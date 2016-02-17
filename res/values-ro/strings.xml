@@ -24,7 +24,7 @@
     <string name="menu_preferences" msgid="3596514894131599202">"Setări"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Ștergeţi difuzările"</string>
     <string name="message_options" msgid="3178489901903589574">"Opţiuni mesaj"</string>
-    <string name="menu_view_details" msgid="1040989019045280975">"Afişaţi detaliile"</string>
+    <string name="menu_view_details" msgid="1040989019045280975">"Afișați detaliile"</string>
     <string name="menu_delete" msgid="128380070910799366">"Ștergeţi difuzarea"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Detalii alertă"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Ștergeţi difuzarea?"</string>
@@ -47,26 +47,26 @@
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"Transmisie celulară"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"Setări pentru alerte de urgenţă"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"Activați notificările"</string>
-    <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Afişaţi difuzările cu alerte de urgenţă"</string>
+    <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Afișați difuzările cu alerte de urgenţă"</string>
     <string name="alert_sound_duration_title" msgid="4712853569849108005">"Durata sunetului pentru alertă"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Memento alerte"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Mesajele de alertă se rostesc"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Utilizaţi funcția de transformare a textului în vorbire pt. a comunica mesajele alertelor de urgenţă"</string>
     <string name="category_etws_settings_title" msgid="4072774251965938576">"Setări ETWS"</string>
-    <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Afişaţi alerte de test ETWS"</string>
-    <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Afişaţi difuzările de testare pentru sistemul de avertizare în caz de cutremur și tsunami"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Afişaţi amenințările extreme"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Afişaţi alertele pentru amenințările extreme în ceea ce priveşte viața și bunurile"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Afişaţi amenințările grave"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Afişaţi alertele pentru amenințările grave în ceea ce priveşte viața și bunurile"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Afişaţi alertele AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Afişaţi buletinele privind urgențele în cazuri de răpire de copii (alertă AMBER)"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Afişaţi alerte de test CMAS"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Afişaţi alerte de test pentru Commercial Mobile Alert System"</string>
+    <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Afișați alerte de test ETWS"</string>
+    <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Afișați difuzările de testare pentru sistemul de avertizare în caz de cutremur și tsunami"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Afișați amenințările extreme"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Afișați alertele pentru amenințările extreme în ceea ce privește viața și bunurile"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Afișați amenințările grave"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Afișați alertele pentru amenințările grave în ceea ce privește viața și bunurile"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Afișați alertele AMBER"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Afișați buletinele privind urgențele în cazuri de răpire de copii (alertă AMBER)"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Afișați alerte de test CMAS"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Afișați alerte de test pentru Commercial Mobile Alert System"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrare"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Vibrare la alertă"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Setări pentru Brazilia"</string>
-    <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Afişaţi difuz. pt. canalul 50"</string>
+    <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Afișați difuz. pt. canalul 50"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"Canalul 50 este utilizat în Brazilia pentru informații despre actualizarea zonelor"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Opțiuni dezvoltator"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoria alertei:"</string>
@@ -103,8 +103,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Primit:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> (de) alerte necitite."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Alerte noi"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Afişaţi un dialog de renunţare după afişarea primei alerte CMAS (altele decât alerta prezidențială)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Afişaţi un dialog de renunţare"</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Afișați un dialog de renunţare după afişarea primei alerte CMAS (altele decât alerta prezidențială)."</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Afișați un dialog de renunţare"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"În prezent, primiţi alerte de urgenţă. Doriți să primiţi în continuare alerte de urgenţă?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Da"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nu"</string>
