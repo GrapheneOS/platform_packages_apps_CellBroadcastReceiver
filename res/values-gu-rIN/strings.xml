@@ -53,23 +53,23 @@
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"ચેતવણી સંદેશ બોલો"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"કટોકટીની ચેતવણીના સંદેશા બોલવા માટે ટેક્સ્ટ-થી-વાણીનો ઉપયોગ કરો"</string>
     <string name="category_etws_settings_title" msgid="4072774251965938576">"ETWS સેટિંગ્સ"</string>
-    <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"ETWS પરીક્ષણ બ્રોડકાસ્ટ્સ દર્શાવો"</string>
+    <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"ETWS પરીક્ષણ બ્રોડકાસ્ટ્સ બતાવો"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"અર્થક્વેક સુનામી વૉર્નિંગ સિસ્ટમ માટેનાં પરીક્ષણ બ્રોડકાસ્ટ્સ પ્રદર્શિત કરો"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"અત્યંત જોખમો દર્શાવો"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"અત્યંત જોખમો બતાવો"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"જીવન અને સંપત્તિના અત્યંત જોખમ માટેની ચેતવણીઓ પ્રદર્શિત કરો"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"ગંભીર જોખમો દર્શાવો"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"ગંભીર જોખમો બતાવો"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"જીવન અને સંપત્તિના ગંભીર જોખમ માટેની ચેતવણીઓ પ્રદર્શિત કરો"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"AMBER ચેતવણીઓ દર્શાવો"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"AMBER ચેતવણીઓ બતાવો"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"બાળ અપહરણનાં કટોકટીનાં બુલેટિન્સ પ્રદર્શિત કરો (AMBER ચેતવણી)"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"CMAS પરીક્ષણ બ્રોડકાસ્ટ્સ દર્શાવો"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"CMAS પરીક્ષણ બ્રોડકાસ્ટ્સ બતાવો"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"કોમર્શિયલ મોબાઇલ એલર્ટ સિસ્ટમ માટેનાં પરીક્ષણ બ્રોડકાસ્ટ્સ પ્રદર્શિત કરો"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"વાઇબ્રેટ"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"ચેતવણી પર વાઇબ્રેટ કરો"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"બ્રાઝિલ માટે સેટિંગ્સ"</string>
-    <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"ચૅનલ 50 બ્રોડકાસ્ટ્સ દર્શાવો"</string>
+    <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"ચૅનલ 50 બ્રોડકાસ્ટ્સ બતાવો"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ચૅનલ 50 નો ઉપયોગ બ્રાઝિલમાં ક્ષેત્રનાં અપડેટની માહિતી માટે થાય છે"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"વિકાસકર્તાનાં વિકલ્પો"</string>
-    <string name="cmas_category_heading" msgid="3923503130776640717">"ચેતવણીની કેટેગરી:"</string>
+    <string name="cmas_category_heading" msgid="3923503130776640717">"ચેતવણીની કૅટેગરી:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"ભૂભૌતિકીય"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"હવામાનશાસ્ત્ર સંબંધી"</string>
     <string name="cmas_category_safety" msgid="2986472639641883453">"સલામતી"</string>
@@ -103,8 +103,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"પ્રાપ્ત કર્યુ:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> વાંચ્યા વગરની ચેતવણીઓ"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"નવી ચેતવણીઓ"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"પ્રથમ CMAS ચેતવણી પછી એક નાપસંદ સંવાદ દર્શાવો (પ્રમુખપદની ચેતવણી સિવાય અન્ય)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"નાપસંદ સંવાદ દર્શાવો"</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"પ્રથમ CMAS ચેતવણી પછી એક નાપસંદ સંવાદ બતાવો (પ્રમુખપદની ચેતવણી સિવાય અન્ય)."</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"નાપસંદ સંવાદ બતાવો"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"તમે હાલમાં કટોકટીની ચેતવણીઓ પ્રાપ્ત કરી રહ્યાં છો. શું તમે કટોકટીની ચેતવણીઓ પ્રાપ્ત કરવાનું ચાલુ રાખવા માંગો છો?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"હા"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"નહીં"</string>
