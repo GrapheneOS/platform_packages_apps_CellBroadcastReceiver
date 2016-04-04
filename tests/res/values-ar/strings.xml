@@ -27,7 +27,7 @@
     <string name="button_cmas_monthly_test" msgid="1609320625517248393">"‏إرسال تنبيه اختبار شهري CMAS"</string>
     <string name="button_gsm_7bit_type" msgid="4757698592787955850">"‏إرسال بث تجريبي لنظام GSM ‏7 بت"</string>
     <string name="button_gsm_7bit_umts_type" msgid="4377077702628367387">"‏إرسال بث تجريبي لكود النظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏7 بت"</string>
-    <string name="button_gsm_7bit_nopadding_type" msgid="5289528095948674862">"‏إرسال بث طويل لنظام GSM ‏7 بت"</string>
+    <string name="button_gsm_7bit_nopadding_type" msgid="5289528095948674862">"‏إرسال بث طويل لنظام GSM 7 بت"</string>
     <string name="button_gsm_7bit_nopadding_umts_type" msgid="7953047238483884846">"‏إرسال بث طويل للنظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏7 بت"</string>
     <string name="button_gsm_7bit_multipage_type" msgid="8516540964071070491">"‏إرسال بث متعدد الصفحات لكود نظام GSM ‏7 بت"</string>
     <string name="button_gsm_7bit_multipage_umts_type" msgid="474883728254547100">"‏إرسال بث متعدد الصفحات لكود النظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏7 بت"</string>
