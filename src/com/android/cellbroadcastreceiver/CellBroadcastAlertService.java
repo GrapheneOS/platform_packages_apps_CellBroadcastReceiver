@@ -33,6 +33,7 @@ import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.CellBroadcastMessage;
 import android.telephony.SmsCbCmasInfo;
+import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionManager;
@@ -62,26 +63,29 @@ public class CellBroadcastAlertService extends Service {
             "android.cellbroadcastreceiver.CB_AREA_INFO_RECEIVED";
 
     /**
-     *  Container for service category, serial number, location, and message body hash code for
-     *  duplicate message detection.
+     *  Container for service category, serial number, location, body hash code, and ETWS primary/
+     *  secondary information for duplication detection.
      */
     private static final class MessageServiceCategoryAndScope {
         private final int mServiceCategory;
         private final int mSerialNumber;
         private final SmsCbLocation mLocation;
         private final int mBodyHash;
+        private final boolean mIsEtwsPrimary;
 
         MessageServiceCategoryAndScope(int serviceCategory, int serialNumber,
-                SmsCbLocation location, int bodyHash) {
+                SmsCbLocation location, int bodyHash, boolean isEtwsPrimary) {
             mServiceCategory = serviceCategory;
             mSerialNumber = serialNumber;
             mLocation = location;
             mBodyHash = bodyHash;
+            mIsEtwsPrimary = isEtwsPrimary;
         }
 
         @Override
         public int hashCode() {
-            return mLocation.hashCode() + 5 * mServiceCategory + 7 * mSerialNumber + 13 * mBodyHash;
+            return mLocation.hashCode() + 5 * mServiceCategory + 7 * mSerialNumber + 13 * mBodyHash
+                    + 17 * Boolean.hashCode(mIsEtwsPrimary);
         }
 
         @Override
@@ -94,7 +98,8 @@ public class CellBroadcastAlertService extends Service {
                 return (mServiceCategory == other.mServiceCategory &&
                         mSerialNumber == other.mSerialNumber &&
                         mLocation.equals(other.mLocation) &&
-                        mBodyHash == other.mBodyHash);
+                        mBodyHash == other.mBodyHash &&
+                        mIsEtwsPrimary == other.mIsEtwsPrimary);
             }
             return false;
         }
@@ -102,7 +107,8 @@ public class CellBroadcastAlertService extends Service {
         @Override
         public String toString() {
             return "{mServiceCategory: " + mServiceCategory + " serial number: " + mSerialNumber +
-                    " location: " + mLocation.toString() + " body hash: " + mBodyHash + '}';
+                    " location: " + mLocation.toString() + " body hash: " + mBodyHash +
+                    " mIsEtwsPrimary: " + mIsEtwsPrimary + "}";
         }
     }
 
@@ -166,18 +172,34 @@ public class CellBroadcastAlertService extends Service {
         }
 
         // If this is an ETWS message, then we want to include the body message to be a factor for
-        // duplicate detection. We found that some Japanese carriers send ETWS messages
+        // duplication detection. We found that some Japanese carriers send ETWS messages
         // with the same serial number, therefore the subsequent messages were all ignored.
         // In the other hand, US carriers have the requirement that only serial number, location,
         // and category should be used for duplicate detection.
         int hashCode = message.isEtwsMessage() ? message.getMessageBody().hashCode() : 0;
+
+        // If this is an ETWS message, we need to include primary/secondary message information to
+        // be a factor for duplication detection as well. Per 3GPP TS 23.041 section 8.2,
+        // duplicate message detection shall be performed independently for primary and secondary
+        // notifications.
+        boolean isEtwsPrimary = false;
+        if (message.isEtwsMessage()) {
+            SmsCbEtwsInfo etwsInfo = message.getEtwsWarningInfo();
+            if (etwsInfo != null) {
+                isEtwsPrimary = etwsInfo.isPrimary();
+            } else {
+                Log.w(TAG, "ETWS info is not available.");
+            }
+        }
 
         // Check for duplicate message IDs according to CMAS carrier requirements. Message IDs
         // are stored in volatile memory. If the maximum of 65535 messages is reached, the
         // message ID of the oldest message is deleted from the list.
         MessageServiceCategoryAndScope newCmasId = new MessageServiceCategoryAndScope(
                 message.getServiceCategory(), message.getSerialNumber(), message.getLocation(),
-                hashCode);
+                hashCode, isEtwsPrimary);
+
+        Log.d(TAG, "message ID = " + newCmasId);
 
         // Add the new message ID to the list. It's okay if this is a duplicate message ID,
         // because the list is only used for removing old message IDs from the hash set.
