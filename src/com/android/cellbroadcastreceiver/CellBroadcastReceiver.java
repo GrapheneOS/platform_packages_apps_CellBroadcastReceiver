@@ -33,7 +33,6 @@ import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
 import android.util.Log;
 
-import com.android.internal.telephony.ITelephony;
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 import com.android.internal.telephony.TelephonyIntents;
 
@@ -202,14 +201,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             subId = SubscriptionManager.getDefaultSubscriptionId();
         }
 
-        try {
-            ITelephony phone = ITelephony.Stub.asInterface(ServiceManager.checkService("phone"));
-            if (phone != null) {
-                isCdma = (phone.getActivePhoneTypeForSubscriber(subId) ==
-                        TelephonyManager.PHONE_TYPE_CDMA);
-            }
-        } catch (RemoteException e) {
-            Log.w(TAG, "phone.getActivePhoneType() failed", e);
+        TelephonyManager tm = TelephonyManager.getDefault();
+        if (tm != null) {
+            isCdma = (tm.getCurrentPhoneType(subId) == TelephonyManager.PHONE_TYPE_CDMA);
         }
         return isCdma;
     }
