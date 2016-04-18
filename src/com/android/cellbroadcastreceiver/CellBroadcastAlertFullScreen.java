@@ -62,7 +62,7 @@ public class CellBroadcastAlertFullScreen extends Activity {
     static final String FROM_NOTIFICATION_EXTRA = "from_notification";
 
     /** List of cell broadcast messages to display (oldest to newest). */
-    ArrayList<CellBroadcastMessage> mMessageList;
+    protected ArrayList<CellBroadcastMessage> mMessageList;
 
     /** Whether a CMAS alert other than Presidential Alert was displayed. */
     private boolean mShowOptOutDialog;
@@ -386,6 +386,7 @@ public class CellBroadcastAlertFullScreen extends Activity {
      * service if necessary.
      */
     void dismiss() {
+        Log.d(TAG, "dismissed");
         // Stop playing alert sound/vibration/speech (if started)
         stopService(new Intent(this, CellBroadcastAlertAudio.class));
 
@@ -454,6 +455,7 @@ public class CellBroadcastAlertFullScreen extends Activity {
             }
         }
 
+        Log.d(TAG, "finished");
         finish();
     }
 
