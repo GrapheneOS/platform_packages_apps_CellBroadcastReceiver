@@ -116,6 +116,11 @@ public class CellBroadcastConfigService extends IntentService {
      * @return true if the message is an emergency alert; false otherwise
      */
     static boolean isEmergencyAlertMessage(CellBroadcastMessage message) {
+
+        if (message == null) {
+            return false;
+        }
+
         if (message.isEmergencyAlertMessage()) {
             return true;
         }
