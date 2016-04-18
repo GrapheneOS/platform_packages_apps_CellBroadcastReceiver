@@ -290,11 +290,6 @@ public class CellBroadcastConfigService extends IntentService {
         boolean supportTaiwanPwsAlerts = (COUNTRY_TAIWAN.equals(tm.getSimCountryIso(subId))
                 || COUNTRY_TAIWAN.equals(tm.getNetworkCountryIso(subId)));
 
-        // Per Taiwan PWS regulatory requirement, table 8, we need to enable CMAS additional
-        // language support. We can add more countries here as they require it in the future.
-        boolean supportAdditionalLanguage = (COUNTRY_TAIWAN.equals(tm.getSimCountryIso(subId))
-                || COUNTRY_TAIWAN.equals(tm.getNetworkCountryIso(subId)));
-
         if (DBG) {
             log("enableEmergencyAlerts = " + enableEmergencyAlerts);
             log("enableEtwsAlerts = " + enableEtwsAlerts);
@@ -308,7 +303,6 @@ public class CellBroadcastConfigService extends IntentService {
             log("enableChannel50Alerts = " + enableChannel50Alerts);
             log("supportIsraelPwsAlerts = " + supportIsraelPwsAlerts);
             log("supportTaiwanPwsAlerts = " + supportTaiwanPwsAlerts);
-            log("supportAdditionalLanguage = " + supportAdditionalLanguage);
         }
 
         /** Enable CDMA CMAS series messages. */
@@ -389,40 +383,38 @@ public class CellBroadcastConfigService extends IntentService {
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_REQUIRED_MONTHLY_TEST,
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_OPERATOR_DEFINED_USE);
 
-        if (supportAdditionalLanguage) {
 
-            /** Enable GSM CMAS series messages for additional languages. */
+        /** Enable GSM CMAS series messages for additional languages. */
 
-            // Enable/Disable GSM CMAS presidential messages for additional languages (4383).
-            setCellBroadcastRange(manager, enablePresidential,
-                    SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
-                    SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE,
-                    SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE);
+        // Enable/Disable GSM CMAS presidential messages for additional languages (4383).
+        setCellBroadcastRange(manager, enablePresidential,
+                SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE);
 
-            // Enable/Disable GSM CMAS extreme messages for additional languages (4384~4385).
-            setCellBroadcastRange(manager, enableCmasExtremeAlerts,
-                    SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
-                    SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED_LANGUAGE,
-                    SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_LIKELY_LANGUAGE);
+        // Enable/Disable GSM CMAS extreme messages for additional languages (4384~4385).
+        setCellBroadcastRange(manager, enableCmasExtremeAlerts,
+                SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED_LANGUAGE,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_LIKELY_LANGUAGE);
 
-            // Enable/Disable GSM CMAS severe messages for additional languages (4386~4391).
-            setCellBroadcastRange(manager, enableCmasSevereAlerts,
-                    SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
-                    SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_EXPECTED_OBSERVED_LANGUAGE,
-                    SmsCbConstants.MESSAGE_ID_CMAS_ALERT_SEVERE_EXPECTED_LIKELY_LANGUAGE);
+        // Enable/Disable GSM CMAS severe messages for additional languages (4386~4391).
+        setCellBroadcastRange(manager, enableCmasSevereAlerts,
+                SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_EXPECTED_OBSERVED_LANGUAGE,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_SEVERE_EXPECTED_LIKELY_LANGUAGE);
 
-            // Enable/Disable GSM CMAS amber alert messages for additional languages (4392).
-            setCellBroadcastRange(manager, enableCmasAmberAlerts,
-                    SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
-                    SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY_LANGUAGE,
-                    SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY_LANGUAGE);
+        // Enable/Disable GSM CMAS amber alert messages for additional languages (4392).
+        setCellBroadcastRange(manager, enableCmasAmberAlerts,
+                SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY_LANGUAGE,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY_LANGUAGE);
 
-            // Enable/Disable GSM CMAS test messages for additional languages (4393~4395).
-            setCellBroadcastRange(manager, enableCmasTestAlerts,
-                    SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
-                    SmsCbConstants.MESSAGE_ID_CMAS_ALERT_REQUIRED_MONTHLY_TEST_LANGUAGE,
-                    SmsCbConstants.MESSAGE_ID_CMAS_ALERT_OPERATOR_DEFINED_USE_LANGUAGE);
-        }
+        // Enable/Disable GSM CMAS test messages for additional languages (4393~4395).
+        setCellBroadcastRange(manager, enableCmasTestAlerts,
+                SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_REQUIRED_MONTHLY_TEST_LANGUAGE,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_OPERATOR_DEFINED_USE_LANGUAGE);
 
         // Enable/Disable channel 50 messages for Brazil.
         setCellBroadcastRange(manager, enableChannel50Alerts,
