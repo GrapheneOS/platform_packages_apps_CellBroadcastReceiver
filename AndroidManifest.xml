@@ -34,7 +34,9 @@
     <application android:name="CellBroadcastReceiverApp"
             android:label="@string/app_label"
             android:icon="@mipmap/ic_launcher_cell_broadcast"
-            android:backupAgent="CellBroadcastBackupAgent">
+            android:backupAgent="CellBroadcastBackupAgent"
+            android:defaultToDeviceProtectedStorage="true"
+            android:directBootAware="true">
 
         <meta-data android:name="com.google.android.backup.api_key"
             android:value="AEdPqrEAAAAI2_Lb4sDI0e0twL-kf6GIqXpZIfrR0OhnM1pNJQ" />
