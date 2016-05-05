@@ -17,6 +17,10 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- According to the new Canadian WPAS requirement, the same bilingual
+         (English and French) banner should be used for all kinds of emergency
+         messages and those messages should not be translated to the language
+         set by the user -->
     <string name="etws_earthquake_warning" translatable="false">EMERGENCY ALERT / ALERTE D’URGENCE</string>
     <string name="etws_tsunami_warning" translatable="false">EMERGENCY ALERT / ALERTE D’URGENCE</string>
     <string name="etws_earthquake_and_tsunami_warning" translatable="false">EMERGENCY ALERT / ALERTE D’URGENCE</string>
