@@ -190,24 +190,6 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         context.startService(serviceIntent);
     }
 
-    /**
-     * @return true if the phone is a CDMA phone type
-     */
-    static boolean phoneIsCdma() {
-        boolean isCdma = false;
-
-        int subId = SubscriptionManager.getDefaultSmsSubscriptionId();
-        if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
-            subId = SubscriptionManager.getDefaultSubscriptionId();
-        }
-
-        TelephonyManager tm = TelephonyManager.getDefault();
-        if (tm != null) {
-            isCdma = (tm.getCurrentPhoneType(subId) == TelephonyManager.PHONE_TYPE_CDMA);
-        }
-        return isCdma;
-    }
-
     private static void log(String msg) {
         Log.d(TAG, msg);
     }

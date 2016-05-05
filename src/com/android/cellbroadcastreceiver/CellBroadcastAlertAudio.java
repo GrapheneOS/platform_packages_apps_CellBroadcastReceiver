@@ -111,6 +111,14 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
     private PendingIntent mPlayReminderIntent;
 
+    public enum ToneType {
+        CMAS_DEFAULT,
+        ETWS_DEFAULT,
+        EARTHQUAKE,
+        TSUNAMI,
+        OTHER
+    }
+
     // Internal messages
     private static final int ALERT_SOUND_FINISHED = 1000;
     private static final int ALERT_PAUSE_FINISHED = 1001;
