@@ -256,7 +256,7 @@ public class CellBroadcastAlertService extends Service {
             return;
         }
 
-        if (CellBroadcastConfigService.isEmergencyAlertMessage(cbm)) {
+        if (cbm.isEmergencyAlertMessage()) {
             // start alert sound / vibration / TTS and display full-screen alert
             openEmergencyAlertNotification(cbm);
         } else {

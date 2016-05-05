@@ -291,7 +291,7 @@ public class CellBroadcastAlertFullScreen extends Activity {
         // For emergency alerts, keep screen on so the user can read it, unless this is a
         // full screen alert created by CellBroadcastAlertDialog when the screen turned off.
         CellBroadcastMessage message = getLatestMessage();
-        if (CellBroadcastConfigService.isEmergencyAlertMessage(message) &&
+        if ((message != null && message.isEmergencyAlertMessage()) &&
                 (savedInstanceState != null ||
                         !getIntent().getBooleanExtra(SCREEN_OFF_EXTRA, false))) {
             Log.d(TAG, "onCreate setting screen on timer for emergency alert");
@@ -366,7 +366,7 @@ public class CellBroadcastAlertFullScreen extends Activity {
         Log.d(TAG, "onResume called");
         super.onResume();
         CellBroadcastMessage message = getLatestMessage();
-        if (message != null && CellBroadcastConfigService.isEmergencyAlertMessage(message)) {
+        if (message != null && message.isEmergencyAlertMessage()) {
             mAnimationHandler.startIconAnimation();
         }
     }
@@ -423,7 +423,7 @@ public class CellBroadcastAlertFullScreen extends Activity {
         CellBroadcastMessage nextMessage = getLatestMessage();
         if (nextMessage != null) {
             updateAlertText(nextMessage);
-            if (CellBroadcastConfigService.isEmergencyAlertMessage(nextMessage)) {
+            if (nextMessage.isEmergencyAlertMessage()) {
                 mAnimationHandler.startIconAnimation();
             } else {
                 mAnimationHandler.stopIconAnimation();

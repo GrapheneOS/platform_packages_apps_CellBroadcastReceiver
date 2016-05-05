@@ -12,8 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := $(call my-dir)
+LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-# Include all makefiles in subdirectories
-include $(call all-makefiles-under,$(LOCAL_PATH))
+# We only want this apk build for tests.
+LOCAL_MODULE_TAGS := tests
+LOCAL_CERTIFICATE := platform
+
+LOCAL_JAVA_LIBRARIES := android.test.runner
+
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-test mockito-target
+
+# Include all test java files.
+LOCAL_SRC_FILES := $(call all-java-files-under, src)
+
+LOCAL_PACKAGE_NAME := CellBroadcastReceiverUnitTests
+
+LOCAL_INSTRUMENTATION_FOR := CellBroadcastReceiver
+
+include $(BUILD_PACKAGE)
+
