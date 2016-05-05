@@ -56,10 +56,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     /** Action to start playing alert audio/vibration/speech. */
     static final String ACTION_START_ALERT_AUDIO = "ACTION_START_ALERT_AUDIO";
 
-    /** Extra for alert audio duration (from settings). */
-    public static final String ALERT_AUDIO_DURATION_EXTRA =
-            "com.android.cellbroadcastreceiver.ALERT_AUDIO_DURATION";
-
     /** Extra for message body to speak (if speech enabled in settings). */
     public static final String ALERT_AUDIO_MESSAGE_BODY =
             "com.android.cellbroadcastreceiver.ALERT_AUDIO_MESSAGE_BODY";
@@ -85,9 +81,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
     /** Pause duration between alert sound and alert speech. */
     private static final int PAUSE_DURATION_BEFORE_SPEAKING_MSEC = 1000;
-
-    /** Duration of a CMAS alert. */
-    private static final int CMAS_DURATION_MSEC = 10500;
 
     /** Vibration uses the same on/off pattern as the CMAS alert tone */
     private static final long[] sVibratePattern = { 0, 2000, 500, 1000, 500, 1000, 500,
@@ -298,11 +291,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             return START_NOT_STICKY;
         }
 
-        // This extra should always be provided by CellBroadcastAlertService,
-        // but default to 10.5 seconds just to be safe (CMAS requirement).
-        int duration = intent.getIntExtra(ALERT_AUDIO_DURATION_EXTRA, CMAS_DURATION_MSEC);
-        if (DBG) log("Duration: " + duration);
-
         // Get text to speak (if enabled by user)
         mMessageBody = intent.getStringExtra(ALERT_AUDIO_MESSAGE_BODY);
         mMessagePreferredLanguage = intent.getStringExtra(ALERT_AUDIO_MESSAGE_PREFERRED_LANGUAGE);
@@ -341,7 +329,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         }
 
         if (mEnableAudio || mEnableVibrate) {
-            play(duration);     // in milliseconds
+            play();
         } else {
             stopSelf();
             return START_NOT_STICKY;
@@ -359,9 +347,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
     /**
      * Start playing the alert sound, and send delayed message when it's time to stop.
-     * @param duration the alert sound duration in milliseconds
      */
-    private void play(int duration) {
+    private void play() {
         // stop() checks to see if we are already playing.
         stop();
 
@@ -407,28 +394,20 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         R.raw.attention_signal);
                 mAudioManager.requestAudioFocus(null, AudioManager.STREAM_NOTIFICATION,
                         AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
-                // if the duration isn't equal to one play of the full 10.5s file then play
-                // with looping enabled.
-                startAlarm(mMediaPlayer, duration != CMAS_DURATION_MSEC);
+                startAlarm(mMediaPlayer);
             } catch (Exception ex) {
                 loge("Failed to play alert sound: " + ex);
             }
         }
 
-        // stop alert after the specified duration, unless we are playing the full 10.5s file once
-        // in which case we'll use the end of playback callback rather than a delayed message.
-        // This is to avoid the CMAS alert potentially being truncated due to audio playback lag.
-        if (duration != CMAS_DURATION_MSEC) {
-            mHandler.sendMessageDelayed(mHandler.obtainMessage(ALERT_SOUND_FINISHED), duration);
-        }
         mState = STATE_ALERTING;
     }
 
     // Do the common stuff when starting the alarm.
-    private static void startAlarm(MediaPlayer player, boolean looping)
+    private static void startAlarm(MediaPlayer player)
             throws java.io.IOException, IllegalArgumentException, IllegalStateException {
         player.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
-        player.setLooping(looping);
+        player.setLooping(false);
         player.prepare();
         player.start();
     }

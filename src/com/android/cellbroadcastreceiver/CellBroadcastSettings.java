@@ -44,12 +44,6 @@ public class CellBroadcastSettings extends PreferenceActivity {
     // Preference key for whether to enable emergency notifications (default enabled).
     public static final String KEY_ENABLE_EMERGENCY_ALERTS = "enable_emergency_alerts";
 
-    // Duration of alert sound (in seconds).
-    public static final String KEY_ALERT_SOUND_DURATION = "alert_sound_duration";
-
-    // Default alert duration (in seconds).
-    public static final String ALERT_SOUND_DEFAULT_DURATION = "4";
-
     // Enable vibration on alert (unless master volume is silent).
     public static final String KEY_ENABLE_ALERT_VIBRATE = "enable_alert_vibrate";
 
@@ -128,7 +122,6 @@ public class CellBroadcastSettings extends PreferenceActivity {
         private CheckBoxPreference mSevereCheckBox;
         private CheckBoxPreference mAmberCheckBox;
         private CheckBoxPreference mEmergencyCheckBox;
-        private ListPreference mAlertDuration;
         private ListPreference mReminderInterval;
         private CheckBoxPreference mSpeechCheckBox;
         private CheckBoxPreference mEtwsTestCheckBox;
@@ -154,8 +147,6 @@ public class CellBroadcastSettings extends PreferenceActivity {
                     findPreference(KEY_ENABLE_CMAS_AMBER_ALERTS);
             mEmergencyCheckBox = (CheckBoxPreference)
                     findPreference(KEY_ENABLE_EMERGENCY_ALERTS);
-            mAlertDuration = (ListPreference)
-                    findPreference(KEY_ALERT_SOUND_DURATION);
             mReminderInterval = (ListPreference)
                     findPreference(KEY_ALERT_REMINDER_INTERVAL);
             mSpeechCheckBox = (CheckBoxPreference)
@@ -227,18 +218,6 @@ public class CellBroadcastSettings extends PreferenceActivity {
 
             // Show alert settings and ETWS categories for ETWS builds and developer mode.
             if (enableDevSettings || showEtwsSettings) {
-                // alert sound duration
-                ListPreference duration = mAlertDuration;
-                duration.setSummary(duration.getEntry());
-                duration.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                    @Override
-                    public boolean onPreferenceChange(Preference pref, Object newValue) {
-                        final ListPreference listPref = (ListPreference) pref;
-                        final int idx = listPref.findIndexOfValue((String) newValue);
-                        listPref.setSummary(listPref.getEntries()[idx]);
-                        return true;
-                    }
-                });
 
                 if (forceDisableEtwsCmasTest) {
                     // Remove ETWS test preference.
@@ -253,7 +232,6 @@ public class CellBroadcastSettings extends PreferenceActivity {
                     }
                 }
             } else {
-                mAlertCategory.removePreference(mAlertDuration);
                 mAlertCategory.removePreference(mSpeechCheckBox);
                 // Remove ETWS test preference category.
                 preferenceScreen.removePreference(mETWSSettingCategory);

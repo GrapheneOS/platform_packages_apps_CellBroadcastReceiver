@@ -48,7 +48,6 @@
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"အရေးပေါ် သတိပေးချက် သတ်မှတ်ချက်များ"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"အကြောင်းကြားမှုများ ဖွင့်ပါ"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"အရေးပေါ် သတိပေးရေး ထုတ်လွှင့်ချက်များကို ပြပါ"</string>
-    <string name="alert_sound_duration_title" msgid="4712853569849108005">"သတိပေးသံ ကြာရှည်မှု"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"သတိပေးနှုန်း"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"စကားပြော သတိပေးချက် သတင်းတို"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"အရေးပေါ် သတိပေးရေး သတင်းများကို ပြောကြားရန် စာသား-မှ-စကားကို အသုံးပြုပါ"</string>
@@ -108,13 +107,6 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"သင်သည် လောလောဆယ်မှာ အရေးပေါ် သတိပေးချက်များကို ရရှိနေသည်။ သင်သည်  အရေးပေါ် သတိပေးချက်များကို ဆက်ရလိုပါသလား?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"လို"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"မလို"</string>
-  <string-array name="alert_sound_duration_entries">
-    <item msgid="5353482200312892037">"၂ စက္ကန့်"</item>
-    <item msgid="5656092384277009212">"၄ စက္ကန့်"</item>
-    <item msgid="253564899252909788">"၆ စက္ကန့်"</item>
-    <item msgid="7514102744524534421">"၈ စက္ကန့်"</item>
-    <item msgid="6062562309271376642">"၁၀ စက္ကန့်"</item>
-  </string-array>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"တစ်ကြိမ်"</item>
     <item msgid="9097229303902157183">"၂ မိနစ်တိုင်း"</item>

@@ -365,17 +365,6 @@ public class CellBroadcastAlertService extends Service {
         audioIntent.setAction(CellBroadcastAlertAudio.ACTION_START_ALERT_AUDIO);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        int duration;   // alert audio duration in ms
-        if (message.isCmasMessage()) {
-            // CMAS requirement: duration of the audio attention signal is 10.5 seconds.
-            duration = 10500;
-        } else {
-            duration = Integer.parseInt(prefs.getString(
-                    CellBroadcastSettings.KEY_ALERT_SOUND_DURATION,
-                    CellBroadcastSettings.ALERT_SOUND_DEFAULT_DURATION)) * 1000;
-        }
-        audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_DURATION_EXTRA, duration);
-
         if (message.isEtwsMessage()) {
             // For ETWS, always vibrate, even in silent mode.
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATE_EXTRA, true);
