@@ -41,6 +41,8 @@ public class CellBroadcastSettings extends PreferenceActivity {
 
     private static final String TAG = "CellBroadcastSettings";
 
+    private static final boolean DBG = false;
+
     // Preference key for whether to enable emergency notifications (default enabled).
     public static final String KEY_ENABLE_EMERGENCY_ALERTS = "enable_emergency_alerts";
 
@@ -88,12 +90,6 @@ public class CellBroadcastSettings extends PreferenceActivity {
 
     // Alert reminder interval ("once" = single 2 minute reminder).
     public static final String KEY_ALERT_REMINDER_INTERVAL = "alert_reminder_interval";
-
-    // Default reminder interval.
-    public static final String ALERT_REMINDER_INTERVAL = "0";
-
-    // First time use
-    public static final String KEY_FIRST_TIME = "first_time";
 
     // Brazil country code
     private static final String COUNTRY_BRAZIL = "br";
@@ -188,18 +184,7 @@ public class CellBroadcastSettings extends PreferenceActivity {
             Resources res = getResources();
             boolean showEtwsSettings = res.getBoolean(R.bool.show_etws_settings);
 
-            // alert reminder interval
-            mReminderInterval.setSummary(mReminderInterval.getEntry());
-            mReminderInterval.setOnPreferenceChangeListener(
-                    new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference pref, Object newValue) {
-                    final ListPreference listPref = (ListPreference) pref;
-                    final int idx = listPref.findIndexOfValue((String) newValue);
-                    listPref.setSummary(listPref.getEntries()[idx]);
-                    return true;
-                }
-            });
+            initReminderIntervalList();
 
             boolean forceDisableEtwsCmasTest =
                     isEtwsCmasTestMessageForcedDisabled(getActivity());
@@ -283,6 +268,40 @@ public class CellBroadcastSettings extends PreferenceActivity {
             if (mCmasTestCheckBox != null) {
                 mCmasTestCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
             }
+        }
+
+        private void initReminderIntervalList() {
+
+            String[] activeValues =
+                    getResources().getStringArray(R.array.alert_reminder_interval_active_values);
+            String[] allEntries =
+                    getResources().getStringArray(R.array.alert_reminder_interval_entries);
+            String[] newEntries = new String[activeValues.length];
+
+            // Only add active interval to the list
+            for (int i = 0; i < activeValues.length; i++) {
+                int index = mReminderInterval.findIndexOfValue(activeValues[i]);
+                if (index != -1) {
+                    newEntries[i] = allEntries[index];
+                    if (DBG) Log.d(TAG, "Added " + allEntries[index]);
+                } else {
+                    Log.e(TAG, "Can't find " + activeValues[i]);
+                }
+            }
+
+            mReminderInterval.setEntries(newEntries);
+            mReminderInterval.setEntryValues(activeValues);
+            mReminderInterval.setSummary(mReminderInterval.getEntry());
+            mReminderInterval.setOnPreferenceChangeListener(
+                    new Preference.OnPreferenceChangeListener() {
+                        @Override
+                        public boolean onPreferenceChange(Preference pref, Object newValue) {
+                            final ListPreference listPref = (ListPreference) pref;
+                            final int idx = listPref.findIndexOfValue((String) newValue);
+                            listPref.setSummary(listPref.getEntries()[idx]);
+                            return true;
+                        }
+                    });
         }
     }
 
