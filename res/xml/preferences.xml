@@ -49,7 +49,7 @@
                         android:title="@string/alert_reminder_interval_title"
                         android:entries="@array/alert_reminder_interval_entries"
                         android:entryValues="@array/alert_reminder_interval_values"
-                        android:defaultValue="0"
+                        android:defaultValue="@string/alert_reminder_interval_default_value"
                         android:dialogTitle="@string/alert_reminder_interval_title" />
 
         <CheckBoxPreference android:defaultValue="true"
