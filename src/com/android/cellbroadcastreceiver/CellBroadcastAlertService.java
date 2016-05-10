@@ -16,12 +16,12 @@
 
 package com.android.cellbroadcastreceiver;
 
+import android.app.ActivityManagerNative;
 import android.app.KeyguardManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.app.ActivityManagerNative;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -36,8 +36,10 @@ import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
-import android.telephony.SubscriptionManager;
 import android.util.Log;
+
+import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
+import com.android.cellbroadcastreceiver.CellBroadcastOtherChannelsManager.CellBroadcastChannelRange;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -50,7 +52,7 @@ import java.util.Locale;
  * (but not when the user views a previously received broadcast).
  */
 public class CellBroadcastAlertService extends Service {
-    private static final String TAG = "CellBroadcastAlertService";
+    private static final String TAG = "CBAlertService";
 
     /** Intent action to display alert dialog/notification, after verifying the alert is new. */
     static final String SHOW_NEW_ALERT_ACTION = "cellbroadcastreceiver.SHOW_NEW_ALERT";
@@ -365,15 +367,47 @@ public class CellBroadcastAlertService extends Service {
         audioIntent.setAction(CellBroadcastAlertAudio.ACTION_START_ALERT_AUDIO);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
+        ToneType toneType = ToneType.CMAS_DEFAULT;
         if (message.isEtwsMessage()) {
             // For ETWS, always vibrate, even in silent mode.
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATE_EXTRA, true);
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_ETWS_VIBRATE_EXTRA, true);
+            toneType = ToneType.ETWS_DEFAULT;
+
+            if (message.getEtwsWarningInfo() != null) {
+                int warningType = message.getEtwsWarningInfo().getWarningType();
+
+                switch (warningType) {
+                    case SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE:
+                    case SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE_AND_TSUNAMI:
+                        toneType = ToneType.EARTHQUAKE;
+                        break;
+                    case SmsCbEtwsInfo.ETWS_WARNING_TYPE_TSUNAMI:
+                        toneType = ToneType.TSUNAMI;
+                        break;
+                    case SmsCbEtwsInfo.ETWS_WARNING_TYPE_OTHER_EMERGENCY:
+                        toneType = ToneType.OTHER;
+                        break;
+                }
+            }
         } else {
             // For other alerts, vibration can be disabled in app settings.
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATE_EXTRA,
                     prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true));
+            int channel = message.getServiceCategory();
+            ArrayList<CellBroadcastChannelRange> ranges= CellBroadcastOtherChannelsManager.
+                    getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
+                    message.getSubId());
+            if (ranges != null) {
+                for (CellBroadcastChannelRange range : ranges) {
+                    if (channel >= range.mStartId && channel <= range.mEndId) {
+                        toneType = range.mToneType;
+                        break;
+                    }
+                }
+            }
         }
+        audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE, toneType);
 
         String messageBody = message.getMessageBody();
 
@@ -385,14 +419,15 @@ public class CellBroadcastAlertService extends Service {
             if (message.isEtwsMessage()) {
                 // Only do TTS for ETWS secondary message.
                 // There is no text in ETWS primary message. When we construct the ETWS primary
-                // message, we hardcode "ETWS" as the body hence we don't want to speak that out here.
-                
+                // message, we hardcode "ETWS" as the body hence we don't want to speak that out
+                // here.
+
                 // Also in many cases we see the secondary message comes few milliseconds after
                 // the primary one. If we play TTS for the primary one, It will be overwritten by
                 // the secondary one immediately anyway.
                 if (!message.getEtwsWarningInfo().isPrimary()) {
-                    // Since only Japanese carriers are using ETWS, if there is no language specified
-                    // in the ETWS message, we'll use Japanese as the default language.
+                    // Since only Japanese carriers are using ETWS, if there is no language
+                    // specified in the ETWS message, we'll use Japanese as the default language.
                     defaultLanguage = "ja";
                 }
             } else {

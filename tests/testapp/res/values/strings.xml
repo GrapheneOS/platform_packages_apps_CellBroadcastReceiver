@@ -16,7 +16,10 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label">Cell Broadcast Tests</string>
-    <string name="button_etws_normal_type">Send ETWS Normal Broadcast</string>
+    <string name="button_etws_earthquake_type">Send ETWS Earthquake Broadcast</string>
+    <string name="button_etws_tsunami_type">Send ETWS Tsunami Broadcast</string>
+    <string name="button_etws_earthquake_tsunami_type">Send ETWS Earthquake and Tsunami Broadcast</string>
+    <string name="button_etws_other_type">Send ETWS Other Emergency Broadcast</string>
     <string name="button_etws_cancel_type">Send ETWS Cancel Broadcast</string>
     <string name="button_etws_test_type">Send ETWS Test Broadcast</string>
     <string name="button_cmas_pres_alert">Send CMAS Presidential Alert</string>
