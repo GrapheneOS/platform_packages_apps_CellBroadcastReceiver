@@ -24,11 +24,8 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnErrorListener;
 import android.media.MediaPlayer.OnCompletionListener;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
+import android.media.MediaPlayer.OnErrorListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -39,7 +36,6 @@ import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-import java.util.HashMap;
 import java.util.Locale;
 import java.util.MissingResourceException;
 
@@ -69,6 +65,10 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     public static final String ALERT_AUDIO_MESSAGE_DEFAULT_LANGUAGE =
             "com.android.cellbroadcastreceiver.ALERT_AUDIO_MESSAGE_DEFAULT_LANGUAGE";
 
+    /** Extra for alert tone type */
+    public static final String ALERT_AUDIO_TONE_TYPE =
+            "com.android.cellbroadcastreceiver.ALERT_AUDIO_TONE_TYPE";
+
     /** Extra for alert audio vibration enabled (from settings). */
     public static final String ALERT_AUDIO_VIBRATE_EXTRA =
             "com.android.cellbroadcastreceiver.ALERT_AUDIO_VIBRATE";
@@ -81,10 +81,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
     /** Pause duration between alert sound and alert speech. */
     private static final int PAUSE_DURATION_BEFORE_SPEAKING_MSEC = 1000;
-
-    /** Vibration uses the same on/off pattern as the CMAS alert tone */
-    private static final long[] sVibratePattern = { 0, 2000, 500, 1000, 500, 1000, 500,
-            2000, 500, 1000, 500, 1000};
 
     private static final int STATE_IDLE = 0;
     private static final int STATE_ALERTING = 1;
@@ -337,7 +333,11 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         }
 
         if (mEnableAudio || mEnableVibrate) {
-            play();
+            ToneType toneType = ToneType.CMAS_DEFAULT;
+            if (intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE) != null) {
+                toneType = (ToneType) intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE);
+            }
+            playAlertTone(toneType);
         } else {
             stopSelf();
             return START_NOT_STICKY;
@@ -354,18 +354,29 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private static final float IN_CALL_VOLUME = 0.125f;
 
     /**
-     * Start playing the alert sound, and send delayed message when it's time to stop.
+     * Start playing the alert sound.
+     * @param toneType the alert tone type (e.g. default, earthquake, tsunami, etc..)
      */
-    private void play() {
+    private void playAlertTone(ToneType toneType) {
         // stop() checks to see if we are already playing.
         stop();
 
-        if (DBG) log("play()");
+        log("playAlertTone: toneType=" + toneType);
 
         // Start the vibration first.
         if (mEnableVibrate) {
-            mVibrator.vibrate(sVibratePattern, -1);
+
+            int[] patternArray = getApplicationContext().getResources().
+                    getIntArray(R.array.default_vibration_pattern);
+            long[] vibrationPattern = new long[patternArray.length];
+
+            for (int i = 0; i < patternArray.length; i++) {
+                vibrationPattern[i] = patternArray[i];
+            }
+
+            mVibrator.vibrate(vibrationPattern, -1);
         }
+
 
         if (mEnableAudio) {
             // future optimization: reuse media player object
@@ -397,27 +408,46 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                     mMediaPlayer.setVolume(IN_CALL_VOLUME, IN_CALL_VOLUME);
                 }
 
+                log("Locale=" + getResources().getConfiguration().getLocales());
+
+                // Load the tones based on type
+                switch (toneType) {
+                    case EARTHQUAKE:
+                        setDataSourceFromResource(getResources(), mMediaPlayer,
+                                R.raw.etws_earthquake);
+                        break;
+                    case TSUNAMI:
+                        setDataSourceFromResource(getResources(), mMediaPlayer,
+                                R.raw.etws_tsunami);
+                        break;
+                    case OTHER:
+                        setDataSourceFromResource(getResources(), mMediaPlayer,
+                                R.raw.etws_other_disaster);
+                        break;
+                    case ETWS_DEFAULT:
+                        setDataSourceFromResource(getResources(), mMediaPlayer,
+                                R.raw.etws_default);
+                    case CMAS_DEFAULT:
+                    default:
+                        setDataSourceFromResource(getResources(), mMediaPlayer,
+                                R.raw.cmas_default);
+                }
+
                 // start playing alert audio (unless master volume is vibrate only or silent).
-                setDataSourceFromResource(getResources(), mMediaPlayer,
-                        R.raw.attention_signal);
                 mAudioManager.requestAudioFocus(null, AudioManager.STREAM_NOTIFICATION,
                         AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
-                startAlarm(mMediaPlayer);
+
+                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
+                mMediaPlayer.setLooping(false);
+                mMediaPlayer.prepare();
+                mMediaPlayer.start();
+
             } catch (Exception ex) {
                 loge("Failed to play alert sound: " + ex);
             }
         }
 
         mState = STATE_ALERTING;
-    }
-
-    // Do the common stuff when starting the alarm.
-    private static void startAlarm(MediaPlayer player)
-            throws java.io.IOException, IllegalArgumentException, IllegalStateException {
-        player.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
-        player.setLooping(false);
-        player.prepare();
-        player.start();
     }
 
     private static void setDataSourceFromResource(Resources resources,
@@ -427,22 +457,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             player.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(),
                     afd.getLength());
             afd.close();
-        }
-    }
-
-    private void playAlertReminderSound() {
-        Uri notificationUri = RingtoneManager.getDefaultUri(
-                RingtoneManager.TYPE_NOTIFICATION | RingtoneManager.TYPE_ALARM);
-        if (notificationUri == null) {
-            loge("Can't get URI for alert reminder sound");
-            return;
-        }
-        Ringtone r = RingtoneManager.getRingtone(this, notificationUri);
-        if (r != null) {
-            log("playing alert reminder sound");
-            r.play();
-        } else {
-            loge("can't get Ringtone for alert reminder sound");
         }
     }
 

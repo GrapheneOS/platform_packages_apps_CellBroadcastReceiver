@@ -30,6 +30,7 @@ import com.android.internal.telephony.PhoneConstants;
 import com.android.internal.telephony.EncodeException;
 import com.android.internal.telephony.GsmAlphabet;
 import com.android.internal.telephony.gsm.GsmSmsCbMessage;
+import com.android.internal.telephony.gsm.SmsCbConstants;
 import com.android.internal.telephony.uicc.IccUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -545,9 +546,37 @@ public class SendTestMessages {
                 AppOpsManager.OP_RECEIVE_SMS, null, null, Activity.RESULT_OK, null, null);
     }
 
-    public static void testSendEtwsMessageNormal(Activity activity, int serialNumber) {
+    public static void testSendEtwsMessageEarthquake(Activity activity, int serialNumber) {
         Intent intent = new Intent(Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
-        intent.putExtra("message", createFromPdu(etwsMessageNormal, serialNumber, 0));
+        intent.putExtra("message", createFromPdu(etwsMessageNormal, serialNumber,
+                SmsCbConstants.MESSAGE_ID_ETWS_EARTHQUAKE_WARNING));
+        activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
+                Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
+                AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);
+    }
+
+    public static void testSendEtwsMessageTsunami(Activity activity, int serialNumber) {
+        Intent intent = new Intent(Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
+        intent.putExtra("message", createFromPdu(etwsMessageNormal, serialNumber,
+                SmsCbConstants.MESSAGE_ID_ETWS_TSUNAMI_WARNING));
+        activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
+                Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
+                AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);
+    }
+
+    public static void testSendEtwsMessageEarthquakeTsunami(Activity activity, int serialNumber) {
+        Intent intent = new Intent(Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
+        intent.putExtra("message", createFromPdu(etwsMessageNormal, serialNumber,
+                SmsCbConstants.MESSAGE_ID_ETWS_EARTHQUAKE_AND_TSUNAMI_WARNING));
+        activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
+                Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
+                AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);
+    }
+
+    public static void testSendEtwsMessageOther(Activity activity, int serialNumber) {
+        Intent intent = new Intent(Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
+        intent.putExtra("message", createFromPdu(etwsMessageNormal, serialNumber,
+                SmsCbConstants.MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE));
         activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
                 Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
                 AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);

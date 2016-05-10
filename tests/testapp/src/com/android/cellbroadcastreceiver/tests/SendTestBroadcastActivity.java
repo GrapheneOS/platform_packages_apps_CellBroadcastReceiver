@@ -20,7 +20,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.telephony.SubscriptionManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -100,16 +99,59 @@ public class SendTestBroadcastActivity extends Activity {
         EditText categoryIdField = (EditText) findViewById(R.id.category_id);
         categoryIdField.setText("0");
 
-        /* Send an ETWS normal broadcast message to app. */
-        Button etwsNormalTypeButton = (Button) findViewById(R.id.button_etws_normal_type);
-        etwsNormalTypeButton.setOnClickListener(new OnClickListener() {
+        /* Send an ETWS earthquake broadcast message to app. */
+        Button etwsEarthquakeTypeButton = (Button) findViewById(R.id.button_etws_earthquake_type);
+        etwsEarthquakeTypeButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 if (mDelayBeforeSending && v != null) {
                     Message msg = mDelayHandler.obtainMessage(0, this);
                     mDelayHandler.sendMessageDelayed(msg, DELAY_BEFORE_SENDING_MSEC);
                 } else {
-                    SendTestMessages.testSendEtwsMessageNormal(SendTestBroadcastActivity.this,
+                    SendTestMessages.testSendEtwsMessageEarthquake(SendTestBroadcastActivity.this,
                             getMessageId());
+                }
+            }
+        });
+
+        /* Send an ETWS tsunami broadcast message to app. */
+        Button etwsTsunamiTypeButton = (Button) findViewById(R.id.button_etws_tsunami_type);
+        etwsTsunamiTypeButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                if (mDelayBeforeSending && v != null) {
+                    Message msg = mDelayHandler.obtainMessage(0, this);
+                    mDelayHandler.sendMessageDelayed(msg, DELAY_BEFORE_SENDING_MSEC);
+                } else {
+                    SendTestMessages.testSendEtwsMessageTsunami(SendTestBroadcastActivity.this,
+                            getMessageId());
+                }
+            }
+        });
+
+        /* Send an ETWS earthquake and tsunami broadcast message to app. */
+        Button etwsEarthquakeTsunamiTypeButton = (Button)
+                findViewById(R.id.button_etws_earthquake_tsunami_type);
+        etwsEarthquakeTsunamiTypeButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                if (mDelayBeforeSending && v != null) {
+                    Message msg = mDelayHandler.obtainMessage(0, this);
+                    mDelayHandler.sendMessageDelayed(msg, DELAY_BEFORE_SENDING_MSEC);
+                } else {
+                    SendTestMessages.testSendEtwsMessageEarthquakeTsunami(
+                            SendTestBroadcastActivity.this, getMessageId());
+                }
+            }
+        });
+
+        /* Send an ETWS other emergency broadcast message to app. */
+        Button etwsOtherTypeButton = (Button) findViewById(R.id.button_etws_other_type);
+        etwsOtherTypeButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                if (mDelayBeforeSending && v != null) {
+                    Message msg = mDelayHandler.obtainMessage(0, this);
+                    mDelayHandler.sendMessageDelayed(msg, DELAY_BEFORE_SENDING_MSEC);
+                } else {
+                    SendTestMessages.testSendEtwsMessageOther(
+                            SendTestBroadcastActivity.this, getMessageId());
                 }
             }
         });

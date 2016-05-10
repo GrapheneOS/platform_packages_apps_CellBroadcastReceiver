@@ -259,4 +259,20 @@
     <!-- Do not translate. Default value that in the ListPreference.
          These must be a subset of the alert_reminder_interval_values list above. -->
     <string name="alert_reminder_interval_default_value">0</string>
+
+    <!-- Do not translate. Values that for the vibration pattern. -->
+    <integer-array name="default_vibration_pattern">
+        <item>0</item>      <!-- the number of milliseconds to wait before turning the vibrator on -->
+        <item>2000</item>   <!-- the number of milliseconds for which to keep the vibrator on before turning it off -->
+        <item>500</item>    <!-- Subsequent values alternate between durations in milliseconds to turn the vibrator off or to turn the vibrator on -->
+        <item>1000</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>500</item>
+        <item>2000</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>500</item>
+        <item>1000</item>
+    </integer-array>
 </resources>
