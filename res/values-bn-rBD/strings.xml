@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"একবার"</item>
     <item msgid="9097229303902157183">"প্রতি ২ মিনিট"</item>
-    <item msgid="5676933700148002666">"প্রতি ১৫ মিনিটে"</item>
-    <item msgid="694355015442188708">"বন্ধ করুন"</item>
+    <item msgid="5718214950343391480">"প্রতি ৫ মিনিট"</item>
+    <item msgid="3863339891188103437">"প্রতি ১৫ মিনিট"</item>
+    <item msgid="6868848414437854609">"বন্ধ আছে"</item>
   </string-array>
 </resources>

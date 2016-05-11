@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"En gång"</item>
     <item msgid="9097229303902157183">"Varannan minut"</item>
-    <item msgid="5676933700148002666">"Var 15:e minut"</item>
-    <item msgid="694355015442188708">"Av"</item>
+    <item msgid="5718214950343391480">"Var 5:e minut"</item>
+    <item msgid="3863339891188103437">"Var 15:e minut"</item>
+    <item msgid="6868848414437854609">"På"</item>
   </string-array>
 </resources>
