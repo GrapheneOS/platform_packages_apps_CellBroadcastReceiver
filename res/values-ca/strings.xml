@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Una vegada"</item>
     <item msgid="9097229303902157183">"Cada 2 minuts"</item>
-    <item msgid="5676933700148002666">"Cada 15 minuts"</item>
-    <item msgid="694355015442188708">"Desactivat"</item>
+    <item msgid="5718214950343391480">"Cada 5 minuts"</item>
+    <item msgid="3863339891188103437">"Cada 15 minuts"</item>
+    <item msgid="6868848414437854609">"Desactivats"</item>
   </string-array>
 </resources>

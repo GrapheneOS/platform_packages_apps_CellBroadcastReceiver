@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Once"</item>
     <item msgid="9097229303902157183">"Every 2 minutes"</item>
-    <item msgid="5676933700148002666">"Every 15 minutes"</item>
-    <item msgid="694355015442188708">"Off"</item>
+    <item msgid="5718214950343391480">"Every 5 minutes"</item>
+    <item msgid="3863339891188103437">"Every 15 minutes"</item>
+    <item msgid="6868848414437854609">"Off"</item>
   </string-array>
 </resources>

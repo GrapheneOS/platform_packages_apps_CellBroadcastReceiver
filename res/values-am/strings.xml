@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"አንዴ"</item>
     <item msgid="9097229303902157183">"በየ2 ደቂቃዎች"</item>
-    <item msgid="5676933700148002666">"በየ15 ደቂቃዎች"</item>
-    <item msgid="694355015442188708">"ጠፍቷል"</item>
+    <item msgid="5718214950343391480">"በየ5 ደቂቃው"</item>
+    <item msgid="3863339891188103437">"በየ15 ደቂቃው"</item>
+    <item msgid="6868848414437854609">"ጠፍቷል"</item>
   </string-array>
 </resources>

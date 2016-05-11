@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ម្ដង"</item>
     <item msgid="9097229303902157183">"រៀងរាល់ ២​ នាទី"</item>
-    <item msgid="5676933700148002666">"រៀង​រាល់ ១៥​ នាទី"</item>
-    <item msgid="694355015442188708">"បិទ"</item>
+    <item msgid="5718214950343391480">"រាល់ 5 នាទីម្ដង"</item>
+    <item msgid="3863339891188103437">"រាល់ 15 នាទីម្តង"</item>
+    <item msgid="6868848414437854609">"បិទ"</item>
   </string-array>
 </resources>

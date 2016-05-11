@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ಒಮ್ಮೆ"</item>
     <item msgid="9097229303902157183">"ಪ್ರತಿ 2 ನಿಮಿಷಗಳು"</item>
-    <item msgid="5676933700148002666">"ಪ್ರತಿ 15 ನಿಮಿಷಗಳು"</item>
-    <item msgid="694355015442188708">"ಆಫ್ ಆಗಿದೆ"</item>
+    <item msgid="5718214950343391480">"ಪ್ರತಿ 5 ನಿಮಿಷಗಳಿಗೆ"</item>
+    <item msgid="3863339891188103437">"ಪ್ರತಿ 15 ನಿಮಿಷಗಳಿಗೆ"</item>
+    <item msgid="6868848414437854609">"ಆಫ್"</item>
   </string-array>
 </resources>

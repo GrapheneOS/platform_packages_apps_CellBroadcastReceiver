@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"တစ်ကြိမ်"</item>
     <item msgid="9097229303902157183">"၂ မိနစ်တိုင်း"</item>
-    <item msgid="5676933700148002666">"၁၅ မိနစ်တိုင်း"</item>
-    <item msgid="694355015442188708">"ပိတ်"</item>
+    <item msgid="5718214950343391480">"၅ မိနစ်တိုင်း"</item>
+    <item msgid="3863339891188103437">"၁၅ မိနစ်တိုင်း"</item>
+    <item msgid="6868848414437854609">"ပိတ်ပါ"</item>
   </string-array>
 </resources>
