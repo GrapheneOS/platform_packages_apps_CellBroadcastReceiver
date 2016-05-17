@@ -17,7 +17,10 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2704349695846064655">"ການທົດສອບການກະຈາຍຂໍ້ມູນ"</string>
-    <string name="button_etws_normal_type" msgid="6039408936111725727">"ສົ່ງການກະຈາຍຂໍ້ມູນ ETWS ປົກກະຕິ"</string>
+    <string name="button_etws_earthquake_type" msgid="5391060421937195923">"ສົ່ງປະກາດແຜ່ນດິນໄຫວ ETWS"</string>
+    <string name="button_etws_tsunami_type" msgid="5866338269041475786">"ສົ່ງສັນຍານສຶນາມິ ETWS"</string>
+    <string name="button_etws_earthquake_tsunami_type" msgid="8045617992086252152">"ສົ່ງປະກາດແຜ່ນດິນໄຫວ ແລະ ສຶນາມິ ETWS"</string>
+    <string name="button_etws_other_type" msgid="4129451610585426791">"ສົ່ງສັນຍານສຸກເສີນ ETWS ອື່ນໆ"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"ສົ່ງການກະຈາຍຂໍ້ມູນຍົກເລີກ ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"ສົ່ງການກະຈາຍຂໍ້ມູນທົດສອບ ETWS"</string>
     <string name="button_cmas_pres_alert" msgid="1269455100893365889">"ສົ່ງການແຈ້ງເຕືອນ CMAS ໂດຍປະທານາທິບໍດີ"</string>

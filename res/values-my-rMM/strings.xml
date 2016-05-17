@@ -29,7 +29,7 @@
     <string name="view_details_title" msgid="1780427629491781473">"သတိပေးချက် အသေးစိတ်များ"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"ဒီ ထုတ်လွှင့်ချက်ကို ဖျက်ရမလား?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"ရရှိထားသည့် ထုတ်လွှင့် စာတို အားလုံး ဖျက်ရမလား?"</string>
-    <string name="button_delete" msgid="4672451757925194350">"ဖျက်သိမ်း"</string>
+    <string name="button_delete" msgid="4672451757925194350">"ပယ်ဖျက်"</string>
     <string name="button_cancel" msgid="7479958360523246140">"ပယ်ဖျက်"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"မြေငလျင် သတိပေးရေး"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"ဆူနာမီ သတိပေးချက်"</string>

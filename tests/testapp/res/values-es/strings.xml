@@ -17,7 +17,10 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2704349695846064655">"Pruebas de mensajes de radiodifusión"</string>
-    <string name="button_etws_normal_type" msgid="6039408936111725727">"Enviar emisión normal de ETWS"</string>
+    <string name="button_etws_earthquake_type" msgid="5391060421937195923">"Enviar difusión de terremoto de ETWS"</string>
+    <string name="button_etws_tsunami_type" msgid="5866338269041475786">"Enviar difusión de tsunami de ETWS"</string>
+    <string name="button_etws_earthquake_tsunami_type" msgid="8045617992086252152">"Enviar difusión de tsunami y terremoto de ETWS"</string>
+    <string name="button_etws_other_type" msgid="4129451610585426791">"Enviar otra difusión de emergencia de ETWS"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Enviar difusión de cancelación de ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Enviar difusión de prueba de ETWS"</string>
     <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Enviar alerta presidencial del CMAS"</string>

@@ -107,7 +107,11 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Sizda aholini ogohlantirish funksiyasi yoqilgan. Favqulodda ogohlantirishlarni qabul qilishni davom ettirmoqchimisiz?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ha"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Yo‘q"</string>
-    <!-- no translation found for alert_reminder_interval_entries:2 (5718214950343391480) -->
-    <!-- no translation found for alert_reminder_interval_entries:3 (3863339891188103437) -->
-    <!-- no translation found for alert_reminder_interval_entries:4 (6868848414437854609) -->
+  <string-array name="alert_reminder_interval_entries">
+    <item msgid="6595211083588795160">"Bir marta"</item>
+    <item msgid="9097229303902157183">"Har 2 daqiqada"</item>
+    <item msgid="5718214950343391480">"Har 5 daqiqada"</item>
+    <item msgid="3863339891188103437">"Har 15 daqiqada"</item>
+    <item msgid="6868848414437854609">"O‘chiq"</item>
+  </string-array>
 </resources>

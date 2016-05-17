@@ -19,7 +19,7 @@
     <string name="app_label" msgid="7559008249836700599">"સેલ બ્રોડકાસ્ટ્સ"</string>
     <string name="sms_cb_settings" msgid="971917159442705371">"સેલ બ્રોડકાસ્ટ સેટિંગ્સ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"સેલ બ્રોડકાસ્ટ સેટિંગ્સ આ વપરાશકર્તા માટે ઉપલબ્ધ નથી"</string>
-    <string name="button_dismiss" msgid="1234221657930516287">"ઑકે"</string>
+    <string name="button_dismiss" msgid="1234221657930516287">"ઓકે"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"તમારા ક્ષેત્રમાં કોઈ સક્રિય ચેતવણીઓ નથી. તમે સેટિંગ્સ મેનૂ વિકલ્પનો ઉપયોગ કરીને ચેતવણી સેટિંગ્સ બદલી શકો છો."</string>
     <string name="menu_preferences" msgid="3596514894131599202">"સેટિંગ્સ"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"બ્રોડકાસ્ટ્સ કાઢી નાખો"</string>

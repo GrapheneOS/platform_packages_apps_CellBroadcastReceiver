@@ -30,7 +30,7 @@
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Выдаліць гэту трансляцыю?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Выдаліць усе атрыманыя паведамленні трансляцыi?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Выдаліць"</string>
-    <string name="button_cancel" msgid="7479958360523246140">"Адмяніць"</string>
+    <string name="button_cancel" msgid="7479958360523246140">"Скасаваць"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"Папярэджанне пра землятрус"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"Папярэджанне пра цунамі"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Папярэджанне пра землятрус і цунамі"</string>
@@ -107,7 +107,11 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Зараз вы атрымліваеце надзвычайныя абвесткі. Працягваць атрымліваць іх?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Так"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Не"</string>
-    <!-- no translation found for alert_reminder_interval_entries:2 (5718214950343391480) -->
-    <!-- no translation found for alert_reminder_interval_entries:3 (3863339891188103437) -->
-    <!-- no translation found for alert_reminder_interval_entries:4 (6868848414437854609) -->
+  <string-array name="alert_reminder_interval_entries">
+    <item msgid="6595211083588795160">"Адзiн раз"</item>
+    <item msgid="9097229303902157183">"Кожныя 2 хвіліны"</item>
+    <item msgid="5718214950343391480">"Кожныя 5 хвілін"</item>
+    <item msgid="3863339891188103437">"Кожныя 15 хвілін"</item>
+    <item msgid="6868848414437854609">"Адключана"</item>
+  </string-array>
 </resources>

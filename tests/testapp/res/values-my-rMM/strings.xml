@@ -17,7 +17,10 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2704349695846064655">"ဆဲလ်လူလာထုတ်လွှင့်မှု စမ်းသပ်ချက်များ"</string>
-    <string name="button_etws_normal_type" msgid="6039408936111725727">"ငလျင်နှင့်ဆူနာမီသတိပေးစနစ် ပုံမှန်ထုတ်လွှင့်ချက် ETWS ပေးပို့ပါ"</string>
+    <string name="button_etws_earthquake_type" msgid="5391060421937195923">"ETWS ငလျင်လှုပ်ခြင်းဆိုင်ရာ သတင်းထုတ်လွှင့်မှုကို ပို့ပါ"</string>
+    <string name="button_etws_tsunami_type" msgid="5866338269041475786">"ETWS ဆူနာမီမုန်တိုင်းဆိုင်ရာ သတင်းထုတ်လွှင့်မှုကို ပို့ပါ"</string>
+    <string name="button_etws_earthquake_tsunami_type" msgid="8045617992086252152">"ETWS ငလျင်လှုပ်ခြင်းနှင့် ဆူနာမီမုန်တိုင်းဆိုင်ရာ သတင်းထုတ်လွှင့်မှုကို ပို့ပါ"</string>
+    <string name="button_etws_other_type" msgid="4129451610585426791">"ETWS အခြားအရေးပေါ်ဆိုင်ရာ သတင်းထုတ်လွှင့်မှုကို ပို့ပါ"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"ငလျင်နှင့်ဆူနာမီသတိပေးချက် ETWS ကို ပယ်ဖျက်ပါ"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"ငလျင်နှင့်ဆူနာမီသတိပေးစနစ် ETWS စမ်းသပ်ထုတ်လွှင့်ခြင်းကို ပို့ပါ"</string>
     <string name="button_cmas_pres_alert" msgid="1269455100893365889">"သမ္မတ အရေးပေါ်သတိပေးချက် CMAS ပေးပို့ပါ"</string>

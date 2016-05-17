@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="971917159442705371">"Mipangilio ya Matangazo ya simu"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Mipangilio ya matangazo ya simu za mkononi haipatikani kwa mtumiaji huyu"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Sawa"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Hakuna arifu amilifu katika eneo lako. Unaweza kubadilisha mipangilio ya Arifu kwa kutumia chaguo la menyu ya Mipangilio."</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Hakuna matangazo ya simu yanayoendelea katika eneo lako. Unaweza kubadilisha mipangilio ya Arifu kwa kutumia menyu ya Mipangilio."</string>
     <string name="menu_preferences" msgid="3596514894131599202">"Mipangilio"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Futa matangazo"</string>
     <string name="message_options" msgid="3178489901903589574">"Chaguo za ujumbe"</string>

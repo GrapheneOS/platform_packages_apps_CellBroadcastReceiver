@@ -17,10 +17,13 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2704349695846064655">"小区广播测试"</string>
-    <string name="button_etws_normal_type" msgid="6039408936111725727">"发送 ETWS 常规广播"</string>
+    <string name="button_etws_earthquake_type" msgid="5391060421937195923">"发送 ETWS 地震广播"</string>
+    <string name="button_etws_tsunami_type" msgid="5866338269041475786">"发送 ETWS 海啸广播"</string>
+    <string name="button_etws_earthquake_tsunami_type" msgid="8045617992086252152">"发送 ETWS 地震和海啸广播"</string>
+    <string name="button_etws_other_type" msgid="4129451610585426791">"发送 ETWS 其他紧急广播"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"发送 ETWS 取消广播"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"发送 ETWS 测试广播"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"发送 CMAS 总统级警报"</string>
+    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"发送 CMAS 国家级警报"</string>
     <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"发送 CMAS 极严重警报"</string>
     <string name="button_cmas_severe_alert" msgid="5197711586353552255">"发送 CMAS 严重警报"</string>
     <string name="button_cmas_amber_alert" msgid="860091654456014191">"发送 CMAS 安珀警报"</string>
@@ -32,7 +35,7 @@
     <string name="button_gsm_7bit_multipage_type" msgid="4722261710591475726">"发送 GSM 7 位多页广播"</string>
     <string name="button_gsm_7bit_multipage_umts_type" msgid="1178053563290345110">"发送 UMTS 7 位多页广播"</string>
     <string name="button_gsm_7bit_with_language_type" msgid="2022040547313986751">"发送 GSM 7 位编码信息，附加语言代码"</string>
-    <string name="button_gsm_7bit_with_language_body_gsm_type" msgid="9100697687183591382">"在正文中发送 GSM 7 位编码信息，附加语言代码"</string>
+    <string name="button_gsm_7bit_with_language_body_gsm_type" msgid="9100697687183591382">"发送 GSM 7 位编码信息，在正文中附加语言代码"</string>
     <string name="button_gsm_7bit_with_language_body_umts_type" msgid="8483712413017340666">"发送 UMTS 7 位编码信息，附加语言代码"</string>
     <string name="button_gsm_ucs2_type" msgid="6571590740592193686">"发送 GSM UCS-2 测试广播"</string>
     <string name="button_gsm_ucs2_umts_type" msgid="5951592009555548877">"发送 UMTS UCS-2 测试广播"</string>
