@@ -20,7 +20,7 @@
     <string name="button_etws_earthquake_type" msgid="5391060421937195923">"ETWS Zəlzələ Yayımını göndərin"</string>
     <string name="button_etws_tsunami_type" msgid="5866338269041475786">"ETWS Sunami Yayımını göndərin"</string>
     <string name="button_etws_earthquake_tsunami_type" msgid="8045617992086252152">"ETWS Zəlzələ və Sunami Yayımını göndərin"</string>
-    <string name="button_etws_other_type" msgid="4129451610585426791">"ETWS Digər Fövqəladə Yayımı göndərin"</string>
+    <string name="button_etws_other_type" msgid="4129451610585426791">"Zəlzələ və tsunami haqqında xəbərdarlıq edən digər bildiriş sistemlərini göndərin"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"ETWS Ləğv Yayımını Göndərin"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"ETWS Test Yayımını Göndərin"</string>
     <string name="button_cmas_pres_alert" msgid="1269455100893365889">"CMAS Prezident Siqnalı Göndərin"</string>

@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="971917159442705371">"Mga setting ng Cell Broadcast"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Hindi available ang mga setting ng Cell Broadcast para sa user na ito"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Walang mga aktibong alerto sa iyong lugar. Mababago mo ang mga setting ng Alerto gamit ang pagpipilian ng menu ng Mga Setting."</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Walang mga aktibong alerto sa lugar mo. Mababago mo ang mga setting ng Alerto gamit ang menu option ng Mga Setting."</string>
     <string name="menu_preferences" msgid="3596514894131599202">"Mga Setting"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"I-delete ang mga broadcast"</string>
     <string name="message_options" msgid="3178489901903589574">"Mga pagpipilian sa mensahe"</string>
