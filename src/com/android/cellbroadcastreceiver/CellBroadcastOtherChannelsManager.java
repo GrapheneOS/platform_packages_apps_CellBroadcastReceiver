@@ -116,7 +116,7 @@ public class CellBroadcastOtherChannelsManager {
                     (CarrierConfigManager) context.getSystemService(Context.CARRIER_CONFIG_SERVICE);
 
             if (configManager != null) {
-                PersistableBundle carrierConfig = configManager.getConfig(subId);
+                PersistableBundle carrierConfig = configManager.getConfigForSubId(subId);
 
                 if (carrierConfig != null) {
                     ranges = carrierConfig.getStringArray(
