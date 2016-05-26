@@ -62,7 +62,7 @@ public abstract class CellBroadcastTest {
             mBundles.put(subId, new PersistableBundle());
         }
         mBundles.get(subId).putStringArray(key, values);
-        doReturn(mBundles.get(subId)).when(mCarrierConfigManager).getConfig(eq(subId));
+        doReturn(mBundles.get(subId)).when(mCarrierConfigManager).getConfigForSubId(eq(subId));
     }
 
     protected void tearDown() throws Exception {
