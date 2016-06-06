@@ -16,11 +16,11 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="7559008249836700599">"ਸੈਲ ਪ੍ਰਸਾਰਨ"</string>
+    <string name="app_label" msgid="7559008249836700599">"ਸੈੱਲ ਪ੍ਰਸਾਰਣ"</string>
     <string name="sms_cb_settings" msgid="971917159442705371">"ਸੈਲ ਪ੍ਰਸਾਰਨ ਸੈਟਿੰਗਾਂ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"ਸੈਲ ਪ੍ਰਸਾਰਨ ਸੈਟਿੰਗਾਂ ਇਸ ਉਪਭੋਗਤਾ ਲਈ ਉਪਲਬਧ ਨਹੀਂ ਹਨ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ਠੀਕ"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"ਤੁਹਾਡੇ ਖੇਤਰ ਵਿੱਚ ਕੋਈ ਸਕਿਰਿਆ ਚਿਤਾਵਨੀਆਂ ਨਹੀਂ ਹਨ। ਤੁਸੀਂ ਸੈਟਿੰਗ ਮੀਨੂ ਚੋਣ ਵਰਤਦੇ ਹੋਏ ਚਿਤਾਵਨੀ ਸੈਟਿੰਗਾਂ ਬਦਲ ਸਕਦੇ ਹੋ।"</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"ਤੁਹਾਡੇ ਖੇਤਰ ਵਿੱਚ ਕੋਈ ਸਰਗਰਮ ਚੇਤਾਵਨੀਆਂ ਨਹੀਂ ਹਨ। ਤੁਸੀਂ ਸੈਟਿੰਗਾਂ ਮੀਨੂ ਵਿਕਲਪ ਵਰਤਦੇ ਹੋਏ ਚੇਤਾਵਨੀ ਸੈਟਿੰਗਾਂ ਬਦਲ ਸਕਦੇ ਹੋ।"</string>
     <string name="menu_preferences" msgid="3596514894131599202">"ਸੈਟਿੰਗਾਂ"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"ਪ੍ਰਸਾਰਨ ਮਿਟਾਓ"</string>
     <string name="message_options" msgid="3178489901903589574">"ਸੁਨੇਹਾ ਚੋਣਾਂ"</string>
@@ -62,8 +62,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"ਬਾਲ ਅਗਵਾ ਐਮਰਜੈਂਸੀ ਬੁਲੇਟਿਨ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ (AMBER ਚਿਤਾਵਨੀ)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"CMAS ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਦਿਖਾਓ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"ਕਮਰਸ਼ੀਅਲ ਮੋਬਾਈਲ ਚਿਤਾਵਨੀ ਸਿਸਟਮ ਲਈ ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ"</string>
-    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ਵਾਈਬ੍ਰੇਟ"</string>
-    <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"ਚਿਤਾਵਨੀ ਤੇ ਵਾਈਬ੍ਰੇਟ"</string>
+    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ਥਰਥਰਾਹਟ ਕਰੋ"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"ਚਿਤਾਵਨੀ ਤੇ ਥਰਥਰਾਹਟ ਕਰੋ"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ਬ੍ਰਾਜ਼ੀਲ ਲਈ ਸੈਟਿੰਗਾਂ"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"ਚੈਨਲ 50 ਦੇ ਪ੍ਰਸਾਰਨ ਦਿਖਾਓ"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ਚੈਨਲ 50 ਖੇਤਰ ਅਪਡੇਟ ਜਾਣਕਾਰੀ ਲਈ ਬ੍ਰਾਜ਼ੀਲ ਵਿੱਚ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ"</string>

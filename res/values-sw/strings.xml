@@ -39,7 +39,7 @@
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Arifa ya Rais"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Arifa ya Dharura: Kabisa"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Arifa ya dharura: Kali"</string>
-    <string name="cmas_amber_alert" msgid="6154867710264778887">"Utekaji nyara wa Mtoto (arifa ya AMBER)"</string>
+    <string name="cmas_amber_alert" msgid="6154867710264778887">"Utekaji nyara Watoto (arifa za AMBER)"</string>
     <string name="cmas_required_monthly_test" msgid="6464047268150108932">"Jaribio la kila mwezi la arifa ya dharura"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Arifa ya Dharura (Zoezi)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Arifa ya dharura (mtoa huduma)"</string>

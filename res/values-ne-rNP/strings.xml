@@ -67,7 +67,7 @@
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ब्राजिलको लागि सेटिङहरू"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"च्यानल ५० प्रसारणहरू देखाउनुहोस्"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"च्यानल ५० ब्राजिलमा क्षेत्र अपडेट जानकारीको लागि प्रयोग गरिन्छ"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"विकासकर्ता विकल्पहरू"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"विकासकर्ताका विकल्पहरू"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"चेतावनी कोटी:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"भूभौतिक"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"मौसम विज्ञान-सम्बन्धी"</string>
