@@ -254,6 +254,8 @@ public class CellBroadcastAlertFullScreen extends Activity {
                 | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                 | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 
+        setFinishOnTouchOutside(false);
+
         // Initialize the view.
         LayoutInflater inflater = LayoutInflater.from(this);
         setContentView(inflater.inflate(getLayoutResId(), null));
@@ -339,6 +341,11 @@ public class CellBroadcastAlertFullScreen extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelableArrayList(CellBroadcastMessage.SMS_CB_MESSAGE_EXTRA, mMessageList);
+        // When the activity goes on background eg. clicking Home button, send notification and
+        // clear the messageList as it will be recovered from notification again.
+        CellBroadcastAlertService.addToNotificationBar(getLatestMessage(), mMessageList,
+                getApplicationContext());
+        mMessageList.clear();
         Log.d(TAG, "onSaveInstanceState saved message list to bundle");
     }
 
@@ -397,6 +404,7 @@ public class CellBroadcastAlertFullScreen extends Activity {
         CellBroadcastMessage lastMessage = removeLatestMessage();
         if (lastMessage == null) {
             Log.e(TAG, "dismiss() called with empty message list!");
+            finish();
             return;
         }
 

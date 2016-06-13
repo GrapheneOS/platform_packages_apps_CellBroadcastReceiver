@@ -262,8 +262,11 @@ public class CellBroadcastAlertService extends Service {
             // start alert sound / vibration / TTS and display full-screen alert
             openEmergencyAlertNotification(cbm);
         } else {
-            // add notification to the bar
-            addToNotificationBar(cbm);
+            // add notification to the bar by passing the list of unread non-emergency
+            // CellBroadcastMessages
+            ArrayList<CellBroadcastMessage> messageList = CellBroadcastReceiverApp
+                    .addNewMessageToList(cbm);
+            addToNotificationBar(cbm, messageList, this);
         }
     }
 
@@ -466,32 +469,29 @@ public class CellBroadcastAlertService extends Service {
      * high-priority immediate intent for emergency alerts.
      * @param message the alert to display
      */
-    private void addToNotificationBar(CellBroadcastMessage message) {
+    static void addToNotificationBar(CellBroadcastMessage message,
+                              ArrayList<CellBroadcastMessage> messageList, Context context) {
         int channelTitleId = CellBroadcastResources.getDialogTitleResource(message);
-        CharSequence channelName = getText(channelTitleId);
+        CharSequence channelName = context.getText(channelTitleId);
         String messageBody = message.getMessageBody();
 
-        // Pass the list of unread non-emergency CellBroadcastMessages
-        ArrayList<CellBroadcastMessage> messageList = CellBroadcastReceiverApp
-                .addNewMessageToList(message);
-
         // Create intent to show the new messages when user selects the notification.
-        Intent intent = createDisplayMessageIntent(this, CellBroadcastAlertDialog.class,
+        Intent intent = createDisplayMessageIntent(context, CellBroadcastAlertDialog.class,
                 messageList);
         intent.putExtra(CellBroadcastAlertFullScreen.FROM_NOTIFICATION_EXTRA, true);
 
-        PendingIntent pi = PendingIntent.getActivity(this, NOTIFICATION_ID, intent,
+        PendingIntent pi = PendingIntent.getActivity(context, NOTIFICATION_ID, intent,
                 PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
 
         // use default sound/vibration/lights for non-emergency broadcasts
-        Notification.Builder builder = new Notification.Builder(this)
+        Notification.Builder builder = new Notification.Builder(context)
                 .setSmallIcon(R.drawable.ic_notify_alert)
                 .setTicker(channelName)
                 .setWhen(System.currentTimeMillis())
                 .setContentIntent(pi)
                 .setCategory(Notification.CATEGORY_SYSTEM)
                 .setPriority(Notification.PRIORITY_HIGH)
-                .setColor(getResources().getColor(R.color.notification_color))
+                .setColor(context.getResources().getColor(R.color.notification_color))
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .setDefaults(Notification.DEFAULT_ALL);
 
@@ -501,14 +501,13 @@ public class CellBroadcastAlertService extends Service {
         int unreadCount = messageList.size();
         if (unreadCount > 1) {
             // use generic count of unread broadcasts if more than one unread
-            builder.setContentTitle(getString(R.string.notification_multiple_title));
-            builder.setContentText(getString(R.string.notification_multiple, unreadCount));
+            builder.setContentTitle(context.getString(R.string.notification_multiple_title));
+            builder.setContentText(context.getString(R.string.notification_multiple, unreadCount));
         } else {
             builder.setContentTitle(channelName).setContentText(messageBody);
         }
 
-        NotificationManager notificationManager =
-            (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = NotificationManager.from(context);
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
     }
