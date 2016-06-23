@@ -232,13 +232,21 @@ public class CellBroadcastSettings extends PreferenceActivity {
             TelephonyManager tm = (TelephonyManager) getActivity().getSystemService(
                     Context.TELEPHONY_SERVICE);
 
-            int subId = SubscriptionManager.getDefaultSmsSubscriptionId();
-            if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
-                subId = SubscriptionManager.getDefaultSubscriptionId();
-            }
+            // We display channel 50 enable/disable menu if one of the followings is true
+            // 1. The setting through resource overlay is set to true.
+            // 2. At least one SIM inserted is Brazilian SIM.
 
-            boolean enableChannel50Support = res.getBoolean(R.bool.show_brazil_settings) ||
-                    COUNTRY_BRAZIL.equals(tm.getSimCountryIso(subId));
+            boolean enableChannel50Support = res.getBoolean(R.bool.show_brazil_settings);
+
+            if (!enableChannel50Support) {
+                SubscriptionManager sm = SubscriptionManager.from(getContext());
+                for (int subId : sm.getActiveSubscriptionIdList()) {
+                    if (COUNTRY_BRAZIL.equals(tm.getSimCountryIso(subId))) {
+                        enableChannel50Support = true;
+                        break;
+                    }
+                }
+            }
 
             if (!enableChannel50Support) {
                 preferenceScreen.removePreference(findPreference(KEY_CATEGORY_BRAZIL_SETTINGS));
