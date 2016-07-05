@@ -30,7 +30,7 @@
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"ဒီ ထုတ်လွှင့်ချက်ကို ဖျက်ရမလား?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"ရရှိထားသည့် ထုတ်လွှင့် စာတို အားလုံး ဖျက်ရမလား?"</string>
     <string name="button_delete" msgid="4672451757925194350">"ပယ်ဖျက်"</string>
-    <string name="button_cancel" msgid="7479958360523246140">"မလုပ်တော့ပါ"</string>
+    <string name="button_cancel" msgid="7479958360523246140">"မလုပ်တော့"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"မြေငလျင် သတိပေးရေး"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"ဆူနာမီ သတိပေးချက်"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"မြေငလျင် နှင့် ဆူနာမီ သတိပေးရေး"</string>
@@ -105,7 +105,7 @@
     <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"ပထမ CMAS သတိပေးချက် (သမ္မတအဆင့် သတိပေးချက်မှ လွဲပြီး) ကို ပြပြီးနောက် ထွက်ရေး မေးမြန်းကွက်ကို ပြပါ။"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"ထွက်ရေး မေးမြန်းကွက်ကို ပြပါ။"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"သင်သည် လောလောဆယ်မှာ အရေးပေါ် သတိပေးချက်များကို ရရှိနေသည်။ သင်သည်  အရေးပေါ် သတိပေးချက်များကို ဆက်ရလိုပါသလား?"</string>
-    <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"လို"</string>
+    <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Yes"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"No"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"တစ်ကြိမ်"</item>
