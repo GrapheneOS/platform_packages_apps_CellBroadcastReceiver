@@ -29,7 +29,7 @@
     <string name="view_details_title" msgid="1780427629491781473">"သတိပေးချက် အသေးစိတ်များ"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"ဒီ ထုတ်လွှင့်ချက်ကို ဖျက်ရမလား?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"ရရှိထားသည့် ထုတ်လွှင့် စာတို အားလုံး ဖျက်ရမလား?"</string>
-    <string name="button_delete" msgid="4672451757925194350">"ပယ်ဖျက်"</string>
+    <string name="button_delete" msgid="4672451757925194350">"ဖျက်ရန်"</string>
     <string name="button_cancel" msgid="7479958360523246140">"မလုပ်တော့"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"မြေငလျင် သတိပေးရေး"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"ဆူနာမီ သတိပေးချက်"</string>
@@ -66,7 +66,7 @@
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"သတိပေးလျှင် တုန်ခါပါ"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ဘရာဇီးလ်အတွက် ဆက်တင်များ"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"ချာနယ် ၅၀ ထုတ်လွှင့်မှုများကို ပြပါ"</string>
-    <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ဘရာဇီးလ်နိုင်ငံမှာ ဒေသအလိုက် သတင်း အသစ်များ ထုတ်လွှင့်ရေးအတွက် ချာနယ် ၅၀ ကို အသုံးပြုသည်"</string>
+    <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ဘရာဇီးနိုင်ငံတွင် ဒေသဆိုင်ရာ သတင်း အသစ်များ ထုတ်လွှင့်ရေးအတွက် ချန်နယ် ၅၀ ကို အသုံးပြုသည်"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"ပြုစုပေးခဲ့သူ၏ ရွေးချယ်မှုများ"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"သတိပေးချက် အမျိုးအစား:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"ဘူမိရုပ်ပိုင်းဆိုင်ရာ"</string>
