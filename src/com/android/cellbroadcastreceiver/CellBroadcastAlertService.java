@@ -31,6 +31,7 @@ import android.os.RemoteException;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
+import android.telephony.CarrierConfigManager;
 import android.telephony.CellBroadcastMessage;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
@@ -290,7 +291,8 @@ public class CellBroadcastAlertService extends Service {
 
         // Check if ETWS/CMAS test message is forced to disabled on the device.
         boolean forceDisableEtwsCmasTest =
-                CellBroadcastSettings.isEtwsCmasTestMessageForcedDisabled(this);
+                CellBroadcastSettings.isFeatureEnabled(this,
+                        CarrierConfigManager.KEY_CARRIER_FORCE_DISABLE_ETWS_CMAS_TEST_BOOL, false);
 
         if (message.isEtwsTestMessage()) {
             return emergencyAlertEnabled &&

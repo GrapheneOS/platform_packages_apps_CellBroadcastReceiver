@@ -22,6 +22,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
+import android.telephony.CarrierConfigManager;
 import android.telephony.SmsManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
@@ -155,7 +156,8 @@ public class CellBroadcastConfigService extends IntentService {
 
         // Check if ETWS/CMAS test message is forced disabled on the device.
         boolean forceDisableEtwsCmasTest =
-                CellBroadcastSettings.isEtwsCmasTestMessageForcedDisabled(this);
+                CellBroadcastSettings.isFeatureEnabled(this,
+                        CarrierConfigManager.KEY_CARRIER_FORCE_DISABLE_ETWS_CMAS_TEST_BOOL, false);
 
         boolean enableEtwsTestAlerts = !forceDisableEtwsCmasTest &&
                 enableEmergencyAlerts &&
