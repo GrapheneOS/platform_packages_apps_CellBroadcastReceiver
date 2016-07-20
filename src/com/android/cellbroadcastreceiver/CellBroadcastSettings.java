@@ -125,6 +125,7 @@ public class CellBroadcastSettings extends PreferenceActivity {
         private CheckBoxPreference mCmasTestCheckBox;
         private PreferenceCategory mAlertCategory;
         private PreferenceCategory mETWSSettingCategory;
+        private boolean mDisableSevereWhenExtremeDisabled = true;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -158,6 +159,9 @@ public class CellBroadcastSettings extends PreferenceActivity {
             mETWSSettingCategory = (PreferenceCategory)
                     findPreference(KEY_CATEGORY_ETWS_SETTINGS);
 
+            mDisableSevereWhenExtremeDisabled = isFeatureEnabled(getContext(),
+                    CarrierConfigManager.KEY_DISABLE_SEVERE_WHEN_EXTREME_DISABLED_BOOL, true);
+
             // Handler for settings that require us to reconfigure enabled channels in radio
             Preference.OnPreferenceChangeListener startConfigServiceListener =
                     new Preference.OnPreferenceChangeListener() {
@@ -165,11 +169,13 @@ public class CellBroadcastSettings extends PreferenceActivity {
                         public boolean onPreferenceChange(Preference pref, Object newValue) {
                             CellBroadcastReceiver.startConfigService(pref.getContext());
 
-                            if (pref.getKey().equals(KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS)) {
-                                boolean isExtremeAlertChecked = (Boolean)newValue;
-                                if (mSevereCheckBox != null) {
-                                    mSevereCheckBox.setEnabled(isExtremeAlertChecked);
-                                    mSevereCheckBox.setChecked(false);
+                            if (mDisableSevereWhenExtremeDisabled) {
+                                if (pref.getKey().equals(KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS)) {
+                                    boolean isExtremeAlertChecked = (Boolean)newValue;
+                                    if (mSevereCheckBox != null) {
+                                        mSevereCheckBox.setEnabled(isExtremeAlertChecked);
+                                        mSevereCheckBox.setChecked(false);
+                                    }
                                 }
                             }
 
@@ -178,7 +184,7 @@ public class CellBroadcastSettings extends PreferenceActivity {
                     };
 
             // Show extra settings when developer options is enabled in settings.
-            boolean enableDevSettings = Settings.Global.getInt(getActivity().getContentResolver(),
+            boolean enableDevSettings = Settings.Global.getInt(getContext().getContentResolver(),
                     Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0;
 
             Resources res = getResources();
@@ -186,11 +192,11 @@ public class CellBroadcastSettings extends PreferenceActivity {
 
             initReminderIntervalList();
 
-            boolean forceDisableEtwsCmasTest =
-                    isEtwsCmasTestMessageForcedDisabled(getActivity());
+            boolean forceDisableEtwsCmasTest = CellBroadcastSettings.isFeatureEnabled(getContext(),
+                    CarrierConfigManager.KEY_CARRIER_FORCE_DISABLE_ETWS_CMAS_TEST_BOOL, false);
 
-            boolean emergencyAlertOnOffOptionEnabled =
-                    isEmergencyAlertOnOffOptionEnabled(getActivity());
+            boolean emergencyAlertOnOffOptionEnabled = isFeatureEnabled(getContext(),
+                    CarrierConfigManager.KEY_ALWAYS_SHOW_EMERGENCY_ALERT_ONOFF_BOOL, false);
 
             if (enableDevSettings || showEtwsSettings || emergencyAlertOnOffOptionEnabled) {
                 // enable/disable all alerts except CMAS presidential alerts.
@@ -229,7 +235,7 @@ public class CellBroadcastSettings extends PreferenceActivity {
                 mAlertCategory.removePreference(mAmberCheckBox);
             }
 
-            TelephonyManager tm = (TelephonyManager) getActivity().getSystemService(
+            TelephonyManager tm = (TelephonyManager) getContext().getSystemService(
                     Context.TELEPHONY_SERVICE);
 
             // We display channel 50 enable/disable menu if one of the followings is true
@@ -264,10 +270,13 @@ public class CellBroadcastSettings extends PreferenceActivity {
             if (mExtremeCheckBox != null) {
                 mExtremeCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
             }
+
             if (mSevereCheckBox != null) {
                 mSevereCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
-                if (mExtremeCheckBox != null) {
-                    mSevereCheckBox.setEnabled(mExtremeCheckBox.isChecked());
+                if (mDisableSevereWhenExtremeDisabled) {
+                    if (mExtremeCheckBox != null) {
+                        mSevereCheckBox.setEnabled(mExtremeCheckBox.isChecked());
+                    }
                 }
             }
             if (mAmberCheckBox != null) {
@@ -313,64 +322,26 @@ public class CellBroadcastSettings extends PreferenceActivity {
         }
     }
 
-    // Check if ETWS/CMAS test message is forced disabled on the device.
-    public static boolean isEtwsCmasTestMessageForcedDisabled(Context context) {
-
-        if (context == null) {
-            return false;
-        }
-
+    public static boolean isFeatureEnabled(Context context, String feature, boolean defaultValue) {
         int subId = SubscriptionManager.getDefaultSmsSubscriptionId();
         if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
             subId = SubscriptionManager.getDefaultSubscriptionId();
-            if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID)
-                return false;
+            if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+                return defaultValue;
+            }
         }
 
         CarrierConfigManager configManager =
                 (CarrierConfigManager) context.getSystemService(Context.CARRIER_CONFIG_SERVICE);
 
         if (configManager != null) {
-            PersistableBundle carrierConfig =
-                    configManager.getConfigForSubId(subId);
+            PersistableBundle carrierConfig = configManager.getConfigForSubId(subId);
 
             if (carrierConfig != null) {
-                return carrierConfig.getBoolean(
-                        CarrierConfigManager.KEY_CARRIER_FORCE_DISABLE_ETWS_CMAS_TEST_BOOL);
+                return carrierConfig.getBoolean(feature, defaultValue);
             }
         }
 
-        return false;
-    }
-
-    // Check if "Turn on Notifications" option should be always displayed regardless of developer
-    // options turned on or not.
-    public static boolean isEmergencyAlertOnOffOptionEnabled(Context context) {
-
-        if (context == null) {
-            return false;
-        }
-
-        int subId = SubscriptionManager.getDefaultSmsSubscriptionId();
-        if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
-            subId = SubscriptionManager.getDefaultSubscriptionId();
-            if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID)
-                return false;
-        }
-
-        CarrierConfigManager configManager =
-                (CarrierConfigManager) context.getSystemService(Context.CARRIER_CONFIG_SERVICE);
-
-        if (configManager != null) {
-            PersistableBundle carrierConfig =
-                    configManager.getConfigForSubId(subId);
-
-            if (carrierConfig != null) {
-                return carrierConfig.getBoolean(
-                    CarrierConfigManager.KEY_ALWAYS_SHOW_EMERGENCY_ALERT_ONOFF_BOOL);
-            }
-        }
-
-        return false;
+        return defaultValue;
     }
 }
