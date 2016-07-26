@@ -344,11 +344,17 @@ public class CellBroadcastConfigService extends IntentService {
 
         /** Enable GSM ETWS series messages. */
 
-        // Enable/Disable GSM ETWS messages.
+        // Enable/Disable GSM ETWS messages (4352 ~ 4354).
         setCellBroadcastRange(manager, enableEtwsAlerts,
                 SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
                 SmsCbConstants.MESSAGE_ID_ETWS_EARTHQUAKE_WARNING,
                 SmsCbConstants.MESSAGE_ID_ETWS_EARTHQUAKE_AND_TSUNAMI_WARNING);
+
+        // Enable/Disable GSM ETWS other messages (4356).
+        setCellBroadcastRange(manager, enableEtwsAlerts,
+                SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
+                SmsCbConstants.MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE,
+                SmsCbConstants.MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE);
 
         // Enable/Disable GSM ETWS test messages (4355).
         setCellBroadcastRange(manager, enableEtwsTestAlerts,
