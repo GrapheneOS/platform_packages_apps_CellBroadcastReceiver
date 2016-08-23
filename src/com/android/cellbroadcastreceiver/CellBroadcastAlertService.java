@@ -267,7 +267,7 @@ public class CellBroadcastAlertService extends Service {
             // CellBroadcastMessages
             ArrayList<CellBroadcastMessage> messageList = CellBroadcastReceiverApp
                     .addNewMessageToList(cbm);
-            addToNotificationBar(cbm, messageList, this);
+            addToNotificationBar(cbm, messageList, this, false);
         }
     }
 
@@ -472,7 +472,8 @@ public class CellBroadcastAlertService extends Service {
      * @param message the alert to display
      */
     static void addToNotificationBar(CellBroadcastMessage message,
-                              ArrayList<CellBroadcastMessage> messageList, Context context) {
+                                     ArrayList<CellBroadcastMessage> messageList, Context context,
+                                     boolean fromSaveState) {
         int channelTitleId = CellBroadcastResources.getDialogTitleResource(message);
         CharSequence channelName = context.getText(channelTitleId);
         String messageBody = message.getMessageBody();
@@ -481,6 +482,8 @@ public class CellBroadcastAlertService extends Service {
         Intent intent = createDisplayMessageIntent(context, CellBroadcastAlertDialog.class,
                 messageList);
         intent.putExtra(CellBroadcastAlertFullScreen.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertFullScreen.FROM_SAVE_STATE_NOTIFICATION_EXTRA,
+                fromSaveState);
 
         PendingIntent pi = PendingIntent.getActivity(context, NOTIFICATION_ID, intent,
                 PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
