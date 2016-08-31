@@ -77,7 +77,7 @@
     <string name="cmas_category_fire" msgid="3331981591918341119">"Пожар"</string>
     <string name="cmas_category_health" msgid="312569774587117324">"Здравствена"</string>
     <string name="cmas_category_env" msgid="9213088574227522961">"Еколошка"</string>
-    <string name="cmas_category_transport" msgid="5014901635987361642">"Транспорт"</string>
+    <string name="cmas_category_transport" msgid="5014901635987361642">"Превоз"</string>
     <string name="cmas_category_infra" msgid="3558151044446851398">"Инфраструктура"</string>
     <string name="cmas_category_cbrne" msgid="240421557913603971">"Хемијска/биолошка/нуклеарна/експлозивна"</string>
     <string name="cmas_category_other" msgid="6158932360790744360">"Друго"</string>
