@@ -17,7 +17,6 @@
 package com.android.cellbroadcastreceiver;
 
 import android.app.ActivityManagerNative;
-import android.app.KeyguardManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -450,18 +449,11 @@ public class CellBroadcastAlertService extends Service {
         }
         startService(audioIntent);
 
-        // Decide which activity to start based on the state of the keyguard.
-        Class c = CellBroadcastAlertDialog.class;
-        KeyguardManager km = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
-        if (km.inKeyguardRestrictedInputMode()) {
-            // Use the full screen activity for security.
-            c = CellBroadcastAlertFullScreen.class;
-        }
-
         ArrayList<CellBroadcastMessage> messageList = new ArrayList<CellBroadcastMessage>(1);
         messageList.add(message);
 
-        Intent alertDialogIntent = createDisplayMessageIntent(this, c, messageList);
+        Intent alertDialogIntent = createDisplayMessageIntent(this, CellBroadcastAlertDialog.class,
+                messageList);
         alertDialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(alertDialogIntent);
     }
@@ -481,9 +473,9 @@ public class CellBroadcastAlertService extends Service {
         // Create intent to show the new messages when user selects the notification.
         Intent intent = createDisplayMessageIntent(context, CellBroadcastAlertDialog.class,
                 messageList);
-        intent.putExtra(CellBroadcastAlertFullScreen.FROM_NOTIFICATION_EXTRA, true);
-        intent.putExtra(CellBroadcastAlertFullScreen.FROM_SAVE_STATE_NOTIFICATION_EXTRA,
-                fromSaveState);
+
+        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertDialog.FROM_SAVE_STATE_NOTIFICATION_EXTRA, fromSaveState);
 
         PendingIntent pi = PendingIntent.getActivity(context, NOTIFICATION_ID, intent,
                 PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
