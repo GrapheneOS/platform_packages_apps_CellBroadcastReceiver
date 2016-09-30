@@ -53,7 +53,7 @@ public class CellBroadcastOtherChannelsManagerTest extends CellBroadcastTest {
     @Test
     @SmallTest
     public void testGetCellBroadcastChannelRanges() throws Exception {
-        int subId = 1;
+        int subId = 1234;
         carrierConfigSetStringArray(subId,
                 CarrierConfigManager.KEY_CARRIER_ADDITIONAL_CBS_CHANNELS_STRINGS,
                 new String[]{
