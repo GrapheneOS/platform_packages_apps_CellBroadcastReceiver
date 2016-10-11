@@ -40,7 +40,7 @@ public class CellBroadcastAlertServiceTest extends
         super(CellBroadcastAlertService.class);
     }
 
-    private SmsCbMessage createMessage() {
+    static SmsCbMessage createMessage() {
         return new SmsCbMessage(1, 2, 3, new SmsCbLocation(),
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL, "language", "body",
                 SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null, new SmsCbCmasInfo(1, 2, 3, 4, 5, 6));
