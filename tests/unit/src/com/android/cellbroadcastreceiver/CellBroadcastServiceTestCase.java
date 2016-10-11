@@ -21,12 +21,18 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.telephony.CarrierConfigManager;
 import android.test.ServiceTestCase;
+import android.util.Log;
 
 import org.junit.Before;
+import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public abstract class CellBroadcastServiceTestCase<T extends Service> extends ServiceTestCase<T> {
+
+    @Mock
+    protected CarrierConfigManager mMockedCarrierConfigManager;
 
     Intent mServiceIntentToVerify;
 
@@ -44,6 +50,9 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
     }
 
     private class TestContextWrapper extends ContextWrapper {
+
+        private final String TAG = TestContextWrapper.class.getSimpleName();
+
         public TestContextWrapper(Context base) {
             super(base);
         }
@@ -57,6 +66,21 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         @Override
         public void startActivity(Intent intent) {
             mActivityIntentToVerify = intent;
+        }
+
+        @Override
+        public Context getApplicationContext() {
+            return this;
+        }
+
+        @Override
+        public Object getSystemService(String name) {
+            if (name.equals(Context.CARRIER_CONFIG_SERVICE)) {
+                Log.d(TAG, "return mocked svc for " + name + ", " + mMockedCarrierConfigManager);
+                return mMockedCarrierConfigManager;
+            }
+            Log.d(TAG, "return real service " + name);
+            return super.getSystemService(name);
         }
     }
 

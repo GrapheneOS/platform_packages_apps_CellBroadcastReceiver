@@ -63,7 +63,7 @@ public class CellBroadcastAlertDialogTest extends
     protected Intent createActivityIntent() {
         ArrayList<CellBroadcastMessage> messageList = new ArrayList<>(1);
         messageList.add(new CellBroadcastMessage(
-                CellBroadcastAlertServiceTest.createMessage()));
+                CellBroadcastAlertServiceTest.createMessage(12412)));
 
         Intent intent = new Intent(getInstrumentation().getTargetContext(),
                         CellBroadcastAlertDialog.class);
@@ -99,7 +99,7 @@ public class CellBroadcastAlertDialogTest extends
         assertEquals(etremeAlertString,
                 ((TextView) getActivity().findViewById(R.id.alertTitle)).getText());
 
-        assertEquals(CellBroadcastAlertServiceTest.createMessage().getMessageBody(),
+        assertEquals(CellBroadcastAlertServiceTest.createMessage(34596).getMessageBody(),
                 (String) ((TextView) getActivity().findViewById(R.id.message)).getText());
 
         stopActivity();
@@ -117,7 +117,7 @@ public class CellBroadcastAlertDialogTest extends
         assertEquals(1, (int) mInt.getValue());
 
         assertEquals(getActivity().getTitle(), b.getCharSequence(Notification.EXTRA_TITLE));
-        assertEquals(CellBroadcastAlertServiceTest.createMessage().getMessageBody(),
+        assertEquals(CellBroadcastAlertServiceTest.createMessage(98235).getMessageBody(),
                 b.getCharSequence(Notification.EXTRA_TEXT));
     }
 }
