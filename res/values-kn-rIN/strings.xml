@@ -30,7 +30,7 @@
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"ಈ ಪ್ರಸಾರವನ್ನು ಅಳಿಸುವುದೇ?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"ಸ್ವೀಕರಿಸಿದ ಎಲ್ಲಾ ಪ್ರಸಾರ ಸಂದೇಶಗಳನ್ನು ಅಳಿಸುವುದೇ?"</string>
     <string name="button_delete" msgid="4672451757925194350">"ಅಳಿಸು"</string>
-    <string name="button_cancel" msgid="7479958360523246140">"ರದ್ದುಮಾಡು"</string>
+    <string name="button_cancel" msgid="7479958360523246140">"ರದ್ದುಮಾಡಿ"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"ಭೂಕಂಪ ಮುನ್ನೆಚ್ಚರಿಕೆ"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"ಸುನಾಮಿ ಮುನ್ನೆಚ್ಚರಿಕೆ"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"ಭೂಕಂಪ ಮತ್ತು ಸುನಾಮಿ ಮುನ್ನೆಚ್ಚರಿಕೆ"</string>
