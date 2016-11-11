@@ -16,7 +16,7 @@
 
 package com.android.cellbroadcastreceiver;
 
-import android.app.ActivityManagerNative;
+import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -148,7 +148,7 @@ public class CellBroadcastAlertService extends Service {
         } else if (SHOW_NEW_ALERT_ACTION.equals(action)) {
             try {
                 if (UserHandle.myUserId() ==
-                        ActivityManagerNative.getDefault().getCurrentUser().id) {
+                        ActivityManager.getService().getCurrentUser().id) {
                     showNewAlert(intent);
                 } else {
                     Log.d(TAG,"Not active user, ignore the alert display");
