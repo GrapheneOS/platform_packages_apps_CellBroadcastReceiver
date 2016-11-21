@@ -16,11 +16,11 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="7559008249836700599">"Transmissões Celulares"</string>
+    <string name="app_label" msgid="7559008249836700599">"Difusões celulares"</string>
     <string name="sms_cb_settings" msgid="971917159442705371">"Definições de transmissão celular"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"As definições de difusão celular não estão disponíveis para este utilizador"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Não existem alertas ativos na sua área. Pode alterar as definições de Alerta utilizando a opção do menu Definições."</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Não existem alertas ativos na sua área. Pode alterar as definições de alertas utilizando a opção do menu Definições."</string>
     <string name="menu_preferences" msgid="3596514894131599202">"Definições"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Eliminar transmissões"</string>
     <string name="message_options" msgid="3178489901903589574">"Opções da mensagem"</string>
@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Uma vez"</item>
     <item msgid="9097229303902157183">"De 2 em 2 minutos"</item>
-    <item msgid="5676933700148002666">"De 15 em 15 minutos"</item>
-    <item msgid="694355015442188708">"Desativado"</item>
+    <item msgid="5718214950343391480">"De 5 em 5 minutos"</item>
+    <item msgid="3863339891188103437">"De 15 em 15 minutos"</item>
+    <item msgid="6868848414437854609">"Desativados"</item>
   </string-array>
 </resources>

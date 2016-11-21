@@ -16,30 +16,33 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="2102435118079140813">"小区广播测试"</string>
-    <string name="button_etws_normal_type" msgid="3852703138521119537">"发送地震海啸警报系统的常规广播"</string>
-    <string name="button_etws_cancel_type" msgid="7194264116649371175">"发送地震海啸警报系统取消广播"</string>
-    <string name="button_etws_test_type" msgid="6353906188028139901">"发送地震海啸警报系统测试广播"</string>
-    <string name="button_cmas_pres_alert" msgid="5905111586384766558">"发送 CMAS 总统警报"</string>
-    <string name="button_cmas_extreme_alert" msgid="6111658124447111920">"发送 CMAS 极端情况警报"</string>
-    <string name="button_cmas_severe_alert" msgid="9051731172452500819">"发送 CMAS 严重情况警报"</string>
-    <string name="button_cmas_amber_alert" msgid="4217147800913845288">"发送 CMAS 安珀警报"</string>
-    <string name="button_cmas_monthly_test" msgid="1609320625517248393">"发送 CMAS 每月测试警报"</string>
-    <string name="button_gsm_7bit_type" msgid="4757698592787955850">"发送GSM 7位测试广播"</string>
-    <string name="button_gsm_7bit_umts_type" msgid="4377077702628367387">"发送UMTS 7位测试广播"</string>
-    <string name="button_gsm_7bit_nopadding_type" msgid="5289528095948674862">"发送 GSM 7 位全长广播"</string>
-    <string name="button_gsm_7bit_nopadding_umts_type" msgid="7953047238483884846">"发送 UMTS 7 位全长广播"</string>
-    <string name="button_gsm_7bit_multipage_type" msgid="8516540964071070491">"发送 GSM 7 位多页广播"</string>
-    <string name="button_gsm_7bit_multipage_umts_type" msgid="474883728254547100">"发送 UMTS 7 位多页广播"</string>
-    <string name="button_gsm_7bit_with_language_type" msgid="7414138913180046493">"发送特定语言的 GSM 7 位编码信息"</string>
-    <string name="button_gsm_7bit_with_language_body_gsm_type" msgid="7365993929355114874">"用正文的语言发送 GSM 7 位编码信息"</string>
-    <string name="button_gsm_7bit_with_language_body_umts_type" msgid="1201329758881885921">"发送特定语言的 UMTS 7 位编码信息"</string>
-    <string name="button_gsm_ucs2_type" msgid="6652864601384080678">"发送GSM UCS-2测试广播"</string>
-    <string name="button_gsm_ucs2_umts_type" msgid="2985879481785569626">"发送UMTS UCS-2测试广播"</string>
-    <string name="button_gsm_ucs2_multipage_umts_type" msgid="4557772309524939206">"发送 UMTS UCS-2 多页广播"</string>
-    <string name="button_gsm_ucs2_with_language_type" msgid="8992961254390480388">"发送特定语言的 GSM UCS-2 编码信息"</string>
-    <string name="button_gsm_ucs2_with_language_umts_type" msgid="1080788762601688380">"发送特定语言的 UMTS UCS-2 编码信息"</string>
-    <string name="button_delay_broadcast" msgid="5138650276363839541">"延迟5秒发送"</string>
-    <string name="message_id_label" msgid="4365322663037110887">"讯息 ID："</string>
-    <string name="category_id_label" msgid="8472814003810180738">"类别："</string>
+    <string name="app_label" msgid="2704349695846064655">"小区广播测试"</string>
+    <string name="button_etws_earthquake_type" msgid="5391060421937195923">"发送 ETWS 地震广播"</string>
+    <string name="button_etws_tsunami_type" msgid="5866338269041475786">"发送 ETWS 海啸广播"</string>
+    <string name="button_etws_earthquake_tsunami_type" msgid="8045617992086252152">"发送 ETWS 地震和海啸广播"</string>
+    <string name="button_etws_other_type" msgid="4129451610585426791">"发送 ETWS 其他紧急广播"</string>
+    <string name="button_etws_cancel_type" msgid="4770911191572322801">"发送 ETWS 取消广播"</string>
+    <string name="button_etws_test_type" msgid="5520113823851979673">"发送 ETWS 测试广播"</string>
+    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"发送 CMAS 国家级警报"</string>
+    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"发送 CMAS 极严重警报"</string>
+    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"发送 CMAS 严重警报"</string>
+    <string name="button_cmas_amber_alert" msgid="860091654456014191">"发送 CMAS 安珀警报"</string>
+    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"发送 CMAS 每月测试警报"</string>
+    <string name="button_gsm_7bit_type" msgid="4902292221458231081">"发送 GSM 7 位测试广播"</string>
+    <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"发送 UMTS 7 位测试广播"</string>
+    <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"发送 GSM 7 位全长广播"</string>
+    <string name="button_gsm_7bit_nopadding_umts_type" msgid="4581119373426634893">"发送 UMTS 7 位全长广播"</string>
+    <string name="button_gsm_7bit_multipage_type" msgid="4722261710591475726">"发送 GSM 7 位多页广播"</string>
+    <string name="button_gsm_7bit_multipage_umts_type" msgid="1178053563290345110">"发送 UMTS 7 位多页广播"</string>
+    <string name="button_gsm_7bit_with_language_type" msgid="2022040547313986751">"发送 GSM 7 位编码信息，附加语言代码"</string>
+    <string name="button_gsm_7bit_with_language_body_gsm_type" msgid="9100697687183591382">"发送 GSM 7 位编码信息，在正文中附加语言代码"</string>
+    <string name="button_gsm_7bit_with_language_body_umts_type" msgid="8483712413017340666">"发送 UMTS 7 位编码信息，附加语言代码"</string>
+    <string name="button_gsm_ucs2_type" msgid="6571590740592193686">"发送 GSM UCS-2 测试广播"</string>
+    <string name="button_gsm_ucs2_umts_type" msgid="5951592009555548877">"发送 UMTS UCS-2 测试广播"</string>
+    <string name="button_gsm_ucs2_multipage_umts_type" msgid="5063336859681757254">"发送 UMTS UCS-2 多页广播"</string>
+    <string name="button_gsm_ucs2_with_language_type" msgid="7782847783969114889">"发送 GSM UCS-2 编码信息，附加语言代码"</string>
+    <string name="button_gsm_ucs2_with_language_umts_type" msgid="1722368447645668730">"发送 UMTS UCS-2 编码信息，附加语言代码"</string>
+    <string name="button_delay_broadcast" msgid="751650250579017537">"延迟 5 秒发送"</string>
+    <string name="message_id_label" msgid="1445077194410403236">"讯息 ID："</string>
+    <string name="category_id_label" msgid="6935815032327981691">"类别："</string>
 </resources>

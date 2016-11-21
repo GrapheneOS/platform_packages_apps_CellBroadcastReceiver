@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Kartą"</item>
     <item msgid="9097229303902157183">"Kas 2 min."</item>
-    <item msgid="5676933700148002666">"Kas 15 min."</item>
-    <item msgid="694355015442188708">"Išjungta"</item>
+    <item msgid="5718214950343391480">"Kas 5 min."</item>
+    <item msgid="3863339891188103437">"Kas 15 min."</item>
+    <item msgid="6868848414437854609">"Išjungta"</item>
   </string-array>
 </resources>
