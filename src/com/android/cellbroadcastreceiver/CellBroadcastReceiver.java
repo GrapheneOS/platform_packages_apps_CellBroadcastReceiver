@@ -34,7 +34,8 @@ import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 
 public class CellBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "CellBroadcastReceiver";
-    static final boolean DBG = false;    // STOPSHIP: change to false before ship
+    static final boolean DBG = true;
+    static final boolean VDBG = false;    // STOPSHIP: change to false before ship
     private static int mServiceState = -1;
 
     public static final String CELLBROADCAST_START_CONFIG_ACTION =
