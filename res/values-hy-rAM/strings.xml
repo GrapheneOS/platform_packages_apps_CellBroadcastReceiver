@@ -18,7 +18,7 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="7559008249836700599">"Բջջային հեռարձակումներ"</string>
     <string name="sms_cb_settings" msgid="971917159442705371">"Բջջային հեռարձակման կարգավորումներ"</string>
-    <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Բջջային կապով ծանուցման կարգավորումներն անհասանելի են այս օգտվողի համար"</string>
+    <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Բջջային կապով ծանուցման կարգավորումներն անհասանելի են այս օգտատիրոջ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Լավ"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"Չկան ակտիվ ահազանգեր ձեր տարածքում: Դուք կարող եք փոխել ահազանգերի կարգավորումները՝ օգտագործելով ցանկը:"</string>
     <string name="menu_preferences" msgid="3596514894131599202">"Կարգավորումներ"</string>
@@ -62,7 +62,7 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Ցուցադրել երեխաների առևանգման մասին ծանուցումները (AMBER)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Ցուցադրել CMAS փորձնական հեռարձակումները"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Ցուցադրել փորձնական հեռարձակումները առևտրային բջջային ահազանգերի համակարգի համար"</string>
-    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Թրթռալ"</string>
+    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Թրթռոց"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Թրթռալ զգուշացման ժամանակ"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Կարգավորումներ Բրազիլիայի համար"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Ցուցադրել 50-րդ ալիքի հեռարձակումները"</string>
