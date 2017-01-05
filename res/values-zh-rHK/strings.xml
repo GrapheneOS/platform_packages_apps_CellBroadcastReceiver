@@ -100,7 +100,7 @@
     <string name="cmas_certainty_observed" msgid="3668549749352106472">"有跡象"</string>
     <string name="cmas_certainty_likely" msgid="4254497828943291749">"可能發生"</string>
     <string name="delivery_time_heading" msgid="5980836543433619329">"接收時間："</string>
-    <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> 則未讀取警示。"</string>
+    <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> 則未讀警示。"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"新警示"</string>
     <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"在第一次 CMAS 警報出現後顯示停用對話框 (港府重大警報除外)。"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"顯示停用對話框"</string>
