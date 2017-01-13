@@ -356,7 +356,13 @@ public class CellBroadcastAlertDialog extends Activity {
         setTitle(titleId);
         ((TextView) findViewById(R.id.alertTitle)).setText(titleId);
         ((TextView) findViewById(R.id.message)).setText(message.getMessageBody());
-
+        if (mMessageList.size() > 1) {
+            ((TextView) findViewById(R.id.dismissButton)).setText("OK  (1/" +
+                    mMessageList.size() + ")");
+        }
+        else if (mMessageList.size() == 1) {
+            ((TextView) findViewById(R.id.dismissButton)).setText("OK");
+        }
         // Set alert reminder depending on user preference
         CellBroadcastAlertReminder.queueAlertReminder(this, true);
     }
