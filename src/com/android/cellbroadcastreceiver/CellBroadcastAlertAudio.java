@@ -432,6 +432,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                     case ETWS_DEFAULT:
                         setDataSourceFromResource(getResources(), mMediaPlayer,
                                 R.raw.etws_default);
+                        break;
                     case CMAS_DEFAULT:
                     default:
                         setDataSourceFromResource(getResources(), mMediaPlayer,
