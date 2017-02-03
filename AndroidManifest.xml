@@ -123,7 +123,6 @@
             <intent-filter>
                  <action android:name="android.intent.action.SERVICE_STATE" />
                  <action android:name="android.intent.action.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED" />
-                 <action android:name="android.intent.action.AIRPLANE_MODE" />
                  <action android:name="android.intent.action.SIM_STATE_CHANGED"/>
             </intent-filter>
         </receiver>
