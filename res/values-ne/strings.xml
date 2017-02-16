@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="971917159442705371">"सेल प्रसारण सेटिङहरू"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"सेल प्रसारण सेटिङहरू यो प्रयोगकर्ताको लागि उपलब्ध छैनन्"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक छ"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"तपाईँको क्षेत्रमा कुनै पनि सक्रिय अलर्टहरू छैनन्। तपाईँ सेटिङहरू मेनु विकल्पको प्रयोग गरी सावधानी सेटिङहरू परिवर्तन गर्न सक्नुहुने छ।"</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"तपाईंको क्षेत्रमा कुनै पनि सक्रिय अलर्टहरू छैनन्। तपाईं सेटिङहरू मेनु विकल्पको प्रयोग गरी सावधानी सेटिङहरू परिवर्तन गर्न सक्नुहुने छ।"</string>
     <string name="menu_preferences" msgid="3596514894131599202">"सेटिङहरू"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"प्रसारणहरू मेटाउनुहोस्"</string>
     <string name="message_options" msgid="3178489901903589574">"सन्देश विकल्पहरू"</string>
@@ -104,7 +104,7 @@
     <string name="notification_multiple_title" msgid="1523638925739947855">"नयाँ सावधानीहरू"</string>
     <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"पहिले CMAS सावधानी (राष्ट्रपति चेतावनीभन्दा अन्य) प्रदर्शित गरेपछि एक अप्ट-आउट सम्बाद देखाउनुहोस्।"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"अप्ट-आउट सम्बाद देखाउनुहोस्"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"तपाईँ हाल आपतकालीन चेतावनीहरू प्राप्त गर्दै हुनुहुन्छ। के तपाईँ आपतकालीन चेतावनीहरू प्राप्त गर्न जारी राख्न चाहनुहुन्छ?"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"तपाईं हाल आपतकालीन चेतावनीहरू प्राप्त गर्दै हुनुहुन्छ। के तपाईं आपतकालीन चेतावनीहरू प्राप्त गर्न जारी राख्न चाहनुहुन्छ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"हो"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"होइन"</string>
   <string-array name="alert_reminder_interval_entries">
