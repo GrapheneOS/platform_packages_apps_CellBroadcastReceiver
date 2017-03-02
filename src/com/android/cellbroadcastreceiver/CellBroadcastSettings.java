@@ -16,6 +16,7 @@
 
 package com.android.cellbroadcastreceiver;
 
+import android.app.backup.BackupManager;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -179,6 +180,8 @@ public class CellBroadcastSettings extends PreferenceActivity {
                                 }
                             }
 
+                            // Notify backup manager a backup pass is needed.
+                            new BackupManager(getContext()).dataChanged();
                             return true;
                         }
                     };
