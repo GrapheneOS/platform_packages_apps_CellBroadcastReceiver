@@ -24,11 +24,10 @@ import android.content.SharedPreferences.Editor;
 import android.os.UserManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
-import android.telephony.ServiceState;
+import android.telephony.CarrierConfigManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
 import android.util.Log;
 
-import com.android.internal.telephony.IccCardConstants;
 import com.android.internal.telephony.TelephonyIntents;
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 
@@ -36,7 +35,6 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "CellBroadcastReceiver";
     static final boolean DBG = true;
     static final boolean VDBG = false;    // STOPSHIP: change to false before ship
-    private static int mServiceState = -1;
 
     public static final String CELLBROADCAST_START_CONFIG_ACTION =
             "android.cellbroadcastreceiver.START_CONFIG";
@@ -54,29 +52,19 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
         String action = intent.getAction();
 
-        if (TelephonyIntents.ACTION_SERVICE_STATE_CHANGED.equals(action)) {
-            if (DBG) log("Intent: " + action);
-            ServiceState serviceState = ServiceState.newFromBundle(intent.getExtras());
-            if (serviceState != null) {
-                int newState = serviceState.getState();
-                if (newState != mServiceState) {
-                    Log.d(TAG, "Service state changed! " + newState + " Full: " + serviceState +
-                            " Current state=" + mServiceState);
-                    mServiceState = newState;
-                    if (((newState == ServiceState.STATE_IN_SERVICE) ||
-                            (newState == ServiceState.STATE_EMERGENCY_ONLY)) &&
-                            (UserManager.get(context).isSystemUser())) {
-                        startConfigService(context.getApplicationContext());
-                    }
-                }
-            }
-        } else if (TelephonyIntents.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action) ||
-                CELLBROADCAST_START_CONFIG_ACTION.equals(action)) {
+        if (TelephonyIntents.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action)
+                || CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED.equals(action)
+                || CELLBROADCAST_START_CONFIG_ACTION.equals(action)) {
             // Todo: Add the service state check once the new get service state API is done.
             // Do not rely on mServiceState as it gets reset to -1 time to time because
             // the process of CellBroadcastReceiver gets killed every time once the job is done.
             if (UserManager.get(context).isSystemUser()) {
                 startConfigService(context.getApplicationContext());
+
+                // Whenever carrier changes, we need to adjust the emergency alert
+                // reminder interval list because it might change since different
+                // countries/carriers might have different interval settings.
+                adjustReminderInterval(context);
             }
             else {
                 Log.e(TAG, "Not system user. Ignored the intent " + action);
@@ -106,21 +94,12 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             } else {
                 loge("ignoring unprivileged action received " + action);
             }
-        } else if (TelephonyIntents.ACTION_SIM_STATE_CHANGED.equals(action)) {
-            String simState = intent.getStringExtra(IccCardConstants.INTENT_KEY_ICC_STATE);
-            // Whenever sim is loaded, we need to adjust the emergency alert
-            // reminder interval list because it might change since different
-            // countries/carriers might have different interval settings.
-            if (simState.equals(IccCardConstants.INTENT_VALUE_ICC_LOADED)) {
-                adjustReminderInterval(context.getApplicationContext());
-            }
         } else {
             Log.w(TAG, "onReceive() unexpected action " + action);
         }
     }
 
     private void adjustReminderInterval(Context context) {
-
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         String currentIntervalDefault = sp.getString(CURRENT_INTERVAL_DEFAULT, "0");
 
