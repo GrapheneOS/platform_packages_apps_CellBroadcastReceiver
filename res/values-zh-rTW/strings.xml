@@ -36,11 +36,11 @@
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"地震與海嘯警告"</string>
     <string name="etws_test_message" msgid="8447820262584381894">"ETWS 測試訊息"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"緊急警告"</string>
-    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"國家級警示"</string>
-    <string name="cmas_extreme_alert" msgid="2588720613319969289">"緊急警示：極嚴重"</string>
+    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"國家級警報"</string>
+    <string name="cmas_extreme_alert" msgid="2588720613319969289">"緊急警報：極嚴重"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"緊急警示：嚴重"</string>
-    <string name="cmas_amber_alert" msgid="6154867710264778887">"兒童綁架 (安珀警示)"</string>
-    <string name="cmas_required_monthly_test" msgid="6464047268150108932">"緊急警示每月測試"</string>
+    <string name="cmas_amber_alert" msgid="6154867710264778887">"兒童綁架 (安珀警報)"</string>
+    <string name="cmas_required_monthly_test" msgid="6464047268150108932">"每月測試用訊息"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"緊急警示 (演習)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"緊急警示 (電信業者自訂)"</string>
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"緊急警示"</string>
@@ -59,7 +59,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"顯示嚴重威脅"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"顯示嚴重生命財產威脅警示"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"顯示安珀警示"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"顯示兒童綁架緊急事件公告 (安珀警示)"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"顯示兒童綁架緊急事件公告 (安珀警報)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"顯示 CMAS 測試廣播"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"顯示商用行動警示系統測試廣播"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"震動"</string>
