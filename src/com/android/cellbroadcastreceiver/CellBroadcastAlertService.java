@@ -24,6 +24,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -71,6 +72,9 @@ public class CellBroadcastAlertService extends Service {
     /** Sticky broadcast for latest area info broadcast received. */
     static final String CB_AREA_INFO_RECEIVED_ACTION =
             "android.cellbroadcastreceiver.CB_AREA_INFO_RECEIVED";
+
+    /** Intent extra for passing a SmsCbMessage */
+    private static final String EXTRA_MESSAGE = "message";
 
     /**
      * Default message expiration time is 24 hours. Same message arrives within 24 hours will be
@@ -197,7 +201,7 @@ public class CellBroadcastAlertService extends Service {
             return;
         }
 
-        SmsCbMessage message = (SmsCbMessage) extras.get("message");
+        SmsCbMessage message = (SmsCbMessage) extras.get(EXTRA_MESSAGE);
 
         if (message == null) {
             Log.e(TAG, "received SMS_CB_RECEIVED_ACTION with no message extra");
@@ -275,7 +279,7 @@ public class CellBroadcastAlertService extends Service {
 
         final Intent alertIntent = new Intent(SHOW_NEW_ALERT_ACTION);
         alertIntent.setClass(this, CellBroadcastAlertService.class);
-        alertIntent.putExtra("message", cbm);
+        alertIntent.putExtra(EXTRA_MESSAGE, cbm);
 
         // write to database on a background thread
         new CellBroadcastContentProvider.AsyncCellBroadcastTask(getContentResolver())
@@ -300,7 +304,7 @@ public class CellBroadcastAlertService extends Service {
             return;
         }
 
-        CellBroadcastMessage cbm = (CellBroadcastMessage) intent.getParcelableExtra("message");
+        CellBroadcastMessage cbm = (CellBroadcastMessage) intent.getParcelableExtra(EXTRA_MESSAGE);
 
         if (cbm == null) {
             Log.e(TAG, "received SHOW_NEW_ALERT_ACTION with no message extra");
@@ -390,7 +394,7 @@ public class CellBroadcastAlertService extends Service {
             // save latest area info broadcast for Settings display and send as broadcast
             CellBroadcastReceiverApp.setLatestAreaInfo(message);
             Intent intent = new Intent(CB_AREA_INFO_RECEIVED_ACTION);
-            intent.putExtra("message", message);
+            intent.putExtra(EXTRA_MESSAGE, message);
             // Send broadcast twice, once for apps that have PRIVILEGED permission and once
             // for those that have the runtime one
             sendBroadcastAsUser(intent, UserHandle.ALL,
@@ -501,10 +505,16 @@ public class CellBroadcastAlertService extends Service {
         ArrayList<CellBroadcastMessage> messageList = new ArrayList<CellBroadcastMessage>(1);
         messageList.add(message);
 
-        Intent alertDialogIntent = createDisplayMessageIntent(this, CellBroadcastAlertDialog.class,
-                messageList);
-        alertDialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(alertDialogIntent);
+        // For FEATURE_WATCH, the dialog doesn't make sense from a UI/UX perspective
+        if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+            addToNotificationBar(message, messageList, this, false);
+        } else {
+            Intent alertDialogIntent = createDisplayMessageIntent(this,
+                    CellBroadcastAlertDialog.class, messageList);
+            alertDialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(alertDialogIntent);
+        }
+
     }
 
     /**
@@ -520,21 +530,32 @@ public class CellBroadcastAlertService extends Service {
         String messageBody = message.getMessageBody();
 
         // Create intent to show the new messages when user selects the notification.
-        Intent intent = createDisplayMessageIntent(context, CellBroadcastAlertDialog.class,
-                messageList);
+        Intent intent;
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+            // For FEATURE_WATCH we want to mark as read
+            intent = createMarkAsReadIntent(context, message.getDeliveryTime());
+        } else {
+            // For anything else we handle it normally
+            intent = createDisplayMessageIntent(context, CellBroadcastAlertDialog.class,
+                    messageList);
+        }
 
         intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
         intent.putExtra(CellBroadcastAlertDialog.FROM_SAVE_STATE_NOTIFICATION_EXTRA, fromSaveState);
 
-        PendingIntent pi = PendingIntent.getActivity(context, NOTIFICATION_ID, intent,
-                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pi;
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+            pi = PendingIntent.getBroadcast(context, 0, intent, 0);
+        } else {
+            pi = PendingIntent.getActivity(context, NOTIFICATION_ID, intent,
+                    PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+        }
 
         // use default sound/vibration/lights for non-emergency broadcasts
         Notification.Builder builder = new Notification.Builder(context)
                 .setSmallIcon(R.drawable.ic_notify_alert)
                 .setTicker(channelName)
                 .setWhen(System.currentTimeMillis())
-                .setContentIntent(pi)
                 .setCategory(Notification.CATEGORY_SYSTEM)
                 .setPriority(Notification.PRIORITY_HIGH)
                 .setColor(context.getResources().getColor(R.color.notification_color))
@@ -542,6 +563,12 @@ public class CellBroadcastAlertService extends Service {
                 .setDefaults(Notification.DEFAULT_ALL);
 
         builder.setDefaults(Notification.DEFAULT_ALL);
+
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+            builder.setDeleteIntent(pi);
+        } else {
+            builder.setContentIntent(pi);
+        }
 
         // increment unread alert count (decremented when user dismisses alert dialog)
         int unreadCount = messageList.size();
@@ -564,6 +591,21 @@ public class CellBroadcastAlertService extends Service {
         Intent intent = new Intent(context, intentClass);
         intent.putParcelableArrayListExtra(CellBroadcastMessage.SMS_CB_MESSAGE_EXTRA, messageList);
         return intent;
+    }
+
+    /**
+     * Creates a delete intent that calls to the {@link CellBroadcastReceiver} in order to mark
+     * a message as read
+     *
+     * @param context context of the caller
+     * @param deliveryTime time the message was sent in order to mark as read
+     * @return delete intent to add to the pending intent
+     */
+    static Intent createMarkAsReadIntent(Context context, long deliveryTime) {
+        Intent deleteIntent = new Intent(context, CellBroadcastReceiver.class);
+        deleteIntent.setAction(CellBroadcastReceiver.ACTION_MARK_AS_READ);
+        deleteIntent.putExtra(CellBroadcastReceiver.EXTRA_DELIVERY_TIME, deliveryTime);
+        return deleteIntent;
     }
 
     @VisibleForTesting
