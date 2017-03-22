@@ -16,6 +16,9 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.DBG;
+import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
+
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
@@ -38,9 +41,6 @@ import android.util.Log;
 
 import java.util.Locale;
 import java.util.MissingResourceException;
-
-import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.DBG;
-import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
 
 /**
  * Manages alert audio and vibration and text-to-speech. Runs as a service so that
@@ -301,23 +301,22 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mMessagePreferredLanguage = intent.getStringExtra(ALERT_AUDIO_MESSAGE_PREFERRED_LANGUAGE);
         mMessageDefaultLanguage = intent.getStringExtra(ALERT_AUDIO_MESSAGE_DEFAULT_LANGUAGE);
 
+        // retrieve the vibrate settings from cellbroadcast receiver settings.
         mEnableVibrate = intent.getBooleanExtra(ALERT_AUDIO_VIBRATE_EXTRA, true);
-        if (intent.getBooleanExtra(ALERT_AUDIO_ETWS_VIBRATE_EXTRA, false)) {
-            mEnableVibrate = true;  // force enable vibration for ETWS alerts
-        }
 
         switch (mAudioManager.getRingerMode()) {
             case AudioManager.RINGER_MODE_SILENT:
                 if (DBG) log("Ringer mode: silent");
                 mEnableAudio = false;
-                mEnableVibrate = false;
+                // If the device is in silent mode, do not vibrate (except ETWS).
+                if (!intent.getBooleanExtra(ALERT_AUDIO_ETWS_VIBRATE_EXTRA, false)) {
+                    mEnableVibrate = false;
+                }
                 break;
-
             case AudioManager.RINGER_MODE_VIBRATE:
                 if (DBG) log("Ringer mode: vibrate");
                 mEnableAudio = false;
                 break;
-
             case AudioManager.RINGER_MODE_NORMAL:
             default:
                 if (DBG) log("Ringer mode: normal");
