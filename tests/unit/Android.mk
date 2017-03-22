@@ -33,5 +33,7 @@ LOCAL_PACKAGE_NAME := CellBroadcastReceiverUnitTests
 
 LOCAL_INSTRUMENTATION_FOR := CellBroadcastReceiver
 
+LOCAL_COMPATIBILITY_SUITE := device-tests
+
 include $(BUILD_PACKAGE)
 
