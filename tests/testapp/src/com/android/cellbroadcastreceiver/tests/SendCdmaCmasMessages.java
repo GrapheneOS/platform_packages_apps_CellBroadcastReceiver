@@ -25,16 +25,13 @@ import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
-import com.android.internal.telephony.PhoneConstants;
+
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 
 /**
  * Send some test CDMA CMAS warning notifications.
  */
 public class SendCdmaCmasMessages {
-
-    private static final String TEST_TEXT = "This is a test CDMA cell broadcast message..."
-            + "678901234567890123456789012345678901234567890";
 
     private static final String PRES_ALERT =
             "THE PRESIDENT HAS ISSUED AN EMERGENCY ALERT. CHECK LOCAL MEDIA FOR MORE DETAILS";
@@ -46,12 +43,11 @@ public class SendCdmaCmasMessages {
             + " - NEW JERSEY UNTIL 415 PM MST";
 
     private static final String AMBER_ALERT =
-            "AMBER ALERT:Mountain View,CA VEH'07 Blue Honda Civic CA LIC 5ABC123";
+            "AMBER ALERT:Mountain View,CA VEH'07 Blue Honda Civic CA LIC 5ABC123. "
+                    + "Check https://www.amberalert.gov/active.htm for more information.";
 
     private static final String MONTHLY_TEST_ALERT = "This is a test of the emergency alert system."
-            + " This is only a test. 89012345678901234567890";
-
-    private static final String IS91_TEXT = "IS91 SHORT MSG";   // max length 14 chars
+            + " This is only a test. Call (123)456-7890.";
 
     public static void testSendCmasPresAlert(Activity activity, int messageId) {
         SmsCbMessage cbMessage = createCmasSmsMessage(
