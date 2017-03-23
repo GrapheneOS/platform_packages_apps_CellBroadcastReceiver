@@ -24,7 +24,7 @@
     <string name="menu_preferences" msgid="3596514894131599202">"Postavke"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Izbriši informacije"</string>
     <string name="message_options" msgid="3178489901903589574">"Opcije za poruke"</string>
-    <string name="menu_view_details" msgid="1040989019045280975">"Pogledajte detalje"</string>
+    <string name="menu_view_details" msgid="1040989019045280975">"Prikaži detalje"</string>
     <string name="menu_delete" msgid="128380070910799366">"Izbriši informaciju"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Detalji o upozorenjima"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Izbrisati ovu informaciju?"</string>
