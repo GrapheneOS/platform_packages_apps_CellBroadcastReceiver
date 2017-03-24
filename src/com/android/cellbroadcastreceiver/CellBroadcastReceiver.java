@@ -24,6 +24,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.UserManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
+import android.provider.Telephony.CellBroadcasts;
 import android.telephony.ServiceState;
 import android.telephony.cdma.CdmaSmsCbProgramData;
 import android.util.Log;
@@ -39,7 +40,11 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     private static int mServiceState = -1;
 
     public static final String CELLBROADCAST_START_CONFIG_ACTION =
-            "android.cellbroadcastreceiver.START_CONFIG";
+            "com.android.cellbroadcastreceiver.intent.START_CONFIG";
+    public static final String ACTION_MARK_AS_READ =
+            "com.android.cellbroadcastreceiver.intent.action.MARK_AS_READ";
+    public static final String EXTRA_DELIVERY_TIME =
+            "com.android.cellbroadcastreceiver.intent.extra.ID";
 
     // Key to access the stored reminder interval default value
     private static final String CURRENT_INTERVAL_DEFAULT = "current_interval_default";
@@ -54,7 +59,17 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
         String action = intent.getAction();
 
-        if (TelephonyIntents.ACTION_SERVICE_STATE_CHANGED.equals(action)) {
+        if (ACTION_MARK_AS_READ.equals(action)) {
+            final long deliveryTime = intent.getLongExtra(EXTRA_DELIVERY_TIME, -1);
+            new CellBroadcastContentProvider.AsyncCellBroadcastTask(context.getContentResolver())
+                    .execute(new CellBroadcastContentProvider.CellBroadcastOperation() {
+                        @Override
+                        public boolean execute(CellBroadcastContentProvider provider) {
+                            return provider.markBroadcastRead(CellBroadcasts.DELIVERY_TIME,
+                                    deliveryTime);
+                        }
+                    });
+        } else if (TelephonyIntents.ACTION_SERVICE_STATE_CHANGED.equals(action)) {
             if (DBG) log("Intent: " + action);
             ServiceState serviceState = ServiceState.newFromBundle(intent.getExtras());
             if (serviceState != null) {
