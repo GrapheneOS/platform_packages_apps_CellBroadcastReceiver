@@ -114,4 +114,6 @@
     <item msgid="3863339891188103437">"15분마다"</item>
     <item msgid="6868848414437854609">"사용 안함"</item>
   </string-array>
+
+    <string name="emergency_alert_settings_title_watches" msgid="8202946850890864200">"긴급 알림"</string>
 </resources>

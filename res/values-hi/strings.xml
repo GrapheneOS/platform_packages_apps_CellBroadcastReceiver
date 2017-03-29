@@ -114,4 +114,6 @@
     <item msgid="3863339891188103437">"प्रत्‍येक 15 मिनट"</item>
     <item msgid="6868848414437854609">"बंद"</item>
   </string-array>
+
+    <string name="emergency_alert_settings_title_watches" msgid="8202946850890864200">"आपातकालीन नोटिफ़िकेशन"</string>
 </resources>

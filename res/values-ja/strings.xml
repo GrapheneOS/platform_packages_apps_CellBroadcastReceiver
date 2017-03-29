@@ -114,4 +114,6 @@
     <item msgid="3863339891188103437">"15 分毎"</item>
     <item msgid="6868848414437854609">"OFF"</item>
   </string-array>
+
+    <string name="emergency_alert_settings_title_watches" msgid="8202946850890864200">"緊急の通知"</string>
 </resources>

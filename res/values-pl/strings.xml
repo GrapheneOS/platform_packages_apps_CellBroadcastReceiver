@@ -114,4 +114,6 @@
     <item msgid="3863339891188103437">"Co 15 minut"</item>
     <item msgid="6868848414437854609">"Wył."</item>
   </string-array>
+
+    <string name="emergency_alert_settings_title_watches" msgid="8202946850890864200">"Powiadomienia alarmowe"</string>
 </resources>

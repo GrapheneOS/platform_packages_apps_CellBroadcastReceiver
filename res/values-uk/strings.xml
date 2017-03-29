@@ -114,4 +114,6 @@
     <item msgid="3863339891188103437">"Кожні 15 хвилин"</item>
     <item msgid="6868848414437854609">"Вимкнено"</item>
   </string-array>
+
+    <string name="emergency_alert_settings_title_watches" msgid="8202946850890864200">"Екстрені сповіщення"</string>
 </resources>
