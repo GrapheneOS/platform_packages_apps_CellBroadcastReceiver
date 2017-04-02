@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"වතාවක්"</item>
     <item msgid="9097229303902157183">"සෑම මිනිත්තු 2 කට වරක්"</item>
-    <item msgid="5676933700148002666">"සෑම මිනිත්තු 15 කට වරක්"</item>
-    <item msgid="694355015442188708">"අක්‍රිය කරන්න"</item>
+    <item msgid="5718214950343391480">"සෑම මිනිත්තු 5කට වරක්"</item>
+    <item msgid="3863339891188103437">"සෑම මිනිත්තු 15කට වරක්"</item>
+    <item msgid="6868848414437854609">"ක්‍රියාවිරහිතයි"</item>
   </string-array>
 </resources>

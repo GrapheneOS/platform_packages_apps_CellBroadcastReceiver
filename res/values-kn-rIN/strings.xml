@@ -30,7 +30,7 @@
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"ಈ ಪ್ರಸಾರವನ್ನು ಅಳಿಸುವುದೇ?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"ಸ್ವೀಕರಿಸಿದ ಎಲ್ಲಾ ಪ್ರಸಾರ ಸಂದೇಶಗಳನ್ನು ಅಳಿಸುವುದೇ?"</string>
     <string name="button_delete" msgid="4672451757925194350">"ಅಳಿಸು"</string>
-    <string name="button_cancel" msgid="7479958360523246140">"ರದ್ದುಮಾಡು"</string>
+    <string name="button_cancel" msgid="7479958360523246140">"ರದ್ದುಮಾಡಿ"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"ಭೂಕಂಪ ಮುನ್ನೆಚ್ಚರಿಕೆ"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"ಸುನಾಮಿ ಮುನ್ನೆಚ್ಚರಿಕೆ"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"ಭೂಕಂಪ ಮತ್ತು ಸುನಾಮಿ ಮುನ್ನೆಚ್ಚರಿಕೆ"</string>
@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ಒಮ್ಮೆ"</item>
     <item msgid="9097229303902157183">"ಪ್ರತಿ 2 ನಿಮಿಷಗಳು"</item>
-    <item msgid="5676933700148002666">"ಪ್ರತಿ 15 ನಿಮಿಷಗಳು"</item>
-    <item msgid="694355015442188708">"ಆಫ್ ಆಗಿದೆ"</item>
+    <item msgid="5718214950343391480">"ಪ್ರತಿ 5 ನಿಮಿಷಗಳಿಗೆ"</item>
+    <item msgid="3863339891188103437">"ಪ್ರತಿ 15 ನಿಮಿಷಗಳಿಗೆ"</item>
+    <item msgid="6868848414437854609">"ಆಫ್"</item>
   </string-array>
 </resources>

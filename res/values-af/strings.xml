@@ -110,7 +110,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Een keer"</item>
     <item msgid="9097229303902157183">"Elke 2 minute"</item>
-    <item msgid="5676933700148002666">"Elke 15 minute"</item>
-    <item msgid="694355015442188708">"Af"</item>
+    <item msgid="5718214950343391480">"Elke 5 minute"</item>
+    <item msgid="3863339891188103437">"Elke 15 minute"</item>
+    <item msgid="6868848414437854609">"Af"</item>
   </string-array>
 </resources>

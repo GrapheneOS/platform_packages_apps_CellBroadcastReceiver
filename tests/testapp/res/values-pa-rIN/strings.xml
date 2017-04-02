@@ -16,30 +16,33 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="2102435118079140813">"ਸੈਲ ਪ੍ਰਸਾਰਨ ਜਾਂਚਾਂ"</string>
-    <string name="button_etws_normal_type" msgid="3852703138521119537">"ETWS ਸਧਾਰਨ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_etws_cancel_type" msgid="7194264116649371175">"ETWS ਰੱਦ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_etws_test_type" msgid="6353906188028139901">"ETWS ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_cmas_pres_alert" msgid="5905111586384766558">"CMAS ਪ੍ਰੈਜੀਡੈਂਸ਼ੀਅਲ ਚਿਤਾਵਨੀ ਭੇਜੋ"</string>
-    <string name="button_cmas_extreme_alert" msgid="6111658124447111920">"CMAS ਐਕਸਟ੍ਰੀਮ ਚਿਤਾਵਨੀ ਭੇਜੋ"</string>
-    <string name="button_cmas_severe_alert" msgid="9051731172452500819">"CMAS ਗੰਭੀਰ ਚਿਤਾਵਨੀ ਭੇਜੋ"</string>
-    <string name="button_cmas_amber_alert" msgid="4217147800913845288">"CMAS AMBER ਚਿਤਾਵਨੀ ਭੇਜੋ"</string>
-    <string name="button_cmas_monthly_test" msgid="1609320625517248393">"CMAS ਮਾਸਿਕ ਜਾਂਚ ਚਿਤਾਵਨੀ ਭੇਜੋ"</string>
-    <string name="button_gsm_7bit_type" msgid="4757698592787955850">"GSM 7 Bit ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_gsm_7bit_umts_type" msgid="4377077702628367387">"UMTS 7 Bit ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_gsm_7bit_nopadding_type" msgid="5289528095948674862">"GSM 7 Bit ਪੂਰੀ ਲੰਮਾਈ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_gsm_7bit_nopadding_umts_type" msgid="7953047238483884846">"UMTS 7 Bit ਪੂਰੀ ਲੰਮਾਈ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_gsm_7bit_multipage_type" msgid="8516540964071070491">"GSM 7 Bit ਮਲਟੀ ਸਫ਼ਾ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_gsm_7bit_multipage_umts_type" msgid="474883728254547100">"UMTS 7 Bit ਮਲਟੀ ਸਫ਼ਾ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_gsm_7bit_with_language_type" msgid="7414138913180046493">"ਭਾਸ਼ਾ ਨਾਲ GSM 7 Bit ਭੇਜੋ"</string>
-    <string name="button_gsm_7bit_with_language_body_gsm_type" msgid="7365993929355114874">"ਬੌਡੀ ਵਿੱਚ ਭਾਸ਼ਾ ਨਾਲ GSM 7 Bit ਭੇਜੋ"</string>
-    <string name="button_gsm_7bit_with_language_body_umts_type" msgid="1201329758881885921">"ਭਾਸ਼ਾ ਨਾਲ UMTS 7 Bit ਭੇਜੋ"</string>
-    <string name="button_gsm_ucs2_type" msgid="6652864601384080678">"GSM UCS-2 ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_gsm_ucs2_umts_type" msgid="2985879481785569626">"UMTS UCS-2 ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_gsm_ucs2_multipage_umts_type" msgid="4557772309524939206">"UMTS UCS-2 ਮਲਟੀ ਸਫ਼ਾ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
-    <string name="button_gsm_ucs2_with_language_type" msgid="8992961254390480388">"ਭਾਸ਼ਾ ਨਾਲ GSM UCS-2 ਭੇਜੋ"</string>
-    <string name="button_gsm_ucs2_with_language_umts_type" msgid="1080788762601688380">"ਭਾਸ਼ਾ ਨਾਲ UMTS UCS-2 ਭੇਜੋ"</string>
-    <string name="button_delay_broadcast" msgid="5138650276363839541">"ਭੇਜਣ ਤੋਂ ਪਹਿਲਾਂ 4 ਸਕਿੰਟ ਤੱਕ ਸਥਗਿਤ ਕਰੋ"</string>
-    <string name="message_id_label" msgid="4365322663037110887">"ਸੁਨੇਹਾ ID:"</string>
-    <string name="category_id_label" msgid="8472814003810180738">"ਸ਼੍ਰੇਣੀ:"</string>
+    <string name="app_label" msgid="2704349695846064655">"ਸੈਲ ਪ੍ਰਸਾਰਨ ਜਾਂਚਾਂ"</string>
+    <string name="button_etws_earthquake_type" msgid="5391060421937195923">"ETWS ਭੂਚਾਲ ਪ੍ਰਸਾਰਣ ਭੇਜੋ"</string>
+    <string name="button_etws_tsunami_type" msgid="5866338269041475786">"ETWS ਸੁਨਾਮੀ ਪ੍ਰਸਾਰਣ ਭੇਜੋ"</string>
+    <string name="button_etws_earthquake_tsunami_type" msgid="8045617992086252152">"ETWS ਭੂਚਾਲ ਅਤੇ ਸੁਨਾਮੀ ਪ੍ਰਸਾਰਣ ਭੇਜੋ"</string>
+    <string name="button_etws_other_type" msgid="4129451610585426791">"ETWS ਹੋਰ ਐਮਰਜੈਂਸ਼ੀ ਪ੍ਰਸਾਰਣ ਭੇਜੋ"</string>
+    <string name="button_etws_cancel_type" msgid="4770911191572322801">"ETWS ਰੱਦ ਕਰਨ ਦਾ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_etws_test_type" msgid="5520113823851979673">"ETWS ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"CMAS Presidential ਚੇਤਾਵਨੀ ਭੇਜੋ"</string>
+    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"CMAS Extreme ਚੇਤਾਵਨੀ ਭੇਜੋ"</string>
+    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"CMAS Severe ਚੇਤਾਵਨੀ ਭੇਜੋ"</string>
+    <string name="button_cmas_amber_alert" msgid="860091654456014191">"CMAS AMBER ਚੇਤਾਵਨੀ ਭੇਜੋ"</string>
+    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"CMAS ਮਹੀਨਾਵਾਰ ਜਾਂਚ ਚੇਤਾਵਨੀ ਭੇਜੋ"</string>
+    <string name="button_gsm_7bit_type" msgid="4902292221458231081">"GSM 7 Bit ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"UMTS 7 Bit ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"GSM 7 Bit ਪੂਰੀ ਸਮਾਂ ਅਵਧੀ ਦਾ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_gsm_7bit_nopadding_umts_type" msgid="4581119373426634893">"UMTS 7 Bit ਪੂਰੀ ਸਮਾਂ ਅਵਧੀ ਦਾ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_gsm_7bit_multipage_type" msgid="4722261710591475726">"GSM 7 Bit ਇੱਕ ਤੋਂ ਵਧੇਰੇ ਪੰਨੇ ਦਾ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_gsm_7bit_multipage_umts_type" msgid="1178053563290345110">"UMTS 7 Bit ਇੱਕ ਤੋਂ ਵਧੇਰੇ ਪੰਨੇ ਦਾ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_gsm_7bit_with_language_type" msgid="2022040547313986751">"ਭਾਸ਼ਾ ਨਾਲ GSM 7 Bit ਭੇਜੋ"</string>
+    <string name="button_gsm_7bit_with_language_body_gsm_type" msgid="9100697687183591382">"ਮੁੱਖ ਭਾਗ ਵਿੱਚ ਭਾਸ਼ਾ ਨਾਲ GSM 7 Bit ਭੇਜੋ"</string>
+    <string name="button_gsm_7bit_with_language_body_umts_type" msgid="8483712413017340666">"ਭਾਸ਼ਾ ਨਾਲ UMTS 7 Bit ਭੇਜੋ"</string>
+    <string name="button_gsm_ucs2_type" msgid="6571590740592193686">"GSM UCS-2 ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_gsm_ucs2_umts_type" msgid="5951592009555548877">"UMTS UCS-2 ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_gsm_ucs2_multipage_umts_type" msgid="5063336859681757254">"UMTS UCS-2 ਇੱਕ ਤੋਂ ਵਧੇਰੇ ਪੰਨੇ ਦਾ ਪ੍ਰਸਾਰਨ ਭੇਜੋ"</string>
+    <string name="button_gsm_ucs2_with_language_type" msgid="7782847783969114889">"ਭਾਸ਼ਾ ਨਾਲ GSM UCS-2 ਭੇਜੋ"</string>
+    <string name="button_gsm_ucs2_with_language_umts_type" msgid="1722368447645668730">"ਭਾਸ਼ਾ ਨਾਲ UMTS UCS-2 ਭੇਜੋ"</string>
+    <string name="button_delay_broadcast" msgid="751650250579017537">"ਭੇਜਣ ਤੋਂ ਪਹਿਲਾਂ 5 ਸਕਿੰਟ ਲਈ ਸਥਗਿਤ ਕਰੋ"</string>
+    <string name="message_id_label" msgid="1445077194410403236">"ਸੁਨੇਹਾ ਆਈ.ਡੀ.:"</string>
+    <string name="category_id_label" msgid="6935815032327981691">"ਸ਼੍ਰੇਣੀ:"</string>
 </resources>
