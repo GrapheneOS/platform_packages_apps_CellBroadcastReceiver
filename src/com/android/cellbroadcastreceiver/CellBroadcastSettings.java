@@ -304,7 +304,10 @@ public class CellBroadcastSettings extends PreferenceActivity {
                 preferenceScreen.removePreference(findPreference(KEY_CATEGORY_BRAZIL_SETTINGS));
             }
             if (!enableDevSettings) {
-                preferenceScreen.removePreference(findPreference(KEY_CATEGORY_DEV_SETTINGS));
+                Preference pref = findPreference(KEY_CATEGORY_DEV_SETTINGS);
+                if (pref != null) {
+                    preferenceScreen.removePreference(pref);
+                }
             }
 
             if (mChannel50CheckBox != null) {
