@@ -31,9 +31,9 @@
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"受信したブロードキャストメッセージをすべて削除しますか？"</string>
     <string name="button_delete" msgid="4672451757925194350">"削除"</string>
     <string name="button_cancel" msgid="7479958360523246140">"キャンセル"</string>
-    <string name="etws_earthquake_warning" msgid="6428741104423152511">"地震警報"</string>
+    <string name="etws_earthquake_warning" msgid="6428741104423152511">"緊急地震速報"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"津波警報"</string>
-    <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"地震津波警報"</string>
+    <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"緊急地震速報 津波警報"</string>
     <string name="etws_test_message" msgid="8447820262584381894">"ETWSテストメッセージ"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"緊急速報メール"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"国家レベルの警報"</string>
