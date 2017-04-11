@@ -432,16 +432,10 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         setDataSourceFromResource(getResources(), mMediaPlayer,
                                 R.raw.cmas_default);
                 }
-
-                // start playing alert audio (unless master volume is vibrate only or silent).
-                mAudioManager.requestAudioFocus(null, AudioManager.STREAM_NOTIFICATION,
-                        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
-
-                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
+                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
                 mMediaPlayer.setLooping(false);
                 mMediaPlayer.prepare();
                 mMediaPlayer.start();
-
             } catch (Exception ex) {
                 loge("Failed to play alert sound: " + ex);
             }
@@ -479,6 +473,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             if (mMediaPlayer != null) {
                 try {
                     mMediaPlayer.stop();
+                    mMediaPlayer.reset();
                     mMediaPlayer.release();
                 } catch (IllegalStateException e) {
                     // catch "Unable to retrieve AudioTrack pointer for stop()" exception
