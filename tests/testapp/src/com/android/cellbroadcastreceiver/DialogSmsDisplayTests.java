@@ -45,6 +45,8 @@ import java.io.UnsupportedEncodingException;
 public class DialogSmsDisplayTests
         extends ActivityInstrumentationTestCase2<CellBroadcastListActivity> {
 
+    private static final String CB_RECEIVER_PKG = "com.android.cellbroadcastreceiver";
+
     public static final String ACTION_SMS_SENT =
         "com.android.basicsmsreceiver.tests.SMS_SENT_ACTION";
     private static String TAG = "DialogSmsDisplayTests";
@@ -131,6 +133,7 @@ public class DialogSmsDisplayTests
         Intent intent = new Intent(Intents.SMS_CB_RECEIVED_ACTION);
         byte[] pdu = encodeCellBroadcast(0, 0, DCS_7BIT_ENGLISH, "Hello in GSM 7 bit");
         intent.putExtra("message", createFromPdu(pdu));
+        intent.setPackage(CB_RECEIVER_PKG);
         mContext.sendOrderedBroadcast(intent, "android.permission.RECEIVE_SMS");
     }
 
@@ -138,12 +141,14 @@ public class DialogSmsDisplayTests
         Intent intent = new Intent(Intents.SMS_CB_RECEIVED_ACTION);
         byte[] pdu = encodeCellBroadcast(0, 0, DCS_16BIT_UCS2, "Hello in UCS2");
         intent.putExtra("message", createFromPdu(pdu));
+        intent.setPackage(CB_RECEIVER_PKG);
         mContext.sendOrderedBroadcast(intent, "android.permission.RECEIVE_SMS");
     }
 
     public void testSendEtwsMessageNormal() throws Exception {
         Intent intent = new Intent(Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
         intent.putExtra("message", createFromPdu(etwsMessageNormal));
+        intent.setPackage(CB_RECEIVER_PKG);
         mContext.sendOrderedBroadcast(intent,
                 "android.permission.RECEIVE_EMERGENCY_BROADCAST");
     }
@@ -151,6 +156,7 @@ public class DialogSmsDisplayTests
     public void testSendEtwsMessageCancel() throws Exception {
         Intent intent = new Intent(Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
         intent.putExtra("message", createFromPdu(etwsMessageCancel));
+        intent.setPackage(CB_RECEIVER_PKG);
         mContext.sendOrderedBroadcast(intent,
                 "android.permission.RECEIVE_EMERGENCY_BROADCAST");
     }
@@ -158,6 +164,7 @@ public class DialogSmsDisplayTests
     public void testSendEtwsMessageTest() throws Exception {
         Intent intent = new Intent(Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
         intent.putExtra("message", createFromPdu(etwsMessageTest));
+        intent.setPackage(CB_RECEIVER_PKG);
         mContext.sendOrderedBroadcast(intent,
                 "android.permission.RECEIVE_EMERGENCY_BROADCAST");
     }
