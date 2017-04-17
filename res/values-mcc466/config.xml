@@ -15,12 +15,6 @@
 -->
 
 <resources>
-    <!-- Whether to enable ETWS settings (Japan) -->
-    <bool name="show_etws_settings">false</bool>
-    <!-- Whether to enable CMAS settings (United States) -->
-    <bool name="show_cmas_settings">true</bool>
-    <!-- Whether to enable channel 50 settings (Brazil) -->
-    <bool name="show_brazil_settings">false</bool>
     <!-- Whether to enable audio alert for non emergency broadcasts on FEATURE_WATCH devices -->
-    <bool name="watch_enable_non_emergency_audio">false</bool>
+    <bool name="watch_enable_non_emergency_audio">true</bool>
 </resources>

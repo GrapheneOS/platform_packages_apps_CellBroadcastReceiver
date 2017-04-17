@@ -541,6 +541,18 @@ public class CellBroadcastAlertService extends Service {
         NotificationManager notificationManager = NotificationManager.from(context);
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
+
+        // For a device with FEATURE_WATCH we don't have sounds available for notifications.
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+            if (context.getResources().getBoolean(R.bool.watch_enable_non_emergency_audio)) {
+                // start audio/vibration/speech service for non emergency alerts
+                Intent audioIntent = new Intent(context, CellBroadcastAlertAudio.class);
+                audioIntent.setAction(CellBroadcastAlertAudio.ACTION_START_ALERT_AUDIO);
+                audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE, ToneType.OTHER);
+                context.startService(audioIntent);
+            }
+        }
+
     }
 
     static Intent createDisplayMessageIntent(Context context, Class intentClass,
