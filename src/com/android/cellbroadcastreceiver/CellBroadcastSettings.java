@@ -53,6 +53,9 @@ public class CellBroadcastSettings extends PreferenceActivity {
     // Speak contents of alert after playing the alert sound.
     public static final String KEY_ENABLE_ALERT_SPEECH = "enable_alert_speech";
 
+    // Always play at full volume when playing the alert sound.
+    public static final String KEY_USE_FULL_VOLUME = "use_full_volume";
+
     // Preference category for emergency alert and CMAS settings.
     public static final String KEY_CATEGORY_ALERT_SETTINGS = "category_alert_settings";
 
@@ -121,6 +124,7 @@ public class CellBroadcastSettings extends PreferenceActivity {
         private TwoStatePreference mEmergencyCheckBox;
         private ListPreference mReminderInterval;
         private TwoStatePreference mSpeechCheckBox;
+        private TwoStatePreference mFullVolumeCheckBox;
         private TwoStatePreference mEtwsTestCheckBox;
         private TwoStatePreference mChannel50CheckBox;
         private TwoStatePreference mCmasTestCheckBox;
@@ -149,6 +153,8 @@ public class CellBroadcastSettings extends PreferenceActivity {
                     findPreference(KEY_ALERT_REMINDER_INTERVAL);
             mSpeechCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_ALERT_SPEECH);
+            mFullVolumeCheckBox = (TwoStatePreference)
+                    findPreference(KEY_USE_FULL_VOLUME);
             mEtwsTestCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_ETWS_TEST_ALERTS);
             mChannel50CheckBox = (TwoStatePreference)
@@ -227,6 +233,7 @@ public class CellBroadcastSettings extends PreferenceActivity {
                 }
             } else {
                 mAlertCategory.removePreference(mSpeechCheckBox);
+                mAlertCategory.removePreference(mFullVolumeCheckBox);
                 // Remove ETWS test preference category.
                 preferenceScreen.removePreference(mETWSSettingCategory);
             }
