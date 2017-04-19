@@ -542,8 +542,13 @@ public class CellBroadcastAlertService extends Service {
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
 
-        // For a device with FEATURE_WATCH we don't have sounds available for notifications.
-        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+        // FEATURE_WATCH devices do not have global sounds for notifications; only vibrate.
+        // TW requires sounds for 911/919
+        // Emergency messages use a different audio playback and display path. Since we use
+        // addToNotification for the emergency display on FEATURE WATCH devices vs the
+        // Alert Dialog, it will call this and override the emergency audio tone.
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH) &&
+            !isEmergencyMessage(context, message)) {
             if (context.getResources().getBoolean(R.bool.watch_enable_non_emergency_audio)) {
                 // start audio/vibration/speech service for non emergency alerts
                 Intent audioIntent = new Intent(context, CellBroadcastAlertAudio.class);
