@@ -432,7 +432,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         setDataSourceFromResource(getResources(), mMediaPlayer,
                                 R.raw.cmas_default);
                 }
-                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
                 mMediaPlayer.setLooping(false);
                 mMediaPlayer.prepare();
                 mMediaPlayer.start();

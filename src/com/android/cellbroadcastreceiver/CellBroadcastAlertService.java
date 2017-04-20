@@ -517,15 +517,15 @@ public class CellBroadcastAlertService extends Service {
                 .setCategory(Notification.CATEGORY_SYSTEM)
                 .setPriority(Notification.PRIORITY_HIGH)
                 .setColor(context.getResources().getColor(R.color.notification_color))
-                .setVisibility(Notification.VISIBILITY_PUBLIC)
-                .setDefaults(Notification.DEFAULT_ALL);
-
-        builder.setDefaults(Notification.DEFAULT_ALL);
+                .setVisibility(Notification.VISIBILITY_PUBLIC);
 
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
             builder.setDeleteIntent(pi);
+            builder.setVibrate(new long[]{0}); // To make FEATURE_WATCH devices see this as priority
         } else {
             builder.setContentIntent(pi);
+            // This breaks the vibration on FEATURE_WATCH so we only use it for devices that aren't
+            builder.setDefaults(Notification.DEFAULT_ALL);
         }
 
         // increment unread alert count (decremented when user dismisses alert dialog)
