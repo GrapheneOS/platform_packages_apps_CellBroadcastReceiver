@@ -114,6 +114,6 @@
     <item msgid="3863339891188103437">"Ogni 15 minuti"</item>
     <item msgid="6868848414437854609">"Disattivati"</item>
   </string-array>
-
-    <string name="emergency_alert_settings_title_watches" msgid="8202946850890864200">"Notifiche di emergenza"</string>
+    <!-- no translation found for emergency_alert_settings_title_watches (5572247166776788695) -->
+    <skip />
 </resources>
