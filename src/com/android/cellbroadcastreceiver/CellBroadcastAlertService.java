@@ -18,6 +18,7 @@ package com.android.cellbroadcastreceiver;
 
 import android.app.ActivityManager;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -68,6 +69,12 @@ public class CellBroadcastAlertService extends Service {
 
     /** Use the same notification ID for non-emergency alerts. */
     static final int NOTIFICATION_ID = 1;
+
+    /**
+     * Notification channel containing all cellbroadcast broadcast messages notifications.
+     * Use the same notification channel for non-emergency alerts.
+     */
+    static final String NOTIFICATION_CHANNEL_BROADCAST_MESSAGES = "broadcastMessages";
 
     /** Sticky broadcast for latest area info broadcast received. */
     static final String CB_AREA_INFO_RECEIVED_ACTION =
@@ -528,6 +535,15 @@ public class CellBroadcastAlertService extends Service {
         int channelTitleId = CellBroadcastResources.getDialogTitleResource(context, message);
         CharSequence channelName = context.getText(channelTitleId);
         String messageBody = message.getMessageBody();
+        final NotificationManager notificationManager = NotificationManager.from(context);
+        /**
+         * Creates the notification channel and registers it with NotificationManager. If a channel
+         * with the same ID is already registered, NotificationManager will ignore this call.
+         */
+        notificationManager.createNotificationChannel(new NotificationChannel(
+                NOTIFICATION_CHANNEL_BROADCAST_MESSAGES,
+                context.getString(R.string.notification_channel_broadcast_messages),
+                NotificationManager.IMPORTANCE_LOW));
 
         // Create intent to show the new messages when user selects the notification.
         Intent intent;
@@ -552,7 +568,8 @@ public class CellBroadcastAlertService extends Service {
         }
 
         // use default sound/vibration/lights for non-emergency broadcasts
-        Notification.Builder builder = new Notification.Builder(context)
+        Notification.Builder builder = new Notification.Builder(
+                context, NOTIFICATION_CHANNEL_BROADCAST_MESSAGES)
                 .setSmallIcon(R.drawable.ic_notify_alert)
                 .setTicker(channelName)
                 .setWhen(System.currentTimeMillis())
@@ -579,8 +596,6 @@ public class CellBroadcastAlertService extends Service {
         } else {
             builder.setContentTitle(channelName).setContentText(messageBody);
         }
-
-        NotificationManager notificationManager = NotificationManager.from(context);
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
     }
