@@ -20,6 +20,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.media.AudioManager;
@@ -432,7 +433,13 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         setDataSourceFromResource(getResources(), mMediaPlayer,
                                 R.raw.cmas_default);
                 }
-                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
+
+                // For FEATURE_WATCH there is no sound produced for STREAM_NOTIFICATION
+                if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                    mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+                } else {
+                    mMediaPlayer.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
+                }
                 mMediaPlayer.setLooping(false);
                 mMediaPlayer.prepare();
                 mMediaPlayer.start();
