@@ -33,6 +33,8 @@ import com.android.internal.telephony.cdma.sms.SmsEnvelope;
  */
 public class SendCdmaCmasMessages {
 
+    private static final String CB_RECEIVER_PKG = "com.android.cellbroadcastreceiver";
+
     private static final String PRES_ALERT =
             "THE PRESIDENT HAS ISSUED AN EMERGENCY ALERT. CHECK LOCAL MEDIA FOR MORE DETAILS";
 
@@ -49,6 +51,15 @@ public class SendCdmaCmasMessages {
     private static final String MONTHLY_TEST_ALERT = "This is a test of the emergency alert system."
             + " This is only a test. Call (123)456-7890.";
 
+    private static void sendBroadcast(Activity activity, SmsCbMessage cbMessage) {
+        Intent intent = new Intent(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
+        intent.putExtra("message", cbMessage);
+        intent.setPackage(CB_RECEIVER_PKG);
+        activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
+                Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
+                AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);
+    }
+
     public static void testSendCmasPresAlert(Activity activity, int messageId) {
         SmsCbMessage cbMessage = createCmasSmsMessage(
                 SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT, messageId, "en",
@@ -56,11 +67,7 @@ public class SendCdmaCmasMessages {
                 SmsCbCmasInfo.CMAS_RESPONSE_TYPE_PREPARE, SmsCbCmasInfo.CMAS_SEVERITY_EXTREME,
                 SmsCbCmasInfo.CMAS_URGENCY_EXPECTED, SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY);
 
-        Intent intent = new Intent(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
-        intent.putExtra("message", cbMessage);
-        activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
-                Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
-                AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);
+        sendBroadcast(activity, cbMessage);
     }
 
     public static void testSendCmasExtremeAlert(Activity activity, int messageId) {
@@ -84,11 +91,7 @@ public class SendCdmaCmasMessages {
                 SmsCbCmasInfo.CMAS_RESPONSE_TYPE_AVOID, SmsCbCmasInfo.CMAS_SEVERITY_SEVERE,
                 SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE, SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY);
 
-        Intent intent = new Intent(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
-        intent.putExtra("message", cbMessage);
-        activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
-                Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
-                AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);
+        sendBroadcast(activity, cbMessage);
     }
 
     public static void testSendCmasAmberAlert(Activity activity, int messageId) {
@@ -98,11 +101,7 @@ public class SendCdmaCmasMessages {
                 SmsCbCmasInfo.CMAS_RESPONSE_TYPE_UNKNOWN, SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
                 SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN, SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN);
 
-        Intent intent = new Intent(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
-        intent.putExtra("message", cbMessage);
-        activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
-                Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
-                AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);
+        sendBroadcast(activity, cbMessage);
     }
 
     public static void testSendCmasMonthlyTest(Activity activity, int messageId) {
@@ -112,11 +111,7 @@ public class SendCdmaCmasMessages {
                 SmsCbCmasInfo.CMAS_RESPONSE_TYPE_UNKNOWN, SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
                 SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN, SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN);
 
-        Intent intent = new Intent(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
-        intent.putExtra("message", cbMessage);
-        activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
-                Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
-                AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);
+        sendBroadcast(activity, cbMessage);
     }
 
     /**
