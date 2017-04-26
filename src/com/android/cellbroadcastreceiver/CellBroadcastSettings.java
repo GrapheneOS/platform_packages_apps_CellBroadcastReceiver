@@ -247,26 +247,31 @@ public class CellBroadcastSettings extends PreferenceActivity {
 
             // Show alert settings and ETWS categories for ETWS builds and developer mode.
             if (enableDevSettings || showEtwsSettings) {
-
                 if (forceDisableEtwsCmasTest) {
-                    if (mETWSSettingCategory != null) {
+                    if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                        // Remove CMAS and ETWS test preferences
+                        preferenceScreen.removePreference(mCmasTestCheckBox);
+                        preferenceScreen.removePreference(mEtwsTestCheckBox);
+                    } else {
                         // Remove ETWS test preference.
                         preferenceScreen.removePreference(mETWSSettingCategory);
-                    }
 
-                    PreferenceCategory devSettingCategory =
-                            (PreferenceCategory) findPreference(KEY_CATEGORY_DEV_SETTINGS);
+                        PreferenceCategory devSettingCategory =
+                                (PreferenceCategory) findPreference(KEY_CATEGORY_DEV_SETTINGS);
 
-                    // Remove CMAS test preference.
-                    if (devSettingCategory != null) {
-                        devSettingCategory.removePreference(mCmasTestCheckBox);
+                        // Remove CMAS test preference.
+                        if (devSettingCategory != null) {
+                            devSettingCategory.removePreference(mCmasTestCheckBox);
+                        }
                     }
                 }
             } else {
-                if (mAlertCategory != null) {
+                if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                    // Remove CMAS and ETWS test preferences
+                    preferenceScreen.removePreference(mEtwsTestCheckBox);
+                    preferenceScreen.removePreference(mCmasTestCheckBox);
+                } else {
                     mAlertCategory.removePreference(mSpeechCheckBox);
-                }
-                if (mETWSSettingCategory != null) {
                     // Remove ETWS test preference category.
                     preferenceScreen.removePreference(mETWSSettingCategory);
                 }
