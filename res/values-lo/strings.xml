@@ -46,6 +46,7 @@
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"ການແຈ້ງເຕືອນສຸກເສີນ"</string>
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"ການແຈ້ງຜ່ານເຄືອຂ່າຍ"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"ຕັ້ງຄ່າການແຈ້ງເຕືອນສຸກເສີນ"</string>
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ຂໍ້ຄວາມສົ່ງສັນຍານ"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"ເປີດໃຊ້ການແຈ້ງເຕືອນ"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"ສະແດງການສົ່ງຂໍ້ມູນແຈ້ງເຕືອນສຸກເສີນ"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ການແຈ້ງເຕືອນ"</string>
