@@ -46,6 +46,8 @@
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"ತುರ್ತು ಎಚ್ಚರಿಕೆ"</string>
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"ಸೆಲ್ ಪ್ರಸಾರ"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"ತುರ್ತು ಎಚ್ಚರಿಕೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"</string>
+    <!-- no translation found for notification_channel_broadcast_messages (880704362482824524) -->
+    <skip />
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"ಅಧಿಸೂಚನೆಗಳನ್ನು ಆನ್ ಮಾಡು"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"ತುರ್ತು ಎಚ್ಚರಿಕೆ ಪ್ರಸಾರಗಳನ್ನು ತೋರಿಸು"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ಎಚ್ಚರಿಕೆ ಜ್ಞಾಪನೆ"</string>

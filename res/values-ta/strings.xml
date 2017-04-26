@@ -46,6 +46,8 @@
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"அவசரகால விழிப்பூட்டல்"</string>
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"செல் அலைபரப்பு"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"அவசரநிலை விழிப்பூட்டல் அமைப்பு"</string>
+    <!-- no translation found for notification_channel_broadcast_messages (880704362482824524) -->
+    <skip />
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"அறிவிப்புகளை இயக்கு"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"அவசரகால எச்சரிக்கை அலைபரப்புகளைக் காட்டு"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"விழிப்பூட்டலுக்கான நினைவூட்டல்"</string>
