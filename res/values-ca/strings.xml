@@ -46,8 +46,7 @@
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"Alerta d\'emergències"</string>
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"Difusió mòbil"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"Configuració d\'alertes d\'emergència"</string>
-    <!-- no translation found for notification_channel_broadcast_messages (880704362482824524) -->
-    <skip />
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Missatges de difusió"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"Activa les notificacions"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Mostra les difusions d\'alertes d\'emergència"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Recordatori d\'alertes"</string>
