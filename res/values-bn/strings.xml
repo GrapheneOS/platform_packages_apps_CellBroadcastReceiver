@@ -46,24 +46,23 @@
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"জরুরী সতর্কতা"</string>
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"সেল সম্প্রচার"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"জরুরী সতর্কতা সেটিংস"</string>
-    <!-- no translation found for notification_channel_broadcast_messages (880704362482824524) -->
-    <skip />
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"সম্প্রচারিত বার্তা"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"বিজ্ঞপ্তি চালু করুন"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"জরুরী সতর্কতা সম্প্রচারগুলি প্রদর্শন করুন"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"সতর্কতা অনুস্মারক"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"সতর্কতা বার্তা বলুন"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"জরুরী সতর্কতা বার্তা বলতে পাঠ্য থেকে ভাষ্য ব্যবহার করুন"</string>
     <string name="category_etws_settings_title" msgid="4072774251965938576">"ETWS সেটিংস"</string>
-    <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"ETWS পরীক্ষা সম্প্রচারগুলি দেখান"</string>
-    <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"ভূমিকম্প সুনামি সতর্কবার্তা সিস্টেমর জন্য পরীক্ষা সম্প্রচারগুলি দেখান"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"চরম হুমকিগুলি দেখান"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"জীবন ও সম্পত্তির উপর চরম হুমকিগুলির জন্য সতর্কতা প্রদর্শন করুন"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"গুরুতর হুমকিগুলি দেখান"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"জীবন ও সম্পত্তির উপর গুরুতর হুমকিগুলির জন্য সতর্কতা প্রদর্শন করুন"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"AMBER সতর্কতাগুলি দেখান"</string>
+    <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"ETWS পরীক্ষা সম্প্রচারগুলি দেখুন"</string>
+    <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"ভূমিকম্প সুনামি সতর্কবার্তা সিস্টেমর জন্য পরীক্ষা সম্প্রচারগুলি দেখুন"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"চরম হুমকিগুলি দেখুন"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"জীবন ও সম্পত্তির উপর চরম হুমকিগুলির জন্য সতর্কতা বার্তা দেখুন"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"গুরুতর হুমকিগুলি দেখুন"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"জীবন ও সম্পত্তির উপর গুরুতর হুমকিগুলির জন্য সতর্কতা বার্তা দেখুন"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"AMBER সতর্কতাগুলি দেখুন"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"শিশু অপহরণের জরুরী বুলেটিনগুলি প্রদর্শন করুন (AMBER সতর্কতা)"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"ETWS পরীক্ষা সম্প্রচারগুলি দেখান"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"বাণিজ্যিক মোবাইল সতর্কতা সিস্টেমের জন্য পরীক্ষা সম্প্রচারগুলি প্রদর্শন করুন"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"ETWS পরীক্ষা সম্প্রচারগুলি দেখুন"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"বাণিজ্যিক মোবাইল সতর্কতা সিস্টেমের জন্য পরীক্ষা সম্প্রচারগুলি দেখুন"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"কম্পন"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"সতর্কতা বিজ্ঞপ্তির জন্য কম্পন"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ব্রাজিলের জন্য সেটিংস"</string>
@@ -104,8 +103,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"গ্রহণ করা হয়েছে:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g>টি অপঠিত সতর্কতা।"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"নতুন সতর্কতাগুলি"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"প্রথম CMAS সতর্কতা প্রদর্শন করার পর একটি অনির্বাচন ডায়লগ দেখান (রাষ্ট্রপতি সতর্কতা ছাড়া)।"</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"অনির্বাচন ডায়লগ দেখান"</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"প্রথম CMAS সতর্কতা প্রদর্শন করার পর একটি অপ্ট আউট ডায়লগ দেখুন (রাষ্ট্রপতি সতর্কতা ছাড়া)।"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"অপ্ট আউট ডায়লগ দেখুন"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"আপনি বর্তমানে জরুরী সতর্কতা গ্রহণ করছেন। আপনি কি জরুরী সতর্কতা গ্রহণ করা চালিয়ে যেতে চান?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"হ্যাঁ"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"না"</string>

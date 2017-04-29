@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="971917159442705371">"小区广播设置"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"此用户无权修改小区广播设置"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"确定"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"您所在的区域没有任何活动的警报。您可以使用“设置”菜单选项更改警报设置。"</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"您所在的区域没有任何事件警报。您可以使用“设置”菜单选项更改警报设置。"</string>
     <string name="menu_preferences" msgid="3596514894131599202">"设置"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"删除广播"</string>
     <string name="message_options" msgid="3178489901903589574">"短信选项"</string>
@@ -46,8 +46,7 @@
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"紧急警报"</string>
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"小区广播"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"紧急警报设置"</string>
-    <!-- no translation found for notification_channel_broadcast_messages (880704362482824524) -->
-    <skip />
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"广播消息"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"开启通知"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"显示紧急警报广播"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"警报提醒"</string>

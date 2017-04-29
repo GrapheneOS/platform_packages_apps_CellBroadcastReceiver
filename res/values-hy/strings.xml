@@ -16,11 +16,11 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="7559008249836700599">"Բջջային հեռարձակումներ"</string>
-    <string name="sms_cb_settings" msgid="971917159442705371">"Բջջային հեռարձակման կարգավորումներ"</string>
+    <string name="app_label" msgid="7559008249836700599">"Բջջային ցանցի ծանուցումներ"</string>
+    <string name="sms_cb_settings" msgid="971917159442705371">"Կարգավորումներ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Բջջային կապով ծանուցման կարգավորումներն անհասանելի են այս օգտատիրոջ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Լավ"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Չկան ակտիվ ահազանգեր ձեր տարածքում: Դուք կարող եք փոխել ահազանգերի կարգավորումները՝ օգտագործելով ցանկը:"</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Ձեր տարածքում ակտիվ ծանուցումներ չկան։ Ծանուցումների ընտրանքները կարող եք փոխել Կարգավորումներում։"</string>
     <string name="menu_preferences" msgid="3596514894131599202">"Կարգավորումներ"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Ջնջել հեռարձակումները"</string>
     <string name="message_options" msgid="3178489901903589574">"Հաղորդագրության ընտրանքներ"</string>
@@ -113,6 +113,6 @@
     <item msgid="9097229303902157183">"2 րոպեն մեկ"</item>
     <item msgid="5718214950343391480">"5 րոպեն մեկ"</item>
     <item msgid="3863339891188103437">"15 րոպեն մեկ"</item>
-    <item msgid="6868848414437854609">"Անջատել"</item>
+    <item msgid="6868848414437854609">"Անջատված է"</item>
   </string-array>
 </resources>

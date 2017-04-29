@@ -46,8 +46,7 @@
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"အရေးပေါ် သတိပေးချက်များ"</string>
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"ဆဲလ် ထုတ်လွှင့်ချက်များ"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"အရေးပေါ် သတိပေးချက် ဆက်တင်များ"</string>
-    <!-- no translation found for notification_channel_broadcast_messages (880704362482824524) -->
-    <skip />
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"မက်ဆေ့ဂျ်များ ထုတ်လွှင့်ခြင်း"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"အကြောင်းကြားမှုများ ဖွင့်ပါ"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"အရေးပေါ် သတိပေးရေး ထုတ်လွှင့်ချက်များကို ပြပါ"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"သတိပေးနှုန်း"</string>
@@ -56,14 +55,14 @@
     <string name="category_etws_settings_title" msgid="4072774251965938576">"ETWS ဆက်တင်များ"</string>
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"ETWS စမ်းသပ်ရေး ထုတ်လွှင့်မှု"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"မြေငလျင် ဆူနာမီ သတိပေးရေး စနစ် အတွက် စမ်းသပ်ရေး ထုတ်လွှင့်မှုများကို ပြပါ"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"ပြင်းထန် အန္တရာယ်များကို ပြပါ"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"အသက် နှင့် အိမ်မြေများအတွက် အထူး အန္တရာယ်များ အတွက် သတိပေးချက်များကို ပြပါ"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"လွန်ကဲ အန္တရာယ်များကို ပြပါ"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"အသက် နှင့် အိမ်မြေများ အတွက် လွန်ကဲသည့် အန္တရာယ်များကို ပြပါ"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"အလွန်စိုးရိမ်စရာ အန္တရာယ်များကို ပြပါ"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"အသက်အိုးအိမ်အားခြိမ်းခြောက်သည့် အထူးအန္တရာယ်ကြီးများအတွက် သတိပေးချက်ကို ပြပါ"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"ကြီးမားသော အန္တရာယ်များကို ပြပါ"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"အသက်အိုးအိမ်ကို ခြိမ်းခြောက်သည့် ကြီးမားသောအန္တရာယ် သတိပေးချက်များကို ပြပါ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"AMBER သတိပေးချက်များကို ပြပါ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"ကလေး ခိုးမှု အရေးပေါ် သတင်းစဉ်များကို ပြပေးပါ (AMBER သတိပေးချက်)"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"CMAS စမ်းသပ် လွှင့်မှုများ ပြ"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"စီးပွားဖြစ် မိုဘိုင်း သတိပေးရေး စနစ် အတွက် စမ်းသပ်ရေး ထုတ်လွှင့်ချက်များကို ပြပါ"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"CMAS စမ်းသပ်အသံလွှင့်မှုများ ပြပါ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"မိုဘိုင်းသတိပေးရေးစနစ်ကြော်ငြာအတွက် စမ်းသပ်အသံလွှင့်ချက်များကို ပြပါ"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"တုန်ခါမှု"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"သတိပေးလျှင် တုန်ခါပါ"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ဘရာဇီးလ်အတွက် ဆက်တင်များ"</string>
@@ -79,7 +78,7 @@
     <string name="cmas_category_fire" msgid="3331981591918341119">"မီး"</string>
     <string name="cmas_category_health" msgid="312569774587117324">"ကျန်းမာရေး"</string>
     <string name="cmas_category_env" msgid="9213088574227522961">"ပတ်ဝန်းကျင်ဆိုင်ရာ"</string>
-    <string name="cmas_category_transport" msgid="5014901635987361642">"ပို့ဆောင်ရေး"</string>
+    <string name="cmas_category_transport" msgid="5014901635987361642">"သယ်ယူပို့ဆောင်ရေး"</string>
     <string name="cmas_category_infra" msgid="3558151044446851398">"ပံ့ပိုးရေး အဆောက်အအုံ"</string>
     <string name="cmas_category_cbrne" msgid="240421557913603971">"ဓါတု/ဇီဝ/နျူကလိယ/ပေါက်ကွဲမှု"</string>
     <string name="cmas_category_other" msgid="6158932360790744360">"အခြား"</string>
@@ -104,8 +103,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"ရရှိခဲ့"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> မဖတ်ရသေးသည့် သတိပေးချက်များ။"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"သတိပေးချက် အသစ်များ"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"ပထမ CMAS သတိပေးချက် (သမ္မတအဆင့် သတိပေးချက်မှ လွဲပြီး) ကို ပြပြီးနောက် ထွက်ရေး မေးမြန်းကွက်ကို ပြပါ။"</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"ထွက်ရေး မေးမြန်းကွက်ကို ပြပါ။"</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"ပထမ CMAS သတိပေးချက် (သမ္မတအဆင့် သတိပေးချက်မှလွဲပြီး) ကို ပြပြီးနောက် ရွေးချယ်နိုင်သည့် မေးမြန်းကွက်ကို ပြပါ။"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"ရွေးချယ်နိုင်သည့် မေးမြန်းကွက်ကို ပြပါ။"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"သင်သည် လောလောဆယ်မှာ အရေးပေါ် သတိပေးချက်များကို ရရှိနေသည်။ သင်သည်  အရေးပေါ် သတိပေးချက်များကို ဆက်ရလိုပါသလား?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Yes"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"No"</string>

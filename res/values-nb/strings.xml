@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="971917159442705371">"Innstillinger for cellekringkasting"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Innstillinger for kringkastede meldinger er ikke tilgjengelig for denne brukeren"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Det er ingen aktive varsler i ditt område. Du kan endre varselinnstillingene i innstillingsmenyen."</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Det finnes ingen aktive varsler i området ditt. Du kan endre varselinnstillingene i innstillingsmenyen."</string>
     <string name="menu_preferences" msgid="3596514894131599202">"Innstillinger"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Slett vanlig ETWS-kringkasting"</string>
     <string name="message_options" msgid="3178489901903589574">"Meldingsalternativer"</string>
@@ -46,8 +46,7 @@
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"Nødvarsel"</string>
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"Cellekringkasting"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"Innstillinger for nødvarsel"</string>
-    <!-- no translation found for notification_channel_broadcast_messages (880704362482824524) -->
-    <skip />
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Kringkastingsmeldinger"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"Slå på varsler"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Vis varsler ved nødssituasjoner"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Påminnelse om varsel"</string>
