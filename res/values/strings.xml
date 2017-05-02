@@ -228,6 +228,9 @@
     <!-- Text for negative button in CMAS opt-out dialog. [CHAR LIMIT=25] -->
     <string name="cmas_opt_out_button_no">No</string>
 
+    <!-- Title for CellBroadcastListActivity -->
+    <string name="cb_list_activity_title">"Emergency alert history"</string>
+
     <!-- Entries in the ListPreference for alert reminder intervals. [CHAR LIMIT=30] -->
     <string-array name="alert_reminder_interval_entries">
       <item>Once</item>
