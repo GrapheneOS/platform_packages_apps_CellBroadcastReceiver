@@ -46,7 +46,7 @@
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"Arifa ya dharura"</string>
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"Tangazo la Simu"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"Mipangilio ya arifa za dharura"</string>
-    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Ujumbe uliotangazwa"</string>
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Ujumbe kwa wapokeaji wengi"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"Ruhusu arifa ziingie"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Onyesha matangazo ya arifa za dharura"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Kikumbusho cha arifa"</string>

@@ -54,7 +54,7 @@
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Usar síntese de voz para ler as mensaxes de alertas de emerxencia"</string>
     <string name="category_etws_settings_title" msgid="4072774251965938576">"Configuración de ETWS"</string>
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Mostrar emisións de proba ETWS"</string>
-    <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Mostrar emisións de proba do Sistema de avisos de terremotos e tsunamis"</string>
+    <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Mostrar emisións de proba de ETWS (sistema de avisos de terremotos e tsunamis)"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Mostrar ameazas extremas"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Mostrar alertas de ameazas extremas para a vida e a propiedade"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Mostrar ameazas graves"</string>
@@ -62,7 +62,7 @@
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Mostrar alertas AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Mostrar avisos de emerxencia de secuestro de menores (alerta AMBER)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Mostrar emisións de proba CMAS"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Mostrar emisións de proba do Sistema de alertas móbiles comerciais"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Mostrar emisións de proba de CMAS (sistema comercial de alertas móbiles)"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrar"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Vibrar en caso de alerta"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Configuración para Brasil"</string>
@@ -103,7 +103,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Recibida ás:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> alertas sen ler."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Alertas novas"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Mostrar un diálogo de desactivación tras mostrar a primeira alerta CMAS (alertas non presidenciais)"</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Mostrar un diálogo de desactivación tras mostrar a primeira alerta CMAS (agas para alerta presidencial)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Mostrar un diálogo de desactivación"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Actualmente recibes alertas de emerxencia. Queres seguir recibindo alertas de emerxencia?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Si"</string>
