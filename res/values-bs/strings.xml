@@ -47,22 +47,22 @@
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"Info servis"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"Postavke upozorenja za vanredne situacije"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Poruke emitera"</string>
-    <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"Uključite obavještenja"</string>
-    <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Prikaži informacije o vanrednim situacijama"</string>
+    <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"Uključivanje obavještenja"</string>
+    <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Prikaz emitiranja hitnih upozorenja"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Podsjetnik za upozorenje"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Izgovorite poruku upozorenja"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Koristite pretvaranje teksta u govor da izgovorite poruke upozorenja"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Izgovaranje poruka upozorenja"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Korištenje pretvaranja teksta u govor za izgovaranje hitnih upozorenja"</string>
     <string name="category_etws_settings_title" msgid="4072774251965938576">"ETWS postavke"</string>
-    <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Pokaži ETWS testne informacije."</string>
-    <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Prikaži testne informacije iz sistema upozoravanja na zemljotres i cunami (ETWS)"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Pokaži ekstremne prijetnje"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Prikaži upozorenja za ekstremne prijetnje po život i imovinu"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Pokaži ozbiljne prijetnje"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Prikaži upozorenja za ozbiljne prijetnje po život i imovinu"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Pokaži AMBER upozorenja"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Prikaži uputstvo za ponašanje u slučaju otmice djeteta (AMBER upozorenje)"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Pokaži CMAS testne informacije"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Prikaži testne informacije iz komercijalnih mobilnih sistema uzbunjivanja (CMAS)"</string>
+    <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Prikaz probnih emitiranja za ETWS"</string>
+    <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Prikaz probnih emitiranja za sistem upozorenja za zemljotrese i cunamije (ETWS)"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Prikaz ekstremnih prijetnji"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Prikaz upozorenja za ekstremne prijetnje po život i imovinu"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Prikaz ozbiljnih prijetnji"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Prikaz upozorenja za ozbiljne prijetnje po život i imovinu"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Prikaz upozorenja AMBER"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Prikaz hitnih obavještenja u slučaju otmice djeteta (upozorenje AMBER)"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Prikaz probnih emitiranja za CMAS"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Prikaz probnih emitiranja za komercijalni sistem upozorenja za mobilne uređaje (CMAS)"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibriraj"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Vibracija za upozorenje"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Postavke za Brazil"</string>
@@ -103,8 +103,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Primljeno:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"Nepročitanih upozorenja: <xliff:g id="COUNT">%s</xliff:g>."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nova upozorenja"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Prikaži dijaloški okvir za isključivanje upozorenja nakon što primite prvo CMAS upozorenje (osim predsjedničkog upozorenja). Also, \"dijaloški okvir\" should be used for \"dialog\""</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Prikaži dij. okvir za isklj. upozorenja"</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Prikaz dijaloškog okvira za isključivanje upozorenja nakon primanja prvog CMAS upozorenja (osim predsjedničkog upozorenja)."</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Prikaz dijal. okvira za isklj. upozorenja"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Trenutno primate upozorenja o vanrednim situacijama. Želite li ih primati i dalje?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Da"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Ne"</string>
