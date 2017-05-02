@@ -536,14 +536,7 @@ public class CellBroadcastAlertService extends Service {
         CharSequence channelName = context.getText(channelTitleId);
         String messageBody = message.getMessageBody();
         final NotificationManager notificationManager = NotificationManager.from(context);
-        /**
-         * Creates the notification channel and registers it with NotificationManager. If a channel
-         * with the same ID is already registered, NotificationManager will ignore this call.
-         */
-        notificationManager.createNotificationChannel(new NotificationChannel(
-                NOTIFICATION_CHANNEL_BROADCAST_MESSAGES,
-                context.getString(R.string.notification_channel_broadcast_messages),
-                NotificationManager.IMPORTANCE_LOW));
+        createNotificationChannels(context);
 
         // Create intent to show the new messages when user selects the notification.
         Intent intent;
@@ -598,6 +591,18 @@ public class CellBroadcastAlertService extends Service {
         }
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
+    }
+
+    /**
+     * Creates the notification channel and registers it with NotificationManager. If a channel
+     * with the same ID is already registered, NotificationManager will ignore this call.
+     */
+    static void createNotificationChannels(Context context) {
+        NotificationManager.from(context).createNotificationChannel(
+                new NotificationChannel(
+                NOTIFICATION_CHANNEL_BROADCAST_MESSAGES,
+                context.getString(R.string.notification_channel_broadcast_messages),
+                NotificationManager.IMPORTANCE_LOW));
     }
 
     static Intent createDisplayMessageIntent(Context context, Class intentClass,
