@@ -110,6 +110,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             } else {
                 loge("ignoring unprivileged action received " + action);
             }
+        } else if (Intent.ACTION_LOCALE_CHANGED.equals(action)) {
+            // rename registered notification channels on locale change
+            CellBroadcastAlertService.createNotificationChannels(context);
         } else {
             Log.w(TAG, "onReceive() unexpected action " + action);
         }
