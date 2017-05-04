@@ -295,7 +295,7 @@ public class CellBroadcastResources {
 
         if (CellBroadcastAlertService.isEmergencyMessage(context, cbm)) {
             ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
-                    .getInstance().getCellBroadcastChannelRanges(context, cbm.getSubId());
+                    .getInstance().getCellBroadcastChannelRanges(context);
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (cbm.getServiceCategory() >= range.mStartId &&
