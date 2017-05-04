@@ -27,8 +27,8 @@ import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
 import java.util.ArrayList;
 
 /**
- * CellBroadcastOtherChannelsManager handles the additional cell broadcast channels that
- * carriers might enable through carrier config app.
+ * CellBroadcastChannelManager handles the additional cell broadcast channels that
+ * carriers might enable through resources.
  * Syntax: "<channel id range>:type=<tone type>"
  * For example,
  * <string-array name="carrier_additional_cbs_channels_strings" num="3">
@@ -39,11 +39,11 @@ import java.util.ArrayList;
  * </string-array>
  * If no tones are specified, the tone type will be set to CMAS_DEFAULT.
  */
-public class CellBroadcastOtherChannelsManager {
+public class CellBroadcastChannelManager {
 
-    private static final String TAG = "CellBroadcastOtherChannelsManager";
+    private static final String TAG = "CellBroadcastChannelManager";
 
-    private static CellBroadcastOtherChannelsManager sInstance = null;
+    private static CellBroadcastChannelManager sInstance = null;
 
     /**
      * Channel range caches with sub id as the key.
@@ -71,7 +71,7 @@ public class CellBroadcastOtherChannelsManager {
             mIsEmergency = false;
 
             int colonIndex = channelRange.indexOf(':');
-            if (colonIndex != -1){
+            if (colonIndex != -1) {
                 // Parse the tone type and emergency flag
                 String[] pairs = channelRange.substring(colonIndex + 1).trim().split(",");
                 for (String pair : pairs) {
@@ -110,9 +110,9 @@ public class CellBroadcastOtherChannelsManager {
      * Get the instance of the cell broadcast other channel manager
      * @return The singleton instance
      */
-    public static CellBroadcastOtherChannelsManager getInstance() {
+    public static CellBroadcastChannelManager getInstance() {
         if (sInstance == null) {
-            sInstance = new CellBroadcastOtherChannelsManager();
+            sInstance = new CellBroadcastChannelManager();
         }
         return sInstance;
     }
@@ -123,7 +123,7 @@ public class CellBroadcastOtherChannelsManager {
      * @param subId Subscription id
      * @return The list of channel ranges enabled by the carriers.
      */
-     public ArrayList<CellBroadcastChannelRange> getCellBroadcastChannelRanges(
+    public ArrayList<CellBroadcastChannelRange> getCellBroadcastChannelRanges(
             Context context, int subId) {
 
         // Check if the cache already had it.

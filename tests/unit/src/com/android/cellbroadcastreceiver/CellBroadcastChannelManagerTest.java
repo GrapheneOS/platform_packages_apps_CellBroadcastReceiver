@@ -16,11 +16,15 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import android.telephony.CarrierConfigManager;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
-import com.android.cellbroadcastreceiver.CellBroadcastOtherChannelsManager.CellBroadcastChannelRange;
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 
 import org.junit.After;
 import org.junit.Before;
@@ -28,14 +32,10 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 /**
  * APN retry manager tests
  */
-public class CellBroadcastOtherChannelsManagerTest extends CellBroadcastTest {
+public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
 
     @Before
     public void setUp() throws Exception {
@@ -63,8 +63,8 @@ public class CellBroadcastOtherChannelsManagerTest extends CellBroadcastTest {
                         "54-60:emergency=true",
                         "100-200"
                 });
-        ArrayList<CellBroadcastChannelRange> list = CellBroadcastOtherChannelsManager.getInstance().
-                getCellBroadcastChannelRanges(mContext, subId);
+        ArrayList<CellBroadcastChannelRange> list = CellBroadcastChannelManager.getInstance()
+                .getCellBroadcastChannelRanges(mContext, subId);
 
         assertEquals(12, list.get(0).mStartId);
         assertEquals(12, list.get(0).mEndId);
