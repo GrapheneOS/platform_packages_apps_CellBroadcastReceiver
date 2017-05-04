@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static android.text.format.DateUtils.DAY_IN_MILLIS;
+
 import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -45,15 +47,13 @@ import android.telephony.SubscriptionManager;
 import android.util.Log;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
-import com.android.cellbroadcastreceiver.CellBroadcastOtherChannelsManager.CellBroadcastChannelRange;
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.telephony.PhoneConstants;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Locale;
-
-import static android.text.format.DateUtils.DAY_IN_MILLIS;
 
 /**
  * This service manages the display and animation of broadcast messages.
@@ -459,8 +459,8 @@ public class CellBroadcastAlertService extends Service {
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATE_EXTRA,
                     prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true));
             int channel = message.getServiceCategory();
-            ArrayList<CellBroadcastChannelRange> ranges= CellBroadcastOtherChannelsManager.
-                    getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
+            ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
+                    .getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
                     message.getSubId());
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
@@ -660,8 +660,8 @@ public class CellBroadcastAlertService extends Service {
         if (cbm.isEmergencyAlertMessage()) {
             isEmergency = true;
         } else {
-            ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastOtherChannelsManager.
-                    getInstance().getCellBroadcastChannelRanges(context, subId);
+            ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
+                    .getInstance().getCellBroadcastChannelRanges(context, subId);
 
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {

@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
+
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
@@ -28,13 +30,11 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-import com.android.cellbroadcastreceiver.CellBroadcastOtherChannelsManager.CellBroadcastChannelRange;
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 
 import java.util.ArrayList;
-
-import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
 
 /**
  * This service manages enabling and disabling ranges of message identifiers
@@ -322,8 +322,8 @@ public class CellBroadcastConfigService extends IntentService {
                 SmsCbConstants.MESSAGE_ID_GSMA_ALLOCATED_CHANNEL_50);
 
         // Enable/Disable additional channels based on carrier specific requirement.
-        ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastOtherChannelsManager.
-                getInstance().getCellBroadcastChannelRanges(getApplicationContext(), subId);
+        ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
+                .getInstance().getCellBroadcastChannelRanges(getApplicationContext(), subId);
 
         if (ranges != null) {
             for (CellBroadcastChannelRange range: ranges) {
