@@ -15,13 +15,11 @@
 -->
 
 <resources>
-    <!-- Whether to enable CMAS settings (United States) -->
-    <!-- No need to show this for Taiwanese users -->
-    <bool name="show_cmas_settings">false</bool>
-
     <string-array name="additional_cbs_channels_strings">
-        <!-- Channel 911 and 919 are required by Taiwan NCC -->
-        <item>0x038F:type=other, emergency=false</item>
-        <item>0x0397:type=other, emergency=false</item>
+        <item>0xA800:type=earthquake, emergency=true</item>
+        <item>0xAFEE:type=tsunami, emergency=true</item>
+        <item>0xAC00-0xAFED:type=other, emergency=true</item>
+        <item>0xA802:type=etws_default, emergency=true</item>
+        <item>0xA804:type=etws_default, emergency=true</item>
     </string-array>
 </resources>

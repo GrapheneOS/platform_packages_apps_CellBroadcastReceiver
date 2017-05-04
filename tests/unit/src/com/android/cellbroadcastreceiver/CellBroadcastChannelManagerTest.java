@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import android.telephony.CarrierConfigManager;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
@@ -53,18 +52,16 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
     @Test
     @SmallTest
     public void testGetCellBroadcastChannelRanges() throws Exception {
-        int subId = 1234;
-        carrierConfigSetStringArray(subId,
-                CarrierConfigManager.KEY_CARRIER_ADDITIONAL_CBS_CHANNELS_STRINGS,
-                new String[]{
-                        "12:type=earthquake, emergency=true",
-                        "456:type=tsunami, emergency=true",
-                        "0xAC00-0xAFED:type=other, emergency=false",
-                        "54-60:emergency=true",
-                        "100-200"
-                });
+        putResources(R.array.additional_cbs_channels_strings, new String[]{
+                "12:type=earthquake, emergency=true",
+                "456:type=tsunami, emergency=true",
+                "0xAC00-0xAFED:type=other, emergency=false",
+                "54-60:emergency=true",
+                "100-200"
+        });
+
         ArrayList<CellBroadcastChannelRange> list = CellBroadcastChannelManager.getInstance()
-                .getCellBroadcastChannelRanges(mContext, subId);
+                .getCellBroadcastChannelRanges(mContext);
 
         assertEquals(12, list.get(0).mStartId);
         assertEquals(12, list.get(0).mEndId);

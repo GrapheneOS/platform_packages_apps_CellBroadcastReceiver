@@ -17,10 +17,7 @@
 package com.android.cellbroadcastreceiver;
 
 import android.content.Context;
-import android.os.PersistableBundle;
-import android.telephony.CarrierConfigManager;
 import android.util.Log;
-import android.util.SparseArray;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
 
@@ -44,12 +41,6 @@ public class CellBroadcastChannelManager {
     private static final String TAG = "CellBroadcastChannelManager";
 
     private static CellBroadcastChannelManager sInstance = null;
-
-    /**
-     * Channel range caches with sub id as the key.
-     */
-    private static SparseArray<ArrayList<CellBroadcastChannelRange>> sChannelRanges =
-            new SparseArray<>();
 
     /**
      * Cell broadcast channel range
@@ -120,62 +111,25 @@ public class CellBroadcastChannelManager {
     /**
      * Get cell broadcast channels enabled by the carriers.
      * @param context Application context
-     * @param subId Subscription id
      * @return The list of channel ranges enabled by the carriers.
      */
-    public ArrayList<CellBroadcastChannelRange> getCellBroadcastChannelRanges(
-            Context context, int subId) {
+    public ArrayList<CellBroadcastChannelRange> getCellBroadcastChannelRanges(Context context) {
 
-        // Check if the cache already had it.
-        if (sChannelRanges.get(subId) == null) {
+        ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
+        String[] ranges = context.getResources().getStringArray(
+                R.array.additional_cbs_channels_strings);
 
-            if (context == null) {
-                loge("context is null");
-                return null;
-            }
-
-            ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
-            String[] ranges;
-            CarrierConfigManager configManager =
-                    (CarrierConfigManager) context.getSystemService(Context.CARRIER_CONFIG_SERVICE);
-
-            if (configManager != null) {
-                PersistableBundle carrierConfig = configManager.getConfigForSubId(subId);
-
-                if (carrierConfig != null) {
-                    ranges = carrierConfig.getStringArray(
-                            CarrierConfigManager.KEY_CARRIER_ADDITIONAL_CBS_CHANNELS_STRINGS);
-
-                    if (ranges == null || ranges.length == 0) {
-                        log("No additional channels configured. subId = " + subId);
-
-                        // If there is nothing configured, store an empty list in the cache
-                        // so we won't look up again next time.
-                        sChannelRanges.put(subId, result);
-                        return result;
-                    }
-
-                    for (String range : ranges) {
-                        try {
-                            result.add(new CellBroadcastChannelRange(range));
-                        } catch (Exception e) {
-                            loge("Failed to parse \"" + range + "\". e=" + e);
-                        }
-                    }
-
-                    sChannelRanges.put(subId, result);
-
-                } else {
-                    loge("Can't get carrier config. subId=" + subId);
-                    return null;
+        if (ranges != null) {
+            for (String range : ranges) {
+                try {
+                    result.add(new CellBroadcastChannelRange(range));
+                } catch (Exception e) {
+                    loge("Failed to parse \"" + range + "\". e=" + e);
                 }
-            } else {
-                loge("Carrier config manager is not available");
-                return null;
             }
         }
 
-        return sChannelRanges.get(subId);
+        return result;
     }
 
     private static void log(String msg) {
