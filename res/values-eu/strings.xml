@@ -65,6 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Erakutsi mugikorretarako merkataritzako alerta sistemaren probako igorpenak"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Egin dar-dar"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Egin dar-dar alerta jasotzean"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"Erabili bolumen osoa"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Egin ez ikusi bolumenaren eta Ez molestatu moduaren beste ezarpenei"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Brasilerako ezarpenak"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Erakutsi Channel 50 kanalaren igorpenak"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"Channel 50 Brasilen erabiltzen da eremuari buruzko informazio eguneratua emateko"</string>
@@ -108,6 +110,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Larrialdi-alertak jasotzen ari zara. Larrialdi-alertak jasotzen jarraitu nahi duzu?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Bai"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Ez"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Behin"</item>
     <item msgid="9097229303902157183">"2 minutuz behin"</item>

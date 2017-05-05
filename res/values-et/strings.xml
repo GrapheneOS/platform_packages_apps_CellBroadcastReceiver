@@ -65,6 +65,10 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Commercial Mobile Alert Systemi katseteavituste kuvamine"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibreerimine"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Märguandel vibreeri"</string>
+    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
+    <skip />
+    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
+    <skip />
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Brasiilia seaded"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"50. kanali saadete kuvamine"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"50. kanalit kasutatakse Brasiilias piirkonnaandmete värskenduste edastamiseks"</string>
@@ -108,6 +112,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Praegu on hädaolukorra märguannete saamine kasutusel. Kas soovite hädaolukorra märguandeid jätkuvalt saada?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Jah"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Ei"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Üks kord"</item>
     <item msgid="9097229303902157183">"Iga 2 minuti järel"</item>

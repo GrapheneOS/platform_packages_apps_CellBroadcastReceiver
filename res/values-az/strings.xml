@@ -65,6 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Ticari Mobil Siqnal Sistemi üçün test yayımlarını göstər"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrasiya"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Siqnal zamanı vibrasiya"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"Tam səs istifadəsi"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Digər səsi və \"Narahat etməyin\" tərcihlərini iqnor edin"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Braziliya üçün Ayarlar"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Kanal 50 yayımlarını göstərin"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"Kanal 50 Braziliyada sahə məlumatlarını yeniləmək üçün işlənir"</string>
@@ -108,6 +110,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Hazırda Həyəcan Siqnalı qəbul edirsiniz. Həyəcan Siqnalını qəbul etməyə davam etmək istəyirsiniz?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Bəli"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Xeyr"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Bir dəfə"</item>
     <item msgid="9097229303902157183">"Hər 2 dəqiqə"</item>

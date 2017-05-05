@@ -56,15 +56,17 @@
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Прикажи ETWS пробна емитовања"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Прикажи пробна емитовања за систем упозорења о земљотресу и цунамију"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Прикажи екстремне опасности"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Приказује упозорења о екстремној опасности по живот и својину"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Приказује упозорења о екстремној опасности по живот и имовину"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Прикажи озбиљне претње"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Приказује упозорења о озбиљној опасности по живот и својину"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Приказује упозорења о озбиљној опасности по живот и имовину"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Прикажи AMBER упозорења"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Приказује ванредне објаве у вези са отмицом детета (AMBER упозорење)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Прикажи CMAS пробна емитовања"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Приказује пробне преносе за Комерцијални систем упозорења за мобилне уређаје (CMAS)"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Вибрирај"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Вибрирај при упозорењу"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"Користи највећу јачину звука"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Занемарује друга подешавања за Јачину звука и Не узнемиравај"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Подешавања за Бразил"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Прикажи емитовања канала 50"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"Канал 50 се у Бразилу користи за ажурирање информација о подручју"</string>
@@ -108,6 +110,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Тренутно примате упозорења о хитним случајевима. Желите ли да наставите да их примате?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Да"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"He"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Једанпут"</item>
     <item msgid="9097229303902157183">"Свака 2 минута"</item>

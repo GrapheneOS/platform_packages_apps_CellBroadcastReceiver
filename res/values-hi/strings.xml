@@ -65,6 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"व्यावसायिक मोबाइल अलर्ट सिस्‍टम के लिए परीक्षण प्रसारण दिखाएं"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"कंपन"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"अलर्ट पर कंपन"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"पूरे वॉल्यूम का उपयोग करें"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"अन्य वॉल्यूम और परेशान न करें प्राथमिकताओं को अनदेखा करें"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ब्राज़ील के लिए सेटिंग"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"चैनल 50 प्रसारण दिखाएं"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ब्राज़ील में चैनल 50 को क्षेत्र के लिए नई जानकारी के लिए उपयोग किया जाता है"</string>
@@ -108,6 +110,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"आपको वर्तमान में आपातकालीन अलर्ट प्राप्त हो रहे हैं. क्या आप आगे भी आपातकालीन अलर्ट प्राप्त करना चाहते हैं?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"हां"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"नहीं"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"एक बार"</item>
     <item msgid="9097229303902157183">"प्रत्येक 2 मिनट में"</item>

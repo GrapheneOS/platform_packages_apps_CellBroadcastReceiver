@@ -65,6 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Zobrazovat testovací zprávy systému Commercial Mobile Alert System"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrace"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Při upozornění vibrovat"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"Použít plnou hlasitost"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorovat ostatní předvolby hlasitosti a režimu Nerušit"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Nastavení pro Brazílii"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Zobrazit zprávy na kanálu 50"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"Kanál 50 se v Brazílii používá pro aktuální informace v oblasti"</string>
@@ -108,6 +110,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Aktuálně jste přihlášeni k odběru nouzových výstrah. Chcete nouzové výstrahy odebírat i nadále?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ano"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Ne"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Jednou"</item>
     <item msgid="9097229303902157183">"Každé 2 minuty"</item>

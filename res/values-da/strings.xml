@@ -58,13 +58,17 @@
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Vis ekstreme trusler"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Vis advarsler om ekstreme trusler mod liv og ejendom"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Vis alvorlige trusler"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Vis advarsler for alvorlige trusler mod liv og ejendom"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Vis advarsler om alvorlige trusler mod liv og ejendom"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Vis advarsel om barnebortførelse"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Vis bulletiner om nødsituationer i forbindelse med børnebortførelse (AMBER Alert)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Vis testudsendelser fra CMAS"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Vis testudsendelser for Commercial Mobile Alert System"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibration"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Vibrer ved underretning"</string>
+    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
+    <skip />
+    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
+    <skip />
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Indstillinger for Brasilien"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Vis meddelelser fra kanal 50"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"I Brasilien anvendes kanal 50 til opdateringer om området"</string>
@@ -108,6 +112,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Du modtager i øjeblikket nødadvarsler. Vil du gerne fortsætte med at modtage dem?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nej"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Én gang"</item>
     <item msgid="9097229303902157183">"Hvert andet minut"</item>

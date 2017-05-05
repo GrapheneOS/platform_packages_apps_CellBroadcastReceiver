@@ -65,6 +65,10 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"ਕਮਰਸ਼ੀਅਲ ਮੋਬਾਈਲ ਚਿਤਾਵਨੀ ਸਿਸਟਮ ਲਈ ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ਥਰਥਰਾਹਟ ਕਰੋ"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"ਚਿਤਾਵਨੀ ਤੇ ਥਰਥਰਾਹਟ ਕਰੋ"</string>
+    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
+    <skip />
+    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
+    <skip />
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ਬ੍ਰਾਜ਼ੀਲ ਲਈ ਸੈਟਿੰਗਾਂ"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"ਚੈਨਲ 50 ਦੇ ਪ੍ਰਸਾਰਨ ਦਿਖਾਓ"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ਚੈਨਲ 50 ਖੇਤਰ ਅਪਡੇਟ ਜਾਣਕਾਰੀ ਲਈ ਬ੍ਰਾਜ਼ੀਲ ਵਿੱਚ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ"</string>
@@ -108,6 +112,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ਇਸ ਵੇਲੇ ਤੁਸੀਂ ਐਮਰਜੈਂਸੀ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਾਪਤ ਕਰ ਰਹੇ ਹੋ। ਕੀ ਤੁਸੀਂ ਐਮਰਜੈਂਸੀ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਾਪਤ ਕਰਨਾ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ਹਾਂ"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ਨਹੀਂ"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ਇੱਕ ਵਾਰ"</item>
     <item msgid="9097229303902157183">"ਹਰੇਕ 2 ਮਿੰਟਾਂ ਵਿੱਚ"</item>
