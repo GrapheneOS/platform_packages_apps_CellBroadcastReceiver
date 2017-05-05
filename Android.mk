@@ -11,6 +11,17 @@ LOCAL_JAVA_LIBRARIES := telephony-common
 LOCAL_PACKAGE_NAME := CellBroadcastReceiver
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
+LOCAL_USE_AAPT2 := true
+
+LOCAL_STATIC_ANDROID_LIBRARIES := \
+    android-support-v4 \
+    android-support-v13 \
+    android-support-v7-recyclerview \
+    android-support-v7-preference \
+    android-support-v7-appcompat \
+    android-support-v14-preference
+
+LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 include $(BUILD_PACKAGE)
 

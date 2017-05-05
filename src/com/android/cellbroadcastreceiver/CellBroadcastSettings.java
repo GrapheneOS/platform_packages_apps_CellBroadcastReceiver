@@ -16,20 +16,21 @@
 
 package com.android.cellbroadcastreceiver;
 
+import android.app.Activity;
 import android.app.backup.BackupManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.os.UserManager;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceScreen;
-import android.preference.TwoStatePreference;
 import android.provider.Settings;
+import android.support.v14.preference.PreferenceFragment;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.TwoStatePreference;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
@@ -38,7 +39,7 @@ import android.util.Log;
 /**
  * Settings activity for the cell broadcast receiver.
  */
-public class CellBroadcastSettings extends PreferenceActivity {
+public class CellBroadcastSettings extends Activity {
 
     private static final String TAG = "CellBroadcastSettings";
 
@@ -57,10 +58,10 @@ public class CellBroadcastSettings extends PreferenceActivity {
     public static final String KEY_USE_FULL_VOLUME = "use_full_volume";
 
     // Preference category for emergency alert and CMAS settings.
-    public static final String KEY_CATEGORY_ALERT_SETTINGS = "category_alert_settings";
+    public static final String KEY_CATEGORY_EMERGENCY_ALERTS = "category_emergency_alerts";
 
-    // Preference category for ETWS related settings.
-    public static final String KEY_CATEGORY_ETWS_SETTINGS = "category_etws_settings";
+    // Preference category for alert preferences.
+    public static final String KEY_CATEGORY_ALERT_PREFERENCES = "category_alert_preferences";
 
     // Whether to display CMAS extreme threat notifications (default is enabled).
     public static final String KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS =
@@ -82,9 +83,6 @@ public class CellBroadcastSettings extends PreferenceActivity {
     // Whether to display CMAS monthly test messages (default is disabled).
     public static final String KEY_ENABLE_CMAS_TEST_ALERTS = "enable_cmas_test_alerts";
 
-    // Preference category for Brazil specific settings.
-    public static final String KEY_CATEGORY_BRAZIL_SETTINGS = "category_brazil_settings";
-
     // Preference key for whether to enable channel 50 notifications
     // Enabled by default for phones sold in Brazil, otherwise this setting may be hidden.
     public static final String KEY_ENABLE_CHANNEL_50_ALERTS = "enable_channel_50_alerts";
@@ -94,6 +92,9 @@ public class CellBroadcastSettings extends PreferenceActivity {
 
     // Alert reminder interval ("once" = single 2 minute reminder).
     public static final String KEY_ALERT_REMINDER_INTERVAL = "alert_reminder_interval";
+
+    // Preference key for emergency alerts history
+    public static final String KEY_EMERGENCY_ALERT_HISTORY = "emergency_alert_history";
 
     // Brazil country code
     private static final String COUNTRY_BRAZIL = "br";
@@ -128,14 +129,14 @@ public class CellBroadcastSettings extends PreferenceActivity {
         private TwoStatePreference mEtwsTestCheckBox;
         private TwoStatePreference mChannel50CheckBox;
         private TwoStatePreference mCmasTestCheckBox;
+        private Preference mAlertHistory;
         private PreferenceCategory mAlertCategory;
-        private PreferenceCategory mETWSSettingCategory;
+        private PreferenceCategory mAlertPreferencesCategory;
+        private PreferenceCategory mDevSettingCategory;
         private boolean mDisableSevereWhenExtremeDisabled = true;
 
         @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.preferences);
 
@@ -161,10 +162,13 @@ public class CellBroadcastSettings extends PreferenceActivity {
                     findPreference(KEY_ENABLE_CHANNEL_50_ALERTS);
             mCmasTestCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_CMAS_TEST_ALERTS);
+            mAlertHistory = findPreference(KEY_EMERGENCY_ALERT_HISTORY);
             mAlertCategory = (PreferenceCategory)
-                    findPreference(KEY_CATEGORY_ALERT_SETTINGS);
-            mETWSSettingCategory = (PreferenceCategory)
-                    findPreference(KEY_CATEGORY_ETWS_SETTINGS);
+                    findPreference(KEY_CATEGORY_EMERGENCY_ALERTS);
+            mAlertPreferencesCategory = (PreferenceCategory)
+                    findPreference(KEY_CATEGORY_ALERT_PREFERENCES);
+            mDevSettingCategory = (PreferenceCategory)
+                    findPreference(KEY_CATEGORY_DEV_SETTINGS);
 
             mDisableSevereWhenExtremeDisabled = isFeatureEnabled(getContext(),
                     CarrierConfigManager.KEY_DISABLE_SEVERE_WHEN_EXTREME_DISABLED_BOOL, true);
@@ -186,6 +190,11 @@ public class CellBroadcastSettings extends PreferenceActivity {
                                 }
                             }
 
+                            if (pref.getKey().equals(KEY_ENABLE_EMERGENCY_ALERTS)) {
+                                boolean isEnableAlerts = (Boolean) newValue;
+                                setAlertsEnabled(isEnableAlerts);
+                            }
+
                             // Notify backup manager a backup pass is needed.
                             new BackupManager(getContext()).dataChanged();
                             return true;
@@ -197,7 +206,6 @@ public class CellBroadcastSettings extends PreferenceActivity {
                     Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0;
 
             Resources res = getResources();
-            boolean showEtwsSettings = res.getBoolean(R.bool.show_etws_settings);
 
             initReminderIntervalList();
 
@@ -207,35 +215,32 @@ public class CellBroadcastSettings extends PreferenceActivity {
             boolean emergencyAlertOnOffOptionEnabled = isFeatureEnabled(getContext(),
                     CarrierConfigManager.KEY_ALWAYS_SHOW_EMERGENCY_ALERT_ONOFF_BOOL, false);
 
-            if (enableDevSettings || showEtwsSettings || emergencyAlertOnOffOptionEnabled) {
+            if (enableDevSettings || emergencyAlertOnOffOptionEnabled) {
                 // enable/disable all alerts except CMAS presidential alerts.
                 if (mEmergencyCheckBox != null) {
                     mEmergencyCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+                }
+                // If allow alerts are disabled, we turn all sub-alerts off. If it's enabled, we
+                // leave them as they are.
+                if (!mEmergencyCheckBox.isChecked()) {
+                    setAlertsEnabled(false);
                 }
             } else {
                 mAlertCategory.removePreference(mEmergencyCheckBox);
             }
 
             // Show alert settings and ETWS categories for ETWS builds and developer mode.
-            if (enableDevSettings || showEtwsSettings) {
-
+            if (enableDevSettings) {
                 if (forceDisableEtwsCmasTest) {
-                    // Remove ETWS test preference.
-                    preferenceScreen.removePreference(mETWSSettingCategory);
-
-                    PreferenceCategory devSettingCategory =
-                            (PreferenceCategory) findPreference(KEY_CATEGORY_DEV_SETTINGS);
-
-                    // Remove CMAS test preference.
-                    if (devSettingCategory != null) {
-                        devSettingCategory.removePreference(mCmasTestCheckBox);
+                    if (mDevSettingCategory != null) {
+                        // Remove ETWS test preference.
+                        mDevSettingCategory.removePreference(mEtwsTestCheckBox);
+                        // Remove CMAS test preference.
+                        mDevSettingCategory.removePreference(mCmasTestCheckBox);
                     }
                 }
             } else {
-                mAlertCategory.removePreference(mSpeechCheckBox);
-                mAlertCategory.removePreference(mFullVolumeCheckBox);
-                // Remove ETWS test preference category.
-                preferenceScreen.removePreference(mETWSSettingCategory);
+                preferenceScreen.removePreference(mDevSettingCategory);
             }
 
             if (!res.getBoolean(R.bool.show_cmas_settings)) {
@@ -265,10 +270,7 @@ public class CellBroadcastSettings extends PreferenceActivity {
             }
 
             if (!enableChannel50Support) {
-                preferenceScreen.removePreference(findPreference(KEY_CATEGORY_BRAZIL_SETTINGS));
-            }
-            if (!enableDevSettings) {
-                preferenceScreen.removePreference(findPreference(KEY_CATEGORY_DEV_SETTINGS));
+                mAlertPreferencesCategory.removePreference(mChannel50CheckBox);
             }
 
             if (mChannel50CheckBox != null) {
@@ -294,6 +296,19 @@ public class CellBroadcastSettings extends PreferenceActivity {
             }
             if (mCmasTestCheckBox != null) {
                 mCmasTestCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
+
+            if (mAlertHistory != null) {
+                mAlertHistory.setOnPreferenceClickListener(
+                        new Preference.OnPreferenceClickListener() {
+                            @Override
+                            public boolean onPreferenceClick(final Preference preference) {
+                                final Intent intent = new Intent(getContext(),
+                                        CellBroadcastListActivity.class);
+                                startActivity(intent);
+                                return true;
+                            }
+                        });
             }
         }
 
@@ -329,6 +344,32 @@ public class CellBroadcastSettings extends PreferenceActivity {
                             return true;
                         }
                     });
+        }
+
+
+        private void setAlertsEnabled(boolean alertsEnabled) {
+            if (mSevereCheckBox != null) {
+                mSevereCheckBox.setEnabled(alertsEnabled);
+                mSevereCheckBox.setChecked(alertsEnabled);
+            }
+            if (mExtremeCheckBox != null) {
+                mExtremeCheckBox.setEnabled(alertsEnabled);
+                mExtremeCheckBox.setChecked(alertsEnabled);
+            }
+            if (mAmberCheckBox != null) {
+                mAmberCheckBox.setEnabled(alertsEnabled);
+                mAmberCheckBox.setChecked(alertsEnabled);
+            }
+            if (mChannel50CheckBox != null) {
+                mChannel50CheckBox.setEnabled(alertsEnabled);
+                mChannel50CheckBox.setChecked(alertsEnabled);
+            }
+            if (mAlertPreferencesCategory != null) {
+                mAlertPreferencesCategory.setEnabled(alertsEnabled);
+            }
+            if (mDevSettingCategory != null) {
+                mDevSettingCategory.setEnabled(alertsEnabled);
+            }
         }
     }
 
