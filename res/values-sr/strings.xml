@@ -56,9 +56,9 @@
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Прикажи ETWS пробна емитовања"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Прикажи пробна емитовања за систем упозорења о земљотресу и цунамију"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Прикажи екстремне опасности"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Приказује упозорења о екстремној опасности по живот и својину"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Приказује упозорења о екстремној опасности по живот и имовину"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Прикажи озбиљне претње"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Приказује упозорења о озбиљној опасности по живот и својину"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Приказује упозорења о озбиљној опасности по живот и имовину"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Прикажи AMBER упозорења"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Приказује ванредне објаве у вези са отмицом детета (AMBER упозорење)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Прикажи CMAS пробна емитовања"</string>

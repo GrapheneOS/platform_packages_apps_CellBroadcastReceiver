@@ -57,7 +57,7 @@
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Afficher les diffusions test du système d\'avertissement pour tremblements de terre et tsunamis"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Afficher les menaces extrêmes"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Afficher les alertes relatives aux menaces extrêmes à la vie et aux biens"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Afficher menaces importantes"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Afficher les menaces importantes"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Afficher les alertes relatives aux menaces importantes à la vie et aux biens"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Afficher les alertes AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Afficher les bulletins d\'urgence relatifs aux enlèvements d\'enfants (alerte AMBER)"</string>

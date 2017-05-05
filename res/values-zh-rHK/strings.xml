@@ -64,7 +64,7 @@
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"顯示 CMAS 測試廣播"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"顯示商用流動警示系統的測試廣播"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"震動"</string>
-    <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"收到警報時震動"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"收到警示時震動"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"巴西專用設定"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"顯示第 50 頻道的廣播"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"巴西使用第 50 頻道廣播地區最新資訊"</string>

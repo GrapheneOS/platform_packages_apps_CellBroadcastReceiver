@@ -55,11 +55,11 @@
     <string name="category_etws_settings_title" msgid="4072774251965938576">"‏הגדרות ETWS"</string>
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"‏הצג שידורי בדיקה של ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"הצג שידורי בדיקה של מערכת ההתראות על צונאמי ורעידות אדמה"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"הצג איומים קיצוניים"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"הצג התראות על איומים קיצוניים לנפש ולרכוש"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"הצג איומים חמורים"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"הצג התראות על איומים חמורים לנפש ולרכוש"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"‏הצג התראות AMBER"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"איומים קיצוניים"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"הצג התרעות על איומים קיצוניים לנפש ולרכוש"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"איומים חמורים"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"הצג התרעות על איומים חמורים לנפש ולרכוש"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"‏התרעות AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"‏הצג מבזקי חירום על חטיפת ילדים (התרעת AMBER)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"‏הצג שידורי בדיקה של CMAS"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"‏הצג שידורי בדיקה של Commercial Mobile Alert System"</string>

@@ -56,9 +56,9 @@
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Prikaži ETWS probna emitovanja"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Prikaži probna emitovanja za sistem upozorenja o zemljotresu i cunamiju"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Prikaži ekstremne opasnosti"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Prikazuje upozorenja o ekstremnoj opasnosti po život i svojinu"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Prikazuje upozorenja o ekstremnoj opasnosti po život i imovinu"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Prikaži ozbiljne pretnje"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Prikazuje upozorenja o ozbiljnoj opasnosti po život i svojinu"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Prikazuje upozorenja o ozbiljnoj opasnosti po život i imovinu"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Prikaži AMBER upozorenja"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Prikazuje vanredne objave u vezi sa otmicom deteta (AMBER upozorenje)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Prikaži CMAS probna emitovanja"</string>
