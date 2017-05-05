@@ -26,6 +26,7 @@ import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.media.AudioAttributes;
+import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -543,8 +544,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
      * Set volume for alerts.
      */
     private void setAlertVolume() {
-        if (mTelephonyManager.getCallState()
-                != TelephonyManager.CALL_STATE_IDLE) {
+        if (mTelephonyManager.getCallState() != TelephonyManager.CALL_STATE_IDLE
+                || isOnEarphone()) {
             // If we are in a call, play the alert
             // sound at a low volume to not disrupt the call.
             log("in call: reducing volume");
@@ -555,6 +556,22 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             // max possible volume, and reset it after it's finished.
             setAlarmStreamVolumeToFull();
         }
+    }
+
+    private boolean isOnEarphone() {
+        AudioDeviceInfo[] deviceList = mAudioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS);
+
+        for (AudioDeviceInfo devInfo : deviceList) {
+            int type = devInfo.getType();
+            if (type == AudioDeviceInfo.TYPE_WIRED_HEADSET
+                    || type == AudioDeviceInfo.TYPE_WIRED_HEADPHONES
+                    || type == AudioDeviceInfo.TYPE_BLUETOOTH_SCO
+                    || type == AudioDeviceInfo.TYPE_BLUETOOTH_A2DP) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
