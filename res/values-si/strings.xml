@@ -65,6 +65,10 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"වාණිජ ජංගම ඇඟවීමේ පද්ධති සඳහා පරීක්ෂණ විකාශන පෙන්වන්න"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"කම්පනය"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"ඇඟවීමේදී කම්පනය වන්න"</string>
+    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
+    <skip />
+    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
+    <skip />
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"බ්‍රසිලය සඳහා සැකසීම්"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"නාලිකා 50 විකාශන පෙන්වන්න"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ප්‍රදේශ යාවත්කාල තොරතුරු සඳහා බ්‍රසීලයේදී නාලිකා 50 භාවිතා වෙයි"</string>
@@ -108,6 +112,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ඔබ දැනට හදිසි ඇඟවීම් ලබයි. හදිසි ඇඟවීම් ලැබීම පවත්වා ගෙන යාමට ඔබ කැමතිද?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ඔව්"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"නැත"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"වතාවක්"</item>
     <item msgid="9097229303902157183">"සෑම මිනිත්තු 2 කට වරක්"</item>

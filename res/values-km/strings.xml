@@ -55,16 +55,20 @@
     <string name="category_etws_settings_title" msgid="4072774251965938576">"ការ​កំណត់ ETWS"</string>
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"បង្ហាញ​​ការ​ផ្សាយ​សាកល្បង ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"បង្ហាញ​ការ​ផ្សាយ​សាកល្បង​សម្រាប់​​ប្រព័ន្ធ​​ការ​ព្រមាន​ពី​ការ​រញ្ជួយ​ដី​​​រលក​យក្ស​ស៊ូ​ណាមិ"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"បង្ហាញ​ការ​គំរាម​កំហែងដ៏កំពូល​"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"បង្ហាញ​ការ​ជូន​ដំណឹង​សម្រាប់​ការ​គំរាមកំហែង​ដ៏កំពូល​​ចំពោះ​អាយុជីវិត និង​ទ្រព្យសម្បត្តិ"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"បង្ហាញ​ការ​គំរាម​កំហែង​​ខ្លាំង"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"បង្ហាញ​ការ​ជូន​ដំណឹង​សម្រាប់​ការ​គំរាមកំហែង​ខ្លាំង​ដល់​អាយុជីវិត និង​ទ្រព្យសម្បត្តិ"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"បង្ហាញ​ការ​គំរាម​កំហែងខ្លាំងបំផុត"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"បង្ហាញ​ការ​ជូន​ដំណឹងចំពោះការ​គំរាមកំហែង​ខ្លាំងបំផុតដល់អាយុជីវិត និង​ទ្រព្យសម្បត្តិ"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"បង្ហាញ​ការ​គំរាម​កំហែងធ្ងន់ធ្ងរ"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"បង្ហាញ​ការ​ជូន​ដំណឹង​ចំពោះ​ការ​គំរាមកំហែងធ្ងន់ធ្ងរ​ដល់​អាយុជីវិត និង​ទ្រព្យសម្បត្តិ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"បង្ហាញ​ការ​​​ជូន​ដំណឹង​ពណ៌​លឿង"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"បង្ហាញ​​ព្រឹត្តិបត្រ​ព័ត៌មាន​ពេល​អាសន្ន​មាន​ការ​ចាប់​ជំរិត​ក្មេង​​ (ជូន​ដំណឹង​ពណ៌​លឿង)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"បង្ហាញ​ការ​ផ្សាយ​សាកល្បង CMAS"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"បង្ហាញ​ការផ្សាយ​​សាកល្បង​សម្រាប់​ប្រព័ន្ធ​ជូន​ដំណឹង​ចល័ត​ទាក់ទង​ពាណិជ្ជកម្ម"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ញ័រ"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"ញ័រ​ពេល​ជូន​ដំណឹង"</string>
+    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
+    <skip />
+    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
+    <skip />
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ការ​កំណត់​សម្រាប់​ប្រេស៊ីល"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"បង្ហាញ​ការ​ប្រកាស​ឆានែល ៥០"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ឆានែល ៥០ ត្រូវ​បាន​ប្រើ​ក្នុង​ប្រទេស​ប្រេស៊ីល​សម្រាប់​ព័ត៌មាន​បច្ចុប្បន្នភាព​តំបន់"</string>
@@ -108,6 +112,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"បច្ចុប្បន្ន​អ្នក​កំពុង​ទទួល​ការ​ជូន​ដំណឹង​ពេល​អាសន្ន។ តើ​អ្នក​ចង់​បន្ត​ទទួល​ការ​ជូន​ដំណឹង​ពេល​អាសន្ន​ដែរ​ឬទេ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"បាទ/ចាស"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ទេ"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ម្ដង"</item>
     <item msgid="9097229303902157183">"រៀងរាល់ ២​ នាទី"</item>

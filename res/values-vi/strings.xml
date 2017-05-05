@@ -65,6 +65,10 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Hiển thị các thông báo kiểm tra cho Hệ thống thông báo thương mại trên điện thoại di động"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Rung"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Rung khi cảnh báo"</string>
+    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
+    <skip />
+    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
+    <skip />
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Cài đặt cho Braxin"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Hiển thị chương trình phát sóng kênh 50"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"Kênh 50 được sử dụng ở Braxin để cập nhật thông tin khu vực"</string>
@@ -108,6 +112,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Bạn hiện đang nhận được Thông báo khẩn cấp. Bạn có muốn tiếp tục nhận được Thông báo khẩn cấp không?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Có"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Không"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Một lần"</item>
     <item msgid="9097229303902157183">"2 phút một lần"</item>

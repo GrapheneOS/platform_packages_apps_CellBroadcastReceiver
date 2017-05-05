@@ -65,6 +65,10 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"ವಾಣಿಜ್ಯ ಮೊಬೈಲ್ ಎಚ್ಚರಿಕೆ ವ್ಯವಸ್ಥೆಯ ಪರೀಕ್ಷಾ ಪ್ರಸಾರಗಳನ್ನು ತೋರಿಸು"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ವೈಬ್ರೇಟ್‌"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"ಎಚ್ಚರಿಕೆಗಾಗಿ ವೈಬ್ರೇಟ್‌"</string>
+    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
+    <skip />
+    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
+    <skip />
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ಬ್ರೆಜಿಲ್‌ಗೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"ಚಾನಲ್ 50 ಪ್ರಸಾರಗಳನ್ನು ತೋರಿಸು"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ಪ್ರದೇಶ ಅಪ್‌ಡೇಟ್‌‌ ಮಾಹಿತಿಗಾಗಿ ಬ್ರೆಜಿಲ್‌ನಲ್ಲಿ ಚಾನೆಲ್ 50 ಅನ್ನು ಬಳಸಲಾಗುತ್ತದೆ"</string>
@@ -108,6 +112,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ನೀವು ಪ್ರಸ್ತುತ ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳನ್ನು ಸ್ವೀಕರಿಸುತ್ತಿರುವಿರಿ. ತುರ್ತು ಎಚ್ಚರಿಕೆ ಸ್ವೀಕರಿಸುವುದನ್ನು ಮುಂದುವರಿಸಲು ನೀವು ಇಚ್ಛಿಸುವಿರಾ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ಹೌದು"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ಇಲ್ಲ"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ಒಮ್ಮೆ"</item>
     <item msgid="9097229303902157183">"ಪ್ರತಿ 2 ನಿಮಿಷಗಳು"</item>

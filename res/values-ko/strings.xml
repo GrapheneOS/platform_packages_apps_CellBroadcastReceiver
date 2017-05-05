@@ -65,6 +65,10 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"모바일 경보 시스템(CMAS)에 대한 테스트 브로드캐스트 표시"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"진동"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"알림 받을 때 진동"</string>
+    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
+    <skip />
+    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
+    <skip />
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"브라질에 대한 설정"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"채널 50 브로드캐스트 표시"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"지역 업데이트 정보용으로 브라질에서 사용되는 채널 50"</string>
@@ -108,6 +112,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"현재 긴급 알림을 수신하고 있습니다. 긴급 알림을 계속 수신하시겠습니까?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"예"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"아니요"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"한 번"</item>
     <item msgid="9097229303902157183">"2분마다"</item>

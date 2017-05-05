@@ -65,6 +65,10 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"বাণিজ্যিক মোবাইল সতর্কতা সিস্টেমের জন্য পরীক্ষা সম্প্রচারগুলি দেখুন"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"কম্পন"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"সতর্কতা বিজ্ঞপ্তির জন্য কম্পন"</string>
+    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
+    <skip />
+    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
+    <skip />
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ব্রাজিলের জন্য সেটিংস"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"চ্যানেল ৫০ সম্প্রচার দেখান"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"চ্যানেল ৫০ সম্প্রচার ব্রাজিলে এলাকার আপডেট তথ্যের জন্য ব্যবহার করা হয়"</string>
@@ -108,6 +112,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"আপনি বর্তমানে জরুরী সতর্কতা গ্রহণ করছেন। আপনি কি জরুরী সতর্কতা গ্রহণ করা চালিয়ে যেতে চান?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"হ্যাঁ"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"না"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"একবার"</item>
     <item msgid="9097229303902157183">"প্রতি ২ মিনিট"</item>

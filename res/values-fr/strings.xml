@@ -55,16 +55,20 @@
     <string name="category_etws_settings_title" msgid="4072774251965938576">"Paramètres ETWS"</string>
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Afficher les diffusions test ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Afficher les diffusions test du système d\'avertissement pour tremblements de terre et tsunamis"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Afficher les menaces extrêmes"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Afficher les alertes relatives aux menaces extrêmes à la vie et aux biens"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Afficher les menaces graves"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Afficher les alertes relatives aux menaces graves pour la vie et les biens"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Afficher menaces importantes"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Afficher les alertes relatives aux menaces importantes à la vie et aux biens"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Afficher les alertes relatives aux menaces importantes pour la vie et les biens"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Afficher les alertes Enlèvement"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Afficher les bulletins d\'urgence relatifs aux enlèvements d\'enfants (Alerte Enlèvement)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Afficher diffusions test CMAS"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Afficher les diffusions test pour le CMAS (système d\'alerte pour mobile commercial)"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibreur"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Vibreur en cas d\'alerte"</string>
+    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
+    <skip />
+    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
+    <skip />
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Paramètres pour le Brésil"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Afficher diffusions chaîne 50"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"Au Brésil, les dernières informations locales sont diffusées sur la chaîne 50."</string>
@@ -108,6 +112,8 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Vous recevez actuellement les alertes d\'urgence. Voulez-vous continuer à les recevoir ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Oui"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Non"</string>
+    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
+    <skip />
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Une fois"</item>
     <item msgid="9097229303902157183">"Toutes les 2 minutes"</item>
