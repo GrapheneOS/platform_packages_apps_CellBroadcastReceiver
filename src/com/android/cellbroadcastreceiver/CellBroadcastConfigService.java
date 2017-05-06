@@ -28,6 +28,7 @@ import android.telephony.SubscriptionManager;
 import android.util.Log;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
+import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 
@@ -118,7 +119,8 @@ public class CellBroadcastConfigService extends IntentService {
      * @param enableForSub True if want to enable messages on this sub (e.g default SMS). False
      *                     will disable all messages
      */
-    private void setCellBroadcastOnSub(SmsManager manager, boolean enableForSub) {
+    @VisibleForTesting
+    public void setCellBroadcastOnSub(SmsManager manager, boolean enableForSub) {
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -288,7 +290,7 @@ public class CellBroadcastConfigService extends IntentService {
 
         // Enable/Disable additional channels based on carrier specific requirement.
         ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
-                .getInstance().getCellBroadcastChannelRanges(getApplicationContext());
+                .getInstance().getCellBroadcastChannelRanges(this);
 
         if (ranges != null) {
             for (CellBroadcastChannelRange range: ranges) {
