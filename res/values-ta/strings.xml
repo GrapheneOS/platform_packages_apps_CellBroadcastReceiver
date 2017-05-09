@@ -110,8 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"தற்போது நீங்கள் அவசரநிலை விழிப்பூட்டல்களைப் பெறுகிறீர்கள். அவசரநிலை விழிப்பூட்டல்கள் பெறுவதைத் தொடர விரும்புகிறீர்களா?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ஆம்"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"வேண்டாம்"</string>
-    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
-    <skip />
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"அவசரகால எச்சரிக்கை வரலாறு"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ஒருமுறை மட்டும்"</item>
     <item msgid="9097229303902157183">"2 நிமிடங்களுக்கு ஒருமுறை"</item>

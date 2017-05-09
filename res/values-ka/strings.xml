@@ -110,8 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ამჟამად იღებთ საგანგებო ვითარების შესახებ გაფრთხილებებს. გსურთ გააგრძელოთ საგანგებო ვითარების შესახებ გაფრთხილებების მიღება?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"დიახ"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"არა"</string>
-    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
-    <skip />
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"საგანგებო გაფრთხილებათა ისტორია"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ერთხელ"</item>
     <item msgid="9097229303902157183">"ყოველ 2 წუთში ერთხელ"</item>

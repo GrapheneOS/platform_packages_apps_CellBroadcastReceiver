@@ -60,15 +60,13 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"తీవ్ర అపాయాలను చూపు"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"ప్రాణానికి మరియు ఆస్తికి తీవ్ర ముప్పు వాటిల్లే అపాయాలకు హెచ్చరికలను ప్రదర్శించు"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"ఆంబర్ హెచ్చరికలను చూపు"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"పిల్లల అపహరణ అత్యవసర బులెటిన్‌లు (ఆంబర్ హెచ్చరిక)"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"పిల్లల అపహరణ అత్యవసర బులెటిన్‌లు (ఆంబర్ హెచ్చరిక) ప్రదర్శించు"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"CMAS పరీక్ష ప్రసారాలను చూపు"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"వాణిజ్య మొబైల్ హెచ్చరిక సిస్టమ్ కోసం పరీక్ష ప్రసారాలను ప్రదర్శించు"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"వైబ్రేట్ చేయడం"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"హెచ్చరిక ఉన్నప్పుడు వైబ్రేట్ చేయడం"</string>
-    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
-    <skip />
-    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
-    <skip />
+    <string name="use_full_volume_title" msgid="8581439612945182255">"పూర్తి వాల్యూమ్‌ను ఉపయోగించు"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"ఇతర వాల్యూమ్ మరియు అంతరాయం కలిగించవద్దు ప్రాధాన్యతలను విస్మరిస్తుంది"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"బ్రెజిల్ కోసం సెట్టింగ్‌లు"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"ఛానెల్ 50 ప్రసారాలను చూపు"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ప్రాంతం నవీకరణ సమాచారం కోసం బ్రెజిల్‌లో ఛానెల్ 50 ఉపయోగించబడుతుంది"</string>
@@ -112,13 +110,12 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"మీరు ప్రస్తుతం అత్యవసర హెచ్చరికలను స్వీకరిస్తున్నారు. మీరు అత్యవసర హెచ్చరికలను స్వీకరించడం కొనసాగించాలనుకుంటున్నారా?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"అవును"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"లేదు"</string>
-    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
-    <skip />
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"అత్యవసర హెచ్చరికల చరిత్ర"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ఒకసారి"</item>
     <item msgid="9097229303902157183">"ప్రతి 2 నిమిషాలకు"</item>
     <item msgid="5718214950343391480">"ప్రతి 5 నిమిషాలకు"</item>
     <item msgid="3863339891188103437">"ప్రతి 15 నిమిషాలకు"</item>
-    <item msgid="6868848414437854609">"ఆఫ్ చేయి"</item>
+    <item msgid="6868848414437854609">"ఆఫ్"</item>
   </string-array>
 </resources>
