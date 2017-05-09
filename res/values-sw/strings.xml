@@ -55,9 +55,9 @@
     <string name="category_etws_settings_title" msgid="4072774251965938576">"Mipangilio ya ETWS"</string>
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Onyesha matangazo ya majaribio ya ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Onyesha matangazo ya majaribio kuhusu Tetemeko la ardhi la Tsunami"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Onyesha vitisho vikali"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Vitisho vikali: onyesha arifa"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Onyesha arifa za vitisho vikali kwa maisha na mali"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Onyesha vitisho vikali"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Vitisho vikali: onyesha arifa"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Onyesha arifa za vitisho vikali kwa maisha na mali"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Onyesha arifa za AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Onyesha taarifa za dharura za kutekwa nyara kwa watoto (arifa za AMBER)"</string>

@@ -56,11 +56,11 @@
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Kuva ETWS-i katseteavitusi"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Maavärina ja hiidlaine hoiatussüsteemi testsaadete kuvamine"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"Kuva äärmuslikud ohud"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Häirete kuvamine, kui ilmneb äärmuslik oht elule ja varale"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Kuva rängad ohud"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Häirete kuvamine, kui ilmneb ränk oht elule ja varale"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Kuva AMBER-häired"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Lapseröövi hädateadete (AMBER-häire) kuvamine"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"Märguannete kuvamine, kui ilmneb äärmuslik oht elule ja varale"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"Kuva tõsised ohud"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"Märguannete kuvamine, kui ilmneb tõsine oht elule ja varale"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"Kuva AMBER-märguanded"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"Lapseröövi häiremärguannete (AMBER-häire) kuvamine"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"Kuva CMAS-i katseteavitusi"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Commercial Mobile Alert Systemi katseteavituste kuvamine"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibreerimine"</string>

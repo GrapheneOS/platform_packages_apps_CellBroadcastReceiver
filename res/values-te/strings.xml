@@ -60,7 +60,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"తీవ్ర అపాయాలను చూపు"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"ప్రాణానికి మరియు ఆస్తికి తీవ్ర ముప్పు వాటిల్లే అపాయాలకు హెచ్చరికలను ప్రదర్శించు"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"ఆంబర్ హెచ్చరికలను చూపు"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"పిల్లల అపహరణ అత్యవసర బులెటిన్‌లు (ఆంబర్ హెచ్చరిక)"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"పిల్లల అపహరణ అత్యవసర బులెటిన్‌లు (ఆంబర్ హెచ్చరిక) ప్రదర్శించు"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"CMAS పరీక్ష ప్రసారాలను చూపు"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"వాణిజ్య మొబైల్ హెచ్చరిక సిస్టమ్ కోసం పరీక్ష ప్రసారాలను ప్రదర్శించు"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"వైబ్రేట్ చేయడం"</string>
@@ -113,6 +113,6 @@
     <item msgid="9097229303902157183">"ప్రతి 2 నిమిషాలకు"</item>
     <item msgid="5718214950343391480">"ప్రతి 5 నిమిషాలకు"</item>
     <item msgid="3863339891188103437">"ప్రతి 15 నిమిషాలకు"</item>
-    <item msgid="6868848414437854609">"ఆఫ్ చేయి"</item>
+    <item msgid="6868848414437854609">"ఆఫ్"</item>
   </string-array>
 </resources>

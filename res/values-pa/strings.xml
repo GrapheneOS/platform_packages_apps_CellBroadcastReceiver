@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="7559008249836700599">"ਸੈੱਲ ਪ੍ਰਸਾਰਣ"</string>
-    <string name="sms_cb_settings" msgid="971917159442705371">"ਸੈਲ ਪ੍ਰਸਾਰਨ ਸੈਟਿੰਗਾਂ"</string>
+    <string name="sms_cb_settings" msgid="971917159442705371">"ਸੈੱਲ ਪ੍ਰਸਾਰਨ ਸੈਟਿੰਗਾਂ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"ਸੈਲ ਪ੍ਰਸਾਰਨ ਸੈਟਿੰਗਾਂ ਇਸ ਉਪਭੋਗਤਾ ਲਈ ਉਪਲਬਧ ਨਹੀਂ ਹਨ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ਠੀਕ"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"ਤੁਹਾਡੇ ਖੇਤਰ ਵਿੱਚ ਕੋਈ ਸਰਗਰਮ ਚੇਤਾਵਨੀਆਂ ਨਹੀਂ ਹਨ। ਤੁਸੀਂ ਸੈਟਿੰਗਾਂ ਮੀਨੂ ਵਿਕਲਪ ਵਰਤਦੇ ਹੋਏ ਚੇਤਾਵਨੀ ਸੈਟਿੰਗਾਂ ਬਦਲ ਸਕਦੇ ਹੋ।"</string>
@@ -49,20 +49,20 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ਪ੍ਰਸਾਰਿਤ ਸੁਨੇਹੇ"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"ਸੂਚਨਾਵਾਂ ਚਾਲੂ ਕਰੋ"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"ਐਮਰਜੈਂਸੀ ਚਿਤਾਵਨੀ ਪ੍ਰਸਾਰਨ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ਚਿਤਾਵਨੀ ਰੀਮਾਈਂਡਰ"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ਚਿਤਾਵਨੀ ਯਾਦ-ਦਹਾਨੀ"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"ਚਿਤਾਵਨੀ ਸੁਨੇਹਾ ਬੋਲੋ"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"ਐਮਰਜੈਂਸੀ ਚਿਤਾਵਨੀ ਸੁਨੇਹੇ ਬੋਲਣ ਲਈ text-to-speech ਵਰਤੋ"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"ਐਮਰਜੈਂਸੀ ਚਿਤਾਵਨੀ ਸੁਨੇਹੇ ਬੋਲਣ ਲਈ \"ਲਿਖਤ-ਤੋਂ-ਬੋਲੀ\" ਵਰਤੋ"</string>
     <string name="category_etws_settings_title" msgid="4072774251965938576">"ETWS ਸੈਟਿੰਗਾਂ"</string>
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"ETWS ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਦਿਖਾਓ"</string>
-    <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"ਭੂਚਾਲ Tsunami ਚਿਤਾਵਨੀ ਸਿਸਟਮ ਲਈ ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"ਐਕਸਟ੍ਰੀਮ ਖਤਰੇ ਦਿਖਾਓ"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"ਜੀਵਨ ਅਤੇ ਜਾਇਦਾਦ ਲਈ ਐਕਸਟ੍ਰੀਮ ਖਤਰਿਆਂ ਦੀਆਂ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ"</string>
+    <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"ਭੂਚਾਲ ਸੁਨਾਮੀ ਚਿਤਾਵਨੀ ਸਿਸਟਮ ਲਈ ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"ਪ੍ਰਚੰਡ ਖਤਰੇ ਦਿਖਾਓ"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"ਜੀਵਨ ਅਤੇ ਜਾਇਦਾਦ ਲਈ ਪ੍ਰਚੰਡ ਖਤਰਿਆਂ ਦੀਆਂ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"ਗੰਭੀਰ ਖਤਰੇ ਦਿਖਾਓ"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"ਜੀਵਨ ਅਤੇ ਜਾਇਦਾਦ ਲਈ ਗੰਭੀਰ ਖਤਰਿਆਂ ਦੀਆਂ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="997138378272381777">"AMBER ਚਿਤਾਵਨੀਆਂ ਦਿਖਾਓ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8423617548641801387">"ਬਾਲ ਅਗਵਾ ਐਮਰਜੈਂਸੀ ਬੁਲੇਟਿਨ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ (AMBER ਚਿਤਾਵਨੀ)"</string>
     <string name="enable_cmas_test_alerts_title" msgid="8620213090932770270">"CMAS ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਦਿਖਾਓ"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"ਕਮਰਸ਼ੀਅਲ ਮੋਬਾਈਲ ਚਿਤਾਵਨੀ ਸਿਸਟਮ ਲਈ ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"ਵਪਾਰਕ ਮੋਬਾਈਲ ਚਿਤਾਵਨੀ ਪ੍ਰਣਾਲੀ ਲਈ ਜਾਂਚ ਪ੍ਰਸਾਰਨ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰੋ"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ਥਰਥਰਾਹਟ ਕਰੋ"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"ਚਿਤਾਵਨੀ ਤੇ ਥਰਥਰਾਹਟ ਕਰੋ"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ਬ੍ਰਾਜ਼ੀਲ ਲਈ ਸੈਟਿੰਗਾਂ"</string>
