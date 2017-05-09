@@ -110,8 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Hazırda Həyəcan Siqnalı qəbul edirsiniz. Həyəcan Siqnalını qəbul etməyə davam etmək istəyirsiniz?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Bəli"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Xeyr"</string>
-    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
-    <skip />
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Təcili siqnal tarixçəsi"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Bir dəfə"</item>
     <item msgid="9097229303902157183">"Hər 2 dəqiqə"</item>

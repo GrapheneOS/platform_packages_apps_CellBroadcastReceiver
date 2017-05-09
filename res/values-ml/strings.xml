@@ -65,10 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"വാണിജ്യ മൊബൈൽ അലേർട്ട് സി‌സ്റ്റം പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ പ്രദർശിപ്പിക്കുക"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"വൈബ്രേറ്റുചെയ്യുക"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"അലേർട്ടിൽ വൈബ്രേറ്റുചെയ്യുക"</string>
-    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
-    <skip />
-    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
-    <skip />
+    <string name="use_full_volume_title" msgid="8581439612945182255">"പൂർണ്ണ വോളിയം ഉപയോഗിക്കുക"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"മറ്റുള്ള വോളിയവും \'ശല്യപ്പെടുത്തരുത്\' മുൻഗണനകളും ഒഴിവാക്കുക"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ബ്രസീലിനുള്ള ക്രമീകരണങ്ങൾ"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"ചാനൽ 50 പ്രക്ഷേപണങ്ങൾ കാണിക്കുക"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ഏരിയ അപ്‌ഡേറ്റുചെയ്യൽ വിവരത്തിന് ബ്രസീലിൽ ചാനൽ 50 ഉപയോഗിക്കുന്നു"</string>
@@ -112,8 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"നിങ്ങൾ നിലവിൽ അടിയന്തര അലേർട്ടുകൾ നേടുന്നു. നിങ്ങൾക്ക് അടിയന്തര അലേർട്ടുകൾ തുടർന്നും നേടണോ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"വേണം"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"വേണ്ട"</string>
-    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
-    <skip />
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"അടിയന്തര അലേർട്ട് ചരിത്രം"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ഒരിക്കല്‍"</item>
     <item msgid="9097229303902157183">"എല്ലാ 2 മിനിറ്റിലും"</item>

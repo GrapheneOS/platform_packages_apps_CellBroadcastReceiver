@@ -65,10 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"顯示商用行動警示系統測試廣播"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"震動"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"警示時發出震動"</string>
-    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
-    <skip />
-    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
-    <skip />
+    <string name="use_full_volume_title" msgid="8581439612945182255">"使用最大音量"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"忽略其他的音量和「零打擾」偏好設定"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"巴西專用設定"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"顯示第 50 頻道的廣播"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"巴西使用第 50 頻道廣播地區最新資訊"</string>
@@ -112,8 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"你目前已設為接收緊急警示，是否要繼續接收？"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"是"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"否"</string>
-    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
-    <skip />
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"緊急警報紀錄"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"一次"</item>
     <item msgid="9097229303902157183">"每隔 2 分鐘"</item>

@@ -46,7 +46,7 @@
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"Nødalarm"</string>
     <string name="cb_other_message_identifiers" msgid="7083176204482365281">"Cell Broadcast"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"Indstillinger for nødalarmer"</string>
-    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Beskeder til udsendelse"</string>
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Udsendte beskeder"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"Aktivér underretninger"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Vis nødudsendelser"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Alarm for påmindelse"</string>
@@ -65,10 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Vis testudsendelser for Commercial Mobile Alert System"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibration"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Vibrer ved underretning"</string>
-    <!-- no translation found for use_full_volume_title (8581439612945182255) -->
-    <skip />
-    <!-- no translation found for use_full_volume_summary (3560764277281704697) -->
-    <skip />
+    <string name="use_full_volume_title" msgid="8581439612945182255">"Anvend fuld lydstyrke"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorer andre præferencer for lydstyrke og Forstyr ikke"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Indstillinger for Brasilien"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Vis meddelelser fra kanal 50"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"I Brasilien anvendes kanal 50 til opdateringer om området"</string>
@@ -112,8 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Du modtager i øjeblikket nødadvarsler. Vil du gerne fortsætte med at modtage dem?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nej"</string>
-    <!-- no translation found for cb_list_activity_title (1433502151877791724) -->
-    <skip />
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Historik for nødalarmer"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Én gang"</item>
     <item msgid="9097229303902157183">"Hvert andet minut"</item>
