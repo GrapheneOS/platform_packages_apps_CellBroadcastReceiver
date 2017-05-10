@@ -44,6 +44,7 @@ import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
@@ -332,6 +333,24 @@ public class CellBroadcastAlertService extends Service {
     }
 
     /**
+     * Check if the device is currently on roaming.
+     *
+     * @param subId Subscription index
+     * @return True if roaming, otherwise not roaming.
+     */
+    private boolean isRoaming(int subId) {
+        Context context = getApplicationContext();
+
+        if (context != null) {
+            TelephonyManager tm =
+                    (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+            return tm.isNetworkRoaming(subId);
+        }
+
+        return false;
+    }
+
+    /**
      * Filter out broadcasts on the test channels that the user has not enabled,
      * and types of notifications that the user is not interested in receiving.
      * This allows us to enable an entire range of message identifiers in the
@@ -368,6 +387,39 @@ public class CellBroadcastAlertService extends Service {
 
         }
 
+        int channel = message.getServiceCategory();
+
+        if (channel == SmsCbConstants.MESSAGE_ID_GSMA_ALLOCATED_CHANNEL_50) {
+            // save latest area info broadcast for Settings display and send as broadcast
+            CellBroadcastReceiverApp.setLatestAreaInfo(message);
+            Intent intent = new Intent(CB_AREA_INFO_RECEIVED_ACTION);
+            intent.putExtra(EXTRA_MESSAGE, message);
+            // Send broadcast twice, once for apps that have PRIVILEGED permission and once
+            // for those that have the runtime one
+            sendBroadcastAsUser(intent, UserHandle.ALL,
+                    android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE);
+            sendBroadcastAsUser(intent, UserHandle.ALL,
+                    android.Manifest.permission.READ_PHONE_STATE);
+            return false;   // area info broadcasts are displayed in Settings status screen
+        }
+
+        // Check if the messages are on additional channels enabled by the resource config.
+        // If those channels are enabled by the carrier, but the device is actually roaming, we
+        // should not allow the messages.
+        ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
+                .getInstance().getCellBroadcastChannelRanges(getApplicationContext());
+
+        if (ranges != null) {
+            for (CellBroadcastChannelRange range : ranges) {
+                if (range.mStartId <= channel && range.mEndId >= channel) {
+                    // We only enable the channels when the device is not roaming.
+                    if (isRoaming(message.getSubId())) {
+                        return false;
+                    }
+                }
+            }
+        }
+
         if (message.isCmasMessage()) {
             switch (message.getCmasMessageClass()) {
                 case SmsCbCmasInfo.CMAS_CLASS_EXTREME_THREAT:
@@ -396,20 +448,6 @@ public class CellBroadcastAlertService extends Service {
                 default:
                     return true;    // presidential-level CMAS alerts are always enabled
             }
-        }
-
-        if (message.getServiceCategory() == SmsCbConstants.MESSAGE_ID_GSMA_ALLOCATED_CHANNEL_50) {
-            // save latest area info broadcast for Settings display and send as broadcast
-            CellBroadcastReceiverApp.setLatestAreaInfo(message);
-            Intent intent = new Intent(CB_AREA_INFO_RECEIVED_ACTION);
-            intent.putExtra(EXTRA_MESSAGE, message);
-            // Send broadcast twice, once for apps that have PRIVILEGED permission and once
-            // for those that have the runtime one
-            sendBroadcastAsUser(intent, UserHandle.ALL,
-                    android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE);
-            sendBroadcastAsUser(intent, UserHandle.ALL,
-                    android.Manifest.permission.READ_PHONE_STATE);
-            return false;   // area info broadcasts are displayed in Settings status screen
         }
 
         return true;    // other broadcast messages are always enabled
