@@ -24,7 +24,8 @@ import android.telephony.SmsCbEtwsInfo;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.StyleSpan;
-import com.android.cellbroadcastreceiver.CellBroadcastOtherChannelsManager.CellBroadcastChannelRange;
+
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 
 import java.util.ArrayList;
 
@@ -293,8 +294,8 @@ public class CellBroadcastResources {
         }
 
         if (CellBroadcastAlertService.isEmergencyMessage(context, cbm)) {
-            ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastOtherChannelsManager.
-                    getInstance().getCellBroadcastChannelRanges(context, cbm.getSubId());
+            ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
+                    .getInstance().getCellBroadcastChannelRanges(context);
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (cbm.getServiceCategory() >= range.mStartId &&
