@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static android.text.format.DateUtils.DAY_IN_MILLIS;
+
 import android.app.ActivityManagerNative;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -41,18 +43,18 @@ import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
-import com.android.cellbroadcastreceiver.CellBroadcastOtherChannelsManager.CellBroadcastChannelRange;
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.telephony.PhoneConstants;
+import com.android.internal.telephony.gsm.SmsCbConstants;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Locale;
-
-import static android.text.format.DateUtils.DAY_IN_MILLIS;
 
 /**
  * This service manages the display and animation of broadcast messages.
@@ -324,6 +326,24 @@ public class CellBroadcastAlertService extends Service {
     }
 
     /**
+     * Check if the device is currently on roaming.
+     *
+     * @param subId Subscription index
+     * @return True if roaming, otherwise not roaming.
+     */
+    private boolean isRoaming(int subId) {
+        Context context = getApplicationContext();
+
+        if (context != null) {
+            TelephonyManager tm =
+                    (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+            return tm.isNetworkRoaming(subId);
+        }
+
+        return false;
+    }
+
+    /**
      * Filter out broadcasts on the test channels that the user has not enabled,
      * and types of notifications that the user is not interested in receiving.
      * This allows us to enable an entire range of message identifiers in the
@@ -360,6 +380,39 @@ public class CellBroadcastAlertService extends Service {
 
         }
 
+        int channel = message.getServiceCategory();
+
+        if (channel == SmsCbConstants.MESSAGE_ID_GSMA_ALLOCATED_CHANNEL_50) {
+            // save latest area info broadcast for Settings display and send as broadcast
+            CellBroadcastReceiverApp.setLatestAreaInfo(message);
+            Intent intent = new Intent(CB_AREA_INFO_RECEIVED_ACTION);
+            intent.putExtra(EXTRA_MESSAGE, message);
+            // Send broadcast twice, once for apps that have PRIVILEGED permission and once
+            // for those that have the runtime one
+            sendBroadcastAsUser(intent, UserHandle.ALL,
+                    android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE);
+            sendBroadcastAsUser(intent, UserHandle.ALL,
+                    android.Manifest.permission.READ_PHONE_STATE);
+            return false;   // area info broadcasts are displayed in Settings status screen
+        }
+
+        // Check if the messages are on additional channels enabled by the resource config.
+        // If those channels are enabled by the carrier, but the device is actually roaming, we
+        // should not allow the messages.
+        ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
+                .getInstance().getCellBroadcastChannelRanges(getApplicationContext());
+
+        if (ranges != null) {
+            for (CellBroadcastChannelRange range : ranges) {
+                if (range.mStartId <= channel && range.mEndId >= channel) {
+                    // We only enable the channels when the device is not roaming.
+                    if (isRoaming(message.getSubId())) {
+                        return false;
+                    }
+                }
+            }
+        }
+
         if (message.isCmasMessage()) {
             switch (message.getCmasMessageClass()) {
                 case SmsCbCmasInfo.CMAS_CLASS_EXTREME_THREAT:
@@ -388,20 +441,6 @@ public class CellBroadcastAlertService extends Service {
                 default:
                     return true;    // presidential-level CMAS alerts are always enabled
             }
-        }
-
-        if (message.getServiceCategory() == 50) {
-            // save latest area info broadcast for Settings display and send as broadcast
-            CellBroadcastReceiverApp.setLatestAreaInfo(message);
-            Intent intent = new Intent(CB_AREA_INFO_RECEIVED_ACTION);
-            intent.putExtra(EXTRA_MESSAGE, message);
-            // Send broadcast twice, once for apps that have PRIVILEGED permission and once
-            // for those that have the runtime one
-            sendBroadcastAsUser(intent, UserHandle.ALL,
-                    android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE);
-            sendBroadcastAsUser(intent, UserHandle.ALL,
-                    android.Manifest.permission.READ_PHONE_STATE);
-            return false;   // area info broadcasts are displayed in Settings status screen
         }
 
         return true;    // other broadcast messages are always enabled
@@ -452,9 +491,8 @@ public class CellBroadcastAlertService extends Service {
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATE_EXTRA,
                     prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true));
             int channel = message.getServiceCategory();
-            ArrayList<CellBroadcastChannelRange> ranges= CellBroadcastOtherChannelsManager.
-                    getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
-                    message.getSubId());
+            ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
+                    .getInstance().getCellBroadcastChannelRanges(getApplicationContext());
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (channel >= range.mStartId && channel <= range.mEndId) {
@@ -635,13 +673,12 @@ public class CellBroadcastAlertService extends Service {
         }
 
         int id = cbm.getServiceCategory();
-        int subId = cbm.getSubId();
 
         if (cbm.isEmergencyAlertMessage()) {
             isEmergency = true;
         } else {
-            ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastOtherChannelsManager.
-                    getInstance().getCellBroadcastChannelRanges(context, subId);
+            ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
+                    .getInstance().getCellBroadcastChannelRanges(context);
 
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
@@ -653,8 +690,7 @@ public class CellBroadcastAlertService extends Service {
             }
         }
 
-        Log.d(TAG, "isEmergencyMessage: " + isEmergency + ", subId = " + subId + ", " +
-                "message id = " + id);
+        Log.d(TAG, "isEmergencyMessage: " + isEmergency + "message id = " + id);
         return isEmergency;
     }
 }
