@@ -110,7 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Դուք այժմ ստանում եք արտակարգ իրավիճակների զգուշացումներ: Ցանկանո՞ւմ եք շարունակել արտակարգ զգուշացումների ստացումը:"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Այո"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Ոչ"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Շտապ զգուշացումների պատմություն"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Արտակարգ իրավիճակների արխիվ"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Մի անգամ"</item>
     <item msgid="9097229303902157183">"2 րոպեն մեկ"</item>
