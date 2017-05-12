@@ -15,7 +15,7 @@
 -->
 
 <resources>
-    <string-array name="additional_cbs_channels_strings">
+    <string-array name="additional_cbs_channels_strings" translatable="false">
         <!-- Channel 50 is required by Brazilian government -->
         <item>0x032:type=other, emergency=false</item>
     </string-array>
