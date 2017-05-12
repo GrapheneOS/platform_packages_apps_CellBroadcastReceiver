@@ -15,7 +15,7 @@
 -->
 
 <resources>
-    <string-array name="additional_cbs_channels_strings">
+    <string-array name="additional_cbs_channels_strings" translatable="false">
         <!-- Channel 919 ~ 928 are required by Israel government -->
         <item>0x0397-0x03A0:type=other, emergency=false</item>
     </string-array>

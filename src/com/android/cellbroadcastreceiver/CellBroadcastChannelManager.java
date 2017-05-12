@@ -26,15 +26,16 @@ import java.util.ArrayList;
 /**
  * CellBroadcastChannelManager handles the additional cell broadcast channels that
  * carriers might enable through resources.
- * Syntax: "<channel id range>:type=<tone type>"
+ * Syntax: "<channel id range>:[type=<tone type>], [emergency=true/false]"
  * For example,
- * <string-array name="carrier_additional_cbs_channels_strings" num="3">
- *     <item value="43008:type=earthquake" />
- *     <item value="0xAFEE:type=tsunami" />
- *     <item value="0xAC00-0xAFED:type=other" />
- *     <item value="1234-5678" />
+ * <string-array name="additional_cbs_channels_strings" translatable="false">
+ *     <item>"43008:type=earthquake, emergency=true"</item>
+ *     <item>"0xAFEE:type=tsunami, emergency=true"</item>
+ *     <item>"0xAC00-0xAFED:type=other"</item>
+ *     <item>"1234-5678"</item>
  * </string-array>
- * If no tones are specified, the tone type will be set to CMAS_DEFAULT.
+ * If no tones are specified, the tone type will be set to CMAS_DEFAULT. If emergency is not set,
+ * by default it's not emergency.
  */
 public class CellBroadcastChannelManager {
 

@@ -15,7 +15,7 @@
 -->
 
 <resources>
-    <string-array name="additional_cbs_channels_strings">
+    <string-array name="additional_cbs_channels_strings" translatable="false">
         <item>0xA003:type=other, emergency=true</item>
     </string-array>
 </resources>
