@@ -133,9 +133,9 @@
     <!-- Preference summary for CMAS vibration on/off. [CHAR LIMIT=60] -->
     <string name="enable_alert_vibrate_summary">Vibrate on alert</string>
 
-    <!-- Preference title for use full volume option. [CHAR LIMIT=30] -->
+    <!-- Preference title for use full volume option. [CHAR LIMIT=50] -->
     <string name="use_full_volume_title">Use full volume</string>
-    <!-- Preference summary for use full volume option. [CHAR LIMIT=60] -->
+    <!-- Preference summary for use full volume option. [CHAR LIMIT=100] -->
     <string name="use_full_volume_summary">Ignore other volume and Do Not Disturb preferences</string>
 
     <!-- Preference category title for Brazil settings. [CHAR LIMIT=50] -->
