@@ -51,7 +51,7 @@
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Onyesha matangazo ya arifa za dharura"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Kikumbusho cha arifa"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Tamka ujumbe wa ilani"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Tumia usemi-hadi-maandishi kusema kwa sauti ujumbe wa kengele ya dharura"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Tumia kipengele cha kusoma maandishi kwa sauti kusoma ujumbe wowote wa dharura"</string>
     <string name="category_etws_settings_title" msgid="4072774251965938576">"Mipangilio ya ETWS"</string>
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"Onyesha matangazo ya majaribio ya ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"Onyesha matangazo ya majaribio kuhusu Tetemeko la ardhi la Tsunami"</string>
