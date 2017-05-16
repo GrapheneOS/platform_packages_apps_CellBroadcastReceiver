@@ -84,7 +84,7 @@
     <!-- Dialog title for all other message identifiers in the PWS range. [CHAR LIMIT=50] -->
     <string name="pws_other_message_identifiers">Emergency alert</string>
     <!-- Dialog title for all non-emergency cell broadcasts. [CHAR LIMIT=50] -->
-    <string name="cb_other_message_identifiers">Cell broadcast</string>
+    <string name="cb_other_message_identifiers">Broadcast messages</string>
 
     <!-- Preference category title for emergency alert settings. [CHAR LIMIT=50] -->
     <string name="emergency_alert_settings_title">Emergency alert settings</string>
