@@ -62,6 +62,11 @@
                             android:summary="@string/enable_alert_speech_summary"
                             android:title="@string/enable_alert_speech_title" />
 
+        <SwitchPreference android:defaultValue="@bool/use_full_volume"
+                          android:key="use_full_volume"
+                          android:summary="@string/use_full_volume_summary"
+                          android:title="@string/use_full_volume_title" />
+
     </PreferenceCategory>
 
     <!-- Emergency alert settings for ETWS. -->
