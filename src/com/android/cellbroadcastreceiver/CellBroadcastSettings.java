@@ -270,7 +270,7 @@ public class CellBroadcastSettings extends Activity {
             }
 
             if (!enableChannel50Support) {
-                mAlertPreferencesCategory.removePreference(mChannel50CheckBox);
+                mAlertCategory.removePreference(mChannel50CheckBox);
             }
 
             if (mChannel50CheckBox != null) {
