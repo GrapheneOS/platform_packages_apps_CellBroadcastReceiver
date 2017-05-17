@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -34,6 +35,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
@@ -99,6 +101,9 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private boolean mTtsLanguageSupported;
     private boolean mEnableVibrate;
     private boolean mEnableAudio;
+    private boolean mUseFullVolume;
+    private boolean mResetAlarmVolumeNeeded;
+    private int mUserSetAlarmVolume;
 
     private Vibrator mVibrator;
     private MediaPlayer mMediaPlayer;
@@ -301,9 +306,12 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mMessagePreferredLanguage = intent.getStringExtra(ALERT_AUDIO_MESSAGE_PREFERRED_LANGUAGE);
         mMessageDefaultLanguage = intent.getStringExtra(ALERT_AUDIO_MESSAGE_DEFAULT_LANGUAGE);
 
+        // Get config of whether to always sound CBS alerts at full volume.
+        mUseFullVolume = PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(CellBroadcastSettings.KEY_USE_FULL_VOLUME, false);
+
         // retrieve the vibrate settings from cellbroadcast receiver settings.
         mEnableVibrate = intent.getBooleanExtra(ALERT_AUDIO_VIBRATE_EXTRA, true);
-
         switch (mAudioManager.getRingerMode()) {
             case AudioManager.RINGER_MODE_SILENT:
                 if (DBG) log("Ringer mode: silent");
@@ -322,6 +330,10 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                 if (DBG) log("Ringer mode: normal");
                 mEnableAudio = true;
                 break;
+        }
+
+        if (mUseFullVolume) {
+            mEnableAudio = true;
         }
 
         if (mMessageBody != null && mEnableAudio) {
@@ -388,9 +400,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             mMediaPlayer.setOnErrorListener(new OnErrorListener() {
                 public boolean onError(MediaPlayer mp, int what, int extra) {
                     loge("Error occurred while playing audio.");
-                    mp.stop();
-                    mp.release();
-                    mMediaPlayer = null;
+                    mHandler.sendMessage(mHandler.obtainMessage(ALERT_SOUND_FINISHED));
                     return true;
                 }
             });
@@ -404,14 +414,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             });
 
             try {
-                // Check if we are in a call. If we are, play the alert
-                // sound at a low volume to not disrupt the call.
-                if (mTelephonyManager.getCallState()
-                        != TelephonyManager.CALL_STATE_IDLE) {
-                    log("in call: reducing volume");
-                    mMediaPlayer.setVolume(IN_CALL_VOLUME, IN_CALL_VOLUME);
-                }
-
                 log("Locale=" + getResources().getConfiguration().getLocales());
 
                 // Load the tones based on type
@@ -439,10 +441,12 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                 }
 
                 // start playing alert audio (unless master volume is vibrate only or silent).
-                mAudioManager.requestAudioFocus(null, AudioManager.STREAM_NOTIFICATION,
+                mAudioManager.requestAudioFocus(null, AudioManager.STREAM_ALARM,
                         AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
-                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
+                setAlertAudioAttributes();
+                setAlertVolume();
+
                 mMediaPlayer.setLooping(false);
                 mMediaPlayer.prepare();
                 mMediaPlayer.start();
@@ -489,6 +493,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mHandler.removeMessages(ALERT_SOUND_FINISHED);
         mHandler.removeMessages(ALERT_PAUSE_FINISHED);
 
+        resetAlarmStreamVolume();
+
         if (mState == STATE_ALERTING) {
             // Stop audio playing
             if (mMediaPlayer != null) {
@@ -513,6 +519,65 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             }
         }
         mState = STATE_IDLE;
+    }
+
+    /**
+     * Set AudioAttributes for mMediaPlayer. Replacement of deprecated
+     * mMediaPlayer.setAudioStreamType.
+     */
+    private void setAlertAudioAttributes() {
+        AudioAttributes.Builder builder = new AudioAttributes.Builder();
+
+        builder.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION);
+        builder.setUsage(AudioAttributes.USAGE_ALARM);
+        if (mUseFullVolume) {
+            // Set FLAG_BYPASS_INTERRUPTION_POLICY so that it still enables
+            // audio in DnD mode (except total silence DnD mode).
+            builder.setFlags(AudioAttributes.FLAG_BYPASS_INTERRUPTION_POLICY);
+        }
+
+        mMediaPlayer.setAudioAttributes(builder.build());
+    }
+
+    /**
+     * Set volume for alerts.
+     */
+    private void setAlertVolume() {
+        if (mTelephonyManager.getCallState()
+                != TelephonyManager.CALL_STATE_IDLE) {
+            // If we are in a call, play the alert
+            // sound at a low volume to not disrupt the call.
+            log("in call: reducing volume");
+            mMediaPlayer.setVolume(IN_CALL_VOLUME);
+        } else if (mUseFullVolume) {
+            // If use_full_volume is configured,
+            // we overwrite volume setting of STREAM_ALARM to full, play at
+            // max possible volume, and reset it after it's finished.
+            setAlarmStreamVolumeToFull();
+        }
+    }
+
+    /**
+     * Set volume of STREAM_ALARM to full.
+     */
+    private void setAlarmStreamVolumeToFull() {
+        log("setting alarm volume to full for cell broadcast alerts.");
+        mUserSetAlarmVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_ALARM);
+        mResetAlarmVolumeNeeded = true;
+        mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM,
+                mAudioManager.getStreamMaxVolume(AudioManager.STREAM_ALARM),
+                0);
+    }
+
+    /**
+     * Reset volume of STREAM_ALARM, if needed.
+     */
+    private void resetAlarmStreamVolume() {
+        if (mResetAlarmVolumeNeeded) {
+            log("resetting alarm volume to back to " + mUserSetAlarmVolume);
+            mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, mUserSetAlarmVolume, 0);
+            mResetAlarmVolumeNeeded = false;
+        }
     }
 
     private static void log(String msg) {
