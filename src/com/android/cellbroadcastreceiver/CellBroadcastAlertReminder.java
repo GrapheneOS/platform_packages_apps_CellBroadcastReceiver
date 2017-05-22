@@ -16,21 +16,24 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.DBG;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.IBinder;
 import android.os.SystemClock;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.media.AudioManager;
-import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.DBG;
 
 /**
  * Manages alert reminder notification.
@@ -81,8 +84,7 @@ public class CellBroadcastAlertReminder extends Service {
      * Use the RingtoneManager to play the alert reminder sound.
      */
     private void playAlertReminderSound() {
-        Uri notificationUri = RingtoneManager.getDefaultUri(
-                RingtoneManager.TYPE_NOTIFICATION);
+        Uri notificationUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         if (notificationUri == null) {
             loge("Can't get URI for alert reminder sound");
             return;
@@ -90,12 +92,18 @@ public class CellBroadcastAlertReminder extends Service {
         Ringtone r = RingtoneManager.getRingtone(this, notificationUri);
         r.setStreamType(AudioManager.STREAM_NOTIFICATION);
 
+        CellBroadcastAlertWakeLock.acquirePartialWakeLock(getApplicationContext());
         if (r != null) {
             log("playing alert reminder sound");
             r.play();
         } else {
             loge("can't get Ringtone for alert reminder sound");
         }
+        // Vibrate for 500ms.
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+
+        CellBroadcastAlertWakeLock.releasePartialWakeLock();
     }
 
     /**

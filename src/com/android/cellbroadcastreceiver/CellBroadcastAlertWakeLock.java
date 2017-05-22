@@ -18,35 +18,62 @@ package com.android.cellbroadcastreceiver;
 
 import android.content.Context;
 import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.util.Log;
 
 /**
- * Hold a wakelock that can be acquired in the CellBroadcastAlertService and
- * released in the CellBroadcastAlertDialog Activity.
+ * Manage wakelocks that are used by Cell broadcast receiver various services.
  */
 class CellBroadcastAlertWakeLock {
     private static final String TAG = "CellBroadcastAlertWakeLock";
 
-    private static PowerManager.WakeLock sCpuWakeLock;
+    private static WakeLock sPartialWakeLock;
+    private static WakeLock sScreenBrightWakeLock;
 
     private CellBroadcastAlertWakeLock() {}
 
-    static void acquireScreenCpuWakeLock(Context context) {
-        if (sCpuWakeLock != null) {
-            return;
+    static void acquirePartialWakeLock(Context context) {
+        if (sPartialWakeLock == null) {
+            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            sPartialWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
         }
-        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-        sCpuWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK
-                | PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.ON_AFTER_RELEASE, TAG);
-        sCpuWakeLock.acquire();
-        Log.d(TAG, "acquired screen + CPU wake lock");
+
+        if (!sPartialWakeLock.isHeld()) {
+            // Make sure we don't acquire the partial lock for more than 1 second. This lock
+            // is currently used to make sure the alert reminder tone and vibration could be played
+            // properly in timely manner.
+            sPartialWakeLock.acquire(1000);
+            Log.d(TAG, "acquired partial wakelock");
+        }
     }
 
-    static void releaseCpuLock() {
-        if (sCpuWakeLock != null) {
-            sCpuWakeLock.release();
-            sCpuWakeLock = null;
-            Log.d(TAG, "released screen + CPU wake lock");
+    static void releasePartialWakeLock() {
+        if (sPartialWakeLock != null && sPartialWakeLock.isHeld()) {
+            sPartialWakeLock.release();
+            Log.d(TAG, "released partial wakelock");
+        }
+    }
+
+    static void acquireScreenBrightWakeLock(Context context) {
+        if (sScreenBrightWakeLock == null) {
+            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            sScreenBrightWakeLock = pm.newWakeLock(
+                    PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, TAG);
+        }
+
+        if (!sScreenBrightWakeLock.isHeld()) {
+            // Make sure we don't acquire the full lock for more than 5 minutes. This lock
+            // is currently used by the main alert tone playing. Normally we hold the lock while
+            // the audio is playing for about 10 ~ 20 seconds.
+            sScreenBrightWakeLock.acquire(1000 * 60 * 5);
+            Log.d(TAG, "acquired screen bright wakelock");
+        }
+    }
+
+    static void releaseScreenBrightWakeLock() {
+        if (sScreenBrightWakeLock != null && sScreenBrightWakeLock.isHeld()) {
+            sScreenBrightWakeLock.release();
+            Log.d(TAG, "released screen bright wakelock");
         }
     }
 }

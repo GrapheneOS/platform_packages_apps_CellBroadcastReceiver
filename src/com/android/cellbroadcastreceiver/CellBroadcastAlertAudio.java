@@ -285,8 +285,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             // TTS is playing). We only want to release the focus when tone and TTS are played.
             mAudioManager.abandonAudioFocus(null);
         }
-        // release CPU wake lock acquired by CellBroadcastAlertService
-        CellBroadcastAlertWakeLock.releaseCpuLock();
+        // release the screen bright wakelock acquired by CellBroadcastAlertService
+        CellBroadcastAlertWakeLock.releaseScreenBrightWakeLock();
     }
 
     @Override
