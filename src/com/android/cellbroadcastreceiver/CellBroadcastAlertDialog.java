@@ -356,13 +356,15 @@ public class CellBroadcastAlertDialog extends Activity {
         setTitle(titleId);
         ((TextView) findViewById(R.id.alertTitle)).setText(titleId);
         ((TextView) findViewById(R.id.message)).setText(message.getMessageBody());
+
+        String dismissButtonText = getApplicationContext().getResources()
+                .getString(R.string.button_dismiss);
+
         if (mMessageList.size() > 1) {
-            ((TextView) findViewById(R.id.dismissButton)).setText("OK  (1/" +
-                    mMessageList.size() + ")");
+            dismissButtonText += "  (1/" + mMessageList.size() + ")";
         }
-        else if (mMessageList.size() == 1) {
-            ((TextView) findViewById(R.id.dismissButton)).setText("OK");
-        }
+
+        ((TextView) findViewById(R.id.dismissButton)).setText(dismissButtonText);
         // Set alert reminder depending on user preference
         CellBroadcastAlertReminder.queueAlertReminder(this, true);
     }
