@@ -61,8 +61,8 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Ekstreme trusler mod liv og ejendom"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Alvorlige trusler"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Alvorlige trusler mod liv og ejendom"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Advarsler om barnebortførelse"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Bulletiner om nødsituationer i forbindelse med barnebortførelse"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Advarsler om bortførelse af børn"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Bulletiner om nødsituationer i forbindelse med bortførelse af børn"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"Testmeddelelser fra CMAS"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Testmeddelelser for mobilalarmsystemet Commercial Mobile Alert System"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibration"</string>

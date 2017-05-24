@@ -58,7 +58,7 @@
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Broadcast uji ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Broadcast uji untuk Sistem Peringatan Tsunami Gempa Bumi"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Ancaman ekstrem"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Ancaman ekstrim terhadap nyawa dan harta"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Ancaman ekstrem terhadap nyawa dan harta"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ancaman berat"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ancaman berat terhadap nyawa dan harta"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Notifikasi AMBER"</string>
