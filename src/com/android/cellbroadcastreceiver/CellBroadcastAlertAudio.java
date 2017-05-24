@@ -19,7 +19,6 @@ package com.android.cellbroadcastreceiver;
 import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.DBG;
 import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
 
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -112,8 +111,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private TelephonyManager mTelephonyManager;
     private int mInitialCallState;
 
-    private PendingIntent mPlayReminderIntent;
-
     public enum ToneType {
         CMAS_DEFAULT,
         ETWS_DEFAULT,
@@ -144,6 +141,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         stopSelf();
                         mState = STATE_IDLE;
                     }
+                    // Set alert reminder depending on user preference
+                    CellBroadcastAlertReminder.queueAlertReminder(getApplicationContext(), true);
                     break;
 
                 case ALERT_PAUSE_FINISHED:
@@ -485,11 +484,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
      */
     public void stop() {
         if (DBG) log("stop()");
-
-        if (mPlayReminderIntent != null) {
-            mPlayReminderIntent.cancel();
-            mPlayReminderIntent = null;
-        }
 
         mHandler.removeMessages(ALERT_SOUND_FINISHED);
         mHandler.removeMessages(ALERT_PAUSE_FINISHED);

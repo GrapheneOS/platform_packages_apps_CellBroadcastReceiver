@@ -375,8 +375,6 @@ public class CellBroadcastAlertDialog extends Activity {
         }
 
         ((TextView) findViewById(R.id.dismissButton)).setText(dismissButtonText);
-        // Set alert reminder depending on user preference
-        CellBroadcastAlertReminder.queueAlertReminder(this, true);
     }
 
     /**

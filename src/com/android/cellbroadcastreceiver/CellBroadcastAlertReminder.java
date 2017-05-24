@@ -42,7 +42,10 @@ public class CellBroadcastAlertReminder extends Service {
     private static final String TAG = "CellBroadcastAlertReminder";
 
     /** Action to wake up and play alert reminder sound. */
-    static final String ACTION_PLAY_ALERT_REMINDER = "ACTION_PLAY_ALERT_REMINDER";
+    private static final String ACTION_PLAY_ALERT_REMINDER = "ACTION_PLAY_ALERT_REMINDER";
+
+    /** Extra for alert reminder vibration enabled (from settings). */
+    private static final String ALERT_REMINDER_VIBRATE_EXTRA = "alert_reminder_vibrate_extra";
 
     /**
      * Pending intent for alert reminder. This is static so that we don't have to start the
@@ -69,7 +72,7 @@ public class CellBroadcastAlertReminder extends Service {
         }
 
         log("playing alert reminder");
-        playAlertReminderSound();
+        playAlertReminderSound(intent.getBooleanExtra(ALERT_REMINDER_VIBRATE_EXTRA, true));
 
         if (queueAlertReminder(this, false)) {
             return START_STICKY;
@@ -82,8 +85,11 @@ public class CellBroadcastAlertReminder extends Service {
 
     /**
      * Use the RingtoneManager to play the alert reminder sound.
+     *
+     * @param enableVibration True to enable vibration when the alert reminder tone is playing,
+     *                        otherwise false.
      */
-    private void playAlertReminderSound() {
+    private void playAlertReminderSound(boolean enableVibration) {
         Uri notificationUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         if (notificationUri == null) {
             loge("Can't get URI for alert reminder sound");
@@ -92,22 +98,29 @@ public class CellBroadcastAlertReminder extends Service {
         Ringtone r = RingtoneManager.getRingtone(this, notificationUri);
         r.setStreamType(AudioManager.STREAM_NOTIFICATION);
 
-        CellBroadcastAlertWakeLock.acquirePartialWakeLock(getApplicationContext());
+        // Acquire the wakelock for 500ms. The wakelock will be released by its
+        // timer.
+        CellBroadcastAlertWakeLock.acquirePartialWakeLock(getApplicationContext(), 500);
         if (r != null) {
             log("playing alert reminder sound");
             r.play();
         } else {
             loge("can't get Ringtone for alert reminder sound");
         }
-        // Vibrate for 500ms.
-        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
 
-        CellBroadcastAlertWakeLock.releasePartialWakeLock();
+        if (enableVibration) {
+            // Vibrate for 500ms.
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+        }
     }
 
     /**
      * Helper method to start the alert reminder service to queue the alert reminder.
+     *
+     * @param context Context.
+     * @param firstTime True if entering this method for the first time, otherwise false.
+     *
      * @return true if a pending reminder was set; false if there are no more reminders
      */
     static boolean queueAlertReminder(Context context, boolean firstTime) {
@@ -141,6 +154,8 @@ public class CellBroadcastAlertReminder extends Service {
 
         Intent playIntent = new Intent(context, CellBroadcastAlertReminder.class);
         playIntent.setAction(ACTION_PLAY_ALERT_REMINDER);
+        playIntent.putExtra(ALERT_REMINDER_VIBRATE_EXTRA,
+                prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true));
         sPlayReminderIntent = PendingIntent.getService(context, 0, playIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
