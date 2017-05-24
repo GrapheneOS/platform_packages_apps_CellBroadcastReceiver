@@ -25,5 +25,7 @@
     <bool name="use_full_volume">true</bool>
     <!-- Append date-time to the alert title -->
     <bool name="show_date_time_title">true</bool>
+    <!-- Emergecny alert tone duration set to 5 minutes for Chilean users -->
+    <integer name="alert_duration">300000</integer>
 </resources>
 
