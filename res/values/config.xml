@@ -25,6 +25,8 @@
     <bool name="show_brazil_settings">false</bool>
     <!-- Whether to append date-time to the alert title -->
     <bool name="show_date_time_title">false</bool>
-
+    <!-- Additional cell broadcast channels to enable -->
     <string-array name="additional_cbs_channels_strings" translatable="false"></string-array>
+    <!-- Emergecny alert tone duration in milliseconds. -1 indicates playing the tone with the tone's duration -->
+    <integer name="alert_duration">-1</integer>
 </resources>
