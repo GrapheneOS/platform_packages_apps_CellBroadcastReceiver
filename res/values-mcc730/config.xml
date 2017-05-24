@@ -23,5 +23,7 @@
 
     <!-- Always play alert at full volume for Chilean users -->
     <bool name="use_full_volume">true</bool>
+    <!-- Append date-time to the alert title -->
+    <bool name="show_date_time_title">true</bool>
 </resources>
 
