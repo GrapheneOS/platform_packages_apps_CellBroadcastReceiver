@@ -57,7 +57,7 @@ public class CellBroadcastAlertDialog extends Activity {
     static final String FROM_NOTIFICATION_EXTRA = "from_notification";
 
     // Intent extra to identify if notification was sent while trying to move away from the dialog
-    //  without acknowleding the dialog
+    //  without acknowledging the dialog
     static final String FROM_SAVE_STATE_NOTIFICATION_EXTRA = "from_save_state_notification";
 
     /** List of cell broadcast messages to display (oldest to newest). */
@@ -367,16 +367,13 @@ public class CellBroadcastAlertDialog extends Activity {
 
         ((TextView) findViewById(R.id.message)).setText(message.getMessageBody());
 
-        String dismissButtonText = getApplicationContext().getResources()
-                .getString(R.string.button_dismiss);
+        String dismissButtonText = getString(R.string.button_dismiss);
 
         if (mMessageList.size() > 1) {
             dismissButtonText += "  (1/" + mMessageList.size() + ")";
         }
 
         ((TextView) findViewById(R.id.dismissButton)).setText(dismissButtonText);
-        // Set alert reminder depending on user preference
-        CellBroadcastAlertReminder.queueAlertReminder(this, true);
     }
 
     /**

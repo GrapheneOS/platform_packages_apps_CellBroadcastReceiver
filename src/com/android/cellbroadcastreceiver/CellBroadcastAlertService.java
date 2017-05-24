@@ -454,12 +454,12 @@ public class CellBroadcastAlertService extends Service {
     }
 
     /**
-     * Display a full-screen alert message for emergency alerts.
+     * Display an alert message for emergency alerts.
      * @param message the alert to display
      */
     private void openEmergencyAlertNotification(CellBroadcastMessage message) {
-        // Acquire a CPU wake lock until the alert dialog and audio start playing.
-        CellBroadcastAlertWakeLock.acquireScreenCpuWakeLock(this);
+        // Acquire a screen bright wakelock until the alert dialog and audio start playing.
+        CellBroadcastAlertWakeLock.acquireScreenBrightWakeLock(this);
 
         // Close dialogs and window shade
         Intent closeDialogs = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
