@@ -48,15 +48,15 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alertes"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Missatges de difusió"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"Permet les alertes"</string>
-    <string name="enable_emergency_alerts_summaryOn" msgid="851750361450323901">"Rep notificacions d\'emergència"</string>
+    <string name="enable_emergency_alerts_summaryOn" msgid="851750361450323901">"Vull rebre notificacions d\'emergència"</string>
     <string name="enable_emergency_alerts_summaryOff" msgid="3771198799478671071">"Encara que estiguin desactivades, pot ser que rebis alertes obligatòries"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"So del recordatori de les alertes"</string>
+    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"So dels recordatoris d\'alertes"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Enuncia el missatge d\'alerta"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Utilitza síntesi de veu per enunciar els missatges d\'alertes d\'emergència"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historial d\'alertes d\'emergència"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferències de les alertes"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Difusions de prova de l\'ETWS"</string>
-    <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Difusions de prova del sistema d\'advertiment de terratrèmols i tsunamis"</string>
+    <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Difusions de prova del sistema d\'avís de terratrèmols i tsunamis"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Amenaces extremes"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Amenaces extremes per a la vida i la propietat"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Amenaces greus"</string>

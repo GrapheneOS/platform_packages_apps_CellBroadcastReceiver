@@ -58,11 +58,11 @@
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS စမ်းသပ်ထုတ်လွှင့်ချက်များ"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"မြေငလျင်ဆူနာမီ သတိပေးရေးစနစ်အတွက် စမ်းသပ်ထုတ်လွှင့်ချက်များ"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"အလွန်အန္တရာယ်ရှိနေသည်"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"အသက်နှင့် အိုးအိမ်အတွက် အလွန်အန္တရာယ်ရှိနေသည်"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"အသက်အိုးအိမ်အတွက် အလွန်အန္တရာယ်ရှိနေသည်"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ကြီးမားသည့် အန္တရာယ်ရှိနေပါသည်"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"အသက်နှင့် အိုးအိမ်အတွက် ကြီးမားသည့် အန္တရာယ်ရှိနေသည်"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"အသက်အိုးအိမ်အတွက် ကြီးမားသည့် အန္တရာယ်ရှိနေသည်"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER သတိပေးချက်များ"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ကလေးသူငယ် ဖြားယောင်းသွေးဆောင်မှု အရေးပေါ်ကြေငြာချက်"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ကလေးခိုးမှု အရေးပေါ်ကြေညာချက်"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS စမ်းသပ်ထုတ်လွှင့်ချက်များ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"မိုဘိုင်းသတိပေးရေးစနစ် ကြော်ငြာအတွက် စမ်းသပ်ထုတ်လွှင့်ချက်များ"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"တုန်ခါမှု"</string>
