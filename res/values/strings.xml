@@ -88,38 +88,38 @@
 
     <!-- Preference category title for emergency alert settings. [CHAR LIMIT=50] -->
     <string name="emergency_alerts_title">Alerts</string>
-    <!-- Notification channel name for a channel containing cell broadcast messages notifications. [CHAR LIMIT=30] -->
+    <!-- Notification channel name for a channel containing cell broadcast messages notifications. [CHAR LIMIT=50] -->
     <string name="notification_channel_broadcast_messages">Broadcast messages</string>
-    <!-- Preference title for enable emergency alerts checkbox. [CHAR LIMIT=30] -->
+    <!-- Preference title for enable emergency alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_emergency_alerts_title">Allow alerts</string>
     <!-- Preference summaries for allow alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_emergency_alerts_summaryOn">Receive emergency notifications</string>
     <string name="enable_emergency_alerts_summaryOff">When off, you may still receive mandatory alerts</string>
-    <!-- Preference title for alert reminder interval list. [CHAR LIMIT=30] -->
+    <!-- Preference title for alert reminder interval list. [CHAR LIMIT=50] -->
     <string name="alert_reminder_interval_title">Alert reminder sound</string>
     <!-- Do not translate. Empty summary for alert reminder (set by CellBroadcastSettings). -->
     <string name="alert_reminder_interval_summary"></string>
-    <!-- Preference title for enable text-to-speech checkbox. [CHAR LIMIT=30] -->
+    <!-- Preference title for enable text-to-speech checkbox. [CHAR LIMIT=50] -->
     <string name="enable_alert_speech_title">Speak alert message</string>
     <!-- Preference summary for enable text-to-speech checkbox. [CHAR LIMIT=100] -->
     <string name="enable_alert_speech_summary">Use text-to-speech to speak emergency alert messages</string>
-    <!-- Preference title for emergency alert history. [CHAR LIMIT=30] -->
+    <!-- Preference title for emergency alert history. [CHAR LIMIT=50] -->
     <string name="emergency_alert_history_title">Emergency alert history</string>
 
     <!-- Preference category title for alert preferences. [CHAR LIMIT=50] -->
     <string name="alert_preferences_title">Alert preferences</string>
 
 
-    <!-- Preference title for enable ETWS test alerts checkbox. [CHAR LIMIT=30] -->
+    <!-- Preference title for enable ETWS test alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_etws_test_alerts_title">ETWS test broadcasts</string>
     <!-- Preference summary for enable ETWS test alerts checkbox. [CHAR LIMIT=100] -->
     <string name="enable_etws_test_alerts_summary">Test broadcasts for Earthquake Tsunami Warning System</string>
 
-    <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=30] -->
+    <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_cmas_extreme_threat_alerts_title">Extreme threats</string>
     <!-- Preference summary for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=100] -->
     <string name="enable_cmas_extreme_threat_alerts_summary">Extreme threats to life and property</string>
-    <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=30] -->
+    <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_cmas_severe_threat_alerts_title">Severe threats</string>
     <!-- Preference summary for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=100] -->
     <string name="enable_cmas_severe_threat_alerts_summary">Severe threats to life and property</string>
@@ -128,12 +128,12 @@
     <!-- Preference summary for enable CMAS amber alerts checkbox. [CHAR LIMIT=100] -->
     <string name="enable_cmas_amber_alerts_summary">Child abduction emergency bulletins</string>
 
-    <!-- Preference title for enable CMAS test alerts checkbox. [CHAR LIMIT=30] -->
+    <!-- Preference title for enable CMAS test alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_cmas_test_alerts_title">CMAS test broadcasts</string>
     <!-- Preference summary for enable CMAS test alerts checkbox. [CHAR LIMIT=100] -->
     <string name="enable_cmas_test_alerts_summary">Test broadcasts for Commercial Mobile Alert System</string>
 
-    <!-- Preference title for CMAS vibration on/off. [CHAR LIMIT=30] -->
+    <!-- Preference title for CMAS vibration on/off. [CHAR LIMIT=50] -->
     <string name="enable_alert_vibrate_title">Vibrate</string>
 
     <!-- Preference title for use full volume option. [CHAR LIMIT=50] -->
@@ -141,7 +141,7 @@
     <!-- Preference summary for use full volume option. [CHAR LIMIT=100] -->
     <string name="use_full_volume_summary">Ignore other volume and Do Not Disturb preferences</string>
 
-    <!-- Preference title for enable channel 50 alerts (Brazil only). [CHAR LIMIT=30] -->
+    <!-- Preference title for enable channel 50 alerts (Brazil only). [CHAR LIMIT=50] -->
     <string name="enable_channel_50_alerts_title">Channel 50 broadcasts</string>
     <!-- Preference summary for enable channel 50 alerts (Brazil only). [CHAR LIMIT=100] -->
     <string name="enable_channel_50_alerts_summary">Brazil area update information</string>
