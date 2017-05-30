@@ -31,11 +31,11 @@
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Vols suprimir tots els missatges de difusió rebuts?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Suprimeix"</string>
     <string name="button_cancel" msgid="7479958360523246140">"Cancel·la"</string>
-    <string name="etws_earthquake_warning" msgid="6428741104423152511">"Advertiment de terratrèmol"</string>
-    <string name="etws_tsunami_warning" msgid="6173964105145900312">"Advertiment de tsunami"</string>
-    <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Advertiment de terratrèmols i tsunamis"</string>
+    <string name="etws_earthquake_warning" msgid="6428741104423152511">"Avís de terratrèmol"</string>
+    <string name="etws_tsunami_warning" msgid="6173964105145900312">"Avís de tsunami"</string>
+    <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Avís de terratrèmols i tsunamis"</string>
     <string name="etws_test_message" msgid="8447820262584381894">"Missatge de prova d\'ETWS"</string>
-    <string name="etws_other_emergency_type" msgid="5233080551309721499">"Advertiment d\'emergències"</string>
+    <string name="etws_other_emergency_type" msgid="5233080551309721499">"Avís d\'emergències"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Alerta presidencial"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Alerta d\'emergències: extrema"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Alerta d\'emergències: greu"</string>
