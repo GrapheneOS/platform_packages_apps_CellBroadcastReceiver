@@ -18,15 +18,14 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <SwitchPreference android:defaultValue="true"
+                      android:key="enable_emergency_alerts"
+                      android:summary="@string/enable_emergency_alerts_summary"
+                      android:title="@string/enable_emergency_alerts_title" />
+
     <!-- Settings to enable / disable emergency alerts -->
     <PreferenceCategory android:title="@string/emergency_alerts_title"
                         android:key="category_emergency_alerts">
-
-        <SwitchPreference android:defaultValue="true"
-                          android:key="enable_emergency_alerts"
-                          android:summaryOn="@string/enable_emergency_alerts_summaryOn"
-                          android:summaryOff="@string/enable_emergency_alerts_summaryOff"
-                          android:title="@string/enable_emergency_alerts_title" />
 
         <!-- Enable CMAS AMBER alerts -->
         <SwitchPreference android:defaultValue="true"

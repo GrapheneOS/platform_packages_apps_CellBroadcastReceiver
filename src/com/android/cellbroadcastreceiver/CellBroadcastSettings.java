@@ -226,7 +226,7 @@ public class CellBroadcastSettings extends Activity {
                     setAlertsEnabled(false);
                 }
             } else {
-                mAlertCategory.removePreference(mEmergencyCheckBox);
+                preferenceScreen.removePreference(mEmergencyCheckBox);
             }
 
             // Show alert settings and ETWS categories for ETWS builds and developer mode.

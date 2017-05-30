@@ -93,8 +93,7 @@
     <!-- Preference title for enable emergency alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_emergency_alerts_title">Allow alerts</string>
     <!-- Preference summaries for allow alerts checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_emergency_alerts_summaryOn">Receive emergency notifications</string>
-    <string name="enable_emergency_alerts_summaryOff">When off, you may still receive mandatory alerts</string>
+    <string name="enable_emergency_alerts_summary">Receive emergency notifications</string>
     <!-- Preference title for alert reminder interval list. [CHAR LIMIT=50] -->
     <string name="alert_reminder_interval_title">Alert reminder sound</string>
     <!-- Do not translate. Empty summary for alert reminder (set by CellBroadcastSettings). -->
