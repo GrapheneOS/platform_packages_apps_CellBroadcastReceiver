@@ -48,8 +48,8 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"ඇඟවීම්"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"විකාශ පණිවිඩ"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"ඇඟවීම්වලට ඉඩ දෙන්න"</string>
-    <string name="enable_emergency_alerts_summaryOn" msgid="851750361450323901">"හදිසි අවස්ථා දැනුම්දීම් ලබා ගන්න"</string>
-    <string name="enable_emergency_alerts_summaryOff" msgid="3771198799478671071">"ක්‍රියාවිරහිත විට විට, ඔබට තවම අනිවාර්ය ඇඟවීම් ලැබිය හැකිය"</string>
+    <!-- no translation found for enable_emergency_alerts_summary (8171013771243907245) -->
+    <skip />
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"ඇඟවීම් සිහිකැඳවීම් හඬ"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"ඇඟවීම් පණිවිඩ කතා කරවන්න"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"හදිසි ඇඟවීම් පණිවිඩ කියවීමට වැකි-සිට-කථන භාවිතා කරන්න"</string>
@@ -68,8 +68,10 @@
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"කම්පනය"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"පූර්ණ හඬ පරිමාව භාවිත කරන්න"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"වෙනත් හඬ පරිමාව සහ බාධා නොකරන්න මනාප නොසලකා හරින්න"</string>
-    <string name="enable_channel_50_alerts_title" msgid="6237803462591121950">"Channel 50 විකාශ"</string>
-    <string name="enable_channel_50_alerts_summary" msgid="3947847328844634097">"බ්‍රසීල ප්‍රදේශ යාවත්කාලීන තොරතුරු"</string>
+    <!-- no translation found for enable_channel_50_alerts_title (2793444925039251306) -->
+    <skip />
+    <!-- no translation found for enable_channel_50_alerts_summary (1638919917695623789) -->
+    <skip />
     <string name="category_dev_settings_title" msgid="6194393458398329994">"සංවර්ධක විකල්ප"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"ඇඟවීමේ ප්‍රවර්ගය:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"භූ භෞතික"</string>

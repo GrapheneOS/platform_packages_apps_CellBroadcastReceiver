@@ -48,8 +48,8 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Сповіщення"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Широкомовні повідомлення"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"Дозволити сповіщення"</string>
-    <string name="enable_emergency_alerts_summaryOn" msgid="851750361450323901">"Отримувати екстрені сповіщення"</string>
-    <string name="enable_emergency_alerts_summaryOff" msgid="3771198799478671071">"Коли цю функцію вимкнено, ви можете все одно отримувати обов’язкові сповіщення"</string>
+    <!-- no translation found for enable_emergency_alerts_summary (8171013771243907245) -->
+    <skip />
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Сигнал нагадування"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Промовляти сповіщення"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Використовувати синтез мовлення, щоб диктувати тексти сповіщень про надзвичайні ситуації"</string>
@@ -68,8 +68,10 @@
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Вібросигнал"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Використовувати повну гучність"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ігнорувати інші параметри гучності й режиму \"Не турбувати\""</string>
-    <string name="enable_channel_50_alerts_title" msgid="6237803462591121950">"Сповіщення Channel 50"</string>
-    <string name="enable_channel_50_alerts_summary" msgid="3947847328844634097">"Оновлення для Бразилії"</string>
+    <!-- no translation found for enable_channel_50_alerts_title (2793444925039251306) -->
+    <skip />
+    <!-- no translation found for enable_channel_50_alerts_summary (1638919917695623789) -->
+    <skip />
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Параметри розробника"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Категорія сповіщення:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Геофізична небезпека"</string>
