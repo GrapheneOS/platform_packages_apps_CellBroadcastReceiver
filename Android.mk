@@ -23,6 +23,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
+include frameworks/base/packages/SettingsLib/common.mk
 include $(BUILD_PACKAGE)
 
 # This finds and builds the test apk as well, so a single make does both.
