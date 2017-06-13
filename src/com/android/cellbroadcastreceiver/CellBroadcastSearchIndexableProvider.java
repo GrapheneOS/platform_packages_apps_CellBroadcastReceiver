@@ -86,6 +86,11 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
         Resources res = getContext().getResources();
         Object[] ref;
 
+        ref = new Object[1];
+        ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                CellBroadcastSettings.KEY_CATEGORY_DEV_SETTINGS;
+        cursor.addRow(ref);
+
         // Show alert settings and ETWS categories for ETWS builds and developer mode.
         if (!enableDevSettings) {
             // Remove general emergency alert preference items (not shown for CMAS builds).
