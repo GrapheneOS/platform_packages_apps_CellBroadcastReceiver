@@ -17,6 +17,7 @@
 package com.android.cellbroadcastreceiver;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.backup.BackupManager;
 import android.content.Context;
 import android.content.Intent;
@@ -109,9 +110,12 @@ public class CellBroadcastSettings extends Activity {
             return;
         }
 
-        // Display the fragment as the main content.
-        getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new CellBroadcastSettingsFragment()).commit();
+        // We only add new CellBroadcastSettingsFragment if no fragment is restored.
+        Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
+        if (fragment == null) {
+            getFragmentManager().beginTransaction().add(android.R.id.content,
+                    new CellBroadcastSettingsFragment()).commit();
+        }
     }
 
     /**
