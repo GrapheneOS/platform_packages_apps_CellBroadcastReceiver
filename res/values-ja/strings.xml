@@ -48,8 +48,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"緊急速報メール"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ブロードキャスト メッセージ"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"緊急速報メールの許可"</string>
-    <!-- no translation found for enable_emergency_alerts_summary (8171013771243907245) -->
-    <skip />
+    <string name="enable_emergency_alerts_summary" msgid="8171013771243907245">"緊急速報メールの受信"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"緊急速報メール着信音"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"受信時にメッセージを読み上げる"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"緊急速報メール受信時にメッセージを読み上げる"</string>
@@ -68,10 +67,8 @@
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"バイブレーション"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"最大音量を使用する"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"その他の音量やマナーモードの設定は無視されます"</string>
-    <!-- no translation found for enable_channel_50_alerts_title (2793444925039251306) -->
-    <skip />
-    <!-- no translation found for enable_channel_50_alerts_summary (1638919917695623789) -->
-    <skip />
+    <string name="enable_channel_50_alerts_title" msgid="2793444925039251306">"エリア更新メッセージ"</string>
+    <string name="enable_channel_50_alerts_summary" msgid="1638919917695623789">"SIM ステータスに更新情報を表示します"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"開発者向けオプション"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"警報のカテゴリ:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"地球物理"</string>
