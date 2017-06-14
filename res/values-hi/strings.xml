@@ -48,8 +48,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"सूचनाएं"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण संदेश"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"सूचनाओं को अनुमति दें"</string>
-    <!-- no translation found for enable_emergency_alerts_summary (8171013771243907245) -->
-    <skip />
+    <string name="enable_emergency_alerts_summary" msgid="8171013771243907245">"आपातकालीन नोटिफ़िकेशन पाएं"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"सूचना रिमाइंडर की ध्वनि"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"अलर्ट संदेश बोलें"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"आपातकालीन अलर्ट संदेश बोलने के लिए लेख-से-बोली का उपयोग करें"</string>
@@ -68,10 +67,8 @@
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"कंपन"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"पूरे वॉल्यूम का उपयोग करें"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"अन्य वॉल्यूम और परेशान न करें प्राथमिकताओं को अनदेखा करें"</string>
-    <!-- no translation found for enable_channel_50_alerts_title (2793444925039251306) -->
-    <skip />
-    <!-- no translation found for enable_channel_50_alerts_summary (1638919917695623789) -->
-    <skip />
+    <string name="enable_channel_50_alerts_title" msgid="2793444925039251306">"क्षेत्र अपडेट प्रसारण"</string>
+    <string name="enable_channel_50_alerts_summary" msgid="1638919917695623789">"SIM स्थिति में अपडेट जानकारी दिखाएं"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"डेवलपर विकल्प"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"अलर्ट श्रेणी:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"भूभौतिकीय"</string>
