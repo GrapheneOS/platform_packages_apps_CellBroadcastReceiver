@@ -31,13 +31,13 @@
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Futa jumbe zote zilizopokewa za matangazo?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Futa"</string>
     <string name="button_cancel" msgid="7479958360523246140">"Ghairi"</string>
-    <string name="etws_earthquake_warning" msgid="6428741104423152511">"Onyo la Tetemeko la ardhi"</string>
+    <string name="etws_earthquake_warning" msgid="6428741104423152511">"Onyo la tetemeko la ardhi"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"Onyo la Tsunami"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Onyo la tetemeko la ardhi na la tsunami"</string>
     <string name="etws_test_message" msgid="8447820262584381894">"Ujumbe wa Jaribio la ETWS"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"Onyo la dharura"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Arifa ya Rais"</string>
-    <string name="cmas_extreme_alert" msgid="2588720613319969289">"Arifa ya Dharura: Kabisa"</string>
+    <string name="cmas_extreme_alert" msgid="2588720613319969289">"Arifa ya Dharura: Kali kabisa"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Arifa ya dharura: Kali"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"Utekaji nyara Watoto (arifa za AMBER)"</string>
     <string name="cmas_required_monthly_test" msgid="6464047268150108932">"Jaribio la kila mwezi la arifa ya dharura"</string>

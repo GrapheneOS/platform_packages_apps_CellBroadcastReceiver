@@ -34,9 +34,9 @@
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"Jordbävningsvarning"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"Tsunamivarning"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Jordbävnings- och tsunamivarning"</string>
-    <string name="etws_test_message" msgid="8447820262584381894">"Testmeddelande från varningssystemet ETWS"</string>
+    <string name="etws_test_message" msgid="8447820262584381894">"Testmeddelande från ETWS"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"Varning om nödsituation"</string>
-    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Högsta varning"</string>
+    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Nationell varning"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Varning om nödsituation: extrem"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Varning om nödsituation: allvarlig"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"Kidnappning"</string>
@@ -104,7 +104,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Mottaget:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> olästa varningar."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Ny varning"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Visa en dialogruta med möjlighet att välja bort alternativet efter att den första CMAS-varningen visas (dock inte varningar som är utfärdade av presidenten)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Visa en dialogruta med möjlighet att välja bort alternativet efter att den första CMAS-varningen visas (dock inte nationella varningar)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Visa dialogrutan"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Du får för närvarande varningsmeddelanden. Vill du fortsätta ta emot varningsmeddelanden?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>

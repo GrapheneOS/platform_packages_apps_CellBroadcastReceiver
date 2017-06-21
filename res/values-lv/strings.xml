@@ -31,10 +31,10 @@
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Vai dzēst visus saņemtos apraides ziņojumus?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Dzēst"</string>
     <string name="button_cancel" msgid="7479958360523246140">"Atcelt"</string>
-    <string name="etws_earthquake_warning" msgid="6428741104423152511">"Zemestrīces brīdinājums"</string>
-    <string name="etws_tsunami_warning" msgid="6173964105145900312">"Cunami brīdinājums"</string>
-    <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Zemestrīces un cunami brīdinājums"</string>
-    <string name="etws_test_message" msgid="8447820262584381894">"Zemestrīču un cunami brīdin. sist. testa ziņojums"</string>
+    <string name="etws_earthquake_warning" msgid="6428741104423152511">"Brīdinājums par zemestrīci"</string>
+    <string name="etws_tsunami_warning" msgid="6173964105145900312">"Brīdinājums par cunami"</string>
+    <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Brīdinājums par zemestrīci un cunami"</string>
+    <string name="etws_test_message" msgid="8447820262584381894">"ETWS testa ziņojums"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"Ārkārtas situācijas brīdinājums"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Valsts līmeņa brīdinājums"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Ārkārtas situācijas brīdinājums: ārkārtējs"</string>

@@ -35,7 +35,7 @@
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"Výstraha pred cunami"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Výstraha pred zemetrasením a cunami"</string>
     <string name="etws_test_message" msgid="8447820262584381894">"Testovacia správa systému ETWS"</string>
-    <string name="etws_other_emergency_type" msgid="5233080551309721499">"Tiesňové varovanie"</string>
+    <string name="etws_other_emergency_type" msgid="5233080551309721499">"Tiesňová výstraha"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Prezidentská výstraha"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Mimoriadne tiesňové upozornenie"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Závažné tiesňové upozornenie"</string>
