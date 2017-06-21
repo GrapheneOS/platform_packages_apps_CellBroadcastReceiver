@@ -36,7 +36,7 @@
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"భూకంపం మరియు సునామీ హెచ్చరిక"</string>
     <string name="etws_test_message" msgid="8447820262584381894">"ETWS పరీక్ష సందేశం"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"అత్యవసర హెచ్చరిక"</string>
-    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"అధ్యక్ష హెచ్చరిక"</string>
+    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"అధ్యక్షుని హెచ్చరిక"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"అత్యవసర హెచ్చరిక: అత్యంత తీవ్రం"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"అత్యవసర హెచ్చరిక: తీవ్రం"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"పిల్లల అపహరణ (ఆంబర్ హెచ్చరిక)"</string>

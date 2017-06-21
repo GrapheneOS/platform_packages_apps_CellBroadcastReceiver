@@ -40,7 +40,7 @@
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"የአደጋ ጊዜ ማስጠንቀቂያ፡በጣም ከፍተኛ"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"የአደጋ ጊዜ ማስጠንቀቂያ፡ከፍተኛ"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"የልጅ ጠለፋ(ቡርትካናማ ማንቂያ)"</string>
-    <string name="cmas_required_monthly_test" msgid="6464047268150108932">"የአደጋ ጊዜ ማስጠንቀቂያወርሃዊ ሙከራ"</string>
+    <string name="cmas_required_monthly_test" msgid="6464047268150108932">"የአደጋ ጊዜ ማስጠንቀቂያ ወርሃዊ ሙከራ"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"የአደጋ ጊዜ ማስጠንቀቂያ(ልምምድ)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"የአደጋ ጊዜ ማንቂያ(ከዋኝ)"</string>
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"የአደጋ ጊዜ ማንቂያ"</string>

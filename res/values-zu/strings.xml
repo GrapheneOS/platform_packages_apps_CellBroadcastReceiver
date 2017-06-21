@@ -31,17 +31,17 @@
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Susa yonke imiyalezo yokusakaza?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Susa"</string>
     <string name="button_cancel" msgid="7479958360523246140">"Khansela"</string>
-    <string name="etws_earthquake_warning" msgid="6428741104423152511">"Isexwayiso Sokundindizela komhlaba"</string>
-    <string name="etws_tsunami_warning" msgid="6173964105145900312">"Isexwayiso se-Tsunami"</string>
-    <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Isexwayiso Sokundindizela komhlaba nese-Tsunami"</string>
-    <string name="etws_test_message" msgid="8447820262584381894">"Umlayezo wesivivinyo we-ETWS"</string>
+    <string name="etws_earthquake_warning" msgid="6428741104423152511">"Isexwayiso Ngokuzamazama komhlaba"</string>
+    <string name="etws_tsunami_warning" msgid="6173964105145900312">"Isexwayiso nge-Tsunami"</string>
+    <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Isexwayiso ngokuzamazama komhlaba neseTsunami"</string>
+    <string name="etws_test_message" msgid="8447820262584381894">"Umlayezo wokuhlolwa kwe-ETWS"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"Isexwayiso Esiphuthumayo"</string>
-    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Isaziso Esiphathelelni nombusi"</string>
+    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Isexwayiso sikamongameli"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Isaziso Esiphuthumayo: Esibaluleke kakhulu"</string>
-    <string name="cmas_severe_alert" msgid="4135809475315826913">"Isaziso Esiphuthumayo: Sinzima"</string>
+    <string name="cmas_severe_alert" msgid="4135809475315826913">"Isaziso Esiphuthumayo: Sibucayi"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"Ukuthunjwa Kwezingane (Isaziso Sebala eliphuzi)"</string>
-    <string name="cmas_required_monthly_test" msgid="6464047268150108932">"Isivivinyo Sanyanga Yonke Yesaziso Esiphuthumayo"</string>
-    <string name="cmas_exercise_alert" msgid="2892255514938370321">"Isaziso Esiphuthumayo (Lolonga umzimba)"</string>
+    <string name="cmas_required_monthly_test" msgid="6464047268150108932">"Ukuhlola isexwayiso ngesimo esiphuthumayo kwanyangazonke"</string>
+    <string name="cmas_exercise_alert" msgid="2892255514938370321">"Isaziso Esiphuthumayo (ukuhlola)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Isaziso Esiphuthumayo (umqondisi)"</string>
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"Isaziso Esiphuthumayo"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Sakaza imilayezo"</string>

@@ -31,18 +31,18 @@
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"सबै प्राप्त प्रशारण सन्देशहरू मेटाउने हो?"</string>
     <string name="button_delete" msgid="4672451757925194350">"मेटाउनुहोस्"</string>
     <string name="button_cancel" msgid="7479958360523246140">"रद्द गर्नुहोस्"</string>
-    <string name="etws_earthquake_warning" msgid="6428741104423152511">"भूकम्प चेतावनी"</string>
-    <string name="etws_tsunami_warning" msgid="6173964105145900312">"सुनामी चेतावनी"</string>
-    <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"भूकम्प र सुनामी चेतावनी"</string>
+    <string name="etws_earthquake_warning" msgid="6428741104423152511">"भूकम्प बारे सतर्कता"</string>
+    <string name="etws_tsunami_warning" msgid="6173964105145900312">"सुनामी बारे चेतावनी"</string>
+    <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"भूकम्प र सुनामी बारे सतर्कता"</string>
     <string name="etws_test_message" msgid="8447820262584381894">"ETWS परीक्षण सन्देश"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"आपतकालीन चेतावनी"</string>
-    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"राष्ट्रपति चेतावनी"</string>
-    <string name="cmas_extreme_alert" msgid="2588720613319969289">"चेतावनी आपतकालीन: चरम"</string>
-    <string name="cmas_severe_alert" msgid="4135809475315826913">"चेतावनी आपतकालीन: गम्भीर"</string>
-    <string name="cmas_amber_alert" msgid="6154867710264778887">"बाल अपहरण (एम्बर चेतावनी)"</string>
-    <string name="cmas_required_monthly_test" msgid="6464047268150108932">"आपातकालीन चेतावनी मासिक परिक्षा"</string>
-    <string name="cmas_exercise_alert" msgid="2892255514938370321">"आपतकालीन चेतावनी (व्यायाम)"</string>
-    <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"आपतकालीन चेतावनी (अपरेटर)"</string>
+    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"राष्ट्राध्यक्षीय सतर्कता"</string>
+    <string name="cmas_extreme_alert" msgid="2588720613319969289">"आपतकालीन सतर्कता: चरम"</string>
+    <string name="cmas_severe_alert" msgid="4135809475315826913">"आपतकालीन सतर्कता: गम्भीर"</string>
+    <string name="cmas_amber_alert" msgid="6154867710264778887">"बाल अपहरण (एम्बर सतर्कता)"</string>
+    <string name="cmas_required_monthly_test" msgid="6464047268150108932">"आपातकालीन सतर्कताको मासिक परिक्षण"</string>
+    <string name="cmas_exercise_alert" msgid="2892255514938370321">"आपतकालीन सतर्कता(अभ्यास)"</string>
+    <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"आपतकालीन सतर्कता (अपरेटर)"</string>
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"आपतकालीन सावधानी"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"प्रसारण गर्ने सन्देशहरू"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"अलर्टहरू"</string>

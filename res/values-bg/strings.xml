@@ -34,7 +34,7 @@
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"Предупреждение за земетресение"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"Предупреждение за цунами"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Предупреждение за земетресения и цунами"</string>
-    <string name="etws_test_message" msgid="8447820262584381894">"Тестово съобщение на СПЗЦ"</string>
+    <string name="etws_test_message" msgid="8447820262584381894">"Тестово съобщение на ETWS"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"Предупреждение при спешност"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Сигнал от президента"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Сигнал при спешни случаи: Извънредно"</string>
