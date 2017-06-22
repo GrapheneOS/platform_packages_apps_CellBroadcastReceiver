@@ -141,9 +141,9 @@
     <string name="use_full_volume_summary">Ignore other volume and Do Not Disturb preferences</string>
 
     <!-- Preference title for enable area update information broadcasts. [CHAR LIMIT=50] -->
-    <string name="enable_channel_50_alerts_title">Area update broadcasts</string>
+    <string name="enable_area_update_info_alerts_title">Area update broadcasts</string>
     <!-- Preference summary for enable area update information broadcasts. [CHAR LIMIT=100] -->
-    <string name="enable_channel_50_alerts_summary">Show update information in SIM status</string>
+    <string name="enable_area_update_info_alerts_summary">Show update information in SIM status</string>
 
     <!-- Preference category title for developer settings. [CHAR LIMIT=50] -->
     <string name="category_dev_settings_title">Developer options</string>

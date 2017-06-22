@@ -67,8 +67,8 @@
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"వైబ్రేట్ చేయడం"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"పూర్తి వాల్యూమ్‌ను ఉపయోగించు"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"ఇతర వాల్యూమ్ మరియు అంతరాయం కలిగించవద్దు ప్రాధాన్యతలను విస్మరిస్తుంది"</string>
-    <string name="enable_channel_50_alerts_title" msgid="2793444925039251306">"ప్రాంతీయ అప్‌డేట్ ప్రసారాలు"</string>
-    <string name="enable_channel_50_alerts_summary" msgid="1638919917695623789">"SIM స్థితిలో అప్‌డేట్ సమాచారాన్ని చూపు"</string>
+    <string name="enable_area_update_info_alerts_title" msgid="2793444925039251306">"ప్రాంతీయ అప్‌డేట్ ప్రసారాలు"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="1638919917695623789">"SIM స్థితిలో అప్‌డేట్ సమాచారాన్ని చూపు"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"డెవలపర్ ఎంపికలు"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"హెచ్చరిక వర్గం:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"భూభౌతిక సంబంధితం"</string>
