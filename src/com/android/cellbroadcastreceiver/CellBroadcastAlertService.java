@@ -28,6 +28,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -47,11 +48,9 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.telephony.PhoneConstants;
-import com.android.internal.telephony.gsm.SmsCbConstants;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -80,7 +79,9 @@ public class CellBroadcastAlertService extends Service {
 
     /** Sticky broadcast for latest area info broadcast received. */
     static final String CB_AREA_INFO_RECEIVED_ACTION =
-            "android.cellbroadcastreceiver.CB_AREA_INFO_RECEIVED";
+            "com.android.cellbroadcastreceiver.CB_AREA_INFO_RECEIVED";
+
+    static final String SETTINGS_APP = "com.android.settings";
 
     /** Intent extra for passing a SmsCbMessage */
     private static final String EXTRA_MESSAGE = "message";
@@ -90,6 +91,18 @@ public class CellBroadcastAlertService extends Service {
      * treated as a duplicate.
      */
     private static final long DEFAULT_EXPIRATION_TIME = DAY_IN_MILLIS;
+
+    /**
+     * Alert type
+     */
+    public enum AlertType {
+        CMAS_DEFAULT,
+        ETWS_DEFAULT,
+        EARTHQUAKE,
+        TSUNAMI,
+        AREA,
+        OTHER
+    }
 
     /**
      *  Container for service category, serial number, location, body hash code, and ETWS primary/
@@ -364,14 +377,20 @@ public class CellBroadcastAlertService extends Service {
      */
     private boolean isMessageEnabledByUser(CellBroadcastMessage message) {
 
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         // Check if all emergency alerts are disabled.
-        boolean emergencyAlertEnabled = PreferenceManager.getDefaultSharedPreferences(this).
-                getBoolean(CellBroadcastSettings.KEY_ENABLE_EMERGENCY_ALERTS, true);
+        boolean emergencyAlertEnabled =
+                prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_EMERGENCY_ALERTS, true);
 
         // Check if ETWS/CMAS test message is forced to disabled on the device.
         boolean forceDisableEtwsCmasTest =
                 CellBroadcastSettings.isFeatureEnabled(this,
                         CarrierConfigManager.KEY_CARRIER_FORCE_DISABLE_ETWS_CMAS_TEST_BOOL, false);
+
+        boolean enableAreaUpdateInfoAlerts = Resources.getSystem().getBoolean(
+                com.android.internal.R.bool.config_showAreaUpdateInfoSettings)
+                && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS,
+                false);
 
         if (message.isEtwsTestMessage()) {
             return emergencyAlertEnabled &&
@@ -389,20 +408,6 @@ public class CellBroadcastAlertService extends Service {
 
         int channel = message.getServiceCategory();
 
-        if (channel == SmsCbConstants.MESSAGE_ID_GSMA_ALLOCATED_CHANNEL_50) {
-            // save latest area info broadcast for Settings display and send as broadcast
-            CellBroadcastReceiverApp.setLatestAreaInfo(message);
-            Intent intent = new Intent(CB_AREA_INFO_RECEIVED_ACTION);
-            intent.putExtra(EXTRA_MESSAGE, message);
-            // Send broadcast twice, once for apps that have PRIVILEGED permission and once
-            // for those that have the runtime one
-            sendBroadcastAsUser(intent, UserHandle.ALL,
-                    android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE);
-            sendBroadcastAsUser(intent, UserHandle.ALL,
-                    android.Manifest.permission.READ_PHONE_STATE);
-            return false;   // area info broadcasts are displayed in Settings status screen
-        }
-
         // Check if the messages are on additional channels enabled by the resource config.
         // If those channels are enabled by the carrier, but the device is actually roaming, we
         // should not allow the messages.
@@ -414,6 +419,27 @@ public class CellBroadcastAlertService extends Service {
                 if (range.mStartId <= channel && range.mEndId >= channel) {
                     // We only enable the channels when the device is not roaming.
                     if (isRoaming(message.getSubId())) {
+                        return false;
+                    }
+
+                    // The area update information cell broadcast should not cause any pop-up.
+                    // Instead the setting's app SIM status will show its information.
+                    if (range.mAlertType == AlertType.AREA) {
+                        if (enableAreaUpdateInfoAlerts) {
+                            // save latest area info broadcast for Settings display and send as
+                            // broadcast.
+                            CellBroadcastReceiverApp.setLatestAreaInfo(message);
+                            Intent intent = new Intent(CB_AREA_INFO_RECEIVED_ACTION);
+                            intent.setPackage(SETTINGS_APP);
+                            intent.putExtra(EXTRA_MESSAGE, message);
+                            // Send broadcast twice, once for apps that have PRIVILEGED permission
+                            // and once for those that have the runtime one.
+                            sendBroadcastAsUser(intent, UserHandle.ALL,
+                                    android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE);
+                            sendBroadcastAsUser(intent, UserHandle.ALL,
+                                    android.Manifest.permission.READ_PHONE_STATE);
+                            // area info broadcasts are displayed in Settings status screen
+                        }
                         return false;
                     }
                 }
@@ -470,12 +496,12 @@ public class CellBroadcastAlertService extends Service {
         audioIntent.setAction(CellBroadcastAlertAudio.ACTION_START_ALERT_AUDIO);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        ToneType toneType = ToneType.CMAS_DEFAULT;
+        AlertType alertType = AlertType.CMAS_DEFAULT;
         if (message.isEtwsMessage()) {
             // For ETWS, always vibrate, even in silent mode.
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATE_EXTRA, true);
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_ETWS_VIBRATE_EXTRA, true);
-            toneType = ToneType.ETWS_DEFAULT;
+            alertType = AlertType.ETWS_DEFAULT;
 
             if (message.getEtwsWarningInfo() != null) {
                 int warningType = message.getEtwsWarningInfo().getWarningType();
@@ -483,13 +509,13 @@ public class CellBroadcastAlertService extends Service {
                 switch (warningType) {
                     case SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE:
                     case SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE_AND_TSUNAMI:
-                        toneType = ToneType.EARTHQUAKE;
+                        alertType = AlertType.EARTHQUAKE;
                         break;
                     case SmsCbEtwsInfo.ETWS_WARNING_TYPE_TSUNAMI:
-                        toneType = ToneType.TSUNAMI;
+                        alertType = AlertType.TSUNAMI;
                         break;
                     case SmsCbEtwsInfo.ETWS_WARNING_TYPE_OTHER_EMERGENCY:
-                        toneType = ToneType.OTHER;
+                        alertType = AlertType.OTHER;
                         break;
                 }
             }
@@ -503,13 +529,13 @@ public class CellBroadcastAlertService extends Service {
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (channel >= range.mStartId && channel <= range.mEndId) {
-                        toneType = range.mToneType;
+                        alertType = range.mAlertType;
                         break;
                     }
                 }
             }
         }
-        audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE, toneType);
+        audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE, alertType);
 
         String messageBody = message.getMessageBody();
 

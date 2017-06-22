@@ -46,12 +46,12 @@
                             android:summary="@string/enable_cmas_severe_threat_alerts_summary"
                             android:title="@string/enable_cmas_severe_threat_alerts_title" />
 
-        <!-- Default value is true for Brazil. This preference is ignored and hidden
-        unless the boolean "show_brazil_settings" is set to true in config.xml. -->
+        <!-- Default value is true for Brazil and India. This preference is ignored and hidden
+        unless the boolean "config_showAreaUpdateInfoSettings" is set to true in the global resource. -->
         <SwitchPreference android:defaultValue="true"
-                          android:key="enable_channel_50_alerts"
-                          android:summary="@string/enable_channel_50_alerts_summary"
-                          android:title="@string/enable_channel_50_alerts_title" />
+                          android:key="enable_area_update_info_alerts"
+                          android:summary="@string/enable_area_update_info_alerts_summary"
+                          android:title="@string/enable_area_update_info_alerts_title" />
 
         <Preference android:key="emergency_alert_history"
                     android:title="@string/emergency_alert_history_title" />
