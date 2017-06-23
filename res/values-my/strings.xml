@@ -67,8 +67,8 @@
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"တုန်ခါမှု"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"အသံအကျယ်ကိုသုံးပါ"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"အခြား အသံနှင့် မနှောင့်ယှက်ရ ရွေးချယ်မှု ကိုပစ်ထားလိုက်ပါ"</string>
-    <string name="enable_channel_50_alerts_title" msgid="2793444925039251306">"နယ်မြေအပ်ဒိတ် ထုတ်လွှင့်ခြင်းများ"</string>
-    <string name="enable_channel_50_alerts_summary" msgid="1638919917695623789">"ဆင်းမ်ကဒ်အခြေအနေတွင် အပ်ဒိတ်အချက်အလက်များကို ပြသရန်"</string>
+    <string name="enable_area_update_info_alerts_title" msgid="2793444925039251306">"နယ်မြေအပ်ဒိတ် ထုတ်လွှင့်ခြင်းများ"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="1638919917695623789">"ဆင်းမ်ကဒ်အခြေအနေတွင် အပ်ဒိတ်အချက်အလက်များကို ပြသရန်"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"ပြုစုပေးခဲ့သူ၏ ရွေးချယ်မှုများ"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"သတိပေးချက် အမျိုးအစား:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"ဘူမိရုပ်ပိုင်းဆိုင်ရာ"</string>
