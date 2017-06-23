@@ -67,8 +67,8 @@
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Вибрации"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Користете макс. јачина на звук"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Занемари други пост. за јачина на звук и „Не вознемирувај“"</string>
-    <string name="enable_channel_50_alerts_title" msgid="2793444925039251306">"Емитување локални информации за состојбата"</string>
-    <string name="enable_channel_50_alerts_summary" msgid="1638919917695623789">"Прикажувај информации за состојбата во статусот на SIM-картичката"</string>
+    <string name="enable_area_update_info_alerts_title" msgid="2793444925039251306">"Емитување локални информации за состојбата"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="1638919917695623789">"Прикажувај информации за состојбата во статусот на SIM-картичката"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Програмерски опции"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Категории на предупредувања:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Геофизички"</string>

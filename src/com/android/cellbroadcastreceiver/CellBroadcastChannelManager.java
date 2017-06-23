@@ -19,14 +19,14 @@ package com.android.cellbroadcastreceiver;
 import android.content.Context;
 import android.util.Log;
 
-import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
+import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
 
 import java.util.ArrayList;
 
 /**
  * CellBroadcastChannelManager handles the additional cell broadcast channels that
  * carriers might enable through resources.
- * Syntax: "<channel id range>:[type=<tone type>], [emergency=true/false]"
+ * Syntax: "<channel id range>:[type=<alert type>], [emergency=true/false]"
  * For example,
  * <string-array name="additional_cbs_channels_strings" translatable="false">
  *     <item>"43008:type=earthquake, emergency=true"</item>
@@ -34,7 +34,7 @@ import java.util.ArrayList;
  *     <item>"0xAC00-0xAFED:type=other"</item>
  *     <item>"1234-5678"</item>
  * </string-array>
- * If no tones are specified, the tone type will be set to CMAS_DEFAULT. If emergency is not set,
+ * If no tones are specified, the alert type will be set to CMAS_DEFAULT. If emergency is not set,
  * by default it's not emergency.
  */
 public class CellBroadcastChannelManager {
@@ -45,7 +45,7 @@ public class CellBroadcastChannelManager {
 
     /**
      * Cell broadcast channel range
-     * A range is consisted by starting channel id, ending channel id, and the tone type
+     * A range is consisted by starting channel id, ending channel id, and the alert type
      */
     public static class CellBroadcastChannelRange {
 
@@ -54,17 +54,17 @@ public class CellBroadcastChannelManager {
 
         public int mStartId;
         public int mEndId;
-        public ToneType mToneType;
+        public AlertType mAlertType;
         public boolean mIsEmergency;
 
         public CellBroadcastChannelRange(String channelRange) throws Exception {
 
-            mToneType = ToneType.CMAS_DEFAULT;
+            mAlertType = AlertType.CMAS_DEFAULT;
             mIsEmergency = false;
 
             int colonIndex = channelRange.indexOf(':');
             if (colonIndex != -1) {
-                // Parse the tone type and emergency flag
+                // Parse the alert type and emergency flag
                 String[] pairs = channelRange.substring(colonIndex + 1).trim().split(",");
                 for (String pair : pairs) {
                     pair = pair.trim();
@@ -74,7 +74,7 @@ public class CellBroadcastChannelManager {
                         String value = tokens[1].trim();
                         switch (key) {
                             case KEY_TYPE:
-                                mToneType = ToneType.valueOf(value.toUpperCase());
+                                mAlertType = AlertType.valueOf(value.toUpperCase());
                                 break;
                             case KEY_EMERGENCY:
                                 mIsEmergency = value.equalsIgnoreCase("true");

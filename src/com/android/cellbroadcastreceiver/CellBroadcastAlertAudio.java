@@ -41,6 +41,8 @@ import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
+
 import java.util.Locale;
 import java.util.MissingResourceException;
 
@@ -110,14 +112,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private AudioManager mAudioManager;
     private TelephonyManager mTelephonyManager;
     private int mInitialCallState;
-
-    public enum ToneType {
-        CMAS_DEFAULT,
-        ETWS_DEFAULT,
-        EARTHQUAKE,
-        TSUNAMI,
-        OTHER
-    }
 
     // Internal messages
     private static final int ALERT_SOUND_FINISHED = 1000;
@@ -345,11 +339,11 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         }
 
         if (mEnableAudio || mEnableVibrate) {
-            ToneType toneType = ToneType.CMAS_DEFAULT;
+            AlertType alertType = AlertType.CMAS_DEFAULT;
             if (intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE) != null) {
-                toneType = (ToneType) intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE);
+                alertType = (AlertType) intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE);
             }
-            playAlertTone(toneType);
+            playAlertTone(alertType);
         } else {
             stopSelf();
             return START_NOT_STICKY;
@@ -367,13 +361,13 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
     /**
      * Start playing the alert sound.
-     * @param toneType the alert tone type (e.g. default, earthquake, tsunami, etc..)
+     * @param alertType the alert type (e.g. default, earthquake, tsunami, etc..)
      */
-    private void playAlertTone(ToneType toneType) {
+    private void playAlertTone(AlertType alertType) {
         // stop() checks to see if we are already playing.
         stop();
 
-        log("playAlertTone: toneType=" + toneType);
+        log("playAlertTone: alertType=" + alertType);
 
         // Vibration duration in milliseconds
         long vibrateDuration = 0;
@@ -425,7 +419,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                 log("Locale=" + getResources().getConfiguration().getLocales());
 
                 // Load the tones based on type
-                switch (toneType) {
+                switch (alertType) {
                     case EARTHQUAKE:
                         setDataSourceFromResource(getResources(), mMediaPlayer,
                                 R.raw.etws_earthquake);
