@@ -277,5 +277,5 @@
     </integer-array>
 
     <!-- Label to open emergencyNotifications dialog [CHAR LIMIT=40] -->
-    <string name="emergency_alert_settings_title_watches">Emergency notifications</string>
+    <string name="emergency_alert_settings_title_watches">Wireless emergency alerts</string>
 </resources>
