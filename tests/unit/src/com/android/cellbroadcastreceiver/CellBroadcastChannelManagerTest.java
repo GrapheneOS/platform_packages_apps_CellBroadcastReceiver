@@ -22,7 +22,7 @@ import static org.junit.Assert.assertTrue;
 
 import android.test.suitebuilder.annotation.SmallTest;
 
-import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ToneType;
+import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 
 import org.junit.After;
@@ -65,27 +65,27 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
 
         assertEquals(12, list.get(0).mStartId);
         assertEquals(12, list.get(0).mEndId);
-        assertEquals(ToneType.EARTHQUAKE, list.get(0).mToneType);
+        assertEquals(AlertType.EARTHQUAKE, list.get(0).mAlertType);
         assertTrue(list.get(0).mIsEmergency);
 
         assertEquals(456, list.get(1).mStartId);
         assertEquals(456, list.get(1).mEndId);
-        assertEquals(ToneType.TSUNAMI, list.get(1).mToneType);
+        assertEquals(AlertType.TSUNAMI, list.get(1).mAlertType);
         assertTrue(list.get(1).mIsEmergency);
 
         assertEquals(0xAC00, list.get(2).mStartId);
         assertEquals(0xAFED, list.get(2).mEndId);
-        assertEquals(ToneType.OTHER, list.get(2).mToneType);
+        assertEquals(AlertType.OTHER, list.get(2).mAlertType);
         assertFalse(list.get(2).mIsEmergency);
 
         assertEquals(54, list.get(3).mStartId);
         assertEquals(60, list.get(3).mEndId);
-        assertEquals(ToneType.CMAS_DEFAULT, list.get(3).mToneType);
+        assertEquals(AlertType.CMAS_DEFAULT, list.get(3).mAlertType);
         assertTrue(list.get(3).mIsEmergency);
 
         assertEquals(100, list.get(4).mStartId);
         assertEquals(200, list.get(4).mEndId);
-        assertEquals(ToneType.CMAS_DEFAULT, list.get(4).mToneType);
+        assertEquals(AlertType.CMAS_DEFAULT, list.get(4).mAlertType);
         assertFalse(list.get(4).mIsEmergency);
     }
 }

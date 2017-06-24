@@ -21,12 +21,14 @@ import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
 import android.app.IntentService;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.preference.PreferenceManager;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SmsManager;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
 
+import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
@@ -159,6 +161,11 @@ public class CellBroadcastConfigService extends IntentService {
                 enableEmergencyAlerts &&
                 prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_CMAS_TEST_ALERTS, false);
 
+        boolean enableAreaUpdateInfoAlerts = Resources.getSystem().getBoolean(
+                com.android.internal.R.bool.config_showAreaUpdateInfoSettings)
+                && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS,
+                false);
+
         if (VDBG) {
             log("enableEmergencyAlerts = " + enableEmergencyAlerts);
             log("enableEtwsAlerts = " + enableEtwsAlerts);
@@ -169,6 +176,7 @@ public class CellBroadcastConfigService extends IntentService {
             log("forceDisableEtwsCmasTest = " + forceDisableEtwsCmasTest);
             log("enableEtwsTestAlerts = " + enableEtwsTestAlerts);
             log("enableCmasTestAlerts = " + enableCmasTestAlerts);
+            log("enableAreaUpdateInfoAlerts = " + enableAreaUpdateInfoAlerts);
         }
 
         /** Enable CDMA CMAS series messages. */
@@ -294,6 +302,10 @@ public class CellBroadcastConfigService extends IntentService {
 
         if (ranges != null) {
             for (CellBroadcastChannelRange range: ranges) {
+                if (range.mAlertType == AlertType.AREA && !enableAreaUpdateInfoAlerts) {
+                    // Skip area update info channels if it's not enabled.
+                    continue;
+                }
                 setCellBroadcastRange(manager, enableEmergencyAlerts,
                         SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
                         range.mStartId, range.mEndId);

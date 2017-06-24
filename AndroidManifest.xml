@@ -116,7 +116,7 @@
         <receiver android:name="CellBroadcastAreaInfoReceiver"
             android:permission="android.permission.READ_PHONE_STATE">
             <intent-filter>
-                 <action android:name="android.cellbroadcastreceiver.GET_LATEST_CB_AREA_INFO" />
+                 <action android:name="com.android.cellbroadcastreceiver.GET_LATEST_CB_AREA_INFO" />
             </intent-filter>
         </receiver>
 
