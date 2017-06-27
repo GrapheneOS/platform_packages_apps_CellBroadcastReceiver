@@ -67,8 +67,8 @@
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"කම්පනය"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"පූර්ණ හඬ පරිමාව භාවිත කරන්න"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"වෙනත් හඬ පරිමාව සහ බාධා නොකරන්න මනාප නොසලකා හරින්න"</string>
-    <string name="enable_area_update_info_alerts_title" msgid="2793444925039251306">"ප්‍රදේශ යාවත්කාලීන තොරතුරු"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="1638919917695623789">"SIM තත්ත්වය තුළ යාවත්කාලීන තොරතුරු පෙන්වන්න"</string>
+    <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ප්‍රදේශ යාවත්කාලීන විකාශන"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM තත්ත්වය තුළ යාවත්කාලීන තොරතුරු පෙන්වන්න"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"සංවර්ධක විකල්ප"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"ඇඟවීමේ ප්‍රවර්ගය:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"භූ භෞතික"</string>

@@ -67,8 +67,8 @@
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"وائبریٹ"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"پورا والیوم استعمال کریں"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"دیگر والیوم اور ڈسٹرب نہ کریں کی ترجیحات کو نظر انداز کریں"</string>
-    <string name="enable_area_update_info_alerts_title" msgid="2793444925039251306">"علاقائی اپ ڈیٹ کے نشریات"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="1638919917695623789">"‏SIM کی صورتحال میں موجود اپ ڈیٹ کی معلومات دکھائیں"</string>
+    <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"علاقائی اپ ڈیٹ کے نشریات"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"‏SIM کی صورتحال میں موجود اپ ڈیٹ کی معلومات دکھائیں"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"ڈیولپر کے اختیارات"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"الرٹ کا زمرہ:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"ارضی طبیعیات سے متعلق"</string>
