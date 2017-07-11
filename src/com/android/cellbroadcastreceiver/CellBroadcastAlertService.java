@@ -442,6 +442,8 @@ public class CellBroadcastAlertService extends Service {
                         }
                         return false;
                     }
+
+                    return emergencyAlertEnabled;
                 }
             }
         }
