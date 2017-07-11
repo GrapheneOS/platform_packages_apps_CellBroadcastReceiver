@@ -27,4 +27,6 @@
     <string-array name="additional_cbs_channels_strings" translatable="false"></string-array>
     <!-- Emergecny alert tone duration in milliseconds. -1 indicates playing the tone with the tone's duration -->
     <integer name="alert_duration">-1</integer>
+    <!-- Whether to compare message body when performing message duplicate dection -->
+    <bool name="duplicate_compare_body">false</bool>
 </resources>
