@@ -416,6 +416,7 @@ public class CellBroadcastAlertService extends Service {
                     if (isRoaming(message.getSubId())) {
                         return false;
                     }
+                    return emergencyAlertEnabled;
                 }
             }
         }
