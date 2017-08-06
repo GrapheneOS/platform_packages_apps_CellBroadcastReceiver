@@ -44,8 +44,9 @@
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"അടിയന്തര അലേർട്ട് (പരിശീലനം)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"അടിയന്തര അലേർട്ട് (ഓപ്പറേറ്റർ)"</string>
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"അടിയന്തര അലേർട്ട്"</string>
-    <string name="cb_other_message_identifiers" msgid="7083176204482365281">"സെൽ ബ്രോഡ്കാസ്‌റ്റ്"</string>
+    <string name="cb_other_message_identifiers" msgid="5790068194529377210">"പ്രക്ഷേപണ സന്ദേശങ്ങൾ"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"അടിയന്തര അലേർട്ട് ക്രമീകരണങ്ങൾ"</string>
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"പ്രക്ഷേപണ സന്ദേശങ്ങൾ"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"അറിയിപ്പുകൾ ഓൺ ചെയ്യുക"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"അടിയന്തര അലേർട്ട് പ്രക്ഷേപണങ്ങൾ പ്രദർശിപ്പിക്കുക"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"അലേർട്ട് ഓർമ്മപ്പെടുത്തൽ"</string>
@@ -54,7 +55,7 @@
     <string name="category_etws_settings_title" msgid="4072774251965938576">"ETWS ക്രമീകരണങ്ങൾ"</string>
     <string name="enable_etws_test_alerts_title" msgid="2569886288897109169">"ETWS പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ കാണിക്കുക"</string>
     <string name="enable_etws_test_alerts_summary" msgid="7988690174166347072">"ഭൂകമ്പ സുനാമി മുന്നറിയിപ്പ് സി‌സ്റ്റം പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ പ്രദർശിപ്പിക്കുക"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"അത്യന്തം ഗുരുതരമായ ഭീഷണികൾ കാണിക്കുക"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="215650211797464620">"അത്യന്തഗുരുതര ഭീഷണികൾ കാണിക്കുക"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2493139961243300290">"ജീവനും സ്വത്തിനും നേരെയുള്ള അത്യന്തം ഗുരുതരമായ ഭീഷണികൾക്കുള്ള അലേർട്ടുകൾ പ്രദർശിപ്പിക്കുക"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8008941231371565775">"ഗുരുതരമായ ഭീഷണികൾ കാണിക്കുക"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4089299793459943222">"ജീവനും സ്വത്തിനും നേരെയുള്ള ഗുരുതരമായ ഭീഷണികൾക്കുള്ള അലേർട്ടുകൾ പ്രദർശിപ്പിക്കുക"</string>
@@ -64,6 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"വാണിജ്യ മൊബൈൽ അലേർട്ട് സി‌സ്റ്റം പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ പ്രദർശിപ്പിക്കുക"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"വൈബ്രേറ്റുചെയ്യുക"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"അലേർട്ടിൽ വൈബ്രേറ്റുചെയ്യുക"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"പൂർണ്ണ വോളിയം ഉപയോഗിക്കുക"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"മറ്റുള്ള വോളിയവും \'ശല്യപ്പെടുത്തരുത്\' മുൻഗണനകളും ഒഴിവാക്കുക"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"ബ്രസീലിനുള്ള ക്രമീകരണങ്ങൾ"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"ചാനൽ 50 പ്രക്ഷേപണങ്ങൾ കാണിക്കുക"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"ഏരിയ അപ്‌ഡേറ്റുചെയ്യൽ വിവരത്തിന് ബ്രസീലിൽ ചാനൽ 50 ഉപയോഗിക്കുന്നു"</string>
@@ -107,6 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"നിങ്ങൾ നിലവിൽ അടിയന്തര അലേർട്ടുകൾ നേടുന്നു. നിങ്ങൾക്ക് അടിയന്തര അലേർട്ടുകൾ തുടർന്നും നേടണോ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"വേണം"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"വേണ്ട"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"അടിയന്തര അലേർട്ട് ചരിത്രം"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ഒരിക്കല്‍"</item>
     <item msgid="9097229303902157183">"എല്ലാ 2 മിനിറ്റിലും"</item>

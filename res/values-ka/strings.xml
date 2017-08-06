@@ -44,8 +44,9 @@
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"საგანგებო ვითარების შესახებ გაფრთხილება (ვარჯიში)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"საგანგებო ვითარების შესახებ გაფრთხილება (ოპერატორი)"</string>
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"საგანგებო გაფრთხილება"</string>
-    <string name="cb_other_message_identifiers" msgid="7083176204482365281">"Cell broadcast"</string>
+    <string name="cb_other_message_identifiers" msgid="5790068194529377210">"შეტყობინებათა გავრცელება"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"საგანგებო ვითარების გაფრთხილებების პარამეტრები"</string>
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Broadcast შეტყობინებები"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"შეტყობინებების ჩართვა"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"საგანგებო ვითარების შესახებ ქსელის შეტყობინებების ჩვენება"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"გაფრთხილება"</string>
@@ -64,6 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"კომერციული მობილური გაფრთხილების სისტემის ტესტირების შესახებ შეტყობინებების ჩვენება"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ვიბრაცია"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"საგანგებო შეტყობინება ვიბრაციით"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"სრული ხმის გამოყენება"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"ხმის დამატებითი პარამეტრების და „არ შემაწუხოთ“ პარამეტრის იგნორირება"</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Brazil-ის პარამეტრები"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"არხი 50-ს მაუწყებლობების ჩვენება"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"არხი 50 ბრაზილიაში განახლებული ინფორმაციის მისაწოდებლად გამოიყენება"</string>
@@ -107,6 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ამჟამად იღებთ საგანგებო ვითარების შესახებ გაფრთხილებებს. გსურთ გააგრძელოთ საგანგებო ვითარების შესახებ გაფრთხილებების მიღება?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"დიახ"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"არა"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"საგანგებო გაფრთხილებათა ისტორია"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ერთხელ"</item>
     <item msgid="9097229303902157183">"ყოველ 2 წუთში ერთხელ"</item>

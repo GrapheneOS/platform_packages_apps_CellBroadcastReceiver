@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="7559008249836700599">"Εκπομπές κινητής τηλεφωνίας"</string>
-    <string name="sms_cb_settings" msgid="971917159442705371">"Ρυθμίσεις εκπομπής κινητής τηλεφωνίας"</string>
+    <string name="sms_cb_settings" msgid="971917159442705371">"Ρυθμίσεις εκπομπής κιν. τηλ."</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Οι ρυθμίσεις εκπομπής κινητής τηλεφωνίας δεν είναι διαθέσιμες για αυτόν το χρήστη"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"Δεν υπάρχουν ενεργές ειδοποιήσεις στην περιοχή σας. Μπορείτε να αλλάξετε τις ρυθμίσεις ειδοποιήσεων χρησιμοποιώντας την επιλογή μενού Ρυθμίσεις."</string>
@@ -44,8 +44,9 @@
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Ειδοποίηση έκτακτης ανάγκης (άσκηση)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Ειδοποίηση έκτακτης ανάγκης (εταιρεία κιν. τηλεφ.)"</string>
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"Ειδοποίηση έκτακτης ανάγκης"</string>
-    <string name="cb_other_message_identifiers" msgid="7083176204482365281">"Εκπομπή κινητής τηλεφωνίας"</string>
+    <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Μετάδοση μηνυμάτων"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"Ρυθμίσεις ειδοποίησης έκτακτης ανάγκης"</string>
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Μετάδοση μηνυμάτων"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"Ενεργοποίηση ειδοποιήσεων"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Εμφάνιση εκπομπών ειδοποιήσεων έκτακτης ανάγκης"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Ειδοποίηση υπενθύμισης"</string>
@@ -64,6 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Εμφάνιση δοκιμαστικών μεταδόσεων για το σύστημα Commercial Mobile Alert System"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Δόνηση"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Δόνηση στις ειδοποιήσεις"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"Χρήση πλήρους έντασης"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Παράβλεψη προτιμήσεων έντασης και λειτ. \"Μην ενοχλείτε\""</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Ρυθμίσεις για τη Βραζιλία"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Εμφάνιση εκπομπών καναλιού 50"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"Τo κανάλι 50 χρησιμοποιείται στη Βραζιλία για πληροφορίες ενημέρωσης της περιοχής"</string>
@@ -107,6 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Αυτή τη στιγμή λαμβάνετε Ειδοποιήσεις έκτακτης ανάγκης. Θέλετε να συνεχίσετε να λαμβάνετε Ειδοποιήσεις έκτακτης ανάγκης;"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ναι"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Όχι"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Ιστορικό ειδοποιήσεων έκτακτης ανάγκης"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Μία φορά"</item>
     <item msgid="9097229303902157183">"Κάθε 2 λεπτά"</item>

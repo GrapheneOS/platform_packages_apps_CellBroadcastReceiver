@@ -44,8 +44,9 @@
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Hätätilannevaroitus (harjoitus)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Hätätilannevaroitus (operaattori)"</string>
     <string name="pws_other_message_identifiers" msgid="1813329661891149820">"Hätätilannevaroitus"</string>
-    <string name="cb_other_message_identifiers" msgid="7083176204482365281">"Cell Broadcast"</string>
+    <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Lähetysviestit"</string>
     <string name="emergency_alert_settings_title" msgid="5427868392642771940">"Hätätilannevaroitusten asetukset"</string>
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Lähetysviestit"</string>
     <string name="enable_emergency_alerts_title" msgid="1411195469162410084">"Ota ilmoitukset käyttöön"</string>
     <string name="enable_emergency_alerts_summary" msgid="5932655529367149358">"Näytä hätätilannevaroituslähetyksiä"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Ilmoitusmuistutus"</string>
@@ -64,6 +65,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2935171596891733844">"Näytä Commercial Mobile Alert Systemin testilähetykset"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Värinä"</string>
     <string name="enable_alert_vibrate_summary" msgid="4328060563316778589">"Käytä värinää ilmoituksesta"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"Täysi äänenvoimakkuus"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Ohita muut volyymi- ja Älä häiritse ‑valinnat."</string>
     <string name="category_brazil_settings_title" msgid="6343130548572319922">"Asetukset, Brasilia"</string>
     <string name="enable_channel_50_alerts_title" msgid="2818924064446974167">"Näytä kanavan 50 lähetykset"</string>
     <string name="enable_channel_50_alerts_summary" msgid="7507770011325273009">"Kanavaa 50 käytetään Brasiliassa alueellisiin tietojen päivityksiin"</string>
@@ -107,6 +110,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Sinulle lähetetään tällä hetkellä hätäilmoituksia. Haluatko jatkaa hätäilmoitusten vastaanottamista?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Kyllä"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Ei"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Hätätilannevaroitusten historia"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Kerran"</item>
     <item msgid="9097229303902157183">"Kahden minuutin välein"</item>
