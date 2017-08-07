@@ -75,10 +75,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     public static final String ALERT_AUDIO_VIBRATE_EXTRA =
             "com.android.cellbroadcastreceiver.ALERT_AUDIO_VIBRATE";
 
-    /** Extra for alert audio ETWS behavior (always vibrate, even in silent mode). */
-    public static final String ALERT_AUDIO_ETWS_VIBRATE_EXTRA =
-            "com.android.cellbroadcastreceiver.ALERT_AUDIO_ETWS_VIBRATE";
-
     private static final String TTS_UTTERANCE_ID = "com.android.cellbroadcastreceiver.UTTERANCE_ID";
 
     /** Pause duration between alert sound and alert speech. */
@@ -315,10 +311,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             case AudioManager.RINGER_MODE_SILENT:
                 if (DBG) log("Ringer mode: silent");
                 mEnableAudio = false;
-                // If the device is in silent mode, do not vibrate (except ETWS).
-                if (!intent.getBooleanExtra(ALERT_AUDIO_ETWS_VIBRATE_EXTRA, false)) {
-                    mEnableVibrate = false;
-                }
+                mEnableVibrate = false;
                 break;
             case AudioManager.RINGER_MODE_VIBRATE:
                 if (DBG) log("Ringer mode: vibrate");
