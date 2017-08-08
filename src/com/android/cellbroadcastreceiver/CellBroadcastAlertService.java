@@ -473,9 +473,6 @@ public class CellBroadcastAlertService extends Service {
 
         ToneType toneType = ToneType.CMAS_DEFAULT;
         if (message.isEtwsMessage()) {
-            // For ETWS, always vibrate, even in silent mode.
-            audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATE_EXTRA, true);
-            audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_ETWS_VIBRATE_EXTRA, true);
             toneType = ToneType.ETWS_DEFAULT;
 
             if (message.getEtwsWarningInfo() != null) {
