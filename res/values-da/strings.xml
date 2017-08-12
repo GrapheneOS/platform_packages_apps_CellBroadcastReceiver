@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"Nødalarmer"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Denne bruger har ikke adgang til indstillingerne for Cell Broadcast"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Der er ingen aktive advarsler i dit område. Du kan ændre indstillingerne for advarslen ved hjælp af menuen Indstillinger."</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Der er ingen aktive advarsler i dit område. Du kan ændre indstillingerne for advarsler i menuen Indstillinger."</string>
     <string name="menu_preferences" msgid="3596514894131599202">"Indstillinger"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Slet meddelelser"</string>
     <string name="message_options" msgid="3178489901903589574">"Valgmuligheder for beskeder"</string>

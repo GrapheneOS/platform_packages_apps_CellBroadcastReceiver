@@ -60,7 +60,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Cana ve mala karşı aşırı düzeyde tehditler"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ciddi tehditler"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Cana ve mala karşı ciddi tehditler"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"SARI uyarılar"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER uyarıları"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Çocuk kaçırma acil durum bültenleri"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS test yayınları"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Ticari Mobil Uyarı Sistemi (CMAS) test yayınları"</string>
