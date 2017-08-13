@@ -16,9 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="7559008249836700599">"सेल प्रसारण"</string>
+    <string name="app_label" msgid="7559008249836700599">"सेल ब्रॉडकास्ट (CBC)"</string>
     <string name="sms_cb_settings" msgid="3795852619005211509">"आपातकालीन सूचनाएं"</string>
-    <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"सेल प्रसारण सेटिंग इस उपयोगकर्ता के लिए उपलब्ध नहीं हैं"</string>
+    <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"सेल ब्रॉडकास्ट (CBC) सेटिंग इस उपयोगकर्ता के लिए उपलब्ध नहीं हैं"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक है"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"आपके क्षेत्र में कोई सक्रिय अलर्ट नहीं है. आप सेटिंग मेनू विकल्‍प का उपयोग करके अलर्ट सेटिंग बदल सकते हैं."</string>
     <string name="menu_preferences" msgid="3596514894131599202">"सेटिंग"</string>
@@ -69,7 +69,7 @@
     <string name="use_full_volume_summary" msgid="3560764277281704697">"अन्य वॉल्यूम और परेशान न करें प्राथमिकताओं को अनदेखा करें"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"क्षेत्र अपडेट प्रसारण"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM स्थिति में अपडेट जानकारी दिखाएं"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"डेवलपर विकल्प"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"डेवलपर के लिए सेटिंग और टूल"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"अलर्ट श्रेणी:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"भूभौतिकीय"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"मौसम संबंधी"</string>
@@ -99,7 +99,7 @@
     <string name="cmas_urgency_immediate" msgid="1577485208196449288">"तुरंत"</string>
     <string name="cmas_urgency_expected" msgid="6830831119872375936">"अपेक्षित"</string>
     <string name="cmas_certainty_heading" msgid="8374669249736439193">"निश्चितता:"</string>
-    <string name="cmas_certainty_observed" msgid="3668549749352106472">"अवलोकन किया गया"</string>
+    <string name="cmas_certainty_observed" msgid="3668549749352106472">"देखा गया"</string>
     <string name="cmas_certainty_likely" msgid="4254497828943291749">"संभावना"</string>
     <string name="delivery_time_heading" msgid="5980836543433619329">"प्राप्त:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> बिना पढ़े अलर्ट."</string>

@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="7559008249836700599">"Správy informačných služieb"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"Núdzové upozornenia"</string>
+    <string name="sms_cb_settings" msgid="3795852619005211509">"Tiesňové upozornenia"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Tento používateľ nemá k dispozícii nastavenia správ informačných služieb"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"Vo vašej oblasti nie sú žiadne aktívne upozornenia. Nastavenia upozornení môžete meniť v Nastaveniach."</string>
@@ -48,7 +48,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Upozornenia"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Správy vysielania"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"Povoliť upozornenia"</string>
-    <string name="enable_emergency_alerts_summary" msgid="8171013771243907245">"Získavať núdzové upozornenia"</string>
+    <string name="enable_emergency_alerts_summary" msgid="8171013771243907245">"Prijímať tiesňové upozornenia"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Zvuk pripomenutí upozornení"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Čítať upozornenia"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Čítať tiesňové upozornenia prevodom textu na reč"</string>
@@ -61,7 +61,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Závažné hrozby"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Závažné ohrozenie života a majetku"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Upozornenia AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Bulletiny pohotovosti pre prípady únosov detí"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Tiesňové správy o únosoch detí"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"Testovacie vysielania CMAS"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Testovacie vysielania systému Commercial Mobile Alert System"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrovať"</string>
