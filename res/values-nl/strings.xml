@@ -60,7 +60,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Extreem gevaar voor levens en eigendommen"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ernstige dreigingen"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ernstig gevaar voor levens en eigendommen"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER-alerts"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER Alerts"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Noodberichten over ontvoering van kinderen"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS-testberichten"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Testberichten voor CMAS (Commercial Mobile Alert System)"</string>
