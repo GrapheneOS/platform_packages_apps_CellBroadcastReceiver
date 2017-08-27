@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"അടിയന്തര അലേർട്ടുകൾ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"ഈ ഉപയോക്താവിനായി സെൽ പ്രക്ഷേപണ ക്രമീകരണങ്ങൾ ലഭ്യമല്ല"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ശരി"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"നിങ്ങളുടെ ഏരിയയിൽ സജീവ അലേർട്ടുകളൊന്നുമില്ല. ക്രമീകരണങ്ങളുടെ മെനു ഓപ്‌ഷൻ ഉപയോഗിച്ച് അലേർട്ട് ക്രമീകരണങ്ങൾ നിങ്ങൾക്ക് മാറ്റാനാകും."</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"നിങ്ങളുടെ ഏരിയയിൽ സജീവ അലേർട്ടുകളൊന്നുമില്ല. ക്രമീകരണമെനു ഉപയോഗിച്ച് അലേർട്ട് ക്രമീകരണങ്ങളില്‍ മാറ്റം വരുത്താം"</string>
     <string name="menu_preferences" msgid="3596514894131599202">"ക്രമീകരണം"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"പ്രക്ഷേപണങ്ങൾ ഇല്ലാതാക്കുക"</string>
     <string name="message_options" msgid="3178489901903589574">"സന്ദേശ ഓപ്‌ഷനുകൾ"</string>
@@ -59,7 +59,7 @@
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"അതീവ ഗുരുതരമായ ഭീഷണികൾ"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"ജീവനും സ്വത്തിനും നേരെയുള്ള അത്യന്തം ഗുരുതരമായ ഭീഷണികൾ"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ഗുരുതരമായ ഭീഷണികൾ"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ജീവനും സ്വത്തിനും എതിരായുള്ള ഗുരുതരമായ ഭീഷണികൾ"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ജീവനും സ്വത്തിനും നേരെയുള്ള ഗുരുതരമായ ഭീഷണികൾ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER അലേർട്ടുകൾ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"കുട്ടികളെ അപഹരിക്കലുമായി ബന്ധപ്പെട്ട അടിയന്തര ബുള്ളറ്റിനുകൾ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ"</string>

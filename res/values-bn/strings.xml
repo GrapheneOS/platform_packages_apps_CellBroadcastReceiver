@@ -104,7 +104,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"গ্রহণ করা হয়েছে:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g>টি অপঠিত সতর্কতা।"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"নতুন সতর্কতাগুলি"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"প্রথম CMAS সতর্কতা প্রদর্শন করার পর একটি অপ্ট আউট ডায়লগ দেখুন (রাষ্ট্রপতি সতর্কতা ছাড়া)।"</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"প্রথম CMAS সতর্কতা প্রদর্শন করার পর একটি অপ্ট-আউট ডায়লগ দেখুন (রাষ্ট্রপতি সতর্কতা ছাড়া)।"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"অপ্ট আউট ডায়লগ দেখুন"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"আপনি বর্তমানে জরুরী সতর্কতা গ্রহণ করছেন। আপনি কি জরুরী সতর্কতা গ্রহণ করা চালিয়ে যেতে চান?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"হ্যাঁ"</string>
