@@ -29,4 +29,6 @@
     <integer name="alert_duration">-1</integer>
     <!-- Whether to compare message body when performing message duplicate dection -->
     <bool name="duplicate_compare_body">false</bool>
+    <!-- Whether to enable audio alert for non emergency broadcasts on FEATURE_WATCH devices -->
+    <bool name="watch_enable_non_emergency_audio">false</bool>
 </resources>
