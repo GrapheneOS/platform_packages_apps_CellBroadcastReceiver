@@ -69,7 +69,7 @@
     <string name="use_full_volume_summary" msgid="3560764277281704697">"ডু নট ডিস্টার্ব এবং ভলিউমের অন্যান্য পছন্দগুলি অগ্রাহ্য করুন"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"জায়গার আপডেটের সম্প্রচার"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"সিম স্ট্যাটাসে আপডেটের তথ্য দেখুন"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"বিকাশকারী বিকল্পগুলি"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"ডেভেলপার বিকল্প"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"সতর্কতা বিভাগ:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"জিওফিজিক্যাল"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"আবহাওয়াগত"</string>
@@ -104,7 +104,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"গ্রহণ করা হয়েছে:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g>টি অপঠিত সতর্কতা।"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"নতুন সতর্কতাগুলি"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"প্রথম CMAS সতর্কতা প্রদর্শন করার পর একটি অপ্ট আউট ডায়লগ দেখুন (রাষ্ট্রপতি সতর্কতা ছাড়া)।"</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"প্রথম CMAS সতর্কতা প্রদর্শন করার পর একটি অপ্ট-আউট ডায়লগ দেখুন (রাষ্ট্রপতি সতর্কতা ছাড়া)।"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"অপ্ট আউট ডায়লগ দেখুন"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"আপনি বর্তমানে জরুরী সতর্কতা গ্রহণ করছেন। আপনি কি জরুরী সতর্কতা গ্রহণ করা চালিয়ে যেতে চান?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"হ্যাঁ"</string>

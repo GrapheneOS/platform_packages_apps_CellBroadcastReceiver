@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"ਸੈਲ ਪ੍ਰਸਾਰਨ ਸੈਟਿੰਗਾਂ ਇਸ ਉਪਭੋਗਤਾ ਲਈ ਉਪਲਬਧ ਨਹੀਂ ਹਨ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ਠੀਕ"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"ਤੁਹਾਡੇ ਖੇਤਰ ਵਿੱਚ ਕੋਈ ਸਰਗਰਮ ਚੇਤਾਵਨੀਆਂ ਨਹੀਂ ਹਨ। ਤੁਸੀਂ ਸੈਟਿੰਗਾਂ ਮੀਨੂ ਵਿਕਲਪ ਵਰਤਦੇ ਹੋਏ ਚੇਤਾਵਨੀ ਸੈਟਿੰਗਾਂ ਬਦਲ ਸਕਦੇ ਹੋ।"</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"ਤੁਹਾਡੇ ਖੇਤਰ ਵਿੱਚ ਕੋਈ ਸਰਗਰਮ ਚਿਤਾਵਨੀਆਂ ਨਹੀਂ ਹਨ। ਤੁਸੀਂ ਸੈਟਿੰਗਾਂ ਮੀਨੂ ਵਿਕਲਪ ਵਰਤਦੇ ਹੋਏ ਚਿਤਾਵਨੀ ਸੈਟਿੰਗਾਂ ਬਦਲ ਸਕਦੇ ਹੋ।"</string>
     <string name="menu_preferences" msgid="3596514894131599202">"ਸੈਟਿੰਗਾਂ"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"ਪ੍ਰਸਾਰਨ ਮਿਟਾਓ"</string>
     <string name="message_options" msgid="3178489901903589574">"ਸੁਨੇਹਾ ਚੋਣਾਂ"</string>
@@ -66,7 +66,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"ਵਪਾਰਕ ਮੋਬਾਈਲ ਸੁਚੇਤਨਾ ਸਿਸਟਮ ਲਈ ਟੈਸਟ ਪ੍ਰਸਾਰਣ"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ਥਰਥਰਾਹਟ ਕਰੋ"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"ਪੂਰੀ ਵੌਲਿਊਮ ਦੀ ਵਰਤੋਂਂ ਕਰੋ"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"ਹੋਰ ਵੌਲਿਊਮ ਅਤੇ \'ਮੈਨੂੰ ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ\' ਤਰਜੀਹਾਂ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"ਹੋਰ ਅਵਾਜ਼ ਅਤੇ \'ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ\' ਤਰਜੀਹਾਂ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ਖੇਤਰ ਬਾਰੇ ਤਾਜ਼ਾ ਜਾਣਕਾਰੀ ਦੇ ਪ੍ਰਸਾਰਣ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM ਅਵਸਥਾ ਵਿੱਚ ਅੱਪਡੇਟ ਦੀ ਜਾਣਕਾਰੀ ਦਿਖਾਓ"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"ਵਿਕਾਸਕਾਰ ਚੋਣਾਂ"</string>
@@ -104,9 +104,9 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"ਪ੍ਰਾਪਤ:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ਅਨਰੀਡ ਚਿਤਾਵਨੀਆਂ।"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"ਨਵੀਆਂ ਚਿਤਾਵਨੀਆਂ"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"ਪਹਿਲੀ CMAS ਚਿਤਾਵਨੀ ਡਿਸਪਲੇ ਕਰਨ ਤੋਂ ਬਾਅਦ ਇੱਕ ਔਪਟ-ਆਊਟ ਡਾਇਲੌਗ ਦਿਖਾਓ (ਪ੍ਰੈਜੀਡੈਂਸ਼ੀਅਲ ਚਿਤਾਵਨੀ ਤੋਂ ਇਲਾਵਾ)।"</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"ਪਹਿਲੀ CMAS ਚਿਤਾਵਨੀ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਤੋਂ ਬਾਅਦ ਇੱਕ ਔਪਟ-ਆਊਟ ਡਾਇਲੌਗ ਦਿਖਾਓ (ਪ੍ਰੈਜੀਡੈਂਸ਼ੀਅਲ ਚਿਤਾਵਨੀ ਤੋਂ ਇਲਾਵਾ)।"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"ਔਪਟ-ਆਊਟ ਡਾਇਲੌਗ ਦਿਖਾਓ"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ਇਸ ਵੇਲੇ ਤੁਸੀਂ ਐਮਰਜੈਂਸੀ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਾਪਤ ਕਰ ਰਹੇ ਹੋ। ਕੀ ਤੁਸੀਂ ਐਮਰਜੈਂਸੀ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਾਪਤ ਕਰਨਾ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ਇਸ ਵੇਲੇ ਤੁਸੀਂ ਸੰਕਟਕਾਲੀਨ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਾਪਤ ਕਰ ਰਹੇ ਹੋ। ਕੀ ਤੁਸੀਂ ਸੰਕਟਕਾਲੀਨ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਾਪਤ ਕਰਨਾ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ਹਾਂ"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ਨਹੀਂ"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"ਸੰਕਟਕਾਲੀਨ ਚੇਤਾਵਨੀ ਸਬੰਧੀ ਇਤਿਹਾਸ"</string>

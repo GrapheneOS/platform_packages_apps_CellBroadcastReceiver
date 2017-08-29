@@ -60,7 +60,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"ការគំរាមកំហែងដល់អាយុជីវិត និងទ្រព្យសម្បត្តិដ៏ធ្ងន់ធ្ងរបំផុត"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ការ​គំរាម​កំហែង​ធ្ងន់ធ្ងរ"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ការគំរាមកំហែងដល់អាយុជីវិត និងទ្រព្យសម្បត្តិដ៏ធ្ងន់ធ្ងរ"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"ការ​ជូនដំណឹង​ AMBER"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"ការ​ជូនដំណឹងពណ៌លឿង"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ព្រឹត្តិបត្រអាសន្ន​អំពី​ការចាប់ជំរិត​ក្មេង"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"ការផ្សាយ​សាកល្បងរបស់ CMAS"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"​ការផ្សាយ​សាកល្បង​សម្រាប់ Commercial Mobile Alert System"</string>
@@ -109,10 +109,10 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"បច្ចុប្បន្ន​អ្នក​កំពុង​ទទួល​ការ​ជូន​ដំណឹង​ពេល​អាសន្ន។ តើ​អ្នក​ចង់​បន្ត​ទទួល​ការ​ជូន​ដំណឹង​ពេល​អាសន្ន​ដែរ​ឬទេ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"បាទ/ចាស"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ទេ"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"ប្រវត្តិដាស់តឿន​ពេលអាសន្ន"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"ប្រវត្តិការជូនដំណឹងពេលអាសន្ន"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ម្ដង"</item>
-    <item msgid="9097229303902157183">"រៀងរាល់ ២​ នាទី"</item>
+    <item msgid="9097229303902157183">"រាល់ 2​ នាទីម្តង"</item>
     <item msgid="5718214950343391480">"រាល់ 5 នាទីម្ដង"</item>
     <item msgid="3863339891188103437">"រាល់ 15 នាទីម្តង"</item>
     <item msgid="6868848414437854609">"បិទ"</item>

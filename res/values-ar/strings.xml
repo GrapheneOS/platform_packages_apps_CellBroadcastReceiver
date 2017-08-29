@@ -19,8 +19,8 @@
     <string name="app_label" msgid="7559008249836700599">"Cell Broadcasts"</string>
     <string name="sms_cb_settings" msgid="3795852619005211509">"تنبيهات الطوارئ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"إعدادات البث الخلوي غير متوفّرة لهذا المستخدم"</string>
-    <string name="button_dismiss" msgid="1234221657930516287">"موافق"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"لا تتوفر اشعارات نشطة في منطقتك. يمكنك تغيير إعدادات التنبيه باستخدام خيار قائمة الإعدادات."</string>
+    <string name="button_dismiss" msgid="1234221657930516287">"حسنًا"</string>
+    <string name="no_cell_broadcasts" msgid="5409324337492758562">"لا تتوفّر إشعارات نشطة في منطقتك. يمكنك تغيير إعدادات التنبيه باستخدام خيار قائمة الإعدادات."</string>
     <string name="menu_preferences" msgid="3596514894131599202">"الإعدادات"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"حذف مجموعات البث"</string>
     <string name="message_options" msgid="3178489901903589574">"خيارات الرسائل"</string>
