@@ -628,15 +628,17 @@ public class CellBroadcastAlertService extends Service {
                 .setCategory(Notification.CATEGORY_SYSTEM)
                 .setPriority(Notification.PRIORITY_HIGH)
                 .setColor(context.getResources().getColor(R.color.notification_color))
-                .setVisibility(Notification.VISIBILITY_PUBLIC)
-                .setDefaults(Notification.DEFAULT_ALL);
+                .setVisibility(Notification.VISIBILITY_PUBLIC);
 
-        builder.setDefaults(Notification.DEFAULT_ALL);
 
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
             builder.setDeleteIntent(pi);
+            // FEATURE_WATCH/CWH devices see this as priority
+            builder.setVibrate(new long[]{0});
         } else {
             builder.setContentIntent(pi);
+            // This will break vibration on FEATURE_WATCH, so use it for anything else
+            builder.setDefaults(Notification.DEFAULT_ALL);
         }
 
         // increment unread alert count (decremented when user dismisses alert dialog)
@@ -650,6 +652,24 @@ public class CellBroadcastAlertService extends Service {
         }
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
+
+        // FEATURE_WATCH devices do not have global sounds for notifications; only vibrate.
+        // TW requires sounds for 911/919
+        // Emergency messages use a different audio playback and display path. Since we use
+        // addToNotification for the emergency display on FEATURE WATCH devices vs the
+        // Alert Dialog, it will call this and override the emergency audio tone.
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)
+                && !isEmergencyMessage(context, message)) {
+            if (context.getResources().getBoolean(R.bool.watch_enable_non_emergency_audio)) {
+                // start audio/vibration/speech service for non emergency alerts
+                Intent audioIntent = new Intent(context, CellBroadcastAlertAudio.class);
+                audioIntent.setAction(CellBroadcastAlertAudio.ACTION_START_ALERT_AUDIO);
+                audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE,
+                        AlertType.OTHER);
+                context.startService(audioIntent);
+            }
+        }
+
     }
 
     /**
