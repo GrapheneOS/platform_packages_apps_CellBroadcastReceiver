@@ -71,6 +71,10 @@
     <string name="cmas_presidential_level_alert">Presidential alert</string>
     <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
     <string name="cmas_extreme_alert">Emergency alert: Extreme</string>
+    <!-- CMAS dialog title for extreme alert with extreme severity, immediate urgency, and observed certainty. [CHAR LIMIT=50] -->
+    <string name="cmas_extreme_immediate_observed_alert">Emergency alert: Extreme</string>
+    <!-- CMAS dialog title for extreme alert with extreme severity, immediate urgency,  and likely certainty. [CHAR LIMIT=50] -->
+    <string name="cmas_extreme_immediate_likely_alert">Emergency alert: Extreme</string>
     <!-- CMAS dialog title for severe alert. [CHAR LIMIT=50] -->
     <string name="cmas_severe_alert">Emergency alert: Severe</string>
     <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
