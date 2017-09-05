@@ -38,6 +38,8 @@
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"Avviso di emergenza"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Avviso presidenziale"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Avviso di emergenza: estremo"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"Avviso di emergenza: estremo"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"Avviso di emergenza: estremo"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Avviso di emergenza: grave"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"Sottrazione di minori (allerta Amber)"</string>
     <string name="cmas_required_monthly_test" msgid="6464047268150108932">"Test mensile avvisi di emergenza"</string>

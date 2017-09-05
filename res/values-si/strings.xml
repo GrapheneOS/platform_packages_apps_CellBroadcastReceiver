@@ -38,6 +38,8 @@
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"හදිසි අනතුරු ඇඟවීම්"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"සභාපතිගේ ඇඟවීම"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"හදිසි ඇඟවීම: උපරිම"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"හදිසි ඇඟවීම: උපරිම"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"හදිසි ඇඟවීම: උපරිම"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"හදිසි නිවේදන: දැඩි"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"ළමා අපහරණය (ඇම්බර් දැනුම්දීම)"</string>
     <string name="cmas_required_monthly_test" msgid="6464047268150108932">"හදිසි ඇඟවීමේ මාසික පරික්ෂාව"</string>
