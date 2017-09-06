@@ -38,6 +38,8 @@
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"કટોકટીની ચેતવણી"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"પ્રમુખપદની ચેતવણી"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"કટોકટીની ચેતવણી: અત્યંત"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"કટોકટીની ચેતવણી: અત્યંત ગંભીર"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"કટોકટીની ચેતવણી: અત્યંત ગંભીર"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"કટોકટીની ચેતવણી: ગંભીર"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"બાળ અપહરણ (Amber ચેતવણી)"</string>
     <string name="cmas_required_monthly_test" msgid="6464047268150108932">"કટોકટીની ચેતવણીની માસિક કસોટી"</string>
@@ -49,7 +51,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"બ્રોડકાસ્ટના સંદેશા"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"ચેતવણીઓને મંજૂરી આપો"</string>
     <string name="enable_emergency_alerts_summary" msgid="8171013771243907245">"કટોકટીની સૂચનાઓ પ્રાપ્ત કરો"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"ચેતવણી સ્મૃતિપત્રનો અવાજ"</string>
+    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"ચેતવણી આપતા રિમાઇન્ડરનો અવાજ"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"ચેતવણી સંદેશ બોલો"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"કટોકટીની ચેતવણીના સંદેશા બોલવા માટે ટેક્સ્ટ-થી-વાણીનો ઉપયોગ કરો"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"કટોકટીની ચેતવણીનો ઇતિહાસ"</string>

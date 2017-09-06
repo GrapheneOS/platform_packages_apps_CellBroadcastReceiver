@@ -38,6 +38,8 @@
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"비상사태 경고"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"정부 경보"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"비상사태 경보: 긴급"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"긴급 재난 문자"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"안전 안내 문자"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"비상사태 경보: 심각"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"아동 유괴(황색 경보)"</string>
     <string name="cmas_required_monthly_test" msgid="6464047268150108932">"비상사태 경보 월별 테스트"</string>
