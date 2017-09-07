@@ -38,6 +38,8 @@
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"Cảnh báo khẩn cấp"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Cảnh báo của tổng thống"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Cảnh báo khẩn cấp: Cao nhất"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"Cảnh báo khẩn cấp: Cao nhất"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"Cảnh báo khẩn cấp: Cao nhất"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Cảnh báo khẩn cấp: Cao"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"Bắt cóc trẻ em (cảnh báo của Amber)"</string>
     <string name="cmas_required_monthly_test" msgid="6464047268150108932">"Thử nghiệm cảnh báo khẩn cấp hàng tháng"</string>
