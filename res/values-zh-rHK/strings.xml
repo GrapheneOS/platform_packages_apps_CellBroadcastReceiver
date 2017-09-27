@@ -119,4 +119,5 @@
     <item msgid="3863339891188103437">"每 15 分鐘"</item>
     <item msgid="6868848414437854609">"關閉"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"無線緊急警報"</string>
 </resources>
