@@ -119,4 +119,5 @@
     <item msgid="3863339891188103437">"Cada 15 minutos"</item>
     <item msgid="6868848414437854609">"Desactivado"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Alertas de emerxencia sen fíos"</string>
 </resources>

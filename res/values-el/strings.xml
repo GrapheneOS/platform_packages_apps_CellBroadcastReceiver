@@ -119,4 +119,5 @@
     <item msgid="3863339891188103437">"Κάθε 15 λεπτά"</item>
     <item msgid="6868848414437854609">"Απενεργοποιημένη"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Ασύρματες ειδοποιήσεις έκτακτης ανάγκης"</string>
 </resources>
