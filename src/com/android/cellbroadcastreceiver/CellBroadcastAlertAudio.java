@@ -531,9 +531,10 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         builder.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION);
         builder.setUsage(AudioAttributes.USAGE_ALARM);
         if (mUseFullVolume) {
-            // Set FLAG_BYPASS_INTERRUPTION_POLICY so that it still enables
-            // audio in DnD mode (except total silence DnD mode).
-            builder.setFlags(AudioAttributes.FLAG_BYPASS_INTERRUPTION_POLICY);
+            // Set FLAG_BYPASS_INTERRUPTION_POLICY and FLAG_BYPASS_MUTE so that it enables
+            // audio in any DnD mode, even in total silence DnD mode (requires MODIFY_PHONE_STATE).
+            builder.setFlags(AudioAttributes.FLAG_BYPASS_INTERRUPTION_POLICY
+                    | AudioAttributes.FLAG_BYPASS_MUTE);
         }
 
         mMediaPlayer.setAudioAttributes(builder.build());
