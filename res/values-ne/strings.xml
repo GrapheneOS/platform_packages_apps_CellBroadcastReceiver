@@ -32,7 +32,7 @@
     <string name="button_delete" msgid="4672451757925194350">"मेटाउनुहोस्"</string>
     <string name="button_cancel" msgid="7479958360523246140">"रद्द गर्नुहोस्"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"भूकम्प बारे सतर्कता"</string>
-    <string name="etws_tsunami_warning" msgid="6173964105145900312">"सुनामी बारे चेतावनी"</string>
+    <string name="etws_tsunami_warning" msgid="6173964105145900312">"सुनामीको चेतावनी"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"भूकम्प र सुनामी बारे सतर्कता"</string>
     <string name="etws_test_message" msgid="8447820262584381894">"ETWS परीक्षण सन्देश"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"आपतकालीन चेतावनी"</string>

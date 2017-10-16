@@ -66,7 +66,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Probna emitiranja komercijalnog sustava mobilnog upozoravanja"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibracija"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Koristi punu glasnoću"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"Zanemari druge postavke glasnoće i značajke Ne uznemiravaj"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Zanemari druge postavke glasnoće i značajke Ne ometaj"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Emitiranja obavijesti za područje"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Prikaži informacije o obavijestima u statusu SIM-a"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Opcije za razvojne programere"</string>
@@ -109,7 +109,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Trenutačno primate Hitna upozorenja. Želite li ih primati i dalje?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Da"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Ne"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Povijest upozorenja o hitnim slučajevima"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Upozorenja o hitnim slučajevima"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Jedanput"</item>
     <item msgid="9097229303902157183">"Svake 2 minute"</item>

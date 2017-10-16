@@ -49,7 +49,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Հեռարձակման հաղորդագրություններ"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"Թույլատրել ահազանգերը"</string>
     <string name="enable_emergency_alerts_summary" msgid="8171013771243907245">"Ստանալ արտակարգ իրավիճակների ծանուցումներ"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Ծանուցումների հիշեցումների ձայն"</string>
+    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Հիշեցման ձայնը"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Բարձրաձայնել զգուշացումը"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Օգտագործել տեքստից-խոսքը՝ արտակարգ նախազգուշական հաղորդագրությունները բարձրաձայնելու համար"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Արտակարգ իրավիճակների արխիվ"</string>
@@ -57,11 +57,11 @@
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS փորձնական հեռարձակումներ"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Փորձնական հեռարձակումներ երկրաշարժի և ցունամիի նախազգուշացնող համակարգի համար"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Կարևոր ահազանգեր"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Կյանքին և սեփականությանը սպառնացող կարևոր ահազանգեր"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Ծայրահեղ սպառնալիքներ կյանքի և գույքի համար"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Կարևոր ահազանգեր"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Կյանքին և սեփականությանը սպառնացող չափազանց կարևոր ահազանգեր"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Լուրջ սպառնալիքներ կյանքի և գույքի համար"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER ծանուցումներ"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Երեխայի առևանգման արտակարգ իրավիճակների տեղեկագրեր"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Հաղորդումներ երեխաների առևանգման մասին"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS փորձնական հեռարձակումներ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Փորձնական հեռարձակումներ բջջային գովազդային ահազանգերի համակարգի համար"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Թրթռոց"</string>

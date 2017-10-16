@@ -57,9 +57,9 @@
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Transmissões de teste do ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Transmissões de teste do Sistema de aviso de tsunamis e terremotos"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Ameaças extremas"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Ameaças extremas contra vida e propriedades"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Ameaças extremas, materiais ou à vida"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ameaças graves"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ameaças graves contra vida e propriedades"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ameaças graves, materiais ou à vida"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Alertas AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Boletins de emergência de rapto de crianças"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"Transmissões de teste do CMAS"</string>

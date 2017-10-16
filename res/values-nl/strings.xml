@@ -57,10 +57,10 @@
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS-testberichten"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Testberichten van het waarschuwingssysteem voor tsunami\'s en aardbevingen"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Extreme dreigingen"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Extreme dreigingen voor levens en eigendommen"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Extreem gevaar voor levens en eigendommen"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ernstige dreigingen"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ernstige dreigingen voor levens en eigendommen"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER-alerts"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ernstig gevaar voor levens en eigendommen"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER Alerts"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Noodberichten over ontvoering van kinderen"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS-testberichten"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Testberichten voor CMAS (Commercial Mobile Alert System)"</string>
@@ -69,7 +69,7 @@
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Andere voorkeuren voor volume en \'Niet storen\' negeren"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Broadcasts met lokale informatie"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Updategegevens weergeven in simkaartstatus"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"Opties voor ontwikkelaars"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"Ontwikkelaarsopties"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Meldingscategorie:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofysisch"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorologisch"</string>

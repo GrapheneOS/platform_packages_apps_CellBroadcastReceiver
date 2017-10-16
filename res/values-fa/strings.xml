@@ -58,7 +58,7 @@
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"پخش‌های آزمایشی برای سیستم هشدار سونامی زلزله"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"تهدیدهای بسیار جدی"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"تهدیدهای بسیار جدی جانی و مالی"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"تهدیدهای بسیار جدی"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"تهدیدهای جدی"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"تهدیدهای جدی جانی و مالی"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"‏هشدارهای AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"بولتن‌های اضطراری کودک‌ربایی"</string>

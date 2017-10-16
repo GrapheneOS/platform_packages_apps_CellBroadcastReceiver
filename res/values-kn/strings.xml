@@ -61,7 +61,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ಗಂಭೀರ ಬೆದರಿಕೆಗಳು"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ಜೀವ ಮತ್ತು ಆಸ್ತಿಪಾಸ್ತಿಗೆ ಗಂಭೀರ ರೀತಿಯ ಬೆದರಿಕೆಗಳು"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER ಎಚ್ಚರಿಕೆಗಳು"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ಮಕ್ಕಳ ಅಪಹರಣ ತುರ್ತು ಕಿರುವರದಿಗಳು"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ಮಕ್ಕಳ ಅಪಹರಣ ತುರ್ತು ಕಿರು ಸುದ್ದಿಗಳು"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS ಪರೀಕ್ಷಾ ಪ್ರಸಾರಗಳು"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"ವಾಣಿಜ್ಯ ಮೊಬೈಲ್ ಎಚ್ಚರಿಕೆ ವ್ಯವಸ್ಥೆಗಾಗಿ ಪರೀಕ್ಷಾ ಪ್ರಸಾರಗಳು"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ವೈಬ್ರೇಟ್‌"</string>
