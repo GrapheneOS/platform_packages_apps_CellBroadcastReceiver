@@ -628,8 +628,8 @@ public class CellBroadcastAlertService extends Service {
                 .setCategory(Notification.CATEGORY_SYSTEM)
                 .setPriority(Notification.PRIORITY_HIGH)
                 .setColor(context.getResources().getColor(R.color.notification_color))
-                .setVisibility(Notification.VISIBILITY_PUBLIC);
-
+                .setVisibility(Notification.VISIBILITY_PUBLIC)
+                .setOngoing(message.isEmergencyAlertMessage());
 
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
             builder.setDeleteIntent(pi);
@@ -648,7 +648,10 @@ public class CellBroadcastAlertService extends Service {
             builder.setContentTitle(context.getString(R.string.notification_multiple_title));
             builder.setContentText(context.getString(R.string.notification_multiple, unreadCount));
         } else {
-            builder.setContentTitle(channelName).setContentText(messageBody);
+            builder.setContentTitle(channelName)
+                    .setContentText(messageBody)
+                    .setStyle(new Notification.BigTextStyle()
+                            .bigText(messageBody));
         }
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
