@@ -48,8 +48,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"सूचना"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण संदेश"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"सूचनांची परवानगी द्या"</string>
-    <!-- no translation found for enable_emergency_alerts_summary (8171013771243907245) -->
-    <skip />
+    <string name="enable_emergency_alerts_summary" msgid="8171013771243907245">"आणीबाणी सूचना मिळवा"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"सूचना रिमाइंडरचा आवाज"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"सूचना संदेश बोला"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"आणीबाणी सूचना संदेश बोलण्यासाठी टेक्स्ट-टू-स्पीच वापरा"</string>
@@ -65,12 +64,12 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"बाल अपहरण आणीबाणी बुलेटिन"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS चाचणी प्रसारणे"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"व्यावसायिक मोबाईल सूचना सिस्टमसाठी चाचणी प्रसारणे"</string>
-    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"कंपन होणे"</string>
+    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"कंप पावणे"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"पूर्ण व्‍हॉल्‍यूम वापरा"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"अन्‍य व्‍हॉल्‍यूम आणि व्‍यत्‍यय आणू नका प्राधान्‍यांकडे दुर्लक्ष करा"</string>
-    <string name="enable_area_update_info_alerts_title" msgid="2793444925039251306">"परिसराशी संबंधित अपडेट ब्रॉडकास्ट"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="1638919917695623789">"सिमच्‍या स्थितीत अपडेटची काही माहिती असल्‍यास दाखवा"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"विकासक पर्याय"</string>
+    <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"परिसराशी संबंधित अपडेट ब्रॉडकास्ट"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"सिमच्‍या स्थितीत अपडेटची काही माहिती असल्‍यास दाखवा"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"डेव्हलपर पर्याय"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"सूचना श्रेणी:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"भूभौतिक"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"हवामानविषयक"</string>

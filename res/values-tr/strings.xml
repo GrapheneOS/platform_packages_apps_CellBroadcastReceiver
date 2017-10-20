@@ -48,8 +48,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Uyarılar"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Yayın mesajları"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"Uyarılara izin ver"</string>
-    <!-- no translation found for enable_emergency_alerts_summary (8171013771243907245) -->
-    <skip />
+    <string name="enable_emergency_alerts_summary" msgid="8171013771243907245">"Acil durum bildirimleri alın"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Uyarı hatırlatıcı sesi"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Uyarı mesajını seslendir"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Acil durum uyarı mesajları için metin-konuşma özelliğini kullan"</string>
@@ -61,15 +60,15 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Cana ve mala karşı aşırı düzeyde tehditler"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ciddi tehditler"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Cana ve mala karşı ciddi tehditler"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"SARI uyarılar"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER uyarıları"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Çocuk kaçırma acil durum bültenleri"</string>
     <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS test yayınları"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Ticari Mobil Uyarı Sistemi (CMAS) test yayınları"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Titreşim"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"En yüksek sesi kullan"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Diğer ses ve Rahatsız Etme tercihlerini yok say"</string>
-    <string name="enable_area_update_info_alerts_title" msgid="2793444925039251306">"Alan güncelleme yayınları"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="1638919917695623789">"SIM durumunda güncelleme bilgilerini göster"</string>
+    <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Alan güncelleme yayınları"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM durumunda güncelleme bilgilerini göster"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Geliştirici seçenekleri"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Uyarı Kategorisi:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Jeofizik"</string>
