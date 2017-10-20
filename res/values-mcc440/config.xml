@@ -21,4 +21,6 @@
     <!-- Whether to always sound CBS alerts at full volume -->
     <!-- By default it's true for Japanese users -->
     <bool name="use_full_volume">true</bool>
+    <!-- Whether to compare message body when performing message duplicate dection -->
+    <bool name="duplicate_compare_body">true</bool>
 </resources>
