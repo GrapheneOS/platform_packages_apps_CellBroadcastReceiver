@@ -301,7 +301,7 @@ public class CellBroadcastResources {
                     if (cbm.getServiceCategory() >= range.mStartId &&
                             cbm.getServiceCategory() <= range.mEndId) {
                         // Apply the closest title to the specified tones.
-                        switch (range.mToneType) {
+                        switch (range.mAlertType) {
                             case CMAS_DEFAULT:
                                 return R.string.pws_other_message_identifiers;
                             case EARTHQUAKE:

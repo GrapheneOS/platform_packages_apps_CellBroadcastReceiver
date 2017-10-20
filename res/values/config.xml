@@ -21,8 +21,6 @@
     <bool name="use_full_volume">false</bool>
     <!-- Whether to enable CMAS settings (United States) -->
     <bool name="show_cmas_settings">true</bool>
-    <!-- Whether to enable channel 50 settings (Brazil) -->
-    <bool name="show_brazil_settings">false</bool>
     <!-- Whether to append date-time to the alert title -->
     <bool name="show_date_time_title">false</bool>
     <!-- Additional cell broadcast channels to enable -->
