@@ -22,6 +22,7 @@ import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.media.AudioAttributes;
@@ -107,6 +108,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private AudioManager mAudioManager;
     private TelephonyManager mTelephonyManager;
     private int mInitialCallState;
+    private PackageManager mPackageManager;
 
     // Internal messages
     private static final int ALERT_SOUND_FINISHED = 1000;
@@ -250,6 +252,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                 (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         mTelephonyManager.listen(
                 mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+        mPackageManager = getPackageManager();
     }
 
     @Override
@@ -434,9 +437,14 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                                 R.raw.cmas_default);
                 }
 
-                // start playing alert audio (unless master volume is vibrate only or silent).
-                mAudioManager.requestAudioFocus(null, AudioManager.STREAM_ALARM,
-                        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+
+                if (!mPackageManager.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                    // start playing alert audio (unless master volume is vibrate only or silent).
+                    mAudioManager.requestAudioFocus(null, AudioManager.STREAM_ALARM,
+                            AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+                } else {
+                    mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+                }
 
                 setAlertAudioAttributes();
                 setAlertVolume();
