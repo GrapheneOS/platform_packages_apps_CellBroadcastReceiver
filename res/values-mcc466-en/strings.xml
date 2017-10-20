@@ -14,16 +14,9 @@
      limitations under the License.
 -->
 
-<resources>
-    <!-- Whether to enable CMAS settings (United States) -->
-    <!-- No need to show this for Taiwanese users -->
-    <bool name="show_cmas_settings">false</bool>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string-array name="additional_cbs_channels_strings" translatable="false">
-        <!-- Channel 911 and 919 are required by Taiwan NCC -->
-        <item>0x038F:type=other, emergency=false</item>
-        <item>0x0397:type=other, emergency=false</item>
-    </string-array>
-
-    <bool name="watch_enable_non_emergency_audio">true</bool>
+    <!-- Dialog title for all non-emergency cell broadcasts. [CHAR LIMIT=50] -->
+    <string name="cb_other_message_identifiers">Alert message</string>
 </resources>
