@@ -34,9 +34,9 @@
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"Jordbävningsvarning"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"Tsunamivarning"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Jordbävnings- och tsunamivarning"</string>
-    <string name="etws_test_message" msgid="8447820262584381894">"Testmeddelande från varningssystemet ETWS"</string>
+    <string name="etws_test_message" msgid="8447820262584381894">"Testmeddelande från ETWS"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"Varning om nödsituation"</string>
-    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Högsta varning"</string>
+    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Nationell varning"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Varning om nödsituation: extrem"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Varning om nödsituation: allvarlig"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"Kidnappning"</string>
@@ -48,8 +48,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Varningar"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Sändningsmeddelanden"</string>
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"Tillåt varningar"</string>
-    <!-- no translation found for enable_emergency_alerts_summary (8171013771243907245) -->
-    <skip />
+    <string name="enable_emergency_alerts_summary" msgid="8171013771243907245">"Ta emot aviseringar vid nödsituationer"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Ljud för varningspåminnelser"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Tala in varningsmeddelande"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Använd text-till-tal när du vill tala in varningsmeddelanden"</string>
@@ -68,8 +67,8 @@
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrera"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Använd högsta volym"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorera andra inställningar för volym och Stör ej"</string>
-    <string name="enable_area_update_info_alerts_title" msgid="2793444925039251306">"Sändningar för områdesuppdateringar"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="1638919917695623789">"Visa uppdateringsinformation i SIM-statusen"</string>
+    <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Sändningar för områdesuppdateringar"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Visa uppdateringsinformation i SIM-statusen"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Utvecklaralternativ"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Varningskategori:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofysiska"</string>
@@ -105,12 +104,12 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Mottaget:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> olästa varningar."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Ny varning"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Visa en dialogruta med möjlighet att välja bort alternativet efter att den första CMAS-varningen visas (dock inte varningar som är utfärdade av presidenten)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Visa en dialogruta med möjlighet att välja bort alternativet efter att den första CMAS-varningen visas (dock inte nationella varningar)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Visa dialogrutan"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Du får för närvarande varningsmeddelanden. Vill du fortsätta ta emot varningsmeddelanden?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nej"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Historik över varningar om nödsituation"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Varningshistorik om nödsituation"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"En gång"</item>
     <item msgid="9097229303902157183">"Varannan minut"</item>
