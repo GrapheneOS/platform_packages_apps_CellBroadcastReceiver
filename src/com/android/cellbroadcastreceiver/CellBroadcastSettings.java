@@ -21,6 +21,7 @@ import android.app.Fragment;
 import android.app.backup.BackupManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -97,6 +98,9 @@ public class CellBroadcastSettings extends Activity {
     // Preference key for emergency alerts history
     public static final String KEY_EMERGENCY_ALERT_HISTORY = "emergency_alert_history";
 
+    // For watch layout
+    private static final String KEY_WATCH_ALERT_REMINDER = "watch_alert_reminder";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,10 +140,19 @@ public class CellBroadcastSettings extends Activity {
         private PreferenceCategory mDevSettingCategory;
         private boolean mDisableSevereWhenExtremeDisabled = true;
 
+        // WATCH
+        private TwoStatePreference mAlertReminder;
+
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
             // Load the preferences from an XML resource
-            addPreferencesFromResource(R.xml.preferences);
+            PackageManager pm = getActivity().getPackageManager();
+            if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                addPreferencesFromResource(R.xml.watch_preferences);
+            } else {
+                addPreferencesFromResource(R.xml.preferences);
+            }
 
             PreferenceScreen preferenceScreen = getPreferenceScreen();
 
@@ -164,12 +177,36 @@ public class CellBroadcastSettings extends Activity {
             mCmasTestCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_CMAS_TEST_ALERTS);
             mAlertHistory = findPreference(KEY_EMERGENCY_ALERT_HISTORY);
-            mAlertCategory = (PreferenceCategory)
-                    findPreference(KEY_CATEGORY_EMERGENCY_ALERTS);
             mAlertPreferencesCategory = (PreferenceCategory)
                     findPreference(KEY_CATEGORY_ALERT_PREFERENCES);
             mDevSettingCategory = (PreferenceCategory)
                     findPreference(KEY_CATEGORY_DEV_SETTINGS);
+
+            if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                mAlertReminder = (TwoStatePreference)
+                        findPreference(KEY_WATCH_ALERT_REMINDER);
+                if (Integer.valueOf(mReminderInterval.getValue()) == 0) {
+                    mAlertReminder.setChecked(false);
+                } else {
+                    mAlertReminder.setChecked(true);
+                }
+                mAlertReminder.setOnPreferenceChangeListener((p, newVal) -> {
+                    try {
+                        mReminderInterval.setValueIndex((Boolean) newVal ? 1 : 3);
+                    } catch (IndexOutOfBoundsException e) {
+                        mReminderInterval.setValue(String.valueOf(0));
+                        Log.w(TAG, "Setting default value");
+                    }
+                    return true;
+                });
+                PreferenceScreen watchScreen = (PreferenceScreen)
+                        findPreference(KEY_CATEGORY_ALERT_PREFERENCES);
+                watchScreen.removePreference(mReminderInterval);
+            } else {
+                mAlertCategory = (PreferenceCategory)
+                        findPreference(KEY_CATEGORY_EMERGENCY_ALERTS);
+            }
+
 
             mDisableSevereWhenExtremeDisabled = isFeatureEnabled(getContext(),
                     CarrierConfigManager.KEY_DISABLE_SEVERE_WHEN_EXTREME_DISABLED_BOOL, true);
@@ -233,27 +270,42 @@ public class CellBroadcastSettings extends Activity {
             // Show alert settings and ETWS categories for ETWS builds and developer mode.
             if (enableDevSettings) {
                 if (forceDisableEtwsCmasTest) {
-                    if (mDevSettingCategory != null) {
-                        // Remove ETWS test preference.
-                        mDevSettingCategory.removePreference(mEtwsTestCheckBox);
-                        // Remove CMAS test preference.
-                        mDevSettingCategory.removePreference(mCmasTestCheckBox);
+                    if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                        // Remove CMAS and ETWS test preferences
+                        preferenceScreen.removePreference(mCmasTestCheckBox);
+                        preferenceScreen.removePreference(mEtwsTestCheckBox);
+                    } else {
+                        if (mDevSettingCategory != null) {
+                            // Remove ETWS test preference.
+                            mDevSettingCategory.removePreference(mEtwsTestCheckBox);
+                            // Remove CMAS test preference.
+                            mDevSettingCategory.removePreference(mCmasTestCheckBox);
+                        }
                     }
                 }
             } else {
-                preferenceScreen.removePreference(mDevSettingCategory);
+                if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                    preferenceScreen.removePreference(mCmasTestCheckBox);
+                    preferenceScreen.removePreference(mEtwsTestCheckBox);
+                } else {
+                    preferenceScreen.removePreference(mDevSettingCategory);
+                }
             }
 
             if (!res.getBoolean(R.bool.show_cmas_settings)) {
                 // Remove CMAS preference items in emergency alert category.
-                mAlertCategory.removePreference(mExtremeCheckBox);
-                mAlertCategory.removePreference(mSevereCheckBox);
-                mAlertCategory.removePreference(mAmberCheckBox);
+                if (mAlertCategory != null) {
+                    mAlertCategory.removePreference(mExtremeCheckBox);
+                    mAlertCategory.removePreference(mSevereCheckBox);
+                    mAlertCategory.removePreference(mAmberCheckBox);
+                }
             }
 
             if (!Resources.getSystem().getBoolean(
                     com.android.internal.R.bool.config_showAreaUpdateInfoSettings)) {
-                mAlertCategory.removePreference(mAreaUpdateInfoCheckBox);
+                if (mAlertCategory != null) {
+                    mAlertCategory.removePreference(mAreaUpdateInfoCheckBox);
+                }
             }
 
             if (mAreaUpdateInfoCheckBox != null) {
