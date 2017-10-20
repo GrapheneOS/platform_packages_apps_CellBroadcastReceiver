@@ -244,12 +244,11 @@ public class CellBroadcastAlertService extends Service {
             return;
         }
 
-        // If this is an ETWS message, then we want to include the body message to be a factor for
-        // duplication detection. We found that some Japanese carriers send ETWS messages
-        // with the same serial number, therefore the subsequent messages were all ignored.
-        // In the other hand, US carriers have the requirement that only serial number, location,
-        // and category should be used for duplicate detection.
-        int hashCode = message.isEtwsMessage() ? message.getMessageBody().hashCode() : 0;
+        // Check if message body should be used for duplicate detection.
+        boolean shouldCompareMessageBody =
+                getApplicationContext().getResources().getBoolean(R.bool.duplicate_compare_body);
+
+        int hashCode = shouldCompareMessageBody ? message.getMessageBody().hashCode() : 0;
 
         // If this is an ETWS message, we need to include primary/secondary message information to
         // be a factor for duplication detection as well. Per 3GPP TS 23.041 section 8.2,
