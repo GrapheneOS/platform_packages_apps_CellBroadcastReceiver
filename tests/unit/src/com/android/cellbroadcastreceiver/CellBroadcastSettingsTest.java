@@ -23,6 +23,7 @@ import android.app.Instrumentation;
 import android.content.Context;
 import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.filters.FlakyTest;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.UiDevice;
 
@@ -45,6 +46,7 @@ public class CellBroadcastSettingsTest {
         mDevice = UiDevice.getInstance(mInstrumentation);
     }
 
+    @FlakyTest
     @Test
     public void testRotate_alertReminderDialogOpen_shouldNotCrash() {
         mInstrumentation.startActivitySync(createActivityIntent());
