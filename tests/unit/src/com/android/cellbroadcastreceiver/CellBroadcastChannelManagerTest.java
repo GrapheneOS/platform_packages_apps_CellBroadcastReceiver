@@ -53,11 +53,12 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
     @SmallTest
     public void testGetCellBroadcastChannelRanges() throws Exception {
         putResources(R.array.additional_cbs_channels_strings, new String[]{
-                "12:type=earthquake, emergency=true",
-                "456:type=tsunami, emergency=true",
+                "12:type=etws_earthquake, emergency=true",
+                "456:type=etws_tsunami, emergency=true",
                 "0xAC00-0xAFED:type=other, emergency=false",
                 "54-60:emergency=true",
-                "100-200"
+                "100-200",
+                "0xA804:type=etws_test, emergency=true"
         });
 
         ArrayList<CellBroadcastChannelRange> list = CellBroadcastChannelManager.getInstance()
@@ -65,12 +66,12 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
 
         assertEquals(12, list.get(0).mStartId);
         assertEquals(12, list.get(0).mEndId);
-        assertEquals(AlertType.EARTHQUAKE, list.get(0).mAlertType);
+        assertEquals(AlertType.ETWS_EARTHQUAKE, list.get(0).mAlertType);
         assertTrue(list.get(0).mIsEmergency);
 
         assertEquals(456, list.get(1).mStartId);
         assertEquals(456, list.get(1).mEndId);
-        assertEquals(AlertType.TSUNAMI, list.get(1).mAlertType);
+        assertEquals(AlertType.ETWS_TSUNAMI, list.get(1).mAlertType);
         assertTrue(list.get(1).mIsEmergency);
 
         assertEquals(0xAC00, list.get(2).mStartId);
@@ -87,5 +88,10 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
         assertEquals(200, list.get(4).mEndId);
         assertEquals(AlertType.CMAS_DEFAULT, list.get(4).mAlertType);
         assertFalse(list.get(4).mIsEmergency);
+
+        assertEquals(0xA804, list.get(5).mStartId);
+        assertEquals(0xA804, list.get(5).mEndId);
+        assertEquals(AlertType.ETWS_TEST, list.get(5).mAlertType);
+        assertTrue(list.get(5).mIsEmergency);
     }
 }
