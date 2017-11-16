@@ -416,11 +416,11 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
                 // Load the tones based on type
                 switch (alertType) {
-                    case EARTHQUAKE:
+                    case ETWS_EARTHQUAKE:
                         setDataSourceFromResource(getResources(), mMediaPlayer,
                                 R.raw.etws_earthquake);
                         break;
-                    case TSUNAMI:
+                    case ETWS_TSUNAMI:
                         setDataSourceFromResource(getResources(), mMediaPlayer,
                                 R.raw.etws_tsunami);
                         break;
@@ -429,6 +429,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                                 R.raw.etws_other_disaster);
                         break;
                     case ETWS_DEFAULT:
+                    case ETWS_TEST:
                         setDataSourceFromResource(getResources(), mMediaPlayer,
                                 R.raw.etws_default);
                         break;
