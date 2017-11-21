@@ -634,7 +634,7 @@ public class CellBroadcastAlertService extends Service {
         // use default sound/vibration/lights for non-emergency broadcasts
         Notification.Builder builder = new Notification.Builder(
                 context, NOTIFICATION_CHANNEL_BROADCAST_MESSAGES)
-                .setSmallIcon(R.drawable.ic_notify_alert)
+                .setSmallIcon(R.drawable.ic_warning_googred)
                 .setTicker(channelName)
                 .setWhen(System.currentTimeMillis())
                 .setCategory(Notification.CATEGORY_SYSTEM)
