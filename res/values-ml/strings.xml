@@ -117,4 +117,5 @@
     <item msgid="3863339891188103437">"ഓരോ 15 മിനിറ്റിലും"</item>
     <item msgid="6868848414437854609">"ഓഫ്"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"അടിയന്തര വയർലെസ് അലേർട്ടുകൾ"</string>
 </resources>

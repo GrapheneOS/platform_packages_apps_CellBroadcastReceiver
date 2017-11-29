@@ -117,4 +117,5 @@
     <item msgid="3863339891188103437">"Hər 15 dəqiqə"</item>
     <item msgid="6868848414437854609">"Deaktiv"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Simsiz təcili siqnallar"</string>
 </resources>
