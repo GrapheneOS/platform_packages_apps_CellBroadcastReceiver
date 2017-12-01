@@ -21,7 +21,6 @@
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Налады мабільнага вяшчання недаступныя для гэтага карыстальніка"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ОК"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"Няма актыўных абвестак у вашым раёне. Вы можаце змяніць налады абвестак, выкарыстоўваючы меню налад."</string>
-    <string name="menu_preferences" msgid="3596514894131599202">"Настройкі"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Выдаліць вяшчаннi"</string>
     <string name="message_options" msgid="3178489901903589574">"Параметры паведамлення"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Прагледзець звесткі"</string>
