@@ -21,7 +21,6 @@
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"緊急速報メールの設定は現在のユーザーでは利用できません"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"受信したメッセージはありません。[設定] メニュー オプションより緊急速報メールの設定を変更できます。"</string>
-    <string name="menu_preferences" msgid="3596514894131599202">"設定"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"すべて削除"</string>
     <string name="message_options" msgid="3178489901903589574">"メッセージオプション"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"詳細を表示"</string>

@@ -21,7 +21,6 @@
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"இவரால் செல் பிராட்காஸ்ட் அமைப்புகளை மாற்ற முடியாது"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"சரி"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"உங்கள் பகுதியில் செயலில் உள்ள விழிப்பூட்டல்கள் எதுவும் இல்லை. அமைப்பு மெனு என்ற விருப்பத்தைப் பயன்படுத்தி விழிப்பூட்டல் அமைப்புகளை மாற்றலாம்."</string>
-    <string name="menu_preferences" msgid="3596514894131599202">"அமைப்பு"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"அலைபரப்புகளை நீக்கு"</string>
     <string name="message_options" msgid="3178489901903589574">"செய்தி விருப்பங்கள்"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"விவரங்களைக் காட்டு"</string>
