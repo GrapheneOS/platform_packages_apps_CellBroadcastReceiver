@@ -21,7 +21,6 @@
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"تنظیمات پخش سلولی برای این کاربر در دسترس نیست"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"تأیید"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"در منطقه شما هشدارهای فعال وجود ندارد. می‌توانید تنظیمات هشدار را با استفاده از گزینه منوی تنظیمات تغییر دهید."</string>
-    <string name="menu_preferences" msgid="3596514894131599202">"تنظیمات"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"حذف پخش ها"</string>
     <string name="message_options" msgid="3178489901903589574">"گزینه‌های پیام"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"مشاهده جزئيات"</string>
