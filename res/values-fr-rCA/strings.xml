@@ -116,4 +116,5 @@
     <item msgid="3863339891188103437">"Toutes les 15 minutes"</item>
     <item msgid="6868848414437854609">"Désactivé"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Alertes d\'urgence sans fil"</string>
 </resources>

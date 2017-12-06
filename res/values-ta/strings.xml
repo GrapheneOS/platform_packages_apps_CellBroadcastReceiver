@@ -116,4 +116,5 @@
     <item msgid="3863339891188103437">"15 நிமிடங்களுக்கு ஒருமுறை"</item>
     <item msgid="6868848414437854609">"ஆஃப்"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"வயர்லெஸ் அவசரகால எச்சரிக்கைகள்"</string>
 </resources>

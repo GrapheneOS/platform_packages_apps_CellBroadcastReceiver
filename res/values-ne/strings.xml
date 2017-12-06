@@ -116,4 +116,5 @@
     <item msgid="3863339891188103437">"हरेक १५ मिनेट"</item>
     <item msgid="6868848414437854609">"निष्क्रिय"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"वायरलेस आपतकालीन अलर्टहरू"</string>
 </resources>

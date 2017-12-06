@@ -82,7 +82,6 @@
         <activity android:name="CellBroadcastSettings"
                   android:theme="@style/CellBroadcastSettingsTheme"
                   android:label="@string/sms_cb_settings"
-                  android:launchMode="singleTask"
                   android:exported="true" />
 
         <activity android:name="CellBroadcastAlertDialog"

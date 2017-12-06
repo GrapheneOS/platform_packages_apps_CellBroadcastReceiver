@@ -116,4 +116,5 @@
     <item msgid="3863339891188103437">"Svakih 15 minuta"</item>
     <item msgid="6868848414437854609">"Isključeno"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Hitna upozorenja putem mobilne mreže"</string>
 </resources>

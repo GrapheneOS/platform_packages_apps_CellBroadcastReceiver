@@ -116,4 +116,5 @@
     <item msgid="3863339891188103437">"Çdo 15 minuta"</item>
     <item msgid="6868848414437854609">"Joaktiv"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Sinjalizimet me valë të urgjencës"</string>
 </resources>
