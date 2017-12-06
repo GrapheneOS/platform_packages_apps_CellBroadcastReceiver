@@ -116,4 +116,5 @@
     <item msgid="3863339891188103437">"كل ١٥ دقيقة"</item>
     <item msgid="6868848414437854609">"إيقاف"</item>
   </string-array>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"إنذارات الطوارئ اللاسلكية"</string>
 </resources>
