@@ -26,7 +26,7 @@
     <string name="message_options" msgid="3178489901903589574">"Opsi pesan"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Tampilkan detail"</string>
     <string name="menu_delete" msgid="128380070910799366">"Hapus siaran"</string>
-    <string name="view_details_title" msgid="1780427629491781473">"Detail lansiran"</string>
+    <string name="view_details_title" msgid="1780427629491781473">"Detail peringatan"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Hapus siaran ini?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Hapus semua pesan siaran yang diterima?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Hapus"</string>
@@ -50,8 +50,8 @@
     <string name="enable_emergency_alerts_title" msgid="2103482403462548059">"Izinkan notifikasi"</string>
     <string name="enable_emergency_alerts_summary" msgid="8171013771243907245">"Terima notifikasi darurat"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Bunyi pengingat notifikasi"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Ucapkan pesan lansiran"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Gunakan text-to-speech untuk mengucapkan pesan lansiran darurat"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Ucapkan pesan peringatan"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Gunakan text-to-speech untuk mengucapkan pesan peringatan darurat"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Histori notifikasi darurat"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferensi notifikasi"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Broadcast uji ETWS"</string>
@@ -104,7 +104,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Diterima:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> peringatan belum dibaca."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Peringatan baru"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Tunjukkan dialog penyisihan setelah lansiran pertama CMAS tampil (selain Notifikasi Presidensial)"</string>
+    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Tunjukkan dialog untuk menolak setelah notifikasi pertama CMAS tampil (selain Notifikasi Presidensial)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Tunjukkan dialog penyisihan"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Saat ini Anda menerima Notifikasi Darurat. Apakah Anda ingin terus menerima Notifikasi Darurat?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ya"</string>

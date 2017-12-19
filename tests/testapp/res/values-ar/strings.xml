@@ -34,14 +34,14 @@
     <string name="button_gsm_7bit_nopadding_umts_type" msgid="4581119373426634893">"‏إرسال بث طويل للنظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏۷ بت"</string>
     <string name="button_gsm_7bit_multipage_type" msgid="4722261710591475726">"‏إرسال بث متعدد الصفحات لكود نظام GSM ‏٧ بت"</string>
     <string name="button_gsm_7bit_multipage_umts_type" msgid="1178053563290345110">"‏إرسال بث متعدد الصفحات لكود النظام العالمي لاتصالات الجوال عن بعد (UMTS) ٧ بت"</string>
-    <string name="button_gsm_7bit_with_language_type" msgid="2022040547313986751">"‏إرسال كود نظام GSM ‏٧ بت مع اللغة"</string>
-    <string name="button_gsm_7bit_with_language_body_gsm_type" msgid="9100697687183591382">"‏إرسال كود نظام GSM ٧ بت مع اللغة ضمن النص"</string>
-    <string name="button_gsm_7bit_with_language_body_umts_type" msgid="8483712413017340666">"‏إرسال كود النظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏٧ بت مع اللغة"</string>
+    <string name="button_gsm_7bit_with_language_type" msgid="2022040547313986751">"‏إرسال رمز نظام GSM ‏٧ بت مع اللغة"</string>
+    <string name="button_gsm_7bit_with_language_body_gsm_type" msgid="9100697687183591382">"‏إرسال رمز نظام GSM ٧ بت مع اللغة ضمن النص"</string>
+    <string name="button_gsm_7bit_with_language_body_umts_type" msgid="8483712413017340666">"‏إرسال رمز النظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏٧ بت مع اللغة"</string>
     <string name="button_gsm_ucs2_type" msgid="6571590740592193686">"‏إرسال بث تجريبي لنظام GSM ‏UCS-2"</string>
     <string name="button_gsm_ucs2_umts_type" msgid="5951592009555548877">"‏إرسال بث تجريبي لكود النظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏UCS-2"</string>
     <string name="button_gsm_ucs2_multipage_umts_type" msgid="5063336859681757254">"‏إرسال بث متعدد الصفحات لكود النظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏UCS-2"</string>
-    <string name="button_gsm_ucs2_with_language_type" msgid="7782847783969114889">"‏إرسال كود GSM UCS-2 مع اللغة"</string>
-    <string name="button_gsm_ucs2_with_language_umts_type" msgid="1722368447645668730">"‏إرسال كود النظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏UCS-2 مع اللغة"</string>
+    <string name="button_gsm_ucs2_with_language_type" msgid="7782847783969114889">"‏إرسال رمز GSM UCS-2 مع اللغة"</string>
+    <string name="button_gsm_ucs2_with_language_umts_type" msgid="1722368447645668730">"‏إرسال رمز النظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏UCS-2 مع اللغة"</string>
     <string name="button_delay_broadcast" msgid="751650250579017537">"التأخير ٥ ثوانٍ قبل الإرسال"</string>
     <string name="message_id_label" msgid="1445077194410403236">"معرف الرسالة:"</string>
     <string name="category_id_label" msgid="6935815032327981691">"الفئة:"</string>
