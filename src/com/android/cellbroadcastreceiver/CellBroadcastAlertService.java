@@ -98,8 +98,9 @@ public class CellBroadcastAlertService extends Service {
     public enum AlertType {
         CMAS_DEFAULT,
         ETWS_DEFAULT,
-        EARTHQUAKE,
-        TSUNAMI,
+        ETWS_EARTHQUAKE,
+        ETWS_TSUNAMI,
+        ETWS_TEST,
         AREA,
         OTHER
     }
@@ -440,6 +441,12 @@ public class CellBroadcastAlertService extends Service {
                             // area info broadcasts are displayed in Settings status screen
                         }
                         return false;
+                    } else if (range.mAlertType == AlertType.ETWS_TEST) {
+                        return emergencyAlertEnabled
+                                && !forceDisableEtwsCmasTest
+                                && PreferenceManager.getDefaultSharedPreferences(this)
+                                .getBoolean(CellBroadcastSettings.KEY_ENABLE_ETWS_TEST_ALERTS,
+                                        false);
                     }
 
                     return emergencyAlertEnabled;
@@ -510,10 +517,13 @@ public class CellBroadcastAlertService extends Service {
                 switch (warningType) {
                     case SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE:
                     case SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE_AND_TSUNAMI:
-                        alertType = AlertType.EARTHQUAKE;
+                        alertType = AlertType.ETWS_EARTHQUAKE;
                         break;
                     case SmsCbEtwsInfo.ETWS_WARNING_TYPE_TSUNAMI:
-                        alertType = AlertType.TSUNAMI;
+                        alertType = AlertType.ETWS_TSUNAMI;
+                        break;
+                    case SmsCbEtwsInfo.ETWS_WARNING_TYPE_TEST_MESSAGE:
+                        alertType = AlertType.ETWS_TEST;
                         break;
                     case SmsCbEtwsInfo.ETWS_WARNING_TYPE_OTHER_EMERGENCY:
                         alertType = AlertType.OTHER;

@@ -304,10 +304,12 @@ public class CellBroadcastResources {
                         switch (range.mAlertType) {
                             case CMAS_DEFAULT:
                                 return R.string.pws_other_message_identifiers;
-                            case EARTHQUAKE:
+                            case ETWS_EARTHQUAKE:
                                 return R.string.etws_earthquake_warning;
-                            case TSUNAMI:
+                            case ETWS_TSUNAMI:
                                 return R.string.etws_tsunami_warning;
+                            case ETWS_TEST:
+                                return R.string.etws_test_message;
                             case ETWS_DEFAULT:
                             case OTHER:
                                 return R.string.etws_other_emergency_type;
