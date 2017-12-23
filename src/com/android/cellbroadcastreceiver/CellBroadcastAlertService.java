@@ -390,7 +390,7 @@ public class CellBroadcastAlertService extends Service {
         boolean enableAreaUpdateInfoAlerts = Resources.getSystem().getBoolean(
                 com.android.internal.R.bool.config_showAreaUpdateInfoSettings)
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS,
-                false);
+                true);
 
         if (message.isEtwsTestMessage()) {
             return emergencyAlertEnabled &&
