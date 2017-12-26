@@ -22,6 +22,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import android.app.Instrumentation;
 import android.content.Context;
 import android.content.Intent;
+import android.os.RemoteException;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.filters.FlakyTest;
 import android.support.test.runner.AndroidJUnit4;
@@ -49,6 +50,13 @@ public class CellBroadcastSettingsTest {
     @FlakyTest
     @Test
     public void testRotate_alertReminderDialogOpen_shouldNotCrash() {
+        try {
+            mDevice.wakeUp();
+            mDevice.pressMenu();
+        } catch (RemoteException exception) {
+            Assert.fail("Exception " + exception);
+        }
+
         mInstrumentation.startActivitySync(createActivityIntent());
 
         openAlertReminderDialog();
