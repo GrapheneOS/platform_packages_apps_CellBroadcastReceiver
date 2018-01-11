@@ -28,7 +28,6 @@ import android.telephony.SmsManager;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
 
-import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
@@ -302,11 +301,18 @@ public class CellBroadcastConfigService extends IntentService {
 
         if (ranges != null) {
             for (CellBroadcastChannelRange range: ranges) {
-                if (range.mAlertType == AlertType.AREA && !enableAreaUpdateInfoAlerts) {
-                    // Skip area update info channels if it's not enabled.
-                    continue;
+                boolean enableAlerts;
+                switch (range.mAlertType) {
+                    case AREA:
+                        enableAlerts = enableAreaUpdateInfoAlerts;
+                        break;
+                    case ETWS_TEST:
+                        enableAlerts = enableEtwsTestAlerts;
+                        break;
+                    default:
+                        enableAlerts = enableEmergencyAlerts;
                 }
-                setCellBroadcastRange(manager, enableEmergencyAlerts,
+                setCellBroadcastRange(manager, enableAlerts,
                         SmsManager.CELL_BROADCAST_RAN_TYPE_GSM,
                         range.mStartId, range.mEndId);
             }
