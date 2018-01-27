@@ -106,7 +106,7 @@
     <string name="notification_multiple_title" msgid="1523638925739947855">"Novos alertas"</string>
     <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Mostrar um diálogo de desativação após exibir o primeiro alerta CMAS (exceto presidencial)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Mostrar diálogo de desativação"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Você está recebendo alertas de emergência. Deseja continuar a receber alertas de emergência?"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Você está recebendo alertas de emergência. Quer continuar a receber alertas de emergência?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Sim"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Não"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"Histórico de alertas de emergência"</string>
