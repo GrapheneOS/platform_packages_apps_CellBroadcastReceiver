@@ -74,6 +74,7 @@ public class CellBroadcastSettingsTest {
         Intent intent = new Intent(mContext, CellBroadcastSettings.class);
         intent.setPackage("com.android.cellbroadcastreceiver");
         intent.setAction("android.intent.action.MAIN");
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         return intent;
     }
 

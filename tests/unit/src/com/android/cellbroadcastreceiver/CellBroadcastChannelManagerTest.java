@@ -62,7 +62,7 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
         });
 
         ArrayList<CellBroadcastChannelRange> list = CellBroadcastChannelManager.getInstance()
-                .getCellBroadcastChannelRanges(mContext);
+                .getCellBroadcastChannelRanges(mContext, R.array.additional_cbs_channels_strings);
 
         assertEquals(12, list.get(0).mStartId);
         assertEquals(12, list.get(0).mEndId);
