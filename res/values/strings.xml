@@ -55,6 +55,7 @@
     <!-- Cancel button text for delete broadcast dialog. [CHAR LIMIT=25] -->
     <string name="button_cancel">Cancel</string>
 
+
     <!-- ETWS dialog title for Earthquake Warning. [CHAR LIMIT=50] -->
     <string name="etws_earthquake_warning">Earthquake warning</string>
     <!-- ETWS dialog title for Tsunami Warning. [CHAR LIMIT=50] -->
@@ -93,9 +94,9 @@
     <!-- Notification channel name for a channel containing cell broadcast messages notifications. [CHAR LIMIT=50] -->
     <string name="notification_channel_broadcast_messages">Broadcast messages</string>
     <!-- Preference title for enable emergency alerts checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_emergency_alerts_title">Allow alerts</string>
+    <string name="enable_alerts_master_toggle_title">Allow alerts</string>
     <!-- Preference summaries for allow alerts checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_emergency_alerts_summary">Receive emergency notifications</string>
+    <string name="enable_alerts_master_toggle_summary">Receive emergency notifications</string>
     <!-- Preference title for alert reminder interval list. [CHAR LIMIT=50] -->
     <string name="alert_reminder_interval_title">Alert reminder sound</string>
     <!-- Do not translate. Empty summary for alert reminder (set by CellBroadcastSettings). -->

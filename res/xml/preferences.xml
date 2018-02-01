@@ -19,13 +19,25 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <SwitchPreference android:defaultValue="true"
-                      android:key="enable_emergency_alerts"
+                      android:key="enable_alerts_master_toggle"
                       android:summary="@string/enable_emergency_alerts_summary"
                       android:title="@string/enable_emergency_alerts_title" />
 
     <!-- Settings to enable / disable emergency alerts -->
     <PreferenceCategory android:title="@string/emergency_alerts_title"
                         android:key="category_emergency_alerts">
+
+        <!-- Enable safety info alerts -->
+        <SwitchPreference android:defaultValue="true"
+                          android:key="enable_safety_info_alerts"
+                          android:summary="@string/enable_alert_message_summary"
+                          android:title="@string/enable_alert_message_title" />
+
+        <!-- Enable emergency alerts -->
+        <SwitchPreference android:defaultValue="true"
+                          android:key="enable_emergency_alerts"
+                          android:summary="@string/enable_emergency_alerts_message_summary"
+                          android:title="@string/enable_emergency_alerts_message_title" />
 
         <!-- Enable CMAS AMBER alerts -->
         <SwitchPreference android:defaultValue="true"
@@ -81,12 +93,7 @@
                         android:key="category_dev_settings">
 
         <SwitchPreference android:defaultValue="false"
-                          android:key="enable_etws_test_alerts"
-                          android:summary="@string/enable_etws_test_alerts_summary"
-                          android:title="@string/enable_etws_test_alerts_title" />
-
-        <SwitchPreference android:defaultValue="false"
-                            android:key="enable_cmas_test_alerts"
+                            android:key="enable_test_alerts"
                             android:summary="@string/enable_cmas_test_alerts_summary"
                             android:title="@string/enable_cmas_test_alerts_title" />
 
