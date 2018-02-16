@@ -280,14 +280,14 @@ public class CellBroadcastResources {
         if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
                 serviceCategory,
                 R.array.cmas_alert_extreme_channels_range_strings, context)) {
-           if (cmasInfo.getSeverity() == SmsCbCmasInfo.CMAS_SEVERITY_EXTREME
-                   && cmasInfo.getUrgency() == SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE) {
-               if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED) {
-                   return R.string.cmas_extreme_immediate_observed_alert;
-               } else if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY) {
-                   return R.string.cmas_extreme_immediate_likely_alert;
-               }
-           }
+            if (cmasInfo.getSeverity() == SmsCbCmasInfo.CMAS_SEVERITY_EXTREME
+                    && cmasInfo.getUrgency() == SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE) {
+                if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED) {
+                    return R.string.cmas_extreme_immediate_observed_alert;
+                } else if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY) {
+                    return R.string.cmas_extreme_immediate_likely_alert;
+                }
+            }
             return R.string.cmas_extreme_alert;
         }
         if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
@@ -313,7 +313,7 @@ public class CellBroadcastResources {
         }
         if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
                 serviceCategory, R.array.safety_info_alerts_channels_range_strings, context)) {
-            return R.string.cb_other_message_identifiers;
+            return R.string.public_safety_message;
         }
 
         if (CellBroadcastAlertService.isEmergencyMessage(context, cbm)) {
@@ -331,7 +331,7 @@ public class CellBroadcastResources {
                                 return R.string.etws_earthquake_warning;
                             case ETWS_TSUNAMI:
                                 return R.string.etws_tsunami_warning;
-                            case ETWS_TEST:
+                            case TEST:
                                 return R.string.etws_test_message;
                             case ETWS_DEFAULT:
                             case OTHER:

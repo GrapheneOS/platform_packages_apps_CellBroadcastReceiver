@@ -21,8 +21,8 @@
 
     <string-array name="safety_info_alerts_channels_range_strings" translatable="false">
         <!-- Channel 911 and 919 are required by Taiwan NCC -->
-        <item>0x038F:type=other, emergency=false, scope=domestic</item>
-        <item>0x0397:type=other, emergency=false, scope=domestic</item>
+        <item>0x038F:type=other, emergency=false</item>
+        <item>0x0397:type=other, emergency=false</item>
     </string-array>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
@@ -48,5 +48,4 @@
     <string-array name="exercise_alert_range_strings" translatable="false"></string-array>
     <string-array name="operator_defined_alert_range_strings" translatable="false"></string-array>
     <bool name="watch_enable_non_emergency_audio">true</bool>
-    <bool name="always_show_test_settings">true</bool>
 </resources>

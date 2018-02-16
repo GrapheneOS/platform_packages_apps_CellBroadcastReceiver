@@ -98,7 +98,7 @@ public class CellBroadcastAlertService extends Service {
         ETWS_DEFAULT,
         ETWS_EARTHQUAKE,
         ETWS_TSUNAMI,
-        ETWS_TEST,
+        TEST,
         AREA,
         OTHER
     }
@@ -420,7 +420,7 @@ public class CellBroadcastAlertService extends Service {
                             // area info broadcasts are displayed in Settings status screen
                         }
                         return false;
-                    } else if (range.mAlertType == AlertType.ETWS_TEST) {
+                    } else if (range.mAlertType == AlertType.TEST) {
                         return emergencyAlertEnabled
                                 && !forceDisableEtwsCmasTest
                                 && PreferenceManager.getDefaultSharedPreferences(this)
@@ -519,7 +519,7 @@ public class CellBroadcastAlertService extends Service {
                         alertType = AlertType.ETWS_TSUNAMI;
                         break;
                     case SmsCbEtwsInfo.ETWS_WARNING_TYPE_TEST_MESSAGE:
-                        alertType = AlertType.ETWS_TEST;
+                        alertType = AlertType.TEST;
                         break;
                     case SmsCbEtwsInfo.ETWS_WARNING_TYPE_OTHER_EMERGENCY:
                         alertType = AlertType.OTHER;
@@ -694,9 +694,9 @@ public class CellBroadcastAlertService extends Service {
     static void createNotificationChannels(Context context) {
         NotificationManager.from(context).createNotificationChannel(
                 new NotificationChannel(
-                NOTIFICATION_CHANNEL_BROADCAST_MESSAGES,
-                context.getString(R.string.notification_channel_broadcast_messages),
-                NotificationManager.IMPORTANCE_LOW));
+                        NOTIFICATION_CHANNEL_BROADCAST_MESSAGES,
+                        context.getString(R.string.notification_channel_broadcast_messages),
+                        NotificationManager.IMPORTANCE_LOW));
     }
 
     static Intent createDisplayMessageIntent(Context context, Class intentClass,
@@ -756,7 +756,9 @@ public class CellBroadcastAlertService extends Service {
             ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
                     .getInstance().getCellBroadcastChannelRanges(context,
                     R.array.additional_cbs_channels_strings);
-
+            ranges.addAll(CellBroadcastChannelManager
+                    .getInstance().getCellBroadcastChannelRanges(context,
+                            R.array.safety_info_alerts_channels_range_strings));
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (range.mStartId <= id && range.mEndId >= id) {
@@ -767,7 +769,7 @@ public class CellBroadcastAlertService extends Service {
             }
         }
 
-        Log.d(TAG, "isEmergencyMessage: " + isEmergency + "message id = " + id);
+        Log.d(TAG, "isEmergencyMessage: " + isEmergency + ", message id = " + id);
         return isEmergency;
     }
 }
