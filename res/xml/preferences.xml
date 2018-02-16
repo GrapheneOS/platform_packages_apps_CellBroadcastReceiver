@@ -58,6 +58,12 @@
                             android:summary="@string/enable_cmas_severe_threat_alerts_summary"
                             android:title="@string/enable_cmas_severe_threat_alerts_title" />
 
+        <!-- Enable receive monthly test -->
+        <SwitchPreference android:defaultValue="false"
+                          android:key="enable_test_alerts"
+                          android:summary="@string/enable_cmas_test_alerts_summary"
+                          android:title="@string/enable_cmas_test_alerts_title" />
+
         <!-- Default value is true for Brazil and India. This preference is ignored and hidden
         unless the boolean "config_showAreaUpdateInfoSettings" is set to true in the global resource. -->
         <SwitchPreference android:defaultValue="true"
@@ -91,11 +97,6 @@
     <!-- Only visible when Developer options toggle is enabled in Settings. -->
     <PreferenceCategory android:title="@string/category_dev_settings_title"
                         android:key="category_dev_settings">
-
-        <SwitchPreference android:defaultValue="false"
-                            android:key="enable_test_alerts"
-                            android:summary="@string/enable_cmas_test_alerts_summary"
-                            android:title="@string/enable_cmas_test_alerts_title" />
 
         <SwitchPreference android:defaultValue="true"
                             android:key="show_cmas_opt_out_dialog"
