@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ernstige bedreigings vir lewe en eiendom"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER-berigte"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Noodbulletins oor kinderontvoering"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS-toetsuitsendings"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Toetsuitsendings vir Kommersiële Mobiele Waarskuwingstelsel (CMAS)"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Waarskuwingboodskappe"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Waarsku oor dreigende veiligheidskwessies"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Noodwaarskuwings"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Waarsku oor lewensgevaarlike gebeurtenisse"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Toetsuitsendings"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Ontvang boodskappe vir die veiligheidswaarskuwingstelsel"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibreer"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Gebruik volle volume"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignoreer ander volume- en Moenie Steur Nie-voorkeure"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Ontvang:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ongeleesde berigte."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nuwe berigte"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Wys \'n intekenweier-dialoog nadat die eerste CMAS-berig gewys is (behalwe presidensiële berig)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Wys onttrekkingdialoog nadat eerste waarskuwing gewys is (afgesien van presidensiële waarskuwing)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Wys intekenweier-dialoog"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Jy ontvang tans noodberigte. Sal jy graag wil voortgaan om noodberigte te ontvang?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>

@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ukusongela okukhulu kwempilo nendawo"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Izexwayiso ze-AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Izindaba eziphuthumayo zokukhishwa kwengane"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"Ukusakaza kokuhlola i-CMAS"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Hlola ukusakazwa Kwesisitimu Yokuxwayisa Ngefoni Yezentengiselwano"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Imilayezo yokuxwayisa"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Xwayisa mayelana nezinsongo zokuphepha eziseduze"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Izexwayiso eziphuthumayo"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Xwayisa mayelana nemicimbi esongela ukuphila"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Ukusakazwa kokuhlola"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Thola imilayezo yombhalo yesistimu yesixwayiso sokuphepha"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Dlidliza"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Sebenzisa ivolomu ephelele"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ziba enye ivolomu kanye nezintandokazi zokuthi ungaphazamisi"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Okwamukelwe:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> izaziso ezingafundiwe."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Izaziso ezintsha"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Bonisa ibhokisi lokuphuma ngemuva kokubonisa isaziso se-CMAS sokuqala (ngaphandle kwesaziso esingumongameli)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Bonisa ingxoxo yokukhetha ukuphuma ngemuva kokubonisa isexwayiso sokuqala (ngaphandle kwesexwayiso somongameli)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Bonisa ibhokisi lokuphuma"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Okwamanje uthola izaziso zesimo esiphuthumayo. Ungathanda ukuqhubeka ukuthola izaziso zesimo esiphuthumayo?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Yebo"</string>

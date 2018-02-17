@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ప్రాణానికి మరియు ఆస్తికి తీవ్ర అపాయాలు"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER హెచ్చరికలు"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"పిల్లల అపహరణ అత్యవసర బులెటిన్‌లు"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS పరీక్ష ప్రసారాలు"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"వాణిజ్య మొబైల్ హెచ్చరిక సిస్టమ్ కోసం పరీక్ష ప్రసారాలు"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"హెచ్చరిక సందేశాలు"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"తక్షణ భద్రతా ప్రమాదాల గురించి హెచ్చరించు"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"అత్యవసర హెచ్చరికలు"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ప్రాణాంతకమైన సంఘటనల గురించి హెచ్చరించు"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"పరీక్ష ప్రసారాలు"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"భద్రతా హెచ్చరిక సిస్టమ్ కోసం పరీక్ష సందేశాలను స్వీకరించండి"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"వైబ్రేట్ చేయడం"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"పూర్తి వాల్యూమ్‌ను ఉపయోగించు"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"ఇతర వాల్యూమ్ మరియు అంతరాయం కలిగించవద్దు ప్రాధాన్యతలను విస్మరిస్తుంది"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"స్వీకరించినది:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> చదవని హెచ్చరికలు."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"కొత్త హెచ్చరికలు"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"మొదటి CMAS హెచ్చరిక (అధ్యక్ష హెచ్చరిక మినహా) కనిపించిన తర్వాత నిలిపివేత డైలాగ్‌ను చూపు."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"మొదటి హెచ్చరిక (అధ్యక్ష హెచ్చరిక మినహా) కనిపించిన తర్వాత నిలిపివేత డైలాగ్‌ను చూపు."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"నిలిపివేత డైలాగ్‌ను చూపు"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"మీరు ప్రస్తుతం అత్యవసర హెచ్చరికలను స్వీకరిస్తున్నారు. మీరు అత్యవసర హెచ్చరికలను స్వీకరించడం కొనసాగించాలనుకుంటున్నారా?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"అవును"</string>

@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"जान और माल से जुड़े गंभीर खतरे"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER सूचनाएं"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"बच्‍चे के अपहरण का आपातकालीन बुलेटिन"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS परीक्षण प्रसारण"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"व्यावसायिक मोबाइल सूचना सिस्‍टम के लिए परीक्षण प्रसारण"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"चेतावनी वाले मैसेज"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जल्द ही सुरक्षा पर खतरा हो सकता है"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"आपातकालीन चेतावनियां"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जान का खतरा हो सकता है"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"ब्रॉडकास्ट जाँचना"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"सुरक्षा की चेतावनी वाले सिस्टम के लिए टेस्ट मैसेज पाना"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"कंपन (वाइब्रेशन)"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"पूरे वॉल्यूम का उपयोग करें"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"अन्य वॉल्यूम और परेशान न करें प्राथमिकताओं को अनदेखा करें"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"प्राप्त:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> बिना पढ़े अलर्ट."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"नए अलर्ट"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"पहला CMAS अलर्ट (प्रेसिडेंशियल अलर्ट के अलावा) दिखाने के बाद ऑप्ट-आउट डॉयलॉग दिखाएं."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"पहली चेतावनी (प्रेसिडेंशियल अलर्ट के अलावा) दिखाने के बाद, छोड़ने के विकल्प से जुड़ा संवाद दिखाएं."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"ऑप्ट-आउट डॉयलॉग दिखाएं"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"आपको वर्तमान में आपातकालीन अलर्ट प्राप्त हो रहे हैं. क्या आप आगे भी आपातकालीन अलर्ट प्राप्त करना चाहते हैं?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"हां"</string>

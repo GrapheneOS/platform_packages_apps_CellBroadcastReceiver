@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Σοβαρές απειλές κατά της ζωής και της ιδιοκτησίας"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Ειδοποιήσεις AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Ανακοινώσεις έκτακτης ανάγκης για απαγωγές ανηλίκων"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"Δοκιμαστικές μεταδόσεις CMAS"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Δοκιμαστικές μεταδόσεις για το σύστημα Commercial Mobile Alert System"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Μηνύματα ειδοποίησης"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Προειδοποίηση σχετικά με επικείμενες απειλές ασφάλειας"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Ειδοποιήσεις έκτακτης ανάγκης"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Προειδοποίηση σχετικά με εκδηλώσεις που είναι απειλητικές για τη ζωή των συμμετεχόντων"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Δοκιμαστικές μεταδόσεις"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Λήψη δοκιμαστικών μηνυμάτων για το σύστημα ειδοποίησης ασφάλειας"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Δόνηση"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Χρήση πλήρους έντασης"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Παράβλεψη προτιμήσεων έντασης και λειτ. \"Μην ενοχλείτε\""</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Ληφθέντα:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> μη αναγνωσμένες ειδοποιήσεις."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Νέες ειδοποιήσεις"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Εμφάν.παραθ.διαλ. εξαίρεσης μετά την εμφάν.της πρώτης ειδοπ.CMAS (εκτός από Ειδοπ.προεδρικού επιπ.)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Εμφάνιση παραθύρου εξαίρεσης μετά την πρώτη ειδοποίηση (εκτός από Ειδοποίηση προεδρικού επιπέδου)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Εμφάνιση παραθύρου διαλόγου εξαίρεσης"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Αυτή τη στιγμή λαμβάνετε Ειδοποιήσεις έκτακτης ανάγκης. Θέλετε να συνεχίσετε να λαμβάνετε Ειδοποιήσεις έκτακτης ανάγκης;"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ναι"</string>

@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Rimta grėsmė gyvybei ir nuosavybei"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER įspėjimai"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Vaikų pagrobimo nepaprastosios padėties biuleteniai"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"Bandomosios CMAS transliacijos"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Bandomosios komercinių įspėjimų mobiliesiems sistemos transliacijos"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Įspėjimų pranešimai"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Įspėti apie neišvengiamas saugos grėsmes"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Nepaprastosios padėties įspėjimai"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Įspėti apie gyvybei grėsmingus įvykius"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Bandomosios transliacijos"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Gauti bandomuosius saugos įspėjimų sistemos pranešimus"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibruoti"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Naudoti visą garsumą"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignoruoti kitas garsumo ir netrukdymo režimo nuostatas"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Gauta:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> neperskaityti (-ų) įspėjimai (-ų)"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nauji įspėjimai"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Rodyti atsisakymo dialogo langą pateikus pirmą CMAS įspėjimą (ne prezidento paskelbtą įspėjimą)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Rodyti atsisakymo dialogo langą pateikus pirmą įspėjimą (ne prezidento paskelbtą įspėjimą)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Rodyti atsisakymo dialogo langą"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Šiuo metu gaunate pagalbos įspėjimus. Ar norite toliau gauti pagalbos įspėjimus?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Taip"</string>

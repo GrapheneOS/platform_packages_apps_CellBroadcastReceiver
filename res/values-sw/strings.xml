@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Vitisho vikali kwa maisha na mali"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Arifa za AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Taarifa za dharura kuhusu utekaji nyara wa watoto"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"Jaribio la matangazo ya CMAS"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Jaribio la matangazo ya Mfumo wa Biashara wa Arifa za Simu za Mkononi"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Ujumbe wa tahadhari"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Itoe tahadhari kuhusu hatari za usalama zinazokaribia kutokea"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Arifa za dharura"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Itoe tahadhari kuhusu matukio yanayohatarisha maisha"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Jaribio la matangazo"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Ipokee ujumbe wa kujaribu mfumo wa tahadhari za usalama"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Tetema"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Tumia sauti kamili"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Puuza mapendeleo mengine ya Usinisumbue na sauti"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Umepokewa:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"Arifu <xliff:g id="COUNT">%s</xliff:g> hazijasomwa."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Arifu mpya"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Onyesha kidadisi cha chaguo la kuondoka baada ya kuonyesha arifa ya kwanza ya CMAS (kando na Arifa ya Urais)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Ionyesha kidirisha cha chaguo la kuondoka baada ya kuonyesha arifa ya kwanza (kando na Arifa inayohusu Rais)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Onyesha kidadisi cha chaguo la kuondoka"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Unapokea Arifa za Dharura hivi sasa. Je, ungependa kuendelea kupokea Arifa za Dharura?`"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ndiyo"</string>

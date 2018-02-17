@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ജീവനും സ്വത്തിനും നേരെയുള്ള ഗുരുതരമായ ഭീഷണികൾ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER അലേർട്ടുകൾ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"കുട്ടികളെ അപഹരിക്കലുമായി ബന്ധപ്പെട്ട അടിയന്തര ബുള്ളറ്റിനുകൾ"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"വാണിജ്യ മൊബൈൽ അലേർട്ട് സി‌സ്‌റ്റത്തിനായുള്ള പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"മുന്നറിയിപ്പ് സന്ദേശങ്ങൾ"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"ഉടൻ ഉണ്ടായേക്കാവുന്ന സുരക്ഷാ ഭീഷണികളെ കുറിച്ച് മുന്നറിയിപ്പ് നൽകുക"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"അടിയന്തര മുന്നറിയിപ്പുകൾ"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ജീവന് ഭീഷണിയുണ്ടാക്കുന്ന സംഭവങ്ങളെ കുറിച്ച് മുന്നറിയിപ്പ് നൽകുക"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"സുരക്ഷാ മുന്നറിയിപ്പ് സിസ്റ്റത്തിനുള്ള പരീക്ഷണ സന്ദേശങ്ങൾ സ്വീകരിക്കുക"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"വൈബ്രേറ്റുചെയ്യുക"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"പൂർണ്ണ വോളിയം ഉപയോഗിക്കുക"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"മറ്റുള്ള വോളിയവും \'ശല്യപ്പെടുത്തരുത്\' മുൻഗണനകളും ഒഴിവാക്കുക"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"ലഭിച്ചത്:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"വായിക്കാത്ത <xliff:g id="COUNT">%s</xliff:g> അലേർട്ടുകൾ."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"പുതിയ അലേർട്ടുകൾ"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"ആദ്യ CMAS അലേർട്ട് പ്രദർശിപ്പിച്ചശേഷം ഒഴിവാക്കൽ ഡയലോഗ് കാണിക്കുക (പ്രസിഡൻഷ്യൽ അലേർട്ട് ഒഴികെ)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"ആദ്യ മുന്നറിയിപ്പ് പ്രദർശിപ്പിച്ചശേഷം ഒരു ഒഴിവാക്കൽ ഡയലോഗ് കാണിക്കുക (പ്രസിഡൻഷ്യൽ മുന്നറിയിപ്പ് ഒഴികെ)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"ഒഴിവാക്കൽ ഡയലോഗ് കാണിക്കുക"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"നിങ്ങൾ നിലവിൽ അടിയന്തര അലേർട്ടുകൾ നേടുന്നു. നിങ്ങൾക്ക് അടിയന്തര അലേർട്ടുകൾ തുടർന്നും നേടണോ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"വേണം"</string>

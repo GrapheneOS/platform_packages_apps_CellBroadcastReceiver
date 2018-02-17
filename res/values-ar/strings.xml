@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"التهديدات الخطيرة للحياة والممتلكات"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"‏تنبيهات AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"نشرات طوارئ اختطاف الأطفال"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"‏مجموعات البث التجريبية في CMAS"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"مجموعات البث التجريبية في نظام التنبيهات عبر شركات الجوّال التجارية"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"رسائل التنبيه"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"إرسال تحذير بشأن التهديدات الوشيكة للسلامة"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"تنبيهات الطوارئ"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"إرسال تحذير بشأن الأحداث التي تهدد الحياة"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"بث تنبيهات تجريبية"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"استلام رسائل تجريبية لنظام تنبيهات السلامة"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"اهتزاز"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"استخدام مستوى الصوت الكامل"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"تجاهل التفضيلات الأخرى لمستوى الصوت وخيار عدم الإزعاج"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"تم التلقي:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> من الاشعارات غير المقروءة."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"اشعارات جديدة"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"‏إظهار حوار تعطيل بعد عرض أول تنبيه CMAS (بخلاف التنبيه الرئاسي)"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"عرض مربع حوار الإيقاف بعد عرض أول تنبيه (بخلاف التنبيه الرئاسي)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"عرض مربع حوار التعطيل"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"أنت حاليًا تتلقى اشعارات طوارئ. هل تريد متابعة تلقي اشعارات الطوارئ؟"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"نعم"</string>

@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Həyat və mülkiyyət üçün dəhşətli təhlükə"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"KƏHRƏBAYI siqnallar"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Uşaq qaçırma həyəcan siqnalı bülletenləri"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"TMSS test yayımları"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Ticari Mobil Siqnal Sistemi üçün test yayımları"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Xəbərdarlıq mesajları"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Qaçılmaz təhlükələr ilə bağlı xəbərdarlıq edin"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Həyəcan siqnalı"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Həyati təhlükəsi olan hadisələrlə bağlı xəbərdarlıq edin"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Test yayımları"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Təhlükəsizlik xəbərdarlığı sistemi üçün test mesajları alın"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrasiya"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Tam səs istifadəsi"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Digər səsi və \"Narahat etməyin\" tərcihlərini iqnor edin"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Qəbul edilmiş:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> oxunmamış siqnallar."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Yeni siqnallar"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"İlk CMAS siqnalı göstərəndən sonra dövrədən kənar dialoqu göstər (Prezident siqnalından başqası)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"İlk siqnaldan (Prezident Xəbərdarlığından başqa) sonra imtina dialoqunu göstərin."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Dövrədən kənar dialoqu göstər"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Hazırda Həyəcan Siqnalı qəbul edirsiniz. Həyəcan Siqnalını qəbul etməyə davam etmək istəyirsiniz?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Bəli"</string>

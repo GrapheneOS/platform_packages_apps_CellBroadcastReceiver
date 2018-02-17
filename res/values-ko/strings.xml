@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"생명 및 재산에 대한 심각한 위협"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"황색 경보"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"아동 유괴 긴급상황 공지"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS 테스트 브로드캐스트"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"모바일 경보 시스템(CMAS)용 테스트 브로드캐스트"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"경보 메시지"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"임박한 안전 위협 경고"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"긴급 경보"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"치명적인 사건 경고"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"테스트 브로드캐스트"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"안전 경보 시스템의 테스트 메시지 수신"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"진동"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"최대 볼륨 사용"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"기타 볼륨 및 알림 일시중지 환경설정 무시"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"받은 시간:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"읽지 않은 경보 <xliff:g id="COUNT">%s</xliff:g>개"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"새 경보"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"위급재난문자가 아닌 첫 번째 CMAS(민간 이동통신 경보체계) 알림을 표시한 뒤에 선택 해제 대화상자를 표시합니다."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"위급재난문자가 아닌 첫 번째 경보를 표시한 뒤에 선택 해제 대화상자를 표시합니다."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"선택 해제 대화상자 표시"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"현재 긴급 경보를 수신하고 있습니다. 긴급 경보를 계속 수신하시겠습니까?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"예"</string>

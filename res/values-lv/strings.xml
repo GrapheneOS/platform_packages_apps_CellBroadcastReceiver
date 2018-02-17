@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Nopietni draudi dzīvībai un īpašumam"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER brīdinājumi"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Bērnu nolaupīšanas ārkārtas gadījumu biļeteni"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS testa apraides"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Komerciālās mobilo ierīču brīdinājumu sistēmas testa apraides"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Brīdinājuma ziņojumi"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Brīdināt par nenovēršamu drošības apdraudējumu"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Ārkārtas brīdinājumi"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Brīdināt par dzīvību apdraudošiem notikumiem"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Testa apraides"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Saņemt testa ziņojumus no drošības brīdinājumu sistēmas"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrācija"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Izmantot pilnu skaļumu"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorēt citas skaļuma un režīma “Netraucēt” preferences"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Saņemts:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> nelasīts(-i) brīdinājums(-i)."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Jauni brīdinājumi"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Rādīt atteikšanās dialoglodziņu pēc pirmā CMAS brīdinājuma (kurš nav prezidenta brīdinājums)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Rādīt atteikšanās dialoglodziņu pēc pirmā brīdinājuma (kurš nav prezidenta brīdinājums)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Rādīt atteikšanās dialoglodziņu"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Pašlaik jūs saņemat ārkārtas brīdinājumus. Vai vēlaties arī turpmāk saņemt ārkārtas brīdinājumus?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Jā"</string>

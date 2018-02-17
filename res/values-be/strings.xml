@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Сур\'ёзныя пагрозы для жыцця і маёмасці"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Абвесткі сістэмы AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Апавяшчэнні пра выкраданне дзяцей"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"Тэставыя рассылкі CMAS"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Тэставыя рассылкі камерцыйнай мабільнай сістэмы абвяшчэння"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Папярэджанні"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Папярэджваць пра непасрэдныя пагрозы бяспекі"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Надзвычайныя абвесткі"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Папярэджваць пра небяспечныя для жыцця падзеі"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Тэставыя трансляцыі"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Атрымліваць тэставыя паведамленні для сістэмы абвяшчэння бяспекі"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Вібрацыя"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Уключыць на поўную гучнасць"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ігнараваць іншыя гукі і параметры рэжыму \"Не турбаваць\""</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Атрымана:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"Непрачытаных абвестак: <xliff:g id="COUNT">%s</xliff:g>."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Новыя абвесткі"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Паказаць дыялогавае вакно выхада пасля адлюстравання першага CMAS (акрамя прэзідэнцкага папярэджання)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Паказаць дыялогавае акно адмовы пасля адлюстравання першай абвесткі (акрамя прэзідэнцкай абвесткі)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Паказваць вакно адключэння"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Зараз вы атрымліваеце надзвычайныя абвесткі. Працягваць атрымліваць іх?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Так"</string>

@@ -62,18 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Өмірге және мүлікке төнген ауыр қауіптер"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER хабарламалары"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Бала ұрлау туралы төтенше бюллетеньдер"</string>
-    <!-- no translation found for enable_alert_message_title (2939830587633599352) -->
-    <skip />
-    <!-- no translation found for enable_alert_message_summary (6525664541696985610) -->
-    <skip />
-    <!-- no translation found for enable_emergency_alerts_message_title (661894007489847468) -->
-    <skip />
-    <!-- no translation found for enable_emergency_alerts_message_summary (7574617515441602546) -->
-    <skip />
-    <!-- no translation found for enable_cmas_test_alerts_title (8153965128102934958) -->
-    <skip />
-    <!-- no translation found for enable_cmas_test_alerts_summary (588517403520088484) -->
-    <skip />
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Ескерту хабарлары"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Болатын қауіп туралы ескерту"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Төтенше жағдай туралы ескертулер"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Өмірге қауіп төндіретін жағдайлар туралы ескерту"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Таратылымдарды тексеру"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Қауіпсіздік жөнінде ескерту жүйесінің тексеру хабарларын алу"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Дірілдеу"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Толық көлемін пайдалану"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Басқа көлемді және \"Мазаламаңыз\" параметрлерін елемеу"</string>
@@ -114,8 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Қабылданды:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> оқылмаған дабыл бар."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Жаңа дабылдар"</string>
-    <!-- no translation found for show_cmas_opt_out_summary (6926059266585295440) -->
-    <skip />
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Алғашқы ескертуден кейін олардан (президенттік ескертулерді қоспағанда) бас тартуды ұсыну."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Қатыспау диалогын көрсету"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Сіз қазір төтенше дабылдарды қабылдап жатырсыз. Төтенше дабылдар қабылдауды жалғастырғыңыз келе ме?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Иә"</string>

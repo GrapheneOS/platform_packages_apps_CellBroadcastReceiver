@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Vakavat ihmishenkiä ja omaisuutta koskevat uhat"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER-hälytykset"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Lapsikaappauksien hätätiedotteet"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS-testilähetykset"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Commercial Mobile Alert Systemin testilähetykset"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Varoitusilmoitukset"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Varoita välittömistä turvallisuusuhista"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Hätätiedotteet"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Varoita hengenvaarallisista tapahtumista"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Testaa lähetyksiä"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Vastaanota turvahälytysjärjestelmän testiviestejä"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Värinä"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Täysi äänenvoimakkuus"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ohita muut volyymi- ja Älä häiritse ‑valinnat."</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Vastaanotettu:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> lukematonta hälytystä"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Uusia hälytyksiä"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Näytä kieltäytymisikkuna ensimmäisen CMAS-ilmoituksen jälkeen (muun kuin presidentin ilmoituksen)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Näytä kieltäytymisikkuna ensimmäisen hälytyksen jälkeen (muun kuin presidentin hälytyksen)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Näytä kieltäytymisikkuna"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Sinulle lähetetään tällä hetkellä hätäilmoituksia. Haluatko jatkaa hätäilmoitusten vastaanottamista?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Kyllä"</string>

@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Þegar líf eða eignir eru í alvarlegri hættu"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER-viðvaranir"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Neyðartilkynningar um brottnám barna"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"Prufuútsendingar CMAS-kerfisins"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Prufuútsendingar CMAS-kerfisins (Commercial Mobile Alert System)"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Viðvörunarskilaboð"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Vara við yfirvofandi öryggisógnum"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Neyðartilkynningar"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Vara við lífshættulegum atburðum"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Prófa endurvarpa"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Fá prufuskilboð frá öryggisviðvörunarkerfinu"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Titringur"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Nota fullan hljóðstyrk"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Hunsa aðrar stillingar fyrir hljóðstyrk og „Ónáðið ekki“"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Móttekið:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ólesnar viðvaranir."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nýjar viðvaranir"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Sýna glugga til að afþakka CMAS-viðvaranir eftir að sú fyrsta birtist (nema viðvörun frá forseta)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Sýna glugga til að afþakka viðvaranir eftir að sú fyrsta birtist (nema viðvörun frá forseta)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Sýna glugga til að afþakka"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Þú færð núna neyðarviðvaranir. Viltu halda áfram að fá neyðarviðvaranir?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Já"</string>

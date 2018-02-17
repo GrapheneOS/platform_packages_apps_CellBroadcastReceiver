@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ameaças graves, materiais ou à vida"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Alertas AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Boletins de emergência de rapto de crianças"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"Transmissões de teste do CMAS"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Transmissões de teste para o Sistema de alertas para celular comercial"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Mensagens de alerta"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Aviso sobre ameaças iminentes à segurança"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Alertas de emergência"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Aviso sobre eventos perigosos"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Testar transmissões"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Receber mensagens de teste para o sistema de alerta de segurança"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrar"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Usar volume máximo"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorar outras preferências de \"Não perturbe\" e volume"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Recebida:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> alertas não lidos."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Novos alertas"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Mostrar um diálogo de desativação após exibir o primeiro alerta CMAS (exceto presidencial)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Mostrar caixa de diálogo de desativação após exibir o primeiro alerta (exceto presidencial)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Mostrar diálogo de desativação"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Você está recebendo alertas de emergência. Quer continuar a receber alertas de emergência?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Sim"</string>

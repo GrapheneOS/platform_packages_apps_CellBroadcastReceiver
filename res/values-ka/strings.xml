@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"მწვავე საფრთხეები სიცოცხლის და საკუთრებისადმი"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER-ის გაფრთხილებები"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"საგანგებო შეტყობინებები ბავშვთა გატაცებების შესახებ"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS-ის შეტყობინებათა სატესტო გავრცელება"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"კომერციული მობილური გაფრთხილების სისტემის შეტყობინებათა სატესტო გავრცელება"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"გამაფრთხილებელი შეტყობინებები"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"დაუყოვნებელი საფრთხეების შესახებ გაფრთხილება"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"საგანგებო გაფრთხილებები"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"სიცოცხლისთვის საფრთხისმომცველი მოვლენების შესახებ გაფრთხილება"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"სატესტო გავრცელება"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"უსაფრთხოების სისტემის გამაფრთხილებელი სატესტო შეტყობინებების მიღება"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ვიბრაცია"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"სრული ხმის გამოყენება"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"ხმის დამატებითი პარამეტრების და „არ შემაწუხოთ“ პარამეტრის იგნორირება"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"მიღებული:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> წაუკითხავი გაფრთხილების შეტყობინებები."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"ახალი გაფრთხილებები"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"პირველი CMAS გაფრთხილების შემდეგ გასვლის დიალოგს ჩვენება (განსხვავდება პრეზიდენტის მიერ გამოცხადებული გაფრთხილებისგან)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"პირველი გაფრთხილების შემდეგ უარის თქმის დიალოგის ჩვენება (პრეზიდენტის მიერ გამოცხადებულ გაფრთხილებათა გარდა)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"გასვლის დიალოგის ჩვენება"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ამჟამად იღებთ საგანგებო ვითარების შესახებ გაფრთხილებებს. გსურთ გააგრძელოთ საგანგებო ვითარების შესახებ გაფრთხილებების მიღება?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"დიახ"</string>

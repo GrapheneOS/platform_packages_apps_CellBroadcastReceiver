@@ -62,8 +62,12 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ozbiljna opasnost po život i imovinu"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER obaveštenja"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Objave u vezi sa otmicom deteta"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="9000272842269750162">"CMAS probna emitovanja"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2694842049601559724">"Probna emitovanja za Komercijalni sistem upozorenja za mobilne uređaje (CMAS)"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"Poruke upozorenja"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Upozoravaj me na neposredne bezbednosne pretnje"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Obaveštenja o hitnim slučajevima"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Upozoravaj me na događaje opasne po život"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="8153965128102934958">"Probna emitovanja"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Primaj probne poruke za sistem bezbednosnih upozorenja"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibriraj"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Koristi najveću jačinu zvuka"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Zanemaruje druga podešavanja za Jačinu zvuka i Ne uznemiravaj"</string>
@@ -104,7 +108,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Primljena:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> nepročitana(ih) upozorenja."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nova upozorenja"</string>
-    <string name="show_cmas_opt_out_summary" msgid="4370292554938680862">"Prikaži dijalog za onemogućavanje nakon prikaza prvog CMAS upozorenja (osim predsedničkog upozorenja)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Prikaži dijalog za onemogućavanje posle prikaza prvog upozorenja (osim predsedničkog upozorenja)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Prikaži dijalog za onemogućavanje"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Trenutno primate upozorenja o hitnim slučajevima. Želite li da nastavite da ih primate?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Da"</string>
