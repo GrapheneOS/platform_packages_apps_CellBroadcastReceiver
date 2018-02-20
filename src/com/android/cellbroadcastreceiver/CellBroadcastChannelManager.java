@@ -23,7 +23,6 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
-import com.android.internal.util.ArrayUtils;
 
 import java.util.ArrayList;
 
@@ -87,6 +86,7 @@ public class CellBroadcastChannelManager {
                     if (tokens.length == 2) {
                         String key = tokens[0].trim();
                         String value = tokens[1].trim();
+                        if (value == null) continue;
                         switch (key) {
                             case KEY_TYPE:
                                 mAlertType = AlertType.valueOf(value.toUpperCase());
@@ -102,7 +102,7 @@ public class CellBroadcastChannelManager {
                             case KEY_SCOPE:
                                 if (value.equalsIgnoreCase("carrier")) {
                                     mScope = SCOPE_CARRIER;
-                                } else if (value.equalsIgnoreCase("national")) {
+                                } else if (value.equalsIgnoreCase("domestic")) {
                                     mScope = SCOPE_DOMESTIC;
                                 } else if (value.equalsIgnoreCase("international")) {
                                     mScope = SCOPE_INTERNATIONAL;
@@ -148,7 +148,6 @@ public class CellBroadcastChannelManager {
             Context context, int key) {
         ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
         String[] ranges = context.getResources().getStringArray(key);
-        if (ArrayUtils.isEmpty(ranges)) return null;
 
         if (ranges != null) {
             for (String range : ranges) {

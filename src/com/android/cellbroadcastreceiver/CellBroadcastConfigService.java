@@ -246,7 +246,7 @@ public class CellBroadcastConfigService extends IntentService {
                     case AREA:
                         enableAlerts = enableAreaUpdateInfoAlerts;
                         break;
-                    case ETWS_TEST:
+                    case TEST:
                         enableAlerts = enableTestAlerts;
                         break;
                     default:
