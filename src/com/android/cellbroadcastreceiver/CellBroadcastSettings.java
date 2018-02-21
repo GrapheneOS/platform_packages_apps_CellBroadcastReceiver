@@ -294,24 +294,11 @@ public class CellBroadcastSettings extends Activity {
             }
 
             // Show alert settings and ETWS categories for ETWS builds and developer mode.
-            // TODO combine etws and cmas testing with a single toggle
-            if (enableDevSettings || this.getResources()
-                    .getBoolean(R.bool.always_show_test_settings)) {
-                if (forceDisableEtwsCmasTest) {
-                    if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
-                        // Remove test preferences
-                        preferenceScreen.removePreference(mTestCheckBox);
-                    } else {
-                        if (mDevSettingCategory != null) {
-                            // Remove test preference.
-                            mDevSettingCategory.removePreference(mTestCheckBox);
-                        }
-                    }
-                }
-            } else {
-                if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
-                    preferenceScreen.removePreference(mTestCheckBox);
-                } else {
+            if (forceDisableEtwsCmasTest || !enableDevSettings) {
+                if (mTestCheckBox != null) preferenceScreen.removePreference(mTestCheckBox);
+            }
+            if (!enableDevSettings && !pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                if (mDevSettingCategory != null) {
                     preferenceScreen.removePreference(mDevSettingCategory);
                 }
             }
@@ -337,7 +324,8 @@ public class CellBroadcastSettings extends Activity {
 
             // Remove preferences based on range configurations
             if (CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(
-                    this.getContext(), R.array.safety_info_alerts_channels_range_strings) == null) {
+                    this.getContext(),
+                    R.array.safety_info_alerts_channels_range_strings).isEmpty()) {
                 // Remove safety info alerts messages
                 if (mAlertCategory != null) {
                     if (mSafetyInfoChannelCheckBox != null) {
@@ -347,7 +335,7 @@ public class CellBroadcastSettings extends Activity {
             }
 
             if (CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(
-                    this.getContext(), R.array.emergency_alerts_channels_range_strings) == null) {
+                    this.getContext(), R.array.emergency_alerts_channels_range_strings).isEmpty()) {
                 // Remove emergency alert messages
                 if (mAlertCategory != null) {
                     if (mEmergencyAlertsCheckBox != null) {
