@@ -93,8 +93,11 @@
 
     <!-- Preference category title for emergency alert settings. [CHAR LIMIT=50] -->
     <string name="emergency_alerts_title">Alerts</string>
-    <!-- Notification channel name for a channel containing cell broadcast messages notifications. [CHAR LIMIT=50] -->
+    <!-- Notification channel name for a channel containing non-emergency broadcast messages notifications. [CHAR LIMIT=50] -->
     <string name="notification_channel_broadcast_messages">Broadcast messages</string>
+    <!-- Notification channel name for a channel containing emergency alert notifications. [CHAR LIMIT=50] -->
+    <string name="notification_channel_emergency_alerts">Emergency alerts</string>
+
     <!-- Preference title for enable emergency alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_alerts_master_toggle_title">Allow alerts</string>
     <!-- Preference summaries for allow alerts checkbox. [CHAR LIMIT=50] -->
