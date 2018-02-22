@@ -29,6 +29,7 @@ LOCAL_SRC_FILES := $(call all-java-files-under, src)
 # automatically get all of its classes loaded into our environment.
 
 LOCAL_PACKAGE_NAME := CellBroadcastReceiverTests
+LOCAL_PRIVATE_PLATFORM_APIS := true
 
 # Apk must be signed with platform signature in order to send test broadcasts.
 LOCAL_CERTIFICATE := platform
