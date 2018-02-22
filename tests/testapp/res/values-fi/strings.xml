@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Lähetä ETWS:n muun hätätilanteen lähetys"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Lähetä ETWS-peruutuslähetys"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Lähetä ETWS-testilähetys"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Lähetä CMAS:n presidenttitason hälytys"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Lähetä CMAS:n äärimmäinen hälytys"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Lähetä CMAS:n vakava hälytys"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Lähetä CMAS:n AMBER-hälytys"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Lähetä CMAS:n kuukausittainen testihälytys"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Lähetä CMAS:n presidenttitason hälytys CDMA:lla"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Lähetä CMAS:n äärimmäinen hälytys CDMA:lla"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Lähetä CMAS:n vakava hälytys CDMA:lla"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Lähetä CMAS:n AMBER-hälytys CDMA:lla"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Lähetä CMAS:n kuukausittainen testihälytys CDMA:lla"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Lähetä CMAS:n presidenttitason hälytys GSM:llä"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Lähetä CMAS:n äärimmäinen hälytys GSM:llä"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Lähetä CMAS:n vakava hälytys GSM:llä"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Lähetä CMAS:n AMBER-hälytys GSM:llä"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Lähetä CMAS:n kuukausittainen testihälytys GSM:llä"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Lähetä turvallisuusilmoitus GSM:llä"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Lähetä 7-bittinen GSM-testilähetys"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Lähetä 7-bittinen UMTS-testilähetys"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Lähetä täyspitkä 7-bittinen GSM-lähetys"</string>

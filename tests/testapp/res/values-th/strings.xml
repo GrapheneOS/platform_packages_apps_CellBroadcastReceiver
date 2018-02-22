@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"ส่งข้อมูลเตือนภัย ETWS สำหรับเหตุฉุกเฉินอื่นๆ"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"ส่งการกระจายข้อมูลยกเลิก ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"ส่งการกระจายข้อมูลทดสอบ ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"ส่งการแจ้งเตือน CMAS ระดับสูง"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"ส่งการแจ้งเตือน CMAS ระดับสูงสุด"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"ส่งการแจ้งเตือน CMAS ระดับร้ายแรง"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"ส่งการแจ้งเตือน CMAS ระดับ AMBER"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"ส่งการแจ้งเตือนทดสอบประจำเดือนของ CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"ส่งการแจ้งเตือน CDMA CMAS ระดับสูง"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"ส่งการแจ้งเตือน CDMA CMAS ระดับสูงสุด"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"ส่งการแจ้งเตือน CDMA CMAS ระดับร้ายแรง"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"ส่งการแจ้งเตือน CDMA CMAS AMBER"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"ส่งการแจ้งเตือนการทดสอบรายเดือนของ CDMA CMAS"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"ส่งการแจ้งเตือน GSM CMAS ระดับสูง"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"ส่งการแจ้งเตือน GSM CMAS ระดับสูงสุด"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"ส่งการแจ้งเตือน GSM CMAS ระดับร้ายแรง"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"ส่งการแจ้งเตือน GSM CMAS AMBER"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"ส่งการแจ้งเตือนการทดสอบรายเดือนของ GSM CMAS"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"ส่งการแจ้งเตือนข้อมูลความปลอดภัยของ GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"ส่งการกระจายข้อมูลทดสอบ GSM 7 บิต"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"ส่งการกระจายข้อมูลทดสอบ UMTS 7 บิต"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"ส่งการกระจายข้อมูลเต็มความยาว GSM 7 บิต"</string>

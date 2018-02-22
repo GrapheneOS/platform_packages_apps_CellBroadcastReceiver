@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"ETWS অন্যান্য জরুরি সম্প্রচার পাঠান"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"ETWS বাতিল সম্প্রচার পাঠান"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"ETWS পরীক্ষা সম্প্রচার পাঠান"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"CMAS রাষ্ট্রপতি সতর্কতা পাঠান"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"CMAS চরম সতর্কতা পাঠান"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"CMAS গুরুতর সতর্কতা পাঠান"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"CMAS AMBER সতর্কতা পাঠান"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"CMAS মাসিক পরীক্ষা সতর্কতা পাঠান"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"CDMA CMAS রাষ্ট্রপতি স্তরের সতর্কতা পাঠান"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"CDMA CMAS চরম সতর্কতা পাঠান"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"CDMA CMAS গুরুতর সতর্কতা পাঠান"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"CDMA CMAS AMBER সতর্কতা পাঠান"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"CDMA CMAS মাসিক পরীক্ষার সতর্কতা পাঠান"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"GSM CMAS রাষ্ট্রপতি স্তরের সতর্কতা পাঠান"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"GSM CMAS চরম সতর্কতা পাঠান"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"GSM CMAS গুরুতর সতর্কতা পাঠান"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"GSM CMAS AMBER সতর্কতা পাঠান"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"GSM CMAS মাসিক পরীক্ষার সতর্কতা পাঠান"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"GSM নিরাপত্তা তথ্যের সতর্কতা পাঠান"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"GSM 7 বিট পরীক্ষা সম্প্রচার পাঠান"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"UMTS 7 বিট পরীক্ষা সম্প্রচার পাঠান"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"GSM 7 বিট সম্পূর্ণ দৈর্ঘ্য সম্প্রচার পাঠান"</string>

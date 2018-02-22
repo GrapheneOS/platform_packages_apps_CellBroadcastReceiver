@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Difuzați un mesaj ETWS pentru alte urgențe"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Difuzați un mesaj de anulare ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Difuzați un mesaj de test ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Trimiteți o alertă prezidențială CMAS"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Trimiteți o alertă extremă CMAS"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Trimiteți o alertă gravă CMAS"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Trimiteți o alertă CMAS AMBER"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Trimiteți lunar o alertă de test CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Trimiteți o alertă prezidențială CDMA CMAS"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Trimiteți o alertă extremă CDMA CMAS"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Trimiteți o alertă gravă CDMA CMAS"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Trimiteți o alertă CDMA CMAS AMBER"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Trimiteți alertă de testare lunară CDMA CMAS"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Trimiteți o alertă prezidențială GMS CMAS AMBER"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Trimiteți o alertă extremă GMS CMAS AMBER"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Trimiteți o alertă gravă GSM CMAS"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Trimiteți o alertă GMS CMAS AMBER"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Trimiteți alertă de testare lunară GMS CMAS AMBER"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Trimiteți o alertă GSM cu informații privind siguranța"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Difuzați un mesaj de test GSM pe 7 biți"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Difuzați un mesaj de test UMTS pe 7 biți"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Difuzați un mesaj de dimensiune completă GSM pe 7 biți"</string>

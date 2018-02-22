@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Отправить другое оповещение системы предупреждения о землетрясениях и цунами"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Отправить рассылку об отмене оповещения системы предупреждения о землетрясениях и цунами"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Отправить тестовую рассылку системы предупреждения о землетрясениях и цунами"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Отправить президентское оповещение через CMAS"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Отправить оповещение о критической угрозе через CMAS"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Отправить оповещение о серьезной угрозе через CMAS"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Отправить оповещение AMBER через CMAS"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Отправить ежемесячное тестовое оповещение через CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Отправить президентское оповещение через CDMA CMAS"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Отправить оповещение о критической угрозе через CDMA CMAS"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Отправить оповещение о серьезной угрозе через CDMA CMAS"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Отправить оповещение о похищении ребенка (AMBER Alert) через CDMA CMAS"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Отправить ежемесячное тестовое оповещение через CDMA CMAS"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Отправить президентское оповещение через GSM CMAS"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Отправить оповещение о критической угрозе через GSM CMAS"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Отправить оповещение о серьезной угрозе через GSM CMAS"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Отправить оповещение о похищении ребенка (AMBER Alert) через GSM CMAS"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Отправить ежемесячное тестовое оповещение через GSM CMAS"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Отправить оповещение о правилах техники безопасности через GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Отправить 7-битную тестовую GSM-рассылку"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Отправить 7-битную тестовую UMTS-рассылку"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Отправить 7-битную GSM-рассылку полной длины"</string>

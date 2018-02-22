@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"ផ្ញើការផ្សាយពីគ្រោះអាសន្នផ្សេងទៀត ETWS"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"ផ្ញើ​ការ​ផ្សាយ​បោះបង់ ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"ផ្ញើ​ការ​ផ្សាយ​សាកល្បង ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"ផ្ញើ​ការ​ជូន​ដំណឹង​ផ្លូវការ CMAS"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"ផ្ញើ​ការ​ជូន​ដំណឹង​ខ្លាំង CMAS"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"ផ្ញើ​ការ​ជូន​ដំណឹង​ធ្ងន់ធ្ងរ CMAS"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"ផ្ញើ​ការ​ជូន​ដំណឹង​ពណ៌លឿង CMAS"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"ផ្ញើ​ការ​ជូន​ដំណឹង​សាកល្បង​ប្រចាំខែ CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"ផ្ញើ​ការជូន​ដំណឹង​ផ្លូវការ​ CDMA CMAS"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"ផ្ញើ​ការជូន​ដំណឹង​អំពី​គ្រោះ​ធម្មជាតិ​ធ្ងន់ធ្ងរ​បំផុត​ CDMA CMAS"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"ផ្ញើ​ការជូន​ដំណឹង​អំពី​គ្រោះ​ធម្មជាតិ​ធ្ងន់ធ្ងរ CDMA CMAS"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"ផ្ញើ​ការជូន​ដំណឹង​អំពី​ការចាប់​ពង្រត់ក្មេង CDMA CMAS"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"ផ្ញើ​ការជូន​ដំណឹង​សាកល្បង​ប្រចាំខែ CDMA CMAS"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"ផ្ញើ​ការជូន​ដំណឹង​ផ្លូវការ​ GSM CMAS"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"ផ្ញើ​ការជូន​ដំណឹង​អំពី​គ្រោះ​ធម្មជាតិ​ធ្ងន់ធ្ងរ​បំផុត​ GSM CMAS"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"ផ្ញើ​ការជូន​ដំណឹង​អំពី​គ្រោះ​ធម្មជាតិ​ធ្ងន់ធ្ងរ​ GSM CMAS"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"ផ្ញើ​ការជូន​ដំណឹង​អំពី​ការចាប់​ពង្រត់ក្មេង GSM CMAS"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"ផ្ញើ​ការជូន​ដំណឹង​សាកល្បង​ប្រចាំខែ​ GSM CMAS"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"ផ្ញើ​ការជូន​ដំណឹង​អំពី​ព័ត៌មាន​សុវត្ថិភាព​ GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"ផ្ញើ​ការ​ផ្សាយ​សាកល្បង GSM 7 Bit"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"ផ្ញើ​ការ​ផ្សាយ​សាកល្បង UMTS 7 Bit"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"ផ្ញើ​ការ​ផ្សាយ​ប្រវែង​ពេញលេញ GSM 7 Bit"</string>

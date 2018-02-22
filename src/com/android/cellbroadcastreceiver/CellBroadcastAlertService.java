@@ -70,10 +70,16 @@ public class CellBroadcastAlertService extends Service {
     static final int NOTIFICATION_ID = 1;
 
     /**
-     * Notification channel containing all cellbroadcast broadcast messages notifications.
-     * Use the same notification channel for non-emergency alerts.
+     * Notification channel containing for non-emergency alerts.
      */
-    static final String NOTIFICATION_CHANNEL_BROADCAST_MESSAGES = "broadcastMessages";
+    static final String NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS = "broadcastMessagesNonEmergency";
+
+    /**
+     * Notification channel for emergency alerts. This is used when users sneak out of the
+     * noisy pop-up for a real emergency and get a notification due to not officially acknowledged
+     * the alert and want to refer it back later.
+     */
+    static final String NOTIFICATION_CHANNEL_EMERGENCY_ALERTS = "broadcastMessages";
 
     /** Sticky broadcast for latest area info broadcast received. */
     static final String CB_AREA_INFO_RECEIVED_ACTION =
@@ -630,10 +636,10 @@ public class CellBroadcastAlertService extends Service {
             pi = PendingIntent.getActivity(context, NOTIFICATION_ID, intent,
                     PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
         }
-
+        final String channelId = isEmergencyMessage(context, message)
+                ? NOTIFICATION_CHANNEL_EMERGENCY_ALERTS : NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS;
         // use default sound/vibration/lights for non-emergency broadcasts
-        Notification.Builder builder = new Notification.Builder(
-                context, NOTIFICATION_CHANNEL_BROADCAST_MESSAGES)
+        Notification.Builder builder = new Notification.Builder(context, channelId)
                 .setSmallIcon(R.drawable.ic_warning_googred)
                 .setTicker(channelName)
                 .setWhen(System.currentTimeMillis())
@@ -694,9 +700,15 @@ public class CellBroadcastAlertService extends Service {
     static void createNotificationChannels(Context context) {
         NotificationManager.from(context).createNotificationChannel(
                 new NotificationChannel(
-                        NOTIFICATION_CHANNEL_BROADCAST_MESSAGES,
-                        context.getString(R.string.notification_channel_broadcast_messages),
+                        NOTIFICATION_CHANNEL_EMERGENCY_ALERTS,
+                        context.getString(R.string.notification_channel_emergency_alerts),
                         NotificationManager.IMPORTANCE_LOW));
+        final NotificationChannel nonEmergency = new NotificationChannel(
+                NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS,
+                context.getString(R.string.notification_channel_broadcast_messages),
+                NotificationManager.IMPORTANCE_DEFAULT);
+        nonEmergency.enableVibration(true);
+        NotificationManager.from(context).createNotificationChannel(nonEmergency);
     }
 
     static Intent createDisplayMessageIntent(Context context, Class intentClass,

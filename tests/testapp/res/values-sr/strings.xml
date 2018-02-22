@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Пошаљи ETWS упозорење о другом хитном случају"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Пошаљи ETWS емитовање за отказивање"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Пошаљи пробно ETWS емитовање"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Пошаљи CMAS председничко упозорење"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Пошаљи CMAS упозорење о екстремној опасности"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Пошаљи CMAS обавештење о озбиљној опасности"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Пошаљи CMAS AMBER упозорење"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Пошаљи CMAS месечно пробно упозорење"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Пошаљи CMAS-ово CDMA председничко упозорење"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Пошаљи CMAS-ово CDMA упозорење о екстремној опасности"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Пошаљи CMAS-ово CDMA упозорење о озбиљној опасности"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Пошаљи CMAS-ово CDMA AMBER упозорење"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Пошаљи CMAS-ов CDMA месечни тест упозорења"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Пошаљи CMAS-ово GSM председничко упозорење"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Пошаљи CMAS-ово GSM упозорење о екстремној опасности"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Пошаљи CMAS-ово GSM упозорење о озбиљној опасности"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Пошаљи CMAS-ово GSM AMBER упозорење"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Пошаљи CMAS-ов GSM месечни тест упозорења"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Пошаљи GSM упозорење са безбедносним информацијама"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Пошаљи 7-битно пробно GSM емитовање"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Пошаљи 7-битно пробно UMTS емитовање"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Пошаљи целокупно 7-битно GSM емитовање"</string>

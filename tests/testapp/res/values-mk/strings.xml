@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Испратете емитување за друга непогода преку ETWS"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Испратете откажување на емитувањето преку ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Испратете тест емитување преку ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Испратете претседателско предупредување преку CMAS"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Испратете предупредување од највисок степен преку CMAS"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Испратете сериозно предупредување преку CMAS"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Испратете AMBER-предупредување преку CMAS"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Испратете предупредување за месечно тестирање преку CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Испратете претседателско предупредување преку CDMA CMAS"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Испратете предупредување од највисок степен преку CDMA CMAS"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Испратете сериозно предупредување преку CDMA CMAS"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Испратете AMBER-предупредување преку CDMA CMAS"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Испратете предупредување за месечно тестирање преку CDMA CMAS"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Испратете претседателско предупредување преку GSM CMAS"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Испратете предупредување од највисок степен преку GSM CMAS"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Испратете сериозно предупредување преку GSM CMAS"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Испратете AMBER-предупредување преку GSM CMAS"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Испратете предупредување за месечно тестирање преку GSM CMAS"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Испратете предупредување за безбедносни информации преку GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Испратете 7-битно тест емитување преку GSM"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Испратете 7-битно тест емитување преку UMTS"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Испратете 7-битно целосно емитување преку GSM"</string>

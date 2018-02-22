@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Send advarsel om andre katastrofer (ETWS)"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Send ETWS-annulleringsmeddelelse"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Send ETWS-testmeddelelse"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Send CMAS-advarsel fra præsidenten"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Send CMAS-advarsel: Ekstrem"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Send CMAS-advarsel: Alvorlig"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Send CMAS-advarsel om børnebortførelse"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Send CMAS-advarsel om månedlig test"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Send CDMA CMAS-advarsel fra præsidenten"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Send CDMA CMAS-advarsel om bortførelse af børn: Ekstrem"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Send CDMA CMAS-advarsel: Alvorlig"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Send CDMA CMAS-advarsel om bortførelse af børn"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Send CDMA CMAS-advarsel om månedlig test"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Send GSM CMAS-advarsel fra præsidenten"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Send GSM CMAS-advarsel: Ekstrem"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Send GMAS CMAS-advarsel: Alvorlig"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Send GSM CMAS-advarsel om bortførelse af børn"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Send GSM CMAS-advarsel om månedlig test"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Send GSM-advarsel om sikkerhedsoplysninger"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Send UMTS 7-bit testmeddelelse"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Send UMTS 7-bit testmeddelelse"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Send GSM 7-bit meddelelse i fuld længde"</string>
