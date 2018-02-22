@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Envoyer une diffusion ETWS au sujet d\'une autre urgence"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Envoyer une diffusion d\'annulation ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Envoyer une diffusion test ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Envoyer l\'alerte présidentielle du CMAS"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Envoyer l\'alerte extrême du CMAS"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Envoyer l\'alerte importante du CMAS"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Envoyer l\'alerte Enlèvement du CMAS"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Envoyer l\'alerte test mensuelle du CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Envoyer l\'alerte présidentielle du CMAS par CDMA"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Envoyer l\'alerte extrême du CMAS par CDMA"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Envoyer l\'alerte importante du CMAS par CDMA"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Envoyer l\'alerte Enlèvement du CMAS par CDMA"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Envoyer l\'alerte test mensuelle du CMAS par CDMA"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Envoyer l\'alerte présidentielle du CMAS par GSM"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Envoyer l\'alerte extrême du CMAS par GSM"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Envoyer l\'alerte importante du CMAS par GSM"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Envoyer l\'alerte Enlèvement du CMAS par GSM"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Envoyer l\'alerte test mensuelle du CMAS par GSM"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Envoyer l\'alerte de sécurité par GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Envoyer une diffusion test GSM 7 bits"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Envoyer une diffusion test UMTS 7 bits"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Envoyer une diffusion longueur intégrale GSM 7 bits"</string>

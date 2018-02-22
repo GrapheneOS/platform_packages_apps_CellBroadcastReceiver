@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Odeslat zprávu ETWS ohledně jiného typu krizové situace"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Odeslat stornovací vysílání ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Odeslat testovací zprávy ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Odeslat prezidentské upozornění CMAS"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Odeslat extrémní upozornění CMAS"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Odeslat závažné upozornění CMAS"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Odeslat upozornění AMBER CMAS"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Odeslat testovací (měsíční) upozornění CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Odeslat prezidentské upozornění CMAS přes CDMA"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Odeslat extrémní upozornění CMAS přes CDMA"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Odeslat závažné upozornění CMAS přes CDMA"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Odeslat upozornění CMAS AMBER přes CDMA"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Odeslat testovací (měsíční) upozornění CMAS přes CDMA"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Odeslat prezidentské upozornění CMAS přes GSM"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Odeslat extrémní upozornění CMAS přes GSM"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Odeslat závažné upozornění CMAS přes GSM"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Odeslat upozornění CMAS AMBER přes GSM"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Odeslat testovací (měsíční) upozornění CMAS přes GSM"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Odeslat upozornění s informacemi o zabezpečení přes GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Odeslat testovací zprávy GSM (7bitové)"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Odeslat testovací zprávy UMTS (7bitové)"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Odeslat zprávy GSM (7bitové) plné délky"</string>

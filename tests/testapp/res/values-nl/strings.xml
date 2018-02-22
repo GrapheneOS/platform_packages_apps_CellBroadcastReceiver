@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"ETWS-waarschuwing voor andere noodsituatie verzenden"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"ETWS-annuleringsbericht verzenden"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"ETWS-testbericht verzenden"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Nationale CMAS-waarschuwing verzenden"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Extreme waarschuwing voor CMAS verzenden"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Ernstige waarschuwing voor CMAS verzenden"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"AMBER-alert voor CMAS verzenden"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Maandelijkse testwaarschuwing voor CMAS verzenden"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Nationale CDMA CMAS-waarschuwing verzenden"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Extreme waarschuwing voor CDMA CMAS verzenden"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Ernstige waarschuwing voor CDMA CMAS verzenden"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"AMBER-alert voor CDMA CMAS verzenden"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Maandelijkse testwaarschuwing voor CDMA CMAS verzenden"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Nationale GSM CMAS-waarschuwing verzenden"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Extreme waarschuwing voor GSM CMAS verzenden"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Ernstige waarschuwing voor GSM CMAS verzenden"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"AMBER-alert voor GSM CMAS verzenden"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Maandelijkse testwaarschuwing voor GSM CMAS verzenden"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Waarschuwing voor GSM-veiligheidsgegevens verzenden"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"GSM 7-bits testbericht verzenden"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"UMTS 7-bits testbericht verzenden"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"GSM 7-bits bericht van volledige lengte verzenden"</string>

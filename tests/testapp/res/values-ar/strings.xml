@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"‏إرسال بث الطوارئ الأخرى إلى ETWS"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"‏إرسال بث إلغاء لـ ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"‏إرسال بث تجريبي لـ ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"‏إرسال تنبيه رئاسي CMAS"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"‏إرسال تنبيه CMAS ذي خطورة قصوى"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"‏إرسال تنبيه CMAS ذي خطورة بالغة"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"‏إرسال تنبيه CMAS AMBER"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"‏إرسال تنبيه اختبار شهري CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"‏إرسال تنبيه رئاسي عبر CDMA CMAS"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"‏إرسال تنبيه حالة التأهب القصوى عبر CDMA CMAS"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"‏إرسال تنبيه الخطورة البالغة عبر CDMA CMAS"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"‏إرسال تنبيه AMBER عبر CDMA CMAS"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"‏إرسال تنبيه الاختبار الشهري عبر CDMA CMAS"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"‏إرسال تنبيه رئاسي عبر GSM CMAS"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"‏إرسال تنبيه حالة التأهب القصوى عبر GSM CMAS"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"‏إرسال تنبيه الخطورة البالغة عبر GSM CMAS"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"‏إرسال تنبيه AMBER عبر GSM CMAS"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"‏إرسال تنبيه الاختبار الشهري عبر GSM CMAS"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"‏إرسال تنبيه معلومات السلامة عبر GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"‏إرسال بث تجريبي لنظام GSM ‏٧ بت"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"‏إرسال بث تجريبي لكود النظام العالمي لاتصالات الجوال عن بعد (UMTS) ‏٧ بت"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"‏إرسال بث طويل لنظام GSM ۷ بت"</string>

@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Kirim Siaran Darurat ETWS Lainnya"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Kirim Siaran Pembatalan ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Kirim Siaran Uji Coba ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Kirim Peringatan Presidensial CMAS"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Kirim Peringatan Ekstrem CMAS"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Kirim Peringatan Parah CMAS"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Kirim Peringatan AMBER CMAS"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Kirim Peringatan Uji Bulanan CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Kirim Peringatan Presidensial CMAS CDMA"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Kirim Peringatan Ekstrem CMAS CDMA"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Kirim Peringatan Parah CMAS CDMA"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Kirim Peringatan AMBER CMAS CDMA"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Kirim Peringatan Uji Coba Bulanan CMAS CDMA"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Kirim Peringatan Presidensial CMAS GSM"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Kirim Peringatan Ekstrem CMAS GSM"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Kirim Peringatan Parah CMAS GSM"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Kirim Peringatan AMBER CMAS GSM"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Kirim Peringatan Uji Coba Bulanan CMAS GSM"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Kirim Peringatan Info Keamanan GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Kirim Siaran Uji Coba GSM 7 Bit"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Kirim Siaran Uji Coba UMTS 7 Bit"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Kirim Siaran Penuh GSM 7 Bit"</string>
