@@ -55,6 +55,7 @@
     <!-- Cancel button text for delete broadcast dialog. [CHAR LIMIT=25] -->
     <string name="button_cancel">Cancel</string>
 
+
     <!-- ETWS dialog title for Earthquake Warning. [CHAR LIMIT=50] -->
     <string name="etws_earthquake_warning">Earthquake warning</string>
     <!-- ETWS dialog title for Tsunami Warning. [CHAR LIMIT=50] -->
@@ -78,7 +79,7 @@
     <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
     <string name="cmas_amber_alert">Child abduction (Amber alert)</string>
     <!-- CMAS dialog title for required monthly test. [CHAR LIMIT=50] -->
-    <string name="cmas_required_monthly_test">Emergency alert monthly test</string>
+    <string name="cmas_required_monthly_test">Required Monthly Test</string>
     <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
     <string name="cmas_exercise_alert">Emergency alert (exercise)</string>
     <!-- CMAS dialog title for operator defined use. [CHAR LIMIT=50] -->
@@ -87,15 +88,20 @@
     <string name="pws_other_message_identifiers">Emergency alert</string>
     <!-- Dialog title for all non-emergency cell broadcasts. [CHAR LIMIT=50] -->
     <string name="cb_other_message_identifiers">Broadcast messages</string>
+    <!-- Dialog title for all public safety message broadcasts. [CHAR LIMIT=50] -->
+    <string name="public_safety_message">Public safety message</string>
 
     <!-- Preference category title for emergency alert settings. [CHAR LIMIT=50] -->
     <string name="emergency_alerts_title">Alerts</string>
-    <!-- Notification channel name for a channel containing cell broadcast messages notifications. [CHAR LIMIT=50] -->
+    <!-- Notification channel name for a channel containing non-emergency broadcast messages notifications. [CHAR LIMIT=50] -->
     <string name="notification_channel_broadcast_messages">Broadcast messages</string>
+    <!-- Notification channel name for a channel containing emergency alert notifications. [CHAR LIMIT=50] -->
+    <string name="notification_channel_emergency_alerts">Emergency alerts</string>
+
     <!-- Preference title for enable emergency alerts checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_emergency_alerts_title">Allow alerts</string>
+    <string name="enable_alerts_master_toggle_title">Allow alerts</string>
     <!-- Preference summaries for allow alerts checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_emergency_alerts_summary">Receive emergency notifications</string>
+    <string name="enable_alerts_master_toggle_summary">Receive emergency notifications</string>
     <!-- Preference title for alert reminder interval list. [CHAR LIMIT=50] -->
     <string name="alert_reminder_interval_title">Alert reminder sound</string>
     <!-- Do not translate. Empty summary for alert reminder (set by CellBroadcastSettings). -->
@@ -137,9 +143,9 @@
     <!-- Preference summary for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->
     <string name="enable_emergency_alerts_message_summary">Warn about life-threatening events</string>
 
-    <!-- Preference title for enable CMAS test alerts checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_cmas_test_alerts_title">Test broadcasts</string>
-    <!-- Preference summary for enable CMAS test alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Preference title for required monthly test alert checkbox. [CHAR LIMIT=50] -->
+    <string name="enable_cmas_test_alerts_title">Required monthly test</string>
+    <!-- Preference summary for enable required monthly test alerts checkbox. [CHAR LIMIT=100] -->
     <string name="enable_cmas_test_alerts_summary">Receive test messages for the safety alert system</string>
 
     <!-- Preference title for CMAS vibration on/off. [CHAR LIMIT=50] -->
