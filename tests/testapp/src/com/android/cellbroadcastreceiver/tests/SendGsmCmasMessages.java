@@ -74,7 +74,7 @@ public class SendGsmCmasMessages {
 
     public static void testSendCmasExtremeAlert(Activity activity, int serialNumber) {
         SmsCbMessage cbMessage = createCmasSmsMessage(
-                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_EXPECTED_OBSERVED, serialNumber, "en",
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED, serialNumber, "en",
                 EXTREME_ALERT, SmsCbCmasInfo.CMAS_SEVERITY_EXTREME,
                 SmsCbCmasInfo.CMAS_URGENCY_EXPECTED, SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED,
                 SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);

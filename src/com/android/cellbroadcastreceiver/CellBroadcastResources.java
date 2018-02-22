@@ -263,51 +263,66 @@ public class CellBroadcastResources {
             }
         }
 
-        // CMAS warning types
         SmsCbCmasInfo cmasInfo = cbm.getCmasWarningInfo();
-        if (cmasInfo != null) {
-            switch (cmasInfo.getMessageClass()) {
-                case SmsCbCmasInfo.CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT:
-                    return R.string.cmas_presidential_level_alert;
-
-                case SmsCbCmasInfo.CMAS_CLASS_EXTREME_THREAT:
-                    if (cmasInfo.getSeverity() == SmsCbCmasInfo.CMAS_SEVERITY_EXTREME
-                            && cmasInfo.getUrgency() == SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE) {
-                        if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED) {
-                            return R.string.cmas_extreme_immediate_observed_alert;
-                        } else if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY) {
-                            return R.string.cmas_extreme_immediate_likely_alert;
-                        }
-                    }
-                    return R.string.cmas_extreme_alert;
-
-                case SmsCbCmasInfo.CMAS_CLASS_SEVERE_THREAT:
-                    return R.string.cmas_severe_alert;
-
-                case SmsCbCmasInfo.CMAS_CLASS_CHILD_ABDUCTION_EMERGENCY:
-                    return R.string.cmas_amber_alert;
-
-                case SmsCbCmasInfo.CMAS_CLASS_REQUIRED_MONTHLY_TEST:
-                    return R.string.cmas_required_monthly_test;
-
-                case SmsCbCmasInfo.CMAS_CLASS_CMAS_EXERCISE:
-                    return R.string.cmas_exercise_alert;
-
-                case SmsCbCmasInfo.CMAS_CLASS_OPERATOR_DEFINED_USE:
-                    return R.string.cmas_operator_defined_alert;
-
-                default:
-                    return R.string.pws_other_message_identifiers;
+        int subId = cbm.getSubId();
+        final int serviceCategory = cbm.getServiceCategory();
+        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
+                serviceCategory,
+                R.array.emergency_alerts_channels_range_strings, context)) {
+            return R.string.pws_other_message_identifiers;
+        }
+        // CMAS warning types
+        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
+                serviceCategory,
+                R.array.cmas_presidential_alerts_channels_range_strings, context)) {
+            return R.string.cmas_presidential_level_alert;
+        }
+        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
+                serviceCategory,
+                R.array.cmas_alert_extreme_channels_range_strings, context)) {
+            if (cmasInfo.getSeverity() == SmsCbCmasInfo.CMAS_SEVERITY_EXTREME
+                    && cmasInfo.getUrgency() == SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE) {
+                if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED) {
+                    return R.string.cmas_extreme_immediate_observed_alert;
+                } else if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY) {
+                    return R.string.cmas_extreme_immediate_likely_alert;
+                }
             }
+            return R.string.cmas_extreme_alert;
+        }
+        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
+                serviceCategory, R.array.cmas_alerts_severe_range_strings, context)) {
+            return R.string.cmas_severe_alert;
+        }
+        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
+                serviceCategory,
+                R.array.cmas_amber_alerts_channels_range_strings, context)) {
+            return R.string.cmas_amber_alert;
+        }
+        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
+                serviceCategory, R.array.required_monthly_test_range_strings, context)) {
+            return R.string.cmas_required_monthly_test;
+        }
+        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
+                serviceCategory, R.array.exercise_alert_range_strings, context)) {
+            return R.string.cmas_exercise_alert;
+        }
+        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
+                serviceCategory, R.array.operator_defined_alert_range_strings, context)) {
+            return R.string.cmas_operator_defined_alert;
+        }
+        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
+                serviceCategory, R.array.safety_info_alerts_channels_range_strings, context)) {
+            return R.string.public_safety_message;
         }
 
         if (CellBroadcastAlertService.isEmergencyMessage(context, cbm)) {
             ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
-                    .getInstance().getCellBroadcastChannelRanges(context);
+                    .getInstance().getCellBroadcastChannelRanges(context,
+                    R.array.additional_cbs_channels_strings);
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
-                    if (cbm.getServiceCategory() >= range.mStartId &&
-                            cbm.getServiceCategory() <= range.mEndId) {
+                    if (serviceCategory >= range.mStartId && serviceCategory <= range.mEndId) {
                         // Apply the closest title to the specified tones.
                         switch (range.mAlertType) {
                             case CMAS_DEFAULT:
@@ -316,7 +331,7 @@ public class CellBroadcastResources {
                                 return R.string.etws_earthquake_warning;
                             case ETWS_TSUNAMI:
                                 return R.string.etws_tsunami_warning;
-                            case ETWS_TEST:
+                            case TEST:
                                 return R.string.etws_test_message;
                             case ETWS_DEFAULT:
                             case OTHER:

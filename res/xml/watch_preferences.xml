@@ -37,7 +37,7 @@
 
         <SwitchPreference android:defaultValue="true"
                           android:key="enable_emergency_alerts"
-                          android:title="@string/enable_emergency_alerts_title" />
+                          android:title="@string/enable_alerts_master_toggle_title" />
 
         <ListPreference android:key="alert_reminder_interval"
                         android:title="@string/alert_reminder_interval_title"
@@ -57,12 +57,9 @@
                           android:key="enable_alert_speech"
                           android:title="@string/enable_alert_speech_title" />
 
+        <!-- Enable receive monthly test -->
         <SwitchPreference android:defaultValue="false"
-                          android:key="enable_etws_test_alerts"
-                          android:title="@string/enable_etws_test_alerts_title" />
-
-        <SwitchPreference android:defaultValue="false"
-                          android:key="enable_cmas_test_alerts"
+                          android:key="enable_test_alerts"
                           android:title="@string/enable_cmas_test_alerts_title" />
 
         <!-- Default value is true for Brazil and India. This preference is ignored and hidden

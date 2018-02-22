@@ -214,7 +214,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
             case SmsEnvelope.SERVICE_CATEGORY_CMAS_TEST_MESSAGE:
                 sharedPrefs.edit().putBoolean(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_TEST_ALERTS, enable).apply();
+                        CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, enable).apply();
                 break;
 
             default:
