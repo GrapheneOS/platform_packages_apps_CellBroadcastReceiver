@@ -58,11 +58,11 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
                 "0xAC00-0xAFED:type=other, emergency=false",
                 "54-60:emergency=true",
                 "100-200",
-                "0xA804:type=etws_test, emergency=true"
+                "0xA804:type=test, emergency=true"
         });
 
         ArrayList<CellBroadcastChannelRange> list = CellBroadcastChannelManager.getInstance()
-                .getCellBroadcastChannelRanges(mContext);
+                .getCellBroadcastChannelRanges(mContext, R.array.additional_cbs_channels_strings);
 
         assertEquals(12, list.get(0).mStartId);
         assertEquals(12, list.get(0).mEndId);
@@ -91,7 +91,7 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
 
         assertEquals(0xA804, list.get(5).mStartId);
         assertEquals(0xA804, list.get(5).mEndId);
-        assertEquals(AlertType.ETWS_TEST, list.get(5).mAlertType);
+        assertEquals(AlertType.TEST, list.get(5).mAlertType);
         assertTrue(list.get(5).mIsEmergency);
     }
 }
