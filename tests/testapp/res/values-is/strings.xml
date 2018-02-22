@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Senda ETWS-útsendingu fyrir önnur neyðartilfelli"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Senda ETWS-afturköllun"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Senda ETWS-prufuskilaboð"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Senda viðvörun frá forseta með CMAS"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Senda CMAS-viðvörun á háu stigi"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Senda alvarlega CMAS-viðvörun"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Senda AMBER-viðvörun með CMAS"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Senda mánaðarlega CMAS-prufuviðvörun"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Senda viðvörun frá forseta með CDMA CMAS"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Senda viðvörun á háu stigi með CDMA CMAS"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Senda alvarlega viðvörun með CDMA CMAS"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Senda AMBER-viðvörun með CDMA CMAS"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Senda mánaðarlega prufuviðvörun með CDMA CMAS"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Senda viðvörun frá forseta með GSM CMAS"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Senda viðvörun á háu stigi með GSM CMAS"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Senda alvarlega viðvörun GSM CMAS"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Senda AMBER-viðvörun með GSM CMAS"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Senda mánaðarlega prufuviðvörun með GSM CMAS"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Senda GSM-viðvörun með öryggisupplýsingum"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Senda 7 bita GSM-prufuskilaboð"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Senda 7 bita UMTS-prufuskilaboð"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Senda 7 bita GSM-skilaboð í fullri lengd"</string>

@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"ETWS башка өзгөчө жагдайлар боюнча шашылыш билдирүү жөнөтүү"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Жокко чыгаруучу ETWS уюк таркатмасын жөнөтүү"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Сынамык ETWS уюк таркатмасын жөнөтүү"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Бүткүл республикалык CMAS айгай кабарын жөнөтүү"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Өтө коркунучтуу кырдаал жөнүндө CMAS айгай кабарын жөнөтүү"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Олуттуу кырдаал жөнүндө CMAS айгай кабарын жөнөтүү"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"CMAS AMBER айгай кабарын жөнөтүү"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Ай сайын сыналуучу CMAS айгай кабарын жөнөтүү"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Бүткүл республикалык CDMA CMAS шашылыш кабарын жөнөтүү"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Өтө коркунучтуу кырдаал жөнүндө CDMA CMAS шашылыш кабарын жөнөтүү"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Олуттуу кырдаал жөнүндө CDMA CMAS шашылыш кабарын жөнөтүү"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"CDMA CMAS AMBER шашылыш кабарын жөнөтүү"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Ай сайын сыналуучу CDMA CMAS шашылыш кабарын жөнөтүү"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Бүткүл республикалык GSM CMAS шашылыш кабарын жөнөтүү"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Өтө коркунучтуу кырдаал жөнүндө GSM CMAS шашылыш кабарын жөнөтүү"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Олуттуу кырдаал жөнүндө GSM CMAS шашылыш кабарын жөнөтүү"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"GSM CMAS AMBER шашылыш кабарын жөнөтүү"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Ай сайын сыналуучу GSM CMAS шашылыш кабарын жөнөтүү"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"GSM коопсуздук маалымат билдирүүсүн жөнөтүү"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"7 биттик GSM сынамык уюк таркатмасын жөнөтүү"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"7 биттик UMTS сынамык уюк таркатмасын жөнөтүү"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"7 биттик GSM толук узундуктагы уюк таркатмасын жөнөтүү"</string>

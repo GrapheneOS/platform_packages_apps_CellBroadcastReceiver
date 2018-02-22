@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"傳送 ETWS 其他緊急廣播"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"傳送 ETWS 取消廣播"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"傳送 ETWS 測試廣播"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"傳送 CMAS 港府重大警報"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"傳送 CMAS 極嚴重警示"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"傳送 CMAS 嚴重警示"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"傳送 CMAS 黃色警示"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"傳送 CMAS 每月測試警示"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"傳送 CDMA CMAS 國家級警報"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"傳送 CDMA CMAS 極嚴重警報"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"傳送 CDMA CMAS 嚴重警報"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"傳送 CDMA CMAS 安珀警報"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"傳送 CDMA CMAS 每月測試警報"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"傳送 GSM CMAS 國家級警報"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"傳送 GSM CMAS 極嚴重警報"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"傳送 GSM CMAS 嚴重警報"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"傳送 GSM CMAS 安珀警報"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"傳送 GSM CMAS 每月測試警報"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"傳送 GSM 安全資訊警報"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"傳送 GSM 7 位元測試廣播"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"傳送 UMTS 7 位元測試廣播"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"傳送 GSM 7 位元完整廣播"</string>

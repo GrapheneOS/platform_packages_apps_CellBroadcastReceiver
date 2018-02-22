@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Адправіць экстранную трансляцыю ETWS"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Адправіць скасаванне трансляцыі ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Адправіць тэставую трансляцыю ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Адправіць прэзідэнцкую абвестку CMAS"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Адправіць экстранную абвестку CMAS"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Адправіць сур\'ёзную абвестку CMAS"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Адправіць абвестку CMAS AMBER"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Адправіць штомесячную тэставую абвестку CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Адправіць прэзідэнцкую абвестку праз CDMA CMAS"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Адправіць экстраную абвестку праз CDMA CMAS"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Адправіць сур\'ёзную абвестку праз CDMA CMAS"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Адправіць абвестку аб ВЫКРАДАННІ ДЗІЦЯЦІ праз CDMA CMAS"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Адправіць штомесячную тэставую абвестку праз CDMA CMAS"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Адправіць прэзідэнцкую абвестку праз GSM CMAS"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Адправіць экстраную абвестку праз GSM CMAS"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Адправіць абвестку аб сур\'ёзнай пагрозе праз GSM CMAS"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Адправіць абвестку аб ВЫКРАДАННІ ДЗІЦЯЦІ праз GSM CMAS"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Адправіць штомесячную тэставую абвестку праз GSM CMAS"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Адправіць абвестку з данымі бяспекі праз GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Адправіць тэставую трансляцыю GSM 7 біт"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Адправіць тэставую трансляцыю UMTS 7 біт"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Адправіць трансляцыю поўнай даўжыні GSM 7 біт"</string>

@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"‏שלח שידור ETWS במקרה חירום אחר"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"‏שלח ביטול שידור ETWS"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"‏שלח שידור בדיקה מסוג ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"‏שלח התרעת CMAS נשיאותית"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"‏שלח התרעת CMAS קיצונית"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"‏שלח התרעת CMAS חמורה"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"‏שלח התרעת CMAS AMBER"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"‏שלח התראת בדיקה חודשית של CMAS"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"‏שליחה של התרעת CMAS נשיאותית באמצעות רשת ה-CDMA"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"‏שליחה של התרעת CMAS קיצונית באמצעות רשת ה-CDMA"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"‏שליחה של התרעת CMAS חמורה באמצעות רשת ה-CDMA"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"‏שליחה של התרעת CMAS AMBER באמצעות רשת ה-CDMA"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"‏שליחה של התרעת CMAS באמצעות רשת ה-CDMA לבדיקה חודשית"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"‏שליחה של התרעת CMAS נשיאותית באמצעות רשת ה-GSM"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"‏שליחה של התרעת CMAS קיצונית באמצעות רשת ה-GSM"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"‏שליחה של התרעת CMAS חמורה באמצעות רשת ה-GSM"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"‏שליחה של התרעת CMAS AMBER באמצעות רשת ה-GSM"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"‏שליחה של התרעת CMAS באמצעות רשת ה-GSM לבדיקה חודשית"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"‏שליחת התרעה של פרטי בטיחות באמצעות רשת ה-GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"‏שלח שידור בדיקה מסוג GSM 7 Bit"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"‏שלח שידור בדיקה מסוג UMTS 7 Bit"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"‏שלח שידור GSM 7 Bit באורך מלא"</string>

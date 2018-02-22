@@ -23,11 +23,17 @@
     <string name="button_etws_other_type" msgid="4129451610585426791">"Tuma Tangazo Lingine la Dharura ya ETWS"</string>
     <string name="button_etws_cancel_type" msgid="4770911191572322801">"Tuma ETWS ya Kughairi Matangazo"</string>
     <string name="button_etws_test_type" msgid="5520113823851979673">"Tuma Tangazo la jaribio la ETWS"</string>
-    <string name="button_cmas_pres_alert" msgid="1269455100893365889">"Tuma Arifa za CMAS za Rais"</string>
-    <string name="button_cmas_extreme_alert" msgid="5922644977169679386">"Tuma Arifa za CMAS za Matukio Hatari ya Hali ya Anga"</string>
-    <string name="button_cmas_severe_alert" msgid="5197711586353552255">"Tuma Arifa za CMAS za Matukio Mabaya ya Hali ya Hewa"</string>
-    <string name="button_cmas_amber_alert" msgid="860091654456014191">"Tuma Arifa za CMAS za AMBER"</string>
-    <string name="button_cmas_monthly_test" msgid="6797479769988491996">"Tuma Arifa za CMAS za Jaribio la Kila Mwezi"</string>
+    <string name="button_cmas_pres_alert" msgid="3928157543499524467">"Tuma Arifa ya Rais ya CDMA CMAS"</string>
+    <string name="button_cmas_extreme_alert" msgid="448470722238103465">"Tuma Arifa za Hali Kali ya CDMA CMAS"</string>
+    <string name="button_cmas_severe_alert" msgid="5972547267122078275">"Tuma Arifa Kali ya CDMA CMAS"</string>
+    <string name="button_cmas_amber_alert" msgid="6923990858396074324">"Tuma Arifa ya CDMA CMAS AMBER"</string>
+    <string name="button_cmas_monthly_test" msgid="6548513777652808056">"Tuma Arifu ya Jaribio la Kila Mwezi la CDMA CMAS"</string>
+    <string name="button_gsm_cmas_pres_alert" msgid="9110074929422290415">"Tuma Arifa ya Rais ya GSM CMAS"</string>
+    <string name="button_gsm_cmas_extreme_alert" msgid="5692478769781307423">"Tuma Arifa ya Hali Kali ya GSM CMAS"</string>
+    <string name="button_gsm_cmas_severe_alert" msgid="5224572355400236960">"Tuma Arifa ya Hali Kali ya GSM CMAS"</string>
+    <string name="button_gsm_cmas_amber_alert" msgid="3960071204805048724">"Tuma Arifa ya GSM CMAS AMBER"</string>
+    <string name="button_gsm_cmas_monthly_test" msgid="2727620745169728094">"Tuma Arifa ya Jaribio la Kila Mwezi la GSM CMAS"</string>
+    <string name="button_gsm_safety_info_alert" msgid="8896248315695113834">"Tuma Arifa ya Maelezo ya Usalama ya GSM"</string>
     <string name="button_gsm_7bit_type" msgid="4902292221458231081">"Tuma Jaribio la Tangazo la Biti ya GSM 7"</string>
     <string name="button_gsm_7bit_umts_type" msgid="5871195118138691977">"Tuma Jaribio la Tangazo la Biti ya UMTS 7"</string>
     <string name="button_gsm_7bit_nopadding_type" msgid="5003490670292596214">"Tuma tangazo la Urefu Kamili wa Biti ya GSM 7"</string>
