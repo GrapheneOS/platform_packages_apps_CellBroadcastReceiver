@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2018 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,12 +26,12 @@ import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 
-import com.android.internal.telephony.cdma.sms.SmsEnvelope;
+import com.android.internal.telephony.gsm.SmsCbConstants;
 
 /**
- * Send some test CDMA CMAS warning notifications.
+ * Send some test GSM CMAS warning notifications.
  */
-public class SendCdmaCmasMessages {
+public class SendGsmCmasMessages {
 
     private static final String CB_RECEIVER_PKG = "com.android.cellbroadcastreceiver";
 
@@ -51,6 +51,8 @@ public class SendCdmaCmasMessages {
     private static final String MONTHLY_TEST_ALERT = "This is a test of the emergency alert system."
             + " This is only a test. Call (123)456-7890.";
 
+    private static final String SAFETY_INFO = "This is safety info alert.";
+
     private static void sendBroadcast(Activity activity, SmsCbMessage cbMessage) {
         Intent intent = new Intent(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
         intent.putExtra("message", cbMessage);
@@ -62,103 +64,83 @@ public class SendCdmaCmasMessages {
 
     public static void testSendCmasPresAlert(Activity activity, int serialNumber) {
         SmsCbMessage cbMessage = createCmasSmsMessage(
-                SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT, serialNumber, "en",
-                PRES_ALERT, SmsCbCmasInfo.CMAS_CATEGORY_GEO,
-                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_PREPARE, SmsCbCmasInfo.CMAS_SEVERITY_EXTREME,
-                SmsCbCmasInfo.CMAS_URGENCY_EXPECTED, SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY);
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL, serialNumber, "en",
+                PRES_ALERT, SmsCbCmasInfo.CMAS_SEVERITY_EXTREME,
+                SmsCbCmasInfo.CMAS_URGENCY_EXPECTED, SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY,
+                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
 
         sendBroadcast(activity, cbMessage);
     }
 
     public static void testSendCmasExtremeAlert(Activity activity, int serialNumber) {
         SmsCbMessage cbMessage = createCmasSmsMessage(
-                SmsEnvelope.SERVICE_CATEGORY_CMAS_EXTREME_THREAT, serialNumber, "en",
-                EXTREME_ALERT, SmsCbCmasInfo.CMAS_CATEGORY_MET,
-                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_PREPARE, SmsCbCmasInfo.CMAS_SEVERITY_EXTREME,
-                SmsCbCmasInfo.CMAS_URGENCY_EXPECTED, SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED);
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_EXPECTED_OBSERVED, serialNumber, "en",
+                EXTREME_ALERT, SmsCbCmasInfo.CMAS_SEVERITY_EXTREME,
+                SmsCbCmasInfo.CMAS_URGENCY_EXPECTED, SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED,
+                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
 
         sendBroadcast(activity, cbMessage);
     }
 
     public static void testSendCmasSevereAlert(Activity activity, int serialNumber) {
         SmsCbMessage cbMessage = createCmasSmsMessage(
-                SmsEnvelope.SERVICE_CATEGORY_CMAS_SEVERE_THREAT, serialNumber, "en",
-                SEVERE_ALERT, SmsCbCmasInfo.CMAS_CATEGORY_HEALTH,
-                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_AVOID, SmsCbCmasInfo.CMAS_SEVERITY_SEVERE,
-                SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE, SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY);
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_SEVERE_EXPECTED_OBSERVED, serialNumber, "en",
+                SEVERE_ALERT, SmsCbCmasInfo.CMAS_SEVERITY_SEVERE,
+                SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE, SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY,
+                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
 
         sendBroadcast(activity, cbMessage);
     }
 
     public static void testSendCmasAmberAlert(Activity activity, int serialNumber) {
         SmsCbMessage cbMessage = createCmasSmsMessage(
-                SmsEnvelope.SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY, serialNumber, "en",
-                AMBER_ALERT, SmsCbCmasInfo.CMAS_CATEGORY_UNKNOWN,
-                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_UNKNOWN, SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
-                SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN, SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN);
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY, serialNumber, "en",
+                AMBER_ALERT, SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
+                SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN, SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN,
+                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
 
         sendBroadcast(activity, cbMessage);
     }
 
     public static void testSendCmasMonthlyTest(Activity activity, int serialNumber) {
         SmsCbMessage cbMessage = createCmasSmsMessage(
-                SmsEnvelope.SERVICE_CATEGORY_CMAS_TEST_MESSAGE, serialNumber, "en",
-                MONTHLY_TEST_ALERT, SmsCbCmasInfo.CMAS_CATEGORY_UNKNOWN,
-                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_UNKNOWN, SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
-                SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN, SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN);
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_REQUIRED_MONTHLY_TEST, serialNumber, "en",
+                MONTHLY_TEST_ALERT, SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
+                SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN, SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN,
+                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
 
         sendBroadcast(activity, cbMessage);
     }
 
+    public static void testSendSafetyInfoAlert(Activity activity, int serialNumber) {
+        SmsCbMessage cbMessage = createCmasSmsMessage(
+                911, serialNumber, "en",
+                SAFETY_INFO, SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
+                SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN, SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN,
+                SmsCbMessage.MESSAGE_PRIORITY_NORMAL);
+
+        sendBroadcast(activity, cbMessage);
+    }
+
+
     /**
-     * Create a new SmsCbMessage for testing CDMA CMAS support.
-     * @param serviceCategory the CDMA service category
+     * Create a new SmsCbMessage for testing GSM CMAS support.
+     * @param serviceCategory the GSM service category
      * @param serialNumber the 16-bit message identifier
      * @param language message language code
      * @param body message body
-     * @param cmasCategory CMAS category (or -1 to skip adding CMAS type 1 elements record)
-     * @param responseType CMAS response type
      * @param severity CMAS severity
      * @param urgency CMAS urgency
      * @param certainty CMAS certainty
      * @return the newly created SmsMessage object
      */
     private static SmsCbMessage createCmasSmsMessage(int serviceCategory, int serialNumber,
-            String language, String body, int cmasCategory, int responseType, int severity,
-            int urgency, int certainty) {
-        int cmasMessageClass = serviceCategoryToCmasMessageClass(serviceCategory);
-        SmsCbCmasInfo cmasInfo = new SmsCbCmasInfo(cmasMessageClass, cmasCategory, responseType,
+            String language, String body, int severity, int urgency, int certainty, int priority) {
+        SmsCbCmasInfo cmasInfo = new SmsCbCmasInfo(serviceCategory,
+                SmsCbCmasInfo.CMAS_CATEGORY_UNKNOWN, SmsCbCmasInfo.CMAS_RESPONSE_TYPE_UNKNOWN,
                 severity, urgency, certainty);
-        return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP2,
-                SmsCbMessage.GEOGRAPHICAL_SCOPE_PLMN_WIDE, serialNumber,
+        return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP, 0, serialNumber,
                 new SmsCbLocation("123456"), serviceCategory, language, body,
-                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null, cmasInfo);
-    }
-
-    /**
-     * Convert CDMA service category to CMAS message class. Copied from {@code BearerData}.
-     * @param serviceCategory CDMA service category
-     * @return CMAS message class
-     */
-    private static int serviceCategoryToCmasMessageClass(int serviceCategory) {
-        switch (serviceCategory) {
-            case SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT:
-                return SmsCbCmasInfo.CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
-
-            case SmsEnvelope.SERVICE_CATEGORY_CMAS_EXTREME_THREAT:
-                return SmsCbCmasInfo.CMAS_CLASS_EXTREME_THREAT;
-
-            case SmsEnvelope.SERVICE_CATEGORY_CMAS_SEVERE_THREAT:
-                return SmsCbCmasInfo.CMAS_CLASS_SEVERE_THREAT;
-
-            case SmsEnvelope.SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY:
-                return SmsCbCmasInfo.CMAS_CLASS_CHILD_ABDUCTION_EMERGENCY;
-
-            case SmsEnvelope.SERVICE_CATEGORY_CMAS_TEST_MESSAGE:
-                return SmsCbCmasInfo.CMAS_CLASS_REQUIRED_MONTHLY_TEST;
-
-            default:
-                return SmsCbCmasInfo.CMAS_CLASS_UNKNOWN;
-        }
+                priority, null, cmasInfo);
     }
 }
