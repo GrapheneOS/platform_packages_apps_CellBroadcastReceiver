@@ -100,7 +100,7 @@ public class CellBroadcastAlertService extends Service {
      * Alert type
      */
     public enum AlertType {
-        CMAS_DEFAULT,
+        DEFAULT,
         ETWS_DEFAULT,
         ETWS_EARTHQUAKE,
         ETWS_TSUNAMI,
@@ -509,7 +509,7 @@ public class CellBroadcastAlertService extends Service {
         audioIntent.setAction(CellBroadcastAlertAudio.ACTION_START_ALERT_AUDIO);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        AlertType alertType = AlertType.CMAS_DEFAULT;
+        AlertType alertType = AlertType.DEFAULT;
         if (message.isEtwsMessage()) {
             alertType = AlertType.ETWS_DEFAULT;
 
