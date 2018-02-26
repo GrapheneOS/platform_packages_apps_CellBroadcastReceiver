@@ -106,6 +106,7 @@ public class CellBroadcastAlertService extends Service {
         ETWS_TSUNAMI,
         TEST,
         AREA,
+        INFO,
         OTHER
     }
 
@@ -536,7 +537,10 @@ public class CellBroadcastAlertService extends Service {
             int channel = message.getServiceCategory();
             ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
                     .getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
-                    R.array.additional_cbs_channels_strings);
+                            R.array.additional_cbs_channels_strings);
+            ranges.addAll(CellBroadcastChannelManager
+                    .getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
+                            R.array.safety_info_alerts_channels_range_strings));
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (channel >= range.mStartId && channel <= range.mEndId) {
@@ -546,9 +550,13 @@ public class CellBroadcastAlertService extends Service {
                 }
             }
         }
+        CellBroadcastChannelRange range = CellBroadcastChannelManager
+                .getCellBroadcastChannelRangeFromMessage(getApplicationContext(), message);
         audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE, alertType);
         audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATE_EXTRA,
                 prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true));
+        audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATION_PATTERN_EXTRA,
+                (range != null) ? range.mVibrationPattern : null);
 
         String messageBody = message.getMessageBody();
 
