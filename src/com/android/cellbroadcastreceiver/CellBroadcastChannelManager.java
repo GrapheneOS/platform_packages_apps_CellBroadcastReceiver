@@ -41,7 +41,7 @@ import java.util.List;
  *     <item>"0xAC00-0xAFED:type=other"</item>
  *     <item>"1234-5678"</item>
  * </string-array>
- * If no tones are specified, the alert type will be set to CMAS_DEFAULT. If emergency is not set,
+ * If no tones are specified, the alert type will be set to DEFAULT. If emergency is not set,
  * by default it's not emergency.
  */
 public class CellBroadcastChannelManager {
@@ -91,7 +91,7 @@ public class CellBroadcastChannelManager {
 
         public CellBroadcastChannelRange(Context context, String channelRange) throws Exception {
 
-            mAlertType = AlertType.CMAS_DEFAULT;
+            mAlertType = AlertType.DEFAULT;
             mIsEmergency = false;
             mRat = SmsManager.CELL_BROADCAST_RAN_TYPE_GSM;
             mScope = SCOPE_UNKNOWN;
