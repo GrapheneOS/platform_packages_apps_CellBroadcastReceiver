@@ -325,7 +325,7 @@ public class CellBroadcastResources {
                     if (serviceCategory >= range.mStartId && serviceCategory <= range.mEndId) {
                         // Apply the closest title to the specified tones.
                         switch (range.mAlertType) {
-                            case CMAS_DEFAULT:
+                            case DEFAULT:
                                 return R.string.pws_other_message_identifiers;
                             case ETWS_EARTHQUAKE:
                                 return R.string.etws_earthquake_warning;

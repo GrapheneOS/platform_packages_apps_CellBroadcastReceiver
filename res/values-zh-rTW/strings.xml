@@ -36,10 +36,10 @@
     <string name="etws_test_message" msgid="8447820262584381894">"地震海嘯警報系統測試訊息"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"緊急警告"</string>
     <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"國家級警報"</string>
-    <string name="cmas_extreme_alert" msgid="2588720613319969289">"緊急警報"</string>
-    <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"緊急警報"</string>
-    <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"緊急警報"</string>
-    <string name="cmas_severe_alert" msgid="4135809475315826913">"緊急警報"</string>
+    <string name="cmas_extreme_alert" msgid="2588720613319969289">"緊急警報：極嚴重"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"緊急警報：極嚴重"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"緊急警報：極嚴重"</string>
+    <string name="cmas_severe_alert" msgid="4135809475315826913">"緊急警報：嚴重"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"緊急警報"</string>
     <!-- no translation found for cmas_required_monthly_test (1890205712251132193) -->
     <skip />
@@ -57,7 +57,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"接收緊急通知"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"警示提醒音效"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"說出警訊通知"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"使用文字轉語音功能說出緊急警訊通知"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"使用文字轉語音功能說出緊急警報通知"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"緊急警報紀錄"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"警示偏好設定"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS 測試廣播"</string>
@@ -69,7 +69,7 @@
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"安珀警示"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"兒童綁架緊急事件公告"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"警訊通知"</string>
-    <string name="enable_alert_message_summary" msgid="6525664541696985610">"針對即將發生的安全性威脅發出警告"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"針對迫切的安全性威脅發出警告"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"緊急警報"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"針對威脅生命安全的事件發出警告"</string>
     <!-- no translation found for enable_cmas_test_alerts_title (1319231576046146463) -->

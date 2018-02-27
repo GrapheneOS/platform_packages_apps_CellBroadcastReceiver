@@ -134,7 +134,7 @@ public class CellBroadcastAlertServiceTest extends
         // verify audio service intent
         assertEquals(CellBroadcastAlertAudio.ACTION_START_ALERT_AUDIO,
                 mServiceIntentToVerify.getAction());
-        assertEquals(CellBroadcastAlertService.AlertType.CMAS_DEFAULT,
+        assertEquals(CellBroadcastAlertService.AlertType.DEFAULT,
                 mServiceIntentToVerify.getSerializableExtra(ALERT_AUDIO_TONE_TYPE));
         assertEquals(message.getMessageBody(),
                 mServiceIntentToVerify.getStringExtra(
