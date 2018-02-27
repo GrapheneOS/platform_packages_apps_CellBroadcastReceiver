@@ -81,12 +81,12 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
 
         assertEquals(54, list.get(3).mStartId);
         assertEquals(60, list.get(3).mEndId);
-        assertEquals(AlertType.CMAS_DEFAULT, list.get(3).mAlertType);
+        assertEquals(AlertType.DEFAULT, list.get(3).mAlertType);
         assertTrue(list.get(3).mIsEmergency);
 
         assertEquals(100, list.get(4).mStartId);
         assertEquals(200, list.get(4).mEndId);
-        assertEquals(AlertType.CMAS_DEFAULT, list.get(4).mAlertType);
+        assertEquals(AlertType.DEFAULT, list.get(4).mAlertType);
         assertFalse(list.get(4).mIsEmergency);
 
         assertEquals(0xA804, list.get(5).mStartId);

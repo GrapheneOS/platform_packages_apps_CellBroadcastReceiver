@@ -332,7 +332,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         }
 
         if (mEnableAudio || mEnableVibrate) {
-            AlertType alertType = AlertType.CMAS_DEFAULT;
+            AlertType alertType = AlertType.DEFAULT;
             if (intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE) != null) {
                 alertType = (AlertType) intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE);
             }
@@ -409,7 +409,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             }
 
             try {
-                log("Locale=" + getResources().getConfiguration().getLocales());
+                log("Locale=" + getResources().getConfiguration().getLocales()
+                        + ", alertType=" + alertType);
 
                 // Load the tones based on type
                 switch (alertType) {
@@ -426,14 +427,14 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                                 R.raw.etws_other_disaster);
                         break;
                     case ETWS_DEFAULT:
-                    case TEST:
                         setDataSourceFromResource(getResources(), mMediaPlayer,
                                 R.raw.etws_default);
                         break;
-                    case CMAS_DEFAULT:
+                    case TEST:
+                    case DEFAULT:
                     default:
                         setDataSourceFromResource(getResources(), mMediaPlayer,
-                                R.raw.cmas_default);
+                                R.raw.default_tone);
                 }
 
                 // Request audio focus (though we're going to play even if we don't get it)
