@@ -148,7 +148,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     @SmallTest
     public void testEnableCellBroadcastRange() throws Exception {
         ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
-        result.add(new CellBroadcastChannelRange("10-20"));
+        result.add(new CellBroadcastChannelRange(mContext, "10-20"));
         setCellBroadcastRange(true, result);
         ArgumentCaptor<Integer> captorStart = ArgumentCaptor.forClass(Integer.class);
         ArgumentCaptor<Integer> captorEnd = ArgumentCaptor.forClass(Integer.class);
@@ -169,7 +169,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     @SmallTest
     public void testDisableCellBroadcastRange() throws Exception {
         ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
-        result.add(new CellBroadcastChannelRange("10-20"));
+        result.add(new CellBroadcastChannelRange(mContext, "10-20"));
         setCellBroadcastRange(false, result);
         ArgumentCaptor<Integer> captorStart = ArgumentCaptor.forClass(Integer.class);
         ArgumentCaptor<Integer> captorEnd = ArgumentCaptor.forClass(Integer.class);
