@@ -85,11 +85,14 @@
     <!-- CMAS dialog title for operator defined use. [CHAR LIMIT=50] -->
     <string name="cmas_operator_defined_alert">Emergency alert (operator)</string>
     <!-- Dialog title for all other message identifiers in the PWS range. [CHAR LIMIT=50] -->
-    <string name="pws_other_message_identifiers">Emergency alert</string>
+    <string name="pws_other_message_identifiers" translatable="false">@string/emergency_alert</string>
     <!-- Dialog title for all non-emergency cell broadcasts. [CHAR LIMIT=50] -->
     <string name="cb_other_message_identifiers">Broadcast messages</string>
     <!-- Dialog title for all public safety message broadcasts. [CHAR LIMIT=50] -->
     <string name="public_safety_message">Public safety message</string>
+
+    <!-- Dialog title or menu title of emergency alert. [CHAR LIMIT=50] -->
+    <string name="emergency_alert">Emergency alert</string>
 
     <!-- Preference category title for emergency alert settings. [CHAR LIMIT=50] -->
     <string name="emergency_alerts_title">Alerts</string>
