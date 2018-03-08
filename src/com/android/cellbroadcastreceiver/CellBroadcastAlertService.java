@@ -484,10 +484,10 @@ public class CellBroadcastAlertService extends Service {
                                     false);
         }
         if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                channel, R.array.safety_info_alerts_channels_range_strings, this)) {
+                channel, R.array.public_safety_messages_channels_range_strings, this)) {
             return emergencyAlertEnabled
                     && PreferenceManager.getDefaultSharedPreferences(this)
-                    .getBoolean(CellBroadcastSettings.KEY_ENABLE_SAFETY_INFO_ALERTS,
+                    .getBoolean(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES,
                             true);
         }
         return true;
@@ -540,7 +540,7 @@ public class CellBroadcastAlertService extends Service {
                             R.array.additional_cbs_channels_strings);
             ranges.addAll(CellBroadcastChannelManager
                     .getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
-                            R.array.safety_info_alerts_channels_range_strings));
+                            R.array.public_safety_messages_channels_range_strings));
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (channel >= range.mStartId && channel <= range.mEndId) {
@@ -780,7 +780,7 @@ public class CellBroadcastAlertService extends Service {
                     R.array.additional_cbs_channels_strings);
             ranges.addAll(CellBroadcastChannelManager
                     .getInstance().getCellBroadcastChannelRanges(context,
-                            R.array.safety_info_alerts_channels_range_strings));
+                            R.array.public_safety_messages_channels_range_strings));
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (range.mStartId <= id && range.mEndId >= id) {
