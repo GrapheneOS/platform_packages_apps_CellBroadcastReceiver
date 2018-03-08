@@ -51,7 +51,7 @@ public class SendGsmCmasMessages {
     private static final String MONTHLY_TEST_ALERT = "This is a test of the emergency alert system."
             + " This is only a test. Call (123)456-7890.";
 
-    private static final String SAFETY_INFO = "This is safety info alert.";
+    private static final String PUBLIC_SAFETY_MESSAGE = "This is a public safety message.";
 
     private static void sendBroadcast(Activity activity, SmsCbMessage cbMessage) {
         Intent intent = new Intent(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
@@ -112,10 +112,10 @@ public class SendGsmCmasMessages {
         sendBroadcast(activity, cbMessage);
     }
 
-    public static void testSendSafetyInfoAlert(Activity activity, int serialNumber) {
+    public static void testSendPublicSafetyMessagesAlert(Activity activity, int serialNumber) {
         SmsCbMessage cbMessage = createCmasSmsMessage(
                 911, serialNumber, "en",
-                SAFETY_INFO, SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
+                PUBLIC_SAFETY_MESSAGE, SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
                 SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN, SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN,
                 SmsCbMessage.MESSAGE_PRIORITY_NORMAL);
 

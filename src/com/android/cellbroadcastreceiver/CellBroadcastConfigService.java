@@ -161,8 +161,9 @@ public class CellBroadcastConfigService extends IntentService {
                 false);
 
         // Non-CMAS channels
-        boolean enableSafetyInfoChannelAlerts = enableAlertsMasterToggle && prefs.getBoolean(
-                CellBroadcastSettings.KEY_ENABLE_SAFETY_INFO_ALERTS, true);
+        boolean enablePublicSafetyMessagesChannelAlerts = enableAlertsMasterToggle
+                && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES,
+                true);
 
         boolean enableEmergencyAlerts = enableAlertsMasterToggle && prefs.getBoolean(
                 CellBroadcastSettings.KEY_ENABLE_EMERGENCY_ALERTS, true);
@@ -177,7 +178,8 @@ public class CellBroadcastConfigService extends IntentService {
             log("forceDisableEtwsCmasTest = " + forceDisableEtwsCmasTest);
             log("enableTestAlerts = " + enableTestAlerts);
             log("enableAreaUpdateInfoAlerts = " + enableAreaUpdateInfoAlerts);
-            log("enableSafetyInfoChannelAlerts = " + enableSafetyInfoChannelAlerts);
+            log("enablePublicSafetyMessagesChannelAlerts = "
+                    + enablePublicSafetyMessagesChannelAlerts);
             log("enableEmergencyAlerts = " + enableEmergencyAlerts);
         }
 
@@ -224,10 +226,10 @@ public class CellBroadcastConfigService extends IntentService {
                 CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
                 R.array.etws_test_alerts_range_strings));
 
-        // Enable/Disable GSM safety info messages.
-        setCellBroadcastRange(manager, enableSafetyInfoChannelAlerts,
+        // Enable/Disable GSM public safety messages.
+        setCellBroadcastRange(manager, enablePublicSafetyMessagesChannelAlerts,
                 CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                        R.array.safety_info_alerts_channels_range_strings));
+                        R.array.public_safety_messages_channels_range_strings));
 
         /** Enable non-CMAS series messages. */
 
