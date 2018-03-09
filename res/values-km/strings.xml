@@ -44,9 +44,9 @@
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"តេស្ត​ប្រចាំ​ខែ​ដែល​ចាំបាច់"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"ការ​ជូន​ដំណឹង​ពេល​អាសន្ន (ហ្វឹកហាត់)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"ការ​ជូន​ដំណឹង​ពេល​អាសន្ន (ប្រតិបត្តិ​ករ)"</string>
-    <string name="pws_other_message_identifiers" msgid="1813329661891149820">"ការ​ជូន​ដំណឹង​ពេល​អាសន្ន"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"សារ​ផ្សព្វផ្សាយ"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"សារ​សុវត្ថិភាព​សាធារណៈ"</string>
+    <string name="emergency_alert" msgid="624783871477634263">"ការ​ជូន​ដំណឹង​ពេល​អាសន្ន"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"ការជូនដំណឹង"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"សារ​ផ្សព្វផ្សាយ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ការជូន​ដំណឹង​ពេលអាសន្ន"</string>
