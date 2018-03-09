@@ -27,11 +27,11 @@
     <PreferenceCategory android:title="@string/emergency_alerts_title"
                         android:key="category_emergency_alerts">
 
-        <!-- Enable safety info alerts -->
+        <!-- Enable public safety messages -->
         <SwitchPreference android:defaultValue="true"
-                          android:key="enable_safety_info_alerts"
-                          android:summary="@string/enable_alert_message_summary"
-                          android:title="@string/enable_alert_message_title" />
+                          android:key="enable_public_safety_messages"
+                          android:summary="@string/enable_public_safety_messages_summary"
+                          android:title="@string/enable_public_safety_messages_title" />
 
         <!-- Enable emergency alerts -->
         <SwitchPreference android:defaultValue="true"

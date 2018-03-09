@@ -141,6 +141,10 @@
     <string name="enable_alert_message_title">Alert messages</string>
     <!-- Preference summary for enable alerts messages checkbox. [CHAR LIMIT=100] -->
     <string name="enable_alert_message_summary">Warn about imminent safety threats</string>
+    <!-- Preference title for enable public safety messages checkbox. [CHAR LIMIT=100] -->
+    <string name="enable_public_safety_messages_title">Public safety messages</string>
+    <!-- Preference summary for enable public safety messages checkbox. [CHAR LIMIT=100] -->
+    <string name="enable_public_safety_messages_summary">Recommended actions that can save lives or property</string>
     <!-- Preference title for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->
     <string name="enable_emergency_alerts_message_title">Emergency alerts</string>
     <!-- Preference summary for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->
