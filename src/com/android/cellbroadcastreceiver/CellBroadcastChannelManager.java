@@ -62,7 +62,7 @@ public class CellBroadcastChannelManager {
                     R.array.operator_defined_alert_range_strings,
                     R.array.etws_alerts_range_strings,
                     R.array.etws_test_alerts_range_strings,
-                    R.array.safety_info_alerts_channels_range_strings
+                    R.array.public_safety_messages_channels_range_strings
             ));
     /**
      * Cell broadcast channel range
