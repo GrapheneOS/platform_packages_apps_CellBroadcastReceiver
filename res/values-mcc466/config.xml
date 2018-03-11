@@ -19,7 +19,7 @@
     <!-- No need to show this for Taiwanese users -->
     <bool name="show_cmas_settings">false</bool>
 
-    <string-array name="safety_info_alerts_channels_range_strings" translatable="false">
+    <string-array name="public_safety_messages_channels_range_strings" translatable="false">
         <!-- Channel 911 and 919 are required by Taiwan NCC -->
         <item>0x038F:type=info, emergency=true, vibration=0|350|250|350</item>
         <item>0x0397:type=info, emergency=true, vibration=0|350|250|350</item>

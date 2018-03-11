@@ -19,4 +19,9 @@
 
     <!-- Dialog title for all public safety message broadcasts. [CHAR LIMIT=50] -->
     <string name="public_safety_message">Alert message</string>
+
+    <!-- Preference title for enable public safety messages checkbox. -->
+    <string name="enable_public_safety_messages_title" translatable="false">@string/enable_alert_message_title</string>
+    <!-- Preference summary for enable public safety messages checkbox. -->
+    <string name="enable_public_safety_messages_summary" translatable="false">@string/enable_alert_message_summary</string>
 </resources>

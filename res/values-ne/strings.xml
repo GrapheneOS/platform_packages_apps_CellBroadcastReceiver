@@ -44,9 +44,9 @@
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"मासिक परीक्षण आवश्यक छ"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"आपतकालीन सतर्कता(अभ्यास)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"आपतकालीन सतर्कता (अपरेटर)"</string>
-    <string name="pws_other_message_identifiers" msgid="1813329661891149820">"आपतकालीन सावधानी"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"प्रसारण गर्ने सन्देशहरू"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"सार्वजनिक सुरक्षासम्बन्धी सन्देश"</string>
+    <string name="emergency_alert" msgid="624783871477634263">"आपतकालीन सतर्कता"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"अलर्टहरू"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण गर्ने सन्देशहरू"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"आपतकालीन सतर्कताहरू"</string>
