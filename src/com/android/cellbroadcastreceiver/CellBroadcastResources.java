@@ -316,7 +316,7 @@ public class CellBroadcastResources {
             return R.string.public_safety_message;
         }
 
-        if (CellBroadcastAlertService.isEmergencyMessage(context, cbm)) {
+        if (CellBroadcastChannelManager.isEmergencyMessage(context, cbm)) {
             ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
                     .getInstance().getCellBroadcastChannelRanges(context,
                     R.array.additional_cbs_channels_strings);
