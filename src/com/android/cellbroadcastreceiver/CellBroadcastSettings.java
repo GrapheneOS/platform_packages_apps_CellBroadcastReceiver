@@ -294,9 +294,12 @@ public class CellBroadcastSettings extends Activity {
             }
 
             // Show alert settings and ETWS categories for ETWS builds and developer mode.
-            if (forceDisableEtwsCmasTest || !enableDevSettings) {
-                if (mTestCheckBox != null) preferenceScreen.removePreference(mTestCheckBox);
+            if (forceDisableEtwsCmasTest || !enableDevSettings || !isTestAlertsAvailable()) {
+                if (mTestCheckBox != null) {
+                    mAlertCategory.removePreference(mTestCheckBox);
+                }
             }
+
             if (!enableDevSettings && !pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
                 if (mDevSettingCategory != null) {
                     preferenceScreen.removePreference(mDevSettingCategory);
@@ -323,7 +326,7 @@ public class CellBroadcastSettings extends Activity {
             }
 
             // Remove preferences based on range configurations
-            if (CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(
+            if (CellBroadcastChannelManager.getCellBroadcastChannelRanges(
                     this.getContext(),
                     R.array.public_safety_messages_channels_range_strings).isEmpty()) {
                 // Remove public safety messages
@@ -334,7 +337,7 @@ public class CellBroadcastSettings extends Activity {
                 }
             }
 
-            if (CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(
+            if (CellBroadcastChannelManager.getCellBroadcastChannelRanges(
                     this.getContext(), R.array.emergency_alerts_channels_range_strings).isEmpty()) {
                 // Remove emergency alert messages
                 if (mAlertCategory != null) {
@@ -384,6 +387,18 @@ public class CellBroadcastSettings extends Activity {
                             }
                         });
             }
+        }
+
+        private boolean isTestAlertsAvailable() {
+            return !CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                    this.getContext(), R.array.required_monthly_test_range_strings).isEmpty()
+                    || !CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                            this.getContext(), R.array.exercise_alert_range_strings).isEmpty()
+                    || !CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                            this.getContext(), R.array.operator_defined_alert_range_strings)
+                    .isEmpty()
+                    || !CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                            this.getContext(), R.array.etws_test_alerts_range_strings).isEmpty();
         }
 
         private void initReminderIntervalList() {
