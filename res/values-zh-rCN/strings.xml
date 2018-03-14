@@ -67,6 +67,10 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"儿童遭绑架/拐骗的紧急公告"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"警报消息"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"针对即将发生的安全威胁发出警告"</string>
+    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
+    <skip />
+    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
+    <skip />
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"紧急警报"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"针对威胁生命安全的事件发出警告"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"强制执行的每月测试"</string>
