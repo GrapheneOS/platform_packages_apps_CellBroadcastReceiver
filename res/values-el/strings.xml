@@ -67,6 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Ανακοινώσεις έκτακτης ανάγκης για απαγωγές ανηλίκων"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Μηνύματα ειδοποίησης"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Προειδοποίηση σχετικά με επικείμενες απειλές ασφάλειας"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Μηνύματα δημόσιας ασφάλειας"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Προτεινόμενες ενέργειες που μπορεί να σώσουν ζωές ή να προστατεύσουν περιουσίες"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Ειδοποιήσεις έκτακτης ανάγκης"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Προειδοποίηση σχετικά με εκδηλώσεις που είναι απειλητικές για τη ζωή των συμμετεχόντων"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Απαιτούμενη μηνιαία δοκιμή"</string>

@@ -67,6 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"የልጅ ጠለፋ አደጋ ጊዜ ማስታወቂያዎች"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"የማንቂያ መልዕክቶች"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ስለተቃረቡ የደህንነት አደጋዎች አስጠንቀቅ"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"የሕዝባዊ ደህንነት መልዕክቶች"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ህይወትን ወይም ንብረትን ሊያድኑ የሚችሉ የሚመከሩ እርምጃዎች"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"የድንገተኛ አደጋ ማንቂያዎች"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ሕይወትን አደጋ ስለሚያጋልጡ ክስተቶችን አስጠንቀቅ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"የወርሃዊ ሙከራን ጠይቅ"</string>
