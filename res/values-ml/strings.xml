@@ -67,6 +67,10 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"കുട്ടികളെ അപഹരിക്കലുമായി ബന്ധപ്പെട്ട അടിയന്തര ബുള്ളറ്റിനുകൾ"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"മുന്നറിയിപ്പ് സന്ദേശങ്ങൾ"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ഉടൻ ഉണ്ടായേക്കാവുന്ന സുരക്ഷാ ഭീഷണികളെ കുറിച്ച് മുന്നറിയിപ്പ് നൽകുക"</string>
+    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
+    <skip />
+    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
+    <skip />
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"അടിയന്തര മുന്നറിയിപ്പുകൾ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ജീവന് ഭീഷണിയുണ്ടാക്കുന്ന സംഭവങ്ങളെ കുറിച്ച് മുന്നറിയിപ്പ് നൽകുക"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"പ്രതിമാസ പരിശോധന ആവശ്യമാണ്"</string>

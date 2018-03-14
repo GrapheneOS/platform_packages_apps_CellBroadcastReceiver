@@ -67,6 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Child abduction emergency bulletins"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Alert messages"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Warn about imminent safety threats"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Public safety messages"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Recommended actions that can save lives or property"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Emergency alerts"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Warn about life-threatening events"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Required monthly test"</string>

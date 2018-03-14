@@ -67,6 +67,10 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Bulletiner om nødsituationer i forbindelse med bortførelse af børn"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Advarsler"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Advar om overhængende sikkerhedstrusler"</string>
+    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
+    <skip />
+    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
+    <skip />
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Nødalarmer"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Advar om livstruende hændelser"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Påkrævet månedlig test"</string>

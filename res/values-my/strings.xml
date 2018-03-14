@@ -67,6 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ကလေးခိုးမှု အရေးပေါ်ကြေညာချက်"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"သတိပေး မက်ဆေ့ဂျ်များ"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ဖြစ်အံ့ဆဲဆဲ လုံခြုံရေးအန္တရာယ်များအတွက် သတိပေးရန်"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"လူထုလုံခြုံရေးဆိုင်ရာ မက်ဆေ့ဂျ်များ"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"အသက်အိုးအိမ်တို့ကို ကယ်တင်နိုင်သော အကြံပြုထားသည့် လုပ်ဆောင်ချက်များ"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"အရေးပေါ်သတိပေးချက်များ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"အသက်အန္တရာယ် ကျရောက်နိုင်သည့် ဖြစ်ရပ်များအတွက် သတိပေးရန်"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"လစဉ်စစ်ဆေးမှု လိုအပ်သည်"</string>
