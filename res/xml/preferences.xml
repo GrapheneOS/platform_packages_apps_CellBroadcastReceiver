@@ -27,12 +27,6 @@
     <PreferenceCategory android:title="@string/emergency_alerts_title"
                         android:key="category_emergency_alerts">
 
-        <!-- Enable safety info alerts -->
-        <SwitchPreference android:defaultValue="true"
-                          android:key="enable_safety_info_alerts"
-                          android:summary="@string/enable_alert_message_summary"
-                          android:title="@string/enable_alert_message_title" />
-
         <!-- Enable emergency alerts -->
         <SwitchPreference android:defaultValue="true"
                           android:key="enable_emergency_alerts"
@@ -57,6 +51,12 @@
                             android:key="enable_cmas_severe_threat_alerts"
                             android:summary="@string/enable_cmas_severe_threat_alerts_summary"
                             android:title="@string/enable_cmas_severe_threat_alerts_title" />
+
+        <!-- Enable public safety messages -->
+        <SwitchPreference android:defaultValue="true"
+                          android:key="enable_public_safety_messages"
+                          android:summary="@string/enable_public_safety_messages_summary"
+                          android:title="@string/enable_public_safety_messages_title" />
 
         <!-- Enable receive monthly test -->
         <SwitchPreference android:defaultValue="false"

@@ -338,7 +338,7 @@ public class CellBroadcastAlertService extends Service {
             return;
         }
 
-        if (isEmergencyMessage(this, cbm)) {
+        if (CellBroadcastChannelManager.isEmergencyMessage(this, cbm)) {
             // start alert sound / vibration / TTS and display full-screen alert
             openEmergencyAlertNotification(cbm);
         } else {
@@ -484,10 +484,10 @@ public class CellBroadcastAlertService extends Service {
                                     false);
         }
         if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                channel, R.array.safety_info_alerts_channels_range_strings, this)) {
+                channel, R.array.public_safety_messages_channels_range_strings, this)) {
             return emergencyAlertEnabled
                     && PreferenceManager.getDefaultSharedPreferences(this)
-                    .getBoolean(CellBroadcastSettings.KEY_ENABLE_SAFETY_INFO_ALERTS,
+                    .getBoolean(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES,
                             true);
         }
         return true;
@@ -540,7 +540,7 @@ public class CellBroadcastAlertService extends Service {
                             R.array.additional_cbs_channels_strings);
             ranges.addAll(CellBroadcastChannelManager
                     .getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
-                            R.array.safety_info_alerts_channels_range_strings));
+                            R.array.public_safety_messages_channels_range_strings));
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (channel >= range.mStartId && channel <= range.mEndId) {
@@ -646,7 +646,7 @@ public class CellBroadcastAlertService extends Service {
             pi = PendingIntent.getActivity(context, NOTIFICATION_ID, intent,
                     PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
         }
-        final String channelId = isEmergencyMessage(context, message)
+        final String channelId = CellBroadcastChannelManager.isEmergencyMessage(context, message)
                 ? NOTIFICATION_CHANNEL_EMERGENCY_ALERTS : NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS;
         // use default sound/vibration/lights for non-emergency broadcasts
         Notification.Builder builder = new Notification.Builder(context, channelId)
@@ -690,7 +690,7 @@ public class CellBroadcastAlertService extends Service {
         // addToNotification for the emergency display on FEATURE WATCH devices vs the
         // Alert Dialog, it will call this and override the emergency audio tone.
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)
-                && !isEmergencyMessage(context, message)) {
+                && !CellBroadcastChannelManager.isEmergencyMessage(context, message)) {
             if (context.getResources().getBoolean(R.bool.watch_enable_non_emergency_audio)) {
                 // start audio/vibration/speech service for non emergency alerts
                 Intent audioIntent = new Intent(context, CellBroadcastAlertAudio.class);
@@ -755,43 +755,5 @@ public class CellBroadcastAlertService extends Service {
         public CellBroadcastAlertService getService() {
             return CellBroadcastAlertService.this;
         }
-    }
-
-    /**
-     * Check if the cell broadcast message is an emergency message or not
-     * @param context Device context
-     * @param cbm Cell broadcast message
-     * @return True if the message is an emergency message, otherwise false.
-     */
-    public static boolean isEmergencyMessage(Context context, CellBroadcastMessage cbm) {
-        boolean isEmergency = false;
-
-        if (cbm == null) {
-            return false;
-        }
-
-        int id = cbm.getServiceCategory();
-
-        if (cbm.isEmergencyAlertMessage()) {
-            isEmergency = true;
-        } else {
-            ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
-                    .getInstance().getCellBroadcastChannelRanges(context,
-                    R.array.additional_cbs_channels_strings);
-            ranges.addAll(CellBroadcastChannelManager
-                    .getInstance().getCellBroadcastChannelRanges(context,
-                            R.array.safety_info_alerts_channels_range_strings));
-            if (ranges != null) {
-                for (CellBroadcastChannelRange range : ranges) {
-                    if (range.mStartId <= id && range.mEndId >= id) {
-                        isEmergency = range.mIsEmergency;
-                        break;
-                    }
-                }
-            }
-        }
-
-        Log.d(TAG, "isEmergencyMessage: " + isEmergency + ", message id = " + id);
-        return isEmergency;
     }
 }

@@ -52,8 +52,8 @@ public class CellBroadcastSettings extends Activity {
     // Preference key for a master toggle to enable/disable all alerts message (default enabled).
     public static final String KEY_ENABLE_ALERTS_MASTER_TOGGLE = "enable_alerts_master_toggle";
 
-    // Preference key for whether to enable safety info alerts (default enabled).
-    public static final String KEY_ENABLE_SAFETY_INFO_ALERTS = "enable_safety_info_alerts";
+    // Preference key for whether to enable public safety messages (default enabled).
+    public static final String KEY_ENABLE_PUBLIC_SAFETY_MESSAGES = "enable_public_safety_messages";
 
     // Preference key for whether to enable emergency alerts (default enabled).
     public static final String KEY_ENABLE_EMERGENCY_ALERTS = "enable_emergency_alerts";
@@ -151,7 +151,7 @@ public class CellBroadcastSettings extends Activity {
         private TwoStatePreference mSevereCheckBox;
         private TwoStatePreference mAmberCheckBox;
         private TwoStatePreference mMasterToggle;
-        private TwoStatePreference mSafetyInfoChannelCheckBox;
+        private TwoStatePreference mPublicSafetyMessagesChannelCheckBox;
         private TwoStatePreference mEmergencyAlertsCheckBox;
         private ListPreference mReminderInterval;
         private TwoStatePreference mSpeechCheckBox;
@@ -188,8 +188,8 @@ public class CellBroadcastSettings extends Activity {
                     findPreference(KEY_ENABLE_CMAS_AMBER_ALERTS);
             mMasterToggle = (TwoStatePreference)
                     findPreference(KEY_ENABLE_ALERTS_MASTER_TOGGLE);
-            mSafetyInfoChannelCheckBox = (TwoStatePreference)
-                    findPreference(KEY_ENABLE_SAFETY_INFO_ALERTS);
+            mPublicSafetyMessagesChannelCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
             mEmergencyAlertsCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_EMERGENCY_ALERTS);
             mReminderInterval = (ListPreference)
@@ -294,9 +294,12 @@ public class CellBroadcastSettings extends Activity {
             }
 
             // Show alert settings and ETWS categories for ETWS builds and developer mode.
-            if (forceDisableEtwsCmasTest || !enableDevSettings) {
-                if (mTestCheckBox != null) preferenceScreen.removePreference(mTestCheckBox);
+            if (forceDisableEtwsCmasTest || !enableDevSettings || !isTestAlertsAvailable()) {
+                if (mTestCheckBox != null) {
+                    mAlertCategory.removePreference(mTestCheckBox);
+                }
             }
+
             if (!enableDevSettings && !pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
                 if (mDevSettingCategory != null) {
                     preferenceScreen.removePreference(mDevSettingCategory);
@@ -323,18 +326,18 @@ public class CellBroadcastSettings extends Activity {
             }
 
             // Remove preferences based on range configurations
-            if (CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(
+            if (CellBroadcastChannelManager.getCellBroadcastChannelRanges(
                     this.getContext(),
-                    R.array.safety_info_alerts_channels_range_strings).isEmpty()) {
-                // Remove safety info alerts messages
+                    R.array.public_safety_messages_channels_range_strings).isEmpty()) {
+                // Remove public safety messages
                 if (mAlertCategory != null) {
-                    if (mSafetyInfoChannelCheckBox != null) {
-                        mAlertCategory.removePreference(mSafetyInfoChannelCheckBox);
+                    if (mPublicSafetyMessagesChannelCheckBox != null) {
+                        mAlertCategory.removePreference(mPublicSafetyMessagesChannelCheckBox);
                     }
                 }
             }
 
-            if (CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(
+            if (CellBroadcastChannelManager.getCellBroadcastChannelRanges(
                     this.getContext(), R.array.emergency_alerts_channels_range_strings).isEmpty()) {
                 // Remove emergency alert messages
                 if (mAlertCategory != null) {
@@ -350,8 +353,8 @@ public class CellBroadcastSettings extends Activity {
             if (mExtremeCheckBox != null) {
                 mExtremeCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
             }
-            if (mSafetyInfoChannelCheckBox != null) {
-                mSafetyInfoChannelCheckBox.setOnPreferenceChangeListener(
+            if (mPublicSafetyMessagesChannelCheckBox != null) {
+                mPublicSafetyMessagesChannelCheckBox.setOnPreferenceChangeListener(
                         startConfigServiceListener);
             }
             if (mEmergencyAlertsCheckBox != null) {
@@ -384,6 +387,18 @@ public class CellBroadcastSettings extends Activity {
                             }
                         });
             }
+        }
+
+        private boolean isTestAlertsAvailable() {
+            return !CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                    this.getContext(), R.array.required_monthly_test_range_strings).isEmpty()
+                    || !CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                            this.getContext(), R.array.exercise_alert_range_strings).isEmpty()
+                    || !CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                            this.getContext(), R.array.operator_defined_alert_range_strings)
+                    .isEmpty()
+                    || !CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                            this.getContext(), R.array.etws_test_alerts_range_strings).isEmpty();
         }
 
         private void initReminderIntervalList() {
@@ -448,9 +463,9 @@ public class CellBroadcastSettings extends Activity {
                 mEmergencyAlertsCheckBox.setEnabled(alertsEnabled);
                 mEmergencyAlertsCheckBox.setChecked(alertsEnabled);
             }
-            if (mSafetyInfoChannelCheckBox != null) {
-                mSafetyInfoChannelCheckBox.setEnabled(alertsEnabled);
-                mSafetyInfoChannelCheckBox.setChecked(alertsEnabled);
+            if (mPublicSafetyMessagesChannelCheckBox != null) {
+                mPublicSafetyMessagesChannelCheckBox.setEnabled(alertsEnabled);
+                mPublicSafetyMessagesChannelCheckBox.setChecked(alertsEnabled);
             }
         }
     }
