@@ -67,6 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Екстрені сповіщення про викрадення дітей"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Сповіщення"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Застерігати про неминучі загрози безпеці"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Повідомлення щодо громадської безпеки"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Рекомендовані дії, щоб урятувати життя чи власність"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Екстрені сповіщення"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Застерігати про небезпечні для життя події"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Обов’язковий щомісячний тест"</string>

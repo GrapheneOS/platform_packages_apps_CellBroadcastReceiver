@@ -67,6 +67,10 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"শিশু অপহরণ সংক্রান্ত জরুরী বুলেটিন"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"সতর্কতা বার্তা"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"আসন্ন নিরাপত্তা ঝুঁকির বিষয়ে সতর্কতা পান"</string>
+    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
+    <skip />
+    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
+    <skip />
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"জরুরি সতর্কতা"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"জীবনের ঝুঁকি হতে পারে এমন ইভেন্টের বিষয়ে সতর্কতা পান"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"প্রয়োজনীয় মাসিক পরীক্ষা"</string>

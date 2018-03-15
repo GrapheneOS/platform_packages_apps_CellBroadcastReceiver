@@ -67,6 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Hitni bilteni o otmicama djece"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Poruke upozorenja"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Upozorenja o neposrednim sigurnosnim prijetnjama"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Poruke o javnoj sigurnosti"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Preporučene radnje koje mogu spasiti živote ili imovinu"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Hitna upozorenja"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Upozorenja o događajima opasnima po život"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Obavezan mjesečni test"</string>
