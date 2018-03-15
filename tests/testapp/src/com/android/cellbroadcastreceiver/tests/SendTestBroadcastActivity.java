@@ -324,16 +324,17 @@ public class SendTestBroadcastActivity extends Activity {
             }
         });
 
-        /* Send a GSM safety info alert to app. */
-        Button GsmSafetyInfoAlertTestButton = findViewById(R.id.button_gsm_safety_info_alert);
-        GsmSafetyInfoAlertTestButton.setOnClickListener(new OnClickListener() {
+        /* Send a GSM public safety messages to app. */
+        Button GsmPublicSafetyMessagesAlertTestButton = findViewById(
+                R.id.button_gsm_public_safety_message);
+        GsmPublicSafetyMessagesAlertTestButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 if (mDelayBeforeSending && v != null) {
                     Message msg = mDelayHandler.obtainMessage(0, this);
                     mDelayHandler.sendMessageDelayed(msg, DELAY_BEFORE_SENDING_MSEC);
                 } else {
-                    SendGsmCmasMessages.testSendSafetyInfoAlert(SendTestBroadcastActivity.this,
-                            getSerialNumber());
+                    SendGsmCmasMessages.testSendPublicSafetyMessagesAlert(
+                            SendTestBroadcastActivity.this, getSerialNumber());
                 }
             }
         });

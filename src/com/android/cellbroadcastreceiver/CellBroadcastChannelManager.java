@@ -46,7 +46,7 @@ import java.util.List;
  */
 public class CellBroadcastChannelManager {
 
-    private static final String TAG = "CellBroadcastChannelManager";
+    private static final String TAG = "CBChannelManager";
 
     private static CellBroadcastChannelManager sInstance = null;
 
@@ -62,7 +62,7 @@ public class CellBroadcastChannelManager {
                     R.array.operator_defined_alert_range_strings,
                     R.array.etws_alerts_range_strings,
                     R.array.etws_test_alerts_range_strings,
-                    R.array.safety_info_alerts_channels_range_strings
+                    R.array.public_safety_messages_channels_range_strings
             ));
     /**
      * Cell broadcast channel range
@@ -81,10 +81,14 @@ public class CellBroadcastChannelManager {
         public static final int SCOPE_DOMESTIC      = 2;
         public static final int SCOPE_INTERNATIONAL = 3;
 
+        public static final int LEVEL_UNKNOWN          = 0;
+        public static final int LEVEL_NOT_EMERGENCY    = 1;
+        public static final int LEVEL_EMERGENCY        = 2;
+
         public int mStartId;
         public int mEndId;
         public AlertType mAlertType;
-        public boolean mIsEmergency;
+        public int mEmergencyLevel;
         public int mRat;
         public int mScope;
         public int[] mVibrationPattern;
@@ -92,7 +96,7 @@ public class CellBroadcastChannelManager {
         public CellBroadcastChannelRange(Context context, String channelRange) throws Exception {
 
             mAlertType = AlertType.DEFAULT;
-            mIsEmergency = false;
+            mEmergencyLevel = LEVEL_UNKNOWN;
             mRat = SmsManager.CELL_BROADCAST_RAN_TYPE_GSM;
             mScope = SCOPE_UNKNOWN;
             mVibrationPattern = context.getResources().getIntArray(
@@ -114,7 +118,11 @@ public class CellBroadcastChannelManager {
                                 mAlertType = AlertType.valueOf(value.toUpperCase());
                                 break;
                             case KEY_EMERGENCY:
-                                mIsEmergency = value.equalsIgnoreCase("true");
+                                if (value.equalsIgnoreCase("true")) {
+                                    mEmergencyLevel = LEVEL_EMERGENCY;
+                                } else if (value.equalsIgnoreCase("false")) {
+                                    mEmergencyLevel = LEVEL_NOT_EMERGENCY;
+                                }
                                 break;
                             case KEY_RAT:
                                 mRat = value.equalsIgnoreCase("cdma")
@@ -155,6 +163,13 @@ public class CellBroadcastChannelManager {
                 // Not a range, only a single id
                 mStartId = mEndId = Integer.decode(channelRange);
             }
+        }
+
+        @Override
+        public String toString() {
+            return "Range:[channels=" + mStartId + "-" + mEndId + ",emergency level="
+                    + mEmergencyLevel + ",type=" + mAlertType + ",scope=" + mScope + ",vibration="
+                    + Arrays.toString(mVibrationPattern) + "]";
         }
     }
 
@@ -250,8 +265,8 @@ public class CellBroadcastChannelManager {
 
     /**
      * Return corresponding cellbroadcast range where message belong to
-     * @param context
-     * @param message
+     * @param context Application context
+     * @param message Cell broadcast message
      */
     public static CellBroadcastChannelRange getCellBroadcastChannelRangeFromMessage(
             Context context, CellBroadcastMessage message) {
@@ -274,6 +289,48 @@ public class CellBroadcastChannelManager {
             }
         }
         return null;
+    }
+
+    /**
+     * Check if the cell broadcast message is an emergency message or not
+     * @param context Application context
+     * @param message Cell broadcast message
+     * @return True if the message is an emergency message, otherwise false.
+     */
+    public static boolean isEmergencyMessage(Context context, CellBroadcastMessage message) {
+        if (message == null) {
+            return false;
+        }
+
+        int id = message.getServiceCategory();
+
+        for (int key : sCellBroadcastRangeResourceKeys) {
+            ArrayList<CellBroadcastChannelRange> ranges =
+                    getCellBroadcastChannelRanges(context, key);
+            for (CellBroadcastChannelRange range : ranges) {
+                if (range.mStartId <= id && range.mEndId >= id) {
+                    switch (range.mEmergencyLevel) {
+                        case CellBroadcastChannelRange.LEVEL_EMERGENCY:
+                            Log.d(TAG, "isEmergencyMessage: true, message id = " + id);
+                            return true;
+                        case CellBroadcastChannelRange.LEVEL_NOT_EMERGENCY:
+                            Log.d(TAG, "isEmergencyMessage: false, message id = " + id);
+                            return false;
+                        case CellBroadcastChannelRange.LEVEL_UNKNOWN:
+                        default:
+                            break;
+                    }
+                    break;
+                }
+            }
+        }
+
+        Log.d(TAG, "isEmergencyMessage: " + message.isEmergencyAlertMessage()
+                + ", message id = " + id);
+        // If the configuration does not specify whether the alert is emergency or not, use the
+        // emergency property from the message itself, which is checking if the channel is between
+        // MESSAGE_ID_PWS_FIRST_IDENTIFIER (4352) and MESSAGE_ID_PWS_LAST_IDENTIFIER (6399).
+        return message.isEmergencyAlertMessage();
     }
 
     private static void log(String msg) {

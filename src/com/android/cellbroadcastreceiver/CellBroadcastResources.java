@@ -312,11 +312,11 @@ public class CellBroadcastResources {
             return R.string.cmas_operator_defined_alert;
         }
         if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory, R.array.safety_info_alerts_channels_range_strings, context)) {
+                serviceCategory, R.array.public_safety_messages_channels_range_strings, context)) {
             return R.string.public_safety_message;
         }
 
-        if (CellBroadcastAlertService.isEmergencyMessage(context, cbm)) {
+        if (CellBroadcastChannelManager.isEmergencyMessage(context, cbm)) {
             ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
                     .getInstance().getCellBroadcastChannelRanges(context,
                     R.array.additional_cbs_channels_strings);
