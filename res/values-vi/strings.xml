@@ -67,10 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Bản tin khẩn cấp vụ việc bắt cóc trẻ em"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Tin nhắn cảnh báo"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Cảnh báo về các mối đe dọa đến sự an toàn sắp xảy ra"</string>
-    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
-    <skip />
-    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
-    <skip />
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Thông báo an toàn công khai"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Hành động được đề xuất có thể bảo vệ tính mạng hoặc tài sản"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Cảnh báo khẩn cấp"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Cảnh báo về các sự kiện đe dọa tới mạng sống"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Cần kiểm tra hàng tháng"</string>

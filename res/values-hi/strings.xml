@@ -67,10 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"बच्‍चे के अपहरण का आपातकालीन बुलेटिन"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"चेतावनी वाले मैसेज"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जल्द ही सुरक्षा पर खतरा हो सकता है"</string>
-    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
-    <skip />
-    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
-    <skip />
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"सभी की सुरक्षा के लिए मैसेज"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ऐसी कार्रवाइयां जिनसे जीवन या संपत्ति की सुरक्षा की जा सकती है"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"आपातकालीन चेतावनियां"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जान का खतरा हो सकता है"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"हर महीने की जाने वाली ज़रूरी जाँच"</string>
