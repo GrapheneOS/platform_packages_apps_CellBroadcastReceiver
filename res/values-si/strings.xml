@@ -67,10 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ළමා අපහරණ හදිසි අවස්ථා බුලටින"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"අනතුරු ඇඟවීම් පණිවිඩ"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"අනිවාර්ය ආරක්ෂක තර්ජන ගැන අනතුරු අඟවන්න"</string>
-    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
-    <skip />
-    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
-    <skip />
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"මහජන ආරක්ෂක පණිවිඩ"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ජීවිත හෝ දේපළ බේරා ගත හැකි නිර්දේශිත ක්‍රියා"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"හදිසි අනතුරු ඇඟවීම්"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ජීවිත තර්ජනාත්මක සිදුවීම් ගැන අනතුරු අඟවන්න"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"අවශ්‍ය මාසික පරීක්ෂාව"</string>

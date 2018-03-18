@@ -67,10 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Nujna obvestila o ugrabitvah otrok"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Sporočila opozoril"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Opozarjanje na neposredne varnostne grožnje"</string>
-    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
-    <skip />
-    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
-    <skip />
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Sporočila za javno varnost"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Priporočena dejanja, ki lahko rešijo življenja ali premoženje"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Nujna opozorila"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Opozarjanje na smrtno nevarne dogodke"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Obvezen mesečni preskus"</string>

@@ -67,10 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"بولتن‌های اضطراری کودک‌ربایی"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"پیام‌های هشدار"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"هشدار درباره تهدیدهای ایمنی قریب‌الوقوع"</string>
-    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
-    <skip />
-    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
-    <skip />
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"پیام‌های امنیت عمومی"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"اقدام‌های توصیه‌شده که می‌تواند جان افراد یا اموال آن‌ها را حفظ کند"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"هشدارهای اضطراری"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"هشدار درباره رویدادهای دارای خطر جانی"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"آزمون ماهیانه الزامی است"</string>
