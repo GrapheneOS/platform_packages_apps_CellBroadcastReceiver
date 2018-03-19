@@ -67,10 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"誘拐兒童緊急事件公告"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"警示訊息"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"對即將發生的安全威脅發出警告"</string>
-    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
-    <skip />
-    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
-    <skip />
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"公共安全訊息"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"有助挽救生命或財產的建議行動"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"緊急警示"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"對威脅生命安全的事件發出警告"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"每月測試用訊息"</string>
