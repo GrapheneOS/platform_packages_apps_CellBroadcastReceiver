@@ -19,15 +19,17 @@
     <!-- No need to show this for Peru users -->
     <bool name="show_cmas_settings">false</bool>
 
-    <!-- 4370, 4371, 919 -->
+    <!-- 4370, 4383, 50, 919 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112-0x1113:rat=gsm, emergency=true</item>
+        <item>0x1112:rat=gsm, emergency=true</item>
+        <item>0x111F:rat=gsm, emergency=true</item>
+        <item>0x32:rat=gsm, emergency=true</item>
         <item>0x397:rat=gsm, emergency=true</item>
     </string-array>
 
     <!-- 4382 -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">
-        <item>0x111E:rat=gsm, emergency=false</item>
+        <item>0x111E:rat=gsm, emergency=true</item>
     </string-array>
 
     <!--4380, 519 -->
@@ -51,6 +53,10 @@
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
     <string-array name="operator_defined_alert_range_strings" translatable="false"></string-array>
     <bool name="show_date_time_title">true</bool>
+
+    <!-- For Peru users, we always play tones with full volume regardless the phone is in slient
+         mode or not -->
+    <bool name="use_full_volume">true</bool>
 
     <!-- Emergecny alert tone duration set to 3 minute for Peru users -->
     <integer name="alert_duration">180000</integer>
