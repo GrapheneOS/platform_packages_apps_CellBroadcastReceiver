@@ -203,8 +203,6 @@ public class CellBroadcastSettings extends Activity {
             mTestCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_TEST_ALERTS);
             mAlertHistory = findPreference(KEY_EMERGENCY_ALERT_HISTORY);
-            mAlertPreferencesCategory = (PreferenceCategory)
-                    findPreference(KEY_CATEGORY_ALERT_PREFERENCES);
             mDevSettingCategory = (PreferenceCategory)
                     findPreference(KEY_CATEGORY_DEV_SETTINGS);
 
@@ -229,6 +227,8 @@ public class CellBroadcastSettings extends Activity {
                         findPreference(KEY_CATEGORY_ALERT_PREFERENCES);
                 watchScreen.removePreference(mReminderInterval);
             } else {
+                mAlertPreferencesCategory = (PreferenceCategory)
+                        findPreference(KEY_CATEGORY_ALERT_PREFERENCES);
                 mAlertCategory = (PreferenceCategory)
                         findPreference(KEY_CATEGORY_EMERGENCY_ALERTS);
             }
