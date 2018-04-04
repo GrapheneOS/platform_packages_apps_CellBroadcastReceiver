@@ -15,8 +15,6 @@
 -->
 
 <resources>
-    <!-- Whether to enable ETWS settings (Japan) -->
-    <bool name="show_etws_settings">false</bool>
     <!-- Whether to always sound CBS alerts at full volume -->
     <bool name="use_full_volume">false</bool>
     <!-- Whether to enable CMAS settings (United States) -->
