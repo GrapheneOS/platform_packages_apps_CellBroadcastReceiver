@@ -67,10 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ព្រឹត្តិបត្រអាសន្ន​អំពី​ការចាប់ជំរិត​ក្មេង"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"សារ​ជូនដំណឹង"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ព្រមាន​អំពី​ការគំរាម​កំហែងផ្នែក​សុវត្ថិភាព​ដែលនឹង​កើត​មាន"</string>
-    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
-    <skip />
-    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
-    <skip />
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"សារ​សុវត្ថិភាព​សាធារណៈ"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"សកម្មភាព​ដែលណែនាំ​ឱ្យធ្វើ​ដែលអាច​ជួយសង្គ្រោះ​ជីវិត ឬទ្រព្យ​សម្បត្តិ"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ការជូន​ដំណឹង​ពេលអាសន្ន"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ព្រមាន​អំពី​ព្រឹត្តិការណ៍​ដែលគំរាម​កំហែងដល់​អាយុជីវិត"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"តេស្ត​ប្រចាំ​ខែ​ដែល​ចាំបាច់"</string>

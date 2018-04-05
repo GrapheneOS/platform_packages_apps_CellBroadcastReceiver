@@ -67,10 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Mimořádné zprávy o únosech dětí"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Upozornění"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Dostávat upozornění na bezprostřední bezpečnostní hrozby"</string>
-    <!-- no translation found for enable_public_safety_messages_title (5576770949182656524) -->
-    <skip />
-    <!-- no translation found for enable_public_safety_messages_summary (7868069748857851521) -->
-    <skip />
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Zprávy o veřejné bezpečnosti"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Doporučené akce, které mohou zachránit životy či majetek"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Výstražné zprávy"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Upozornění na události ohrožující život"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Povinná měsíční zkouška"</string>
