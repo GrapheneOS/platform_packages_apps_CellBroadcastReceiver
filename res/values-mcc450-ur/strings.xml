@@ -16,6 +16,5 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="public_safety_message" msgid="7237115648380675159">"សារ​ដែលផ្តល់ព័ត៌មាន​ជាប្រយោជន៍"</string>
-    <string name="enable_public_safety_messages_title" msgid="4037404034274507696">"សារ​ដែលផ្តល់ព័ត៌មាន​ជាប្រយោជន៍"</string>
+    <string name="cmas_presidential_level_alert" msgid="6968323372438785870">"اہم ہنگامی الرٹ"</string>
 </resources>

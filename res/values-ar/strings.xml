@@ -54,7 +54,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"تلقّي إشعارات الطوارئ"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"صوت تذكير التنبيه"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"نطق رسالة التنبيه"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"استخدام ميزة تحويل النص إلى كلام لنطق رسائل اشعارات الطوارئ"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"استخدام ميزة \"تحويل النص إلى كلام\" لنطق رسائل إشعارات الطوارئ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"سجلّ تنبيهات حالات الطوارئ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"تفضيلات التنبيه"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"‏مجموعات البث التجريبية في ETWS"</string>
@@ -114,7 +114,7 @@
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> من الاشعارات غير المقروءة."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"اشعارات جديدة"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"عرض مربع حوار الإيقاف بعد عرض أول تنبيه (بخلاف التنبيه الرئاسي)"</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"عرض مربع حوار التعطيل"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"عرض مربّع الإيقاف"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"أنت حاليًا تتلقى اشعارات طوارئ. هل تريد متابعة تلقي اشعارات الطوارئ؟"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"نعم"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"لا"</string>
