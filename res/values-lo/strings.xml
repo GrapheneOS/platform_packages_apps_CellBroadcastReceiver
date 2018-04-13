@@ -41,7 +41,7 @@
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"ການແຈ້ງເຕືອນສຸກເສີນ: ຮ້າຍແຮງ"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"ການແຈ້ງເຕືອນສຸກເສີນ: ຮຸນແຮງ"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"ການລັກພາໂຕເດັກ (ການແຈ້ງເຕືອນ AMBER)"</string>
-    <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Required Monthly Test"</string>
+    <string name="cmas_required_monthly_test" msgid="1890205712251132193">"ການທົດສອບລາຍເດືອນທີ່ຈຳເປັນ"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"ການແຈ້ງເຕືອນສຸກເສີນ (ເຝິກຫັດ)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"ການແຈ້ງເຕືອນສຸກເສີນ (ຜູ່ໃຫ້ບໍລິການ)"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"ຂໍ້ຄວາມສົ່ງສັນຍານ"</string>
@@ -71,7 +71,7 @@
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ຄຳສັ່ງທີ່ແນະນຳທີ່ສາມາດຊ່ວຍຊີວິດ ຫຼື ຊັບສິນໄດ້"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ການເຕືອນສຸກເສີນ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ເຕືອນກ່ຽວກັບເຫດການຂູ່ເຂັນຊີວິດ"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Required monthly test"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"ການທົດສອບລາຍເດືອນທີ່ຈຳເປັນ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"ຮັບຂໍ້ຄວາມທົດສອບສຳລັບລະບົບການເຕືອນຄວາມປອດໄພ"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ສັ່ນເຕືອນ"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"ໃຊ້ລະດັບສຽງເຕັມ"</string>

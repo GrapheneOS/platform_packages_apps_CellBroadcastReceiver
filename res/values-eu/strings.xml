@@ -52,7 +52,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Larrialdi-alertak"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Onartu alertak"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"Jaso larrialdi-jakinarazpenak"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Alerta-egoeren abisuen soinua"</string>
+    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Alerta-abisuen soinua"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Irakurri alerta-mezua ozen"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Erabili testua audio gisa erreproduzitzeko eginbidea larrialdien alerta-mezuak ozen irakurtzeko"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Larrialdi-alerten historia"</string>

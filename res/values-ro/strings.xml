@@ -54,7 +54,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"Primiți notificări despre urgențe"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Sunet de memento pentru alertă"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Mesajele de alertă se rostesc"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Utilizați funcția de transformare a textului în vorbire pt. a comunica mesajele alertelor de urgență"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Utilizați funcția de redare vocală a textului pentru a comunica mesajele alertelor de urgență"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Istoricul alertelor de urgență"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferințe pentru alerte"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Difuzări de testare ETWS"</string>
