@@ -70,7 +70,7 @@
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Mga mensahe para sa pampublikong kaligtasan"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Mga inirerekomendang pagkilos na makakaligtas ng mga buhay o pag-aari"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Mga alerto sa emergency"</string>
-    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Magbabala tungkol sa mga nakamamatay na kaganapan"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Magbabala tungkol sa mga nakamamatay na event"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Kinakailangang buwanang pagsubok"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Makatanggap ng mga pansubok na mensahe para sa sistema ng alerto sa kaligtasan"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Mag-vibrate"</string>

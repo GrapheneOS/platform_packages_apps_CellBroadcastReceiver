@@ -113,7 +113,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Recibido:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> alertas no leídas"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nuevas alertas"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Muestra un cuadro de diálogo de desactivación tras la primera alerta (excepto la alerta presidencial)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Muestra un cuadro de diálogo de desactivación tras la primera alerta (excepto una alerta presidencial)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Cuadro de diálogo para desactivar"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Actualmente recibes alertas de emergencia. ¿Quieres seguir recibiéndolas?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Sí"</string>
