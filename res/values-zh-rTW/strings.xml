@@ -55,7 +55,7 @@
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"警示提醒音效"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"說出警訊通知"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"使用文字轉語音功能說出緊急警報通知"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"緊急警報紀錄"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"緊急警報記錄"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"警示偏好設定"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS 測試廣播"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"地震海嘯警報系統測試廣播"</string>
@@ -118,7 +118,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"你目前已設為接收緊急警報，是否要繼續接收？"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"是"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"否"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"緊急警報紀錄"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"緊急警報記錄"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"一次"</item>
     <item msgid="9097229303902157183">"每隔 2 分鐘"</item>
