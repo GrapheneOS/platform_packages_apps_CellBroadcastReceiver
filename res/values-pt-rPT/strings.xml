@@ -124,7 +124,7 @@
     <item msgid="9097229303902157183">"De 2 em 2 minutos"</item>
     <item msgid="5718214950343391480">"De 5 em 5 minutos"</item>
     <item msgid="3863339891188103437">"De 15 em 15 minutos"</item>
-    <item msgid="6868848414437854609">"Desativados"</item>
+    <item msgid="6868848414437854609">"Desativado"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Alertas de emergência sem fios"</string>
 </resources>

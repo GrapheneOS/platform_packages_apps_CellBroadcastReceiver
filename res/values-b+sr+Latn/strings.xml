@@ -78,7 +78,7 @@
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Zanemaruje druga podešavanja za Jačinu zvuka i Ne uznemiravaj"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Obaveštenja o ažuriranju područja"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Prikazuj informacije o ažuriranju u statusu SIM kartice"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"Opcije za programera"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"Opcije za programere"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategorija upozorenja:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofizička"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorološka"</string>

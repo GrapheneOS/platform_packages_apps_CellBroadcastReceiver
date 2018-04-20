@@ -35,7 +35,7 @@
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Výstraha pred zemetrasením a cunami"</string>
     <string name="etws_test_message" msgid="8447820262584381894">"Testovacia správa systému ETWS"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"Tiesňová výstraha"</string>
-    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Prezidentská výstraha"</string>
+    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Prezidentské varovanie"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Mimoriadne tiesňové upozornenie"</string>
     <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"Mimoriadne tiesňové upozornenie"</string>
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"Mimoriadne tiesňové upozornenie"</string>
@@ -63,7 +63,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Extrémne ohrozenie života a majetku"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Závažné hrozby"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Závažné ohrozenie života a majetku"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Upozornenia AMBER"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Upozornenia Amber"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Tiesňové správy o únosoch detí"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Správy s upozorneniami"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Upozorňovať na bezprostredné ohrozenia bezpečnosti"</string>
@@ -72,7 +72,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Tiesňové upozornenia"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Upozorňovať na udalosti ohrozujúce život"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Povinný mesačný test"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Získavajte testovacie správy týkajúce sa systému bezpečnostných upozornení"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Dostávať testovacie správy zo systému bezpečnostných upozornení"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrovať"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Použiť plnú hlasitosť"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Predvoľby Ignorovať ďalšie nastavenia hlasitosti a Nerušiť"</string>
@@ -113,7 +113,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Prijaté:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"Počet neprečítaných upozornení: <xliff:g id="COUNT">%s</xliff:g>."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nové upozornenia"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Zobraziť dialógové okno na zrušenie po spustení prvého upozornenia (okrem prezident. upozornenia)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Zobraziť dialógové okno na zrušenie po spustení prvého upozornenia (okrem prezident. varovania)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Zobraziť dialógové okno na zrušenie"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Aktuálne prijímate tiesňové upozornenia. Chcete ich prijímať aj naďalej?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Áno"</string>
