@@ -114,7 +114,7 @@
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ongeleesde berigte."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nuwe berigte"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Wys onttrekkingdialoog nadat eerste waarskuwing gewys is (afgesien van presidensiële waarskuwing)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Wys intekenweier-dialoog"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Wys onttrekkingdialoog"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Jy ontvang tans noodberigte. Sal jy graag wil voortgaan om noodberigte te ontvang?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nee"</string>
