@@ -47,4 +47,7 @@
 
     <!-- Emergecny alert tone duration set to 1 minute for Korean users -->
     <integer name="alert_duration">60000</integer>
+
+    <!-- Always play alert at full volume regardless silent/do-not-disturb mode for Korean users -->
+    <bool name="use_full_volume">true</bool>
 </resources>
