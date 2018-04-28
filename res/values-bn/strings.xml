@@ -65,7 +65,7 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"জীবন ও সম্পদহানির গুরুতর আশঙ্কা"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER সতর্কতা"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"শিশু অপহরণ সংক্রান্ত জরুরি বুলেটিন"</string>
-    <string name="enable_alert_message_title" msgid="2939830587633599352">"সতর্কতা বার্তা"</string>
+    <string name="enable_alert_message_title" msgid="2939830587633599352">"সতর্কবার্তা"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"আসন্ন নিরাপত্তা ঝুঁকির বিষয়ে সতর্কতা পান"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"সর্বজনীন নিরাপত্তা মেসেজ"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"জীবন অথবা সম্পত্তি রক্ষা করতে পারে, এমন কাজের প্রস্তাবনা"</string>
