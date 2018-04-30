@@ -59,8 +59,8 @@
     <string name="alert_preferences_title" msgid="6001469026393248468">"Mga kagustuhan sa alerto"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Pansubok na broadcast ng ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Mga pansubok na broadcast ng Earthquake Tsunami Warning System"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Matitinding banta"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Matitinding banta sa buhay at ari-arian"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Pinakamatitinding banta"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Pinakamatitinding banta sa buhay at ari-arian"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Malulubhang banta"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Malulubhang banta sa buhay at ari-arian"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Mga AMBER alert"</string>

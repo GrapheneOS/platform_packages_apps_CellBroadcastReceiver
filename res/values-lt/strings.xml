@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="7559008249836700599">"Tinklo transliacijos"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"Nepaprastosios padėties įspėjimai"</string>
+    <string name="sms_cb_settings" msgid="3795852619005211509">"Nepaprastosios padėties įspėj."</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Transliacijos mobiliuoju nustatymai negalimi šiam naudotojui"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Gerai"</string>
     <string name="no_cell_broadcasts" msgid="5409324337492758562">"Jūsų srityje nėra aktyvių įspėjimų. Įspėjimų nustatymus galite pakeisti naudodami meniu parinktį „Nustatymai“."</string>

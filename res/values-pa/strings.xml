@@ -113,8 +113,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"ਪ੍ਰਾਪਤ:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ਅਨਰੀਡ ਚਿਤਾਵਨੀਆਂ।"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"ਨਵੀਆਂ ਚਿਤਾਵਨੀਆਂ"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"ਪਹਿਲੀ ਸੁਚੇਤਨਾ ਦਿਖਾਉਣ ਤੋਂ ਬਾਅਦ ਹਟਣ ਦੀ ਚੋਣ ਸੰਬੰਧੀ ਇੱਕ ਵਿੰਡੋ ਦਿਖਾਓ (ਸਰਕਾਰੀ ਸੁਚੇਤਨਾ ਤੋਂ ਇਲਾਵਾ)।"</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"ਹਟਣ ਦੀ ਚੋਣ ਵਾਲਾ ਡਾਇਲੌਗ ਦਿਖਾਓ"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"ਪਹਿਲੀ ਸੁਚੇਤਨਾ ਦਿਖਾਉਣ ਤੋਂ ਬਾਅਦ ਹਟਣ ਦੀ ਚੋਣ ਸੰਬੰਧੀ ਇੱਕ ਵਿੰਡੋ ਦਿਖਾਓ (ਪ੍ਰੈਜੀਡੈਂਸ਼ੀਅਲ ਸੁਚੇਤਨਾ ਤੋਂ ਇਲਾਵਾ)।"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"ਹਟਣ ਦੀ ਚੋਣ ਵਾਲੀ ਵਿੰਡੋ ਦਿਖਾਓ"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ਇਸ ਵੇਲੇ ਤੁਸੀਂ ਸੰਕਟਕਾਲੀਨ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਾਪਤ ਕਰ ਰਹੇ ਹੋ। ਕੀ ਤੁਸੀਂ ਸੰਕਟਕਾਲੀਨ ਚਿਤਾਵਨੀਆਂ ਪ੍ਰਾਪਤ ਕਰਨਾ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ਹਾਂ"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ਨਹੀਂ"</string>
