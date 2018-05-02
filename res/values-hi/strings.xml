@@ -20,7 +20,8 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"सेल ब्रॉडकास्ट (CBC) सेटिंग इस उपयोगकर्ता के लिए मौजूद नहीं हैं"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक है"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"आपके इलाके में कोई सक्रिय अलर्ट नहीं है. आप सेटिंग मेन्यू विकल्‍प का इस्तेमाल करके अलर्ट सेटिंग बदल सकते हैं."</string>
+    <!-- no translation found for no_cell_broadcasts (7554779730107421769) -->
+    <skip />
     <string name="menu_delete_all" msgid="3940997343921149800">"प्रसारण मिटाएं"</string>
     <string name="message_options" msgid="3178489901903589574">"संदेश विकल्‍प"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"विवरण देखें"</string>

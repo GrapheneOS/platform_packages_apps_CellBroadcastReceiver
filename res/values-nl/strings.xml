@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"Noodmeldingen"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Instellingen voor cell broadcast zijn niet beschikbaar voor deze gebruiker"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Er zijn geen actieve waarschuwingen in je omgeving. Je kunt de meldingsinstellingen wijzigen via de menuoptie Instellingen."</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Geen eerdere meldingen"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Broadcasts verwijderen"</string>
     <string name="message_options" msgid="3178489901903589574">"Berichtopties"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Details weergeven"</string>
@@ -113,8 +113,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Ontvangen:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ongelezen waarschuwingen."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nieuwe waarschuwingen"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Een afmeldingsvenster weergeven na de eerste melding (geen nationale melding)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Afmeldingsvenster weergeven"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Een afmeldvenster weergeven na de eerste melding (geen nationale melding)."</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Afmeldvenster weergeven"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Je ontvangt momenteel noodmeldingen. Wil je noodmeldingen blijven ontvangen?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nee"</string>

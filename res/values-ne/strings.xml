@@ -19,8 +19,9 @@
     <string name="app_label" msgid="7559008249836700599">"सेल प्रसारणहरू"</string>
     <string name="sms_cb_settings" msgid="3795852619005211509">"आपतकालीन अलर्टहरू"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"सेल प्रसारण सेटिङहरू यो प्रयोगकर्ताको लागि उपलब्ध छैनन्"</string>
-    <string name="button_dismiss" msgid="1234221657930516287">"ठीक छ"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"तपाईंको क्षेत्रमा कुनै पनि सक्रिय अलर्टहरू छैनन्। तपाईं सेटिङहरू मेनु विकल्पको प्रयोग गरी सावधानी सेटिङहरू परिवर्तन गर्न सक्नु हुने छ"</string>
+    <string name="button_dismiss" msgid="1234221657930516287">"ठिक छ"</string>
+    <!-- no translation found for no_cell_broadcasts (7554779730107421769) -->
+    <skip />
     <string name="menu_delete_all" msgid="3940997343921149800">"प्रसारणहरू मेटाउनुहोस्"</string>
     <string name="message_options" msgid="3178489901903589574">"सन्देश विकल्पहरू"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"विवरणहरू हेर्नुहोस्"</string>

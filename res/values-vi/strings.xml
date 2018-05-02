@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"Cảnh báo khẩn cấp"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Cài đặt truyền phát trên di động không khả dụng cho người dùng này"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Không có cảnh báo hoạt động nào trong khu vực của bạn. Bạn có thể thay đổi cài đặt Cảnh báo bằng tùy chọn menu Cài đặt."</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Đã không có thông báo nào"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Xóa chương trình phát sóng"</string>
     <string name="message_options" msgid="3178489901903589574">"Tùy chọn tin nhắn"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Xem chi tiết"</string>

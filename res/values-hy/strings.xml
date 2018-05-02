@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"Արտակարգ իրավիճակների ահազանգեր"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Բջջային կապով ծանուցման կարգավորումներն անհասանելի են այս օգտատիրոջ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Եղավ"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Ձեր տարածքում ակտիվ ծանուցումներ չկան։ Ծանուցումների ընտրանքները կարող եք փոխել Կարգավորումներում։"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Ծանուցումներ չեն եղել"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Ջնջել հեռարձակումները"</string>
     <string name="message_options" msgid="3178489901903589574">"Հաղորդագրության ընտրանքներ"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Տեսնել մանրամասները"</string>
@@ -75,7 +75,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Ստանալ բնակչության ազդարարման համակարգի փորձնական ահազանգեր"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Թրթռոց"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Օգտագործել ձայնի ողջ ուժգնությունը"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"Անտեսել ձայնի ուժգնության և Չանհանգստացնել ռեժիմի այլ կարգավորումները"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Անտեսել ձայնի ուժգնության և «Չանհանգստացնել» ռեժիմի այլ կարգավորումները"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Տեղական ծանուցող հեռարձակումներ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Թարմացման մասին տեղեկությունը ցուցադրել SIM քարտի կարգավիճակում"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Մշակողի ընտրանքներ"</string>
@@ -113,7 +113,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Ստացվել է՝"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> չկարդացված ծանուցում"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Նոր զգուշացումներ"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Ցուցադրել ահազանգերն անջատելու պատուհանը առաջին ահազանգից հետո:"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Ցուցադրել ահազանգերն անջատելու պատուհանը առաջին ահազանգից հետո"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Ցուցադրել հրաժարման երկխոսությունը"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Դուք այժմ ստանում եք արտակարգ իրավիճակների զգուշացումներ: Ցանկանո՞ւմ եք շարունակել արտակարգ զգուշացումների ստացումը:"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Այո"</string>

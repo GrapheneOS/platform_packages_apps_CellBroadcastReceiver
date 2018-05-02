@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"Alertas de urxencia"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"A configuración da difusión móbil non está dispoñible para este usuario"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Aceptar"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Non hai alertas activas na túa zona. Podes cambiar a configuración das alertas a través da opción do menú Configuración."</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Non hai alertas anteriores"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Eliminar emisións"</string>
     <string name="message_options" msgid="3178489901903589574">"Opcións das mensaxes"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Ver detalles"</string>

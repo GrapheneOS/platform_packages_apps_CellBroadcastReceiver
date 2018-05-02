@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"การแจ้งเตือนเหตุฉุกเฉิน"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"การตั้งค่าการส่งข้อมูลเตือนภัยทางมือถือ (CB) ไม่พร้อมใช้งานสำหรับผู้ใช้รายนี้"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ตกลง"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"ไม่มีการแจ้งเตือนในพื้นที่ของคุณ คุณสามารถเปลี่ยนการตั้งค่าการแจ้งเตือนได้ในตัวเลือกเมนูการตั้งค่า"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"ไม่มีการแจ้งเตือนก่อนหน้านี้"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"ลบการแจ้งเตือนทั้งหมด"</string>
     <string name="message_options" msgid="3178489901903589574">"ตัวเลือกข้อความ"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"ดูรายละเอียด"</string>
@@ -113,8 +113,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"ได้รับ:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> การแจ้งเตือนที่ยังไม่ได้อ่าน"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"การแจ้งเตือนใหม่"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"แสดงกล่องโต้ตอบเลือกไม่ใช้หลังจากแสดงการแจ้งเตือนแรก (นอกเหนือจากการแจ้งเตือนระดับสูง)"</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"แสดงช่องโต้ตอบเลือกไม่ใช้"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"แสดงกล่องโต้ตอบเพื่อเลือกไม่ใช้งานหลังจากแสดงการแจ้งเตือนแรก (นอกเหนือจากการแจ้งเตือนระดับสูง)"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"แสดงกล่องโต้ตอบเพื่อเลือกไม่ใช้งาน"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ขณะนี้ คุณได้รับการแจ้งเตือนฉุกเฉิน คุณต้องการรับการแจ้งเตือนฉุกเฉินต่อไปหรือไม่"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ใช่"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ไม่ใช่"</string>

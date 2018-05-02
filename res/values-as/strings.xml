@@ -20,7 +20,8 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"জৰুৰীকালীন সতৰ্কবাণীসমূহ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"এই ব্য়ৱহাৰকাৰীৰ বাবে চেল সম্প্ৰচাৰ ছেটিংসমূহ নাই"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ঠিক আছে"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"আপোনাৰ এলেকাত কোনো সক্ৰিয় বিপদৰ সতৰ্কবাণী নাই। আপুনি ছেটিংসমূহৰ মেনুৰ বিকল্প ব্যৱহাৰ কৰি সতৰ্কবাণীৰ ছেটিংসমূহ সলনি কৰিব পাৰে।"</string>
+    <!-- no translation found for no_cell_broadcasts (7554779730107421769) -->
+    <skip />
     <string name="menu_delete_all" msgid="3940997343921149800">"সম্প্ৰচাৰসমূহ মচক"</string>
     <string name="message_options" msgid="3178489901903589574">"বাৰ্তাৰ বিকল্পসমূহ"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"সবিশেষ চাওক"</string>
@@ -113,7 +114,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"প্ৰাপ্ত:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> নপঢ়া সতৰ্কবাণীসমূহ।"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"নতুন সতৰ্কবাণী"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"CMASৰ প্ৰথমটো সতৰ্কবাণী দেখুওৱাৰ পিছত এই সেৱা পৰিত্যাগ কৰা বার্তা দেখুৱাওক (ৰাষ্ট্ৰপতিয়ে জাৰি কৰা সতৰ্কবাণীৰ বাহিৰে)।"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"প্ৰথমটো সতৰ্কবাণী দেখুওৱাৰ পিছত এই সেৱা পৰিত্যাগ কৰা বার্তা দেখুৱাওক (ৰাষ্ট্ৰপতিয়ে জাৰি কৰা সতৰ্কবাণীৰ বাহিৰে)।"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"এই সেৱা পৰিত্যাগ কৰা বার্তা দেখুৱাওক"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"আপুনি বৰ্তমান জৰুৰীকালীন সতৰ্কবাণী লাভ কৰি আছে। আপুনি আগলৈও জৰুৰীকালীন সতৰ্কবাণী পাব বিচাৰেনে?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"হয়"</string>

@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"Tiesňové upozornenia"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Tento používateľ nemá k dispozícii nastavenia správ informačných služieb"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
-    <string name="no_cell_broadcasts" msgid="5409324337492758562">"Vo vašej oblasti nie sú žiadne aktívne upozornenia. Nastavenia upozornení môžete meniť v Nastaveniach."</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Žiadne predchádzajúce upozornenia"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Odstrániť vysielania"</string>
     <string name="message_options" msgid="3178489901903589574">"Možnosti správy"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Zobraziť podrobnosti"</string>
@@ -75,7 +75,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Dostávať testovacie správy zo systému bezpečnostných upozornení"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrovať"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Použiť plnú hlasitosť"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"Predvoľby Ignorovať ďalšie nastavenia hlasitosti a Nerušiť"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorovať ďalšie nastavenia hlasitosti a režim Nerušiť"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Vysielania s aktuálnymi informáciami oblasti"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Zobrazovať informácie o aktualizácii v stave SIM karty"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Pre vývojárov"</string>
