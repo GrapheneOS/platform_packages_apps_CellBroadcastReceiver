@@ -273,9 +273,6 @@ public class CellBroadcastSettings extends Activity {
 
             initReminderIntervalList();
 
-            boolean forceDisableEtwsCmasTest = CellBroadcastSettings.isFeatureEnabled(getContext(),
-                    CarrierConfigManager.KEY_CARRIER_FORCE_DISABLE_ETWS_CMAS_TEST_BOOL, false);
-
             boolean emergencyAlertOnOffOptionEnabled = isFeatureEnabled(getContext(),
                     CarrierConfigManager.KEY_ALWAYS_SHOW_EMERGENCY_ALERT_ONOFF_BOOL, false);
 
@@ -293,8 +290,11 @@ public class CellBroadcastSettings extends Activity {
                 if (mMasterToggle != null) preferenceScreen.removePreference(mMasterToggle);
             }
 
-            // Show alert settings and ETWS categories for ETWS builds and developer mode.
-            if (forceDisableEtwsCmasTest || !enableDevSettings || !isTestAlertsAvailable()) {
+            boolean hideTestAlertMenu = CellBroadcastSettings.isFeatureEnabled(getContext(),
+                    CarrierConfigManager.KEY_CARRIER_FORCE_DISABLE_ETWS_CMAS_TEST_BOOL, false);
+
+            // Check if we want to hide the test alert toggle.
+            if (hideTestAlertMenu || !enableDevSettings || !isTestAlertsAvailable()) {
                 if (mTestCheckBox != null) {
                     mAlertCategory.removePreference(mTestCheckBox);
                 }
