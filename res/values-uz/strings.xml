@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"Favqulodda ogohlantirishlar"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Ushbu foydalanuvchi uchun Aholini ogohlantirish sozlamalari mavjud emas"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Ogohlantirish berilmagan"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Hech qanday ogohlantirish topilmadi"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Tarqatma xabarlarni o‘chirish"</string>
     <string name="message_options" msgid="3178489901903589574">"Xabar sozlamalari"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Tafsilotlarni ko‘rish"</string>
@@ -113,7 +113,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Qabul qilingan:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ta o‘qilmagan ogohlantirish."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Yangi ogohlantirishlar"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Birinchi ogohlantirishdan keyin (hukumat ogohlantirishidan boshqa) bildirishnomalarni o‘chirib qo‘yishni taklif qilish."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Birinchi ogohlantirishdan keyin favqulodda holatlar bildirishnomalarini faolsizlantirishni taklif qilish"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Ogohlantirish kelmaydigan qilish"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Sizda aholini ogohlantirish funksiyasi yoqilgan. Favqulodda ogohlantirishlarni qabul qilishni davom ettirmoqchimisiz?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ha"</string>

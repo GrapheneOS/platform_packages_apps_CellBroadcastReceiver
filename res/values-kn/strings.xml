@@ -20,8 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"ಸೆಲ್‌ ಪ್ರಸಾರ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಈ ಬಳಕೆದಾರರಿಗೆ ಲಭ್ಯವಿಲ್ಲ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ಸರಿ"</string>
-    <!-- no translation found for no_cell_broadcasts (7554779730107421769) -->
-    <skip />
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"ಹಿಂದಿನ ಯಾವುದೇ ಎಚ್ಚರಿಕೆಗಳಿಲ್ಲ"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"ಪ್ರಸಾರಗಳನ್ನು ಅಳಿಸಿ"</string>
     <string name="message_options" msgid="3178489901903589574">"ಸಂದೇಶದ ಆಯ್ಕೆಗಳು"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ"</string>

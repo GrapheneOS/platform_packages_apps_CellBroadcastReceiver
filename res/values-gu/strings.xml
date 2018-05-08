@@ -20,8 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"કટોકટીની ચેતવણીઓ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"સેલ બ્રોડકાસ્ટ સેટિંગ્સ આ વપરાશકર્તા માટે ઉપલબ્ધ નથી"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ઓકે"</string>
-    <!-- no translation found for no_cell_broadcasts (7554779730107421769) -->
-    <skip />
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"કોઈ પાછલી અલર્ટ નથી"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"બ્રોડકાસ્ટ્સ કાઢી નાખો"</string>
     <string name="message_options" msgid="3178489901903589574">"સંદેશ વિકલ્પો"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"વિગતો જુઓ"</string>

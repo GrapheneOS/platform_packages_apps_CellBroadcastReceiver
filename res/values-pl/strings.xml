@@ -20,8 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"Alerty o zagrożeniu"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Ustawienia komunikatów z sieci komórkowej nie są dostępne dla tego użytkownika"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
-    <!-- no translation found for no_cell_broadcasts (7554779730107421769) -->
-    <skip />
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Brak wcześniejszych alertów"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Usuń transmisje"</string>
     <string name="message_options" msgid="3178489901903589574">"Opcje wiadomości"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Wyświetl szczegóły"</string>
