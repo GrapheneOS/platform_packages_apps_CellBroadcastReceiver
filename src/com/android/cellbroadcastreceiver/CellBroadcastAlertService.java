@@ -364,11 +364,6 @@ public class CellBroadcastAlertService extends Service {
         boolean emergencyAlertEnabled =
                 prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
 
-        // Check if ETWS/CMAS test message is forced to disabled on the device.
-        boolean forceDisableEtwsCmasTest =
-                CellBroadcastSettings.isFeatureEnabled(this,
-                        CarrierConfigManager.KEY_CARRIER_FORCE_DISABLE_ETWS_CMAS_TEST_BOOL, false);
-
         boolean enableAreaUpdateInfoAlerts = Resources.getSystem().getBoolean(
                 com.android.internal.R.bool.config_showAreaUpdateInfoSettings)
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS,
@@ -376,7 +371,6 @@ public class CellBroadcastAlertService extends Service {
 
         if (message.isEtwsTestMessage()) {
             return emergencyAlertEnabled &&
-                    !forceDisableEtwsCmasTest &&
                     PreferenceManager.getDefaultSharedPreferences(this)
                     .getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, false);
         }
@@ -429,7 +423,6 @@ public class CellBroadcastAlertService extends Service {
                         return false;
                     } else if (range.mAlertType == AlertType.TEST) {
                         return emergencyAlertEnabled
-                                && !forceDisableEtwsCmasTest
                                 && PreferenceManager.getDefaultSharedPreferences(this)
                                 .getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS,
                                         false);
@@ -478,7 +471,6 @@ public class CellBroadcastAlertService extends Service {
                 || CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
                 channel, R.array.operator_defined_alert_range_strings, this)) {
             return emergencyAlertEnabled
-                    && !forceDisableEtwsCmasTest
                     && PreferenceManager.getDefaultSharedPreferences(this)
                             .getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS,
                                     false);
