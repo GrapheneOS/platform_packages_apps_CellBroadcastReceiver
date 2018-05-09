@@ -23,7 +23,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
-import android.telephony.CarrierConfigManager;
 import android.telephony.SmsManager;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
@@ -147,12 +146,7 @@ public class CellBroadcastConfigService extends IntentService {
         boolean enableCmasAmberAlerts = enableAlertsMasterToggle && prefs.getBoolean(
                 CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true);
 
-        // Check if ETWS/CMAS test message is forced disabled on the device.
-        boolean forceDisableEtwsCmasTest =
-                CellBroadcastSettings.isFeatureEnabled(this,
-                        CarrierConfigManager.KEY_CARRIER_FORCE_DISABLE_ETWS_CMAS_TEST_BOOL, false);
-
-        boolean enableTestAlerts = !forceDisableEtwsCmasTest && enableAlertsMasterToggle
+        boolean enableTestAlerts = enableAlertsMasterToggle
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, false);
 
         boolean enableAreaUpdateInfoAlerts = Resources.getSystem().getBoolean(
@@ -175,7 +169,6 @@ public class CellBroadcastConfigService extends IntentService {
             log("enableCmasExtremeAlerts = " + enableCmasExtremeAlerts);
             log("enableCmasSevereAlerts = " + enableCmasExtremeAlerts);
             log("enableCmasAmberAlerts = " + enableCmasAmberAlerts);
-            log("forceDisableEtwsCmasTest = " + forceDisableEtwsCmasTest);
             log("enableTestAlerts = " + enableTestAlerts);
             log("enableAreaUpdateInfoAlerts = " + enableAreaUpdateInfoAlerts);
             log("enablePublicSafetyMessagesChannelAlerts = "
