@@ -148,9 +148,10 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         if (DBG) log("Speaking broadcast text: " + mMessageBody);
 
                         Bundle params = new Bundle();
-                        // Play TTS in notification stream.
+                        // Play TTS in the alarm stream, which we use for playing alert tones as
+                        // well.
                         params.putInt(TextToSpeech.Engine.KEY_PARAM_STREAM,
-                                AudioManager.STREAM_NOTIFICATION);
+                                AudioManager.STREAM_ALARM);
                         // Use the non-public parameter 2 --> TextToSpeech.QUEUE_DESTROY for TTS.
                         // The entire playback queue is purged. This is different from QUEUE_FLUSH
                         // in that all entries are purged, not just entries from a given caller.
