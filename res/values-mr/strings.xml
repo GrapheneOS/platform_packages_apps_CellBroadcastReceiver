@@ -79,7 +79,7 @@
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"परिसराशी संबंधित अपडेट ब्रॉडकास्ट"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"सिमच्‍या स्थितीत अपडेटची काही माहिती असल्‍यास दाखवा"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"डेव्हलपर पर्याय"</string>
-    <string name="cmas_category_heading" msgid="3923503130776640717">"सूचना श्रेणी:"</string>
+    <string name="cmas_category_heading" msgid="3923503130776640717">"सूचना वर्गवारी:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"भूभौतिक"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"हवामानविषयक"</string>
     <string name="cmas_category_safety" msgid="2986472639641883453">"सुरक्षितता"</string>
