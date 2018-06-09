@@ -14,6 +14,8 @@ LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_USE_AAPT2 := true
 
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
+
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.legacy_legacy-support-v4 \
     androidx.legacy_legacy-support-v13 \
