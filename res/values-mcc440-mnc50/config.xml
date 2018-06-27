@@ -15,8 +15,11 @@
 -->
 
 <resources>
-    <string-array name="additional_cbs_channels_strings" translatable="false">
-        <item>0xAC00:type=test, emergency=true, scope=carrier</item>
-        <item>0x1105-0xAFFF:type=other, emergency=true, scope=carrier</item>
+    <!-- Based on KDDI open device requirement, only 4352 and 40963 should be enabled -->
+    <string-array name="etws_alerts_range_strings" translatable="false">
+        <!-- 0x1100 for earthquake -->
+        <item>0x1100:rat=gsm, emergency=true</item>
+        <!-- 0xA003 for Tsunami -->
+        <item>0xA003:rat=gsm, emergency=true, scope=carrier</item>
     </string-array>
 </resources>
