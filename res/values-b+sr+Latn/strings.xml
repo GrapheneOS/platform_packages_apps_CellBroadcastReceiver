@@ -44,9 +44,9 @@
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Obavezan mesečni test"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Obaveštenje o hitnom slučaju (vežba)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Obaveštenje o hitnom slučaju (operater)"</string>
-    <string name="pws_other_message_identifiers" msgid="1813329661891149820">"Obaveštenje o hitnom slučaju"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Poruke o emitovanju"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"Poruka o javnoj bezbednosti"</string>
+    <string name="emergency_alert" msgid="624783871477634263">"Obaveštenje o hitnom slučaju"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Obaveštenja"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Poruke o emitovanju"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Hitna obaveštenja"</string>
@@ -67,6 +67,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Objave u vezi sa otmicom deteta"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Poruke upozorenja"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Upozoravaj me na neposredne bezbednosne pretnje"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Poruke o javnoj bezbednosti"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Preporučene radnje koje mogu da sačuvaju živote ili imovinu"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Obaveštenja o hitnim slučajevima"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Upozoravaj me na događaje opasne po život"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Obavezan mesečni test"</string>
@@ -76,7 +78,7 @@
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Zanemaruje druga podešavanja za Jačinu zvuka i Ne uznemiravaj"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Obaveštenja o ažuriranju područja"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Prikazuj informacije o ažuriranju u statusu SIM kartice"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"Opcije za programera"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"Opcije za programere"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategorija upozorenja:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofizička"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorološka"</string>
