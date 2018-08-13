@@ -44,9 +44,9 @@
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Igakuine kohustuslik test"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Hädaolukorra märguanne (harjutus)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Hädaolukorra märguanne (operaator)"</string>
+    <string name="pws_other_message_identifiers" msgid="1813329661891149820">"Hädaolukorra märguanne"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Sõnumite edastamine"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"Avalik turvateadaanne"</string>
-    <string name="emergency_alert" msgid="624783871477634263">"Hädaolukorra märguanne"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Teatised"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Sõnumite edastamine"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Hädaolukorra teatised"</string>
@@ -67,15 +67,13 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Lapseröövi häireteadaanded"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Hoiatussõnumid"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Hoiatused eelseisvate turvaohtude puhul"</string>
-    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Avalikud turvateadaanded"</string>
-    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Soovitatud toimingud, mis võivad päästa elusid või vara"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Hädaolukorra hoiatused"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Hoiatused eluohtlike sündmuste puhul"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Igakuine kohustuslik test"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Turvahoiatussüsteemi puhul testsõnumite saamine"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibreerimine"</string>
-    <string name="use_full_volume_title" msgid="8581439612945182255">"Kasuta max helitugevust"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignoreeri muid helitugevuse ja režiimi Mitte segada eelistusi"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"Kasutage max helitugevust"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignoreerige muid helitug. ja režiimi Mitte segada eelistusi"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Piirkonna värskenduste edastamine"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM-kaardi olekus värskendamisteabe kuvamine"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Arendaja valikud"</string>
