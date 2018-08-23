@@ -45,7 +45,7 @@
 
     <!-- 4396~4399 -->
     <string-array name="additional_cbs_channels_strings" translatable="false">
-        <item>0x112C-0x112F:rat:gsm, emergency=true</item>
+        <item>0x112C-0x112F:rat=gsm, emergency=true</item>
     </string-array>
 
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false"></string-array>
