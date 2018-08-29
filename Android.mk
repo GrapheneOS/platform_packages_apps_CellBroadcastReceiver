@@ -17,12 +17,12 @@ LOCAL_USE_AAPT2 := true
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
-    android-support-v4 \
-    android-support-v13 \
-    android-support-v7-recyclerview \
-    android-support-v7-preference \
-    android-support-v7-appcompat \
-    android-support-v14-preference
+    androidx.legacy_legacy-support-v4 \
+    androidx.legacy_legacy-support-v13 \
+    androidx.recyclerview_recyclerview \
+    androidx.preference_preference \
+    androidx.appcompat_appcompat \
+    androidx.legacy_legacy-preference-v14
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
