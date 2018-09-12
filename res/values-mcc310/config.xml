@@ -66,4 +66,11 @@
         <!-- Public safety messages for additional language -->
         <item>0x112D-0x112D:rat=gsm, emergency=true, filter_language=true</item>
     </string-array>
+    <!-- Channels to receive state/local test messages -->
+    <string-array name="state_local_test_alert_range_strings" translatable="false">
+        <!-- state/local test -->
+        <item>0x112E-0x112E:rat=gsm, emergency=true</item>
+        <!-- state/local test additional language -->
+        <item>0x112F-0x112F:rat=gsm, emergency=true, filter_language=true</item>
+    </string-array>
 </resources>

@@ -90,6 +90,8 @@
     <string name="cb_other_message_identifiers">Broadcast messages</string>
     <!-- Dialog title for all public safety message broadcasts. [CHAR LIMIT=50] -->
     <string name="public_safety_message">Public safety message</string>
+    <!-- Dialog title for all state/local test alerts. [CHAR LIMIT=50] -->
+    <string name="state_local_test_alert">State/Local test</string>
 
     <!-- Dialog title or menu title of emergency alert. [CHAR LIMIT=50] -->
     <string name="emergency_alert">Emergency alert</string>
@@ -145,6 +147,10 @@
     <string name="enable_public_safety_messages_title">Public safety messages</string>
     <!-- Preference summary for enable public safety messages checkbox. [CHAR LIMIT=100] -->
     <string name="enable_public_safety_messages_summary">Recommended actions that can save lives or property</string>
+    <!-- Preference title for enable state/local test alerts checkbox. [CHAR LIMIT=100] -->
+    <string name="enable_state_local_test_alerts_title">State and local tests</string>
+    <!-- Preference summary for enable state/local test alerts checkbox. [CHAR LIMIT=100] -->
+    <string name="enable_state_local_test_alerts_summary">Receive test messages from state and local authorities</string>
     <!-- Preference title for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->
     <string name="enable_emergency_alerts_message_title">Emergency alerts</string>
     <!-- Preference summary for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->

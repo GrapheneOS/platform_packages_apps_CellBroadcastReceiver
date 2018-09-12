@@ -512,6 +512,13 @@ public class CellBroadcastAlertService extends Service {
                     .getBoolean(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES,
                             true);
         }
+        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
+                channel, R.array.state_local_test_alert_range_strings, this)) {
+            return emergencyAlertEnabled
+                    && PreferenceManager.getDefaultSharedPreferences(this)
+                    .getBoolean(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS,
+                            false);
+        }
         return true;
     }
 
@@ -558,11 +565,7 @@ public class CellBroadcastAlertService extends Service {
         } else {
             int channel = message.getServiceCategory();
             ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
-                    .getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
-                            R.array.additional_cbs_channels_strings);
-            ranges.addAll(CellBroadcastChannelManager
-                    .getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
-                            R.array.public_safety_messages_channels_range_strings));
+                    .getAllCellBroadcastChannelRanges(getApplicationContext());
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (channel >= range.mStartId && channel <= range.mEndId) {
