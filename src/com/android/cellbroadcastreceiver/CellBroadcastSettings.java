@@ -316,6 +316,8 @@ public class CellBroadcastSettings extends Activity {
                 }
             }
 
+
+
             if (!Resources.getSystem().getBoolean(
                     com.android.internal.R.bool.config_showAreaUpdateInfoSettings)) {
                 if (mAlertCategory != null) {
