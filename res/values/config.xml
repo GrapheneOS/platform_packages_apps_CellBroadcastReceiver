@@ -74,6 +74,9 @@
         <item>0x112B-0x112B:rat=gsm, emergency=true</item>
     </string-array>
 
+    <!-- Channels to receive state/local test messages -->
+    <string-array name="state_local_test_alert_range_strings" translatable="false"></string-array>
+
     <!-- 4352~4354, 4356 -->
     <string-array name="etws_alerts_range_strings" translatable="false">
         <item>0x1100-0x1102:rat=gsm, emergency=true</item>

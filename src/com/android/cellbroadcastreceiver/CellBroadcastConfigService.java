@@ -208,6 +208,9 @@ public class CellBroadcastConfigService extends IntentService {
         setCellBroadcastRange(manager, enableTestAlerts,
                 CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
                         R.array.operator_defined_alert_range_strings));
+        setCellBroadcastRange(manager, enableTestAlerts,
+                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
+                        R.array.state_local_test_alert_range_strings));
 
         // Enable/Disable GSM ETWS messages.
         setCellBroadcastRange(manager, enableEtwsAlerts,

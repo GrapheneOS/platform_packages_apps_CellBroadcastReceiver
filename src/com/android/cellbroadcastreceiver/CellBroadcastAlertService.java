@@ -558,11 +558,7 @@ public class CellBroadcastAlertService extends Service {
         } else {
             int channel = message.getServiceCategory();
             ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
-                    .getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
-                            R.array.additional_cbs_channels_strings);
-            ranges.addAll(CellBroadcastChannelManager
-                    .getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
-                            R.array.public_safety_messages_channels_range_strings));
+                    .getAllCellBroadcastChannelRanges(getApplicationContext());
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (channel >= range.mStartId && channel <= range.mEndId) {

@@ -84,6 +84,8 @@
     <string name="cmas_exercise_alert">Emergency alert (exercise)</string>
     <!-- CMAS dialog title for operator defined use. [CHAR LIMIT=50] -->
     <string name="cmas_operator_defined_alert">Emergency alert (operator)</string>
+    <!-- Dialog title for all state/local test alert. [CHAR LIMIT=50] -->
+    <string name="state_local_test_alert">State/Local test alert</string>
     <!-- Dialog title for all other message identifiers in the PWS range. [CHAR LIMIT=50] -->
     <string name="pws_other_message_identifiers" translatable="false">@string/emergency_alert</string>
     <!-- Dialog title for all non-emergency cell broadcasts. [CHAR LIMIT=50] -->

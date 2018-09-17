@@ -398,6 +398,9 @@ public class CellBroadcastSettings extends Activity {
                             this.getContext(), R.array.operator_defined_alert_range_strings)
                     .isEmpty()
                     || !CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                            this.getContext(), R.array.state_local_test_alert_range_strings)
+                    .isEmpty()
+                    || !CellBroadcastChannelManager.getCellBroadcastChannelRanges(
                             this.getContext(), R.array.etws_test_alerts_range_strings).isEmpty();
         }
 

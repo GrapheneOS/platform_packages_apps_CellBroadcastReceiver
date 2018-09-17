@@ -64,6 +64,9 @@ public class CellBroadcastChannelManager {
                     R.array.etws_test_alerts_range_strings,
                     R.array.public_safety_messages_channels_range_strings
             ));
+
+    private static ArrayList<CellBroadcastChannelRange> sAllCellBroadcastChannelRanges = null;
+
     /**
      * Cell broadcast channel range
      * A range is consisted by starting channel id, ending channel id, and the alert type
@@ -222,6 +225,26 @@ public class CellBroadcastChannelManager {
             }
         }
 
+        return result;
+    }
+
+    /**
+     * Get all cell broadcast channels
+     *
+     * @param context Application context
+     * @return all cell broadcast channels
+     */
+    public static ArrayList<CellBroadcastChannelRange> getAllCellBroadcastChannelRanges(
+            Context context) {
+        if (sAllCellBroadcastChannelRanges != null) return sAllCellBroadcastChannelRanges;
+
+        ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
+
+        for (int key : sCellBroadcastRangeResourceKeys) {
+            result.addAll(getCellBroadcastChannelRanges(context, key));
+        }
+
+        sAllCellBroadcastChannelRanges = result;
         return result;
     }
 
