@@ -312,10 +312,6 @@ public class CellBroadcastResources {
             return R.string.cmas_operator_defined_alert;
         }
         if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory, R.array.state_local_test_alert_range_strings, context)) {
-            return R.string.state_local_test_alert;
-        }
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
                 serviceCategory, R.array.public_safety_messages_channels_range_strings, context)) {
             return R.string.public_safety_message;
         }
