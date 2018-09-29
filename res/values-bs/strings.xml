@@ -85,7 +85,7 @@
     <string name="cmas_category_safety" msgid="2986472639641883453">"Sigurnost"</string>
     <string name="cmas_category_security" msgid="2549520159044403704">"Zaštita"</string>
     <string name="cmas_category_rescue" msgid="4907571719983321086">"Spašavanje"</string>
-    <string name="cmas_category_fire" msgid="3331981591918341119">"Požarno"</string>
+    <string name="cmas_category_fire" msgid="3331981591918341119">"Požar"</string>
     <string name="cmas_category_health" msgid="312569774587117324">"Zdravstveno"</string>
     <string name="cmas_category_env" msgid="9213088574227522961">"Ekološko"</string>
     <string name="cmas_category_transport" msgid="5014901635987361642">"Transport"</string>

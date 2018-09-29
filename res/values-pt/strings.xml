@@ -77,7 +77,7 @@
     <string name="use_full_volume_title" msgid="8581439612945182255">"Usar volume máximo"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorar outras preferências de \"Não perturbe\" e volume"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Transmissões de atualização de área"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostrar informações de atualização no status do SIM"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostrar informações de atualização no status do chip"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Opções do desenvolvedor"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoria de alerta:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofísico"</string>
