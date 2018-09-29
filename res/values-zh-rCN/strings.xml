@@ -46,6 +46,8 @@
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"紧急警报（操作人员）"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"广播消息"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"公共安全消息"</string>
+    <!-- no translation found for state_local_test_alert (8003145745857480200) -->
+    <skip />
     <string name="emergency_alert" msgid="624783871477634263">"紧急警报"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"警报"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"广播消息"</string>
@@ -69,6 +71,10 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"针对即将发生的安全威胁发出警告"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"公共安全消息"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"可挽救生命或财产的推荐措施"</string>
+    <!-- no translation found for enable_state_local_test_alerts_title (1012930918171302720) -->
+    <skip />
+    <!-- no translation found for enable_state_local_test_alerts_summary (780298327377950187) -->
+    <skip />
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"紧急警报"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"针对威胁生命安全的事件发出警告"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"强制执行的每月测试"</string>
