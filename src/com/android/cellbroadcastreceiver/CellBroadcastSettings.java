@@ -90,6 +90,10 @@ public class CellBroadcastSettings extends Activity {
     // Whether to display monthly test messages (default is disabled).
     public static final String KEY_ENABLE_TEST_ALERTS = "enable_test_alerts";
 
+    // Whether to display state/local test messages (default disabled).
+    public static final String KEY_ENABLE_STATE_LOCAL_TEST_ALERTS =
+            "enable_state_local_test_alerts";
+
     // Preference key for whether to enable area update information notifications
     // Enabled by default for phones sold in Brazil and India, otherwise this setting may be hidden.
     public static final String KEY_ENABLE_AREA_UPDATE_INFO_ALERTS =
@@ -158,6 +162,7 @@ public class CellBroadcastSettings extends Activity {
         private TwoStatePreference mFullVolumeCheckBox;
         private TwoStatePreference mAreaUpdateInfoCheckBox;
         private TwoStatePreference mTestCheckBox;
+        private TwoStatePreference mStateLocalTestCheckBox;
         private Preference mAlertHistory;
         private PreferenceCategory mAlertCategory;
         private PreferenceCategory mAlertPreferencesCategory;
@@ -202,6 +207,8 @@ public class CellBroadcastSettings extends Activity {
                     findPreference(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS);
             mTestCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_TEST_ALERTS);
+            mStateLocalTestCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_STATE_LOCAL_TEST_ALERTS);
             mAlertHistory = findPreference(KEY_EMERGENCY_ALERT_HISTORY);
             mDevSettingCategory = (PreferenceCategory)
                     findPreference(KEY_CATEGORY_DEV_SETTINGS);
@@ -347,6 +354,17 @@ public class CellBroadcastSettings extends Activity {
                 }
             }
 
+            if (CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                    this.getContext(),
+                    R.array.state_local_test_alert_range_strings).isEmpty()) {
+                // Remove state local test messages
+                if (mAlertCategory != null) {
+                    if (mStateLocalTestCheckBox != null) {
+                        mAlertCategory.removePreference(mStateLocalTestCheckBox);
+                    }
+                }
+            }
+
             if (mAreaUpdateInfoCheckBox != null) {
                 mAreaUpdateInfoCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
             }
@@ -373,6 +391,10 @@ public class CellBroadcastSettings extends Activity {
             }
             if (mTestCheckBox != null) {
                 mTestCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
+            if (mStateLocalTestCheckBox != null) {
+                mStateLocalTestCheckBox.setOnPreferenceChangeListener(
+                        startConfigServiceListener);
             }
 
             if (mAlertHistory != null) {
@@ -466,6 +488,10 @@ public class CellBroadcastSettings extends Activity {
             if (mPublicSafetyMessagesChannelCheckBox != null) {
                 mPublicSafetyMessagesChannelCheckBox.setEnabled(alertsEnabled);
                 mPublicSafetyMessagesChannelCheckBox.setChecked(alertsEnabled);
+            }
+            if (mStateLocalTestCheckBox != null) {
+                mStateLocalTestCheckBox.setEnabled(alertsEnabled);
+                mStateLocalTestCheckBox.setChecked(alertsEnabled);
             }
         }
     }
