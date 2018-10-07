@@ -46,8 +46,7 @@
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"అత్యవసర హెచ్చరిక (ఆపరేటర్)"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"ప్రసార సందేశాలు"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"ప్రజా భద్రత సందేశం"</string>
-    <!-- no translation found for state_local_test_alert (8003145745857480200) -->
-    <skip />
+    <string name="state_local_test_alert" msgid="8003145745857480200">"రాష్ట్రీయ/స్థానిక పరీక్ష"</string>
     <string name="emergency_alert" msgid="624783871477634263">"అత్యవసర హెచ్చరిక"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"హెచ్చరికలు"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ప్రసార సందేశాలు"</string>
@@ -71,10 +70,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"తక్షణ భద్రతా ప్రమాదాల గురించి హెచ్చరించు"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ప్రజా భద్రత సందేశాలు"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ప్రాణ నష్టం లేదా ఆస్తి నష్టం జరగకుండా కాపాడే సిఫార్సు చేయబడిన చర్యలు"</string>
-    <!-- no translation found for enable_state_local_test_alerts_title (1012930918171302720) -->
-    <skip />
-    <!-- no translation found for enable_state_local_test_alerts_summary (780298327377950187) -->
-    <skip />
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"రాష్ట్రీయ మరియు స్థానిక పరీక్షలు"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"రాష్ట్రీయ మరియు స్థానిక అధికార సంస్థల నుండి పరీక్ష సందేశాలను స్వీకరిస్తుంది"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"అత్యవసర హెచ్చరికలు"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ప్రాణాంతకమైన సంఘటనల గురించి హెచ్చరించు"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"నెలవారీ పరీక్ష అవసరం"</string>

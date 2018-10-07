@@ -46,8 +46,7 @@
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Alertă de urgență (operator)"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Mesaje difuzate"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"Mesaj de siguranță publică"</string>
-    <!-- no translation found for state_local_test_alert (8003145745857480200) -->
-    <skip />
+    <string name="state_local_test_alert" msgid="8003145745857480200">"Testare națională/locală"</string>
     <string name="emergency_alert" msgid="624783871477634263">"Alertă de urgenţă"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alerte"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Mesaje privind difuzarea"</string>
@@ -71,10 +70,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Avertizează cu privire la amenințările iminente la adresa siguranței"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Mesaje de siguranță publică"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Acțiuni recomandate care pot salva vieți sau bunuri"</string>
-    <!-- no translation found for enable_state_local_test_alerts_title (1012930918171302720) -->
-    <skip />
-    <!-- no translation found for enable_state_local_test_alerts_summary (780298327377950187) -->
-    <skip />
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Testări naționale și locale"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Primiți mesaje de testare de la autoritățile de stat și locale"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Alerte de urgență"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Avertizează cu privire la evenimentele care pun în pericol viața"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Testul lunar obligatoriu"</string>

@@ -46,8 +46,7 @@
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Өзгөчө кырдаал жөнүндө айгай кабар (оператор)"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Билдирүүлөрдү таркатуу"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"Коомдук коопсуздук тууралуу билдирүү"</string>
-    <!-- no translation found for state_local_test_alert (8003145745857480200) -->
-    <skip />
+    <string name="state_local_test_alert" msgid="8003145745857480200">"Мамлекеттик/жергиликтүү органдардын билдирүүлөрү"</string>
     <string name="emergency_alert" msgid="624783871477634263">"Өзгөчө кырдаал жөнүндө шашылыш билдирүү"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Эскертүүлөр"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Билдирүүлөрдү таркатуу"</string>
@@ -71,10 +70,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Коопсуздукка коркунуч туудурган нерселер тууралуу кабарлоо"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Коомдук коопсуздук тууралуу билдирүүлөр"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Бирөөнүн өмүрүн же мүлкүн сактап калууга сунушталган аракеттер"</string>
-    <!-- no translation found for enable_state_local_test_alerts_title (1012930918171302720) -->
-    <skip />
-    <!-- no translation found for enable_state_local_test_alerts_summary (780298327377950187) -->
-    <skip />
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Мамлекеттик жана жергиликтүү башкаруу органдарынын сынамык билдирүүлөрү"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Мамлекеттик жана жергиликтүү башкаруу органдарынан сынамык билдирүүлөрдү алуу"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Шашылыш билдирүүлөр"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Жашоого коркунуч туудурган окуялар тууралуу эскертүү"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Милдеттүү ай сайын өткөрүлүүчү сыноо"</string>
