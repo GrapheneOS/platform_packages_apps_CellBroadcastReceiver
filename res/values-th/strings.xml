@@ -46,6 +46,7 @@
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"การแจ้งเตือนฉุกเฉิน (ผู้ให้บริการ)"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"ข้อความการแจ้งเตือน"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"ข้อความความปลอดภัยสาธารณะ"</string>
+    <string name="state_local_test_alert" msgid="8003145745857480200">"การทดสอบระดับมลรัฐ/ท้องถิ่น"</string>
     <string name="emergency_alert" msgid="624783871477634263">"การแจ้งเตือนฉุกเฉิน"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"การแจ้งเตือน"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ข้อความการออกอากาศ"</string>
@@ -69,6 +70,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"เตือนเกี่ยวกับภัยคุกคามความปลอดภัยที่จะเกิดขึ้น"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ข้อความด้านความปลอดภัยสาธารณะ"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"การดำเนินการที่แนะนำซึ่งจะช่วยรักษาชีวิตหรือทรัพย์สินได้"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"การทดสอบระดับมลรัฐและระดับท้องถิ่น"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"รับข้อความทดสอบจากหน่วยงานของมลรัฐและหน่วยงานท้องถิ่น"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"การแจ้งเตือนเหตุฉุกเฉิน"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"เตือนเกี่ยวกับเหตุการณ์ที่เป็นอันตรายต่อชีวิต"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"การทดสอบรายเดือนที่จำเป็น"</string>
