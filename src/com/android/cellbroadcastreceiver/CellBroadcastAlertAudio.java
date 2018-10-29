@@ -22,6 +22,7 @@ import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.media.AudioAttributes;
@@ -34,6 +35,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
@@ -74,10 +76,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     /** Extra for alert tone type */
     public static final String ALERT_AUDIO_TONE_TYPE =
             "com.android.cellbroadcastreceiver.ALERT_AUDIO_TONE_TYPE";
-
-    /** Extra for alert audio vibration enabled (from settings). */
-    public static final String ALERT_AUDIO_VIBRATE_EXTRA =
-            "com.android.cellbroadcastreceiver.ALERT_AUDIO_VIBRATE";
 
     /** Extra for alert vibration pattern (unless master volume is silent). */
     public static final String ALERT_AUDIO_VIBRATION_PATTERN_EXTRA =
@@ -303,34 +301,37 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mMessagePreferredLanguage = intent.getStringExtra(ALERT_AUDIO_MESSAGE_PREFERRED_LANGUAGE);
         mMessageDefaultLanguage = intent.getStringExtra(ALERT_AUDIO_MESSAGE_DEFAULT_LANGUAGE);
 
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
         // Get config of whether to always sound CBS alerts at full volume.
-        mUseFullVolume = PreferenceManager.getDefaultSharedPreferences(this)
-                .getBoolean(CellBroadcastSettings.KEY_USE_FULL_VOLUME, false);
+        mUseFullVolume = prefs.getBoolean(CellBroadcastSettings.KEY_USE_FULL_VOLUME, false);
 
         // retrieve the vibrate settings from cellbroadcast receiver settings.
-        mEnableVibrate = intent.getBooleanExtra(ALERT_AUDIO_VIBRATE_EXTRA, true);
+        mEnableVibrate = prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true);
         // retrieve the vibration patterns
         mVibrationPattern = intent.getIntArrayExtra(ALERT_AUDIO_VIBRATION_PATTERN_EXTRA);
 
         switch (mAudioManager.getRingerMode()) {
             case AudioManager.RINGER_MODE_SILENT:
                 if (DBG) log("Ringer mode: silent");
-                mEnableAudio = false;
-                mEnableVibrate = false;
+                if (!mUseFullVolume) {
+                    mEnableVibrate = false;
+                }
+                // If the phone is in silent mode, we only enable the audio when use full volume
+                // setting is turned on.
+                mEnableAudio = mUseFullVolume;
                 break;
             case AudioManager.RINGER_MODE_VIBRATE:
                 if (DBG) log("Ringer mode: vibrate");
-                mEnableAudio = false;
+                // If the phone is in vibration mode, we only enable the audio when use full volume
+                // setting is turned on.
+                mEnableAudio = mUseFullVolume;
                 break;
             case AudioManager.RINGER_MODE_NORMAL:
             default:
                 if (DBG) log("Ringer mode: normal");
                 mEnableAudio = true;
                 break;
-        }
-
-        if (mUseFullVolume) {
-            mEnableAudio = true;
         }
 
         if (mMessageBody != null && mEnableAudio) {
@@ -386,7 +387,15 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                 vibrationPattern[i] = patternArray[i];
                 vibrateDuration += patternArray[i];
             }
-            mVibrator.vibrate(vibrationPattern, 0);
+
+            // Use the alarm channel so it can vibrate in DnD mode, unless alarms are
+            // specifically disabled in DnD.
+            AudioAttributes.Builder attrBuilder = new AudioAttributes.Builder();
+            attrBuilder.setUsage(AudioAttributes.USAGE_ALARM);
+            AudioAttributes attr = attrBuilder.build();
+            VibrationEffect effect = VibrationEffect.createWaveform(vibrationPattern, 0);
+            log("vibrate: effect=" + effect + ", attr=" + attr);
+            mVibrator.vibrate(effect, attr);
         }
 
 
