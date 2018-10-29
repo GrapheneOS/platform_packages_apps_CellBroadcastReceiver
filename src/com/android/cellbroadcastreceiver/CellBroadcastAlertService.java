@@ -578,8 +578,6 @@ public class CellBroadcastAlertService extends Service {
         CellBroadcastChannelRange range = CellBroadcastChannelManager
                 .getCellBroadcastChannelRangeFromMessage(getApplicationContext(), message);
         audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE, alertType);
-        audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATE_EXTRA,
-                prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true));
         audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATION_PATTERN_EXTRA,
                 (range != null) ? range.mVibrationPattern
                         : getApplicationContext().getResources().getIntArray(
