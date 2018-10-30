@@ -18,7 +18,7 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- The name of the Cell Broadcast Receiver app. [CHAR LIMIT=NONE] -->
-    <string name="app_label">Cell Broadcasts</string>
+    <string name="app_label">Emergency alerts</string>
 
     <!-- Label for settings screen. [CHAR LIMIT=NONE] -->
     <string name="sms_cb_settings">Emergency alerts</string>
@@ -162,7 +162,7 @@
     <string name="enable_cmas_test_alerts_summary">Receive test messages for the safety alert system</string>
 
     <!-- Preference title for CMAS vibration on/off. [CHAR LIMIT=50] -->
-    <string name="enable_alert_vibrate_title">Vibrate</string>
+    <string name="enable_alert_vibrate_title">Vibration</string>
 
     <!-- Preference title for use full volume option. [CHAR LIMIT=50] -->
     <string name="use_full_volume_title">Use full volume</string>
