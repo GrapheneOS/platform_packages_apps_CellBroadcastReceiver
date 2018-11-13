@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="7559008249836700599">"सेल ब्रॉडकास्ट (CBC)"</string>
+    <string name="app_label" msgid="6006277287245076524">"इमरजेंसी के समय मिलने वाली सूचनाएं"</string>
     <string name="sms_cb_settings" msgid="3795852619005211509">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"सेल ब्रॉडकास्ट (CBC) सेटिंग इस उपयोगकर्ता के लिए मौजूद नहीं हैं"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक है"</string>
@@ -76,7 +76,7 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जान का खतरा हो सकता है"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"हर महीने की जाने वाली ज़रूरी जाँच"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"सुरक्षा की चेतावनी वाले सिस्टम के लिए टेस्ट मैसेज पाना"</string>
-    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"कंपन (वाइब्रेशन)"</string>
+    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"वाइब्रेशन"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"सबसे ऊंची आवाज़ पर सेट करें"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"आवाज़ और परेशान न करें सुविधा से जुड़ी पसंद की सेटिंग को अनदेखा करें"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"क्षेत्र अपडेट प्रसारण"</string>
