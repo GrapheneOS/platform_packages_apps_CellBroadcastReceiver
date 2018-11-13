@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="7559008249836700599">"सेल प्रसारणहरू"</string>
+    <string name="app_label" msgid="6006277287245076524">"आपतकालीन अलर्टहरू"</string>
     <string name="sms_cb_settings" msgid="3795852619005211509">"आपतकालीन अलर्टहरू"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"सेल प्रसारण सेटिङहरू यो प्रयोगकर्ताको लागि उपलब्ध छैनन्"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठिक छ"</string>
@@ -76,7 +76,7 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"जीवन जोखिममा पर्न सक्ने घटनाहरूबारे सचेत गराउनुहोस्"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"मासिक परीक्षण आवश्यक छ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"सुरक्षा सतर्कता प्रणालीका परीक्षण सन्देशहरू प्राप्त गर्नुहोस्"</string>
-    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"भाइब्रेट गर्नुहोस्"</string>
+    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"कम्पन"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"पूर्ण भोल्युम प्रयोग गर्नुहोस्"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"अन्य भोल्युम र बाधा नपुऱ्याउनुहोस्-का प्राथमिकतालाई बेवास्ता गर्नुहोस्"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"क्षेत्रसम्बन्धी अद्यावधिकका प्रसारणहरू"</string>

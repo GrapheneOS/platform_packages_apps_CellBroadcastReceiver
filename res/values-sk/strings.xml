@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="7559008249836700599">"Správy informačných služieb"</string>
+    <string name="app_label" msgid="6006277287245076524">"Tiesňové upozornenia"</string>
     <string name="sms_cb_settings" msgid="3795852619005211509">"Tiesňové upozornenia"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Tento používateľ nemá k dispozícii nastavenia správ informačných služieb"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
@@ -76,9 +76,9 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Upozorňovať na udalosti ohrozujúce život"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Povinný mesačný test"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Dostávať testovacie správy zo systému bezpečnostných upozornení"</string>
-    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrovať"</string>
+    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrácie"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Použiť plnú hlasitosť"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorovať ďalšie nastavenia hlasitosti a režim Nerušiť"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorovať ďalšie nastavenia hlasitosti a režim bez vyrušení"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Vysielania s aktuálnymi informáciami oblasti"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Zobrazovať informácie o aktualizácii v stave SIM karty"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Pre vývojárov"</string>

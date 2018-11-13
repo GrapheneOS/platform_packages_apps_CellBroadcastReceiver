@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="7559008249836700599">"Емитовања оператера"</string>
+    <string name="app_label" msgid="6006277287245076524">"Хитна обавештења"</string>
     <string name="sms_cb_settings" msgid="3795852619005211509">"Хитна обавештења"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Подешавања за поруке за мобилне уређаје на локалитету нису доступна за овог корисника"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Потврди"</string>
@@ -76,7 +76,7 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Упозоравај ме на догађаје опасне по живот"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Обавезан месечни тест"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Примај пробне поруке за систем безбедносних упозорења"</string>
-    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Вибрирај"</string>
+    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вибрација"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Користи највећу јачину звука"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Занемарује друга подешавања за Јачину звука и Не узнемиравај"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Обавештења о ажурирању подручја"</string>
