@@ -349,6 +349,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         // Vibration duration in milliseconds
         long vibrateDuration = 0;
 
+        // Get the alert tone duration. Negative tone duration value means we only play the tone
+        // once, not repeat it.
         int customAlertDuration = getResources().getInteger(R.integer.alert_duration);
 
         // Start the vibration first.
@@ -365,8 +367,12 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             AudioAttributes.Builder attrBuilder = new AudioAttributes.Builder();
             attrBuilder.setUsage(AudioAttributes.USAGE_ALARM);
             AudioAttributes attr = attrBuilder.build();
-            VibrationEffect effect = VibrationEffect.createWaveform(vibrationPattern, 0);
-            log("vibrate: effect=" + effect + ", attr=" + attr);
+            // If we only play the tone once, then we also play the vibration pattern once.
+            int repeatIndex = (customAlertDuration < 0)
+                    ? -1 /* not repeat */ : 0 /* index to repeat */;
+            VibrationEffect effect = VibrationEffect.createWaveform(vibrationPattern, repeatIndex);
+            log("vibrate: effect=" + effect + ", attr=" + attr + ", duration="
+                    + customAlertDuration);
             mVibrator.vibrate(effect, attr);
         }
 
