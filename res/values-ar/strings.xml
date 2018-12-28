@@ -127,7 +127,7 @@
     <item msgid="9097229303902157183">"كل دقيقتين"</item>
     <item msgid="5718214950343391480">"كل ٥ دقائق"</item>
     <item msgid="3863339891188103437">"كل ١٥ دقيقة"</item>
-    <item msgid="6868848414437854609">"إيقاف"</item>
+    <item msgid="6868848414437854609">"غير مفعّل"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"إنذارات الطوارئ اللاسلكية"</string>
 </resources>
