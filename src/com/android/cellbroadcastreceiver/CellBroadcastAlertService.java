@@ -36,6 +36,7 @@ import android.os.PersistableBundle;
 import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
@@ -97,6 +98,12 @@ public class CellBroadcastAlertService extends Service {
      * treated as a duplicate.
      */
     private static final long DEFAULT_EXPIRATION_TIME = DAY_IN_MILLIS;
+
+    /**
+     * Key for accessing message filter from SystemProperties. For testing use.
+     */
+    private static final String MESSAGE_FILTER_PROPERTY_KEY =
+            "persist.cellbroadcast.message_filter";
 
     /**
      * Alert type
@@ -253,6 +260,21 @@ public class CellBroadcastAlertService extends Service {
                 return false;
             }
         }
+
+        // Check for custom filtering
+        String messageFilters = SystemProperties.get(MESSAGE_FILTER_PROPERTY_KEY, "");
+        if (!TextUtils.isEmpty(messageFilters)) {
+            String[] filters = messageFilters.split(",");
+            for (String filter : filters) {
+                if (!TextUtils.isEmpty(filter)) {
+                    if (cbm.getMessageBody().toLowerCase().contains(filter)) {
+                        Log.i(TAG, "Skipped message due to filter: " + filter);
+                        return false;
+                    }
+                }
+            }
+        }
+
         return true;
     }
 
