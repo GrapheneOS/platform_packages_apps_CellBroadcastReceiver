@@ -92,6 +92,8 @@
     <string-array name="emergency_alerts_channels_range_strings" translatable="false"></string-array>
     <!-- Channels to receive public safety messages -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false"></string-array>
+    <!-- Channels to receive state/local test messages -->
+    <string-array name="state_local_test_alert_range_strings" translatable="false"></string-array>
 
     <!-- Values that are retrieved from the ListPreference.
          These must match the alert_reminder_interval_entries list above. -->

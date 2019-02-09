@@ -46,6 +46,7 @@
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Notfallbenachrichtigung (Betreiber)"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Broadcast-Nachrichten"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"Nachricht zur öffentlichen Sicherheit"</string>
+    <string name="state_local_test_alert" msgid="8003145745857480200">"Staatlicher/lokaler Test"</string>
     <string name="emergency_alert" msgid="624783871477634263">"Notfallbenachrichtigung"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Benachrichtigungen"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Broadcast-Nachrichten"</string>
@@ -69,13 +70,15 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Vor akuten Sicherheitsbedrohungen warnen"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Nachrichten zur öffentlichen Sicherheit"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Empfohlene Maßnahmen, die Leben oder Eigentum retten können"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Staatliche und lokale Tests"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Testnachrichten von staatlichen und lokalen Behörden erhalten"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Notfallbenachrichtigungen"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Vor lebensbedrohlichen Ereignissen warnen"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Erforderlicher monatlicher Test"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Testnachrichten für das Sicherheitswarnsystem erhalten"</string>
     <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Vibrieren"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Mit voller Lautstärke hören"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"Andere Einstellungen für Lautstärke und \"Nicht stören\" ignorieren"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"Andere Einstellungen für Lautstärke und \"Bitte nicht stören\" ignorieren"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Aktuelle Gebietsinformationen"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Aktuelle Informationen im SIM-Status anzeigen"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Entwickleroptionen"</string>

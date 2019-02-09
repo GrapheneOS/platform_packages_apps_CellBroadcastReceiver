@@ -46,6 +46,7 @@
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Alerta de emergência (telefonista)"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Transmitir mensagens"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"Mensagem de segurança pública"</string>
+    <string name="state_local_test_alert" msgid="8003145745857480200">"Teste estadual/local"</string>
     <string name="emergency_alert" msgid="624783871477634263">"Alerta de emergência"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alertas"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Transmitir mensagens"</string>
@@ -69,6 +70,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Aviso sobre ameaças iminentes à segurança"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Mensagens de segurança pública"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Ações recomendadas que podem salvar vidas ou propriedades"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Testes estaduais e locais"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Receber mensagens de teste das autoridades estaduais e locais"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Alertas de emergência"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Aviso sobre eventos perigosos"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Teste mensal obrigatório"</string>
@@ -77,7 +80,7 @@
     <string name="use_full_volume_title" msgid="8581439612945182255">"Usar volume máximo"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorar outras preferências de \"Não perturbe\" e volume"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Transmissões de atualização de área"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostrar informações de atualização no status do SIM"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostrar informações de atualização no status do chip"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"Opções do desenvolvedor"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoria de alerta:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofísico"</string>

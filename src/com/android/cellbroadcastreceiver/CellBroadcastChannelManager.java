@@ -62,19 +62,33 @@ public class CellBroadcastChannelManager {
                     R.array.operator_defined_alert_range_strings,
                     R.array.etws_alerts_range_strings,
                     R.array.etws_test_alerts_range_strings,
-                    R.array.public_safety_messages_channels_range_strings
+                    R.array.public_safety_messages_channels_range_strings,
+                    R.array.state_local_test_alert_range_strings
             ));
+
+    private static ArrayList<CellBroadcastChannelRange> sAllCellBroadcastChannelRanges = null;
+
     /**
      * Cell broadcast channel range
      * A range is consisted by starting channel id, ending channel id, and the alert type
      */
     public static class CellBroadcastChannelRange {
-
+        /** Defines the type of the alert. */
         private static final String KEY_TYPE = "type";
+        /** Defines if the alert is emergency. */
         private static final String KEY_EMERGENCY = "emergency";
+        /** Defines the network RAT for the alert. */
         private static final String KEY_RAT = "rat";
+        /** Defines the scope of the alert. */
         private static final String KEY_SCOPE = "scope";
+        /** Defines the vibration pattern of the alert. */
         private static final String KEY_VIBRATION = "vibration";
+        /**
+         * Defines whether the channel needs language filter or not. True indicates that the alert
+         * will only pop-up when the alert's language matches the device's language.
+         */
+        private static final String KEY_FILTER_LANGUAGE = "filter_language";
+
 
         public static final int SCOPE_UNKNOWN       = 0;
         public static final int SCOPE_CARRIER       = 1;
@@ -92,6 +106,7 @@ public class CellBroadcastChannelManager {
         public int mRat;
         public int mScope;
         public int[] mVibrationPattern;
+        public boolean mFilterLanguage;
 
         public CellBroadcastChannelRange(Context context, String channelRange) throws Exception {
 
@@ -101,6 +116,7 @@ public class CellBroadcastChannelManager {
             mScope = SCOPE_UNKNOWN;
             mVibrationPattern = context.getResources().getIntArray(
                     R.array.default_vibration_pattern);
+            mFilterLanguage = false;
 
             int colonIndex = channelRange.indexOf(':');
             if (colonIndex != -1) {
@@ -145,6 +161,11 @@ public class CellBroadcastChannelManager {
                                     for (int i = 0; i < vibration.length; i++) {
                                         mVibrationPattern[i] = Integer.parseInt(vibration[i]);
                                     }
+                                }
+                                break;
+                            case KEY_FILTER_LANGUAGE:
+                                if (value.equalsIgnoreCase("true")) {
+                                    mFilterLanguage = true;
                                 }
                                 break;
                         }
@@ -205,6 +226,26 @@ public class CellBroadcastChannelManager {
             }
         }
 
+        return result;
+    }
+
+    /**
+     * Get all cell broadcast channels
+     *
+     * @param context Application context
+     * @return all cell broadcast channels
+     */
+    public static ArrayList<CellBroadcastChannelRange> getAllCellBroadcastChannelRanges(
+            Context context) {
+        if (sAllCellBroadcastChannelRanges != null) return sAllCellBroadcastChannelRanges;
+
+        ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
+
+        for (int key : sCellBroadcastRangeResourceKeys) {
+            result.addAll(getCellBroadcastChannelRanges(context, key));
+        }
+
+        sAllCellBroadcastChannelRanges = result;
         return result;
     }
 
