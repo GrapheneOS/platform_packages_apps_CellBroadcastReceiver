@@ -204,6 +204,14 @@ public class CellBroadcastAlertService extends Service {
     }
 
     /**
+     * Reset the duplicate detection map.
+     */
+    public static void resetMessageDuplicateDetection() {
+        Log.d(TAG, "Reset alert duplicate detection map.");
+        sMessagesMap.clear();
+    }
+
+    /**
      * Get the carrier specific message duplicate expiration time.
      *
      * @param subId Subscription index
