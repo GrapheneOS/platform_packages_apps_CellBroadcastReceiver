@@ -276,8 +276,7 @@ public class CellBroadcastSettings extends Activity {
             boolean enableDevSettings = Settings.Global.getInt(getContext().getContentResolver(),
                     Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0;
 
-            Resources res = getResources();
-
+            Resources res = getResourcesForDefaultSmsSubscriptionId(getContext());
             initReminderIntervalList();
 
             boolean emergencyAlertOnOffOptionEnabled = isFeatureEnabled(getContext(),
@@ -424,11 +423,11 @@ public class CellBroadcastSettings extends Activity {
         }
 
         private void initReminderIntervalList() {
+            Resources res = getResourcesForDefaultSmsSubscriptionId(getContext());
 
             String[] activeValues =
-                    getResources().getStringArray(R.array.alert_reminder_interval_active_values);
-            String[] allEntries =
-                    getResources().getStringArray(R.array.alert_reminder_interval_entries);
+                    res.getStringArray(R.array.alert_reminder_interval_active_values);
+            String[] allEntries = res.getStringArray(R.array.alert_reminder_interval_entries);
             String[] newEntries = new String[activeValues.length];
 
             // Only add active interval to the list
@@ -517,5 +516,16 @@ public class CellBroadcastSettings extends Activity {
         }
 
         return defaultValue;
+    }
+
+    public static Resources getResourcesForDefaultSmsSubscriptionId(Context context) {
+        int subId = SubscriptionManager.getDefaultSmsSubscriptionId();
+        if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+            subId = SubscriptionManager.getDefaultSubscriptionId();
+            if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+                return context.getResources();
+            }
+        }
+        return SubscriptionManager.getResourcesForSubId(context, subId);
     }
 }
