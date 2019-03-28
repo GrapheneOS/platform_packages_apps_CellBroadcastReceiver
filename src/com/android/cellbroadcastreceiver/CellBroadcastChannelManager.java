@@ -114,8 +114,9 @@ public class CellBroadcastChannelManager {
             mEmergencyLevel = LEVEL_UNKNOWN;
             mRat = SmsManager.CELL_BROADCAST_RAN_TYPE_GSM;
             mScope = SCOPE_UNKNOWN;
-            mVibrationPattern = context.getResources().getIntArray(
-                    R.array.default_vibration_pattern);
+            mVibrationPattern =
+                    CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(context)
+                            .getIntArray(R.array.default_vibration_pattern);
             mFilterLanguage = false;
 
             int colonIndex = channelRange.indexOf(':');
@@ -214,7 +215,9 @@ public class CellBroadcastChannelManager {
     public static ArrayList<CellBroadcastChannelRange> getCellBroadcastChannelRanges(
             Context context, int key) {
         ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
-        String[] ranges = context.getResources().getStringArray(key);
+        String[] ranges =
+                CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(context)
+                        .getStringArray(key);
 
         if (ranges != null) {
             for (String range : ranges) {

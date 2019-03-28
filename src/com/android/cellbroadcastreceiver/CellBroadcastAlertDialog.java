@@ -350,15 +350,16 @@ public class CellBroadcastAlertDialog extends Activity {
      * @param message CB message which is used to update alert text.
      */
     private void updateAlertText(CellBroadcastMessage message) {
-        int titleId = CellBroadcastResources.getDialogTitleResource(
-                getApplicationContext(), message);
+        Context context = getApplicationContext();
+        int titleId = CellBroadcastResources.getDialogTitleResource(context, message);
 
         String title = getText(titleId).toString();
         TextView titleTextView = findViewById(R.id.alertTitle);
 
-        if (getApplicationContext().getResources().getBoolean(R.bool.show_date_time_title)) {
+        if (CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(context)
+                .getBoolean(R.bool.show_date_time_title)) {
             titleTextView.setSingleLine(false);
-            title += "\n" + message.getDateString(getApplicationContext());
+            title += "\n" + message.getDateString(context);
         }
 
         setTitle(title);
