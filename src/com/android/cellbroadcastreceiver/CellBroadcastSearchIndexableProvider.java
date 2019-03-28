@@ -89,7 +89,8 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     @Override
     public Cursor queryRawData(String[] projection) {
         MatrixCursor cursor = new MatrixCursor(INDEXABLES_RAW_COLUMNS);
-        final Resources res = getContext().getResources();
+        final Resources res =
+                CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(getContext());
 
         Object[] raw = new Object[INDEXABLES_RAW_COLUMNS.length];
         raw[COLUMN_INDEX_RAW_TITLE] = res.getString(R.string.sms_cb_settings);
@@ -130,7 +131,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
         boolean enableDevSettings = Settings.Global.getInt(getContext().getContentResolver(),
                 Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0;
 
-        Resources res = getContext().getResources();
+        Resources res = CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(getContext());
         Object[] ref;
 
         ref = new Object[1];
