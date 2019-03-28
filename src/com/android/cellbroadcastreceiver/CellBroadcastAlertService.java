@@ -314,7 +314,9 @@ public class CellBroadcastAlertService extends Service {
 
         // Check if message body should be used for duplicate detection.
         boolean shouldCompareMessageBody =
-                getApplicationContext().getResources().getBoolean(R.bool.duplicate_compare_body);
+                CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(
+                                getApplicationContext())
+                        .getBoolean(R.bool.duplicate_compare_body);
 
         int hashCode = shouldCompareMessageBody ? message.getMessageBody().hashCode() : 0;
 
@@ -609,10 +611,13 @@ public class CellBroadcastAlertService extends Service {
         CellBroadcastChannelRange range = CellBroadcastChannelManager
                 .getCellBroadcastChannelRangeFromMessage(getApplicationContext(), message);
         audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE, alertType);
-        audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATION_PATTERN_EXTRA,
-                (range != null) ? range.mVibrationPattern
-                        : getApplicationContext().getResources().getIntArray(
-                        R.array.default_vibration_pattern));
+        audioIntent.putExtra(
+                CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATION_PATTERN_EXTRA,
+                (range != null)
+                        ? range.mVibrationPattern
+                        : CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(
+                                        getApplicationContext())
+                                .getIntArray(R.array.default_vibration_pattern));
 
         String messageBody = message.getMessageBody();
 
@@ -655,6 +660,7 @@ public class CellBroadcastAlertService extends Service {
     static void addToNotificationBar(CellBroadcastMessage message,
                                      ArrayList<CellBroadcastMessage> messageList, Context context,
                                      boolean fromSaveState) {
+        Resources res = CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(context);
         int channelTitleId = CellBroadcastResources.getDialogTitleResource(context, message);
         CharSequence channelName = context.getText(channelTitleId);
         String messageBody = message.getMessageBody();
@@ -685,15 +691,16 @@ public class CellBroadcastAlertService extends Service {
         final String channelId = CellBroadcastChannelManager.isEmergencyMessage(context, message)
                 ? NOTIFICATION_CHANNEL_EMERGENCY_ALERTS : NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS;
         // use default sound/vibration/lights for non-emergency broadcasts
-        Notification.Builder builder = new Notification.Builder(context, channelId)
-                .setSmallIcon(R.drawable.ic_warning_googred)
-                .setTicker(channelName)
-                .setWhen(System.currentTimeMillis())
-                .setCategory(Notification.CATEGORY_SYSTEM)
-                .setPriority(Notification.PRIORITY_HIGH)
-                .setColor(context.getResources().getColor(R.color.notification_color))
-                .setVisibility(Notification.VISIBILITY_PUBLIC)
-                .setOngoing(message.isEmergencyAlertMessage());
+        Notification.Builder builder =
+                new Notification.Builder(context, channelId)
+                        .setSmallIcon(R.drawable.ic_warning_googred)
+                        .setTicker(channelName)
+                        .setWhen(System.currentTimeMillis())
+                        .setCategory(Notification.CATEGORY_SYSTEM)
+                        .setPriority(Notification.PRIORITY_HIGH)
+                        .setColor(res.getColor(R.color.notification_color))
+                        .setVisibility(Notification.VISIBILITY_PUBLIC)
+                        .setOngoing(message.isEmergencyAlertMessage());
 
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
             builder.setDeleteIntent(pi);
@@ -727,7 +734,7 @@ public class CellBroadcastAlertService extends Service {
         // Alert Dialog, it will call this and override the emergency audio tone.
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)
                 && !CellBroadcastChannelManager.isEmergencyMessage(context, message)) {
-            if (context.getResources().getBoolean(R.bool.watch_enable_non_emergency_audio)) {
+            if (res.getBoolean(R.bool.watch_enable_non_emergency_audio)) {
                 // start audio/vibration/speech service for non emergency alerts
                 Intent audioIntent = new Intent(context, CellBroadcastAlertAudio.class);
                 audioIntent.setAction(CellBroadcastAlertAudio.ACTION_START_ALERT_AUDIO);
