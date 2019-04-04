@@ -345,13 +345,16 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         stop();
 
         log("playAlertTone: alertType=" + alertType);
+        Resources res =
+                CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(
+                        getApplicationContext());
 
         // Vibration duration in milliseconds
         long vibrateDuration = 0;
 
         // Get the alert tone duration. Negative tone duration value means we only play the tone
         // once, not repeat it.
-        int customAlertDuration = getResources().getInteger(R.integer.alert_duration);
+        int customAlertDuration = res.getInteger(R.integer.alert_duration);
 
         // Start the vibration first.
         if (mEnableVibrate) {
@@ -404,26 +407,21 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             }
 
             try {
-                log("Locale=" + getResources().getConfiguration().getLocales()
-                        + ", alertType=" + alertType);
+                log("Locale=" + res.getConfiguration().getLocales() + ", alertType=" + alertType);
 
                 // Load the tones based on type
                 switch (alertType) {
                     case ETWS_EARTHQUAKE:
-                        setDataSourceFromResource(getResources(), mMediaPlayer,
-                                R.raw.etws_earthquake);
+                        setDataSourceFromResource(res, mMediaPlayer, R.raw.etws_earthquake);
                         break;
                     case ETWS_TSUNAMI:
-                        setDataSourceFromResource(getResources(), mMediaPlayer,
-                                R.raw.etws_tsunami);
+                        setDataSourceFromResource(res, mMediaPlayer, R.raw.etws_tsunami);
                         break;
                     case OTHER:
-                        setDataSourceFromResource(getResources(), mMediaPlayer,
-                                R.raw.etws_other_disaster);
+                        setDataSourceFromResource(res, mMediaPlayer, R.raw.etws_other_disaster);
                         break;
                     case ETWS_DEFAULT:
-                        setDataSourceFromResource(getResources(), mMediaPlayer,
-                                R.raw.etws_default);
+                        setDataSourceFromResource(res, mMediaPlayer, R.raw.etws_default);
                         break;
                     case INFO:
                         // for non-emergency alerts, we are using system default notification sound.
@@ -435,8 +433,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                     case TEST:
                     case DEFAULT:
                     default:
-                        setDataSourceFromResource(getResources(), mMediaPlayer,
-                                R.raw.default_tone);
+                        setDataSourceFromResource(res, mMediaPlayer, R.raw.default_tone);
                 }
 
                 // Request audio focus (though we're going to play even if we don't get it)
