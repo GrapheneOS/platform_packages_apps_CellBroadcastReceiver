@@ -149,7 +149,8 @@ public class CellBroadcastAlertDialog extends Activity {
         private boolean initDrawableAndImageView() {
             if (mWarningIcon == null) {
                 try {
-                    mWarningIcon = getResources().getDrawable(R.drawable.ic_warning_googred);
+                    mWarningIcon = CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(
+                            getApplicationContext()).getDrawable(R.drawable.ic_warning_googred);
                 } catch (Resources.NotFoundException e) {
                     Log.e(TAG, "warning icon resource not found", e);
                     return false;
