@@ -106,7 +106,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             // rename registered notification channels on locale change
             CellBroadcastAlertService.createNotificationChannels(context);
         } else if (Intent.ACTION_SERVICE_STATE.equals(action)) {
-            if (context.getResources().getBoolean(
+            if (CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(context).getBoolean(
                     R.bool.reset_duplicate_detection_on_airplane_mode)) {
                 Bundle extras = intent.getExtras();
                 ServiceState ss = ServiceState.newFromBundle(extras);
