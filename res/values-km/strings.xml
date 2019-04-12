@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="7559008249836700599">"ការ​ផ្សាយ​ចល័ត"</string>
+    <string name="app_label" msgid="6006277287245076524">"ការជូន​ដំណឹង​ពេលអាសន្ន"</string>
     <string name="sms_cb_settings" msgid="3795852619005211509">"ការជូន​ដំណឹង​ពេលអាសន្ន"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"ការ​កំណត់​ប្រកាស​ចល័ត​មិន​អាច​ប្រើ​បាន​សម្រាប់​អ្នក​ប្រើ​នេះ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"យល់​ព្រម​"</string>
@@ -76,7 +76,7 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ព្រមាន​អំពី​ព្រឹត្តិការណ៍​ដែលគំរាម​កំហែងដល់​អាយុជីវិត"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"តេស្ត​ប្រចាំ​ខែ​ដែល​ចាំបាច់"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"ទទួលសារសាកល្បង​សម្រាប់ប្រព័ន្ធ​ជូនដំណឹងផ្នែក​សុវត្ថិភាព"</string>
-    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"ញ័រ"</string>
+    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ការ​ញ័រ"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"ប្រើកម្រិតសំឡេងពេញ"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"មិនអើពើនឹងសំឡេងផ្សេងទៀត និងចំណូល​ចិត្ត​មុខងារ​កុំ​រំខាន"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ការផ្សាយបច្ចុប្បន្នភាពតំបន់"</string>

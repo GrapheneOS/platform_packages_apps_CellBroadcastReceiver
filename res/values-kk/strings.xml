@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="7559008249836700599">"Cell Broadcasts"</string>
+    <string name="app_label" msgid="6006277287245076524">"Төтенше жағдай туралы ескертулер"</string>
     <string name="sms_cb_settings" msgid="3795852619005211509">"Төтенше жағдай туралы хабарламалар"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Ұялы таратылым параметрлері осы пайдаланушы үшін қол жетімді емес"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Жарайды"</string>
@@ -76,7 +76,7 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Өмірге қауіп төндіретін жағдайлар туралы ескерту"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Ай сайынғы міндетті сынақ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Қауіпсіздік жөнінде ескерту жүйесінің тексеру хабарларын алу"</string>
-    <string name="enable_alert_vibrate_title" msgid="982817538757982090">"Діріл"</string>
+    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Діріл"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Дыбысты толықтай шығару"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Басқа дыбыс реттеуін және \"Мазаламау\" параметрлерін елемеу"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Жергілікті жаңартылған ақпаратты тарату"</string>
