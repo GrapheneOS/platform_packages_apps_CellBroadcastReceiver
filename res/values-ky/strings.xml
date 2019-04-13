@@ -29,7 +29,7 @@
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Бул уюк таркатмасы жок кылынсынбы?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Кабыл алынган уюк билдирүүлөрүнүн бардыгы жок кылынсынбы?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Жок кылуу"</string>
-    <string name="button_cancel" msgid="7479958360523246140">"Жокко чыгаруу"</string>
+    <string name="button_cancel" msgid="7479958360523246140">"Жок"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"Жер титирөө жөнүндө эскертүү"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"Цунами жөнүндө эскертүү"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Жер титирөө жана цунами жөнүндө эскертүү"</string>
