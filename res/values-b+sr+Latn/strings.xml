@@ -54,8 +54,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Dozvolite obaveštenja"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"Primajte hitna obaveštenja"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Zvuk podsetnika za obaveštenja"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Izgovorite poruku obaveštenja"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Koristite opciju pretvaranja teksta u govor za izgovaranje poruka obaveštenja o hitnom slučaju"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Izgovori poruku obaveštenja"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Koristi opciju pretvaranja teksta u govor za izgovaranje poruka obaveštenja o hitnom slučaju"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Istorija hitnih obaveštenja"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Podešavanja obaveštenja"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS probna emitovanja"</string>

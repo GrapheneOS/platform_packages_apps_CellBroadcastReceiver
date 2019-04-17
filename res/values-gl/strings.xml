@@ -63,7 +63,7 @@
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Ameazas extremas"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Ameazas extremas para a vida e a propiedade"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ameazas graves"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ameazas graves para vida e a propiedade"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ameazas graves para a vida e a propiedade"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Alertas AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Avisos de emerxencia de secuestro de menores"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Mensaxes de alerta"</string>
@@ -77,11 +77,11 @@
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Proba mensual obrigatoria"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Recibir mensaxes de proba para o sistema de alertas de seguranza"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibración"</string>
-    <string name="use_full_volume_title" msgid="8581439612945182255">"Usar volume completo"</string>
+    <string name="use_full_volume_title" msgid="8581439612945182255">"Usar volume máximo"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignora outras preferencias de volume e de Non molestar"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Emisións de información actualizada sobre a zona"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostra información actualizada no estado da SIM"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"Opcións de programador"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"Opcións para programadores"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoría de alerta:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Xeofísicas"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorolóxicas"</string>
