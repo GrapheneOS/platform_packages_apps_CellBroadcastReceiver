@@ -27,7 +27,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.os.UserManager;
-import android.provider.Settings;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
@@ -39,6 +38,8 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
+
+import com.android.settingslib.development.DevelopmentSettingsEnabler;
 
 /**
  * Settings activity for the cell broadcast receiver.
@@ -273,8 +274,8 @@ public class CellBroadcastSettings extends Activity {
                     };
 
             // Show extra settings when developer options is enabled in settings.
-            boolean enableDevSettings = Settings.Global.getInt(getContext().getContentResolver(),
-                    Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0;
+            boolean enableDevSettings =
+                    DevelopmentSettingsEnabler.isDevelopmentSettingsEnabled(getContext());
 
             Resources res = getResourcesForDefaultSmsSubscriptionId(getContext());
             initReminderIntervalList();
