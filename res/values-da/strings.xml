@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"Nødalarmer"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Denne bruger har ikke adgang til indstillingerne for Cell Broadcast"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Der er ingen tidligere underretninger"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Ingen tidligere nødalarmer"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Slet meddelelser"</string>
     <string name="message_options" msgid="3178489901903589574">"Valgmuligheder for beskeder"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Se info"</string>
@@ -51,11 +51,11 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alarmer"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Udsendte beskeder"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Nødalarmer"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Tillad underretninger"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Tillad nødalarmer"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"Få notifikationer i nødsituationer"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Lyd for alarmpåmindelse"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Læs advarselsmeddelelser op"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Brug Oplæsning for at indtale beskeder om nødalarmer"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"Brug Oplæsning for at oplæse beskeder om nødalarmer"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historik for nødalarmer"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Præferencer for alarmer"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Testmeddelelser fra ETWS"</string>
@@ -116,8 +116,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Modtaget:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ulæste advarsler."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nye advarsler"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Vis en fravalgsdialogboks efter visningen af den første advarsel (nationalalarm undtaget)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Vis en fravalgsdialogboks"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Vis en Vis en dialogboks om fravalg efter visningen af den første advarsel (nationalalarm undtaget)."</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Vis en dialogboks om fravalg"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Du modtager i øjeblikket nødadvarsler. Vil du gerne fortsætte med at modtage dem?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nej"</string>

@@ -116,8 +116,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Diterima:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> peringatan belum dibaca."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Peringatan baru"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Tunjukkan dialog tidak ikut setelah notifikasi pertama tampil (selain Notifikasi Presidensial)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Tunjukkan dialog penyisihan"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Tunjukkan dialog menolak ikut serta setelah notifikasi pertama tampil (selain Notifikasi Presidensial)."</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Tunjukkan dialog menolak ikut serta"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Saat ini Anda menerima Notifikasi Darurat. Apakah Anda ingin terus menerima Notifikasi Darurat?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ya"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Tidak"</string>
