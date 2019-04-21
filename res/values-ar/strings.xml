@@ -53,19 +53,19 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"إنذارات الطوارئ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"السماح بالتنبيهات"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"تلقّي إشعارات عن حالات الطوارئ"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"صوت تذكير التنبيه"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"نطق رسالة التنبيه"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"استخدام ميزة \"تحويل النص إلى كلام\" لنطق رسائل إشعارات الطوارئ"</string>
+    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"مدّة التذكير بالتنبيه"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"الاستماع إلى رسالة التنبيه"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"استخدام ميزة \"تحويل النص إلى كلام\" لكي تستمع إلى رسائل إشعارات الطوارئ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"سجلّ تنبيهات الطوارئ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"الإعدادات المفضّلة للتنبيهات"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"‏مجموعات البث التجريبية في ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"مجموعات البث التجريبية لنظام التحذير المبكر من موجات تسونامي عقب الزلازل"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"التهديدات الشديدة"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"التهديدات الشديدة للحياة والممتلكات"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"التهديدات القصوى"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"التهديدات القصوى للحياة والممتلكات"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"التهديدات الخطيرة"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"التهديدات الخطيرة للحياة والممتلكات"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"‏تنبيهات AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"نشرات طوارئ اختطاف الأطفال"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"نشرات طارئة عن اختطاف الأطفال"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"رسائل التنبيه"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"إرسال تحذير بشأن التهديدات الوشيكة للسلامة"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"رسائل السلامة العامة"</string>
@@ -78,7 +78,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"استلام رسائل تجريبية لنظام تنبيهات السلامة"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"الاهتزاز"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"استخدام مستوى الصوت الكامل"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"تجاهل التفضيلات الأخرى لمستوى الصوت وخيار عدم الإزعاج"</string>
+    <string name="use_full_volume_summary" msgid="3560764277281704697">"تجاهل الإعدادات الأخرى لمستوى الصوت وخيار \"عدم الإزعاج\""</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"عمليات بث معلومات التحديث المتعلقة بالمنطقة"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"‏إظهار معلومات التحديث في حالة SIM"</string>
     <string name="category_dev_settings_title" msgid="6194393458398329994">"خيارات مطور البرامج"</string>
@@ -116,8 +116,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"تم التلقي:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> من الاشعارات غير المقروءة."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"اشعارات جديدة"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"عرض مربّع حوار الإيقاف بعد عرض أول تنبيه (غير التنبيه الرئاسي)"</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"عرض مربّع الإيقاف"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"عرض خيار الإيقاف بعد عرض أوّل تنبيه (غير التنبيه الرئاسي)"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"عرض خيار الإيقاف"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"أنت حاليًا تتلقى اشعارات طوارئ. هل تريد متابعة تلقي اشعارات الطوارئ؟"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"نعم"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"لا"</string>

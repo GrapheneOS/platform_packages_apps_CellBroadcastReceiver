@@ -35,7 +35,7 @@
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Предупреждение о землетрясении и цунами"</string>
     <string name="etws_test_message" msgid="8447820262584381894">"Тест предупреждения о землетрясении и цунами"</string>
     <string name="etws_other_emergency_type" msgid="5233080551309721499">"Предупреждение о чрезвычайной ситуации"</string>
-    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Национальное оповещение"</string>
+    <string name="cmas_presidential_level_alert" msgid="1209234030582361001">"Президентское оповещение"</string>
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Экстренное оповещение (чрезвычайная ситуация)"</string>
     <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"Экстренное оповещение (чрезвычайная ситуация)"</string>
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"Экстренное оповещение (чрезвычайная ситуация)"</string>
@@ -116,7 +116,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Получено:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"Непрочитанных оповещений: <xliff:g id="COUNT">%s</xliff:g>."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Новые оповещения"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Предлагать отключить уведомления экстренных служб при первом появлении"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Предлагать отключить после первого оповещения (кроме президентского)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Отключение оповещений"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Вы получаете экстренные оповещения. Вы хотите получать их в дальнейшем?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Да"</string>
