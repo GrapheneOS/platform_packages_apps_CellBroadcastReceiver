@@ -75,7 +75,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"అత్యవసర హెచ్చరికలు"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ప్రాణాంతకమైన సంఘటనల గురించి హెచ్చరించు"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"నెలవారీ పరీక్ష అవసరం"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"భద్రతా హెచ్చరిక సిస్టమ్ కోసం పరీక్ష సందేశాలను స్వీకరించండి"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"భద్రతా హెచ్చరిక సిస్టమ్ కోసం టెస్ట్‌ సందేశాలను స్వీకరించండి"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"వైబ్రేషన్"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"పూర్తి వాల్యూమ్‌ను ఉపయోగించు"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"ఇతర వాల్యూమ్ మరియు అంతరాయం కలిగించవద్దు ప్రాధాన్యతలను విస్మరిస్తుంది"</string>
