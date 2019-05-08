@@ -30,7 +30,7 @@
     <string name="button_dismiss">OK</string>
 
     <!-- Text for list view when empty (no broadcasts). [CHAR LIMIT=200] -->
-    <string name="no_cell_broadcasts">There are no active alerts in your area. You can change the Alert settings using the Settings menu option.</string>
+    <string name="no_cell_broadcasts">No previous alerts</string>
 
     <!-- Menu item for deleting all broadcasts. [CHAR LIMIT=30] -->
     <string name="menu_delete_all">Delete broadcasts</string>
