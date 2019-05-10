@@ -116,7 +116,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Modtaget:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ulæste advarsler."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nye advarsler"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Vis en Vis en dialogboks om fravalg efter visningen af den første advarsel (nationalalarm undtaget)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Vis en dialogboks om fravalg efter visningen af den første advarsel (nationalalarm undtaget)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Vis en dialogboks om fravalg"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Du modtager i øjeblikket nødadvarsler. Vil du gerne fortsætte med at modtage dem?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
