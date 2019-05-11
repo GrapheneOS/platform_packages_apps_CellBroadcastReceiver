@@ -51,7 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"सूचना"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण मेसेज"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"आणीबाणीच्या सूचना"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"सूचनांची अनुमती द्या"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"सूचनांना अनुमती द्या"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"आणीबाणी सूचना मिळवा"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"सूचना रिमाइंडरचा आवाज"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"सूचना मेसेज बोला"</string>
@@ -116,7 +116,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"प्राप्त झाले:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> न वाचलेल्या सूचना."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"नवीन सूचना"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"पहिली सूचना (राष्ट्रपतींच्या सूचनेव्यतिरिक्त) प्रदर्शित केल्यानंतर निवड रद्द करा डायलॉग दाखवा."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"पहिली सूचना (राष्ट्रपतींच्या सूचनेव्यतिरिक्त) डिस्प्ले केल्यानंतर निवड रद्द करा डायलॉग दाखवा."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"निवड रद्द करा संवाद दर्शवा"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"तुम्ही सध्या आणीबाणी सूचना प्राप्त करत आहात. तुम्ही आणीबाणी सूचना प्राप्त करणे सुरु ठेऊ इच्छिता का?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"होय"</string>
