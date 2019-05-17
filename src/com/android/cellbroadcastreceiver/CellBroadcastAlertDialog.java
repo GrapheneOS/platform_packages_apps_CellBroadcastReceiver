@@ -43,6 +43,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -390,6 +392,34 @@ public class CellBroadcastAlertDialog extends Activity {
                 mMessageList = newMessageList;
             } else {
                 mMessageList.addAll(newMessageList);
+                if (CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(
+                                getApplicationContext())
+                        .getBoolean(R.bool.show_cmas_messages_in_priority_order)) {
+                    // Sort message list to show messages in a different order than received by
+                    // prioritizing them. Presidential Alert only has top priority.
+                    Collections.sort(
+                            mMessageList,
+                            new Comparator() {
+                                public int compare(Object o1, Object o2) {
+                                    boolean isPresidentialAlert1 =
+                                            ((CellBroadcastMessage) o1).getCmasMessageClass()
+                                                    == SmsCbCmasInfo
+                                                            .CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
+                                    boolean isPresidentialAlert2 =
+                                            ((CellBroadcastMessage) o2).getCmasMessageClass()
+                                                    == SmsCbCmasInfo
+                                                            .CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
+                                    if (isPresidentialAlert1 ^ isPresidentialAlert2) {
+                                        return isPresidentialAlert1 ? 1 : -1;
+                                    }
+                                    Long time1 =
+                                            new Long(((CellBroadcastMessage) o1).getDeliveryTime());
+                                    Long time2 =
+                                            new Long(((CellBroadcastMessage) o2).getDeliveryTime());
+                                    return time2.compareTo(time1);
+                                }
+                            });
+                }
             }
             Log.d(TAG, "onNewIntent called with message list of size " + newMessageList.size());
             updateAlertText(getLatestMessage());
