@@ -29,6 +29,8 @@
     <bool name="watch_enable_non_emergency_audio">false</bool>
     <!-- Whether to reset alert message duplicate detection after toggling airplane mode -->
     <bool name="reset_duplicate_detection_on_airplane_mode">false</bool>
+    <!-- Whether to show CMAS messages by in a different order than received by prioritizing them -->
+    <bool name="show_cmas_messages_in_priority_order">false</bool>
 
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
