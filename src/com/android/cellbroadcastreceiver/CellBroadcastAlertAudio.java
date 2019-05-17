@@ -344,7 +344,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         // stop() checks to see if we are already playing.
         stop();
 
-        log("playAlertTone: alertType=" + alertType);
+        log("playAlertTone: alertType=" + alertType + ", mEnableVibrate=" + mEnableVibrate
+                + ", mEnableAudio=" + mEnableAudio + ", mUseFullVolume=" + mUseFullVolume);
         Resources res =
                 CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(
                         getApplicationContext());
@@ -365,10 +366,13 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                 vibrateDuration += patternArray[i];
             }
 
-            // Use the alarm channel so it can vibrate in DnD mode, unless alarms are
-            // specifically disabled in DnD.
             AudioAttributes.Builder attrBuilder = new AudioAttributes.Builder();
             attrBuilder.setUsage(AudioAttributes.USAGE_ALARM);
+            if (mUseFullVolume) {
+                // Set the flags to bypass DnD mode if the user enables use full volume option.
+                attrBuilder.setFlags(AudioAttributes.FLAG_BYPASS_INTERRUPTION_POLICY
+                        | AudioAttributes.FLAG_BYPASS_MUTE);
+            }
             AudioAttributes attr = attrBuilder.build();
             // If we only play the tone once, then we also play the vibration pattern once.
             int repeatIndex = (customAlertDuration < 0)
