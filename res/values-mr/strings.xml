@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"आणीबाणीच्या सूचना"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"या वापरकर्त्‍यासाठी सेल प्रसारण सेटिंग्‍ज उपलब्‍ध नाहीत"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक आहे"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"मागील अलर्ट नाहीत"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"यापूर्वीचे अलर्ट नाहीत"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"प्रसारणे हटवा"</string>
     <string name="message_options" msgid="3178489901903589574">"मेसेज पर्याय"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"तपशील पहा"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"तुम्ही सध्या आणीबाणी सूचना प्राप्त करत आहात. तुम्ही आणीबाणी सूचना प्राप्त करणे सुरु ठेऊ इच्छिता का?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"होय"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"नाही"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"आणीबाणी सतर्क इतिहास"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"आणीबाणी अलर्ट इतिहास"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"एकदा"</item>
     <item msgid="9097229303902157183">"दर 2 मिनिटांनी"</item>

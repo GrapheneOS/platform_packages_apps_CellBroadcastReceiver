@@ -81,7 +81,7 @@
     <string name="use_full_volume_summary" msgid="3560764277281704697">"અન્ય વૉલ્યૂમ અને ખલેલ પાડશો નહીં પસંદગીઓને અવગણો"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"વિસ્તારના અપડેટ વિશેના બ્રૉડકાસ્ટ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"અપડેટ વિશેની માહિતી SIMની સ્થિતિમાં બતાવો"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"વિકાસકર્તાનાં વિકલ્પો"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"ડેવલપરના વિકલ્પો"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"ચેતવણીની કૅટેગરી:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"ભૂભૌતિકીય"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"હવામાનશાસ્ત્ર સંબંધી"</string>
