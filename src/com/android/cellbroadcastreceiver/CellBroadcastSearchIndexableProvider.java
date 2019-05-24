@@ -41,8 +41,9 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.provider.SearchIndexableResource;
 import android.provider.SearchIndexablesProvider;
-import android.provider.Settings;
 import android.text.TextUtils;
+
+import com.android.settingslib.development.DevelopmentSettingsEnabler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,8 +129,8 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
         MatrixCursor cursor = new MatrixCursor(NON_INDEXABLES_KEYS_COLUMNS);
 
         // Show extra settings when developer options is enabled in settings.
-        boolean enableDevSettings = Settings.Global.getInt(getContext().getContentResolver(),
-                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0;
+        boolean enableDevSettings =
+                DevelopmentSettingsEnabler.isDevelopmentSettingsEnabled(getContext());
 
         Resources res = CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(getContext());
         Object[] ref;
