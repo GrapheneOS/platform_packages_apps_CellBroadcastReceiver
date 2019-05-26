@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Понастоящем получавате спешни сигнали. Искате ли да продължите да ги получавате?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Да"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Не"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"История на сигналите при спешни случаи"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Ист. на сигнали при спешност"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Веднъж"</item>
     <item msgid="9097229303902157183">"На всеки 2 минути"</item>
