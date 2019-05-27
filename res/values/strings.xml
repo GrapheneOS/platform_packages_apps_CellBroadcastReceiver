@@ -18,13 +18,13 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- The name of the Cell Broadcast Receiver app. [CHAR LIMIT=NONE] -->
-    <string name="app_label">Emergency alerts</string>
+    <string name="app_label">Wireless emergency alerts</string>
 
     <!-- Label for settings screen. [CHAR LIMIT=NONE] -->
-    <string name="sms_cb_settings">Emergency alerts</string>
+    <string name="sms_cb_settings">Wireless emergency alerts</string>
 
     <!-- Error message for users that aren't allowed to modify Cell broadcast settings [CHAR LIMIT=none] -->
-    <string name="cell_broadcast_settings_not_available">Cell Broadcast settings are not available for this user</string>
+    <string name="cell_broadcast_settings_not_available">Wireless emergency alert settings are not available for this user</string>
 
     <!-- Text for dismiss button in broadcast message view dialog. [CHAR LIMIT=25] -->
     <string name="button_dismiss">OK</string>
@@ -106,7 +106,7 @@
     <!-- Preference title for enable emergency alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_alerts_master_toggle_title">Allow alerts</string>
     <!-- Preference summaries for allow alerts checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_alerts_master_toggle_summary">Receive emergency notifications</string>
+    <string name="enable_alerts_master_toggle_summary">Receive wireless emergency alert notifications</string>
     <!-- Preference title for alert reminder interval list. [CHAR LIMIT=50] -->
     <string name="alert_reminder_interval_title">Alert reminder sound</string>
     <!-- Do not translate. Empty summary for alert reminder (set by CellBroadcastSettings). -->
@@ -114,7 +114,7 @@
     <!-- Preference title for enable text-to-speech checkbox. [CHAR LIMIT=50] -->
     <string name="enable_alert_speech_title">Speak alert message</string>
     <!-- Preference summary for enable text-to-speech checkbox. [CHAR LIMIT=100] -->
-    <string name="enable_alert_speech_summary">Use text-to-speech to speak emergency alert messages</string>
+    <string name="enable_alert_speech_summary">Use text-to-speech to speak wireless emergency alert messages</string>
     <!-- Preference title for emergency alert history. [CHAR LIMIT=50] -->
     <string name="emergency_alert_history_title">Emergency alert history</string>
 
@@ -258,7 +258,7 @@
     <string name="show_cmas_opt_out_title">Show opt-out dialog</string>
 
     <!-- CMAS opt-out dialog message. [CHAR LIMIT=160] -->
-    <string name="cmas_opt_out_dialog_text">You are currently receiving Emergency Alerts. Would you like to continue receiving Emergency Alerts?</string>
+    <string name="cmas_opt_out_dialog_text">You are currently receiving wireless emergency alerts. Would you like to continue receiving wireless emergency alerts?</string>
     <!-- Text for positive button in CMAS opt-out dialog. [CHAR LIMIT=25] -->
     <string name="cmas_opt_out_button_yes">Yes</string>
     <!-- Text for negative button in CMAS opt-out dialog. [CHAR LIMIT=25] -->
