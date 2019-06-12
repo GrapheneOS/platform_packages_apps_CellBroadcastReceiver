@@ -450,9 +450,9 @@ public class CellBroadcastAlertService extends Service {
         // Check if the messages are on additional channels enabled by the resource config.
         // If those channels are enabled by the carrier, but the device is actually roaming, we
         // should not allow the messages.
-        ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
-                .getInstance().getCellBroadcastChannelRanges(getApplicationContext(),
-                R.array.additional_cbs_channels_strings);
+        ArrayList<CellBroadcastChannelRange> ranges =
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        getApplicationContext(), R.array.additional_cbs_channels_strings);
 
         if (ranges != null) {
             for (CellBroadcastChannelRange range : ranges) {

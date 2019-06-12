@@ -182,66 +182,89 @@ public class CellBroadcastConfigService extends IntentService {
         /** Enable CMAS series messages. */
 
         // Enable/Disable Presidential messages.
-        setCellBroadcastRange(manager, enablePresidential,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                R.array.cmas_presidential_alerts_channels_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enablePresidential,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.cmas_presidential_alerts_channels_range_strings));
 
         // Enable/Disable CMAS extreme messages.
-        setCellBroadcastRange(manager, enableCmasExtremeAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                R.array.cmas_alert_extreme_channels_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enableCmasExtremeAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.cmas_alert_extreme_channels_range_strings));
 
         // Enable/Disable CMAS severe messages.
-        setCellBroadcastRange(manager, enableCmasSevereAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                R.array.cmas_alerts_severe_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enableCmasSevereAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.cmas_alerts_severe_range_strings));
 
         // Enable/Disable CMAS amber alert messages.
-        setCellBroadcastRange(manager, enableCmasAmberAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                R.array.cmas_amber_alerts_channels_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enableCmasAmberAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.cmas_amber_alerts_channels_range_strings));
 
         // Enable/Disable test messages.
-        setCellBroadcastRange(manager, enableTestAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                R.array.required_monthly_test_range_strings));
-        setCellBroadcastRange(manager, enableTestAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                        R.array.exercise_alert_range_strings));
-        setCellBroadcastRange(manager, enableTestAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                        R.array.operator_defined_alert_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enableTestAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.required_monthly_test_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enableTestAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.exercise_alert_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enableTestAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.operator_defined_alert_range_strings));
 
         // Enable/Disable GSM ETWS messages.
-        setCellBroadcastRange(manager, enableEtwsAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                R.array.etws_alerts_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enableEtwsAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.etws_alerts_range_strings));
 
         // Enable/Disable GSM ETWS test messages.
-        setCellBroadcastRange(manager, enableTestAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                R.array.etws_test_alerts_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enableTestAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.etws_test_alerts_range_strings));
 
         // Enable/Disable GSM public safety messages.
-        setCellBroadcastRange(manager, enablePublicSafetyMessagesChannelAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                        R.array.public_safety_messages_channels_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enablePublicSafetyMessagesChannelAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.public_safety_messages_channels_range_strings));
 
         // Enable/Disable GSM state/local test alerts.
-        setCellBroadcastRange(manager, enableStateLocalTestAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                        R.array.state_local_test_alert_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enableStateLocalTestAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.state_local_test_alert_range_strings));
 
         /** Enable non-CMAS series messages. */
-
-        setCellBroadcastRange(manager, enableEmergencyAlerts,
-                CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
-                R.array.emergency_alerts_channels_range_strings));
+        setCellBroadcastRange(
+                manager,
+                enableEmergencyAlerts,
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.emergency_alerts_channels_range_strings));
 
         // Enable/Disable additional channels based on carrier specific requirement.
-        ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
-                .getInstance().getCellBroadcastChannelRanges(this,
-                R.array.additional_cbs_channels_strings);
+        ArrayList<CellBroadcastChannelRange> ranges =
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        this, R.array.additional_cbs_channels_strings);
         if (ranges != null) {
             for (CellBroadcastChannelRange range: ranges) {
                 boolean enableAlerts;

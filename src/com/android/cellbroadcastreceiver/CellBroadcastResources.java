@@ -321,9 +321,9 @@ public class CellBroadcastResources {
         }
 
         if (CellBroadcastChannelManager.isEmergencyMessage(context, cbm)) {
-            ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
-                    .getInstance().getCellBroadcastChannelRanges(context,
-                    R.array.additional_cbs_channels_strings);
+            ArrayList<CellBroadcastChannelRange> ranges =
+                    CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                            context, R.array.additional_cbs_channels_strings);
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (serviceCategory >= range.mStartId && serviceCategory <= range.mEndId) {
