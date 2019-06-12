@@ -48,8 +48,6 @@ public class CellBroadcastChannelManager {
 
     private static final String TAG = "CBChannelManager";
 
-    private static CellBroadcastChannelManager sInstance = null;
-
     private static List<Integer> sCellBroadcastRangeResourceKeys = new ArrayList<>(
             Arrays.asList(R.array.additional_cbs_channels_strings,
                     R.array.emergency_alerts_channels_range_strings,
@@ -196,17 +194,6 @@ public class CellBroadcastChannelManager {
     }
 
     /**
-     * Get the instance of the cell broadcast other channel manager
-     * @return The singleton instance
-     */
-    public static CellBroadcastChannelManager getInstance() {
-        if (sInstance == null) {
-            sInstance = new CellBroadcastChannelManager();
-        }
-        return sInstance;
-    }
-
-    /**
      * Get cell broadcast channels enabled by the carriers from resource key
      * @param context Application context
      * @param key Resource key
@@ -262,8 +249,8 @@ public class CellBroadcastChannelManager {
      */
     public static boolean checkCellBroadcastChannelRange(int subId, int channel, int key,
             Context context) {
-        ArrayList<CellBroadcastChannelRange> ranges = CellBroadcastChannelManager
-                .getInstance().getCellBroadcastChannelRanges(context, key);
+        ArrayList<CellBroadcastChannelRange> ranges =
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(context, key);
         if (ranges != null) {
             for (CellBroadcastChannelRange range : ranges) {
                 if (channel >= range.mStartId && channel <= range.mEndId) {

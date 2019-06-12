@@ -59,8 +59,9 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
                 "0xA804:type=test, emergency=true"
         });
 
-        ArrayList<CellBroadcastChannelRange> list = CellBroadcastChannelManager.getInstance()
-                .getCellBroadcastChannelRanges(mContext, R.array.additional_cbs_channels_strings);
+        ArrayList<CellBroadcastChannelRange> list =
+                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
+                        mContext, R.array.additional_cbs_channels_strings);
 
         assertEquals(12, list.get(0).mStartId);
         assertEquals(12, list.get(0).mEndId);
