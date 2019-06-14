@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="3795852619005211509">"긴급 경보"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"이 사용자는 셀 브로드캐스트 설정을 사용할 수 없습니다."</string>
     <string name="button_dismiss" msgid="1234221657930516287">"확인"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"이전 알림 없음"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"이전 경보 없음"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"브로드캐스트 삭제"</string>
     <string name="message_options" msgid="3178489901903589574">"메시지 옵션"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"세부정보 보기"</string>
@@ -54,8 +54,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"경보 허용"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"긴급 알림 수신"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"경보 알림음"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"경고 메시지를 음성 언어로 표시"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"비상사태 경고 메시지를 TTS 기능을 사용하여 음성 언어로 알림"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"경보 메시지를 음성 언어로 표시"</string>
+    <string name="enable_alert_speech_summary" msgid="356086178962268831">"긴급 경보 메시지를 TTS 기능을 사용하여 음성 언어로 알림"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"긴급 경보 내역"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"경보 환경설정"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS 테스트 브로드캐스트"</string>
