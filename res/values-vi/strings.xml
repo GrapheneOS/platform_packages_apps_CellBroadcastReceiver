@@ -53,11 +53,11 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Cảnh báo khẩn cấp"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Cho phép cảnh báo"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"Nhận thông báo khẩn cấp"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Âm thanh lời nhắc thông báo"</string>
+    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Âm thanh lời nhắc cảnh báo"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Đọc to nội dung cảnh báo"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Sử dụng tính năng chuyển văn bản sang lời nói để đọc to nội dung các cảnh báo khẩn cấp"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Lịch sử cảnh báo khẩn cấp"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"Tùy chọn thông báo"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"Tùy chọn cảnh báo"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Thông báo thử nghiệm cho ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Thông báo thử nghiệm cho Hệ thống cảnh báo động đất và sóng thần"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Mối đe dọa cực kỳ nghiêm trọng"</string>

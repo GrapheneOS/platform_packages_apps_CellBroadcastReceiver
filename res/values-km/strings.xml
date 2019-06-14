@@ -117,7 +117,7 @@
     <string name="notification_multiple" msgid="5121978148152124860">"ការ​ជូន​ដំណឹង​មិន​ទាន់​អាន <xliff:g id="COUNT">%s</xliff:g>"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"ការ​ជូន​ដំណឹង​ថ្មី"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"បង្ហាញ​ប្រអប់​បញ្ចូល​សម្រាប់ការ​ផ្តាច់ចេញ បន្ទាប់​ពី​បង្ហាញ​ការ​ជូន​ដំណឹង​ដំបូង (ជា​ជាង​ការ​ជូន​ដំណឹងផ្លូវការ)។"</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"បង្ហាញ​ប្រអប់​ចេញ"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"បង្ហាញ​ប្រអប់​បញ្ចូល​សម្រាប់ការ​ផ្តាច់ចេញ"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"បច្ចុប្បន្ន​អ្នក​កំពុង​ទទួល​ការ​ជូន​ដំណឹង​ពេល​អាសន្ន។ តើ​អ្នក​ចង់​បន្ត​ទទួល​ការ​ជូន​ដំណឹង​ពេល​អាសន្ន​ដែរ​ឬទេ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"បាទ/ចាស"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ទេ"</string>
