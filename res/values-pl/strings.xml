@@ -116,7 +116,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Odebrano:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"Nieprzeczytane alerty: <xliff:g id="COUNT">%s</xliff:g>."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nowe alerty"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Pokaż okno rezygnacji po wyświetleniu pierwszego alertu CMAS (innego niż alert prezydencki)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Pokaż okno rezygnacji po wyświetleniu pierwszego alertu CMAS (innego niż alert prezydencki)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Pokaż okno rezygnacji"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Obecnie otrzymujesz alerty o zagrożeniu. Czy nadal chcesz je dostawać?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Tak"</string>
@@ -127,7 +127,7 @@
     <item msgid="9097229303902157183">"Co 2 minuty"</item>
     <item msgid="5718214950343391480">"Co 5 minut"</item>
     <item msgid="3863339891188103437">"Co 15 minut"</item>
-    <item msgid="6868848414437854609">"Wył."</item>
+    <item msgid="6868848414437854609">"Wyłączony"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Alerty o zagrożeniu"</string>
 </resources>

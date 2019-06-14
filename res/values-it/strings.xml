@@ -56,7 +56,7 @@
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Suono promemoria degli avvisi"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Leggimi messaggio di avviso"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Usa la sintesi vocale per farmi ascoltare i messaggi degli avvisi di emergenza"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Cronologia degli avvisi di emergenza"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Cronologia avvisi di emergenza"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferenze per gli avvisi"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Trasmissioni di prova ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Trasmissioni di prova per il sistema di avviso tsunami e terremoto"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Stai ricevendo avvisi di emergenza. Vuoi continuare a ricevere questi avvisi?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Sì"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"No"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Cronologia degli avvisi di emergenza"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Cronologia avvisi di emergenza"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Una volta"</item>
     <item msgid="9097229303902157183">"Ogni 2 minuti"</item>

@@ -56,7 +56,7 @@
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Waarskuwingonthounota-klank"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Sê waarskuwingboodskap hardop"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"Gebruik teks-na-spraak om \'n noodberigboodskap hardop te sê"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Noodwaarskuwing-geskiedenis"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Noodwaarskuwinggeskiedenis"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Waarskuwingvoorkeure"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS-toetsuitsendings"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Toetsuitsendings vir aardbewing-tsoenami-waarskuwingstelsel (ETWS)"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Jy ontvang tans noodberigte. Sal jy graag wil voortgaan om noodberigte te ontvang?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nee"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Noodwaarskuwing-geskiedenis"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Noodwaarskuwinggeskiedenis"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Een keer"</item>
     <item msgid="9097229303902157183">"Elke 2 minute"</item>

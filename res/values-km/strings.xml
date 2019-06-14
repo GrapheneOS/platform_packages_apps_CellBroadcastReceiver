@@ -65,7 +65,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ការ​គំរាម​កំហែង​ធ្ងន់ធ្ងរ"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ការគំរាមកំហែងដល់អាយុជីវិត និងទ្រព្យសម្បត្តិដ៏ធ្ងន់ធ្ងរ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"ការ​ជូនដំណឹងចាប់ជំរិតក្មេង"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ព្រឹត្តិបត្រអាសន្ន​អំពី​ការចាប់ជំរិត​ក្មេង"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ការប្រកាសអាសន្ន​អំពី​ការចាប់ជំរិត​ក្មេង"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"សារ​ជូនដំណឹង"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ព្រមាន​អំពី​ការគំរាម​កំហែងផ្នែក​សុវត្ថិភាព​ដែលនឹង​កើត​មាន"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"សារ​សុវត្ថិភាព​សាធារណៈ"</string>
@@ -117,7 +117,7 @@
     <string name="notification_multiple" msgid="5121978148152124860">"ការ​ជូន​ដំណឹង​មិន​ទាន់​អាន <xliff:g id="COUNT">%s</xliff:g>"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"ការ​ជូន​ដំណឹង​ថ្មី"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"បង្ហាញ​ប្រអប់​បញ្ចូល​សម្រាប់ការ​ផ្តាច់ចេញ បន្ទាប់​ពី​បង្ហាញ​ការ​ជូន​ដំណឹង​ដំបូង (ជា​ជាង​ការ​ជូន​ដំណឹងផ្លូវការ)។"</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"បង្ហាញ​ប្រអប់​ចេញ"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"បង្ហាញ​ប្រអប់​បញ្ចូល​សម្រាប់ការ​ផ្តាច់ចេញ"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"បច្ចុប្បន្ន​អ្នក​កំពុង​ទទួល​ការ​ជូន​ដំណឹង​ពេល​អាសន្ន។ តើ​អ្នក​ចង់​បន្ត​ទទួល​ការ​ជូន​ដំណឹង​ពេល​អាសន្ន​ដែរ​ឬទេ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"បាទ/ចាស"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ទេ"</string>

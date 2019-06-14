@@ -81,7 +81,7 @@
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Egin ez ikusi bolumenaren eta Ez molestatu moduaren hobespenei"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Inguruko berritasunei buruzko igorpenak"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Erakutsi berritasunei buruzko informazioa SIMaren egoeran"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"Garatzaileen aukerak"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"Garatzaileentzako aukerak"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Alerten kategoria:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofisikoak"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorologikoak"</string>
@@ -116,7 +116,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Jasota:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> alerta dituzu irakurri gabe."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Alerta berriak"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Erakutsi zerbitzua ez erabiltzeko leihoa lehen alerta jaso ondoren (gobernuaren alerta izan ezik)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Erakutsi zerbitzua ez erabiltzeko leihoa lehen alerta jaso ondoren (gobernuaren alerta izan ezik)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Erakutsi ez erabiltzeko leihoa"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Larrialdi-alertak jasotzen ari zara. Larrialdi-alertak jasotzen jarraitu nahi duzu?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Bai"</string>

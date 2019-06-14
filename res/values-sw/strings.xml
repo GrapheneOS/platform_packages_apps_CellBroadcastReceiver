@@ -117,7 +117,7 @@
     <string name="notification_multiple" msgid="5121978148152124860">"Arifu <xliff:g id="COUNT">%s</xliff:g> hazijasomwa."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Arifu mpya"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Onyesha kidirisha cha chaguo la kuondoka baada ya kuonyesha arifa ya kwanza (kando na Arifa inayohusu Rais)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Onyesha kidadisi cha chaguo la kuondoka"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Onyesha kidirisha cha chaguo la kuondoka"</string>
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Unapokea Arifa za Dharura hivi sasa. Je, ungependa kuendelea kupokea Arifa za Dharura?`"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ndiyo"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"La"</string>
