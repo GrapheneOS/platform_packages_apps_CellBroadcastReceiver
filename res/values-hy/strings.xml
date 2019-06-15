@@ -81,7 +81,7 @@
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Անտեսել ձայնի ուժգնության և «Չանհանգստացնել» ռեժիմի կարգավորումները"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Տեղական ծանուցող հեռարձակումներ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Թարմացման մասին տեղեկությունը ցուցադրել SIM քարտի կարգավիճակում"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"Մշակողի ընտրանքներ"</string>
+    <string name="category_dev_settings_title" msgid="6194393458398329994">"Ծրագրավորողի ընտրանքներ"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Զգուշացման բաժինը՝"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Երկրաֆիզիկական"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Մթնոլորտային"</string>
