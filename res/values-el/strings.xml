@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Αυτή τη στιγμή λαμβάνετε Ειδοποιήσεις έκτακτης ανάγκης. Θέλετε να συνεχίσετε να λαμβάνετε Ειδοποιήσεις έκτακτης ανάγκης;"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ναι"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Όχι"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Ιστορικό ειδοποιήσεων έκτακτης ανάγκης"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Ιστορ. ειδοπ. έκτακτης ανάγκης"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Μία φορά"</item>
     <item msgid="9097229303902157183">"Κάθε 2 λεπτά"</item>
