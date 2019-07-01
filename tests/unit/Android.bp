@@ -14,7 +14,6 @@
 
 android_test {
     name: "CellBroadcastReceiverUnitTests",
-    // We only want this apk build for tests.
     certificate: "platform",
     libs: [
         "android.test.runner",
@@ -22,8 +21,8 @@ android_test {
         "android.test.base",
     ],
     static_libs: [
-        "android-support-test",
-        "espresso-core",
+        "androidx.test.rules",
+        "androidx.test.espresso.core",
         "mockito-target-minus-junit4",
         "truth-prebuilt",
         "ub-uiautomator",
