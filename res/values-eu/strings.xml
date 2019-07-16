@@ -99,7 +99,7 @@
     <string name="cmas_response_shelter" msgid="7301175579079615909">"Babestu"</string>
     <string name="cmas_response_evacuate" msgid="5833170084430021095">"Ebakuatu"</string>
     <string name="cmas_response_prepare" msgid="8428073909753758319">"Prestatu"</string>
-    <string name="cmas_response_execute" msgid="284719420769568493">"Exekutatu"</string>
+    <string name="cmas_response_execute" msgid="284719420769568493">"Abiarazi"</string>
     <string name="cmas_response_monitor" msgid="681400164440495749">"Kontrolatu"</string>
     <string name="cmas_response_avoid" msgid="156419597612629270">"Saihestu"</string>
     <string name="cmas_response_assess" msgid="9043534222710563415">"Ebaluatu"</string>
