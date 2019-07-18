@@ -31,6 +31,8 @@
     <bool name="reset_duplicate_detection_on_airplane_mode">false</bool>
     <!-- Whether to show CMAS messages by in a different order than received by prioritizing them -->
     <bool name="show_cmas_messages_in_priority_order">false</bool>
+    <!-- Whether to ignore any alert message in ECBM(Emergency Callback Mode) -->
+    <bool name="ignore_messages_in_ecbm">false</bool>
 
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
