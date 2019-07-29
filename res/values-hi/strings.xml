@@ -113,12 +113,12 @@
     <string name="cmas_certainty_heading" msgid="8374669249736439193">"निश्चितता:"</string>
     <string name="cmas_certainty_observed" msgid="3668549749352106472">"देखा गया"</string>
     <string name="cmas_certainty_likely" msgid="4254497828943291749">"संभावना"</string>
-    <string name="delivery_time_heading" msgid="5980836543433619329">"प्राप्त:"</string>
+    <string name="delivery_time_heading" msgid="5980836543433619329">"पाया:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> बिना पढ़े अलर्ट."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"नए अलर्ट"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"पहला अलर्ट (प्रेसिडेंशियल अलर्ट के अलावा) दिखाने के बाद, ऑप्ट-आउट डायलॉग दिखाएं."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"ऑप्ट-आउट डॉयलॉग दिखाएं"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"आपको वर्तमान में आपातकालीन अलर्ट प्राप्त हो रहे हैं. क्या आप आगे भी आपातकालीन अलर्ट प्राप्त करना चाहते हैं?"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"आपको वर्तमान में आपातकालीन अलर्ट मिल रहे हैं. क्या आप आगे भी आपातकालीन अलर्ट पाते रहना चाहते हैं?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"हां"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"नहीं"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"इमरजेंसी के समय की सूचनाओं का इतिहास"</string>
