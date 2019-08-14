@@ -362,7 +362,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     }
 
     // Volume suggested by media team for in-call alarms.
-    private static final float IN_CALL_VOLUME = 0.125f;
+    private static final float IN_CALL_VOLUME_LEFT = 0.125f;
+    private static final float IN_CALL_VOLUME_RIGHT = 0.125f;
 
     /**
      * Start playing the alert sound.
@@ -574,7 +575,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             // If we are in a call, play the alert
             // sound at a low volume to not disrupt the call.
             log("in call: reducing volume");
-            mMediaPlayer.setVolume(IN_CALL_VOLUME);
+            mMediaPlayer.setVolume(IN_CALL_VOLUME_LEFT, IN_CALL_VOLUME_RIGHT);
         } else if (mUseFullVolume) {
             // If use_full_volume is configured,
             // we overwrite volume setting of STREAM_ALARM to full, play at
