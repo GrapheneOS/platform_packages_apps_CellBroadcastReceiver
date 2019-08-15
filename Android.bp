@@ -1,13 +1,11 @@
 // Copyright 2011 The Android Open Source Project
-
-android_app {
-    name: "CellBroadcastReceiver",
+java_defaults {
+    name: "CellBroadcastCommon",
+    min_sdk_version: "29",
+    platform_apis: true,
+    privileged: true,
     srcs: ["src/**/*.java"],
     libs: ["telephony-common"],
-    platform_apis: true,
-    certificate: "platform",
-    privileged: true,
-    resource_dirs: ["res"],
     static_libs: [
         "androidx.legacy_legacy-support-v4",
         "androidx.legacy_legacy-support-v13",
@@ -17,7 +15,24 @@ android_app {
         "androidx.legacy_legacy-preference-v14",
     ],
     optimize: {
-        proguard_flags_files: ["proguard.flags"],
+       proguard_flags_files: ["proguard.flags"],
     },
+    resource_dirs: ["res"],
     defaults: ["SettingsLibDefaults"],
+}
+
+android_app {
+    name: "CellBroadcastApp",
+    defaults: ["CellBroadcastCommon"],
+    certificate: "networkstack",
+    manifest: "AndroidManifest.xml",
+}
+
+android_app {
+     name: "CellBroadcastAppPlatform",
+     defaults: ["CellBroadcastCommon"],
+     certificate: "platform",
+     // CellBroadcastAppPlatform is a replacement for CellBroadcastApp
+     overrides: ["CellBroadcastApp"],
+     manifest: "AndroidManifest_Platform.xml",
 }
