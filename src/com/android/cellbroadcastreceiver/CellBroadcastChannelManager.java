@@ -16,8 +16,12 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static android.telephony.ServiceState.ROAMING_TYPE_NOT_ROAMING;
+
 import android.content.Context;
+import android.telephony.AccessNetworkConstants;
 import android.telephony.CellBroadcastMessage;
+import android.telephony.NetworkRegistrationInfo;
 import android.telephony.ServiceState;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
@@ -272,20 +276,27 @@ public class CellBroadcastChannelManager {
         if (context != null) {
             TelephonyManager tm =
                     (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-            ServiceState ss = tm.getServiceStateForSubscriber(subId);
+            tm = tm.createForSubscriptionId(subId);
+            ServiceState ss = tm.getServiceState();
             if (ss != null) {
-                if (ss.getVoiceRegState() == ServiceState.STATE_IN_SERVICE
-                        || ss.getVoiceRegState() == ServiceState.STATE_EMERGENCY_ONLY) {
-                    if (ss.getVoiceRoamingType() == ServiceState.ROAMING_TYPE_NOT_ROAMING) {
-                        return true;
-                    } else if (ss.getVoiceRoamingType() == ServiceState.ROAMING_TYPE_DOMESTIC
-                            && rangeScope == CellBroadcastChannelRange.SCOPE_DOMESTIC) {
-                        return true;
-                    } else if (ss.getVoiceRoamingType() == ServiceState.ROAMING_TYPE_INTERNATIONAL
-                            && rangeScope == CellBroadcastChannelRange.SCOPE_INTERNATIONAL) {
-                        return true;
+                NetworkRegistrationInfo regInfo = ss.getNetworkRegistrationInfo(
+                        NetworkRegistrationInfo.DOMAIN_CS,
+                        AccessNetworkConstants.TRANSPORT_TYPE_WWAN);
+                if (regInfo != null) {
+                    if (regInfo.isInService() || regInfo.isEmergencyEnabled()) {
+                        int voiceRoamingType = (regInfo != null) ? regInfo.getRoamingType() :
+                                ROAMING_TYPE_NOT_ROAMING;
+                        if (voiceRoamingType == ROAMING_TYPE_NOT_ROAMING) {
+                            return true;
+                        } else if (voiceRoamingType == ServiceState.ROAMING_TYPE_DOMESTIC
+                                && rangeScope == CellBroadcastChannelRange.SCOPE_DOMESTIC) {
+                            return true;
+                        } else if (voiceRoamingType == ServiceState.ROAMING_TYPE_INTERNATIONAL
+                                && rangeScope == CellBroadcastChannelRange.SCOPE_INTERNATIONAL) {
+                            return true;
+                        }
+                        return false;
                     }
-                    return false;
                 }
             }
         }

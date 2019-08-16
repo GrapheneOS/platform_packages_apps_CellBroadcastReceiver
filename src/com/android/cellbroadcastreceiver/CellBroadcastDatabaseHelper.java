@@ -46,6 +46,10 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     /** Temporary table for upgrading the database version. */
     static final String TEMP_TABLE_NAME = "old_broadcasts";
 
+    /** Old fields used for upgrading database */
+    private static final String V1_MESSAGE_CODE = "message_code";
+    private static final String V1_MESSAGE_IDENTIFIER = " message_id";
+
     /**
      * Database version 1: initial version
      * Database version 2-9: (reserved for OEM database customization)
@@ -94,8 +98,8 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     private static final String[] COLUMNS_V1 = {
             Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE,
             Telephony.CellBroadcasts.SERIAL_NUMBER,
-            Telephony.CellBroadcasts.V1_MESSAGE_CODE,
-            Telephony.CellBroadcasts.V1_MESSAGE_IDENTIFIER,
+            V1_MESSAGE_CODE,
+            V1_MESSAGE_IDENTIFIER,
             Telephony.CellBroadcasts.LANGUAGE_CODE,
             Telephony.CellBroadcasts.MESSAGE_BODY,
             Telephony.CellBroadcasts.DELIVERY_TIME,
