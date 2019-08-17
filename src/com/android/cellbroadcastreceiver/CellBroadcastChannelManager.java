@@ -24,7 +24,6 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
-import com.android.internal.util.ArrayUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -155,7 +154,7 @@ public class CellBroadcastChannelManager {
                                 break;
                             case KEY_VIBRATION:
                                 String[] vibration = value.split("\\|");
-                                if (!ArrayUtils.isEmpty(vibration)) {
+                                if (vibration != null && vibration.length > 0) {
                                     mVibrationPattern = new int[vibration.length];
                                     for (int i = 0; i < vibration.length; i++) {
                                         mVibrationPattern[i] = Integer.parseInt(vibration[i]);
