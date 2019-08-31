@@ -24,6 +24,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
+import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
 
@@ -65,7 +66,7 @@ public class CellBroadcastConfigService extends IntentService {
                     subId = SubscriptionManager.getDefaultSubscriptionId();
                     if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID &&
                             subManager != null) {
-                        int [] subIds = subManager.getActiveSubscriptionIdList();
+                        int [] subIds = getActiveSubIdList(subManager);
                         if (subIds.length != 0) {
                             subId = subIds[0];
                         }
@@ -77,7 +78,7 @@ public class CellBroadcastConfigService extends IntentService {
                     // cell broadcast on the sub we are interested in and we'll disable
                     // it on other subs so the users will not receive duplicate messages from
                     // multiple carriers (e.g. for multi-sim users).
-                    int [] subIds = subManager.getActiveSubscriptionIdList();
+                    int [] subIds = getActiveSubIdList(subManager);
                     if (subIds.length != 0)
                     {
                         for (int id : subIds) {
@@ -110,6 +111,15 @@ public class CellBroadcastConfigService extends IntentService {
                 Log.e(TAG, "exception enabling cell broadcast channels", ex);
             }
         }
+    }
+
+    private int[] getActiveSubIdList(SubscriptionManager subMgr) {
+        List<SubscriptionInfo> subInfos = subMgr.getActiveSubscriptionInfoList();
+        int[] subIds = new int[subInfos.size()];
+        for (int i = 0; i < subInfos.size(); i++) {
+            subIds[i] = subInfos.get(i).getSubscriptionId();
+        }
+        return subIds;
     }
 
     /**
