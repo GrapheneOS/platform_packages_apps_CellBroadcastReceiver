@@ -16,13 +16,13 @@
 
 package com.android.cellbroadcastreceiver;
 
+import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.os.UserManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
@@ -153,7 +153,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
                 // If the device is in test harness mode, we need to disable emergency alert by
                 // default.
-                if (SystemProperties.getBoolean("persist.sys.test_harness", false)) {
+                if (ActivityManager.isRunningInUserTestHarness()) {
                     Log.d(TAG, "In test harness mode. Turn off emergency alert by default.");
                     sp.edit().putBoolean(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE,
                             false).apply();
