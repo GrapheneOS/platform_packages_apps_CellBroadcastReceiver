@@ -690,6 +690,10 @@ public class CellBroadcastAlertService extends Service {
         }
         final String channelId = CellBroadcastChannelManager.isEmergencyMessage(context, message)
                 ? NOTIFICATION_CHANNEL_EMERGENCY_ALERTS : NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS;
+
+        boolean nonSwipeableNotification = message.isEmergencyAlertMessage()
+                && res.getBoolean(R.bool.non_swipeable_notificaiton);
+
         // use default sound/vibration/lights for non-emergency broadcasts
         Notification.Builder builder =
                 new Notification.Builder(context, channelId)
@@ -700,7 +704,7 @@ public class CellBroadcastAlertService extends Service {
                         .setPriority(Notification.PRIORITY_HIGH)
                         .setColor(res.getColor(R.color.notification_color))
                         .setVisibility(Notification.VISIBILITY_PUBLIC)
-                        .setOngoing(message.isEmergencyAlertMessage());
+                        .setOngoing(nonSwipeableNotification);
 
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
             builder.setDeleteIntent(pi);
