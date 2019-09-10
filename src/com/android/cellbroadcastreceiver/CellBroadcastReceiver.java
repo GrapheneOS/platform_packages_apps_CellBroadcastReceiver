@@ -109,7 +109,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             if (CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(context).getBoolean(
                     R.bool.reset_duplicate_detection_on_airplane_mode)) {
                 Bundle extras = intent.getExtras();
-                ServiceState ss = ServiceState.newFromBundle(extras);
+                ServiceState ss = extras.getParcelable(Intent.EXTRA_SERVICE_STATE);
                 if (ss.getState() == ServiceState.STATE_POWER_OFF) {
                     CellBroadcastAlertService.resetMessageDuplicateDetection();
                 }
