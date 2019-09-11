@@ -29,5 +29,5 @@ android_test {
     platform_apis: true,
     // Apk must be signed with platform signature in order to send test broadcasts.
     certificate: "platform",
-    instrumentation_for: "CellBroadcastReceiver",
+    instrumentation_for: "CellBroadcastApp",
 }
