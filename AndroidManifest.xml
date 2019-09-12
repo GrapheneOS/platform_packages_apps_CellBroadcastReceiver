@@ -17,7 +17,9 @@
  */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.android.cellbroadcastreceiver">
+        package="com.android.cellbroadcastreceiver"
+        android:versionCode="300000000"
+        android:versionName="R-initial">
 
     <original-package android:name="com.android.cellbroadcastreceiver" />
 
@@ -25,7 +27,6 @@
     <uses-permission android:name="android.permission.RECEIVE_EMERGENCY_BROADCAST" />
     <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
     <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
