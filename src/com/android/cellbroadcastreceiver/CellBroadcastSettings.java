@@ -41,6 +41,9 @@ import androidx.preference.TwoStatePreference;
 
 import com.android.settingslib.development.DevelopmentSettingsEnabler;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Settings activity for the cell broadcast receiver.
  */
@@ -111,6 +114,9 @@ public class CellBroadcastSettings extends Activity {
 
     // For watch layout
     private static final String KEY_WATCH_ALERT_REMINDER = "watch_alert_reminder";
+
+    // Resource cache
+    private static final Map<Integer, Resources> sResourcesCache = new HashMap<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -527,6 +533,14 @@ public class CellBroadcastSettings extends Activity {
                 return context.getResources();
             }
         }
-        return SubscriptionManager.getResourcesForSubId(context, subId);
+
+        if (sResourcesCache.containsKey(subId)) {
+            return sResourcesCache.get(subId);
+        }
+
+        Resources res = SubscriptionManager.getResourcesForSubId(context, subId);
+        sResourcesCache.put(subId, res);
+
+        return res;
     }
 }
