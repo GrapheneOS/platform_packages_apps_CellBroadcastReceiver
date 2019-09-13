@@ -98,9 +98,6 @@ public class CellBroadcastAlertReminder extends Service {
         Ringtone r = RingtoneManager.getRingtone(this, notificationUri);
         r.setStreamType(AudioManager.STREAM_NOTIFICATION);
 
-        // Acquire the wakelock for 500ms. The wakelock will be released by its
-        // timer.
-        CellBroadcastAlertWakeLock.acquirePartialWakeLock(getApplicationContext(), 500);
         if (r != null) {
             log("playing alert reminder sound");
             r.play();
