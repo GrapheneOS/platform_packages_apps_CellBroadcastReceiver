@@ -573,9 +573,6 @@ public class CellBroadcastAlertService extends Service {
      * @param message the alert to display
      */
     private void openEmergencyAlertNotification(CellBroadcastMessage message) {
-        // Acquire a screen bright wakelock until the alert dialog and audio start playing.
-        CellBroadcastAlertWakeLock.acquireScreenBrightWakeLock(this);
-
         // Close dialogs and window shade
         Intent closeDialogs = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         sendBroadcast(closeDialogs);
