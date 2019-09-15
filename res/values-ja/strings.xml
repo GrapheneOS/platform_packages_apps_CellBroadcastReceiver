@@ -53,7 +53,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"緊急速報メール"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"緊急速報メールの許可"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"緊急速報メールを受信する"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"緊急速報メールの着信音"</string>
+    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"緊急速報メールの再通知"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"受信時にメッセージを読み上げる"</string>
     <string name="enable_alert_speech_summary" msgid="356086178962268831">"緊急速報メール受信時にメッセージを読み上げる"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"緊急速報メールの履歴"</string>
