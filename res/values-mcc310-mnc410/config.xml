@@ -21,4 +21,6 @@
     <bool name="reset_duplicate_detection_on_airplane_mode">true</bool>
     <!-- Show timestamp of the alert -->
     <bool name="show_date_time_title">true</bool>
+    <!-- Whether to show CMAS messages by in a different order than received by prioritizing them -->
+    <bool name="show_cmas_messages_in_priority_order">true</bool>
 </resources>
