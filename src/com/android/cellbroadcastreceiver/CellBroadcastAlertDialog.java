@@ -269,17 +269,17 @@ public class CellBroadcastAlertDialog extends Activity {
             finish();
         } else {
             Log.d(TAG, "onCreate loaded message list of size " + mMessageList.size());
-        }
 
-        // For emergency alerts, keep screen on so the user can read it
-        CellBroadcastMessage message = getLatestMessage();
-        if (message != null && CellBroadcastChannelManager.isEmergencyMessage(
-                this, message)) {
-            Log.d(TAG, "onCreate setting screen on timer for emergency alert");
-            mScreenOffHandler.startScreenOnTimer();
-        }
+            // For emergency alerts, keep screen on so the user can read it
+            CellBroadcastMessage message = getLatestMessage();
+            if (message != null && CellBroadcastChannelManager.isEmergencyMessage(
+                    this, message)) {
+                Log.d(TAG, "onCreate setting screen on timer for emergency alert");
+                mScreenOffHandler.startScreenOnTimer();
+            }
 
-        updateAlertText(message);
+            updateAlertText(message);
+        }
     }
 
     /**
