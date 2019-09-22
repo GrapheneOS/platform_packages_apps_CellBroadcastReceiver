@@ -16,9 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="6006277287245076524">"आणीबाणीच्या सूचना"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"आणीबाणीच्या सूचना"</string>
-    <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"या वापरकर्त्‍यासाठी सेल प्रसारण सेटिंग्‍ज उपलब्‍ध नाहीत"</string>
+    <string name="app_label" msgid="2008319089248760277">"आणीबाणीमधील वायरलेस इशारा"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"आणीबाणीमधील वायरलेस इशारा"</string>
+    <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"या वापरकर्त्यासाठी आणीबाणीमधील वायरलेस इशारा सेटिंग्ज उपलब्ध नाही"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक आहे"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"यापूर्वीचे अलर्ट नाहीत"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"प्रसारणे हटवा"</string>
@@ -52,10 +52,10 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण मेसेज"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"आणीबाणीच्या सूचना"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"सूचनांना अनुमती द्या"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"आणीबाणी सूचना मिळवा"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"आणीबाणीमधील वायरलेस इशारा सूचना स्वीकारा"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"सूचना रिमाइंडरचा आवाज"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"सूचना मेसेज बोला"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"आणीबाणी सूचना मेसेज बोलण्यासाठी टेक्स्ट-टू-स्पीच वापरा"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"आणीबाणीमधील वायरलेस इशारा मेसेज बोलण्यासाठी टेक्स्ट-टू-स्पीच वापरा"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"आणीबाणी सूचना इतिहास"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"सूचना प्राधान्ये"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS चाचणी प्रसारणे"</string>
@@ -118,7 +118,7 @@
     <string name="notification_multiple_title" msgid="1523638925739947855">"नवीन सूचना"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"पहिली सूचना (राष्ट्रपतींच्या सूचनेव्यतिरिक्त) डिस्प्ले केल्यानंतर निवड रद्द करा डायलॉग दाखवा."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"निवड रद्द करा संवाद दर्शवा"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"तुम्ही सध्या आणीबाणी सूचना प्राप्त करत आहात. तुम्ही आणीबाणी सूचना प्राप्त करणे सुरु ठेऊ इच्छिता का?"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"तुम्हाला सध्या आणीबाणीमधील वायरलेस इशारा सूचना मिळत आहेत. तुम्हाला आणीबाणीमधील वायरलेस इशारा सूचना पुढे सुरू ठेवायच्या आहेत का?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"होय"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"नाही"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"आणीबाणी अलर्ट इतिहास"</string>
