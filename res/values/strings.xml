@@ -105,7 +105,7 @@
 
     <!-- Preference title for enable emergency alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_alerts_master_toggle_title">Allow alerts</string>
-    <!-- Preference summaries for allow alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Preference summaries for allow alerts checkbox. [CHAR LIMIT=66] -->
     <string name="enable_alerts_master_toggle_summary">Receive wireless emergency alert notifications</string>
     <!-- Preference title for alert reminder interval list. [CHAR LIMIT=50] -->
     <string name="alert_reminder_interval_title">Alert reminder sound</string>
@@ -113,7 +113,7 @@
     <string name="alert_reminder_interval_summary"></string>
     <!-- Preference title for enable text-to-speech checkbox. [CHAR LIMIT=50] -->
     <string name="enable_alert_speech_title">Speak alert message</string>
-    <!-- Preference summary for enable text-to-speech checkbox. [CHAR LIMIT=100] -->
+    <!-- Preference summary for enable text-to-speech checkbox. [CHAR LIMIT=101] -->
     <string name="enable_alert_speech_summary">Use text-to-speech to speak wireless emergency alert messages</string>
     <!-- Preference title for emergency alert history. [CHAR LIMIT=50] -->
     <string name="emergency_alert_history_title">Emergency alert history</string>
