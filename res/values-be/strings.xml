@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="6006277287245076524">"Абвесткі аб надзвычайных сітуацыях"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"Надзвычайныя абвесткі"</string>
+    <string name="sms_cb_settings" msgid="3795852619005211509">"Абвесткі аб надзвычайных сітуацыях"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"Налады мабільнага вяшчання недаступныя для гэтага карыстальніка"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ОК"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Папярэднія абвесткі адсутнічаюць"</string>
@@ -72,7 +72,7 @@
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Рэкамендаваныя дзеянні, якія могуць выратаваць жыцці або маёмасць"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Дзяржаўныя і мясцовыя тэставыя паведамленні"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Атрымліваць тэставыя паведамленні ад дзяржаўных і мясцовых органаў улады"</string>
-    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Надзвычайныя абвесткі"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Абвесткі аб надзвычайных сітуацыях"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Папярэджваць пра небяспечныя для жыцця падзеі"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Абавязковы штомесячны тэст"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Атрымліваць тэставыя паведамленні для сістэмы абвяшчэння бяспекі"</string>

@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="6006277287245076524">"إنذارات الطوارئ"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"تنبيهات الطوارئ"</string>
+    <string name="sms_cb_settings" msgid="3795852619005211509">"إنذارات الطوارئ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"إعدادات البث الخلوي غير متوفّرة لهذا المستخدم"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"حسنًا"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"ليست هناك تنبيهات سابقة."</string>
@@ -72,7 +72,7 @@
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"الإجراءات المقترحة التي يمكن أن تنقذ الأرواح أو الممتلكات"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"اختبارات الولاية والاختبارات المحلية"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"استلام رسائل اختبارية من سلطات الولاية والسلطات المحلية"</string>
-    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"تنبيهات الطوارئ"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"إنذارات الطوارئ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"إرسال تحذير بشأن الأحداث التي تهدد الحياة"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"الاختبار الشهري المطلوب"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"استلام رسائل تجريبية لنظام تنبيهات السلامة"</string>

@@ -61,7 +61,7 @@
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS का परीक्षण प्रसारणहरू"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"भूकम्प सुनामी चेतावनी प्रणालीका परीक्षण प्रसारणहरू"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"चरम खतराहरू"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"जनधनका लागि चरम खतराहरूको अलर्ट"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"जनधनको चरम खतरासम्बन्धी अलर्ट"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"गम्भीर खतराहरू"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"जनधनका लागि गम्भीर खतराहरूको अलर्ट"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER सम्बन्धी अलर्टहरू"</string>

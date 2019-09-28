@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="6006277287245076524">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"ଜରୁରୀକାଳୀନ ଅଲର୍ଟ"</string>
+    <string name="sms_cb_settings" msgid="3795852619005211509">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"ଏହି ୟୁଜରଙ୍କ ପାଇଁ ସେଲ୍‌ ବ୍ରୋଡକାଷ୍ଟ ସେଟିଙ୍ଗ ଉପଲବ୍ଧ ନାହିଁ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ଠିକ ଅଛି"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"ପୂର୍ବରୁ କୌଣସି ଆଲର୍ଟ ନାହିଁ"</string>

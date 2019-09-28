@@ -65,7 +65,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Arrisku larriak"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Bizitza eta jabetza arrisku larrian jartzen dituzten egoerak"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER alertak"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Haurrak bahitzeagatiko larrialdi-albisteak"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Haurrak bahitzeagatiko larrialdi-buletinak"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Alerta-mezuak"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Ohartarazi berehalako segurtasun-arriskuei buruz"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Segurtasun publikoari buruzko mezuak"</string>

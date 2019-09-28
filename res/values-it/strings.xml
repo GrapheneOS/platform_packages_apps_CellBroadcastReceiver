@@ -127,7 +127,7 @@
     <item msgid="9097229303902157183">"Ogni 2 minuti"</item>
     <item msgid="5718214950343391480">"Ogni 5 minuti"</item>
     <item msgid="3863339891188103437">"Ogni 15 minuti"</item>
-    <item msgid="6868848414437854609">"Disattivato"</item>
+    <item msgid="6868848414437854609">"Off"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Avvisi di emergenza wireless"</string>
 </resources>
