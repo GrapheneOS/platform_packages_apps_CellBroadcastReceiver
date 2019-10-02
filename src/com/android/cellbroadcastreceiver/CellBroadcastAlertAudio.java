@@ -225,7 +225,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mSubscriptionManager =
                 (SubscriptionManager) getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
 
-        mPhoneCount = mTelephonyManager.getPhoneCount();
+        mPhoneCount = mTelephonyManager.getMaxPhoneCount();
         for (int i = 0; i < mPhoneCount; i++) {
             final SubscriptionInfo sir =
                     mSubscriptionManager.getActiveSubscriptionInfoForSimSlotIndex(i);
