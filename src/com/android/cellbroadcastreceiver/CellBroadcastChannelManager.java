@@ -20,7 +20,6 @@ import static android.telephony.ServiceState.ROAMING_TYPE_NOT_ROAMING;
 
 import android.content.Context;
 import android.telephony.AccessNetworkConstants;
-import android.telephony.CellBroadcastMessage;
 import android.telephony.NetworkRegistrationInfo;
 import android.telephony.ServiceState;
 import android.telephony.SmsManager;
@@ -315,7 +314,7 @@ public class CellBroadcastChannelManager {
      */
     public static CellBroadcastChannelRange getCellBroadcastChannelRangeFromMessage(
             Context context, CellBroadcastMessage message) {
-        int subId = message.getSubId();
+        int subId = message.getSubId(context);
         int channel = message.getServiceCategory();
         ArrayList<CellBroadcastChannelRange> ranges = null;
 

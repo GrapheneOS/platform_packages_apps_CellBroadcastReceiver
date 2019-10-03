@@ -55,8 +55,9 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
      * Database version 2-9: (reserved for OEM database customization)
      * Database version 10: adds ETWS and CMAS columns and CDMA support
      * Database version 11: adds delivery time index
+     * Datatbase version 12: add slotIndex
      */
-    static final int DATABASE_VERSION = 11;
+    static final int DATABASE_VERSION = 12;
 
     CellBroadcastDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -66,6 +67,7 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_NAME + " ("
                 + Telephony.CellBroadcasts._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + Telephony.CellBroadcasts.SLOT_INDEX + " INTEGER DEFAULT 0,"
                 + Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE + " INTEGER,"
                 + Telephony.CellBroadcasts.PLMN + " TEXT,"
                 + Telephony.CellBroadcasts.LAC + " INTEGER,"
@@ -164,6 +166,11 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
         if (oldVersion == 10) {
             createDeliveryTimeIndex(db);
             oldVersion++;
+        }
+
+        if (oldVersion == 11) {
+            db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN "
+                    + Telephony.CellBroadcasts.SLOT_INDEX + " INTEGER DEFAULT 0;");
         }
     }
 
