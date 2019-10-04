@@ -133,4 +133,7 @@
         <item>500</item>
         <item>1000</item>
     </integer-array>
+
+    <!-- Whether the emergency alert notification is non-swipeable -->
+    <bool name="non_swipeable_notificaiton">false</bool>
 </resources>
