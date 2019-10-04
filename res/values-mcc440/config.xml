@@ -23,4 +23,6 @@
     <bool name="use_full_volume">true</bool>
     <!-- Whether to compare message body when performing message duplicate dection -->
     <bool name="duplicate_compare_body">true</bool>
+    <!-- Whether the emergency alert notification is non-swipeable -->
+    <bool name="non_swipeable_notificaiton">true</bool>
 </resources>
