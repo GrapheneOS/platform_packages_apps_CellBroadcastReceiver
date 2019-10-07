@@ -23,8 +23,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Message;
 import android.os.PowerManager;
-
 import android.util.Log;
+
 import com.android.internal.util.State;
 import com.android.internal.util.StateMachine;
 
@@ -109,7 +109,7 @@ public abstract class WakeLockStateMachine extends StateMachine {
      * Send a message with the specified object for {@link #handleSmsMessage}.
      * @param obj the object to pass in the msg.obj field
      */
-    public final void dispatchSmsMessage(Object obj) {
+    public final void onCdmaCellBroadcastSms(Object obj) {
         sendMessage(EVENT_NEW_SMS_MESSAGE, obj);
     }
 
