@@ -43,8 +43,6 @@ import android.provider.SearchIndexableResource;
 import android.provider.SearchIndexablesProvider;
 import android.text.TextUtils;
 
-import com.android.settingslib.development.DevelopmentSettingsEnabler;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -130,7 +128,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
 
         // Show extra settings when developer options is enabled in settings.
         boolean enableDevSettings =
-                DevelopmentSettingsEnabler.isDevelopmentSettingsEnabled(getContext());
+                DevelopmentSettingsHelper.isDevelopmentSettingsEnabled(getContext());
 
         Resources res = CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(getContext());
         Object[] ref;

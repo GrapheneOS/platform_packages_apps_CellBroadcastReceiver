@@ -41,8 +41,6 @@ import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 
-import com.android.settingslib.development.DevelopmentSettingsEnabler;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -286,7 +284,7 @@ public class CellBroadcastSettings extends Activity {
 
             // Show extra settings when developer options is enabled in settings.
             boolean enableDevSettings =
-                    DevelopmentSettingsEnabler.isDevelopmentSettingsEnabled(getContext());
+                    DevelopmentSettingsHelper.isDevelopmentSettingsEnabled(getContext());
 
             Resources res = getResourcesForDefaultSmsSubscriptionId(getContext());
             initReminderIntervalList();
