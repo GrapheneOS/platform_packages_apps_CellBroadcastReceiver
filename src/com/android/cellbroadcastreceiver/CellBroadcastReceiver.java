@@ -151,6 +151,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 // Sets the default values of the shared preference if there isn't any.
                 PreferenceManager.setDefaultValues(context, R.xml.preferences, false);
 
+                sp.edit().putBoolean(CellBroadcastSettings.KEY_USE_FULL_VOLUME_SETTINGS_CHANGED,
+                        false).apply();
+
                 // If the device is in test harness mode, we need to disable emergency alert by
                 // default.
                 if (ActivityManager.isRunningInUserTestHarness()) {
