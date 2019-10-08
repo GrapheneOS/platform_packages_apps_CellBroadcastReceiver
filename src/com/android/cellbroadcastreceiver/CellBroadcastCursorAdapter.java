@@ -18,7 +18,6 @@ package com.android.cellbroadcastreceiver;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.telephony.CellBroadcastMessage;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

@@ -39,7 +39,6 @@ import android.os.UserHandle;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.CarrierConfigManager;
-import android.telephony.CellBroadcastMessage;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
@@ -244,7 +243,7 @@ public class CellBroadcastAlertService extends Service {
         TelephonyManager tm =
                 ((TelephonyManager)
                                 getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE))
-                        .createForSubscriptionId(cbm.getSubId());
+                        .createForSubscriptionId(cbm.getSubId(getApplicationContext()));
         if (tm.getEmergencyCallbackMode()
                 && CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(
                                 getApplicationContext())
@@ -309,12 +308,7 @@ public class CellBroadcastAlertService extends Service {
         }
 
         final CellBroadcastMessage cbm = new CellBroadcastMessage(message);
-        int subId = intent.getExtras().getInt(PhoneConstants.SUBSCRIPTION_KEY);
-        if (SubscriptionManager.isValidSubscriptionId(subId)) {
-            cbm.setSubId(subId);
-        } else {
-            Log.e(TAG, "Invalid subscription id");
-        }
+        int subId = cbm.getSubId(getApplicationContext());
 
         if (!shouldDisplayMessage(cbm)) {
             return;
@@ -467,7 +461,7 @@ public class CellBroadcastAlertService extends Service {
                 if (range.mStartId <= channel && range.mEndId >= channel) {
                     // Check if the channel is within the scope. If not, ignore the alert message.
                     if (!CellBroadcastChannelManager.checkScope(getApplicationContext(),
-                            message.getSubId(), range.mScope)) {
+                            message.getSubId(getApplicationContext()), range.mScope)) {
                         Log.d(TAG, "The range [" + range.mStartId + "-" + range.mEndId
                                 + "] is not within the scope. mScope = " + range.mScope);
                         return false;
@@ -482,7 +476,7 @@ public class CellBroadcastAlertService extends Service {
                             CellBroadcastReceiverApp.setLatestAreaInfo(message);
                             Intent intent = new Intent(CB_AREA_INFO_RECEIVED_ACTION);
                             intent.setPackage(SETTINGS_APP);
-                            intent.putExtra(EXTRA_MESSAGE, message);
+                            intent.putExtra(EXTRA_MESSAGE, message.getSmsCbMessage());
                             // Send broadcast twice, once for apps that have PRIVILEGED permission
                             // and once for those that have the runtime one.
                             sendBroadcastAsUser(intent, UserHandle.ALL,
@@ -503,7 +497,7 @@ public class CellBroadcastAlertService extends Service {
                 }
             }
         }
-        int subId = message.getSubId();
+        int subId = message.getSubId(getApplicationContext());
         if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
                 channel, R.array.emergency_alerts_channels_range_strings, this)) {
             return emergencyAlertEnabled

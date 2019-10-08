@@ -17,7 +17,6 @@
 package com.android.cellbroadcastreceiver;
 
 import android.app.Application;
-import android.telephony.CellBroadcastMessage;
 
 import java.util.ArrayList;
 
