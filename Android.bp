@@ -18,7 +18,6 @@ java_defaults {
        proguard_flags_files: ["proguard.flags"],
     },
     resource_dirs: ["res"],
-    defaults: ["SettingsLibDefaults"],
 }
 
 android_app {
