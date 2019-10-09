@@ -29,7 +29,6 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.Telephony;
-import android.telephony.CellBroadcastMessage;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -196,7 +195,6 @@ public class CellBroadcastContentProvider extends ContentProvider {
         // is not compatible with CMAS carrier requirements and could also cause other emergency
         // alerts, e.g. ETWS, to not display if the database is filled with old messages.
         // Use duplicate message ID detection in CellBroadcastAlertService instead of DB query.
-
         long rowId = db.insert(CellBroadcastDatabaseHelper.TABLE_NAME, null, cv);
         if (rowId == -1) {
             Log.e(TAG, "failed to insert new broadcast into database");

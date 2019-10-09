@@ -26,7 +26,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.IPowerManager;
 import android.os.PowerManager;
-import android.telephony.CellBroadcastMessage;
 import android.widget.TextView;
 
 import org.junit.After;

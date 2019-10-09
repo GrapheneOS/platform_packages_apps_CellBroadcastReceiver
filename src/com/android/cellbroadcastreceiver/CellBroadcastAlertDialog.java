@@ -30,7 +30,6 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
-import android.telephony.CellBroadcastMessage;
 import android.telephony.SmsCbCmasInfo;
 import android.util.Log;
 import android.view.KeyEvent;

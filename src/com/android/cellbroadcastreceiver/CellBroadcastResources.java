@@ -18,7 +18,6 @@ package com.android.cellbroadcastreceiver;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.telephony.CellBroadcastMessage;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.text.Spannable;
@@ -264,7 +263,7 @@ public class CellBroadcastResources {
         }
 
         SmsCbCmasInfo cmasInfo = cbm.getCmasWarningInfo();
-        int subId = cbm.getSubId();
+        int subId = cbm.getSubId(context);
         final int serviceCategory = cbm.getServiceCategory();
         if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
                 serviceCategory,
