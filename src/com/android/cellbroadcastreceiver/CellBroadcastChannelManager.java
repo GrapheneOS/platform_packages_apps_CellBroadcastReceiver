@@ -282,7 +282,11 @@ public class CellBroadcastChannelManager {
                         NetworkRegistrationInfo.DOMAIN_CS,
                         AccessNetworkConstants.TRANSPORT_TYPE_WWAN);
                 if (regInfo != null) {
-                    if (regInfo.isInService() || regInfo.isEmergencyEnabled()) {
+                    if (regInfo.getRegistrationState() ==
+                            NetworkRegistrationInfo.REGISTRATION_STATE_HOME
+                            || regInfo.getRegistrationState() ==
+                            NetworkRegistrationInfo.REGISTRATION_STATE_ROAMING
+                            || regInfo.isEmergencyEnabled()) {
                         int voiceRoamingType = (regInfo != null) ? regInfo.getRoamingType() :
                                 ROAMING_TYPE_NOT_ROAMING;
                         if (voiceRoamingType == ROAMING_TYPE_NOT_ROAMING) {
