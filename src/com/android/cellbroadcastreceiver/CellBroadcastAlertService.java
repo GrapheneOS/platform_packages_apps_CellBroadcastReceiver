@@ -260,6 +260,13 @@ public class CellBroadcastAlertService extends Service {
             return false;
         }
 
+        // Check if message body is empty
+        String msgBody = cbm.getMessageBody();
+        if (msgBody == null || msgBody.length() == 0) {
+            Log.e(TAG, "Empty content or Unsupported charset");
+            return false;
+        }
+
         // Check if we need to perform language filtering.
         CellBroadcastChannelRange range = CellBroadcastChannelManager
                 .getCellBroadcastChannelRangeFromMessage(getApplicationContext(), cbm);
