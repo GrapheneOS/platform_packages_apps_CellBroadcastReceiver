@@ -78,8 +78,7 @@
                 android:paddingStart="16dip"
                 android:paddingEnd="16dip"
                 android:paddingTop="8dip"
-                android:paddingBottom="8dip"
-                android:autoLink="email|phone|web" />
+                android:paddingBottom="8dip" />
         </ScrollView>
     </LinearLayout>
 
