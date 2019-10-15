@@ -28,9 +28,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
+import android.os.UserManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -369,6 +371,13 @@ public class CellBroadcastAlertDialog extends Activity {
 
         ((TextView) findViewById(R.id.message)).setText(message.getMessageBody());
 
+        TextView body = ((TextView) findViewById(R.id.message));
+        body.setText(message.getMessageBody());
+        if (shouldAddLinksToMessage(message)) {
+            Linkify.addLinks(body, Linkify.EMAIL_ADDRESSES | Linkify.PHONE_NUMBERS |
+                    Linkify.WEB_URLS);
+        }
+
         String dismissButtonText = getString(R.string.button_dismiss);
 
         if (mMessageList.size() > 1) {
@@ -376,6 +385,26 @@ public class CellBroadcastAlertDialog extends Activity {
         }
 
         ((TextView) findViewById(R.id.dismissButton)).setText(dismissButtonText);
+    }
+
+    /**
+     * Check if links should be added to message, according to the message class and the
+     * values defined in {@code message_classes_to_linkify}
+     * @param message CMAS message
+     * @return True if the message should be linkified, false otherwise
+     */
+    private boolean shouldAddLinksToMessage(CellBroadcastMessage message) {
+        int[] classesToLinkify = getResources().getIntArray(R.array.message_classes_to_linkify);
+        if (classesToLinkify == null || classesToLinkify.length == 0) {
+            return false;
+        }
+
+        int messageClass = message.getCmasMessageClass();
+        for (int i = 0; i < classesToLinkify.length; i++) {
+            if (classesToLinkify[i] == messageClass)
+                return true;
+        }
+        return false;
     }
 
     /**
