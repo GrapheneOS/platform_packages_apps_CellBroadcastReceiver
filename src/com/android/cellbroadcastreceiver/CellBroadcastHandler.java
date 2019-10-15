@@ -104,7 +104,7 @@ public class CellBroadcastHandler extends WakeLockStateMachine {
     @Override
     protected boolean handleSmsMessage(Message message) {
         if (message.obj instanceof SmsCbMessage) {
-            handleBroadcastSms((SmsCbMessage) message.obj, message.arg1);
+            handleBroadcastSms((SmsCbMessage) message.obj);
             return true;
         } else {
             loge("handleMessage got object of type: " + message.obj.getClass().getName());
@@ -116,7 +116,8 @@ public class CellBroadcastHandler extends WakeLockStateMachine {
      * Dispatch a Cell Broadcast message to listeners.
      * @param message the Cell Broadcast to broadcast
      */
-    protected void handleBroadcastSms(SmsCbMessage message, int slotIndex) {
+    protected void handleBroadcastSms(SmsCbMessage message) {
+        int slotIndex = message.getSlotIndex();
         // Log Cellbroadcast msg received event
         TelephonyMetrics metrics = TelephonyMetrics.getInstance();
         metrics.writeNewCBSms(slotIndex, message.getMessageFormat(),
