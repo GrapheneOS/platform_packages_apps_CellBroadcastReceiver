@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static android.telephony.PhoneStateListener.LISTEN_NONE;
+
 import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.DBG;
 
 import android.app.Service;
@@ -39,12 +41,9 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.telephony.PhoneStateListener;
-import android.telephony.SubscriptionInfo;
-import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
-import android.util.SparseArray;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
 
@@ -106,9 +105,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private MediaPlayer mMediaPlayer;
     private AudioManager mAudioManager;
     private TelephonyManager mTelephonyManager;
-    private SubscriptionManager mSubscriptionManager;
-    private int mPhoneCount;
-    private SparseArray<PhoneStateListener> mPhoneStateListeners = new SparseArray<>();
     private int mInitialCallState;
 
     // Internal messages
@@ -156,6 +152,17 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
                 default:
                     loge("Handler received unknown message, what=" + msg.what);
+             }
+        }
+    };
+
+    private final PhoneStateListener mPhoneStateListener = new PhoneStateListener() {
+        @Override
+        public void onCallStateChanged(int state, String ignored) {
+            // Stop the alert sound and speech if the call state changes.
+            if (state != TelephonyManager.CALL_STATE_IDLE
+                    && state != mInitialCallState) {
+                stopSelf();
             }
         }
     };
@@ -220,34 +227,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         // Listen for incoming calls to kill the alarm.
-        mTelephonyManager =
-                (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        mSubscriptionManager =
-                (SubscriptionManager) getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
-
-        mPhoneCount = mTelephonyManager.getSupportedModemCount();
-        for (int i = 0; i < mPhoneCount; i++) {
-            final SubscriptionInfo sir =
-                    mSubscriptionManager.getActiveSubscriptionInfoForSimSlotIndex(i);
-            if (sir == null) continue;
-            final int subId = sir.getSubscriptionId();
-            PhoneStateListener listener =
-                    new PhoneStateListener() {
-                        @Override
-                        public void onCallStateChanged(int state, String ignored) {
-                            // Stop the alert sound and speech if the call state changes.
-                            if (state != TelephonyManager.CALL_STATE_IDLE
-                                    && state != mInitialCallState) {
-                                stopSelf();
-                            }
-                        }
-                    };
-
-            mPhoneStateListeners.put(subId, listener);
-            mTelephonyManager
-                    .createForSubscriptionId(subId)
-                    .listen(listener, PhoneStateListener.LISTEN_CALL_STATE);
-        }
+        mTelephonyManager = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE));
+        mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
     }
 
     @Override
@@ -255,17 +236,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         // stop audio, vibration and TTS
         stop();
         // Stop listening for incoming calls.
-        for (int i = 0; i < mPhoneCount; i++) {
-            final SubscriptionInfo sir =
-                    mSubscriptionManager.getActiveSubscriptionInfoForSimSlotIndex(i);
-            if (sir == null) continue;
-            final int subId = sir.getSubscriptionId();
-            PhoneStateListener listener = mPhoneStateListeners.get(subId);
-            if (listener == null) continue;
-            mTelephonyManager
-                    .createForSubscriptionId(subId)
-                    .listen(listener, PhoneStateListener.LISTEN_NONE);
-        }
+        mTelephonyManager.listen(mPhoneStateListener, LISTEN_NONE);
         // shutdown TTS engine
         if (mTts != null) {
             try {
