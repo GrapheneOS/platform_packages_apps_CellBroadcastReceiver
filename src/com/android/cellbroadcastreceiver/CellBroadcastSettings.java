@@ -82,6 +82,11 @@ public class CellBroadcastSettings extends Activity {
     // Preference category for alert preferences.
     public static final String KEY_CATEGORY_ALERT_PREFERENCES = "category_alert_preferences";
 
+    // Show checkbox for Presidential alerts in settings
+    // Whether to display CMAS presidential alert notifications (always enabled).
+    public static final String KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS =
+            "enable_cmas_presidential_alerts";
+
     // Whether to display CMAS extreme threat notifications (default is enabled).
     public static final String KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS =
             "enable_cmas_extreme_threat_alerts";
@@ -184,6 +189,9 @@ public class CellBroadcastSettings extends Activity {
         // WATCH
         private TwoStatePreference mAlertReminder;
 
+        // Show checkbox for Presidential alerts in settings
+        private TwoStatePreference mPresidentialCheckBox;
+
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
@@ -224,6 +232,10 @@ public class CellBroadcastSettings extends Activity {
             mAlertHistory = findPreference(KEY_EMERGENCY_ALERT_HISTORY);
             mDevSettingCategory = (PreferenceCategory)
                     findPreference(KEY_CATEGORY_DEV_SETTINGS);
+
+            // Show checkbox for Presidential alerts in settings
+            mPresidentialCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS);
 
             if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
                 mAlertReminder = (TwoStatePreference)
@@ -432,6 +444,13 @@ public class CellBroadcastSettings extends Activity {
                                 return true;
                             }
                         });
+            }
+
+            // Show checkbox for Presidential alerts in settings
+            if (!res.getBoolean(R.bool.show_presidential_alerts_in_settings)) {
+                if (mAlertCategory != null) {
+                    mAlertCategory.removePreference(mPresidentialCheckBox);
+                }
             }
         }
 
