@@ -4,10 +4,8 @@ java_defaults {
     min_sdk_version: "29",
     platform_apis: true,
     privileged: true,
-    // TODO remove framework-cellbroadcast-shared-srcs once move service to different repo
     srcs: [
       "src/**/*.java",
-      ":framework-cellbroadcast-shared-srcs",
    ],
     libs: ["telephony-common"],
     static_libs: [
