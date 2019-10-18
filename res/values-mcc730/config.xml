@@ -31,5 +31,7 @@
     <bool name="show_date_time_title">true</bool>
     <!-- Emergecny alert tone duration set to 5 minutes for Chilean users -->
     <integer name="alert_duration">300000</integer>
+    <!-- Disable links for Chile -->
+    <integer-array name="message_classes_to_linkify"></integer-array>
 </resources>
 
