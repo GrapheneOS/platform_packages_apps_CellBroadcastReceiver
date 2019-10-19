@@ -35,6 +35,8 @@ import android.util.Log;
 
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 
+import java.util.ArrayList;
+
 public class CellBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "CellBroadcastReceiver";
     static final boolean DBG = true;
@@ -92,12 +94,12 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         } else if (Telephony.Sms.Intents.SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED_ACTION
                 .equals(action)) {
             if (privileged) {
-                CdmaSmsCbProgramData[] programDataList = (CdmaSmsCbProgramData[])
-                        intent.getParcelableArrayExtra("program_data_list");
+                ArrayList<CdmaSmsCbProgramData> programDataList =
+                        intent.getParcelableArrayListExtra("program_data");
                 if (programDataList != null) {
                     handleCdmaSmsCbProgramData(context, programDataList);
                 } else {
-                    loge("SCPD intent received with no program_data_list");
+                    loge("SCPD intent received with no program_data");
                 }
             } else {
                 loge("ignoring unprivileged action received " + action);
@@ -179,7 +181,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      * @param programDataList
      */
     private void handleCdmaSmsCbProgramData(Context context,
-                                            CdmaSmsCbProgramData[] programDataList) {
+                                            ArrayList<CdmaSmsCbProgramData> programDataList) {
         for (CdmaSmsCbProgramData programData : programDataList) {
             switch (programData.getOperation()) {
                 case CdmaSmsCbProgramData.OPERATION_ADD_CATEGORY:
