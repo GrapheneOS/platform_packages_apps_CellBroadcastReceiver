@@ -59,7 +59,7 @@
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"అత్యవసర హెచ్చరికల చరిత్ర"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"హెచ్చరిక ప్రాధాన్యతలు"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS పరీక్ష ప్రసారాలు"</string>
-    <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"భూకంపం సునామీ హెచ్చరిక సిస్టమ్ కోసం పరీక్ష ప్రసారాలు"</string>
+    <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"\'భూకంప సునామీ హెచ్చరిక సిస్టమ్\' కోసం పరీక్ష ప్రసారాలు"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"అత్యంత తీవ్ర అపాయాలు"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"ప్రాణానికి మరియు ఆస్తికి అత్యంత తీవ్ర అపాయాలు"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"తీవ్ర అపాయాలు"</string>
