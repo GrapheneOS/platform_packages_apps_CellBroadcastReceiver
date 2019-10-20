@@ -1,4 +1,0 @@
-rule android.util.LocalLog* com.android.cellbroadcast.LocalLog@1
-rule android.util.Slog* com.android.cellbroadcast.Slog@1
-rule com.android.internal.util.State* com.android.cellbroadcast.State@1
-rule com.android.internal.util.StateMachine* com.android.cellbroadcast.StateMachine@1
