@@ -252,7 +252,10 @@ public class GsmCellBroadcastHandler extends CellBroadcastHandler {
             }
 
             if (VDBG) log("header=" + header);
-            String plmn = TelephonyManager.from(mContext).getNetworkOperatorForPhone(slotIndex);
+            TelephonyManager tm =
+                (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+            // TODO make a systemAPI for getNetworkOperatorForSlotIndex
+            String plmn = tm.getNetworkOperatorForPhone(slotIndex);
             int lac = -1;
             int cid = -1;
             CellLocation cl = getCellLocation();
