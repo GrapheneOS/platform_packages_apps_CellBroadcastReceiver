@@ -4,7 +4,11 @@ java_defaults {
     min_sdk_version: "29",
     platform_apis: true,
     privileged: true,
-    srcs: ["src/**/*.java"],
+    // TODO remove framework-cellbroadcast-shared-srcs once move service to different repo
+    srcs: [
+      "src/**/*.java",
+      ":framework-cellbroadcast-shared-srcs",
+   ],
     libs: ["telephony-common"],
     static_libs: [
         "androidx.legacy_legacy-support-v4",
@@ -17,8 +21,8 @@ java_defaults {
     optimize: {
        proguard_flags_files: ["proguard.flags"],
     },
+    jarjar_rules: "cellbroadcast-jarjar-rules.txt",
     resource_dirs: ["res"],
-    defaults: ["SettingsLibDefaults"],
 }
 
 android_app {
