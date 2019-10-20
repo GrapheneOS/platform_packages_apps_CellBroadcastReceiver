@@ -23,8 +23,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Message;
 import android.os.PowerManager;
-import android.telephony.Rlog;
 
+import android.util.Log;
 import com.android.internal.util.State;
 import com.android.internal.util.StateMachine;
 
@@ -225,7 +225,7 @@ public abstract class WakeLockStateMachine extends StateMachine {
     @UnsupportedAppUsage
     @Override
     protected void log(String s) {
-        Rlog.d(getName(), s);
+        Log.d(getName(), s);
     }
 
     /**
@@ -234,7 +234,7 @@ public abstract class WakeLockStateMachine extends StateMachine {
      */
     @Override
     protected void loge(String s) {
-        Rlog.e(getName(), s);
+        Log.e(getName(), s);
     }
 
     /**
@@ -244,6 +244,6 @@ public abstract class WakeLockStateMachine extends StateMachine {
      */
     @Override
     protected void loge(String s, Throwable e) {
-        Rlog.e(getName(), s, e);
+        Log.e(getName(), s, e);
     }
 }
