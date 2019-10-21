@@ -17,6 +17,7 @@
 package com.android.cellbroadcastreceiver;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -28,9 +29,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
+import android.os.UserManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -81,6 +84,9 @@ public class CellBroadcastAlertDialog extends Activity {
 
     /** Handler to add and remove screen on flags for emergency alerts. */
     private final ScreenOffHandler mScreenOffHandler = new ScreenOffHandler();
+
+    // Show the opt-out dialog
+    private AlertDialog mOptOutDialog;
 
     /**
      * Animation handler for the flashing warning icon (emergency alerts only).
@@ -369,6 +375,13 @@ public class CellBroadcastAlertDialog extends Activity {
 
         ((TextView) findViewById(R.id.message)).setText(message.getMessageBody());
 
+        TextView body = ((TextView) findViewById(R.id.message));
+        body.setText(message.getMessageBody());
+        if (shouldAddLinksToMessage(message)) {
+            Linkify.addLinks(body, Linkify.EMAIL_ADDRESSES | Linkify.PHONE_NUMBERS |
+                    Linkify.WEB_URLS);
+        }
+
         String dismissButtonText = getString(R.string.button_dismiss);
 
         if (mMessageList.size() > 1) {
@@ -376,6 +389,26 @@ public class CellBroadcastAlertDialog extends Activity {
         }
 
         ((TextView) findViewById(R.id.dismissButton)).setText(dismissButtonText);
+    }
+
+    /**
+     * Check if links should be added to message, according to the message class and the
+     * values defined in {@code message_classes_to_linkify}
+     * @param message CMAS message
+     * @return True if the message should be linkified, false otherwise
+     */
+    private boolean shouldAddLinksToMessage(CellBroadcastMessage message) {
+        int[] classesToLinkify = getResources().getIntArray(R.array.message_classes_to_linkify);
+        if (classesToLinkify == null || classesToLinkify.length == 0) {
+            return false;
+        }
+
+        int messageClass = message.getCmasMessageClass();
+        for (int i = 0; i < classesToLinkify.length; i++) {
+            if (classesToLinkify[i] == messageClass)
+                return true;
+        }
+        return false;
     }
 
     /**
@@ -421,6 +454,7 @@ public class CellBroadcastAlertDialog extends Activity {
                 }
             }
             Log.d(TAG, "onNewIntent called with message list of size " + newMessageList.size());
+            hideOptOutDialog(); // Hide opt-out dialog when new alert coming
             updateAlertText(getLatestMessage());
             // If the new intent was sent from a notification, dismiss it.
             clearNotification(intent);
@@ -512,7 +546,7 @@ public class CellBroadcastAlertDialog extends Activity {
                     startActivity(intent);
                 } else {
                     Log.d(TAG, "Showing opt-out dialog in current activity");
-                    CellBroadcastOptOutActivity.showOptOutDialog(this);
+                    mOptOutDialog = CellBroadcastOptOutActivity.showOptOutDialog(this);
                     return; // don't call finish() until user dismisses the dialog
                 }
             }
@@ -548,5 +582,19 @@ public class CellBroadcastAlertDialog extends Activity {
     @Override
     public void onBackPressed() {
         // Disable back key
+    }
+
+    /**
+     * Hide opt-out dialog.
+     * In case of any emergency alert invisible, need to hide the opt-out dialog when
+     * new alert coming.
+     */
+    private void hideOptOutDialog() {
+        if (mOptOutDialog != null && mOptOutDialog.isShowing()) {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            prefs.edit().putBoolean(CellBroadcastSettings.KEY_SHOW_CMAS_OPT_OUT_DIALOG, true)
+                    .apply();
+            mOptOutDialog.dismiss();
+        }
     }
 }
