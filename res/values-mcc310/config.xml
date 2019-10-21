@@ -73,4 +73,9 @@
         <!-- state/local test additional language -->
         <item>0x112F-0x112F:rat=gsm, emergency=true, filter_language=true</item>
     </string-array>
+    <!-- Channels to receive geo-fencing trigger messages -->
+    <string-array name="geo_fencing_trigger_messages_range_strings" translatable="false">
+        <!-- geo-fencing trigger messages -->
+        <item>0x1130-0x1130:rat=gsm, emergency=true</item>
+    </string-array>
 </resources>
