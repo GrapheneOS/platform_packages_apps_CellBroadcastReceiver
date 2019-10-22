@@ -72,7 +72,7 @@
 
         <!-- Export provider for AT&T Device and Network Reset-->
         <provider android:name="CellBroadcastContentProvider"
-                  android:authorities="cellbroadcasts"
+                  android:authorities="cellbroadcasts-app"
                   android:exported="true"
                   android:readPermission="android.permission.READ_CELL_BROADCASTS" />
 

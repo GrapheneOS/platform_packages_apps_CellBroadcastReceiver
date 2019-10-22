@@ -69,7 +69,7 @@
         android:exported="false" />
 
     <provider android:name="CellBroadcastContentProvider"
-        android:authorities="cellbroadcasts"
+        android:authorities="cellbroadcasts-app"
         android:readPermission="android.permission.READ_CELL_BROADCASTS" />
 
     <activity android:name="CellBroadcastListActivity"
