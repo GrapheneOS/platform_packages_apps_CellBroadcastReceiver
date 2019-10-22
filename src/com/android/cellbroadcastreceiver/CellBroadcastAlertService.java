@@ -33,7 +33,6 @@ import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PersistableBundle;
-import android.os.RemoteException;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.UserHandle;
@@ -187,15 +186,11 @@ public class CellBroadcastAlertService extends Service {
                 Telephony.Sms.Intents.SMS_CB_RECEIVED_ACTION.equals(action)) {
             handleCellBroadcastIntent(intent);
         } else if (SHOW_NEW_ALERT_ACTION.equals(action)) {
-            try {
-                if (UserHandle.myUserId() ==
-                        ActivityManager.getService().getCurrentUser().id) {
-                    showNewAlert(intent);
-                } else {
-                    Log.d(TAG,"Not active user, ignore the alert display");
-                }
-            } catch (RemoteException e) {
-                e.printStackTrace();
+            if (UserHandle.myUserId() == ((ActivityManager) getSystemService(
+                    Context.ACTIVITY_SERVICE)).getCurrentUser()) {
+                showNewAlert(intent);
+            } else {
+                Log.d(TAG, "Not active user, ignore the alert display");
             }
         } else {
             Log.e(TAG, "Unrecognized intent action: " + action);
@@ -676,7 +671,8 @@ public class CellBroadcastAlertService extends Service {
         int channelTitleId = CellBroadcastResources.getDialogTitleResource(context, message);
         CharSequence channelName = context.getText(channelTitleId);
         String messageBody = message.getMessageBody();
-        final NotificationManager notificationManager = NotificationManager.from(context);
+        final NotificationManager notificationManager =
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         createNotificationChannels(context);
 
         // Create intent to show the new messages when user selects the notification.
@@ -767,7 +763,9 @@ public class CellBroadcastAlertService extends Service {
      * with the same ID is already registered, NotificationManager will ignore this call.
      */
     static void createNotificationChannels(Context context) {
-        NotificationManager.from(context).createNotificationChannel(
+        NotificationManager notificationManager =
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.createNotificationChannel(
                 new NotificationChannel(
                         NOTIFICATION_CHANNEL_EMERGENCY_ALERTS,
                         context.getString(R.string.notification_channel_emergency_alerts),
@@ -777,7 +775,7 @@ public class CellBroadcastAlertService extends Service {
                 context.getString(R.string.notification_channel_broadcast_messages),
                 NotificationManager.IMPORTANCE_DEFAULT);
         nonEmergency.enableVibration(true);
-        NotificationManager.from(context).createNotificationChannel(nonEmergency);
+        notificationManager.createNotificationChannel(nonEmergency);
     }
 
     static Intent createDisplayMessageIntent(Context context, Class intentClass,
