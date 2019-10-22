@@ -42,14 +42,12 @@ import android.telephony.CarrierConfigManager;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
-import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
-import com.android.internal.telephony.PhoneConstants;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
