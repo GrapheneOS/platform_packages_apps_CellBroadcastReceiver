@@ -146,7 +146,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     }
 
     private void initializeSharedPreference(Context context) {
-        if (UserManager.get(context).isSystemUser()) {
+        if (isSystemUser(context)) {
             Log.d(TAG, "initializeSharedPreference");
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
             if (!sp.getBoolean(PreferenceManager.KEY_HAS_SET_DEFAULT_VALUES, false)) {
@@ -242,11 +242,20 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     }
 
     /**
+     * Check if user from context is system user
+     * @param context
+     * @return whether the user is system user
+     */
+    private static boolean isSystemUser(Context context) {
+        return ((UserManager) context.getSystemService(Context.USER_SERVICE)).isSystemUser();
+    }
+
+    /**
      * Tell {@link CellBroadcastConfigService} to enable the CB channels.
      * @param context the broadcast receiver context
      */
     static void startConfigService(Context context) {
-        if (UserManager.get(context).isSystemUser()) {
+        if (isSystemUser(context)) {
             Intent serviceIntent = new Intent(CellBroadcastConfigService.ACTION_ENABLE_CHANNELS,
                     null, context, CellBroadcastConfigService.class);
             Log.d(TAG, "Start Cell Broadcast configuration.");
