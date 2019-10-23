@@ -236,7 +236,7 @@ public class CellBroadcastConfigService extends IntentService {
                         R.array.state_local_test_alert_range_strings));
 
         // Enable/Disable GSM geo-fencing trigger messages.
-        setCellBroadcastRange(manager, enableStateLocalTestAlerts,
+        setCellBroadcastRange(manager, enableGeoFencingTriggerMessage,
                 CellBroadcastChannelManager.getInstance().getCellBroadcastChannelRanges(this,
                         R.array.geo_fencing_trigger_messages_range_strings));
 
