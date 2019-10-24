@@ -26,9 +26,9 @@
     </string-array>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112-0x1112:rat=gsm, emergency=true</item>
+        <item>0x1112:rat=gsm, emergency=true</item>
         <!-- additional language -->
-        <item>0x111F-0x111F:rat=gsm, emergency=true</item>
+        <item>0x111F:rat=gsm, emergency=true</item>
     </string-array>
     <!--4371~4379, 4384~4392 -->
     <string-array name="emergency_alerts_channels_range_strings" translatable="false">
@@ -38,9 +38,9 @@
     </string-array>
     <!--4380, 4393 -->
     <string-array name="required_monthly_test_range_strings" translatable="false">
-        <item>0x111C-0x111C:rat=gsm, emergency=true</item>
+        <item>0x111C:rat=gsm, emergency=true</item>
         <!-- additional language -->
-        <item>0x1129-0x1129:rat=gsm, emergency=true</item>
+        <item>0x1129:rat=gsm, emergency=true</item>
     </string-array>
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false"></string-array>
     <string-array name="cmas_alerts_severe_range_strings" translatable="false"></string-array>
