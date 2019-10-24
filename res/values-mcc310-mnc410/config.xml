@@ -15,8 +15,6 @@
 -->
 
 <resources>
-    <!-- Whether to reset alert message duplicate detection after toggling airplane mode -->
-    <bool name="reset_duplicate_detection_on_airplane_mode">true</bool>
     <!-- Show timestamp of the alert -->
     <bool name="show_date_time_title">true</bool>
     <!-- Whether to show CMAS messages by in a different order than received by prioritizing them -->

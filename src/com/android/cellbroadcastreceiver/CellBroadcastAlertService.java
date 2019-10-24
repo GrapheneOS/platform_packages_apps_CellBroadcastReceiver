@@ -16,8 +16,6 @@
 
 package com.android.cellbroadcastreceiver;
 
-import static android.text.format.DateUtils.DAY_IN_MILLIS;
-
 import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -32,15 +30,11 @@ import android.content.res.Resources;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.os.PersistableBundle;
-import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
-import android.telephony.CarrierConfigManager;
 import android.telephony.SmsCbEtwsInfo;
-import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -50,7 +44,6 @@ import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadca
 import com.android.internal.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.Locale;
 
 /**
@@ -90,12 +83,6 @@ public class CellBroadcastAlertService extends Service {
     private static final String EXTRA_MESSAGE = "message";
 
     /**
-     * Default message expiration time is 24 hours. Same message arrives within 24 hours will be
-     * treated as a duplicate.
-     */
-    private static final long DEFAULT_EXPIRATION_TIME = DAY_IN_MILLIS;
-
-    /**
      * Key for accessing message filter from SystemProperties. For testing use.
      */
     private static final String MESSAGE_FILTER_PROPERTY_KEY =
@@ -117,66 +104,6 @@ public class CellBroadcastAlertService extends Service {
         OTHER
     }
 
-    /**
-     *  Container for service category, serial number, location, body hash code, and ETWS primary/
-     *  secondary information for duplication detection.
-     */
-    private static final class MessageServiceCategoryAndScope {
-        private final int mServiceCategory;
-        private final int mSerialNumber;
-        private final SmsCbLocation mLocation;
-        private final int mBodyHash;
-        private final boolean mIsEtwsPrimary;
-
-        MessageServiceCategoryAndScope(int serviceCategory, int serialNumber,
-                SmsCbLocation location, int bodyHash, boolean isEtwsPrimary) {
-            mServiceCategory = serviceCategory;
-            mSerialNumber = serialNumber;
-            mLocation = location;
-            mBodyHash = bodyHash;
-            mIsEtwsPrimary = isEtwsPrimary;
-        }
-
-        @Override
-        public int hashCode() {
-            return mLocation.hashCode() + 5 * mServiceCategory + 7 * mSerialNumber + 13 * mBodyHash
-                    + 17 * Boolean.hashCode(mIsEtwsPrimary);
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == this) {
-                return true;
-            }
-            if (o instanceof MessageServiceCategoryAndScope) {
-                MessageServiceCategoryAndScope other = (MessageServiceCategoryAndScope) o;
-                return (mServiceCategory == other.mServiceCategory &&
-                        mSerialNumber == other.mSerialNumber &&
-                        mLocation.equals(other.mLocation) &&
-                        mBodyHash == other.mBodyHash &&
-                        mIsEtwsPrimary == other.mIsEtwsPrimary);
-            }
-            return false;
-        }
-
-        @Override
-        public String toString() {
-            return "{mServiceCategory: " + mServiceCategory + " serial number: " + mSerialNumber +
-                    " location: " + mLocation.toString() + " body hash: " + mBodyHash +
-                    " mIsEtwsPrimary: " + mIsEtwsPrimary + "}";
-        }
-    }
-
-    /** Maximum number of message IDs to save before removing the oldest message ID. */
-    private static final int MAX_MESSAGE_ID_SIZE = 1024;
-
-    /** Linked hash map of the message identities for duplication detection purposes. The key is the
-     * the collection of different message keys used for duplication detection, and the value
-     * is the timestamp of message arriving time. Some carriers may require shorter expiration time.
-     */
-    private static final LinkedHashMap<MessageServiceCategoryAndScope, Long> sMessagesMap =
-            new LinkedHashMap<>();
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         mContext = getApplicationContext();
@@ -196,42 +123,6 @@ public class CellBroadcastAlertService extends Service {
             Log.e(TAG, "Unrecognized intent action: " + action);
         }
         return START_NOT_STICKY;
-    }
-
-    /**
-     * Reset the duplicate detection map.
-     */
-    public static void resetMessageDuplicateDetection() {
-        Log.d(TAG, "Reset alert duplicate detection map.");
-        sMessagesMap.clear();
-    }
-
-    /**
-     * Get the carrier specific message duplicate expiration time.
-     *
-     * @param subId Subscription index
-     * @return The expiration time in milliseconds. Small values like 0 (or negative values)
-     * indicate expiration immediately (meaning the duplicate will always be displayed), while large
-     * values indicate the duplicate will always be ignored. The default value would be 24 hours.
-     */
-    private long getDuplicateExpirationTime(int subId) {
-        CarrierConfigManager configManager = (CarrierConfigManager) mContext.getSystemService(
-                Context.CARRIER_CONFIG_SERVICE);
-        Log.d(TAG, "manager = " + configManager);
-        if (configManager == null) {
-            Log.e(TAG, "carrier config is not available.");
-            return DEFAULT_EXPIRATION_TIME;
-        }
-
-        PersistableBundle b = configManager.getConfigForSubId(subId);
-        if (b == null) {
-            Log.e(TAG, "expiration key does not exist.");
-            return DEFAULT_EXPIRATION_TIME;
-        }
-
-        long time = b.getLong(CarrierConfigManager.KEY_MESSAGE_EXPIRATION_TIME_LONG,
-                DEFAULT_EXPIRATION_TIME);
-        return time;
     }
 
     /**
@@ -314,66 +205,10 @@ public class CellBroadcastAlertService extends Service {
         }
 
         final CellBroadcastMessage cbm = new CellBroadcastMessage(message);
-        int subId = cbm.getSubId(mContext);
 
         if (!shouldDisplayMessage(cbm)) {
             return;
         }
-
-        // Check if message body should be used for duplicate detection.
-        boolean shouldCompareMessageBody =
-                CellBroadcastSettings.getResources(mContext, cbm.getSubId(mContext))
-                        .getBoolean(R.bool.duplicate_compare_body);
-
-        int hashCode = shouldCompareMessageBody ? message.getMessageBody().hashCode() : 0;
-
-        // If this is an ETWS message, we need to include primary/secondary message information to
-        // be a factor for duplication detection as well. Per 3GPP TS 23.041 section 8.2,
-        // duplicate message detection shall be performed independently for primary and secondary
-        // notifications.
-        boolean isEtwsPrimary = false;
-        if (message.isEtwsMessage()) {
-            SmsCbEtwsInfo etwsInfo = message.getEtwsWarningInfo();
-            if (etwsInfo != null) {
-                isEtwsPrimary = etwsInfo.isPrimary();
-            } else {
-                Log.w(TAG, "ETWS info is not available.");
-            }
-        }
-
-        // Check for duplicate message IDs according to CMAS carrier requirements. Message IDs
-        // are stored in volatile memory. If the maximum of 1024 messages is reached, the
-        // message ID of the oldest message is deleted from the list.
-        MessageServiceCategoryAndScope newCmasId = new MessageServiceCategoryAndScope(
-                message.getServiceCategory(), message.getSerialNumber(), message.getLocation(),
-                hashCode, isEtwsPrimary);
-
-        Log.d(TAG, "message ID = " + newCmasId);
-
-        long nowTime = SystemClock.elapsedRealtime();
-        // Check if the identical message arrives again
-        if (sMessagesMap.get(newCmasId) != null) {
-            // And if the previous one has not expired yet, treat it as a duplicate message.
-            long previousTime = sMessagesMap.get(newCmasId);
-            long expirationTime = getDuplicateExpirationTime(subId);
-            if (nowTime - previousTime < expirationTime) {
-                Log.d(TAG, "ignoring the duplicate alert " + newCmasId + ", nowTime=" + nowTime
-                        + ", previous=" + previousTime + ", expiration=" + expirationTime);
-                return;
-            }
-            // otherwise, we don't treat it as a duplicate and will show the same message again.
-            Log.d(TAG, "The same message shown up " + (nowTime - previousTime)
-                    + " milliseconds ago. Not a duplicate.");
-        } else if (sMessagesMap.size() >= MAX_MESSAGE_ID_SIZE){
-            // If we reach the maximum, remove the first inserted message key.
-            MessageServiceCategoryAndScope oldestCmasId = sMessagesMap.keySet().iterator().next();
-            Log.d(TAG, "message ID limit reached, removing oldest message ID " + oldestCmasId);
-            sMessagesMap.remove(oldestCmasId);
-        } else {
-            Log.d(TAG, "New message. Not a duplicate. Map size = " + sMessagesMap.size());
-        }
-
-        sMessagesMap.put(newCmasId, nowTime);
 
         final Intent alertIntent = new Intent(SHOW_NEW_ALERT_ACTION);
         alertIntent.setClass(this, CellBroadcastAlertService.class);
