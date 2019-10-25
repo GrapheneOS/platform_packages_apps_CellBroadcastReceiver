@@ -32,7 +32,6 @@ import android.os.PowerManager;
 import android.os.UserManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
-import android.telephony.CellBroadcastMessage;
 import android.telephony.SmsCbCmasInfo;
 import android.text.util.Linkify;
 import android.util.Log;

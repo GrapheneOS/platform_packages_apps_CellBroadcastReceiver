@@ -27,7 +27,6 @@ import android.content.Intent;
 import android.os.PersistableBundle;
 import android.provider.Telephony;
 import android.telephony.CarrierConfigManager;
-import android.telephony.CellBroadcastMessage;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
@@ -50,7 +49,8 @@ public class CellBroadcastAlertServiceTest extends
     static SmsCbMessage createMessage(int serialNumber) {
         return new SmsCbMessage(1, 2, serialNumber, new SmsCbLocation(),
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL, "language", "body",
-                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null, new SmsCbCmasInfo(0, 2, 3, 4, 5, 6));
+                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null, new SmsCbCmasInfo(0, 2, 3, 4, 5, 6),
+                0 /*subId*/);
     }
 
     @Before
@@ -89,10 +89,9 @@ public class CellBroadcastAlertServiceTest extends
         compareEtwsWarningInfo(cbm1.getEtwsWarningInfo(), cbm2.getEtwsWarningInfo());
         assertEquals(cbm1.getLanguageCode(), cbm2.getLanguageCode());
         assertEquals(cbm1.getMessageBody(), cbm2.getMessageBody());
-        assertEquals(cbm1.getSerialNumber(), cbm2.getSerialNumber());
         assertEquals(cbm1.getServiceCategory(), cbm2.getServiceCategory());
-        assertEquals(cbm1.getSubId(), cbm2.getSubId());
-        assertEquals(cbm1.getSerialNumber(), cbm2.getSerialNumber());
+        assertEquals(cbm1.getSmsCbMessage().getSerialNumber(),
+                cbm2.getSmsCbMessage().getSerialNumber());
     }
 
     private void sendMessage(int serialNumber) {
@@ -232,7 +231,7 @@ public class CellBroadcastAlertServiceTest extends
 
         CellBroadcastMessage cbmTest =
                 (CellBroadcastMessage) mServiceIntentToVerify.getExtras().get("message");
-        assertEquals(91924, cbmTest.getSerialNumber());
+        assertEquals(91924, cbmTest.getSmsCbMessage().getSerialNumber());
         mServiceIntentToVerify = null;
 
         // Wait until it expires.
@@ -242,7 +241,7 @@ public class CellBroadcastAlertServiceTest extends
 
         // Since the previous one has already expired, this one should not be treated as a duplicate
         cbmTest = (CellBroadcastMessage) mServiceIntentToVerify.getExtras().get("message");
-        assertEquals(91924, cbmTest.getSerialNumber());
+        assertEquals(91924, cbmTest.getSmsCbMessage().getSerialNumber());
 
         waitForMs(500);
         mServiceIntentToVerify = null;
