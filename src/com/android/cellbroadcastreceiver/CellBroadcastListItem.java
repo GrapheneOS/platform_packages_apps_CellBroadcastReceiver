@@ -18,7 +18,6 @@ package com.android.cellbroadcastreceiver;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.telephony.CellBroadcastMessage;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.StyleSpan;
