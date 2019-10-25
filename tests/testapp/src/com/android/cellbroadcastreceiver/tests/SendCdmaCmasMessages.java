@@ -132,7 +132,7 @@ public class SendCdmaCmasMessages {
         return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP2,
                 SmsCbMessage.GEOGRAPHICAL_SCOPE_PLMN_WIDE, serialNumber,
                 new SmsCbLocation("123456"), serviceCategory, language, body,
-                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null, cmasInfo);
+                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null, cmasInfo, 0 /*subId*/);
     }
 
     /**
