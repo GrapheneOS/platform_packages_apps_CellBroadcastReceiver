@@ -16,9 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="6006277287245076524">"ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
-    <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"ಸೆಲ್‌ ಪ್ರಸಾರ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಈ ಬಳಕೆದಾರರಿಗೆ ಲಭ್ಯವಿಲ್ಲ"</string>
+    <string name="app_label" msgid="2008319089248760277">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್‌ಗಳು"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್‌ಗಳು"</string>
+    <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"ಈ ಬಳಕೆದಾರರಿಗೆ ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಲಭ್ಯವಿಲ್ಲ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ಸರಿ"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"ಹಿಂದಿನ ಯಾವುದೇ ಎಚ್ಚರಿಕೆಗಳಿಲ್ಲ"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"ಪ್ರಸಾರಗಳನ್ನು ಅಳಿಸಿ"</string>
@@ -52,10 +52,10 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ಪ್ರಸಾರ ಸಂದೇಶಗಳು"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ಎಚ್ಚರಿಕೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"ತುರ್ತು ಸೂಚನೆಗಳನ್ನು ಸ್ವೀಕರಿಸಿ"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್ ಅಧಿಸೂಚನೆಗಳನ್ನು ಸ್ವೀಕರಿಸಿ"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"ಎಚ್ಚರಿಕೆ ಜ್ಞಾಪನೆ ಧ್ವನಿ"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"ಎಚ್ಚರಿಕೆ ಸಂದೇಶವನ್ನು ಹೇಳಿ"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"ತುರ್ತು ಎಚ್ಚರಿಕೆ ಸಂದೇಶಗಳನ್ನು ಹೇಳಲು ಪಠ್ಯದಿಂದ ಧ್ವನಿಯನ್ನು ಬಳಸಿ"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್ ಸಂದೇಶಗಳನ್ನು ತಿಳಿಸಲು ಪಠ್ಯದಿಂದ ಧ್ವನಿಯನ್ನು ಬಳಸಿ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ತುರ್ತು ಎಚ್ಚರಿಕೆ ಇತಿಹಾಸ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ಎಚ್ಚರಿಕೆ ಪ್ರಾಶಸ್ತ್ಯಗಳು"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS ಪರೀಕ್ಷಾ ಪ್ರಸಾರಗಳು"</string>
@@ -118,7 +118,7 @@
     <string name="notification_multiple_title" msgid="1523638925739947855">"ಹೊಸ ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"ಮೊದಲ ಎಚ್ಚರಿಕೆಯನ್ನು (ಅಧ್ಯಕ್ಷೀಯ ಎಚ್ಚರಿಕೆ ಹೊರತುಪಡಿಸಿ) ಪ್ರದರ್ಶಿಸಿದ ಬಳಿಕ ಆಯ್ಕೆಯಿಂದ ಹೊರಗಿನ ಸಂವಾದ ತೋರಿಸಿ."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"ಆಯ್ಕೆಯಿಂದ ಹೊರಗಿನ ಸಂವಾದ ತೋರಿಸು"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ನೀವು ಪ್ರಸ್ತುತ ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳನ್ನು ಸ್ವೀಕರಿಸುತ್ತಿರುವಿರಿ. ತುರ್ತು ಎಚ್ಚರಿಕೆ ಸ್ವೀಕರಿಸುವುದನ್ನು ಮುಂದುವರಿಸಲು ನೀವು ಇಚ್ಛಿಸುವಿರಾ?"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"ನೀವು ಪ್ರಸ್ತುತ ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್‌ಗಳನ್ನು ಸ್ವೀಕರಿಸುತ್ತಿರುವಿರಿ. ನೀವು ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್‌ಗಳನ್ನು ಸ್ವೀಕರಿಸುವುದನ್ನು ಮುಂದುವರಿಸಲು ಬಯಸುವಿರಾ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ಹೌದು"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ಇಲ್ಲ"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"ತುರ್ತು ಎಚ್ಚರಿಕೆ ಇತಿಹಾಸ"</string>
