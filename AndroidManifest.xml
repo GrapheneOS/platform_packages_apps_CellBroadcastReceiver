@@ -70,8 +70,10 @@
         <service android:name="CellBroadcastAlertReminder"
                  android:exported="false" />
 
+        <!-- Export provider for AT&T Device and Network Reset-->
         <provider android:name="CellBroadcastContentProvider"
                   android:authorities="cellbroadcasts"
+                  android:exported="true"
                   android:readPermission="android.permission.READ_CELL_BROADCASTS" />
 
         <activity android:name="CellBroadcastListActivity"
