@@ -264,21 +264,20 @@ public class CellBroadcastResources {
 
         SmsCbCmasInfo cmasInfo = cbm.getCmasWarningInfo();
         int subId = cbm.getSubId(context);
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                context, subId);
         final int serviceCategory = cbm.getServiceCategory();
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory,
-                R.array.emergency_alerts_channels_range_strings, context)) {
+        if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
+                R.array.emergency_alerts_channels_range_strings)) {
             return R.string.pws_other_message_identifiers;
         }
         // CMAS warning types
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory,
-                R.array.cmas_presidential_alerts_channels_range_strings, context)) {
+        if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
+                R.array.cmas_presidential_alerts_channels_range_strings)) {
             return R.string.cmas_presidential_level_alert;
         }
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory,
-                R.array.cmas_alert_extreme_channels_range_strings, context)) {
+        if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
+                R.array.cmas_alert_extreme_channels_range_strings)) {
             if (cmasInfo.getSeverity() == SmsCbCmasInfo.CMAS_SEVERITY_EXTREME
                     && cmasInfo.getUrgency() == SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE) {
                 if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED) {
@@ -289,40 +288,39 @@ public class CellBroadcastResources {
             }
             return R.string.cmas_extreme_alert;
         }
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory, R.array.cmas_alerts_severe_range_strings, context)) {
+        if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
+                R.array.cmas_alerts_severe_range_strings)) {
             return R.string.cmas_severe_alert;
         }
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory,
-                R.array.cmas_amber_alerts_channels_range_strings, context)) {
+        if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
+                R.array.cmas_amber_alerts_channels_range_strings)) {
             return R.string.cmas_amber_alert;
         }
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory, R.array.required_monthly_test_range_strings, context)) {
+        if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
+                R.array.required_monthly_test_range_strings)) {
             return R.string.cmas_required_monthly_test;
         }
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory, R.array.exercise_alert_range_strings, context)) {
+        if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
+                R.array.exercise_alert_range_strings)) {
             return R.string.cmas_exercise_alert;
         }
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory, R.array.operator_defined_alert_range_strings, context)) {
+        if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
+                R.array.operator_defined_alert_range_strings)) {
             return R.string.cmas_operator_defined_alert;
         }
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory, R.array.public_safety_messages_channels_range_strings, context)) {
+        if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
+                R.array.public_safety_messages_channels_range_strings)) {
             return R.string.public_safety_message;
         }
-        if (CellBroadcastChannelManager.checkCellBroadcastChannelRange(subId,
-                serviceCategory, R.array.state_local_test_alert_range_strings, context)) {
+        if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
+                R.array.state_local_test_alert_range_strings)) {
             return R.string.state_local_test_alert;
         }
 
-        if (CellBroadcastChannelManager.isEmergencyMessage(context, cbm)) {
+        if (channelManager.isEmergencyMessage(cbm)) {
             ArrayList<CellBroadcastChannelRange> ranges =
-                    CellBroadcastChannelManager.getCellBroadcastChannelRanges(
-                            context, R.array.additional_cbs_channels_strings);
+                    channelManager.getCellBroadcastChannelRanges(
+                            R.array.additional_cbs_channels_strings);
             if (ranges != null) {
                 for (CellBroadcastChannelRange range : ranges) {
                     if (serviceCategory >= range.mStartId && serviceCategory <= range.mEndId) {

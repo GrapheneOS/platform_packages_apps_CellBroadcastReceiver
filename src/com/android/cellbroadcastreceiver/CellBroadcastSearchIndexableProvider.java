@@ -41,6 +41,7 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.provider.SearchIndexableResource;
 import android.provider.SearchIndexablesProvider;
+import android.telephony.SubscriptionManager;
 import android.text.TextUtils;
 
 import java.util.ArrayList;
@@ -88,8 +89,8 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     @Override
     public Cursor queryRawData(String[] projection) {
         MatrixCursor cursor = new MatrixCursor(INDEXABLES_RAW_COLUMNS);
-        final Resources res =
-                CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(getContext());
+        final Resources res = CellBroadcastSettings.getResources(getContext(),
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         Object[] raw = new Object[INDEXABLES_RAW_COLUMNS.length];
         raw[COLUMN_INDEX_RAW_TITLE] = res.getString(R.string.sms_cb_settings);
@@ -98,14 +99,15 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             keywordList.add(res.getString(keywordRes));
         }
 
-        if (!CellBroadcastChannelManager.getCellBroadcastChannelRanges(
-                this.getContext(),
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(getContext(),
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+
+        if (!channelManager.getCellBroadcastChannelRanges(
                 R.array.public_safety_messages_channels_range_strings).isEmpty()) {
             keywordList.add(res.getString(R.string.public_safety_message));
         }
 
-        if (!CellBroadcastChannelManager.getCellBroadcastChannelRanges(
-                this.getContext(),
+        if (!channelManager.getCellBroadcastChannelRanges(
                 R.array.state_local_test_alert_range_strings).isEmpty()) {
             keywordList.add(res.getString(R.string.state_local_test_alert));
         }
@@ -130,7 +132,8 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
         boolean enableDevSettings =
                 DevelopmentSettingsHelper.isDevelopmentSettingsEnabled(getContext());
 
-        Resources res = CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(getContext());
+        Resources res = CellBroadcastSettings.getResources(getContext(),
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
         Object[] ref;
 
         ref = new Object[1];
