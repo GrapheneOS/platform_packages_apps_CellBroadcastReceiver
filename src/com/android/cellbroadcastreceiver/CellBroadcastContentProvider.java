@@ -42,10 +42,10 @@ public class CellBroadcastContentProvider extends ContentProvider {
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
     /** Authority string for content URIs. */
-    static final String CB_AUTHORITY = "cellbroadcasts";
+    static final String CB_AUTHORITY = "cellbroadcasts-app";
 
     /** Content URI for notifying observers. */
-    static final Uri CONTENT_URI = Uri.parse("content://cellbroadcasts/");
+    static final Uri CONTENT_URI = Uri.parse("content://cellbroadcasts-app/");
 
     /** URI matcher type to get all cell broadcasts. */
     private static final int CB_ALL = 0;
@@ -63,6 +63,33 @@ public class CellBroadcastContentProvider extends ContentProvider {
         sUriMatcher.addURI(CB_AUTHORITY, null, CB_ALL);
         sUriMatcher.addURI(CB_AUTHORITY, "#", CB_ALL_ID);
     }
+
+    /*
+     * Query columns for instantiating com.android.cellbroadcastreceiver.CellBroadcastMessage.
+     */
+    public static final String[] QUERY_COLUMNS = {
+            Telephony.CellBroadcasts._ID,
+            Telephony.CellBroadcasts.SLOT_INDEX,
+            Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE,
+            Telephony.CellBroadcasts.PLMN,
+            Telephony.CellBroadcasts.LAC,
+            Telephony.CellBroadcasts.CID,
+            Telephony.CellBroadcasts.SERIAL_NUMBER,
+            Telephony.CellBroadcasts.SERVICE_CATEGORY,
+            Telephony.CellBroadcasts.LANGUAGE_CODE,
+            Telephony.CellBroadcasts.MESSAGE_BODY,
+            Telephony.CellBroadcasts.DELIVERY_TIME,
+            Telephony.CellBroadcasts.MESSAGE_READ,
+            Telephony.CellBroadcasts.MESSAGE_FORMAT,
+            Telephony.CellBroadcasts.MESSAGE_PRIORITY,
+            Telephony.CellBroadcasts.ETWS_WARNING_TYPE,
+            Telephony.CellBroadcasts.CMAS_MESSAGE_CLASS,
+            Telephony.CellBroadcasts.CMAS_CATEGORY,
+            Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE,
+            Telephony.CellBroadcasts.CMAS_SEVERITY,
+            Telephony.CellBroadcasts.CMAS_URGENCY,
+            Telephony.CellBroadcasts.CMAS_CERTAINTY
+    };
 
     /** The database for this content provider. */
     private SQLiteOpenHelper mOpenHelper;
