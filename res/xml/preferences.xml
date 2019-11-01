@@ -33,6 +33,13 @@
                           android:summary="@string/enable_emergency_alerts_message_summary"
                           android:title="@string/enable_emergency_alerts_message_title" />
 
+        <!-- Show checkbox for Presidential alerts in settings -->
+        <SwitchPreference android:defaultValue="true"
+                          android:enabled="false"
+                          android:key="enable_cmas_presidential_alerts"
+                          android:summary="@string/enable_cmas_presidential_alerts_summary"
+                          android:title="@string/enable_cmas_presidential_alerts_title"/>
+
         <!-- Enable CMAS AMBER alerts -->
         <SwitchPreference android:defaultValue="true"
                           android:key="enable_cmas_amber_alerts"
