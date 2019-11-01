@@ -29,10 +29,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
-import android.os.UserManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
+import android.telephony.SubscriptionManager;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -108,8 +108,8 @@ public class CellBroadcastAlertDialog extends Activity {
         AnimationHandler() {}
 
         /** Start the warning icon animation. */
-        void startIconAnimation() {
-            if (!initDrawableAndImageView()) {
+        void startIconAnimation(int subId) {
+            if (!initDrawableAndImageView(subId)) {
                 return;     // init failure
             }
             mWarningIconVisible = true;
@@ -151,13 +151,16 @@ public class CellBroadcastAlertDialog extends Activity {
 
         /**
          * Initialize the Drawable and ImageView fields.
+         *
+         * @param subId Subscription index
+         *
          * @return true if successful; false if any field failed to initialize
          */
-        private boolean initDrawableAndImageView() {
+        private boolean initDrawableAndImageView(int subId) {
             if (mWarningIcon == null) {
                 try {
-                    mWarningIcon = CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(
-                            getApplicationContext()).getDrawable(R.drawable.ic_warning_googred);
+                    mWarningIcon = CellBroadcastSettings.getResources(getApplicationContext(),
+                            subId).getDrawable(R.drawable.ic_warning_googred);
                 } catch (Resources.NotFoundException e) {
                     Log.e(TAG, "warning icon resource not found", e);
                     return false;
@@ -277,10 +280,14 @@ public class CellBroadcastAlertDialog extends Activity {
 
             // For emergency alerts, keep screen on so the user can read it
             CellBroadcastMessage message = getLatestMessage();
-            if (message != null && CellBroadcastChannelManager.isEmergencyMessage(
-                    this, message)) {
-                Log.d(TAG, "onCreate setting screen on timer for emergency alert");
-                mScreenOffHandler.startScreenOnTimer();
+            if (message != null) {
+                CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                        this, message.getSubId(this));
+                if (channelManager.isEmergencyMessage(message)) {
+                    Log.d(TAG, "onCreate setting screen on timer for emergency alert for sub "
+                            + message.getSubId(this));
+                    mScreenOffHandler.startScreenOnTimer();
+                }
             }
 
             updateAlertText(message);
@@ -294,8 +301,13 @@ public class CellBroadcastAlertDialog extends Activity {
     protected void onResume() {
         super.onResume();
         CellBroadcastMessage message = getLatestMessage();
-        if (message != null && CellBroadcastChannelManager.isEmergencyMessage(this, message)) {
-            mAnimationHandler.startIconAnimation();
+        if (message != null) {
+            int subId = message.getSubId(this);
+            CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(this,
+                    subId);
+            if (channelManager.isEmergencyMessage(message)) {
+                mAnimationHandler.startIconAnimation(subId);
+            }
         }
     }
 
@@ -364,7 +376,7 @@ public class CellBroadcastAlertDialog extends Activity {
         String title = getText(titleId).toString();
         TextView titleTextView = findViewById(R.id.alertTitle);
 
-        if (CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(context)
+        if (CellBroadcastSettings.getResources(context, message.getSubId(context))
                 .getBoolean(R.bool.show_date_time_title)) {
             titleTextView.setSingleLine(false);
             title += "\n" + message.getDateString(context);
@@ -424,8 +436,8 @@ public class CellBroadcastAlertDialog extends Activity {
                 mMessageList = newMessageList;
             } else {
                 mMessageList.addAll(newMessageList);
-                if (CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(
-                                getApplicationContext())
+                if (CellBroadcastSettings.getResources(getApplicationContext(),
+                        SubscriptionManager.DEFAULT_SUBSCRIPTION_ID)
                         .getBoolean(R.bool.show_cmas_messages_in_priority_order)) {
                     // Sort message list to show messages in a different order than received by
                     // prioritizing them. Presidential Alert only has top priority.
@@ -519,9 +531,11 @@ public class CellBroadcastAlertDialog extends Activity {
         CellBroadcastMessage nextMessage = getLatestMessage();
         if (nextMessage != null) {
             updateAlertText(nextMessage);
-            if (CellBroadcastChannelManager.isEmergencyMessage(
-                    this, nextMessage)) {
-                mAnimationHandler.startIconAnimation();
+            int subId = nextMessage.getSubId(getApplicationContext());
+            CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                    getApplicationContext(), subId);
+            if (channelManager.isEmergencyMessage(nextMessage)) {
+                mAnimationHandler.startIconAnimation(subId);
             } else {
                 mAnimationHandler.stopIconAnimation();
             }

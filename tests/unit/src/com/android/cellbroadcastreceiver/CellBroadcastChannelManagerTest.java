@@ -18,6 +18,7 @@ package com.android.cellbroadcastreceiver;
 
 import static org.junit.Assert.assertEquals;
 
+import android.telephony.SubscriptionManager;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
@@ -59,9 +60,11 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
                 "0xA804:type=test, emergency=true"
         });
 
-        ArrayList<CellBroadcastChannelRange> list =
-                CellBroadcastChannelManager.getCellBroadcastChannelRanges(
-                        mContext, R.array.additional_cbs_channels_strings);
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(mContext,
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+
+        ArrayList<CellBroadcastChannelRange> list = channelManager.getCellBroadcastChannelRanges(
+                R.array.additional_cbs_channels_strings);
 
         assertEquals(12, list.get(0).mStartId);
         assertEquals(12, list.get(0).mEndId);
