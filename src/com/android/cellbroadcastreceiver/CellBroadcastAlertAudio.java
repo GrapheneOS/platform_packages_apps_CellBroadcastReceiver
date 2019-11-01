@@ -41,6 +41,7 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.telephony.PhoneStateListener;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -74,7 +75,11 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
     /** Extra for alert vibration pattern (unless master volume is silent). */
     public static final String ALERT_AUDIO_VIBRATION_PATTERN_EXTRA =
-            "com.android.cellbroadcastreceiver.ALERT_VIBRATION_PATTERN";
+            "com.android.cellbroadcastreceiver.ALERT_AUDIO_VIBRATION_PATTERN";
+
+    /** Extra for alert subscription index */
+    public static final String ALERT_AUDIO_SUB_INDEX =
+            "com.android.cellbroadcastreceiver.ALERT_AUDIO_SUB_INDEX";
 
     private static final String TTS_UTTERANCE_ID = "com.android.cellbroadcastreceiver.UTTERANCE_ID";
 
@@ -93,6 +98,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
     private String mMessageBody;
     private String mMessageLanguage;
+    private int mSubId;
     private boolean mTtsLanguageSupported;
     private boolean mEnableVibrate;
     private boolean mEnableAudio;
@@ -270,6 +276,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         // Get text to speak (if enabled by user)
         mMessageBody = intent.getStringExtra(ALERT_AUDIO_MESSAGE_BODY);
         mMessageLanguage = intent.getStringExtra(ALERT_AUDIO_MESSAGE_LANGUAGE);
+        mSubId = intent.getIntExtra(ALERT_AUDIO_SUB_INDEX,
+                SubscriptionManager.INVALID_SUBSCRIPTION_ID);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -344,10 +352,9 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         stop();
 
         log("playAlertTone: alertType=" + alertType + ", mEnableVibrate=" + mEnableVibrate
-                + ", mEnableAudio=" + mEnableAudio + ", mUseFullVolume=" + mUseFullVolume);
-        Resources res =
-                CellBroadcastSettings.getResourcesForDefaultSmsSubscriptionId(
-                        getApplicationContext());
+                + ", mEnableAudio=" + mEnableAudio + ", mUseFullVolume=" + mUseFullVolume
+                + ", mSubId=" + mSubId);
+        Resources res = CellBroadcastSettings.getResources(getApplicationContext(), mSubId);
 
         // Vibration duration in milliseconds
         long vibrateDuration = 0;
