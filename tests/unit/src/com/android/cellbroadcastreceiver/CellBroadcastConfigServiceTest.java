@@ -29,6 +29,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.SharedPreferences;
 import android.telephony.SmsManager;
+import android.telephony.SubscriptionManager;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
@@ -58,8 +59,6 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     SharedPreferences mMockedSharedPreferences;
 
     private CellBroadcastConfigService mConfigService;
-
-    private SmsManager mSmsManager = SmsManager.getDefault();
 
     @Before
     public void setUp() throws Exception {
@@ -126,11 +125,12 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
         super.tearDown();
     }
 
-    private void setCellBroadcastRange(boolean enable, List<CellBroadcastChannelRange> ranges)
+    private void setCellBroadcastRange(int subId, boolean enable,
+                                       List<CellBroadcastChannelRange> ranges)
             throws Exception {
 
         Class[] cArgs = new Class[3];
-        cArgs[0] = SmsManager.class;
+        cArgs[0] = Integer.TYPE;
         cArgs[1] = Boolean.TYPE;
         cArgs[2] = List.class;
 
@@ -138,7 +138,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 CellBroadcastConfigService.class.getDeclaredMethod("setCellBroadcastRange", cArgs);
         method.setAccessible(true);
 
-        method.invoke(mConfigService, mSmsManager, enable, ranges);
+        method.invoke(mConfigService, subId, enable, ranges);
     }
 
     /**
@@ -148,8 +148,9 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     @SmallTest
     public void testEnableCellBroadcastRange() throws Exception {
         ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
-        result.add(new CellBroadcastChannelRange(mContext, "10-20"));
-        setCellBroadcastRange(true, result);
+        result.add(new CellBroadcastChannelRange(mContext,
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, "10-20"));
+        setCellBroadcastRange(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, true, result);
         ArgumentCaptor<Integer> captorStart = ArgumentCaptor.forClass(Integer.class);
         ArgumentCaptor<Integer> captorEnd = ArgumentCaptor.forClass(Integer.class);
         ArgumentCaptor<Integer> captorType = ArgumentCaptor.forClass(Integer.class);
@@ -169,8 +170,9 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     @SmallTest
     public void testDisableCellBroadcastRange() throws Exception {
         ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
-        result.add(new CellBroadcastChannelRange(mContext, "10-20"));
-        setCellBroadcastRange(false, result);
+        result.add(new CellBroadcastChannelRange(mContext,
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, "10-20"));
+        setCellBroadcastRange(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, false, result);
         ArgumentCaptor<Integer> captorStart = ArgumentCaptor.forClass(Integer.class);
         ArgumentCaptor<Integer> captorEnd = ArgumentCaptor.forClass(Integer.class);
         ArgumentCaptor<Integer> captorType = ArgumentCaptor.forClass(Integer.class);
@@ -198,7 +200,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, true);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true);
 
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -288,7 +290,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     @SmallTest
     public void testEnablingPresidential() throws Exception {
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -309,7 +311,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, false);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -330,21 +332,21 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, false);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
-        verify(mMockedSmsService, times(1)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(3)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT),
                 eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT),
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_CDMA));
 
-        verify(mMockedSmsService, times(1)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(3)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL),
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
-        verify(mMockedSmsService, times(1)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(3)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE),
@@ -360,7 +362,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     public void testEnablingExtreme() throws Exception {
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, true);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -381,7 +383,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, false);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(1)).disableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -402,21 +404,21 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, true);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, false);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_EXTREME_THREAT),
                 eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_EXTREME_THREAT),
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_CDMA));
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_LIKELY),
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED_LANGUAGE),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_LIKELY_LANGUAGE),
@@ -432,7 +434,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     public void testEnablingSevere() throws Exception {
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, true);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -453,7 +455,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, false);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(1)).disableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -474,21 +476,21 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, true);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, false);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_SEVERE_THREAT),
                 eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_SEVERE_THREAT),
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_CDMA));
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_EXPECTED_OBSERVED),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_SEVERE_EXPECTED_LIKELY),
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_EXPECTED_OBSERVED_LANGUAGE),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_SEVERE_EXPECTED_LIKELY_LANGUAGE),
@@ -503,7 +505,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     public void testEnablingAmber() throws Exception {
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -524,7 +526,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, false);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(1)).disableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -545,21 +547,21 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, false);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY),
                 eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY),
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_CDMA));
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY),
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY_LANGUAGE),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY_LANGUAGE),
@@ -573,7 +575,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     @SmallTest
     public void testEnablingETWS() throws Exception {
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -588,7 +590,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, false);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, true);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         verify(mMockedSmsService, times(1)).disableCellBroadcastRangeForSubscriber(
                 eq(0),
@@ -603,15 +605,15 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
-        mConfigService.setCellBroadcastOnSub(mSmsManager, false);
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_ETWS_EARTHQUAKE_WARNING),
                 eq(SmsCbConstants.MESSAGE_ID_ETWS_EARTHQUAKE_AND_TSUNAMI_WARNING),
                 eq(SmsManager.CELL_BROADCAST_RAN_TYPE_GSM));
 
-        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE),
                 eq(SmsCbConstants.MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE),
