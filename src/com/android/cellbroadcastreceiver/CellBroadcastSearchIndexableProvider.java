@@ -188,6 +188,16 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             cursor.addRow(ref);
         }
 
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(getContext(),
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        if (channelManager.getCellBroadcastChannelRanges(
+                R.array.cmas_amber_alerts_channels_range_strings).isEmpty()) {
+            ref = new Object[1];
+            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                    CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS;
+            cursor.addRow(ref);
+        }
+
         return cursor;
     }
 }

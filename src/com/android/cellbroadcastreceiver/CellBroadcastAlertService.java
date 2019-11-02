@@ -39,6 +39,7 @@ import android.os.UserHandle;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.CarrierConfigManager;
+import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
@@ -627,6 +628,13 @@ public class CellBroadcastAlertService extends Service {
                         ? range.mVibrationPattern
                         : CellBroadcastSettings.getResources(mContext, message.getSubId(mContext))
                         .getIntArray(R.array.default_vibration_pattern));
+
+        Resources res = CellBroadcastSettings.getResources(mContext, message.getSubId(mContext));
+        if ((res.getBoolean(R.bool.full_volume_presidential_alert)
+            && message.getCmasMessageClass() == SmsCbCmasInfo.CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT)
+                || prefs.getBoolean(CellBroadcastSettings.KEY_USE_FULL_VOLUME, false)) {
+            audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_FULL_VOLUME_EXTRA, true);
+        }
 
         String messageBody = message.getMessageBody();
 
