@@ -369,6 +369,17 @@ public class CellBroadcastSettings extends Activity {
 
             // Remove preferences based on range configurations
             if (channelManager.getCellBroadcastChannelRanges(
+                    R.array.cmas_amber_alerts_channels_range_strings).isEmpty()) {
+                // Remove ambert alert
+                if (mAlertCategory != null) {
+                    if (mAmberCheckBox != null) {
+                        mAlertCategory.removePreference(mAmberCheckBox);
+                    }
+                }
+            }
+
+            // Remove preferences based on range configurations
+            if (channelManager.getCellBroadcastChannelRanges(
                     R.array.public_safety_messages_channels_range_strings).isEmpty() ||
                     !res.getBoolean(R.bool.show_public_safety_settings)) {
                 // Remove public safety messages
