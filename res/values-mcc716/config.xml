@@ -63,4 +63,7 @@
 
     <!-- Disable links for Peru -->
     <integer-array name="message_classes_to_linkify"></integer-array>
+
+    <!-- Hide public safety settings per Peru users -->
+    <bool name="show_public_safety_settings">false</bool>
 </resources>
