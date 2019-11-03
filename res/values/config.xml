@@ -35,6 +35,8 @@
     <bool name="ignore_messages_in_ecbm">false</bool>
     <!-- Show checkbox for Presidential alerts in settings -->
     <bool name="show_presidential_alerts_in_settings">false</bool>
+    <!-- Whether to display public safety alert settings, some countries/carriers want to enable it by default and not allow users to disable -->
+    <bool name="show_public_safety_settings">true</bool>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true</item>
