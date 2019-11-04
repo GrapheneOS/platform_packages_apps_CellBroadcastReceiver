@@ -16,9 +16,6 @@
 
 package com.android.cellbroadcastreceiver;
 
-import static android.telephony.SmsManager.CELL_BROADCAST_RAN_TYPE_CDMA;
-import static android.telephony.SmsManager.CELL_BROADCAST_RAN_TYPE_GSM;
-
 import static com.android.internal.telephony.cdma.sms.SmsEnvelope.SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY;
 import static com.android.internal.telephony.cdma.sms.SmsEnvelope.SERVICE_CATEGORY_CMAS_EXTREME_THREAT;
 import static com.android.internal.telephony.cdma.sms.SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT;
@@ -46,6 +43,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import android.content.Intent;
+import android.telephony.SmsCbMessage;
 
 import com.android.internal.telephony.ISms;
 
@@ -135,46 +133,46 @@ public class CellBroadcastBootupConfigTest extends
         CbConfig[] configs = new CbConfig[] {
                 new CbConfig(MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL,
                         MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL,
-                        CELL_BROADCAST_RAN_TYPE_GSM),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP),
                 new CbConfig(SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT,
                         SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT,
-                        CELL_BROADCAST_RAN_TYPE_CDMA),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP2),
                 new CbConfig(MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE,
                         MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL_LANGUAGE,
-                        CELL_BROADCAST_RAN_TYPE_GSM),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP),
                 new CbConfig(MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED,
                         MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_LIKELY,
-                        CELL_BROADCAST_RAN_TYPE_GSM),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP),
                 new CbConfig(SERVICE_CATEGORY_CMAS_EXTREME_THREAT,
                         SERVICE_CATEGORY_CMAS_EXTREME_THREAT,
-                        CELL_BROADCAST_RAN_TYPE_CDMA),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP2),
                 new CbConfig(MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED_LANGUAGE,
                         MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_LIKELY_LANGUAGE,
-                        CELL_BROADCAST_RAN_TYPE_GSM),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP),
                 new CbConfig(MESSAGE_ID_CMAS_ALERT_EXTREME_EXPECTED_OBSERVED,
                         MESSAGE_ID_CMAS_ALERT_SEVERE_EXPECTED_LIKELY,
-                        CELL_BROADCAST_RAN_TYPE_GSM),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP),
                 new CbConfig(SERVICE_CATEGORY_CMAS_SEVERE_THREAT,
                         SERVICE_CATEGORY_CMAS_SEVERE_THREAT,
-                        CELL_BROADCAST_RAN_TYPE_CDMA),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP2),
                 new CbConfig(MESSAGE_ID_CMAS_ALERT_EXTREME_EXPECTED_OBSERVED_LANGUAGE,
                         MESSAGE_ID_CMAS_ALERT_SEVERE_EXPECTED_LIKELY_LANGUAGE,
-                        CELL_BROADCAST_RAN_TYPE_GSM),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP),
                 new CbConfig(MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY,
                         MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY,
-                        CELL_BROADCAST_RAN_TYPE_GSM),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP),
                 new CbConfig(SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY,
                         SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY,
-                        CELL_BROADCAST_RAN_TYPE_CDMA),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP2),
                 new CbConfig(MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY_LANGUAGE,
                         MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY_LANGUAGE,
-                        CELL_BROADCAST_RAN_TYPE_GSM),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP),
                 new CbConfig(MESSAGE_ID_ETWS_EARTHQUAKE_WARNING,
                         MESSAGE_ID_ETWS_EARTHQUAKE_AND_TSUNAMI_WARNING,
-                        CELL_BROADCAST_RAN_TYPE_GSM),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP),
                 new CbConfig(MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE,
                         MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE,
-                        CELL_BROADCAST_RAN_TYPE_GSM),
+                        SmsCbMessage.MESSAGE_FORMAT_3GPP),
         };
 
         verify(mSmsService, times(configs.length)).enableCellBroadcastRangeForSubscriber(anyInt(),
