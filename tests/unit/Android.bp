@@ -31,7 +31,7 @@ android_test {
     srcs: ["src/**/*.java"],
     platform_apis: true,
     instrumentation_for: "CellBroadcastApp",
-    test_suites: ["device-tests"],
+    test_suites: ["device-tests", "mts"],
 }
 
 android_test {

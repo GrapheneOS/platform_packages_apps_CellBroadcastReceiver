@@ -369,7 +369,8 @@ public class CellBroadcastSettings extends Activity {
 
             // Remove preferences based on range configurations
             if (channelManager.getCellBroadcastChannelRanges(
-                    R.array.public_safety_messages_channels_range_strings).isEmpty()) {
+                    R.array.public_safety_messages_channels_range_strings).isEmpty() ||
+                    !res.getBoolean(R.bool.show_public_safety_settings)) {
                 // Remove public safety messages
                 if (mAlertCategory != null) {
                     if (mPublicSafetyMessagesChannelCheckBox != null) {
