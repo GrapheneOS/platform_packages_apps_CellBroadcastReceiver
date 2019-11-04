@@ -15,6 +15,9 @@
 -->
 
 <resources>
+    <!-- sms encoded as octet is decoded by utf8 decoder if it is true -->
+    <bool name="config_sms_utf8_support">true</bool>
+
     <!-- Disable ETWS test channel for Sprint users -->
     <string-array name="etws_test_alerts_range_strings" translatable="false"></string-array>
 </resources>
