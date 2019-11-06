@@ -15,10 +15,6 @@
 -->
 
 <resources>
-    <!-- If this value is true, SMS encoded as octet is decoded by utf8 decoder.
-      If false, decoded by Latin decoder. -->
-    <bool name="config_sms_utf8_support">false</bool>
-
     <!-- Whether to always sound CBS alerts at full volume -->
     <bool name="use_full_volume">false</bool>
     <!-- Whether to enable CMAS settings (United States) -->
