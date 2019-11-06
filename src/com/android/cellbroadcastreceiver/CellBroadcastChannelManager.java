@@ -23,7 +23,7 @@ import android.content.Context;
 import android.telephony.AccessNetworkConstants;
 import android.telephony.NetworkRegistrationInfo;
 import android.telephony.ServiceState;
-import android.telephony.SmsManager;
+import android.telephony.SmsCbMessage;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
@@ -108,7 +108,7 @@ public class CellBroadcastChannelManager {
         public int mEndId;
         public AlertType mAlertType;
         public int mEmergencyLevel;
-        public int mRat;
+        public int mRanType;
         public int mScope;
         public int[] mVibrationPattern;
         public boolean mFilterLanguage;
@@ -117,7 +117,7 @@ public class CellBroadcastChannelManager {
 
             mAlertType = AlertType.DEFAULT;
             mEmergencyLevel = LEVEL_UNKNOWN;
-            mRat = SmsManager.CELL_BROADCAST_RAN_TYPE_GSM;
+            mRanType = SmsCbMessage.MESSAGE_FORMAT_3GPP;
             mScope = SCOPE_UNKNOWN;
             mVibrationPattern =
                     CellBroadcastSettings.getResources(context, subId)
@@ -146,9 +146,9 @@ public class CellBroadcastChannelManager {
                                 }
                                 break;
                             case KEY_RAT:
-                                mRat = value.equalsIgnoreCase("cdma")
-                                        ? SmsManager.CELL_BROADCAST_RAN_TYPE_CDMA :
-                                        SmsManager.CELL_BROADCAST_RAN_TYPE_GSM;
+                                mRanType = value.equalsIgnoreCase("cdma")
+                                        ? SmsCbMessage.MESSAGE_FORMAT_3GPP2 :
+                                        SmsCbMessage.MESSAGE_FORMAT_3GPP;
                                 break;
                             case KEY_SCOPE:
                                 if (value.equalsIgnoreCase("carrier")) {
