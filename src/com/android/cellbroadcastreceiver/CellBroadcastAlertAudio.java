@@ -77,6 +77,10 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     public static final String ALERT_AUDIO_VIBRATION_PATTERN_EXTRA =
             "com.android.cellbroadcastreceiver.ALERT_AUDIO_VIBRATION_PATTERN";
 
+    /** Extra for always sound alerts at full volume. */
+    public static final String ALERT_AUDIO_FULL_VOLUME_EXTRA =
+            "com.android.cellbroadcastreceiver.ALERT_FULL_VOLUME_EXTRA";
+
     /** Extra for alert subscription index */
     public static final String ALERT_AUDIO_SUB_INDEX =
             "com.android.cellbroadcastreceiver.ALERT_AUDIO_SUB_INDEX";
@@ -281,12 +285,11 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        // Get config of whether to always sound CBS alerts at full volume.
-        mUseFullVolume = prefs.getBoolean(CellBroadcastSettings.KEY_USE_FULL_VOLUME, false);
-
+        // retrieve whether always sound CBS alerts at full volume.
+        mUseFullVolume = intent.getBooleanExtra(ALERT_AUDIO_FULL_VOLUME_EXTRA, false);
         // retrieve the vibrate settings from cellbroadcast receiver settings.
         mEnableVibrate = prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true);
-        // retrieve the vibration patterns
+        // retrieve the vibration patterns.
         mVibrationPattern = intent.getIntArrayExtra(ALERT_AUDIO_VIBRATION_PATTERN_EXTRA);
 
         switch (mAudioManager.getRingerMode()) {
