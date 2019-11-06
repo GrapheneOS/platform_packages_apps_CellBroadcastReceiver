@@ -127,6 +127,10 @@ public class CellBroadcastSettings extends Activity {
     // Resource cache
     private static final Map<Integer, Resources> sResourcesCache = new HashMap<>();
 
+    // Whether to receive alert in second language code
+    public static final String KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE =
+            "receive_cmas_in_second_language";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -191,6 +195,9 @@ public class CellBroadcastSettings extends Activity {
         // Show checkbox for Presidential alerts in settings
         private TwoStatePreference mPresidentialCheckBox;
 
+        // on/off switch in settings for receiving alert in second language code
+        private TwoStatePreference mReceiveCmasInSecondLanguageCheckBox;
+
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
@@ -231,6 +238,8 @@ public class CellBroadcastSettings extends Activity {
             mAlertHistory = findPreference(KEY_EMERGENCY_ALERT_HISTORY);
             mDevSettingCategory = (PreferenceCategory)
                     findPreference(KEY_CATEGORY_DEV_SETTINGS);
+            mReceiveCmasInSecondLanguageCheckBox = (TwoStatePreference) findPreference
+                    (KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
 
             // Show checkbox for Presidential alerts in settings
             mPresidentialCheckBox = (TwoStatePreference)
@@ -455,6 +464,14 @@ public class CellBroadcastSettings extends Activity {
                                 return true;
                             }
                         });
+            }
+
+            // Do not show additional language settings is no additional language code specified,
+            if (res.getString(R.string.emergency_alert_second_language_code).isEmpty()) {
+                if (mAlertPreferencesCategory != null) {
+                    mAlertPreferencesCategory.removePreference(
+                            mReceiveCmasInSecondLanguageCheckBox);
+                }
             }
 
             // Show checkbox for Presidential alerts in settings
