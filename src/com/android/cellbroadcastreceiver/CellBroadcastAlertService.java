@@ -185,7 +185,7 @@ public class CellBroadcastAlertService extends Service {
         mContext = getApplicationContext();
         String action = intent.getAction();
         Log.d(TAG, "onStartCommand: " + action);
-        if (Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION.equals(action) ||
+        if (Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED.equals(action) ||
                 Telephony.Sms.Intents.SMS_CB_RECEIVED_ACTION.equals(action)) {
             handleCellBroadcastIntent(intent);
         } else if (SHOW_NEW_ALERT_ACTION.equals(action)) {
