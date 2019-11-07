@@ -56,7 +56,7 @@ public class SendGsmCmasMessages {
     private static final String STATE_LOCAL_ALERT = "This is a state/local test message.";
 
     private static void sendBroadcast(Activity activity, SmsCbMessage cbMessage) {
-        Intent intent = new Intent(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
+        Intent intent = new Intent(Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED);
         intent.putExtra("message", cbMessage);
         intent.setPackage(CB_RECEIVER_PKG);
         activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,

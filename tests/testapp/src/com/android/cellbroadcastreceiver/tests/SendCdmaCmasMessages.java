@@ -52,7 +52,7 @@ public class SendCdmaCmasMessages {
             + " This is only a test. Call (123)456-7890.";
 
     private static void sendBroadcast(Activity activity, SmsCbMessage cbMessage) {
-        Intent intent = new Intent(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
+        Intent intent = new Intent(Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED);
         intent.putExtra("message", cbMessage);
         intent.setPackage(CB_RECEIVER_PKG);
         activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
