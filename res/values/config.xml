@@ -15,7 +15,7 @@
 -->
 
 <resources>
-    <!-- Whether to always sound CBS alerts at full volume -->
+    <!-- Whether to bypass Do-Not-Disturb/silent mode and play emergency alert tone at full volume. -->
     <bool name="use_full_volume">false</bool>
     <!-- Whether to enable CMAS settings (United States) -->
     <bool name="show_cmas_settings">true</bool>
@@ -35,6 +35,8 @@
     <bool name="show_presidential_alerts_in_settings">false</bool>
     <!-- Whether to display public safety alert settings, some countries/carriers want to enable it by default and not allow users to disable -->
     <bool name="show_public_safety_settings">true</bool>
+    <!-- Whether to bypass Do-Not-Disturb/silent mode and play emergency alert tone at full volume for presidential alert -->
+    <bool name="full_volume_presidential_alert">false</bool>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true</item>

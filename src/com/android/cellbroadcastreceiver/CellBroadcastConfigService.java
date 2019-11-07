@@ -267,9 +267,9 @@ public class CellBroadcastConfigService extends IntentService {
         if (ranges != null) {
             for (CellBroadcastChannelRange range: ranges) {
                 if (enable) {
-                    manager.enableCellBroadcastRange(range.mStartId, range.mEndId, range.mRat);
+                    manager.enableCellBroadcastRange(range.mStartId, range.mEndId, range.mRanType);
                 } else {
-                    manager.disableCellBroadcastRange(range.mStartId, range.mEndId, range.mRat);
+                    manager.disableCellBroadcastRange(range.mStartId, range.mEndId, range.mRanType);
                 }
             }
         }
