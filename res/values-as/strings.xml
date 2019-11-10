@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"অফ"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"অনাতাঁৰ জৰুৰীকালীন সতৰ্কবাণীসমূহ"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ৰাষ্ট্ৰপতিয়ে পঠিওৱা সতর্কবাণীসমূহ"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ৰাষ্ট্ৰপতিয়ে পঠিওৱা ৰাষ্ট্ৰীয় সতর্কবার্তা। অফ কৰিব নোৱাৰি।"</string>
 </resources>

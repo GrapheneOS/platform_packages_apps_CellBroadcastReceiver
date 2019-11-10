@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"Искључено"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Бежична обавештења о хитним случајевима"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Обавештења председника"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Упозорења која издаје председник на нивоу земље. Не могу да се искључе."</string>
 </resources>

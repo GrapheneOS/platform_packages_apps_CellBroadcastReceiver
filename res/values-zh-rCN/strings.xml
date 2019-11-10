@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"关闭"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"无线紧急警报"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"总统警报"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"由总统发布的国家警告消息。无法关闭。"</string>
 </resources>

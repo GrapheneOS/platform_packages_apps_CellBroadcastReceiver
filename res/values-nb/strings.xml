@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"Av"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Trådløse nødvarsler"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Presidentvarsler"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Nasjonale advarsler som er utstedt av presidenten. Kan ikke slås av."</string>
 </resources>

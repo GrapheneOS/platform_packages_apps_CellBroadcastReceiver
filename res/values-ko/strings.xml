@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"사용 안함"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"무선 긴급 알림"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"대통령령 비상 메시지"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"대통령이 발령한 대국민 비상 메시지입니다. 이 알림은 끌 수 없습니다"</string>
 </resources>

@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"बंद"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"वायरलेस आणीबाणी सूचना"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"राष्ट्रपतींनी दिलेले इशारे"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"राष्ट्रीय चेतावणी संबंधित राष्ट्रपतींनी जारी केलेला मेसेज. बंद केला जाऊ शकत नाही."</string>
 </resources>

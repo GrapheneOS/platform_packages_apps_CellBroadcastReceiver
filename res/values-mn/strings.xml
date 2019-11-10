@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"Унтраалттай"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Утасгүй сүлжээгээр дамжуулах гамшгийн аюулын дохио"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Ерөнхийлөгчийн сэрэмжлүүлэг"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Ерөнхийлөгчийн гаргасан Үндэсний сэрэмжлүүлэг зурвас. Унтраах боломжгүй."</string>
 </resources>

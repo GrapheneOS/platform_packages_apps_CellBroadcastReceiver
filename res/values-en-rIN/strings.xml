@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"Off"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Wireless emergency alerts"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Presidential alerts"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"National warning messages issued by the President. Can\'t be turned off."</string>
 </resources>

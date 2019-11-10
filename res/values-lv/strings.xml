@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"Izslēgts"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Bezvadu ārkārtas brīdinājumi"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Valsts līmeņa brīdinājumi"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Valsts līmeņa brīdinājuma ziņojumi no prezidenta. Tos nevar izslēgt."</string>
 </resources>

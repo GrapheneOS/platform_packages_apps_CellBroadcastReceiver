@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"Kimezimwa"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Arifa za tahadhari kupitia vifaa visivyotumia waya"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Arifa za Rais"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Ujumbe wa kitaifa wa maonyo unaotolewa na Rais. Huwezi kuuzima."</string>
 </resources>
