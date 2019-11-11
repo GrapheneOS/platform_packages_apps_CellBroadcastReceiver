@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"બંધ"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"કટોકટી માટેની વાયરલેસ ચેતવણીઓ"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"રાષ્ટ્રપતિ દ્વારા અલર્ટ"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"રાષ્ટ્રપતિ દ્વારા જારી કરાયેલા રાષ્ટ્રીય ચેતવણી સંદેશા. બંધ કરી શકાતા નથી."</string>
 </resources>

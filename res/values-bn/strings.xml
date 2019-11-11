@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"বন্ধ আছে"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ওয়্যারলেস জরুরী সতর্কতা"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"রাষ্ট্রপতির জারি করা সতর্কতা"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"রাষ্ট্রপতি জাতীয় সতর্কতা জারি করেছেন। তাই এই বিজ্ঞপ্তি বন্ধ করা যাবে না।"</string>
 </resources>

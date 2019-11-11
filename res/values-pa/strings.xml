@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"ਬੰਦ"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ਵਾਇਰਲੈੱਸ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ਰਾਸ਼ਟਰਪਤੀ ਵੱਲੋਂ ਸੁਚੇਤਨਾਵਾਂ"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ਰਾਸ਼ਟਰਪਤੀ ਵੱਲੋਂ ਜਾਰੀ ਰਾਸ਼ਟਰੀ ਚਿਤਾਵਨੀ ਸੰਬੰਧੀ ਸੁਨੇਹੇ। ਇਨ੍ਹਾਂ ਨੂੰ ਬੰਦ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।"</string>
 </resources>

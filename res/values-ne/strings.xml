@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"निष्क्रिय"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"वायरलेस आपतकालीन अलर्टहरू"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"राष्ट्राध्यक्षीय सतर्कताहरू"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"राष्ट्रपतिले जारी गर्नुभएका राष्ट्रिय चेतावनीसम्बन्धी सन्देशहरू। निष्क्रिय पार्न सकिँदैन।"</string>
 </resources>

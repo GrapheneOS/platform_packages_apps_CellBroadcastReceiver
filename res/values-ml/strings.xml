@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"ഓഫ്"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"അടിയന്തര വയർലെസ് അലേർട്ടുകൾ"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"രാഷ്ട്രപതിയുടെ മുന്നറിയിപ്പ്"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"രാഷ്ട്രപതി ഇഷ്യൂ ചെയ്ത ദേശീയ മുന്നറിയിപ്പ് സന്ദേശങ്ങൾ ഓഫാക്കാനാവില്ല."</string>
 </resources>

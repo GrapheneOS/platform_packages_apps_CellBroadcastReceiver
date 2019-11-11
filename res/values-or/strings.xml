@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"ଅଫ୍‌"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ୱେୟାରଲେସ୍‌ ଜରୁରୀକାଳୀନ ଅଲର୍ଟ"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ରାଷ୍ଟ୍ରପତିଙ୍କ ଦ୍ୱାରା ଜାରି କରାଯାଇଥିବା ଆଲର୍ଟ"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ରାଷ୍ଟ୍ରପତିଙ୍କ ଦ୍ୱାରା ଜାରି କରାଯାଇଥିବା ଜାତୀୟ ଚେତାବନୀ ମେସେଜ୍‌ଗୁଡ଼ିକ। ବନ୍ଦ କରାଯାଇପାରିବ ନାହିଁ।"</string>
 </resources>

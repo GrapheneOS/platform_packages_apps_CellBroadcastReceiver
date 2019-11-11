@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"Naka-off"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Mga wireless na alerto sa emergency"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Mga Presidential alert"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Mga pambansang mensahe ng babala na inilabas ng Pangulo. Hindi puwedeng i-off."</string>
 </resources>

@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"ක්‍රියාවිරහිතයි"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"රැහැන් රහිත අනතුරු ඇඟවීම්"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ජනාධිපති ඇඟවීම්"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ජනාධිපති විසින් නිකුත් කළ ජාතික අනතුරු ඇඟවීමේ පණිවිඩ. ක්‍රියාවිරහිත කිරීමට නොහැකිය."</string>
 </resources>

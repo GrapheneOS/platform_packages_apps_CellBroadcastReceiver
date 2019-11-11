@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"Kikapcsolva"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Vezeték nélküli vészriasztások"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Elnöki értesítések"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Nemzeti figyelmeztető üzenetek az elnöktől. Nem lehet kikapcsolni."</string>
 </resources>

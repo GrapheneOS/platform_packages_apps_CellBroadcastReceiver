@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"Nonaktif"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Notifikasi darurat nirkabel"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Peringatan kepresidenan"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Pesan peringatan nasional yang dikeluarkan oleh Presiden. Tidak dapat dinonaktifkan."</string>
 </resources>

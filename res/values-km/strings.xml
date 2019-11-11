@@ -130,4 +130,6 @@
     <item msgid="6868848414437854609">"បិទ"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ការជូនដំណឹងអាសន្នដោយឥតប្រើខ្សែ"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ការ​ជូន​ដំណឹង​ផ្លូវការ"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"សារ​ព្រមាន​ថ្នាក់ជាតិ ដែលចេញ​ដោយ​ប្រធានាធិបតី​។ មិនអាច​បិទ​បានទេ​។"</string>
 </resources>
