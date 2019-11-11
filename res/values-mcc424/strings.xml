@@ -24,4 +24,5 @@
     <string name="cmas_severe_alert" translatable="false">@string/emergency_alert</string>
     <string name="cmas_amber_alert">Warning alert</string>
     <string name="cmas_required_monthly_test">Test alert</string>
+    <string name="cmas_exercise_alert">Exercise</string>
 </resources>
