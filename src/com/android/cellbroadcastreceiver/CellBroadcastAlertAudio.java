@@ -100,6 +100,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private TextToSpeech mTts;
     private boolean mTtsEngineReady;
 
+    private AlertType mAlertType;
     private String mMessageBody;
     private String mMessageLanguage;
     private int mSubId;
@@ -149,7 +150,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                     if (mMessageBody != null && mTtsEngineReady && mTtsLanguageSupported) {
                         if (DBG) log("Speaking broadcast text: " + mMessageBody);
 
-                        mTts.setAudioAttributes(getAlertAudioAttributes());
+                        mTts.setAudioAttributes(getAlertAudioAttributes(mAlertType));
                         res = mTts.speak(mMessageBody, 2, null, TTS_UTTERANCE_ID);
                         mState = STATE_SPEAKING;
                     }
@@ -291,6 +292,11 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mEnableVibrate = prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true);
         // retrieve the vibration patterns.
         mVibrationPattern = intent.getIntArrayExtra(ALERT_AUDIO_VIBRATION_PATTERN_EXTRA);
+        // retrieve the alert type
+        mAlertType = AlertType.DEFAULT;
+        if (intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE) != null) {
+            mAlertType = (AlertType) intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE);
+        }
 
         switch (mAudioManager.getRingerMode()) {
             case AudioManager.RINGER_MODE_SILENT:
@@ -324,11 +330,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         }
 
         if (mEnableAudio || mEnableVibrate) {
-            AlertType alertType = AlertType.DEFAULT;
-            if (intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE) != null) {
-                alertType = (AlertType) intent.getSerializableExtra(ALERT_AUDIO_TONE_TYPE);
-            }
-            playAlertTone(alertType, mVibrationPattern);
+            playAlertTone(mAlertType, mVibrationPattern);
         } else {
             stopSelf();
             return START_NOT_STICKY;
@@ -376,7 +378,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             }
 
             AudioAttributes.Builder attrBuilder = new AudioAttributes.Builder();
-            attrBuilder.setUsage(AudioAttributes.USAGE_ALARM);
+            attrBuilder.setUsage(alertType == AlertType.INFO
+                    ? AudioAttributes.USAGE_NOTIFICATION : AudioAttributes.USAGE_ALARM);
             if (mUseFullVolume) {
                 // Set the flags to bypass DnD mode if the user enables use full volume option.
                 attrBuilder.setFlags(AudioAttributes.FLAG_BYPASS_INTERRUPTION_POLICY
@@ -452,8 +455,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                 // Request audio focus (though we're going to play even if we don't get it)
                 mAudioManager.requestAudioFocus(null, AudioManager.STREAM_ALARM,
                         AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
-                mMediaPlayer.setAudioAttributes(getAlertAudioAttributes());
-                setAlertVolume();
+                mMediaPlayer.setAudioAttributes(getAlertAudioAttributes(mAlertType));
+                setAlertVolume(mAlertType);
 
                 // If we are using the custom alert duration, set looping to true so we can repeat
                 // the alert. The tone playing will stop when ALERT_SOUND_FINISHED arrives.
@@ -499,7 +502,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mHandler.removeMessages(ALERT_SOUND_FINISHED);
         mHandler.removeMessages(ALERT_PAUSE_FINISHED);
 
-        resetAlarmStreamVolume();
+        resetAlarmStreamVolume(mAlertType);
 
         if (mState == STATE_ALERTING) {
             // Stop audio playing
@@ -530,11 +533,12 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     /**
      * Get audio attribute for the alarm.
      */
-    private AudioAttributes getAlertAudioAttributes() {
+    private AudioAttributes getAlertAudioAttributes(AlertType alertType) {
         AudioAttributes.Builder builder = new AudioAttributes.Builder();
 
         builder.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION);
-        builder.setUsage(AudioAttributes.USAGE_ALARM);
+        builder.setUsage((alertType == AlertType.INFO
+                ? AudioAttributes.USAGE_NOTIFICATION : AudioAttributes.USAGE_ALARM));
         if (mUseFullVolume) {
             // Set FLAG_BYPASS_INTERRUPTION_POLICY and FLAG_BYPASS_MUTE so that it enables
             // audio in any DnD mode, even in total silence DnD mode (requires MODIFY_PHONE_STATE).
@@ -548,7 +552,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     /**
      * Set volume for alerts.
      */
-    private void setAlertVolume() {
+    private void setAlertVolume(AlertType alertType) {
         if (mTelephonyManager.getCallState() != TelephonyManager.CALL_STATE_IDLE
                 || isOnEarphone()) {
             // If we are in a call, play the alert
@@ -559,7 +563,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             // If use_full_volume is configured,
             // we overwrite volume setting of STREAM_ALARM to full, play at
             // max possible volume, and reset it after it's finished.
-            setAlarmStreamVolumeToFull();
+            setAlarmStreamVolumeToFull(alertType);
         }
     }
 
@@ -582,22 +586,25 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     /**
      * Set volume of STREAM_ALARM to full.
      */
-    private void setAlarmStreamVolumeToFull() {
+    private void setAlarmStreamVolumeToFull(AlertType alertType) {
         log("setting alarm volume to full for cell broadcast alerts.");
-        mUserSetAlarmVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_ALARM);
+        int streamType = (alertType == AlertType.INFO)
+                ? AudioManager.STREAM_NOTIFICATION : AudioManager.STREAM_ALARM;
+        mUserSetAlarmVolume = mAudioManager.getStreamVolume(streamType);
         mResetAlarmVolumeNeeded = true;
-        mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM,
-                mAudioManager.getStreamMaxVolume(AudioManager.STREAM_ALARM),
-                0);
+        mAudioManager.setStreamVolume(streamType,
+                mAudioManager.getStreamMaxVolume(streamType), 0);
     }
 
     /**
      * Reset volume of STREAM_ALARM, if needed.
      */
-    private void resetAlarmStreamVolume() {
+    private void resetAlarmStreamVolume(AlertType alertType) {
         if (mResetAlarmVolumeNeeded) {
             log("resetting alarm volume to back to " + mUserSetAlarmVolume);
-            mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, mUserSetAlarmVolume, 0);
+            mAudioManager.setStreamVolume(alertType == AlertType.INFO
+                    ? AudioManager.STREAM_NOTIFICATION : AudioManager.STREAM_ALARM,
+                    mUserSetAlarmVolume, 0);
             mResetAlarmVolumeNeeded = false;
         }
     }
