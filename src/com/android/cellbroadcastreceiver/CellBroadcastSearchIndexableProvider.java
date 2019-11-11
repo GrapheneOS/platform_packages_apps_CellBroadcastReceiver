@@ -181,6 +181,13 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             cursor.addRow(ref);
         }
 
+        if (!Resources.getSystem().getBoolean(R.bool.show_presidential_alerts_in_settings)) {
+            ref = new Object[1];
+            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                    CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS;
+            cursor.addRow(ref);
+        }
+
         if (!enableDevSettings) {
             ref = new Object[1];
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
@@ -195,6 +202,30 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             ref = new Object[1];
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
                     CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS;
+            cursor.addRow(ref);
+        }
+
+        if (channelManager.getCellBroadcastChannelRanges(
+                R.array.emergency_alerts_channels_range_strings).isEmpty()) {
+            ref = new Object[1];
+            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                    CellBroadcastSettings.KEY_ENABLE_EMERGENCY_ALERTS;
+            cursor.addRow(ref);
+        }
+
+        if (channelManager.getCellBroadcastChannelRanges(
+                R.array.public_safety_messages_channels_range_strings).isEmpty()) {
+            ref = new Object[1];
+            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                    CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES;
+            cursor.addRow(ref);
+        }
+
+        if (channelManager.getCellBroadcastChannelRanges(
+                R.array.state_local_test_alert_range_strings).isEmpty()) {
+            ref = new Object[1];
+            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                    CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS;
             cursor.addRow(ref);
         }
 
