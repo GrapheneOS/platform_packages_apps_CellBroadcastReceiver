@@ -75,7 +75,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         } else if (CELLBROADCAST_START_CONFIG_ACTION.equals(action)
                 || SubscriptionManager.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action)) {
             startConfigService(context.getApplicationContext());
-        } else if (Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION.equals(action) ||
+        } else if (Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED.equals(action) ||
                 Telephony.Sms.Intents.SMS_CB_RECEIVED_ACTION.equals(action)) {
             // If 'privileged' is false, it means that the intent was delivered to the base
             // no-permissions receiver class.  If we get an SMS_CB_RECEIVED message that way, it
