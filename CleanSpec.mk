@@ -46,6 +46,8 @@
 
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/priv-app/CellBroadcastReceiver)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/priv-app/CellBroadcastAppPlatform)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/priv-app/CellBroadcastApp)
+
 # ************************************************
 # NEWER CLEAN STEPS MUST BE AT THE END OF THE LIST
 # ************************************************
