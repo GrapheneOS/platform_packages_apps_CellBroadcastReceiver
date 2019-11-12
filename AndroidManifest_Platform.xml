@@ -105,7 +105,7 @@
     <receiver android:name="PrivilegedCellBroadcastReceiver"
         android:permission="android.permission.BROADCAST_SMS">
       <intent-filter>
-        <action android:name="android.provider.Telephony.SMS_EMERGENCY_CB_RECEIVED" />
+        <action android:name="android.provider.action.SMS_EMERGENCY_CB_RECEIVED" />
         <action android:name="android.provider.Telephony.SMS_CB_RECEIVED" />
         <action android:name="android.cellbroadcastreceiver.START_CONFIG" />
         <action android:name="android.provider.Telephony.SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED" />
