@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 The Android Open Source Project
+<!-- Copyright (C) 2019 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,13 +15,6 @@
 -->
 
 <resources>
-    <string-array name="additional_cbs_channels_strings" translatable="false">
-        <item>0xA800:type=etws_earthquake, emergency=true, scope=carrier</item>
-        <item>0xAFEE:type=etws_tsunami, emergency=true, scope=carrier</item>
-        <item>0xAC00-0xAFED:type=other, emergency=true, scope=carrier</item>
-        <item>0xA802:type=test, emergency=true, scope=carrier</item>
-        <item>0xA804:type=test, emergency=true, scope=carrier</item>
-    </string-array>
     <!-- Whether to show test settings -->
     <bool name="show_test_settings">false</bool>
 </resources>

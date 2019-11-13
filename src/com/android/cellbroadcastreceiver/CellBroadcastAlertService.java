@@ -371,6 +371,12 @@ public class CellBroadcastAlertService extends Service {
         }
 
         if (channelManager.checkCellBroadcastChannelRange(channel,
+                R.array.exercise_alert_range_strings)
+                && getResources().getBoolean(R.bool.always_enable_exercise_alert)) {
+            return true;
+        }
+
+        if (channelManager.checkCellBroadcastChannelRange(channel,
                 R.array.required_monthly_test_range_strings)
                 || channelManager.checkCellBroadcastChannelRange(channel,
                 R.array.exercise_alert_range_strings)
