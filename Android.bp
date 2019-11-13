@@ -35,7 +35,8 @@ android_app {
      name: "CellBroadcastAppPlatform",
      defaults: ["CellBroadcastCommon"],
      certificate: "platform",
-     // CellBroadcastAppPlatform is a replacement for CellBroadcastApp
-     overrides: ["CellBroadcastApp"],
+     // CellBroadcastAppPlatform is a replacement for com.android.cellbroadcast apex which consists
+     // of CellBroadcastApp
+     overrides: ["com.android.cellbroadcast"],
      manifest: "AndroidManifest_Platform.xml",
 }
