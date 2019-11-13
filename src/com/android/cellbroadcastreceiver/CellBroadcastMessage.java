@@ -36,7 +36,7 @@ import android.text.format.DateUtils;
  * Application wrapper for {@link SmsCbMessage}. This is Parcelable so that
  * decoded broadcast message objects can be passed between running Services.
  * New broadcasts are received by the CellBroadcastReceiver app, which exports
- * the database of previously received broadcasts at "content://cellbroadcasts/".
+ * the database of previously received broadcasts at "content://cellbroadcasts-app/".
  * The "android.permission.READ_CELL_BROADCASTS" permission is required to read
  * from the ContentProvider, and writes to the database are not allowed.<p>
  *

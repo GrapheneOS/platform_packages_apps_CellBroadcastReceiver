@@ -156,7 +156,7 @@ public class CellBroadcastListActivity extends Activity {
         @Override
         public Loader<Cursor> onCreateLoader(int id, Bundle args) {
             return new CursorLoader(getActivity(), CellBroadcastContentProvider.CONTENT_URI,
-                    Telephony.CellBroadcasts.QUERY_COLUMNS, null, null,
+                    CellBroadcastContentProvider.QUERY_COLUMNS, null, null,
                     Telephony.CellBroadcasts.DELIVERY_TIME + " DESC");
         }
 
