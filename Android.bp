@@ -6,6 +6,8 @@ java_defaults {
     privileged: true,
     srcs: [
       "src/**/*.java",
+      ":framework-annotations",
+      ":cellbroadcast-constants-shared-srcs",
    ],
     libs: ["telephony-common"],
     static_libs: [
@@ -19,7 +21,6 @@ java_defaults {
     optimize: {
        proguard_flags_files: ["proguard.flags"],
     },
-    jarjar_rules: "cellbroadcast-jarjar-rules.txt",
     resource_dirs: ["res"],
 }
 
