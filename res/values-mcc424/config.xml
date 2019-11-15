@@ -21,4 +21,13 @@
     <!-- Whether to always sound CBS alerts at full volume -->
     <!-- By default it's true for United Arab Emirates users -->
     <bool name="use_full_volume">true</bool>
+    <!-- Channels to receive emergency alerts -->
+    <!-- 4379, 4392 -->
+    <string-array name="emergency_alerts_channels_range_strings" translatable="false">
+        <item>0x111B:rat=gsm, emergency=true</item>
+        <!-- additional language -->
+        <item>0x1128:rat=gsm, emergency=true</item>
+    </string-array>
+    <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false">
+    </string-array>
 </resources>
