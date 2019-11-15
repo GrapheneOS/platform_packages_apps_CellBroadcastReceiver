@@ -22,7 +22,10 @@
     <string name="cmas_extreme_immediate_observed_alert" translatable="false">@string/emergency_alert</string>
     <string name="cmas_extreme_immediate_likely_alert" translatable="false">@string/emergency_alert</string>
     <string name="cmas_severe_alert" translatable="false">@string/emergency_alert</string>
-    <string name="cmas_amber_alert">Warning alert</string>
+    <!-- Dialog title for warning alert for United Arab Emirates users. -->
+    <string name="pws_other_message_identifiers">Warning alerts</string>
+    <string name="enable_emergency_alerts_message_title">Warning alerts</string>
+    <string name="enable_emergency_alerts_message_summary">Recommended actions that can save lives or property</string>
     <string name="cmas_required_monthly_test">Test alert</string>
     <string name="cmas_exercise_alert">Exercise</string>
 </resources>
