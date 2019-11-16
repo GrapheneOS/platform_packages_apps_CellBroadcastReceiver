@@ -27,8 +27,6 @@
     <bool name="duplicate_compare_body">false</bool>
     <!-- Whether to enable audio alert for non emergency broadcasts on FEATURE_WATCH devices -->
     <bool name="watch_enable_non_emergency_audio">false</bool>
-    <!-- Whether to reset alert message duplicate detection after toggling airplane mode -->
-    <bool name="reset_duplicate_detection_on_airplane_mode">false</bool>
     <!-- Whether to show CMAS messages by in a different order than received by prioritizing them -->
     <bool name="show_cmas_messages_in_priority_order">false</bool>
     <!-- Whether to ignore any alert message in ECBM(Emergency Callback Mode) -->

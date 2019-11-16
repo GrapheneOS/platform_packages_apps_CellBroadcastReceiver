@@ -20,13 +20,9 @@ import static com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ALERT_AU
 import static com.android.cellbroadcastreceiver.CellBroadcastAlertService.SHOW_NEW_ALERT_ACTION;
 
 import static org.junit.Assert.assertArrayEquals;
-import static org.mockito.Matchers.anyInt;
-import static org.mockito.Mockito.doReturn;
 
 import android.content.Intent;
-import android.os.PersistableBundle;
 import android.provider.Telephony;
-import android.telephony.CarrierConfigManager;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
@@ -146,108 +142,5 @@ public class CellBroadcastAlertServiceTest extends
         assertEquals(Intent.FLAG_ACTIVITY_NEW_TASK,
                 (mActivityIntentToVerify.getFlags() & Intent.FLAG_ACTIVITY_NEW_TASK));
         compareCellBroadCastMessage(new CellBroadcastMessage(message), newMessageList.get(0));
-    }
-
-    // Test if we ignore the duplicate message
-    public void testDuplicateMessage() throws Exception {
-        sendMessage(4321);
-        waitForMs(500);
-
-        assertEquals(SHOW_NEW_ALERT_ACTION, mServiceIntentToVerify.getAction());
-
-        CellBroadcastMessage cbmTest =
-                (CellBroadcastMessage) mServiceIntentToVerify.getExtras().get("message");
-        CellBroadcastMessage cbm = new CellBroadcastMessage(createMessage(4321));
-
-        compareCellBroadCastMessage(cbm, cbmTest);
-
-        mServiceIntentToVerify = null;
-
-        Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
-        intent.setAction(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
-
-        SmsCbMessage m = createMessage(4321);
-        intent.putExtra("message", m);
-
-        startService(intent);
-        waitForMs(500);
-
-        // If the duplicate detection is working, the service should not pop-up the dialog and
-        // play the alert tones.
-        assertNull(mServiceIntentToVerify);
-    }
-
-    // Test if we allow non-duplicate message
-    public void testNonDuplicateMessage() throws Exception {
-        sendMessage(187286123);
-
-        mServiceIntentToVerify = null;
-
-        Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
-        intent.setAction(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
-
-        SmsCbMessage m = createMessage(129487394);
-        intent.putExtra("message", m);
-
-        startService(intent);
-        waitForMs(200);
-
-        assertEquals(SHOW_NEW_ALERT_ACTION, mServiceIntentToVerify.getAction());
-        assertEquals(CellBroadcastAlertService.class.getName(),
-                intent.getComponent().getClassName());
-
-        CellBroadcastMessage cbmTest =
-                (CellBroadcastMessage) mServiceIntentToVerify.getExtras().get("message");
-        CellBroadcastMessage cbm = new CellBroadcastMessage(m);
-
-        compareCellBroadCastMessage(cbm, cbmTest);
-    }
-
-    // Test when we reach the maximum messages, the oldest one should be evicted.
-    public void testMaximumMessages() throws Exception {
-        for (int i = 0; i < 1024 + 1; i++) {
-            sendMessage(i);
-            waitForMs(50);
-        }
-
-        sendMessage(0);
-        waitForMs(40);
-        // Check if the oldest one has been already evicted.
-        CellBroadcastMessage cbmTest =
-                (CellBroadcastMessage) mServiceIntentToVerify.getExtras().get("message");
-        CellBroadcastMessage cbm = new CellBroadcastMessage(createMessage(0));
-
-        compareCellBroadCastMessage(cbm, cbmTest);
-        mActivityIntentToVerify = null;
-    }
-
-    public void testExpiration() throws Exception {
-        PersistableBundle b = new PersistableBundle();
-        b.putLong(CarrierConfigManager.KEY_MESSAGE_EXPIRATION_TIME_LONG, 1000);
-        doReturn(b).when(mMockedCarrierConfigManager).getConfigForSubId(anyInt());
-
-        sendMessage(91924);
-        waitForMs(500);
-
-        CellBroadcastMessage cbmTest =
-                (CellBroadcastMessage) mServiceIntentToVerify.getExtras().get("message");
-        assertEquals(91924, cbmTest.getSmsCbMessage().getSerialNumber());
-        mServiceIntentToVerify = null;
-
-        // Wait until it expires.
-        waitForMs(1500);
-        sendMessage(91924);
-        waitForMs(100);
-
-        // Since the previous one has already expired, this one should not be treated as a duplicate
-        cbmTest = (CellBroadcastMessage) mServiceIntentToVerify.getExtras().get("message");
-        assertEquals(91924, cbmTest.getSmsCbMessage().getSerialNumber());
-
-        waitForMs(500);
-        mServiceIntentToVerify = null;
-        // This one should be treated as a duplicate since it's not expired yet.
-        sendMessage(91924);
-        assertNull(mServiceIntentToVerify);
-
     }
 }
