@@ -16,9 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="6006277287245076524">"إنذارات الطوارئ"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"إنذارات الطوارئ"</string>
-    <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"إعدادات البث الخلوي غير متوفّرة لهذا المستخدم"</string>
+    <string name="app_label" msgid="2008319089248760277">"إنذارات الطوارئ اللاسلكية"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"إنذارات الطوارئ اللاسلكية"</string>
+    <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"لا تتوفَّر إعدادات إنذارات الطوارئ اللاسلكية لهذا المستخدم,"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"حسنًا"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"ليست هناك تنبيهات سابقة."</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"حذف مجموعات البث"</string>
@@ -52,10 +52,10 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"رسائل البث"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"إنذارات الطوارئ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"السماح بالتنبيهات"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"تلقّي إشعارات عن حالات الطوارئ"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"تلقي الإشعارات بإنذارات الطوارئ اللاسلكية"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"مدّة التذكير بالتنبيه"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"الاستماع إلى رسالة التنبيه"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"استخدام ميزة \"تحويل النص إلى كلام\" للاستماع إلى رسائل إشعارات الطوارئ"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"استخدام ميزة \"تحويل النص إلى كلام\" للاستماع إلى رسائل إنذارات الطوارئ اللاسلكية"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"سجلّ تنبيهات الطوارئ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"الإعدادات المفضّلة للتنبيهات"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"‏مجموعات البث التجريبية في ETWS"</string>
@@ -118,7 +118,7 @@
     <string name="notification_multiple_title" msgid="1523638925739947855">"اشعارات جديدة"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"عرض خيار الإيقاف بعد عرض أوّل تنبيه (غير التنبيه الرئاسي)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"عرض خيار الإيقاف"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"أنت حاليًا تتلقى اشعارات طوارئ. هل تريد متابعة تلقي اشعارات الطوارئ؟"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"أنت حاليًا تتلقى إنذارات الطوارئ اللاسلكية. هل تريد مواصلة تلقي إنذارات الطوارئ اللاسلكية؟"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"نعم"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"لا"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"سجلّ تنبيهات الطوارئ"</string>

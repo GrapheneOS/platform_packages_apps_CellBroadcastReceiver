@@ -16,9 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="6006277287245076524">"การแจ้งเหตุฉุกเฉิน"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"การแจ้งเตือนเหตุฉุกเฉิน"</string>
-    <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"การตั้งค่าการส่งข้อมูลเตือนภัยทางมือถือ (CB) ไม่พร้อมใช้งานสำหรับผู้ใช้รายนี้"</string>
+    <string name="app_label" msgid="2008319089248760277">"การแจ้งเหตุฉุกเฉินแบบไร้สาย"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"การแจ้งเหตุฉุกเฉินแบบไร้สาย"</string>
+    <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"การตั้งค่าการแจ้งเหตุฉุกเฉินแบบไร้สายไม่พร้อมใช้งานสำหรับผู้ใช้รายนี้"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ตกลง"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"ไม่มีการแจ้งเตือนก่อนหน้านี้"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"ลบการแจ้งเตือนทั้งหมด"</string>
@@ -52,10 +52,10 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ข้อความการออกอากาศ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"การแจ้งเหตุฉุกเฉิน"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"อนุญาตการแจ้งเตือน"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"รับการแจ้งเตือนฉุกเฉิน"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"รับการแจ้งเตือนการแจ้งเหตุฉุกเฉินแบบไร้สาย"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"เสียงการช่วยเตือนซ้ำ"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"อ่านออกเสียงข้อความแจ้งเตือน"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"ใช้การอ่านออกเสียงข้อความเพื่ออ่านข้อความแจ้งเตือนฉุกเฉิน"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"ใช้การอ่านออกเสียงข้อความเพื่ออ่านข้อความแจ้งเหตุฉุกเฉินแบบไร้สาย"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ประวัติการแจ้งเตือนเหตุฉุกเฉิน"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ค่ากำหนดการแจ้งเตือน"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"การทดสอบการแจ้งเตือน ETWS"</string>
@@ -118,7 +118,7 @@
     <string name="notification_multiple_title" msgid="1523638925739947855">"การแจ้งเตือนใหม่"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"แสดงกล่องโต้ตอบเพื่อเลือกไม่ใช้งานหลังจากแสดงการแจ้งเตือนแรก (นอกเหนือจากการแจ้งเตือนระดับสูง)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"แสดงกล่องโต้ตอบเพื่อเลือกไม่ใช้งาน"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"ขณะนี้ คุณได้รับการแจ้งเตือนฉุกเฉิน คุณต้องการรับการแจ้งเตือนฉุกเฉินต่อไปหรือไม่"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"ขณะนี้คุณรับการแจ้งเหตุฉุกเฉินแบบไร้สาย คุณต้องการรับการแจ้งเหตุฉุกเฉินแบบไร้สายต่อหรือไม่"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ใช่"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ไม่ใช่"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"ประวัติการแจ้งเตือนเหตุฉุกเฉิน"</string>
