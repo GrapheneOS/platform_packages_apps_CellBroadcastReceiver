@@ -22,13 +22,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.os.Bundle;
 import android.os.UserManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.provider.Telephony.CellBroadcasts;
 import android.telephony.CarrierConfigManager;
-import android.telephony.ServiceState;
 import android.telephony.SubscriptionManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
 import android.util.Log;
@@ -105,16 +103,6 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         } else if (Intent.ACTION_LOCALE_CHANGED.equals(action)) {
             // rename registered notification channels on locale change
             CellBroadcastAlertService.createNotificationChannels(context);
-        } else if (Intent.ACTION_SERVICE_STATE.equals(action)) {
-            if (CellBroadcastSettings.getResources(context,
-                    SubscriptionManager.DEFAULT_SUBSCRIPTION_ID).getBoolean(
-                            R.bool.reset_duplicate_detection_on_airplane_mode)) {
-                Bundle extras = intent.getExtras();
-                ServiceState ss = extras.getParcelable(Intent.EXTRA_SERVICE_STATE);
-                if (ss.getState() == ServiceState.STATE_POWER_OFF) {
-                    CellBroadcastAlertService.resetMessageDuplicateDetection();
-                }
-            }
         } else {
             Log.w(TAG, "onReceive() unexpected action " + action);
         }
