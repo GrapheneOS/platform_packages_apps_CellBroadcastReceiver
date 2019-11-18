@@ -92,7 +92,7 @@ public class CellBroadcastAlertServiceTest extends
 
     private void sendMessage(int serialNumber) {
         Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
-        intent.setAction(Telephony.Sms.Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
+        intent.setAction(Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED);
 
         SmsCbMessage m = createMessage(serialNumber);
         sendMessage(m, intent);
