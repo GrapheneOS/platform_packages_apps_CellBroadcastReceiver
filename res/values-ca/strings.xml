@@ -114,7 +114,7 @@
     <string name="cmas_certainty_observed" msgid="3668549749352106472">"Complerta"</string>
     <string name="cmas_certainty_likely" msgid="4254497828943291749">"Probable"</string>
     <string name="delivery_time_heading" msgid="5980836543433619329">"Rebut:"</string>
-    <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> alertes sense llegir."</string>
+    <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> alertes no llegides."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Alertes noves"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Mostra un quadre de diàleg de desactivació després de la primera alerta (tret d\'alerta presidencial)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Mostra el diàleg de desactivació"</string>
