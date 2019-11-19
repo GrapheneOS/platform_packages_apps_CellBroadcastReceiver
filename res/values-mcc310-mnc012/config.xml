@@ -17,4 +17,6 @@
 <resources>
     <!-- Whether to ignore any alert message in ECBM(Emergency Callback Mode) -->
     <bool name="ignore_messages_in_ecbm">true</bool>
+    <!-- Whether to disable cell broadcast severe alert when extreme alert is disabled -->
+    <bool name="disable_severe_when_extreme_disabled">false</bool>
 </resources>
