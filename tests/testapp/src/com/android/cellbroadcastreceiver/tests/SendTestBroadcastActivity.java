@@ -342,6 +342,23 @@ public class SendTestBroadcastActivity extends Activity {
                     }
                 });
 
+        /* Send a GSM CMAS exercise test alert to app. */
+        Button GsmCmasExerciseTestButton = findViewById(R.id.button_gsm_cmas_exercise_test);
+        GsmCmasExerciseTestButton.setOnClickListener(
+                new OnClickListener() {
+                    public void onClick(View v) {
+                        if (mDelayBeforeSending && v != null) {
+                            Message msg = mDelayHandler.obtainMessage(0, this);
+                            mDelayHandler.sendMessageDelayed(msg, DELAY_BEFORE_SENDING_MSEC);
+                        } else {
+                            SendGsmCmasMessages.testSendCmasExerciseTest(
+                                    SendTestBroadcastActivity.this,
+                                    getSerialNumber(),
+                                    mIsAdditionalLangAlert);
+                        }
+                    }
+                });
+
         /* Send a GSM public safety messages to app. */
         Button GsmPublicSafetyMessagesAlertTestButton = findViewById(
                 R.id.button_gsm_public_safety_message);
