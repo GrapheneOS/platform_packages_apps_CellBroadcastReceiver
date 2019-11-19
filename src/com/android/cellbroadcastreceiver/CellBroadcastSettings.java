@@ -320,23 +320,11 @@ public class CellBroadcastSettings extends Activity {
                 if (mMasterToggle != null) preferenceScreen.removePreference(mMasterToggle);
             }
 
-            boolean hideTestAlertMenu = CellBroadcastSettings.isFeatureEnabled(getContext(),
-                    CarrierConfigManager.KEY_CARRIER_FORCE_DISABLE_ETWS_CMAS_TEST_BOOL, false);
-
             CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                     getContext(), SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
-            boolean isTestAlertsAvailable = !channelManager.getCellBroadcastChannelRanges(
-                    R.array.required_monthly_test_range_strings).isEmpty()
-                    || !channelManager.getCellBroadcastChannelRanges(
-                            R.array.exercise_alert_range_strings).isEmpty()
-                    || !channelManager.getCellBroadcastChannelRanges(
-                            R.array.operator_defined_alert_range_strings).isEmpty()
-                    || !channelManager.getCellBroadcastChannelRanges(
-                            R.array.etws_test_alerts_range_strings).isEmpty();
-
             // Check if we want to hide the test alert toggle.
-            if (hideTestAlertMenu || !enableDevSettings || !isTestAlertsAvailable) {
+            if (!isTestAlertsToggleVisible(getContext())) {
                 if (mTestCheckBox != null) {
                     mAlertCategory.removePreference(mTestCheckBox);
                 }
@@ -548,6 +536,23 @@ public class CellBroadcastSettings extends Activity {
                 mStateLocalTestCheckBox.setChecked(alertsEnabled);
             }
         }
+    }
+
+    public static boolean isTestAlertsToggleVisible(Context context) {
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(context,
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        Resources res = CellBroadcastSettings.getResources(context,
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        boolean isTestAlertsAvailable = !channelManager.getCellBroadcastChannelRanges(
+                R.array.required_monthly_test_range_strings).isEmpty()
+                || !channelManager.getCellBroadcastChannelRanges(
+                R.array.exercise_alert_range_strings).isEmpty()
+                || !channelManager.getCellBroadcastChannelRanges(
+                R.array.operator_defined_alert_range_strings).isEmpty()
+                || !channelManager.getCellBroadcastChannelRanges(
+                R.array.etws_test_alerts_range_strings).isEmpty();
+
+        return res.getBoolean(R.bool.show_test_settings) && isTestAlertsAvailable;
     }
 
     public static boolean isFeatureEnabled(Context context, String feature, boolean defaultValue) {

@@ -229,6 +229,13 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             cursor.addRow(ref);
         }
 
+        if (!CellBroadcastSettings.isTestAlertsToggleVisible(getContext())) {
+            ref = new Object[1];
+            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                    CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS;
+            cursor.addRow(ref);
+        }
+
         return cursor;
     }
 }
