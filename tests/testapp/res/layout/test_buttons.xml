@@ -175,6 +175,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button android:id="@+id/button_gsm_cmas_exercise_test"
+        android:text="@string/button_gsm_cmas_exercise_test"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <Button android:id="@+id/button_gsm_public_safety_message"
         android:text="@string/button_gsm_public_safety_message"
         android:layout_marginLeft="20dp"
