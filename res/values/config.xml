@@ -37,6 +37,8 @@
     <bool name="show_public_safety_settings">true</bool>
     <!-- Whether to bypass Do-Not-Disturb/silent mode and play emergency alert tone at full volume for presidential alert -->
     <bool name="full_volume_presidential_alert">false</bool>
+    <!-- Whether to disable cell broadcast severe alert when extreme alert is disabled -->
+    <bool name="disable_severe_when_extreme_disabled">true</bool>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true</item>

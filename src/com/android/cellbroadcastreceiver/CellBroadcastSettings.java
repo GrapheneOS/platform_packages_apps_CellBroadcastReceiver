@@ -263,9 +263,12 @@ public class CellBroadcastSettings extends Activity {
                         findPreference(KEY_CATEGORY_EMERGENCY_ALERTS);
             }
 
+            Resources res = CellBroadcastSettings.getResources(getContext(),
+                    SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-            mDisableSevereWhenExtremeDisabled = isFeatureEnabled(getContext(),
-                    CarrierConfigManager.KEY_DISABLE_SEVERE_WHEN_EXTREME_DISABLED_BOOL, true);
+            mDisableSevereWhenExtremeDisabled = res.getBoolean(
+                    R.bool.disable_severe_when_extreme_disabled);
 
             // Handler for settings that require us to reconfigure enabled channels in radio
             Preference.OnPreferenceChangeListener startConfigServiceListener =
@@ -299,8 +302,6 @@ public class CellBroadcastSettings extends Activity {
             boolean enableDevSettings =
                     DevelopmentSettingsHelper.isDevelopmentSettingsEnabled(getContext());
 
-            Resources res = CellBroadcastSettings.getResources(getContext(),
-                    SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
             initReminderIntervalList();
 
             boolean emergencyAlertOnOffOptionEnabled = isFeatureEnabled(getContext(),
