@@ -46,7 +46,7 @@ public class CellBroadcastAlertServiceTest extends
         return new SmsCbMessage(1, 2, serialNumber, new SmsCbLocation(),
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL, "language", "body",
                 SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null, new SmsCbCmasInfo(0, 2, 3, 4, 5, 6),
-                0 /*subId*/);
+                0, 1);
     }
 
     @Before
