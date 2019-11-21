@@ -103,6 +103,7 @@ public class CellBroadcastConfigService extends IntentService {
     public void enableCellBroadcastChannels(int subId) {
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        Resources res = CellBroadcastSettings.getResources(this, subId);
 
         // boolean for each user preference checkbox, true for checked, false for unchecked
         // Note: If enableAlertsMasterToggle is false, it disables ALL emergency broadcasts
@@ -192,9 +193,13 @@ public class CellBroadcastConfigService extends IntentService {
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.required_monthly_test_range_strings));
 
-        setCellBroadcastRange(subId, enableTestAlerts,
+        // Exercise is part of test toggle with monthly test and operator defined. some carriers
+        // mandate to show test settings in UI but always enable exercise alert.
+        setCellBroadcastRange(subId, enableTestAlerts ||
+                        res.getBoolean(R.bool.always_enable_exercise_alert),
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.exercise_alert_range_strings));
+
         setCellBroadcastRange(subId, enableTestAlerts,
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.operator_defined_alert_range_strings));
