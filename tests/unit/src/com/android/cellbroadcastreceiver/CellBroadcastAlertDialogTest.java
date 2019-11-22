@@ -26,6 +26,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.IPowerManager;
 import android.os.PowerManager;
+import android.telephony.SmsCbMessage;
 import android.widget.TextView;
 
 import org.junit.After;
@@ -60,13 +61,12 @@ public class CellBroadcastAlertDialogTest extends
 
     @Override
     protected Intent createActivityIntent() {
-        ArrayList<CellBroadcastMessage> messageList = new ArrayList<>(1);
-        messageList.add(new CellBroadcastMessage(
-                CellBroadcastAlertServiceTest.createMessage(12412)));
+        ArrayList<SmsCbMessage> messageList = new ArrayList<>(1);
+        messageList.add(CellBroadcastAlertServiceTest.createMessage(12412));
 
         Intent intent = new Intent(getInstrumentation().getTargetContext(),
                         CellBroadcastAlertDialog.class);
-        intent.putParcelableArrayListExtra(CellBroadcastMessage.SMS_CB_MESSAGE_EXTRA,
+        intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
                         messageList);
         return intent;
     }
