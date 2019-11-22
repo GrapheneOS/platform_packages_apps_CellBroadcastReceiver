@@ -12,8 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-java_defaults {
-    name: "CellBroadcastTestCommon",
+android_test {
+    name: "CellBroadcastReceiverUnitTests",
+    certificate: "networkstack",
     libs: [
         "android.test.runner",
         "telephony-common",
@@ -29,31 +30,28 @@ java_defaults {
     // Include all test java files.
     srcs: ["src/**/*.java"],
     platform_apis: true,
-}
-
-android_test {
-    name: "CellBroadcastReceiverUnitTests",
-    certificate: "networkstack",
-    defaults: ["CellBroadcastTestCommon"],
     instrumentation_for: "CellBroadcastApp",
-    test_suites: ["device-tests"],
+    test_suites: ["device-tests", "mts"],
 }
 
 android_test {
     name: "CellBroadcastReceiverPlatformUnitTests",
     certificate: "platform",
-    defaults: ["CellBroadcastTestCommon"],
+    libs: [
+        "android.test.runner",
+        "telephony-common",
+        "android.test.base",
+    ],
+    static_libs: [
+        "androidx.test.rules",
+        "androidx.test.espresso.core",
+        "mockito-target-minus-junit4",
+        "truth-prebuilt",
+        "ub-uiautomator",
+    ],
+    // Include all test java files.
+    srcs: ["src/**/*.java"],
+    platform_apis: true,
     instrumentation_for: "CellBroadcastAppPlatform",
     test_suites: ["device-tests"],
-}
-
-// this is a test target for MTS only.
-// As MTS is running on non-AOSP thus hardcoding the certificate as dev key.
-android_test {
-    name: "CellBroadcastReceiverMTS",
-    certificate: ":com_google_android_networkstack_container",
-    defaults: ["CellBroadcastTestCommon"],
-    instrumentation_for: "CellBroadcastApp",
-    test_suites: ["device-tests", "mts"],
-    test_config: "mts/AndroidTest.xml",
 }
