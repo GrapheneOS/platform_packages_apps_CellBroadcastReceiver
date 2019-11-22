@@ -18,6 +18,12 @@ package com.android.cellbroadcastreceiver;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.provider.Telephony;
+import android.telephony.SmsCbCmasInfo;
+import android.telephony.SmsCbEtwsInfo;
+import android.telephony.SmsCbLocation;
+import android.telephony.SmsCbMessage;
+import android.telephony.SubscriptionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +49,7 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
      */
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
-        CellBroadcastMessage message = CellBroadcastMessage.createFromCursor(cursor);
+        SmsCbMessage message = createFromCursor(context, cursor);
 
         LayoutInflater factory = LayoutInflater.from(context);
         CellBroadcastListItem listItem = (CellBroadcastListItem) factory.inflate(
@@ -51,6 +57,132 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
 
         listItem.bind(message);
         return listItem;
+    }
+
+    static SmsCbMessage createFromCursor(Context context, Cursor cursor) {
+        int geoScope = cursor.getInt(
+                cursor.getColumnIndexOrThrow(Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE));
+        int serialNum = cursor.getInt(
+                cursor.getColumnIndexOrThrow(Telephony.CellBroadcasts.SERIAL_NUMBER));
+        int category = cursor.getInt(
+                cursor.getColumnIndexOrThrow(Telephony.CellBroadcasts.SERVICE_CATEGORY));
+        String language = cursor.getString(
+                cursor.getColumnIndexOrThrow(Telephony.CellBroadcasts.LANGUAGE_CODE));
+        String body = cursor.getString(
+                cursor.getColumnIndexOrThrow(Telephony.CellBroadcasts.MESSAGE_BODY));
+        int format = cursor.getInt(
+                cursor.getColumnIndexOrThrow(Telephony.CellBroadcasts.MESSAGE_FORMAT));
+        int priority = cursor.getInt(
+                cursor.getColumnIndexOrThrow(Telephony.CellBroadcasts.MESSAGE_PRIORITY));
+        int slotIndex = cursor.getInt(
+                cursor.getColumnIndexOrThrow(Telephony.CellBroadcasts.SLOT_INDEX));
+
+        String plmn;
+        int plmnColumn = cursor.getColumnIndex(Telephony.CellBroadcasts.PLMN);
+        if (plmnColumn != -1 && !cursor.isNull(plmnColumn)) {
+            plmn = cursor.getString(plmnColumn);
+        } else {
+            plmn = null;
+        }
+
+        int lac;
+        int lacColumn = cursor.getColumnIndex(Telephony.CellBroadcasts.LAC);
+        if (lacColumn != -1 && !cursor.isNull(lacColumn)) {
+            lac = cursor.getInt(lacColumn);
+        } else {
+            lac = -1;
+        }
+
+        int cid;
+        int cidColumn = cursor.getColumnIndex(Telephony.CellBroadcasts.CID);
+        if (cidColumn != -1 && !cursor.isNull(cidColumn)) {
+            cid = cursor.getInt(cidColumn);
+        } else {
+            cid = -1;
+        }
+
+        SmsCbLocation location = new SmsCbLocation(plmn, lac, cid);
+
+        SmsCbEtwsInfo etwsInfo;
+        int etwsWarningTypeColumn = cursor.getColumnIndex(
+                Telephony.CellBroadcasts.ETWS_WARNING_TYPE);
+        if (etwsWarningTypeColumn != -1 && !cursor.isNull(etwsWarningTypeColumn)) {
+            int warningType = cursor.getInt(etwsWarningTypeColumn);
+            etwsInfo = new SmsCbEtwsInfo(warningType, false, false, false, null);
+        } else {
+            etwsInfo = null;
+        }
+
+        SmsCbCmasInfo cmasInfo;
+        int cmasMessageClassColumn = cursor.getColumnIndex(
+                Telephony.CellBroadcasts.CMAS_MESSAGE_CLASS);
+        if (cmasMessageClassColumn != -1 && !cursor.isNull(cmasMessageClassColumn)) {
+            int messageClass = cursor.getInt(cmasMessageClassColumn);
+
+            int cmasCategory;
+            int cmasCategoryColumn = cursor.getColumnIndex(
+                    Telephony.CellBroadcasts.CMAS_CATEGORY);
+            if (cmasCategoryColumn != -1 && !cursor.isNull(cmasCategoryColumn)) {
+                cmasCategory = cursor.getInt(cmasCategoryColumn);
+            } else {
+                cmasCategory = SmsCbCmasInfo.CMAS_CATEGORY_UNKNOWN;
+            }
+
+            int responseType;
+            int cmasResponseTypeColumn = cursor.getColumnIndex(
+                    Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE);
+            if (cmasResponseTypeColumn != -1 && !cursor.isNull(cmasResponseTypeColumn)) {
+                responseType = cursor.getInt(cmasResponseTypeColumn);
+            } else {
+                responseType = SmsCbCmasInfo.CMAS_RESPONSE_TYPE_UNKNOWN;
+            }
+
+            int severity;
+            int cmasSeverityColumn = cursor.getColumnIndex(
+                    Telephony.CellBroadcasts.CMAS_SEVERITY);
+            if (cmasSeverityColumn != -1 && !cursor.isNull(cmasSeverityColumn)) {
+                severity = cursor.getInt(cmasSeverityColumn);
+            } else {
+                severity = SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN;
+            }
+
+            int urgency;
+            int cmasUrgencyColumn = cursor.getColumnIndex(
+                    Telephony.CellBroadcasts.CMAS_URGENCY);
+            if (cmasUrgencyColumn != -1 && !cursor.isNull(cmasUrgencyColumn)) {
+                urgency = cursor.getInt(cmasUrgencyColumn);
+            } else {
+                urgency = SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN;
+            }
+
+            int certainty;
+            int cmasCertaintyColumn = cursor.getColumnIndex(
+                    Telephony.CellBroadcasts.CMAS_CERTAINTY);
+            if (cmasCertaintyColumn != -1 && !cursor.isNull(cmasCertaintyColumn)) {
+                certainty = cursor.getInt(cmasCertaintyColumn);
+            } else {
+                certainty = SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN;
+            }
+
+            cmasInfo = new SmsCbCmasInfo(messageClass, cmasCategory, responseType, severity,
+                    urgency, certainty);
+        } else {
+            cmasInfo = null;
+        }
+
+        long deliveryTime = cursor.getLong(cursor.getColumnIndexOrThrow(
+                Telephony.CellBroadcasts.DELIVERY_TIME));
+
+        SubscriptionManager sm = (SubscriptionManager) context.getSystemService(
+                Context.TELEPHONY_SUBSCRIPTION_SERVICE);
+        int subId = SubscriptionManager.DEFAULT_SUBSCRIPTION_ID;
+        int[] subIds = sm.getSubscriptionIds(slotIndex);
+        if (subIds != null && subIds.length > 0) {
+            subId = subIds[0];
+        }
+
+        return new SmsCbMessage(format, geoScope, serialNum, location, category, language, body,
+                priority, etwsInfo, cmasInfo, 0, null, deliveryTime, slotIndex, subId);
     }
 
     /**
@@ -62,7 +194,7 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
      */
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        CellBroadcastMessage message = CellBroadcastMessage.createFromCursor(cursor);
+        SmsCbMessage message = createFromCursor(context, cursor);
         CellBroadcastListItem listItem = (CellBroadcastListItem) view;
         listItem.bind(message);
     }

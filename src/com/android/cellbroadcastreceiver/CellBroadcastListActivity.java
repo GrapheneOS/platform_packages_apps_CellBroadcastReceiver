@@ -32,8 +32,7 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.Telephony;
-import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
+import android.telephony.SmsCbMessage;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -177,18 +176,19 @@ public class CellBroadcastListActivity extends Activity {
             mAdapter.swapCursor(null);
         }
 
-        private void showDialogAndMarkRead(CellBroadcastMessage cbm) {
+        private void showDialogAndMarkRead(SmsCbMessage message) {
             // show emergency alerts with the warning icon, but don't play alert tone
             Intent i = new Intent(getActivity(), CellBroadcastAlertDialog.class);
-            ArrayList<CellBroadcastMessage> messageList = new ArrayList<CellBroadcastMessage>(1);
-            messageList.add(cbm);
-            i.putParcelableArrayListExtra(CellBroadcastMessage.SMS_CB_MESSAGE_EXTRA, messageList);
+            ArrayList<SmsCbMessage> messageList = new ArrayList<>();
+            messageList.add(message);
+            i.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
+                    messageList);
             startActivity(i);
         }
 
-        private void showBroadcastDetails(CellBroadcastMessage cbm) {
+        private void showBroadcastDetails(SmsCbMessage message) {
             // show dialog with delivery date/time and alert details
-            CharSequence details = CellBroadcastResources.getMessageDetails(getActivity(), cbm);
+            CharSequence details = CellBroadcastResources.getMessageDetails(getActivity(), message);
             new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.view_details_title)
                     .setMessage(details)
@@ -197,14 +197,10 @@ public class CellBroadcastListActivity extends Activity {
         }
 
         private final OnCreateContextMenuListener mOnCreateContextMenuListener =
-                new OnCreateContextMenuListener() {
-                    @Override
-                    public void onCreateContextMenu(ContextMenu menu, View v,
-                            ContextMenuInfo menuInfo) {
-                        menu.setHeaderTitle(R.string.message_options);
-                        menu.add(0, MENU_VIEW_DETAILS, 0, R.string.menu_view_details);
-                        menu.add(0, MENU_DELETE, 0, R.string.menu_delete);
-                    }
+                (menu, v, menuInfo) -> {
+                    menu.setHeaderTitle(R.string.message_options);
+                    menu.add(0, MENU_VIEW_DETAILS, 0, R.string.menu_view_details);
+                    menu.add(0, MENU_DELETE, 0, R.string.menu_delete);
                 };
 
         private void updateNoAlertTextVisibility() {
@@ -233,7 +229,8 @@ public class CellBroadcastListActivity extends Activity {
                         break;
 
                     case MENU_VIEW_DETAILS:
-                        showBroadcastDetails(CellBroadcastMessage.createFromCursor(cursor));
+                        showBroadcastDetails(CellBroadcastCursorAdapter.createFromCursor(
+                                getContext(), cursor));
                         break;
 
                     default:
@@ -297,16 +294,13 @@ public class CellBroadcastListActivity extends Activity {
                 // delete from database on a background thread
                 new CellBroadcastContentProvider.AsyncCellBroadcastTask(
                         getActivity().getContentResolver()).execute(
-                        new CellBroadcastContentProvider.CellBroadcastOperation() {
-                            @Override
-                            public boolean execute(CellBroadcastContentProvider provider) {
-                                if (mRowId != -1) {
-                                    return provider.deleteBroadcast(mRowId);
-                                } else {
-                                    return provider.deleteAllBroadcasts();
-                                }
-                            }
-                        });
+                                (CellBroadcastContentProvider.CellBroadcastOperation) provider -> {
+                                    if (mRowId != -1) {
+                                        return provider.deleteBroadcast(mRowId);
+                                    } else {
+                                        return provider.deleteAllBroadcasts();
+                                    }
+                                });
 
                 dialog.dismiss();
             }
