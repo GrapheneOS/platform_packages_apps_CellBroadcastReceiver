@@ -244,7 +244,8 @@ public class CellBroadcastMessage implements Parcelable {
         }
 
         SmsCbMessage msg = new SmsCbMessage(format, geoScope, serialNum, location, category,
-                language, body, priority, etwsInfo, cmasInfo, slotIndex);
+                language, body, priority, etwsInfo, cmasInfo, slotIndex,
+                /* Using 1 because this file is to be deleted anyway */1);
 
         long deliveryTime = cursor.getLong(cursor.getColumnIndexOrThrow(
                 Telephony.CellBroadcasts.DELIVERY_TIME));
