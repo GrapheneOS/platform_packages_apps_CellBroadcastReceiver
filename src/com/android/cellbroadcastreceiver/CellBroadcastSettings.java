@@ -536,6 +536,10 @@ public class CellBroadcastSettings extends Activity {
                 mStateLocalTestCheckBox.setEnabled(alertsEnabled);
                 mStateLocalTestCheckBox.setChecked(alertsEnabled);
             }
+            if (mTestCheckBox != null) {
+                mTestCheckBox.setEnabled(alertsEnabled);
+                mTestCheckBox.setChecked(alertsEnabled);
+            }
         }
     }
 
