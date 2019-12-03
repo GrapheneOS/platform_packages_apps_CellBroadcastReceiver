@@ -156,10 +156,10 @@
     <!-- Preference summary for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->
     <string name="enable_emergency_alerts_message_summary">Warn about life-threatening events</string>
 
-    <!-- Preference title for required monthly test alert checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_cmas_test_alerts_title">Required monthly test</string>
-    <!-- Preference summary for enable required monthly test alerts checkbox. [CHAR LIMIT=100] -->
-    <string name="enable_cmas_test_alerts_summary">Receive test messages for the safety alert system</string>
+    <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
+    <string name="enable_cmas_test_alerts_title">Other tests</string>
+    <!-- Preference summary for other test alerts checkbox. [CHAR LIMIT=100] -->
+    <string name="enable_cmas_test_alerts_summary">Receive carrier tests and monthly tests from the safety alert system</string>
 
     <!-- Preference title for CMAS vibration on/off. [CHAR LIMIT=50] -->
     <string name="enable_alert_vibrate_title">Vibration</string>
