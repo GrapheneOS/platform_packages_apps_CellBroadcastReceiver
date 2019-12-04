@@ -54,4 +54,9 @@ public class CellBroadcastReceiverApp extends Application {
     static SmsCbMessage getLatestAreaInfo() {
         return sLatestAreaInfo;
     }
+
+    /** Returns a list of unread non-emergency alerts */
+    static ArrayList<SmsCbMessage> getNewMessageList() {
+        return sNewMessageList;
+    }
 }

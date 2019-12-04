@@ -102,6 +102,8 @@
     <string name="notification_channel_broadcast_messages">Broadcast messages</string>
     <!-- Notification channel name for a channel containing emergency alert notifications. [CHAR LIMIT=50] -->
     <string name="notification_channel_emergency_alerts">Emergency alerts</string>
+    <!-- Notification channel name for a channel containing emergency alert notifications during voice call. [CHAR LIMIT=100] -->
+    <string name="notification_channel_broadcast_messages_in_voicecall">Emergency alerts in voice call</string>
 
     <!-- Preference title for enable emergency alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_alerts_master_toggle_title">Allow alerts</string>
