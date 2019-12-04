@@ -29,11 +29,15 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Binder;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
+import android.service.notification.StatusBarNotification;
+import android.telephony.PhoneStateListener;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbMessage;
@@ -78,6 +82,14 @@ public class CellBroadcastAlertService extends Service {
      */
     static final String NOTIFICATION_CHANNEL_EMERGENCY_ALERTS = "broadcastMessages";
 
+    /**
+     * Notification channel for emergency alerts during voice call. This is used when users in a
+     * voice call, emergency alert will be displayed in a notification format rather than playing
+     * alert tone.
+     */
+    static final String NOTIFICATION_CHANNEL_EMERGENCY_ALERTS_IN_VOICECALL =
+        "broadcastMessagesInVoiceCall";
+
     /** Sticky broadcast for latest area info broadcast received. */
     static final String CB_AREA_INFO_RECEIVED_ACTION =
             "com.android.cellbroadcastreceiver.CB_AREA_INFO_RECEIVED";
@@ -109,6 +121,15 @@ public class CellBroadcastAlertService extends Service {
         OTHER
     }
 
+    private TelephonyManager mTelephonyManager;
+
+    /**
+     * Do not preempt active voice call, instead post notifications and play the ringtone/vibrate
+     * when the voicecall finish
+     */
+    private static boolean sRemindAfterCallFinish = false;
+
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         mContext = getApplicationContext();
@@ -128,6 +149,21 @@ public class CellBroadcastAlertService extends Service {
             Log.e(TAG, "Unrecognized intent action: " + action);
         }
         return START_NOT_STICKY;
+    }
+
+    @Override
+    public void onCreate() {
+        mTelephonyManager =
+                (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        mTelephonyManager.listen(mPhoneStateListener,
+                PhoneStateListener.LISTEN_CALL_STATE);
+    }
+
+    @Override
+    public void onDestroy() {
+        // Stop listening for incoming calls.
+        mTelephonyManager.listen(mPhoneStateListener, 0);
+
     }
 
     /**
@@ -244,9 +280,16 @@ public class CellBroadcastAlertService extends Service {
             return;
         }
 
+        if (mTelephonyManager.getCallState() != TelephonyManager.CALL_STATE_IDLE
+                && CellBroadcastSettings.getResources(mContext, cbm.getSubscriptionId())
+                .getBoolean(R.bool.enable_alert_handling_during_call)) {
+            Log.d(TAG, "CMAS received in dialing/during voicecall.");
+            sRemindAfterCallFinish = true;
+        }
+
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                 mContext, cbm.getSubscriptionId());
-        if (channelManager.isEmergencyMessage(cbm)) {
+        if (channelManager.isEmergencyMessage(cbm) && !sRemindAfterCallFinish) {
             // start alert sound / vibration / TTS and display full-screen alert
             openEmergencyAlertNotification(cbm);
         } else {
@@ -549,11 +592,15 @@ public class CellBroadcastAlertService extends Service {
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                 context, message.getSubscriptionId());
 
-        final String channelId = channelManager.isEmergencyMessage(message)
+        String channelId = channelManager.isEmergencyMessage(message)
                 ? NOTIFICATION_CHANNEL_EMERGENCY_ALERTS : NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS;
+        if (channelId == NOTIFICATION_CHANNEL_EMERGENCY_ALERTS && sRemindAfterCallFinish) {
+            channelId = NOTIFICATION_CHANNEL_EMERGENCY_ALERTS_IN_VOICECALL;
+        }
 
         boolean nonSwipeableNotification = message.isEmergencyMessage()
-                && res.getBoolean(R.bool.non_swipeable_notificaiton);
+                && CellBroadcastSettings.getResources(context, message.getSubscriptionId())
+                .getBoolean(R.bool.non_swipeable_notification) || sRemindAfterCallFinish;
 
         // use default sound/vibration/lights for non-emergency broadcasts
         Notification.Builder builder =
@@ -629,6 +676,13 @@ public class CellBroadcastAlertService extends Service {
                 NotificationManager.IMPORTANCE_DEFAULT);
         nonEmergency.enableVibration(true);
         notificationManager.createNotificationChannel(nonEmergency);
+
+        final NotificationChannel emergencyAlertInVoiceCall = new NotificationChannel(
+            NOTIFICATION_CHANNEL_EMERGENCY_ALERTS_IN_VOICECALL,
+            context.getString(R.string.notification_channel_broadcast_messages_in_voicecall),
+            NotificationManager.IMPORTANCE_HIGH);
+        emergencyAlertInVoiceCall.enableVibration(true);
+        notificationManager.createNotificationChannel(emergencyAlertInVoiceCall);
     }
 
     private static Intent createDisplayMessageIntent(Context context, Class intentClass,
@@ -667,4 +721,45 @@ public class CellBroadcastAlertService extends Service {
             return CellBroadcastAlertService.this;
         }
     }
+
+    /**
+     * Remove previous unread notifications and play stored unread
+     * emergency messages after voice call finish.
+     */
+    private final PhoneStateListener mPhoneStateListener = new PhoneStateListener(
+        new Handler(Looper.getMainLooper())::post) {
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+
+            switch (state) {
+                case TelephonyManager.CALL_STATE_IDLE:
+                    Log.d(TAG, "onCallStateChanged: CALL_STATE_IDLE");
+                    if (sRemindAfterCallFinish) {
+                        sRemindAfterCallFinish = false;
+                        NotificationManager notificationManager = (NotificationManager)
+                                getApplicationContext().getSystemService(
+                                        Context.NOTIFICATION_SERVICE);
+
+                        StatusBarNotification[] notificationList =
+                                notificationManager.getActiveNotifications();
+
+                        if(notificationList != null && notificationList.length >0) {
+                            notificationManager.cancel(CellBroadcastAlertService.NOTIFICATION_ID);
+                            ArrayList<SmsCbMessage> newMessageList =
+                                    CellBroadcastReceiverApp.getNewMessageList();
+
+                            for (int i = 0; i < newMessageList.size(); i++) {
+                                openEmergencyAlertNotification(newMessageList.get(i));
+                            }
+                        }
+                        CellBroadcastReceiverApp.clearNewMessageList();
+                    }
+                    break;
+
+                default:
+                    Log.d(TAG, "onCallStateChanged: other state = " + state);
+                    break;
+            }
+        }
+    };
 }
