@@ -20,6 +20,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.UserHandle;
+import android.telephony.SmsCbMessage;
 import android.util.Log;
 
 public class CellBroadcastAreaInfoReceiver extends BroadcastReceiver {
@@ -35,7 +36,7 @@ public class CellBroadcastAreaInfoReceiver extends BroadcastReceiver {
         String action = intent.getAction();
 
         if (GET_LATEST_CB_AREA_INFO_ACTION.equals(action)) {
-            CellBroadcastMessage message = CellBroadcastReceiverApp.getLatestAreaInfo();
+            SmsCbMessage message = CellBroadcastReceiverApp.getLatestAreaInfo();
             if (message != null) {
                 Intent areaInfoIntent = new Intent(
                         CellBroadcastAlertService.CB_AREA_INFO_RECEIVED_ACTION);

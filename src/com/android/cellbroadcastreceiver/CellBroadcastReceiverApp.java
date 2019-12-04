@@ -17,6 +17,7 @@
 package com.android.cellbroadcastreceiver;
 
 import android.app.Application;
+import android.telephony.SmsCbMessage;
 
 import java.util.ArrayList;
 
@@ -28,14 +29,13 @@ public class CellBroadcastReceiverApp extends Application {
     private static final String TAG = "CellBroadcastReceiverApp";
 
     /** List of unread non-emergency alerts to show when user selects the notification. */
-    private static final ArrayList<CellBroadcastMessage> sNewMessageList =
-            new ArrayList<CellBroadcastMessage>(4);
+    private static final ArrayList<SmsCbMessage> sNewMessageList = new ArrayList<>(4);
 
     /** Latest area info cell broadcast received. */
-    private static CellBroadcastMessage sLatestAreaInfo;
+    private static SmsCbMessage sLatestAreaInfo;
 
     /** Adds a new unread non-emergency message and returns the current list. */
-    static ArrayList<CellBroadcastMessage> addNewMessageToList(CellBroadcastMessage message) {
+    static ArrayList<SmsCbMessage> addNewMessageToList(SmsCbMessage message) {
         sNewMessageList.add(message);
         return sNewMessageList;
     }
@@ -46,12 +46,17 @@ public class CellBroadcastReceiverApp extends Application {
     }
 
     /** Saves the latest area info broadcast received. */
-    static void setLatestAreaInfo(CellBroadcastMessage areaInfo) {
+    static void setLatestAreaInfo(SmsCbMessage areaInfo) {
         sLatestAreaInfo = areaInfo;
     }
 
     /** Returns the latest area info broadcast received. */
-    static CellBroadcastMessage getLatestAreaInfo() {
+    static SmsCbMessage getLatestAreaInfo() {
         return sLatestAreaInfo;
+    }
+
+    /** Returns a list of unread non-emergency alerts */
+    static ArrayList<SmsCbMessage> getNewMessageList() {
+        return sNewMessageList;
     }
 }

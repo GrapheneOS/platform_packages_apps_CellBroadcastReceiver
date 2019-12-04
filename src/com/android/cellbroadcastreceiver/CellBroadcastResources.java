@@ -20,8 +20,10 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
+import android.telephony.SmsCbMessage;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.format.DateUtils;
 import android.text.style.StyleSpan;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
@@ -41,7 +43,7 @@ public class CellBroadcastResources {
      * @param context a Context for resource string access
      * @return a CharSequence for display in the broadcast alert dialog
      */
-    public static CharSequence getMessageDetails(Context context, CellBroadcastMessage cbm) {
+    public static CharSequence getMessageDetails(Context context, SmsCbMessage message) {
         SpannableStringBuilder buf = new SpannableStringBuilder();
 
         // Alert date/time
@@ -50,11 +52,14 @@ public class CellBroadcastResources {
         int end = buf.length();
         buf.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         buf.append(" ");
-        buf.append(cbm.getDateString(context));
+        buf.append(DateUtils.formatDateTime(context, message.getReceivedTime(),
+                DateUtils.FORMAT_NO_NOON_MIDNIGHT | DateUtils.FORMAT_SHOW_TIME
+                        | DateUtils.FORMAT_ABBREV_ALL | DateUtils.FORMAT_SHOW_DATE
+                        | DateUtils.FORMAT_CAP_AMPM));
 
-        if (cbm.isCmasMessage()) {
+        if (message.isCmasMessage()) {
             // CMAS category, response type, severity, urgency, certainty
-            appendCmasAlertDetails(context, buf, cbm.getCmasWarningInfo());
+            appendCmasAlertDetails(context, buf, message.getCmasWarningInfo());
         }
 
         return buf;
@@ -239,9 +244,9 @@ public class CellBroadcastResources {
         }
     }
 
-    public static int getDialogTitleResource(Context context, CellBroadcastMessage cbm) {
+    static int getDialogTitleResource(Context context, SmsCbMessage message) {
         // ETWS warning types
-        SmsCbEtwsInfo etwsInfo = cbm.getEtwsWarningInfo();
+        SmsCbEtwsInfo etwsInfo = message.getEtwsWarningInfo();
         if (etwsInfo != null) {
             switch (etwsInfo.getWarningType()) {
                 case SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE:
@@ -262,11 +267,11 @@ public class CellBroadcastResources {
             }
         }
 
-        SmsCbCmasInfo cmasInfo = cbm.getCmasWarningInfo();
-        int subId = cbm.getSubId(context);
+        SmsCbCmasInfo cmasInfo = message.getCmasWarningInfo();
+        int subId = message.getSubscriptionId();
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                 context, subId);
-        final int serviceCategory = cbm.getServiceCategory();
+        final int serviceCategory = message.getServiceCategory();
         if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
                 R.array.emergency_alerts_channels_range_strings)) {
             return R.string.pws_other_message_identifiers;
@@ -317,7 +322,7 @@ public class CellBroadcastResources {
             return R.string.state_local_test_alert;
         }
 
-        if (channelManager.isEmergencyMessage(cbm)) {
+        if (channelManager.isEmergencyMessage(message)) {
             ArrayList<CellBroadcastChannelRange> ranges =
                     channelManager.getCellBroadcastChannelRanges(
                             R.array.additional_cbs_channels_strings);

@@ -32,7 +32,9 @@ import android.os.PowerManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
+import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionManager;
+import android.text.format.DateUtils;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -40,7 +42,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -65,7 +66,7 @@ public class CellBroadcastAlertDialog extends Activity {
     static final String FROM_SAVE_STATE_NOTIFICATION_EXTRA = "from_save_state_notification";
 
     /** List of cell broadcast messages to display (oldest to newest). */
-    protected ArrayList<CellBroadcastMessage> mMessageList;
+    protected ArrayList<SmsCbMessage> mMessageList;
 
     /** Whether a CMAS alert other than Presidential Alert was displayed. */
     private boolean mShowOptOutDialog;
@@ -249,24 +250,18 @@ public class CellBroadcastAlertDialog extends Activity {
         LayoutInflater inflater = LayoutInflater.from(this);
         setContentView(inflater.inflate(R.layout.cell_broadcast_alert, null));
 
-        findViewById(R.id.dismissButton).setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dismiss();
-                    }
-                });
+        findViewById(R.id.dismissButton).setOnClickListener(v -> dismiss());
 
         // Get message list from saved Bundle or from Intent.
         if (savedInstanceState != null) {
             Log.d(TAG, "onCreate getting message list from saved instance state");
             mMessageList = savedInstanceState.getParcelableArrayList(
-                    CellBroadcastMessage.SMS_CB_MESSAGE_EXTRA);
+                    CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA);
         } else {
             Log.d(TAG, "onCreate getting message list from intent");
             Intent intent = getIntent();
             mMessageList = intent.getParcelableArrayListExtra(
-                    CellBroadcastMessage.SMS_CB_MESSAGE_EXTRA);
+                    CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA);
 
             // If we were started from a notification, dismiss it.
             clearNotification(intent);
@@ -279,13 +274,13 @@ public class CellBroadcastAlertDialog extends Activity {
             Log.d(TAG, "onCreate loaded message list of size " + mMessageList.size());
 
             // For emergency alerts, keep screen on so the user can read it
-            CellBroadcastMessage message = getLatestMessage();
+            SmsCbMessage message = getLatestMessage();
             if (message != null) {
                 CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
-                        this, message.getSubId(this));
+                        this, message.getSubscriptionId());
                 if (channelManager.isEmergencyMessage(message)) {
                     Log.d(TAG, "onCreate setting screen on timer for emergency alert for sub "
-                            + message.getSubId(this));
+                            + message.getSubscriptionId());
                     mScreenOffHandler.startScreenOnTimer();
                 }
             }
@@ -300,9 +295,9 @@ public class CellBroadcastAlertDialog extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        CellBroadcastMessage message = getLatestMessage();
+        SmsCbMessage message = getLatestMessage();
         if (message != null) {
-            int subId = message.getSubId(this);
+            int subId = message.getSubscriptionId();
             CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(this,
                     subId);
             if (channelManager.isEmergencyMessage(message)) {
@@ -335,7 +330,7 @@ public class CellBroadcastAlertDialog extends Activity {
     }
 
     /** Returns the currently displayed message. */
-    CellBroadcastMessage getLatestMessage() {
+    SmsCbMessage getLatestMessage() {
         int index = mMessageList.size() - 1;
         if (index >= 0) {
             return mMessageList.get(index);
@@ -346,7 +341,7 @@ public class CellBroadcastAlertDialog extends Activity {
     }
 
     /** Removes and returns the currently displayed message. */
-    private CellBroadcastMessage removeLatestMessage() {
+    private SmsCbMessage removeLatestMessage() {
         int index = mMessageList.size() - 1;
         if (index >= 0) {
             return mMessageList.remove(index);
@@ -362,24 +357,28 @@ public class CellBroadcastAlertDialog extends Activity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelableArrayList(CellBroadcastMessage.SMS_CB_MESSAGE_EXTRA, mMessageList);
+        outState.putParcelableArrayList(
+                CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA, mMessageList);
     }
 
     /**
      * Update alert text when a new emergency alert arrives.
      * @param message CB message which is used to update alert text.
      */
-    private void updateAlertText(CellBroadcastMessage message) {
+    private void updateAlertText(SmsCbMessage message) {
         Context context = getApplicationContext();
         int titleId = CellBroadcastResources.getDialogTitleResource(context, message);
 
         String title = getText(titleId).toString();
         TextView titleTextView = findViewById(R.id.alertTitle);
 
-        if (CellBroadcastSettings.getResources(context, message.getSubId(context))
+        if (CellBroadcastSettings.getResources(context, message.getSubscriptionId())
                 .getBoolean(R.bool.show_date_time_title)) {
             titleTextView.setSingleLine(false);
-            title += "\n" + message.getDateString(context);
+            title += "\n" + DateUtils.formatDateTime(context, message.getReceivedTime(),
+                    DateUtils.FORMAT_NO_NOON_MIDNIGHT | DateUtils.FORMAT_SHOW_TIME
+                            | DateUtils.FORMAT_ABBREV_ALL | DateUtils.FORMAT_SHOW_DATE
+                            | DateUtils.FORMAT_CAP_AMPM);
         }
 
         setTitle(title);
@@ -409,13 +408,17 @@ public class CellBroadcastAlertDialog extends Activity {
      * @param message CMAS message
      * @return True if the message should be linkified, false otherwise
      */
-    private boolean shouldAddLinksToMessage(CellBroadcastMessage message) {
+    private boolean shouldAddLinksToMessage(SmsCbMessage message) {
         int[] classesToLinkify = getResources().getIntArray(R.array.message_classes_to_linkify);
         if (classesToLinkify == null || classesToLinkify.length == 0) {
             return false;
         }
 
-        int messageClass = message.getCmasMessageClass();
+        int messageClass = SmsCbCmasInfo.CMAS_CLASS_UNKNOWN;
+        if (message.isCmasMessage()) {
+            messageClass = message.getCmasWarningInfo().getMessageClass();
+        }
+
         for (int i = 0; i < classesToLinkify.length; i++) {
             if (classesToLinkify[i] == messageClass)
                 return true;
@@ -425,12 +428,12 @@ public class CellBroadcastAlertDialog extends Activity {
 
     /**
      * Called by {@link CellBroadcastAlertService} to add a new alert to the stack.
-     * @param intent The new intent containing one or more {@link CellBroadcastMessage}s.
+     * @param intent The new intent containing one or more {@link SmsCbMessage}.
      */
     @Override
     protected void onNewIntent(Intent intent) {
-        ArrayList<CellBroadcastMessage> newMessageList = intent.getParcelableArrayListExtra(
-                CellBroadcastMessage.SMS_CB_MESSAGE_EXTRA);
+        ArrayList<SmsCbMessage> newMessageList = intent.getParcelableArrayListExtra(
+                CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA);
         if (newMessageList != null) {
             if (intent.getBooleanExtra(FROM_SAVE_STATE_NOTIFICATION_EXTRA, false)) {
                 mMessageList = newMessageList;
@@ -443,25 +446,25 @@ public class CellBroadcastAlertDialog extends Activity {
                     // prioritizing them. Presidential Alert only has top priority.
                     Collections.sort(
                             mMessageList,
-                            new Comparator() {
-                                public int compare(Object o1, Object o2) {
-                                    boolean isPresidentialAlert1 =
-                                            ((CellBroadcastMessage) o1).getCmasMessageClass()
-                                                    == SmsCbCmasInfo
-                                                            .CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
-                                    boolean isPresidentialAlert2 =
-                                            ((CellBroadcastMessage) o2).getCmasMessageClass()
-                                                    == SmsCbCmasInfo
-                                                            .CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
-                                    if (isPresidentialAlert1 ^ isPresidentialAlert2) {
-                                        return isPresidentialAlert1 ? 1 : -1;
-                                    }
-                                    Long time1 =
-                                            new Long(((CellBroadcastMessage) o1).getDeliveryTime());
-                                    Long time2 =
-                                            new Long(((CellBroadcastMessage) o2).getDeliveryTime());
-                                    return time2.compareTo(time1);
+                            (Comparator) (o1, o2) -> {
+                                boolean isPresidentialAlert1 =
+                                        ((SmsCbMessage) o1).isCmasMessage()
+                                                && ((SmsCbMessage) o1).getCmasWarningInfo()
+                                                .getMessageClass() == SmsCbCmasInfo
+                                                .CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
+                                boolean isPresidentialAlert2 =
+                                        ((SmsCbMessage) o2).isCmasMessage()
+                                                && ((SmsCbMessage) o2).getCmasWarningInfo()
+                                                .getMessageClass() == SmsCbCmasInfo
+                                                .CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
+                                if (isPresidentialAlert1 ^ isPresidentialAlert2) {
+                                    return isPresidentialAlert1 ? 1 : -1;
                                 }
+                                Long time1 =
+                                        new Long(((SmsCbMessage) o1).getReceivedTime());
+                                Long time2 =
+                                        new Long(((SmsCbMessage) o2).getReceivedTime());
+                                return time2.compareTo(time1);
                             });
                 }
             }
@@ -501,7 +504,7 @@ public class CellBroadcastAlertDialog extends Activity {
         CellBroadcastAlertReminder.cancelAlertReminder();
 
         // Remove the current alert message from the list.
-        CellBroadcastMessage lastMessage = removeLatestMessage();
+        SmsCbMessage lastMessage = removeLatestMessage();
         if (lastMessage == null) {
             Log.e(TAG, "dismiss() called with empty message list!");
             finish();
@@ -509,29 +512,25 @@ public class CellBroadcastAlertDialog extends Activity {
         }
 
         // Mark the alert as read.
-        final long deliveryTime = lastMessage.getDeliveryTime();
+        final long deliveryTime = lastMessage.getReceivedTime();
 
         // Mark broadcast as read on a background thread.
         new CellBroadcastContentProvider.AsyncCellBroadcastTask(getContentResolver())
-                .execute(new CellBroadcastContentProvider.CellBroadcastOperation() {
-                    @Override
-                    public boolean execute(CellBroadcastContentProvider provider) {
-                        return provider.markBroadcastRead(
-                                Telephony.CellBroadcasts.DELIVERY_TIME, deliveryTime);
-                    }
-                });
+                .execute((CellBroadcastContentProvider.CellBroadcastOperation) provider
+                        -> provider.markBroadcastRead(Telephony.CellBroadcasts.DELIVERY_TIME,
+                        deliveryTime));
 
         // Set the opt-out dialog flag if this is a CMAS alert (other than Presidential Alert).
-        if (lastMessage.isCmasMessage() && lastMessage.getCmasMessageClass() !=
-                SmsCbCmasInfo.CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT) {
+        if (lastMessage.isCmasMessage() && lastMessage.getCmasWarningInfo().getMessageClass()
+                != SmsCbCmasInfo.CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT) {
             mShowOptOutDialog = true;
         }
 
         // If there are older emergency alerts to display, update the alert text and return.
-        CellBroadcastMessage nextMessage = getLatestMessage();
+        SmsCbMessage nextMessage = getLatestMessage();
         if (nextMessage != null) {
             updateAlertText(nextMessage);
-            int subId = nextMessage.getSubId(getApplicationContext());
+            int subId = nextMessage.getSubscriptionId();
             CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                     getApplicationContext(), subId);
             if (channelManager.isEmergencyMessage(nextMessage)) {
@@ -573,7 +572,7 @@ public class CellBroadcastAlertDialog extends Activity {
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-        CellBroadcastMessage message = getLatestMessage();
+        SmsCbMessage message = getLatestMessage();
         if (message != null && !message.isEtwsMessage()) {
             switch (event.getKeyCode()) {
                 // Volume keys and camera keys mute the alert sound/vibration (except ETWS).

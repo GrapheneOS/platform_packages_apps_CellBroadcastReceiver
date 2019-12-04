@@ -29,6 +29,10 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.Telephony;
+import android.telephony.SmsCbCmasInfo;
+import android.telephony.SmsCbEtwsInfo;
+import android.telephony.SmsCbLocation;
+import android.telephony.SmsCbMessage;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -65,7 +69,7 @@ public class CellBroadcastContentProvider extends ContentProvider {
     }
 
     /*
-     * Query columns for instantiating com.android.cellbroadcastreceiver.CellBroadcastMessage.
+     * Query columns for instantiating SmsCbMessage.
      */
     public static final String[] QUERY_COLUMNS = {
             Telephony.CellBroadcasts._ID,
@@ -209,14 +213,52 @@ public class CellBroadcastContentProvider extends ContentProvider {
         throw new UnsupportedOperationException("update not supported");
     }
 
+    private ContentValues getContentValues(SmsCbMessage message) {
+        ContentValues cv = new ContentValues();
+        cv.put(Telephony.CellBroadcasts.SLOT_INDEX, message.getSlotIndex());
+        cv.put(Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE, message.getGeographicalScope());
+        SmsCbLocation location = message.getLocation();
+        cv.put(Telephony.CellBroadcasts.PLMN, location.getPlmn());
+        if (location.getLac() != -1) {
+            cv.put(Telephony.CellBroadcasts.LAC, location.getLac());
+        }
+        if (location.getCid() != -1) {
+            cv.put(Telephony.CellBroadcasts.CID, location.getCid());
+        }
+        cv.put(Telephony.CellBroadcasts.SERIAL_NUMBER, message.getSerialNumber());
+        cv.put(Telephony.CellBroadcasts.SERVICE_CATEGORY, message.getServiceCategory());
+        cv.put(Telephony.CellBroadcasts.LANGUAGE_CODE, message.getLanguageCode());
+        cv.put(Telephony.CellBroadcasts.MESSAGE_BODY, message.getMessageBody());
+        cv.put(Telephony.CellBroadcasts.DELIVERY_TIME, message.getReceivedTime());
+        cv.put(Telephony.CellBroadcasts.MESSAGE_FORMAT, message.getMessageFormat());
+        cv.put(Telephony.CellBroadcasts.MESSAGE_PRIORITY, message.getMessagePriority());
+
+        SmsCbEtwsInfo etwsInfo = message.getEtwsWarningInfo();
+        if (etwsInfo != null) {
+            cv.put(Telephony.CellBroadcasts.ETWS_WARNING_TYPE, etwsInfo.getWarningType());
+        }
+
+        SmsCbCmasInfo cmasInfo = message.getCmasWarningInfo();
+        if (cmasInfo != null) {
+            cv.put(Telephony.CellBroadcasts.CMAS_MESSAGE_CLASS, cmasInfo.getMessageClass());
+            cv.put(Telephony.CellBroadcasts.CMAS_CATEGORY, cmasInfo.getCategory());
+            cv.put(Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE, cmasInfo.getResponseType());
+            cv.put(Telephony.CellBroadcasts.CMAS_SEVERITY, cmasInfo.getSeverity());
+            cv.put(Telephony.CellBroadcasts.CMAS_URGENCY, cmasInfo.getUrgency());
+            cv.put(Telephony.CellBroadcasts.CMAS_CERTAINTY, cmasInfo.getCertainty());
+        }
+
+        return cv;
+    }
+
     /**
      * Internal method to insert a new Cell Broadcast into the database and notify observers.
      * @param message the message to insert
      * @return true if the broadcast is new, false if it's a duplicate broadcast.
      */
-    boolean insertNewBroadcast(CellBroadcastMessage message) {
+    boolean insertNewBroadcast(SmsCbMessage message) {
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-        ContentValues cv = message.getContentValues();
+        ContentValues cv = getContentValues(message);
 
         // Note: this method previously queried the database for duplicate message IDs, but this
         // is not compatible with CMAS carrier requirements and could also cause other emergency
@@ -226,7 +268,7 @@ public class CellBroadcastContentProvider extends ContentProvider {
         if (rowId == -1) {
             Log.e(TAG, "failed to insert new broadcast into database");
             // Return true on DB write failure because we still want to notify the user.
-            // The CellBroadcastMessage will be passed with the intent, so the message will be
+            // The SmsCbMessage will be passed with the intent, so the message will be
             // displayed in the emergency alert dialog, or the dialog that is displayed when
             // the user selects the notification for a non-emergency broadcast, even if the
             // broadcast could not be written to the database.

@@ -315,12 +315,11 @@ public class CellBroadcastChannelManager {
      *
      * @param message Cell broadcast message
      */
-    public CellBroadcastChannelRange getCellBroadcastChannelRangeFromMessage(
-            CellBroadcastMessage message) {
-        if (mSubId != message.getSubId(mContext)) {
+    public CellBroadcastChannelRange getCellBroadcastChannelRangeFromMessage(SmsCbMessage message) {
+        if (mSubId != message.getSubscriptionId()) {
             Log.e(TAG, "getCellBroadcastChannelRangeFromMessage: This manager is created for "
                     + "sub " + mSubId + ", should not be used for message from sub "
-                    + message.getSubId(mContext));
+                    + message.getSubscriptionId());
         }
 
         int channel = message.getServiceCategory();
@@ -349,14 +348,14 @@ public class CellBroadcastChannelManager {
      * @param message Cell broadcast message
      * @return True if the message is an emergency message, otherwise false.
      */
-    public boolean isEmergencyMessage(CellBroadcastMessage message) {
+    public boolean isEmergencyMessage(SmsCbMessage message) {
         if (message == null) {
             return false;
         }
 
-        if (mSubId != message.getSubId(mContext)) {
+        if (mSubId != message.getSubscriptionId()) {
             Log.e(TAG, "This manager is created for sub " + mSubId
-                    + ", should not be used for message from sub " + message.getSubId(mContext));
+                    + ", should not be used for message from sub " + message.getSubscriptionId());
         }
 
         int id = message.getServiceCategory();
@@ -382,12 +381,12 @@ public class CellBroadcastChannelManager {
             }
         }
 
-        Log.d(TAG, "isEmergencyMessage: " + message.isEmergencyAlertMessage()
+        Log.d(TAG, "isEmergencyMessage: " + message.isEmergencyMessage()
                 + ", message id = " + id);
         // If the configuration does not specify whether the alert is emergency or not, use the
         // emergency property from the message itself, which is checking if the channel is between
         // MESSAGE_ID_PWS_FIRST_IDENTIFIER (4352) and MESSAGE_ID_PWS_LAST_IDENTIFIER (6399).
-        return message.isEmergencyAlertMessage();
+        return message.isEmergencyMessage();
     }
 
     private static void log(String msg) {
