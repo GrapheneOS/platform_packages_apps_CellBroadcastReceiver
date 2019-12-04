@@ -41,6 +41,8 @@
     <bool name="full_volume_presidential_alert">false</bool>
     <!-- Whether to bypass test alert settings and always enable exercise alert channel -->
     <bool name="always_enable_exercise_alert">false</bool>
+    <!-- Whether to enable alert handling during active voice call. -->
+    <bool name="enable_alert_handling_during_call">true</bool>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true</item>
@@ -148,7 +150,7 @@
     </integer-array>
 
     <!-- Whether the emergency alert notification is non-swipeable -->
-    <bool name="non_swipeable_notificaiton">false</bool>
+    <bool name="non_swipeable_notification">false</bool>
 
     <!-- Independent link support for Email, URL and phone in CMAS mes This array
      contains the message classes that should be linkfied. Values should match the ones defined
