@@ -237,7 +237,7 @@ public class SendGsmCmasMessages {
                         certainty);
         return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP, 0, serialNumber,
                 new SmsCbLocation("123456"), serviceCategory, language, body,
-                priority, null, cmasInfo, 0/*slotIndex*/);
+                priority, null, cmasInfo, 0, 1);
     }
 
     /**
