@@ -46,7 +46,7 @@ public class CellBroadcastAlertServiceTest extends
         return new SmsCbMessage(1, 2, serialNumber, new SmsCbLocation(),
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL, "language", "body",
                 SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null, new SmsCbCmasInfo(0, 2, 3, 4, 5, 6),
-                0 /*subId*/);
+                0, 1);
     }
 
     @Before
@@ -77,17 +77,16 @@ public class CellBroadcastAlertServiceTest extends
         assertEquals(info1.getUrgency(), info2.getUrgency());
     }
 
-    private static void compareCellBroadCastMessage(CellBroadcastMessage cbm1,
-                                                    CellBroadcastMessage cbm2) {
-        if (cbm1 == cbm2) return;
-        assertEquals(cbm1.getCmasMessageClass(), cbm2.getCmasMessageClass());
-        compareCmasWarningInfo(cbm1.getCmasWarningInfo(), cbm2.getCmasWarningInfo());
-        compareEtwsWarningInfo(cbm1.getEtwsWarningInfo(), cbm2.getEtwsWarningInfo());
-        assertEquals(cbm1.getLanguageCode(), cbm2.getLanguageCode());
-        assertEquals(cbm1.getMessageBody(), cbm2.getMessageBody());
-        assertEquals(cbm1.getServiceCategory(), cbm2.getServiceCategory());
-        assertEquals(cbm1.getSmsCbMessage().getSerialNumber(),
-                cbm2.getSmsCbMessage().getSerialNumber());
+    private static void compareCellBroadCastMessage(SmsCbMessage m1, SmsCbMessage m2) {
+        if (m1 == m2) return;
+        assertEquals(m1.getCmasWarningInfo().getMessageClass(),
+                m2.getCmasWarningInfo().getMessageClass());
+        compareCmasWarningInfo(m1.getCmasWarningInfo(), m2.getCmasWarningInfo());
+        compareEtwsWarningInfo(m1.getEtwsWarningInfo(), m2.getEtwsWarningInfo());
+        assertEquals(m1.getLanguageCode(), m2.getLanguageCode());
+        assertEquals(m1.getMessageBody(), m2.getMessageBody());
+        assertEquals(m1.getServiceCategory(), m2.getServiceCategory());
+        assertEquals(m1.getSerialNumber(), m2.getSerialNumber());
     }
 
     private void sendMessage(int serialNumber) {
@@ -110,9 +109,8 @@ public class CellBroadcastAlertServiceTest extends
 
         assertEquals(SHOW_NEW_ALERT_ACTION, mServiceIntentToVerify.getAction());
 
-        CellBroadcastMessage cbmTest =
-                (CellBroadcastMessage) mServiceIntentToVerify.getExtras().get("message");
-        CellBroadcastMessage cbm = new CellBroadcastMessage(createMessage(987654321));
+        SmsCbMessage cbmTest = (SmsCbMessage) mServiceIntentToVerify.getExtras().get("message");
+        SmsCbMessage cbm = createMessage(987654321);
 
         compareCellBroadCastMessage(cbm, cbmTest);
     }
@@ -122,7 +120,7 @@ public class CellBroadcastAlertServiceTest extends
         Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
         intent.setAction(SHOW_NEW_ALERT_ACTION);
         SmsCbMessage message = createMessage(34788612);
-        intent.putExtra("message", new CellBroadcastMessage(message));
+        intent.putExtra("message", message);
         startService(intent);
         waitForMs(200);
 
@@ -136,11 +134,11 @@ public class CellBroadcastAlertServiceTest extends
                         CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_BODY));
 
         // verify alert dialog activity intent
-        ArrayList<CellBroadcastMessage> newMessageList = mActivityIntentToVerify
-                .getParcelableArrayListExtra(CellBroadcastMessage.SMS_CB_MESSAGE_EXTRA);
+        ArrayList<SmsCbMessage> newMessageList = mActivityIntentToVerify
+                .getParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA);
         assertEquals(1, newMessageList.size());
         assertEquals(Intent.FLAG_ACTIVITY_NEW_TASK,
                 (mActivityIntentToVerify.getFlags() & Intent.FLAG_ACTIVITY_NEW_TASK));
-        compareCellBroadCastMessage(new CellBroadcastMessage(message), newMessageList.get(0));
+        compareCellBroadCastMessage(message, newMessageList.get(0));
     }
 }

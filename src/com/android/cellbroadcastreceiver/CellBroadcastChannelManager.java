@@ -23,7 +23,7 @@ import android.content.Context;
 import android.telephony.AccessNetworkConstants;
 import android.telephony.NetworkRegistrationInfo;
 import android.telephony.ServiceState;
-import android.telephony.SmsManager;
+import android.telephony.SmsCbMessage;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
@@ -108,7 +108,7 @@ public class CellBroadcastChannelManager {
         public int mEndId;
         public AlertType mAlertType;
         public int mEmergencyLevel;
-        public int mRat;
+        public int mRanType;
         public int mScope;
         public int[] mVibrationPattern;
         public boolean mFilterLanguage;
@@ -117,7 +117,7 @@ public class CellBroadcastChannelManager {
 
             mAlertType = AlertType.DEFAULT;
             mEmergencyLevel = LEVEL_UNKNOWN;
-            mRat = SmsManager.CELL_BROADCAST_RAN_TYPE_GSM;
+            mRanType = SmsCbMessage.MESSAGE_FORMAT_3GPP;
             mScope = SCOPE_UNKNOWN;
             mVibrationPattern =
                     CellBroadcastSettings.getResources(context, subId)
@@ -146,9 +146,9 @@ public class CellBroadcastChannelManager {
                                 }
                                 break;
                             case KEY_RAT:
-                                mRat = value.equalsIgnoreCase("cdma")
-                                        ? SmsManager.CELL_BROADCAST_RAN_TYPE_CDMA :
-                                        SmsManager.CELL_BROADCAST_RAN_TYPE_GSM;
+                                mRanType = value.equalsIgnoreCase("cdma")
+                                        ? SmsCbMessage.MESSAGE_FORMAT_3GPP2 :
+                                        SmsCbMessage.MESSAGE_FORMAT_3GPP;
                                 break;
                             case KEY_SCOPE:
                                 if (value.equalsIgnoreCase("carrier")) {
@@ -315,12 +315,11 @@ public class CellBroadcastChannelManager {
      *
      * @param message Cell broadcast message
      */
-    public CellBroadcastChannelRange getCellBroadcastChannelRangeFromMessage(
-            CellBroadcastMessage message) {
-        if (mSubId != message.getSubId(mContext)) {
+    public CellBroadcastChannelRange getCellBroadcastChannelRangeFromMessage(SmsCbMessage message) {
+        if (mSubId != message.getSubscriptionId()) {
             Log.e(TAG, "getCellBroadcastChannelRangeFromMessage: This manager is created for "
                     + "sub " + mSubId + ", should not be used for message from sub "
-                    + message.getSubId(mContext));
+                    + message.getSubscriptionId());
         }
 
         int channel = message.getServiceCategory();
@@ -349,14 +348,14 @@ public class CellBroadcastChannelManager {
      * @param message Cell broadcast message
      * @return True if the message is an emergency message, otherwise false.
      */
-    public boolean isEmergencyMessage(CellBroadcastMessage message) {
+    public boolean isEmergencyMessage(SmsCbMessage message) {
         if (message == null) {
             return false;
         }
 
-        if (mSubId != message.getSubId(mContext)) {
+        if (mSubId != message.getSubscriptionId()) {
             Log.e(TAG, "This manager is created for sub " + mSubId
-                    + ", should not be used for message from sub " + message.getSubId(mContext));
+                    + ", should not be used for message from sub " + message.getSubscriptionId());
         }
 
         int id = message.getServiceCategory();
@@ -382,12 +381,12 @@ public class CellBroadcastChannelManager {
             }
         }
 
-        Log.d(TAG, "isEmergencyMessage: " + message.isEmergencyAlertMessage()
+        Log.d(TAG, "isEmergencyMessage: " + message.isEmergencyMessage()
                 + ", message id = " + id);
         // If the configuration does not specify whether the alert is emergency or not, use the
         // emergency property from the message itself, which is checking if the channel is between
         // MESSAGE_ID_PWS_FIRST_IDENTIFIER (4352) and MESSAGE_ID_PWS_LAST_IDENTIFIER (6399).
-        return message.isEmergencyAlertMessage();
+        return message.isEmergencyMessage();
     }
 
     private static void log(String msg) {
