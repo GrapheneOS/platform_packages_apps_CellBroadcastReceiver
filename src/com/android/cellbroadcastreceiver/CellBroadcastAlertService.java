@@ -41,6 +41,7 @@ import android.telephony.PhoneStateListener;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbMessage;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -202,15 +203,36 @@ public class CellBroadcastAlertService extends Service {
         CellBroadcastChannelRange range = channelManager
                 .getCellBroadcastChannelRangeFromMessage(message);
         if (range != null && range.mFilterLanguage) {
-            // If the message's language does not match device's message, we don't display the
-            // message.
-            String messageLanguage = message.getLanguageCode();
-            String deviceLanguage = Locale.getDefault().getLanguage();
-            if (!TextUtils.isEmpty(messageLanguage)
-                    && !messageLanguage.equalsIgnoreCase(deviceLanguage)) {
-                Log.d(TAG, "ignoring the alert due to language mismatch. Message lang="
-                        + messageLanguage + ", device lang=" + deviceLanguage);
-                return false;
+            // language filtering based on CBR second language settings
+            final String secondLanguageCode =  CellBroadcastSettings.getResources(mContext,
+                    SubscriptionManager.DEFAULT_SUBSCRIPTION_ID)
+                    .getString(R.string.emergency_alert_second_language_code);
+            if (!secondLanguageCode.isEmpty()) {
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+                boolean receiveInSecondLanguage = prefs.getBoolean(
+                        CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE, false);
+                String messageLanguage = message.getLanguageCode();
+
+                if (!secondLanguageCode.equalsIgnoreCase(messageLanguage)) {
+                    Log.w(TAG, "Ignoring message in the unspecified second language:"
+                            + messageLanguage);
+                    return false;
+                } else if (!receiveInSecondLanguage) {
+                    Log.d(TAG, "Ignoring message in second language because setting is off");
+                    return false;
+                }
+            } else {
+                // language filtering based on device language settings.
+                String messageLanguage = message.getLanguageCode();
+                String deviceLanguage = Locale.getDefault().getLanguage();
+                // Apply If the message's language does not match device's message, we don't
+                // display the message.
+                if (!TextUtils.isEmpty(messageLanguage)
+                        && !messageLanguage.equalsIgnoreCase(deviceLanguage)) {
+                    Log.d(TAG, "ignoring the alert due to language mismatch. Message lang="
+                            + messageLanguage + ", device lang=" + deviceLanguage);
+                    return false;
+                }
             }
         }
 
