@@ -105,6 +105,12 @@
                         android:defaultValue="@string/alert_reminder_interval_default_value"
                         android:dialogTitle="@string/alert_reminder_interval_title" />
 
+        <!-- Show additional language on/off switch in settings -->
+        <SwitchPreference android:defaultValue="false"
+                          android:key="receive_cmas_in_second_language"
+                          android:summary="@string/receive_cmas_in_second_language_summary"
+                          android:title="@string/receive_cmas_in_second_language_title" />
+
     </PreferenceCategory>
 
     <!-- Only visible when Developer options toggle is enabled in Settings. -->

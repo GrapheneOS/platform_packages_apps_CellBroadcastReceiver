@@ -15,6 +15,8 @@
 -->
 
 <resources>
+    <!-- Specify second language code to receive emergency alerts -->
+    <string name="emergency_alert_second_language_code" translatable="false">es</string>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true</item>
