@@ -127,8 +127,11 @@
 
         <receiver android:name="CellBroadcastReceiver">
             <intent-filter>
-                 <action android:name="android.telephony.action.DEFAULT_SMS_SUBSCRIPTION_CHANGED" />
-                 <action android:name="android.telephony.action.CARRIER_CONFIG_CHANGED" />
+                <action android:name="android.telephony.action.DEFAULT_SMS_SUBSCRIPTION_CHANGED" />
+                <action android:name="android.telephony.action.CARRIER_CONFIG_CHANGED" />
+                <action android:name="android.telephony.action.SECRET_CODE" />
+                <!-- CMAS: To toggle test mode for cell broadcast testing on userdebug build -->
+                <data android:scheme="android_secret_code" android:host="2627" />
             </intent-filter>
         </receiver>
 
