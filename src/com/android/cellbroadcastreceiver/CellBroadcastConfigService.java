@@ -128,6 +128,7 @@ public class CellBroadcastConfigService extends IntentService {
                 CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true);
 
         boolean enableTestAlerts = enableAlertsMasterToggle
+                && CellBroadcastSettings.isTestAlertsToggleVisible(getApplicationContext())
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, false);
 
         boolean enableAreaUpdateInfoAlerts = Resources.getSystem().getBoolean(
@@ -229,7 +230,7 @@ public class CellBroadcastConfigService extends IntentService {
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.geo_fencing_trigger_messages_range_strings));
 
-        /** Enable non-CMAS series messages. */
+        // Enable non-CMAS series messages.
         setCellBroadcastRange(subId, enableEmergencyAlerts,
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.emergency_alerts_channels_range_strings));
