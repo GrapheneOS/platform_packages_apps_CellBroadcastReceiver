@@ -17,4 +17,6 @@
 <resources>
     <!-- Whether to show CMAS messages by in a different order than received by prioritizing them -->
     <bool name="show_cmas_messages_in_priority_order">true</bool>
+    <!-- use global language settings for TMO -->
+    <string name="emergency_alert_second_language_code" translatable="false"></string>
 </resources>
