@@ -202,6 +202,7 @@ public class CellBroadcastAlertService extends Service {
                 message.getSubscriptionId());
         CellBroadcastChannelRange range = channelManager
                 .getCellBroadcastChannelRangeFromMessage(message);
+        String messageLanguage = message.getLanguageCode();
         if (range != null && range.mFilterLanguage) {
             // language filtering based on CBR second language settings
             final String secondLanguageCode =  CellBroadcastSettings.getResources(mContext,
@@ -211,9 +212,11 @@ public class CellBroadcastAlertService extends Service {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
                 boolean receiveInSecondLanguage = prefs.getBoolean(
                         CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE, false);
-                String messageLanguage = message.getLanguageCode();
-
-                if (!secondLanguageCode.equalsIgnoreCase(messageLanguage)) {
+                // For DCS values that bit 6 is 1 and bit 7 is 0, language field is not defined so
+                // ap receives it as null value and so alert is not shown to the user.
+                // bypass language filter in this case.
+                if (!TextUtils.isEmpty(messageLanguage)
+                        && !secondLanguageCode.equalsIgnoreCase(messageLanguage)) {
                     Log.w(TAG, "Ignoring message in the unspecified second language:"
                             + messageLanguage);
                     return false;
@@ -223,7 +226,6 @@ public class CellBroadcastAlertService extends Service {
                 }
             } else {
                 // language filtering based on device language settings.
-                String messageLanguage = message.getLanguageCode();
                 String deviceLanguage = Locale.getDefault().getLanguage();
                 // Apply If the message's language does not match device's message, we don't
                 // display the message.
