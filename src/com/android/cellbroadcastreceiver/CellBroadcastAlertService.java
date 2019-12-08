@@ -346,8 +346,9 @@ public class CellBroadcastAlertService extends Service {
         SmsCbEtwsInfo etwsInfo = message.getEtwsWarningInfo();
         if (etwsInfo != null
                 && etwsInfo.getWarningType() == SmsCbEtwsInfo.ETWS_WARNING_TYPE_TEST_MESSAGE) {
-            return emergencyAlertEnabled &&
-                    PreferenceManager.getDefaultSharedPreferences(this)
+            return emergencyAlertEnabled
+                    && CellBroadcastSettings.isTestAlertsToggleVisible(getApplicationContext())
+                    && PreferenceManager.getDefaultSharedPreferences(this)
                     .getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, false);
         }
 
@@ -398,6 +399,8 @@ public class CellBroadcastAlertService extends Service {
                     return false;
                 } else if (range.mAlertType == AlertType.TEST) {
                     return emergencyAlertEnabled
+                            && CellBroadcastSettings.isTestAlertsToggleVisible(
+                                    getApplicationContext())
                             && PreferenceManager.getDefaultSharedPreferences(this)
                             .getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS,
                                     false);
@@ -451,6 +454,7 @@ public class CellBroadcastAlertService extends Service {
                 || channelManager.checkCellBroadcastChannelRange(channel,
                 R.array.operator_defined_alert_range_strings)) {
             return emergencyAlertEnabled
+                    && CellBroadcastSettings.isTestAlertsToggleVisible(getApplicationContext())
                     && PreferenceManager.getDefaultSharedPreferences(this)
                             .getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS,
                                     false);

@@ -19,7 +19,6 @@ package com.android.cellbroadcastreceiver;
 import android.annotation.NonNull;
 import android.app.ActionBar;
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.backup.BackupManager;
 import android.content.Context;
 import android.content.Intent;
@@ -131,6 +130,8 @@ public class CellBroadcastSettings extends Activity {
     public static final String KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE =
             "receive_cmas_in_second_language";
 
+    private boolean mCellBroadcastAllowed = true;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -144,13 +145,19 @@ public class CellBroadcastSettings extends Activity {
         UserManager userManager = (UserManager) getSystemService(Context.USER_SERVICE);
         if (userManager.hasUserRestriction(UserManager.DISALLOW_CONFIG_CELL_BROADCASTS)) {
             setContentView(R.layout.cell_broadcast_disallowed_preference_screen);
+            mCellBroadcastAllowed = false;
             return;
         }
+    }
 
-        // We only add new CellBroadcastSettingsFragment if no fragment is restored.
-        Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
-        if (fragment == null) {
-            getFragmentManager().beginTransaction().add(android.R.id.content,
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (mCellBroadcastAllowed) {
+            // Always create a new fragment and replace it. We would like to dynamically change the
+            // menu, for example, after toggling testing mode via dialing *#*#CMAS#*#*.
+            getFragmentManager().beginTransaction().replace(android.R.id.content,
                     new CellBroadcastSettingsFragment()).commit();
         }
     }
@@ -574,7 +581,8 @@ public class CellBroadcastSettings extends Activity {
                 || !channelManager.getCellBroadcastChannelRanges(
                 R.array.etws_test_alerts_range_strings).isEmpty();
 
-        return res.getBoolean(R.bool.show_test_settings) && isTestAlertsAvailable;
+        return (res.getBoolean(R.bool.show_test_settings) || CellBroadcastReceiver.isTestingMode())
+                && isTestAlertsAvailable;
     }
 
     public static boolean isFeatureEnabled(Context context, String feature, boolean defaultValue) {
