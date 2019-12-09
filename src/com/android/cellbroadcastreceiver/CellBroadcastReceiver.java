@@ -22,14 +22,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.os.SystemProperties;
 import android.os.UserManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.provider.Telephony.CellBroadcasts;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -48,6 +51,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             "com.android.cellbroadcastreceiver.intent.action.MARK_AS_READ";
     public static final String EXTRA_DELIVERY_TIME =
             "com.android.cellbroadcastreceiver.intent.extra.ID";
+
+    private static boolean sIsTestingMode = false;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -103,9 +108,27 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         } else if (Intent.ACTION_LOCALE_CHANGED.equals(action)) {
             // rename registered notification channels on locale change
             CellBroadcastAlertService.createNotificationChannels(context);
+        } else if (TelephonyManager.ACTION_SECRET_CODE.equals(action)) {
+            if (SystemProperties.getInt("ro.debuggable", 0) == 1) {
+                sIsTestingMode = !sIsTestingMode;
+                int msgId = (sIsTestingMode) ? R.string.testing_mode_enabled
+                        : R.string.testing_mode_disabled;
+                String msg =  CellBroadcastSettings.getResources(context,
+                        SubscriptionManager.DEFAULT_SUBSCRIPTION_ID).getString(msgId);
+                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                log(msg);
+            }
         } else {
             Log.w(TAG, "onReceive() unexpected action " + action);
         }
+    }
+
+    /**
+     * @return {@code true} if operating in testing mode, which enables some features for testing
+     * purposes.
+     */
+    public static boolean isTestingMode() {
+        return sIsTestingMode;
     }
 
     private void adjustReminderInterval(Context context) {
