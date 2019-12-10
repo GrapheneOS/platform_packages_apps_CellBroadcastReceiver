@@ -29,9 +29,11 @@
     <bool name="use_full_volume">true</bool>
     <!-- Append date-time to the alert title -->
     <bool name="show_date_time_title">true</bool>
-    <!-- Emergecny alert tone duration set to 5 minutes for Chilean users -->
-    <integer name="alert_duration">300000</integer>
+    <!-- Emergecny alert tone duration set to one day for Chilean users -->
+    <integer name="alert_duration">86400000</integer>
     <!-- Disable links for Chile -->
     <integer-array name="message_classes_to_linkify"></integer-array>
+    <!-- Whether the user can mute the alert by physical button -->
+    <bool name="mute_by_physical_button">false</bool>
 </resources>
 
