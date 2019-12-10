@@ -573,7 +573,8 @@ public class CellBroadcastAlertDialog extends Activity {
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         SmsCbMessage message = getLatestMessage();
-        if (message != null && !message.isEtwsMessage()) {
+        if (CellBroadcastSettings.getResources(getApplicationContext(), message.getSubscriptionId())
+                .getBoolean(R.bool.mute_by_physical_button)) {
             switch (event.getKeyCode()) {
                 // Volume keys and camera keys mute the alert sound/vibration (except ETWS).
                 case KeyEvent.KEYCODE_VOLUME_UP:
