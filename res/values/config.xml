@@ -45,6 +45,8 @@
     <bool name="always_enable_exercise_alert">false</bool>
     <!-- Whether to enable alert handling during active voice call. -->
     <bool name="enable_alert_handling_during_call">true</bool>
+    <!-- Whether the user can mute the alert by physical button -->
+    <bool name="mute_by_physical_button">true</bool>
     <!-- Specify second language code to receive emergency alerts -->
     <string name="emergency_alert_second_language_code" translatable="false"></string>
     <!-- 4370, 4383 -->

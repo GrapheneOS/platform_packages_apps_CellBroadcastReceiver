@@ -25,4 +25,6 @@
     <bool name="duplicate_compare_body">true</bool>
     <!-- Whether the emergency alert notification is non-swipeable -->
     <bool name="non_swipeable_notification">true</bool>
+    <!-- Whether the user can mute the alert by physical button -->
+    <bool name="mute_by_physical_button">false</bool>
 </resources>
