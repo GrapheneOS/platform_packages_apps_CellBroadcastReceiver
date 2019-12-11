@@ -160,7 +160,7 @@
 
     <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_cmas_test_alerts_title">Other tests</string>
-    <!-- Preference summary for other test alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Preference summary for other test alerts checkbox. [CHAR LIMIT=125] -->
     <string name="enable_cmas_test_alerts_summary">Receive carrier tests and monthly tests from the safety alert system</string>
 
     <!-- Preference title for CMAS vibration on/off. [CHAR LIMIT=50] -->
