@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Cảnh báo"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Thông báo truyền phát"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Cảnh báo khẩn cấp"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Cảnh báo khẩn cấp trong cuộc gọi thoại"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Cho phép cảnh báo"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Nhận cảnh báo khẩn cấp không dây"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Âm thanh lời nhắc cảnh báo"</string>
@@ -74,8 +75,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Nhận tin nhắn thử nghiệm từ chính quyền địa phương và tiểu bang"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Cảnh báo khẩn cấp"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Cảnh báo về các sự kiện đe dọa tới mạng sống"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Cảnh báo kiểm tra hằng tháng bắt buộc"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Nhận các tin nhắn thử nghiệm của hệ thống cảnh báo an toàn"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"Các cảnh báo kiểm tra khác"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Nhận cảnh báo kiểm tra của nhà mạng và cảnh báo kiểm tra hàng tháng của hệ thống cảnh báo an toàn"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Rung"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Sử dụng mức âm lượng cao nhất"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Bỏ qua các tùy chọn âm lượng khác cũng như chế độ Không làm phiền"</string>
@@ -132,4 +133,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Cảnh báo khẩn cấp không dây"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Thông báo của tổng thống"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Thông báo cảnh báo cấp quốc gia do Tổng thống ban bố. Không thể tắt."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"Đã bật chế độ kiểm tra tính năng truyền phát trên di động."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"Đã tắt chế độ kiểm tra tính năng truyền phát trên di động."</string>
 </resources>

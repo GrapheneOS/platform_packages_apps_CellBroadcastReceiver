@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"सूचनाएं"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण संदेश"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"इमरजेंसी के समय सूचनाएं"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"वॉयस कॉल के दौरान आपातकालीन चेतावनियां"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"अलर्ट दिखाए जाने की अनुमति दें"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"वायरलेस इमरजेंसी अलर्ट की सूचनाएं पाएं"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"बहुत ज़रूरी सूचनाओं के रिमाइंडर की टोन"</string>
@@ -74,8 +75,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"राज्य और स्थानीय अधिकारियों से टेस्ट मैसेज पाना"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जान का खतरा हो सकता है"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"हर महीने की जाने वाली ज़रूरी जाँच"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"सुरक्षा की चेतावनी वाले सिस्टम के लिए टेस्ट मैसेज पाना"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"अन्य टेस्ट मैसेज"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा चेतावनी वाले सिस्टम से हर महीने टेस्ट मैसेज पाएं. साथ ही, मोबाइल करियर से टेस्ट मैसेज पाएं"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"वाइब्रेशन"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"सबसे ऊंची आवाज़ पर सेट करें"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"आवाज़ और परेशान न करें सुविधा से जुड़ी पसंद की सेटिंग को अनदेखा करें"</string>
@@ -132,4 +133,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"वायरलेस आपातकालीन अलर्ट"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"राष्ट्रपति की ओर से जारी सूचनाएं"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"राष्ट्रपति की ओर से जारी राष्ट्रीय चेतावनियां. इसे बंद नहीं किया जा सकता."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"सेल ब्रॉडकास्ट (CBC) की सुविधा का टेस्टिंग मोड चालू है."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"सेल ब्रॉडकास्ट (CBC) की सुविधा का टेस्टिंग मोड बंद है."</string>
 </resources>

@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"ଅଲର୍ଟ"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ବ୍ରୋଡକାଷ୍ଟ ମେସେଜ୍‌"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ଭଏସ୍ କଲ୍‌ରେ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ଆଲର୍ଟକୁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ୱେୟାରଲେସ୍ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ବିଜ୍ଞପ୍ତି ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"ଆଲର୍ଟ ରିମାଇଣ୍ଡର୍ ସାଉଣ୍ଡ"</string>
@@ -74,8 +75,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ରାଜ୍ୟ ଓ ସ୍ଥାନୀୟ କର୍ତ୍ତୃପକ୍ଷଙ୍କ ତରଫରୁ ପରୀକ୍ଷାମୂଳକ ମେସେଜ୍ ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ପ୍ରାଣଘାତକ ଘଟଣା ବିଷୟରେ ଚେତାବନୀ"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"ମାସିକ ଯାଞ୍ଚ ଆବଶ୍ୟକ"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"ସୁରକ୍ଷା ଆଲର୍ଟ ସିଷ୍ଟମ୍ ପାଇଁ ଟେଷ୍ଟ୍ ମେସେଜ୍ ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"ଅନ୍ୟ ଟେଷ୍ଟ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ସୁରକ୍ଷା ଆଲର୍ଟ ସିଷ୍ଟମ୍‌ରୁ ମୋବାଇଲ୍ କମ୍ପାନୀ ଟେଷ୍ଟ ଏବଂ ମାସିକ ଟେଷ୍ଟଗୁଡ଼ିକ ପାଆନ୍ତୁ"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ଭାଇବ୍ରେସନ୍"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"ପୂର୍ଣ୍ଣ ଭଲ୍ୟୁମ୍‌କୁ ବ୍ୟବହାର କରନ୍ତୁ"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"ଅନ୍ୟ ଭଲ୍ୟୁମ୍‌କୁ ଏବଂ \"ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ\" ପସନ୍ଦକୁ ଅଣଦେଖା କରନ୍ତୁ"</string>
@@ -132,4 +133,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ୱେୟାରଲେସ୍‌ ଜରୁରୀକାଳୀନ ଅଲର୍ଟ"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ରାଷ୍ଟ୍ରପତିଙ୍କ ଦ୍ୱାରା ଜାରି କରାଯାଇଥିବା ଆଲର୍ଟ"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ରାଷ୍ଟ୍ରପତିଙ୍କ ଦ୍ୱାରା ଜାରି କରାଯାଇଥିବା ଜାତୀୟ ଚେତାବନୀ ମେସେଜ୍‌ଗୁଡ଼ିକ। ବନ୍ଦ କରାଯାଇପାରିବ ନାହିଁ।"</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"ସେଲ୍ ବ୍ରଡକାଷ୍ଟ୍ ଟେଷ୍ଟିଂ ମୋଡ୍‌କୁ ସକ୍ଷମ କରାଯାଇଛି।"</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"ସେଲ୍ ବ୍ରଡକାଷ୍ଟ୍ ଟେଷ୍ଟିଂ ମୋଡ୍‌କୁ ଅକ୍ଷମ କରାଯାଇଛି।"</string>
 </resources>

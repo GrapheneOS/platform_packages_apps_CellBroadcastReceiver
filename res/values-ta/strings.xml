@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"எச்சரிக்கைகள்"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"வலைபரப்புச் செய்திகள்"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"அவசரகால எச்சரிக்கைகள்"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"குரல் அழைப்பில் அவசரகால விழிப்பூட்டல்கள்"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"விழிப்பூட்டல்களை அனுமதி"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"வயர்லெஸ் அவசரகால விழிப்பூட்டல்களைப் பெறு"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"எச்சரிக்கை ஒலி"</string>
@@ -74,8 +75,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"மாநில மற்றும் உள்ளூர் நிர்வாகங்களின் சோதனை மெசேஜ்களைப் பெறு"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"அவசரகால விழிப்பூட்டல்கள்"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"உயிருக்கு ஆபத்தை விளைவிக்கும் நிகழ்வுகள் பற்றி எச்சரிக்கவும்"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"அவசியமான மாதாந்திரச் சோதனை"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"பாதுகாப்பு விழிப்பூட்டல் அமைப்புக்கான, சோதனைச் செய்திகளைப் பெறவும்"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"பிற சோதனைகள்"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"பாதுகாப்பு விழிப்பூட்டல் அமைப்பிலிருந்து மொபைல் நிறுவன சோதனைகளையும் மாதாந்திர சோதனைகளையும் அனுப்புக"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"அதிர்வு"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"முழு ஒலியைப் பயன்படுத்து"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"மற்ற ஒலி மற்றும் தொந்தரவு செய்ய வேண்டாம் விருப்பத்தேர்வுகளைப் புறக்கணிக்கும்"</string>
@@ -132,4 +133,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"வயர்லெஸ் அவசரகால எச்சரிக்கைகள்"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ஜனாதிபதி விழிப்பூட்டல்கள்"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ஜனாதிபதியால் அறிவிக்கப்படும் தேசிய அளவிலான எச்சரிக்கை மெசேஜ்கள். இவற்றை ஆஃப் செய்ய முடியாது."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"செல் பிராட்காஸ்ட் சோதனை பயன்முறை இயக்கப்பட்டுள்ளது."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"செல் பிராட்காஸ்ட் சோதனை பயன்முறை முடக்கப்பட்டுள்ளது."</string>
 </resources>

@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Сповіщення"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Широкомовні повідомлення"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Екстрені сповіщення"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Екстрені сповіщення, надіслані під час голосового виклику"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дозволити сповіщення"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Отримувати бездротові екстрені сповіщення"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Сигнал нагадування"</string>
@@ -74,8 +75,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Отримувати тестові повідомлення від державних і місцевих органів влади"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Екстрені сповіщення"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Застерігати про небезпечні для життя події"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Обов’язковий щомісячний тест"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Отримувати тестові повідомлення для системи безпеки"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"Інші тестові сповіщення"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Отримувати щомісячні тестові сповіщення й тестові сповіщення від оператора для системи безпеки"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вібрація"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Використовувати повну гучність"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ігнорувати інші параметри гучності й режиму \"Не турбувати\""</string>
@@ -132,4 +133,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Бездротові екстрені сповіщення"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Президентські сповіщення"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Повідомлення з попередженнями для всіх громадян від президента. Ці сповіщення не можна вимкнути."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"Тестовий режим Cell Broadcast увімкнено."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"Тестовий режим Cell Broadcast вимкнено."</string>
 </resources>

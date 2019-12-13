@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alertes"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Messages de diffusion"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertes d\'urgence"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertes d\'urgence pendant l\'appel téléphonique"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Autoriser les alertes"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recevoir les notif. d\'alertes d\'urgence sans fil"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Son du rappel d\'alerte"</string>
@@ -74,8 +75,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Recevoir des messages tests des autorités nationales et locales"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Alertes d\'urgence"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Recevoir des avertissements relatifs aux événements potentiellement mortels"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Test mensuel obligatoire"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Recevoir des messages de test pour le système d\'alerte de sécurité"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"Autres tests"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Recevoir des tests de l\'opérateur et des tests mensuels du système d\'alertes de sécurité"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibration"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Utiliser le volume maximal"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorer les autres préférences de volume et \"Ne pas déranger\""</string>
@@ -132,4 +133,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Alertes d\'urgence sans fil"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Alertes présidentielles"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Messages d\'avertissement nationaux émis par le Président. Il est impossible de les désactiver."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"Le mode de test de la diffusion cellulaire est activé."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"Le mode de test de la diffusion cellulaire est désactivé."</string>
 </resources>
