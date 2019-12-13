@@ -26,7 +26,7 @@
     </string-array>
 
     <!-- Always play alert at full volume for Chilean users -->
-    <bool name="use_full_volume">true</bool>
+    <bool name="always_use_full_volume">true</bool>
     <!-- Append date-time to the alert title -->
     <bool name="show_date_time_title">true</bool>
     <!-- Emergecny alert tone duration set to one day for Chilean users -->

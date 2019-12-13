@@ -357,6 +357,15 @@ public class CellBroadcastSettings extends Activity {
                 }
             }
 
+            // Remove preferences
+            if (res.getBoolean(R.bool.always_use_full_volume)) {
+                // Remove full volume preference items in emergency alert category.
+                if (mAlertCategory != null) {
+                    if (mExtremeCheckBox != null) mAlertCategory.removePreference(
+                            mFullVolumeCheckBox);
+                }
+            }
+
             if (!Resources.getSystem().getBoolean(
                     com.android.internal.R.bool.config_showAreaUpdateInfoSettings)) {
                 if (mAlertCategory != null) {
@@ -445,7 +454,7 @@ public class CellBroadcastSettings extends Activity {
                     && !sp.getBoolean(KEY_USE_FULL_VOLUME_SETTINGS_CHANGED, false)) {
                 // If the user hasn't changed this settings yet, use the default settings from
                 // resource overlay.
-                mFullVolumeCheckBox.setChecked(res.getBoolean(R.bool.use_full_volume));
+                mFullVolumeCheckBox.setChecked(res.getBoolean(R.bool.use_full_volume_default));
                 mFullVolumeCheckBox.setOnPreferenceChangeListener(
                         (pref, newValue) -> {
                             sp.edit().putBoolean(KEY_USE_FULL_VOLUME_SETTINGS_CHANGED,
