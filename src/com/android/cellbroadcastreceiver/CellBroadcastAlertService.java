@@ -551,15 +551,13 @@ public class CellBroadcastAlertService extends Service {
 
         String messageBody = message.getMessageBody();
 
-        if (prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH, true)) {
-            audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_BODY, messageBody);
+        audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_BODY, messageBody);
 
-            String language = message.getLanguageCode();
+        String language = message.getLanguageCode();
 
-            Log.d(TAG, "Message language = " + language);
-            audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_LANGUAGE,
-                    language);
-        }
+        Log.d(TAG, "Message language = " + language);
+        audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_LANGUAGE,
+                language);
 
         audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_SUB_INDEX,
                 message.getSubscriptionId());

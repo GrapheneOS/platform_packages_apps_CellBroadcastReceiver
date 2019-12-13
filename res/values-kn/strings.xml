@@ -54,8 +54,6 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ಎಚ್ಚರಿಕೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"ತುರ್ತು ಸೂಚನೆಗಳನ್ನು ಸ್ವೀಕರಿಸಿ"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"ಎಚ್ಚರಿಕೆ ಜ್ಞಾಪನೆ ಧ್ವನಿ"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"ಎಚ್ಚರಿಕೆ ಸಂದೇಶವನ್ನು ಹೇಳಿ"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"ತುರ್ತು ಎಚ್ಚರಿಕೆ ಸಂದೇಶಗಳನ್ನು ಹೇಳಲು ಪಠ್ಯದಿಂದ ಧ್ವನಿಯನ್ನು ಬಳಸಿ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ತುರ್ತು ಎಚ್ಚರಿಕೆ ಇತಿಹಾಸ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ಎಚ್ಚರಿಕೆ ಪ್ರಾಶಸ್ತ್ಯಗಳು"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS ಪರೀಕ್ಷಾ ಪ್ರಸಾರಗಳು"</string>
