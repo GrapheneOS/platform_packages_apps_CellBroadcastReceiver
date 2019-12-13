@@ -122,11 +122,6 @@
                             android:summary="@string/show_cmas_opt_out_summary"
                             android:title="@string/show_cmas_opt_out_title" />
 
-        <SwitchPreference android:defaultValue="true"
-                          android:key="enable_alert_speech"
-                          android:summary="@string/enable_alert_speech_summary"
-                          android:title="@string/enable_alert_speech_title" />
-
         <SwitchPreference android:defaultValue="@bool/use_full_volume"
                           android:key="use_full_volume"
                           android:summary="@string/use_full_volume_summary"

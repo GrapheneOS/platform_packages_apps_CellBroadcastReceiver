@@ -65,9 +65,6 @@ public class CellBroadcastSettings extends Activity {
     // Enable vibration on alert (unless master volume is silent).
     public static final String KEY_ENABLE_ALERT_VIBRATE = "enable_alert_vibrate";
 
-    // Speak contents of alert after playing the alert sound.
-    public static final String KEY_ENABLE_ALERT_SPEECH = "enable_alert_speech";
-
     // Always play at full volume when playing the alert sound.
     public static final String KEY_USE_FULL_VOLUME = "use_full_volume";
 
@@ -185,7 +182,6 @@ public class CellBroadcastSettings extends Activity {
         private TwoStatePreference mPublicSafetyMessagesChannelCheckBox;
         private TwoStatePreference mEmergencyAlertsCheckBox;
         private ListPreference mReminderInterval;
-        private TwoStatePreference mSpeechCheckBox;
         private TwoStatePreference mFullVolumeCheckBox;
         private TwoStatePreference mAreaUpdateInfoCheckBox;
         private TwoStatePreference mTestCheckBox;
@@ -232,8 +228,6 @@ public class CellBroadcastSettings extends Activity {
                     findPreference(KEY_ENABLE_EMERGENCY_ALERTS);
             mReminderInterval = (ListPreference)
                     findPreference(KEY_ALERT_REMINDER_INTERVAL);
-            mSpeechCheckBox = (TwoStatePreference)
-                    findPreference(KEY_ENABLE_ALERT_SPEECH);
             mFullVolumeCheckBox = (TwoStatePreference)
                     findPreference(KEY_USE_FULL_VOLUME);
             mAreaUpdateInfoCheckBox = (TwoStatePreference)
