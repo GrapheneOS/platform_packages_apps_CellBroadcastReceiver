@@ -148,11 +148,6 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
                     CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE;
             cursor.addRow(ref);
-
-            ref = new Object[1];
-            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
-                    CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH;
-            cursor.addRow(ref);
         }
 
         if (!res.getBoolean(R.bool.show_cmas_settings)) {
