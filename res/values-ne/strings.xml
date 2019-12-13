@@ -54,8 +54,6 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"अलर्टहरूलाई अनुमति दिनुहोस्"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"आपतकालीन सूचनाहरू प्राप्त गर्नुहोस्"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"अलर्टको रिमाइन्डरको ध्वनि"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"चेतावनी सन्देश बोल्नुहोस्"</string>
-    <string name="enable_alert_speech_summary" msgid="356086178962268831">"आपतकालीन चेतावनी सन्देश बोलाउनको लागि पाठ-देखि-स्पिच प्रयोग गर्नुहोस्"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"आपतकालीन अलर्टको इतिहास"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"अलर्टका प्राथमिकताहरू"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS का परीक्षण प्रसारणहरू"</string>
