@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Avvisi"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Messaggi broadcast"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Avvisi di emergenza"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Avvisi d\'emergenza in chiamata vocale"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Consenti avvisi"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Ricevi notifiche per avvisi di emergenza wireless"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Suono promemoria degli avvisi"</string>
@@ -72,8 +73,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Ricevi messaggi di prova da autorità statali e locali"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Avvisi d\'emergenza"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Avvisi relativi a eventi potenzialmente letali"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Test mensile obbligatorio"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Ricevi messaggi di prova per il sistema di avvisi relativi alla sicurezza"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"Altri test"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Ricevi test dell\'operatore e test mensili dal sistema di avvisi relativi alla sicurezza"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrazione"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Usa volume massimo"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignora altre preferenze per Volume e Non disturbare"</string>
@@ -125,9 +126,13 @@
     <item msgid="9097229303902157183">"Ogni 2 minuti"</item>
     <item msgid="5718214950343391480">"Ogni 5 minuti"</item>
     <item msgid="3863339891188103437">"Ogni 15 minuti"</item>
-    <item msgid="6868848414437854609">"Off"</item>
+    <item msgid="6868848414437854609">"OFF"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Avvisi di emergenza wireless"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Avvisi del presidente"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Messaggi di allerta nazionale da parte del presidente Non possono essere disattivati."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"Modalità di test cell broadcast attiva."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"Modalità di test cell broadcast non attiva."</string>
 </resources>

@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Mga Alerto"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Mga mensahe ng broadcast"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Mga alerto sa emergency"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Mga emergency na alerto sa voice call"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Payagan ang mga alerto"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Tumanggap ng wireless emergency alert notification"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Tunog ng paalala ng alerto"</string>
@@ -72,8 +73,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Makatanggap ng mga pansubok na mensahe mula sa mga awtoridad ng estado at lokal na awtoridad"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Mga alerto sa emergency"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Magbabala tungkol sa mga nakamamatay na event"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Kinakailangang buwanang test"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Makatanggap ng mga test na mensahe para sa sistema ng alerto sa kaligtasan"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"Iba pang pagsubok"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Makatanggap ng mga pansubok ng carrier at buwanang pagsubok mula sa system ng alerto sa kaligtasan"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Pag-vibrate"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Gamitin ang sagad na volume"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Balewalain ang mga kagustuhan sa volume at Huwag Istorbohin"</string>
@@ -130,4 +131,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Mga wireless na alerto sa emergency"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Mga Presidential alert"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Mga pambansang mensahe ng babala na inilabas ng Pangulo. Hindi puwedeng i-off."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"Naka-enable ang mode ng pagsubok ng cell broadcast."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"Naka-disable ang mode ng pagsubok ng cell broadcast."</string>
 </resources>

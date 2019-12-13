@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"ማንቂያዎች"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"መልእክቶችን አሰራጭ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"አስቸኳይ ማንቂያዎች"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"የድንገተኛ አደጋ ማንቂያዎች በድምፅ ጥሪ ውስጥ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ማንቂያዎችን ፍቀድ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ገመድ-አልባ የድንገተኛ አደጋ ማንቂያ ማሳወቂያዎችን ይቀበሉ"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"የማንቂያ አስታዋሽ ድምጽ"</string>
@@ -72,8 +73,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ከግዛት እና የአካባቢ ባለሥልጣናት የሙከራ መልዕክቶችን ተቀበል"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"የድንገተኛ አደጋ ማንቂያዎች"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ሕይወትን አደጋ ስለሚያጋልጡ ክስተቶችን አስጠንቀቅ"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"የወርሃዊ ሙከራን ጠይቅ"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"ለደህንነት ማንቂያ ሥርዓት የሙከራ መልዕክቶችን ተቀበል"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"ሌሎች ሙከራዎች"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"የአገልግሎት አቅራቢ ሙከራዎችን እና ወርሃዊ ሙከራዎችን ከደህንነት ማንቂያ ስርዓቱ ይቀበሉ"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ንዝረት"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"ሙሉ ድምጽ ተጠቀም"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"ሌላ ድምጽ እና የአትረብሽ ምርጫዎችን ችላ በል"</string>
@@ -130,4 +131,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ገመድ-አልባ የአስቸኳይ አደጋ ማንቂያዎች"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ፕሬዝዳንታዊ ማስጠንቀቂያዎች"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"በፕሬዝዳንቱ የተሰጡ ብሔራዊ ማስጠነቀቂያ መልዕክቶች። ሊጠፋ አይችልም።"</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"የተንቀሳቃሽ ስልክ ስርጭት ሙከራ ሁነታ ነቅቷል።"</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"የተንቀሳቃሽ ስልክ ስርጭት ሙከራ ሁነታ ተሰናክሏል።"</string>
 </resources>

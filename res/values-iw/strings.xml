@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"התרעות"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"הודעות שידור"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"התרעות חירום"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"התרעות על מקרי חירום בשיחה קולית"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"הצגת התרעות"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"לקבלת התראות אלחוטיות על מקרי חירום"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"הצליל של תזכורות ההתרעה"</string>
@@ -72,8 +73,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"קבלת הודעות בדיקה מרשויות מקומיות וארציות"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"התרעות חירום"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"הזהר אותי מפני אירועים מסכני חיים"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"בדיקה חודשית נדרשת"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"קבלת הודעות בדיקה למערכת התרעות האבטחה"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"בדיקות אחרות"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"קבלת בדיקות של הספק ובדיקות חודשיות ממערכת התרעות האבטחה"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"רטט"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"השתמש בעוצמת קול מלאה"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"התעלם מהעדפות אחרות של עוצמת הקול והמצב \'נא לא להפריע\'"</string>
@@ -130,4 +131,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"התראות על מקרי חירום"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"התרעות נשיאותיות"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"הודעות אזהרה לאומיות מהנשיא. לא ניתן להשבית אותן."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"מצב הבדיקה של השידור הסלולרי מופעל."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"מצב הבדיקה של השידור הסלולרי מושבת."</string>
 </resources>

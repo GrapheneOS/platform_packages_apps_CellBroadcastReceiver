@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"সতৰ্কবাণীসমূহ"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"সম্প্ৰচাৰ কৰা বাৰ্তাবোৰ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"জৰুৰীকালীন সতৰ্কবাণীসমূহ"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ভইচ কলত জৰুৰীকালীন সতৰ্কবাৰ্তা"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"সতৰ্কবাণীযুক্ত বাৰ্তাসমূহ লাভ কৰিবলৈ অনুমতি দিয়ক"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"অনাতাঁৰ জৰুৰীকালীন সতৰ্কবাৰ্তাৰ জাননীসমূহ পাওক"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"সতর্কতা স্মৰণ কৰোৱা ধ্বনি"</string>
@@ -72,8 +73,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ৰাজ্য চৰকাৰ আৰু স্থানীয় কৰ্তৃপক্ষৰ পৰা পৰীক্ষামূলক বাৰ্তা লাভ কৰক"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"জৰুৰীকালীন সতৰ্কবাণীসমূহ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"জীৱন-সংশয়ী ঘটনাসমূহৰ বিষয়ে সতৰ্ক কৰক"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"দৰকাৰী মাহেকীয়া পৰীক্ষা"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"সুৰক্ষা সতৰ্কীকৰণ ব্যৱস্থাৰ পৰীক্ষামূলক বাৰ্তা লাভ কৰক"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"অন্য পৰীক্ষাসমূহ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"সুৰক্ষা সতৰ্কবাৰ্তা ব্যৱস্থাৰ পৰা বাহকৰ আৰু মাহেকীয়া পৰীক্ষাসমূহ লাভ কৰক"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"কম্পন"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"সম্পূৰ্ণ ভলিউম ব্য়ৱহাৰ কৰক"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"অন্য়ান্য় ভলিউম আৰু \'অসুবিধা নিদিব\'ৰ অগ্ৰাধিকাৰবোৰ উপেক্ষা কৰক"</string>
@@ -130,4 +131,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"অনাতাঁৰ জৰুৰীকালীন সতৰ্কবাণীসমূহ"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ৰাষ্ট্ৰপতিয়ে পঠিওৱা সতর্কবাণীসমূহ"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ৰাষ্ট্ৰপতিয়ে পঠিওৱা ৰাষ্ট্ৰীয় সতর্কবার্তা। অফ কৰিব নোৱাৰি।"</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"চেল সম্প্ৰচাৰ পৰীক্ষণ ম’ড সক্ষম কৰা হৈছে।"</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"চেল সম্প্ৰচাৰ পৰীক্ষণ ম’ড অক্ষম কৰা হৈছে।"</string>
 </resources>

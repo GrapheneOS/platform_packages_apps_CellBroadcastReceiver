@@ -51,6 +51,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"హెచ్చరికలు"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ప్రసార సందేశాలు"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"అత్యవసర హెచ్చరికలు"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"వాయిస్ కాల్‌లో అత్యవసర అలర్ట్‌లు"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"హెచ్చరికలను అనుమతించండి"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"వైర్‌లెస్ అత్యవసర హెచ్చరిక నోటిఫికేషన్‌లను పొందు"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"హెచ్చరిక రిమైండర్ ధ్వని"</string>
@@ -72,8 +73,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"రాష్ట్రీయ మరియు స్థానిక అధికార సంస్థల నుండి పరీక్ష సందేశాలను స్వీకరిస్తుంది"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"అత్యవసర హెచ్చరికలు"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ప్రాణాంతకమైన సంఘటనల గురించి హెచ్చరించు"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"నెలవారీ పరీక్ష అవసరం"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"భద్రతా హెచ్చరిక సిస్టమ్ కోసం టెస్ట్‌ సందేశాలను స్వీకరించండి"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"ఇతర పరీక్షలు"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"భద్రతా అలర్ట్ సిస్టమ్ నుండి క్యారియర్ పరిక్షలను, నెలవారీ పరిక్షలను స్వీకరించండి"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"వైబ్రేషన్"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"పూర్తి వాల్యూమ్‌ను ఉపయోగించు"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"ఇతర వాల్యూమ్ మరియు అంతరాయం కలిగించవద్దు ప్రాధాన్యతలను విస్మరిస్తుంది"</string>
@@ -130,4 +131,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"వైర్‌లెస్ అత్యవసర హెచ్చరికలు"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"అధ్యక్ష హెచ్చరికలు"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"అధ్యక్షుడు జారీ చేసిన జాతీయ హెచ్చరిక సందేశాలు. వీటిని ఆఫ్ చేయలేరు."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"\'సెల్ ప్రసారం టెస్టింగ్ మోడ్\' ఎనేబుల్ అయ్యింది."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"\'సెల్ ప్రసారం టెస్టింగ్ మోడ్\' డిజేబుల్ అయ్యింది."</string>
 </resources>
