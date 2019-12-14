@@ -19,11 +19,12 @@
     <!-- No need to show this for Peru users -->
     <bool name="show_cmas_settings">false</bool>
 
-    <!-- 4370, 4383, 919 -->
+    <!-- 4370, 4383, 50, 919 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true</item>
         <item>0x111F:rat=gsm, emergency=true</item>
         <item>0x397:rat=gsm, emergency=true</item>
+        <item>0x032:rat=gsm, emergency=true</item>
     </string-array>
 
     <!-- 4382 -->
@@ -37,15 +38,15 @@
         <item>0x207:rat=gsm, emergency=true</item>
     </string-array>
 
-    <!--4381 -->
+    <!--4381, 519 -->
     <string-array name="exercise_alert_range_strings" translatable="false">
         <item>0x111D:rat=gsm, emergency=true</item>
+        <item>0x207:rat=gsm, emergency=true</item>
     </string-array>
 
-    <!-- 4396~4399, 50 -->
+    <!-- 4396~4399-->
     <string-array name="additional_cbs_channels_strings" translatable="false">
         <item>0x112C-0x112F:rat=gsm, emergency=true</item>
-        <item>0x032:type=area, emergency=false</item>
     </string-array>
 
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false"></string-array>
@@ -66,4 +67,7 @@
 
     <!-- Hide public safety settings per Peru users -->
     <bool name="show_public_safety_settings">false</bool>
+
+    <!-- Whether the user can mute the alert by physical button -->
+    <bool name="mute_by_physical_button">false</bool>
 </resources>
