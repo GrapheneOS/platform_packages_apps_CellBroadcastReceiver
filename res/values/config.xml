@@ -15,8 +15,10 @@
 -->
 
 <resources>
-    <!-- Whether to bypass Do-Not-Disturb/silent mode and play emergency alert tone at full volume. -->
-    <bool name="use_full_volume">false</bool>
+    <!-- Whether to always bypass Do-Not-Disturb/silent mode and play emergency alert tone at full volume. -->
+    <bool name="always_use_full_volume">false</bool>
+    <!-- The default value for full volume settings-->
+    <bool name="use_full_volume_default">false</bool>
     <!-- Whether to enable CMAS settings (United States) -->
     <bool name="show_cmas_settings">true</bool>
     <!-- Whether to show test settings -->

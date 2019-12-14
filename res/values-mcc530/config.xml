@@ -16,7 +16,7 @@
 
 <resources>
     <bool name="show_date_time_title">true</bool>
-    <bool name="use_full_volume">true</bool>
+    <bool name="always_use_full_volume">true</bool>
     <!-- always bypass user settings and play presidential alert at full volumes -->
     <bool name="full_volume_presidential_alert">true</bool>
     <!-- Disable Amber alert-->
