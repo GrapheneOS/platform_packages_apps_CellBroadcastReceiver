@@ -20,7 +20,7 @@
     <bool name="show_cmas_settings">false</bool>
     <!-- Whether to always sound CBS alerts at full volume -->
     <!-- By default it's true for United Arab Emirates users -->
-    <bool name="use_full_volume">true</bool>
+    <bool name="always_use_full_volume">true</bool>
     <!-- Channels to receive emergency alerts -->
     <!-- 4379, 4392 -->
     <string-array name="emergency_alerts_channels_range_strings" translatable="false">
