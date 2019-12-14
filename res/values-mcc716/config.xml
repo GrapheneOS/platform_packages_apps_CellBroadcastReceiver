@@ -56,7 +56,7 @@
 
     <!-- For Peru users, we always play tones with full volume regardless the phone is in slient
          mode or not -->
-    <bool name="use_full_volume">true</bool>
+    <bool name="always_use_full_volume">true</bool>
 
     <!-- Emergecny alert tone duration set to 3 minute for Peru users -->
     <integer name="alert_duration">180000</integer>

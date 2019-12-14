@@ -20,7 +20,7 @@
     <bool name="show_cmas_settings">false</bool>
     <!-- Whether to always sound CBS alerts at full volume -->
     <!-- By default it's true for Japanese users -->
-    <bool name="use_full_volume">true</bool>
+    <bool name="always_use_full_volume">true</bool>
     <!-- Whether to compare message body when performing message duplicate dection -->
     <bool name="duplicate_compare_body">true</bool>
     <!-- Whether the emergency alert notification is non-swipeable -->

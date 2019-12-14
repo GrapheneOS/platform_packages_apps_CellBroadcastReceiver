@@ -51,11 +51,10 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alertak"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Igorpen-mezuak"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Larrialdi-alertak"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Larrialdien alertak ahots-deietan"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Onartu alertak"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Jaso hari gabeko larrialdi-alerten jakinarazpenak"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Alerta-abisuen soinua"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Irakurri alerta-mezua ozen"</string>
-    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Erabili testua ahots bihurtzeko eginbidea hari gabeko larrialdi-alertak ozen irakurtzeko"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Larrialdi-alerten historia"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Alerten hobespenak"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS probako igorpenak"</string>
@@ -74,8 +73,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Jaso probako mezuak estatuko eta tokiko erakundeengandik"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Larrialdi-alertak"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Ohartarazi bizitza arriskuan jar dezaketen gertaerei buruz"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Hileroko nahitaezko proba"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Jaso segurtasun-alerten sistemaren probako mezuak"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"Beste proba batzuk"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Jaso segurtasun-alerten sistemaren operadore-probak eta hileroko probak"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Dardara"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Erabili bolumen osoa"</string>
     <string name="use_full_volume_summary" msgid="3560764277281704697">"Egin ez ikusi bolumenaren eta ez molestatzeko moduaren hobespenei"</string>
@@ -132,4 +131,8 @@
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Hari gabeko larrialdi-alertak"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Gobernuaren alertak"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Presidenteak bidali duen abisu-mezu nazionala da. Ezin da desaktibatu."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"Gaitu da sare mugikor bidezko igorpenaren proba modua."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"Desgaitu da sare mugikor bidezko igorpenaren proba modua."</string>
 </resources>
