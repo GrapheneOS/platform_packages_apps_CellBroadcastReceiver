@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package com.android.cellbroadcastreceiver;
+package com.android.cellbroadcastreceiver.unit;
 
 import android.os.IBinder;
 import android.os.ServiceManager;
-import android.util.Log;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
