@@ -38,10 +38,9 @@
         <item>0x207:rat=gsm, emergency=true</item>
     </string-array>
 
-    <!--4381, 519 -->
+    <!--4381 -->
     <string-array name="exercise_alert_range_strings" translatable="false">
         <item>0x111D:rat=gsm, emergency=true</item>
-        <item>0x207:rat=gsm, emergency=true</item>
     </string-array>
 
     <!-- 4396~4399-->
