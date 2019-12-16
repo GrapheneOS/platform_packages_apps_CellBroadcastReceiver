@@ -16,7 +16,6 @@
 
 package com.android.cellbroadcastreceiver;
 
-import android.app.AppOpsManager;
 import android.content.ContentProvider;
 import android.content.ContentProviderClient;
 import android.content.ContentResolver;
@@ -105,7 +104,6 @@ public class CellBroadcastContentProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         mOpenHelper = new CellBroadcastDatabaseHelper(getContext());
-        setAppOps(AppOpsManager.OP_READ_CELL_BROADCASTS, AppOpsManager.OP_NONE);
         return true;
     }
 
