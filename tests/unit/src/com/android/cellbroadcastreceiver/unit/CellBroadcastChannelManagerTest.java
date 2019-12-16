@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.cellbroadcastreceiver;
+package com.android.cellbroadcastreceiver.unit;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,7 +22,9 @@ import android.telephony.SubscriptionManager;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
+import com.android.cellbroadcastreceiver.unit.CellBroadcastTest;
 
 import org.junit.After;
 import org.junit.Before;
@@ -51,20 +53,18 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
     @Test
     @SmallTest
     public void testGetCellBroadcastChannelRanges() throws Exception {
-        putResources(R.array.additional_cbs_channels_strings, new String[]{
-                "12:type=etws_earthquake, emergency=true",
-                "456:type=etws_tsunami, emergency=true",
-                "0xAC00-0xAFED:type=other, emergency=false",
-                "54-60:emergency=true",
-                "100-200",
-                "0xA804:type=test, emergency=true"
-        });
+        putResources(com.android.cellbroadcastreceiver.R.array.additional_cbs_channels_strings,
+                new String[]{
+                        "12:type=etws_earthquake, emergency=true",
+                        "456:type=etws_tsunami, emergency=true",
+                        "0xAC00-0xAFED:type=other, emergency=false",
+                        "54-60:emergency=true", "100-200", "0xA804:type=test, emergency=true"});
 
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(mContext,
                 SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         ArrayList<CellBroadcastChannelRange> list = channelManager.getCellBroadcastChannelRanges(
-                R.array.additional_cbs_channels_strings);
+                com.android.cellbroadcastreceiver.R.array.additional_cbs_channels_strings);
 
         assertEquals(12, list.get(0).mStartId);
         assertEquals(12, list.get(0).mEndId);

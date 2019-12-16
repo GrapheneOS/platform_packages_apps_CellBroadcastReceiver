@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.android.cellbroadcastreceiver;
+package com.android.cellbroadcastreceiver.unit;
 
 import static com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE;
 import static com.android.cellbroadcastreceiver.CellBroadcastAlertService.SHOW_NEW_ALERT_ACTION;
@@ -28,6 +28,8 @@ import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 
+import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio;
+import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 
 import org.junit.After;
