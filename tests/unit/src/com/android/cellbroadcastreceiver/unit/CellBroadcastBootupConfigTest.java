@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.android.cellbroadcastreceiver;
+package com.android.cellbroadcastreceiver.unit;
 
 import static com.android.internal.telephony.cdma.sms.SmsEnvelope.SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY;
 import static com.android.internal.telephony.cdma.sms.SmsEnvelope.SERVICE_CATEGORY_CMAS_EXTREME_THREAT;
@@ -45,6 +45,7 @@ import static org.mockito.Mockito.verify;
 import android.content.Intent;
 import android.telephony.SmsCbMessage;
 
+import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
 import com.android.internal.telephony.ISms;
 
 import org.junit.After;
@@ -78,27 +79,32 @@ public class CellBroadcastBootupConfigTest extends
 
         doReturn(mSmsService).when(mSmsService).queryLocalInterface(anyString());
         mMockedServiceManager.replaceService("isms", mSmsService);
-        putResources(R.array.cmas_presidential_alerts_channels_range_strings, new String[]{
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .cmas_presidential_alerts_channels_range_strings, new String[]{
                 "0x1112-0x1112:rat=gsm",
                 "0x1000-0x1000:rat=cdma",
                 "0x111F-0x111F:rat=gsm",
         });
-        putResources(R.array.cmas_alert_extreme_channels_range_strings, new String[]{
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .cmas_alert_extreme_channels_range_strings, new String[]{
                 "0x1113-0x1114:rat=gsm",
                 "0x1001-0x1001:rat=cdma",
                 "0x1120-0x1121:rat=gsm",
         });
-        putResources(R.array.cmas_alerts_severe_range_strings, new String[]{
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .cmas_alerts_severe_range_strings, new String[]{
                 "0x1115-0x111A:rat=gsm",
                 "0x1002-0x1002:rat=cdma",
                 "0x1122-0x1127:rat=gsm",
         });
-        putResources(R.array.cmas_amber_alerts_channels_range_strings, new String[]{
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .cmas_amber_alerts_channels_range_strings, new String[]{
                 "0x111B-0x111B:rat=gsm",
                 "0x1003-0x1003:rat=cdma",
                 "0x1128-0x1128:rat=gsm",
         });
-        putResources(R.array.etws_alerts_range_strings, new String[]{
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .etws_alerts_range_strings, new String[]{
                 "0x1100-0x1102:rat=gsm",
                 "0x1104-0x1104:rat=gsm",
         });

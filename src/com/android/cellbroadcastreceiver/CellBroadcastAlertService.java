@@ -62,7 +62,8 @@ public class CellBroadcastAlertService extends Service {
     private static final String TAG = "CBAlertService";
 
     /** Intent action to display alert dialog/notification, after verifying the alert is new. */
-    static final String SHOW_NEW_ALERT_ACTION = "cellbroadcastreceiver.SHOW_NEW_ALERT";
+    @VisibleForTesting
+    public static final String SHOW_NEW_ALERT_ACTION = "cellbroadcastreceiver.SHOW_NEW_ALERT";
 
     /** Identifier for getExtra() when adding this object to an Intent. */
     public static final String SMS_CB_MESSAGE_EXTRA =

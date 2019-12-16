@@ -47,6 +47,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
+import com.android.internal.annotations.VisibleForTesting;
 
 import java.util.Locale;
 
@@ -59,7 +60,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private static final String TAG = "CellBroadcastAlertAudio";
 
     /** Action to start playing alert audio/vibration/speech. */
-    static final String ACTION_START_ALERT_AUDIO = "ACTION_START_ALERT_AUDIO";
+    @VisibleForTesting
+    public static final String ACTION_START_ALERT_AUDIO = "ACTION_START_ALERT_AUDIO";
 
     /** Extra for message body to speak (if speech enabled in settings). */
     public static final String ALERT_AUDIO_MESSAGE_BODY =
