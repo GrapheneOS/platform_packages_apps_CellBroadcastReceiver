@@ -50,7 +50,8 @@ import java.util.List;
 public class CellBroadcastConfigService extends IntentService {
     private static final String TAG = "CellBroadcastConfigService";
 
-    static final String ACTION_ENABLE_CHANNELS = "ACTION_ENABLE_CHANNELS";
+    @VisibleForTesting
+    public static final String ACTION_ENABLE_CHANNELS = "ACTION_ENABLE_CHANNELS";
 
     public CellBroadcastConfigService() {
         super(TAG);          // use class name for worker thread name

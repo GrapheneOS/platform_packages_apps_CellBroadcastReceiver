@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.cellbroadcastreceiver;
+package com.android.cellbroadcastreceiver.unit;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -24,6 +24,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.RemoteException;
 import android.support.test.uiautomator.UiDevice;
+
+import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 
 import androidx.test.InstrumentationRegistry;
 import androidx.test.filters.FlakyTest;
@@ -80,7 +82,7 @@ public class CellBroadcastSettingsTest {
     }
 
     private void openAlertReminderDialog() {
-        onView(withText(mContext.getString(R.string.alert_reminder_interval_title)))
-                .perform(click());
+        onView(withText(mContext.getString(com.android.cellbroadcastreceiver.R
+                .string.alert_reminder_interval_title))).perform(click());
     }
 }
