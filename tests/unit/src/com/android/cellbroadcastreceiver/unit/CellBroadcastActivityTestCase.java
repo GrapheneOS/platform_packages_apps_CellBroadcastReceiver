@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.cellbroadcastreceiver;
+package com.android.cellbroadcastreceiver.unit;
 
 import android.app.Activity;
 import android.content.Context;

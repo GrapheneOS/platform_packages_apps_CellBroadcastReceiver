@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.cellbroadcastreceiver;
+package com.android.cellbroadcastreceiver.unit;
 
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Matchers.anyInt;
@@ -32,6 +32,7 @@ import android.telephony.SubscriptionManager;
 import android.test.ServiceTestCase;
 import android.util.Log;
 
+import com.android.cellbroadcastreceiver.unit.MockedServiceManager;
 import com.android.internal.telephony.ISub;
 
 import org.junit.After;
