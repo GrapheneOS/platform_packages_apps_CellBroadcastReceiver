@@ -52,6 +52,7 @@
     <string-array name="cmas_alerts_severe_range_strings" translatable="false"></string-array>
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
     <string-array name="operator_defined_alert_range_strings" translatable="false"></string-array>
+    <string-array name="etws_test_alerts_range_strings" translatable="false"></string-array>
     <bool name="show_date_time_title">true</bool>
 
     <!-- For Peru users, we always play tones with full volume regardless the phone is in slient
