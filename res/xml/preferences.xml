@@ -116,17 +116,10 @@
     <!-- Only visible when Developer options toggle is enabled in Settings. -->
     <PreferenceCategory android:title="@string/category_dev_settings_title"
                         android:key="category_dev_settings">
-
-        <SwitchPreference android:defaultValue="true"
-                            android:key="show_cmas_opt_out_dialog"
-                            android:summary="@string/show_cmas_opt_out_summary"
-                            android:title="@string/show_cmas_opt_out_title" />
-
         <SwitchPreference android:defaultValue="@bool/use_full_volume_default"
                           android:key="use_full_volume"
                           android:summary="@string/use_full_volume_summary"
                           android:title="@string/use_full_volume_title" />
-
     </PreferenceCategory>
 
 </PreferenceScreen>
