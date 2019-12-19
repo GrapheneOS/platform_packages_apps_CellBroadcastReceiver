@@ -49,6 +49,27 @@
     <bool name="enable_alert_handling_during_call">true</bool>
     <!-- Whether the user can mute the alert by physical button -->
     <bool name="mute_by_physical_button">true</bool>
+
+    <!-- Section for switch default value -->
+    <!-- Master toggle default value -->
+    <bool name="master_toggle_enabled_default">true</bool>
+    <!-- Emergency alerts toggle default value -->
+    <bool name="emergency_alerts_enabled_default">true</bool>
+    <!-- Amber alerts toggle default value -->
+    <bool name="amber_alerts_enabled_default">true</bool>
+    <!-- Extreme alerts toggle default value -->
+    <bool name="extreme_threat_alerts_enabled_default">true</bool>
+    <!-- Severe alerts toggle default value -->
+    <bool name="severe_threat_alerts_enabled_default">true</bool>
+    <!-- Public safety messages toggle default value -->
+    <bool name="public_safety_messages_enabled_default">true</bool>
+    <!-- State local test alerts toggle default value -->
+    <bool name="state_local_test_alerts_enabled_default">false</bool>
+    <!-- Other test alerts toggle default value -->
+    <bool name="test_alerts_enabled_default">false</bool>
+    <!-- Area info toggle default value -->
+    <bool name="area_update_info_alerts_enabled_default">true</bool>
+
     <!-- Specify second language code to receive emergency alerts -->
     <string name="emergency_alert_second_language_code" translatable="false"></string>
     <!-- 4370, 4383 -->
