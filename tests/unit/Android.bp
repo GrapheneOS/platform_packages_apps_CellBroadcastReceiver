@@ -39,12 +39,13 @@ android_test {
     test_suites: ["device-tests"],
 }
 
+// used to run mts coverage test
 android_test {
     name: "CellBroadcastReceiverPlatformUnitTests",
     certificate: "platform",
     defaults: ["CellBroadcastTestCommon"],
     instrumentation_for: "CellBroadcastAppPlatform",
-    test_suites: ["device-tests"],
+    test_suites: ["device-tests", "mts"],
 }
 
 // used to share src with unit test app
