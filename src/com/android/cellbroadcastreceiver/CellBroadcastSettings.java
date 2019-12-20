@@ -347,13 +347,44 @@ public class CellBroadcastSettings extends Activity {
                 }
             }
 
-            // Remove preferences
+            // Remove all cmas preferences
             if (!res.getBoolean(R.bool.show_cmas_settings)) {
                 // Remove CMAS preference items in emergency alert category.
                 if (mAlertCategory != null) {
                     if (mExtremeCheckBox != null) mAlertCategory.removePreference(mExtremeCheckBox);
                     if (mSevereCheckBox != null) mAlertCategory.removePreference(mSevereCheckBox);
                     if (mAmberCheckBox != null) mAlertCategory.removePreference(mAmberCheckBox);
+                }
+            }
+
+            // Remove each individual settings if no channel configured
+            if (channelManager.getCellBroadcastChannelRanges(
+                    R.array.cmas_alert_extreme_channels_range_strings).isEmpty()) {
+                // Remove extreme alert preference
+                if (mAlertCategory != null) {
+                    if (mExtremeCheckBox != null) {
+                        mAlertCategory.removePreference(mExtremeCheckBox);
+                    }
+                }
+            }
+
+            if (channelManager.getCellBroadcastChannelRanges(
+                    R.array.cmas_alerts_severe_range_strings).isEmpty()) {
+                // Remove severe alert preference
+                if (mAlertCategory != null) {
+                    if (mSevereCheckBox != null) {
+                        mAlertCategory.removePreference(mSevereCheckBox);
+                    }
+                }
+            }
+
+            if (channelManager.getCellBroadcastChannelRanges(
+                    R.array.cmas_amber_alerts_channels_range_strings).isEmpty()) {
+                // Remove amber alert preference
+                if (mAlertCategory != null) {
+                    if (mAmberCheckBox != null) {
+                        mAlertCategory.removePreference(mAmberCheckBox);
+                    }
                 }
             }
 

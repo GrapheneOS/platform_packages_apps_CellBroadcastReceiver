@@ -20,32 +20,32 @@
     <bool name="show_cmas_settings">false</bool>
 
     <!-- 4370, 4383, 50, 919 -->
+    <!-- Emergecny alert tone duration set to 3 minute for Peru users -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true</item>
-        <item>0x111F:rat=gsm, emergency=true</item>
-        <item>0x397:rat=gsm, emergency=true</item>
-        <item>0x032:rat=gsm, emergency=true</item>
+        <item>0x1112:rat=gsm, emergency=true, alert_duration=180000</item>
+        <item>0x111F:rat=gsm, emergency=true, alert_duration=180000</item>
+        <item>0x397:rat=gsm, emergency=true, alert_duration=180000</item>
+        <item>0x032:rat=gsm, emergency=true, alert_duration=180000</item>
     </string-array>
-
     <!-- 4382 -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">
-        <item>0x111E:rat=gsm, emergency=true</item>
+        <item>0x111E:rat=gsm, emergency=true, alert_duration=180000</item>
     </string-array>
 
     <!--4380, 519 -->
     <string-array name="required_monthly_test_range_strings" translatable="false">
-        <item>0x111C:rat=gsm, emergency=true</item>
-        <item>0x207:rat=gsm, emergency=true</item>
+        <item>0x111C:rat=gsm, emergency=true, alert_duration=180000</item>
+        <item>0x207:rat=gsm, emergency=true, alert_duration=180000</item>
     </string-array>
 
     <!--4381 -->
     <string-array name="exercise_alert_range_strings" translatable="false">
-        <item>0x111D:rat=gsm, emergency=true</item>
+        <item>0x111D:rat=gsm, emergency=true, alert_duration=180000</item>
     </string-array>
 
     <!-- 4396~4399-->
     <string-array name="additional_cbs_channels_strings" translatable="false">
-        <item>0x112C-0x112F:rat=gsm, emergency=true</item>
+        <item>0x112C-0x112F:rat=gsm, emergency=true, alert_duration=180000</item>
     </string-array>
 
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false"></string-array>
@@ -58,9 +58,6 @@
     <!-- For Peru users, we always play tones with full volume regardless the phone is in slient
          mode or not -->
     <bool name="always_use_full_volume">true</bool>
-
-    <!-- Emergecny alert tone duration set to 3 minute for Peru users -->
-    <integer name="alert_duration">180000</integer>
 
     <!-- Disable links for Peru -->
     <integer-array name="message_classes_to_linkify"></integer-array>
