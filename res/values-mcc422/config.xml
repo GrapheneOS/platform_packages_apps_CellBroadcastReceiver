@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The Android Open Source Project
+<!-- Copyright (C) 2019 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,37 +15,27 @@
 -->
 
 <resources>
-    <!-- Whether to enable CMAS settings (United States) -->
-    <!-- No need to show this for Korean users -->
-    <bool name="show_cmas_settings">false</bool>
-
-    <!-- 4370 -->
-    <!-- Emergecny alert tone duration set to 1 minute for Korean users -->
+    <!-- 4370 emergency alert can not be disabled -->
+    <!-- Oman requires to play alert for 30s -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, alert_duration=60000</item>
+        <item>0x1112:rat=gsm, emergency=true, alert_duration=30000</item>
     </string-array>
-    <!-- 4371 -->
-    <string-array name="emergency_alerts_channels_range_strings" translatable="false">
-        <item>0x1113:rat=gsm, emergency=true, alert_duration=60000</item>
-    </string-array>
-    <!-- 4372 -->
-    <string-array name="public_safety_messages_channels_range_strings" translatable="false">
-        <item>0x1114:rat=gsm, emergency=false, alert_duration=60000</item>
-    </string-array>
-    <!-- 4373~4379 -->
+    <!-- 4371 warning alert cannot be disabled-->
     <string-array name="additional_cbs_channels_strings" translatable="false">
-        <item>0x1115-0x111B:rat=gsm, emergency=true, alert_duration=60000</item>
+        <item>0x1113:rat=gsm, emergency=true</item>
     </string-array>
-
+    <!-- 4381 -->
+    <string-array name="exercise_alert_range_strings" translatable="false">
+        <item>0x111D:rat=gsm, emergency=true</item>
+    </string-array>
+    <!-- Always play alert at full volume for Oman users -->
+    <bool name="always_use_full_volume">true</bool>
+    <!-- test alerts toggle default true for Oman users -->
+    <bool name="test_alerts_enabled_default">true</bool>
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false"></string-array>
     <string-array name="cmas_alerts_severe_range_strings" translatable="false"></string-array>
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
-    <string-array name="exercise_alert_range_strings" translatable="false"></string-array>
-    <string-array name="operator_defined_alert_range_strings" translatable="false"></string-array>
     <string-array name="required_monthly_test_range_strings" translatable="false"></string-array>
+    <string-array name="operator_defined_alert_range_strings" translatable="false"></string-array>
     <string-array name="etws_test_alerts_range_strings" translatable="false"></string-array>
-    <bool name="watch_enable_non_emergency_audio">true</bool>
-
-    <!-- Always play alert at full volume regardless silent/do-not-disturb mode for Korean users -->
-    <bool name="always_use_full_volume">true</bool>
 </resources>

@@ -562,6 +562,8 @@ public class CellBroadcastAlertService extends Service {
 
         audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_SUB_INDEX,
                 message.getSubscriptionId());
+        audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_DURATION,
+                (range != null) ? range.mAlertDuration : -1);
         startService(audioIntent);
 
         ArrayList<SmsCbMessage> messageList = new ArrayList<>();
