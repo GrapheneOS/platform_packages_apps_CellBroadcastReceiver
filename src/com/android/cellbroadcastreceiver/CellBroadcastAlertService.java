@@ -339,8 +339,9 @@ public class CellBroadcastAlertService extends Service {
         boolean emergencyAlertEnabled =
                 prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
 
-        boolean enableAreaUpdateInfoAlerts = Resources.getSystem().getBoolean(
-                com.android.internal.R.bool.config_showAreaUpdateInfoSettings)
+        boolean enableAreaUpdateInfoAlerts = CellBroadcastSettings.getResources(
+                mContext, message.getSubscriptionId()).getBoolean(
+                R.bool.config_showAreaUpdateInfoSettings)
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS,
                 true);
 
