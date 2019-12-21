@@ -25,8 +25,6 @@
     <bool name="show_test_settings">true</bool>
     <!-- Whether to append date-time to the alert title -->
     <bool name="show_date_time_title">false</bool>
-    <!-- Emergecny alert tone duration in milliseconds. -1 indicates playing the tone with the tone's duration -->
-    <integer name="alert_duration">-1</integer>
     <!-- Whether to compare message body when performing message duplicate dection -->
     <bool name="duplicate_compare_body">false</bool>
     <!-- Whether to enable audio alert for non emergency broadcasts on FEATURE_WATCH devices -->
