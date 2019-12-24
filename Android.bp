@@ -2,14 +2,13 @@
 java_defaults {
     name: "CellBroadcastCommon",
     min_sdk_version: "29",
-    platform_apis: true,
+    sdk_version: "system_current",
     privileged: true,
     srcs: [
       "src/**/*.java",
       ":framework-annotations",
       ":cellbroadcast-constants-shared-srcs",
    ],
-    libs: ["telephony-common"],
     static_libs: [
         "androidx.legacy_legacy-support-v4",
         "androidx.legacy_legacy-support-v13",
