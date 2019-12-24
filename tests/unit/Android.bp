@@ -31,21 +31,21 @@ java_defaults {
     platform_apis: true,
 }
 
+// used to run mts coverage test
 android_test {
     name: "CellBroadcastReceiverUnitTests",
     certificate: "networkstack",
     defaults: ["CellBroadcastTestCommon"],
     instrumentation_for: "CellBroadcastApp",
-    test_suites: ["device-tests"],
+    test_suites: ["device-tests", "mts"],
 }
 
-// used to run mts coverage test
 android_test {
     name: "CellBroadcastReceiverPlatformUnitTests",
     certificate: "platform",
     defaults: ["CellBroadcastTestCommon"],
     instrumentation_for: "CellBroadcastAppPlatform",
-    test_suites: ["device-tests", "mts"],
+    test_suites: ["device-tests"],
 }
 
 // used to share src with unit test app
