@@ -132,8 +132,8 @@ public class CellBroadcastConfigService extends IntentService {
                 && CellBroadcastSettings.isTestAlertsToggleVisible(getApplicationContext())
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, false);
 
-        boolean enableAreaUpdateInfoAlerts = Resources.getSystem().getBoolean(
-                com.android.internal.R.bool.config_showAreaUpdateInfoSettings)
+        boolean enableAreaUpdateInfoAlerts = res.getBoolean(
+                R.bool.config_showAreaUpdateInfoSettings)
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS,
                 false);
 
