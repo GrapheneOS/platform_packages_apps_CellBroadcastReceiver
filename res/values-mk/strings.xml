@@ -73,7 +73,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Добијте тест пораки од државните и локалните власти"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Предупредувања за итни случаи"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Предупреди за настани опасни по живот"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7379758554628726654">"Други тест-предупредувања"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Тест-предупредувања"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Примај тест-предупредувања од операторот и месечни тест-предупредувања од безбедносниот систем"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вибрации"</string>
     <string name="use_full_volume_title" msgid="8581439612945182255">"Користи макс. јачина на звук"</string>
