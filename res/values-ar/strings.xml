@@ -47,7 +47,7 @@
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"رسائل البث"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"رسالة السلامة العامة"</string>
     <string name="state_local_test_alert" msgid="8003145745857480200">"اختبار الولاية/الاختبار المحلي"</string>
-    <string name="emergency_alert" msgid="624783871477634263">"إنذار الطوارئ"</string>
+    <string name="emergency_alert" msgid="624783871477634263">"تحذير طارئ"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"التنبيهات"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"رسائل البث"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"إنذارات الطوارئ"</string>
