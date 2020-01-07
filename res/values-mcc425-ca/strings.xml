@@ -18,8 +18,8 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_severe_alert" msgid="4470698515511189493">"Alerta"</string>
     <string name="public_safety_message" msgid="7373019453807671797">"Missatge informatiu"</string>
-    <string name="cmas_amber_alert" msgid="740474290634511931">"Missatge de sol·licitud d\'assistència del públic"</string>
+    <string name="cmas_amber_alert" msgid="740474290634511931">"Missatge de sol·licitud d\'ajuda pública"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="4570611095431464471">"Alertes"</string>
     <string name="enable_public_safety_messages_title" msgid="6173886162636474286">"Missatges informatius"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="3896845887375326185">"Missatges de sol·licitud d\'assistència del públic"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="3896845887375326185">"Missatges de sol·licitud d\'ajuda pública"</string>
 </resources>
