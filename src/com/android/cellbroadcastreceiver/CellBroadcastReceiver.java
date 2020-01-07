@@ -16,12 +16,16 @@
 
 package com.android.cellbroadcastreceiver;
 
+import android.annotation.NonNull;
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
+import android.content.ContentProviderClient;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.os.Bundle;
+import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.os.UserManager;
 import android.preference.PreferenceManager;
@@ -159,12 +163,18 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         if (isSystemUser(context)) {
             Log.d(TAG, "initializeSharedPreference");
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-            if (!sp.getBoolean(PreferenceManager.KEY_HAS_SET_DEFAULT_VALUES, false)) {
+
+            if (!context.getSharedPreferences(PreferenceManager.KEY_HAS_SET_DEFAULT_VALUES,
+                    Context.MODE_PRIVATE).getBoolean(PreferenceManager.KEY_HAS_SET_DEFAULT_VALUES,
+                    false)) {
                 // Sets the default values of the shared preference if there isn't any.
                 PreferenceManager.setDefaultValues(context, R.xml.preferences, false);
 
                 sp.edit().putBoolean(CellBroadcastSettings.KEY_USE_FULL_VOLUME_SETTINGS_CHANGED,
                         false).apply();
+
+                // migrate sharedpref from legacy app
+                migrateSharedPreferenceFromLegacy(context);
 
                 // If the device is in test harness mode, we need to disable emergency alert by
                 // default.
@@ -173,6 +183,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                     sp.edit().putBoolean(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE,
                             false).apply();
                 }
+
             } else {
                 Log.d(TAG, "Skip setting default values of shared preference.");
             }
@@ -180,6 +191,54 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             adjustReminderInterval(context);
         } else {
             Log.e(TAG, "initializeSharedPreference: Not system user.");
+        }
+    }
+
+    private static void migrateSharedPreferenceFromLegacy(@NonNull Context context) {
+        String[] PREF_KEYS = {
+                CellBroadcasts.Preference.ENABLE_CMAS_AMBER_PREF,
+                CellBroadcasts.Preference.ENABLE_AREA_UPDATE_INFO_PREF,
+                CellBroadcasts.Preference.ENABLE_TEST_ALERT_PREF,
+                CellBroadcasts.Preference.ENABLE_STATE_LOCAL_TEST_PREF,
+                CellBroadcasts.Preference.ENABLE_PUBLIC_SAFETY_PREF,
+                CellBroadcasts.Preference.ENABLE_CMAS_SEVERE_THREAT_PREF,
+                CellBroadcasts.Preference.ENABLE_CMAS_EXTREME_THREAT_PREF,
+                CellBroadcasts.Preference.ENABLE_CMAS_PRESIDENTIAL_PREF,
+                CellBroadcasts.Preference.ENABLE_FULL_VOLUME_PREF,
+                CellBroadcasts.Preference.ENABLE_EMERGENCY_PERF,
+                CellBroadcasts.Preference.ENABLE_ALERT_VIBRATION_PREF,
+                CellBroadcasts.Preference.ENABLE_CMAS_IN_SECOND_LANGUAGE_PREF,
+        };
+        try (ContentProviderClient client = context.getContentResolver()
+                .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
+            if (client == null) {
+                Log.d(TAG, "No legacy provider available for sharedpreference migration");
+                return;
+            }
+            SharedPreferences.Editor sp = PreferenceManager
+                    .getDefaultSharedPreferences(context).edit();
+            for (String key : PREF_KEYS) {
+                try {
+                    Bundle pref = client.call(
+                            CellBroadcasts.AUTHORITY_LEGACY,
+                            CellBroadcasts.CALL_METHOD_GET_PREFERENCE,
+                            key, null);
+                    if (pref != null) {
+                        Log.d(TAG, "migrateSharedPreferenceFromLegacy: " + key + "val: "
+                                + pref.getBoolean(key));
+                        sp.putBoolean(key, pref.getBoolean(key));
+                    } else {
+                        Log.d(TAG, "migrateSharedPreferenceFromLegacy: unsupported key: " + key);
+                    }
+                } catch (RemoteException e) {
+                    Log.e(TAG, "fails to get shared preference " + e);
+                }
+            }
+            sp.apply();
+        } catch (Exception e) {
+            // We have to guard ourselves against any weird behavior of the
+            // legacy provider by trying to catch everything
+            loge("Failed migration from legacy provider: " + e);
         }
     }
 
