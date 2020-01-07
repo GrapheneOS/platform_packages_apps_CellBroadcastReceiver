@@ -27,6 +27,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.Handler;
@@ -58,7 +60,8 @@ import java.util.Locale;
  * and an alert tone is played when the alert is first shown to the user
  * (but not when the user views a previously received broadcast).
  */
-public class CellBroadcastAlertService extends Service {
+public class CellBroadcastAlertService extends Service
+        implements AudioManager.OnAudioFocusChangeListener {
     private static final String TAG = "CBAlertService";
 
     /** Intent action to display alert dialog/notification, after verifying the alert is new. */
@@ -124,6 +127,7 @@ public class CellBroadcastAlertService extends Service {
     }
 
     private TelephonyManager mTelephonyManager;
+    private AudioManager mAudioManager;
 
     /**
      * Do not preempt active voice call, instead post notifications and play the ringtone/vibrate
@@ -159,6 +163,7 @@ public class CellBroadcastAlertService extends Service {
                 (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         mTelephonyManager.listen(mPhoneStateListener,
                 PhoneStateListener.LISTEN_CALL_STATE);
+        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
     }
 
     @Override
@@ -752,6 +757,15 @@ public class CellBroadcastAlertService extends Service {
         }
     }
 
+    @Override
+    public void onAudioFocusChange(int focusChange) {
+        if(focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+            Log.d(TAG, "audio focus released from voice call, play pending alert if needed");
+            mAudioManager.abandonAudioFocus(this);
+            playPendingAlert();
+        }
+    }
+
     /**
      * Remove previous unread notifications and play stored unread
      * emergency messages after voice call finish.
@@ -764,25 +778,23 @@ public class CellBroadcastAlertService extends Service {
             switch (state) {
                 case TelephonyManager.CALL_STATE_IDLE:
                     Log.d(TAG, "onCallStateChanged: CALL_STATE_IDLE");
-                    if (sRemindAfterCallFinish) {
-                        sRemindAfterCallFinish = false;
-                        NotificationManager notificationManager = (NotificationManager)
-                                getApplicationContext().getSystemService(
-                                        Context.NOTIFICATION_SERVICE);
-
-                        StatusBarNotification[] notificationList =
-                                notificationManager.getActiveNotifications();
-
-                        if(notificationList != null && notificationList.length >0) {
-                            notificationManager.cancel(CellBroadcastAlertService.NOTIFICATION_ID);
-                            ArrayList<SmsCbMessage> newMessageList =
-                                    CellBroadcastReceiverApp.getNewMessageList();
-
-                            for (int i = 0; i < newMessageList.size(); i++) {
-                                openEmergencyAlertNotification(newMessageList.get(i));
-                            }
-                        }
-                        CellBroadcastReceiverApp.clearNewMessageList();
+                    // check if audio focus was released by voice call. This is to avoid possible
+                    // race conditions that voice call did not release audio focus while alert is
+                    // playing at the same time (out-of-rhythm)
+                    int audioFocusResult = mAudioManager.requestAudioFocus(
+                            CellBroadcastAlertService.this::onAudioFocusChange,
+                            new AudioAttributes.Builder().setLegacyStreamType(
+                                    AudioManager.STREAM_ALARM).build(),
+                            AudioManager.AUDIOFOCUS_GAIN_TRANSIENT,
+                            AudioManager.AUDIOFOCUS_FLAG_DELAY_OK);
+                    if (audioFocusResult == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                        Log.d(TAG, "audio focus released from voice call, "
+                                + "play pending alert if needed");
+                        mAudioManager.abandonAudioFocus(
+                                CellBroadcastAlertService.this::onAudioFocusChange);
+                        playPendingAlert();
+                    } else {
+                        Log.d(TAG, "wait for audio focus release after call");
                     }
                     break;
 
@@ -792,4 +804,27 @@ public class CellBroadcastAlertService extends Service {
             }
         }
     };
+
+    private void playPendingAlert() {
+        if (sRemindAfterCallFinish) {
+            sRemindAfterCallFinish = false;
+            NotificationManager notificationManager = (NotificationManager)
+                    getApplicationContext().getSystemService(
+                            Context.NOTIFICATION_SERVICE);
+
+            StatusBarNotification[] notificationList =
+                    notificationManager.getActiveNotifications();
+
+            if(notificationList != null && notificationList.length >0) {
+                notificationManager.cancel(CellBroadcastAlertService.NOTIFICATION_ID);
+                ArrayList<SmsCbMessage> newMessageList =
+                        CellBroadcastReceiverApp.getNewMessageList();
+
+                for (int i = 0; i < newMessageList.size(); i++) {
+                    openEmergencyAlertNotification(newMessageList.get(i));
+                }
+            }
+            CellBroadcastReceiverApp.clearNewMessageList();
+        }
+    }
 }
