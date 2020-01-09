@@ -43,7 +43,7 @@
                         android:title="@string/alert_reminder_interval_title"
                         android:entries="@array/alert_reminder_interval_entries"
                         android:entryValues="@array/alert_reminder_interval_values"
-                        android:defaultValue="@string/alert_reminder_interval_default_value"
+                        android:defaultValue="@string/alert_reminder_interval_in_min_default"
                         android:dialogTitle="@string/alert_reminder_interval_title" />
 
         <SwitchPreference android:key="watch_alert_reminder"
