@@ -15,10 +15,10 @@
 -->
 
 <resources>
-    <!-- Whether to always bypass Do-Not-Disturb/silent mode and play emergency alert tone at full volume. -->
-    <bool name="always_use_full_volume">false</bool>
-    <!-- The default value for full volume settings-->
-    <bool name="use_full_volume_default">false</bool>
+    <!-- Whether to show override dnd settings -->
+    <bool name="show_override_dnd_settings">false</bool>
+    <!-- The default value for overriding dnd settings-->
+    <bool name="override_dnd_default">false</bool>
     <!-- Whether to enable CMAS settings (United States) -->
     <bool name="show_cmas_settings">true</bool>
     <!-- Whether to show test settings -->
@@ -37,8 +37,6 @@
     <bool name="show_presidential_alerts_in_settings">false</bool>
     <!-- Whether to display public safety alert settings, some countries/carriers want to enable it by default and not allow users to disable -->
     <bool name="show_public_safety_settings">true</bool>
-    <!-- Whether to bypass Do-Not-Disturb/silent mode and play emergency alert tone at full volume for presidential alert -->
-    <bool name="full_volume_presidential_alert">false</bool>
     <!-- Whether to disable cell broadcast severe alert when extreme alert is disabled -->
     <bool name="disable_severe_when_extreme_disabled">true</bool>
     <!-- Whether to bypass test alert settings and always enable exercise alert channel -->

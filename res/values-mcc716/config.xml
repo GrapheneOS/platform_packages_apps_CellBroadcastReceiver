@@ -55,9 +55,8 @@
     <string-array name="etws_test_alerts_range_strings" translatable="false"></string-array>
     <bool name="show_date_time_title">true</bool>
 
-    <!-- For Peru users, we always play tones with full volume regardless the phone is in slient
-         mode or not -->
-    <bool name="always_use_full_volume">true</bool>
+    <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
+    <bool name="override_dnd_default">true</bool>
 
     <!-- Disable links for Peru -->
     <integer-array name="message_classes_to_linkify"></integer-array>

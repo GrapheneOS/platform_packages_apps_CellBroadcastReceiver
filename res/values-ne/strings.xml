@@ -76,11 +76,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"परीक्षणसम्बन्धी सतर्कताहरू"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सेवा प्रदायकका परीक्षण र मासिक परीक्षणहरू सुरक्षा सतर्कता प्रणालीबाट प्राप्त गर्नुहोस्"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"कम्पन"</string>
-    <string name="use_full_volume_title" msgid="8581439612945182255">"पूर्ण भोल्युम प्रयोग गर्नुहोस्"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"अन्य भोल्युम र बाधा नपुऱ्याउनुहोस्-का प्राथमिकतालाई बेवास्ता गर्नुहोस्"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"क्षेत्रसम्बन्धी अद्यावधिकका प्रसारणहरू"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM को स्थितिमा अद्यावधिकसम्बन्धी जानकारी देखाउनुहोस्‌"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"विकासकर्ताका विकल्पहरू"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"चेतावनी कोटी:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"भूभौतिक"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"मौसम विज्ञान-सम्बन्धी"</string>
