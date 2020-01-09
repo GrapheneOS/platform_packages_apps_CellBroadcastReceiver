@@ -104,9 +104,6 @@ public class DataMigrationContentProvider extends ContentProvider {
                     case Telephony.CellBroadcasts.Preference.ENABLE_CMAS_PRESIDENTIAL_PREF:
                         return packageValueForCallResult(Telephony.CellBroadcasts.Preference
                                 .ENABLE_CMAS_PRESIDENTIAL_PREF, false);
-                    case Telephony.CellBroadcasts.Preference.ENABLE_FULL_VOLUME_PREF:
-                        return packageValueForCallResult(Telephony.CellBroadcasts.Preference
-                                .ENABLE_FULL_VOLUME_PREF, false);
                     case Telephony.CellBroadcasts.Preference.ENABLE_EMERGENCY_PERF:
                         return packageValueForCallResult(Telephony.CellBroadcasts.Preference
                                 .ENABLE_EMERGENCY_PERF, false);

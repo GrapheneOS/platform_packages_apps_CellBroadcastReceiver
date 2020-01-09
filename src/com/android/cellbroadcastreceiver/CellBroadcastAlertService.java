@@ -40,7 +40,6 @@ import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.service.notification.StatusBarNotification;
 import android.telephony.PhoneStateListener;
-import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionManager;
@@ -547,13 +546,9 @@ public class CellBroadcastAlertService extends Service
                         : CellBroadcastSettings.getResources(mContext, message.getSubscriptionId())
                         .getIntArray(R.array.default_vibration_pattern));
 
-        Resources res = CellBroadcastSettings.getResources(mContext, message.getSubscriptionId());
-        if ((res.getBoolean(R.bool.full_volume_presidential_alert)
-                && message.isCmasMessage()
-                && message.getCmasWarningInfo().getMessageClass()
-                == SmsCbCmasInfo.CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT)
-                || prefs.getBoolean(CellBroadcastSettings.KEY_USE_FULL_VOLUME, false)) {
-            audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_FULL_VOLUME_EXTRA, true);
+        if (prefs.getBoolean(CellBroadcastSettings.KEY_OVERRIDE_DND, false)
+                || (range != null && range.mOverrideDnd)) {
+            audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA, true);
         }
 
         String messageBody = message.getMessageBody();

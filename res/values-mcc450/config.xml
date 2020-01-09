@@ -47,5 +47,5 @@
     <bool name="watch_enable_non_emergency_audio">true</bool>
 
     <!-- Always play alert at full volume regardless silent/do-not-disturb mode for Korean users -->
-    <bool name="always_use_full_volume">true</bool>
+    <bool name="override_dnd_default">true</bool>
 </resources>
