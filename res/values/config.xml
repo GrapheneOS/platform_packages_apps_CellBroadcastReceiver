@@ -161,7 +161,7 @@
 
     <!-- Default value that in the ListPreference.
          These must be a subset of the alert_reminder_interval_values list above. -->
-    <string name="alert_reminder_interval_default_value" translatable="false">0</string>
+    <string name="alert_reminder_interval_in_min_default" translatable="false">0</string>
 
     <!-- Values that for the vibration pattern. -->
     <integer-array name="default_vibration_pattern">
@@ -178,6 +178,10 @@
         <item>500</item>
         <item>1000</item>
     </integer-array>
+
+    <!-- Value of the first reminder interval in minutes. 0 means using one of the
+         alert_reminder_interval_values for the interval of first reminder -->
+    <integer name="first_reminder_interval_in_min">0</integer>
 
     <!-- Whether the emergency alert notification is non-swipeable -->
     <bool name="non_swipeable_notification">false</bool>
