@@ -142,7 +142,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         // If interval default changes, reset the interval to the new default value.
         String newIntervalDefault = CellBroadcastSettings.getResources(context,
                 SubscriptionManager.DEFAULT_SUBSCRIPTION_ID).getString(
-                        R.string.alert_reminder_interval_default_value);
+                        R.string.alert_reminder_interval_in_min_default);
         if (!newIntervalDefault.equals(currentIntervalDefault)) {
             Log.d(TAG, "Default interval changed from " + currentIntervalDefault + " to " +
                     newIntervalDefault);

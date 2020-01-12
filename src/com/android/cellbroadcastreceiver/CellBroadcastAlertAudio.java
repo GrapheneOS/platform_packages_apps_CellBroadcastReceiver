@@ -34,6 +34,7 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaPlayer.OnErrorListener;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.os.Message;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
@@ -128,7 +129,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     // Internal messages
     private static final int ALERT_SOUND_FINISHED = 1000;
     private static final int ALERT_PAUSE_FINISHED = 1001;
-    private final Handler mHandler = new Handler() {
+    private final Handler mHandler = new Handler(Looper.myLooper()) {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -148,7 +149,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         mState = STATE_IDLE;
                     }
                     // Set alert reminder depending on user preference
-                    CellBroadcastAlertReminder.queueAlertReminder(getApplicationContext(), true);
+                    CellBroadcastAlertReminder.queueAlertReminder(getApplicationContext(), mSubId,
+                            true);
                     break;
 
                 case ALERT_PAUSE_FINISHED:
