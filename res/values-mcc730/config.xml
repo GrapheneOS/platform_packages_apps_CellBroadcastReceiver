@@ -53,8 +53,8 @@
         <item>0x111E:rat=gsm, emergency=true, alert_duration=86400000</item>
     </string-array>
 
-    <!-- Always play alert at full volume for Chilean users -->
-    <bool name="always_use_full_volume">true</bool>
+    <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
+    <bool name="override_dnd_default">true</bool>
     <!-- Append date-time to the alert title -->
     <bool name="show_date_time_title">true</bool>
     <!-- Disable links for Chile -->

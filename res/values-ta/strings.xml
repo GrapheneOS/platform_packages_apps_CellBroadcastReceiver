@@ -76,11 +76,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"பரிசோதனை விழிப்பூட்டல்கள்"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"பாதுகாப்பு விழிப்பூட்டல் அமைப்பிலிருந்து மொபைல் நிறுவன சோதனைகளையும் மாதாந்திர சோதனைகளையும் அனுப்புக"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"அதிர்வு"</string>
-    <string name="use_full_volume_title" msgid="8581439612945182255">"முழு ஒலியைப் பயன்படுத்து"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"மற்ற ஒலி மற்றும் தொந்தரவு செய்ய வேண்டாம் விருப்பத்தேர்வுகளைப் புறக்கணிக்கும்"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"பகுதி பற்றிய புதிய பிராட்காஸ்ட் அறிவிப்புகள்"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"சிம் நிலையில் புதிய தகவலைக் காட்டு"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"டெவெலப்பர் விருப்பங்கள்"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"விழிப்பூட்டல் வகை:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"புவியமைப்பியல்"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"வானிலை"</string>

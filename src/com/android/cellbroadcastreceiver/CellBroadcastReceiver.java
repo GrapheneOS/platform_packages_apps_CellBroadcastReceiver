@@ -170,7 +170,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 // Sets the default values of the shared preference if there isn't any.
                 PreferenceManager.setDefaultValues(context, R.xml.preferences, false);
 
-                sp.edit().putBoolean(CellBroadcastSettings.KEY_USE_FULL_VOLUME_SETTINGS_CHANGED,
+                sp.edit().putBoolean(CellBroadcastSettings.KEY_OVERRIDE_DND_SETTINGS_CHANGED,
                         false).apply();
 
                 // migrate sharedpref from legacy app
@@ -204,7 +204,6 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 CellBroadcasts.Preference.ENABLE_CMAS_SEVERE_THREAT_PREF,
                 CellBroadcasts.Preference.ENABLE_CMAS_EXTREME_THREAT_PREF,
                 CellBroadcasts.Preference.ENABLE_CMAS_PRESIDENTIAL_PREF,
-                CellBroadcasts.Preference.ENABLE_FULL_VOLUME_PREF,
                 CellBroadcasts.Preference.ENABLE_EMERGENCY_PERF,
                 CellBroadcasts.Preference.ENABLE_ALERT_VIBRATION_PREF,
                 CellBroadcasts.Preference.ENABLE_CMAS_IN_SECOND_LANGUAGE_PREF,
