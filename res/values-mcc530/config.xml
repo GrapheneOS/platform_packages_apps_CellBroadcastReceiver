@@ -15,10 +15,12 @@
  -->
 
 <resources>
+    <!-- 4370 -->
+    <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
+        <item>0x1112:rat=gsm, emergency=true, override_dnd=true</item>
+    </string-array>
+
     <bool name="show_date_time_title">true</bool>
-    <bool name="always_use_full_volume">true</bool>
-    <!-- always bypass user settings and play presidential alert at full volumes -->
-    <bool name="full_volume_presidential_alert">true</bool>
     <!-- Disable Amber alert-->
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
 </resources>

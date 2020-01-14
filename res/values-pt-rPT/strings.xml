@@ -75,11 +75,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Teste mensal obrigatório"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Receber mensagens de teste para o sistema de alerta de segurança"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibração"</string>
-    <string name="use_full_volume_title" msgid="8581439612945182255">"Utilizar volume máximo"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"Ignorar preferências de Não incomodar e de volume"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Transmissões de atualização de área"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostrar informações de atualização no estado do SIM"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"Opções de programador"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoria de Alerta:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofísico"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorológico"</string>

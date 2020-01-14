@@ -28,8 +28,8 @@
     <string-array name="exercise_alert_range_strings" translatable="false">
         <item>0x111D:rat=gsm, emergency=true</item>
     </string-array>
-    <!-- Always play alert at full volume for Oman users -->
-    <bool name="always_use_full_volume">true</bool>
+    <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
+    <bool name="override_dnd_default">true</bool>
     <!-- test alerts toggle default true for Oman users -->
     <bool name="test_alerts_enabled_default">true</bool>
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false"></string-array>
