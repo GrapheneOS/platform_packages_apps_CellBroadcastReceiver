@@ -41,6 +41,10 @@
             </intent-filter>
         </activity>
 
+        <provider
+            android:name="DataMigrationContentProvider"
+            android:authorities="cellbroadcast-legacy"
+            android:exported="true" />
     </application>
 
     <!--
