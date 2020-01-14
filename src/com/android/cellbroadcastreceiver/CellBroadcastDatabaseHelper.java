@@ -16,9 +16,14 @@
 
 package com.android.cellbroadcastreceiver;
 
+import android.annotation.NonNull;
+import android.content.ContentProviderClient;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.RemoteException;
 import android.provider.Telephony;
 import android.util.Log;
 
@@ -44,8 +49,11 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
      */
     private static final int DATABASE_VERSION = 12;
 
+    private final Context mContext;
+
     CellBroadcastDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        mContext = context;
     }
 
     @Override
@@ -75,6 +83,7 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE INDEX IF NOT EXISTS deliveryTimeIndex ON " + TABLE_NAME
                 + " (" + Telephony.CellBroadcasts.DELIVERY_TIME + ");");
+        migrateFromLegacy(db);
     }
 
     @Override
@@ -91,7 +100,72 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * This is the migration logic to accommodate OEMs who previously use non-AOSP CBR and move to
+     * mainlined CBR for the first time. When the db is initially created, this is called once to
+     * migrate predefined data through {@link Telephony.CellBroadcasts#AUTHORITY_LEGACY_URI}
+     * from OEM app.
+     */
+    private void migrateFromLegacy(@NonNull SQLiteDatabase db) {
+        try (ContentProviderClient client = mContext.getContentResolver()
+                .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
+            if (client == null) {
+                log("No legacy provider available for migration");
+                return;
+            }
+
+            db.beginTransaction();
+            log("Starting migration from legacy provider");
+            // migration columns are same as query columns
+            try (Cursor c = client.query(Telephony.CellBroadcasts.AUTHORITY_LEGACY_URI,
+                    CellBroadcastContentProvider.QUERY_COLUMNS,
+                    null, null, null)) {
+                final ContentValues values = new ContentValues();
+                while (c.moveToNext()) {
+                    values.clear();
+                    for (String column : CellBroadcastContentProvider.QUERY_COLUMNS) {
+                        copyFromCursorToContentValues(column, c, values);
+                    }
+
+                    if (db.insert(TABLE_NAME, null, values) == -1) {
+                        // We only have one shot to migrate data, so log and
+                        // keep marching forward
+                        loge("Failed to insert " + values + "; continuing");
+                    }
+                }
+
+                db.setTransactionSuccessful();
+                log("Finished migration from legacy provider");
+            } catch (RemoteException e) {
+                throw new IllegalStateException(e);
+            } finally {
+                db.endTransaction();
+            }
+        } catch (Exception e) {
+            // We have to guard ourselves against any weird behavior of the
+            // legacy provider by trying to catch everything
+            loge("Failed migration from legacy provider: " + e);
+        }
+
+    }
+
+    public static void copyFromCursorToContentValues(@NonNull String column, @NonNull Cursor cursor,
+            @NonNull ContentValues values) {
+        final int index = cursor.getColumnIndex(column);
+        if (index != -1) {
+            if (cursor.isNull(index)) {
+                values.putNull(column);
+            } else {
+                values.put(column, cursor.getString(index));
+            }
+        }
+    }
+
     private static void log(String msg) {
         Log.d(TAG, msg);
+    }
+
+    private static void loge(String msg) {
+        Log.e(TAG, msg);
     }
 }
