@@ -79,9 +79,9 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     public static final String ALERT_AUDIO_VIBRATION_PATTERN_EXTRA =
             "com.android.cellbroadcastreceiver.ALERT_AUDIO_VIBRATION_PATTERN";
 
-    /** Extra for always sound alerts at full volume. */
-    public static final String ALERT_AUDIO_FULL_VOLUME_EXTRA =
-            "com.android.cellbroadcastreceiver.ALERT_FULL_VOLUME_EXTRA";
+    /** Extra for playing alert sound in full volume regardless Do Not Disturb is on. */
+    public static final String ALERT_AUDIO_OVERRIDE_DND_EXTRA =
+            "com.android.cellbroadcastreceiver.ALERT_OVERRIDE_DND_EXTRA";
 
     /** Extra for cutomized alert duration in ms. */
     public static final String ALERT_AUDIO_DURATION =
@@ -113,7 +113,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private boolean mTtsLanguageSupported;
     private boolean mEnableVibrate;
     private boolean mEnableAudio;
-    private boolean mUseFullVolume;
+    private boolean mOverrideDnd;
     private boolean mResetAlarmVolumeNeeded;
     private int mUserSetAlarmVolume;
     private int[] mVibrationPattern;
@@ -293,8 +293,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        // retrieve whether always sound CBS alerts at full volume.
-        mUseFullVolume = intent.getBooleanExtra(ALERT_AUDIO_FULL_VOLUME_EXTRA, false);
+        // retrieve whether to play alert sound in full volume regardless Do Not Disturb is on.
+        mOverrideDnd = intent.getBooleanExtra(ALERT_AUDIO_OVERRIDE_DND_EXTRA, false);
         // retrieve the vibrate settings from cellbroadcast receiver settings.
         mEnableVibrate = prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true);
         // retrieve the vibration patterns.
@@ -310,18 +310,18 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         switch (mAudioManager.getRingerMode()) {
             case AudioManager.RINGER_MODE_SILENT:
                 if (DBG) log("Ringer mode: silent");
-                if (!mUseFullVolume) {
+                if (!mOverrideDnd) {
                     mEnableVibrate = false;
                 }
-                // If the phone is in silent mode, we only enable the audio when use full volume
+                // If the phone is in silent mode, we only enable the audio when override dnd
                 // setting is turned on.
-                mEnableAudio = mUseFullVolume;
+                mEnableAudio = mOverrideDnd;
                 break;
             case AudioManager.RINGER_MODE_VIBRATE:
                 if (DBG) log("Ringer mode: vibrate");
-                // If the phone is in vibration mode, we only enable the audio when use full volume
+                // If the phone is in vibration mode, we only enable the audio when override dnd
                 // setting is turned on.
-                mEnableAudio = mUseFullVolume;
+                mEnableAudio = mOverrideDnd;
                 break;
             case AudioManager.RINGER_MODE_NORMAL:
             default:
@@ -366,7 +366,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         stop();
 
         log("playAlertTone: alertType=" + alertType + ", mEnableVibrate=" + mEnableVibrate
-                + ", mEnableAudio=" + mEnableAudio + ", mUseFullVolume=" + mUseFullVolume
+                + ", mEnableAudio=" + mEnableAudio + ", mOverrideDnd=" + mOverrideDnd
                 + ", mSubId=" + mSubId);
         Resources res = CellBroadcastSettings.getResources(getApplicationContext(), mSubId);
 
@@ -389,8 +389,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             AudioAttributes.Builder attrBuilder = new AudioAttributes.Builder();
             attrBuilder.setUsage(alertType == AlertType.INFO
                     ? AudioAttributes.USAGE_NOTIFICATION : AudioAttributes.USAGE_ALARM);
-            if (mUseFullVolume) {
-                // Set the flags to bypass DnD mode if the user enables use full volume option.
+            if (mOverrideDnd) {
+                // Set the flags to bypass DnD mode if override dnd is turned on.
                 attrBuilder.setFlags(AudioAttributes.FLAG_BYPASS_INTERRUPTION_POLICY
                         | AudioAttributes.FLAG_BYPASS_MUTE);
             }
@@ -548,7 +548,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         builder.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION);
         builder.setUsage((alertType == AlertType.INFO
                 ? AudioAttributes.USAGE_NOTIFICATION : AudioAttributes.USAGE_ALARM));
-        if (mUseFullVolume) {
+        if (mOverrideDnd) {
             // Set FLAG_BYPASS_INTERRUPTION_POLICY and FLAG_BYPASS_MUTE so that it enables
             // audio in any DnD mode, even in total silence DnD mode (requires MODIFY_PHONE_STATE).
             builder.setFlags(AudioAttributes.FLAG_BYPASS_INTERRUPTION_POLICY
@@ -568,8 +568,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             // sound at a low volume to not disrupt the call.
             log("in call: reducing volume");
             mMediaPlayer.setVolume(IN_CALL_VOLUME_LEFT, IN_CALL_VOLUME_RIGHT);
-        } else if (mUseFullVolume) {
-            // If use_full_volume is configured,
+        } else if (mOverrideDnd) {
+            // If override DnD is turned on,
             // we overwrite volume setting of STREAM_ALARM to full, play at
             // max possible volume, and reset it after it's finished.
             setAlarmStreamVolumeToFull(alertType);
