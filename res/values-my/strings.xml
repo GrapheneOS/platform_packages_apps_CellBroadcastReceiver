@@ -76,11 +76,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"စမ်းသပ် သတိပေးချက်များ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"လုံခြုံရေးသတိပေးချက်စနစ်အတွက် ဝန်ဆောင်မှုပေးသူ စစ်ဆေးမှုများနှင့် လစဉ်စစ်ဆေးမှုများကို လက်ခံရယူရန်"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"တုန်ခါမှု"</string>
-    <string name="use_full_volume_title" msgid="8581439612945182255">"အသံအကျယ်ကိုသုံးပါ"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"အခြား အသံနှင့် \'မနှောင့်ယှက်ရ\' ရွေးချယ်မှုများကို လစ်လျူရှုပါ"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"နယ်မြေအပ်ဒိတ် ထုတ်လွှင့်ခြင်းများ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"ဆင်းမ်ကဒ်အခြေအနေတွင် အပ်ဒိတ်အချက်အလက်များကို ပြသရန်"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"ဆော့ဖ်ဝဲရေးသူ၏ ရွေးချယ်မှုများ"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"သတိပေးချက် အမျိုးအစား:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"ဘူမိရုပ်ပိုင်းဆိုင်ရာ"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"မိုးလေဝသဆိုင်ရာ"</string>
