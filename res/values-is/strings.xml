@@ -75,11 +75,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Áskilin mánaðarleg prófun"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Fá prufuskilboð frá öryggisviðvörunarkerfinu"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Titringur"</string>
-    <string name="use_full_volume_title" msgid="8581439612945182255">"Nota fullan hljóðstyrk"</string>
-    <string name="use_full_volume_summary" msgid="3560764277281704697">"Hunsa aðrar stillingar fyrir hljóðstyrk og „Ónáðið ekki“"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Staðbundnar uppfærslur"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Sýna uppfærsluupplýsingar í SIM-stöðu"</string>
-    <string name="category_dev_settings_title" msgid="6194393458398329994">"Forritunarkostir"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Flokkur viðvörunar:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Jarðeðlisfræði"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Veðurfræði"</string>

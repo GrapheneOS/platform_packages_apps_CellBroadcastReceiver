@@ -65,11 +65,11 @@ public class CellBroadcastSettings extends Activity {
     // Enable vibration on alert (unless master volume is silent).
     public static final String KEY_ENABLE_ALERT_VIBRATE = "enable_alert_vibrate";
 
-    // Always play at full volume when playing the alert sound.
-    public static final String KEY_USE_FULL_VOLUME = "use_full_volume";
+    // Play alert sound in full volume regardless Do Not Disturb is on.
+    public static final String KEY_OVERRIDE_DND = "override_dnd";
 
-    public static final String KEY_USE_FULL_VOLUME_SETTINGS_CHANGED =
-            "use_full_volume_settings_changed";
+    public static final String KEY_OVERRIDE_DND_SETTINGS_CHANGED =
+            "override_dnd_settings_changed";
 
     // Preference category for emergency alert and CMAS settings.
     public static final String KEY_CATEGORY_EMERGENCY_ALERTS = "category_emergency_alerts";
@@ -92,9 +92,6 @@ public class CellBroadcastSettings extends Activity {
 
     // Whether to display CMAS amber alert messages (default is enabled).
     public static final String KEY_ENABLE_CMAS_AMBER_ALERTS = "enable_cmas_amber_alerts";
-
-    // Preference category for development settings (enabled by settings developer options toggle).
-    public static final String KEY_CATEGORY_DEV_SETTINGS = "category_dev_settings";
 
     // Whether to display monthly test messages (default is disabled).
     public static final String KEY_ENABLE_TEST_ALERTS = "enable_test_alerts";
@@ -182,14 +179,13 @@ public class CellBroadcastSettings extends Activity {
         private TwoStatePreference mPublicSafetyMessagesChannelCheckBox;
         private TwoStatePreference mEmergencyAlertsCheckBox;
         private ListPreference mReminderInterval;
-        private TwoStatePreference mFullVolumeCheckBox;
+        private TwoStatePreference mOverrideDndCheckBox;
         private TwoStatePreference mAreaUpdateInfoCheckBox;
         private TwoStatePreference mTestCheckBox;
         private TwoStatePreference mStateLocalTestCheckBox;
         private Preference mAlertHistory;
         private PreferenceCategory mAlertCategory;
         private PreferenceCategory mAlertPreferencesCategory;
-        private PreferenceCategory mDevSettingCategory;
         private boolean mDisableSevereWhenExtremeDisabled = true;
 
         // WATCH
@@ -228,8 +224,8 @@ public class CellBroadcastSettings extends Activity {
                     findPreference(KEY_ENABLE_EMERGENCY_ALERTS);
             mReminderInterval = (ListPreference)
                     findPreference(KEY_ALERT_REMINDER_INTERVAL);
-            mFullVolumeCheckBox = (TwoStatePreference)
-                    findPreference(KEY_USE_FULL_VOLUME);
+            mOverrideDndCheckBox = (TwoStatePreference)
+                    findPreference(KEY_OVERRIDE_DND);
             mAreaUpdateInfoCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS);
             mTestCheckBox = (TwoStatePreference)
@@ -237,8 +233,6 @@ public class CellBroadcastSettings extends Activity {
             mStateLocalTestCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_STATE_LOCAL_TEST_ALERTS);
             mAlertHistory = findPreference(KEY_EMERGENCY_ALERT_HISTORY);
-            mDevSettingCategory = (PreferenceCategory)
-                    findPreference(KEY_CATEGORY_DEV_SETTINGS);
             mReceiveCmasInSecondLanguageCheckBox = (TwoStatePreference) findPreference
                     (KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
 
@@ -308,27 +302,15 @@ public class CellBroadcastSettings extends Activity {
                         }
                     };
 
-            // Show extra settings when developer options is enabled in settings.
-            boolean enableDevSettings =
-                    DevelopmentSettingsHelper.isDevelopmentSettingsEnabled(getContext());
-
             initReminderIntervalList();
 
-            boolean emergencyAlertOnOffOptionEnabled = isFeatureEnabled(getContext(),
-                    CarrierConfigManager.KEY_ALWAYS_SHOW_EMERGENCY_ALERT_ONOFF_BOOL, false);
-
-            if (enableDevSettings || emergencyAlertOnOffOptionEnabled) {
-                // enable/disable all alerts except CMAS presidential alerts.
-                if (mMasterToggle != null) {
-                    mMasterToggle.setOnPreferenceChangeListener(startConfigServiceListener);
-                    // If allow alerts are disabled, we turn all sub-alerts off. If it's enabled, we
-                    // leave them as they are.
-                    if (!mMasterToggle.isChecked()) {
-                        setAlertsEnabled(false);
-                    }
+            if (mMasterToggle != null) {
+                mMasterToggle.setOnPreferenceChangeListener(startConfigServiceListener);
+                // If allow alerts are disabled, we turn all sub-alerts off. If it's enabled, we
+                // leave them as they are.
+                if (!mMasterToggle.isChecked()) {
+                    setAlertsEnabled(false);
                 }
-            } else {
-                if (mMasterToggle != null) preferenceScreen.removePreference(mMasterToggle);
             }
 
             CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
@@ -338,12 +320,6 @@ public class CellBroadcastSettings extends Activity {
             if (!isTestAlertsToggleVisible(getContext())) {
                 if (mTestCheckBox != null) {
                     mAlertCategory.removePreference(mTestCheckBox);
-                }
-            }
-
-            if (!enableDevSettings && !pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
-                if (mDevSettingCategory != null) {
-                    preferenceScreen.removePreference(mDevSettingCategory);
                 }
             }
 
@@ -388,12 +364,12 @@ public class CellBroadcastSettings extends Activity {
                 }
             }
 
-            // Remove preferences
-            if (res.getBoolean(R.bool.always_use_full_volume)) {
-                // Remove full volume preference items in emergency alert category.
+            if (!res.getBoolean(R.bool.show_override_dnd_settings)) {
+                // Remove override dnd preference items in emergency alert category.
                 if (mAlertCategory != null) {
-                    if (mExtremeCheckBox != null) mAlertCategory.removePreference(
-                            mFullVolumeCheckBox);
+                    if (mOverrideDndCheckBox != null) {
+                        mAlertCategory.removePreference(mOverrideDndCheckBox);
+                    }
                 }
             }
 
@@ -480,14 +456,14 @@ public class CellBroadcastSettings extends Activity {
                         startConfigServiceListener);
             }
 
-            if (mFullVolumeCheckBox != null
-                    && !sp.getBoolean(KEY_USE_FULL_VOLUME_SETTINGS_CHANGED, false)) {
+            if (mOverrideDndCheckBox != null
+                    && !sp.getBoolean(KEY_OVERRIDE_DND_SETTINGS_CHANGED, false)) {
                 // If the user hasn't changed this settings yet, use the default settings from
                 // resource overlay.
-                mFullVolumeCheckBox.setChecked(res.getBoolean(R.bool.use_full_volume_default));
-                mFullVolumeCheckBox.setOnPreferenceChangeListener(
+                mOverrideDndCheckBox.setChecked(res.getBoolean(R.bool.override_dnd_default));
+                mOverrideDndCheckBox.setOnPreferenceChangeListener(
                         (pref, newValue) -> {
-                            sp.edit().putBoolean(KEY_USE_FULL_VOLUME_SETTINGS_CHANGED,
+                            sp.edit().putBoolean(KEY_OVERRIDE_DND_SETTINGS_CHANGED,
                                     true).apply();
                             return true;
                         });
@@ -577,9 +553,6 @@ public class CellBroadcastSettings extends Activity {
             }
             if (mAlertPreferencesCategory != null) {
                 mAlertPreferencesCategory.setEnabled(alertsEnabled);
-            }
-            if (mDevSettingCategory != null) {
-                mDevSettingCategory.setEnabled(alertsEnabled);
             }
             if (mEmergencyAlertsCheckBox != null) {
                 mEmergencyAlertsCheckBox.setEnabled(alertsEnabled);
