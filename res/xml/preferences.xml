@@ -102,7 +102,7 @@
                         android:entries="@array/alert_reminder_interval_entries"
                         android:entryValues="@array/alert_reminder_interval_values"
                         android:defaultValue="@string/alert_reminder_interval_in_min_default"
-                        android:dialogTitle="@string/alert_reminder_interval_title" />
+                        android:dialogTitle="@string/alert_reminder_dialog_title" />
 
         <!-- Show additional language on/off switch in settings -->
         <SwitchPreference android:defaultValue="false"
