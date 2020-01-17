@@ -158,11 +158,11 @@ public class CellBroadcastAlertService extends Service
 
     @Override
     public void onCreate() {
-        mTelephonyManager =
-                (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        mTelephonyManager.listen(mPhoneStateListener,
-                PhoneStateListener.LISTEN_CALL_STATE);
-        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        mTelephonyManager = (TelephonyManager)
+                getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
+        mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+        mAudioManager = (AudioManager)
+            getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
     }
 
     @Override
@@ -776,6 +776,10 @@ public class CellBroadcastAlertService extends Service
                     // check if audio focus was released by voice call. This is to avoid possible
                     // race conditions that voice call did not release audio focus while alert is
                     // playing at the same time (out-of-rhythm)
+                    if (mAudioManager == null) {
+                        mAudioManager = (AudioManager)
+                            getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
+                    }
                     int audioFocusResult = mAudioManager.requestAudioFocus(
                             CellBroadcastAlertService.this::onAudioFocusChange,
                             new AudioAttributes.Builder().setLegacyStreamType(
