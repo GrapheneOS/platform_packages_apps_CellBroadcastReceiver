@@ -41,6 +41,8 @@ import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 
+import com.android.internal.annotations.VisibleForTesting;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -119,6 +121,9 @@ public class CellBroadcastSettings extends Activity {
 
     // Resource cache
     private static final Map<Integer, Resources> sResourcesCache = new HashMap<>();
+
+    // Test override for disabling the subId specific resources
+    private static boolean sUseResourcesForSubId = true;
 
     // Whether to receive alert in second language code
     public static final String KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE =
@@ -606,6 +611,16 @@ public class CellBroadcastSettings extends Activity {
     }
 
     /**
+     * Override used by tests so that we don't call
+     * SubscriptionManager.getResourcesForSubId, which is a static unmockable
+     * method.
+     */
+    @VisibleForTesting
+    public static void setUseResourcesForSubId(boolean useResourcesForSubId) {
+        sUseResourcesForSubId = useResourcesForSubId;
+    }
+
+    /**
      * Get the device resource based on SIM
      *
      * @param context Context
@@ -615,7 +630,7 @@ public class CellBroadcastSettings extends Activity {
      */
     public static @NonNull Resources getResources(@NonNull Context context, int subId) {
         if (subId == SubscriptionManager.DEFAULT_SUBSCRIPTION_ID
-                || !SubscriptionManager.isValidSubscriptionId(subId)) {
+                || !SubscriptionManager.isValidSubscriptionId(subId) || !sUseResourcesForSubId) {
             return context.getResources();
         }
 
