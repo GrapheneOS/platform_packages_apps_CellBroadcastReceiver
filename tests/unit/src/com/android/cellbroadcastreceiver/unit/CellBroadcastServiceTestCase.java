@@ -32,6 +32,7 @@ import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.test.ServiceTestCase;
 
+import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.internal.telephony.ISub;
 
 import org.junit.After;
@@ -123,6 +124,7 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         mMockedServiceManager.replaceService("isub", mSubService);
         mContext = new TestContextWrapper(getContext());
         setContext(mContext);
+        CellBroadcastSettings.setUseResourcesForSubId(false);
     }
 
     @After
