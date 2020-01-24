@@ -181,7 +181,7 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
             subId = subIds[0];
         }
 
-        return new SmsCbMessage(format, geoScope, serialNum, location, category, language, body,
+        return new SmsCbMessage(format, geoScope, serialNum, location, category, language, 0, body,
                 priority, etwsInfo, cmasInfo, 0, null, deliveryTime, slotIndex, subId);
     }
 
