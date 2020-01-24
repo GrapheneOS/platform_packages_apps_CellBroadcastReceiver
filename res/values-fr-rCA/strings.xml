@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertes d’urgence dans les appels vocaux"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Autoriser les alertes"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recevoir les notif. d\'alerte d\'urgence sans fil"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Son de rappel d\'alerte"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Rappel d\'alerte"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Un son de rappel jouera à un volume régulier"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historique des alertes d\'urgence"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Préférences d\'alertes"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Diffusions tests ETWS"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Alertes test"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Recevoir des tests du fournisseur de services et des tests mensuels du système d\'alertes de sécurité"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrations"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Toujours émettre les alertes au plein volume"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Ignorer le mode Ne pas déranger et d\'autres paramètres de volume"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Diffusion de mises à jour régionales"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Afficher les données de mise à jour dans l\'état de la carte SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Catégorie d\'alerte :"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"Toutes les 2 minutes"</item>
     <item msgid="5718214950343391480">"Toutes les 5 minutes"</item>
     <item msgid="3863339891188103437">"Toutes les 15 minutes"</item>
-    <item msgid="6868848414437854609">"Désactivé"</item>
+    <item msgid="7388573183644474611">"Jamais"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Alertes d\'urgence sans fil"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Alertes du président"</string>

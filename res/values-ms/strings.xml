@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Makluman kecemasan dalam panggilan suara"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Benarkan makluman"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Terima pemberitahuan makluman kecemasan wayarles"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Bunyi peringatan makluman"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Peringatan awasan"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Bunyi peringatan akan dimainkan pada kelantangan biasa"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Sejarah makluman kecemasan"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Pilihan makluman"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Siaran ujian ETWS"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Makluman ujian"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Terima ujian pembawa dan ujian bulanan daripada sistem makluman keselamatan"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Getaran"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Sentiasa beri makluman pada kelantangan penuh"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Abaikan Jangan Ganggu &amp; tetapan kelantangan yang lain"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Siaran kemas kini kawasan"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Tunjukkan maklumat kemas kini dalam status SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategori Awasan:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"Setiap 2 minit"</item>
     <item msgid="5718214950343391480">"Setiap 5 minit"</item>
     <item msgid="3863339891188103437">"Setiap 15 minit"</item>
-    <item msgid="6868848414437854609">"Mati"</item>
+    <item msgid="7388573183644474611">"Jangan"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Makluman kecemasan wayarles"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Makluman Presiden"</string>

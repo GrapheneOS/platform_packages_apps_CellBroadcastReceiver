@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ভয়েস কলের সময়ে জরুরি সতর্কতা"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"সতর্কতার অনুমতি দিন"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ওয়্যারলেস জরুরি সতর্কতার বিজ্ঞপ্তি রিসিভ করুন"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"সতর্কতা মনে করিয়ে দেওয়ার সাউন্ড"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"সতর্কতা অনুস্মারক"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"নির্দিষ্ট সময় অন্তর রিমাইন্ডার শোনা যাবে"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"জরুরি সতর্কতার ইতিহাস"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"সতর্কতার পছন্দগুলি"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS পরীক্ষামূলক সম্প্রচার"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"পরীক্ষা সংক্রান্ত বিজ্ঞপ্তি"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"সিকিউরিটি অ্যালার্ট সিস্টেম থেকে পরিষেবা প্রদানকারীর পরীক্ষা এবং মাসিক পরীক্ষা পান"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ভাইব্রেশন"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"যেকোনও সময়ে বিজ্ঞপ্তি পেতে সম্পূর্ণ ভলিউম দিন"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"বিরক্ত করবে না &amp; অন্য ভলিউম সেটিংস এড়িয়ে যান"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"জায়গার আপডেটের সম্প্রচার"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"সিম স্ট্যাটাসে আপডেটের তথ্য দেখুন"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"সতর্কতা বিভাগ:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"প্রতি ২ মিনিট"</item>
     <item msgid="5718214950343391480">"প্রতি ৫ মিনিট"</item>
     <item msgid="3863339891188103437">"প্রতি ১৫ মিনিট"</item>
-    <item msgid="6868848414437854609">"বন্ধ আছে"</item>
+    <item msgid="7388573183644474611">"কখনই নয়"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ওয়্যারলেস জরুরী সতর্কতা"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"রাষ্ট্রপতির জারি করা সতর্কতা"</string>

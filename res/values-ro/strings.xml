@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alerte de urgență într-un apel vocal"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permiteți alertele"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Primiți notificări privind alertele de urgență wireless"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Sunet de memento pentru alertă"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Memento alerte"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Un sunet de memento va fi redat la volumul obișnuit"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Istoricul alertelor de urgență"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferințe pentru alerte"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Difuzări de testare ETWS"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Alerte de testare"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Trimite teste de la operator și teste lunare de la sistemul de alertă privind siguranța"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrație"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Trimite întotdeauna alerte la volumul maxim"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Ignoră funcția Nu deranja și alte setări pentru volum"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Difuzarea actualizărilor despre zonă"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Afișați informațiile despre actualizare în starea cardului SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoria alertei:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"La fiecare 2 minute"</item>
     <item msgid="5718214950343391480">"La fiecare 5 minute"</item>
     <item msgid="3863339891188103437">"La fiecare 15 minute"</item>
-    <item msgid="6868848414437854609">"Dezactivat"</item>
+    <item msgid="7388573183644474611">"Niciodată"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Alerte de urgență wireless"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Alerte de la președinte"</string>

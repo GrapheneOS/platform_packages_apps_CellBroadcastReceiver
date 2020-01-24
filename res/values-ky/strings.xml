@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Аудио чалуу учурунда берилген шашылыш билдирүүлөр"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Шашылыш билдирүүлөргө уруксат берүү"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Зымсыз шашылыш билдирүүлөрдү кабыл алуу"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Эстеткичтин үнү"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Кабарлардын мезгилдүүлүгү"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Эстеткичтин добушу демейки катуулукта ойнотулат"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Шашылыш билдирүүлөрдүн таржымалы"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Шашылыш билдирүүнүн параметрлери"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS сынамык таркатмалары"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Сынамык эскертүүлөр"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"CMAS системасынын шашылыш билдирүүлөрүн байланыш операторунун сыноолору жана ай сайын аткарылуучу сыноолор аркылуу алуу"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Дирилдөө"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Эскертүү ар дайым катуу ойнотулсун"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"\"Тынчымды алба\" жана үн көлөмүнүн башка жөндөөлөрүн этибарга албоо"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Аймакты жаңыртуу боюнча таркатмалар"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM-картанын абалы тууралуу жаңыртылган маалымат көрсөтүлсүн"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Шашылыш билдирүүнүн категориясы:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"2 мүнөт сайын"</item>
     <item msgid="5718214950343391480">"5 мүнөт сайын"</item>
     <item msgid="3863339891188103437">"15 мүнөт сайын"</item>
-    <item msgid="6868848414437854609">"Өчүк"</item>
+    <item msgid="7388573183644474611">"Эч качан"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Шашылыш билдирүүлөр"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Президент жөнөткөн билдирүүлөр"</string>

@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"വോയ്സ് കോളിലെ അടിയന്തര മുന്നറിയിപ്പുകൾ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"മുന്നറിയിപ്പുകൾ അനുവദിക്കുക"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"വയർലെസ് അടിയന്തിര അലേർട്ട് അറിയിപ്പുകൾ നേടുക"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"അലേർട്ട് റിമൈൻഡർ ശബ്‌ദം"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"അലേർട്ട് ഓർമ്മപ്പെടുത്തൽ"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"റിമെെൻഡർ ശബ്ദം സാധാരണ ശബ്ദത്തിൽ പ്ലേ ചെയ്യും"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"അടിയന്തര അലേർട്ട് ചരിത്രം"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"അലേർട്ട് മുൻഗണനകൾ"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"പരിശോധനാ മുന്നറിയിപ്പുകൾ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"സേവനദാതാവിന്റെ പരിശോധനകളും സുരക്ഷാ മുന്നറിയിപ്പ് സിസ്റ്റത്തിൽ നിന്നുള്ള പ്രതിമാസ പരിശോധനകളും നേടുക"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"വൈബ്രേഷൻ"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"എപ്പോഴും പൂർണ്ണ ശബ്ദത്തിൽ മുന്നറിയിപ്പ് നൽകുക"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"\'ശല്യപ്പെടുത്തരുത്\' മോഡും മറ്റ് ശബ്ദ ക്രമീകരണവും അവഗണിക്കുക"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ഏരിയ അപ്‌ഡേറ്റ് ബ്രോഡ്‌കാസ്റ്റുകൾ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"സിം സ്റ്റാറ്റസിൽ ഏറ്റവും പുതിയ വിവരങ്ങൾ കാണിക്കുക"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"അലേർട്ട് വിഭാഗം:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"എല്ലാ 2 മിനിറ്റിലും"</item>
     <item msgid="5718214950343391480">"എല്ലാ 5 മിനിറ്റിലും"</item>
     <item msgid="3863339891188103437">"ഓരോ 15 മിനിറ്റിലും"</item>
-    <item msgid="6868848414437854609">"ഓഫ്"</item>
+    <item msgid="7388573183644474611">"ഒരിക്കലും വേണ്ട"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"അടിയന്തര വയർലെസ് അലേർട്ടുകൾ"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"രാഷ്ട്രപതിയുടെ മുന്നറിയിപ്പ്"</string>

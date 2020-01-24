@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Дуут дуудлагын үеэр ирэх гамшгийн аюулын дохио"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дохиоллыг зөвшөөрөх"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Утасгүй гамшгийн аюулын дохионы мэдэгдэл авах"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Сануулах дохионы ая"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Сэрэмжлүүлгийн сануулагч"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Сануулагчийн аяыг дууны энгийн түвшинд тоглуулна"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Гамшгийн аюулын дохионы түүх"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Дохионы тохиргоо"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ГХЦАС тест дамжуулалт"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Туршилтын сэрэмжлүүлэг"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Оператор компанийн болон аюулгүй байдлын сэрэмжлүүлгийн системийн сар тутмын туршилтын зурвас авах"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Чичиргээ"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Сэрэмжлүүлгийг үргэлж хамгийн чанга дээр тоглуулах"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Бүү саад бол горимыг үл хэрэгсэх болон дууны түвшний бусад тохиргоо"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Газрын шинэчлэлтийн дамжуулалт"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Шинэчлэлтийн мэдээллийг SIM-н төлөвт харуулах"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Сэрэмжлүүлгийн Ангилал:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"2 минут тутамд"</item>
     <item msgid="5718214950343391480">"5 минут тутамд"</item>
     <item msgid="3863339891188103437">"15 минут тутамд"</item>
-    <item msgid="6868848414437854609">"Унтраалттай"</item>
+    <item msgid="7388573183644474611">"Хэзээ ч үгүй"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Утасгүй сүлжээгээр дамжуулах гамшгийн аюулын дохио"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Ерөнхийлөгчийн сэрэмжлүүлэг"</string>

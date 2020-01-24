@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"వాయిస్ కాల్‌లో అత్యవసర అలర్ట్‌లు"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"హెచ్చరికలను అనుమతించండి"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"వైర్‌లెస్ అత్యవసర హెచ్చరిక నోటిఫికేషన్‌లను పొందు"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"హెచ్చరిక రిమైండర్ ధ్వని"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"హెచ్చరిక రిమైండర్"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"రిమైండర్ శబ్దం క్రమ విరామాల వద్ద ప్లే అవుతుంది"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"అత్యవసర హెచ్చరికల చరిత్ర"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"హెచ్చరిక ప్రాధాన్యతలు"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS పరీక్ష ప్రసారాలు"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"పరీక్ష అలర్ట్‌లు"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"భద్రతా అలర్ట్ సిస్టమ్ నుండి క్యారియర్ పరిక్షలను, నెలవారీ పరిక్షలను స్వీకరించండి"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"వైబ్రేషన్"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"ఎల్లప్పుడూ పూర్తి వాల్యూమ్ వద్ద హెచ్చరించు"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"అంతరాయం కలిగించవద్దు &amp; ఇతర వాల్యూమ్ సెట్టింగ్‌లను తిరస్కరించండి"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ప్రాంతీయ అప్‌డేట్ ప్రసారాలు"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM స్థితిలో అప్‌డేట్ సమాచారాన్ని చూపు"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"హెచ్చరిక వర్గం:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"ప్రతి 2 నిమిషాలకు"</item>
     <item msgid="5718214950343391480">"ప్రతి 5 నిమిషాలకు"</item>
     <item msgid="3863339891188103437">"ప్రతి 15 నిమిషాలకు"</item>
-    <item msgid="6868848414437854609">"ఆఫ్"</item>
+    <item msgid="7388573183644474611">"ఎప్పుడూ వద్దు"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"వైర్‌లెస్ అత్యవసర హెచ్చరికలు"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"అధ్యక్ష హెచ్చరికలు"</string>
