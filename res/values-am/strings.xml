@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"የድንገተኛ አደጋ ማንቂያዎች በድምፅ ጥሪ ውስጥ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ማንቂያዎችን ፍቀድ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ገመድ-አልባ የድንገተኛ አደጋ ማንቂያ ማሳወቂያዎችን ይቀበሉ"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"የማንቂያ አስታዋሽ ድምጽ"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"የማንቂያ አስታዋሽ"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"አንድ የአስታዋሽ ድምጽ በመደበኛ የድምጽ መጠን ላይ ይጫወታል"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"የአደጋ ጊዜ ማንቂያ ታሪክ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"የማንቂያ ምርጫዎች"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"የETWS ሙከራ ስርጭቶች"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"የሙከራ ማንቂያዎች"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"የአገልግሎት አቅራቢ ሙከራዎችን እና ወርሃዊ ሙከራዎችን ከደህንነት ማንቂያ ስርዓቱ ይቀበሉ"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ንዝረት"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"ሁልጊዜ በሙሉ ድምጽ ላይ አንቃ"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"አትረብሽን እና ሌሎች የድምጽ ቅንብሮችን ችላ ይበሉ"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"የአካባቢ ዝማኔ ስርጭቶች"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"በሲም ሁኔታ ውስጥ የዝማኔ መረጃን አሳይ"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"የማንቂያ ምድብ፦"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"በየ2 ደቂቃዎች"</item>
     <item msgid="5718214950343391480">"በየ5 ደቂቃው"</item>
     <item msgid="3863339891188103437">"በየ15 ደቂቃው"</item>
-    <item msgid="6868848414437854609">"ጠፍቷል"</item>
+    <item msgid="7388573183644474611">"በጭራሽ"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ገመድ-አልባ የአስቸኳይ አደጋ ማንቂያዎች"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ፕሬዝዳንታዊ ማስጠንቀቂያዎች"</string>

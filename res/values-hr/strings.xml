@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Hitna upozorenja u glasovnom pozivu"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Dopusti upozorenja"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Primanje obavijesti o hitnim upozorenjima"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Zvuk podsjetnika upozorenja"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Podsjetnik upozorenja"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Zvuk podsjetnika bit će normalne jačine"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Povijest hitnih upozorenja"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Postavke upozorenja"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS-ova probna emitiranja"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testiranje upozorenja"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Primajte testove mobilnog operatera i mjesečne testove sustava sigurnosnih upozorenja"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibracija"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Uvijek upozori s punom jačinom"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Zanemari Ne uznemiravaj i druge postavke glasnoće"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Emitiranja obavijesti za područje"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Prikaži informacije o obavijestima u statusu SIM-a"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategorija upozorenja:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"Svake 2 minute"</item>
     <item msgid="5718214950343391480">"Svakih 5 minuta"</item>
     <item msgid="3863339891188103437">"Svakih 15 minuta"</item>
-    <item msgid="6868848414437854609">"Isključeno"</item>
+    <item msgid="7388573183644474611">"Nikad"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Hitna upozorenja putem mobilne mreže"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Upozorenja predsjednika"</string>

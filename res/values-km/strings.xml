@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ការជូនដំណឹងពេល​មានអាសន្នអំឡុងពេលហៅជាសំឡេង"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"អនុញ្ញាត​ការជូន​ដំណឹង"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ទទួលបានការជូនដំណឹង​ពេលមានអាសន្នដោយឥតប្រើខ្សែ"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"សំឡេងការរំលឹកការជូនដំណឹង"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ជូន​ដំណឹង"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"សំឡេង​ការរំលឹក​នឹងចាក់​នៅ​កម្រិតសំឡេង​ធម្មតា"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ប្រវត្តិការជូនដំណឹង​ពេលអាសន្ន"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ចំណូលចិត្តការជូនដំណឹង"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ការ​ផ្សាយ​សាកល្បងរបស់ ETWS"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"ការជូនដំណឹង​សាកល្បង"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ទទួលតេស្តរបស់ក្រុមហ៊ុន​សេវាទូរសព្ទ និងតេស្តប្រចាំខែ​ពីប្រព័ន្ធ​ជូនដំណឹងផ្នែក​សុវត្ថិភាព"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ការ​ញ័រ"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"ជូនដំណឹង​នៅ​កម្រិតសំឡេង​ពេញ​ជានិច្ច"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"មិនអើពើ​ចំពោះ​មុខងារ​កុំ​រំខាន និងការកំណត់​កម្រិតសំឡេង​ផ្សេងទៀត"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ការផ្សាយបច្ចុប្បន្នភាពតំបន់"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"បង្ហាញ​ព័ត៌មាន​បច្ចុប្បន្ន​ភាព​នៅ​ក្នុង​ស្ថានភាព​ស៊ីម"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"ប្រភេទ​រំលឹក៖"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"រាល់ 2​ នាទីម្តង"</item>
     <item msgid="5718214950343391480">"រាល់ 5 នាទីម្ដង"</item>
     <item msgid="3863339891188103437">"រាល់ 15 នាទីម្តង"</item>
-    <item msgid="6868848414437854609">"បិទ"</item>
+    <item msgid="7388573183644474611">"កុំឱ្យសោះ"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ការជូនដំណឹងអាសន្នដោយឥតប្រើខ្សែ"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ការ​ជូន​ដំណឹង​ផ្លូវការ"</string>

@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"语音通话期间收到的紧急警报"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"允许接收警报"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"接收无线紧急警报通知"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"警报提醒提示音"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"警报提醒"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"提醒提示音将以正常音量播放"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"紧急警报历史记录"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"警报偏好设置"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS 测试广播"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"测试警报"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"接收来自安全警报系统的运营商测试和每月测试"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"振动"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"始终以最大音量播放提醒提示音"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"忽略“勿扰”模式及其他音量设置"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"区域动态信息广播"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"在 SIM 卡状态中显示动态信息"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"警报类别："</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"每隔 2 分钟"</item>
     <item msgid="5718214950343391480">"每隔 5 分钟"</item>
     <item msgid="3863339891188103437">"每隔 15 分钟"</item>
-    <item msgid="6868848414437854609">"关闭"</item>
+    <item msgid="7388573183644474611">"永不"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"无线紧急警报"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"总统警报"</string>

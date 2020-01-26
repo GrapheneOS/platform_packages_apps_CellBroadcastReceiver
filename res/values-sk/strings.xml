@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Tiesňové upozornenia v hlasovom hovore"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Povoliť upozornenia"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Prijímajte bezdrôtové tiesňové upozornenia"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Zvuk pripomenutí upozornení"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Pripomínať upozornenia"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Zvuk pripomenutí sa prehrá bežnou hlasitosťou"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"História tiesňových upozornení"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Nastavenia upozornení"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Testovacie vysielania ETWS"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testovacie upozornenia"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Dostávať testy od operátora a mesačné testy zo systému bezpečnostných upozornení"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrácie"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Upozornenia vždy prehrávať pri plnej hlasitosti"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Ignorovať režim bez vyrušení a ďalšie nastavenia hlasitosti"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Vysielania s aktuálnymi informáciami oblasti"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Zobrazovať informácie o aktualizácii v stave SIM karty"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategória upozornenia:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"Každé 2 minúty"</item>
     <item msgid="5718214950343391480">"Každých 5 minút"</item>
     <item msgid="3863339891188103437">"Každých 15 minút"</item>
-    <item msgid="6868848414437854609">"Vypnuté"</item>
+    <item msgid="7388573183644474611">"Nikdy"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Bezdrôtové núdzové upozornenia"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Prezidentské upozornenia"</string>

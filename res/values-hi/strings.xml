@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"वॉयस कॉल के दौरान आपातकालीन चेतावनियां"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"अलर्ट दिखाए जाने की अनुमति दें"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"वायरलेस इमरजेंसी अलर्ट की सूचनाएं पाएं"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"बहुत ज़रूरी सूचनाओं के रिमाइंडर की टोन"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"याद दिलाने के लिए अलर्ट"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमांइडर की रिंगटोन की आवाज़ सामान्य रहेगी"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"इमरजेंसी के समय की सूचनाओं का इतिहास"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"सूचना से जुड़ी पसंद"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS परीक्षण प्रसारण"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"जांच करने के लिए भेजी जाने वाली सूचनाएं"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा चेतावनी वाले सिस्टम से हर महीने टेस्ट मैसेज पाएं. साथ ही, मोबाइल कैरियर से टेस्ट मैसेज पाएं"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"वाइब्रेशन"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"हमेशा सबसे तेज़ आवाज़ (फ़ुल वॉल्यूम) में सूचना दें"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"\'परेशान न करें\' मोड और आवाज़ की अन्य सेटिंग को अनदेखा करें"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"क्षेत्र अपडेट प्रसारण"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"सिम की स्थिति में बदलाव की जानकारी दिखाएं"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"अलर्ट श्रेणी:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"हर 2 मिनट में"</item>
     <item msgid="5718214950343391480">"प्रत्‍येक 5 मिनट"</item>
     <item msgid="3863339891188103437">"हर 15 मिनट"</item>
-    <item msgid="6868848414437854609">"बंद"</item>
+    <item msgid="7388573183644474611">"कभी नहीं"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"वायरलेस आपातकालीन अलर्ट"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"राष्ट्रपति की ओर से जारी सूचनाएं"</string>

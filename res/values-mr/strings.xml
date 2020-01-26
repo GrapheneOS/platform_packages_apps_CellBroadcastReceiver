@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"व्हॉइस कॉलमधील आणीबाणी सूचना"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"सूचनांना अनुमती द्या"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"आणीबाणीमधील वायरलेस इशारा सूचना स्वीकारा"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"सूचना रिमाइंडरचा आवाज"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"सूचना स्मरणपत्र"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"नियमित व्हॉल्यूमवर एक रिमाइंडर आवाज प्ले होईल"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"आणीबाणी सूचना इतिहास"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"सूचना प्राधान्ये"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS चाचणी प्रसारणे"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"चाचणीच्या सूचना"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा सूचना सिस्टमकडून वाहक चाचण्या आणि मासिक चाचण्या मिळवा"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"कंपन"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"सूचना नेहमी संपूर्ण व्हॉल्यूमवर द्या"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"व्यत्यय आणू नका कडे दुर्लक्ष करा &amp; इतर व्‍हॉल्‍यूम सेटिंग्ज"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"परिसराशी संबंधित अपडेट ब्रॉडकास्ट"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"सिमच्‍या स्थितीत अपडेटची काही माहिती असल्‍यास दाखवा"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"सूचना वर्गवारी:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"दर 2 मिनिटांनी"</item>
     <item msgid="5718214950343391480">"दर 5 मिनिटांनी"</item>
     <item msgid="3863339891188103437">"दर 15 मिनिटांनी"</item>
-    <item msgid="6868848414437854609">"बंद"</item>
+    <item msgid="7388573183644474611">"कधीही नाही"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"वायरलेस आणीबाणी सूचना"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"राष्ट्रपतींनी दिलेले इशारे"</string>

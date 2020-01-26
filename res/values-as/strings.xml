@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ভইচ কলত জৰুৰীকালীন সতৰ্কবাৰ্তা"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"সতৰ্কবাণীযুক্ত বাৰ্তাসমূহ লাভ কৰিবলৈ অনুমতি দিয়ক"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"অনাতাঁৰ জৰুৰীকালীন সতৰ্কবাৰ্তাৰ জাননীসমূহ পাওক"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"সতর্কতা স্মৰণ কৰোৱা ধ্বনি"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"সতৰ্কতা স্মৰণ কৰোৱাৰ সুবিধা"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"কোনো স্বাভাৱিক ভলিউমত ৰিমাইণ্ডাৰ ধ্বনি প্লে\' হ\'ব"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"জৰুৰীকালীন সতৰ্কবাণীৰ ইতিহাস"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"সতর্কতা সম্পৰ্কীয় অগ্ৰাধিকাৰসমূহ"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS পৰীক্ষামূলক সম্প্ৰচাৰ"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"পৰীক্ষা সম্পর্কীয় সতৰ্কবার্তাসমূহ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"সুৰক্ষা সতৰ্কবাৰ্তা ব্যৱস্থাৰ পৰা বাহকৰ আৰু মাহেকীয়া পৰীক্ষাসমূহ লাভ কৰক"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"কম্পন"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"সদায় সম্পূর্ণ ভলিউমত সতর্ক কৰক"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"অসুবিধা নিদিব আৰু অন্য ধ্বনিৰ ছেটিংসমূহ উপেক্ষা কৰক"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"এলেকা আপডে’ট সম্প্ৰচাৰসমূহ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"ছিমৰ স্থিতিত আপডেটৰ তথ্য় দেখুৱাওক"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"সতৰ্কবাণীৰ প্ৰকাৰ:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"প্ৰতি ২ মিনিটত"</item>
     <item msgid="5718214950343391480">"প্ৰতি ৫ মিনিটত"</item>
     <item msgid="3863339891188103437">"প্ৰতি ১৫ মিনিটত"</item>
-    <item msgid="6868848414437854609">"অফ"</item>
+    <item msgid="7388573183644474611">"কেতিয়াও নহয়"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"অনাতাঁৰ জৰুৰীকালীন সতৰ্কবাণীসমূহ"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ৰাষ্ট্ৰপতিয়ে পঠিওৱা সতর্কবাণীসমূহ"</string>

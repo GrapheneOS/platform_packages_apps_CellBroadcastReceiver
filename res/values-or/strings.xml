@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ଭଏସ୍ କଲ୍‌ରେ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ଆଲର୍ଟକୁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ୱେୟାରଲେସ୍ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ବିଜ୍ଞପ୍ତି ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"ଆଲର୍ଟ ରିମାଇଣ୍ଡର୍ ସାଉଣ୍ଡ"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ଅଲର୍ଟ ସ୍ମରଣକରାଇବା"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ଏକ ରିମାଇଣ୍ଡର୍ ସାଉଣ୍ଡ ରେଗୁଲାର୍ ଭଲ୍ୟୁମରେ ପ୍ଲେ ହେବ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ଇତିହାସ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ନିଜ ପସନ୍ଦର ଆଲର୍ଟ"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS ଟେଷ୍ଟ ବ୍ରୋଡକାଷ୍ଟ"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"ପରୀକ୍ଷା ଆଲର୍ଟ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ସୁରକ୍ଷା ଆଲର୍ଟ ସିଷ୍ଟମ୍‌ରୁ ମୋବାଇଲ୍ କମ୍ପାନୀ ଟେଷ୍ଟ ଏବଂ ମାସିକ ଟେଷ୍ଟଗୁଡ଼ିକ ପାଆନ୍ତୁ"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ଭାଇବ୍ରେସନ୍"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"ସର୍ବଦା ଉଚ୍ଚ ଭଲ୍ୟୁମରେ ଆଲର୍ଟ କରନ୍ତୁ"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"\"ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ\" ଓ ଅନ୍ୟ ଭଲ୍ୟୁମ୍ ସେଟିଂସକୁ ଅଣଦେଖା କରନ୍ତୁ"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ଅଞ୍ଚଳ ଅପଡେଟ୍‍ ବ୍ରୋଡକାଷ୍ଟକରିବା"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM ଷ୍ଟାଟସରେ ଅପଡେଟ୍‍ ସୂଚନା ଦେଖାନ୍ତୁ"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"ଅଲର୍ଟ ବର୍ଗ:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"ପ୍ରତି 2 ମିନିଟରେ"</item>
     <item msgid="5718214950343391480">"ପ୍ରତି 5 ମିନିଟରେ"</item>
     <item msgid="3863339891188103437">"ପ୍ରତି 15 ମିନିଟରେ"</item>
-    <item msgid="6868848414437854609">"ଅଫ୍‌"</item>
+    <item msgid="7388573183644474611">"କେବେ ବି ନୁହେଁ"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ୱେୟାରଲେସ୍‌ ଜରୁରୀକାଳୀନ ଅଲର୍ଟ"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ରାଷ୍ଟ୍ରପତିଙ୍କ ଦ୍ୱାରା ଜାରି କରାଯାଇଥିବା ଆଲର୍ଟ"</string>

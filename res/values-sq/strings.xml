@@ -54,7 +54,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Sinjalizimet e urgjencës në telefonatë zanore"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Lejo sinjalizimet"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Merr njoftimet e sinjalizimeve me valë të urgjencës"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Tingulli i alarmeve rikujtuese"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Alarmet rikujtuese"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Një tingull alarmi rikujtues do të luhet me volum të rregullt"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historiku i sinjalizimeve të urgjencës"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferencat për sinjalizimet"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Transmetimet provë të ETWS-së"</string>
@@ -76,6 +77,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Sinjalizime testimi"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Merr testet e operatorit celular dhe testet mujore nga sistemi i sinjalizimeve të sigurisë"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Dridhje"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Gjithmonë sinjalizo me volum të plotë"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Shpërfill \"Mos shqetëso\" dhe cilësimet e tjera të volumit"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Transmetimet e përditësimeve për zonën"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Shfaq informacionet e përditësimit në statusin e kartës SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategoria e alarmit:"</string>
@@ -123,7 +126,7 @@
     <item msgid="9097229303902157183">"Çdo 2 minuta"</item>
     <item msgid="5718214950343391480">"Çdo 5 minuta"</item>
     <item msgid="3863339891188103437">"Çdo 15 minuta"</item>
-    <item msgid="6868848414437854609">"Joaktiv"</item>
+    <item msgid="7388573183644474611">"Asnjëherë"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Sinjalizimet me valë të urgjencës"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Sinjalizimet presidenciale"</string>
