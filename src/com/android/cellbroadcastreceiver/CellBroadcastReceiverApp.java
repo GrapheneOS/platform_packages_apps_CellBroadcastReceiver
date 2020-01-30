@@ -31,9 +31,6 @@ public class CellBroadcastReceiverApp extends Application {
     /** List of unread non-emergency alerts to show when user selects the notification. */
     private static final ArrayList<SmsCbMessage> sNewMessageList = new ArrayList<>(4);
 
-    /** Latest area info cell broadcast received. */
-    private static SmsCbMessage sLatestAreaInfo;
-
     /** Adds a new unread non-emergency message and returns the current list. */
     static ArrayList<SmsCbMessage> addNewMessageToList(SmsCbMessage message) {
         sNewMessageList.add(message);
@@ -43,16 +40,6 @@ public class CellBroadcastReceiverApp extends Application {
     /** Clears the list of unread non-emergency messages. */
     static void clearNewMessageList() {
         sNewMessageList.clear();
-    }
-
-    /** Saves the latest area info broadcast received. */
-    static void setLatestAreaInfo(SmsCbMessage areaInfo) {
-        sLatestAreaInfo = areaInfo;
-    }
-
-    /** Returns the latest area info broadcast received. */
-    static SmsCbMessage getLatestAreaInfo() {
-        return sLatestAreaInfo;
     }
 
     /** Returns a list of unread non-emergency alerts */
