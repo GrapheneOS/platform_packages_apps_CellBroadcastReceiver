@@ -37,6 +37,8 @@
     <bool name="show_presidential_alerts_in_settings">false</bool>
     <!-- Whether to display public safety alert settings, some countries/carriers want to enable it by default and not allow users to disable -->
     <bool name="show_public_safety_settings">true</bool>
+    <!-- Whether to display state/local test settings, some countries/carriers want to enable it by default and not allow users to disable -->
+    <bool name="show_state_local_test_settings">true</bool>
     <!-- Whether to disable cell broadcast severe alert when extreme alert is disabled -->
     <bool name="disable_severe_when_extreme_disabled">true</bool>
     <!-- Whether to bypass test alert settings and always enable exercise alert channel -->
