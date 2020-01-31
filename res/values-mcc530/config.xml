@@ -23,4 +23,7 @@
     <bool name="show_date_time_title">true</bool>
     <!-- Disable Amber alert-->
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
+
+    <!-- Whether enable LED flash when playing alert tones -->
+    <bool name="enable_led_flash">true</bool>
 </resources>

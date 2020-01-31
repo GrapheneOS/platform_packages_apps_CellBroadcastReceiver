@@ -26,6 +26,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraManager;
 import android.media.AudioAttributes;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
@@ -95,12 +98,15 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private static final String TTS_UTTERANCE_ID = "com.android.cellbroadcastreceiver.UTTERANCE_ID";
 
     /** Pause duration between alert sound and alert speech. */
-    private static final int PAUSE_DURATION_BEFORE_SPEAKING_MSEC = 1000;
+    private static final long PAUSE_DURATION_BEFORE_SPEAKING_MSEC = 1000L;
 
     private static final int STATE_IDLE = 0;
     private static final int STATE_ALERTING = 1;
     private static final int STATE_PAUSING = 2;
     private static final int STATE_SPEAKING = 3;
+
+    /** Default LED flashing frequency is 250 milliseconds */
+    private static final long DEFAULT_LED_FLASH_INTERVAL_MSEC = 250L;
 
     private int mState;
 
@@ -114,6 +120,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private boolean mTtsLanguageSupported;
     private boolean mEnableVibrate;
     private boolean mEnableAudio;
+    private boolean mEnableLedFlash;
     private boolean mOverrideDnd;
     private boolean mResetAlarmVolumeNeeded;
     private int mUserSetAlarmVolume;
@@ -129,6 +136,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     // Internal messages
     private static final int ALERT_SOUND_FINISHED = 1000;
     private static final int ALERT_PAUSE_FINISHED = 1001;
+    private static final int ALERT_LED_FLASH_TOGGLE = 1002;
+
     private final Handler mHandler = new Handler(Looper.myLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -138,7 +147,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                     stop();     // stop alert sound
                     // if we can speak the message text
                     if (mMessageBody != null && mTtsEngineReady && mTtsLanguageSupported) {
-                        mHandler.sendMessageDelayed(mHandler.obtainMessage(ALERT_PAUSE_FINISHED),
+                        sendMessageDelayed(mHandler.obtainMessage(ALERT_PAUSE_FINISHED),
                                 PAUSE_DURATION_BEFORE_SPEAKING_MSEC);
                         mState = STATE_PAUSING;
                     } else {
@@ -167,6 +176,14 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         loge("TTS engine not ready or language not supported or speak() failed");
                         stopSelf();
                         mState = STATE_IDLE;
+                    }
+                    break;
+
+                case ALERT_LED_FLASH_TOGGLE:
+                    if (enableLedFlash(msg.arg1 != 0)) {
+                        sendMessageDelayed(mHandler.obtainMessage(
+                                ALERT_LED_FLASH_TOGGLE, msg.arg1 != 0 ? 0 : 1, 0),
+                                DEFAULT_LED_FLASH_INTERVAL_MSEC);
                     }
                     break;
 
@@ -301,6 +318,10 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mEnableVibrate = prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true);
         // retrieve the vibration patterns.
         mVibrationPattern = intent.getIntArrayExtra(ALERT_AUDIO_VIBRATION_PATTERN_EXTRA);
+
+        Resources res = CellBroadcastSettings.getResources(getApplicationContext(), mSubId);
+        mEnableLedFlash = res.getBoolean(R.bool.enable_led_flash);
+
         // retrieve the customized alert duration. -1 means play the alert with the tone's duration.
         mAlertDuration = intent.getIntExtra(ALERT_AUDIO_DURATION, -1);
         // retrieve the alert type
@@ -406,6 +427,10 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             mVibrator.vibrate(effect, attr);
         }
 
+        if (mEnableLedFlash) {
+            log("Start LED flashing");
+            mHandler.sendMessage(mHandler.obtainMessage(ALERT_LED_FLASH_TOGGLE, 1, 0));
+        }
 
         if (mEnableAudio) {
             // future optimization: reuse media player object
@@ -505,6 +530,42 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     }
 
     /**
+     * Turn on camera's LED
+     *
+     * @param on {@code true} if turned on, otherwise turned off.
+     *
+     * @return {@code true} if successful, otherwise false.
+     */
+    private boolean enableLedFlash(boolean on) {
+        log("enbleLedFlash=" + on);
+        CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+        if (cameraManager == null) return false;
+        final String[] ids;
+        try {
+            ids = cameraManager.getCameraIdList();
+        } catch (CameraAccessException e) {
+            log("Can't get camera id");
+            return false;
+        }
+
+        boolean success = false;
+        for (String id : ids) {
+            try {
+                CameraCharacteristics c = cameraManager.getCameraCharacteristics(id);
+                Boolean flashAvailable = c.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
+                if (flashAvailable != null && flashAvailable) {
+                    cameraManager.setTorchMode(id, on);
+                    success = true;
+                }
+            } catch (CameraAccessException e) {
+                log("Can't flash. e=" + e);
+                // continue with the next available camera
+            }
+        }
+        return success;
+    }
+
+    /**
      * Stops alert audio and speech.
      */
     public void stop() {
@@ -512,6 +573,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
         mHandler.removeMessages(ALERT_SOUND_FINISHED);
         mHandler.removeMessages(ALERT_PAUSE_FINISHED);
+        mHandler.removeMessages(ALERT_LED_FLASH_TOGGLE);
 
         resetAlarmStreamVolume(mAlertType);
 
@@ -530,6 +592,9 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
             // Stop vibrator
             mVibrator.cancel();
+            if (mEnableLedFlash) {
+                enableLedFlash(false);
+            }
         } else if (mState == STATE_SPEAKING && mTts != null) {
             try {
                 mTts.stop();
