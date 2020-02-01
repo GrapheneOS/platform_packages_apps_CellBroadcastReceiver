@@ -16,9 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="6006277287245076524">"Alertas de emergência"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"Alertas de emergência"</string>
-    <string name="cell_broadcast_settings_not_available" msgid="2612364350745967915">"As configurações de transmissão celular não estão disponíveis para este usuário"</string>
+    <string name="app_label" msgid="2008319089248760277">"Alertas de emergência sem fio"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"Alertas de emergência sem fio"</string>
+    <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Os alertas de emergência sem fio não estão disponíveis para este usuário"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Não há alertas anteriores"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Excluir transmissões"</string>
@@ -51,8 +51,9 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alertas"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Transmitir mensagens"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertas de emergência"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertas de emergência em chamadas de voz"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permitir alertas"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="699552922381916044">"Receber notificações de emergência"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Receber notif. de alertas de emergência sem fio"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Som do lembrete de alerta"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Histórico de alertas de emergência"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferências de alertas"</string>
@@ -72,9 +73,11 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Receber mensagens de teste das autoridades estaduais e locais"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Alertas de emergência"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Aviso sobre eventos perigosos"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"Teste mensal obrigatório"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="588517403520088484">"Receber mensagens de teste para o sistema de alerta de segurança"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Alertas de teste"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Receber testes mensais e da operadora pelo sistema de alerta de segurança"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibração"</string>
+    <string name="override_dnd_title" msgid="1517121512526835684">"Modificar \"Não perturbe\""</string>
+    <string name="override_dnd_summary" msgid="7755172156039625132">"Tocar som de alerta no volume máximo, estando o \"Não perturbe\" ativado ou não"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Transmissões de atualização de área"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostrar informações de atualização no status do chip"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoria de alerta:"</string>
@@ -111,9 +114,9 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Recebida:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> alertas não lidos."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Novos alertas"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Mostrar caixa de diálogo de desativação após exibir o primeiro alerta (exceto presidencial)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Mostrar caixa de diálogo de desativação após exibir o primeiro alerta (exceção: alerta presidencial)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Mostrar diálogo de desativação"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="7529010670998259128">"Você está recebendo alertas de emergência. Quer continuar a receber alertas de emergência?"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Você está recebendo alertas de emergência sem fio. Quer continuar a recebê-los?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Sim"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Não"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"Histórico de alertas de emergência"</string>
@@ -125,4 +128,10 @@
     <item msgid="6868848414437854609">"Desativado"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Alertas de emergência sem fio"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Alertas da presidência"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Mensagens de alerta nacional emitidas pela presidência. Não é possível desativá-las."</string>
+    <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
+    <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"O modo de teste de transmissão celular está ativado."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"O modo de teste de transmissão celular está desativado."</string>
 </resources>
