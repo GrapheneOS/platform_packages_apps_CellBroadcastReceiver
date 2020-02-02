@@ -16,23 +16,28 @@
  * limitations under the License.
  */
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:title="@string/emergency_alert_settings_title_watches"
-                  android:key="category_alert_preferences">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/emergency_alert_settings_title_watches"
+    android:key="category_alert_preferences">
 
         <!-- Enable CMAS Extreme Threat alerts -->
         <SwitchPreference android:defaultValue="true"
                           android:key="enable_cmas_extreme_threat_alerts"
+                          app:isPreferenceVisible="@bool/show_cmas_settings"
                           android:title="@string/enable_cmas_extreme_threat_alerts_title" />
 
         <!-- Enable CMAS Severe Threat alerts -->
         <SwitchPreference android:defaultValue="true"
                           android:key="enable_cmas_severe_threat_alerts"
+                          app:isPreferenceVisible="@bool/show_cmas_settings"
                           android:title="@string/enable_cmas_severe_threat_alerts_title" />
 
         <!-- Enable CMAS AMBER alerts -->
         <SwitchPreference android:defaultValue="true"
                           android:key="enable_cmas_amber_alerts"
+                          app:isPreferenceVisible="@bool/show_cmas_settings"
                           android:title="@string/enable_cmas_amber_alerts_title" />
 
         <SwitchPreference android:defaultValue="true"
@@ -62,6 +67,7 @@
         unless the boolean "config_showAreaUpdateInfoSettings" is set to true in the global resource. -->
         <SwitchPreference android:defaultValue="true"
                           android:key="enable_area_update_info_alerts"
+                          app:isPreferenceVisible="@bool/config_showAreaUpdateInfoSettings"
                           android:summary="@string/enable_area_update_info_alerts_summary"
                           android:title="@string/enable_area_update_info_alerts_title" />
 
