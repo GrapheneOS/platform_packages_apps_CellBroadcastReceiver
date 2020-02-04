@@ -74,6 +74,7 @@
         <!-- Enable state/local test alerts -->
         <SwitchPreference android:defaultValue="@bool/state_local_test_alerts_enabled_default"
                           android:key="enable_state_local_test_alerts"
+                          app:isPreferenceVisible="@bool/show_state_local_test_settings"
                           android:summary="@string/enable_state_local_test_alerts_summary"
                           android:title="@string/enable_state_local_test_alerts_title" />
 

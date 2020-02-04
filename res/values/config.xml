@@ -37,8 +37,10 @@
     <bool name="show_presidential_alerts_in_settings">false</bool>
     <!-- Whether to display public safety alert settings, some countries/carriers want to enable it by default and not allow users to disable -->
     <bool name="show_public_safety_settings">true</bool>
-    <!-- Whether to bypass Do-Not-Disturb/silent mode and play emergency alert tone at full volume for presidential alert -->
-    <bool name="full_volume_presidential_alert">false</bool>
+    <!-- Whether to display state/local test settings, some countries/carriers want to enable it by default and not allow users to disable -->
+    <bool name="show_state_local_test_settings">true</bool>
+    <!-- Whether to disable cell broadcast severe alert when extreme alert is disabled -->
+    <bool name="disable_severe_when_extreme_disabled">true</bool>
     <!-- Whether to bypass test alert settings and always enable exercise alert channel -->
     <bool name="always_enable_exercise_alert">false</bool>
     <!-- Whether to enable alert handling during active voice call. -->
@@ -71,8 +73,6 @@
 
     <!-- Specify second language code to receive emergency alerts -->
     <string name="emergency_alert_second_language_code" translatable="false"></string>
-    <!-- Whether to disable cell broadcast severe alert when extreme alert is disabled -->
-    <bool name="disable_severe_when_extreme_disabled">true</bool>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true</item>
