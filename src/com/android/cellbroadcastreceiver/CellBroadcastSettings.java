@@ -328,16 +328,6 @@ public class CellBroadcastSettings extends Activity {
                 }
             }
 
-            // Remove all cmas preferences
-            if (!res.getBoolean(R.bool.show_cmas_settings)) {
-                // Remove CMAS preference items in emergency alert category.
-                if (mAlertCategory != null) {
-                    if (mExtremeCheckBox != null) mAlertCategory.removePreference(mExtremeCheckBox);
-                    if (mSevereCheckBox != null) mAlertCategory.removePreference(mSevereCheckBox);
-                    if (mAmberCheckBox != null) mAlertCategory.removePreference(mAmberCheckBox);
-                }
-            }
-
             // Remove each individual settings if no channel configured
             if (channelManager.getCellBroadcastChannelRanges(
                     R.array.cmas_alert_extreme_channels_range_strings).isEmpty()) {
@@ -369,27 +359,10 @@ public class CellBroadcastSettings extends Activity {
                 }
             }
 
-            if (!res.getBoolean(R.bool.show_override_dnd_settings)) {
-                // Remove override dnd preference items in emergency alert category.
-                if (mAlertCategory != null) {
-                    if (mOverrideDndCheckBox != null) {
-                        mAlertCategory.removePreference(mOverrideDndCheckBox);
-                    }
-                }
-            }
-
-            if (!res.getBoolean(R.bool.config_showAreaUpdateInfoSettings)) {
-                if (mAlertCategory != null) {
-                    if (mAreaUpdateInfoCheckBox != null) {
-                        mAlertCategory.removePreference(mAreaUpdateInfoCheckBox);
-                    }
-                }
-            }
-
             // Remove preferences based on range configurations
             if (channelManager.getCellBroadcastChannelRanges(
                     R.array.cmas_amber_alerts_channels_range_strings).isEmpty()) {
-                // Remove ambert alert
+                // Remove amber alert
                 if (mAlertCategory != null) {
                     if (mAmberCheckBox != null) {
                         mAlertCategory.removePreference(mAmberCheckBox);
@@ -399,8 +372,7 @@ public class CellBroadcastSettings extends Activity {
 
             // Remove preferences based on range configurations
             if (channelManager.getCellBroadcastChannelRanges(
-                    R.array.public_safety_messages_channels_range_strings).isEmpty() ||
-                    !res.getBoolean(R.bool.show_public_safety_settings)) {
+                    R.array.public_safety_messages_channels_range_strings).isEmpty()) {
                 // Remove public safety messages
                 if (mAlertCategory != null) {
                     if (mPublicSafetyMessagesChannelCheckBox != null) {
@@ -492,13 +464,6 @@ public class CellBroadcastSettings extends Activity {
                 if (mAlertPreferencesCategory != null) {
                     mAlertPreferencesCategory.removePreference(
                             mReceiveCmasInSecondLanguageCheckBox);
-                }
-            }
-
-            // Show checkbox for Presidential alerts in settings
-            if (!res.getBoolean(R.bool.show_presidential_alerts_in_settings)) {
-                if (mAlertCategory != null) {
-                    mAlertCategory.removePreference(mPresidentialCheckBox);
                 }
             }
         }
