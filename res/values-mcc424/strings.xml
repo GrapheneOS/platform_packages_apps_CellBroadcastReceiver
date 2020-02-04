@@ -27,5 +27,6 @@
     <string name="enable_emergency_alerts_message_title">Warning alerts</string>
     <string name="enable_emergency_alerts_message_summary">Recommended actions that can save lives or property</string>
     <string name="cmas_required_monthly_test">Test alert</string>
+    <string name="public_safety_message">Test alert</string>
     <string name="cmas_exercise_alert">Exercise</string>
 </resources>
