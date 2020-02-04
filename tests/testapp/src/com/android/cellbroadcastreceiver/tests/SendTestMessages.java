@@ -27,9 +27,8 @@ import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.util.Log;
 
-import com.android.internal.telephony.gsm.GsmSmsCbMessage;
+import com.android.cellbroadcastservice.SmsCbHeader;
 import com.android.internal.telephony.gsm.SmsCbConstants;
-import com.android.internal.telephony.gsm.SmsCbHeader;
 import com.android.internal.telephony.uicc.IccUtils;
 
 /**
