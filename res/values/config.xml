@@ -37,14 +37,18 @@
     <bool name="show_presidential_alerts_in_settings">false</bool>
     <!-- Whether to display public safety alert settings, some countries/carriers want to enable it by default and not allow users to disable -->
     <bool name="show_public_safety_settings">true</bool>
-    <!-- Whether to bypass Do-Not-Disturb/silent mode and play emergency alert tone at full volume for presidential alert -->
-    <bool name="full_volume_presidential_alert">false</bool>
+    <!-- Whether to display state/local test settings, some countries/carriers want to enable it by default and not allow users to disable -->
+    <bool name="show_state_local_test_settings">true</bool>
+    <!-- Whether to disable cell broadcast severe alert when extreme alert is disabled -->
+    <bool name="disable_severe_when_extreme_disabled">true</bool>
     <!-- Whether to bypass test alert settings and always enable exercise alert channel -->
     <bool name="always_enable_exercise_alert">false</bool>
     <!-- Whether to enable alert handling during active voice call. -->
     <bool name="enable_alert_handling_during_call">true</bool>
     <!-- Whether the user can mute the alert by physical button -->
     <bool name="mute_by_physical_button">true</bool>
+    <!-- Whether enable LED flash when playing alert tones -->
+    <bool name="enable_led_flash">false</bool>
 
     <!-- Section for switch default value -->
     <!-- Master toggle default value -->
@@ -71,8 +75,6 @@
 
     <!-- Specify second language code to receive emergency alerts -->
     <string name="emergency_alert_second_language_code" translatable="false"></string>
-    <!-- Whether to disable cell broadcast severe alert when extreme alert is disabled -->
-    <bool name="disable_severe_when_extreme_disabled">true</bool>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true</item>
@@ -161,7 +163,7 @@
 
     <!-- Default value that in the ListPreference.
          These must be a subset of the alert_reminder_interval_values list above. -->
-    <string name="alert_reminder_interval_default_value" translatable="false">0</string>
+    <string name="alert_reminder_interval_in_min_default" translatable="false">0</string>
 
     <!-- Values that for the vibration pattern. -->
     <integer-array name="default_vibration_pattern">
@@ -178,6 +180,10 @@
         <item>500</item>
         <item>1000</item>
     </integer-array>
+
+    <!-- Value of the first reminder interval in minutes. 0 means using one of the
+         alert_reminder_interval_values for the interval of first reminder -->
+    <integer name="first_reminder_interval_in_min">0</integer>
 
     <!-- Whether the emergency alert notification is non-swipeable -->
     <bool name="non_swipeable_notification">false</bool>
