@@ -22,6 +22,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -289,6 +290,19 @@ public class CellBroadcastAlertService extends Service
                 });
     }
 
+    /**
+     * Mark the message as displayed in cell broadcast service's database.
+     *
+     * @param message The cell broadcast message.
+     */
+    private void markMessageDisplayed(SmsCbMessage message) {
+        ContentValues cv = new ContentValues();
+        cv.put(Telephony.CellBroadcasts.MESSAGE_DISPLAYED, 1);
+        mContext.getContentResolver().update(Telephony.CellBroadcasts.CONTENT_URI, cv,
+                Telephony.CellBroadcasts.RECEIVED_TIME + "=?",
+                new String[] {Long.toString(message.getReceivedTime())});
+    }
+
     private void showNewAlert(Intent intent) {
         Bundle extras = intent.getExtras();
         if (extras == null) {
@@ -309,6 +323,10 @@ public class CellBroadcastAlertService extends Service
             Log.d(TAG, "CMAS received in dialing/during voicecall.");
             sRemindAfterCallFinish = true;
         }
+
+        // Either shown the dialog, adding it to notification (non emergency, or delayed emergency),
+        // mark the message as displayed to the user.
+        markMessageDisplayed(cbm);
 
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                 mContext, cbm.getSubscriptionId());
