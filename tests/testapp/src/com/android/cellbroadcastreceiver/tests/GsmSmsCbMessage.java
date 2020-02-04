@@ -108,7 +108,7 @@ public class GsmSmsCbMessage {
             // message identifier, warning type, and warning security information.
             // There is no field for the content/text so we get the text from the resources.
             return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP, header.getGeographicalScope(),
-                    header.getSerialNumber(), location, header.getServiceCategory(), null,
+                    header.getSerialNumber(), location, header.getServiceCategory(), null, 0,
                     getEtwsPrimaryMessage(context, header.getEtwsInfo().getWarningType()),
                     SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, header.getEtwsInfo(),
                     header.getCmasInfo(), 0, null /* geometries */, receivedTimeMillis, slotIndex,
@@ -144,7 +144,7 @@ public class GsmSmsCbMessage {
 
             return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP,
                     header.getGeographicalScope(), header.getSerialNumber(), location,
-                    header.getServiceCategory(), language, body, priority,
+                    header.getServiceCategory(), language, 0, body, priority,
                     header.getEtwsInfo(), header.getCmasInfo(), maximumWaitingTimeSec, geometries,
                     receivedTimeMillis, slotIndex, subId);
         } else {
@@ -160,7 +160,7 @@ public class GsmSmsCbMessage {
 
             return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP,
                     header.getGeographicalScope(), header.getSerialNumber(), location,
-                    header.getServiceCategory(), language, sb.toString(), priority,
+                    header.getServiceCategory(), language, 0, sb.toString(), priority,
                     header.getEtwsInfo(), header.getCmasInfo(), 0, null /* geometries */,
                     receivedTimeMillis, slotIndex, subId);
         }
