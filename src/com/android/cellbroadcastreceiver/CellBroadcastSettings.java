@@ -448,14 +448,11 @@ public class CellBroadcastSettings extends Activity {
 
             if (mAlertHistory != null) {
                 mAlertHistory.setOnPreferenceClickListener(
-                        new Preference.OnPreferenceClickListener() {
-                            @Override
-                            public boolean onPreferenceClick(final Preference preference) {
-                                final Intent intent = new Intent(getContext(),
-                                        CellBroadcastListActivity.class);
-                                startActivity(intent);
-                                return true;
-                            }
+                        preference -> {
+                            final Intent intent = new Intent(getContext(),
+                                    CellBroadcastListActivity.class);
+                            startActivity(intent);
+                            return true;
                         });
             }
 
@@ -557,7 +554,8 @@ public class CellBroadcastSettings extends Activity {
                 || !channelManager.getCellBroadcastChannelRanges(
                 R.array.etws_test_alerts_range_strings).isEmpty();
 
-        return (res.getBoolean(R.bool.show_test_settings) || CellBroadcastReceiver.isTestingMode())
+        return (res.getBoolean(R.bool.show_test_settings)
+                || CellBroadcastReceiver.isTestingMode(context))
                 && isTestAlertsAvailable;
     }
 

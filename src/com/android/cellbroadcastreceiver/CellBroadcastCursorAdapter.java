@@ -34,9 +34,9 @@ import android.widget.CursorAdapter;
  */
 public class CellBroadcastCursorAdapter extends CursorAdapter {
 
-    public CellBroadcastCursorAdapter(Context context, Cursor cursor) {
+    public CellBroadcastCursorAdapter(Context context) {
         // don't set FLAG_AUTO_REQUERY or FLAG_REGISTER_CONTENT_OBSERVER
-        super(context, cursor, 0);
+        super(context, null, 0);
     }
 
     /**
@@ -170,8 +170,20 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
             cmasInfo = null;
         }
 
-        long deliveryTime = cursor.getLong(cursor.getColumnIndexOrThrow(
-                Telephony.CellBroadcasts.DELIVERY_TIME));
+        String timeColumn = null;
+        if (cursor.getColumnIndex(Telephony.CellBroadcasts.DELIVERY_TIME) >= 0) {
+            timeColumn = Telephony.CellBroadcasts.DELIVERY_TIME;
+        } else if (cursor.getColumnIndex(Telephony.CellBroadcasts.RECEIVED_TIME) >= 0) {
+            timeColumn = Telephony.CellBroadcasts.RECEIVED_TIME;
+        }
+
+        long time = cursor.getLong(cursor.getColumnIndexOrThrow(timeColumn));
+
+        int dcs = 0;
+        if (cursor.getColumnIndex(Telephony.CellBroadcasts.DATA_CODING_SCHEME) >= 0) {
+            dcs = cursor.getInt(cursor.getColumnIndexOrThrow(
+                    Telephony.CellBroadcasts.DATA_CODING_SCHEME));
+        }
 
         SubscriptionManager sm = (SubscriptionManager) context.getSystemService(
                 Context.TELEPHONY_SUBSCRIPTION_SERVICE);
@@ -181,8 +193,15 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
             subId = subIds[0];
         }
 
-        return new SmsCbMessage(format, geoScope, serialNum, location, category, language, 0, body,
-                priority, etwsInfo, cmasInfo, 0, null, deliveryTime, slotIndex, subId);
+        int maximumWaitTimeSec = 0;
+        if (cursor.getColumnIndex(Telephony.CellBroadcasts.MAXIMUM_WAIT_TIME) >= 0) {
+            maximumWaitTimeSec = cursor.getInt(cursor.getColumnIndexOrThrow(
+                    Telephony.CellBroadcasts.MAXIMUM_WAIT_TIME));
+        }
+
+        return new SmsCbMessage(format, geoScope, serialNum, location, category, language, dcs,
+                body, priority, etwsInfo, cmasInfo, maximumWaitTimeSec, null, time,
+                slotIndex, subId);
     }
 
     /**
