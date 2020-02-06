@@ -448,14 +448,11 @@ public class CellBroadcastSettings extends Activity {
 
             if (mAlertHistory != null) {
                 mAlertHistory.setOnPreferenceClickListener(
-                        new Preference.OnPreferenceClickListener() {
-                            @Override
-                            public boolean onPreferenceClick(final Preference preference) {
-                                final Intent intent = new Intent(getContext(),
-                                        CellBroadcastListActivity.class);
-                                startActivity(intent);
-                                return true;
-                            }
+                        preference -> {
+                            final Intent intent = new Intent(getContext(),
+                                    CellBroadcastListActivity.class);
+                            startActivity(intent);
+                            return true;
                         });
             }
 

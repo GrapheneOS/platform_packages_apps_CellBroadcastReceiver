@@ -33,6 +33,7 @@
     <uses-permission android:name="android.permission.MANAGE_USERS" />
     <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+    <uses-permission android:name="android.permission.READ_CELL_BROADCASTS" />
 
     <uses-sdk android:minSdkVersion="21"/>
 
@@ -114,14 +115,6 @@
                 <action android:name="android.cellbroadcastreceiver.START_CONFIG" />
                 <action android:name="android.provider.Telephony.SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED" />
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
-            </intent-filter>
-        </receiver>
-
-        <!-- Require sender permission for querying latest area info broadcast -->
-        <receiver android:name="CellBroadcastAreaInfoReceiver"
-            android:permission="android.permission.READ_PHONE_STATE">
-            <intent-filter>
-                 <action android:name="com.android.cellbroadcastreceiver.GET_LATEST_CB_AREA_INFO" />
             </intent-filter>
         </receiver>
 

@@ -45,6 +45,9 @@
     <!-- Title of "View details" dialog -->
     <string name="view_details_title">Alert details</string>
 
+    <!-- Title of "View details for debugging" dialog. Note this is for debugging purposes only -->
+    <string name="view_details_debugging_title">Alert details for debugging</string>
+
     <!-- Confirm Delete -->
     <!-- Delete broadcast confirmation dialog message. [CHAR LIMIT=NONE] -->
     <string name="confirm_delete_broadcast">Delete this broadcast?</string>
@@ -292,4 +295,41 @@
     <string name="testing_mode_enabled">Cell broadcast testing mode is enabled.</string>
     <!-- Toast message to indicate testing mode is disabled. [CHAR LIMIT=100] -->
     <string name="testing_mode_disabled">Cell broadcast testing mode is disabled.</string>
+
+    <!-- Show all emergency messages including the hidden messages. This is for debugging purposes
+         only -->
+    <string name="show_all_messages">Show all messages</string>
+
+    <!-- Show regular emergency messages (not including hidden messages). This is for debugging
+         purposes only -->
+    <string name="show_regular_messages">Show regular messages</string>
+
+    <!-- Cell broadcast message identifier. This is the id of the alert message. For debugging
+         purposes only -->
+    <string name="message_identifier">Identifier:</string>
+
+    <!-- Serial number of the message. This is for debugging purposes only -->
+    <string name="message_serial_number">Serial number:</string>
+
+    <!-- Data coding scheme of the emergency message. This is for debugging purposes only -->
+    <string name="data_coding_scheme">Data coding scheme:</string>
+
+    <!-- Content of the emergency message. This is for debugging purposes only -->
+    <string name="message_content">Message content:</string>
+
+    <!-- Location check time of the emergency message. This is for debugging purposes only -->
+    <string name="location_check_time">Location check time:</string>
+
+    <!-- Whether emergency message displayed to the user or not. This is for debugging purposes
+         only -->
+    <string name="message_displayed">Message displayed:</string>
+
+    <!-- Coordinates of the emergency alert. This is for debugging purposes only -->
+    <string name="message_coordinates">Coordinates:</string>
+
+    <!-- Maximum waiting time for location check. This is for debugging purposes only -->
+    <string name="maximum_waiting_time">Maximum waiting time:</string>
+
+    <!-- Sesconds (time unit). This is for debugging purposes only -->
+    <string name="seconds">seconds</string>
 </resources>
