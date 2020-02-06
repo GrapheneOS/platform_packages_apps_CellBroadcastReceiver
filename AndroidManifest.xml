@@ -117,14 +117,6 @@
             </intent-filter>
         </receiver>
 
-        <!-- Require sender permission for querying latest area info broadcast -->
-        <receiver android:name="CellBroadcastAreaInfoReceiver"
-            android:permission="android.permission.READ_PHONE_STATE">
-            <intent-filter>
-                 <action android:name="com.android.cellbroadcastreceiver.GET_LATEST_CB_AREA_INFO" />
-            </intent-filter>
-        </receiver>
-
         <receiver android:name="CellBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.telephony.action.DEFAULT_SMS_SUBSCRIPTION_CHANGED" />
