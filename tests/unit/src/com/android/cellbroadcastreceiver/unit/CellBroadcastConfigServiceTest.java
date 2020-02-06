@@ -30,6 +30,7 @@ import android.content.ContextWrapper;
 import android.content.SharedPreferences;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
@@ -67,6 +68,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     public void setUp() throws Exception {
         super.setUp(getClass().getSimpleName());
         mConfigService = spy(new CellBroadcastConfigService());
+        TelephonyManager.disableServiceHandleCaching();
 
         Class[] cArgs = new Class[1];
         cArgs[0] = Context.class;
@@ -135,6 +137,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     @After
     public void tearDown() throws Exception {
         super.tearDown();
+        TelephonyManager.enableServiceHandleCaching();
     }
 
     private void setCellBroadcastRange(int subId, boolean enable,
