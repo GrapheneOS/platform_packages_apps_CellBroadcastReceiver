@@ -144,9 +144,9 @@ public class GsmSmsCbMessage {
 
             return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP,
                     header.getGeographicalScope(), header.getSerialNumber(), location,
-                    header.getServiceCategory(), language, 0, body, priority,
-                    header.getEtwsInfo(), header.getCmasInfo(), maximumWaitingTimeSec, geometries,
-                    receivedTimeMillis, slotIndex, subId);
+                    header.getServiceCategory(), language, header.getDataCodingScheme(), body,
+                    priority, header.getEtwsInfo(), header.getCmasInfo(), maximumWaitingTimeSec,
+                    geometries, receivedTimeMillis, slotIndex, subId);
         } else {
             String language = null;
             StringBuilder sb = new StringBuilder();
@@ -160,9 +160,9 @@ public class GsmSmsCbMessage {
 
             return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP,
                     header.getGeographicalScope(), header.getSerialNumber(), location,
-                    header.getServiceCategory(), language, 0, sb.toString(), priority,
-                    header.getEtwsInfo(), header.getCmasInfo(), 0, null /* geometries */,
-                    receivedTimeMillis, slotIndex, subId);
+                    header.getServiceCategory(), language, header.getDataCodingScheme(),
+                    sb.toString(), priority, header.getEtwsInfo(), header.getCmasInfo(), 0,
+                    null /* geometries */, receivedTimeMillis, slotIndex, subId);
         }
     }
 

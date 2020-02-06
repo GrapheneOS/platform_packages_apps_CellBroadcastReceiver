@@ -23,11 +23,12 @@ import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbMessage;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
-import android.text.format.DateUtils;
+import android.text.TextUtils;
 import android.text.style.StyleSpan;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 
 /**
@@ -41,25 +42,55 @@ public class CellBroadcastResources {
     /**
      * Returns a styled CharSequence containing the message date/time and alert details.
      * @param context a Context for resource string access
+     * @param showDebugInfo {@code true} if adding more information for debugging purposes.
+     * @param message The cell broadcast message.
+     * @param locationCheckTime The EPOCH time in milliseconds that Device-based Geo-fencing (DBGF)
+     * was last performed. 0 if the message does not have DBGF information.
+     * @param isDisplayed {@code true} if the message is displayed to the user.
+     * @param geometry Geometry string for device-based geo-fencing message.
+     *
      * @return a CharSequence for display in the broadcast alert dialog
      */
-    public static CharSequence getMessageDetails(Context context, SmsCbMessage message) {
+    public static CharSequence getMessageDetails(Context context, boolean showDebugInfo,
+                                                 SmsCbMessage message, long locationCheckTime,
+                                                 boolean isDisplayed, String geometry) {
         SpannableStringBuilder buf = new SpannableStringBuilder();
-
         // Alert date/time
-        int start = buf.length();
-        buf.append(context.getString(R.string.delivery_time_heading));
-        int end = buf.length();
-        buf.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        buf.append(" ");
-        buf.append(DateUtils.formatDateTime(context, message.getReceivedTime(),
-                DateUtils.FORMAT_NO_NOON_MIDNIGHT | DateUtils.FORMAT_SHOW_TIME
-                        | DateUtils.FORMAT_ABBREV_ALL | DateUtils.FORMAT_SHOW_DATE
-                        | DateUtils.FORMAT_CAP_AMPM));
+        appendMessageDetail(context, buf, R.string.delivery_time_heading,
+                DateFormat.getDateTimeInstance().format(message.getReceivedTime()));
+
+        // Message id
+        if (showDebugInfo) {
+            appendMessageDetail(context, buf, R.string.message_identifier,
+                    Integer.toString(message.getServiceCategory()));
+            appendMessageDetail(context, buf, R.string.message_serial_number,
+                    Integer.toString(message.getSerialNumber()));
+        }
 
         if (message.isCmasMessage()) {
             // CMAS category, response type, severity, urgency, certainty
             appendCmasAlertDetails(context, buf, message.getCmasWarningInfo());
+        }
+
+        if (showDebugInfo) {
+            appendMessageDetail(context, buf, R.string.data_coding_scheme,
+                    Integer.toString(message.getDataCodingScheme()));
+
+            appendMessageDetail(context, buf, R.string.message_content, message.getMessageBody());
+
+            appendMessageDetail(context, buf, R.string.location_check_time, locationCheckTime == -1
+                    ? "N/A"
+                    : DateFormat.getDateTimeInstance().format(locationCheckTime));
+
+            appendMessageDetail(context, buf, R.string.maximum_waiting_time,
+                    message.getMaximumWaitingDuration() + " "
+                            + context.getString(R.string.seconds));
+
+            appendMessageDetail(context, buf, R.string.message_displayed,
+                    Boolean.toString(isDisplayed));
+
+            appendMessageDetail(context, buf, R.string.message_coordinates,
+                    TextUtils.isEmpty(geometry) ? "N/A" : geometry);
         }
 
         return buf;
@@ -70,36 +101,41 @@ public class CellBroadcastResources {
         // CMAS category
         int categoryId = getCmasCategoryResId(cmasInfo);
         if (categoryId != 0) {
-            appendMessageDetail(context, buf, R.string.cmas_category_heading, categoryId);
+            appendMessageDetail(context, buf, R.string.cmas_category_heading,
+                    context.getString(categoryId));
         }
 
         // CMAS response type
         int responseId = getCmasResponseResId(cmasInfo);
         if (responseId != 0) {
-            appendMessageDetail(context, buf, R.string.cmas_response_heading, responseId);
+            appendMessageDetail(context, buf, R.string.cmas_response_heading,
+                    context.getString(responseId));
         }
 
         // CMAS severity
         int severityId = getCmasSeverityResId(cmasInfo);
         if (severityId != 0) {
-            appendMessageDetail(context, buf, R.string.cmas_severity_heading, severityId);
+            appendMessageDetail(context, buf, R.string.cmas_severity_heading,
+                    context.getString(severityId));
         }
 
         // CMAS urgency
         int urgencyId = getCmasUrgencyResId(cmasInfo);
         if (urgencyId != 0) {
-            appendMessageDetail(context, buf, R.string.cmas_urgency_heading, urgencyId);
+            appendMessageDetail(context, buf, R.string.cmas_urgency_heading,
+                    context.getString(urgencyId));
         }
 
         // CMAS certainty
         int certaintyId = getCmasCertaintyResId(cmasInfo);
         if (certaintyId != 0) {
-            appendMessageDetail(context, buf, R.string.cmas_certainty_heading, certaintyId);
+            appendMessageDetail(context, buf, R.string.cmas_certainty_heading,
+                    context.getString(certaintyId));
         }
     }
 
     private static void appendMessageDetail(Context context, SpannableStringBuilder buf,
-            int typeId, int valueId) {
+                                           int typeId, String value) {
         if (buf.length() != 0) {
             buf.append("\n");
         }
@@ -108,7 +144,7 @@ public class CellBroadcastResources {
         int end = buf.length();
         buf.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         buf.append(" ");
-        buf.append(context.getString(valueId));
+        buf.append(value);
     }
 
     /**
