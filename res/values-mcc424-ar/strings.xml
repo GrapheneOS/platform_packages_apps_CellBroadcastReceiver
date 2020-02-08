@@ -21,7 +21,6 @@
     <string name="enable_emergency_alerts_message_title" msgid="876981179796412627">"التنبيهات التحذيرية"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="6745452404477073171">"الإجراءات المقترحة التي يمكن أن تنقذ الأرواح أو الممتلكات"</string>
     <string name="cmas_required_monthly_test" msgid="7606843318721168353">"رسالة تجريبية"</string>
-    <!-- no translation found for public_safety_message (2643362135123023300) -->
-    <skip />
+    <string name="public_safety_message" msgid="2643362135123023300">"تنبيه تجريبي"</string>
     <string name="cmas_exercise_alert" msgid="5775307523978007483">"تمرين"</string>
 </resources>

@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Lihat butiran"</string>
     <string name="menu_delete" msgid="128380070910799366">"Padam siaran"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Butiran awasan"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Butiran makluman untuk penyahpepijatan"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Padam siaran ini?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Padam semua mesej siaran yang diterima?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Padam"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Mod ujian siaran sel didayakan."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Mod ujian siaran sel dilumpuhkan."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Tunjukkan semua mesej"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Tunjukkan mesej biasa"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Pengecam:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Nombor siri:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Skema pengekodan data:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Kandungan mesej:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Masa semakan lokasi:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Mesej yang dipaparkan:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Koordinat:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Masa menunggu maksimum:"</string>
+    <string name="seconds" msgid="141450721520515025">"saat"</string>
 </resources>

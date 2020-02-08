@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Προβολή λεπτομερειών"</string>
     <string name="menu_delete" msgid="128380070910799366">"Διαγραφή εκπομπής"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Λεπτομέρειες ειδοποίησης"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Λεπτομέρειες ειδοποίησης για εντοπισμό και διόρθωση σφαλμάτων"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Διαγραφή αυτής της μετάδοσης;"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Να διαγραφούν όλα τα ληφθέντα μηνύματα μετάδοσης;"</string>
     <string name="button_delete" msgid="4672451757925194350">"Διαγραφή"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Η λειτουργία δοκιμής εκπομπής κινητής τηλεφωνίας είναι ενεργοποιημένη."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Η λειτουργία δοκιμής εκπομπής κινητής τηλεφωνίας είναι απενεργοποιημένη."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Εμφάνιση όλων των μηνυμάτων"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Εμφάνιση κανονικών μηνυμάτων"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Αναγνωριστικό:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Σειριακός αριθμός:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Σχήμα κωδικοποίησης δεδομένων:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Περιεχόμενο μηνύματος:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Ώρα ελέγχου τοποθεσίας:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Μήνυμα που εμφανίζεται:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Συντεταγμένες:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Μέγιστος χρόνος αναμονής:"</string>
+    <string name="seconds" msgid="141450721520515025">"δευτερόλεπτα"</string>
 </resources>

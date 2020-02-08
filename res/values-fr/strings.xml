@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Afficher les détails"</string>
     <string name="menu_delete" msgid="128380070910799366">"Supprimer la diffusion"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Détails de l\'alerte"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Détails de l\'alerte pour le débogage"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Supprimer cette diffusion ?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Supprimer tous les messages de diffusion reçus ?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Supprimer"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Le mode de test de la diffusion cellulaire est activé."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Le mode de test de la diffusion cellulaire est désactivé."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Afficher tous les messages"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Afficher les messages standards"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Identifiant :"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Numéro de série :"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Schéma de codage des données :"</string>
+    <string name="message_content" msgid="6204502929879474632">"Contenu du message :"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Heure de détection de la position :"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Message affiché :"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Coordonnées :"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Temps d\'attente maximal :"</string>
+    <string name="seconds" msgid="141450721520515025">"secondes"</string>
 </resources>

@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"세부정보 보기"</string>
     <string name="menu_delete" msgid="128380070910799366">"브로드캐스트 삭제"</string>
     <string name="view_details_title" msgid="1780427629491781473">"알리미 세부정보"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"디버깅을 위한 알림 세부정보"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"브로드캐스트를 삭제하시겠습니까?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"수신된 모든 브로드캐스트 메시지를 삭제하시겠습니까?"</string>
     <string name="button_delete" msgid="4672451757925194350">"삭제"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"셀 브로드캐스트 테스트 모드가 사용 설정되었습니다."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"셀 브로드캐스트 테스트 모드가 사용 중지되었습니다."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"모든 메시지 표시"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"일반 메시지 표시"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"식별자:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"일련번호:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"데이터 코딩 방식:"</string>
+    <string name="message_content" msgid="6204502929879474632">"메시지 내용:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"위치 확인 시간:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"표시된 메시지:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"좌표:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"최대 대기 시간:"</string>
+    <string name="seconds" msgid="141450721520515025">"초"</string>
 </resources>

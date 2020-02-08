@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"查看詳細資料"</string>
     <string name="menu_delete" msgid="128380070910799366">"刪除廣播"</string>
     <string name="view_details_title" msgid="1780427629491781473">"警示詳細資料"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"用於除錯的警示詳細資料"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"刪除這個廣播嗎？"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"刪除所有收到的廣播訊息嗎？"</string>
     <string name="button_delete" msgid="4672451757925194350">"刪除"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"區域廣播測試模式已啟用。"</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"區域廣播測試模式已停用。"</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"顯示所有訊息"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"顯示一般訊息"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"ID："</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"序號："</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"資料編碼配置："</string>
+    <string name="message_content" msgid="6204502929879474632">"訊息內容："</string>
+    <string name="location_check_time" msgid="4105326161240531207">"位置檢查時間："</string>
+    <string name="message_displayed" msgid="5091678195925617971">"是否要顯示訊息："</string>
+    <string name="message_coordinates" msgid="356333576818059052">"座標："</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"等待時間上限："</string>
+    <string name="seconds" msgid="141450721520515025">"秒"</string>
 </resources>

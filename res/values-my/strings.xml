@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"အသေးစိတ်များ ကြည့်ရှု"</string>
     <string name="menu_delete" msgid="128380070910799366">"ထုတ်လွှင့်မှုကို ဖျက်ပါ"</string>
     <string name="view_details_title" msgid="1780427629491781473">"သတိပေးချက် အသေးစိတ်များ"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"အမှားရှာပြင်ခြင်းအတွက် သတိပေးချက် အသေးစိတ်"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"ဒီ ထုတ်လွှင့်ချက်ကို ဖျက်ရမလား?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"ရရှိထားသည့် ထုတ်လွှင့် စာတို အားလုံး ဖျက်ရမလား?"</string>
     <string name="button_delete" msgid="4672451757925194350">"ဖျက်ရန်"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"စာတိုများ ဖြန့်ဝေခြင်းစနစ် အစမ်းမုဒ်ကို ဖွင့်ထားသည်။"</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"စာတိုများ ဖြန့်ဝေခြင်းစနစ် အစမ်းမုဒ်ကို ပိတ်ထားသည်။"</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"မက်ဆေ့ဂျ်အားလုံး ပြရန်"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"ပုံမှန်မက်ဆေ့ဂျ်ကို ပြရန်"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"သတ်မှတ်သူ−"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"အစဉ်လိုက်နံပါတ်−"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"ဒေတာပရိုဂရမ်ရေးခြင်း အစီအစဉ်−"</string>
+    <string name="message_content" msgid="6204502929879474632">"မက်ဆေ့ဂျ် အကြောင်းအရာ-"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"တည်နေရာ စစ်ဆေးရန် အချိန်−"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"ဖော်ပြခဲ့သော မက်ဆေ့ဂျ်−"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"ကိုဩဒိနိတ်များ−"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"အကြာဆုံး စောင့်ဆိုင်းချိန်−"</string>
+    <string name="seconds" msgid="141450721520515025">"စက္ကန့်"</string>
 </resources>

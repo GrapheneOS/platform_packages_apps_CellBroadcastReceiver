@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"عرض التفاصيل"</string>
     <string name="menu_delete" msgid="128380070910799366">"حذف بث"</string>
     <string name="view_details_title" msgid="1780427629491781473">"تفاصيل التنبيه"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"تفاصيل التنبيه لتصحيح الأخطاء"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"هل تريد حذف هذا البث؟"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"هل تريد حذف جميع رسائل البث المستلمة؟"</string>
     <string name="button_delete" msgid="4672451757925194350">"حذف"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"وضع اختبار البث الخلوي مفعّل."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"وضع اختبار البث الخلوي غير مفعّل."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"إظهار جميع الرسائل"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"إظهار الرسائل العادية"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"المعرّف:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"الرقم المسلسل:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"نظام ترميز البيانات:"</string>
+    <string name="message_content" msgid="6204502929879474632">"محتوى الرسالة:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"وقت التحقّق من الموقع الجغرافي:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"الرسالة معروضة:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"الإحداثيات:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"الحد الأقصى لوقت الانتظار:"</string>
+    <string name="seconds" msgid="141450721520515025">"ثوانٍ"</string>
 </resources>
