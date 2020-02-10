@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Ikusi xehetasunak"</string>
     <string name="menu_delete" msgid="128380070910799366">"Ezabatu igorpena"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Alerten xehetasunak"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Alertaren xehetasunak, arazketa egiteko"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Igorpena ezabatu nahi duzu?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Igorpen-mezu guztiak ezabatu nahi dituzu?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Ezabatu"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Gaitu da sare mugikor bidezko igorpenaren proba modua."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Desgaitu da sare mugikor bidezko igorpenaren proba modua."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Erakutsi mezu guztiak"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Erakutsi mezu arruntak"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Identifikatzailea:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Serie-zenbakia:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Datuak kodetzeko eskema:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Mezuaren edukia:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Kokapena egiaztatu zen ordua:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Bistaratu al da mezurik?"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Koordenatuak:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Gehienezko itxaron-denbora:"</string>
+    <string name="seconds" msgid="141450721520515025">"segundo"</string>
 </resources>

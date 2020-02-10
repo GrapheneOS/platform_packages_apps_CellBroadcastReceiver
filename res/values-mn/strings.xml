@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Дэлгэрэнгүй үзэх"</string>
     <string name="menu_delete" msgid="128380070910799366">"Нэвтрүүлгийг устгах"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Сэрэмжлүүлгийн мэдээлэл"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Алдаа засах сэрэмжлүүлгийн дэлгэрэнгүй"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Энэ нэвтрүүлгийг устгах уу?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Хүлээн авсан бүх нэвтрүүлгийн зурвасуудыг устгах уу?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Устгах"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Гар утсанд масс мессеж түгээх туршилтын горимыг идэвхжүүлсэн байна."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Гар утсанд масс мессеж түгээх туршилтын горимыг идэвхгүй болгосон байна."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Бүх зурвасыг харуулах"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Энгийн зурвасыг харуулах"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Таниулбар:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Серийн дугаар:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Өгөгдөл кодчлох схем:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Зурвасын контент:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Байршлыг шалгах хугацаа:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Үзүүлсэн зурвас:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Солбилцол:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Хамгийн дээд хүлээх хугацаа:"</string>
+    <string name="seconds" msgid="141450721520515025">"секунд"</string>
 </resources>

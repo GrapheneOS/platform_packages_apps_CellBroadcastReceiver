@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Переглянути деталі"</string>
     <string name="menu_delete" msgid="128380070910799366">"Видалити широкомовне повідомл."</string>
     <string name="view_details_title" msgid="1780427629491781473">"Деталі сповіщення"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Інформація про сповіщення для налагодження"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Видалити це широкомовне повідомлення?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Видалити всі отримані широкомовні повідомлення?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Видалити"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Тестовий режим Cell Broadcast увімкнено."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Тестовий режим Cell Broadcast вимкнено."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Показати всі повідомлення"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Показати звичайні повідомлення"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Ідентифікатор:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Серійний номер:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Схема кодування даних:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Вміст повідомлення:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Час отримання геоданих:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Показ повідомлення:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Координати:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Максимальний час очікування:"</string>
+    <string name="seconds" msgid="141450721520515025">"с"</string>
 </resources>

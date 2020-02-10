@@ -21,7 +21,6 @@
     <string name="enable_emergency_alerts_message_title" msgid="876981179796412627">"সকীয়নিমূলক সতৰ্কবাৰ্তাসমূহ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="6745452404477073171">"জীৱন অথবা সম্পত্তি ৰক্ষা কৰিব পৰা চুপাৰিছ কৰা কাৰ্যসমূহ"</string>
     <string name="cmas_required_monthly_test" msgid="7606843318721168353">"পৰীক্ষামূলক সতৰ্কতা"</string>
-    <!-- no translation found for public_safety_message (2643362135123023300) -->
-    <skip />
+    <string name="public_safety_message" msgid="2643362135123023300">"পৰীক্ষামূলক সতৰ্কবার্তা"</string>
     <string name="cmas_exercise_alert" msgid="5775307523978007483">"অনুশীলন"</string>
 </resources>

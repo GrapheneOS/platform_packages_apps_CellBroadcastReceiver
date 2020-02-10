@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Xem chi tiết"</string>
     <string name="menu_delete" msgid="128380070910799366">"Xóa chương trình phát sóng"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Chi tiết cảnh báo"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Thông báo chi tiết cho mục đích gỡ lỗi"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Xóa chương trình phát sóng này?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Xóa tất cả các thông báo của chương trình phát sóng đã nhận được?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Xóa"</string>
@@ -135,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Đã bật chế độ kiểm tra tính năng truyền phát trên di động."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Đã tắt chế độ kiểm tra tính năng truyền phát trên di động."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Hiển thị tất cả thông báo"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Hiển thị thông báo thông thường"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Giá trị nhận dạng:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Số sê-ri:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Lược đồ mã hóa dữ liệu:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Nội dung thông báo:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Thời gian kiểm tra thông tin vị trí:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Thông báo được hiển thị:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Tọa độ:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Thời gian chờ đợi tối đa:"</string>
+    <string name="seconds" msgid="141450721520515025">"giây"</string>
 </resources>
