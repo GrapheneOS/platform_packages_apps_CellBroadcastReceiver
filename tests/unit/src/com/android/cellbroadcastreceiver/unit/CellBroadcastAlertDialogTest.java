@@ -25,6 +25,7 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.IPowerManager;
+import android.os.IThermalService;
 import android.os.PowerManager;
 import android.telephony.SmsCbMessage;
 import android.widget.TextView;
@@ -49,6 +50,9 @@ public class CellBroadcastAlertDialogTest extends
 
     @Mock
     private IPowerManager.Stub mMockedPowerManagerService;
+
+    @Mock
+    private IThermalService.Stub mMockedThermalService;
 
     @Captor
     private ArgumentCaptor<Integer> mInt;
@@ -82,7 +86,8 @@ public class CellBroadcastAlertDialogTest extends
         // PowerManager is a final class so we can't use Mockito to mock it, but we can mock
         // its underlying service.
         doReturn(true).when(mMockedPowerManagerService).isInteractive();
-        mPowerManager = new PowerManager(mContext, mMockedPowerManagerService, null);
+        mPowerManager = new PowerManager(mContext, mMockedPowerManagerService,
+                mMockedThermalService, null);
         injectSystemService(PowerManager.class, mPowerManager);
     }
 
