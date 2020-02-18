@@ -26,8 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Mostra els detalls"</string>
     <string name="menu_delete" msgid="128380070910799366">"Suprimeix la difusió"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Detalls de l\'alerta"</string>
-    <!-- no translation found for view_details_debugging_title (5699927030805114173) -->
-    <skip />
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Detalls d\'alerta per depurar"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Vols suprimir aquesta missatge de difusió?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Vols suprimir tots els missatges de difusió rebuts?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Suprimeix"</string>
@@ -137,26 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"El mode de prova de difusió mòbil està activat."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"El mode de prova de difusió mòbil està desactivat."</string>
-    <!-- no translation found for show_all_messages (3780970968167139836) -->
-    <skip />
-    <!-- no translation found for show_regular_messages (7376885150513522515) -->
-    <skip />
-    <!-- no translation found for message_identifier (5558338496219327850) -->
-    <skip />
-    <!-- no translation found for message_serial_number (3386553658712978964) -->
-    <skip />
-    <!-- no translation found for data_coding_scheme (4628901196730870577) -->
-    <skip />
-    <!-- no translation found for message_content (6204502929879474632) -->
-    <skip />
-    <!-- no translation found for location_check_time (4105326161240531207) -->
-    <skip />
-    <!-- no translation found for message_displayed (5091678195925617971) -->
-    <skip />
-    <!-- no translation found for message_coordinates (356333576818059052) -->
-    <skip />
-    <!-- no translation found for maximum_waiting_time (3504809124079381356) -->
-    <skip />
-    <!-- no translation found for seconds (141450721520515025) -->
-    <skip />
+    <string name="show_all_messages" msgid="3780970968167139836">"Mostra tots els missatges"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Mostra els missatges normals"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Identificador:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Número de sèrie:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Esquema de programació de dades:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Contingut del missatge:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Hora de comprovació de la ubicació:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Es mostra un missatge:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Coordenades:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Temps màxim d\'espera:"</string>
+    <string name="seconds" msgid="141450721520515025">"segons"</string>
 </resources>
