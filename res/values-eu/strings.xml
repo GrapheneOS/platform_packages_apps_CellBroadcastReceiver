@@ -145,6 +145,6 @@
     <string name="location_check_time" msgid="4105326161240531207">"Kokapena egiaztatu zen ordua:"</string>
     <string name="message_displayed" msgid="5091678195925617971">"Bistaratu al da mezurik?"</string>
     <string name="message_coordinates" msgid="356333576818059052">"Koordenatuak:"</string>
-    <string name="maximum_waiting_time" msgid="3504809124079381356">"Gehienezko itxaron-denbora:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Gehieneko itxarote-denbora:"</string>
     <string name="seconds" msgid="141450721520515025">"segundo"</string>
 </resources>

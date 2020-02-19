@@ -26,8 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"সবিশেষ চাওক"</string>
     <string name="menu_delete" msgid="128380070910799366">"সম্প্ৰচাৰ মচক"</string>
     <string name="view_details_title" msgid="1780427629491781473">"সতৰ্কবাণীৰ সবিশেষ"</string>
-    <!-- no translation found for view_details_debugging_title (5699927030805114173) -->
-    <skip />
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"ডিবাগিঙৰ বাবে সতর্কবার্তাৰ সবিশেষ"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"এই সম্প্ৰচাৰটো মচিবনে?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"আপুনি লাভ কৰা সকলোবোৰ সম্প্ৰচাৰ বাৰ্তা মচিবনে?"</string>
     <string name="button_delete" msgid="4672451757925194350">"মচক"</string>
@@ -137,26 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"চেল সম্প্ৰচাৰ পৰীক্ষণ ম’ড সক্ষম কৰা হৈছে।"</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"চেল সম্প্ৰচাৰ পৰীক্ষণ ম’ড অক্ষম কৰা হৈছে।"</string>
-    <!-- no translation found for show_all_messages (3780970968167139836) -->
-    <skip />
-    <!-- no translation found for show_regular_messages (7376885150513522515) -->
-    <skip />
-    <!-- no translation found for message_identifier (5558338496219327850) -->
-    <skip />
-    <!-- no translation found for message_serial_number (3386553658712978964) -->
-    <skip />
-    <!-- no translation found for data_coding_scheme (4628901196730870577) -->
-    <skip />
-    <!-- no translation found for message_content (6204502929879474632) -->
-    <skip />
-    <!-- no translation found for location_check_time (4105326161240531207) -->
-    <skip />
-    <!-- no translation found for message_displayed (5091678195925617971) -->
-    <skip />
-    <!-- no translation found for message_coordinates (356333576818059052) -->
-    <skip />
-    <!-- no translation found for maximum_waiting_time (3504809124079381356) -->
-    <skip />
-    <!-- no translation found for seconds (141450721520515025) -->
-    <skip />
+    <string name="show_all_messages" msgid="3780970968167139836">"সকলো বার্তা দেখুৱাওক"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"নিয়মীয়া বার্তাসমূহ দেখুৱাওক"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"চিনাক্তকাৰী:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"ক্ৰমিক নম্বৰ:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"ডেটা ক\'ডিঙৰ আঁচনি:"</string>
+    <string name="message_content" msgid="6204502929879474632">"বার্তাৰ সমল:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"অৱস্থান পৰীক্ষা কৰাৰ সময়:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"এই বার্তাটো প্ৰদর্শন কৰা হৈছে:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"স্থানাংক:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"অপেক্ষা কৰাৰ সর্বাধিক সময়:"</string>
+    <string name="seconds" msgid="141450721520515025">"ছেকেণ্ড"</string>
 </resources>

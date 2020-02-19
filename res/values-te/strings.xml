@@ -26,8 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"వివరాలను వీక్షించండి"</string>
     <string name="menu_delete" msgid="128380070910799366">"ప్రసారాన్ని తొలగించు"</string>
     <string name="view_details_title" msgid="1780427629491781473">"హెచ్చరిక వివరాలు"</string>
-    <!-- no translation found for view_details_debugging_title (5699927030805114173) -->
-    <skip />
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"డీబగ్గింగ్ కోసం అలర్ట్ వివరాలు"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"ఈ ప్రసారాన్ని తొలగించాలా?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"అన్ని స్వీకరించిన ప్రసార సందేశాలను తొలగించాలా?"</string>
     <string name="button_delete" msgid="4672451757925194350">"తొలగించు"</string>
@@ -137,26 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"\'సెల్ ప్రసారం టెస్టింగ్ మోడ్\' ఎనేబుల్ అయ్యింది."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"\'సెల్ ప్రసారం టెస్టింగ్ మోడ్\' డిజేబుల్ అయ్యింది."</string>
-    <!-- no translation found for show_all_messages (3780970968167139836) -->
-    <skip />
-    <!-- no translation found for show_regular_messages (7376885150513522515) -->
-    <skip />
-    <!-- no translation found for message_identifier (5558338496219327850) -->
-    <skip />
-    <!-- no translation found for message_serial_number (3386553658712978964) -->
-    <skip />
-    <!-- no translation found for data_coding_scheme (4628901196730870577) -->
-    <skip />
-    <!-- no translation found for message_content (6204502929879474632) -->
-    <skip />
-    <!-- no translation found for location_check_time (4105326161240531207) -->
-    <skip />
-    <!-- no translation found for message_displayed (5091678195925617971) -->
-    <skip />
-    <!-- no translation found for message_coordinates (356333576818059052) -->
-    <skip />
-    <!-- no translation found for maximum_waiting_time (3504809124079381356) -->
-    <skip />
-    <!-- no translation found for seconds (141450721520515025) -->
-    <skip />
+    <string name="show_all_messages" msgid="3780970968167139836">"అన్ని మెసేజ్‌లను చూపించు"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"సాధారణ మెసేజ్ లను చూపించు"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"ఐడెంటిఫయర్:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"క్రమ సంఖ్య:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"డేటా కోడింగ్ స్కీమ్:"</string>
+    <string name="message_content" msgid="6204502929879474632">"మెసేజ్ కంటెంట్:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"లొకేషన్ చెక్ టైమ్:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"మెసేజ్ ప్రదర్శించబడింది:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"అక్షాంశాలు:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"గరిష్ఠ వెయిటింగ్ టైమ్:"</string>
+    <string name="seconds" msgid="141450721520515025">"సెకన్లు"</string>
 </resources>
