@@ -1,5 +1,6 @@
 apex_defaults {
     name: "com.android.cellbroadcast-defaults",
+    updatable: true,
 
     manifest: "apex_manifest.json",
 
