@@ -188,18 +188,10 @@
     <!-- Whether the emergency alert notification is non-swipeable -->
     <bool name="non_swipeable_notification">false</bool>
 
-    <!-- Independent link support for Email, URL and phone in CMAS mes This array
-     contains the message classes that should be linkfied. Values should match the ones defined
-     in SmsCbCmasInfo class. If empty, no messages will be linked. By default, add link to all
-     messages -->
-    <integer-array name="message_classes_to_linkify">
-        <item>0x00</item> <!-- Presidential alerts -->
-        <item>0x01</item> <!-- Extreme alerts -->
-        <item>0x02</item> <!-- Severe alerts -->
-        <item>0x04</item> <!-- Monthly test -->
-        <item>0x05</item> <!-- CMAS exercise -->
-        <item>0x06</item> <!-- Operator defined use -->
-        <item>0x07</item> <!-- Public Safety alerts -->
-        <item>0x08</item> <!-- State/Local test alerts -->
-    </integer-array>
+    <!-- Text links generating method. Could be one of the followings.
+         "none": Not adding any link to message texts.
+         "legacy_linkify": Use the legacy linkify to add links to message texts.
+         "smart_linkify": Use machine learning based smart linkify to add links to message texts.
+    -->
+    <string name="link_method" translatable="false">smart_linkify</string>
 </resources>
