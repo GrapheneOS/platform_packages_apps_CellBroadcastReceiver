@@ -194,4 +194,7 @@
          "smart_linkify": Use machine learning based smart linkify to add links to message texts.
     -->
     <string name="link_method" translatable="false">smart_linkify</string>
+
+    <!-- Whether enabling copy message text into clipboard by long press -->
+    <bool name="enable_text_copy">true</bool>
 </resources>
