@@ -107,7 +107,7 @@ public class CellBroadcastAlertServiceTest extends
     // Test handleCellBroadcastIntent method
     public void testHandleCellBroadcastIntent() throws Exception {
         sendMessage(987654321);
-        waitForMs(200);
+        waitForMs(500);
 
         assertEquals(SHOW_NEW_ALERT_ACTION, mServiceIntentToVerify.getAction());
 
@@ -124,7 +124,7 @@ public class CellBroadcastAlertServiceTest extends
         SmsCbMessage message = createMessage(34788612);
         intent.putExtra("message", message);
         startService(intent);
-        waitForMs(200);
+        waitForMs(500);
 
         // verify audio service intent
         assertEquals(CellBroadcastAlertAudio.ACTION_START_ALERT_AUDIO,

@@ -25,11 +25,11 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.support.test.uiautomator.UiDevice;
 
-import com.android.cellbroadcastreceiver.CellBroadcastSettings;
-
 import androidx.test.InstrumentationRegistry;
 import androidx.test.filters.FlakyTest;
 import androidx.test.runner.AndroidJUnit4;
+
+import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 
 import junit.framework.Assert;
 
@@ -52,7 +52,7 @@ public class CellBroadcastSettingsTest {
 
     @FlakyTest
     @Test
-    public void testRotate_alertReminderDialogOpen_shouldNotCrash() {
+    public void testRotateAlertReminderDialogOpen() {
         try {
             mDevice.wakeUp();
             mDevice.pressMenu();
