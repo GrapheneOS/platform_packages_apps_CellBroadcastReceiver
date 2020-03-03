@@ -29,7 +29,9 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.media.AudioManager;
 import android.telephony.CarrierConfigManager;
+import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
 import android.test.ServiceTestCase;
 
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
@@ -39,6 +41,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import java.util.Arrays;
 
 public abstract class CellBroadcastServiceTestCase<T extends Service> extends ServiceTestCase<T> {
 
@@ -50,6 +54,12 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
     protected ISub.Stub mSubService;
     @Mock
     protected AudioManager mMockedAudioManager;
+    @Mock
+    protected SubscriptionManager mMockedSubscriptionManager;
+    @Mock
+    protected SubscriptionInfo mMockSubscriptionInfo;
+    @Mock
+    protected TelephonyManager mMockedTelephonyManager;
 
     MockedServiceManager mMockedServiceManager;
 
@@ -104,6 +114,10 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
                     return mMockedCarrierConfigManager;
                 case Context.AUDIO_SERVICE:
                     return mMockedAudioManager;
+                case Context.TELEPHONY_SUBSCRIPTION_SERVICE:
+                    return mMockedSubscriptionManager;
+                case Context.TELEPHONY_SERVICE:
+                    return mMockedTelephonyManager;
             }
             return super.getSystemService(name);
         }
@@ -120,8 +134,16 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
 
         doReturn(new String[]{""}).when(mResources).getStringArray(anyInt());
 
+        doReturn(1).when(mMockSubscriptionInfo).getSubscriptionId();
+        doReturn(Arrays.asList(mMockSubscriptionInfo)).when(mMockedSubscriptionManager)
+                .getActiveSubscriptionInfoList();
+
+        doReturn(mMockedTelephonyManager).when(mMockedTelephonyManager)
+                .createForSubscriptionId(anyInt());
+
         mMockedServiceManager = new MockedServiceManager();
         mMockedServiceManager.replaceService("isub", mSubService);
+
         mContext = new TestContextWrapper(getContext());
         setContext(mContext);
         CellBroadcastSettings.setUseResourcesForSubId(false);
