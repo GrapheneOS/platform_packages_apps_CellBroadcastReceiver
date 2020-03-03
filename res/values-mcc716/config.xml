@@ -58,8 +58,8 @@
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
     <bool name="override_dnd_default">true</bool>
 
-    <!-- Disable links for Peru -->
-    <integer-array name="message_classes_to_linkify"></integer-array>
+    <!-- Link method -->
+    <string name="link_method" translatable="false">none</string>
 
     <!-- Hide public safety settings per Peru users -->
     <bool name="show_public_safety_settings">false</bool>

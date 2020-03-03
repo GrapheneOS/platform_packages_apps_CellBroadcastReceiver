@@ -29,6 +29,8 @@ import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
 
@@ -68,7 +70,7 @@ public class CellBroadcastConfigService extends IntentService {
                     // Retrieve all the active subscription indice and enable cell broadcast
                     // messages on all subs. The duplication detection will be done at the
                     // frameworks.
-                    int [] subIds = getActiveSubIdList(subManager);
+                    int[] subIds = getActiveSubIdList(subManager);
                     if (subIds.length != 0) {
                         for (int subId : subIds) {
                             log("Enable CellBroadcast on sub " + subId);
@@ -85,10 +87,12 @@ public class CellBroadcastConfigService extends IntentService {
         }
     }
 
+    @NonNull
     private int[] getActiveSubIdList(SubscriptionManager subMgr) {
         List<SubscriptionInfo> subInfos = subMgr.getActiveSubscriptionInfoList();
-        int[] subIds = new int[subInfos.size()];
-        for (int i = 0; i < subInfos.size(); i++) {
+        int size = subInfos != null ? subInfos.size() : 0;
+        int[] subIds = new int[size];
+        for (int i = 0; i < size; i++) {
             subIds[i] = subInfos.get(i).getSubscriptionId();
         }
         return subIds;

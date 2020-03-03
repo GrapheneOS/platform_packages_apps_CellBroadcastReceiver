@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The Android Open Source Project
+<!-- Copyright (C) 2020 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
 -->
 
 <resources>
+    <!-- This configuration is for the test SIM. We tried to enable features as many as possible -->
+
     <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_cmas_test_alerts_title">Other tests</string>
 
@@ -84,11 +86,21 @@
         <item>0x1130:rat=gsm, emergency=true</item>
     </string-array>
 
-    <!-- Text links generating method. U.S does not allow text to be copied, so
-         we can't use smart linkify. -->
-    <string name="link_method" translatable="false">legacy_linkify</string>
+    <!-- Whether to show override dnd settings -->
+    <bool name="show_override_dnd_settings">false</bool>
 
-    <!-- Whether enabling copy message text into clipboard by long press.
-         FCC does not allow message to be copied/pasted -->
-    <bool name="enable_text_copy">false</bool>
+    <!-- Show timestamp of the alert -->
+    <bool name="show_date_time_title">true</bool>
+    <!-- Whether to show CMAS messages by in a different order than received by prioritizing them -->
+    <bool name="show_cmas_messages_in_priority_order">true</bool>
+    <!-- Whether enable LED flash when playing alert tones -->
+    <bool name="enable_led_flash">false</bool>
+
+    <string-array name="additional_cbs_channels_strings" translatable="false">
+        <!-- Channel 50 and 60 for area update info -->
+        <item>0x32:type=area, emergency=false</item>
+        <item>0x3C:type=area, emergency=false</item>
+    </string-array>
+    <!-- Show area update info settings in CellBroadcastReceiver and information in SIM status in Settings app -->
+    <bool name="config_showAreaUpdateInfoSettings">true</bool>
 </resources>
