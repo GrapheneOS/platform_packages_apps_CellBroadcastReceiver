@@ -46,7 +46,8 @@ public class SendGsmCmasMessages {
 
     private static final String AMBER_ALERT =
             "AMBER ALERT:Mountain View,CA VEH'07 Blue Honda Civic CA LIC 5ABC123. "
-                    + "Check https://www.amberalert.gov/active.htm for more information.";
+                    + "Check www.amberalert.gov/active.htm, call 858-123-4567, or email "
+                    + "amberalert@mountainview.ca.gov for more information.";
 
     private static final String MONTHLY_TEST_ALERT = "This is a test of the emergency alert system."
             + " This is only a test. Call (123)456-7890.";

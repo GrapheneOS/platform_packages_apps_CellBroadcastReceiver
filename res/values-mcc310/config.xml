@@ -83,4 +83,8 @@
         <!-- geo-fencing trigger messages -->
         <item>0x1130:rat=gsm, emergency=true</item>
     </string-array>
+
+    <!-- Text links generating method. U.S does not allow text to be copied, so
+         we can't use smart linkify. -->
+    <string name="link_method" translatable="false">legacy_linkify</string>
 </resources>
