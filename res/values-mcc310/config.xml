@@ -87,4 +87,8 @@
     <!-- Text links generating method. U.S does not allow text to be copied, so
          we can't use smart linkify. -->
     <string name="link_method" translatable="false">legacy_linkify</string>
+
+    <!-- Whether enabling copy message text into clipboard by long press.
+         FCC does not allow message to be copied/pasted -->
+    <bool name="enable_text_copy">false</bool>
 </resources>
