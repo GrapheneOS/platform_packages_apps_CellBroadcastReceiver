@@ -22,6 +22,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.app.NotificationManager;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -51,6 +53,7 @@ import android.view.textclassifier.TextClassifier;
 import android.view.textclassifier.TextLinks;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -314,17 +317,31 @@ public class CellBroadcastAlertDialog extends Activity {
 
             // For emergency alerts, keep screen on so the user can read it
             SmsCbMessage message = getLatestMessage();
-            if (message != null) {
-                CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
-                        this, message.getSubscriptionId());
-                if (channelManager.isEmergencyMessage(message)) {
-                    Log.d(TAG, "onCreate setting screen on timer for emergency alert for sub "
-                            + message.getSubscriptionId());
-                    mScreenOffHandler.startScreenOnTimer();
-                }
+
+            if (message == null) {
+                Log.e(TAG, "message is null");
+                finish();
+                return;
+            }
+
+            CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                    this, message.getSubscriptionId());
+            if (channelManager.isEmergencyMessage(message)) {
+                Log.d(TAG, "onCreate setting screen on timer for emergency alert for sub "
+                        + message.getSubscriptionId());
+                mScreenOffHandler.startScreenOnTimer();
             }
 
             updateAlertText(message);
+
+            Resources res = CellBroadcastSettings.getResources(getApplicationContext(),
+                    message.getSubscriptionId());
+            if (res.getBoolean(R.bool.enable_text_copy)) {
+                TextView textView = findViewById(R.id.message);
+                if (textView != null) {
+                    textView.setOnLongClickListener(v -> copyMessageToClipboard(message));
+                }
+            }
         }
     }
 
@@ -468,7 +485,7 @@ public class CellBroadcastAlertDialog extends Activity {
      * Update alert text when a new emergency alert arrives.
      * @param message CB message which is used to update alert text.
      */
-    private void updateAlertText(SmsCbMessage message) {
+    private void updateAlertText(@NonNull SmsCbMessage message) {
         Context context = getApplicationContext();
         int titleId = CellBroadcastResources.getDialogTitleResource(context, message);
 
@@ -694,5 +711,24 @@ public class CellBroadcastAlertDialog extends Activity {
                     .apply();
             mOptOutDialog.dismiss();
         }
+    }
+
+    /**
+     * Copy the message to clipboard.
+     *
+     * @param message Cell broadcast message.
+     *
+     * @return {@code true} if success, otherwise {@code false};
+     */
+    private boolean copyMessageToClipboard(SmsCbMessage message) {
+        ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        if (cm == null) return false;
+
+        cm.setPrimaryClip(ClipData.newPlainText("Alert Message", message.getMessageBody()));
+
+        String msg = CellBroadcastSettings.getResources(getApplicationContext(),
+                message.getSubscriptionId()).getString(R.string.message_copied);
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+        return true;
     }
 }
