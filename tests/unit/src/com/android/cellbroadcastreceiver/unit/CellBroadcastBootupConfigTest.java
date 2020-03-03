@@ -43,6 +43,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import android.content.Intent;
+import android.os.IBinder;
 import android.telephony.SmsCbMessage;
 
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
@@ -59,6 +60,8 @@ public class CellBroadcastBootupConfigTest extends
 
     @Mock
     ISms.Stub mSmsService;
+    @Mock
+    IBinder mIBinder;
 
     @Captor
     private ArgumentCaptor<Integer> mStartIds;
@@ -78,6 +81,7 @@ public class CellBroadcastBootupConfigTest extends
         super.setUp();
 
         doReturn(mSmsService).when(mSmsService).queryLocalInterface(anyString());
+        doReturn(mIBinder).when(mSmsService).asBinder();
         mMockedServiceManager.replaceService("isms", mSmsService);
         putResources(com.android.cellbroadcastreceiver.R.array
                 .cmas_presidential_alerts_channels_range_strings, new String[]{
