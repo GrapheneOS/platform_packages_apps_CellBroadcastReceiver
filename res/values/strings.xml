@@ -332,4 +332,7 @@
 
     <!-- Sesconds (time unit). This is for debugging purposes only -->
     <string name="seconds">seconds</string>
+
+    <!-- Emergency alert message copied to clipboard. -->
+    <string name="message_copied">Message copied</string>
 </resources>
