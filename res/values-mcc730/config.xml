@@ -57,8 +57,8 @@
     <bool name="override_dnd_default">true</bool>
     <!-- Append date-time to the alert title -->
     <bool name="show_date_time_title">true</bool>
-    <!-- Disable links for Chile -->
-    <integer-array name="message_classes_to_linkify"></integer-array>
+    <!-- Link method -->
+    <string name="link_method" translatable="false">none</string>
     <!-- Whether the user can mute the alert by physical button -->
     <bool name="mute_by_physical_button">false</bool>
 </resources>

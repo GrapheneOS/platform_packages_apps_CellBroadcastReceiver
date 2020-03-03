@@ -100,17 +100,17 @@ public class CellBroadcastAlertDialogTest extends
         startActivity();
         waitForMs(100);
 
-        CharSequence etremeAlertString =
+        CharSequence alertString =
                 getActivity().getResources().getText(com.android.cellbroadcastreceiver.R.string
                         .cmas_presidential_level_alert);
-        assertEquals(etremeAlertString, getActivity().getTitle());
-        assertEquals(etremeAlertString,
-                ((TextView) getActivity().findViewById(
-                        com.android.cellbroadcastreceiver.R.id.alertTitle)).getText());
+        assertTrue(getActivity().getTitle().toString().startsWith(alertString.toString()));
+        assertTrue(((TextView) getActivity().findViewById(
+                com.android.cellbroadcastreceiver.R.id.alertTitle)).getText().toString()
+                .startsWith(alertString.toString()));
 
         assertEquals(CellBroadcastAlertServiceTest.createMessage(34596).getMessageBody(),
-                (String) ((TextView) getActivity().findViewById(
-                        com.android.cellbroadcastreceiver.R.id.message)).getText());
+                ((TextView) getActivity().findViewById(
+                        com.android.cellbroadcastreceiver.R.id.message)).getText().toString());
 
         stopActivity();
     }
@@ -126,7 +126,8 @@ public class CellBroadcastAlertDialogTest extends
 
         assertEquals(1, (int) mInt.getValue());
 
-        assertEquals(getActivity().getTitle(), b.getCharSequence(Notification.EXTRA_TITLE));
+        assertTrue(getActivity().getTitle().toString().startsWith(
+                b.getCharSequence(Notification.EXTRA_TITLE).toString()));
         assertEquals(CellBroadcastAlertServiceTest.createMessage(98235).getMessageBody(),
                 b.getCharSequence(Notification.EXTRA_TEXT));
     }
