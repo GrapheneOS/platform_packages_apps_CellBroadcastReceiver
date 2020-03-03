@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver;
 
+import android.annotation.IntDef;
+import android.annotation.NonNull;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.KeyguardManager;
@@ -34,7 +36,10 @@ import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionManager;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.format.DateUtils;
+import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -42,10 +47,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.textclassifier.TextClassifier;
+import android.view.textclassifier.TextLinks;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -64,6 +74,35 @@ public class CellBroadcastAlertDialog extends Activity {
     // Intent extra to identify if notification was sent while trying to move away from the dialog
     //  without acknowledging the dialog
     static final String FROM_SAVE_STATE_NOTIFICATION_EXTRA = "from_save_state_notification";
+
+    /** Not link any text. */
+    private static final int LINK_METHOD_NONE = 0;
+
+    private static final String LINK_METHOD_NONE_STRING = "none";
+
+    /** Use {@link android.text.util.Linkify} to generate links. */
+    private static final int LINK_METHOD_LEGACY_LINKIFY = 1;
+
+    private static final String LINK_METHOD_LEGACY_LINKIFY_STRING = "legacy_linkify";
+
+    /**
+     * Use the machine learning based {@link TextClassifier} to generate links. Will fallback to
+     * {@link #LINK_METHOD_LEGACY_LINKIFY} if not enabled.
+     */
+    private static final int LINK_METHOD_SMART_LINKIFY = 2;
+
+    private static final String LINK_METHOD_SMART_LINKIFY_STRING = "smart_linkify";
+
+    /**
+     * Text link method
+     * @hide
+     */
+    @Retention(RetentionPolicy.SOURCE)
+    @IntDef(prefix = "LINK_METHOD_",
+            value = {LINK_METHOD_NONE, LINK_METHOD_LEGACY_LINKIFY,
+                    LINK_METHOD_SMART_LINKIFY})
+    private @interface LinkMethod {}
+
 
     /** List of cell broadcast messages to display (oldest to newest). */
     protected ArrayList<SmsCbMessage> mMessageList;
@@ -362,6 +401,70 @@ public class CellBroadcastAlertDialog extends Activity {
     }
 
     /**
+     * Get link method
+     *
+     * @param subId Subscription index
+     * @return The link method
+     */
+    private @LinkMethod int getLinkMethod(int subId) {
+        Resources res = CellBroadcastSettings.getResources(getApplicationContext(), subId);
+        switch (res.getString(R.string.link_method)) {
+            case LINK_METHOD_NONE_STRING: return LINK_METHOD_NONE;
+            case LINK_METHOD_LEGACY_LINKIFY_STRING: return LINK_METHOD_LEGACY_LINKIFY;
+            case LINK_METHOD_SMART_LINKIFY_STRING: return LINK_METHOD_SMART_LINKIFY;
+        }
+        return LINK_METHOD_NONE;
+    }
+
+    /**
+     * Add URL links to the applicable texts.
+     *
+     * @param textView Text view
+     * @param messageText The text string of the message
+     * @param linkMethod Link method
+     */
+    private void addLinks(@NonNull TextView textView, @NonNull String messageText,
+            @LinkMethod int linkMethod) {
+        Spannable text = new SpannableString(messageText);
+        if (linkMethod == LINK_METHOD_LEGACY_LINKIFY) {
+            Linkify.addLinks(text, Linkify.ALL);
+            textView.setMovementMethod(LinkMovementMethod.getInstance());
+            textView.setText(text);
+        } else if (linkMethod == LINK_METHOD_SMART_LINKIFY) {
+            // Text classification cannot be run in the main thread.
+            new Thread(() -> {
+                final TextClassifier classifier = textView.getTextClassifier();
+
+                TextClassifier.EntityConfig entityConfig =
+                        new TextClassifier.EntityConfig.Builder()
+                                .setIncludedTypes(Arrays.asList(
+                                        TextClassifier.TYPE_URL,
+                                        TextClassifier.TYPE_EMAIL,
+                                        TextClassifier.TYPE_PHONE,
+                                        TextClassifier.TYPE_ADDRESS,
+                                        TextClassifier.TYPE_FLIGHT_NUMBER))
+                                .setExcludedTypes(Arrays.asList(
+                                        TextClassifier.TYPE_DATE,
+                                        TextClassifier.TYPE_DATE_TIME))
+                                .build();
+
+                TextLinks.Request request = new TextLinks.Request.Builder(text)
+                        .setEntityConfig(entityConfig)
+                        .build();
+                // Add links to the spannable text.
+                classifier.generateLinks(request).apply(
+                        text, TextLinks.APPLY_STRATEGY_REPLACE, null);
+
+                // UI can be only updated in the main thread.
+                runOnUiThread(() -> {
+                    textView.setMovementMethod(LinkMovementMethod.getInstance());
+                    textView.setText(text);
+                });
+            }).start();
+        }
+    }
+
+    /**
      * Update alert text when a new emergency alert arrives.
      * @param message CB message which is used to update alert text.
      */
@@ -372,25 +475,30 @@ public class CellBroadcastAlertDialog extends Activity {
         String title = getText(titleId).toString();
         TextView titleTextView = findViewById(R.id.alertTitle);
 
-        if (CellBroadcastSettings.getResources(context, message.getSubscriptionId())
-                .getBoolean(R.bool.show_date_time_title)) {
-            titleTextView.setSingleLine(false);
-            title += "\n" + DateUtils.formatDateTime(context, message.getReceivedTime(),
-                    DateUtils.FORMAT_NO_NOON_MIDNIGHT | DateUtils.FORMAT_SHOW_TIME
-                            | DateUtils.FORMAT_ABBREV_ALL | DateUtils.FORMAT_SHOW_DATE
-                            | DateUtils.FORMAT_CAP_AMPM);
+        Resources res = CellBroadcastSettings.getResources(context, message.getSubscriptionId());
+        if (titleTextView != null) {
+            if (res.getBoolean(R.bool.show_date_time_title)) {
+                titleTextView.setSingleLine(false);
+                title += "\n" + DateUtils.formatDateTime(context, message.getReceivedTime(),
+                        DateUtils.FORMAT_NO_NOON_MIDNIGHT | DateUtils.FORMAT_SHOW_TIME
+                                | DateUtils.FORMAT_ABBREV_ALL | DateUtils.FORMAT_SHOW_DATE
+                                | DateUtils.FORMAT_CAP_AMPM);
+            }
+
+            setTitle(title);
+            titleTextView.setText(title);
         }
 
-        setTitle(title);
-        titleTextView.setText(title);
-
-        ((TextView) findViewById(R.id.message)).setText(message.getMessageBody());
-
-        TextView body = ((TextView) findViewById(R.id.message));
-        body.setText(message.getMessageBody());
-        if (shouldAddLinksToMessage(message)) {
-            Linkify.addLinks(body, Linkify.EMAIL_ADDRESSES | Linkify.PHONE_NUMBERS |
-                    Linkify.WEB_URLS);
+        TextView textView = findViewById(R.id.message);
+        String messageText = message.getMessageBody();
+        if (textView != null && messageText != null) {
+            int linkMethod = getLinkMethod(message.getSubscriptionId());
+            if (linkMethod != LINK_METHOD_NONE) {
+                addLinks(textView, messageText, linkMethod);
+            } else {
+                // Do not add any link to the message text.
+                textView.setText(messageText);
+            }
         }
 
         String dismissButtonText = getString(R.string.button_dismiss);
@@ -400,30 +508,6 @@ public class CellBroadcastAlertDialog extends Activity {
         }
 
         ((TextView) findViewById(R.id.dismissButton)).setText(dismissButtonText);
-    }
-
-    /**
-     * Check if links should be added to message, according to the message class and the
-     * values defined in {@code message_classes_to_linkify}
-     * @param message CMAS message
-     * @return True if the message should be linkified, false otherwise
-     */
-    private boolean shouldAddLinksToMessage(SmsCbMessage message) {
-        int[] classesToLinkify = getResources().getIntArray(R.array.message_classes_to_linkify);
-        if (classesToLinkify == null || classesToLinkify.length == 0) {
-            return false;
-        }
-
-        int messageClass = SmsCbCmasInfo.CMAS_CLASS_UNKNOWN;
-        if (message.isCmasMessage()) {
-            messageClass = message.getCmasWarningInfo().getMessageClass();
-        }
-
-        for (int i = 0; i < classesToLinkify.length; i++) {
-            if (classesToLinkify[i] == messageClass)
-                return true;
-        }
-        return false;
     }
 
     /**
