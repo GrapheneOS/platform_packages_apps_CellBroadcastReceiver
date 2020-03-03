@@ -30,8 +30,8 @@
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
     <bool name="override_dnd_default">true</bool>
 
-    <!-- Disable links for Mexico -->
-    <integer-array name="message_classes_to_linkify"></integer-array>
+    <!-- Link method -->
+    <string name="link_method" translatable="false">none</string>
 
     <!-- Show area update info settings in CellBroadcastReceiver and information in SIM status in Settings app -->
     <bool name="config_showAreaUpdateInfoSettings">true</bool>
