@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"ବିବରଣୀ ଦେଖନ୍ତୁ"</string>
     <string name="menu_delete" msgid="128380070910799366">"ବ୍ରୋଡକାଷ୍ଟକୁ ଡିଲିଟ୍‌ କରନ୍ତୁ"</string>
     <string name="view_details_title" msgid="1780427629491781473">"ଅଲର୍ଟ ବିବରଣୀ"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"ଡିବଗ୍ କରିବା ପାଇଁ ଆଲର୍ଟ ବିବରଣୀ"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"ଏହି ବ୍ରୋଡକାଷ୍ଟକୁ ଡିଲିଟ୍‌ କରିବେ?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"ପ୍ରାପ୍ତ କରିଥିବା ସମସ୍ତ ବ୍ରୋଡକାଷ୍ଟ ମେସେଜ୍‌ ଡିଲିଟ୍‌ କରିବେ?"</string>
     <string name="button_delete" msgid="4672451757925194350">"ଡିଲିଟ୍‌ କରନ୍ତୁ"</string>
@@ -54,7 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ଭଏସ୍ କଲ୍‌ରେ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ଆଲର୍ଟକୁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ୱେୟାରଲେସ୍ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ବିଜ୍ଞପ୍ତି ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"ଆଲର୍ଟ ରିମାଇଣ୍ଡର୍ ସାଉଣ୍ଡ"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ଅଲର୍ଟ ସ୍ମରଣକରାଇବା"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ଏକ ରିମାଇଣ୍ଡର୍ ସାଉଣ୍ଡ ରେଗୁଲାର୍ ଭଲ୍ୟୁମରେ ପ୍ଲେ ହେବ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ଇତିହାସ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ନିଜ ପସନ୍ଦର ଆଲର୍ଟ"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS ଟେଷ୍ଟ ବ୍ରୋଡକାଷ୍ଟ"</string>
@@ -76,8 +78,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"ପରୀକ୍ଷା ଆଲର୍ଟ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ସୁରକ୍ଷା ଆଲର୍ଟ ସିଷ୍ଟମ୍‌ରୁ ମୋବାଇଲ୍ କମ୍ପାନୀ ଟେଷ୍ଟ ଏବଂ ମାସିକ ଟେଷ୍ଟଗୁଡ଼ିକ ପାଆନ୍ତୁ"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ଭାଇବ୍ରେସନ୍"</string>
-    <string name="override_dnd_title" msgid="1517121512526835684">"\'ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ\' ଓଭରରାଇଡ କରନ୍ତୁ"</string>
-    <string name="override_dnd_summary" msgid="7755172156039625132">"\'ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ\' ଚାଲୁ ଥିଲେ ମଧ୍ୟ ଆଲର୍ଟ ସାଉଣ୍ଡକୁ ଫୁଲ୍ ଭଲ୍ୟୁମରେ ଚଲାନ୍ତୁ"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"ସର୍ବଦା ଉଚ୍ଚ ଭଲ୍ୟୁମରେ ଆଲର୍ଟ କରନ୍ତୁ"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"\"ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ\" ଓ ଅନ୍ୟ ଭଲ୍ୟୁମ୍ ସେଟିଂସକୁ ଅଣଦେଖା କରନ୍ତୁ"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ଅଞ୍ଚଳ ଅପଡେଟ୍‍ ବ୍ରୋଡକାଷ୍ଟକରିବା"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM ଷ୍ଟାଟସରେ ଅପଡେଟ୍‍ ସୂଚନା ଦେଖାନ୍ତୁ"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"ଅଲର୍ଟ ବର୍ଗ:"</string>
@@ -125,7 +127,7 @@
     <item msgid="9097229303902157183">"ପ୍ରତି 2 ମିନିଟରେ"</item>
     <item msgid="5718214950343391480">"ପ୍ରତି 5 ମିନିଟରେ"</item>
     <item msgid="3863339891188103437">"ପ୍ରତି 15 ମିନିଟରେ"</item>
-    <item msgid="6868848414437854609">"ଅଫ୍‌"</item>
+    <item msgid="7388573183644474611">"କେବେ ବି ନୁହେଁ"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ୱେୟାରଲେସ୍‌ ଜରୁରୀକାଳୀନ ଅଲର୍ଟ"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ରାଷ୍ଟ୍ରପତିଙ୍କ ଦ୍ୱାରା ଜାରି କରାଯାଇଥିବା ଆଲର୍ଟ"</string>
@@ -134,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"ସେଲ୍ ବ୍ରଡକାଷ୍ଟ୍ ଟେଷ୍ଟିଂ ମୋଡ୍‌କୁ ସକ୍ଷମ କରାଯାଇଛି।"</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"ସେଲ୍ ବ୍ରଡକାଷ୍ଟ୍ ଟେଷ୍ଟିଂ ମୋଡ୍‌କୁ ଅକ୍ଷମ କରାଯାଇଛି।"</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"ସବୁ ମେସେଜ୍ ଦେଖାନ୍ତୁ"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"ରେଗୁଲାର୍ ମେସେଜଗୁଡ଼ିକୁ ଦେଖାନ୍ତୁ"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"ଚିହ୍ନଟକର୍ତ୍ତା:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"କ୍ରମିକ ସଂଖ୍ୟା:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"ଡାଟା କୋଡିଂ ସ୍କିମ୍:"</string>
+    <string name="message_content" msgid="6204502929879474632">"ମେସେଜର ବିଷୟବସ୍ତୁ:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"ଲୋକେସନ୍ ଯାଞ୍ଚ ସମୟ:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"ମେସେଜ୍ ପ୍ରଦର୍ଶିତ ହୋଇଛି:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"ସଞ୍ଚାଳନ:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"ସର୍ବାଧିକ ଅପେକ୍ଷାରତ ସମୟ:"</string>
+    <string name="seconds" msgid="141450721520515025">"ସେକେଣ୍ଡ"</string>
 </resources>

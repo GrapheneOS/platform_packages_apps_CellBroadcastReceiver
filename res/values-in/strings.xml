@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Tampilkan detail"</string>
     <string name="menu_delete" msgid="128380070910799366">"Hapus siaran"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Detail peringatan"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Detail pemberitahuan untuk proses debug"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Hapus siaran ini?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Hapus semua pesan siaran yang diterima?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Hapus"</string>
@@ -54,7 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Notifikasi darurat dalam panggilan suara"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Izinkan notifikasi"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Terima notifikasi darurat nirkabel"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Bunyi pengingat notifikasi"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Pengingat pemberitahuan"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Suara pengingat akan diputar dengan volume reguler"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Histori notifikasi darurat"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferensi notifikasi"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Broadcast uji ETWS"</string>
@@ -76,8 +78,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Uji notifikasi"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Menerima pengujian operator dan pengujian bulanan dari sistem notifikasi keselamatan"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Getaran"</string>
-    <string name="override_dnd_title" msgid="1517121512526835684">"Ganti mode Jangan Ganggu"</string>
-    <string name="override_dnd_summary" msgid="7755172156039625132">"Putar suara notifikasi dalam volume penuh meskipun mode Jangan Ganggu diaktifkan"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Selalu ingatkan dengan volume penuh"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Abaikan fitur Jangan Ganggu &amp; setelan volume lainnya"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Siaran update area"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Tampilan informasi update di status SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategori Notifikasi:"</string>
@@ -125,7 +127,7 @@
     <item msgid="9097229303902157183">"Setiap 2 menit"</item>
     <item msgid="5718214950343391480">"Setiap 5 menit"</item>
     <item msgid="3863339891188103437">"Setiap 15 menit"</item>
-    <item msgid="6868848414437854609">"Nonaktif"</item>
+    <item msgid="7388573183644474611">"Tidak pernah"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Notifikasi darurat nirkabel"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Peringatan kepresidenan"</string>
@@ -134,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Mode pengujian cell broadcast diaktifkan."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Mode pengujian cell broadcast dinonaktifkan."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Tampilkan semua pesan"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Tampilkan pesan reguler"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"ID:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Nomor seri:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Skema coding data:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Konten pesan:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Waktu pemeriksaan lokasi:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Pesan ditampilkan:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Koordinat:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Waktu tunggu maksimum:"</string>
+    <string name="seconds" msgid="141450721520515025">"detik"</string>
 </resources>

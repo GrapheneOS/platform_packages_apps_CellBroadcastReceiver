@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Xem chi tiết"</string>
     <string name="menu_delete" msgid="128380070910799366">"Xóa chương trình phát sóng"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Chi tiết cảnh báo"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Thông báo chi tiết cho mục đích gỡ lỗi"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Xóa chương trình phát sóng này?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Xóa tất cả các thông báo của chương trình phát sóng đã nhận được?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Xóa"</string>
@@ -54,7 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Cảnh báo khẩn cấp trong cuộc gọi thoại"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Cho phép cảnh báo"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Nhận cảnh báo khẩn cấp không dây"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Âm thanh lời nhắc cảnh báo"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Lời nhắc thông báo"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Âm báo nhắc nhở sẽ phát ở mức âm lượng bình thường"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Lịch sử cảnh báo khẩn cấp"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Tùy chọn cảnh báo"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Thông báo thử nghiệm cho ETWS"</string>
@@ -76,8 +78,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Cảnh báo thử nghiệm"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Nhận cảnh báo kiểm tra của nhà mạng và cảnh báo kiểm tra hàng tháng của hệ thống cảnh báo an toàn"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Rung"</string>
-    <string name="override_dnd_title" msgid="1517121512526835684">"Ghi đè chế độ Không làm phiền"</string>
-    <string name="override_dnd_summary" msgid="7755172156039625132">"Phát âm báo ở mức âm lượng tối đa ngay cả khi chế độ Không làm phiền đang bật"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Luôn cảnh báo ở mức âm lượng to nhất"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Bỏ qua tùy chọn Không làm phiền và các tùy chọn âm lượng khác"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Chương trình phát sóng thông tin cập nhật khu vực"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Hiển thị thông tin cập nhật trong trạng thái SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Danh mục cảnh báo:"</string>
@@ -125,7 +127,7 @@
     <item msgid="9097229303902157183">"2 phút một lần"</item>
     <item msgid="5718214950343391480">"5 phút một lần"</item>
     <item msgid="3863339891188103437">"15 phút một lần"</item>
-    <item msgid="6868848414437854609">"Đang tắt"</item>
+    <item msgid="7388573183644474611">"Không đặt âm báo"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Cảnh báo khẩn cấp không dây"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Thông báo của tổng thống"</string>
@@ -134,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Đã bật chế độ kiểm tra tính năng truyền phát trên di động."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Đã tắt chế độ kiểm tra tính năng truyền phát trên di động."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Hiển thị tất cả thông báo"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Hiển thị thông báo thông thường"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Giá trị nhận dạng:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Số sê-ri:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Lược đồ mã hóa dữ liệu:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Nội dung thông báo:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Thời gian kiểm tra thông tin vị trí:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Thông báo được hiển thị:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Tọa độ:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Thời gian chờ đợi tối đa:"</string>
+    <string name="seconds" msgid="141450721520515025">"giây"</string>
 </resources>

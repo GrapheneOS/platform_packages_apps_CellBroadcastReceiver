@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Lihat butiran"</string>
     <string name="menu_delete" msgid="128380070910799366">"Padam siaran"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Butiran awasan"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Butiran makluman untuk penyahpepijatan"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Padam siaran ini?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Padam semua mesej siaran yang diterima?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Padam"</string>
@@ -54,7 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Makluman kecemasan dalam panggilan suara"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Benarkan makluman"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Terima pemberitahuan makluman kecemasan wayarles"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Bunyi peringatan makluman"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Peringatan awasan"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Bunyi peringatan akan dimainkan pada kelantangan biasa"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Sejarah makluman kecemasan"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Pilihan makluman"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Siaran ujian ETWS"</string>
@@ -76,8 +78,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Makluman ujian"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Terima ujian pembawa dan ujian bulanan daripada sistem makluman keselamatan"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Getaran"</string>
-    <string name="override_dnd_title" msgid="1517121512526835684">"Batalkan Jangan Ganggu"</string>
-    <string name="override_dnd_summary" msgid="7755172156039625132">"Mainkan bunyi makluman dalam kelantangan penuh walaupun Jangan Ganggu dihidupkan"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Sentiasa beri makluman pada kelantangan penuh"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Abaikan Jangan Ganggu &amp; tetapan kelantangan yang lain"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Siaran kemas kini kawasan"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Tunjukkan maklumat kemas kini dalam status SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategori Awasan:"</string>
@@ -125,7 +127,7 @@
     <item msgid="9097229303902157183">"Setiap 2 minit"</item>
     <item msgid="5718214950343391480">"Setiap 5 minit"</item>
     <item msgid="3863339891188103437">"Setiap 15 minit"</item>
-    <item msgid="6868848414437854609">"Mati"</item>
+    <item msgid="7388573183644474611">"Jangan"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Makluman kecemasan wayarles"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Makluman Presiden"</string>
@@ -134,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Mod ujian siaran sel didayakan."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Mod ujian siaran sel dilumpuhkan."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Tunjukkan semua mesej"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Tunjukkan mesej biasa"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Pengecam:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Nombor siri:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Skema pengekodan data:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Kandungan mesej:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Masa semakan lokasi:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Mesej yang dipaparkan:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Koordinat:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Masa menunggu maksimum:"</string>
+    <string name="seconds" msgid="141450721520515025">"saat"</string>
 </resources>
