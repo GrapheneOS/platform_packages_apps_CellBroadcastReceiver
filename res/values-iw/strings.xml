@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"הצג פרטים"</string>
     <string name="menu_delete" msgid="128380070910799366">"מחק שידור"</string>
     <string name="view_details_title" msgid="1780427629491781473">"פרטי התרעה"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"פרטי התראות לניפוי באגים"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"למחוק שידור זה?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"למחוק את כל הודעות השידור שהתקבלו?"</string>
     <string name="button_delete" msgid="4672451757925194350">"מחק"</string>
@@ -54,7 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"התרעות על מקרי חירום בשיחה קולית"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"הצגת התרעות"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"לקבלת התראות אלחוטיות על מקרי חירום"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"הצליל של תזכורות ההתרעה"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"תזכורת התרעה"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"צליל תזכורת יושמע בעוצמת שמע רגילה"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"היסטוריה של התרעות חירום"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"העדפות להתרעות"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"‏שידורי בדיקה של ETWS"</string>
@@ -76,8 +78,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"התראות בדיקה"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"קבלת בדיקות של הספק ובדיקות חודשיות ממערכת התרעות האבטחה"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"רטט"</string>
-    <string name="override_dnd_title" msgid="1517121512526835684">"ביטול/שינוי של \'נא לא להפריע\'"</string>
-    <string name="override_dnd_summary" msgid="7755172156039625132">"צליל ההתראה יופעל בעוצמת הקול המרבית בלי קשר לפעולת \'נא לא להפריע\'"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"צליל ההתראה יושמע תמיד בעוצמת השמע המרבית"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"יש להתעלם מהתכונה \'נא לא להפריע\' ומהגדרות אחרות של עוצמת השמע"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"שידורי עדכונים רלוונטיים לאזור"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"‏הצגה של פרטי עדכון בסטטוס ה-SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"קטגוריית התרעה:"</string>
@@ -125,7 +127,7 @@
     <item msgid="9097229303902157183">"כל שתי דקות"</item>
     <item msgid="5718214950343391480">"כל 5 דקות"</item>
     <item msgid="3863339891188103437">"כל 15 דקות"</item>
-    <item msgid="6868848414437854609">"כבוי"</item>
+    <item msgid="7388573183644474611">"אף פעם"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"התראות על מקרי חירום"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"התרעות נשיאותיות"</string>
@@ -134,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"מצב הבדיקה של השידור הסלולרי מופעל."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"מצב הבדיקה של השידור הסלולרי מושבת."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"הצגת כל ההודעות"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"הצגת ההודעות הרגילות"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"מזהה:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"מספר סידורי:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"סכמת תכנות נתונים:"</string>
+    <string name="message_content" msgid="6204502929879474632">"תוכן ההודעה:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"זמן בדיקת מיקום:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"ההודעה המוצגת:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"קואורדינטות:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"סמן המתנה מרבי:"</string>
+    <string name="seconds" msgid="141450721520515025">"שניות"</string>
 </resources>

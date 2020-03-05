@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Ver detalles"</string>
     <string name="menu_delete" msgid="128380070910799366">"Eliminar emisión"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Detalles da alerta"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Detalles da alerta para a depuración"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Queres eliminar esta emisión?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Queres eliminar todas as mensaxes de emisión recibidas?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Eliminar"</string>
@@ -54,7 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertas de emerxencia durante as chamadas de voz"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permitir alertas"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recibir alertas de emerxencia sen fíos"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"Son do recordatorio de alerta"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Recordatorio de alerta"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Reproducirase un son de recordatorio co volume habitual"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historial de alertas de emerxencia"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferencias de alertas"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Emisións de proba do ETWS"</string>
@@ -76,8 +78,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Alertas de proba"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Recibe probas do operador e probas mensuais do sistema de alertas de seguranza"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibración"</string>
-    <string name="override_dnd_title" msgid="1517121512526835684">"Anular modo Non molestar"</string>
-    <string name="override_dnd_summary" msgid="7755172156039625132">"Reproduce o son da alerta a todo volume aínda que estea activado o modo Non molestar"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Alertar sempre cando o volume estea ao máximo"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"Ignora o modo Non molestar e outras opcións de configuración do volume"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Emisións de información actualizada sobre a zona"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostra información actualizada no estado da SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoría de alerta:"</string>
@@ -125,7 +127,7 @@
     <item msgid="9097229303902157183">"Cada 2 minutos"</item>
     <item msgid="5718214950343391480">"Cada 5 minutos"</item>
     <item msgid="3863339891188103437">"Cada 15 minutos"</item>
-    <item msgid="6868848414437854609">"Desactivado"</item>
+    <item msgid="7388573183644474611">"Nunca"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Alertas de emerxencia sen fíos"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Alertas presidenciais"</string>
@@ -134,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Está activado o modo de proba de difusión móbil."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Está desactivado o modo de proba de difusión móbil."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Mostrar todas as mensaxes"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Mostrar as mensaxes non ocultas"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"Identificador:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Número de serie:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"Esquema de codificación de datos:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Contido da mensaxe:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"Hora de consulta da localización:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"Mostrouse a mensaxe?:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"Coordenadas:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"Tempo de espera máximo:"</string>
+    <string name="seconds" msgid="141450721520515025">"segundos"</string>
 </resources>

@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"查看詳細資料"</string>
     <string name="menu_delete" msgid="128380070910799366">"刪除廣播"</string>
     <string name="view_details_title" msgid="1780427629491781473">"警報詳細資料"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"偵錯警示詳細資料"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"刪除廣播？"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"刪除所有收到的廣播訊息嗎？"</string>
     <string name="button_delete" msgid="4672451757925194350">"刪除"</string>
@@ -54,7 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"語音通話中的緊急通知"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"允許接收警報"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"接收無線緊急警示通知"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"警報提醒音效"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"警示提醒"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"提醒音效將以正常音量播放"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"緊急警報記錄"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"警報偏好設定"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS 測試廣播"</string>
@@ -76,8 +78,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"測試警示"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"接收安全警示系統的流動網絡供應商測試及每月測試"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"震動"</string>
-    <string name="override_dnd_title" msgid="1517121512526835684">"蓋過「請勿騷擾」設定"</string>
-    <string name="override_dnd_summary" msgid="7755172156039625132">"以最大音量播放通知音效，不論是否已開啟「請勿騷擾」"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"一律以最大音量通知"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"忽略「請勿騷擾」模式及其他音量設定"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"地區最新資訊廣播"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"在 SIM 卡狀態中顯示最新資訊"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"警報類別："</string>
@@ -125,7 +127,7 @@
     <item msgid="9097229303902157183">"每 2 分鐘"</item>
     <item msgid="5718214950343391480">"每 5 分鐘"</item>
     <item msgid="3863339891188103437">"每 15 分鐘"</item>
-    <item msgid="6868848414437854609">"關閉"</item>
+    <item msgid="7388573183644474611">"永不"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"無線緊急警報"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"總統警報"</string>
@@ -134,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"已啟用區域廣播測試模式。"</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"已停用區域廣播測試模式。"</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"顯示所有訊息"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"顯示一般訊息"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"識別碼："</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"序號："</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"數據編碼配置："</string>
+    <string name="message_content" msgid="6204502929879474632">"訊息內容："</string>
+    <string name="location_check_time" msgid="4105326161240531207">"位置檢查時間："</string>
+    <string name="message_displayed" msgid="5091678195925617971">"已顯示訊息："</string>
+    <string name="message_coordinates" msgid="356333576818059052">"座標："</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"最長等候時間："</string>
+    <string name="seconds" msgid="141450721520515025">"秒"</string>
 </resources>

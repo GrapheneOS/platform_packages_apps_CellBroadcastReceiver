@@ -26,6 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"විස්තර බලන්න"</string>
     <string name="menu_delete" msgid="128380070910799366">"විකාශන මකන්න"</string>
     <string name="view_details_title" msgid="1780427629491781473">"ඇඟවීමේ විස්තර"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"නිදොස් කිරීම සඳහා ඇඟවීම් විස්තර"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"මෙම විකාශනය මකන්න ද?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"සියලුම ලැබුණු විකාශන පණිවිඩ මකන්න ද?"</string>
     <string name="button_delete" msgid="4672451757925194350">"මකන්න"</string>
@@ -54,7 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"හඬ ඇමතුමේ ඇති හදිසි ඇඟවීම්"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ඇඟවීම්වලට ඉඩ දෙන්න"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම් ලබා ගන්න"</string>
-    <string name="alert_reminder_interval_title" msgid="7466642011937564868">"ඇඟවීම් සිහිකැඳවීම් හඬ"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ඇඟවීම් මතක් කිරීම"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ක්‍රමවත් හඬ පරිමාවකින් සිහිකැඳවීමේ ශබ්දයක් වාදනය වෙනු ඇත"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"හදිසි අවස්ථා ඇඟවීම් ඉතිහාසය"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ඇඟවීම් මනාප"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS පරීක්ෂණ විකාශ"</string>
@@ -76,8 +78,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"පරීක්ෂණ ඇඟවීම්"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ආරක්ෂක අනතුරු ඇඟවීමේ පද්ධතියෙන් වාහක පරීක්ෂා සහ මාසික පරීක්ෂා ලබා ගන්න"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"කම්පනය"</string>
-    <string name="override_dnd_title" msgid="1517121512526835684">"බාධා නොකරන්න ඉක්මවන්න"</string>
-    <string name="override_dnd_summary" msgid="7755172156039625132">"බාධා නොකරන්න ක්‍රියාත්මකව තිබීම නොසලකා සම්පූර්ණ ධාරිතාවෙන් ඇඟවීමේ ශබ්ද වාදනය කරන්න"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"සැමවිට පූර්ණ හඬ පරිමාවෙන් අඟවන්න"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"බාධා නොකරන්න &amp; වෙනත් හඬ පරිමා සැකසීම් නොසලකා හරින්න"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ප්‍රදේශ යාවත්කාලීන විකාශන"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM තත්ත්වය තුළ යාවත්කාලීන තොරතුරු පෙන්වන්න"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"ඇඟවීමේ ප්‍රවර්ගය:"</string>
@@ -125,7 +127,7 @@
     <item msgid="9097229303902157183">"සෑම මිනිත්තු 2 කට වරක්"</item>
     <item msgid="5718214950343391480">"සෑම මිනිත්තු 5කට වරක්"</item>
     <item msgid="3863339891188103437">"සෑම මිනිත්තු 15කට වරක්"</item>
-    <item msgid="6868848414437854609">"ක්‍රියාවිරහිතයි"</item>
+    <item msgid="7388573183644474611">"කිසිදා නැත"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"රැහැන් රහිත අනතුරු ඇඟවීම්"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ජනාධිපති ඇඟවීම්"</string>
@@ -134,4 +136,15 @@
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"සෙල් විකාශන පරීක්ෂාව සබල කර ඇත."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"සෙල් විකාශන පරීක්ෂාව අබල කර ඇත."</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"සියලු පණිවිඩ පෙන්වන්න"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"සුපුරුදු පණිවිඩ පෙන්වන්න"</string>
+    <string name="message_identifier" msgid="5558338496219327850">"අනන්‍යකාරකය:"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"අනුක්‍රමික අංකය:"</string>
+    <string name="data_coding_scheme" msgid="4628901196730870577">"දත්ත කේත කිරීමේ ක්‍රමය:"</string>
+    <string name="message_content" msgid="6204502929879474632">"පණිවිඩ අන්තර්ගතය:"</string>
+    <string name="location_check_time" msgid="4105326161240531207">"ස්ථාන පරීක්ෂා වේලාව:"</string>
+    <string name="message_displayed" msgid="5091678195925617971">"පණිවිඩය සංදර්ශනය විය:"</string>
+    <string name="message_coordinates" msgid="356333576818059052">"ඛණ්ඩාංක:"</string>
+    <string name="maximum_waiting_time" msgid="3504809124079381356">"උපරිම පොරොත්තු වේලාව:"</string>
+    <string name="seconds" msgid="141450721520515025">"තත්පර"</string>
 </resources>
