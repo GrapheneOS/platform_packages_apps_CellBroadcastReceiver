@@ -36,7 +36,6 @@ import android.os.Message;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
@@ -428,11 +427,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         setDataSourceFromResource(res, mMediaPlayer, R.raw.etws_default);
                         break;
                     case INFO:
-                        // for non-emergency alerts, we are using system default notification sound.
-                        String sound = Settings.System.getString(
-                                getApplicationContext().getContentResolver(),
-                                Settings.System.NOTIFICATION_SOUND);
-                        mMediaPlayer.setDataSource(sound);
+                        setDataSourceFromResource(res, mMediaPlayer, R.raw.info);
                         break;
                     case TEST:
                     case DEFAULT:
