@@ -147,4 +147,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"കോർഡിനേറ്റുകൾ:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"പരമാവധി കാത്തിരിക്കൽ സമയം:"</string>
     <string name="seconds" msgid="141450721520515025">"സെക്കൻഡ്"</string>
+    <string name="message_copied" msgid="6922953753733166675">"സന്ദേശം പകർത്തി"</string>
 </resources>
