@@ -17,10 +17,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_presidential_level_alert" msgid="175237477015066795">"राष्ट्रीय आपातकालीन अलर्ट"</string>
-    <string name="pws_other_message_identifiers" msgid="1160028649251004769">"चेतावनियां"</string>
-    <string name="enable_emergency_alerts_message_title" msgid="876981179796412627">"चेतावनियां"</string>
-    <string name="enable_emergency_alerts_message_summary" msgid="6745452404477073171">"ऐसी कार्रवाइयों के सुझाव जिनसे जानें बचाई जा सकती हैं या संपत्ति की सुरक्षा की जा सकती है"</string>
+    <string name="cmas_amber_alert" msgid="2410977367530696102">"चेतावनी अलर्ट"</string>
     <string name="cmas_required_monthly_test" msgid="7606843318721168353">"टेस्ट अलर्ट"</string>
-    <string name="public_safety_message" msgid="2643362135123023300">"टेस्ट अलर्ट"</string>
-    <string name="cmas_exercise_alert" msgid="5775307523978007483">"व्यायाम"</string>
 </resources>
