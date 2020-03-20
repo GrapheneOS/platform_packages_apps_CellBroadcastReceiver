@@ -28,6 +28,7 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.media.AudioManager;
+import android.os.Vibrator;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
@@ -60,6 +61,8 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
     protected SubscriptionInfo mMockSubscriptionInfo;
     @Mock
     protected TelephonyManager mMockedTelephonyManager;
+    @Mock
+    protected Vibrator mMockedVibrator;
 
     MockedServiceManager mMockedServiceManager;
 
@@ -118,6 +121,8 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
                     return mMockedSubscriptionManager;
                 case Context.TELEPHONY_SERVICE:
                     return mMockedTelephonyManager;
+                case Context.VIBRATOR_SERVICE:
+                    return mMockedVibrator;
             }
             return super.getSystemService(name);
         }
@@ -130,7 +135,8 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         // CellBroadcastSettings.getResources(context).
         doReturn(mSubService).when(mSubService).queryLocalInterface(anyString());
         doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService).getDefaultSubId();
-        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService).getDefaultSmsSubId();
+        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(
+                mSubService).getDefaultSmsSubId();
 
         doReturn(new String[]{""}).when(mResources).getStringArray(anyInt());
 
