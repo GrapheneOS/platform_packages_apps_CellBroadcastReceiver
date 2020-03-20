@@ -137,75 +137,13 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private static final int ALERT_PAUSE_FINISHED = 1001;
     private static final int ALERT_LED_FLASH_TOGGLE = 1002;
 
-    private final Handler mHandler = new Handler(Looper.myLooper()) {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case ALERT_SOUND_FINISHED:
-                    if (DBG) log("ALERT_SOUND_FINISHED");
-                    stop();     // stop alert sound
-                    // if we can speak the message text
-                    if (mMessageBody != null && mTtsEngineReady && mTtsLanguageSupported) {
-                        sendMessageDelayed(mHandler.obtainMessage(ALERT_PAUSE_FINISHED),
-                                PAUSE_DURATION_BEFORE_SPEAKING_MSEC);
-                        mState = STATE_PAUSING;
-                    } else {
-                        if (DBG) log("MessageEmpty = " + (mMessageBody == null) +
-                                ", mTtsEngineReady = " + mTtsEngineReady +
-                                ", mTtsLanguageSupported = " + mTtsLanguageSupported);
-                        stopSelf();
-                        mState = STATE_IDLE;
-                    }
-                    // Set alert reminder depending on user preference
-                    CellBroadcastAlertReminder.queueAlertReminder(getApplicationContext(), mSubId,
-                            true);
-                    break;
+    private Handler mHandler;
 
-                case ALERT_PAUSE_FINISHED:
-                    if (DBG) log("ALERT_PAUSE_FINISHED");
-                    int res = TextToSpeech.ERROR;
-                    if (mMessageBody != null && mTtsEngineReady && mTtsLanguageSupported) {
-                        if (DBG) log("Speaking broadcast text: " + mMessageBody);
-
-                        mTts.setAudioAttributes(getAlertAudioAttributes(mAlertType));
-                        res = mTts.speak(mMessageBody, 2, null, TTS_UTTERANCE_ID);
-                        mState = STATE_SPEAKING;
-                    }
-                    if (res != TextToSpeech.SUCCESS) {
-                        loge("TTS engine not ready or language not supported or speak() failed");
-                        stopSelf();
-                        mState = STATE_IDLE;
-                    }
-                    break;
-
-                case ALERT_LED_FLASH_TOGGLE:
-                    if (enableLedFlash(msg.arg1 != 0)) {
-                        sendMessageDelayed(mHandler.obtainMessage(
-                                ALERT_LED_FLASH_TOGGLE, msg.arg1 != 0 ? 0 : 1, 0),
-                                DEFAULT_LED_FLASH_INTERVAL_MSEC);
-                    }
-                    break;
-
-                default:
-                    loge("Handler received unknown message, what=" + msg.what);
-             }
-        }
-    };
-
-    private final PhoneStateListener mPhoneStateListener = new PhoneStateListener() {
-        @Override
-        public void onCallStateChanged(int state, String ignored) {
-            // Stop the alert sound and speech if the call state changes.
-            if (state != TelephonyManager.CALL_STATE_IDLE
-                    && state != mInitialCallState) {
-                if (DBG) log("Call interrupted. Stop CellBroadcastAlertAudio service");
-                stopSelf();
-            }
-        }
-    };
+    private PhoneStateListener mPhoneStateListener;
 
     /**
      * Callback from TTS engine after initialization.
+     *
      * @param status {@link TextToSpeech#SUCCESS} or {@link TextToSpeech#ERROR}.
      */
     @Override
@@ -246,6 +184,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
     /**
      * Callback from TTS engine.
+     *
      * @param utteranceId the identifier of the utterance.
      */
     @Override
@@ -266,6 +205,75 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         // Listen for incoming calls to kill the alarm.
         mTelephonyManager = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE));
+        mHandler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case ALERT_SOUND_FINISHED:
+                        if (DBG) log("ALERT_SOUND_FINISHED");
+                        stop();     // stop alert sound
+                        // if we can speak the message text
+                        if (mMessageBody != null && mTtsEngineReady && mTtsLanguageSupported) {
+                            sendMessageDelayed(mHandler.obtainMessage(ALERT_PAUSE_FINISHED),
+                                    PAUSE_DURATION_BEFORE_SPEAKING_MSEC);
+                            mState = STATE_PAUSING;
+                        } else {
+                            if (DBG) {
+                                log("MessageEmpty = " + (mMessageBody == null)
+                                        + ", mTtsEngineReady = " + mTtsEngineReady
+                                        + ", mTtsLanguageSupported = " + mTtsLanguageSupported);
+                            }
+                            stopSelf();
+                            mState = STATE_IDLE;
+                        }
+                        // Set alert reminder depending on user preference
+                        CellBroadcastAlertReminder.queueAlertReminder(getApplicationContext(),
+                                mSubId,
+                                true);
+                        break;
+
+                    case ALERT_PAUSE_FINISHED:
+                        if (DBG) log("ALERT_PAUSE_FINISHED");
+                        int res = TextToSpeech.ERROR;
+                        if (mMessageBody != null && mTtsEngineReady && mTtsLanguageSupported) {
+                            if (DBG) log("Speaking broadcast text: " + mMessageBody);
+
+                            mTts.setAudioAttributes(getAlertAudioAttributes(mAlertType));
+                            res = mTts.speak(mMessageBody, 2, null, TTS_UTTERANCE_ID);
+                            mState = STATE_SPEAKING;
+                        }
+                        if (res != TextToSpeech.SUCCESS) {
+                            loge("TTS engine not ready or language not supported or speak() "
+                                    + "failed");
+                            stopSelf();
+                            mState = STATE_IDLE;
+                        }
+                        break;
+
+                    case ALERT_LED_FLASH_TOGGLE:
+                        if (enableLedFlash(msg.arg1 != 0)) {
+                            sendMessageDelayed(mHandler.obtainMessage(
+                                    ALERT_LED_FLASH_TOGGLE, msg.arg1 != 0 ? 0 : 1, 0),
+                                    DEFAULT_LED_FLASH_INTERVAL_MSEC);
+                        }
+                        break;
+
+                    default:
+                        loge("Handler received unknown message, what=" + msg.what);
+                }
+            }
+        };
+        mPhoneStateListener = new PhoneStateListener() {
+            @Override
+            public void onCallStateChanged(int state, String ignored) {
+                // Stop the alert sound and speech if the call state changes.
+                if (state != TelephonyManager.CALL_STATE_IDLE
+                        && state != mInitialCallState) {
+                    if (DBG) log("Call interrupted. Stop CellBroadcastAlertAudio service");
+                    stopSelf();
+                }
+            }
+        };
         mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
     }
 
@@ -385,7 +393,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
     /**
      * Start playing the alert sound.
-     * @param alertType the alert type (e.g. default, earthquake, tsunami, etc..)
+     *
+     * @param alertType    the alert type (e.g. default, earthquake, tsunami, etc..)
      * @param patternArray the alert vibration pattern
      */
     private void playAlertTone(AlertType alertType, int[] patternArray) {
@@ -533,7 +542,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
      * Turn on camera's LED
      *
      * @param on {@code true} if turned on, otherwise turned off.
-     *
      * @return {@code true} if successful, otherwise false.
      */
     private boolean enableLedFlash(boolean on) {
@@ -679,7 +687,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         if (mResetAlarmVolumeNeeded) {
             log("resetting alarm volume to back to " + mUserSetAlarmVolume);
             mAudioManager.setStreamVolume(alertType == AlertType.INFO
-                    ? AudioManager.STREAM_NOTIFICATION : AudioManager.STREAM_ALARM,
+                            ? AudioManager.STREAM_NOTIFICATION : AudioManager.STREAM_ALARM,
                     mUserSetAlarmVolume, 0);
             mResetAlarmVolumeNeeded = false;
         }
