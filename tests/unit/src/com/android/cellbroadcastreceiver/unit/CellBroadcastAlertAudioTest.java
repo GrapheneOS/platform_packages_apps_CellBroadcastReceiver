@@ -258,7 +258,7 @@ public class CellBroadcastAlertAudioTest extends
                 });
         phoneStateListenerHandler.start();
         waitUntilReady();
-        verify(mMockedVibrator, times(2)).cancel();
+        verify(mMockedVibrator, atLeastOnce()).cancel();
         phoneStateListenerHandler.quit();
     }
 }
