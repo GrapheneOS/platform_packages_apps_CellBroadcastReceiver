@@ -388,4 +388,48 @@ public class CellBroadcastResources {
             return R.string.cb_other_message_identifiers;
         }
     }
+
+    /**
+     * Choose pictogram resource according to etws type.
+     *
+     * @param context Application context
+     * @param message Cell broadcast message
+     *
+     * @return The resource of the pictogram, -1 if not available.
+     */
+    static int getDialogPictogramResource(Context context, SmsCbMessage message) {
+        SmsCbEtwsInfo etwsInfo = message.getEtwsWarningInfo();
+        if (etwsInfo != null) {
+            switch (etwsInfo.getWarningType()) {
+                case SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE:
+                case SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE_AND_TSUNAMI:
+                    return R.drawable.pict_icon_earthquake;
+                case SmsCbEtwsInfo.ETWS_WARNING_TYPE_TSUNAMI:
+                    return R.drawable.pict_icon_tsunami;
+            }
+        }
+
+        final int serviceCategory = message.getServiceCategory();
+        int subId = message.getSubscriptionId();
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                context, subId);
+        if (channelManager.isEmergencyMessage(message)) {
+            ArrayList<CellBroadcastChannelRange> ranges =
+                    channelManager.getCellBroadcastChannelRanges(
+                            R.array.additional_cbs_channels_strings);
+            for (CellBroadcastChannelRange range : ranges) {
+                if (serviceCategory >= range.mStartId && serviceCategory <= range.mEndId) {
+                    // Apply the closest title to the specified tones.
+                    switch (range.mAlertType) {
+                        case ETWS_EARTHQUAKE:
+                            return R.drawable.pict_icon_earthquake;
+                        case ETWS_TSUNAMI:
+                            return R.drawable.pict_icon_tsunami;
+                    }
+                }
+            }
+            return R.string.pws_other_message_identifiers;
+        }
+        return -1;
+    }
 }
