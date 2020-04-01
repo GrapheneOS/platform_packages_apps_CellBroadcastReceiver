@@ -47,6 +47,8 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.internal.annotations.VisibleForTesting;
+
 import java.util.ArrayList;
 
 /**
@@ -54,6 +56,9 @@ import java.util.ArrayList;
  * in the inner CursorLoaderListFragment class.
  */
 public class CellBroadcastListActivity extends Activity {
+
+    @VisibleForTesting
+    public CursorLoaderListFragment mListFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +80,8 @@ public class CellBroadcastListActivity extends Activity {
 
         // Create the list fragment and add it as our sole content.
         if (fm.findFragmentById(android.R.id.content) == null) {
-            CursorLoaderListFragment listFragment = new CursorLoaderListFragment();
-            fm.beginTransaction().add(android.R.id.content, listFragment).commit();
+            mListFragment = new CursorLoaderListFragment();
+            fm.beginTransaction().add(android.R.id.content, mListFragment).commit();
         }
     }
 
@@ -100,20 +105,27 @@ public class CellBroadcastListActivity extends Activity {
         private static final boolean DBG = true;
 
         // IDs of the main menu items.
-        private static final int MENU_DELETE_ALL            = 3;
-        private static final int MENU_SHOW_REGULAR_MESSAGES = 4;
-        private static final int MENU_SHOW_ALL_MESSAGES     = 5;
+        @VisibleForTesting
+        public static final int MENU_DELETE_ALL            = 3;
+        @VisibleForTesting
+        public static final int MENU_SHOW_REGULAR_MESSAGES = 4;
+        @VisibleForTesting
+        public static final int MENU_SHOW_ALL_MESSAGES     = 5;
 
         // Load the history from cell broadcast receiver database
         private static final int LOADER_NORMAL_HISTORY      = 1;
         // Load the history from cell broadcast service. This will include all non-shown messages.
-        private static final int LOADER_HISTORY_FROM_CBS    = 2;
+        @VisibleForTesting
+        public static final int LOADER_HISTORY_FROM_CBS    = 2;
 
-        private static final String KEY_LOADER_ID = "loader_id";
+        @VisibleForTesting
+        public static final String KEY_LOADER_ID = "loader_id";
 
         // IDs of the context menu items (package local, accessed from inner DeleteThreadListener).
-        static final int MENU_DELETE               = 0;
-        static final int MENU_VIEW_DETAILS         = 1;
+        @VisibleForTesting
+        public static final int MENU_DELETE               = 0;
+        @VisibleForTesting
+        public static final int MENU_VIEW_DETAILS         = 1;
 
         // cell broadcast provider from cell broadcast service.
         public static final Uri CONTENT_URI = Uri.parse("content://cellbroadcasts");
@@ -150,7 +162,8 @@ public class CellBroadcastListActivity extends Activity {
         };
 
         // This is the Adapter being used to display the list's data.
-        private CursorAdapter mAdapter;
+        @VisibleForTesting
+        public CursorAdapter mAdapter;
 
         private int mCurrentLoaderId = 0;
 
