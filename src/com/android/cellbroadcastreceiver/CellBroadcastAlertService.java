@@ -73,7 +73,8 @@ public class CellBroadcastAlertService extends Service
             "com.android.cellbroadcastreceiver.SMS_CB_MESSAGE";
 
     /** Use the same notification ID for non-emergency alerts. */
-    static final int NOTIFICATION_ID = 1;
+    @VisibleForTesting
+    public static final int NOTIFICATION_ID = 1;
 
     /**
      * Notification channel containing for non-emergency alerts.
