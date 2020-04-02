@@ -37,6 +37,8 @@ import android.preference.PreferenceManager;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
 
+import com.android.internal.annotations.VisibleForTesting;
+
 /**
  * Manages alert reminder notification.
  */
@@ -44,10 +46,12 @@ public class CellBroadcastAlertReminder extends Service {
     private static final String TAG = "CellBroadcastAlertReminder";
 
     /** Action to wake up and play alert reminder sound. */
-    private static final String ACTION_PLAY_ALERT_REMINDER = "ACTION_PLAY_ALERT_REMINDER";
+    @VisibleForTesting
+    public static final String ACTION_PLAY_ALERT_REMINDER = "ACTION_PLAY_ALERT_REMINDER";
 
     /** Extra for alert reminder vibration enabled (from settings). */
-    private static final String ALERT_REMINDER_VIBRATE_EXTRA = "alert_reminder_vibrate_extra";
+    @VisibleForTesting
+    public static final String ALERT_REMINDER_VIBRATE_EXTRA = "alert_reminder_vibrate_extra";
 
     /**
      * Pending intent for alert reminder. This is static so that we don't have to start the
