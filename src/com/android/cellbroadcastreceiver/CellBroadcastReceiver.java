@@ -38,6 +38,8 @@ import android.telephony.cdma.CdmaSmsCbProgramData;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import java.util.ArrayList;
 
 public class CellBroadcastReceiver extends BroadcastReceiver {
@@ -58,6 +60,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             "com.android.cellbroadcastreceiver.intent.action.MARK_AS_READ";
     public static final String EXTRA_DELIVERY_TIME =
             "com.android.cellbroadcastreceiver.intent.extra.ID";
+
+    public static final String ACTION_TESTING_MODE_CHANGED =
+            "com.android.cellbroadcastreceiver.intent.ACTION_TESTING_MODE_CHANGED";
 
     private Context mContext;
 
@@ -124,6 +129,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 String msg =  CellBroadcastSettings.getResources(mContext,
                         SubscriptionManager.DEFAULT_SUBSCRIPTION_ID).getString(msgId);
                 Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+                LocalBroadcastManager.getInstance(mContext)
+                        .sendBroadcast(new Intent(ACTION_TESTING_MODE_CHANGED));
                 log(msg);
             }
         } else {
