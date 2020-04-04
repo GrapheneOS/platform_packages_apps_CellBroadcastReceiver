@@ -39,42 +39,36 @@
         <SwitchPreference android:defaultValue="true"
                           android:enabled="false"
                           android:key="enable_cmas_presidential_alerts"
-                          app:isPreferenceVisible="@bool/show_presidential_alerts_in_settings"
                           android:summary="@string/enable_cmas_presidential_alerts_summary"
                           android:title="@string/enable_cmas_presidential_alerts_title"/>
 
         <!-- Enable CMAS Extreme Threat alerts -->
         <SwitchPreference android:defaultValue="@bool/extreme_threat_alerts_enabled_default"
                           android:key="enable_cmas_extreme_threat_alerts"
-                          app:isPreferenceVisible="@bool/show_cmas_settings"
                           android:summary="@string/enable_cmas_extreme_threat_alerts_summary"
                           android:title="@string/enable_cmas_extreme_threat_alerts_title" />
 
         <!-- Enable CMAS Severe Threat alerts -->
         <SwitchPreference android:defaultValue="@bool/severe_threat_alerts_enabled_default"
                           android:key="enable_cmas_severe_threat_alerts"
-                          app:isPreferenceVisible="@bool/show_cmas_settings"
                           android:summary="@string/enable_cmas_severe_threat_alerts_summary"
                           android:title="@string/enable_cmas_severe_threat_alerts_title" />
 
         <!-- Enable CMAS AMBER alerts -->
         <SwitchPreference android:defaultValue="@bool/amber_alerts_enabled_default"
                           android:key="enable_cmas_amber_alerts"
-                          app:isPreferenceVisible="@bool/show_cmas_settings"
                           android:summary="@string/enable_cmas_amber_alerts_summary"
                           android:title="@string/enable_cmas_amber_alerts_title" />
 
         <!-- Enable public safety messages -->
         <SwitchPreference android:defaultValue="@bool/public_safety_messages_enabled_default"
                           android:key="enable_public_safety_messages"
-                          app:isPreferenceVisible="@bool/show_public_safety_settings"
                           android:summary="@string/enable_public_safety_messages_summary"
                           android:title="@string/enable_public_safety_messages_title" />
 
         <!-- Enable state/local test alerts -->
         <SwitchPreference android:defaultValue="@bool/state_local_test_alerts_enabled_default"
                           android:key="enable_state_local_test_alerts"
-                          app:isPreferenceVisible="@bool/show_state_local_test_settings"
                           android:summary="@string/enable_state_local_test_alerts_summary"
                           android:title="@string/enable_state_local_test_alerts_title" />
 
@@ -88,7 +82,6 @@
         unless the boolean "config_showAreaUpdateInfoSettings" is set to true in the global resource. -->
         <SwitchPreference android:defaultValue="@bool/area_update_info_alerts_enabled_default"
                           android:key="enable_area_update_info_alerts"
-                          app:isPreferenceVisible="@bool/config_showAreaUpdateInfoSettings"
                           android:summary="@string/enable_area_update_info_alerts_summary"
                           android:title="@string/enable_area_update_info_alerts_title" />
 
@@ -121,7 +114,6 @@
 
         <SwitchPreference android:defaultValue="@bool/override_dnd_default"
                           android:key="override_dnd"
-                          app:isPreferenceVisible="@bool/show_override_dnd_settings"
                           android:summary="@string/override_dnd_summary"
                           android:title="@string/override_dnd_title" />
     </PreferenceCategory>
