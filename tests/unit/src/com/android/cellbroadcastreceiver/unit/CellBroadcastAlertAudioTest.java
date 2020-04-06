@@ -232,7 +232,6 @@ public class CellBroadcastAlertAudioTest extends
         waitUntilReady();
         verify(mMockedAudioManager).getRingerMode();
         verify(mMockedVibrator).vibrate(any(), any());
-        verify(mMockedVibrator).cancel();
         phoneStateListenerHandler.quit();
     }
 
