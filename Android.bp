@@ -29,6 +29,7 @@ android_app {
     defaults: ["CellBroadcastCommon"],
     certificate: "networkstack",
     manifest: "AndroidManifest.xml",
+    apex_available: ["com.android.cellbroadcast"],
 }
 
 android_app {
