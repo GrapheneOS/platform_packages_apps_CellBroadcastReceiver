@@ -24,8 +24,10 @@ import static android.telephony.SmsCbEtwsInfo.ETWS_WARNING_TYPE_TSUNAMI;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.telephony.CbGeoUtils.Circle;
 import android.telephony.CbGeoUtils.Geometry;
 import android.telephony.CbGeoUtils.LatLng;
+import android.telephony.CbGeoUtils.Polygon;
 import android.telephony.Rlog;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
@@ -33,8 +35,6 @@ import android.telephony.SubscriptionManager;
 import android.util.Pair;
 
 import com.android.cellbroadcastservice.CbGeoUtils;
-import com.android.cellbroadcastservice.CbGeoUtils.Circle;
-import com.android.cellbroadcastservice.CbGeoUtils.Polygon;
 import com.android.cellbroadcastservice.GsmAlphabet;
 import com.android.cellbroadcastservice.SmsCbHeader;
 import com.android.cellbroadcastservice.SmsCbHeader.DataCodingScheme;
