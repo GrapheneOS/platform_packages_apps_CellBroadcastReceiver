@@ -387,6 +387,8 @@ public class CellBroadcastAlertDialog extends Activity {
             CellBroadcastAlertService.addToNotificationBar(getLatestMessage(), mMessageList,
                     getApplicationContext(), true);
         }
+        // Stop playing alert sound/vibration/speech (if started)
+        stopService(new Intent(this, CellBroadcastAlertAudio.class));
     }
 
     @Override
