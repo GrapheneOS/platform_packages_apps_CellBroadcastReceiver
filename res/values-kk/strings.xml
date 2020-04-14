@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="9021266457863671070">"Төтенше жағдай туралы сымсыз хабарландырулар"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Төтенше жағдай туралы сымсыз хабарландыру параметрлері бұл пайдаланушы үшін қолжетімді емес."</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Жарайды"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Бұрын хабарламалар берілмеген"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Бұрын хабарландыру берілмеген"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Таратылымдарды жою"</string>
     <string name="message_options" msgid="3178489901903589574">"Хабар опциялары"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Мәліметтерді көру"</string>
@@ -49,16 +49,16 @@
     <string name="public_safety_message" msgid="9119928798786998252">"Жалпы қауіпсіздік хабары"</string>
     <string name="state_local_test_alert" msgid="8003145745857480200">"Мемлекеттік/Жергілікті тексеру"</string>
     <string name="emergency_alert" msgid="624783871477634263">"Төтенше жағдай дабылы"</string>
-    <string name="emergency_alerts_title" msgid="6605036374197485429">"Хабарламалар"</string>
+    <string name="emergency_alerts_title" msgid="6605036374197485429">"Хабарландырулар"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Таратылым хабарлары"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Төтенше жағдай туралы хабарламалар"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Дауыстық қоңыраудағы төтенше жағдай ескертулері"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Хабарламаларға рұқсат беру"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Хабарландыруларға рұқсат беру"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Төтенше жағдай туралы сымсыз хабарландырулар алу"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Дабыл еске салғышы"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Хабарландыру туралы еске салғыш"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Еске салғыш дыбысының қаттылығы қалыпты болады"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Төтенше жағдай туралы хабарламалар тарихы"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"Хабарлама параметрлері"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Төтенше жағдай туралы хабарландырулар тарихы"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"Хабарландыру параметрлері"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS сынақ таратылымдары"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Earthquake Tsunami Warning System жүйесі үшін сынақ таратылымдарын көрсету"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Үлкен қауіптер"</string>
@@ -75,7 +75,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Мемлекеттік және жергілікті органдардан тексеру хабарларын алу"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Төтенше жағдай туралы хабарламалар"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Өмірге қауіп төндіретін жағдайлар туралы ескерту"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Сынақ ескертулері"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Сынақ хабарландырулары"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Қауіпсіздік жөнінде хабарлау жүйесінен байланыс операторының сынақ хабарландырулары мен ай сайынғы сынақ хабарландыруларын алып отыру"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Діріл"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Әрдайым қатты дыбыспен ескерту"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Төтенше жағдай туралы сымсыз хабарландыруларды алып жүрсіз. Оларды әрі қарай ала бересіз бе?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Иә"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Жоқ"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Төтенше жағдай туралы хабарламалар тарихы"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Төтенше жағдай туралы хабарландырулар тарихы"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Бір рет"</item>
     <item msgid="9097229303902157183">"2 минут сайын"</item>
@@ -129,7 +129,7 @@
     <item msgid="3863339891188103437">"Әр 15 минут сайын"</item>
     <item msgid="7388573183644474611">"Ешқашан"</item>
   </string-array>
-    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Төтенше жағдай туралы құлақтандыру"</string>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Төтенше жағдай туралы хабарландырулар"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Президент ескертулері"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Прездент атынан ұлттық деңгейдегі ескерту хабарлары. Оларды өшіруге болмайды."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
