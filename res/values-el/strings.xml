@@ -56,13 +56,13 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Να επιτρέπονται οι ειδοποιήσεις"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Λήψη ειδοπ. έκτ. ανάγκης μέσω ασύρματου δικτύου"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Ειδοποίηση υπενθύμισης"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Θα γίνεται αναπαραγωγή ενός ήχου υπενθύμισης σε κανονική ένταση"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Αναπαραγωγή ενός ήχου υπενθύμισης σε κανονική ένταση"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Ιστορ. ειδοποιήσ. έκτ. ανάγκης"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Προτιμήσεις ειδοποιήσεων"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Δοκιμαστικές μεταδόσεις ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Δοκιμαστικές μεταδόσεις για το σύστημα προειδοποίησης για τσουνάμι και σεισμούς"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Ακραίες απειλές"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Ακραίες απειλές κατά τη ζωής και της ιδιοκτησίας"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Ακραίες απειλές κατά της ζωής και της ιδιοκτησίας"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Σοβαρές απειλές"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Σοβαρές απειλές κατά της ζωής και της ιδιοκτησίας"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Ειδοποιήσεις AMBER"</string>
