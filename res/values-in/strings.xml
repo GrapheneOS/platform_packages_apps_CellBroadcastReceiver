@@ -55,7 +55,7 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Notifikasi darurat dalam panggilan suara"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Izinkan notifikasi"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Terima notifikasi darurat nirkabel"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Pengingat pemberitahuan"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Pengingat notifikasi"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Suara pengingat akan diputar dengan volume reguler"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Histori notifikasi darurat"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferensi notifikasi"</string>
@@ -147,4 +147,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Koordinat:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Waktu tunggu maksimum:"</string>
     <string name="seconds" msgid="141450721520515025">"detik"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Pesan disalin"</string>
 </resources>
