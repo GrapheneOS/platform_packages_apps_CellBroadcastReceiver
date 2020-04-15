@@ -54,7 +54,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertas de emergência"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertas de emergência em chamada de voz"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permitir alertas"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Rec. notificações de alerta de emergência sem fios"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Receber notificações de alerta de emergência sem fios"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Lembrete de alerta"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Será reproduzido um som de lembrete com o volume normal"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Histórico de alertas de emergência"</string>

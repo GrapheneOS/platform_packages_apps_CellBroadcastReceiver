@@ -56,7 +56,7 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"경보 허용"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"무선 긴급 경보 알림 수신"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"경고 알림"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"경보 알림음이 보통 볼륨으로 재생됩니다"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"경보 알림음이 보통 볼륨으로 재생됨"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"긴급 경보 기록"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"경보 환경설정"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS 테스트 브로드캐스트"</string>

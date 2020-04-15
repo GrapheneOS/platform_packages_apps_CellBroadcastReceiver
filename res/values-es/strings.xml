@@ -54,11 +54,11 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertas de emergencias"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertas de emergencia en llamadas"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permitir alertas"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recibir alertas de emergencia inalámbricas"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Recordatorio de la alerta"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Los recordatorios sonarán al volumen habitual"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recibe notificaciones de alerta de emergencia inalámbricas"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Recordatorio de alertas"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Sonará un recordatorio al volumen normal"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historial de alertas de emergencia"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"Preferencias de las alertas"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"Preferencias de alertas"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Difusiones de prueba del ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Difusiones de prueba del sistema de alerta de tsunami y terremoto"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Amenazas extremas"</string>
@@ -76,7 +76,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Alertas de emergencias"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Advertencia sobre eventos que pueden ser mortales"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Alertas de prueba"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Recibir pruebas de operadores y mensuales del sistema de alertas de seguridad"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Recibe pruebas de operadores y pruebas mensuales del sistema de alertas de seguridad"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibración"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Las alertas sonarán siempre a todo volumen"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignorar el modo No molestar y otros ajustes de volumen"</string>

@@ -54,9 +54,9 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Шашылыш билдирүүлөр"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Аудио чалуу учурунда берилген шашылыш билдирүүлөр"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Шашылыш билдирүүлөргө уруксат берүү"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Зымсыз шашылыш билдирүүлөрдү кабыл алуу"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Зымсыз тармактар аркылуу шашылыш билдирүүлөрдү алуу"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Кабарлардын мезгилдүүлүгү"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Эстеткичтин добушу демейки катуулукта ойнотулат"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Эстеткичтин үнү демейки катуулукта угулат"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Шашылыш билдирүүлөрдүн таржымалы"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Шашылыш билдирүүнүн параметрлери"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS сынамык таркатмалары"</string>
