@@ -75,7 +75,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Saate riiklikelt ja kohalikelt ametkondadelt testsõnumeid"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Hädaolukorra hoiatused"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Hoiatused eluohtlike sündmuste puhul"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testhoiatused"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testteatised"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Turvahoiatussüsteem saadab operaatori teste ja igakuiseid teste"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibreerimine"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Teavita alati maksimaalse helitugevusega"</string>
@@ -147,4 +147,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Koordinaadid:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maksimaalne ooteaeg:"</string>
     <string name="seconds" msgid="141450721520515025">"sekundit"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Sõnum on kopeeritud"</string>
 </resources>

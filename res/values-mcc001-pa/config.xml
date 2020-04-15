@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2018 The Android Open Source Project
+<!--  Copyright (C) 2020 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,9 +16,5 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="public_safety_message" msgid="7237115648380675159">"Informativní zpráva"</string>
-    <string name="enable_public_safety_messages_title" msgid="4037404034274507696">"Informativní zpráva"</string>
-    <string name="cmas_required_monthly_test" msgid="9061179556831144678">"Výstražná zpráva: testovací zpráva"</string>
-    <string name="cmas_exercise_alert" msgid="3061507852301643814">"Výstražná zpráva: testovací zpráva / cvičení"</string>
-    <string name="pws_other_message_identifiers" msgid="4992476982074198144">"Výstražná zpráva: testovací zpráva"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7552567512178490413">"ਹੋਰ ਜਾਂਚਾਂ"</string>
 </resources>
