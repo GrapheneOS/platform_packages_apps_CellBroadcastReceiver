@@ -40,6 +40,8 @@ import android.widget.Toast;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.android.internal.annotations.VisibleForTesting;
+
 import java.util.ArrayList;
 
 public class CellBroadcastReceiver extends BroadcastReceiver {
@@ -66,6 +68,22 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
     private Context mContext;
 
+    /**
+     * helper method for easier testing. To generate a new CellBroadcastTask
+     * @param deliveryTime message delivery time
+     */
+    @VisibleForTesting
+    public void getCellBroadcastTask(final long deliveryTime) {
+        new CellBroadcastContentProvider.AsyncCellBroadcastTask(mContext.getContentResolver())
+                .execute(new CellBroadcastContentProvider.CellBroadcastOperation() {
+                    @Override
+                    public boolean execute(CellBroadcastContentProvider provider) {
+                        return provider.markBroadcastRead(CellBroadcasts.DELIVERY_TIME,
+                                deliveryTime);
+                    }
+                });
+    }
+
     @Override
     public void onReceive(Context context, Intent intent) {
         onReceiveWithPrivilege(context, intent, false);
@@ -79,14 +97,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
         if (ACTION_MARK_AS_READ.equals(action)) {
             final long deliveryTime = intent.getLongExtra(EXTRA_DELIVERY_TIME, -1);
-            new CellBroadcastContentProvider.AsyncCellBroadcastTask(mContext.getContentResolver())
-                    .execute(new CellBroadcastContentProvider.CellBroadcastOperation() {
-                        @Override
-                        public boolean execute(CellBroadcastContentProvider provider) {
-                            return provider.markBroadcastRead(CellBroadcasts.DELIVERY_TIME,
-                                    deliveryTime);
-                        }
-                    });
+            getCellBroadcastTask(deliveryTime);
         } else if (CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED.equals(action)) {
             initializeSharedPreference();
             startConfigService(mContext);
@@ -157,7 +168,11 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         return sp.getBoolean(TESTING_MODE, false);
     }
 
-    private void adjustReminderInterval() {
+    /**
+     * update reminder interval
+     */
+    @VisibleForTesting
+    public void adjustReminderInterval() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
         String currentIntervalDefault = sp.getString(CURRENT_INTERVAL_DEFAULT, "0");
 
@@ -181,7 +196,11 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         }
     }
 
-    private void initializeSharedPreference() {
+    /**
+     * initialize shared preferences before starting services
+     */
+    @VisibleForTesting
+    public void initializeSharedPreference() {
         if (isSystemUser(mContext)) {
             Log.d(TAG, "initializeSharedPreference");
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
@@ -334,7 +353,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      * @param context
      * @return whether the user is system user
      */
-    private static boolean isSystemUser(Context context) {
+    @VisibleForTesting
+    public static boolean isSystemUser(Context context) {
         return ((UserManager) context.getSystemService(Context.USER_SERVICE)).isSystemUser();
     }
 
