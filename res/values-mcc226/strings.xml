@@ -20,7 +20,7 @@
     <string name="enable_public_safety_messages_title">Orange Alert</string>
     <!-- Dialog title for all orange alert for Romania [CHAR LIMIT=50] -->
     <string name="public_safety_message">RO-Alert: Orange Alert</string>
-    <!-- CMAS dialog title for Romania presidential level alert. [CHAR LIMIT=50] -->
+    <!-- CMAS dialog title for Romania presidential level alert. [CHAR LIMIT=60] -->
     <string name="cmas_presidential_level_alert">RO-Alert: Presidential Alert</string>
     <!-- CMAS dialog title for Romania extreme alert. [CHAR LIMIT=50] -->
     <string name="cmas_extreme_alert">RO-Alert: Extreme Alert</string>
