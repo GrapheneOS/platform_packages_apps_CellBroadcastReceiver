@@ -19,7 +19,6 @@
     <string name="cmas_presidential_level_alert" msgid="175237477015066795">"緊急速報メール（国内）"</string>
     <string name="pws_other_message_identifiers" msgid="1160028649251004769">"警告アラート"</string>
     <string name="enable_emergency_alerts_message_title" msgid="876981179796412627">"警告アラート"</string>
-    <string name="enable_emergency_alerts_message_summary" msgid="6745452404477073171">"人命や財産を守るための推奨される対応"</string>
     <string name="cmas_required_monthly_test" msgid="7606843318721168353">"テストアラート"</string>
     <string name="public_safety_message" msgid="2643362135123023300">"テストアラート"</string>
     <string name="cmas_exercise_alert" msgid="5775307523978007483">"エクササイズ"</string>
