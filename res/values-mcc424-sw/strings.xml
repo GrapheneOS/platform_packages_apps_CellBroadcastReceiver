@@ -19,7 +19,6 @@
     <string name="cmas_presidential_level_alert" msgid="175237477015066795">"Tahadhari kuhusu dharura ya kitaifa"</string>
     <string name="pws_other_message_identifiers" msgid="1160028649251004769">"Arifa za onyo"</string>
     <string name="enable_emergency_alerts_message_title" msgid="876981179796412627">"Arifa za onyo"</string>
-    <string name="enable_emergency_alerts_message_summary" msgid="6745452404477073171">"Hatua zinazopendekezwa ambazo zinaweza kuokoa maisha au mali"</string>
     <string name="cmas_required_monthly_test" msgid="7606843318721168353">"Jaribio la tahadhari"</string>
     <string name="public_safety_message" msgid="2643362135123023300">"Ilani ya jaribio"</string>
     <string name="cmas_exercise_alert" msgid="5775307523978007483">"Mazoezi"</string>
