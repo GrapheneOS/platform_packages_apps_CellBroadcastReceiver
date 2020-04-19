@@ -58,7 +58,7 @@
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Recordatori d\'alertes"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Un so de recordatori es reproduirà a un volum normal"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historial d\'alertes d\'emergència"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"Preferències de les alertes"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"Preferències d\'alertes"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Difusions de prova de l\'ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Difusions de prova del sistema d\'avís de terratrèmols i tsunamis"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Amenaces extremes"</string>

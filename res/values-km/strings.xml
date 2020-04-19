@@ -55,8 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ការជូនដំណឹងពេល​មានអាសន្នអំឡុងពេលហៅជាសំឡេង"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"អនុញ្ញាត​ការជូន​ដំណឹង"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ទទួលបានការជូនដំណឹង​ពេលមានអាសន្នដោយឥតប្រើខ្សែ"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ជូន​ដំណឹង"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"សំឡេង​ការរំលឹក​នឹងចាក់​នៅ​កម្រិតសំឡេង​ធម្មតា"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ការរំលឹកអំពីការជូន​ដំណឹង"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"សំឡេងរំលឹក​នឹងបន្លឺឡើងនៅ​កម្រិតសំឡេង​ធម្មតា"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ប្រវត្តិការជូនដំណឹង​ពេលអាសន្ន"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ចំណូលចិត្តការជូនដំណឹង"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ការ​ផ្សាយ​សាកល្បងរបស់ ETWS"</string>

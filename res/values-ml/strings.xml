@@ -16,8 +16,8 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="2008319089248760277">"വയർലെസ് അടിയന്തിര അലേർട്ടുകൾ"</string>
-    <string name="sms_cb_settings" msgid="9021266457863671070">"വയർലെസ് അടിയന്തിര അലേർട്ടുകൾ"</string>
+    <string name="app_label" msgid="2008319089248760277">"വയർലെസ് അടിയന്തര അലേർട്ടുകൾ"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"വയർലെസ് അടിയന്തര അലേർട്ടുകൾ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"ഈ ഉപയോക്താവിന് വയർലെസ് അടിയന്തിര അലേർട്ടുകളുടെ ക്രമീകരണം ലഭ്യമല്ല"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ശരി"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"മുമ്പ് മുന്നറിയിപ്പുകളൊന്നുമില്ല"</string>
@@ -54,8 +54,8 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"അടിയന്തര അലേർട്ടുകൾ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"വോയ്സ് കോളിലെ അടിയന്തര മുന്നറിയിപ്പുകൾ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"മുന്നറിയിപ്പുകൾ അനുവദിക്കുക"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"വയർലെസ് അടിയന്തിര അലേർട്ട് അറിയിപ്പുകൾ നേടുക"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"അലേർട്ട് ഓർമ്മപ്പെടുത്തൽ"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"വയർലെസ് അടിയന്തര അലേർട്ട് അറിയിപ്പുകൾ നേടുക"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"അലേർട്ട് റിമൈൻഡർ"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"റിമെെൻഡർ ശബ്ദം സാധാരണ ശബ്ദത്തിൽ പ്ലേ ചെയ്യും"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"അടിയന്തര അലേർട്ട് ചരിത്രം"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"അലേർട്ട് മുൻഗണനകൾ"</string>

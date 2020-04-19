@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="9021266457863671070">"वायरलेस इमरजेंसी अलर्ट"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"यह उपयोगकर्ता, वायरलेस इमरजेंसी अलर्ट की सूचनाओं की सेटिंग में बदलाव नहीं कर सकता"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक है"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"पहले का कोई भी अलर्ट मौजूद नहीं है"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"पहले का किसी भी तरह का अलर्ट मौजूद नहीं है"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"प्रसारण मिटाएं"</string>
     <string name="message_options" msgid="3178489901903589574">"संदेश विकल्‍प"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"विवरण देखें"</string>
@@ -66,7 +66,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"गंभीर खतरे"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"जान और माल से जुड़े गंभीर खतरे"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER सूचनाएं"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"बच्‍चे के अपहरण का आपातकालीन बुलेटिन"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"बच्‍चे के अपहरण के आपातकालीन बुलेटिन"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"चेतावनी वाले मैसेज"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जल्द ही सुरक्षा पर खतरा हो सकता है"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"सभी की सुरक्षा के लिए मैसेज"</string>

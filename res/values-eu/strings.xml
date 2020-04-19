@@ -53,7 +53,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Igorpen-mezuak"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Larrialdi-alertak"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Larrialdien alertak ahots-deietan"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Onartu alertak"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Baimendu alertak"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Jaso hari gabeko larrialdi-alerten jakinarazpenak"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Alerta-egoeraren abisua"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Abisu-soinu batek joko du ohiko bolumenean"</string>
