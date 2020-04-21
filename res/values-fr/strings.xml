@@ -54,7 +54,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertes d\'urgence"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertes d\'urgence pendant l\'appel téléphonique"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Autoriser les alertes"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recevoir les notif. d\'alertes d\'urgence sans fil"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recevoir les notifications d\'alertes d\'urgence sans fil"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Rappel d\'alerte"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Volume normal pour les rappels"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historique des alertes d\'urgence"</string>

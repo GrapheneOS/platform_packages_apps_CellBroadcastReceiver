@@ -53,9 +53,9 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ਪ੍ਰਸਾਰਿਤ ਸੁਨੇਹੇ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ਸੰਕਟਕਾਲੀਨ ਚਿਤਾਵਨੀਆਂ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ਅਵਾਜ਼ੀ ਕਾਲ ਵਿੱਚ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ਸੁਚੇਤਨਾਵਾਂ ਆਉਣ ਦਿਓ"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ਵਾਇਰਲੈੱਸ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾ ਦੀਆਂ ਸੂਚਨਾਵਾਂ ਪਾਓ"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ਚਿਤਾਵਨੀ ਯਾਦ-ਦਹਾਨੀ"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ਸੁਚੇਤਨਾਵਾਂ ਦੀ ਆਗਿਆ ਦਿਓ"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ਵਾਇਰਲੈੱਸ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾ ਦੀਆਂ ਸੂਚਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ਸੁਚੇਤਨਾ ਯਾਦ-ਸੂਚਨਾ"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ਯਾਦ-ਸੂਚਨਾ ਸੰਬੰਧੀ ਧੁਨੀ ਨਿਯਮਿਤ ਅਵਾਜ਼ \'ਤੇ ਚੱਲੇਗੀ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾ ਦਾ ਇਤਿਹਾਸ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ਸੁਚੇਤਨਾ ਤਰਜੀਹਾਂ"</string>
@@ -65,7 +65,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"ਜਾਨ ਅਤੇ ਮਾਲ ਦੇ ਹੱਦੋਂ ਵੱਧ ਖਤਰਿਆਂ ਸੰਬੰਧੀ ਸੁਚੇਤਨਾਵਾਂ"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ਗੰਭੀਰ ਖਤਰੇ"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ਜਾਨ ਅਤੇ ਮਾਲ ਦੇ ਗੰਭੀਰ ਖਤਰਿਆਂ ਸੰਬੰਧੀ ਸੁਚੇਤਨਾਵਾਂ"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"ਐਂਬਰ ਸੁਚੇਤਨਾਵਾਂ"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER ਸੁਚੇਤਨਾਵਾਂ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ਅਗਵਾ ਹੋਏ ਬੱਚੇ ਸੰਬੰਧੀ ਸੰਕਟਕਾਲੀਨ ਬੁਲੇਟਿਨ"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"ਸੁਚੇਤਨਾ ਸੰਬੰਧੀ ਸੁਨੇਹੇ"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ਸੰਭਾਵੀ ਸੁਰੱਖਿਆ ਖਤਰਿਆਂ ਬਾਰੇ ਚਿਤਾਵਨੀ ਦਿਓ"</string>
