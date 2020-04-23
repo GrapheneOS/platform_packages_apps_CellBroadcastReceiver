@@ -402,23 +402,23 @@ public class CellBroadcastSettings extends Activity {
 
             if (mPresidentialCheckBox != null) {
                 mPresidentialCheckBox.setVisible(
-                        res.getBoolean(R.bool.show_presidential_alerts_in_settings));
+                        res.getBoolean(R.bool.show_presidential_alerts_settings));
             }
 
             if (mExtremeCheckBox != null) {
-                mExtremeCheckBox.setVisible(res.getBoolean(R.bool.show_cmas_settings)
+                mExtremeCheckBox.setVisible(res.getBoolean(R.bool.show_extreme_alert_settings)
                         && !channelManager.getCellBroadcastChannelRanges(
                                 R.array.cmas_alert_extreme_channels_range_strings).isEmpty());
             }
 
             if (mSevereCheckBox != null) {
-                mSevereCheckBox.setVisible(res.getBoolean(R.bool.show_cmas_settings)
+                mSevereCheckBox.setVisible(res.getBoolean(R.bool.show_severe_alert_settings)
                         && !channelManager.getCellBroadcastChannelRanges(
                                 R.array.cmas_alerts_severe_range_strings).isEmpty());
             }
 
             if (mAmberCheckBox != null) {
-                mAmberCheckBox.setVisible(res.getBoolean(R.bool.show_cmas_settings)
+                mAmberCheckBox.setVisible(res.getBoolean(R.bool.show_amber_alert_settings)
                         && !channelManager.getCellBroadcastChannelRanges(
                                 R.array.cmas_amber_alerts_channels_range_strings).isEmpty());
             }
