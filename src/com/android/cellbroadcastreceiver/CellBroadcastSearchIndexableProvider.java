@@ -132,18 +132,30 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
                 SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
         Object[] ref;
 
-        if (!res.getBoolean(R.bool.show_cmas_settings)) {
+        if (!res.getBoolean(R.bool.show_presidential_alerts_settings)) {
+            ref = new Object[1];
+            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                    CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS;
+            cursor.addRow(ref);
+        }
+
+        if (!res.getBoolean(R.bool.show_extreme_alert_settings)) {
             // Remove CMAS preference items in emergency alert category.
             ref = new Object[1];
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
                     CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS;
             cursor.addRow(ref);
+        }
+
+        if (!res.getBoolean(R.bool.show_severe_alert_settings)) {
 
             ref = new Object[1];
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
                     CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS;
             cursor.addRow(ref);
+        }
 
+        if (!res.getBoolean(R.bool.show_amber_alert_settings)) {
             ref = new Object[1];
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
                     CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS;
@@ -154,13 +166,6 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             ref = new Object[1];
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
                     CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS;
-            cursor.addRow(ref);
-        }
-
-        if (!res.getBoolean(R.bool.show_presidential_alerts_in_settings)) {
-            ref = new Object[1];
-            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
-                    CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS;
             cursor.addRow(ref);
         }
 
