@@ -19,8 +19,14 @@
     <bool name="show_override_dnd_settings">false</bool>
     <!-- The default value for overriding dnd settings-->
     <bool name="override_dnd_default">false</bool>
-    <!-- Whether to enable CMAS settings (United States) -->
-    <bool name="show_cmas_settings">true</bool>
+    <!-- Whether to show presidential alert settings -->
+    <bool name="show_presidential_alerts_settings">false</bool>
+    <!-- Whether to show extreme alert settings -->
+    <bool name="show_extreme_alert_settings">true</bool>
+    <!-- Whether to show severe alert settings -->
+    <bool name="show_severe_alert_settings">true</bool>
+    <!-- Whether to show amber alert settings -->
+    <bool name="show_amber_alert_settings">true</bool>
     <!-- Whether to show test settings -->
     <bool name="show_test_settings">true</bool>
     <!-- Whether to append date-time to the alert title -->
@@ -33,8 +39,6 @@
     <bool name="show_cmas_messages_in_priority_order">false</bool>
     <!-- Whether to ignore any alert message in ECBM(Emergency Callback Mode) -->
     <bool name="ignore_messages_in_ecbm">false</bool>
-    <!-- Show checkbox for Presidential alerts in settings -->
-    <bool name="show_presidential_alerts_in_settings">false</bool>
     <!-- Whether to display public safety alert settings, some countries/carriers want to enable it by default and not allow users to disable -->
     <bool name="show_public_safety_settings">true</bool>
     <!-- Whether to display state/local test settings, some countries/carriers want to enable it by default and not allow users to disable -->
