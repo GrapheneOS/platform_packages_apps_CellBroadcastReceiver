@@ -15,8 +15,13 @@
 -->
 
 <resources>
-    <!-- Whether to enable CMAS settings -->
-    <bool name="show_cmas_settings">false</bool>
+    <!-- Whether to show extreme alert settings -->
+    <bool name="show_extreme_alert_settings">false</bool>
+    <!-- Whether to show severe alert settings -->
+    <bool name="show_severe_alert_settings">false</bool>
+    <!-- Whether to show amber alert settings -->
+    <bool name="show_amber_alert_settings">false</bool>
+
     <!-- 4372 -->
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
         <item>0x1114:rat=gsm, emergency=true</item>
