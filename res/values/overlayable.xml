@@ -42,7 +42,7 @@
             <!-- Presidential alert is default on and cannot be turned off.
             AOSP CBR app does not show presidential alert in settings, however OEM can choose to
             display a greyout presidential alert settings by overriding below config -->
-            <item type="bool" name="show_presidential_alerts_in_settings" />
+            <item type="bool" name="show_presidential_alerts_settings" />
 
             <!-- Some JP carriers requires to enable 0xA807 in additional_cbs_channels_strings
             but only for certain products. OEMs can customize below config by including 0xA807
