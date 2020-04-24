@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.SystemProperties;
@@ -90,6 +91,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
         mContext = context.getApplicationContext();
         String action = intent.getAction();
+        Resources res = CellBroadcastSettings.getResources(mContext,
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         if (ACTION_MARK_AS_READ.equals(action)) {
             final long deliveryTime = intent.getLongExtra(EXTRA_DELIVERY_TIME, -1);
@@ -117,12 +120,12 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             // rename registered notification channels on locale change
             CellBroadcastAlertService.createNotificationChannels(mContext);
         } else if (TelephonyManager.ACTION_SECRET_CODE.equals(action)) {
-            if (SystemProperties.getInt("ro.debuggable", 0) == 1) {
+            if (SystemProperties.getInt("ro.debuggable", 0) == 1
+                    || res.getBoolean(R.bool.allow_testing_mode_on_user_build)) {
                 setTestingMode(!isTestingMode(mContext));
                 int msgId = (isTestingMode(mContext)) ? R.string.testing_mode_enabled
                         : R.string.testing_mode_disabled;
-                String msg =  CellBroadcastSettings.getResources(mContext,
-                        SubscriptionManager.DEFAULT_SUBSCRIPTION_ID).getString(msgId);
+                String msg =  res.getString(msgId);
                 Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
                 LocalBroadcastManager.getInstance(mContext)
                         .sendBroadcast(new Intent(ACTION_TESTING_MODE_CHANGED));
