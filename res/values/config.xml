@@ -53,6 +53,8 @@
     <bool name="mute_by_physical_button">true</bool>
     <!-- Whether enable LED flash when playing alert tones -->
     <bool name="enable_led_flash">false</bool>
+    <!-- Whether allowing testing mode on user build or not -->
+    <bool name="allow_testing_mode_on_user_build">false</bool>
 
     <!-- Section for switch default value -->
     <!-- Master toggle default value -->
