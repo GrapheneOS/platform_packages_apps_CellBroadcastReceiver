@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver.unit;
 
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -23,15 +25,21 @@ import static org.mockito.Mockito.verify;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.IPowerManager;
 import android.os.IThermalService;
+import android.os.Looper;
 import android.os.PowerManager;
+import android.preference.PreferenceManager;
 import android.telephony.SmsCbMessage;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertDialog;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
+import com.android.cellbroadcastreceiver.CellBroadcastSettings;
+import com.android.internal.telephony.gsm.SmsCbConstants;
 
 import org.junit.After;
 import org.junit.Before;
@@ -66,15 +74,22 @@ public class CellBroadcastAlertDialogTest extends
         super(CellBroadcastAlertDialog.class);
     }
 
+    private int mServiceCategory = SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL;
+    private int mCmasMessageClass = 0;
+
+    private ArrayList<SmsCbMessage> mMessageList;
+
     @Override
     protected Intent createActivityIntent() {
-        ArrayList<SmsCbMessage> messageList = new ArrayList<>(1);
-        messageList.add(CellBroadcastAlertServiceTest.createMessage(12412));
+        mMessageList = new ArrayList<>(1);
+        mMessageList.add(CellBroadcastAlertServiceTest.createMessageForCmasMessageClass(12412,
+                mServiceCategory,
+                mCmasMessageClass));
 
         Intent intent = new Intent(getInstrumentation().getTargetContext(),
-                        CellBroadcastAlertDialog.class);
+                CellBroadcastAlertDialog.class);
         intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
-                        messageList);
+                mMessageList);
         return intent;
     }
 
@@ -130,5 +145,57 @@ public class CellBroadcastAlertDialogTest extends
                 b.getCharSequence(Notification.EXTRA_TITLE).toString()));
         assertEquals(CellBroadcastAlertServiceTest.createMessage(98235).getMessageBody(),
                 b.getCharSequence(Notification.EXTRA_TEXT));
+    }
+
+    public void testDismiss() throws Throwable {
+        CellBroadcastAlertDialog activity = startActivity();
+        waitForMs(100);
+        activity.dismiss();
+
+        verify(mMockedNotificationManager, times(1)).cancel(
+                eq(CellBroadcastAlertService.NOTIFICATION_ID));
+    }
+
+    public void testDismissWithDialog() throws Throwable {
+        // in order to trigger mShowOptOutDialog=true, the message should not be a presidential
+        // alert (the default message we send in this test)
+        mServiceCategory = SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY;
+        mCmasMessageClass = SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY;
+
+        // prepare the looper so we can create opt out dialog
+        Looper.prepare();
+
+        // enable opt out dialog in shared prefs
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        prefs.edit().putBoolean(CellBroadcastSettings.KEY_SHOW_CMAS_OPT_OUT_DIALOG, true).apply();
+
+        boolean triedToCreateDialog = false;
+        try {
+            CellBroadcastAlertDialog activity = startActivity();
+            waitForMs(100);
+            activity.dismiss();
+        } catch (WindowManager.BadTokenException e) {
+            triedToCreateDialog = true;
+        }
+
+        assertTrue(triedToCreateDialog);
+    }
+
+    public void testOnNewIntent() throws Throwable {
+        Intent intent = createActivityIntent();
+        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+
+        Looper.prepare();
+        CellBroadcastAlertDialog activity = startActivity(intent, null, null);
+        waitForMs(100);
+
+        // add more messages to list
+        mMessageList.add(CellBroadcastAlertServiceTest.createMessageForCmasMessageClass(12413,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY));
+        activity.onNewIntent(intent);
+
+        verify(mMockedNotificationManager, atLeastOnce()).cancel(
+                eq(CellBroadcastAlertService.NOTIFICATION_ID));
     }
 }
