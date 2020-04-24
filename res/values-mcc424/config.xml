@@ -15,9 +15,13 @@
 -->
 
 <resources>
-    <!-- Whether to enable CMAS settings (United States) -->
-    <!-- No need to show this for United Arab Emirates users -->
-    <bool name="show_cmas_settings">false</bool>
+    <!-- Whether to show extreme alert settings -->
+    <bool name="show_extreme_alert_settings">false</bool>
+    <!-- Whether to show severe alert settings -->
+    <bool name="show_severe_alert_settings">false</bool>
+    <!-- Whether to show amber alert settings -->
+    <bool name="show_amber_alert_settings">false</bool>
+
     <!-- Hide state local test from menu, but still enable it -->
     <bool name="show_state_local_test_settings">false</bool>
     <bool name="state_local_test_alerts_enabled_default">true</bool>
