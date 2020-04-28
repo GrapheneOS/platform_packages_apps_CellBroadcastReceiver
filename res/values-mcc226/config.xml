@@ -16,7 +16,7 @@
 
 <resources>
     <!-- Whether to display presidential alert in the settings -->
-    <bool name="show_presidential_alerts_in_settings">true</bool>
+    <bool name="show_presidential_alerts_settings">true</bool>
     <!-- 4370 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true</item>
