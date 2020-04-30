@@ -107,22 +107,15 @@
         <activity android:name="CellBroadcastOptOutActivity"
                   android:exported="false" />
 
-        <!-- Require sender permissions to prevent SMS spoofing -->
-        <receiver android:name="PrivilegedCellBroadcastReceiver"
-            android:permission="android.permission.BROADCAST_SMS">
+        <receiver android:name="CellBroadcastReceiver">
             <intent-filter>
+                <action android:name="android.telephony.action.DEFAULT_SMS_SUBSCRIPTION_CHANGED" />
+                <action android:name="android.telephony.action.CARRIER_CONFIG_CHANGED" />
                 <action android:name="android.provider.action.SMS_EMERGENCY_CB_RECEIVED" />
                 <action android:name="android.provider.Telephony.SMS_CB_RECEIVED" />
                 <action android:name="android.cellbroadcastreceiver.START_CONFIG" />
                 <action android:name="android.provider.Telephony.SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED" />
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
-            </intent-filter>
-        </receiver>
-
-        <receiver android:name="CellBroadcastReceiver">
-            <intent-filter>
-                <action android:name="android.telephony.action.DEFAULT_SMS_SUBSCRIPTION_CHANGED" />
-                <action android:name="android.telephony.action.CARRIER_CONFIG_CHANGED" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.telephony.action.SECRET_CODE" />
