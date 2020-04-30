@@ -15,9 +15,6 @@
 -->
 
 <resources>
-    <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_cmas_test_alerts_title">Other tests</string>
-
     <!-- Specify second language code to receive emergency alerts -->
     <string name="emergency_alert_second_language_code" translatable="false">es</string>
     <!-- 4370, 4383 -->
