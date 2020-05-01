@@ -16,6 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="enable_cmas_test_alerts_title" msgid="5028777622440500200">"Citi testi"</string>
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"Spāņu"</string>
     <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"Saņemt ārkārtas brīdinājumus spāņu valodā, kad iespējams"</string>
 </resources>
