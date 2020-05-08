@@ -53,19 +53,19 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण संदेश"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"वॉयस कॉल के दौरान आपातकालीन चेतावनियां"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"अलर्ट दिखाए जाने की अनुमति दें"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"वायरलेस इमरजेंसी अलर्ट की सूचनाएं पाएं"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"चेतावनी दिखाए जाने की अनुमति दें"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"वायरलेस इमरजेंसी अलर्ट की चेतावनी पाएं"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"याद दिलाने के लिए अलर्ट"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमांइडर की रिंगटोन की आवाज़ सामान्य रहेगी"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"इमरजेंसी के समय की सूचनाओं का इतिहास"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"सूचना से जुड़ी पसंद"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"चेतावनी से जुड़ी पसंद"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS परीक्षण प्रसारण"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"भूकंप सुनामी चेतावनी सिस्‍टम के लिए परीक्षण प्रसारण"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"बहुत गंभीर खतरे"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"जान और माल से जुड़े बहुत गंभीर खतरे"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"गंभीर खतरे"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"जान और माल से जुड़े गंभीर खतरे"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER सूचनाएं"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER चेतावनियां"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"बच्‍चे के अपहरण के आपातकालीन बुलेटिन"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"चेतावनी वाले मैसेज"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जल्द ही सुरक्षा पर खतरा हो सकता है"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"फ़िलहाल, आपको वायरलेस इमरजेंसी अलर्ट की सूचनाएं भेजी जा रही हैं. क्या आप वायरलेस इमरजेंसी अलर्ट की सूचनाएं आगे भी पाना चाहेंगे?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"हां"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"नहीं"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"इमरजेंसी के समय की सूचनाओं का इतिहास"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"आपातकालीन समय की चेतावनियों का इतिहास"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"एक बार"</item>
     <item msgid="9097229303902157183">"हर 2 मिनट में"</item>
