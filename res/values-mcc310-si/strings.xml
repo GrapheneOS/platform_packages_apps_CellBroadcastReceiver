@@ -16,6 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="enable_cmas_test_alerts_title" msgid="5028777622440500200">"වෙනත් පරීක්ෂා"</string>
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"ස්පාඤ්ඤ"</string>
     <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"හැකි විට ස්පාඤ්ඤ භාෂාවෙන් හදිසි අනතුරු ඇඟවීම් ලබා ගන්න"</string>
 </resources>
