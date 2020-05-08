@@ -16,6 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="enable_cmas_test_alerts_title" msgid="5028777622440500200">"အခြားစမ်းသပ်မှုများ"</string>
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"စပိန်"</string>
     <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"ဖြစ်နိုင်ပါက အရေးပေါ် သတိပေးချက်များကို စပိန်ဘာသာစကားနှင့် ရယူရန်"</string>
 </resources>
