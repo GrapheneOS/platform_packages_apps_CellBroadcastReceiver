@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2019 The Android Open Source Project
+<!--  Copyright (C) 2020 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="enable_cmas_test_alerts_title" msgid="5028777622440500200">"Ander toetse"</string>
-    <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"Spaans"</string>
-    <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"Ontvang wanneer moontlik noodwaarskuwings in Spaans"</string>
+    <string name="cmas_presidential_level_alert" msgid="7537268211853689036">"உயர்நிலை எச்சரிக்கை"</string>
+    <string name="cmas_extreme_alert" msgid="6487533089309567518">"அவசரகால எச்சரிக்கை"</string>
+    <string name="cmas_amber_alert" msgid="1920575955518082111">"Amber எச்சரிக்கை"</string>
+    <string name="cmas_required_monthly_test" msgid="4861373660989211951">"சோதனைச் செய்தி"</string>
 </resources>
