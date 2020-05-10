@@ -41,7 +41,7 @@
     <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"緊急警示：極嚴重"</string>
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"緊急警示：極嚴重"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"緊急警示：嚴重"</string>
-    <string name="cmas_amber_alert" msgid="6154867710264778887">"誘拐兒童 (黃色警示)"</string>
+    <string name="cmas_amber_alert" msgid="6154867710264778887">"擄拐兒童 (安珀警報)"</string>
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"必要的每月測試訊息"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"緊急警示 (演習)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"緊急警示 (網絡供應商)"</string>
