@@ -26,7 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Дайындарды көрүү"</string>
     <string name="menu_delete" msgid="128380070910799366">"Уюк таркатмасын жок кылуу"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Шашылыш билдирүүнүн чоо-жайы"</string>
-    <string name="view_details_debugging_title" msgid="5699927030805114173">"Мүчүлүштүктөрдү оңдоо эскертүүсүнүн чоо-жайы"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Мүчүлүштүктөрдү аныктоо эскертүүсүнүн чоо-жайы"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Бул уюк таркатмасы жок кылынсынбы?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Кабыл алынган уюк билдирүүлөрүнүн бардыгы жок кылынсынбы?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Жок кылуу"</string>
