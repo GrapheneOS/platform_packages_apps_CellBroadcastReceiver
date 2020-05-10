@@ -18,6 +18,6 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_presidential_level_alert" msgid="7537268211853689036">"ការជូនដំណឹង​កម្រិត​ខ្ពស់បំផុត"</string>
     <string name="cmas_extreme_alert" msgid="6487533089309567518">"ការជូនដំណឹង​ពេលមានអាសន្ន"</string>
-    <string name="cmas_amber_alert" msgid="1920575955518082111">"ការជូនដំណឹង AMBER"</string>
+    <string name="cmas_amber_alert" msgid="1920575955518082111">"ការ​ជូនដំណឹងចាប់ជំរិតក្មេង"</string>
     <string name="cmas_required_monthly_test" msgid="4861373660989211951">"សារ​សាកល្បង"</string>
 </resources>
