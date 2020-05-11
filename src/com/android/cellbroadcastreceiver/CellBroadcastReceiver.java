@@ -19,11 +19,15 @@ package com.android.cellbroadcastreceiver;
 import android.annotation.NonNull;
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.ContentProviderClient;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -36,6 +40,7 @@ import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -109,6 +114,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             getCellBroadcastTask(deliveryTime);
         } else if (CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED.equals(action)) {
             initializeSharedPreference();
+            enableLauncher();
             startConfigService();
         } else if (CELLBROADCAST_START_CONFIG_ACTION.equals(action)
                 || SubscriptionManager.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action)) {
@@ -401,6 +407,51 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             context.startService(serviceIntent);
         } else {
             Log.e(TAG, "startConfigService: Not system user.");
+        }
+    }
+
+    /**
+     * Enable Launcher.
+     */
+    @VisibleForTesting
+    public void enableLauncher() {
+        boolean enable = getResourcesMethod().getBoolean(R.bool.show_message_history_in_launcher);
+        final PackageManager pm = mContext.getPackageManager();
+        // This alias presents the target activity, CellBroadcastListActivity, as a independent
+        // entity with its own intent filter for android.intent.category.LAUNCHER.
+        // This alias will be enabled/disabled at run-time based on resource overlay. Once enabled,
+        // it will appear in the Launcher as a top-level application
+        String aliasLauncherActivity = null;
+        try {
+            PackageInfo p = pm.getPackageInfo(mContext.getPackageName(),
+                PackageManager.GET_ACTIVITIES | PackageManager.MATCH_DISABLED_COMPONENTS);
+            if (p != null) {
+                for (ActivityInfo activityInfo : p.activities) {
+                    String targetActivity = activityInfo.targetActivity;
+                    if (CellBroadcastListActivity.class.getName().equals(targetActivity)) {
+                        aliasLauncherActivity = activityInfo.name;
+                        break;
+                    }
+                }
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(TAG, e.toString());
+        }
+        if (TextUtils.isEmpty(aliasLauncherActivity)) {
+            Log.e(TAG, "cannot find launcher activity");
+            return;
+        }
+
+        if (enable) {
+            Log.d(TAG, "enable launcher activity: " + aliasLauncherActivity);
+            pm.setComponentEnabledSetting(
+                new ComponentName(mContext, aliasLauncherActivity),
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+        } else {
+            Log.d(TAG, "disable launcher activity: " + aliasLauncherActivity);
+            pm.setComponentEnabledSetting(
+                new ComponentName(mContext, aliasLauncherActivity),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
         }
     }
 

@@ -80,6 +80,8 @@
     <!-- Show area update info settings in CellBroadcastReceiver and information in SIM status in Settings app -->
     <!-- TODO: we have another copy of this config in framework which is consumed by settings. should clean this up as part of brazil 50 refactor -->
     <bool name="config_showAreaUpdateInfoSettings">false</bool>
+    <!-- Show cellbroadcast message history entry point in the application launcher.-->
+    <bool name="show_message_history_in_launcher">false</bool>
 
     <!-- Specify second language code to receive emergency alerts -->
     <string name="emergency_alert_second_language_code" translatable="false"></string>
