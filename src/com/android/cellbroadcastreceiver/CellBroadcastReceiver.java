@@ -85,24 +85,34 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 });
     }
 
+    /**
+     * this method is to make this class unit-testable, because CellBroadcastSettings.getResources()
+     * is a static method and cannot be stubbed.
+     * @return resources
+     */
+    @VisibleForTesting
+    public Resources getResourcesMethod() {
+        return CellBroadcastSettings.getResources(mContext,
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+    }
+
     @Override
     public void onReceive(Context context, Intent intent) {
         if (DBG) log("onReceive " + intent);
 
         mContext = context.getApplicationContext();
         String action = intent.getAction();
-        Resources res = CellBroadcastSettings.getResources(mContext,
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        Resources res = getResourcesMethod();
 
         if (ACTION_MARK_AS_READ.equals(action)) {
             final long deliveryTime = intent.getLongExtra(EXTRA_DELIVERY_TIME, -1);
             getCellBroadcastTask(deliveryTime);
         } else if (CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED.equals(action)) {
             initializeSharedPreference();
-            startConfigService(mContext);
+            startConfigService();
         } else if (CELLBROADCAST_START_CONFIG_ACTION.equals(action)
                 || SubscriptionManager.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action)) {
-            startConfigService(mContext);
+            startConfigService();
         } else if (Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED.equals(action) ||
                 Telephony.Sms.Intents.SMS_CB_RECEIVED_ACTION.equals(action)) {
             intent.setClass(mContext, CellBroadcastAlertService.class);
@@ -141,7 +151,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      *
      * @param on {@code true} if testing mode is on, otherwise off.
      */
-    private void setTestingMode(boolean on) {
+    @VisibleForTesting
+    public void setTestingMode(boolean on) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
         sp.edit().putBoolean(TESTING_MODE, on).commit();
     }
@@ -182,19 +193,35 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             if (DBG) Log.d(TAG, "Default interval " + currentIntervalDefault + " did not change.");
         }
     }
+    /**
+     * This method's purpose if to enable unit testing
+     * @return sharedePreferences for mContext
+     */
+    @VisibleForTesting
+    public SharedPreferences getDefaultSharedPreferences() {
+        return PreferenceManager.getDefaultSharedPreferences(mContext);
+    }
 
+    /**
+     * return if there are default values in shared preferences
+     * @return boolean
+     */
+    @VisibleForTesting
+    public Boolean sharedPrefsHaveDefaultValues() {
+        return mContext.getSharedPreferences(PreferenceManager.KEY_HAS_SET_DEFAULT_VALUES,
+                Context.MODE_PRIVATE).getBoolean(PreferenceManager.KEY_HAS_SET_DEFAULT_VALUES,
+                false);
+    }
     /**
      * initialize shared preferences before starting services
      */
     @VisibleForTesting
     public void initializeSharedPreference() {
-        if (isSystemUser(mContext)) {
+        if (isSystemUser()) {
             Log.d(TAG, "initializeSharedPreference");
-            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
+            SharedPreferences sp = getDefaultSharedPreferences();
 
-            if (!mContext.getSharedPreferences(PreferenceManager.KEY_HAS_SET_DEFAULT_VALUES,
-                    Context.MODE_PRIVATE).getBoolean(PreferenceManager.KEY_HAS_SET_DEFAULT_VALUES,
-                    false)) {
+            if (!sharedPrefsHaveDefaultValues()) {
                 // Sets the default values of the shared preference if there isn't any.
                 PreferenceManager.setDefaultValues(mContext, R.xml.preferences, false);
 
@@ -336,13 +363,30 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     }
 
     /**
+     * This method's purpose if to enable unit testing
+     * @return if the mContext user is a system user
+     */
+    @VisibleForTesting
+    public boolean isSystemUser() {
+        return isSystemUser(mContext);
+    }
+
+    /**
+     * This method's purpose if to enable unit testing
+     */
+    @VisibleForTesting
+    public void startConfigService() {
+        startConfigService(mContext);
+    }
+
+    /**
      * Check if user from context is system user
      * @param context
      * @return whether the user is system user
      */
-    @VisibleForTesting
-    public static boolean isSystemUser(Context context) {
-        return ((UserManager) context.getSystemService(Context.USER_SERVICE)).isSystemUser();
+    private static boolean isSystemUser(Context context) {
+        UserManager userManager = (UserManager) context.getSystemService(Context.USER_SERVICE);
+        return userManager.isSystemUser();
     }
 
     /**
