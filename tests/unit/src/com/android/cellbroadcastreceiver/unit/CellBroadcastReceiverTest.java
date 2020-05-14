@@ -16,15 +16,14 @@
 
 package com.android.cellbroadcastreceiver.unit;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import android.content.Intent;
@@ -55,6 +54,8 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     UserManager mUserManager;
     @Mock
     SharedPreferences mSharedPreferences;
+    @Mock
+    SharedPreferences mDefaultSharedPreferences;
 
     @Mock
     Intent mIntent;
@@ -92,9 +93,9 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         MockitoAnnotations.initMocks(this);
         doReturn(mConfiguration).when(mResources).getConfiguration();
         mCellBroadcastReceiver = spy(new CellBroadcastReceiver());
+        doReturn(mResources).when(mCellBroadcastReceiver).getResourcesMethod();
+        doNothing().when(mCellBroadcastReceiver).startConfigService();
         doReturn(mContext).when(mContext).getApplicationContext();
-        //return false in isSystemUser, so that system services are not initiated
-
     }
 
     @Test
@@ -103,26 +104,24 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         doNothing().when(mCellBroadcastReceiver).getCellBroadcastTask(anyLong());
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
         verify(mIntent).getLongExtra(CellBroadcastReceiver.EXTRA_DELIVERY_TIME, -1);
+        verify(mCellBroadcastReceiver).getCellBroadcastTask(anyLong());
     }
 
     @Test
     public void testOnReceive_actionCarrierConfigChanged() {
         doReturn(CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED).when(mIntent).getAction();
-        doReturn(mUserManager).when(mContext).getSystemService(anyString());
-        doReturn(false).when(mUserManager).isSystemUser();
+        doNothing().when(mCellBroadcastReceiver).initializeSharedPreference();
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
         verify(mCellBroadcastReceiver).initializeSharedPreference();
-        verify(mContext, times(2)).getSystemService(anyString());
+        verify(mCellBroadcastReceiver).startConfigService();
     }
 
     @Test
     public void testOnReceive_cellbroadcastStartConfigAction() {
         doReturn(CellBroadcastReceiver.CELLBROADCAST_START_CONFIG_ACTION).when(mIntent).getAction();
-        doReturn(mUserManager).when(mContext).getSystemService(anyString());
-        doReturn(false).when(mUserManager).isSystemUser();
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
         verify(mCellBroadcastReceiver, never()).initializeSharedPreference();
-        verify(mContext).getSystemService(anyString());
+        verify(mCellBroadcastReceiver).startConfigService();
     }
 
     @Test
@@ -130,16 +129,16 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         doReturn(SubscriptionManager.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED)
                 .when(mIntent).getAction();
         doReturn(mUserManager).when(mContext).getSystemService(anyString());
-        doReturn(false).when(mUserManager).isSystemUser();
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
         verify(mCellBroadcastReceiver, never()).initializeSharedPreference();
-        verify(mContext).getSystemService(anyString());
+        verify(mCellBroadcastReceiver).startConfigService();
     }
 
     @Test
     public void testOnReceive_actionSmsEmergencyCbReceived() {
         doReturn(Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED).when(mIntent).getAction();
         doReturn(mIntent).when(mIntent).setClass(mContext, CellBroadcastAlertService.class);
+        doReturn(null).when(mContext).startService(mIntent);
 
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
         verify(mIntent).setClass(mContext, CellBroadcastAlertService.class);
@@ -150,6 +149,7 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     public void testOnReceive_smsCbReceivedAction() {
         doReturn(Telephony.Sms.Intents.SMS_CB_RECEIVED_ACTION).when(mIntent).getAction();
         doReturn(mIntent).when(mIntent).setClass(mContext, CellBroadcastAlertService.class);
+        doReturn(null).when(mContext).startService(any());
 
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
         verify(mIntent).setClass(mContext, CellBroadcastAlertService.class);
@@ -169,25 +169,21 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     @Test
     public void testInitializeSharedPreference_ifSystemUser() {
         doReturn("An invalid action").when(mIntent).getAction();
-        mCellBroadcastReceiver.onReceive(mContext, mIntent);
-
-        doReturn(mUserManager).when(mContext).getSystemService(anyString());
-        doReturn(true).when(mUserManager).isSystemUser();
-        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
-        doReturn(true).when(mSharedPreferences).getBoolean(anyString(), anyBoolean());
+        doReturn(true).when(mCellBroadcastReceiver).isSystemUser();
+        doReturn(mDefaultSharedPreferences).when(mCellBroadcastReceiver)
+                .getDefaultSharedPreferences();
+        doReturn(true).when(mCellBroadcastReceiver).sharedPrefsHaveDefaultValues();
         doNothing().when(mCellBroadcastReceiver).adjustReminderInterval();
+
         mCellBroadcastReceiver.initializeSharedPreference();
-        verify(mSharedPreferences).getBoolean(anyString(), anyBoolean());
+        verify(mCellBroadcastReceiver).getDefaultSharedPreferences();
     }
 
     @Test
     public void testInitializeSharedPreference_ifNotSystemUser() {
         doReturn("An invalid action").when(mIntent).getAction();
-        mCellBroadcastReceiver.onReceive(mContext, mIntent);
+        doReturn(false).when(mCellBroadcastReceiver).isSystemUser();
 
-        doReturn(mUserManager).when(mContext).getSystemService(anyString());
-        doReturn(false).when(mUserManager).isSystemUser();
-        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
         mCellBroadcastReceiver.initializeSharedPreference();
         verify(mSharedPreferences, never()).getBoolean(anyString(), anyBoolean());
     }
