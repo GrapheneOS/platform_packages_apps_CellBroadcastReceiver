@@ -35,6 +35,8 @@ import static android.provider.SearchIndexablesContract.INDEXABLES_RAW_COLUMNS;
 import static android.provider.SearchIndexablesContract.INDEXABLES_XML_RES_COLUMNS;
 import static android.provider.SearchIndexablesContract.NON_INDEXABLES_KEYS_COLUMNS;
 
+import android.annotation.Nullable;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -44,13 +46,16 @@ import android.provider.SearchIndexablesProvider;
 import android.telephony.SubscriptionManager;
 import android.text.TextUtils;
 
+import com.android.internal.annotations.VisibleForTesting;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvider {
 
+    @VisibleForTesting
     // Additional keywords for settings search
-    private static final int[] INDEXABLE_KEYWORDS_RESOURCES = {
+    public static final int[] INDEXABLE_KEYWORDS_RESOURCES = {
             R.string.etws_earthquake_warning,
             R.string.etws_tsunami_warning,
             R.string.cmas_presidential_level_alert,
@@ -58,11 +63,44 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             R.string.emergency_alerts_title
     };
 
-    private static final SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[] {
+    @VisibleForTesting
+    public static final SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[] {
             new SearchIndexableResource(1, R.xml.preferences,
                     CellBroadcastSettings.class.getName(),
                     R.mipmap.ic_launcher_cell_broadcast),
     };
+
+    /**
+     * this method is to make this class unit-testable, because super.getContext() is a final
+     * method and therefore not mockable
+     * @return context
+     */
+    @VisibleForTesting
+    public @Nullable Context getContextMethod() {
+        return super.getContext();
+    }
+
+    /**
+     * this method is to make this class unit-testable, because CellBroadcastSettings.getResources()
+     * is a static method and cannot be stubbed.
+     * @return resources
+     */
+    @VisibleForTesting
+    public Resources getResourcesMethod() {
+        return CellBroadcastSettings.getResources(getContextMethod(),
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+    }
+
+    /**
+     * this method is to make this class unit-testable, because
+     * CellBroadcastSettings.isTestAlertsToggleVisible is a static method and therefore not mockable
+     * @return true if test alerts toggle is Visible
+     */
+    @VisibleForTesting
+    public boolean isTestAlertsToggleVisible() {
+        return CellBroadcastSettings.isTestAlertsToggleVisible(getContextMethod());
+    }
+
     @Override
     public boolean onCreate() {
         return true;
@@ -79,7 +117,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             ref[COLUMN_INDEX_XML_RES_CLASS_NAME] = null;
             ref[COLUMN_INDEX_XML_RES_ICON_RESID] = INDEXABLE_RES[n].iconResId;
             ref[COLUMN_INDEX_XML_RES_INTENT_ACTION] = Intent.ACTION_MAIN;
-            ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_PACKAGE] = getContext().getPackageName();
+            ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_PACKAGE] = getContextMethod().getPackageName();
             ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_CLASS] = INDEXABLE_RES[n].className;
             cursor.addRow(ref);
         }
@@ -89,8 +127,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     @Override
     public Cursor queryRawData(String[] projection) {
         MatrixCursor cursor = new MatrixCursor(INDEXABLES_RAW_COLUMNS);
-        final Resources res = CellBroadcastSettings.getResources(getContext(),
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        final Resources res = getResourcesMethod();
 
         Object[] raw = new Object[INDEXABLES_RAW_COLUMNS.length];
         raw[COLUMN_INDEX_RAW_TITLE] = res.getString(R.string.sms_cb_settings);
@@ -99,7 +136,8 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             keywordList.add(res.getString(keywordRes));
         }
 
-        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(getContext(),
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                getContextMethod(),
                 SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
         if (!channelManager.getCellBroadcastChannelRanges(
@@ -117,7 +155,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
         raw[COLUMN_INDEX_RAW_SCREEN_TITLE] = res.getString(R.string.sms_cb_settings);
         raw[COLUMN_INDEX_RAW_KEY] = CellBroadcastSettings.class.getSimpleName();
         raw[COLUMN_INDEX_RAW_INTENT_ACTION] = Intent.ACTION_MAIN;
-        raw[COLUMN_INDEX_RAW_INTENT_TARGET_PACKAGE] = getContext().getPackageName();
+        raw[COLUMN_INDEX_RAW_INTENT_TARGET_PACKAGE] = getContextMethod().getPackageName();
         raw[COLUMN_INDEX_RAW_INTENT_TARGET_CLASS] = CellBroadcastSettings.class.getName();
 
         cursor.addRow(raw);
@@ -128,8 +166,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     public Cursor queryNonIndexableKeys(String[] projection) {
         MatrixCursor cursor = new MatrixCursor(NON_INDEXABLES_KEYS_COLUMNS);
 
-        Resources res = CellBroadcastSettings.getResources(getContext(),
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        Resources res = getResourcesMethod();
         Object[] ref;
 
         if (!res.getBoolean(R.bool.show_presidential_alerts_settings)) {
@@ -169,8 +206,8 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             cursor.addRow(ref);
         }
 
-        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(getContext(),
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                getContextMethod(), SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
         if (channelManager.getCellBroadcastChannelRanges(
                 R.array.cmas_amber_alerts_channels_range_strings).isEmpty()) {
             ref = new Object[1];
@@ -203,7 +240,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             cursor.addRow(ref);
         }
 
-        if (!CellBroadcastSettings.isTestAlertsToggleVisible(getContext())) {
+        if (!isTestAlertsToggleVisible()) {
             ref = new Object[1];
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
                 CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS;
