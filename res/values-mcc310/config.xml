@@ -88,4 +88,7 @@
     <!-- Whether enabling copy message text into clipboard by long press.
          FCC does not allow message to be copied/pasted -->
     <bool name="enable_text_copy">false</bool>
+
+    <!-- Whether to enable alert handling during active voice call. -->
+    <bool name="enable_alert_handling_during_call">true</bool>
 </resources>
