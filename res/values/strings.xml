@@ -23,6 +23,9 @@
     <!-- Label for settings screen. [CHAR LIMIT=NONE] -->
     <string name="sms_cb_settings">Wireless emergency alerts</string>
 
+    <!-- Value of sms sender display name to be shown in SMS inbox -->
+    <string name="sms_cb_sender_name" translatable="false">Wireless emergency alerts</string>
+
     <!-- Error message for users that aren't allowed to modify Cell broadcast settings [CHAR LIMIT=none] -->
     <string name="cell_broadcast_settings_not_available">Wireless emergency alert settings are not available for this user</string>
 
