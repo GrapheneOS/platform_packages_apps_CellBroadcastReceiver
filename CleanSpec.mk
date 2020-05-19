@@ -48,6 +48,9 @@ $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/priv-app/CellBroadcastReceiv
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/priv-app/CellBroadcastAppPlatform)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/priv-app/CellBroadcastApp)
 
+# Build finger print update in order to trigger default permission grant policy on incremental build
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/ETC/system_build_prop_intermediates/build.prop)
+
 # ************************************************
 # NEWER CLEAN STEPS MUST BE AT THE END OF THE LIST
 # ************************************************
