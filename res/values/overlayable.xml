@@ -49,6 +49,11 @@
             or not per product configuration-->
             <item type="array" name="additional_cbs_channels_strings" />
             <!-- END CHANNEL related configurations -->
+
+            <!-- Some countries like KR requires to display CB messages inside SMS inbox.
+            allow customization for sms sender name -->
+            <item type="string" name="sms_cb_sender_name" />
+            <item type="bool" name="enable_write_alerts_to_sms_inbox" />
         </policy>
         <!-- END VENDOR CUSTOMIZATION -->
 

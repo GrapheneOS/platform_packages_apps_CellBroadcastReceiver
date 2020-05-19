@@ -55,6 +55,8 @@
     <bool name="enable_led_flash">false</bool>
     <!-- Whether allowing testing mode on user build or not -->
     <bool name="allow_testing_mode_on_user_build">false</bool>
+    <!-- Whether to save alerts to sms inbox database -->
+    <bool name="enable_write_alerts_to_sms_inbox">false</bool>
 
     <!-- Section for switch default value -->
     <!-- Master toggle default value -->
