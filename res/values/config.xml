@@ -48,7 +48,7 @@
     <!-- Whether to bypass test alert settings and always enable exercise alert channel -->
     <bool name="always_enable_exercise_alert">false</bool>
     <!-- Whether to enable alert handling during active voice call. -->
-    <bool name="enable_alert_handling_during_call">true</bool>
+    <bool name="enable_alert_handling_during_call">false</bool>
     <!-- Whether the user can mute the alert by physical button -->
     <bool name="mute_by_physical_button">true</bool>
     <!-- Whether enable LED flash when playing alert tones -->
