@@ -54,7 +54,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alerty o zagrożeniu"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alert o zagrożeniu podczas połączenia głosowego"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Zezwól na alerty"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Otrzymywanie alertów o zagrożeniu"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Otrzymuj alerty o zagrożeniu"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Alarm z przypomnieniem"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Dźwięk przypomnienia będzie odtwarzany ze zwykłą głośnością"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historia alertów o zagrożeniu"</string>
