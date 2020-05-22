@@ -70,9 +70,9 @@
     <string name="enable_alert_message_title" msgid="2939830587633599352">"ଆଲର୍ଟ ମେସେଜ୍"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ଏପରି ବିଷୟରେ ସୂଚନା ଦେବା, ଯେଉଁ କାରଣରୁ ସୁରକ୍ଷା ଉପରେ ବିପଦ ଆସିପାରେ"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ଜନସୁରକ୍ଷା ମେସେଜ୍"</string>
-    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ସୁପାରିସକୃତ କାର୍ଯ୍ୟ, ଯାହା ଜୀବନ କିମ୍ୱା ସମ୍ପତ୍ତି ବଞ୍ଚାଇପାରିବ"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ସୁପାରିଶ କରାଯାଇଥିବା କାର୍ଯ୍ୟ ଯାହା ଜୀବନ କିମ୍ୱା ସମ୍ପତ୍ତି ବଞ୍ଚାଇପାରିବ"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"ରାଜ୍ୟ ଓ ସ୍ଥାନୀୟ ପରୀକ୍ଷା"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ରାଜ୍ୟ ଓ ସ୍ଥାନୀୟ କର୍ତ୍ତୃପକ୍ଷଙ୍କ ତରଫରୁ ପରୀକ୍ଷାମୂଳକ ମେସେଜ୍ ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ରାଜ୍ୟ ଓ ସ୍ଥାନୀୟ କର୍ତ୍ତୃପକ୍ଷଙ୍କ ତରଫରୁ ଟେଷ୍ଟ ମେସେଜ୍ ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ପ୍ରାଣଘାତକ ଘଟଣା ବିଷୟରେ ଚେତାବନୀ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"ପରୀକ୍ଷା ଆଲର୍ଟ"</string>

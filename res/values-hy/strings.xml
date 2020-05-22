@@ -72,7 +72,7 @@
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Հաղորդագրություններ հանրային անվտանգության սպառնալիքի մասին"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Առաջարկվող գործողություններ, որոնք կօգնեն փրկել կյանքը և գույքը"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Փորձնական ահազանգեր պետական և տեղական կառավարման մարմիններից"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Ստանալ փորձնական ահազանգեր պետական և տեղական կառավարման մարմիններից"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Փորձնական ահազանգեր ստանալ պետական և տեղական կառավարման մարմիններից"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Բնակչության ազդարարման համակարգ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Զգուշացնել կյանքին վտանգ սպառնացող իրադարձությունների մասին"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Փորձնական ծանուցումներ"</string>
