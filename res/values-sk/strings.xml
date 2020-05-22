@@ -54,7 +54,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Tiesňové upozornenia"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Tiesňové upozornenia v hlasovom hovore"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Povoliť upozornenia"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Prijímajte bezdrôtové tiesňové upozornenia"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Prijímanie bezdrôtových tiesňových upozornení"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Pripomínať upozornenia"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Zvuk pripomenutí sa prehrá bežnou hlasitosťou"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"História tiesňových upozornení"</string>
@@ -72,7 +72,7 @@
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Správy verejnej bezpečnosti"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Odporúčané akcie, ktoré môžu zachrániť životy alebo majetok"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Štátne a miestne testy"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Získavajte testovacie správy od štátnych aj miestnych úradov"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Dostávať testovacie správy zo systému bezpečnostných upozornení"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Tiesňové upozornenia"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Upozorňovať na udalosti ohrozujúce život"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testovacie upozornenia"</string>

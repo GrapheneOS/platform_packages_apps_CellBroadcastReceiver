@@ -62,7 +62,7 @@
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Jaribio la matangazo ya ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Jaribio la matangazo ya Mfumo wa Ilani za Zilizala ya Tsunami"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Vitisho hatari zaidi"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Arifa za mambo yanayotishia maisha na mali"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Vitisho vikali zaidi kwa maisha na mali"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Vitisho hatari"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Vitisho vikali kwa maisha na mali"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Arifa za AMBER"</string>
@@ -71,8 +71,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Itoe tahadhari kuhusu hatari za usalama zinazokaribia kutokea"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Ujumbe wa usalama kwa umma"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Hatua zinazopendekezwa ambazo zinaweza kuokoa maisha na mali"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Majaribio katika jimbo na setikali za mitaa"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Pokea ujumbe wa majaribio kutoka kwa mamlaka ya jimbo na serikali za mitaa"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Majaribio katika nchi na majimbo"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Pokea ujumbe wa majaribio kutoka kwa mamlaka ya nchi na majimbo"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Arifa za dharura"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Itoe tahadhari kuhusu matukio yanayohatarisha maisha"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Arifa za majaribio"</string>

@@ -64,7 +64,7 @@
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Mjög alvarlegar ógnir"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Þegar líf eða eignir eru í mjög alvarlegri hættu"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Alvarlegar ógnir"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Þegar líf eða eignir eru í alvarlegri hættu"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Líf eða eignir í alvarlegri hættu"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER-viðvaranir"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Neyðartilkynningar um brottnám barna"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Viðvörunarskilaboð"</string>
