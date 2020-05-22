@@ -69,7 +69,7 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Bilteni hitnih obavještenja u slučaju otmice djeteta"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Upozorenja"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Upozori na neposredne sigurnosne prijetnje"</string>
-    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Poruka za javnu sigurnost"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Poruke za javnu sigurnost"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Preporučene radnje kojim se mogu spasiti životi ili imovina"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Državni i lokalni testovi"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Primajte probne poruke od državnih i lokalnih vlasti"</string>

@@ -57,7 +57,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Få aviseringar om nödsituationer trådlöst"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Påminnelse"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Påminnelseljudet spelas upp på normal volym"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historik över nödvarningar"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Varningshistorik"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Varningsinställningar"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Testsändningar från ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Testsändningar för varningssystemet för jordbävningar och tsunami (ETWS)"</string>
@@ -69,7 +69,7 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Nödmeddelanden om bortförda barn"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Varningsmeddelanden"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Varna om överhängande säkerhetshot"</string>
-    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Viktiga meddelande till allmänheten"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Viktiga meddelanden till allmänheten"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Rekommenderade åtgärder som kan rädda liv eller egendom"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Statliga och lokala tester"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Få testmeddelanden från statliga och lokala myndigheter"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Du får för närvarande trådlösa varningar vid nödsituationer. Vill du fortsätta att få trådlösa varningar vid nödsituationer?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nej"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Varningshistorik om nödsituation"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Varningshistorik"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"En gång"</item>
     <item msgid="9097229303902157183">"Varannan minut"</item>
