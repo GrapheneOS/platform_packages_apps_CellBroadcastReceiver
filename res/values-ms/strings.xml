@@ -55,7 +55,7 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Makluman kecemasan dalam panggilan suara"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Benarkan makluman"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Terima pemberitahuan makluman kecemasan wayarles"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Peringatan awasan"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Peringatan makluman"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Bunyi peringatan akan dimainkan pada kelantangan biasa"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Sejarah makluman kecemasan"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Pilihan makluman"</string>

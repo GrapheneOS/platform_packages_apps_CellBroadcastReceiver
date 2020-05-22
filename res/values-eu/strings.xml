@@ -131,7 +131,7 @@
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Hari gabeko larrialdi-alertak"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Gobernuaren alertak"</string>
-    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Presidenteak bidali duen abisu-mezu nazionala da. Ezin da desaktibatu."</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Gobernuak bidalitako abisu-mezu nazionalak. Ezin da desaktibatu."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Gaitu da sare mugikor bidezko igorpenaren proba modua."</string>
