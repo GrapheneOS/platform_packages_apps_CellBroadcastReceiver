@@ -54,10 +54,10 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"إنذارات الطوارئ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"إنذارات الطوارئ في مكالمة صوتية"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"السماح بالتنبيهات"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"تلقي الإشعارات بإنذارات الطوارئ اللاسلكية"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"تلقّي الإشعارات بإنذارات الطوارئ اللاسلكية"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"تذكير التنبيه"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"سيتم تشغيل صوت تذكير بمستوى صوت منتظم"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"سجلّ تنبيهات الطوارئ"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"سجلّ إنذارات الطوارئ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"الإعدادات المفضّلة للتنبيهات"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"‏مجموعات البث التجريبية في ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"مجموعات البث التجريبية لنظام التحذير المبكر من موجات تسونامي عقب الزلازل"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"أنت حاليًا تتلقى إنذارات الطوارئ اللاسلكية. هل تريد مواصلة تلقي إنذارات الطوارئ اللاسلكية؟"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"نعم"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"لا"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"سجلّ تنبيهات الطوارئ"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"سجلّ إنذارات الطوارئ"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"مرة واحدة"</item>
     <item msgid="9097229303902157183">"كل دقيقتين"</item>
