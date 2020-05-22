@@ -41,7 +41,7 @@
     <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"緊急警示：極嚴重"</string>
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"緊急警示：極嚴重"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"緊急警示：嚴重"</string>
-    <string name="cmas_amber_alert" msgid="6154867710264778887">"誘拐兒童 (黃色警示)"</string>
+    <string name="cmas_amber_alert" msgid="6154867710264778887">"擄拐兒童 (安珀警報)"</string>
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"必要的每月測試訊息"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"緊急警示 (演習)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"緊急警示 (網絡供應商)"</string>
@@ -70,7 +70,7 @@
     <string name="enable_alert_message_title" msgid="2939830587633599352">"警示訊息"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"對即將發生的安全威脅發出警告"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"公共安全訊息"</string>
-    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"有助挽救生命或財產的建議行動"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"有助拯救生命或財產的建議措施"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"州份和地區測試"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"接收來自州政府和地區政府的測試訊息"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"緊急警報"</string>

@@ -130,8 +130,8 @@
     <item msgid="7388573183644474611">"Nie"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Notfallbenachrichtigungen Mobilgeräte"</string>
-    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Warnung des Präsidenten"</string>
-    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Nationale Warnmeldungen des Präsidenten. Diese Mitteilungen können nicht deaktiviert werden."</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Warnungen auf höchster Stufe"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Nationale Warnmeldungen auf der höchsten Stufe. Diese Mitteilungen können nicht deaktiviert werden."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Testmodus für Cell Broadcast ist aktiviert."</string>
