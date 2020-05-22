@@ -18,5 +18,5 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="enable_cmas_test_alerts_title" msgid="5028777622440500200">"其他測試"</string>
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"西班牙文"</string>
-    <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"接收西班牙文的緊急警示 (如有的話)"</string>
+    <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"接收西班牙文的緊急警示 (如有)"</string>
 </resources>
