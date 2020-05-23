@@ -70,7 +70,7 @@
     <string name="enable_alert_message_title" msgid="2939830587633599352">"警示訊息"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"對即將發生的安全威脅發出警告"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"公共安全訊息"</string>
-    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"有助挽救生命或財產的建議行動"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"有助拯救生命或財產的建議措施"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"州份和地區測試"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"接收來自州政府和地區政府的測試訊息"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"緊急警報"</string>

@@ -41,7 +41,7 @@
     <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"Alerta de emergência: extremo"</string>
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"Alerta de emergência: extremo"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Alerta de emergência: grave"</string>
-    <string name="cmas_amber_alert" msgid="6154867710264778887">"Rapto de crianças (alerta Amber)"</string>
+    <string name="cmas_amber_alert" msgid="6154867710264778887">"Sequestro de crianças (alerta Amber)"</string>
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Teste mensal obrigatório"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Alerta de emergência (exercício)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Alerta de emergência (telefonista)"</string>
@@ -66,7 +66,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ameaças graves"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ameaças graves, materiais ou à vida"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Alertas AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Boletins de emergência de rapto de crianças"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Boletins de emergência envolvendo sequestro de crianças"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Mensagens de alerta"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Aviso sobre ameaças iminentes à segurança"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Mensagens de segurança pública"</string>

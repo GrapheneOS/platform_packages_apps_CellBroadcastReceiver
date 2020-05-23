@@ -55,7 +55,7 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"음성 통화 중 응급 상황 알림"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"경보 허용"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"무선 긴급 경보 알림 수신"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"경고 알림"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"경보 알림"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"경보 알림음이 보통 볼륨으로 재생됨"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"긴급 경보 기록"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"경보 환경설정"</string>
@@ -71,7 +71,7 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"임박한 안전 위협 경고"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"안전 안내 문자"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"생명이나 재산을 보호할 수 있는 행동 요령"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"주 및 지방 테스트"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"주/지방 테스트 메시지"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"주 및 지방 당국으로부터 테스트 메시지 수신"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"긴급 재난 문자"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"치명적인 사건 경고"</string>
