@@ -54,7 +54,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"การแจ้งเหตุฉุกเฉิน"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"การแจ้งเหตุฉุกเฉินระหว่างการโทรสนทนา"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"อนุญาตการแจ้งเตือน"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"รับการแจ้งเตือนการแจ้งเหตุฉุกเฉินแบบไร้สาย"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"รับการแจ้งเตือนเหตุฉุกเฉินแบบไร้สาย"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"การช่วยเตือนซ้ำ"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"การช่วยเตือนจะส่งเสียงที่ระดับเสียงปกติ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ประวัติการแจ้งเตือนเหตุฉุกเฉิน"</string>
@@ -71,8 +71,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"เตือนเกี่ยวกับภัยคุกคามความปลอดภัยที่จะเกิดขึ้น"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ข้อความด้านความปลอดภัยสาธารณะ"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"การดำเนินการที่แนะนำซึ่งจะช่วยรักษาชีวิตหรือทรัพย์สินได้"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"การทดสอบระดับมลรัฐและระดับท้องถิ่น"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"รับข้อความทดสอบจากหน่วยงานของมลรัฐและหน่วยงานท้องถิ่น"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"การทดสอบระดับประเทศและระดับท้องถิ่น"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"รับข้อความทดสอบจากหน่วยงานรัฐและหน่วยงานท้องถิ่น"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"การแจ้งเตือนเหตุฉุกเฉิน"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"เตือนเกี่ยวกับเหตุการณ์ที่เป็นอันตรายต่อชีวิต"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"การแจ้งเตือนทดสอบ"</string>

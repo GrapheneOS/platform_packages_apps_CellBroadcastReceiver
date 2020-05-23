@@ -70,7 +70,7 @@
     <string name="enable_alert_message_title" msgid="2939830587633599352">"മുന്നറിയിപ്പ് സന്ദേശങ്ങൾ"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ഉടൻ ഉണ്ടായേക്കാവുന്ന സുരക്ഷാ ഭീഷണികളെ കുറിച്ച് മുന്നറിയിപ്പ് നൽകുക"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"പൊതുജനങ്ങൾക്കുള്ള സുരക്ഷാ സന്ദേശങ്ങൾ"</string>
-    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ജീവിതമോ സ്വത്തോ സംരക്ഷിക്കുന്ന, ശുപാർശ ചെയ്‌തിരിക്കുന്ന പ്രവൃത്തികൾ"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ജീവനോ സ്വത്തോ സംരക്ഷിക്കാൻ ശുപാർശ ചെയ്‌തിരിക്കുന്ന പ്രവൃത്തികൾ"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"സംസ്ഥാന, പ്രാദേശിക പരീക്ഷണ മുന്നറിയിപ്പുകൾ"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"സംസ്ഥാന, പ്രാദേശിക അധികാരികളിൽ നിന്ന് പരീക്ഷണ സന്ദേശങ്ങൾ സ്വീകരിക്കുക"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"അടിയന്തര മുന്നറിയിപ്പുകൾ"</string>
