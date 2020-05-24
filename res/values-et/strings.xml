@@ -129,7 +129,7 @@
     <item msgid="3863339891188103437">"Iga 15 minuti järel"</item>
     <item msgid="7388573183644474611">"Mitte kunagi"</item>
   </string-array>
-    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Eriolukorra raadiosidehoiatused"</string>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Juhtmevabad hädaolukorra teatised"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Presidendi edastatud hoiatused"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Presidendi edastatud riiklikud hoiatussõnumid. Ei saa välja lülitada."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>

@@ -53,7 +53,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Поруке о емитовању"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Хитна обавештења"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Обавештења у хитним случајевима током гласовног позива"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дозволите обавештења"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дозволи обавештења"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Шаљи ми бежична обавештења о хитним случајевима"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Подсетник за обавештења"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Звук подсетника ће бити нормалне јачине"</string>
