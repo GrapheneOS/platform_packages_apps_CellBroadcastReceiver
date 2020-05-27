@@ -256,7 +256,7 @@ public class CellBroadcastListActivity extends Activity {
             if (id == LOADER_NORMAL_HISTORY) {
                 Log.d(TAG, "onCreateLoader: normal history.");
                 return new CursorLoader(getActivity(), CellBroadcastContentProvider.CONTENT_URI,
-                        CellBroadcastContentProvider.QUERY_COLUMNS, null, null,
+                        CellBroadcastDatabaseHelper.QUERY_COLUMNS, null, null,
                         Telephony.CellBroadcasts.DELIVERY_TIME + " DESC");
             } else if (id == LOADER_HISTORY_FROM_CBS) {
                 Log.d(TAG, "onCreateLoader: history from cell broadcast service");

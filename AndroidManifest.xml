@@ -17,7 +17,7 @@
  */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.android.cellbroadcastreceiver"
+        package="com.android.cellbroadcastreceiver.module"
         android:versionCode="300000000"
         android:versionName="R-initial">
 
@@ -40,7 +40,7 @@
 
     <uses-sdk android:minSdkVersion="21"/>
 
-    <application android:name="CellBroadcastReceiverApp"
+    <application android:name="com.android.cellbroadcastreceiver.CellBroadcastReceiverApp"
             android:label="@string/app_label"
             android:icon="@mipmap/ic_launcher_cell_broadcast"
             android:backupAgent="CellBroadcastBackupAgent"
@@ -51,25 +51,25 @@
         <meta-data android:name="com.google.android.backup.api_key"
                 android:value="AEdPqrEAAAAI2_Lb4sDI0e0twL-kf6GIqXpZIfrR0OhnM1pNJQ" />
 
-        <service android:name="CellBroadcastAlertAudio"
+        <service android:name="com.android.cellbroadcastreceiver.CellBroadcastAlertAudio"
                  android:exported="false" />
 
-        <service android:name="CellBroadcastAlertService"
+        <service android:name="com.android.cellbroadcastreceiver.CellBroadcastAlertService"
                  android:exported="false" />
 
-        <service android:name="CellBroadcastConfigService"
+        <service android:name="com.android.cellbroadcastreceiver.CellBroadcastConfigService"
                  android:exported="false" />
 
-        <service android:name="CellBroadcastAlertReminder"
+        <service android:name="com.android.cellbroadcastreceiver.CellBroadcastAlertReminder"
                  android:exported="false" />
 
         <!-- Export provider for AT&T Device and Network Reset-->
-        <provider android:name="CellBroadcastContentProvider"
+        <provider android:name="com.android.cellbroadcastreceiver.CellBroadcastContentProvider"
                   android:authorities="cellbroadcasts-app"
                   android:exported="true"
                   android:readPermission="android.permission.READ_CELL_BROADCASTS" />
 
-        <activity android:name="CellBroadcastListActivity"
+        <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastListActivity"
                   android:label="@string/app_label"
                   android:theme="@style/CellBroadcastSettingsTheme"
                   android:exported="true"
@@ -90,12 +90,12 @@
         </activity>
 
         <!-- Settings opened by ListActivity menu, Settings app link or opt-out dialog. -->
-        <activity android:name="CellBroadcastSettings"
+        <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastSettings"
                   android:theme="@style/CellBroadcastSettingsTheme"
                   android:label="@string/sms_cb_settings"
                   android:exported="true" />
 
-        <activity android:name="CellBroadcastAlertDialog"
+        <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastAlertDialog"
                   android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
                   android:launchMode="singleTask"
                   android:exported="false"
@@ -107,10 +107,10 @@
         </activity>
 
         <!-- Container activity for CMAS opt-in/opt-out dialog. -->
-        <activity android:name="CellBroadcastOptOutActivity"
+        <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastOptOutActivity"
                   android:exported="false" />
 
-        <receiver android:name="CellBroadcastReceiver"
+        <receiver android:name="com.android.cellbroadcastreceiver.CellBroadcastReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.telephony.action.DEFAULT_SMS_SUBSCRIPTION_CHANGED" />
@@ -129,7 +129,7 @@
         </receiver>
 
         <provider
-                android:name="CellBroadcastSearchIndexableProvider"
+                android:name="com.android.cellbroadcastreceiver.CellBroadcastSearchIndexableProvider"
                 android:authorities="com.android.cellbroadcastreceiver"
                 android:multiprocess="false"
                 android:grantUriPermissions="true"

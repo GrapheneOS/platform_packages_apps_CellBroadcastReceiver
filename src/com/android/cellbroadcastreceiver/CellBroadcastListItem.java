@@ -75,7 +75,7 @@ public class CellBroadcastListItem extends RelativeLayout {
         SpannableStringBuilder messageText = new SpannableStringBuilder(message.getMessageBody());
         try (Cursor cursor = mContext.getContentResolver().query(
                 CellBroadcastContentProvider.CONTENT_URI,
-                CellBroadcastContentProvider.QUERY_COLUMNS,
+                CellBroadcastDatabaseHelper.QUERY_COLUMNS,
                 Telephony.CellBroadcasts.DELIVERY_TIME + "=?",
                 new String[] {Long.toString(message.getReceivedTime())},
                 null)) {

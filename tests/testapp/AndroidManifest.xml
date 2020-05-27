@@ -45,6 +45,7 @@
         <provider
             android:name="DataMigrationContentProvider"
             android:authorities="cellbroadcast-legacy"
+            android:enabled="false"
             android:exported="true" />
     </application>
 
