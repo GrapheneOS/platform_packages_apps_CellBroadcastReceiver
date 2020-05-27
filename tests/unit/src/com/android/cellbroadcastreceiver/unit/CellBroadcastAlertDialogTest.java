@@ -123,11 +123,29 @@ public class CellBroadcastAlertDialogTest extends
                 com.android.cellbroadcastreceiver.R.id.alertTitle)).getText().toString()
                 .startsWith(alertString.toString()));
 
-        assertEquals(CellBroadcastAlertServiceTest.createMessage(34596).getMessageBody(),
-                ((TextView) getActivity().findViewById(
-                        com.android.cellbroadcastreceiver.R.id.message)).getText().toString());
+        waitUntilAssertPasses(()-> {
+            String body = CellBroadcastAlertServiceTest.createMessage(34596).getMessageBody();
+            assertEquals(body, ((TextView) getActivity().findViewById(
+                            com.android.cellbroadcastreceiver.R.id.message)).getText().toString());
+        }, 1000);
 
         stopActivity();
+    }
+
+    public void waitUntilAssertPasses(Runnable r, long maxWaitMs) {
+        long waitTime = 0;
+        while (waitTime < maxWaitMs) {
+            try {
+                r.run();
+                // if the assert succeeds, return
+                return;
+            } catch (Exception e) {
+                waitTime += 100;
+                waitForMs(100);
+            }
+        }
+        // if timed out, run one last time without catching exception
+        r.run();
     }
 
     public void testAddToNotification() throws Throwable {
