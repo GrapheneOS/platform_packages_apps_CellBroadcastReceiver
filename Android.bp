@@ -28,6 +28,7 @@ android_app {
     name: "CellBroadcastApp",
     defaults: ["CellBroadcastCommon"],
     certificate: "networkstack",
+    aaptflags: ["--custom-package com.android.cellbroadcastreceiver"],
     manifest: "AndroidManifest.xml",
     apex_available: ["com.android.cellbroadcast"],
 }
@@ -40,4 +41,12 @@ android_app {
      // of CellBroadcastApp
      overrides: ["com.android.cellbroadcast"],
      manifest: "AndroidManifest_Platform.xml",
+}
+
+// source file shared with legacy cellbroadcast app
+filegroup {
+    name: "cellbroadcast-database-sources",
+    srcs: [
+        "src/com/android/cellbroadcastreceiver/CellBroadcastDatabaseHelper.java",
+    ],
 }
