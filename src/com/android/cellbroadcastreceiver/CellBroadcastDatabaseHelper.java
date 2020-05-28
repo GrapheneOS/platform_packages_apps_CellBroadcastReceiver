@@ -40,6 +40,33 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "cell_broadcasts.db";
     static final String TABLE_NAME = "broadcasts";
 
+    /*
+     * Query columns for instantiating SmsCbMessage.
+     */
+    public static final String[] QUERY_COLUMNS = {
+            Telephony.CellBroadcasts._ID,
+            Telephony.CellBroadcasts.SLOT_INDEX,
+            Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE,
+            Telephony.CellBroadcasts.PLMN,
+            Telephony.CellBroadcasts.LAC,
+            Telephony.CellBroadcasts.CID,
+            Telephony.CellBroadcasts.SERIAL_NUMBER,
+            Telephony.CellBroadcasts.SERVICE_CATEGORY,
+            Telephony.CellBroadcasts.LANGUAGE_CODE,
+            Telephony.CellBroadcasts.MESSAGE_BODY,
+            Telephony.CellBroadcasts.DELIVERY_TIME,
+            Telephony.CellBroadcasts.MESSAGE_READ,
+            Telephony.CellBroadcasts.MESSAGE_FORMAT,
+            Telephony.CellBroadcasts.MESSAGE_PRIORITY,
+            Telephony.CellBroadcasts.ETWS_WARNING_TYPE,
+            Telephony.CellBroadcasts.CMAS_MESSAGE_CLASS,
+            Telephony.CellBroadcasts.CMAS_CATEGORY,
+            Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE,
+            Telephony.CellBroadcasts.CMAS_SEVERITY,
+            Telephony.CellBroadcasts.CMAS_URGENCY,
+            Telephony.CellBroadcasts.CMAS_CERTAINTY
+    };
+
     /**
      * Database version 1: initial version (support removed)
      * Database version 2-9: (reserved for OEM database customization) (support removed)
@@ -50,10 +77,12 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 12;
 
     private final Context mContext;
+    final boolean mLegacyProvider;
 
-    CellBroadcastDatabaseHelper(Context context) {
+    CellBroadcastDatabaseHelper(Context context, boolean legacyProvider) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         mContext = context;
+        mLegacyProvider = legacyProvider;
     }
 
     @Override
@@ -83,7 +112,9 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE INDEX IF NOT EXISTS deliveryTimeIndex ON " + TABLE_NAME
                 + " (" + Telephony.CellBroadcasts.DELIVERY_TIME + ");");
-        migrateFromLegacy(db);
+        if (!mLegacyProvider) {
+            migrateFromLegacy(db);
+        }
     }
 
     @Override
@@ -101,8 +132,8 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * This is the migration logic to accommodate OEMs who previously use non-AOSP CBR and move to
-     * mainlined CBR for the first time. When the db is initially created, this is called once to
+     * This is the migration logic to accommodate OEMs move to mainlined CBR for the first time.
+     * When the db is initially created, this is called once to
      * migrate predefined data through {@link Telephony.CellBroadcasts#AUTHORITY_LEGACY_URI}
      * from OEM app.
      */
@@ -118,12 +149,11 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
             log("Starting migration from legacy provider");
             // migration columns are same as query columns
             try (Cursor c = client.query(Telephony.CellBroadcasts.AUTHORITY_LEGACY_URI,
-                    CellBroadcastContentProvider.QUERY_COLUMNS,
-                    null, null, null)) {
+                QUERY_COLUMNS, null, null, null)) {
                 final ContentValues values = new ContentValues();
                 while (c.moveToNext()) {
                     values.clear();
-                    for (String column : CellBroadcastContentProvider.QUERY_COLUMNS) {
+                    for (String column : QUERY_COLUMNS) {
                         copyFromCursorToContentValues(column, c, values);
                     }
 
