@@ -8,6 +8,7 @@ java_defaults {
       "src/**/*.java",
       ":framework-annotations",
       ":cellbroadcast-constants-shared-srcs",
+      ":statslog-cellbroadcast-java-gen",
    ],
     static_libs: [
         "androidx.legacy_legacy-support-v4",
