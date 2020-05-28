@@ -326,7 +326,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         // retrieve whether to play alert sound in full volume regardless Do Not Disturb is on.
         mOverrideDnd = intent.getBooleanExtra(ALERT_AUDIO_OVERRIDE_DND_EXTRA, false);
         // retrieve the vibrate settings from cellbroadcast receiver settings.
-        mEnableVibrate = prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true);
+        mEnableVibrate = prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, true)
+                || mOverrideDnd;
         // retrieve the vibration patterns.
         mVibrationPattern = intent.getIntArrayExtra(ALERT_AUDIO_VIBRATION_PATTERN_EXTRA);
 
