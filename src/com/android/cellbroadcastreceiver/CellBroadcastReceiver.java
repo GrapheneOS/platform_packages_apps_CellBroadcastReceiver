@@ -277,7 +277,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                             CellBroadcasts.AUTHORITY_LEGACY,
                             CellBroadcasts.CALL_METHOD_GET_PREFERENCE,
                             key, null);
-                    if (pref != null) {
+                    if (pref != null && pref.containsKey(key)) {
                         Log.d(TAG, "migrateSharedPreferenceFromLegacy: " + key + "val: "
                                 + pref.getBoolean(key));
                         sp.putBoolean(key, pref.getBoolean(key));
