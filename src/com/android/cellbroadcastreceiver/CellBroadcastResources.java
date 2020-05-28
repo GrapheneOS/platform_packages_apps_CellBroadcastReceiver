@@ -428,7 +428,7 @@ public class CellBroadcastResources {
                     }
                 }
             }
-            return R.string.pws_other_message_identifiers;
+            return -1;
         }
         return -1;
     }
