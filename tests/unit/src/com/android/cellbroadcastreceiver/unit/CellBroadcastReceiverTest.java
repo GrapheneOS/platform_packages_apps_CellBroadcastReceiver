@@ -111,9 +111,11 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     public void testOnReceive_actionCarrierConfigChanged() {
         doReturn(CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED).when(mIntent).getAction();
         doNothing().when(mCellBroadcastReceiver).initializeSharedPreference();
+        doNothing().when(mCellBroadcastReceiver).enableLauncher();
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
         verify(mCellBroadcastReceiver).initializeSharedPreference();
         verify(mCellBroadcastReceiver).startConfigService();
+        verify(mCellBroadcastReceiver).enableLauncher();
     }
 
     @Test
