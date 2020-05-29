@@ -59,4 +59,6 @@
     <!-- Whether to always receive exercise alerts regardless of test alerts toggle state -->
     <!-- By default it's true for United Arab Emirates users -->
     <bool name="always_enable_exercise_alert">true</bool>
+    <!-- Whether enabling copy message text into clipboard by long press -->
+    <bool name="enable_text_copy">false</bool>
 </resources>
