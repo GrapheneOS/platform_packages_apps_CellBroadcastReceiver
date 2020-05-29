@@ -187,6 +187,7 @@ public class CellBroadcastSettings extends Activity {
         private TwoStatePreference mAreaUpdateInfoCheckBox;
         private TwoStatePreference mTestCheckBox;
         private TwoStatePreference mStateLocalTestCheckBox;
+        private TwoStatePreference mEnableVibrateCheckBox;
         private Preference mAlertHistory;
         private PreferenceCategory mAlertCategory;
         private PreferenceCategory mAlertPreferencesCategory;
@@ -254,6 +255,7 @@ public class CellBroadcastSettings extends Activity {
             mAlertHistory = findPreference(KEY_EMERGENCY_ALERT_HISTORY);
             mReceiveCmasInSecondLanguageCheckBox = (TwoStatePreference) findPreference
                     (KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
+            mEnableVibrateCheckBox = findPreference(KEY_ENABLE_ALERT_VIBRATE);
 
             // Show checkbox for Presidential alerts in settings
             mPresidentialCheckBox = (TwoStatePreference)
@@ -364,15 +366,17 @@ public class CellBroadcastSettings extends Activity {
                         startConfigServiceListener);
             }
 
-            if (mOverrideDndCheckBox != null
-                    && !sp.getBoolean(KEY_OVERRIDE_DND_SETTINGS_CHANGED, false)) {
-                // If the user hasn't changed this settings yet, use the default settings from
-                // resource overlay.
-                mOverrideDndCheckBox.setChecked(res.getBoolean(R.bool.override_dnd_default));
+            if (mOverrideDndCheckBox != null) {
+                if (!sp.getBoolean(KEY_OVERRIDE_DND_SETTINGS_CHANGED, false)) {
+                    // If the user hasn't changed this settings yet, use the default settings
+                    // from resource overlay.
+                    mOverrideDndCheckBox.setChecked(res.getBoolean(R.bool.override_dnd_default));
+                }
                 mOverrideDndCheckBox.setOnPreferenceChangeListener(
                         (pref, newValue) -> {
                             sp.edit().putBoolean(KEY_OVERRIDE_DND_SETTINGS_CHANGED,
                                     true).apply();
+                            updateVibrationPreference((boolean) newValue);
                             return true;
                         });
             }
@@ -387,7 +391,27 @@ public class CellBroadcastSettings extends Activity {
                         });
             }
 
+            updateVibrationPreference(sp.getBoolean(CellBroadcastSettings.KEY_OVERRIDE_DND,
+                    false));
             updatePreferenceVisibility();
+        }
+
+        /**
+         * Update the vibration preference based on override DND. If DND is overridden, then do
+         * not allow users to turn off vibration.
+         *
+         * @param overrideDnd {@code true} if the alert will be played at full volume, regardless
+         * DND settings.
+         */
+        private void updateVibrationPreference(boolean overrideDnd) {
+            if (mEnableVibrateCheckBox != null) {
+                if (overrideDnd) {
+                    // If DND is enabled, always enable vibration.
+                    mEnableVibrateCheckBox.setChecked(true);
+                }
+                // Grey out the preference if DND is overridden.
+                mEnableVibrateCheckBox.setEnabled(!overrideDnd);
+            }
         }
 
         /**
@@ -459,6 +483,16 @@ public class CellBroadcastSettings extends Activity {
 
             if (mOverrideDndCheckBox != null) {
                 mOverrideDndCheckBox.setVisible(res.getBoolean(R.bool.show_override_dnd_settings));
+            }
+
+            if (mEnableVibrateCheckBox != null) {
+                // Only show vibrate toggle when override DND toggle is available to users, or when
+                // override DND default is turned off.
+                // In some countries, override DND is always on, which means vibration is always on.
+                // In that case, no need to show vibration toggle for users.
+                mEnableVibrateCheckBox.setVisible(
+                        res.getBoolean(R.bool.show_override_dnd_settings)
+                                || !res.getBoolean(R.bool.override_dnd_default));
             }
         }
 
