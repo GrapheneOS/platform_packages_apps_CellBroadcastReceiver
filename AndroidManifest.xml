@@ -89,6 +89,18 @@
             </intent-filter>
         </activity>
 
+        <!-- Alias activity for CellBroadcastListActivity. Once enabled, it will appear in the launcher -->
+        <activity-alias android:name="com.android.cellbroadcastreceiver.CellBroadcastListLauncherActivity"
+            android:targetActivity="com.android.cellbroadcastreceiver.CellBroadcastListActivity"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+
         <!-- Settings opened by ListActivity menu, Settings app link or opt-out dialog. -->
         <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastSettings"
                   android:theme="@style/CellBroadcastSettingsTheme"
