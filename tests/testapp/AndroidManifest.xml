@@ -41,12 +41,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <provider
-            android:name="DataMigrationContentProvider"
-            android:authorities="cellbroadcast-legacy"
-            android:enabled="false"
-            android:exported="true" />
     </application>
 
     <!--
