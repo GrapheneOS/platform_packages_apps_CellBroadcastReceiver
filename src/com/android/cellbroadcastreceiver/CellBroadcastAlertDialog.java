@@ -44,6 +44,7 @@ import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbMessage;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -353,6 +354,14 @@ public class CellBroadcastAlertDialog extends Activity {
         win.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN
                 | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                 | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
+
+        // Disable home button when alert dialog is showing if mute_by_physical_button is false.
+        if (!CellBroadcastSettings.getResources(getApplicationContext(),
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID)
+                .getBoolean(R.bool.mute_by_physical_button)) {
+            final View decorView = win.getDecorView();
+            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+        }
 
         // Initialize the view.
         LayoutInflater inflater = LayoutInflater.from(this);
