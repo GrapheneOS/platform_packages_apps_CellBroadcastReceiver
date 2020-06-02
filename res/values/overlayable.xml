@@ -38,6 +38,9 @@
             <item type="color" name="cell_broadcast_color_primary_dark"/>
             <!-- END COLOR -->
 
+            <!-- Customize launcher icon for cellbroadcast history -->
+            <item type="mipmap" name="ic_launcher_cell_broadcast" />
+
             <!-- START CHANNEL related configurations which allows customization -->
             <!-- Presidential alert is default on and cannot be turned off.
             AOSP CBR app does not show presidential alert in settings, however OEM can choose to
