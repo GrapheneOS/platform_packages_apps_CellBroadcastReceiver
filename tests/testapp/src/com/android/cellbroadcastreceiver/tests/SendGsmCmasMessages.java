@@ -26,14 +26,14 @@ import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 
+import android.util.Log;
+import com.android.internal.telephony.CellBroadcastUtils;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 
 /**
  * Send some test GSM CMAS warning notifications.
  */
 public class SendGsmCmasMessages {
-
-    private static final String CB_RECEIVER_PKG = "com.android.cellbroadcastreceiver";
 
     private static final String PRES_ALERT =
             "THE PRESIDENT HAS ISSUED AN EMERGENCY ALERT. CHECK LOCAL MEDIA FOR MORE DETAILS";
@@ -59,7 +59,8 @@ public class SendGsmCmasMessages {
     private static void sendBroadcast(Activity activity, SmsCbMessage cbMessage) {
         Intent intent = new Intent(Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED);
         intent.putExtra("message", cbMessage);
-        intent.setPackage(CB_RECEIVER_PKG);
+        CellBroadcastUtils.getDefaultCellBroadcastReceiverPackageName(
+                activity.getApplicationContext());
         activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
                 Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
                 AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);
