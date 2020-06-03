@@ -46,6 +46,7 @@ import android.widget.Toast;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.android.cellbroadcastservice.CellBroadcastStatsLog;
 import com.android.internal.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
@@ -127,6 +128,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 .equals(action)) {
             ArrayList<CdmaSmsCbProgramData> programDataList =
                     intent.getParcelableArrayListExtra("program_data");
+            CellBroadcastStatsLog.write(CellBroadcastStatsLog.CB_MESSAGE_REPORTED,
+                    CellBroadcastStatsLog.CELL_BROADCAST_MESSAGE_REPORTED__TYPE__CDMA_SPC,
+                    CellBroadcastStatsLog.CELL_BROADCAST_MESSAGE_REPORTED__SOURCE__CB_RECEIVER_APP);
             if (programDataList != null) {
                 handleCdmaSmsCbProgramData(programDataList);
             } else {
