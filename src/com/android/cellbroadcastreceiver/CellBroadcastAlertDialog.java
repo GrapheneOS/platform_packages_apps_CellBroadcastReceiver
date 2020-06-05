@@ -352,6 +352,14 @@ public class CellBroadcastAlertDialog extends Activity {
         }
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        getWindow().addSystemFlags(
+                android.view.WindowManager.LayoutParams
+                        .SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS);
+    }
+
     /**
      * Start animating warning icon.
      */
