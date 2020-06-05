@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static android.view.WindowManager.LayoutParams.SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS;
+
 import android.annotation.Nullable;
 import android.app.ActionBar;
 import android.app.Activity;
@@ -83,6 +85,12 @@ public class CellBroadcastListActivity extends Activity {
             mListFragment = new CursorLoaderListFragment();
             fm.beginTransaction().add(android.R.id.content, mListFragment).commit();
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        getWindow().addSystemFlags(SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS);
     }
 
     @Override
