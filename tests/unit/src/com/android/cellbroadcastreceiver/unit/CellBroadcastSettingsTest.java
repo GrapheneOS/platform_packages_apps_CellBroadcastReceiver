@@ -42,6 +42,7 @@ public class CellBroadcastSettingsTest {
     private Instrumentation mInstrumentation;
     private Context mContext;
     private UiDevice mDevice;
+    private static final long DEVICE_WAIT_TIME = 500L;
 
     @Before
     public void setUp() {
@@ -52,7 +53,7 @@ public class CellBroadcastSettingsTest {
 
     @FlakyTest
     @Test
-    public void testRotateAlertReminderDialogOpen() {
+    public void testRotateAlertReminderDialogOpen() throws InterruptedException {
         try {
             mDevice.wakeUp();
             mDevice.pressMenu();
@@ -61,6 +62,16 @@ public class CellBroadcastSettingsTest {
         }
 
         mInstrumentation.startActivitySync(createActivityIntent());
+        int w = mDevice.getDisplayWidth();
+        int h = mDevice.getDisplayHeight();
+        synchronized (mDevice) {
+            mDevice.wait(DEVICE_WAIT_TIME);
+        }
+        mDevice.swipe(w / 2 /* start X */,
+                h / 2 /* start Y */,
+                w / 2 /* end X */,
+                0 /* end Y */,
+                100 /* steps */);
 
         openAlertReminderDialog();
 
