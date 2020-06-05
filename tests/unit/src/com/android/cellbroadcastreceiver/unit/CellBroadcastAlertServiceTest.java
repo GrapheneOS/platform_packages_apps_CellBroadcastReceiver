@@ -45,9 +45,16 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     static SmsCbMessage createMessage(int serialNumber) {
-        return new SmsCbMessage(1, 2, serialNumber, new SmsCbLocation(),
-                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL, "language", "body",
-                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null, new SmsCbCmasInfo(0, 2, 3, 4, 5, 6),
+        return createMessageForCmasMessageClass(serialNumber,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL, 0);
+    }
+
+    static SmsCbMessage createMessageForCmasMessageClass(int serialNumber,
+            int serviceCategory, int cmasMessageClass) {
+        return new SmsCbMessage(1, 2, serialNumber, new SmsCbLocation(), serviceCategory,
+                "language", "body",
+                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null,
+                new SmsCbCmasInfo(cmasMessageClass, 2, 3, 4, 5, 6),
                 0, 1);
     }
 
