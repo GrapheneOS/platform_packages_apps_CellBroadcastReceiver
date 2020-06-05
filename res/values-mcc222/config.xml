@@ -16,4 +16,21 @@
 <resources>
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
     <bool name="override_dnd_default">true</bool>
+    <!-- Whether to append date-time to the alert title -->
+    <bool name="show_date_time_title">true</bool>
+    <!-- 4371, 4384 -->
+    <!-- 4375, 4388 -->
+    <!-- 4379, 4392 -->
+    <!-- group IT-Alet Level 1,2,3 together, controlled by a single user settings -->
+    <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
+        <item>0x1113:rat=gsm, emergency=true</item>
+        <item>0x1117:rat=gsm, emergency=true</item>
+        <item>0x111B:rat=gsm, emergency=true</item>
+        <!-- additional language -->
+        <item>0x1120:rat=gsm, emergency=true</item>
+        <item>0x1124:rat=gsm, emergency=true</item>
+        <item>0x1128:rat=gsm, emergency=true</item>
+    </string-array>
+    <string-array name="cmas_alerts_severe_range_strings" translatable="false"/>
+    <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"/>
 </resources>
