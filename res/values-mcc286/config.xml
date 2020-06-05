@@ -16,7 +16,15 @@
 
 <resources>
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">
-        <!-- Channel 112 are required by Turkey -->
-        <item>0x070:rat=gsm,emergency=true</item>
+        <!-- Public safety messages -->
+        <item>0x112C:rat=gsm, emergency=true</item>
+        <!-- Public safety messages for additional language -->
+        <item>0x112D:rat=gsm, emergency=true</item>
+    </string-array>
+    <string-array name="state_local_test_alert_range_strings" translatable="false">
+        <!-- state/local test -->
+        <item>0x112E:rat=gsm, emergency=true</item>
+        <!-- state/local test additional language -->
+        <item>0x112F:rat=gsm, emergency=true</item>
     </string-array>
 </resources>
