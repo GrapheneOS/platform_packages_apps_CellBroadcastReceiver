@@ -53,8 +53,8 @@ public class SendCdmaCmasMessages {
     private static void sendBroadcast(Activity activity, SmsCbMessage cbMessage) {
         Intent intent = new Intent(Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED);
         intent.putExtra("message", cbMessage);
-        CellBroadcastUtils.getDefaultCellBroadcastReceiverPackageName(
-                activity.getApplicationContext());
+        intent.setPackage(CellBroadcastUtils.getDefaultCellBroadcastReceiverPackageName(
+                activity.getApplicationContext()));
         activity.sendOrderedBroadcastAsUser(intent, UserHandle.ALL,
                 Manifest.permission.RECEIVE_EMERGENCY_BROADCAST,
                 AppOpsManager.OP_RECEIVE_EMERGECY_SMS, null, null, Activity.RESULT_OK, null, null);
