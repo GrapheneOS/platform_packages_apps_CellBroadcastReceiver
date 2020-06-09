@@ -62,6 +62,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     // Key to access the shared preference of cell broadcast testing mode.
     private static final String TESTING_MODE = "testing_mode";
 
+    // shared preference under developer settings
+    private static final String ENABLE_ALERT_MASTER_PREF = "enable_alerts_master_toggle";
+
     // Intent actions and extras
     public static final String CELLBROADCAST_START_CONFIG_ACTION =
             "com.android.cellbroadcastreceiver.intent.START_CONFIG";
@@ -272,6 +275,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 CellBroadcasts.Preference.ENABLE_EMERGENCY_PERF,
                 CellBroadcasts.Preference.ENABLE_ALERT_VIBRATION_PREF,
                 CellBroadcasts.Preference.ENABLE_CMAS_IN_SECOND_LANGUAGE_PREF,
+                ENABLE_ALERT_MASTER_PREF,
         };
         try (ContentProviderClient client = context.getContentResolver()
                 .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
