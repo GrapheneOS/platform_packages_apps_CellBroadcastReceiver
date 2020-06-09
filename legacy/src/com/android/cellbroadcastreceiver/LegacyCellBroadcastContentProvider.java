@@ -20,6 +20,8 @@ import java.util.List;
  * Very limited subset of function which is only used to surfaces data.
  */
 public class LegacyCellBroadcastContentProvider extends ContentProvider {
+    // shared preference under developer settings
+    private static final String ENABLE_ALERT_MASTER_PREF = "enable_alerts_master_toggle";
 
     private static final String TAG = LegacyCellBroadcastContentProvider.class.getSimpleName();
     /** A list of preference supported by legacy app **/
@@ -34,7 +36,8 @@ public class LegacyCellBroadcastContentProvider extends ContentProvider {
             CellBroadcasts.Preference.ENABLE_CMAS_PRESIDENTIAL_PREF,
             CellBroadcasts.Preference.ENABLE_EMERGENCY_PERF,
             CellBroadcasts.Preference.ENABLE_ALERT_VIBRATION_PREF,
-            CellBroadcasts.Preference.ENABLE_CMAS_IN_SECOND_LANGUAGE_PREF
+            CellBroadcasts.Preference.ENABLE_CMAS_IN_SECOND_LANGUAGE_PREF,
+            ENABLE_ALERT_MASTER_PREF
     );
 
     /** The database for this content provider. */
