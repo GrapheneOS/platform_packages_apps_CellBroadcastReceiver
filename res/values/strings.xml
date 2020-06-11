@@ -294,6 +294,9 @@
     <!-- Preference summary for enable CMAS second language checkbox. [CHAR LIMIT=100] -->
     <string name="receive_cmas_in_second_language_summary"></string>
 
+    <!-- Preference summary for emergency alert header -->
+    <string name="alerts_header_summary"></string>
+
     <!-- Toast message to indicate testing mode is enabled. [CHAR LIMIT=100] -->
     <string name="testing_mode_enabled">Cell broadcast testing mode is enabled.</string>
     <!-- Toast message to indicate testing mode is disabled. [CHAR LIMIT=100] -->
