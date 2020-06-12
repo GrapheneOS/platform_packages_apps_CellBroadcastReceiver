@@ -45,9 +45,10 @@
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false">
         <item>0x111B:rat=gsm, emergency=true, alert_duration=86400000</item>
     </string-array>
-    <!-- 4380 ~ 4382 -->
+    <!-- 4380~4382, 519 -->
     <string-array name="required_monthly_test_range_strings" translatable="false">
         <item>0x111C:rat=gsm, emergency=true, alert_duration=86400000</item>
+        <item>0x207:rat=gsm, emergency=true, alert_duration=86400000</item>
     </string-array>
     <string-array name="exercise_alert_range_strings" translatable="false">
         <item>0x111D:rat=gsm, emergency=true, alert_duration=86400000</item>
