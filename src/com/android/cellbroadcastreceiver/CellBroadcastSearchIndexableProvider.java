@@ -38,6 +38,7 @@ import static android.provider.SearchIndexablesContract.NON_INDEXABLES_KEYS_COLU
 import android.annotation.Nullable;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -108,6 +109,10 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
 
     @Override
     public Cursor queryXmlResources(String[] projection) {
+        if (isAutomotive()) {
+            return null;
+        }
+
         MatrixCursor cursor = new MatrixCursor(INDEXABLES_XML_RES_COLUMNS);
         final int count = INDEXABLE_RES.length;
         for (int n = 0; n < count; n++) {
@@ -126,6 +131,10 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
 
     @Override
     public Cursor queryRawData(String[] projection) {
+        if (isAutomotive()) {
+            return null;
+        }
+
         MatrixCursor cursor = new MatrixCursor(INDEXABLES_RAW_COLUMNS);
         final Resources res = getResourcesMethod();
 
@@ -254,5 +263,15 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
         }
 
         return cursor;
+    }
+
+    /**
+     * Whether or not this is an Android Automotive platform.
+     * @return true if the current platform is automotive
+     */
+    @VisibleForTesting
+    public boolean isAutomotive() {
+        return getContextMethod().getPackageManager().hasSystemFeature(
+                PackageManager.FEATURE_AUTOMOTIVE);
     }
 }
