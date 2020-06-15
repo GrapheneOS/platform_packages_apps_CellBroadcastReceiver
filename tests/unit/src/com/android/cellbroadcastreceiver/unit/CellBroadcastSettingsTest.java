@@ -38,11 +38,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
-public class CellBroadcastSettingsTest {
+public class CellBroadcastSettingsTest extends
+        CellBroadcastActivityTestCase<CellBroadcastSettings> {
     private Instrumentation mInstrumentation;
     private Context mContext;
     private UiDevice mDevice;
-    private static final long DEVICE_WAIT_TIME = 500L;
+    private static final long DEVICE_WAIT_TIME = 1000L;
+
+    public CellBroadcastSettingsTest() {
+        super(CellBroadcastSettings.class);
+    }
 
     @Before
     public void setUp() {
@@ -64,16 +69,16 @@ public class CellBroadcastSettingsTest {
         mInstrumentation.startActivitySync(createActivityIntent());
         int w = mDevice.getDisplayWidth();
         int h = mDevice.getDisplayHeight();
-        synchronized (mDevice) {
-            mDevice.wait(DEVICE_WAIT_TIME);
-        }
-        mDevice.swipe(w / 2 /* start X */,
-                h / 2 /* start Y */,
-                w / 2 /* end X */,
-                0 /* end Y */,
-                100 /* steps */);
 
-        openAlertReminderDialog();
+        waitUntilDialogOpens(()-> {
+            mDevice.swipe(w / 2 /* start X */,
+                    h / 2 /* start Y */,
+                    w / 2 /* end X */,
+                    0 /* end Y */,
+                    100 /* steps */);
+
+            openAlertReminderDialog();
+        }, DEVICE_WAIT_TIME);
 
         try {
             mDevice.setOrientationLeft();
@@ -84,7 +89,24 @@ public class CellBroadcastSettingsTest {
         }
     }
 
-    private Intent createActivityIntent() {
+    public void waitUntilDialogOpens(Runnable r, long maxWaitMs) {
+        long waitTime = 0;
+        while (waitTime < maxWaitMs) {
+            try {
+                r.run();
+                // if the assert succeeds, return
+                return;
+            } catch (Exception e) {
+                waitTime += 100;
+                waitForMs(100);
+            }
+        }
+        // if timed out, run one last time without catching exception
+        r.run();
+    }
+
+    @Override
+    protected Intent createActivityIntent() {
         Intent intent = new Intent(mContext, CellBroadcastSettings.class);
         intent.setPackage("com.android.cellbroadcastreceiver");
         intent.setAction("android.intent.action.MAIN");
