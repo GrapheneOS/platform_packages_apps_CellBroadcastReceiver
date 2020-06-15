@@ -24,4 +24,12 @@
     <string name="receive_cmas_in_second_language_title">Spanish</string>
     <!-- Preference summary for enable CMAS second language checkbox. [CHAR LIMIT=100] -->
     <string name="receive_cmas_in_second_language_summary">Receive emergency alerts in Spanish when possible</string>
+    <!-- Delete alert confirmation dialog message. [CHAR LIMIT=NONE] -->
+    <string name="confirm_delete_broadcast">Delete this alert?</string>
+    <!-- Delete all alerts confirmation dialog message. [CHAR LIMIT=NONE] -->
+    <string name="confirm_delete_all_broadcasts">Delete all received alerts messages?</string>
+    <!-- Context menu item to delete a previously received alert. [CHAR LIMIT=30] -->
+    <string name="menu_delete">Delete alert</string>
+    <!-- Menu item for deleting all alerts. [CHAR LIMIT=30] -->
+    <string name="menu_delete_all">Delete alerts</string>
 </resources>
