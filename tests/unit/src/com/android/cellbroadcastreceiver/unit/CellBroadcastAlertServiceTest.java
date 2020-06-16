@@ -145,6 +145,9 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     // Test handleCellBroadcastIntent method
+    @InstrumentationTest
+    // This test has a module dependency, so it is disabled for OEM testing because it is not a true
+    // unit test
     public void testHandleCellBroadcastIntent() throws Exception {
         sendMessage(987654321);
         waitForMs(500);
@@ -158,6 +161,9 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     // Test showNewAlert method
+    @InstrumentationTest
+    // This test has a module dependency, so it is disabled for OEM testing because it is not a true
+    // unit test
     public void testShowNewAlert() throws Exception {
         Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
         intent.setAction(SHOW_NEW_ALERT_ACTION);
@@ -185,6 +191,9 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     // Test showNewAlert method with a CMAS child abduction alert, using the default language code
+    @InstrumentationTest
+    // This test has a module dependency, so it is disabled for OEM testing because it is not a true
+    // unit test
     public void testShowNewAlertChildAbductionWithDefaultLanguage() {
         doReturn(new String[]{"0x111B:rat=gsm, emergency=true"})
                 .when(mResources).getStringArray(anyInt());
@@ -205,6 +214,9 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     // Test showNewAlert method with a CMAS child abduction alert
+    @InstrumentationTest
+    // This test has a module dependency, so it is disabled for OEM testing because it is not a true
+    // unit test
     public void testShowNewAlertChildAbduction() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         prefs.edit().putBoolean(CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE, true)
