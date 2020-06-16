@@ -34,6 +34,16 @@ android_app {
     apex_available: ["com.android.cellbroadcast"],
 }
 
+// filegroup used to include source into unit tests
+filegroup {
+    name: "cellbroadcastreceiver-sources",
+    srcs: [
+      "src/**/*.java",
+      ":framework-annotations",
+      ":cellbroadcast-constants-shared-srcs",
+    ],
+}
+
 android_app {
      name: "CellBroadcastAppPlatform",
      defaults: ["CellBroadcastCommon"],
