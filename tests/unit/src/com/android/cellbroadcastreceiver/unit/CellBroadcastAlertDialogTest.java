@@ -165,6 +165,9 @@ public class CellBroadcastAlertDialogTest extends
                 b.getCharSequence(Notification.EXTRA_TEXT));
     }
 
+    @InstrumentationTest
+    // This test has a module dependency (it uses the CellBroadcastContentProvider), so it is
+    // disabled for OEM testing because it is not a true unit test
     public void testDismiss() throws Throwable {
         CellBroadcastAlertDialog activity = startActivity();
         waitForMs(100);
@@ -174,6 +177,9 @@ public class CellBroadcastAlertDialogTest extends
                 eq(CellBroadcastAlertService.NOTIFICATION_ID));
     }
 
+    @InstrumentationTest
+    // This test has a module dependency (it uses the CellBroadcastContentProvider), so it is
+    // disabled for OEM testing because it is not a true unit test
     public void testDismissWithDialog() throws Throwable {
         // in order to trigger mShowOptOutDialog=true, the message should not be a presidential
         // alert (the default message we send in this test)
