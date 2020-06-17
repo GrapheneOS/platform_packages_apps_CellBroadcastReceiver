@@ -25,6 +25,13 @@
     <string name="cmas_extreme_immediate_likely_alert">@string/cmas_presidential_level_alert</string>
     <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_cmas_extreme_threat_alerts_title">@string/cmas_presidential_level_alert</string>
-    <!-- CMAS summary for the alerts header preference [CHAR LIMIT=150]-->
+    <!-- CMAS summary for the alerts header preference [CHAR LIMIT=150]
+         This preference header will be shown on devices with Italian SIMs.
+         Required Italian (it) translation for this message:
+         "Messaggi di particolare rilevanza possono essere ricevuti indipendentemente dalle impostazioni dell’Utente" -->
     <string name="alerts_header_summary">Critical messages may come through regardless of user settings</string>
+    <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50]
+         This preference settings will be shown on devices with Italian SIMs,
+         Required Italian (it) translation for this message: "Messaggi di test" -->
+    <string name="enable_cmas_test_alerts_title">Test messages</string>
 </resources>

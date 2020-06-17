@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 The Android Open Source Project
+<!-- Copyright (C) 2020 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,17 +13,22 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<configuration description="Run CellBroadcastReceiver Unit Test Cases.">
-    <target_preparer class="com.android.tradefed.targetprep.TestAppInstallSetup">
-        <option name="test-file-name" value="CellBroadcastReceiverUnitTests.apk" />
+<configuration description="Run CellBroadcastReceiver OEM Unit Test Cases.">
+    <!-- additional configuration for CellBroadcastReceiverOemUnitTests -->
+    <target_preparer class="com.android.tradefed.targetprep.suite.SuiteApkInstaller">
+        <option name="test-file-name" value="CellBroadcastReceiverOemUnitTests.apk" />
         <option name="install-arg" value="-g"/>
     </target_preparer>
 
     <option name="test-suite-tag" value="apct" />
-    <option name="test-tag" value="CellBroadcastReceiverUnitTests" />
+    <option name="test-tag" value="CellBroadcastReceiverOemUnitTests" />
     <test class="com.android.tradefed.testtype.AndroidJUnitTest" >
         <option name="package" value="com.android.cellbroadcastreceiver.tests.unit" />
         <option name="runner" value="androidx.test.runner.AndroidJUnitRunner" />
         <option name="hidden-api-checks" value="false"/>
+        <option name="exclude-annotation" value="com.android.cellbroadcastreceiver.unit.InstrumentationTest" />
     </test>
+    <object type="module_controller" class="com.android.tradefed.testtype.suite.module.MainlineTestModuleController">
+        <option name="mainline-module-package-name" value="com.google.android.cellbroadcast" />
+    </object>
 </configuration>
