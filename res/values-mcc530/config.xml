@@ -26,4 +26,6 @@
 
     <!-- Whether enable LED flash when playing alert tones -->
     <bool name="enable_led_flash">true</bool>
+    <!-- Whether to disable a grey-out presidential alert -->
+    <bool name="show_presidential_alerts_settings">true</bool>
 </resources>
