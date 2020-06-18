@@ -17,22 +17,34 @@
 package com.android.cellbroadcastreceiver.unit;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.HandlerThread;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertReminder;
+import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 
 import org.junit.After;
 import org.junit.Before;
+import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class CellBroadcastAlertReminderTest extends
         CellBroadcastServiceTestCase<CellBroadcastAlertReminder> {
 
     private static final long MAX_INIT_WAIT_MS = 5000;
+
+    @Mock
+    private SharedPreferences mSharedPreferences;
+    @Mock
+    private Context mMockContext;
 
     private Object mLock = new Object();
     private boolean mReady;
@@ -128,5 +140,33 @@ public class CellBroadcastAlertReminderTest extends
 
         verify(mMockedVibrator, never()).vibrate(any());
         phoneStateListenerHandler.quit();
+    }
+
+    public void testQueueAlertReminderReturnFalseIfIntervalNull() {
+        doReturn(mSharedPreferences).when(mMockContext).getSharedPreferences(anyString(), anyInt());
+        doReturn(null).when(mSharedPreferences).getString(
+                CellBroadcastSettings.KEY_ALERT_REMINDER_INTERVAL, null);
+        assertFalse(CellBroadcastAlertReminder.queueAlertReminder(mMockContext, 1, true));
+    }
+
+    public void testQueueAlertReminderReturnFalseIfIntervalStringNotANumber() {
+        doReturn(mSharedPreferences).when(mMockContext).getSharedPreferences(anyString(), anyInt());
+        doReturn("NotANumber").when(mSharedPreferences).getString(
+                CellBroadcastSettings.KEY_ALERT_REMINDER_INTERVAL, null);
+        assertFalse(CellBroadcastAlertReminder.queueAlertReminder(mMockContext, 1, true));
+    }
+
+    public void testQueueAlertReminderReturnFalseIfIntervalZero() {
+        doReturn(mSharedPreferences).when(mMockContext).getSharedPreferences(anyString(), anyInt());
+        doReturn("0").when(mSharedPreferences).getString(
+                CellBroadcastSettings.KEY_ALERT_REMINDER_INTERVAL, null);
+        assertFalse(CellBroadcastAlertReminder.queueAlertReminder(mMockContext, 1, true));
+    }
+
+    public void testQueueAlertReminderReturnFalseIfIntervalOneButNotFirstTime() {
+        doReturn(mSharedPreferences).when(mMockContext).getSharedPreferences(anyString(), anyInt());
+        doReturn("1").when(mSharedPreferences).getString(
+                CellBroadcastSettings.KEY_ALERT_REMINDER_INTERVAL, null);
+        assertFalse(CellBroadcastAlertReminder.queueAlertReminder(mMockContext, 1, false));
     }
 }
