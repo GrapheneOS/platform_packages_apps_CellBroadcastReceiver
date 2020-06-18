@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Ujumbe wa kitaifa wa maonyo unaotolewa na Rais. Huwezi kuuzima."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Hali ya majaribio ya matangazo ya simu (CB) imewashwa."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Hali ya majaribio ya matangazo ya simu (CB) imezimwa."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Onyesha ujumbe wote"</string>

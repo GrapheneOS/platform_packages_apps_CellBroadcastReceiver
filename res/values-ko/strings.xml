@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"대통령이 발령한 대국민 비상 메시지입니다. 이 알림은 끌 수 없습니다"</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"셀 브로드캐스트 테스트 모드가 사용 설정되었습니다."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"셀 브로드캐스트 테스트 모드가 사용 중지되었습니다."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"모든 메시지 표시"</string>
