@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"રાષ્ટ્રપતિ દ્વારા જારી કરાયેલા રાષ્ટ્રીય ચેતવણી સંદેશા. બંધ કરી શકાતા નથી."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"સેલ બ્રોડકાસ્ટ પરીક્ષણ મોડ ચાલુ કરેલો છે."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"સેલ બ્રોડકાસ્ટ પરીક્ષણ મોડ બંધ કરેલો છે."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"બધા સંદેશા બતાવો"</string>
