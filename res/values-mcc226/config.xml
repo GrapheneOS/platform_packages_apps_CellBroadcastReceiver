@@ -21,29 +21,25 @@
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true</item>
     </string-array>
-    <!-- 4371, 919 -->
+    <!-- 4371 -->
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
         <item>0x1113:rat=gsm, emergency=true</item>
-        <item>0x397:rat=gsm, emergency=true</item>
     </string-array>
-    <!-- 4375, 918 -->
+    <!-- 4375 -->
     <string-array name="cmas_alerts_severe_range_strings" translatable="false">
         <item>0x1117:rat=gsm, emergency=true</item>
-        <item>0x396:rat=gsm, emergency=true</item>
     </string-array>
-    <!-- 4379 Orange Alert for RO, 917 -->
+    <!-- 4379 Orange Alert for RO -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">
         <item>0x111B:rat=gsm, emergency=true</item>
-        <item>0x395:rat=gsm, emergency=true</item>
     </string-array>
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false">
     </string-array>
     <string-array name="required_monthly_test_range_strings" translatable="false">
     </string-array>
-    <!-- 4381, 916 -->
+    <!-- 4381 -->
     <string-array name="exercise_alert_range_strings" translatable="false">
         <item>0x111D:rat=gsm, emergency=true</item>
-        <item>0x394:rat=gsm, emergency=true</item>
     </string-array>
     <string-array name="operator_defined_alert_range_strings" translatable="false">
     </string-array>
