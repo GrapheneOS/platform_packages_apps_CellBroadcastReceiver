@@ -50,7 +50,7 @@ android_app {
      certificate: "platform",
      // CellBroadcastAppPlatform is a replacement for com.android.cellbroadcast apex which consists
      // of CellBroadcastApp
-     overrides: ["com.android.cellbroadcast"],
+     overrides: ["com.android.cellbroadcast", "CellBroadcastLegacyApp"],
      manifest: "AndroidManifest_Platform.xml",
 }
 
