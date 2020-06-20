@@ -27,7 +27,7 @@
     <!-- Delete alert confirmation dialog message. [CHAR LIMIT=NONE] -->
     <string name="confirm_delete_broadcast">Delete this alert?</string>
     <!-- Delete all alerts confirmation dialog message. [CHAR LIMIT=NONE] -->
-    <string name="confirm_delete_all_broadcasts">Delete all received alerts messages?</string>
+    <string name="confirm_delete_all_broadcasts">Delete all received alerts?</string>
     <!-- Context menu item to delete a previously received alert. [CHAR LIMIT=30] -->
     <string name="menu_delete">Delete alert</string>
     <!-- Menu item for deleting all alerts. [CHAR LIMIT=30] -->
