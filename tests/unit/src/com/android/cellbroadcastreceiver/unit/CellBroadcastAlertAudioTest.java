@@ -44,6 +44,7 @@ public class CellBroadcastAlertAudioTest extends
 
     private static final String TEST_MESSAGE_BODY = "test message body";
     private static final int[] TEST_VIBRATION_PATTERN = new int[]{0, 1, 0, 1};
+    private static final String TEST_MESSAGE_LANGUAGE = "en";
     private static final int TEST_MAX_VOLUME = 1001;
     private static final long MAX_INIT_WAIT_MS = 5000;
 
@@ -121,6 +122,10 @@ public class CellBroadcastAlertAudioTest extends
                             TEST_MESSAGE_BODY);
                     intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATION_PATTERN_EXTRA,
                             TEST_VIBRATION_PATTERN);
+                    intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_LANGUAGE,
+                            TEST_MESSAGE_LANGUAGE);
+                    intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA,
+                            true);
                     startService(intent);
                 });
         phoneStateListenerHandler.start();
