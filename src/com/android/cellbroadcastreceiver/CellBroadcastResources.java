@@ -319,12 +319,14 @@ public class CellBroadcastResources {
         }
         if (channelManager.checkCellBroadcastChannelRange(serviceCategory,
                 R.array.cmas_alert_extreme_channels_range_strings)) {
-            if (cmasInfo.getSeverity() == SmsCbCmasInfo.CMAS_SEVERITY_EXTREME
-                    && cmasInfo.getUrgency() == SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE) {
-                if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED) {
-                    return R.string.cmas_extreme_immediate_observed_alert;
-                } else if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY) {
-                    return R.string.cmas_extreme_immediate_likely_alert;
+            if (message.isCmasMessage()) {
+                if (cmasInfo.getSeverity() == SmsCbCmasInfo.CMAS_SEVERITY_EXTREME
+                        && cmasInfo.getUrgency() == SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE) {
+                    if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED) {
+                        return R.string.cmas_extreme_immediate_observed_alert;
+                    } else if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY) {
+                        return R.string.cmas_extreme_immediate_likely_alert;
+                    }
                 }
             }
             return R.string.cmas_extreme_alert;
