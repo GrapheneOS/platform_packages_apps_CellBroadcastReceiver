@@ -312,7 +312,7 @@ public class CellBroadcastAlertService extends Service
                             CellBroadcastChannelRange range = channelManager
                                     .getCellBroadcastChannelRangeFromMessage(message);
                             if (CellBroadcastReceiver.isTestingMode(getApplicationContext())
-                                    || range.mWriteToSmsInbox) {
+                                    || (range != null && range.mWriteToSmsInbox)) {
                                 writeMessageToSmsInbox(message);
                             }
                         }
