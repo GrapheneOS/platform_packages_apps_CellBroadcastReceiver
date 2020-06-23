@@ -129,7 +129,8 @@ public class CellBroadcastAlertReminder extends Service {
      *
      * @return true if a pending reminder was set; false if there are no more reminders
      */
-    static boolean queueAlertReminder(Context context, int subId, boolean firstTime) {
+    @VisibleForTesting
+    public static boolean queueAlertReminder(Context context, int subId, boolean firstTime) {
         // Stop any alert reminder sound and cancel any previously queued reminders.
         cancelAlertReminder();
 
