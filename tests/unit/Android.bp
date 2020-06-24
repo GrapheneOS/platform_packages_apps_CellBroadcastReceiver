@@ -18,6 +18,7 @@ java_defaults {
         "android.test.runner",
         "telephony-common",
         "android.test.base",
+        "android.test.mock",
     ],
     static_libs: [
         "androidx.test.rules",
