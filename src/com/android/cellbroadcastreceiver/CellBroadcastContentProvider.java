@@ -34,6 +34,7 @@ import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.text.TextUtils;
 import android.util.Log;
+import com.android.internal.annotations.VisibleForTesting;
 
 /**
  * ContentProvider for the database of received cell broadcasts.
@@ -68,7 +69,8 @@ public class CellBroadcastContentProvider extends ContentProvider {
     }
 
     /** The database for this content provider. */
-    private SQLiteOpenHelper mOpenHelper;
+    @VisibleForTesting
+    public SQLiteOpenHelper mOpenHelper;
 
     /**
      * Initialize content provider.
@@ -232,7 +234,8 @@ public class CellBroadcastContentProvider extends ContentProvider {
      * @param message the message to insert
      * @return true if the broadcast is new, false if it's a duplicate broadcast.
      */
-    boolean insertNewBroadcast(SmsCbMessage message) {
+    @VisibleForTesting
+    public boolean insertNewBroadcast(SmsCbMessage message) {
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         ContentValues cv = getContentValues(message);
 
@@ -257,7 +260,8 @@ public class CellBroadcastContentProvider extends ContentProvider {
      * @param rowId the row ID of the broadcast to delete
      * @return true if the database was updated, false otherwise
      */
-    boolean deleteBroadcast(long rowId) {
+    @VisibleForTesting
+    public boolean deleteBroadcast(long rowId) {
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
 
         int rowCount = db.delete(CellBroadcastDatabaseHelper.TABLE_NAME,
@@ -275,7 +279,8 @@ public class CellBroadcastContentProvider extends ContentProvider {
      * Internal method to delete all cell broadcasts and notify observers.
      * @return true if the database was updated, false otherwise
      */
-    boolean deleteAllBroadcasts() {
+    @VisibleForTesting
+    public boolean deleteAllBroadcasts() {
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
 
         int rowCount = db.delete(CellBroadcastDatabaseHelper.TABLE_NAME, null, null);
