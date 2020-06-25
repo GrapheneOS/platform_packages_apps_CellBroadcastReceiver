@@ -130,7 +130,8 @@ public class CellBroadcastAlertDialog extends Activity {
     private static final int KEEP_SCREEN_ON_DURATION_MSEC = 60000;
 
     /** Animation handler for the flashing warning icon (emergency alerts only). */
-    private final AnimationHandler mAnimationHandler = new AnimationHandler();
+    @VisibleForTesting
+    public AnimationHandler mAnimationHandler = new AnimationHandler();
 
     /** Handler to add and remove screen on flags for emergency alerts. */
     private final ScreenOffHandler mScreenOffHandler = new ScreenOffHandler();
@@ -141,12 +142,15 @@ public class CellBroadcastAlertDialog extends Activity {
     /**
      * Animation handler for the flashing warning icon (emergency alerts only).
      */
-    private class AnimationHandler extends Handler {
+    @VisibleForTesting
+    public class AnimationHandler extends Handler {
         /** Latest {@code message.what} value for detecting old messages. */
-        private final AtomicInteger mCount = new AtomicInteger();
+        @VisibleForTesting
+        public final AtomicInteger mCount = new AtomicInteger();
 
         /** Warning icon state: visible == true, hidden == false. */
-        private boolean mWarningIconVisible;
+        @VisibleForTesting
+        public boolean mWarningIconVisible;
 
         /** The warning icon Drawable. */
         private Drawable mWarningIcon;
@@ -158,7 +162,8 @@ public class CellBroadcastAlertDialog extends Activity {
         AnimationHandler() {}
 
         /** Start the warning icon animation. */
-        void startIconAnimation(int subId) {
+        @VisibleForTesting
+        public void startIconAnimation(int subId) {
             if (!initDrawableAndImageView(subId)) {
                 return;     // init failure
             }
@@ -169,7 +174,8 @@ public class CellBroadcastAlertDialog extends Activity {
         }
 
         /** Stop the warning icon animation. */
-        void stopIconAnimation() {
+        @VisibleForTesting
+        public void stopIconAnimation() {
             // Increment the counter so the handler will ignore the next message.
             mCount.incrementAndGet();
             if (mWarningIconView != null) {
@@ -354,7 +360,8 @@ public class CellBroadcastAlertDialog extends Activity {
             if (res.getBoolean(R.bool.enable_text_copy)) {
                 TextView textView = findViewById(R.id.message);
                 if (textView != null) {
-                    textView.setOnLongClickListener(v -> copyMessageToClipboard(message));
+                    textView.setOnLongClickListener(v -> copyMessageToClipboard(message,
+                            getApplicationContext()));
                 }
             }
         }
@@ -372,7 +379,8 @@ public class CellBroadcastAlertDialog extends Activity {
      * Start animating warning icon.
      */
     @Override
-    protected void onResume() {
+    @VisibleForTesting
+    public void onResume() {
         super.onResume();
         SmsCbMessage message = getLatestMessage();
         if (message != null) {
@@ -389,7 +397,8 @@ public class CellBroadcastAlertDialog extends Activity {
      * Stop animating warning icon.
      */
     @Override
-    protected void onPause() {
+    @VisibleForTesting
+    public void onPause() {
         Log.d(TAG, "onPause called");
         mAnimationHandler.stopIconAnimation();
         super.onPause();
@@ -815,15 +824,16 @@ public class CellBroadcastAlertDialog extends Activity {
      *
      * @return {@code true} if success, otherwise {@code false};
      */
-    private boolean copyMessageToClipboard(SmsCbMessage message) {
-        ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+    @VisibleForTesting
+    public static boolean copyMessageToClipboard(SmsCbMessage message, Context context) {
+        ClipboardManager cm = (ClipboardManager) context.getSystemService(CLIPBOARD_SERVICE);
         if (cm == null) return false;
 
         cm.setPrimaryClip(ClipData.newPlainText("Alert Message", message.getMessageBody()));
 
-        String msg = CellBroadcastSettings.getResources(getApplicationContext(),
+        String msg = CellBroadcastSettings.getResources(context,
                 message.getSubscriptionId()).getString(R.string.message_copied);
-        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
         return true;
     }
 }
