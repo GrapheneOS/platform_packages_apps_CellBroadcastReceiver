@@ -128,6 +128,7 @@
         <action android:name="android.intent.action.LOCALE_CHANGED" />
         <action android:name="android.telephony.action.DEFAULT_SMS_SUBSCRIPTION_CHANGED" />
         <action android:name="android.telephony.action.CARRIER_CONFIG_CHANGED" />
+        <action android:name="android.intent.action.SERVICE_STATE" />
       </intent-filter>
       <intent-filter>
         <action android:name="android.telephony.action.SECRET_CODE" />
