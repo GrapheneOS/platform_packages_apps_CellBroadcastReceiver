@@ -16,7 +16,6 @@
 
 package com.android.cellbroadcastreceiver;
 
-import android.annotation.NonNull;
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -57,10 +56,12 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     static final boolean VDBG = false;    // STOPSHIP: change to false before ship
 
     // Key to access the shared preference of reminder interval default value.
-    private static final String CURRENT_INTERVAL_DEFAULT = "current_interval_default";
+    @VisibleForTesting
+    public static final String CURRENT_INTERVAL_DEFAULT = "current_interval_default";
 
     // Key to access the shared preference of cell broadcast testing mode.
-    private static final String TESTING_MODE = "testing_mode";
+    @VisibleForTesting
+    public static final String TESTING_MODE = "testing_mode";
 
     // shared preference under developer settings
     private static final String ENABLE_ALERT_MASTER_PREF = "enable_alerts_master_toggle";
@@ -242,7 +243,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                         false).apply();
 
                 // migrate sharedpref from legacy app
-                migrateSharedPreferenceFromLegacy(mContext);
+                migrateSharedPreferenceFromLegacy();
 
                 // If the device is in test harness mode, we need to disable emergency alert by
                 // default.
@@ -262,7 +263,11 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         }
     }
 
-    private static void migrateSharedPreferenceFromLegacy(@NonNull Context context) {
+    /**
+     * migrate shared preferences from legacy content provider client
+     */
+    @VisibleForTesting
+    public void migrateSharedPreferenceFromLegacy() {
         String[] PREF_KEYS = {
                 CellBroadcasts.Preference.ENABLE_CMAS_AMBER_PREF,
                 CellBroadcasts.Preference.ENABLE_AREA_UPDATE_INFO_PREF,
@@ -277,14 +282,14 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 CellBroadcasts.Preference.ENABLE_CMAS_IN_SECOND_LANGUAGE_PREF,
                 ENABLE_ALERT_MASTER_PREF,
         };
-        try (ContentProviderClient client = context.getContentResolver()
+        try (ContentProviderClient client = mContext.getContentResolver()
                 .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
             if (client == null) {
                 Log.d(TAG, "No legacy provider available for sharedpreference migration");
                 return;
             }
             SharedPreferences.Editor sp = PreferenceManager
-                    .getDefaultSharedPreferences(context).edit();
+                    .getDefaultSharedPreferences(mContext).edit();
             for (String key : PREF_KEYS) {
                 try {
                     Bundle pref = client.call(
@@ -316,7 +321,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      *
      * @param programDataList
      */
-    private void handleCdmaSmsCbProgramData(ArrayList<CdmaSmsCbProgramData> programDataList) {
+    @VisibleForTesting
+    public void handleCdmaSmsCbProgramData(ArrayList<CdmaSmsCbProgramData> programDataList) {
         for (CdmaSmsCbProgramData programData : programDataList) {
             switch (programData.getOperation()) {
                 case CdmaSmsCbProgramData.OPERATION_ADD_CATEGORY:
@@ -344,7 +350,14 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         }
     }
 
-    private void tryCdmaSetCategory(Context context, int category, boolean enable) {
+    /**
+     * set CDMA category in shared preferences
+     * @param context
+     * @param category CDMA category
+     * @param enable true for add category, false otherwise
+     */
+    @VisibleForTesting
+    public void tryCdmaSetCategory(Context context, int category, boolean enable) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         switch (category) {
