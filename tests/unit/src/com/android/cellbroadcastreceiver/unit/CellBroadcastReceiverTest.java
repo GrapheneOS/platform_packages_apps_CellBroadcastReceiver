@@ -18,25 +18,37 @@ package com.android.cellbroadcastreceiver.unit;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
+import android.content.ContentResolver;
+import android.content.IContentProvider;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.media.AudioDeviceInfo;
+import android.os.RemoteException;
 import android.os.UserManager;
 import android.provider.Telephony;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
+import android.telephony.cdma.CdmaSmsCbProgramData;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
+import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
 import com.android.cellbroadcastreceiver.CellBroadcastReceiver;
+import com.android.cellbroadcastreceiver.CellBroadcastSettings;
+import com.android.cellbroadcastreceiver.R;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -45,20 +57,33 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CellBroadcastReceiverTest extends CellBroadcastTest {
     private static final long MAX_INIT_WAIT_MS = 5000;
 
     CellBroadcastReceiver mCellBroadcastReceiver;
+    String mPackageName = "testPackageName";
 
     @Mock
     UserManager mUserManager;
     @Mock
     SharedPreferences mSharedPreferences;
     @Mock
+    private SharedPreferences.Editor mEditor;
+    @Mock
     SharedPreferences mDefaultSharedPreferences;
-
     @Mock
     Intent mIntent;
+    @Mock
+    PackageManager mPackageManager;
+    @Mock
+    PackageInfo mPackageInfo;
+    @Mock
+    ContentResolver mContentResolver;
+    @Mock
+    IContentProvider mContentProviderClient;
 
     private Configuration mConfiguration = new Configuration();
     private AudioDeviceInfo[] mDevices = new AudioDeviceInfo[0];
@@ -96,6 +121,7 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         doReturn(mResources).when(mCellBroadcastReceiver).getResourcesMethod();
         doNothing().when(mCellBroadcastReceiver).startConfigService();
         doReturn(mContext).when(mContext).getApplicationContext();
+        doReturn(mPackageName).when(mContext).getPackageName();
     }
 
     @Test
@@ -188,6 +214,213 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
 
         mCellBroadcastReceiver.initializeSharedPreference();
         verify(mSharedPreferences, never()).getBoolean(anyString(), anyBoolean());
+    }
+
+    @Test
+    public void testMigrateSharedPreferenceFromLegacyWhenNoLegacyProvider() {
+        setContext();
+        doReturn(mContentResolver).when(mContext).getContentResolver();
+        doReturn(null).when(mContentResolver).acquireContentProviderClient(
+                Telephony.CellBroadcasts.AUTHORITY_LEGACY);
+
+        mCellBroadcastReceiver.migrateSharedPreferenceFromLegacy();
+        verify(mContext, never()).getSharedPreferences(anyString(), anyInt());
+    }
+
+    @Test
+    public void testMigrateSharedPreferenceFromLegacyWhenBundleNull() throws RemoteException {
+        setContext();
+        doReturn(mContentResolver).when(mContext).getContentResolver();
+        doReturn(mContentProviderClient).when(mContentResolver).acquireContentProviderClient(
+                Telephony.CellBroadcasts.AUTHORITY_LEGACY);
+        doReturn(mEditor).when(mSharedPreferences).edit();
+        doReturn(null).when(mContentProviderClient).call(
+                anyString(), anyString(), anyString(), any());
+        doNothing().when(mEditor).apply();
+
+        mCellBroadcastReceiver.migrateSharedPreferenceFromLegacy();
+        verify(mContext).getSharedPreferences(anyString(), anyInt());
+        verify(mEditor, never()).putBoolean(anyString(), anyBoolean());
+    }
+
+    @Test
+    public void testSetTestingMode() {
+        boolean isTestingMode = true;
+        setContext();
+        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
+        doReturn(mEditor).when(mSharedPreferences).edit();
+        doReturn(mEditor).when(mEditor).putBoolean(anyString(), anyBoolean());
+        doReturn(true).when(mEditor).commit();
+
+        mCellBroadcastReceiver.setTestingMode(isTestingMode);
+        verify(mEditor).putBoolean(CellBroadcastReceiver.TESTING_MODE, isTestingMode);
+    }
+
+    @Test
+    public void testIsTestingMode() {
+        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
+
+        mCellBroadcastReceiver.isTestingMode(mContext);
+        verify(mSharedPreferences).getBoolean("testing_mode", false);
+    }
+
+    @Test
+    public void testAdjustReminderInterval() {
+        setContext();
+        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
+        doReturn("currentInterval").when(mSharedPreferences).getString(
+                CellBroadcastReceiver.CURRENT_INTERVAL_DEFAULT, "0");
+        doReturn(mResources).when(mContext).getResources();
+        doReturn("newInterval").when(mResources).getString(
+                R.string.alert_reminder_interval_in_min_default);
+        doReturn(mEditor).when(mSharedPreferences).edit();
+        doReturn(mEditor).when(mEditor).putBoolean(anyString(), anyBoolean());
+        doReturn(true).when(mEditor).commit();
+
+        mCellBroadcastReceiver.adjustReminderInterval();
+        verify(mEditor).putString(CellBroadcastReceiver.CURRENT_INTERVAL_DEFAULT, "newInterval");
+    }
+
+    @Test
+    public void testEnableLauncherIfNoLauncherActivity() throws
+            PackageManager.NameNotFoundException {
+        setContext();
+        doReturn(mPackageManager).when(mContext).getPackageManager();
+        doReturn(mPackageInfo).when(mPackageManager).getPackageInfo(anyString(), anyInt());
+
+        ActivityInfo activityInfo = new ActivityInfo();
+        String activityInfoName = "";
+        activityInfo.targetActivity = CellBroadcastListActivity.class.getName();
+        activityInfo.name = activityInfoName;
+        ActivityInfo[] activityInfos = new ActivityInfo[1];
+        activityInfos[0] = activityInfo;
+        mPackageInfo.activities = activityInfos;
+
+        mCellBroadcastReceiver.enableLauncher();
+        verify(mPackageManager, never()).setComponentEnabledSetting(any(), anyInt(), anyInt());
+    }
+
+    @Test
+    public void testEnableLauncherIfEnableTrue() throws PackageManager.NameNotFoundException {
+        setContext();
+        doReturn(mPackageManager).when(mContext).getPackageManager();
+        doReturn(mPackageInfo).when(mPackageManager).getPackageInfo(anyString(), anyInt());
+        doReturn(true).when(mResources)
+                .getBoolean(R.bool.show_message_history_in_launcher);
+
+        ActivityInfo activityInfo = new ActivityInfo();
+        String activityInfoName = "testName";
+        activityInfo.targetActivity = CellBroadcastListActivity.class.getName();
+        activityInfo.name = activityInfoName;
+        ActivityInfo[] activityInfos = new ActivityInfo[1];
+        activityInfos[0] = activityInfo;
+        mPackageInfo.activities = activityInfos;
+
+        mCellBroadcastReceiver.enableLauncher();
+        verify(mPackageManager).setComponentEnabledSetting(any(),
+                eq(PackageManager.COMPONENT_ENABLED_STATE_ENABLED), anyInt());
+    }
+
+    @Test
+    public void testEnableLauncherIfEnableFalse() throws PackageManager.NameNotFoundException {
+        setContext();
+        doReturn(mPackageManager).when(mContext).getPackageManager();
+        doReturn(mPackageInfo).when(mPackageManager).getPackageInfo(anyString(), anyInt());
+        doReturn(false).when(mResources)
+                .getBoolean(R.bool.show_message_history_in_launcher);
+
+        ActivityInfo activityInfo = new ActivityInfo();
+        String activityInfoName = "testName";
+        activityInfo.targetActivity = CellBroadcastListActivity.class.getName();
+        activityInfo.name = activityInfoName;
+        ActivityInfo[] activityInfos = new ActivityInfo[1];
+        activityInfos[0] = activityInfo;
+        mPackageInfo.activities = activityInfos;
+
+        mCellBroadcastReceiver.enableLauncher();
+        verify(mPackageManager).setComponentEnabledSetting(any(),
+                eq(PackageManager.COMPONENT_ENABLED_STATE_DISABLED), anyInt());
+    }
+
+    @Test
+    public void testTryCdmaSetCatergory() {
+        boolean enable = true;
+        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
+        doReturn(mEditor).when(mSharedPreferences).edit();
+        doReturn(mEditor).when(mEditor).putBoolean(anyString(), anyBoolean());
+
+        mCellBroadcastReceiver.tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_EXTREME_THREAT, enable);
+        verify(mEditor).putBoolean(
+                CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, enable);
+
+        mCellBroadcastReceiver.tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_SEVERE_THREAT, enable);
+        verify(mEditor).putBoolean(
+                CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, enable);
+
+        mCellBroadcastReceiver.tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY, enable);
+        verify(mEditor).putBoolean(
+                CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, enable);
+
+        mCellBroadcastReceiver.tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_TEST_MESSAGE, enable);
+        verify(mEditor).putBoolean(
+                CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, enable);
+    }
+
+    @Test
+    public void testHandleCdmaSmsCbProgramDataOperationAddAndDelete() {
+        setContext();
+        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
+        doReturn(mEditor).when(mSharedPreferences).edit();
+        doReturn(mEditor).when(mEditor).putBoolean(anyString(), anyBoolean());
+
+        CdmaSmsCbProgramData programData = new CdmaSmsCbProgramData(
+                CdmaSmsCbProgramData.OPERATION_ADD_CATEGORY,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_EXTREME_THREAT,
+                1, 1, 1, "catergoryName");
+        mCellBroadcastReceiver.handleCdmaSmsCbProgramData(new ArrayList<>(List.of(programData)));
+        verify(mCellBroadcastReceiver).tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_EXTREME_THREAT, true);
+
+        programData = new CdmaSmsCbProgramData(CdmaSmsCbProgramData.OPERATION_DELETE_CATEGORY,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_EXTREME_THREAT,
+                1, 1, 1, "catergoryName");
+        mCellBroadcastReceiver.handleCdmaSmsCbProgramData(new ArrayList<>(List.of(programData)));
+        verify(mCellBroadcastReceiver).tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_EXTREME_THREAT, false);
+    }
+
+    @Test
+    public void testHandleCdmaSmsCbProgramDataOprationClear() {
+        setContext();
+        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
+        doReturn(mEditor).when(mSharedPreferences).edit();
+        doReturn(mEditor).when(mEditor).putBoolean(anyString(), anyBoolean());
+
+        CdmaSmsCbProgramData programData = new CdmaSmsCbProgramData(
+                CdmaSmsCbProgramData.OPERATION_CLEAR_CATEGORIES,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT,
+                1, 1, 1, "catergoryName");
+        mCellBroadcastReceiver.handleCdmaSmsCbProgramData(new ArrayList<>(List.of(programData)));
+        verify(mCellBroadcastReceiver).tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_EXTREME_THREAT, false);
+        verify(mCellBroadcastReceiver).tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_SEVERE_THREAT, false);
+        verify(mCellBroadcastReceiver).tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY, false);
+        verify(mCellBroadcastReceiver).tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_TEST_MESSAGE, false);
+    }
+
+    //this method is just to assign mContext to the spied instance mCellBroadcastReceiver
+    private void setContext() {
+        doReturn("dummy action").when(mIntent).getAction();
+        doNothing().when(mCellBroadcastReceiver).getCellBroadcastTask(anyLong());
+
+        mCellBroadcastReceiver.onReceive(mContext, mIntent);
     }
 
     @After
