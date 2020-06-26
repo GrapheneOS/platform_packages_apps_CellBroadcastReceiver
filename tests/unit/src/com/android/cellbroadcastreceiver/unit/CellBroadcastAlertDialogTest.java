@@ -16,23 +16,31 @@
 
 package com.android.cellbroadcastreceiver.unit;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.IPowerManager;
 import android.os.IThermalService;
 import android.os.Looper;
+import android.os.Message;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
 import android.telephony.SmsCbMessage;
+import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -69,6 +77,7 @@ public class CellBroadcastAlertDialogTest extends
     private ArgumentCaptor<Notification> mNotification;
 
     private PowerManager mPowerManager;
+    private int mSubId = 0;
 
     public CellBroadcastAlertDialogTest() {
         super(CellBroadcastAlertDialog.class);
@@ -221,5 +230,90 @@ public class CellBroadcastAlertDialogTest extends
 
         verify(mMockedNotificationManager, atLeastOnce()).cancel(
                 eq(CellBroadcastAlertService.NOTIFICATION_ID));
+    }
+
+    public void testCopyMessageToClipboard() {
+        Context mockContext = mock(Context.class);
+        ClipboardManager mockClipboardManager = mock(ClipboardManager.class);
+        Resources mockResources = mock(Resources.class);
+        doReturn(mockClipboardManager).when(mockContext).getSystemService(
+                eq(Context.CLIPBOARD_SERVICE));
+        doReturn(mockResources).when(mockContext).getResources();
+        CellBroadcastSettings.setUseResourcesForSubId(false);
+
+
+        SmsCbMessage testMessage =
+                CellBroadcastAlertServiceTest.createMessageForCmasMessageClass(12412,
+                        mServiceCategory,
+                        mCmasMessageClass);
+
+        boolean madeToast = false;
+        try {
+            CellBroadcastAlertDialog.copyMessageToClipboard(testMessage, mockContext);
+        } catch (NullPointerException e) {
+            // exception expected from creating the toast at the end of copyMessageToClipboard
+            madeToast = true;
+        }
+
+        assertTrue(madeToast);
+        verify(mockContext).getSystemService(eq(Context.CLIPBOARD_SERVICE));
+        verify(mockClipboardManager).setPrimaryClip(any());
+    }
+
+    public void testAnimationHandler() throws Throwable {
+        CellBroadcastAlertDialog activity = startActivity();
+        CellBroadcastSettings.setUseResourcesForSubId(false);
+
+        activity.mAnimationHandler.startIconAnimation(mSubId);
+
+        assertTrue(activity.mAnimationHandler.mWarningIconVisible);
+
+        Message m = Message.obtain();
+        m.what = activity.mAnimationHandler.mCount.get();
+        activity.mAnimationHandler.handleMessage(m);
+
+        // assert that message count has gone up
+        assertEquals(m.what + 1, activity.mAnimationHandler.mCount.get());
+    }
+
+    public void testOnResume() throws Throwable {
+        Intent intent = createActivityIntent();
+        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+
+        Looper.prepare();
+        CellBroadcastAlertDialog activity = startActivity(intent, null, null);
+
+        CellBroadcastAlertDialog.AnimationHandler mockAnimationHandler = mock(
+                CellBroadcastAlertDialog.AnimationHandler.class);
+        activity.mAnimationHandler = mockAnimationHandler;
+
+        activity.onResume();
+        verify(mockAnimationHandler).startIconAnimation(anyInt());
+    }
+
+    public void testOnPause() throws Throwable {
+        Intent intent = createActivityIntent();
+        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+
+        Looper.prepare();
+        CellBroadcastAlertDialog activity = startActivity(intent, null, null);
+
+        CellBroadcastAlertDialog.AnimationHandler mockAnimationHandler = mock(
+                CellBroadcastAlertDialog.AnimationHandler.class);
+        activity.mAnimationHandler = mockAnimationHandler;
+
+        activity.onPause();
+        verify(mockAnimationHandler).stopIconAnimation();
+    }
+
+    public void testOnKeyDown() throws Throwable {
+        Intent intent = createActivityIntent();
+        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+
+        Looper.prepare();
+        CellBroadcastAlertDialog activity = startActivity(intent, null, null);
+
+        assertTrue(activity.onKeyDown(0,
+                new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_FOCUS)));
     }
 }
