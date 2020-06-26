@@ -16,7 +16,6 @@
 
 package com.android.cellbroadcastreceiver;
 
-import android.annotation.NonNull;
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -37,6 +36,7 @@ import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.provider.Telephony.CellBroadcasts;
 import android.telephony.CarrierConfigManager;
+import android.telephony.ServiceState;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
@@ -57,13 +57,21 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     static final boolean VDBG = false;    // STOPSHIP: change to false before ship
 
     // Key to access the shared preference of reminder interval default value.
-    private static final String CURRENT_INTERVAL_DEFAULT = "current_interval_default";
+    @VisibleForTesting
+    public static final String CURRENT_INTERVAL_DEFAULT = "current_interval_default";
 
     // Key to access the shared preference of cell broadcast testing mode.
-    private static final String TESTING_MODE = "testing_mode";
+    @VisibleForTesting
+    public static final String TESTING_MODE = "testing_mode";
+
+    // Key to access the shared preference of service state.
+    private static final String SERVICE_STATE = "service_state";
 
     // shared preference under developer settings
     private static final String ENABLE_ALERT_MASTER_PREF = "enable_alerts_master_toggle";
+
+    public static final String ACTION_SERVICE_STATE = "android.intent.action.SERVICE_STATE";
+    public static final String EXTRA_VOICE_REG_STATE = "voiceRegState";
 
     // Intent actions and extras
     public static final String CELLBROADCAST_START_CONFIG_ACTION =
@@ -120,6 +128,16 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             initializeSharedPreference();
             enableLauncher();
             startConfigService();
+        } else if (ACTION_SERVICE_STATE.equals(action)) {
+            // lower layer clears channel configurations under APM, thus need to resend
+            // configurations once moving back from APM. This should be fixed in lower layer
+            // going forward.
+            int ss = intent.getIntExtra(EXTRA_VOICE_REG_STATE, ServiceState.STATE_IN_SERVICE);
+            if (ss != ServiceState.STATE_POWER_OFF
+                    && getServiceState(context) == ServiceState.STATE_POWER_OFF) {
+                startConfigService();
+            }
+            setServiceState(ss);
         } else if (CELLBROADCAST_START_CONFIG_ACTION.equals(action)
                 || SubscriptionManager.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action)) {
             startConfigService();
@@ -177,6 +195,24 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     public static boolean isTestingMode(Context context) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         return sp.getBoolean(TESTING_MODE, false);
+    }
+
+    /**
+     * Store the current service state for voice registration.
+     *
+     * @param ss current voice registration service state.
+     */
+    private void setServiceState(int ss) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
+        sp.edit().putInt(SERVICE_STATE, ss).commit();
+    }
+
+    /**
+     * @return the stored voice registration service state
+     */
+    private static int getServiceState(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        return sp.getInt(SERVICE_STATE, ServiceState.STATE_IN_SERVICE);
     }
 
     /**
@@ -242,7 +278,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                         false).apply();
 
                 // migrate sharedpref from legacy app
-                migrateSharedPreferenceFromLegacy(mContext);
+                migrateSharedPreferenceFromLegacy();
 
                 // If the device is in test harness mode, we need to disable emergency alert by
                 // default.
@@ -262,7 +298,11 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         }
     }
 
-    private static void migrateSharedPreferenceFromLegacy(@NonNull Context context) {
+    /**
+     * migrate shared preferences from legacy content provider client
+     */
+    @VisibleForTesting
+    public void migrateSharedPreferenceFromLegacy() {
         String[] PREF_KEYS = {
                 CellBroadcasts.Preference.ENABLE_CMAS_AMBER_PREF,
                 CellBroadcasts.Preference.ENABLE_AREA_UPDATE_INFO_PREF,
@@ -277,14 +317,14 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 CellBroadcasts.Preference.ENABLE_CMAS_IN_SECOND_LANGUAGE_PREF,
                 ENABLE_ALERT_MASTER_PREF,
         };
-        try (ContentProviderClient client = context.getContentResolver()
+        try (ContentProviderClient client = mContext.getContentResolver()
                 .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
             if (client == null) {
                 Log.d(TAG, "No legacy provider available for sharedpreference migration");
                 return;
             }
             SharedPreferences.Editor sp = PreferenceManager
-                    .getDefaultSharedPreferences(context).edit();
+                    .getDefaultSharedPreferences(mContext).edit();
             for (String key : PREF_KEYS) {
                 try {
                     Bundle pref = client.call(
@@ -316,7 +356,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      *
      * @param programDataList
      */
-    private void handleCdmaSmsCbProgramData(ArrayList<CdmaSmsCbProgramData> programDataList) {
+    @VisibleForTesting
+    public void handleCdmaSmsCbProgramData(ArrayList<CdmaSmsCbProgramData> programDataList) {
         for (CdmaSmsCbProgramData programData : programDataList) {
             switch (programData.getOperation()) {
                 case CdmaSmsCbProgramData.OPERATION_ADD_CATEGORY:
@@ -344,7 +385,14 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         }
     }
 
-    private void tryCdmaSetCategory(Context context, int category, boolean enable) {
+    /**
+     * set CDMA category in shared preferences
+     * @param context
+     * @param category CDMA category
+     * @param enable true for add category, false otherwise
+     */
+    @VisibleForTesting
+    public void tryCdmaSetCategory(Context context, int category, boolean enable) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         switch (category) {
