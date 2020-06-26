@@ -113,7 +113,8 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     private final Context mContext;
     final boolean mLegacyProvider;
 
-    CellBroadcastDatabaseHelper(Context context, boolean legacyProvider) {
+    @VisibleForTesting
+    public CellBroadcastDatabaseHelper(Context context, boolean legacyProvider) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         mContext = context;
         mLegacyProvider = legacyProvider;
@@ -150,7 +151,8 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
      * migrate predefined data through {@link Telephony.CellBroadcasts#AUTHORITY_LEGACY_URI}
      * from OEM app.
      */
-    private void migrateFromLegacy(@NonNull SQLiteDatabase db) {
+    @VisibleForTesting
+    public void migrateFromLegacy(@NonNull SQLiteDatabase db) {
         try (ContentProviderClient client = mContext.getContentResolver()
                 .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
             if (client == null) {
