@@ -38,4 +38,7 @@ android_app {
      // of CellBroadcastApp
      overrides: ["com.android.cellbroadcast"],
      manifest: "AndroidManifest_Platform.xml",
+     system_ext_specific: true,
+     privileged: true,
+     required: ["privapp_whitelist_com.android.cellbroadcastreceiver"],
 }
