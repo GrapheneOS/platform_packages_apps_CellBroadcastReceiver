@@ -75,7 +75,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Ricevi messaggi di prova da autorità statali e locali"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Avvisi d\'emergenza"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Avvisi relativi a eventi potenzialmente letali"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Allarmi di prova"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Allarmi pubblici"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Ricevi test dell\'operatore e test mensili dal sistema di avvisi relativi alla sicurezza"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrazione"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Avvisa sempre a tutto volume"</string>
