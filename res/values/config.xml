@@ -53,7 +53,8 @@
     <bool name="mute_by_physical_button">true</bool>
     <!-- Whether enable LED flash when playing alert tones -->
     <bool name="enable_led_flash">false</bool>
-
+    <!-- Whether to save alerts to sms inbox database -->
+    <bool name="enable_write_alerts_to_sms_inbox">false</bool>
     <!-- Section for switch default value -->
     <!-- Master toggle default value -->
     <bool name="master_toggle_enabled_default">true</bool>
