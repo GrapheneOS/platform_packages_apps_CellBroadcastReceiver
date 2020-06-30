@@ -34,8 +34,11 @@ import static com.android.cellbroadcastreceiver.CellBroadcastListActivity.Cursor
 import static com.android.cellbroadcastreceiver.CellBroadcastListActivity.CursorLoaderListFragment.LOADER_HISTORY_FROM_CBS;
 import static com.android.cellbroadcastreceiver.CellBroadcastListActivity.CursorLoaderListFragment.MENU_DELETE;
 import static com.android.cellbroadcastreceiver.CellBroadcastListActivity.CursorLoaderListFragment.MENU_DELETE_ALL;
+import static com.android.cellbroadcastreceiver.CellBroadcastListActivity.CursorLoaderListFragment.MENU_SHOW_ALL_MESSAGES;
+import static com.android.cellbroadcastreceiver.CellBroadcastListActivity.CursorLoaderListFragment.MENU_SHOW_REGULAR_MESSAGES;
 import static com.android.cellbroadcastreceiver.CellBroadcastListActivity.CursorLoaderListFragment.MENU_VIEW_DETAILS;
 
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
@@ -50,6 +53,7 @@ import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Telephony;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -284,6 +288,17 @@ public class CellBroadcastListActivityTest extends
 
     public void testOnOptionsItemSelected() throws Throwable {
         CellBroadcastListActivity activity = startActivity();
+
+        // create mock home menu item
+        MenuItem mockMenuItem = mock(MenuItem.class);
+        doReturn(android.R.id.home).when(mockMenuItem).getItemId();
+
+        // the activity should hkandle home button press
+        assertTrue(activity.onOptionsItemSelected(mockMenuItem));
+    }
+
+    public void testFragmentOnOptionsItemSelected() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
         assertNotNull(activity.mListFragment);
 
         // create mock delete all menu item
@@ -303,6 +318,49 @@ public class CellBroadcastListActivityTest extends
 
         assertTrue("onContextItemSelected - MENU_DELETE_ALL should create alert dialog",
                 alertDialogCreated);
+
+        // "show all messages" and "show regular messages" options return false to allow normal
+        // menu  processing to continue
+        doReturn(MENU_SHOW_ALL_MESSAGES).when(mockMenuItem).getItemId();
+        assertFalse(activity.mListFragment.onOptionsItemSelected(mockMenuItem));
+        doReturn(MENU_SHOW_REGULAR_MESSAGES).when(mockMenuItem).getItemId();
+        assertFalse(activity.mListFragment.onOptionsItemSelected(mockMenuItem));
+
         stopActivity();
+    }
+
+    public void testFragmentOnCreateOptionsMenu() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        // create mock menu
+        Menu mockMenu = mock(Menu.class);
+        MenuItem mockMenuItem = mock(MenuItem.class);
+        doReturn(mockMenuItem).when(mockMenu).add(anyInt(), anyInt(), anyInt(), anyInt());
+
+        activity.mListFragment.onCreateOptionsMenu(mockMenu, null);
+        verify(mockMenu, times(3)).add(anyInt(), anyInt(), anyInt(), anyInt());
+    }
+
+    public void testFragmentOnPrepareOptionsMenu() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        // create mock menu
+        Menu mockMenu = mock(Menu.class);
+        MenuItem mockMenuItem = mock(MenuItem.class);
+        doReturn(mockMenuItem).when(mockMenu).findItem(anyInt());
+
+        activity.mListFragment.onPrepareOptionsMenu(mockMenu);
+        verify(mockMenuItem, times(3)).setVisible(anyBoolean());
+    }
+
+    public void testFragmentOnSaveInstanceState() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        Bundle bundle = new Bundle();
+        activity.mListFragment.onSaveInstanceState(bundle);
+        assertTrue(bundle.containsKey(KEY_LOADER_ID));
     }
 }
