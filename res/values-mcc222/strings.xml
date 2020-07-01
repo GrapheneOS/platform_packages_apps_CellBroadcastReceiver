@@ -16,15 +16,13 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
            xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
      <!-- CMAS dialog title for presidential level alert.  [CHAR LIMIT=50] -->
-    <string name="cmas_presidential_level_alert">IT-Alert</string>
+    <string name="cmas_presidential_level_alert" translatable="false">IT-Alert</string>
     <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
     <string name="cmas_extreme_alert">@string/cmas_presidential_level_alert</string>
     <!-- CMAS dialog title for extreme alert with extreme severity, immediate urgency, and observed certainty. [CHAR LIMIT=50] -->
     <string name="cmas_extreme_immediate_observed_alert">@string/cmas_presidential_level_alert</string>
     <!-- CMAS dialog title for extreme alert with extreme severity, immediate urgency,  and likely certainty. [CHAR LIMIT=50] -->
     <string name="cmas_extreme_immediate_likely_alert">@string/cmas_presidential_level_alert</string>
-    <!-- CMAS dialog title for severe alert. [CHAR LIMIT=50] -->
-    <string name="cmas_severe_alert">@string/cmas_presidential_level_alert</string>
-    <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
-    <string name="cmas_amber_alert">@string/cmas_presidential_level_alert</string>
+    <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
+    <string name="enable_cmas_extreme_threat_alerts_title">@string/cmas_presidential_level_alert</string>
 </resources>
