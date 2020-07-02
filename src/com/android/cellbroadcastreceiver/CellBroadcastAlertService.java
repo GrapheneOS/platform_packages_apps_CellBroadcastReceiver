@@ -291,7 +291,16 @@ public class CellBroadcastAlertService extends Service
                         if (CellBroadcastSettings.getResources(mContext,
                                 message.getSubscriptionId())
                                 .getBoolean(R.bool.enable_write_alerts_to_sms_inbox)) {
-                            writeMessageToSmsInbox(message);
+                            // TODO: Should not create the instance of channel manager everywhere.
+                            CellBroadcastChannelManager channelManager =
+                                    new CellBroadcastChannelManager(mContext,
+                                            message.getSubscriptionId());
+                            CellBroadcastChannelRange range = channelManager
+                                    .getCellBroadcastChannelRangeFromMessage(message);
+                            if (CellBroadcastReceiver.isTestingMode(getApplicationContext())
+                                    || range.mWriteToSmsInbox) {
+                                writeMessageToSmsInbox(message);
+                            }
                         }
                         return true;
                     } else {

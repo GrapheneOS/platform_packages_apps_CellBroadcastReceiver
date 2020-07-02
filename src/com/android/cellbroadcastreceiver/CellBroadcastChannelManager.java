@@ -92,6 +92,8 @@ public class CellBroadcastChannelManager {
         private static final String KEY_ALERT_DURATION = "alert_duration";
         /** Defines if Do Not Disturb should be overridden for this alert */
         private static final String KEY_OVERRIDE_DND = "override_dnd";
+        /** Defines whether writing alert message should exclude from SMS inbox. */
+        private static final String KEY_EXCLUDE_FROM_SMS_INBOX = "exclude_from_sms_inbox";
 
         /**
          * Defines whether the channel needs language filter or not. True indicates that the alert
@@ -120,6 +122,9 @@ public class CellBroadcastChannelManager {
         // by default no custom alert duration. play the alert tone with the tone's duration.
         public int mAlertDuration = -1;
         public boolean mOverrideDnd = false;
+        // If enable_write_alerts_to_sms_inbox is true, write to sms inbox is enabled by default
+        // for all channels except for channels which explicitly set to exclude from sms inbox.
+        public boolean mWriteToSmsInbox = true;
 
         public CellBroadcastChannelRange(Context context, int subId, String channelRange) {
 
@@ -187,6 +192,11 @@ public class CellBroadcastChannelManager {
                             case KEY_OVERRIDE_DND:
                                 if (value.equalsIgnoreCase("true")) {
                                     mOverrideDnd = true;
+                                }
+                                break;
+                            case KEY_EXCLUDE_FROM_SMS_INBOX:
+                                if (value.equalsIgnoreCase("true")) {
+                                    mWriteToSmsInbox = false;
                                 }
                                 break;
                         }
