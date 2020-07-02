@@ -37,6 +37,7 @@ import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.provider.Telephony.CellBroadcasts;
 import android.telephony.CarrierConfigManager;
+import android.telephony.ServiceState;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
@@ -60,6 +61,12 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
     // Key to access the shared preference of cell broadcast testing mode.
     private static final String TESTING_MODE = "testing_mode";
+
+    // Key to access the shared preference of service state.
+    private static final String SERVICE_STATE = "service_state";
+
+    public static final String ACTION_SERVICE_STATE = "android.intent.action.SERVICE_STATE";
+    public static final String EXTRA_VOICE_REG_STATE = "voiceRegState";
 
     // Intent actions and extras
     public static final String CELLBROADCAST_START_CONFIG_ACTION =
@@ -116,6 +123,16 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             initializeSharedPreference();
             enableLauncher();
             startConfigService();
+        } else if (ACTION_SERVICE_STATE.equals(action)) {
+            // lower layer clears channel configurations under APM, thus need to resend
+            // configurations once moving back from APM. This should be fixed in lower layer
+            // going forward.
+            int ss = intent.getIntExtra(EXTRA_VOICE_REG_STATE, ServiceState.STATE_IN_SERVICE);
+            if (ss != ServiceState.STATE_POWER_OFF
+                    && getServiceState(context) == ServiceState.STATE_POWER_OFF) {
+                startConfigService();
+            }
+            setServiceState(ss);
         } else if (CELLBROADCAST_START_CONFIG_ACTION.equals(action)
                 || SubscriptionManager.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action)) {
             startConfigService();
@@ -170,6 +187,24 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     public static boolean isTestingMode(Context context) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         return sp.getBoolean(TESTING_MODE, false);
+    }
+
+    /**
+     * Store the current service state for voice registration.
+     *
+     * @param ss current voice registration service state.
+     */
+    private void setServiceState(int ss) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
+        sp.edit().putInt(SERVICE_STATE, ss).commit();
+    }
+
+    /**
+     * @return the stored voice registration service state
+     */
+    private static int getServiceState(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        return sp.getInt(SERVICE_STATE, ServiceState.STATE_IN_SERVICE);
     }
 
     /**
