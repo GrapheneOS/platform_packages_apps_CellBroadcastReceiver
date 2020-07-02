@@ -297,7 +297,8 @@ public class CellBroadcastAlertService extends Service
                                             message.getSubscriptionId());
                             CellBroadcastChannelRange range = channelManager
                                     .getCellBroadcastChannelRangeFromMessage(message);
-                            if (range.mWriteToSmsInbox) {
+                            if (CellBroadcastReceiver.isTestingMode(getApplicationContext())
+                                    || range.mWriteToSmsInbox) {
                                 writeMessageToSmsInbox(message);
                             }
                         }
