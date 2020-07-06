@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="9021266457863671070">"ୱେୟାରଲେସ୍ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"ଏହି ବ୍ୟବହାରକାରୀଙ୍କ ପାଇଁ ୱେୟାରଲେସ୍ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ସେଟିଂସ୍ ଉପଲବ୍ଧ ନାହିଁ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ଠିକ ଅଛି"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"ପୂର୍ବରୁ କୌଣସି ଆଲର୍ଟ ନାହିଁ"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"ପୂର୍ବର କୌଣସି ଆଲର୍ଟ ନାହିଁ"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"ବ୍ରୋଡକାଷ୍ଟକୁ ଡିଲିଟ୍‌ କରନ୍ତୁ"</string>
     <string name="message_options" msgid="3178489901903589574">"ମେସେଜ୍‌ ବିକଳ୍ପ"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"ବିବରଣୀ ଦେଖନ୍ତୁ"</string>
@@ -69,9 +69,9 @@
     <string name="enable_alert_message_title" msgid="2939830587633599352">"ଆଲର୍ଟ ମେସେଜ୍"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ଏପରି ବିଷୟରେ ସୂଚନା ଦେବା, ଯେଉଁ କାରଣରୁ ସୁରକ୍ଷା ଉପରେ ବିପଦ ଆସିପାରେ"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ଜନସୁରକ୍ଷା ମେସେଜ୍"</string>
-    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ସୁପାରିସକୃତ କାର୍ଯ୍ୟ, ଯାହା ଜୀବନ କିମ୍ୱା ସମ୍ପତ୍ତି ବଞ୍ଚାଇପାରିବ"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ସୁପାରିଶ କରାଯାଇଥିବା କାର୍ଯ୍ୟ ଯାହା ଜୀବନ କିମ୍ୱା ସମ୍ପତ୍ତି ବଞ୍ଚାଇପାରିବ"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"ରାଜ୍ୟ ଓ ସ୍ଥାନୀୟ ପରୀକ୍ଷା"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ରାଜ୍ୟ ଓ ସ୍ଥାନୀୟ କର୍ତ୍ତୃପକ୍ଷଙ୍କ ତରଫରୁ ପରୀକ୍ଷାମୂଳକ ମେସେଜ୍ ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ରାଜ୍ୟ ଓ ସ୍ଥାନୀୟ କର୍ତ୍ତୃପକ୍ଷଙ୍କ ତରଫରୁ ଟେଷ୍ଟ ମେସେଜ୍ ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ପ୍ରାଣଘାତକ ଘଟଣା ବିଷୟରେ ଚେତାବନୀ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1319231576046146463">"ମାସିକ ଯାଞ୍ଚ ଆବଶ୍ୟକ"</string>
@@ -103,7 +103,7 @@
     <string name="cmas_response_monitor" msgid="681400164440495749">"ନୀରିକ୍ଷଣ"</string>
     <string name="cmas_response_avoid" msgid="156419597612629270">"ଏଡ଼ାଇ ଯାଆନ୍ତୁ"</string>
     <string name="cmas_response_assess" msgid="9043534222710563415">"ଆକଳନ"</string>
-    <string name="cmas_response_none" msgid="5149009359674452959">"କିଛିନୁହେଁ"</string>
+    <string name="cmas_response_none" msgid="5149009359674452959">"କିଛି ନାହିଁ"</string>
     <string name="cmas_severity_heading" msgid="8437057117822305243">"ଗମ୍ଭୀରତା:"</string>
     <string name="cmas_severity_extreme" msgid="1312013282860183082">"ସାଂଘାତିକ"</string>
     <string name="cmas_severity_severe" msgid="7504359209737074524">"ଗମ୍ଭୀର"</string>
@@ -127,7 +127,7 @@
     <item msgid="9097229303902157183">"ପ୍ରତି 2 ମିନିଟରେ"</item>
     <item msgid="5718214950343391480">"ପ୍ରତି 5 ମିନିଟରେ"</item>
     <item msgid="3863339891188103437">"ପ୍ରତି 15 ମିନିଟରେ"</item>
-    <item msgid="6868848414437854609">"ଅଫ୍‌"</item>
+    <item msgid="6868848414437854609">"ବନ୍ଦ"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ୱେୟାରଲେସ୍‌ ଜରୁରୀକାଳୀନ ଅଲର୍ଟ"</string>
 </resources>

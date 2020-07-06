@@ -16,8 +16,8 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="2008319089248760277">"വയർലെസ് അടിയന്തിര അലേർട്ടുകൾ"</string>
-    <string name="sms_cb_settings" msgid="9021266457863671070">"വയർലെസ് അടിയന്തിര അലേർട്ടുകൾ"</string>
+    <string name="app_label" msgid="2008319089248760277">"വയർലെസ് അടിയന്തര അലേർട്ടുകൾ"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"വയർലെസ് അടിയന്തര അലേർട്ടുകൾ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"ഈ ഉപയോക്താവിന് വയർലെസ് അടിയന്തിര അലേർട്ടുകളുടെ ക്രമീകരണം ലഭ്യമല്ല"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ശരി"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"മുമ്പ് മുന്നറിയിപ്പുകളൊന്നുമില്ല"</string>
@@ -52,7 +52,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"പ്രക്ഷേപണ സന്ദേശങ്ങൾ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"അടിയന്തര അലേർട്ടുകൾ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"മുന്നറിയിപ്പുകൾ അനുവദിക്കുക"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"വയർലെസ് അടിയന്തിര അലേർട്ട് അറിയിപ്പുകൾ നേടുക"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"വയർലെസ് അടിയന്തര അലേർട്ട് അറിയിപ്പുകൾ നേടുക"</string>
     <string name="alert_reminder_interval_title" msgid="7466642011937564868">"അലേർട്ട് റിമൈൻഡർ ശബ്‌ദം"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"അലേർട്ട് സന്ദേശങ്ങൾ സംസാരിക്കുക"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"വയർലെസ് അടിയന്തിര അലേർട്ട് സന്ദേശങ്ങൾ പറയാൻ ടെക്‌സ്റ്റ് ടു സ്‌പീച്ച് ഉപയോഗിക്കുക"</string>
@@ -69,7 +69,7 @@
     <string name="enable_alert_message_title" msgid="2939830587633599352">"മുന്നറിയിപ്പ് സന്ദേശങ്ങൾ"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ഉടൻ ഉണ്ടായേക്കാവുന്ന സുരക്ഷാ ഭീഷണികളെ കുറിച്ച് മുന്നറിയിപ്പ് നൽകുക"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"പൊതുജനങ്ങൾക്കുള്ള സുരക്ഷാ സന്ദേശങ്ങൾ"</string>
-    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ജീവിതമോ സ്വത്തോ സംരക്ഷിക്കുന്ന, ശുപാർശ ചെയ്‌തിരിക്കുന്ന പ്രവൃത്തികൾ"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ജീവനോ സ്വത്തോ സംരക്ഷിക്കാൻ ശുപാർശ ചെയ്‌തിരിക്കുന്ന പ്രവൃത്തികൾ"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"സംസ്ഥാന, പ്രാദേശിക പരീക്ഷണ മുന്നറിയിപ്പുകൾ"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"സംസ്ഥാന, പ്രാദേശിക അധികാരികളിൽ നിന്ന് പരീക്ഷണ സന്ദേശങ്ങൾ സ്വീകരിക്കുക"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"അടിയന്തര മുന്നറിയിപ്പുകൾ"</string>
