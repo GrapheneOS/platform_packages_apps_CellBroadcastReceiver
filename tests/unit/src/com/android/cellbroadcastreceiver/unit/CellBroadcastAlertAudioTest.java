@@ -34,6 +34,7 @@ import android.os.HandlerThread;
 import android.telephony.TelephonyManager;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio;
+import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 
 import org.junit.After;
 import org.junit.Before;
@@ -101,7 +102,7 @@ public class CellBroadcastAlertAudioTest extends
         MockitoAnnotations.initMocks(this);
         doReturn(mConfiguration).when(mResources).getConfiguration();
         doReturn(mDevices).when(mMockedAudioManager).getDevices(anyInt());
-
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE);
     }
 
     @After
