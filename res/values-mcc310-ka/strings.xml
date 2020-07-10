@@ -19,4 +19,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="5028777622440500200">"სხვა ტესტები"</string>
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"ესპანური"</string>
     <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"საგანგებო გაფრთხილებების მიღება ესპანურ ენაზე, როდესაც ეს შესაძლებელია"</string>
+    <string name="confirm_delete_broadcast" msgid="6808374217554967811">"გსურთ ამ გაფრთხილების წაშლა?"</string>
+    <string name="confirm_delete_all_broadcasts" msgid="4748571670736214158">"წაიშალოს ყველა მიღებული გაფრთხილება?"</string>
+    <string name="menu_delete" msgid="2691868773984777519">"გაფრთხილების წაშლა"</string>
+    <string name="menu_delete_all" msgid="8991615021908376216">"გაფრთხილებების წაშლა"</string>
 </resources>
