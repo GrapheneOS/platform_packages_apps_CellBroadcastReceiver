@@ -19,4 +19,8 @@
     <string name="enable_cmas_test_alerts_title" msgid="5028777622440500200">"इतर चाचण्या"</string>
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"स्पॅनिश"</string>
     <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"शक्य असेल तेव्हा स्पॅनिशमध्ये आणीबाणीच्या सूचना मिळवा"</string>
+    <string name="confirm_delete_broadcast" msgid="6808374217554967811">"ही सूचना हटवायची आहे का?"</string>
+    <string name="confirm_delete_all_broadcasts" msgid="4748571670736214158">"मिळालेल्या सर्व सूचना हटवायच्या आहेत का?"</string>
+    <string name="menu_delete" msgid="2691868773984777519">"सूचना हटवा"</string>
+    <string name="menu_delete_all" msgid="8991615021908376216">"सूचना हटवा"</string>
 </resources>
