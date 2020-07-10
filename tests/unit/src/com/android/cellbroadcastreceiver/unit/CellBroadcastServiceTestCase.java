@@ -50,6 +50,9 @@ import java.util.function.BooleanSupplier;
 
 public abstract class CellBroadcastServiceTestCase<T extends Service> extends ServiceTestCase<T> {
 
+    static final long WAIT_TIMEOUT_MS = 5000;
+    static final long WAIT_INTERVAL_MS = 100;
+
     @Mock
     protected CarrierConfigManager mMockedCarrierConfigManager;
     @Mock
@@ -83,12 +86,13 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         if (condition.getAsBoolean()) {
             return;
         }
-        for (int i = 0; i < 50; i++) {
-            SystemClock.sleep(100);
+        long startTime = SystemClock.uptimeMillis();
+        do {
+            SystemClock.sleep(WAIT_INTERVAL_MS);
             if (condition.getAsBoolean()) {
                 return;
             }
-        }
+        } while (SystemClock.uptimeMillis() - startTime < WAIT_TIMEOUT_MS);
     }
 
     protected void enablePreference(String pref) {
