@@ -20,8 +20,7 @@
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"스페인어"</string>
     <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"가능한 경우 스페인어로 응급 상황 알림 받기"</string>
     <string name="confirm_delete_broadcast" msgid="6808374217554967811">"이 알림을 삭제하시겠습니까?"</string>
-    <!-- no translation found for confirm_delete_all_broadcasts (4748571670736214158) -->
-    <skip />
+    <string name="confirm_delete_all_broadcasts" msgid="4748571670736214158">"수신된 알림을 모두 삭제하시겠습니까?"</string>
     <string name="menu_delete" msgid="2691868773984777519">"알림 삭제"</string>
     <string name="menu_delete_all" msgid="8991615021908376216">"알림 삭제"</string>
 </resources>
