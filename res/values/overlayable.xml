@@ -22,7 +22,7 @@
         <!-- START VENDOR CUSTOMIZATION -->
         <policy type="product|system|vendor">
             <!-- START THEME / STYLE -->
-            <item type="style" name="AlertFullScreenTheme"/>
+            <item type="style" name="CellBroadcastAlertTheme"/>
             <item type="style" name="PreferenceTheme"/>
             <item type="style" name="CellBroadcastSettingsTheme"/>
             <!-- END THEME / STYLE -->
