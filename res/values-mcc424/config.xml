@@ -56,6 +56,8 @@
     </string-array>
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false">
     </string-array>
+    <string-array name="operator_defined_alert_range_strings" translatable="false">
+    </string-array>
     <!-- Whether to always receive exercise alerts regardless of test alerts toggle state -->
     <!-- By default it's true for United Arab Emirates users -->
     <bool name="always_enable_exercise_alert">true</bool>
