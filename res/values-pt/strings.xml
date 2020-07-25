@@ -41,7 +41,7 @@
     <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"Alerta de emergência: extremo"</string>
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"Alerta de emergência: extremo"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Alerta de emergência: grave"</string>
-    <string name="cmas_amber_alert" msgid="6154867710264778887">"Rapto de crianças (alerta Amber)"</string>
+    <string name="cmas_amber_alert" msgid="6154867710264778887">"Sequestro de crianças (alerta Amber)"</string>
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Teste mensal obrigatório"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Alerta de emergência (exercício)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Alerta de emergência (telefonista)"</string>
@@ -54,7 +54,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertas de emergência"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertas de emergência em chamadas de voz"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permitir alertas"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Receber notif. de alertas de emergência sem fio"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Receber notificações de alertas de emergência sem fio"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Lembrete de alerta"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Um som de lembrete tocará em volume normal"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Histórico de alertas de emergência"</string>
@@ -66,7 +66,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ameaças graves"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ameaças graves, materiais ou à vida"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Alertas AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Boletins de emergência de rapto de crianças"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Boletins de emergência envolvendo sequestro de crianças"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Mensagens de alerta"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Aviso sobre ameaças iminentes à segurança"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Mensagens de segurança pública"</string>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Mensagens de alerta nacional emitidas pela presidência. Não é possível desativá-las."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"O modo de teste de transmissão celular está ativado."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"O modo de teste de transmissão celular está desativado."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Mostrar todas as mensagens"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Coordenadas:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Tempo máximo de espera:"</string>
     <string name="seconds" msgid="141450721520515025">"segundos"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Mensagem copiada"</string>
 </resources>
