@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="175237477015066795">"Kansallinen hätäilmoitus"</string>
+    <string name="cmas_presidential_level_alert" msgid="175237477015066795">"Kansallinen vaaratiedote"</string>
     <string name="pws_other_message_identifiers" msgid="9062780351883657067">"Varoitus"</string>
     <string name="public_safety_message" msgid="2187283654023170988">"Yleistä turvallisuutta koskeva hälytys"</string>
     <string name="cmas_exercise_alert" msgid="5775307523978007483">"Liikunta"</string>
