@@ -116,8 +116,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Ontvangen:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ongelezen waarschuwingen."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nieuwe waarschuwingen"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Een afmeldvenster weergeven na de eerste melding (geen nationale melding)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Afmeldvenster weergeven"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Een toestemmingsvenster weergeven na de eerste melding (geen nationale melding)."</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Toestemmingsvenster weergeven"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Je ontvangt momenteel meldingen voor noodwaarschuwingen. Wil je meldingen voor noodwaarschuwingen blijven ontvangen?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nee"</string>
