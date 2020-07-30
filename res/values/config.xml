@@ -59,7 +59,7 @@
     <bool name="enable_write_alerts_to_sms_inbox">false</bool>
 
     <!-- Section for switch default value -->
-    <!-- Master toggle default value -->
+    <!-- Main toggle default value -->
     <bool name="master_toggle_enabled_default">true</bool>
     <!-- Emergency alerts toggle default value -->
     <bool name="emergency_alerts_enabled_default">true</bool>

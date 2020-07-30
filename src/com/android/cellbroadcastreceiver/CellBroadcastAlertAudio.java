@@ -78,7 +78,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     public static final String ALERT_AUDIO_TONE_TYPE =
             "com.android.cellbroadcastreceiver.ALERT_AUDIO_TONE_TYPE";
 
-    /** Extra for alert vibration pattern (unless master volume is silent). */
+    /** Extra for alert vibration pattern (unless main volume is silent). */
     public static final String ALERT_AUDIO_VIBRATION_PATTERN_EXTRA =
             "com.android.cellbroadcastreceiver.ALERT_AUDIO_VIBRATION_PATTERN";
 
