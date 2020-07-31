@@ -72,7 +72,7 @@
 
         <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastListActivity"
                   android:label="@string/app_label"
-                  android:theme="@style/CellBroadcastSettingsTheme"
+                  android:theme="@style/CellBroadcastListActivityTheme"
                   android:exported="true"
                   android:configChanges="orientation|keyboardHidden" >
             <intent-filter>
