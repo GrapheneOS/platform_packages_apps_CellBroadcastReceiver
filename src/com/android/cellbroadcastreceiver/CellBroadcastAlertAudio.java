@@ -59,7 +59,7 @@ import java.util.Locale;
  * it can continue to play if another activity overrides the CellBroadcastListActivity.
  */
 public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnInitListener,
-        TextToSpeech.OnUtteranceCompletedListener {
+        TextToSpeech.OnUtteranceCompletedListener, AudioManager.OnAudioFocusChangeListener {
     private static final String TAG = "CellBroadcastAlertAudio";
 
     /** Action to start playing alert audio/vibration/speech. */
@@ -297,7 +297,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             // Release the audio focus so other audio (e.g. music) can resume.
             // Do not do this in stop() because stop() is also called when we stop the tone (before
             // TTS is playing). We only want to release the focus when tone and TTS are played.
-            mAudioManager.abandonAudioFocus(null);
+            mAudioManager.abandonAudioFocus(this);
         }
     }
 
@@ -498,9 +498,15 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         setDataSourceFromResource(res, mMediaPlayer, R.raw.default_tone);
                 }
 
-                // Request audio focus (though we're going to play even if we don't get it)
-                mAudioManager.requestAudioFocus(null, AudioManager.STREAM_ALARM,
-                        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+                // Request audio focus (though we're going to play even if we don't get it). The
+                // only scenario we are not getting focus immediately is a voice call is holding
+                // focus, since we are passing AUDIOFOCUS_FLAG_DELAY_OK, the focus will be granted
+                // once voice call ends.
+                mAudioManager.requestAudioFocus(this,
+                        new AudioAttributes.Builder().setLegacyStreamType(
+                                AudioManager.STREAM_ALARM).build(),
+                        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT,
+                        AudioManager.AUDIOFOCUS_FLAG_DELAY_OK);
                 mMediaPlayer.setAudioAttributes(getAlertAudioAttributes(mAlertType));
                 setAlertVolume(mAlertType);
 
@@ -613,6 +619,13 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             }
         }
         mState = STATE_IDLE;
+    }
+
+    @Override
+    public void onAudioFocusChange(int focusChange) {
+        log("onAudioFocusChanged: " + focusChange);
+        // Do nothing, as we don't care if focus was steal from other apps, as emergency alerts will
+        // play anyway.
     }
 
     /**
