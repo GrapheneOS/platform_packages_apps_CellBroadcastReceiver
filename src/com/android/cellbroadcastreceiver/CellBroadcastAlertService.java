@@ -855,12 +855,13 @@ public class CellBroadcastAlertService extends Service
         cv.put(Telephony.Sms.Inbox.BODY, message.getMessageBody());
         cv.put(Telephony.Sms.Inbox.DATE, message.getReceivedTime());
         cv.put(Telephony.Sms.Inbox.SUBSCRIPTION_ID, message.getSubscriptionId());
-        cv.put(Telephony.Sms.Inbox.SUBJECT, CellBroadcastResources.getDialogTitleResource(mContext,
-                message));
-        cv.put(Telephony.Sms.Inbox.ADDRESS, mContext.getString(R.string.sms_cb_sender_name));
-        // store all cellbroadcast messages in the same thread.
+        cv.put(Telephony.Sms.Inbox.SUBJECT, mContext.getString(
+                CellBroadcastResources.getDialogTitleResource(mContext, message)));
+        cv.put(Telephony.Sms.Inbox.ADDRESS, mContext.getString(
+                CellBroadcastResources.getSmsSenderAddressResource(mContext, message)));
         cv.put(Telephony.Sms.Inbox.THREAD_ID, Telephony.Threads.getOrCreateThreadId(mContext,
-                mContext.getString(R.string.sms_cb_sender_name)));
+                mContext.getString(CellBroadcastResources
+                        .getSmsSenderAddressResource(mContext, message))));
         Uri uri = mContext.getContentResolver().insert(Telephony.Sms.Inbox.CONTENT_URI, cv);
         if (uri == null) {
             Log.e(TAG, "writeMessageToSmsInbox: failed");

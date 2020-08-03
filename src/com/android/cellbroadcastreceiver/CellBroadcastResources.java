@@ -16,6 +16,7 @@
 
 package com.android.cellbroadcastreceiver;
 
+import android.annotation.NonNull;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.telephony.SmsCbCmasInfo;
@@ -277,6 +278,21 @@ public class CellBroadcastResources {
 
             default:
                 return 0;
+        }
+    }
+
+    /**
+     * @return the string resource ID for the SMS sender address.
+     */
+    public static int getSmsSenderAddressResource(@NonNull Context context,
+            @NonNull SmsCbMessage message) {
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                context, message.getSubscriptionId());
+        // store to different SMS threads based on emergency and non-emergency.
+        if (channelManager.isEmergencyMessage(message)) {
+            return R.string.sms_cb_sender_name;
+        } else {
+            return R.string.sms_cb_non_emergency_sender_name;
         }
     }
 
