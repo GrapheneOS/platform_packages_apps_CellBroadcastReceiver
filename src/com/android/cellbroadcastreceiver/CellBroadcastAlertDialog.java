@@ -666,6 +666,19 @@ public class CellBroadcastAlertDialog extends Activity {
                 }
             }
             Log.d(TAG, "onNewIntent called with message list of size " + newMessageList.size());
+
+            // For emergency alerts, keep screen on so the user can read it
+            SmsCbMessage message = getLatestMessage();
+            if (message != null) {
+                CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                        this, message.getSubscriptionId());
+                if (channelManager.isEmergencyMessage(message)) {
+                    Log.d(TAG, "onCreate setting screen on timer for emergency alert for sub "
+                            + message.getSubscriptionId());
+                    mScreenOffHandler.startScreenOnTimer();
+                }
+            }
+
             hideOptOutDialog(); // Hide opt-out dialog when new alert coming
             updateAlertText(getLatestMessage());
             // If the new intent was sent from a notification, dismiss it.
