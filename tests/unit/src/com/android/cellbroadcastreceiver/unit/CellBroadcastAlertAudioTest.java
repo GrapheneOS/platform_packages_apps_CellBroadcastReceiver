@@ -165,7 +165,7 @@ public class CellBroadcastAlertAudioTest extends
         verify(mMockedAudioManager).getRingerMode();
         verify(mMockedVibrator).vibrate(any(), any());
         verify(mMockedTelephonyManager, atLeastOnce()).getCallState();
-        verify(mMockedAudioManager).requestAudioFocus(any(), anyInt(), anyInt());
+        verify(mMockedAudioManager).requestAudioFocus(any(), any(), anyInt(), anyInt());
         verify(mMockedAudioManager).getDevices(anyInt());
         verify(mMockedAudioManager).setStreamVolume(anyInt(), eq(TEST_MAX_VOLUME), anyInt());
         phoneStateListenerHandler.quit();
