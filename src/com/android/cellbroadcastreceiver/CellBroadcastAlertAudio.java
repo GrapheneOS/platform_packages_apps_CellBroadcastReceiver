@@ -238,7 +238,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         if (mMessageBody != null && mTtsEngineReady && mTtsLanguageSupported) {
                             if (DBG) log("Speaking broadcast text: " + mMessageBody);
 
-                            mTts.setAudioAttributes(getAlertAudioAttributes(mAlertType));
+                            mTts.setAudioAttributes(getAlertAudioAttributes());
                             res = mTts.speak(mMessageBody, 2, null, TTS_UTTERANCE_ID);
                             mState = STATE_SPEAKING;
                         }
@@ -424,8 +424,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             }
 
             AudioAttributes.Builder attrBuilder = new AudioAttributes.Builder();
-            attrBuilder.setUsage(alertType == AlertType.INFO
-                    ? AudioAttributes.USAGE_NOTIFICATION : AudioAttributes.USAGE_ALARM);
+            attrBuilder.setUsage(AudioAttributes.USAGE_ALARM);
             if (mOverrideDnd) {
                 // Set the flags to bypass DnD mode if override dnd is turned on.
                 attrBuilder.setFlags(AudioAttributes.FLAG_BYPASS_INTERRUPTION_POLICY
@@ -507,8 +506,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                                 AudioManager.STREAM_ALARM).build(),
                         AudioManager.AUDIOFOCUS_GAIN_TRANSIENT,
                         AudioManager.AUDIOFOCUS_FLAG_DELAY_OK);
-                mMediaPlayer.setAudioAttributes(getAlertAudioAttributes(mAlertType));
-                setAlertVolume(mAlertType);
+                mMediaPlayer.setAudioAttributes(getAlertAudioAttributes());
+                setAlertVolume();
 
                 // If we are using the custom alert duration, set looping to true so we can repeat
                 // the alert. The tone playing will stop when ALERT_SOUND_FINISHED arrives.
@@ -590,7 +589,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         mHandler.removeMessages(ALERT_PAUSE_FINISHED);
         mHandler.removeMessages(ALERT_LED_FLASH_TOGGLE);
 
-        resetAlarmStreamVolume(mAlertType);
+        resetAlarmStreamVolume();
 
         if (mState == STATE_ALERTING) {
             // Stop audio playing
@@ -631,12 +630,11 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     /**
      * Get audio attribute for the alarm.
      */
-    private AudioAttributes getAlertAudioAttributes(AlertType alertType) {
+    private AudioAttributes getAlertAudioAttributes() {
         AudioAttributes.Builder builder = new AudioAttributes.Builder();
 
         builder.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION);
-        builder.setUsage((alertType == AlertType.INFO
-                ? AudioAttributes.USAGE_NOTIFICATION : AudioAttributes.USAGE_ALARM));
+        builder.setUsage(AudioAttributes.USAGE_ALARM);
         if (mOverrideDnd) {
             // Set FLAG_BYPASS_INTERRUPTION_POLICY and FLAG_BYPASS_MUTE so that it enables
             // audio in any DnD mode, even in total silence DnD mode (requires MODIFY_PHONE_STATE).
@@ -650,7 +648,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     /**
      * Set volume for alerts.
      */
-    private void setAlertVolume(AlertType alertType) {
+    private void setAlertVolume() {
         if (mTelephonyManager.getCallState() != TelephonyManager.CALL_STATE_IDLE
                 || isOnEarphone()) {
             // If we are in a call, play the alert
@@ -661,7 +659,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             // If override DnD is turned on,
             // we overwrite volume setting of STREAM_ALARM to full, play at
             // max possible volume, and reset it after it's finished.
-            setAlarmStreamVolumeToFull(alertType);
+            setAlarmStreamVolumeToFull();
         }
     }
 
@@ -684,10 +682,9 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     /**
      * Set volume of STREAM_ALARM to full.
      */
-    private void setAlarmStreamVolumeToFull(AlertType alertType) {
+    private void setAlarmStreamVolumeToFull() {
         log("setting alarm volume to full for cell broadcast alerts.");
-        int streamType = (alertType == AlertType.INFO)
-                ? AudioManager.STREAM_NOTIFICATION : AudioManager.STREAM_ALARM;
+        int streamType = AudioManager.STREAM_ALARM;
         mUserSetAlarmVolume = mAudioManager.getStreamVolume(streamType);
         mResetAlarmVolumeNeeded = true;
         mAudioManager.setStreamVolume(streamType,
@@ -697,12 +694,10 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     /**
      * Reset volume of STREAM_ALARM, if needed.
      */
-    private void resetAlarmStreamVolume(AlertType alertType) {
+    private void resetAlarmStreamVolume() {
         if (mResetAlarmVolumeNeeded) {
             log("resetting alarm volume to back to " + mUserSetAlarmVolume);
-            mAudioManager.setStreamVolume(alertType == AlertType.INFO
-                            ? AudioManager.STREAM_NOTIFICATION : AudioManager.STREAM_ALARM,
-                    mUserSetAlarmVolume, 0);
+            mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, mUserSetAlarmVolume, 0);
             mResetAlarmVolumeNeeded = false;
         }
     }
