@@ -18,6 +18,10 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"വയർലെസ് അടിയന്തര അലേർട്ടുകൾ"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"വയർലെസ് അടിയന്തര അലേർട്ടുകൾ"</string>
+    <!-- no translation found for sms_cb_sender_name (7548466291720451777) -->
+    <skip />
+    <!-- no translation found for sms_cb_non_emergency_sender_name (3274624200561218662) -->
+    <skip />
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"ഈ ഉപയോക്താവിന് വയർലെസ് അടിയന്തിര അലേർട്ടുകളുടെ ക്രമീകരണം ലഭ്യമല്ല"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ശരി"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"മുമ്പ് മുന്നറിയിപ്പുകളൊന്നുമില്ല"</string>

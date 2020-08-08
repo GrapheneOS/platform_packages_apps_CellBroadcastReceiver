@@ -18,6 +18,10 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"ਵਾਇਰਲੈੱਸ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"ਵਾਇਰਲੈੱਸ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ"</string>
+    <!-- no translation found for sms_cb_sender_name (7548466291720451777) -->
+    <skip />
+    <!-- no translation found for sms_cb_non_emergency_sender_name (3274624200561218662) -->
+    <skip />
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"ਇਸ ਵਰਤੋਂਕਾਰ ਲਈ ਵਾਇਰਲੈੱਸ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਉਪਲਬਧ ਨਹੀਂ ਹਨ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ਠੀਕ"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"ਕੋਈ ਪਿਛਲੀਆਂ ਸੁਚੇਤਨਾਵਾਂ ਨਹੀਂ ਹਨ"</string>
