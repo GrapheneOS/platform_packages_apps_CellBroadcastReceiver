@@ -25,6 +25,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"이 사용자는 무선 긴급 경보 알림 설정을 사용할 수 없습니다."</string>
     <string name="button_dismiss" msgid="1234221657930516287">"확인"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"이전 경보 없음"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"설정"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"브로드캐스트 삭제"</string>
     <string name="message_options" msgid="3178489901903589574">"메시지 옵션"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"세부정보 보기"</string>

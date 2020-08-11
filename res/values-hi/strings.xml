@@ -25,6 +25,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"यह उपयोगकर्ता, वायरलेस इमरजेंसी अलर्ट की सूचनाओं की सेटिंग में बदलाव नहीं कर सकता"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक है"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"पहले का किसी भी तरह का अलर्ट मौजूद नहीं है"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"सेटिंग"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"प्रसारण मिटाएं"</string>
     <string name="message_options" msgid="3178489901903589574">"संदेश विकल्‍प"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"विवरण देखें"</string>

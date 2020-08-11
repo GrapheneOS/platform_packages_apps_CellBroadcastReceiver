@@ -25,6 +25,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"এই ব্যবহারকারীর জন্য ওয়্যারলেস সতর্কতার সেটিংস উপলভ্য নয়"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ঠিক আছে"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"পূর্বের কোনও অ্যালার্ট নেই"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"সেটিংস"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"সম্প্রচারগুলি মুছে দিন"</string>
     <string name="message_options" msgid="3178489901903589574">"মেসেজ বিকল্পগুলি"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"বিশদ বিবরণ দেখুন"</string>
