@@ -21,6 +21,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"ఈ వినియోగదారుకి వైర్‌లెస్ అత్యవసర హెచ్చరిక సెట్టింగ్‌లు అందుబాటులో లేవు"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"సరే"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"మునుపటి హెచ్చరికలు లేవు"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"సెట్టింగ్‌లు"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"ప్రసారాలను తొలగించు"</string>
     <string name="message_options" msgid="3178489901903589574">"సందేశ ఎంపికలు"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"వివరాలను వీక్షించండి"</string>

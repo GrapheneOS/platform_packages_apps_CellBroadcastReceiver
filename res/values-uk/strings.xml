@@ -21,6 +21,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Налаштування бездротових екстрених сповіщень недоступні для цього користувача"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Немає попередніх сповіщень"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"Налаштування"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Видалити широкомовні повідомл."</string>
     <string name="message_options" msgid="3178489901903589574">"Параметри повідомлення"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Переглянути деталі"</string>

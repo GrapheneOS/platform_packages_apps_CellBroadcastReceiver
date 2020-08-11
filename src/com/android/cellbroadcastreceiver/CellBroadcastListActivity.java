@@ -35,6 +35,7 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbMessage;
 import android.util.Log;
@@ -119,6 +120,8 @@ public class CellBroadcastListActivity extends Activity {
         public static final int MENU_SHOW_REGULAR_MESSAGES = 4;
         @VisibleForTesting
         public static final int MENU_SHOW_ALL_MESSAGES     = 5;
+        @VisibleForTesting
+        public static final int MENU_PREFERENCES           = 6;
 
         // Load the history from cell broadcast receiver database
         private static final int LOADER_NORMAL_HISTORY      = 1;
@@ -235,6 +238,11 @@ public class CellBroadcastListActivity extends Activity {
                     android.R.drawable.ic_menu_delete);
             menu.add(0, MENU_SHOW_ALL_MESSAGES, 0, R.string.show_all_messages);
             menu.add(0, MENU_SHOW_REGULAR_MESSAGES, 0, R.string.show_regular_messages);
+            final UserManager userManager = getContext().getSystemService(UserManager.class);
+            if (userManager.isAdminUser()) {
+                menu.add(0, MENU_PREFERENCES, 0, R.string.menu_preferences).setIcon(
+                        android.R.drawable.ic_menu_preferences);
+            }
         }
 
         @Override
@@ -419,6 +427,11 @@ public class CellBroadcastListActivity extends Activity {
 
                 case MENU_SHOW_REGULAR_MESSAGES:
                     getLoaderManager().restartLoader(LOADER_NORMAL_HISTORY, null, this);
+                    break;
+
+                case MENU_PREFERENCES:
+                    Intent intent = new Intent(getActivity(), CellBroadcastSettings.class);
+                    startActivity(intent);
                     break;
 
                 default:

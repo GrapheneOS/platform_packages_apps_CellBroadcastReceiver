@@ -21,6 +21,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Nastavitve brezžičnih nujnih opozoril niso na voljo za tega uporabnika"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"V redu"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Ni prejšnjih opozoril"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"Nastavitve"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Izbriši oddaje"</string>
     <string name="message_options" msgid="3178489901903589574">"Možnosti sporočila"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Ogled podrobnosti"</string>

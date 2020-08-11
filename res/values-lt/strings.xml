@@ -21,6 +21,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Šis naudotojas negali pasiekti belaidžiu ryšiu siunčiamų įspėjimų nustatymų"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Gerai"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Nėra ankstesnių įspėjimų"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"Nustatymai"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Ištrinti transliacijas"</string>
     <string name="message_options" msgid="3178489901903589574">"Pranešimo parinktys"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Žiūrėti išsamią informaciją"</string>
