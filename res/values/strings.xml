@@ -38,6 +38,8 @@
     <!-- Text for list view when empty (no broadcasts). [CHAR LIMIT=200] -->
     <string name="no_cell_broadcasts">No previous alerts</string>
 
+    <!-- Menu item for accessing application settings. [CHAR LIMIT=30] -->
+    <string name="menu_preferences">Settings</string>
     <!-- Menu item for deleting all broadcasts. [CHAR LIMIT=30] -->
     <string name="menu_delete_all">Delete broadcasts</string>
 
