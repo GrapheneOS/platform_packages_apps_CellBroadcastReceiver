@@ -21,6 +21,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"មិនអាចប្រើ​ការកំណត់ការជូនដំណឹងពេលមាន​អាសន្នដោយឥតប្រើខ្សែ​សម្រាប់អ្នកប្រើប្រាស់នេះ​បានទេ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"យល់​ព្រម​"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"មិន​មាន​ការជូនដំណឹង​ពីមុន​ទេ"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"ការ​កំណត់"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"លុប​ការ​ផ្សាយ"</string>
     <string name="message_options" msgid="3178489901903589574">"ជម្រើស​សារ"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"មើល​​ព័ត៌មាន​លម្អិត"</string>

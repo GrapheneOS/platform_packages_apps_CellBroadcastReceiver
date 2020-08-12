@@ -78,6 +78,7 @@
 
         <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastListActivity"
                   android:label="@string/app_label"
+                  android:launchMode="singleTask"
                   android:theme="@style/CellBroadcastListActivityTheme"
                   android:exported="true"
                   android:configChanges="orientation|keyboardHidden" >
@@ -111,6 +112,7 @@
         <!-- Settings opened by ListActivity menu, Settings app link or opt-out dialog. -->
         <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastSettings"
                   android:theme="@style/CellBroadcastSettingsTheme"
+                  android:launchMode="singleTask"
                   android:label="@string/sms_cb_settings"
                   android:exported="true" />
 

@@ -339,7 +339,7 @@ public class CellBroadcastListActivityTest extends
         doReturn(mockMenuItem).when(mockMenu).add(anyInt(), anyInt(), anyInt(), anyInt());
 
         activity.mListFragment.onCreateOptionsMenu(mockMenu, null);
-        verify(mockMenu, times(3)).add(anyInt(), anyInt(), anyInt(), anyInt());
+        verify(mockMenu, times(4)).add(anyInt(), anyInt(), anyInt(), anyInt());
     }
 
     public void testFragmentOnPrepareOptionsMenu() throws Throwable {

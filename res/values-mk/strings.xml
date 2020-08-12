@@ -21,6 +21,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Поставките за безжичните предупредувања за итни случаи не се достапни за корисников"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Во ред"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Нема претходни предупредувања"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"Поставки"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Избриши емитувања"</string>
     <string name="message_options" msgid="3178489901903589574">"Опции на порака"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Прикажи детали"</string>

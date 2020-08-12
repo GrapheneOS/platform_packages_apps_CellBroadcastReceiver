@@ -21,6 +21,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Энэ хэрэглэгчийн хувьд утасгүй сүлжээгээр дамжуулах гамшгийн аюулын дохионы тохиргоо боломжгүй байна"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Өмнөх сэрэмжлүүлэг алга"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"Тохиргоо"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Нэвтрүүлгүүдийг устгах"</string>
     <string name="message_options" msgid="3178489901903589574">"Зурвасын тохиргоо"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Дэлгэрэнгүй үзэх"</string>
