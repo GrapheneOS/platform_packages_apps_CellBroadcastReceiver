@@ -44,9 +44,9 @@
     </string-array>
     <!-- 4380, 4393 -->
     <string-array name="required_monthly_test_range_strings" translatable="false">
-        <item>0x111C:rat=gsm, type=info, emergency=true</item>
+        <item>0x111C:rat=gsm, emergency=true</item>
         <!-- additional language -->
-        <item>0x1129:rat=gsm, type=info, emergency=true</item>
+        <item>0x1129:rat=gsm, emergency=true</item>
     </string-array>
     <string-array name="exercise_alert_range_strings" translatable="false"></string-array>
     <string-array name="operator_defined_alert_range_strings" translatable="false"></string-array>
