@@ -196,7 +196,7 @@ public class CellBroadcastBootupConfigTest extends
                         SmsCbMessage.MESSAGE_FORMAT_3GPP),
         };
 
-        verify(mSmsService, timeout(5000).times(configs.length))
+        verify(mSmsService, timeout(10000).times(configs.length))
                 .enableCellBroadcastRangeForSubscriber(
                         anyInt(), mStartIds.capture(), mEndIds.capture(), mTypes.capture());
 
