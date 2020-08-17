@@ -33,7 +33,7 @@
     </string-array>
     <!-- 4372 -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">
-        <item>0x1114:rat=gsm, emergency=false, alert_duration=60000</item>
+        <item>0x1114:rat=gsm, emergency=true, type=info, alert_duration=60000</item>
     </string-array>
     <!-- 4373~4379, 40960~45055-->
     <string-array name="additional_cbs_channels_strings" translatable="false">
