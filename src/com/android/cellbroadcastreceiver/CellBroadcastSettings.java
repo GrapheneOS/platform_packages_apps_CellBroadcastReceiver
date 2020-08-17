@@ -114,6 +114,12 @@ public class CellBroadcastSettings extends Activity {
     public static final String KEY_ENABLE_AREA_UPDATE_INFO_ALERTS =
             "enable_area_update_info_alerts";
 
+    // Preference key for whether to use carrier default value for enabling area update info alerts.
+    // This should be true until the user explicitly changes the setting, at which point it will
+    // become false and the carrier default will no longer be used.
+    public static final String KEY_ENABLE_AUI_ALERTS_CARRIER_DEFAULT =
+            "enable_area_update_info_alerts_carrier_default";
+
     // Preference key for initial opt-in/opt-out dialog.
     public static final String KEY_SHOW_CMAS_OPT_OUT_DIALOG = "show_cmas_opt_out_dialog";
 
@@ -214,7 +220,7 @@ public class CellBroadcastSettings extends Activity {
         // on/off switch in settings for receiving alert in second language code
         private TwoStatePreference mReceiveCmasInSecondLanguageCheckBox;
 
-        private final BroadcastReceiver mTestingModeChangedReeiver = new BroadcastReceiver() {
+        private final BroadcastReceiver mTestingModeChangedReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 switch (intent.getAction()) {
@@ -229,7 +235,7 @@ public class CellBroadcastSettings extends Activity {
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
             LocalBroadcastManager.getInstance(getContext())
-                    .registerReceiver(mTestingModeChangedReeiver, new IntentFilter(
+                    .registerReceiver(mTestingModeChangedReceiver, new IntentFilter(
                             CellBroadcastReceiver.ACTION_TESTING_MODE_CHANGED));
 
             // Load the preferences from an XML resource
@@ -239,8 +245,6 @@ public class CellBroadcastSettings extends Activity {
             } else {
                 addPreferencesFromResource(R.xml.preferences);
             }
-
-            PreferenceScreen preferenceScreen = getPreferenceScreen();
 
             mExtremeCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS);
@@ -269,6 +273,14 @@ public class CellBroadcastSettings extends Activity {
             mReceiveCmasInSecondLanguageCheckBox = (TwoStatePreference) findPreference
                     (KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
             mEnableVibrateCheckBox = findPreference(KEY_ENABLE_ALERT_VIBRATE);
+
+            // If AUI (Area Update Info) alerts have not been explicitly set by the user, either
+            // individually or through the main toggle, load the carrier value here
+            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+            if (sp.getBoolean(KEY_ENABLE_AUI_ALERTS_CARRIER_DEFAULT, true)) {
+                mAreaUpdateInfoCheckBox.setChecked(
+                        getResources().getBoolean(R.bool.area_update_info_alerts_enabled_default));
+            }
 
             // Show checkbox for Presidential alerts in settings
             mPresidentialCheckBox = (TwoStatePreference)
@@ -304,7 +316,6 @@ public class CellBroadcastSettings extends Activity {
             Resources res = CellBroadcastSettings.getResources(getContext(),
                     SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
-            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
             mDisableSevereWhenExtremeDisabled = res.getBoolean(
                     R.bool.disable_severe_when_extreme_disabled);
 
@@ -322,6 +333,16 @@ public class CellBroadcastSettings extends Activity {
                                         mSevereCheckBox.setEnabled(isExtremeAlertChecked);
                                         mSevereCheckBox.setChecked(false);
                                     }
+                                }
+                            }
+
+                            // For Enable Area Update Info preference, keep track of whether the
+                            // user has explicitly selected an option.
+                            if (pref.getKey().equals(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS)
+                                    || pref.getKey().equals(KEY_ENABLE_ALERTS_MASTER_TOGGLE)) {
+                                if (sp.getBoolean(KEY_ENABLE_AUI_ALERTS_CARRIER_DEFAULT, true)) {
+                                    sp.edit().putBoolean(KEY_ENABLE_AUI_ALERTS_CARRIER_DEFAULT,
+                                            false).commit();
                                 }
                             }
 
@@ -597,7 +618,7 @@ public class CellBroadcastSettings extends Activity {
         public void onDestroy() {
             super.onDestroy();
             LocalBroadcastManager.getInstance(getContext())
-                    .unregisterReceiver(mTestingModeChangedReeiver);
+                    .unregisterReceiver(mTestingModeChangedReceiver);
         }
     }
 
