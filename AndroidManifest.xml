@@ -21,8 +21,6 @@
         android:versionCode="300000000"
         android:versionName="R-initial">
 
-    <original-package android:name="com.android.cellbroadcastreceiver" />
-
     <!-- Needed for TTS when targetSdkVersion is 30 -->
     <queries>
         <intent>
