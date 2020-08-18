@@ -36,4 +36,7 @@
     <!-- Whether to always receive exercise alerts regardless of test alerts toggle state -->
     <!-- By default it's true for Saudi users -->
     <bool name="always_enable_exercise_alert">true</bool>
+
+    <!-- Whether to override the language of the alert dialog's title to match the message locale -->
+    <bool name="override_alert_title_language_to_match_message_locale">true</bool>
 </resources>
