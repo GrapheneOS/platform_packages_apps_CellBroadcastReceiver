@@ -31,6 +31,8 @@
     <bool name="show_test_settings">true</bool>
     <!-- Whether to append date-time to the alert title -->
     <bool name="show_date_time_title">false</bool>
+    <!-- if appending date-time to alert title, whether to include year -->
+    <bool name="show_date_time_with_year_title">false</bool>
     <!-- Whether to compare message body when performing message duplicate dection -->
     <bool name="duplicate_compare_body">false</bool>
     <!-- Whether to enable audio alert for non emergency broadcasts on FEATURE_WATCH devices -->
