@@ -52,6 +52,7 @@ import com.android.internal.telephony.ISms;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
@@ -133,6 +134,7 @@ public class CellBroadcastBootupConfigTest extends
     }
 
     // Test if CellbroadcastConfigService properly configure all the required channels.
+    @Ignore
     public void testConfiguration() throws Exception {
         String[] preferenceKeys = {
                 CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE,
