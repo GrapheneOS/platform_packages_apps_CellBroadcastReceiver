@@ -39,7 +39,6 @@ import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbMessage;
-import android.telephony.SubscriptionManager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
@@ -302,8 +301,7 @@ public class CellBroadcastAlertDialog extends Activity {
                 | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 
         // Disable home button when alert dialog is showing if mute_by_physical_button is false.
-        if (!CellBroadcastSettings.getResources(getApplicationContext(),
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID)
+        if (!CellBroadcastSettings.getResourcesForDefaultSubId(getApplicationContext())
                 .getBoolean(R.bool.mute_by_physical_button)) {
             final View decorView = win.getDecorView();
             decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
@@ -664,8 +662,7 @@ public class CellBroadcastAlertDialog extends Activity {
                 mMessageList = newMessageList;
             } else {
                 mMessageList.addAll(newMessageList);
-                if (CellBroadcastSettings.getResources(getApplicationContext(),
-                        SubscriptionManager.DEFAULT_SUBSCRIPTION_ID)
+                if (CellBroadcastSettings.getResourcesForDefaultSubId(getApplicationContext())
                         .getBoolean(R.bool.show_cmas_messages_in_priority_order)) {
                     // Sort message list to show messages in a different order than received by
                     // prioritizing them. Presidential Alert only has top priority.
