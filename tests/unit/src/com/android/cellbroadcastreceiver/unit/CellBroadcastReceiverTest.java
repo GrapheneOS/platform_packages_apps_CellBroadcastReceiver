@@ -145,6 +145,17 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     }
 
     @Test
+    public void testOnReceive_actionCarrierConfigChangedOnRebroadcast() {
+        doReturn(CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED).when(mIntent).getAction();
+        doReturn(true).when(mIntent)
+                .getBooleanExtra("android.telephony.extra.REBROADCAST_ON_UNLOCK", false);
+        mCellBroadcastReceiver.onReceive(mContext, mIntent);
+        verify(mCellBroadcastReceiver, never()).initializeSharedPreference();
+        verify(mCellBroadcastReceiver, never()).startConfigService();
+        verify(mCellBroadcastReceiver, never()).enableLauncher();
+    }
+
+    @Test
     public void testOnReceive_cellbroadcastStartConfigAction() {
         doReturn(CellBroadcastReceiver.CELLBROADCAST_START_CONFIG_ACTION).when(mIntent).getAction();
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
