@@ -575,10 +575,13 @@ public class CellBroadcastAlertDialog extends Activity {
         if (titleTextView != null) {
             if (res.getBoolean(R.bool.show_date_time_title)) {
                 titleTextView.setSingleLine(false);
-                title += "\n" + DateUtils.formatDateTime(context, message.getReceivedTime(),
-                        DateUtils.FORMAT_NO_NOON_MIDNIGHT | DateUtils.FORMAT_SHOW_TIME
+                int flags = DateUtils.FORMAT_NO_NOON_MIDNIGHT | DateUtils.FORMAT_SHOW_TIME
                                 | DateUtils.FORMAT_ABBREV_ALL | DateUtils.FORMAT_SHOW_DATE
-                                | DateUtils.FORMAT_CAP_AMPM);
+                                | DateUtils.FORMAT_CAP_AMPM;
+                if (res.getBoolean(R.bool.show_date_time_with_year_title)) {
+                    flags |= DateUtils.FORMAT_SHOW_YEAR;
+                }
+                title += "\n" + DateUtils.formatDateTime(context, message.getReceivedTime(), flags);
             }
 
             setTitle(title);

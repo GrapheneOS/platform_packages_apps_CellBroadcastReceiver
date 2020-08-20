@@ -61,6 +61,8 @@
     <bool name="override_dnd_default">true</bool>
     <!-- Append date-time to the alert title -->
     <bool name="show_date_time_title">true</bool>
+    <!-- if appending date-time to alert title, whether to include year -->
+    <bool name="show_date_time_with_year_title">true</bool>
     <!-- Link method -->
     <string name="link_method" translatable="false">none</string>
     <!-- Whether the user can mute the alert by physical button -->
