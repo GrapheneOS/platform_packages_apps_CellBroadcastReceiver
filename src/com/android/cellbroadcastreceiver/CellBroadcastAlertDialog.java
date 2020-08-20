@@ -269,10 +269,13 @@ public class CellBroadcastAlertDialog extends Activity {
                     | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
 
-        /** Clear the screen on window flags. */
+        /**
+         * Clear the keep screen on window flags in order for powersaving but keep TURN_ON_SCREEN_ON
+         * to make sure next wake up still turn screen on without unintended onStop triggered at
+         * the beginning.
+         */
         private void clearWindowFlags() {
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
-                    | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
 
         @Override
