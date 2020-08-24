@@ -150,6 +150,11 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name="com.android.cellbroadcastreceiver.CellBroadcastInternalReceiver"
+                  android:exported="false">
+            <!-- No intent filter on purpose: this should only receive explicit intents -->
+        </receiver>
+
         <provider
                 android:name="com.android.cellbroadcastreceiver.CellBroadcastSearchIndexableProvider"
                 android:authorities="com.android.cellbroadcastreceiver"
