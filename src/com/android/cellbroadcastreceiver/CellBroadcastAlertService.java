@@ -609,9 +609,11 @@ public class CellBroadcastAlertService extends Service {
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         createNotificationChannels(context);
 
+        boolean isWatch = context.getPackageManager()
+                .hasSystemFeature(PackageManager.FEATURE_WATCH);
         // Create intent to show the new messages when user selects the notification.
         Intent intent;
-        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+        if (isWatch) {
             // For FEATURE_WATCH we want to mark as read
             intent = createMarkAsReadIntent(context, message.getReceivedTime());
         } else {
@@ -624,7 +626,7 @@ public class CellBroadcastAlertService extends Service {
         intent.putExtra(CellBroadcastAlertDialog.FROM_SAVE_STATE_NOTIFICATION_EXTRA, fromSaveState);
 
         PendingIntent pi;
-        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+        if (isWatch) {
             pi = PendingIntent.getBroadcast(context, 0, intent, 0);
         } else {
             pi = PendingIntent.getActivity(context, NOTIFICATION_ID, intent,
@@ -655,7 +657,7 @@ public class CellBroadcastAlertService extends Service {
                         .setVisibility(Notification.VISIBILITY_PUBLIC)
                         .setOngoing(nonSwipeableNotification);
 
-        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+        if (isWatch) {
             builder.setDeleteIntent(pi);
             // FEATURE_WATCH/CWH devices see this as priority
             builder.setVibrate(new long[]{0});
@@ -685,8 +687,7 @@ public class CellBroadcastAlertService extends Service {
         // Emergency messages use a different audio playback and display path. Since we use
         // addToNotification for the emergency display on FEATURE WATCH devices vs the
         // Alert Dialog, it will call this and override the emergency audio tone.
-        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)
-                && !channelManager.isEmergencyMessage(message)) {
+        if (isWatch && !channelManager.isEmergencyMessage(message)) {
             if (res.getBoolean(R.bool.watch_enable_non_emergency_audio)) {
                 // start audio/vibration/speech service for non emergency alerts
                 Intent audioIntent = new Intent(context, CellBroadcastAlertAudio.class);
@@ -744,7 +745,7 @@ public class CellBroadcastAlertService extends Service {
      * @return delete intent to add to the pending intent
      */
     static Intent createMarkAsReadIntent(Context context, long deliveryTime) {
-        Intent deleteIntent = new Intent(context, CellBroadcastReceiver.class);
+        Intent deleteIntent = new Intent(context, CellBroadcastInternalReceiver.class);
         deleteIntent.setAction(CellBroadcastReceiver.ACTION_MARK_AS_READ);
         deleteIntent.putExtra(CellBroadcastReceiver.EXTRA_DELIVERY_TIME, deliveryTime);
         return deleteIntent;
