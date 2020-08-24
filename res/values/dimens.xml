@@ -24,4 +24,7 @@
     <!-- Dialog button bar height -->
     <dimen name="alert_dialog_button_bar_height">48dip</dimen>
 
+    <!-- dimensions for CellBroadcastListActivity ListItems -->
+    <dimen name="list_item_internal_line_space_horizontal">16dp</dimen>
+    <dimen name="list_item_internal_line_space_vertical">4dp</dimen>
 </resources>

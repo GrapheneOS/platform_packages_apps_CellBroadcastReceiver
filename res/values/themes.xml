@@ -31,4 +31,14 @@
     <style name="CellBroadcastListActivityTheme" parent="@android:style/Theme.DeviceDefault.Settings">
     </style>
 
+    <style name="CellBroadcastListItemTheme" parent="SettingsPreference">
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:background">?android:attr/colorBackground</item>
+    </style>
+    <style name="CellBroadcastListViewTheme">
+    </style>
+
 </resources>

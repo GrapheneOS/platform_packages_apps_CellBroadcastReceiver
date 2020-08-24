@@ -18,19 +18,15 @@
 -->
 
 <com.android.cellbroadcastreceiver.CellBroadcastListItem xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="?android:attr/colorBackground"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/CellBroadcastListItemTheme"
+        >
 
     <TextView android:id="@+id/channel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dip"
+        android:layout_marginEnd="@dimen/list_item_internal_line_space_horizontal"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignWithParentIfMissing="true"
@@ -46,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignBaseline="@id/channel"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
         android:singleLine="true"
         />
 
@@ -54,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/channel"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/list_item_internal_line_space_vertical"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:singleLine="true"
         android:ellipsize="marquee"
