@@ -63,6 +63,10 @@
             <item type="string" name="sms_cb_sender_name" />
             <item type="string" name="sms_cb_non_emergency_sender_name" />
             <item type="bool" name="enable_write_alerts_to_sms_inbox" />
+
+            <!-- Allow user to enable/disable audio speech alert (text-to-speech for received
+            messages)-->
+            <item type="bool" name="show_alert_speech_setting" />
         </policy>
         <!-- END VENDOR CUSTOMIZATION -->
 

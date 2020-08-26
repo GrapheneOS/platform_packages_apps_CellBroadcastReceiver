@@ -55,6 +55,10 @@
                           android:key="enable_alert_vibrate"
                           android:title="@string/enable_alert_vibrate_title" />
 
+        <SwitchPreference android:defaultValue="true"
+                          android:key="enable_alert_speech"
+                          android:title="@string/enable_alert_speech_title" />
+
         <!-- Enable receive monthly test -->
         <SwitchPreference android:defaultValue="false"
                           android:key="enable_test_alerts"
