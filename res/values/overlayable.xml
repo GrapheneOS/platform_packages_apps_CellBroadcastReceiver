@@ -27,6 +27,8 @@
             <item type="style" name="CellBroadcastSettingsTheme"/>
             <item type="style" name="CellBroadcastListViewTheme"/>
             <item type="style" name="CellBroadcastListItemTheme"/>
+
+            <item type="id" name="dismissButton"/>
             <!-- END THEME / STYLE -->
 
             <!-- START DIMEN -->
