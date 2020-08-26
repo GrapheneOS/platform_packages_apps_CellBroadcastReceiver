@@ -184,6 +184,15 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             cursor.addRow(ref);
         }
 
+        if (!CellBroadcastSettings.getResources(getContext(),
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID)
+                .getBoolean(R.bool.show_alert_speech_setting)) {
+            ref = new Object[1];
+            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                    CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH;
+            cursor.addRow(ref);
+        }
+
         if (!res.getBoolean(R.bool.show_extreme_alert_settings)) {
             // Remove CMAS preference items in emergency alert category.
             ref = new Object[1];

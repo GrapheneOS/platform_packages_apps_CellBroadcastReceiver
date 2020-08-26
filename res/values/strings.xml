@@ -134,6 +134,10 @@
     <string name="alert_reminder_interval_title">Alert reminder</string>
     <!-- Do not translate. Empty summary for alert reminder (set by CellBroadcastSettings). -->
     <string name="alert_reminder_interval_summary"></string>
+    <!-- Preference title for enable text-to-speech checkbox. [CHAR LIMIT=50] -->
+    <string name="enable_alert_speech_title">Speak alert message</string>
+    <!-- Preference summary for enable text-to-speech checkbox. [CHAR LIMIT=101] -->
+    <string name="enable_alert_speech_summary">Use text-to-speech to speak wireless emergency alert messages</string>
     <!-- Dialog title for alert reminder interval list. [CHAR LIMIT=100] -->
     <string name="alert_reminder_dialog_title">A reminder sound will play at regular volume</string>
     <!-- Preference title for emergency alert history. [CHAR LIMIT=50] -->
