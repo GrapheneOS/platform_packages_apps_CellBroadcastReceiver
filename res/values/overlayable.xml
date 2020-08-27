@@ -28,7 +28,52 @@
             <item type="style" name="CellBroadcastListViewTheme"/>
             <item type="style" name="CellBroadcastListItemTheme"/>
 
+            <!-- All attributes defined in app level need to exposed to overlay the AlerDialg and
+                 CellBroadcastAlertDialog layouts -->
+            <item type="attr" name="preferenceFragmentCompatStyle"/>
+            <item type="attr" name="switchPreferenceStyle"/>
+            <item type="attr" name="preferenceCategoryStyle"/>
+            <item type="attr" name="preferenceStyle"/>
+            <item type="attr" name="dialogPreferenceStyle"/>
+
+            <item type="attr" name="preferenceTheme"/>
+            <item type="attr" name="allowDividerAfterLastItem"/>
+            <item type="attr" name="allowDividerAbove"/>
+            <item type="attr" name="allowDividerBelow"/>
+            <item type="attr" name="singleLineTitle"/>
+
+            <item type="attr" name="alertDialogTheme"/>
+            <item type="attr" name="alertDialogStyle"/>
+            <item type="attr" name="listLayout"/>
+            <item type="attr" name="listItemLayout"/>
+            <item type="attr" name="multiChoiceItemLayout"/>
+            <item type="attr" name="singleChoiceItemLayout"/>
+
+            <item type="attr" name="windowActionBar"/>
+            <item type="attr" name="colorAccent"/>
+
+            <!-- Declare the IDs used in overlayable layouts like CellBroadcastAlertDialog -->
+            <item type="id" name="parentPanel"/>
+            <item type="id" name="topPanel"/>
+            <item type="id" name="titleDividerTop"/>
+            <item type="id" name="title_template"/>
+            <item type="id" name="icon"/>
+            <item type="id" name="alertTitle"/>
+            <item type="id" name="titleDivider"/>
+            <item type="id" name="contentPanel"/>
+            <item type="id" name="scrollView"/>
+            <item type="id" name="message"/>
+            <item type="id" name="pictogramPanel"/>
+            <item type="id" name="pictogramImage"/>
+            <item type="id" name="buttonPanel"/>
             <item type="id" name="dismissButton"/>
+            <!-- additional IDs used by AlertDialog(androidx) -->
+            <item type="id" name="scrollIndicatorUp"/>
+            <item type="id" name="textSpacerNoTitle"/>
+            <item type="id" name="textSpacerNoButtons"/>
+            <item type="id" name="scrollIndicatorDown"/>
+            <item type="id" name="customPanel"/>
+            <item type="id" name="custom"/>
             <!-- END THEME / STYLE -->
 
             <!-- START DIMEN -->
