@@ -34,6 +34,7 @@ import androidx.annotation.NonNull;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -98,6 +99,23 @@ public class CellBroadcastConfigService extends IntentService {
         return subIds;
     }
 
+    private void resetCellBroadcastChannels(int subId) {
+        SmsManager manager;
+        if (subId != SubscriptionManager.DEFAULT_SUBSCRIPTION_ID) {
+            manager = SmsManager.getSmsManagerForSubscriptionId(subId);
+        } else {
+            manager = SmsManager.getDefault();
+        }
+
+        // TODO: Call manager.resetAllCellBroadcastRanges() in Android S.
+        try {
+            Method method = SmsManager.class.getDeclaredMethod("resetAllCellBroadcastRanges");
+            method.invoke(manager);
+        } catch (Exception e) {
+            log("Can't reset cell broadcast ranges. e=" + e);
+        }
+    }
+
     /**
      * Enable cell broadcast messages channels. Messages can be only received on the
      * enabled channels.
@@ -106,6 +124,7 @@ public class CellBroadcastConfigService extends IntentService {
      */
     @VisibleForTesting
     public void enableCellBroadcastChannels(int subId) {
+        resetCellBroadcastChannels(subId);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         Resources res = CellBroadcastSettings.getResources(this, subId);

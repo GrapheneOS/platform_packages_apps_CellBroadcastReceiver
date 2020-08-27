@@ -1,12 +1,12 @@
-apex {
-    name: "com.android.cellbroadcast",
+apex_defaults {
+    name: "com.android.cellbroadcast-defaults",
+    updatable: true,
+    min_sdk_version: "R",
 
     manifest: "apex_manifest.json",
 
     // optional. if unspecified, a default one is auto-generated
     androidManifest: "AndroidManifest.xml",
-
-    apps: ["CellBroadcastApp", "CellBroadcastServiceModule"],
 
     key: "com.android.cellbroadcast.key",
     certificate: ":com.android.cellbroadcast.certificate",
@@ -21,4 +21,10 @@ apex_key {
 android_app_certificate {
     name: "com.android.cellbroadcast.certificate",
     certificate: "com.android.cellbroadcast",
+}
+
+apex {
+    name: "com.android.cellbroadcast",
+    defaults:["com.android.cellbroadcast-defaults"],
+    apps: ["CellBroadcastApp", "CellBroadcastServiceModule"],
 }

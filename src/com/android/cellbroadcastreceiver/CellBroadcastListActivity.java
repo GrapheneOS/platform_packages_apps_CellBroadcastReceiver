@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static android.view.WindowManager.LayoutParams.SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS;
+
 import android.annotation.Nullable;
 import android.app.ActionBar;
 import android.app.Activity;
@@ -83,6 +85,12 @@ public class CellBroadcastListActivity extends Activity {
             mListFragment = new CursorLoaderListFragment();
             fm.beginTransaction().add(android.R.id.content, mListFragment).commit();
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        getWindow().addSystemFlags(SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS);
     }
 
     @Override
@@ -256,7 +264,7 @@ public class CellBroadcastListActivity extends Activity {
             if (id == LOADER_NORMAL_HISTORY) {
                 Log.d(TAG, "onCreateLoader: normal history.");
                 return new CursorLoader(getActivity(), CellBroadcastContentProvider.CONTENT_URI,
-                        CellBroadcastContentProvider.QUERY_COLUMNS, null, null,
+                        CellBroadcastDatabaseHelper.QUERY_COLUMNS, null, null,
                         Telephony.CellBroadcasts.DELIVERY_TIME + " DESC");
             } else if (id == LOADER_HISTORY_FROM_CBS) {
                 Log.d(TAG, "onCreateLoader: history from cell broadcast service");

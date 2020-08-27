@@ -46,6 +46,7 @@ import android.widget.Toast;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.android.cellbroadcastservice.CellBroadcastStatsLog;
 import com.android.internal.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
@@ -65,6 +66,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
     // Key to access the shared preference of service state.
     private static final String SERVICE_STATE = "service_state";
+
+    // shared preference under developer settings
+    private static final String ENABLE_ALERT_MASTER_PREF = "enable_alerts_master_toggle";
 
     public static final String ACTION_SERVICE_STATE = "android.intent.action.SERVICE_STATE";
     public static final String EXTRA_VOICE_REG_STATE = "voiceRegState";
@@ -145,6 +149,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 .equals(action)) {
             ArrayList<CdmaSmsCbProgramData> programDataList =
                     intent.getParcelableArrayListExtra("program_data");
+            CellBroadcastStatsLog.write(CellBroadcastStatsLog.CB_MESSAGE_REPORTED,
+                    CellBroadcastStatsLog.CELL_BROADCAST_MESSAGE_REPORTED__TYPE__CDMA_SPC,
+                    CellBroadcastStatsLog.CELL_BROADCAST_MESSAGE_REPORTED__SOURCE__CB_RECEIVER_APP);
             if (programDataList != null) {
                 handleCdmaSmsCbProgramData(programDataList);
             } else {
@@ -308,6 +315,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 CellBroadcasts.Preference.ENABLE_EMERGENCY_PERF,
                 CellBroadcasts.Preference.ENABLE_ALERT_VIBRATION_PREF,
                 CellBroadcasts.Preference.ENABLE_CMAS_IN_SECOND_LANGUAGE_PREF,
+                ENABLE_ALERT_MASTER_PREF,
         };
         try (ContentProviderClient client = mContext.getContentResolver()
                 .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
@@ -323,7 +331,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                             CellBroadcasts.AUTHORITY_LEGACY,
                             CellBroadcasts.CALL_METHOD_GET_PREFERENCE,
                             key, null);
-                    if (pref != null) {
+                    if (pref != null && pref.containsKey(key)) {
                         Log.d(TAG, "migrateSharedPreferenceFromLegacy: " + key + "val: "
                                 + pref.getBoolean(key));
                         sp.putBoolean(key, pref.getBoolean(key));

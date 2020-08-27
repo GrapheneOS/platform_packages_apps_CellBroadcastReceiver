@@ -17,11 +17,13 @@
 package com.android.cellbroadcastreceiver.unit;
 
 import android.app.Activity;
+import android.app.ResourcesManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.test.ActivityUnitTestCase;
 import android.util.Log;
+import android.view.Display;
 
 import java.util.HashMap;
 
@@ -90,6 +92,12 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
         public <S> void injectSystemService(Class<S> cls, S service) {
             final String name = getSystemServiceName(cls);
             mInjectedSystemServices.put(name, service);
+        }
+
+        @Override
+        public Display getDisplay() {
+            return ResourcesManager.getInstance().getAdjustedDisplay(Display.DEFAULT_DISPLAY,
+                    null);
         }
 
         @Override
