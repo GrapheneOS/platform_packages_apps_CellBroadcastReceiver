@@ -23,10 +23,10 @@ import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
@@ -63,6 +63,8 @@ public class CellBroadcastContentProvider extends ContentProvider {
     /** MIME type for an individual cell broadcast. */
     private static final String CB_TYPE = "vnd.android.cursor.item/cellbroadcast";
 
+    public static final String CALL_MIGRATION_METHOD = "migrate-legacy-data";
+
     static {
         sUriMatcher.addURI(CB_AUTHORITY, null, CB_ALL);
         sUriMatcher.addURI(CB_AUTHORITY, "#", CB_ALL_ID);
@@ -70,7 +72,7 @@ public class CellBroadcastContentProvider extends ContentProvider {
 
     /** The database for this content provider. */
     @VisibleForTesting
-    public SQLiteOpenHelper mOpenHelper;
+    public CellBroadcastDatabaseHelper mOpenHelper;
 
     /**
      * Initialize content provider.
@@ -189,6 +191,19 @@ public class CellBroadcastContentProvider extends ContentProvider {
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
         throw new UnsupportedOperationException("update not supported");
+    }
+
+    @Override
+    public Bundle call(String method, String name, Bundle args) {
+        Log.d(TAG, "call:"
+                + " method=" + method
+                + " name=" + name
+                + " args=" + args);
+        // this is to handle a content-provider defined method: migration
+        if (CALL_MIGRATION_METHOD.equals(method)) {
+            mOpenHelper.migrateFromLegacyIfNeeded(mOpenHelper.getReadableDatabase());
+        }
+        return null;
     }
 
     private ContentValues getContentValues(SmsCbMessage message) {

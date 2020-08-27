@@ -168,6 +168,11 @@
             <item type="string" name="enable_emergency_alerts_message_title" />
             <!-- Preference title for enable presidential threat alerts checkbox. [CHAR LIMIT=40] -->
             <item type="string" name="enable_cmas_presidential_alerts_title" />
+
+            <!-- Whether to retry message history data migration after db creation
+            Note, please only enable this flag when upgrade to R, enabling this
+            flag during OTA might cause history data inserted twice.-->
+            <item type="bool" name="retry_message_history_data_migration" />
         </policy>
         <!-- END VENDOR CUSTOMIZATION -->
 
