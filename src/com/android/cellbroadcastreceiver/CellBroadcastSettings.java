@@ -321,14 +321,6 @@ public class CellBroadcastSettings extends FragmentActivity {
 
             Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
 
-            // Remove TTS toggle if needed
-            if (!res.getBoolean(R.bool.show_alert_speech_setting)
-                    && !pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
-                if (mAlertPreferencesCategory != null && mSpeechCheckBox != null) {
-                    mAlertPreferencesCategory.removePreference(mSpeechCheckBox);
-                }
-            }
-
             mDisableSevereWhenExtremeDisabled = res.getBoolean(
                     R.bool.disable_severe_when_extreme_disabled);
 
@@ -543,6 +535,12 @@ public class CellBroadcastSettings extends FragmentActivity {
             if (mAlertsHeader != null) {
                 mAlertsHeader.setVisible(
                         !getContext().getString(R.string.alerts_header_summary).isEmpty());
+            }
+
+            if (mSpeechCheckBox != null) {
+                mSpeechCheckBox.setVisible(res.getBoolean(R.bool.show_alert_speech_setting)
+                        || getActivity().getPackageManager()
+                        .hasSystemFeature(PackageManager.FEATURE_WATCH));
             }
         }
 
