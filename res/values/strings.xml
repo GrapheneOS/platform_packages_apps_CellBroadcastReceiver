@@ -23,11 +23,21 @@
     <!-- Label for settings screen. [CHAR LIMIT=NONE] -->
     <string name="sms_cb_settings">Wireless emergency alerts</string>
 
-    <!-- Value of sms sender display name to be shown in SMS inbox -->
-    <string name="sms_cb_sender_name">Wireless emergency alerts</string>
+    <!-- Value of sms sender default display name to be shown in SMS inbox -->
+    <string name="sms_cb_sender_name_default">Wireless emergency alerts</string>
 
-    <!-- Value of sms sender for non-emergency alerts display name to be shown in SMS inbox -->
-    <string name="sms_cb_non_emergency_sender_name">Informational notification</string>
+    <!-- Value of sms sender display name to be shown in SMS inbox for presidential alerts -->
+    <!-- Required Korean (kr) translation for this message: 위급 재난 문자 -->
+    <string name="sms_cb_sender_name_presidential">@string/sms_cb_sender_name_default</string>
+
+    <!-- Value of sms sender display name to be shown in SMS inbox for emergency alerts -->
+    <!-- mapping to emergency_alerts_channels_range_strings channel range -->
+    <!-- Required Korean (kr) translation for this message: 긴급 재난 문자-->
+    <string name="sms_cb_sender_name_emergency">@string/sms_cb_sender_name_default</string>
+
+    <!-- Value of sms sender display name to be shown in SMS inbox for public safety alerts -->
+    <!-- Required Korean (kr) translation for this message: 안전 안내 문자-->
+    <string name="sms_cb_sender_name_public_safety">Informational notification</string>
 
     <!-- Error message for users that aren't allowed to modify Cell broadcast settings [CHAR LIMIT=none] -->
     <string name="cell_broadcast_settings_not_available">Wireless emergency alert settings are not available for this user</string>
