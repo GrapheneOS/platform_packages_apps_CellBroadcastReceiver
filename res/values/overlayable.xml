@@ -59,6 +59,64 @@
             <item type="string" name="sms_cb_sender_name" />
             <item type="string" name="sms_cb_non_emergency_sender_name" />
             <item type="bool" name="enable_write_alerts_to_sms_inbox" />
+
+            <!-- The name of the Cell Broadcast Receiver app. [CHAR LIMIT=NONE] -->
+            <item type="string" name="app_label" />
+            <!-- Label for settings screen. [CHAR LIMIT=NONE] -->
+            <item type="string" name="sms_cb_settings" />
+
+            <!-- Text for dismiss button in broadcast message view dialog. [CHAR LIMIT=25] -->
+            <item type="string" name="button_dismiss" />
+
+            <!-- Temporarily enable string customization to address translation issues. All translation issues will be fixed in S by upstreaming -->
+            <!-- Dialog title for presidential level alert. [CHAR LIMIT=50] -->
+            <item type="string" name="cmas_presidential_level_alert" />
+            <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
+            <item type="string" name="cmas_extreme_alert" />
+            <!-- CMAS dialog title for extreme alert with extreme severity, immediate urgency, and observed certainty. [CHAR LIMIT=50] -->
+            <item type="string" name="cmas_extreme_immediate_observed_alert" />
+            <!-- CMAS dialog title for extreme alert with extreme severity, immediate urgency,  and likely certainty. [CHAR LIMIT=50] -->
+            <item type="string" name="cmas_extreme_immediate_likely_alert" />
+            <!-- CMAS dialog title for severe alert. [CHAR LIMIT=50] -->
+            <item type="string" name="cmas_severe_alert" />
+            <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
+            <item type="string" name="cmas_amber_alert" />
+            <!-- Dialog title for all public safety message broadcasts. [CHAR LIMIT=50] -->
+            <item type="string" name="public_safety_message" />
+            <!-- Dialog title for all state/local test alerts. [CHAR LIMIT=50] -->
+            <item type="string" name="state_local_test_alert" />
+            <!-- Dialog title pws_other_message_identifiers. [CHAR LIMIT=50]-->
+            <item type="string" name="pws_other_message_identifiers" />
+            <!-- Dialog title for test alert. [CHAR LIMIT=50] -->
+            <item type="string" name="cmas_required_monthly_test" />
+            <!-- CMAS dialog title for operator defined use. [CHAR LIMIT=50] -->
+            <item type="string" name="cmas_operator_defined_alert" />
+            <!-- Dialog title for exercise level alert. [CHAR LIMIT=50] -->
+            <item type="string" name="cmas_exercise_alert" />
+            <!-- Dialog title for all non-emergency cell broadcasts. [CHAR LIMIT=50] -->
+            <item type="string" name="cb_other_message_identifiers" />
+            <!-- Dialog title or menu title of emergency alert. [CHAR LIMIT=50] -->
+            <item type="string" name="emergency_alert" />
+            <item type="string" name="enable_cmas_test_alerts_title" />
+            <!-- Preference title for enable ETWS test alerts checkbox. [CHAR LIMIT=50] -->
+            <item type="string" name="enable_etws_test_alerts_title" />
+            <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
+            <item type="string" name="enable_cmas_extreme_threat_alerts_title" />
+            <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
+            <item type="string" name="enable_cmas_severe_threat_alerts_title" />
+            <!-- Preference title for enable CMAS amber alerts checkbox. [CHAR LIMIT=50] -->
+            <item type="string" name="enable_cmas_amber_alerts_title" />
+            <!-- Preference title for enable alerts messages checkbox. [CHAR LIMIT=100] -->
+            <item type="string" name="enable_alert_message_title" />
+            <!-- Preference title for enable public safety messages checkbox. [CHAR LIMIT=100] -->
+            <item type="string" name="enable_public_safety_messages_title" />
+            <!-- Preference title for enable state/local test alerts checkbox. [CHAR LIMIT=100] -->
+            <item type="string" name="enable_state_local_test_alerts_title" />
+            <!-- Preference title for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->
+            <item type="string" name="enable_emergency_alerts_message_title" />
+            <!-- Preference title for enable presidential threat alerts checkbox. [CHAR LIMIT=40] -->
+            <item type="string" name="enable_cmas_presidential_alerts_title" />
+
         </policy>
         <!-- END VENDOR CUSTOMIZATION -->
 
