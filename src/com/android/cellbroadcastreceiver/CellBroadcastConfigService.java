@@ -19,6 +19,9 @@ package com.android.cellbroadcastreceiver;
 import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
 
 import android.app.IntentService;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -87,8 +90,29 @@ public class CellBroadcastConfigService extends IntentService {
                 Log.e(TAG, "exception enabling cell broadcast channels", ex);
             }
         } else if (ACTION_UPDATE_SETTINGS_FOR_CARRIER.equals(intent.getAction())) {
-            // TODO(jminjie): cellbroadcastservice should post a notification if any settings have
-            //                been touched
+            Context c = getApplicationContext();
+            if (CellBroadcastSettings.hasAnyPreferenceChanged(c)) {
+                Log.d(TAG, "Preference has changed from user set, posting notification.");
+
+                CellBroadcastAlertService.createNotificationChannels(c);
+                Intent settingsIntent = new Intent(c, CellBroadcastSettings.class);
+                PendingIntent pi = PendingIntent.getActivity(c,
+                        CellBroadcastAlertService.SETTINGS_CHANGED_NOTIFICATION_ID, settingsIntent,
+                        PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+
+                Notification.Builder builder = new Notification.Builder(c,
+                        CellBroadcastAlertService.NOTIFICATION_CHANNEL_SETTINGS_UPDATES)
+                        .setCategory(Notification.CATEGORY_SYSTEM)
+                        .setContentTitle(c.getString(R.string.notification_cb_settings_changed_title))
+                        .setContentText(c.getString(R.string.notification_cb_settings_changed_text))
+                        .setSmallIcon(R.drawable.ic_settings_gear_outline_24dp)
+                        .setContentIntent(pi);
+                NotificationManager notificationManager = c.getSystemService(
+                        NotificationManager.class);
+                notificationManager.notify(
+                        CellBroadcastAlertService.SETTINGS_CHANGED_NOTIFICATION_ID,
+                        builder.build());
+            }
             Log.e(TAG, "Reset all preferences");
             CellBroadcastSettings.resetAllPreferences(getApplicationContext());
         }
