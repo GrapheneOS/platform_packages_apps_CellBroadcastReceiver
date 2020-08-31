@@ -125,6 +125,8 @@
     <string name="notification_channel_emergency_alerts">Emergency alerts</string>
     <!-- Notification channel name for a channel containing emergency alert notifications during voice call. [CHAR LIMIT=100] -->
     <string name="notification_channel_broadcast_messages_in_voicecall">Emergency alerts in voice call</string>
+    <!-- Notification channel name for a channel containing info about WEA settings updates. [CHAR LIMIT=100] -->
+    <string name="notification_channel_settings_updates">Automatic WEA Settings changes based on SIM</string>
 
     <!-- Preference title for enable emergency alerts checkbox. [CHAR LIMIT=50] -->
     <string name="enable_alerts_master_toggle_title">Allow alerts</string>
@@ -365,4 +367,8 @@
 
     <!-- Emergency alert message copied to clipboard. -->
     <string name="message_copied">Message copied</string>
+
+    <!-- Notification title and text when alerting user that their CB settings have changed -->
+    <string name="notification_cb_settings_changed_title">Settings changed by carrier</string>
+    <string name="notification_cb_settings_changed_text">Tap to see wireless emergency alert settings</string>
 </resources>
