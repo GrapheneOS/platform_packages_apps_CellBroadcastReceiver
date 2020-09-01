@@ -18,7 +18,6 @@ package com.android.cellbroadcastreceiver;
 
 import android.annotation.IntDef;
 import android.annotation.NonNull;
-import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.app.NotificationManager;
 import android.content.ClipData;
@@ -59,6 +58,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentActivity;
 
 import com.android.internal.annotations.VisibleForTesting;
