@@ -19,12 +19,17 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
 
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.IContentProvider;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -60,12 +65,21 @@ public class CellBroadcastDatabaseHelperTest {
     IContentProvider mContentProviderClient;
     @Mock
     Cursor mCursor;
+    @Mock
+    SharedPreferences mSharedPreferences;
+    @Mock
+    android.content.SharedPreferences.Editor mEditor;
 
     @Before
     public void setUp() {
         Log.d(TAG, "setUp() +");
         MockitoAnnotations.initMocks(this);
         doReturn(mContentResolver).when(mContext).getContentResolver();
+        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
+        doReturn(mEditor).when(mSharedPreferences).edit();
+        doReturn(mEditor).when(mEditor).putBoolean(anyString(), anyBoolean());
+        doReturn(true).when(mEditor).commit();
+
         mHelper = new CellBroadcastDatabaseHelper(mContext, false);
         mInMemoryDbHelper = new InMemoryCellBroadcastProviderDbHelperV11();
         Log.d(TAG, "setUp() -");
@@ -136,7 +150,7 @@ public class CellBroadcastDatabaseHelperTest {
                 CellBroadcastDatabaseHelper.QUERY_COLUMNS, null, null, null, null, null);
         assertEquals(0, cursor.getCount());
 
-        mHelper.migrateFromLegacy(db);
+        mHelper.migrateFromLegacyIfNeeded(db);
         // verify insertion from legacy provider is succeed
         verify(mContentProviderClient).query(any(), any(), any(), any(), any(), any());
         cursor = db.query(CellBroadcastDatabaseHelper.TABLE_NAME,

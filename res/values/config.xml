@@ -59,6 +59,8 @@
     <bool name="allow_testing_mode_on_user_build">false</bool>
     <!-- Whether to save alerts to sms inbox database -->
     <bool name="enable_write_alerts_to_sms_inbox">false</bool>
+    <!-- Whether to retry message history data migration after db creation -->
+    <bool name="retry_message_history_data_migration">false</bool>
 
     <!-- Section for switch default value -->
     <!-- Main toggle default value -->

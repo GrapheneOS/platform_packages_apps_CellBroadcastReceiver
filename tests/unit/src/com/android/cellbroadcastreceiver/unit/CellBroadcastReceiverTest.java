@@ -122,6 +122,7 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         doNothing().when(mCellBroadcastReceiver).startConfigService();
         doReturn(mContext).when(mContext).getApplicationContext();
         doReturn(mPackageName).when(mContext).getPackageName();
+        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
     }
 
     @Test
