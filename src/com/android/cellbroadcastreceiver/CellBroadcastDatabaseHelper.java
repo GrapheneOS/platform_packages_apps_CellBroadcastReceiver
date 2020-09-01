@@ -20,10 +20,12 @@ import android.annotation.NonNull;
 import android.content.ContentProviderClient;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.RemoteException;
+import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.provider.Telephony.CellBroadcasts;
 import android.util.Log;
@@ -42,6 +44,9 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "cell_broadcasts.db";
     @VisibleForTesting
     public static final String TABLE_NAME = "broadcasts";
+
+    // Preference key for whether the data migration from pre-R CBR app was complete.
+    public static final String KEY_LEGACY_DATA_MIGRATION = "legacy_data_migration";
 
     /*
      * Query columns for instantiating SmsCbMessage.
@@ -120,6 +125,13 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
         mLegacyProvider = legacyProvider;
     }
 
+    @VisibleForTesting
+    public CellBroadcastDatabaseHelper(Context context, boolean legacyProvider, String dbName) {
+        super(context, dbName, null, DATABASE_VERSION);
+        mContext = context;
+        mLegacyProvider = legacyProvider;
+    }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(getStringForCellBroadcastTableCreation(TABLE_NAME));
@@ -127,7 +139,7 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE INDEX IF NOT EXISTS deliveryTimeIndex ON " + TABLE_NAME
                 + " (" + Telephony.CellBroadcasts.DELIVERY_TIME + ");");
         if (!mLegacyProvider) {
-            migrateFromLegacy(db);
+            migrateFromLegacyIfNeeded(db);
         }
     }
 
@@ -152,7 +164,13 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
      * from OEM app.
      */
     @VisibleForTesting
-    public void migrateFromLegacy(@NonNull SQLiteDatabase db) {
+    public void migrateFromLegacyIfNeeded(@NonNull SQLiteDatabase db) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
+        if (sp.getBoolean(CellBroadcastDatabaseHelper.KEY_LEGACY_DATA_MIGRATION, false)) {
+            log("Data migration was complete already");
+            return;
+        }
+
         try (ContentProviderClient client = mContext.getContentResolver()
                 .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
             if (client == null) {
@@ -171,6 +189,8 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
                     for (String column : QUERY_COLUMNS) {
                         copyFromCursorToContentValues(column, c, values);
                     }
+                    // remove the primary key to avoid UNIQUE constraint failure.
+                    values.remove(Telephony.CellBroadcasts._ID);
 
                     if (db.insert(TABLE_NAME, null, values) == -1) {
                         // We only have one shot to migrate data, so log and
@@ -190,8 +210,10 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
             // We have to guard ourselves against any weird behavior of the
             // legacy provider by trying to catch everything
             loge("Failed migration from legacy provider: " + e);
+        } finally {
+            // Mark data migration was triggered to make sure this is done only once.
+            sp.edit().putBoolean(KEY_LEGACY_DATA_MIGRATION, true).commit();
         }
-
     }
 
     public static void copyFromCursorToContentValues(@NonNull String column, @NonNull Cursor cursor,

@@ -44,12 +44,11 @@ public class CellBroadcastContentProviderTestable extends CellBroadcastContentPr
         mOpenHelper.close();
     }
 
-    public static class InMemoryCellBroadcastProviderDbHelper extends SQLiteOpenHelper {
+    public static class InMemoryCellBroadcastProviderDbHelper extends CellBroadcastDatabaseHelper {
         public InMemoryCellBroadcastProviderDbHelper() {
             super(InstrumentationRegistry.getTargetContext(),
-                    null,    // db file name is null for in-memory db
-                    null,    // CursorFactory is null by default
-                    1);      // db version is no-op for tests
+                    false,
+                    null);    // db file name is null for in-memory db
         }
 
         @Override
