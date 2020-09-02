@@ -16,15 +16,14 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="2884179444895260284">"Peringatan IT"</string>
     <!-- no translation found for cmas_extreme_alert (8930893242227527613) -->
     <skip />
     <!-- no translation found for cmas_extreme_immediate_observed_alert (3037852378370476280) -->
     <skip />
     <!-- no translation found for cmas_extreme_immediate_likely_alert (5388568769567706023) -->
     <skip />
-    <!-- no translation found for cmas_severe_alert (5143747644314951321) -->
+    <!-- no translation found for enable_cmas_extreme_threat_alerts_title (4190349287603327927) -->
     <skip />
-    <!-- no translation found for cmas_amber_alert (8474556156456621408) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="5963536832729208581">"Pesan penting dapat muncul terlepas dari setelan pengguna"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7658007515811137035">"Pesan pengujian"</string>
 </resources>
