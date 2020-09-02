@@ -54,7 +54,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Предупредувања за итни случаи"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Предупредувања за итни случаи во гласовен повик"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дозволи предупредувања"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Добивај извес. за безжични предупр. за итни случаи"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Примај безжични предупредувања за итни случаи"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Потсетник за предупредување"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Звукот на потсетникот ќе се пушта со стандардна јачина"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Историја на предупредувања"</string>
@@ -124,7 +124,7 @@
     <string name="cb_list_activity_title" msgid="1433502151877791724">"Историја на предупредувањата за итни случаи"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Еднаш"</item>
-    <item msgid="9097229303902157183">"Секои 2 минути"</item>
+    <item msgid="9097229303902157183">"На 2 минути"</item>
     <item msgid="5718214950343391480">"На 5 минути"</item>
     <item msgid="3863339891188103437">"На 15 минути"</item>
     <item msgid="7388573183644474611">"Никогаш"</item>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Пораки за предупредување на ниво на држава издадени од претседателот. Не може да се исклучат."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Режимот на тестирање мобилен пренос е овозможен."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Режимот на тестирање мобилен пренос е оневозможен."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Прикажи ги сите пораки"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Координати:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Максимално време на чекање:"</string>
     <string name="seconds" msgid="141450721520515025">"секунди"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Пораката е копирана"</string>
 </resources>
