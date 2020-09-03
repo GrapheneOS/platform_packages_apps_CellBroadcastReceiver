@@ -21,6 +21,9 @@
     <bool name="show_severe_alert_settings">false</bool>
     <!-- Whether enabling copy message text into clipboard by long press -->
     <bool name="enable_text_copy">false</bool>
+    <!-- Text links generating method. Hongkong does not allow text to be copied,
+    so we can't use smart linkify. -->
+    <string name="link_method" translatable="false">legacy_linkify</string>
 
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
