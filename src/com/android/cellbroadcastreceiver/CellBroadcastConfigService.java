@@ -55,6 +55,7 @@ public class CellBroadcastConfigService extends IntentService {
 
     @VisibleForTesting
     public static final String ACTION_ENABLE_CHANNELS = "ACTION_ENABLE_CHANNELS";
+    public static final String ACTION_UPDATE_SETTINGS_FOR_CARRIER = "UPDATE_SETTINGS_FOR_CARRIER";
 
     public CellBroadcastConfigService() {
         super(TAG);          // use class name for worker thread name
@@ -85,6 +86,11 @@ public class CellBroadcastConfigService extends IntentService {
             } catch (Exception ex) {
                 Log.e(TAG, "exception enabling cell broadcast channels", ex);
             }
+        } else if (ACTION_UPDATE_SETTINGS_FOR_CARRIER.equals(intent.getAction())) {
+            // TODO(jminjie): cellbroadcastservice should post a notification if any settings have
+            //                been touched
+            Log.e(TAG, "Reset all preferences");
+            CellBroadcastSettings.resetAllPreferences(getApplicationContext());
         }
     }
 
