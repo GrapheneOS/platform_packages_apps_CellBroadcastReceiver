@@ -28,12 +28,12 @@
 
     <!-- Value of sms sender display name to be shown in SMS inbox for presidential alerts -->
     <!-- Required Korean (kr) translation for this message: 위급 재난 문자 -->
-    <string name="sms_cb_sender_name_presidential">@string/sms_cb_sender_name_default</string>
+    <string name="sms_cb_sender_name_presidential">Wireless emergency alerts</string>
 
     <!-- Value of sms sender display name to be shown in SMS inbox for emergency alerts -->
     <!-- mapping to emergency_alerts_channels_range_strings channel range -->
     <!-- Required Korean (kr) translation for this message: 긴급 재난 문자-->
-    <string name="sms_cb_sender_name_emergency">@string/sms_cb_sender_name_default</string>
+    <string name="sms_cb_sender_name_emergency">Wireless emergency alerts</string>
 
     <!-- Value of sms sender display name to be shown in SMS inbox for public safety alerts -->
     <!-- Required Korean (kr) translation for this message: 안전 안내 문자-->
