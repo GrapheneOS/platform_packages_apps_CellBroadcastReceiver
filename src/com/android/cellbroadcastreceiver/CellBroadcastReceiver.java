@@ -31,6 +31,7 @@ import android.telephony.CarrierConfigManager;
 import android.telephony.ServiceState;
 import android.telephony.SubscriptionManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
+import android.util.EventLog;
 import android.util.Log;
 
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
@@ -62,15 +63,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         String action = intent.getAction();
 
         if (ACTION_MARK_AS_READ.equals(action)) {
-            final long deliveryTime = intent.getLongExtra(EXTRA_DELIVERY_TIME, -1);
-            new CellBroadcastContentProvider.AsyncCellBroadcastTask(context.getContentResolver())
-                    .execute(new CellBroadcastContentProvider.CellBroadcastOperation() {
-                        @Override
-                        public boolean execute(CellBroadcastContentProvider provider) {
-                            return provider.markBroadcastRead(CellBroadcasts.DELIVERY_TIME,
-                                    deliveryTime);
-                        }
-                    });
+            // The only way this'll be called is if someone tries to maliciously set something as
+            // read. Log an event.
+            EventLog.writeEvent(0x534e4554, "162741784", -1, null);
         } else if (CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED.equals(action)) {
             initializeSharedPreference(context.getApplicationContext());
             startConfigService(context.getApplicationContext());
