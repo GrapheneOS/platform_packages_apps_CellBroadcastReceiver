@@ -323,9 +323,9 @@ public class CellBroadcastAlertService extends Service {
      * @param message The cell broadcast message.
      */
     private void markMessageDisplayed(SmsCbMessage message) {
-        ContentValues cv = new ContentValues();
-        cv.put(Telephony.CellBroadcasts.MESSAGE_DISPLAYED, 1);
-        mContext.getContentResolver().update(Telephony.CellBroadcasts.CONTENT_URI, cv,
+        mContext.getContentResolver().update(
+                Uri.withAppendedPath(Telephony.CellBroadcasts.CONTENT_URI,"displayed"),
+                new ContentValues(),
                 Telephony.CellBroadcasts.RECEIVED_TIME + "=?",
                 new String[] {Long.toString(message.getReceivedTime())});
     }
