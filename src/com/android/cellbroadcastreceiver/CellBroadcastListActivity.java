@@ -76,10 +76,6 @@ public class CellBroadcastListActivity extends FragmentActivity {
 
         setTitle(getString(R.string.cb_list_activity_title));
 
-        // Dismiss the notification that brought us here (if any).
-        ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE))
-                .cancel(CellBroadcastAlertService.NOTIFICATION_ID);
-
         FragmentManager fm = getSupportFragmentManager();
 
         // Create the list fragment and add it as our sole content.

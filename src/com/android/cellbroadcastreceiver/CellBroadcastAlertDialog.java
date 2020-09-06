@@ -424,7 +424,7 @@ public class CellBroadcastAlertDialog extends FragmentActivity {
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         if (!(isChangingConfigurations() || getLatestMessage() == null) && pm.isScreenOn()) {
             CellBroadcastAlertService.addToNotificationBar(getLatestMessage(), mMessageList,
-                    getApplicationContext(), true);
+                    getApplicationContext(), true, true);
             // Stop playing alert sound/vibration/speech (if started)
             stopService(new Intent(this, CellBroadcastAlertAudio.class));
         }
@@ -764,6 +764,10 @@ public class CellBroadcastAlertDialog extends FragmentActivity {
             return;
         }
 
+        // Remove the read message from the notification bar.
+        // e.g, read the message from emergency alert history, need to update the notification bar.
+        removeReadMessageFromNotificationBar(lastMessage, getApplicationContext());
+
         // Mark the alert as read.
         final long deliveryTime = lastMessage.getReceivedTime();
 
@@ -817,9 +821,6 @@ public class CellBroadcastAlertDialog extends FragmentActivity {
                 }
             }
         }
-        NotificationManager notificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.cancel(CellBroadcastAlertService.NOTIFICATION_ID);
         finish();
     }
 
@@ -890,5 +891,29 @@ public class CellBroadcastAlertDialog extends FragmentActivity {
                 message.getSubscriptionId()).getString(R.string.message_copied);
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
         return true;
+    }
+
+    /**
+     * Remove read message from the notification bar, update the notification text, count or cancel
+     * the notification if there is no un-read messages.
+     * @param message The dismissed/read message to be removed from the notification bar
+     * @param context
+     */
+    private void removeReadMessageFromNotificationBar(SmsCbMessage message, Context context) {
+        Log.d(TAG, "removeReadMessageFromNotificationBar, msg: " + message.toString());
+        ArrayList<SmsCbMessage> unreadMessageList = CellBroadcastReceiverApp
+                .removeReadMessage(message);
+        if (unreadMessageList.isEmpty()) {
+            Log.d(TAG, "removeReadMessageFromNotificationBar, cancel notification");
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.cancel(CellBroadcastAlertService.NOTIFICATION_ID);
+        } else {
+            Log.d(TAG, "removeReadMessageFromNotificationBar, update count to "
+                    + unreadMessageList.size() );
+            // do not alert if remove unread messages from the notification bar.
+           CellBroadcastAlertService.addToNotificationBar(
+                   CellBroadcastReceiverApp.getLatestMessage(),
+                   unreadMessageList, context,false, false);
+        }
     }
 }

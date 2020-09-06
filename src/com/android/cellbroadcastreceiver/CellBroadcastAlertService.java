@@ -361,7 +361,7 @@ public class CellBroadcastAlertService extends Service {
             // cell broadcast messages
             ArrayList<SmsCbMessage> messageList = CellBroadcastReceiverApp
                     .addNewMessageToList(cbm);
-            addToNotificationBar(cbm, messageList, this, false);
+            addToNotificationBar(cbm, messageList, this, false, true);
         }
     }
 
@@ -587,7 +587,7 @@ public class CellBroadcastAlertService extends Service {
 
         // For FEATURE_WATCH, the dialog doesn't make sense from a UI/UX perspective
         if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
-            addToNotificationBar(message, messageList, this, false);
+            addToNotificationBar(message, messageList, this, false, true);
         } else {
             Intent alertDialogIntent = createDisplayMessageIntent(this,
                     CellBroadcastAlertDialog.class, messageList);
@@ -601,10 +601,11 @@ public class CellBroadcastAlertService extends Service {
      * Add the new alert to the notification bar (non-emergency alerts), or launch a
      * high-priority immediate intent for emergency alerts.
      * @param message the alert to display
+     * @param shouldAlert only notify once if set to {@code false}.
      */
     static void addToNotificationBar(SmsCbMessage message,
                                      ArrayList<SmsCbMessage> messageList, Context context,
-                                     boolean fromSaveState) {
+                                     boolean fromSaveState, boolean shouldAlert) {
         Resources res = CellBroadcastSettings.getResources(context, message.getSubscriptionId());
         int channelTitleId = CellBroadcastResources.getDialogTitleResource(context, message);
         CharSequence channelName = context.getText(channelTitleId);
@@ -659,7 +660,8 @@ public class CellBroadcastAlertService extends Service {
                         .setPriority(Notification.PRIORITY_HIGH)
                         .setColor(res.getColor(R.color.notification_color))
                         .setVisibility(Notification.VISIBILITY_PUBLIC)
-                        .setOngoing(nonSwipeableNotification);
+                        .setOngoing(nonSwipeableNotification)
+                        .setOnlyAlertOnce(!shouldAlert);
 
         if (isWatch) {
             builder.setDeleteIntent(pi);
