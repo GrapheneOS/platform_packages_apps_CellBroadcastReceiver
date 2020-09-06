@@ -101,6 +101,15 @@
             but only for certain products. OEMs can customize below config by including 0xA807
             or not per product configuration-->
             <item type="array" name="additional_cbs_channels_strings" />
+
+            <!-- Allow OEM to customize link_method. By default, use smart
+            linkify except for countries which do not allow link copy. -->
+            <!-- Text links generating method. Could be one of the followings.
+             "none": Not adding any link to message texts.
+             "legacy_linkify": Use the legacy linkify to add links to message texts.
+             "smart_linkify": Use machine learning based smart linkify to add
+             links to message texts. -->
+            <item type="string" name="link_method" />
             <!-- END CHANNEL related configurations -->
 
             <!-- Some countries like KR requires to display CB messages inside SMS inbox.
