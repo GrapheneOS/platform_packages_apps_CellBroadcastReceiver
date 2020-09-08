@@ -491,8 +491,9 @@ public class CellBroadcastAlertService extends Service {
                     .getBoolean(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS,
                             false);
         }
-
-        return true;
+        
+        Log.e(TAG, "received undefined channels: " + channel);
+        return false;
     }
 
     /**

@@ -151,6 +151,9 @@ public class CellBroadcastAlertServiceTest extends
     // This test has a module dependency, so it is disabled for OEM testing because it is not a true
     // unit test
     public void testHandleCellBroadcastIntent() throws Exception {
+        doReturn(new String[]{"0x1112:rat=gsm, emergency=true"})
+                .when(mResources).getStringArray(anyInt());
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
         sendMessage(987654321);
         waitForServiceIntent();
 
