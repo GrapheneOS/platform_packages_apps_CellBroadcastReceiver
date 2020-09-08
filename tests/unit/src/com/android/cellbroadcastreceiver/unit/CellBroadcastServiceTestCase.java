@@ -18,7 +18,6 @@ package com.android.cellbroadcastreceiver.unit;
 
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Matchers.anyInt;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.doReturn;
 
 import android.app.Service;
@@ -133,7 +132,7 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         MockitoAnnotations.initMocks(this);
         // A hack to return mResources from static method
         // CellBroadcastSettings.getResources(context).
-        doReturn(mSubService).when(mSubService).queryLocalInterface(anyString());
+        //doReturn(mSubService).when(mSubService).queryLocalInterface(anyString());
         doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService).getDefaultSubId();
         doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(
                 mSubService).getDefaultSmsSubId();

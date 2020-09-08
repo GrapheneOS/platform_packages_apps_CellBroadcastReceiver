@@ -16,6 +16,9 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static android.telephony.SmsCbMessage.MESSAGE_FORMAT_3GPP;
+import static android.telephony.SmsCbMessage.MESSAGE_FORMAT_3GPP2;
+
 import android.annotation.NonNull;
 import android.app.ActivityManager;
 import android.app.Notification;
@@ -51,6 +54,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
+import com.android.cellbroadcastservice.CellBroadcastStatsLog;
 import com.android.internal.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
@@ -272,6 +276,16 @@ public class CellBroadcastAlertService extends Service
             return;
         }
 
+        if (message.getMessageFormat() == MESSAGE_FORMAT_3GPP) {
+            CellBroadcastStatsLog.write(CellBroadcastStatsLog.CB_MESSAGE_REPORTED,
+                    CellBroadcastStatsLog.CELL_BROADCAST_MESSAGE_REPORTED__TYPE__GSM,
+                    CellBroadcastStatsLog.CELL_BROADCAST_MESSAGE_REPORTED__SOURCE__CB_RECEIVER_APP);
+        } else if (message.getMessageFormat() == MESSAGE_FORMAT_3GPP2) {
+            CellBroadcastStatsLog.write(CellBroadcastStatsLog.CB_MESSAGE_REPORTED,
+                    CellBroadcastStatsLog.CELL_BROADCAST_MESSAGE_REPORTED__TYPE__CDMA,
+                    CellBroadcastStatsLog.CELL_BROADCAST_MESSAGE_REPORTED__SOURCE__CB_RECEIVER_APP);
+        }
+
         if (!shouldDisplayMessage(message)) {
             return;
         }
@@ -298,7 +312,7 @@ public class CellBroadcastAlertService extends Service
                             CellBroadcastChannelRange range = channelManager
                                     .getCellBroadcastChannelRangeFromMessage(message);
                             if (CellBroadcastReceiver.isTestingMode(getApplicationContext())
-                                    || range.mWriteToSmsInbox) {
+                                    || (range != null && range.mWriteToSmsInbox)) {
                                 writeMessageToSmsInbox(message);
                             }
                         }

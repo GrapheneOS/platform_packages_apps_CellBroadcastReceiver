@@ -30,6 +30,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.IPowerManager;
+import android.os.IThermalService;
 import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
@@ -61,6 +62,9 @@ public class CellBroadcastAlertDialogTest extends
 
     @Mock
     private IPowerManager.Stub mMockedPowerManagerService;
+
+    @Mock
+    private IThermalService.Stub mMockedThermalService;
 
     @Captor
     private ArgumentCaptor<Integer> mInt;
@@ -102,7 +106,8 @@ public class CellBroadcastAlertDialogTest extends
         // PowerManager is a final class so we can't use Mockito to mock it, but we can mock
         // its underlying service.
         doReturn(true).when(mMockedPowerManagerService).isInteractive();
-        mPowerManager = new PowerManager(mContext, mMockedPowerManagerService, null);
+        mPowerManager = new PowerManager(mContext, mMockedPowerManagerService,
+                mMockedThermalService, null);
         injectSystemService(PowerManager.class, mPowerManager);
     }
 
@@ -165,6 +170,9 @@ public class CellBroadcastAlertDialogTest extends
                 b.getCharSequence(Notification.EXTRA_TEXT));
     }
 
+    @InstrumentationTest
+    // This test has a module dependency (it uses the CellBroadcastContentProvider), so it is
+    // disabled for OEM testing because it is not a true unit test
     public void testDismiss() throws Throwable {
         CellBroadcastAlertDialog activity = startActivity();
         waitForMs(100);
@@ -174,6 +182,9 @@ public class CellBroadcastAlertDialogTest extends
                 eq(CellBroadcastAlertService.NOTIFICATION_ID));
     }
 
+    @InstrumentationTest
+    // This test has a module dependency (it uses the CellBroadcastContentProvider), so it is
+    // disabled for OEM testing because it is not a true unit test
     public void testDismissWithDialog() throws Throwable {
         // in order to trigger mShowOptOutDialog=true, the message should not be a presidential
         // alert (the default message we send in this test)
