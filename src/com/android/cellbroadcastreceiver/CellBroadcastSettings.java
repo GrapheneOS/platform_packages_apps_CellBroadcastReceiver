@@ -196,8 +196,8 @@ public class CellBroadcastSettings extends Activity {
      * @param c the application context
      */
     public static void resetAllPreferences(Context c) {
-        PreferenceManager.getDefaultSharedPreferences(c).edit()
-                .remove(KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS)
+        SharedPreferences.Editor e = PreferenceManager.getDefaultSharedPreferences(c).edit();
+        e.remove(KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS)
                 .remove(KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS)
                 .remove(KEY_ENABLE_CMAS_AMBER_ALERTS)
                 .remove(KEY_ENABLE_PUBLIC_SAFETY_MESSAGES)
@@ -208,14 +208,19 @@ public class CellBroadcastSettings extends Activity {
                 .remove(KEY_ENABLE_TEST_ALERTS)
                 .remove(KEY_ENABLE_STATE_LOCAL_TEST_ALERTS)
                 .remove(KEY_ENABLE_ALERT_VIBRATE)
-                .remove(KEY_EMERGENCY_ALERT_HISTORY)
-                .remove(KEY_ALERTS_HEADER)
-                .remove(KEY_CATEGORY_EMERGENCY_ALERTS)
-                .remove(KEY_CATEGORY_ALERT_PREFERENCES)
-                .remove(KEY_WATCH_ALERT_REMINDER)
                 .remove(KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS)
-                .remove(KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE)
-                .commit();
+                .remove(KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
+        PackageManager pm = c.getPackageManager();
+        if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+            e.remove(KEY_WATCH_ALERT_REMINDER);
+        }
+        e.commit();
+
+        if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+            PreferenceManager.setDefaultValues(c, R.xml.watch_preferences, true);
+        } else {
+            PreferenceManager.setDefaultValues(c, R.xml.preferences, true);
+        }
     }
 
     /**
