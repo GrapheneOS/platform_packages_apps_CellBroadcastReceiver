@@ -56,7 +56,7 @@
     <!-- Whether enable LED flash when playing alert tones -->
     <bool name="enable_led_flash">false</bool>
     <!-- Whether allowing testing mode on user build or not -->
-    <bool name="allow_testing_mode_on_user_build">false</bool>
+    <bool name="allow_testing_mode_on_user_build">true</bool>
     <!-- Whether to save alerts to sms inbox database -->
     <bool name="enable_write_alerts_to_sms_inbox">false</bool>
     <!-- Whether to retry message history data migration after db creation -->
