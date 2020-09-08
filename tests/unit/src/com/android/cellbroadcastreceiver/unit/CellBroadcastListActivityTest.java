@@ -100,7 +100,6 @@ public class CellBroadcastListActivityTest extends
 
     public void testOnCreate() throws Throwable {
         startActivity();
-        verify(mMockNotificationManager).cancel(eq(CellBroadcastAlertService.NOTIFICATION_ID));
         stopActivity();
     }
 
