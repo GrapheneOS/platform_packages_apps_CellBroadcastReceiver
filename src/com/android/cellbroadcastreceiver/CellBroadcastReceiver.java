@@ -222,6 +222,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 // SIM when it is inserted.
                 saveCarrierIdForDefaultSub(TelephonyManager.UNKNOWN_CARRIER_ID);
             }
+            Log.d(TAG, "ignoring carrier config broadcast because subId=-1");
             return;
         }
 
