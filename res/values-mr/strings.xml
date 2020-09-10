@@ -19,10 +19,8 @@
     <string name="app_label" msgid="2008319089248760277">"आणीबाणीमधील वायरलेस इशारा"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"आणीबाणीमधील वायरलेस इशारा"</string>
     <string name="sms_cb_sender_name_default" msgid="972946539768958828">"वायरलेस आणीबाणी सूचना"</string>
-    <!-- no translation found for sms_cb_sender_name_presidential (5302753979711319380) -->
-    <skip />
-    <!-- no translation found for sms_cb_sender_name_emergency (2937067842997478965) -->
-    <skip />
+    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"आणीबाणीच्या वायरलेस सूचना"</string>
+    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"आणीबाणीच्या वायरलेस सूचना"</string>
     <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"माहितीपूर्ण सूचना"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"या वापरकर्त्यासाठी आणीबाणीमधील वायरलेस इशारा सेटिंग्ज उपलब्ध नाही"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक आहे"</string>
