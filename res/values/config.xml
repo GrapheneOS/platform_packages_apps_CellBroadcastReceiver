@@ -59,6 +59,8 @@
     <bool name="allow_testing_mode_on_user_build">true</bool>
     <!-- Whether to save alerts to sms inbox database -->
     <bool name="enable_write_alerts_to_sms_inbox">false</bool>
+    <!-- Whether to always mark sms read -->
+    <bool name="always_mark_sms_read">false</bool>
     <!-- Whether to retry message history data migration after db creation -->
     <bool name="retry_message_history_data_migration">false</bool>
 
