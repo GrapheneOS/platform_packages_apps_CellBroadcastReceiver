@@ -94,6 +94,11 @@ public class CellBroadcastChannelManager {
         private static final String KEY_OVERRIDE_DND = "override_dnd";
         /** Defines whether writing alert message should exclude from SMS inbox. */
         private static final String KEY_EXCLUDE_FROM_SMS_INBOX = "exclude_from_sms_inbox";
+        /** Define whether to display this cellbroadcast messages. */
+        private static final String KEY_DISPLAY = "display";
+        /** Define whether to enable this only in test/debug mode. */
+        private static final String KEY_TESTING_MODE_ONLY = "testing_mode";
+
 
         /**
          * Defines whether the channel needs language filter or not. True indicates that the alert
@@ -119,6 +124,8 @@ public class CellBroadcastChannelManager {
         public int mScope;
         public int[] mVibrationPattern;
         public boolean mFilterLanguage;
+        public boolean mDisplay;
+        public boolean mTestMode;
         // by default no custom alert duration. play the alert tone with the tone's duration.
         public int mAlertDuration = -1;
         public boolean mOverrideDnd = false;
@@ -136,6 +143,9 @@ public class CellBroadcastChannelManager {
                     CellBroadcastSettings.getResources(context, subId)
                             .getIntArray(R.array.default_vibration_pattern);
             mFilterLanguage = false;
+            // by default all received messages should be displayed.
+            mDisplay = true;
+            mTestMode = false;
 
             int colonIndex = channelRange.indexOf(':');
             if (colonIndex != -1) {
@@ -199,6 +209,16 @@ public class CellBroadcastChannelManager {
                                     mWriteToSmsInbox = false;
                                 }
                                 break;
+                            case KEY_DISPLAY:
+                                if (value.equalsIgnoreCase("false")) {
+                                    mDisplay = false;
+                                }
+                                break;
+                            case KEY_TESTING_MODE_ONLY:
+                                if (value.equalsIgnoreCase("true")) {
+                                    mTestMode = true;
+                                }
+                                break;
                         }
                     }
                 }
@@ -222,7 +242,8 @@ public class CellBroadcastChannelManager {
             return "Range:[channels=" + mStartId + "-" + mEndId + ",emergency level="
                     + mEmergencyLevel + ",type=" + mAlertType + ",scope=" + mScope + ",vibration="
                     + Arrays.toString(mVibrationPattern) + ",alertDuration=" + mAlertDuration
-                    + ",filter_language=" + mFilterLanguage + ",override_dnd=" + mOverrideDnd + "]";
+                    + ",filter_language=" + mFilterLanguage + ",override_dnd=" + mOverrideDnd
+                    + ",display=" + mDisplay + ",testMode=" + mTestMode +"]";
         }
     }
 
