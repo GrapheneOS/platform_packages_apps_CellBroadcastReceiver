@@ -34,6 +34,7 @@ import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.text.TextUtils;
 import android.util.Log;
+import com.android.internal.annotations.VisibleForTesting;
 
 /**
  * ContentProvider for the database of received cell broadcasts.
@@ -67,35 +68,9 @@ public class CellBroadcastContentProvider extends ContentProvider {
         sUriMatcher.addURI(CB_AUTHORITY, "#", CB_ALL_ID);
     }
 
-    /*
-     * Query columns for instantiating SmsCbMessage.
-     */
-    public static final String[] QUERY_COLUMNS = {
-            Telephony.CellBroadcasts._ID,
-            Telephony.CellBroadcasts.SLOT_INDEX,
-            Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE,
-            Telephony.CellBroadcasts.PLMN,
-            Telephony.CellBroadcasts.LAC,
-            Telephony.CellBroadcasts.CID,
-            Telephony.CellBroadcasts.SERIAL_NUMBER,
-            Telephony.CellBroadcasts.SERVICE_CATEGORY,
-            Telephony.CellBroadcasts.LANGUAGE_CODE,
-            Telephony.CellBroadcasts.MESSAGE_BODY,
-            Telephony.CellBroadcasts.DELIVERY_TIME,
-            Telephony.CellBroadcasts.MESSAGE_READ,
-            Telephony.CellBroadcasts.MESSAGE_FORMAT,
-            Telephony.CellBroadcasts.MESSAGE_PRIORITY,
-            Telephony.CellBroadcasts.ETWS_WARNING_TYPE,
-            Telephony.CellBroadcasts.CMAS_MESSAGE_CLASS,
-            Telephony.CellBroadcasts.CMAS_CATEGORY,
-            Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE,
-            Telephony.CellBroadcasts.CMAS_SEVERITY,
-            Telephony.CellBroadcasts.CMAS_URGENCY,
-            Telephony.CellBroadcasts.CMAS_CERTAINTY
-    };
-
     /** The database for this content provider. */
-    private SQLiteOpenHelper mOpenHelper;
+    @VisibleForTesting
+    public SQLiteOpenHelper mOpenHelper;
 
     /**
      * Initialize content provider.
@@ -103,7 +78,12 @@ public class CellBroadcastContentProvider extends ContentProvider {
      */
     @Override
     public boolean onCreate() {
-        mOpenHelper = new CellBroadcastDatabaseHelper(getContext());
+        mOpenHelper = new CellBroadcastDatabaseHelper(getContext(), false);
+        // trigger this to create database explicitly. Otherwise the db will be created only after
+        // the first query/update/insertion. Data migration is done inside db creation and we want
+        // to migrate data from cellbroadcast-legacy immediately when upgrade to the mainline module
+        // rather than migrate after the first emergency alert.
+        mOpenHelper.getReadableDatabase();
         return true;
     }
 
@@ -254,7 +234,8 @@ public class CellBroadcastContentProvider extends ContentProvider {
      * @param message the message to insert
      * @return true if the broadcast is new, false if it's a duplicate broadcast.
      */
-    boolean insertNewBroadcast(SmsCbMessage message) {
+    @VisibleForTesting
+    public boolean insertNewBroadcast(SmsCbMessage message) {
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         ContentValues cv = getContentValues(message);
 
@@ -279,7 +260,8 @@ public class CellBroadcastContentProvider extends ContentProvider {
      * @param rowId the row ID of the broadcast to delete
      * @return true if the database was updated, false otherwise
      */
-    boolean deleteBroadcast(long rowId) {
+    @VisibleForTesting
+    public boolean deleteBroadcast(long rowId) {
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
 
         int rowCount = db.delete(CellBroadcastDatabaseHelper.TABLE_NAME,
@@ -297,7 +279,8 @@ public class CellBroadcastContentProvider extends ContentProvider {
      * Internal method to delete all cell broadcasts and notify observers.
      * @return true if the database was updated, false otherwise
      */
-    boolean deleteAllBroadcasts() {
+    @VisibleForTesting
+    public boolean deleteAllBroadcasts() {
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
 
         int rowCount = db.delete(CellBroadcastDatabaseHelper.TABLE_NAME, null, null);

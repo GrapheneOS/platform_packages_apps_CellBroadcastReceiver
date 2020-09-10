@@ -56,9 +56,12 @@ public class CellBroadcastSettingsTest extends
         mDevice = UiDevice.getInstance(mInstrumentation);
     }
 
+    @InstrumentationTest
+    // This test has a module dependency, so it is disabled for OEM testing because it is not a true
+    // unit test
     @FlakyTest
     @Test
-    public void testRotateAlertReminderDialogOpen() {
+    public void testRotateAlertReminderDialogOpen() throws InterruptedException {
         try {
             mDevice.wakeUp();
             mDevice.pressMenu();

@@ -25,7 +25,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.RemoteException;
 import android.provider.Telephony;
+import android.provider.Telephony.CellBroadcasts;
 import android.util.Log;
+import com.android.internal.annotations.VisibleForTesting;
 
 /**
  * Open, create, and upgrade the cell broadcast SQLite database. Previously an inner class of
@@ -38,34 +40,50 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = "CellBroadcastDatabaseHelper";
 
     private static final String DATABASE_NAME = "cell_broadcasts.db";
-    static final String TABLE_NAME = "broadcasts";
+    @VisibleForTesting
+    public static final String TABLE_NAME = "broadcasts";
+
+    /*
+     * Query columns for instantiating SmsCbMessage.
+     */
+    public static final String[] QUERY_COLUMNS = {
+            Telephony.CellBroadcasts._ID,
+            Telephony.CellBroadcasts.SLOT_INDEX,
+            Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE,
+            Telephony.CellBroadcasts.PLMN,
+            Telephony.CellBroadcasts.LAC,
+            Telephony.CellBroadcasts.CID,
+            Telephony.CellBroadcasts.SERIAL_NUMBER,
+            Telephony.CellBroadcasts.SERVICE_CATEGORY,
+            Telephony.CellBroadcasts.LANGUAGE_CODE,
+            Telephony.CellBroadcasts.MESSAGE_BODY,
+            Telephony.CellBroadcasts.DELIVERY_TIME,
+            Telephony.CellBroadcasts.MESSAGE_READ,
+            Telephony.CellBroadcasts.MESSAGE_FORMAT,
+            Telephony.CellBroadcasts.MESSAGE_PRIORITY,
+            Telephony.CellBroadcasts.ETWS_WARNING_TYPE,
+            Telephony.CellBroadcasts.CMAS_MESSAGE_CLASS,
+            Telephony.CellBroadcasts.CMAS_CATEGORY,
+            Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE,
+            Telephony.CellBroadcasts.CMAS_SEVERITY,
+            Telephony.CellBroadcasts.CMAS_URGENCY,
+            Telephony.CellBroadcasts.CMAS_CERTAINTY
+    };
 
     /**
-     * Database version 1: initial version (support removed)
-     * Database version 2-9: (reserved for OEM database customization) (support removed)
-     * Database version 10: adds ETWS and CMAS columns and CDMA support (support removed)
-     * Database version 11: adds delivery time index
-     * Database version 12: add slotIndex
+     * Returns a string used to create the cell broadcast table. This is exposed so the unit test
+     * can construct its own in-memory database to match the cell broadcast db.
      */
-    private static final int DATABASE_VERSION = 12;
-
-    private final Context mContext;
-
-    CellBroadcastDatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        mContext = context;
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " ("
-                + Telephony.CellBroadcasts._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + Telephony.CellBroadcasts.SLOT_INDEX + " INTEGER DEFAULT 0,"
-                + Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE + " INTEGER,"
-                + Telephony.CellBroadcasts.PLMN + " TEXT,"
-                + Telephony.CellBroadcasts.LAC + " INTEGER,"
-                + Telephony.CellBroadcasts.CID + " INTEGER,"
-                + Telephony.CellBroadcasts.SERIAL_NUMBER + " INTEGER,"
+    @VisibleForTesting
+    public static String getStringForCellBroadcastTableCreation(String tableName) {
+        return "CREATE TABLE " + tableName + " ("
+                + CellBroadcasts._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + CellBroadcasts.SLOT_INDEX + " INTEGER DEFAULT 0,"
+                + CellBroadcasts.GEOGRAPHICAL_SCOPE + " INTEGER,"
+                + CellBroadcasts.PLMN + " TEXT,"
+                + CellBroadcasts.LAC + " INTEGER,"
+                + CellBroadcasts.CID + " INTEGER,"
+                + CellBroadcasts.SERIAL_NUMBER + " INTEGER,"
                 + Telephony.CellBroadcasts.SERVICE_CATEGORY + " INTEGER,"
                 + Telephony.CellBroadcasts.LANGUAGE_CODE + " TEXT,"
                 + Telephony.CellBroadcasts.MESSAGE_BODY + " TEXT,"
@@ -79,11 +97,38 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
                 + Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE + " INTEGER,"
                 + Telephony.CellBroadcasts.CMAS_SEVERITY + " INTEGER,"
                 + Telephony.CellBroadcasts.CMAS_URGENCY + " INTEGER,"
-                + Telephony.CellBroadcasts.CMAS_CERTAINTY + " INTEGER);");
+                + Telephony.CellBroadcasts.CMAS_CERTAINTY + " INTEGER);";
+    }
+
+
+    /**
+     * Database version 1: initial version (support removed)
+     * Database version 2-9: (reserved for OEM database customization) (support removed)
+     * Database version 10: adds ETWS and CMAS columns and CDMA support (support removed)
+     * Database version 11: adds delivery time index
+     * Database version 12: add slotIndex
+     */
+    private static final int DATABASE_VERSION = 12;
+
+    private final Context mContext;
+    final boolean mLegacyProvider;
+
+    @VisibleForTesting
+    public CellBroadcastDatabaseHelper(Context context, boolean legacyProvider) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        mContext = context;
+        mLegacyProvider = legacyProvider;
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(getStringForCellBroadcastTableCreation(TABLE_NAME));
 
         db.execSQL("CREATE INDEX IF NOT EXISTS deliveryTimeIndex ON " + TABLE_NAME
                 + " (" + Telephony.CellBroadcasts.DELIVERY_TIME + ");");
-        migrateFromLegacy(db);
+        if (!mLegacyProvider) {
+            migrateFromLegacy(db);
+        }
     }
 
     @Override
@@ -101,12 +146,13 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * This is the migration logic to accommodate OEMs who previously use non-AOSP CBR and move to
-     * mainlined CBR for the first time. When the db is initially created, this is called once to
+     * This is the migration logic to accommodate OEMs move to mainlined CBR for the first time.
+     * When the db is initially created, this is called once to
      * migrate predefined data through {@link Telephony.CellBroadcasts#AUTHORITY_LEGACY_URI}
      * from OEM app.
      */
-    private void migrateFromLegacy(@NonNull SQLiteDatabase db) {
+    @VisibleForTesting
+    public void migrateFromLegacy(@NonNull SQLiteDatabase db) {
         try (ContentProviderClient client = mContext.getContentResolver()
                 .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
             if (client == null) {
@@ -118,12 +164,11 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
             log("Starting migration from legacy provider");
             // migration columns are same as query columns
             try (Cursor c = client.query(Telephony.CellBroadcasts.AUTHORITY_LEGACY_URI,
-                    CellBroadcastContentProvider.QUERY_COLUMNS,
-                    null, null, null)) {
+                QUERY_COLUMNS, null, null, null)) {
                 final ContentValues values = new ContentValues();
                 while (c.moveToNext()) {
                     values.clear();
-                    for (String column : CellBroadcastContentProvider.QUERY_COLUMNS) {
+                    for (String column : QUERY_COLUMNS) {
                         copyFromCursorToContentValues(column, c, values);
                     }
 
