@@ -40,6 +40,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.os.UserManager;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.service.notification.StatusBarNotification;
@@ -832,6 +833,13 @@ public class CellBroadcastAlertService extends Service {
      * @param message The cell broadcast message.
      */
     private void writeMessageToSmsInbox(@NonNull SmsCbMessage message) {
+        UserManager userManager = mContext.getSystemService(UserManager.class);
+        if (!userManager.isSystemUser()) {
+            // SMS database is single-user mode, discard non-system users to avoid inserting twice.
+            Log.d(TAG, "ignoring writeMessageToSmsInbox due to non-system user");
+            return;
+        }
+
         // composing SMS
         ContentValues cv = new ContentValues();
         cv.put(Telephony.Sms.Inbox.BODY, message.getMessageBody());
@@ -844,6 +852,16 @@ public class CellBroadcastAlertService extends Service {
         cv.put(Telephony.Sms.Inbox.THREAD_ID, Telephony.Threads.getOrCreateThreadId(mContext,
                 mContext.getString(CellBroadcastResources
                         .getSmsSenderAddressResource(mContext, message))));
+        if (CellBroadcastSettings.getResources(mContext, message.getSubscriptionId())
+                .getBoolean(R.bool.always_mark_sms_read)) {
+            // Always mark SMS message READ. End users expect when they read new CBS messages,
+            // the unread alert count in the notification should be decreased, as they thought it
+            // was coming from SMS. Now we are marking those SMS as read (SMS now serve as a message
+            // history purpose) and that should give clear messages to end-users that alerts are not
+            // from the SMS app but CellBroadcast and they should tap the notification to read alert
+            // in order to see decreased unread message count.
+            cv.put(Telephony.Sms.Inbox.READ, 1);
+        }
         Uri uri = mContext.getContentResolver().insert(Telephony.Sms.Inbox.CONTENT_URI, cv);
         if (uri == null) {
             Log.e(TAG, "writeMessageToSmsInbox: failed");
