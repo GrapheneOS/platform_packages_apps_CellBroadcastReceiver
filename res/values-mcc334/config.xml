@@ -17,7 +17,7 @@
 <resources>
     <!-- Channel 4370 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, alert_duration=86400000</item>
+        <item>0x1112:rat=gsm, emergency=true, alert_duration=86400000, always_on=true</item>
     </string-array>
 
     <!-- Channel 50 and 919 -->

@@ -17,9 +17,9 @@
 <resources>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, override_dnd=true</item>
+        <item>0x1112:rat=gsm, emergency=true, override_dnd=true, always_on=true</item>
         <!-- additional language -->
-        <item>0x111F:rat=gsm, emergency=true, override_dnd=true</item>
+        <item>0x111F:rat=gsm, emergency=true, override_dnd=true, always_on=true</item>
     </string-array>
 
     <!-- Whether to show CMAS messages by in a different order than received by prioritizing them -->

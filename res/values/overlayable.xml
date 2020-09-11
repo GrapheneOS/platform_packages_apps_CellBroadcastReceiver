@@ -115,10 +115,12 @@
             <item type="string" name="sms_cb_sender_name_public_safety" />
             <item type="bool" name="enable_write_alerts_to_sms_inbox" />
             <item type="bool" name="always_mark_sms_read" />
+
             <!-- Whether to retry message history data migration after db creation
            Note, please only enable this flag when upgrade to R, enabling this
            flag during OTA might cause history data inserted twice.-->
             <item type="bool" name="retry_message_history_data_migration" />
+            <item type="bool" name="show_main_switch_settings" />
 
 
             <!-- Temporarily enable string customization to address translation issues. All translation issues will be fixed in S by upstreaming -->

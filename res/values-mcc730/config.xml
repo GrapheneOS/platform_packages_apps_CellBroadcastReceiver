@@ -29,9 +29,9 @@
     </string-array>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, alert_duration=86400000</item>
+        <item>0x1112:rat=gsm, emergency=true, alert_duration=86400000, always_on=true</item>
         <!-- additional language -->
-        <item>0x1120-0x1121:rat=gsm, emergency=true</item>
+        <item>0x1120-0x1121:rat=gsm, emergency=true, always_on=true</item>
     </string-array>
     <!-- 4371~4372 -->
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">

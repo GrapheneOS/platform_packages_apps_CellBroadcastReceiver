@@ -483,6 +483,10 @@ public class CellBroadcastSettings extends Activity {
             CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                     getContext(), SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
 
+            if (mMasterToggle != null) {
+                mMasterToggle.setVisible(res.getBoolean(R.bool.show_main_switch_settings));
+            }
+
             if (mPresidentialCheckBox != null) {
                 mPresidentialCheckBox.setVisible(
                         res.getBoolean(R.bool.show_presidential_alerts_settings));

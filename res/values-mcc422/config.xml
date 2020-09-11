@@ -18,7 +18,7 @@
     <!-- 4370 emergency alert can not be disabled -->
     <!-- Oman requires to play alert for 30s -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, alert_duration=30000</item>
+        <item>0x1112:rat=gsm, emergency=true, alert_duration=30000, always_on=true</item>
     </string-array>
     <!-- 4371 warning alert cannot be disabled-->
     <string-array name="additional_cbs_channels_strings" translatable="false">
