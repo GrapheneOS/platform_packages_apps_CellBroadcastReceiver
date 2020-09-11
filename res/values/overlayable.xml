@@ -117,6 +117,7 @@
             <item type="string" name="sms_cb_sender_name_public_safety" />
             <item type="bool" name="enable_write_alerts_to_sms_inbox" />
             <item type="bool" name="always_mark_sms_read" />
+
             <!-- Whether to retry message history data migration after db creation
            Note, please only enable this flag when upgrade to R, enabling this
            flag during OTA might cause history data inserted twice.-->
@@ -124,6 +125,7 @@
             <!-- Allow user to enable/disable audio speech alert (text-to-speech for received
             messages)-->
             <item type="bool" name="show_alert_speech_setting" />
+            <item type="bool" name="show_main_switch_settings" />
 
             <!-- Temporarily enable string customization to address translation issues. All translation issues will be fixed in S by upstreaming -->
             <!-- Dialog title for presidential level alert. [CHAR LIMIT=50] -->

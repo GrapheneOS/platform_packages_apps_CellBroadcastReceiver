@@ -98,7 +98,8 @@ public class CellBroadcastChannelManager {
         private static final String KEY_DISPLAY = "display";
         /** Define whether to enable this only in test/debug mode. */
         private static final String KEY_TESTING_MODE_ONLY = "testing_mode";
-
+        /** Define the channels which not allow opt-out. */
+        private static final String KEY_ALWAYS_ON = "always_on";
 
         /**
          * Defines whether the channel needs language filter or not. True indicates that the alert
@@ -132,6 +133,8 @@ public class CellBroadcastChannelManager {
         // If enable_write_alerts_to_sms_inbox is true, write to sms inbox is enabled by default
         // for all channels except for channels which explicitly set to exclude from sms inbox.
         public boolean mWriteToSmsInbox = true;
+        // only set to true for channels not allow opt-out. e.g, presidential alert.
+        public boolean mAlwaysOn = false;
 
         public CellBroadcastChannelRange(Context context, int subId, String channelRange) {
 
@@ -219,6 +222,11 @@ public class CellBroadcastChannelManager {
                                     mTestMode = true;
                                 }
                                 break;
+                            case KEY_ALWAYS_ON:
+                                if (value.equalsIgnoreCase("true")) {
+                                    mAlwaysOn = true;
+                                }
+                                break;
                         }
                     }
                 }
@@ -243,7 +251,8 @@ public class CellBroadcastChannelManager {
                     + mEmergencyLevel + ",type=" + mAlertType + ",scope=" + mScope + ",vibration="
                     + Arrays.toString(mVibrationPattern) + ",alertDuration=" + mAlertDuration
                     + ",filter_language=" + mFilterLanguage + ",override_dnd=" + mOverrideDnd
-                    + ",display=" + mDisplay + ",testMode=" + mTestMode +"]";
+                    + ",display=" + mDisplay + ",testMode=" + mTestMode + ",mAlwaysOn="
+                    + mAlwaysOn +"]";
         }
     }
 

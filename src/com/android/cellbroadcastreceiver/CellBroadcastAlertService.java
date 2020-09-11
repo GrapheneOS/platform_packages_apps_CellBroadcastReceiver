@@ -387,6 +387,14 @@ public class CellBroadcastAlertService extends Service {
      * @return true if the channel is enabled on the device, otherwise false.
      */
     private boolean isChannelEnabled(SmsCbMessage message) {
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(mContext,
+                message.getSubscriptionId());
+        CellBroadcastChannelRange chanelrange = channelManager
+                .getCellBroadcastChannelRangeFromMessage(message);
+        if (chanelrange != null && chanelrange.mAlwaysOn) {
+            Log.d(TAG, "channel is enabled due to always-on, ignoring preference check");
+            return true;
+        }
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         // Check if all emergency alerts are disabled.
@@ -414,8 +422,6 @@ public class CellBroadcastAlertService extends Service {
         // Check if the messages are on additional channels enabled by the resource config.
         // If those channels are enabled by the carrier, but the device is actually roaming, we
         // should not allow the messages.
-        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
-                mContext, message.getSubscriptionId());
         ArrayList<CellBroadcastChannelRange> ranges = channelManager.getCellBroadcastChannelRanges(
                 R.array.additional_cbs_channels_strings);
 
@@ -470,12 +476,6 @@ public class CellBroadcastAlertService extends Service {
             return emergencyAlertEnabled
                     && PreferenceManager.getDefaultSharedPreferences(this)
                             .getBoolean(CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true);
-        }
-
-        if (channelManager.checkCellBroadcastChannelRange(channel,
-                R.array.exercise_alert_range_strings)
-                && getResources().getBoolean(R.bool.always_enable_exercise_alert)) {
-            return true;
         }
 
         if (channelManager.checkCellBroadcastChannelRange(channel,
