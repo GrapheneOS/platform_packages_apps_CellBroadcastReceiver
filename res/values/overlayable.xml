@@ -114,6 +114,7 @@
             <!-- Value of sms sender display name to be shown in SMS inbox for public safety alerts -->
             <item type="string" name="sms_cb_sender_name_public_safety" />
             <item type="bool" name="enable_write_alerts_to_sms_inbox" />
+            <item type="bool" name="always_mark_sms_read" />
 
             <!-- Allow user to enable/disable audio speech alert (text-to-speech for received
             messages)-->
