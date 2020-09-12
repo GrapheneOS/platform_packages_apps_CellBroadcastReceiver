@@ -75,68 +75,145 @@
             <item type="string" name="sms_cb_sender_name_public_safety" />
             <item type="bool" name="enable_write_alerts_to_sms_inbox" />
             <item type="bool" name="always_mark_sms_read" />
+            <!-- Whether to retry message history data migration after db creation
+           Note, please only enable this flag when upgrade to R, enabling this
+           flag during OTA might cause history data inserted twice.-->
+            <item type="bool" name="retry_message_history_data_migration" />
 
-            <!-- The name of the Cell Broadcast Receiver app. [CHAR LIMIT=NONE] -->
-            <item type="string" name="app_label" />
-            <!-- Label for settings screen. [CHAR LIMIT=NONE] -->
-            <item type="string" name="sms_cb_settings" />
-
-            <!-- Text for dismiss button in broadcast message view dialog. [CHAR LIMIT=25] -->
-            <item type="string" name="button_dismiss" />
 
             <!-- Temporarily enable string customization to address translation issues. All translation issues will be fixed in S by upstreaming -->
             <!-- Dialog title for presidential level alert. [CHAR LIMIT=50] -->
-            <item type="string" name="cmas_presidential_level_alert" />
-            <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
-            <item type="string" name="cmas_extreme_alert" />
-            <!-- CMAS dialog title for extreme alert with extreme severity, immediate urgency, and observed certainty. [CHAR LIMIT=50] -->
-            <item type="string" name="cmas_extreme_immediate_observed_alert" />
-            <!-- CMAS dialog title for extreme alert with extreme severity, immediate urgency,  and likely certainty. [CHAR LIMIT=50] -->
-            <item type="string" name="cmas_extreme_immediate_likely_alert" />
-            <!-- CMAS dialog title for severe alert. [CHAR LIMIT=50] -->
-            <item type="string" name="cmas_severe_alert" />
-            <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
-            <item type="string" name="cmas_amber_alert" />
-            <!-- Dialog title for all public safety message broadcasts. [CHAR LIMIT=50] -->
-            <item type="string" name="public_safety_message" />
-            <!-- Dialog title for all state/local test alerts. [CHAR LIMIT=50] -->
-            <item type="string" name="state_local_test_alert" />
-            <!-- Dialog title pws_other_message_identifiers. [CHAR LIMIT=50]-->
+            <!-- The name of the Cell Broadcast Receiver app. [CHAR LIMIT=NONE] -->
+            <item type="string" name="app_label" />
+            <item type="string" name="sms_cb_settings" />
+            <item type="string" name="cell_broadcast_settings_not_available"/>
+            <item type="string" name="button_dismiss"/>
+            <item type="string" name="no_cell_broadcasts"/>
+            <item type="string" name="menu_preferences"/>
+            <item type="string" name="menu_delete_all"/>
+            <item type="string" name="message_options"/>
+            <item type="string" name="menu_view_details"/>
+            <item type="string" name="menu_delete"/>
+            <item type="string" name="view_details_title"/>
+            <item type="string" name="view_details_debugging_title"/>
+            <item type="string" name="confirm_delete_broadcast"/>
+            <item type="string" name="confirm_delete_all_broadcasts"/>
+            <item type="string" name="button_delete"/>
+            <item type="string" name="button_cancel"/>
+            <item type="string" name="etws_earthquake_warning"/>
+            <item type="string" name="etws_tsunami_warning"/>
+            <item type="string" name="etws_earthquake_and_tsunami_warning"/>
+            <item type="string" name="etws_test_message"/>
+            <item type="string" name="etws_other_emergency_type"/>
+            <item type="string" name="cmas_presidential_level_alert"/>
+            <item type="string" name="cmas_extreme_alert"/>
+            <item type="string" name="cmas_extreme_immediate_observed_alert"/>
+            <item type="string" name="cmas_extreme_immediate_likely_alert"/>
+            <item type="string" name="cmas_severe_alert"/>
+            <item type="string" name="cmas_amber_alert"/>
+            <item type="string" name="cmas_required_monthly_test"/>
+            <item type="string" name="cmas_exercise_alert"/>
+            <item type="string" name="cmas_operator_defined_alert"/>
             <item type="string" name="pws_other_message_identifiers" />
-            <!-- Dialog title for test alert. [CHAR LIMIT=50] -->
-            <item type="string" name="cmas_required_monthly_test" />
-            <!-- CMAS dialog title for operator defined use. [CHAR LIMIT=50] -->
-            <item type="string" name="cmas_operator_defined_alert" />
-            <!-- Dialog title for exercise level alert. [CHAR LIMIT=50] -->
-            <item type="string" name="cmas_exercise_alert" />
-            <!-- Dialog title for all non-emergency cell broadcasts. [CHAR LIMIT=50] -->
-            <item type="string" name="cb_other_message_identifiers" />
-            <!-- Dialog title or menu title of emergency alert. [CHAR LIMIT=50] -->
-            <item type="string" name="emergency_alert" />
-            <item type="string" name="enable_cmas_test_alerts_title" />
-            <!-- Preference title for enable ETWS test alerts checkbox. [CHAR LIMIT=50] -->
-            <item type="string" name="enable_etws_test_alerts_title" />
-            <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
-            <item type="string" name="enable_cmas_extreme_threat_alerts_title" />
-            <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
-            <item type="string" name="enable_cmas_severe_threat_alerts_title" />
-            <!-- Preference title for enable CMAS amber alerts checkbox. [CHAR LIMIT=50] -->
-            <item type="string" name="enable_cmas_amber_alerts_title" />
-            <!-- Preference title for enable alerts messages checkbox. [CHAR LIMIT=100] -->
-            <item type="string" name="enable_alert_message_title" />
-            <!-- Preference title for enable public safety messages checkbox. [CHAR LIMIT=100] -->
-            <item type="string" name="enable_public_safety_messages_title" />
-            <!-- Preference title for enable state/local test alerts checkbox. [CHAR LIMIT=100] -->
-            <item type="string" name="enable_state_local_test_alerts_title" />
-            <!-- Preference title for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->
-            <item type="string" name="enable_emergency_alerts_message_title" />
-            <!-- Preference title for enable presidential threat alerts checkbox. [CHAR LIMIT=40] -->
-            <item type="string" name="enable_cmas_presidential_alerts_title" />
+            <item type="string" name="cb_other_message_identifiers"/>
+            <item type="string" name="public_safety_message"/>
+            <item type="string" name="state_local_test_alert"/>
+            <item type="string" name="emergency_alert"/>
+            <item type="string" name="emergency_alerts_title"/>
+            <item type="string" name="notification_channel_broadcast_messages"/>
+            <item type="string" name="notification_channel_emergency_alerts"/>
+            <item type="string" name="notification_channel_broadcast_messages_in_voicecall"/>
+            <item type="string" name="enable_alerts_master_toggle_title"/>
+            <item type="string" name="enable_alerts_master_toggle_summary"/>
+            <item type="string" name="alert_reminder_interval_title"/>
+            <item type="string" name="alert_reminder_interval_summary"/>
+            <item type="string" name="alert_reminder_dialog_title"/>
+            <item type="string" name="emergency_alert_history_title"/>
+            <item type="string" name="alert_preferences_title"/>
+            <item type="string" name="enable_etws_test_alerts_title"/>
+            <item type="string" name="enable_etws_test_alerts_summary"/>
+            <item type="string" name="enable_cmas_extreme_threat_alerts_title"/>
+            <item type="string" name="enable_cmas_extreme_threat_alerts_summary"/>
+            <item type="string" name="enable_cmas_severe_threat_alerts_title"/>
+            <item type="string" name="enable_cmas_severe_threat_alerts_summary"/>
+            <item type="string" name="enable_cmas_amber_alerts_title"/>
+            <item type="string" name="enable_cmas_amber_alerts_summary"/>
+            <item type="string" name="enable_alert_message_title"/>
+            <item type="string" name="enable_alert_message_summary"/>
+            <item type="string" name="enable_public_safety_messages_title"/>
+            <item type="string" name="enable_public_safety_messages_summary"/>
+            <item type="string" name="enable_state_local_test_alerts_title"/>
+            <item type="string" name="enable_state_local_test_alerts_summary"/>
+            <item type="string" name="enable_emergency_alerts_message_title"/>
+            <item type="string" name="enable_emergency_alerts_message_summary"/>
+            <item type="string" name="enable_cmas_test_alerts_title"/>
+            <item type="string" name="enable_cmas_test_alerts_summary"/>
+            <item type="string" name="enable_alert_vibrate_title"/>
+            <item type="string" name="override_dnd_title"/>
+            <item type="string" name="override_dnd_summary"/>
+            <item type="string" name="enable_area_update_info_alerts_title"/>
+            <item type="string" name="enable_area_update_info_alerts_summary"/>
 
-            <!-- Whether to retry message history data migration after db creation
-            Note, please only enable this flag when upgrade to R, enabling this
-            flag during OTA might cause history data inserted twice.-->
-            <item type="bool" name="retry_message_history_data_migration" />
+            <item type="string" name="cmas_category_heading"/>
+            <item type="string" name="cmas_category_geo"/>
+            <item type="string" name="cmas_category_met"/>
+            <item type="string" name="cmas_category_safety"/>
+            <item type="string" name="cmas_category_security"/>
+            <item type="string" name="cmas_category_rescue"/>
+            <item type="string" name="cmas_category_fire"/>
+            <item type="string" name="cmas_category_health"/>
+            <item type="string" name="cmas_category_env"/>
+            <item type="string" name="cmas_category_transport"/>
+            <item type="string" name="cmas_category_infra"/>
+            <item type="string" name="cmas_category_cbrne"/>
+            <item type="string" name="cmas_category_other"/>
+            <item type="string" name="cmas_response_heading"/>
+            <item type="string" name="cmas_response_shelter"/>
+            <item type="string" name="cmas_response_evacuate"/>
+            <item type="string" name="cmas_response_prepare"/>
+            <item type="string" name="cmas_response_execute"/>
+            <item type="string" name="cmas_response_monitor"/>
+            <item type="string" name="cmas_response_avoid"/>
+            <item type="string" name="cmas_response_assess"/>
+            <item type="string" name="cmas_response_none"/>
+            <item type="string" name="cmas_severity_heading"/>
+            <item type="string" name="cmas_severity_extreme"/>
+            <item type="string" name="cmas_severity_severe"/>
+            <item type="string" name="cmas_urgency_heading"/>
+            <item type="string" name="cmas_urgency_immediate"/>
+            <item type="string" name="cmas_urgency_expected"/>
+            <item type="string" name="cmas_certainty_heading"/>
+            <item type="string" name="cmas_certainty_observed"/>
+            <item type="string" name="cmas_certainty_likely"/>
+            <item type="string" name="delivery_time_heading"/>
+            <item type="string" name="notification_multiple"/>
+            <item type="string" name="notification_multiple_title"/>
+            <item type="string" name="show_cmas_opt_out_summary"/>
+            <item type="string" name="show_cmas_opt_out_title"/>
+            <item type="string" name="cmas_opt_out_dialog_text"/>
+            <item type="string" name="cmas_opt_out_button_yes" />
+            <item type="string" name="cmas_opt_out_button_no" />
+            <item type="string" name="cb_list_activity_title" />
+            <item type="string" name="emergency_alert_settings_title_watches" />
+            <item type="string" name="enable_cmas_presidential_alerts_title" />
+            <item type="string" name="enable_cmas_presidential_alerts_summary" />
+            <item type="string" name="receive_cmas_in_second_language_title" />
+            <item type="string" name="receive_cmas_in_second_language_summary" />
+            <item type="string" name="alerts_header_summary" />
+            <item type="string" name="testing_mode_enabled" />
+            <item type="string" name="testing_mode_disabled" />
+            <item type="string" name="show_all_messages" />
+            <item type="string" name="show_regular_messages" />
+            <item type="string" name="message_identifier" />
+            <item type="string" name="message_serial_number" />
+            <item type="string" name="data_coding_scheme" />
+            <item type="string" name="message_content" />
+            <item type="string" name="location_check_time" />
+            <item type="string" name="message_displayed" />
+            <item type="string" name="message_coordinates" />
+            <item type="string" name="maximum_waiting_time" />
+            <item type="string" name="seconds" />
+            <item type="string" name="message_copied" />
         </policy>
         <!-- END VENDOR CUSTOMIZATION -->
 
