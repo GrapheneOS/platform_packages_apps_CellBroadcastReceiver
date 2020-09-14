@@ -20,11 +20,18 @@ import static android.view.WindowManager.LayoutParams.SYSTEM_FLAG_HIDE_NON_SYSTE
 
 import android.annotation.Nullable;
 import android.app.ActionBar;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.FragmentManager;
+import android.app.ListFragment;
+import android.app.LoaderManager;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,14 +50,6 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.ListFragment;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.CursorLoader;
-import androidx.loader.content.Loader;
-
 import com.android.internal.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
@@ -59,7 +58,7 @@ import java.util.ArrayList;
  * This activity provides a list view of received cell broadcasts. Most of the work is handled
  * in the inner CursorLoaderListFragment class.
  */
-public class CellBroadcastListActivity extends FragmentActivity {
+public class CellBroadcastListActivity extends Activity {
 
     @VisibleForTesting
     public CursorLoaderListFragment mListFragment;
@@ -76,7 +75,7 @@ public class CellBroadcastListActivity extends FragmentActivity {
 
         setTitle(getString(R.string.cb_list_activity_title));
 
-        FragmentManager fm = getSupportFragmentManager();
+        FragmentManager fm = getFragmentManager();
 
         // Create the list fragment and add it as our sole content.
         if (fm.findFragmentById(android.R.id.content) == null) {
