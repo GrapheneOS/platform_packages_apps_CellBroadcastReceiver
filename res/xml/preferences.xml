@@ -19,11 +19,12 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    
-    <Preference android:key="alerts_header" 
+
+    <Preference android:key="alerts_header"
                 android:summary="@string/alerts_header_summary"
+                android:icon="@drawable/ic_info_outline_24dp"
                 android:selectable="false" />
-                
+
     <SwitchPreference android:defaultValue="@bool/master_toggle_enabled_default"
                       android:key="enable_alerts_master_toggle"
                       android:summary="@string/enable_alerts_master_toggle_summary"
