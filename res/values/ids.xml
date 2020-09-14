@@ -17,12 +17,4 @@
     <item type="id" name="buttonPanel"/>
     <item type="id" name="dismissButton"/>
 
-    <!--IDs used by androidx AlertDialog layout-->
-    <item type="id" name="scrollIndicatorUp"/>
-    <item type="id" name="textSpacerNoTitle"/>
-    <item type="id" name="textSpacerNoButtons"/>
-    <item type="id" name="scrollIndicatorDown"/>
-    <item type="id" name="customPanel"/>
-    <item type="id" name="custom"/>
-
 </resources>
