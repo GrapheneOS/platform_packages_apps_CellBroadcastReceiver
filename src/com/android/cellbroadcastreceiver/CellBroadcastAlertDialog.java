@@ -60,6 +60,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
 
 import java.lang.annotation.Retention;
@@ -766,9 +767,15 @@ public class CellBroadcastAlertDialog extends Activity {
                         -> provider.markBroadcastRead(Telephony.CellBroadcasts.DELIVERY_TIME,
                         deliveryTime));
 
-        // Set the opt-out dialog flag if this is a CMAS alert (other than Presidential Alert).
-        if (lastMessage.isCmasMessage() && lastMessage.getCmasWarningInfo().getMessageClass()
-                != SmsCbCmasInfo.CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT) {
+        // Set the opt-out dialog flag if this is a CMAS alert (other than Always-on alert e.g,
+        // Presidential alert).
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                getApplicationContext(),
+                lastMessage.getSubscriptionId());
+        CellBroadcastChannelRange range = channelManager
+                .getCellBroadcastChannelRangeFromMessage(lastMessage);
+
+        if (range!= null && !range.mAlwaysOn) {
             mShowOptOutDialog = true;
         }
 
@@ -777,8 +784,6 @@ public class CellBroadcastAlertDialog extends Activity {
         if (nextMessage != null) {
             updateAlertText(nextMessage);
             int subId = nextMessage.getSubscriptionId();
-            CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
-                    getApplicationContext(), subId);
             if (channelManager.isEmergencyMessage(nextMessage)) {
                 mAnimationHandler.startIconAnimation(subId);
             } else {

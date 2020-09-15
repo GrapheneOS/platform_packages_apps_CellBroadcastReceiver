@@ -18,8 +18,8 @@
   <!-- 4370, 4383, (0xA16A test-mode) -->
   <!-- Emergency alert tone duration set to 1 minute for Korean users -->
   <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-    <item>0x1112:rat=gsm, emergency=true, alert_duration=60000</item>
-    <item>0x111F:rat=gsm, emergency=true, alert_duration=60000</item>
+    <item>0x1112:rat=gsm, emergency=true, alert_duration=60000, always_on=true</item>
+    <item>0x111F:rat=gsm, emergency=true, alert_duration=60000, always_on=true</item>
     <item>0xA16A:rat=gsm, emergency=true, alert_duration=60000, testing_mode=true</item>
   </string-array>
   <!-- 4371, 4384, (0xA16B test mode) -->

@@ -137,7 +137,7 @@ public class CellBroadcastConfigService extends IntentService {
 
         // boolean for each user preference checkbox, true for checked, false for unchecked
         // Note: If enableAlertsMasterToggle is false, it disables ALL emergency broadcasts
-        // except for CMAS presidential. i.e. to receive CMAS severe alerts, both
+        // except for always-on alerts e.g, presidential. i.e. to receive CMAS severe alerts, both
         // enableAlertsMasterToggle AND enableCmasSevereAlerts must be true.
         boolean enableAlertsMasterToggle = prefs.getBoolean(
                 CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
@@ -224,10 +224,8 @@ public class CellBroadcastConfigService extends IntentService {
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.required_monthly_test_range_strings));
 
-        // Exercise is part of test toggle with monthly test and operator defined. some carriers
-        // mandate to show test settings in UI but always enable exercise alert.
-        setCellBroadcastRange(subId, enableTestAlerts ||
-                        res.getBoolean(R.bool.always_enable_exercise_alert),
+        // Enable/Disable exercise test messages.
+        setCellBroadcastRange(subId, enableTestAlerts,
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.exercise_alert_range_strings));
 
@@ -302,6 +300,11 @@ public class CellBroadcastConfigService extends IntentService {
 
         if (ranges != null) {
             for (CellBroadcastChannelRange range: ranges) {
+                if (range.mAlwaysOn) {
+                    log("mAlwaysOn is set to true, enable the range: " + range.mStartId
+                            + ":" + range.mEndId);
+                    enable = true;
+                }
                 if (enable) {
                     manager.enableCellBroadcastRange(range.mStartId, range.mEndId, range.mRanType);
                 } else {

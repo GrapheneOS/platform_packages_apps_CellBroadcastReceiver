@@ -20,6 +20,8 @@
     <string-array name="additional_cbs_channels_strings" translatable="false">
         <item>0x032:type=area, emergency=true</item>
     </string-array>
+    <!-- Whether to show main switch settings at the top -->
+    <bool name="show_main_switch_settings">false</bool>
 
     <!-- This is a special case that channel 50 is used as a regular message channel -->
     <bool name="config_showAreaUpdateInfoSettings">true</bool>

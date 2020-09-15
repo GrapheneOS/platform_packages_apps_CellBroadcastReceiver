@@ -21,4 +21,6 @@
     <bool name="show_severe_alert_settings">false</bool>
     <!-- Whether to show amber alert settings -->
     <bool name="show_amber_alert_settings">false</bool>
+    <!-- Whether to show main switch settings at the top -->
+    <bool name="show_main_switch_settings">false</bool>
 </resources>

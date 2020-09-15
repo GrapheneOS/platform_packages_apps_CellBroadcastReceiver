@@ -27,9 +27,9 @@
 
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, override_dnd=true</item>
+        <item>0x1112:rat=gsm, emergency=true, override_dnd=true, always_on=true</item>
         <!-- additional language -->
-        <item>0x111F:rat=gsm, emergency=true, override_dnd=true</item>
+        <item>0x111F:rat=gsm, emergency=true, override_dnd=true, always_on=true</item>
     </string-array>
 
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
