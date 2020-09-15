@@ -309,7 +309,8 @@
     <!-- Preference summary for enable CMAS second language checkbox. [CHAR LIMIT=100] -->
     <string name="receive_cmas_in_second_language_summary"></string>
 
-    <!-- Preference summary for emergency alert header -->
+    <!-- Preference summary for emergency alert header. For some carriers this is a required
+      "about cell broadcast messages" info preference -->
     <string name="alerts_header_summary"></string>
 
     <!-- Toast message to indicate testing mode is enabled. [CHAR LIMIT=100] -->
