@@ -18,6 +18,8 @@ package com.android.cellbroadcastreceiver;
 
 import android.annotation.IntDef;
 import android.annotation.NonNull;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.app.NotificationManager;
 import android.content.ClipData;
@@ -44,7 +46,6 @@ import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -57,9 +58,6 @@ import android.view.textclassifier.TextLinks;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.FragmentActivity;
 
 import com.android.internal.annotations.VisibleForTesting;
 
@@ -76,7 +74,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Custom alert dialog with optional flashing warning icon.
  * Alert audio and text-to-speech handled by {@link CellBroadcastAlertAudio}.
  */
-public class CellBroadcastAlertDialog extends FragmentActivity {
+public class CellBroadcastAlertDialog extends Activity {
 
     private static final String TAG = "CellBroadcastAlertDialog";
 
@@ -316,13 +314,7 @@ public class CellBroadcastAlertDialog extends FragmentActivity {
 
         // Initialize the view.
         LayoutInflater inflater = LayoutInflater.from(this);
-        TypedValue typedValue = new TypedValue();
-        getTheme().resolveAttribute(android.R.attr.layout, typedValue, true);
-        if (typedValue.resourceId > 0) {
-            setContentView(inflater.inflate(typedValue.resourceId, null));
-        } else {
-            setContentView(inflater.inflate(R.layout.cell_broadcast_alert, null));
-        }
+        setContentView(inflater.inflate(R.layout.cell_broadcast_alert, null));
 
         findViewById(R.id.dismissButton).setOnClickListener(v -> dismiss());
 

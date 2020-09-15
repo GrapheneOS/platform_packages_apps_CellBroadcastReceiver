@@ -18,6 +18,8 @@ package com.android.cellbroadcastreceiver;
 
 import android.annotation.NonNull;
 import android.app.ActionBar;
+import android.app.Activity;
+import android.app.Fragment;
 import android.app.backup.BackupManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -34,13 +36,11 @@ import android.telephony.SubscriptionManager;
 import android.util.Log;
 import android.view.MenuItem;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
@@ -53,7 +53,7 @@ import java.util.Map;
 /**
  * Settings activity for the cell broadcast receiver.
  */
-public class CellBroadcastSettings extends FragmentActivity {
+public class CellBroadcastSettings extends Activity {
 
     private static final String TAG = "CellBroadcastSettings";
 
@@ -162,10 +162,10 @@ public class CellBroadcastSettings extends FragmentActivity {
         }
 
         // We only add new CellBroadcastSettingsFragment if no fragment is restored.
-        Fragment fragment = getSupportFragmentManager().findFragmentById(android.R.id.content);
+        Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
         if (fragment == null) {
             fragment = new CellBroadcastSettingsFragment();
-            getSupportFragmentManager()
+            getFragmentManager()
                     .beginTransaction()
                     .add(android.R.id.content, fragment)
                     .commit();
@@ -229,7 +229,7 @@ public class CellBroadcastSettings extends FragmentActivity {
     /**
      * New fragment-style implementation of preferences.
      */
-    public static class CellBroadcastSettingsFragment extends PreferenceFragmentCompat {
+    public static class CellBroadcastSettingsFragment extends PreferenceFragment {
 
         private TwoStatePreference mExtremeCheckBox;
         private TwoStatePreference mSevereCheckBox;
