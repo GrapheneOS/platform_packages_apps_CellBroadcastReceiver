@@ -28,7 +28,7 @@
             <item type="style" name="CellBroadcastListViewTheme"/>
             <item type="style" name="CellBroadcastListItemTheme"/>
 
-            <!-- All attributes defined in app level need to exposed to overlay the AlerDialg and
+            <!-- All attributes defined in app level need to exposed to overlay the AlerDialog and
                  CellBroadcastAlertDialog layouts -->
             <item type="attr" name="preferenceFragmentCompatStyle"/>
             <item type="attr" name="switchPreferenceStyle"/>
@@ -67,13 +67,6 @@
             <item type="id" name="pictogramImage"/>
             <item type="id" name="buttonPanel"/>
             <item type="id" name="dismissButton"/>
-            <!-- additional IDs used by AlertDialog(androidx) -->
-            <item type="id" name="scrollIndicatorUp"/>
-            <item type="id" name="textSpacerNoTitle"/>
-            <item type="id" name="textSpacerNoButtons"/>
-            <item type="id" name="scrollIndicatorDown"/>
-            <item type="id" name="customPanel"/>
-            <item type="id" name="custom"/>
             <!-- END THEME / STYLE -->
 
             <!-- START DIMEN -->
