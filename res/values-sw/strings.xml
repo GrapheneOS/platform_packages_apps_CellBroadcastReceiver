@@ -32,8 +32,8 @@
     <string name="menu_delete" msgid="128380070910799366">"Futa tangazo"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Maelezo ya arifa"</string>
     <string name="view_details_debugging_title" msgid="5699927030805114173">"Maelezo ya arifa za utatuzi"</string>
-    <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Futa matangazo haya?"</string>
-    <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Futa jumbe zote zilizopokewa za matangazo?"</string>
+    <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Ifute tangazo hili?"</string>
+    <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Ifute ujumbe wote wa watu wengi uliopokea?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Futa"</string>
     <string name="button_cancel" msgid="7479958360523246140">"Ghairi"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"Onyo la tetemeko la ardhi"</string>
