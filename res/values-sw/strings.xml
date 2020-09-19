@@ -59,7 +59,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Arifa za dharura"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Arifa za dharura kupitia simu ya sauti"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Ruhusu arifa"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Pokea arifa za tahadhari za dharura kupitia vifaa visivyotumia waya"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Pokea arifa za dharura kupitia vifaa visivyotumia waya"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Kikumbusho cha arifa"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Sauti ya kikumbusho itacheza kwa kiwango cha kawaida cha sauti"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historia ya arifa za dharura"</string>
