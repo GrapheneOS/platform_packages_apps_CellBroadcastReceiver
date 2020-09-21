@@ -47,7 +47,6 @@ import android.service.notification.StatusBarNotification;
 import android.telephony.PhoneStateListener;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbMessage;
-import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -207,8 +206,8 @@ public class CellBroadcastAlertService extends Service {
         String messageLanguage = message.getLanguageCode();
         if (range != null && range.mFilterLanguage) {
             // language filtering based on CBR second language settings
-            final String secondLanguageCode =  CellBroadcastSettings.getResources(mContext,
-                    SubscriptionManager.DEFAULT_SUBSCRIPTION_ID)
+            final String secondLanguageCode = CellBroadcastSettings.getResources(mContext,
+                    message.getSubscriptionId())
                     .getString(R.string.emergency_alert_second_language_code);
             if (!secondLanguageCode.isEmpty()) {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);

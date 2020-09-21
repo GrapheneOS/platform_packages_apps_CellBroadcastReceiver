@@ -82,14 +82,13 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     }
 
     /**
-     * this method is to make this class unit-testable, because CellBroadcastSettings.getResources()
-     * is a static method and cannot be stubbed.
+     * this method is to make this class unit-testable, because
+     * CellBroadcastSettings.getResourcesForDefaultSubId() is a static method and cannot be stubbed.
      * @return resources
      */
     @VisibleForTesting
     public Resources getResourcesMethod() {
-        return CellBroadcastSettings.getResources(getContextMethod(),
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        return CellBroadcastSettings.getResourcesForDefaultSubId(getContextMethod());
     }
 
     /**
