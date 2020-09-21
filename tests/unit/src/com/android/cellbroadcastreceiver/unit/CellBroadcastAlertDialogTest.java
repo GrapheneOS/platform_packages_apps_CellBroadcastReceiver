@@ -28,6 +28,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.IPowerManager;
 import android.os.IThermalService;
@@ -37,12 +38,16 @@ import android.os.PowerManager;
 import android.preference.PreferenceManager;
 import android.telephony.SmsCbMessage;
 import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertDialog;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
+import com.android.cellbroadcastreceiver.R;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 
 import org.junit.After;
@@ -283,5 +288,34 @@ public class CellBroadcastAlertDialogTest extends
 
         assertTrue(activity.onKeyDown(0,
                 new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_FOCUS)));
+    }
+
+    public void testOnConfigurationChanged() throws Throwable {
+        CellBroadcastAlertDialog activity = startActivity();
+        Configuration newConfig = new Configuration();
+
+        ImageView image = activity.findViewById(R.id.pictogramImage);
+        image.setVisibility(View.VISIBLE);
+        assertEquals(View.VISIBLE, image.getVisibility());
+
+        newConfig.orientation = Configuration.ORIENTATION_LANDSCAPE;
+        activity.onConfigurationChanged(newConfig);
+        assertNotNull(image.getLayoutParams());
+
+        newConfig.orientation = Configuration.ORIENTATION_PORTRAIT;
+        activity.onConfigurationChanged(newConfig);
+        assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, image.getLayoutParams().height);
+        assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, image.getLayoutParams().width);
+    }
+
+    public void testOnWindowFocusChanged() throws Throwable {
+        CellBroadcastAlertDialog activity = startActivity();
+
+        ImageView image = activity.findViewById(R.id.pictogramImage);
+        image.setVisibility(View.VISIBLE);
+        assertEquals(View.VISIBLE, image.getVisibility());
+
+        activity.onWindowFocusChanged(true);
+        assertNotNull(image.getLayoutParams());
     }
 }
