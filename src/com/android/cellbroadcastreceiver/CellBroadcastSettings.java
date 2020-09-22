@@ -345,8 +345,7 @@ public class CellBroadcastSettings extends Activity {
 
             initPreferences();
 
-            Resources res = CellBroadcastSettings.getResources(getContext(),
-                    SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+            Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
 
             mDisableSevereWhenExtremeDisabled = res.getBoolean(
                     R.bool.disable_severe_when_extreme_disabled);
@@ -477,8 +476,7 @@ public class CellBroadcastSettings extends Activity {
          * Dynamically update each preference's visibility based on configuration.
          */
         private void updatePreferenceVisibility() {
-            Resources res = CellBroadcastSettings.getResources(getContext(),
-                    SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+            Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
 
             CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                     getContext(), SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
@@ -564,8 +562,7 @@ public class CellBroadcastSettings extends Activity {
         }
 
         private void initReminderIntervalList() {
-            Resources res = CellBroadcastSettings.getResources(
-                    getContext(), SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+            Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
 
             String[] activeValues =
                     res.getStringArray(R.array.alert_reminder_interval_active_values);
@@ -654,8 +651,7 @@ public class CellBroadcastSettings extends Activity {
     public static boolean isTestAlertsToggleVisible(Context context) {
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(context,
                 SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
-        Resources res = CellBroadcastSettings.getResources(context,
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(context);
         boolean isTestAlertsAvailable = !channelManager.getCellBroadcastChannelRanges(
                 R.array.required_monthly_test_range_strings).isEmpty()
                 || !channelManager.getCellBroadcastChannelRanges(
@@ -716,5 +712,15 @@ public class CellBroadcastSettings extends Activity {
         sResourcesCache.put(subId, res);
 
         return res;
+    }
+
+    /**
+     * Get the resources using the default subscription ID.
+     * @param context Context
+     * @return the Resources for the default subscription ID, or if there is no default subscription
+     * from SubscriptionManager, the resources for the latest loaded SIM.
+     */
+    public static @NonNull Resources getResourcesForDefaultSubId(@NonNull Context context) {
+        return getResources(context, SubscriptionManager.getDefaultSubscriptionId());
     }
 }

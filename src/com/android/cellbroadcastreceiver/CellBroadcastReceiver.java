@@ -114,8 +114,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      */
     @VisibleForTesting
     public Resources getResourcesMethod() {
-        return CellBroadcastSettings.getResources(mContext,
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        return CellBroadcastSettings.getResourcesForDefaultSubId(mContext);
     }
 
     @Override
@@ -323,9 +322,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         String currentIntervalDefault = sp.getString(CURRENT_INTERVAL_DEFAULT, "0");
 
         // If interval default changes, reset the interval to the new default value.
-        String newIntervalDefault = CellBroadcastSettings.getResources(mContext,
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID).getString(
-                        R.string.alert_reminder_interval_in_min_default);
+        String newIntervalDefault = CellBroadcastSettings.getResourcesForDefaultSubId(mContext)
+                .getString(R.string.alert_reminder_interval_in_min_default);
         if (!newIntervalDefault.equals(currentIntervalDefault)) {
             Log.d(TAG, "Default interval changed from " + currentIntervalDefault + " to " +
                     newIntervalDefault);
