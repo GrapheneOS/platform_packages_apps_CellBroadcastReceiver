@@ -57,6 +57,8 @@
     <bool name="show_date_time_title">true</bool>
     <!-- if appending date-time to alert title, whether to include year -->
     <bool name="show_date_time_with_year_title">true</bool>
+    <!-- if appending date-time to alert title, whether to use numeric format -->
+    <bool name="show_date_in_numeric_format">true</bool>
 
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
     <bool name="override_dnd_default">true</bool>

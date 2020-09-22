@@ -583,6 +583,9 @@ public class CellBroadcastAlertDialog extends Activity {
                 if (res.getBoolean(R.bool.show_date_time_with_year_title)) {
                     flags |= DateUtils.FORMAT_SHOW_YEAR;
                 }
+                if (res.getBoolean(R.bool.show_date_in_numeric_format)) {
+                    flags |= DateUtils.FORMAT_NUMERIC_DATE;
+                }
                 title += "\n" + DateUtils.formatDateTime(context, message.getReceivedTime(), flags);
             }
 
