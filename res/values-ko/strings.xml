@@ -59,7 +59,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"긴급 경보"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"음성 통화 중 응급 상황 알림"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"경보 허용"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"무선 긴급 경보 알림 수신"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"재난문자 알림 수신"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"재난문자 알림음"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"경보 알림음이 보통 볼륨으로 재생됨"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"긴급 경보 기록"</string>
@@ -126,7 +126,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"현재 무선 긴급 경보를 수신하고 있습니다. 무선 긴급 경보를 계속 수신하시겠습니까?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"예"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"아니요"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"긴급 경보 기록"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"수신된 재난문자"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"한 번"</item>
     <item msgid="9097229303902157183">"2분마다"</item>
