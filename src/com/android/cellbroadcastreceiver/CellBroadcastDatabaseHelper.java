@@ -29,6 +29,7 @@ import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.provider.Telephony.CellBroadcasts;
 import android.util.Log;
+
 import com.android.internal.annotations.VisibleForTesting;
 
 /**
@@ -192,18 +193,28 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
                     // remove the primary key to avoid UNIQUE constraint failure.
                     values.remove(Telephony.CellBroadcasts._ID);
 
-                    if (db.insert(TABLE_NAME, null, values) == -1) {
-                        // We only have one shot to migrate data, so log and
-                        // keep marching forward
-                        loge("Failed to insert " + values + "; continuing");
+                    try {
+                        if (db.insert(TABLE_NAME, null, values) == -1) {
+                            // We only have one shot to migrate data, so log and
+                            // keep marching forward
+                            loge("Failed to insert " + values + "; continuing");
+                        }
+                    } catch (Exception e) {
+                        // If insert for one message fails, continue with other messages
+                        loge("Failed to insert " + values + " due to exception: " + e);
                     }
                 }
 
-                db.setTransactionSuccessful();
                 log("Finished migration from legacy provider");
             } catch (RemoteException e) {
                 throw new IllegalStateException(e);
             } finally {
+                // if beginTransaction() is called then setTransactionSuccessful() must be called.
+                // This is a nested begin/end transcation block -- since this is called from
+                // onCreate() which is inside another block in SQLiteOpenHelper. If a nested
+                // transaction fails, all transaction fail and that would result in table not being
+                // created (it's created in onCreate()).
+                db.setTransactionSuccessful();
                 db.endTransaction();
             }
         } catch (Exception e) {
