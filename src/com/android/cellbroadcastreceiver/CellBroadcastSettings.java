@@ -559,6 +559,12 @@ public class CellBroadcastSettings extends Activity {
                 mAlertsHeader.setVisible(
                         !getContext().getString(R.string.alerts_header_summary).isEmpty());
             }
+
+            if (mSpeechCheckBox != null) {
+                mSpeechCheckBox.setVisible(res.getBoolean(R.bool.show_alert_speech_setting)
+                        || getActivity().getPackageManager()
+                        .hasSystemFeature(PackageManager.FEATURE_WATCH));
+            }
         }
 
         private void initReminderIntervalList() {
