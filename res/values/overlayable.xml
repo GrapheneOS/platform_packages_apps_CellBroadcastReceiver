@@ -256,6 +256,9 @@
             <item type="string" name="maximum_waiting_time" />
             <item type="string" name="seconds" />
             <item type="string" name="message_copied" />
+            <!-- Allow user to enable/disable audio speech alert (text-to-speech for received
+            messages)-->
+            <item type="bool" name="show_alert_speech_setting" />
         </policy>
         <!-- END VENDOR CUSTOMIZATION -->
 

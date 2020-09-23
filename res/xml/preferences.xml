@@ -121,5 +121,11 @@
                           android:key="override_dnd"
                           android:summary="@string/override_dnd_summary"
                           android:title="@string/override_dnd_title" />
+
+        <SwitchPreference android:defaultValue="true"
+                          android:key="enable_alert_speech"
+                          android:summary="@string/enable_alert_speech_summary"
+                          android:title="@string/enable_alert_speech_title" />
     </PreferenceCategory>
+
 </PreferenceScreen>

@@ -78,6 +78,9 @@ public class CellBroadcastSettings extends Activity {
     // Enable vibration on alert (unless main volume is silent).
     public static final String KEY_ENABLE_ALERT_VIBRATE = "enable_alert_vibrate";
 
+    // Speak contents of alert after playing the alert sound.
+    public static final String KEY_ENABLE_ALERT_SPEECH = "enable_alert_speech";
+
     // Play alert sound in full volume regardless Do Not Disturb is on.
     public static final String KEY_OVERRIDE_DND = "override_dnd";
 
@@ -235,6 +238,7 @@ public class CellBroadcastSettings extends Activity {
         private TwoStatePreference mPublicSafetyMessagesChannelCheckBox;
         private TwoStatePreference mEmergencyAlertsCheckBox;
         private ListPreference mReminderInterval;
+        private TwoStatePreference mSpeechCheckBox;
         private TwoStatePreference mOverrideDndCheckBox;
         private TwoStatePreference mAreaUpdateInfoCheckBox;
         private TwoStatePreference mTestCheckBox;
@@ -281,6 +285,8 @@ public class CellBroadcastSettings extends Activity {
                     findPreference(KEY_ENABLE_EMERGENCY_ALERTS);
             mReminderInterval = (ListPreference)
                     findPreference(KEY_ALERT_REMINDER_INTERVAL);
+            mSpeechCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_ALERT_SPEECH);
             mOverrideDndCheckBox = (TwoStatePreference)
                     findPreference(KEY_OVERRIDE_DND);
             mAreaUpdateInfoCheckBox = (TwoStatePreference)
@@ -346,6 +352,14 @@ public class CellBroadcastSettings extends Activity {
             initPreferences();
 
             Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
+
+            // Remove TTS toggle if needed
+            if (!res.getBoolean(R.bool.show_alert_speech_setting)
+                    && !pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                if (mAlertPreferencesCategory != null && mSpeechCheckBox != null) {
+                    mAlertPreferencesCategory.removePreference(mSpeechCheckBox);
+                }
+            }
 
             mDisableSevereWhenExtremeDisabled = res.getBoolean(
                     R.bool.disable_severe_when_extreme_disabled);
