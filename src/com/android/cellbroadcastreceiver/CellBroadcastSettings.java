@@ -353,14 +353,6 @@ public class CellBroadcastSettings extends Activity {
 
             Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
 
-            // Remove TTS toggle if needed
-            if (!res.getBoolean(R.bool.show_alert_speech_setting)
-                    && !pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
-                if (mAlertPreferencesCategory != null && mSpeechCheckBox != null) {
-                    mAlertPreferencesCategory.removePreference(mSpeechCheckBox);
-                }
-            }
-
             mDisableSevereWhenExtremeDisabled = res.getBoolean(
                     R.bool.disable_severe_when_extreme_disabled);
 
