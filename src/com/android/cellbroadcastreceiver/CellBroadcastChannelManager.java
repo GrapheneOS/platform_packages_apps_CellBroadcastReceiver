@@ -446,10 +446,6 @@ public class CellBroadcastChannelManager {
         return message.isEmergencyMessage();
     }
 
-    private static void log(String msg) {
-        Log.d(TAG, msg);
-    }
-
     private static void loge(String msg) {
         Log.e(TAG, msg);
     }
