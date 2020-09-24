@@ -52,13 +52,13 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.os.Looper;
+import android.os.UserManager;
 import android.provider.Telephony;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
 import com.android.cellbroadcastreceiver.CellBroadcastListItem;
 import com.android.cellbroadcastreceiver.R;
@@ -78,6 +78,9 @@ public class CellBroadcastListActivityTest extends
     @Mock
     private NotificationManager mMockNotificationManager;
 
+    @Mock
+    private UserManager mMockUserManager;
+
 
     @Captor
     private ArgumentCaptor<String> mColumnCaptor;
@@ -87,6 +90,9 @@ public class CellBroadcastListActivityTest extends
         super.setUp();
         MockitoAnnotations.initMocks(this);
         injectSystemService(NotificationManager.class, mMockNotificationManager);
+        injectSystemService(UserManager.class, mMockUserManager);
+
+        doReturn(true).when(mMockUserManager).isAdminUser();
     }
 
     @After
