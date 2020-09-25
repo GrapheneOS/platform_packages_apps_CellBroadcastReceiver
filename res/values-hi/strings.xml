@@ -49,7 +49,7 @@
     <string name="public_safety_message" msgid="9119928798786998252">"सार्वजनिक सुरक्षा से जुड़ा मैसेज"</string>
     <string name="state_local_test_alert" msgid="8003145745857480200">"राज्य/स्थानीय टेस्ट"</string>
     <string name="emergency_alert" msgid="624783871477634263">"इमरजेंसी के समय सूचनाएं"</string>
-    <string name="emergency_alerts_title" msgid="6605036374197485429">"सूचनाएं"</string>
+    <string name="emergency_alerts_title" msgid="6605036374197485429">"चेतावनियां"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण संदेश"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"वॉयस कॉल के दौरान आपातकालीन चेतावनियां"</string>
@@ -57,7 +57,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"वायरलेस इमरजेंसी अलर्ट की चेतावनी पाएं"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"याद दिलाने के लिए अलर्ट"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमांइडर की रिंगटोन की आवाज़ सामान्य रहेगी"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"इमरजेंसी के समय की सूचनाओं का इतिहास"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"आपातकालीन समय की चेतावनियों का इतिहास"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"चेतावनी से जुड़ी पसंद"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS परीक्षण प्रसारण"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"भूकंप सुनामी चेतावनी सिस्‍टम के लिए परीक्षण प्रसारण"</string>
@@ -75,7 +75,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"राज्य और स्थानीय अधिकारियों से टेस्ट मैसेज पाना"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जान का खतरा हो सकता है"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"जांच करने के लिए भेजी जाने वाली सूचनाएं"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"जांच करने के लिया भेजी जाने वाली चेतावनियां"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा चेतावनी वाले सिस्टम से हर महीने टेस्ट मैसेज पाएं. साथ ही, मोबाइल कैरियर से टेस्ट मैसेज पाएं"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"वाइब्रेशन"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"हमेशा सबसे तेज़ आवाज़ (फ़ुल वॉल्यूम) में सूचना दें"</string>
