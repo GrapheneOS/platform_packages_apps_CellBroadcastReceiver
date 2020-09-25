@@ -80,6 +80,9 @@ public class CellBroadcastContentProviderTest extends TestCase {
     }
 
     @Test
+    @InstrumentationTest
+    // This test requires the content provider from the cell broadcast module, so it is disabled for
+    // OEM testing because it is not a true unit test
     public void testInsert() {
         try {
             ContentValues msg = new ContentValues();
@@ -92,6 +95,9 @@ public class CellBroadcastContentProviderTest extends TestCase {
     }
 
     @Test
+    @InstrumentationTest
+    // This test requires the content provider from the cell broadcast module, so it is disabled for
+    // OEM testing because it is not a true unit test
     public void testDelete() {
         try {
             mContentResolver.delete(CONTENT_URI, null, null);
@@ -102,6 +108,9 @@ public class CellBroadcastContentProviderTest extends TestCase {
     }
 
     @Test
+    @InstrumentationTest
+    // This test requires the content provider from the cell broadcast module, so it is disabled for
+    // OEM testing because it is not a true unit test
     public void testUpdate() {
         try {
             mContentResolver.update(CONTENT_URI, null, null);
@@ -112,6 +121,9 @@ public class CellBroadcastContentProviderTest extends TestCase {
     }
 
     @Test
+    @InstrumentationTest
+    // This test requires the content provider from the cell broadcast module, so it is disabled for
+    // OEM testing because it is not a true unit test
     public void testDeleteAll() {
         // Insert a cell broadcast message
         mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage());
@@ -127,6 +139,9 @@ public class CellBroadcastContentProviderTest extends TestCase {
     }
 
     @Test
+    @InstrumentationTest
+    // This test requires the content provider from the cell broadcast module, so it is disabled for
+    // OEM testing because it is not a true unit test
     public void testDeleteBroadcast() {
         // Insert two cell broadcast message
         mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage());
@@ -143,6 +158,9 @@ public class CellBroadcastContentProviderTest extends TestCase {
     }
 
     @Test
+    @InstrumentationTest
+    // This test requires the content provider from the cell broadcast module, so it is disabled for
+    // OEM testing because it is not a true unit test
     public void testInsertQuery() {
         // Insert a cell broadcast message
         mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage());
