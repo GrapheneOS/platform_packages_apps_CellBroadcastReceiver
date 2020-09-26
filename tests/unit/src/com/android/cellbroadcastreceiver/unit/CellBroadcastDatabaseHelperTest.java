@@ -112,6 +112,22 @@ public class CellBroadcastDatabaseHelperTest {
     }
 
     @Test
+    public void databaseHelperOnUpgrade_V13() {
+        Log.d(TAG, "databaseHelperOnUpgrade_V13");
+        SQLiteDatabase db = mInMemoryDbHelper.getWritableDatabase();
+        // version 11 -> 13 trigger in onUpgrade
+        mHelper.onUpgrade(db, 11, 13);
+        // the upgraded db must have the slot index field
+        Cursor upgradedCursor = db.query(CellBroadcastDatabaseHelper.TABLE_NAME,
+                null, null, null, null, null, null);
+        String[] upgradedColumns = upgradedCursor.getColumnNames();
+        Log.d(TAG, "cellbroadcastreceiver columns: " + Arrays.toString(upgradedColumns));
+        assertTrue(Arrays.asList(upgradedColumns).contains(CellBroadcasts.SLOT_INDEX));
+        assertTrue(Arrays.asList(upgradedColumns).contains(
+                CellBroadcastDatabaseHelper.SMS_SYNC_PENDING));
+    }
+
+    @Test
     public void testMigration() throws Exception {
         Log.d(TAG, "dataBaseHelper_testMigration");
         // mock a legacy provider for data migration

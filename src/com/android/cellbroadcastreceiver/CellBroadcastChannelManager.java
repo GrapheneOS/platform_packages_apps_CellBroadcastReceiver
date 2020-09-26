@@ -286,15 +286,15 @@ public class CellBroadcastChannelManager {
         ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
         String[] ranges =
                 CellBroadcastSettings.getResources(mContext, mSubId).getStringArray(key);
-
-        for (String range : ranges) {
-            try {
-                result.add(new CellBroadcastChannelRange(mContext, mSubId, range));
-            } catch (Exception e) {
-                loge("Failed to parse \"" + range + "\". e=" + e);
+        if (ranges != null) {
+            for (String range : ranges) {
+                try {
+                    result.add(new CellBroadcastChannelRange(mContext, mSubId, range));
+                } catch (Exception e) {
+                    loge("Failed to parse \"" + range + "\". e=" + e);
+                }
             }
         }
-
         return result;
     }
 
