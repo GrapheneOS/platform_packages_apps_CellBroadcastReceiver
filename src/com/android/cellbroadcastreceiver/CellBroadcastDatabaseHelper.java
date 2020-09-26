@@ -49,6 +49,14 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     // Preference key for whether the data migration from pre-R CBR app was complete.
     public static final String KEY_LEGACY_DATA_MIGRATION = "legacy_data_migration";
 
+    /**
+     * Is the message pending for sms synchronization.
+     * when received cellbroadcast message in direct boot mode, we will retry synchronizing
+     * alert message to sms inbox after user unlock if needed.
+     * <P>Type: Boolean</P>
+     */
+    public static final String SMS_SYNC_PENDING = "isSmsSyncPending";
+
     /*
      * Query columns for instantiating SmsCbMessage.
      */
@@ -103,7 +111,8 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
                 + Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE + " INTEGER,"
                 + Telephony.CellBroadcasts.CMAS_SEVERITY + " INTEGER,"
                 + Telephony.CellBroadcasts.CMAS_URGENCY + " INTEGER,"
-                + Telephony.CellBroadcasts.CMAS_CERTAINTY + " INTEGER);";
+                + Telephony.CellBroadcasts.CMAS_CERTAINTY + " INTEGER,"
+                + SMS_SYNC_PENDING + " BOOLEAN);";
     }
 
 
@@ -113,8 +122,9 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
      * Database version 10: adds ETWS and CMAS columns and CDMA support (support removed)
      * Database version 11: adds delivery time index
      * Database version 12: add slotIndex
+     * Database version 13: add smsSyncPending
      */
-    private static final int DATABASE_VERSION = 12;
+    private static final int DATABASE_VERSION = 13;
 
     private final Context mContext;
     final boolean mLegacyProvider;
@@ -155,6 +165,10 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
         if (oldVersion < 12) {
             db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN "
                     + Telephony.CellBroadcasts.SLOT_INDEX + " INTEGER DEFAULT 0;");
+        }
+        if (oldVersion < 13) {
+            db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN " + SMS_SYNC_PENDING
+                    + " BOOLEAN DEFAULT 0;");
         }
     }
 

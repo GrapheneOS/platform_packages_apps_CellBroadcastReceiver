@@ -196,6 +196,13 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                         .sendBroadcast(new Intent(ACTION_TESTING_MODE_CHANGED));
                 log(msg);
             }
+        } else if (Intent.ACTION_BOOT_COMPLETED.equals(action)) {
+            new CellBroadcastContentProvider.AsyncCellBroadcastTask(
+                    mContext.getContentResolver()).execute((CellBroadcastContentProvider
+                    .CellBroadcastOperation) provider -> {
+                        provider.resyncToSmsInbox(mContext);
+                        return true;
+                    });
         } else {
             Log.w(TAG, "onReceive() unexpected action " + action);
         }
