@@ -390,6 +390,7 @@ public class CellBroadcastAlertService extends Service {
                 message.getSubscriptionId());
         CellBroadcastChannelRange chanelrange = channelManager
                 .getCellBroadcastChannelRangeFromMessage(message);
+        Resources res = CellBroadcastSettings.getResources(mContext, message.getSubscriptionId());
         if (chanelrange != null && chanelrange.mAlwaysOn) {
             Log.d(TAG, "channel is enabled due to always-on, ignoring preference check");
             return true;
@@ -475,6 +476,13 @@ public class CellBroadcastAlertService extends Service {
             return emergencyAlertEnabled
                     && PreferenceManager.getDefaultSharedPreferences(this)
                             .getBoolean(CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true);
+        }
+
+        if (channelManager.checkCellBroadcastChannelRange(
+                channel, R.array.exercise_alert_range_strings) &&
+                res.getBoolean(R.bool.show_separate_exercise_settings)) {
+            return emergencyAlertEnabled && PreferenceManager.getDefaultSharedPreferences(this)
+                    .getBoolean(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS, false);
         }
 
         if (channelManager.checkCellBroadcastChannelRange(channel,
