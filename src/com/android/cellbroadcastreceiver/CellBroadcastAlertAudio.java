@@ -42,6 +42,7 @@ import android.os.Message;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.telephony.PhoneStateListener;
 import android.telephony.SubscriptionManager;
@@ -489,7 +490,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         setDataSourceFromResource(res, mMediaPlayer, R.raw.etws_default);
                         break;
                     case INFO:
-                        setDataSourceFromResource(res, mMediaPlayer, R.raw.info);
+                        mMediaPlayer.setDataSource(this, Settings.System.DEFAULT_NOTIFICATION_URI);
                         break;
                     case TEST:
                     case DEFAULT:
@@ -503,7 +504,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                 // once voice call ends.
                 mAudioManager.requestAudioFocus(this,
                         new AudioAttributes.Builder().setLegacyStreamType(
-                                AudioManager.STREAM_ALARM).build(),
+                                alertType == AlertType.INFO ? AudioManager.STREAM_NOTIFICATION
+                                        : AudioManager.STREAM_ALARM).build(),
                         AudioManager.AUDIOFOCUS_GAIN_TRANSIENT,
                         AudioManager.AUDIOFOCUS_FLAG_DELAY_OK);
                 mMediaPlayer.setAudioAttributes(getAlertAudioAttributes());

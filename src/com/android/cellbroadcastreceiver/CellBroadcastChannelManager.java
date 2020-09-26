@@ -149,6 +149,7 @@ public class CellBroadcastChannelManager {
             // by default all received messages should be displayed.
             mDisplay = true;
             mTestMode = false;
+            boolean hasVibrationPattern = false;
 
             int colonIndex = channelRange.indexOf(':');
             if (colonIndex != -1) {
@@ -192,6 +193,7 @@ public class CellBroadcastChannelManager {
                                     for (int i = 0; i < vibration.length; i++) {
                                         mVibrationPattern[i] = Integer.parseInt(vibration[i]);
                                     }
+                                    hasVibrationPattern = true;
                                 }
                                 break;
                             case KEY_FILTER_LANGUAGE:
@@ -231,6 +233,12 @@ public class CellBroadcastChannelManager {
                     }
                 }
                 channelRange = channelRange.substring(0, colonIndex).trim();
+            }
+
+            // If alert type is info, override vibration pattern
+            if (!hasVibrationPattern && mAlertType.equals(AlertType.INFO)) {
+                mVibrationPattern = CellBroadcastSettings.getResources(context, subId)
+                        .getIntArray(R.array.default_notification_vibration_pattern);
             }
 
             // Parse the channel range
