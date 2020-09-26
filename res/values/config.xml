@@ -201,6 +201,15 @@
         <item>1000</item>
     </integer-array>
 
+    <!-- Vibrator pattern to be used as the default for notifications copy of
+    config_defaultNotificationVibePattern -->
+    <integer-array name="default_notification_vibration_pattern">
+        <item>0</item>
+        <item>350</item>
+        <item>250</item>
+        <item>350</item>
+    </integer-array>
+
     <!-- Value of the first reminder interval in minutes. 0 means using one of the
          alert_reminder_interval_values for the interval of first reminder -->
     <integer name="first_reminder_interval_in_min">0</integer>
