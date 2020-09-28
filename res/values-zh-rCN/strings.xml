@@ -61,6 +61,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"允许接收警报"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"接收无线紧急警报通知"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"警报提醒"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"读出警报消息"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"使用文字转语音功能读出无线紧急警报消息"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"提醒提示音将以正常音量播放"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"紧急警报历史记录"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"警报偏好设置"</string>

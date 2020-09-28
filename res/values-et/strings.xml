@@ -61,6 +61,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Teatiste lubamine"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Saate juhtmevabalt hädaolukorra teatisi"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Märguannete meeldetuletus"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Märguandesõnumi esitamine kõnena"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Kõnesünteesi funktsiooni kasutamine juhtmevabade hädaolukorra teatiste esitamiseks kõnena"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Meeldetuletuse heli esitatakse tavapärase helitugevusega"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Hädaolukorra teatiste ajalugu"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Teatiste eelistused"</string>

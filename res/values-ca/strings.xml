@@ -61,6 +61,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permet les alertes"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Rep notificacions d\'alertes d\'emergència sense fil"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Recordatori d\'alertes"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Enuncia el missatge d\'alerta"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Utilitza text a parla per enunciar els missatges d\'alertes d\'emergència sense fil"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Un so de recordatori es reproduirà a un volum normal"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historial d\'alertes d\'emergència"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferències d\'alertes"</string>
