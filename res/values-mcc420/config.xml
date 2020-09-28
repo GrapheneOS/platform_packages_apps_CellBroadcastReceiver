@@ -23,7 +23,7 @@
     <bool name="show_amber_alert_settings">false</bool>
 
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
-    <bool name="override_dnd_default">true</bool>
+    <bool name="override_dnd">true</bool>
     <!-- Channels to receive emergency alerts -->
     <!-- 4371~4372, 4384~4385 -->
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">

@@ -29,7 +29,7 @@
     <bool name="state_local_test_alerts_enabled_default">true</bool>
 
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
-    <bool name="override_dnd_default">true</bool>
+    <bool name="override_dnd">true</bool>
     <!-- 4379, 4392 -->
     <string-array name="emergency_alerts_channels_range_strings" translatable="false">
         <item>0x111B:rat=gsm, emergency=true</item>
