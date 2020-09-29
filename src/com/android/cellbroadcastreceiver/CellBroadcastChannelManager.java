@@ -100,6 +100,8 @@ public class CellBroadcastChannelManager {
         private static final String KEY_TESTING_MODE_ONLY = "testing_mode";
         /** Define the channels which not allow opt-out. */
         private static final String KEY_ALWAYS_ON = "always_on";
+        /** Define the duration of screen on in milliseconds. */
+        private static final String KEY_SCREEN_ON_DURATION = "screen_on_duration";
 
         /**
          * Defines whether the channel needs language filter or not. True indicates that the alert
@@ -135,6 +137,8 @@ public class CellBroadcastChannelManager {
         public boolean mWriteToSmsInbox = true;
         // only set to true for channels not allow opt-out. e.g, presidential alert.
         public boolean mAlwaysOn = false;
+        // de default screen duration is 1min;
+        public int mScreenOnDuration = 60000;
 
         public CellBroadcastChannelRange(Context context, int subId, String channelRange) {
 
@@ -229,6 +233,9 @@ public class CellBroadcastChannelManager {
                                     mAlwaysOn = true;
                                 }
                                 break;
+                            case KEY_SCREEN_ON_DURATION:
+                                mScreenOnDuration = Integer.parseInt(value);
+                                break;
                         }
                     }
                 }
@@ -260,7 +267,7 @@ public class CellBroadcastChannelManager {
                     + Arrays.toString(mVibrationPattern) + ",alertDuration=" + mAlertDuration
                     + ",filter_language=" + mFilterLanguage + ",override_dnd=" + mOverrideDnd
                     + ",display=" + mDisplay + ",testMode=" + mTestMode + ",mAlwaysOn="
-                    + mAlwaysOn +"]";
+                    + mAlwaysOn + ",ScreenOnDuration=" + mAlertDuration +"]";
         }
     }
 
