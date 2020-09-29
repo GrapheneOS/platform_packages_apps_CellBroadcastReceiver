@@ -19,9 +19,9 @@
 -->
 
 <resources>
-    <style name="CellBroadcastAlertTheme" parent="android:Theme.DeviceDefault.Light.Dialog" />
+    <style name="CellBroadcastAlertTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog.Alert"/>
 
-    <style name="CellBroadcastSettingsTheme" parent="@style/PreferenceThemeOverlay.v14.Material">
+    <style name="CellBroadcastSettingsTheme" parent="@android:style/Theme.DeviceDefault.Settings">
         <item name="switchPreferenceStyle">@style/SettingsSwitchPreference</item>
         <item name="preferenceCategoryStyle">@style/Preference.Category.Material</item>
         <item name="preferenceStyle">@style/SettingsPreference</item>
