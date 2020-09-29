@@ -571,9 +571,13 @@ public class CellBroadcastAlertService extends Service {
                         ? range.mVibrationPattern
                         : CellBroadcastSettings.getResources(mContext, message.getSubscriptionId())
                         .getIntArray(R.array.default_vibration_pattern));
-
-        if (prefs.getBoolean(CellBroadcastSettings.KEY_OVERRIDE_DND, false)
-                || (range != null && range.mOverrideDnd)) {
+        // read key_override_dnd only when the toggle is visible.
+        // range.mOverrideDnd is per channel configuration. override_dnd is the main config
+        // applied for all channels.
+        Resources res = CellBroadcastSettings.getResources(mContext, message.getSubscriptionId());
+        if ((res.getBoolean(R.bool.show_override_dnd_settings)
+                && prefs.getBoolean(CellBroadcastSettings.KEY_OVERRIDE_DND, false))
+                || (range != null && range.mOverrideDnd) || res.getBoolean(R.bool.override_dnd)) {
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA, true);
         }
 

@@ -61,7 +61,7 @@
     <bool name="show_date_in_numeric_format">true</bool>
 
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
-    <bool name="override_dnd_default">true</bool>
+    <bool name="override_dnd">true</bool>
 
     <!-- Link method -->
     <string name="link_method" translatable="false">none</string>

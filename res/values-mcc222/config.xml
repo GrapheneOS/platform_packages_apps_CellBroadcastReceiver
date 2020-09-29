@@ -15,7 +15,7 @@
 -->
 <resources>
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
-    <bool name="override_dnd_default">true</bool>
+    <bool name="override_dnd">true</bool>
     <!-- Whether to append date-time to the alert title -->
     <bool name="show_date_time_title">true</bool>
     <!-- 4371, 4384 -->
