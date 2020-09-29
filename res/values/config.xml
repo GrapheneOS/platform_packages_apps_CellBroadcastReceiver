@@ -92,6 +92,8 @@
     <bool name="show_message_history_in_launcher">false</bool>
     <!-- Allow user to enable/disable audio speech alert (text-to-speech for received messages)-->
     <bool name="show_alert_speech_setting">false</bool>
+    <!-- always overriding dnd settings: Play alert sound in full volume regardless DND is on. Applied to all channels -->
+    <bool name="override_dnd">false</bool>
 
     <!-- Specify second language code to receive emergency alerts -->
     <string name="emergency_alert_second_language_code" translatable="false"></string>
