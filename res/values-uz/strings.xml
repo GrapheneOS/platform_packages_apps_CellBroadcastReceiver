@@ -61,6 +61,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Ogohlantirishlarga ruxsat"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Simsiz tarmoqlar orqali favqulodda ogohlantirishlarni qabul qilish"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Eslatmalar davriyligi"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Ogohlantirish xabarini ijro qilish"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Simsiz favqulodda ogohlantirish xabarlarini eshitish uchun matndan-nutqqa vositasidan foydalanish"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Eslatma tovushi odatdagi balandlikda yangraydi"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Favqulodda xabarlar arxivi"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Ogohlantirish parametrlari"</string>

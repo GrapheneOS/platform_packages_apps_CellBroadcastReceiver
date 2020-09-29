@@ -61,6 +61,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"விழிப்பூட்டல்களை அனுமதி"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"வயர்லெஸ் அவசரகால விழிப்பூட்டல்களைப் பெறு"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"விழிப்பூட்டலுக்கான நினைவூட்டல்"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"விழிப்பூட்டல் செய்தியைப் படித்துக் காட்டு"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"வயர்லெஸ் அவசரகால விழிப்பூட்டல்கள் மெசேஜ்களை சொல்வதற்கு \'உரையிலிருந்து பேச்சு\' அம்சத்தைப் பயன்படுத்து"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"பொதுவான ஒலியளவில் நினைவூட்டல் சத்தம் ஒன்று இயக்கப்படும்"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"முன்னர் வந்த அவசரகால எச்சரிக்கை செய்திகள்"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"எச்சரிக்கை விருப்பத்தேர்வுகள்"</string>

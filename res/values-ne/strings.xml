@@ -61,6 +61,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"अलर्टहरूलाई अनुमति दिनुहोस्"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"आपत्कालीन वायरलेस सतर्कता सूचनाहरू प्राप्त गर्नु…"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"अलर्ट रिमाइन्डर"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"चेतावनी सन्देश बोल्नुहोस्"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"आपत्कालीन वायरलेस सतर्कता सन्देशहरूलाई आवाजमा परिवर्तन गर्न टेक्स्ट-टू-स्पिच सुविधा प्रयोग गर्नुहोस्"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमाइन्डरको आवाज नियमित भोल्युममा बज्ने छ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"आपतकालीन अलर्टको इतिहास"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"अलर्टका प्राथमिकताहरू"</string>

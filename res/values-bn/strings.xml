@@ -61,6 +61,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"সতর্কতার অনুমতি দিন"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ওয়্যারলেস জরুরি সতর্কতার বিজ্ঞপ্তি রিসিভ করুন"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"সতর্কতা অনুস্মারক"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"সতর্কতা মেসেজ বলুন"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"জরুরি সতর্কতা মেসেজ বলতে টেক্সট-টু-স্পিচ ব্যবহার করুন"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"নির্দিষ্ট সময় অন্তর রিমাইন্ডার শোনা যাবে"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"জরুরি সতর্কতার ইতিহাস"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"সতর্কতার পছন্দগুলি"</string>

@@ -61,6 +61,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Cho phép cảnh báo"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Nhận cảnh báo khẩn cấp không dây"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Lời nhắc cảnh báo"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Đọc to nội dung cảnh báo"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Dùng tính năng chuyển văn bản sang lời nói để đọc to các cảnh báo khẩn cấp không dây"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Âm báo nhắc nhở sẽ phát ở mức âm lượng bình thường"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Lịch sử cảnh báo khẩn cấp"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Tùy chọn cảnh báo"</string>

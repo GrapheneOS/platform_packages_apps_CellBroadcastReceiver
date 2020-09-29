@@ -61,6 +61,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Izinkan peringatan"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Terima peringatan darurat nirkabel"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Pengingat peringatan"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Ucapkan pesan peringatan"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Gunakan text-to-speech untuk mengucapkan pesan notifikasi darurat nirkabel"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Suara pengingat akan diputar dengan volume reguler"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Histori notifikasi darurat"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferensi peringatan"</string>

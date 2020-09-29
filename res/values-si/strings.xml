@@ -61,6 +61,8 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ඇඟවීම්වලට ඉඩ දෙන්න"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම් ලබා ගන්න"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ඇඟවීම් මතක් කිරීම"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"ඇඟවීම් පණිවිඩ කතා කරවන්න"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම් පණිවිඩ කියවීමට පෙළ-සිට-කථනය භාවිත කරන්න"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ක්‍රමවත් හඬ පරිමාවකින් සිහිකැඳවීමේ ශබ්දයක් වාදනය වෙනු ඇත"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"හදිසි අවස්ථා ඇඟවීම් ඉතිහාසය"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ඇඟවීම් මනාප"</string>
