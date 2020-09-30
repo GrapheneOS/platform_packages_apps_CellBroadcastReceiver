@@ -184,7 +184,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             cursor.addRow(ref);
         }
 
-        if (!CellBroadcastSettings.getResources(getContext(),
+        if (!CellBroadcastSettings.getResources(getContextMethod(),
                 SubscriptionManager.DEFAULT_SUBSCRIPTION_ID)
                 .getBoolean(R.bool.show_alert_speech_setting)) {
             ref = new Object[1];
