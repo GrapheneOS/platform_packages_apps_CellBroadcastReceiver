@@ -69,6 +69,18 @@ public class CellBroadcastSearchIndexableProviderTest extends CellBroadcastTest 
         doReturn(false).when(mResources).getBoolean(anyInt());
         Cursor cursor = mSearchIndexableProvider.queryNonIndexableKeys(new String[]{""});
 
-        assertThat(cursor.getCount()).isEqualTo(9);
+        //KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE
+        //KEY_ENABLE_TEST_ALERTS
+        //KEY_ENABLE_STATE_LOCAL_TEST_ALERTS
+        //KEY_ENABLE_PUBLIC_SAFETY_MESSAGES
+        //KEY_ENABLE_EMERGENCY_ALERTS
+        //KEY_ENABLE_CMAS_AMBER_ALERTS
+        //KEY_ENABLE_AREA_UPDATE_INFO_ALERTS
+        //KEY_ENABLE_CMAS_AMBER_ALERTS
+        //KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS
+        //KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS
+        //KEY_ENABLE_ALERT_SPEECH
+        //KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS
+        assertThat(cursor.getCount()).isEqualTo(10);
     }
 }
