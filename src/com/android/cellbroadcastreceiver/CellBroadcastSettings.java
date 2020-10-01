@@ -19,6 +19,7 @@ package com.android.cellbroadcastreceiver;
 import android.annotation.NonNull;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Fragment;
 import android.app.backup.BackupManager;
 import android.content.BroadcastReceiver;
@@ -192,9 +193,7 @@ public class CellBroadcastSettings extends Activity {
     }
 
     /**
-     * Reset all user values for preferences (stored in shared preferences). Default values will
-     * be applied the next time the user opens WEA Settings page. Do not reset main toggle
-     * (KEY_ENABLE_ALERTS_MASTER_TOGGLE).
+     * Reset all user values for preferences (stored in shared preferences).
      *
      * @param c the application context
      */
@@ -213,6 +212,12 @@ public class CellBroadcastSettings extends Activity {
                 .remove(KEY_ENABLE_ALERT_VIBRATE)
                 .remove(KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS)
                 .remove(KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
+        // If the device is in test harness mode, reset main toggle should only happen on the
+        // first boot.
+        if (!ActivityManager.isRunningInUserTestHarness()) {
+          Log.d(TAG, "In not test harness mode. reset main toggle.");
+          e.remove(KEY_ENABLE_ALERTS_MASTER_TOGGLE);
+        }
         PackageManager pm = c.getPackageManager();
         if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
             e.remove(KEY_WATCH_ALERT_REMINDER);
