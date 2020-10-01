@@ -636,10 +636,16 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         AudioAttributes.Builder builder = new AudioAttributes.Builder();
 
         builder.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION);
-        builder.setUsage(AudioAttributes.USAGE_ALARM);
+        builder.setUsage(mAlertType == AlertType.INFO ? AudioAttributes.USAGE_NOTIFICATION
+                : AudioAttributes.USAGE_ALARM);
         if (mOverrideDnd) {
             // Set FLAG_BYPASS_INTERRUPTION_POLICY and FLAG_BYPASS_MUTE so that it enables
             // audio in any DnD mode, even in total silence DnD mode (requires MODIFY_PHONE_STATE).
+
+            // Note: this only works when the audio attributes usage is set to USAGE_ALARM. If
+            // regulatory concerns mean that we need to bypass DnD for AlertType.INFO as well, we'll
+            // need to add a config flag to have INFO go over the alarm stream as well for those
+            // jurisdictions in which those regulatory concerns apply.
             builder.setFlags(AudioAttributes.FLAG_BYPASS_INTERRUPTION_POLICY
                     | AudioAttributes.FLAG_BYPASS_MUTE);
         }
@@ -685,12 +691,16 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
      * Set volume of STREAM_ALARM to full.
      */
     private void setAlarmStreamVolumeToFull() {
-        log("setting alarm volume to full for cell broadcast alerts.");
-        int streamType = AudioManager.STREAM_ALARM;
-        mUserSetAlarmVolume = mAudioManager.getStreamVolume(streamType);
-        mResetAlarmVolumeNeeded = true;
-        mAudioManager.setStreamVolume(streamType,
-                mAudioManager.getStreamMaxVolume(streamType), 0);
+        if (mAlertType != AlertType.INFO) {
+            log("setting alarm volume to full for cell broadcast alerts.");
+            int streamType = AudioManager.STREAM_ALARM;
+            mUserSetAlarmVolume = mAudioManager.getStreamVolume(streamType);
+            mResetAlarmVolumeNeeded = true;
+            mAudioManager.setStreamVolume(streamType,
+                    mAudioManager.getStreamMaxVolume(streamType), 0);
+        } else {
+            log("Skipping setting alarm volume to full for alert type INFO");
+        }
     }
 
     /**
