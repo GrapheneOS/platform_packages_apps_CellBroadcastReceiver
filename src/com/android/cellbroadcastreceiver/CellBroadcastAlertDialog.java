@@ -249,11 +249,24 @@ public class CellBroadcastAlertDialog extends Activity {
         ScreenOffHandler() {}
 
         /** Add screen on window flags and queue a delayed message to remove them later. */
-        void startScreenOnTimer() {
+        void startScreenOnTimer(@NonNull SmsCbMessage message) {
+            // if screenOnDuration in milliseconds. if set to 0, do not turn screen on.
+            int screenOnDuration = KEEP_SCREEN_ON_DURATION_MSEC;
+            CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                    getApplicationContext(), message.getSubscriptionId());
+            CellBroadcastChannelRange range = channelManager
+                    .getCellBroadcastChannelRangeFromMessage(message);
+            if (range!= null) {
+                screenOnDuration = range.mScreenOnDuration;
+            }
+            if (screenOnDuration == 0) {
+                Log.d(TAG, "screenOnDuration set to 0, do not turn screen on");
+                return;
+            }
             addWindowFlags();
             int msgWhat = mCount.incrementAndGet();
             removeMessages(msgWhat - 1);    // Remove previous message, if any.
-            sendEmptyMessageDelayed(msgWhat, KEEP_SCREEN_ON_DURATION_MSEC);
+            sendEmptyMessageDelayed(msgWhat, screenOnDuration);
             Log.d(TAG, "added FLAG_KEEP_SCREEN_ON, queued screen off message id " + msgWhat);
         }
 
@@ -354,7 +367,7 @@ public class CellBroadcastAlertDialog extends Activity {
             if (channelManager.isEmergencyMessage(message)) {
                 Log.d(TAG, "onCreate setting screen on timer for emergency alert for sub "
                         + message.getSubscriptionId());
-                mScreenOffHandler.startScreenOnTimer();
+                mScreenOffHandler.startScreenOnTimer(message);
             }
 
             updateAlertText(message);
@@ -710,7 +723,7 @@ public class CellBroadcastAlertDialog extends Activity {
                 if (channelManager.isEmergencyMessage(message)) {
                     Log.d(TAG, "onCreate setting screen on timer for emergency alert for sub "
                             + message.getSubscriptionId());
-                    mScreenOffHandler.startScreenOnTimer();
+                    mScreenOffHandler.startScreenOnTimer(message);
                 }
             }
 
