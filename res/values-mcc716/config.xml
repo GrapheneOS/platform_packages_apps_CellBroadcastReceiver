@@ -36,18 +36,24 @@
 
     <!-- 4380 -->
     <string-array name="required_monthly_test_range_strings" translatable="false">
-        <item>0x111C:rat=gsm, emergency=true, alert_duration=180000</item>
+        <item>0x111C:rat=gsm, emergency=true, alert_duration=180000, always_on=true</item>
     </string-array>
 
     <!--4381 -->
     <string-array name="exercise_alert_range_strings" translatable="false">
-        <item>0x111D:rat=gsm, emergency=true, alert_duration=180000</item>
+        <item>0x111D:rat=gsm, emergency=true, alert_duration=180000, always_on=true</item>
     </string-array>
 
     <!-- 4396~4399-->
     <string-array name="additional_cbs_channels_strings" translatable="false">
         <item>0x112C-0x112F:rat=gsm, emergency=true, alert_duration=180000</item>
     </string-array>
+
+    <!-- hide test alerts toggle. Note that test alerts are set to always_on -->
+    <bool name="show_test_settings">false</bool>
+
+    <!-- Whether to show main switch settings at the top -->
+    <bool name="show_main_switch_settings">false</bool>
 
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false"></string-array>
     <string-array name="cmas_alerts_severe_range_strings" translatable="false"></string-array>
