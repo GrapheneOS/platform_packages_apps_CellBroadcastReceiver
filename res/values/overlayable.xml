@@ -122,6 +122,9 @@
             <item type="bool" name="retry_message_history_data_migration" />
             <item type="bool" name="show_main_switch_settings" />
 
+            <!-- Whether to enable alert handling during active voice call. OEMs overriding this value
+            should note that some countries require that it be turned off by default (e.g. JP).-->
+            <item type="bool" name="enable_alert_handling_during_call" />
 
             <!-- Temporarily enable string customization to address translation issues. All translation issues will be fixed in S by upstreaming -->
             <!-- Dialog title for presidential level alert. [CHAR LIMIT=50] -->
