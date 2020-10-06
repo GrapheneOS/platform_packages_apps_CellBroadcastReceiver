@@ -120,11 +120,17 @@
            Note, please only enable this flag when upgrade to R, enabling this
            flag during OTA might cause history data inserted twice.-->
             <item type="bool" name="retry_message_history_data_migration" />
+            <!-- Allow user to enable/disable audio speech alert (text-to-speech for received
+            messages)-->
+            <item type="bool" name="show_alert_speech_setting" />
             <item type="bool" name="show_main_switch_settings" />
 
             <!-- Whether to enable alert handling during active voice call. OEMs overriding this value
             should note that some countries require that it be turned off by default (e.g. JP).-->
             <item type="bool" name="enable_alert_handling_during_call" />
+
+            <!-- Default value which determines whether spoken alerts enabled -->
+            <item type="bool" name="enable_alert_speech_default" />
 
             <!-- Temporarily enable string customization to address translation issues. All translation issues will be fixed in S by upstreaming -->
             <!-- Dialog title for presidential level alert. [CHAR LIMIT=50] -->
@@ -259,9 +265,8 @@
             <item type="string" name="maximum_waiting_time" />
             <item type="string" name="seconds" />
             <item type="string" name="message_copied" />
-            <!-- Allow user to enable/disable audio speech alert (text-to-speech for received
-            messages)-->
-            <item type="bool" name="show_alert_speech_setting" />
+            <item type="string" name="enable_alert_speech_title" />
+            <item type="string" name="enable_alert_speech_summary" />
         </policy>
         <!-- END VENDOR CUSTOMIZATION -->
 
