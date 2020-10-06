@@ -139,7 +139,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 startConfigServiceToEnableChannels();
                 // Some OEMs do not have legacyMigrationProvider active during boot-up, thus we
                 // need to retry data migration from another trigger point.
-                boolean hasMigrated = PreferenceManager.getDefaultSharedPreferences(mContext)
+                boolean hasMigrated = getDefaultSharedPreferences()
                         .getBoolean(CellBroadcastDatabaseHelper.KEY_LEGACY_DATA_MIGRATION, false);
                 if (res.getBoolean(R.bool.retry_message_history_data_migration) && !hasMigrated) {
                     // migrate message history from legacy app on a background thread.
@@ -347,7 +347,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         }
     }
     /**
-     * This method's purpose if to enable unit testing
+     * This method's purpose is to enable unit testing
      * @return sharedePreferences for mContext
      */
     @VisibleForTesting
