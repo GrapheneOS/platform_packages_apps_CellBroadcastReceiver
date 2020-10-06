@@ -17,4 +17,6 @@
 <resources>
     <!-- Allow user to enable/disable audio speech alert (text-to-speech for received messages)-->
     <bool name="show_alert_speech_setting">true</bool>
+    <!-- Default value which determines whether spoken alerts enabled -->
+    <bool name="enable_alert_speech_default">false</bool>
 </resources>
