@@ -205,6 +205,7 @@ public class CellBroadcastSettings extends Activity {
                 .remove(KEY_ENABLE_PUBLIC_SAFETY_MESSAGES)
                 .remove(KEY_ENABLE_EMERGENCY_ALERTS)
                 .remove(KEY_ALERT_REMINDER_INTERVAL)
+                .remove(KEY_ENABLE_ALERT_SPEECH)
                 .remove(KEY_OVERRIDE_DND)
                 .remove(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS)
                 .remove(KEY_ENABLE_TEST_ALERTS)

@@ -94,6 +94,8 @@
     <bool name="show_alert_speech_setting">false</bool>
     <!-- always overriding dnd settings: Play alert sound in full volume regardless DND is on. Applied to all channels -->
     <bool name="override_dnd">false</bool>
+    <!-- Default value which determines whether spoken alerts enabled -->
+    <bool name="enable_alert_speech_default">true</bool>
 
     <!-- Specify second language code to receive emergency alerts -->
     <string name="emergency_alert_second_language_code" translatable="false"></string>
