@@ -102,6 +102,8 @@ public class CellBroadcastChannelManager {
         private static final String KEY_ALWAYS_ON = "always_on";
         /** Define the duration of screen on in milliseconds. */
         private static final String KEY_SCREEN_ON_DURATION = "screen_on_duration";
+        /** Define whether to display warning icon in the alert dialog. */
+        private static final String KEY_DISPLAY_ICON = "display_icon";
 
         /**
          * Defines whether the channel needs language filter or not. True indicates that the alert
@@ -139,6 +141,8 @@ public class CellBroadcastChannelManager {
         public boolean mAlwaysOn = false;
         // de default screen duration is 1min;
         public int mScreenOnDuration = 60000;
+        // whether to display warning icon in the pop-up dialog;
+        public boolean mDisplayIcon = true;
 
         public CellBroadcastChannelRange(Context context, int subId, String channelRange) {
 
@@ -236,6 +240,11 @@ public class CellBroadcastChannelManager {
                             case KEY_SCREEN_ON_DURATION:
                                 mScreenOnDuration = Integer.parseInt(value);
                                 break;
+                            case KEY_DISPLAY_ICON:
+                                if (value.equalsIgnoreCase("false")) {
+                                    mDisplayIcon = false;
+                                }
+                                break;
                         }
                     }
                 }
@@ -267,7 +276,8 @@ public class CellBroadcastChannelManager {
                     + Arrays.toString(mVibrationPattern) + ",alertDuration=" + mAlertDuration
                     + ",filter_language=" + mFilterLanguage + ",override_dnd=" + mOverrideDnd
                     + ",display=" + mDisplay + ",testMode=" + mTestMode + ",mAlwaysOn="
-                    + mAlwaysOn + ",ScreenOnDuration=" + mAlertDuration +"]";
+                    + mAlwaysOn + ",ScreenOnDuration=" + mScreenOnDuration + ", displayIcon="
+                    + mDisplayIcon + "]";
         }
     }
 
