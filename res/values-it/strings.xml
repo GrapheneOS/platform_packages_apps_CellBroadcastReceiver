@@ -75,7 +75,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Ricevi messaggi di prova da autorità statali e locali"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Avvisi d\'emergenza"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Avvisi relativi a eventi potenzialmente letali"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Allarmi di prova"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Allarmi pubblici"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Ricevi test dell\'operatore e test mensili dal sistema di avvisi relativi alla sicurezza"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrazione"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Avvisa sempre a tutto volume"</string>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Messaggi di allerta nazionale da parte del presidente. Non possono essere disattivati."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Modalità di test cell broadcast attiva."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Modalità di test cell broadcast non attiva."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Mostra tutti i messaggi"</string>
