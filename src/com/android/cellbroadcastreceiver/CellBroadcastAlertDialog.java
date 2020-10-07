@@ -404,7 +404,10 @@ public class CellBroadcastAlertDialog extends Activity {
             int subId = message.getSubscriptionId();
             CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(this,
                     subId);
-            if (channelManager.isEmergencyMessage(message)) {
+            CellBroadcastChannelRange range = channelManager
+                    .getCellBroadcastChannelRangeFromMessage(message);
+            if (channelManager.isEmergencyMessage(message)
+                    && (range!= null && range.mDisplayIcon)) {
                 mAnimationHandler.startIconAnimation(subId);
             }
         }
