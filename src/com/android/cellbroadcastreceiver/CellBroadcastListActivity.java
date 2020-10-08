@@ -22,10 +22,11 @@ import android.annotation.Nullable;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.FragmentManager;
 import android.app.ListFragment;
 import android.app.LoaderManager;
-import android.app.NotificationManager;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
@@ -127,6 +128,8 @@ public class CellBroadcastListActivity extends Activity {
 
         @VisibleForTesting
         public static final String KEY_LOADER_ID = "loader_id";
+
+        public static final String KEY_DELETE_DIALOG = "delete_dialog";
 
         // IDs of the context menu items (package local, accessed from inner DeleteThreadListener).
         @VisibleForTesting
@@ -441,34 +444,52 @@ public class CellBroadcastListActivity extends Activity {
          * @param rowId the row ID of the broadcast to delete, or -1 to delete all broadcasts
          */
         public void confirmDeleteThread(long rowId) {
-            DeleteThreadListener listener = new DeleteThreadListener(rowId);
-            confirmDeleteThreadDialog(listener, (rowId == -1), getActivity());
+            DeleteDialogFragment dialog = new DeleteDialogFragment();
+            Bundle dialogArgs = new Bundle();
+            dialogArgs.putLong(DeleteDialogFragment.ROW_ID, rowId);
+            dialog.setArguments(dialogArgs);
+            dialog.show(getFragmentManager(), KEY_DELETE_DIALOG);
         }
 
-        /**
-         * Build and show the proper delete broadcast dialog. The UI is slightly different
-         * depending on whether there are locked messages in the thread(s) and whether we're
-         * deleting a single broadcast or all broadcasts.
-         * @param listener gets called when the delete button is pressed
-         * @param deleteAll whether to show a single thread or all threads UI
-         * @param context used to load the various UI elements
-         */
-        public static void confirmDeleteThreadDialog(DeleteThreadListener listener,
-                boolean deleteAll, Context context) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setIconAttribute(android.R.attr.alertDialogIcon)
-                    .setCancelable(true)
-                    .setPositiveButton(R.string.button_delete, listener)
-                    .setNegativeButton(R.string.button_cancel, null)
-                    .setMessage(deleteAll ? R.string.confirm_delete_all_broadcasts
-                            : R.string.confirm_delete_broadcast)
-                    .show();
+        public static class DeleteDialogFragment extends DialogFragment {
+            /**
+             * Key for the row id of the message to delete. If the row id is -1, the displayed
+             * dialog will indicate that all messages are to be deleted.
+             */
+            public static final String ROW_ID = "row_id";
+            @Override
+            public Dialog onCreateDialog(Bundle savedInstanceState) {
+                setRetainInstance(true);
+                long rowId = getArguments().getLong(ROW_ID);
+                boolean deleteAll = rowId == -1;
+                DeleteThreadListener listener = new DeleteThreadListener(getActivity(), rowId);
+                AlertDialog.Builder builder = new AlertDialog.Builder(
+                        DeleteDialogFragment.this.getActivity());
+                builder.setIconAttribute(android.R.attr.alertDialogIcon)
+                        .setCancelable(true)
+                        .setPositiveButton(R.string.button_delete, listener)
+                        .setNegativeButton(R.string.button_cancel, null)
+                        .setMessage(deleteAll ? R.string.confirm_delete_all_broadcasts
+                                : R.string.confirm_delete_broadcast);
+                return builder.create();
+            }
+
+            @Override
+            public void onDestroyView() {
+                Dialog dialog = getDialog();
+                if (dialog != null && getRetainInstance()) {
+                    dialog.setDismissMessage(null);
+                }
+                super.onDestroyView();
+            }
         }
 
-        public class DeleteThreadListener implements OnClickListener {
+        public static class DeleteThreadListener implements OnClickListener {
             private final long mRowId;
+            private final Context mContext;
 
-            public DeleteThreadListener(long rowId) {
+            public DeleteThreadListener(Context context, long rowId) {
+                mContext = context;
                 mRowId = rowId;
             }
 
@@ -476,7 +497,7 @@ public class CellBroadcastListActivity extends Activity {
             public void onClick(DialogInterface dialog, int whichButton) {
                 // delete from database on a background thread
                 new CellBroadcastContentProvider.AsyncCellBroadcastTask(
-                        getActivity().getContentResolver()).execute(
+                        mContext.getContentResolver()).execute(
                                 (CellBroadcastContentProvider.CellBroadcastOperation) provider -> {
                                     if (mRowId != -1) {
                                         return provider.deleteBroadcast(mRowId);
