@@ -143,6 +143,19 @@ public class CellBroadcastSettings extends Activity {
     // Resource cache
     private static final Map<Integer, Resources> sResourcesCache = new HashMap<>();
 
+    // Intent sent from cellbroadcastreceiver to notify cellbroadcastservice that area info update
+    // is disabled/enabled.
+    private static final String AREA_INFO_UPDATE_ACTION =
+            "com.android.cellbroadcastreceiver.action.AREA_UPDATE_INFO_ENABLED";
+    private static final String AREA_INFO_UPDATE_ENABLED_EXTRA = "enable";
+
+    /**
+     * This permission is only granted to the cellbroadcast mainline module and thus can be
+     * used for permission check within CBR and CBS.
+     */
+    private static final String CBR_MODULE_PERMISSION =
+            "com.android.cellbroadcastservice.FULL_ACCESS_CELL_BROADCAST_HISTORY";
+
     // Test override for disabling the subId specific resources
     private static boolean sUseResourcesForSubId = true;
 
@@ -383,6 +396,19 @@ public class CellBroadcastSettings extends Activity {
                             if (pref.getKey().equals(KEY_ENABLE_ALERTS_MASTER_TOGGLE)) {
                                 boolean isEnableAlerts = (Boolean) newValue;
                                 setAlertsEnabled(isEnableAlerts);
+                            }
+
+                            // check if area update was disabled
+                            if (pref.getKey().equals(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS)) {
+                                boolean isEnabledAlert = (Boolean) newValue;
+                                if (!isEnabledAlert) {
+                                    Intent areaInfoIntent = new Intent(AREA_INFO_UPDATE_ACTION);
+                                    areaInfoIntent.putExtra(AREA_INFO_UPDATE_ENABLED_EXTRA,
+                                            isEnabledAlert);
+                                    // sending broadcast protected by the permission which is only
+                                    // granted for CBR mainline module.
+                                    getContext().sendBroadcast(areaInfoIntent, CBR_MODULE_PERMISSION);
+                                }
                             }
 
                             // Notify backup manager a backup pass is needed.
