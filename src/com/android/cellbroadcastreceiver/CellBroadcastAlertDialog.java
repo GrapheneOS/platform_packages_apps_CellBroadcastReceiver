@@ -841,8 +841,8 @@ public class CellBroadcastAlertDialog extends Activity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.d(TAG, "onKeyDown: " + event);
         SmsCbMessage message = getLatestMessage();
-        if (CellBroadcastSettings.getResources(getApplicationContext(), message.getSubscriptionId())
-                .getBoolean(R.bool.mute_by_physical_button)) {
+        if (message != null && CellBroadcastSettings.getResources(getApplicationContext(),
+                message.getSubscriptionId()).getBoolean(R.bool.mute_by_physical_button)) {
             switch (event.getKeyCode()) {
                 // Volume keys and camera keys mute the alert sound/vibration (except ETWS).
                 case KeyEvent.KEYCODE_VOLUME_UP:
