@@ -185,6 +185,10 @@
     <string name="enable_cmas_test_alerts_title">Test alerts</string>
     <!-- Preference summary for other test alerts checkbox. [CHAR LIMIT=125] -->
     <string name="enable_cmas_test_alerts_summary">Receive carrier tests and monthly tests from the safety alert system</string>
+    <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
+    <string name="enable_exercise_test_alerts_title">@string/cmas_exercise_alert</string>
+    <!-- Preference summary for exercise test alerts checkbox. [CHAR LIMIT=125] -->
+    <string name="enable_exercise_test_alerts_summary">Receive emergency alert: Exercise/Drill message</string>
 
     <!-- Preference title for CMAS vibration on/off. [CHAR LIMIT=50] -->
     <string name="enable_alert_vibrate_title">Vibration</string>

@@ -161,6 +161,10 @@ public class CellBroadcastConfigService extends IntentService {
                 && CellBroadcastSettings.isTestAlertsToggleVisible(getApplicationContext())
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, false);
 
+        boolean enableExerciseAlerts = enableAlertsMasterToggle
+                && res.getBoolean(R.bool.show_separate_exercise_settings)
+                && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS, false);
+
         boolean enableAreaUpdateInfoAlerts = res.getBoolean(
                 R.bool.config_showAreaUpdateInfoSettings)
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS,
@@ -186,6 +190,7 @@ public class CellBroadcastConfigService extends IntentService {
             log("enableCmasSevereAlerts = " + enableCmasExtremeAlerts);
             log("enableCmasAmberAlerts = " + enableCmasAmberAlerts);
             log("enableTestAlerts = " + enableTestAlerts);
+            log("enableExerciseAlerts = " + enableExerciseAlerts);
             log("enableAreaUpdateInfoAlerts = " + enableAreaUpdateInfoAlerts);
             log("enablePublicSafetyMessagesChannelAlerts = "
                     + enablePublicSafetyMessagesChannelAlerts);
@@ -225,7 +230,8 @@ public class CellBroadcastConfigService extends IntentService {
                         R.array.required_monthly_test_range_strings));
 
         // Enable/Disable exercise test messages.
-        setCellBroadcastRange(subId, enableTestAlerts,
+        // This could either controlled by main test toggle or separate exercise test toggle.
+        setCellBroadcastRange(subId, enableTestAlerts || enableExerciseAlerts,
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.exercise_alert_range_strings));
 
