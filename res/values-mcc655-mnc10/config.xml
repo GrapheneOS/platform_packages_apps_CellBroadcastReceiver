@@ -18,7 +18,7 @@
     <!-- Channel 50. Even though it's for non-emergency, we mark it as
          emergency here so the dialog will pop-up. -->
     <string-array name="additional_cbs_channels_strings" translatable="false">
-        <item>0x032:type=info, emergency=true, display_icon=false</item>
+        <item>0x032:type=area, emergency=true, display_icon=false</item>
     </string-array>
     <!-- Whether to show main switch settings at the top -->
     <bool name="show_main_switch_settings">false</bool>

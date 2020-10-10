@@ -442,6 +442,12 @@ public class CellBroadcastAlertService extends Service {
                             .getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS,
                                     false);
                 }
+                if (range.mAlertType == AlertType.AREA) {
+                    return emergencyAlertEnabled && PreferenceManager
+                            .getDefaultSharedPreferences(this)
+                            .getBoolean(CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS,
+                                    false);
+                }
 
                 return emergencyAlertEnabled;
             }
