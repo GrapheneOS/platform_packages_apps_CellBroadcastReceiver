@@ -113,6 +113,9 @@ public class CellBroadcastSettings extends Activity {
     // Whether to display monthly test messages (default is disabled).
     public static final String KEY_ENABLE_TEST_ALERTS = "enable_test_alerts";
 
+    // Whether to display exercise test alerts.
+    public static final String KEY_ENABLE_EXERCISE_ALERTS = "enable_exercise_alerts";
+
     // Whether to display state/local test messages (default disabled).
     public static final String KEY_ENABLE_STATE_LOCAL_TEST_ALERTS =
             "enable_state_local_test_alerts";
@@ -225,7 +228,8 @@ public class CellBroadcastSettings extends Activity {
                 .remove(KEY_ENABLE_STATE_LOCAL_TEST_ALERTS)
                 .remove(KEY_ENABLE_ALERT_VIBRATE)
                 .remove(KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS)
-                .remove(KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
+                .remove(KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE)
+                .remove(KEY_ENABLE_EXERCISE_ALERTS);
         // If the device is in test harness mode, reset main toggle should only happen on the
         // first boot.
         if (!ActivityManager.isRunningInUserTestHarness()) {
@@ -261,6 +265,7 @@ public class CellBroadcastSettings extends Activity {
         private TwoStatePreference mOverrideDndCheckBox;
         private TwoStatePreference mAreaUpdateInfoCheckBox;
         private TwoStatePreference mTestCheckBox;
+        private TwoStatePreference mExerciseTestCheckBox;
         private TwoStatePreference mStateLocalTestCheckBox;
         private TwoStatePreference mEnableVibrateCheckBox;
         private Preference mAlertHistory;
@@ -312,6 +317,7 @@ public class CellBroadcastSettings extends Activity {
                     findPreference(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS);
             mTestCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_TEST_ALERTS);
+            mExerciseTestCheckBox = (TwoStatePreference) findPreference(KEY_ENABLE_EXERCISE_ALERTS);
             mStateLocalTestCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_STATE_LOCAL_TEST_ALERTS);
             mAlertHistory = findPreference(KEY_EMERGENCY_ALERT_HISTORY);
@@ -455,6 +461,9 @@ public class CellBroadcastSettings extends Activity {
             if (mTestCheckBox != null) {
                 mTestCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
             }
+            if (mExerciseTestCheckBox != null) {
+                mExerciseTestCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
             if (mStateLocalTestCheckBox != null) {
                 mStateLocalTestCheckBox.setOnPreferenceChangeListener(
                         startConfigServiceListener);
@@ -556,6 +565,20 @@ public class CellBroadcastSettings extends Activity {
 
             if (mTestCheckBox != null) {
                 mTestCheckBox.setVisible(isTestAlertsToggleVisible(getContext()));
+            }
+
+            if (mExerciseTestCheckBox != null) {
+                boolean visible = false;
+                if (res.getBoolean(R.bool.show_separate_exercise_settings)) {
+                    if (res.getBoolean(R.bool.show_exercise_settings)
+                            || CellBroadcastReceiver.isTestingMode(getContext())) {
+                        if (!channelManager.getCellBroadcastChannelRanges(
+                                R.array.exercise_alert_range_strings).isEmpty()) {
+                            visible = true;
+                        }
+                    }
+                }
+                mExerciseTestCheckBox.setVisible(visible);
             }
 
             if (mEmergencyAlertsCheckBox != null) {
@@ -676,6 +699,10 @@ public class CellBroadcastSettings extends Activity {
                 mTestCheckBox.setEnabled(alertsEnabled);
                 mTestCheckBox.setChecked(alertsEnabled);
             }
+            if (mExerciseTestCheckBox != null) {
+                mExerciseTestCheckBox.setEnabled(alertsEnabled);
+                mExerciseTestCheckBox.setChecked(alertsEnabled);
+            }
         }
 
         @Override
@@ -698,8 +725,10 @@ public class CellBroadcastSettings extends Activity {
         Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(context);
         boolean isTestAlertsAvailable = !channelManager.getCellBroadcastChannelRanges(
                 R.array.required_monthly_test_range_strings).isEmpty()
-                || !channelManager.getCellBroadcastChannelRanges(
+                || (!channelManager.getCellBroadcastChannelRanges(
                 R.array.exercise_alert_range_strings).isEmpty()
+                /** exercise toggle is controlled under the main test toggle */
+                && (!res.getBoolean(R.bool.show_separate_exercise_settings)))
                 || !channelManager.getCellBroadcastChannelRanges(
                 R.array.operator_defined_alert_range_strings).isEmpty()
                 || !channelManager.getCellBroadcastChannelRanges(

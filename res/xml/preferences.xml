@@ -83,6 +83,12 @@
                           android:summary="@string/enable_cmas_test_alerts_summary"
                           android:title="@string/enable_cmas_test_alerts_title" />
 
+        <!-- Enable exercise test alerts -->
+        <SwitchPreference android:defaultValue="@bool/test_exercise_alerts_enabled_default"
+                          android:key="enable_exercise_alerts"
+                          android:summary="@string/enable_exercise_test_alerts_summary"
+                          android:title="@string/enable_exercise_test_alerts_title" />
+
         <!-- Default value is true for Brazil and India. This preference is ignored and hidden
         unless the boolean "config_showAreaUpdateInfoSettings" is set to true in the global resource. -->
         <SwitchPreference android:defaultValue="@bool/area_update_info_alerts_enabled_default"
