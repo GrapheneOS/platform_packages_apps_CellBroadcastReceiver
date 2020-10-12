@@ -73,6 +73,9 @@ public class CellBroadcastAlertService extends Service {
     public static final String SMS_CB_MESSAGE_EXTRA =
             "com.android.cellbroadcastreceiver.SMS_CB_MESSAGE";
 
+    /** Intent extra indicate this intent is to dismiss the alert dialog */
+    public static final String DISMISS_DIALOG = "com.android.cellbroadcastreceiver.DIMISS_DIALOG";
+
     /** Use the same notification ID for non-emergency alerts. */
     @VisibleForTesting
     public static final int NOTIFICATION_ID = 1;
@@ -370,12 +373,19 @@ public class CellBroadcastAlertService extends Service {
         if (channelManager.isEmergencyMessage(cbm) && !sRemindAfterCallFinish) {
             // start alert sound / vibration / TTS and display full-screen alert
             openEmergencyAlertNotification(cbm);
+            Resources res = CellBroadcastSettings.getResources(mContext, cbm.getSubscriptionId());
+            if (res.getBoolean(R.bool.show_alert_dialog_with_notification)) {
+                // add notification to the bar by passing the list of unread non-emergency
+                // cell broadcast messages
+                addToNotificationBar(cbm, CellBroadcastReceiverApp.addNewMessageToList(cbm),
+                        this, false, true, true);
+            }
         } else {
             // add notification to the bar by passing the list of unread non-emergency
             // cell broadcast messages
             ArrayList<SmsCbMessage> messageList = CellBroadcastReceiverApp
                     .addNewMessageToList(cbm);
-            addToNotificationBar(cbm, messageList, this, false, true);
+            addToNotificationBar(cbm, messageList, this, false, true, false);
         }
     }
 
@@ -619,7 +629,7 @@ public class CellBroadcastAlertService extends Service {
 
         // For FEATURE_WATCH, the dialog doesn't make sense from a UI/UX perspective
         if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
-            addToNotificationBar(message, messageList, this, false, true);
+            addToNotificationBar(message, messageList, this, false, true, false);
         } else {
             Intent alertDialogIntent = createDisplayMessageIntent(this,
                     CellBroadcastAlertDialog.class, messageList);
@@ -630,14 +640,20 @@ public class CellBroadcastAlertService extends Service {
     }
 
     /**
-     * Add the new alert to the notification bar (non-emergency alerts), or launch a
-     * high-priority immediate intent for emergency alerts.
+     * Add the new alert to the notification bar (non-emergency alerts), launch a
+     * high-priority immediate intent for emergency alerts or notifications for companion devices.
      * @param message the alert to display
      * @param shouldAlert only notify once if set to {@code false}.
+     * @param fromDialog if {@code true} indicate this notification is coming from the alert dialog
+     * with following behaviors:
+     * 1. display when alert is shown in the foreground.
+     * 2. dismiss when foreground alert is gone.
+     * 3. dismiss foreground alert when swipe away the notification.
+     * 4. no dialog open when tap the notification.
      */
     static void addToNotificationBar(SmsCbMessage message,
-                                     ArrayList<SmsCbMessage> messageList, Context context,
-                                     boolean fromSaveState, boolean shouldAlert) {
+            ArrayList<SmsCbMessage> messageList, Context context,
+            boolean fromSaveState, boolean shouldAlert, boolean fromDialog) {
         Resources res = CellBroadcastSettings.getResources(context, message.getSubscriptionId());
         int channelTitleId = CellBroadcastResources.getDialogTitleResource(context, message);
         CharSequence channelName = context.getText(channelTitleId);
@@ -700,7 +716,21 @@ public class CellBroadcastAlertService extends Service {
             // FEATURE_WATCH/CWH devices see this as priority
             builder.setVibrate(new long[]{0});
         } else {
-            builder.setContentIntent(pi);
+            if (fromDialog) {
+                // If this is a notification coming from the foreground dialog, should dismiss the
+                // foreground alert dialog when swipe the notification. This is needed
+                // when receiving emergency alerts on companion devices are supported, so that users
+                // swipe away notification on companion devices will synced to the parent devices
+                // with the foreground dialog/sound/vibration dismissed and stopped.
+                Intent deleteIntent = new Intent(intent);
+                deleteIntent.putExtra(CellBroadcastAlertService.DISMISS_DIALOG, true);
+                builder.setDeleteIntent(PendingIntent.getActivity(context, NOTIFICATION_ID,
+                        deleteIntent, PendingIntent.FLAG_ONE_SHOT
+                                | PendingIntent.FLAG_UPDATE_CURRENT));
+            } else {
+                builder.setContentIntent(pi);
+            }
+
             // This will break vibration on FEATURE_WATCH, so use it for anything else
             builder.setDefaults(Notification.DEFAULT_ALL);
         }

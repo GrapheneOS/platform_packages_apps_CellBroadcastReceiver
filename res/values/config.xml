@@ -242,4 +242,8 @@
 
     <!-- Whether to override the language of the alert dialog's title to match the message locale -->
     <bool name="override_alert_title_language_to_match_message_locale">false</bool>
+
+    <!-- Whether to display a notification with pop-up dialog in the foreground.
+    This is used to support emergency alert on the companion devices by bridged notification -->
+    <bool name="show_alert_dialog_with_notification">false</bool>
 </resources>
