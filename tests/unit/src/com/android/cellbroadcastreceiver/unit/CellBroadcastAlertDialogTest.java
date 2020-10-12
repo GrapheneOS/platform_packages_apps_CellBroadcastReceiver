@@ -318,4 +318,19 @@ public class CellBroadcastAlertDialogTest extends
         activity.onWindowFocusChanged(true);
         assertNotNull(image.getLayoutParams());
     }
+
+    public void testOnKeyDownWithEmptyMessageList() throws Throwable {
+        mMessageList = new ArrayList<>(1);
+
+        Intent intent = new Intent(getInstrumentation().getTargetContext(),
+                CellBroadcastAlertDialog.class);
+        intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
+                mMessageList);
+        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        Looper.prepare();
+        CellBroadcastAlertDialog activity = startActivity(intent, null, null);
+
+        assertTrue(activity.onKeyDown(0,
+                new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_FOCUS)));
+    }
 }
