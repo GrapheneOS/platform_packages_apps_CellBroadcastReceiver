@@ -224,6 +224,9 @@
          alert_reminder_interval_values for the interval of first reminder -->
     <integer name="first_reminder_interval_in_min">0</integer>
 
+    <!-- Whether to disable the opt-out dialog for all channels -->
+    <bool name="disable_opt_out_dialog">false</bool>
+
     <!-- Whether the emergency alert notification is non-swipeable -->
     <bool name="non_swipeable_notification">false</bool>
 
