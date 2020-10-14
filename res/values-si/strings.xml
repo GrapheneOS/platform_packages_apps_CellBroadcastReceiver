@@ -84,6 +84,10 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ජීවිත තර්ජනාත්මක සිදුවීම් ගැන අනතුරු අඟවන්න"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"පරීක්ෂණ ඇඟවීම්"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ආරක්ෂක අනතුරු ඇඟවීමේ පද්ධතියෙන් වාහක පරීක්ෂා සහ මාසික පරීක්ෂා ලබා ගන්න"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <!-- no translation found for enable_exercise_test_alerts_summary (4276766794979567304) -->
+    <skip />
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"කම්පනය"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"සැමවිට පූර්ණ හඬ පරිමාවෙන් අඟවන්න"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"බාධා නොකරන්න &amp; වෙනත් හඬ පරිමා සැකසීම් නොසලකා හරින්න"</string>

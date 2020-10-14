@@ -84,6 +84,10 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Advar om livstruende hendelser"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testvarsler"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Motta operatørtester og månedlige tester fra systemet for sikkerhetsvarsling"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <!-- no translation found for enable_exercise_test_alerts_summary (4276766794979567304) -->
+    <skip />
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrasjon"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Varsle alltid på fullt volum"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignorer «Ikke forstyrr» og andre voluminnstillinger"</string>
