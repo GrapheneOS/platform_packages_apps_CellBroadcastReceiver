@@ -66,6 +66,10 @@
     <!-- if appending date-time to alert title, whether to use numeric format -->
     <bool name="show_date_in_numeric_format">true</bool>
 
+    <!-- Whether to disable the opt-out dialog for all channels. Peru has no user toggles enabled,
+         so we disable the opt-out dialog -->
+    <bool name="disable_opt_out_dialog">true</bool>
+
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
     <bool name="override_dnd">true</bool>
 

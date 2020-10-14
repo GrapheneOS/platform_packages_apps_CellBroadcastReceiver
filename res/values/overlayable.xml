@@ -116,6 +116,9 @@
             <item type="bool" name="enable_write_alerts_to_sms_inbox" />
             <item type="bool" name="always_mark_sms_read" />
 
+            <!-- Whether to disable the opt-out dialog for all channels -->
+            <item type="bool" name="disable_opt_out_dialog" />
+
             <!-- Whether to retry message history data migration after db creation
            Note, please only enable this flag when upgrade to R, enabling this
            flag during OTA might cause history data inserted twice.-->

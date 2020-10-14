@@ -70,5 +70,7 @@
     <string name="link_method" translatable="false">none</string>
     <!-- Whether the user can mute the alert by physical button -->
     <bool name="mute_by_physical_button">false</bool>
+    <!-- Whether to disable the opt-out dialog for all channels -->
+    <bool name="disable_opt_out_dialog">true</bool>
 </resources>
 
