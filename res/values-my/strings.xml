@@ -84,6 +84,10 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"အသက်အန္တရာယ် ကျရောက်နိုင်သည့် ဖြစ်ရပ်များအတွက် သတိပေးရန်"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"စမ်းသပ် သတိပေးချက်များ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"လုံခြုံရေးသတိပေးချက်စနစ်အတွက် ဝန်ဆောင်မှုပေးသူ စစ်ဆေးမှုများနှင့် လစဉ်စစ်ဆေးမှုများကို လက်ခံရယူရန်"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <!-- no translation found for enable_exercise_test_alerts_summary (4276766794979567304) -->
+    <skip />
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"တုန်ခါမှု"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"သတိပေးချက်ကို အမြဲ အသံအကျယ်ဆုံး"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'မနှောင့်ယှက်ရ\'နှင့် အခြားအသံဆက်တင်များကို ပယ်ပါ"</string>

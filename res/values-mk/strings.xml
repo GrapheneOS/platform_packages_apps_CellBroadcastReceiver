@@ -84,6 +84,9 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Предупреди за настани опасни по живот"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Тест-предупредувања"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Примај тест-предупредувања од операторот и месечни тест-предупредувања од безбедносниот систем"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Добивајте предупредувања за итни случаи: порака за вежба/обука"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вибрации"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Секогаш предупредувај со максимална јачина на звук"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Игнорирај ги „Не вознемирувај“ и другите поставки за јачина на звук"</string>
