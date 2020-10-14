@@ -84,6 +84,10 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"உயிருக்கு ஆபத்தை விளைவிக்கும் நிகழ்வுகள் பற்றி எச்சரிக்கவும்"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"பரிசோதனை விழிப்பூட்டல்கள்"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"பாதுகாப்பு விழிப்பூட்டல் அமைப்பிலிருந்து மொபைல் நிறுவன சோதனைகளையும் மாதாந்திர சோதனைகளையும் அனுப்புக"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <!-- no translation found for enable_exercise_test_alerts_summary (4276766794979567304) -->
+    <skip />
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"அதிர்வு"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"எப்போதும் முழுஒலியளவில் விழிப்பூட்டு"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'தொந்தரவு செய்ய வேண்டாம்\' &amp; பிற ஒலி அமைப்புகளைப் புறக்கணி"</string>
