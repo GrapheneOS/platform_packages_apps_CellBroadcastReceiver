@@ -794,7 +794,8 @@ public class CellBroadcastAlertDialog extends Activity {
         CellBroadcastChannelRange range = channelManager
                 .getCellBroadcastChannelRangeFromMessage(lastMessage);
 
-        if (range!= null && !range.mAlwaysOn) {
+        if (!neverShowOptOutDialog(lastMessage.getSubscriptionId()) && range != null
+                && !range.mAlwaysOn) {
             mShowOptOutDialog = true;
         }
 
@@ -885,6 +886,14 @@ public class CellBroadcastAlertDialog extends Activity {
                     .apply();
             mOptOutDialog.dismiss();
         }
+    }
+
+    /**
+     * @return true if the device is configured to never show the opt out dialog for the mcc/mnc
+     */
+    private boolean neverShowOptOutDialog(int subId) {
+        return CellBroadcastSettings.getResources(getApplicationContext(), subId)
+                .getBoolean(R.bool.disable_opt_out_dialog);
     }
 
     /**
