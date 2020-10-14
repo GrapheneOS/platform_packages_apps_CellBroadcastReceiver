@@ -804,7 +804,8 @@ public class CellBroadcastAlertDialog extends Activity {
         if (nextMessage != null) {
             updateAlertText(nextMessage);
             int subId = nextMessage.getSubscriptionId();
-            if (channelManager.isEmergencyMessage(nextMessage)) {
+            if (channelManager.isEmergencyMessage(nextMessage)
+                    && (range!= null && range.mDisplayIcon)) {
                 mAnimationHandler.startIconAnimation(subId);
             } else {
                 mAnimationHandler.stopIconAnimation();
