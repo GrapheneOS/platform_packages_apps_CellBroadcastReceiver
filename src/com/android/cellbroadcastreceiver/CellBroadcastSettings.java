@@ -407,14 +407,12 @@ public class CellBroadcastSettings extends Activity {
                             // check if area update was disabled
                             if (pref.getKey().equals(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS)) {
                                 boolean isEnabledAlert = (Boolean) newValue;
-                                if (!isEnabledAlert) {
-                                    Intent areaInfoIntent = new Intent(AREA_INFO_UPDATE_ACTION);
-                                    areaInfoIntent.putExtra(AREA_INFO_UPDATE_ENABLED_EXTRA,
-                                            isEnabledAlert);
-                                    // sending broadcast protected by the permission which is only
-                                    // granted for CBR mainline module.
-                                    getContext().sendBroadcast(areaInfoIntent, CBR_MODULE_PERMISSION);
-                                }
+                                Intent areaInfoIntent = new Intent(AREA_INFO_UPDATE_ACTION);
+                                areaInfoIntent.putExtra(AREA_INFO_UPDATE_ENABLED_EXTRA,
+                                        isEnabledAlert);
+                                // sending broadcast protected by the permission which is only
+                                // granted for CBR mainline module.
+                                getContext().sendBroadcast(areaInfoIntent, CBR_MODULE_PERMISSION);
                             }
 
                             // Notify backup manager a backup pass is needed.
