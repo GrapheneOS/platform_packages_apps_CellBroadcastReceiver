@@ -135,6 +135,10 @@
             <!-- Default value which determines whether spoken alerts enabled -->
             <item type="bool" name="enable_alert_speech_default" />
 
+            <!-- Default value of whether to display a notification with pop-up dialog in the foreground.
+            This is used to support emergency alert on the companion devices by bridged notification -->
+            <item type="bool" name="show_alert_dialog_with_notification" />
+
             <!-- Temporarily enable string customization to address translation issues. All translation issues will be fixed in S by upstreaming -->
             <!-- Dialog title for presidential level alert. [CHAR LIMIT=50] -->
             <!-- The name of the Cell Broadcast Receiver app. [CHAR LIMIT=NONE] -->
