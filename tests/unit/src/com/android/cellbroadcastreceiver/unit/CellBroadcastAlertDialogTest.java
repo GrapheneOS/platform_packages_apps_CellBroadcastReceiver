@@ -227,6 +227,8 @@ public class CellBroadcastAlertDialogTest extends
         mMessageList.add(CellBroadcastAlertServiceTest.createMessageForCmasMessageClass(12413,
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY,
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY));
+        intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
+                new ArrayList<>(mMessageList));
         activity.onNewIntent(intent);
 
         verify(mMockedNotificationManager, atLeastOnce()).cancel(

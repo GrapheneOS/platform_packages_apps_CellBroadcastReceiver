@@ -306,6 +306,11 @@ public class CellBroadcastAlertDialog extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // if this is only to dismiss any pending alert dialog
+        if (getIntent().getBooleanExtra(CellBroadcastAlertService.DISMISS_DIALOG, false)) {
+            dismissAllFromNotification(getIntent());
+            return;
+        }
 
         final Window win = getWindow();
 
@@ -433,7 +438,7 @@ public class CellBroadcastAlertDialog extends Activity {
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         if (!(isChangingConfigurations() || getLatestMessage() == null) && pm.isScreenOn()) {
             CellBroadcastAlertService.addToNotificationBar(getLatestMessage(), mMessageList,
-                    getApplicationContext(), true, true);
+                    getApplicationContext(), true, true, false);
             // Stop playing alert sound/vibration/speech (if started)
             stopService(new Intent(this, CellBroadcastAlertAudio.class));
         }
@@ -681,12 +686,21 @@ public class CellBroadcastAlertDialog extends Activity {
     @Override
     @VisibleForTesting
     public void onNewIntent(Intent intent) {
+        if (intent.getBooleanExtra(CellBroadcastAlertService.DISMISS_DIALOG, false)) {
+            dismissAllFromNotification(intent);
+            return;
+        }
         ArrayList<SmsCbMessage> newMessageList = intent.getParcelableArrayListExtra(
                 CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA);
         if (newMessageList != null) {
             if (intent.getBooleanExtra(FROM_SAVE_STATE_NOTIFICATION_EXTRA, false)) {
                 mMessageList = newMessageList;
             } else {
+                // remove the duplicate messages
+                for (SmsCbMessage message : newMessageList) {
+                    mMessageList.removeIf(
+                            msg -> msg.getReceivedTime() == message.getReceivedTime());
+                }
                 mMessageList.addAll(newMessageList);
                 if (CellBroadcastSettings.getResourcesForDefaultSubId(getApplicationContext())
                         .getBoolean(R.bool.show_cmas_messages_in_priority_order)) {
@@ -750,6 +764,27 @@ public class CellBroadcastAlertDialog extends Activity {
             notificationManager.cancel(CellBroadcastAlertService.NOTIFICATION_ID);
             CellBroadcastReceiverApp.clearNewMessageList();
         }
+    }
+
+    /**
+     * This will be called when users swipe away the notification, this will
+     * 1. dismiss all foreground dialog, stop animating warning icon and stop the
+     * {@link CellBroadcastAlertAudio} service.
+     * 2. Does not mark message read.
+     */
+    public void dismissAllFromNotification(Intent intent) {
+        Log.d(TAG, "dismissAllFromNotification");
+        // Stop playing alert sound/vibration/speech (if started)
+        stopService(new Intent(this, CellBroadcastAlertAudio.class));
+        // Cancel any pending alert reminder
+        CellBroadcastAlertReminder.cancelAlertReminder();
+        // Remove the all current showing alert message from the list.
+        mMessageList.clear();
+        // clear notifications.
+        clearNotification(intent);
+        // Remove pending screen-off messages (animation messages are removed in onPause()).
+        mScreenOffHandler.stopScreenOnTimer();
+        finish();
     }
 
     /**
@@ -936,7 +971,7 @@ public class CellBroadcastAlertDialog extends Activity {
             // do not alert if remove unread messages from the notification bar.
            CellBroadcastAlertService.addToNotificationBar(
                    CellBroadcastReceiverApp.getLatestMessage(),
-                   unreadMessageList, context,false, false);
+                   unreadMessageList, context,false, false, false);
         }
     }
 }
