@@ -64,7 +64,7 @@
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"അലേർട്ട് സന്ദേശങ്ങൾ സംസാരിക്കുക"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"വയർലെസ് അടിയന്തിര അലേർട്ട് സന്ദേശങ്ങൾ പറയാൻ ടെക്‌സ്റ്റ് ടു സ്‌പീച്ച് ഉപയോഗിക്കുക"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"റിമെെൻഡർ ശബ്ദം സാധാരണ ശബ്ദത്തിൽ പ്ലേ ചെയ്യും"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"അടിയന്തര അലേർട്ട് ചരിത്രം"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"അടിയന്തര മുന്നറിയിപ്പ് ചരിത്രം"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"അലേർട്ട് മുൻഗണനകൾ"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"ഭൂകമ്പ സുനാമി മുന്നറിയിപ്പ് സി‌സ്‌റ്റത്തിനായുള്ള പരീക്ഷണ പ്രക്ഷേപണങ്ങൾ"</string>
@@ -86,8 +86,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"സേവനദാതാവിന്റെ പരിശോധനകളും സുരക്ഷാ മുന്നറിയിപ്പ് സിസ്റ്റത്തിൽ നിന്നുള്ള പ്രതിമാസ പരിശോധനകളും നേടുക"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
-    <!-- no translation found for enable_exercise_test_alerts_summary (4276766794979567304) -->
-    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"അടിയന്തര മുന്നറിയിപ്പുകൾ സ്വീകരിക്കുക: വ്യായാമം/ഡ്രിൽ സന്ദേശം"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"വൈബ്രേഷൻ"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"എപ്പോഴും പൂർണ്ണ ശബ്ദത്തിൽ മുന്നറിയിപ്പ് നൽകുക"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'ശല്യപ്പെടുത്തരുത്\' മോഡും മറ്റ് ശബ്ദ ക്രമീകരണവും അവഗണിക്കുക"</string>
@@ -132,7 +131,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"നിലവിൽ വയർലെസ് അടിയന്തിര അലേർട്ട് അറിയിപ്പുകളാണ് നിങ്ങൾക്ക് ലഭിക്കുന്നത്. വയർലെസ് അടിയന്തിര അലേർട്ട് അറിയിപ്പുകൾ നേടുന്നത് തുടരാൻ നിങ്ങൾക്ക് താൽപ്പര്യമുണ്ടോ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"വേണം"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"വേണ്ട"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"അടിയന്തര അലേർട്ട് ചരിത്രം"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"അടിയന്തര മുന്നറിയിപ്പ് ചരിത്രം"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ഒരിക്കല്‍"</item>
     <item msgid="9097229303902157183">"എല്ലാ 2 മിനിറ്റിലും"</item>

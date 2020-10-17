@@ -86,8 +86,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Recevoir des tests du fournisseur de services et des tests mensuels du système d\'alertes de sécurité"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
-    <!-- no translation found for enable_exercise_test_alerts_summary (4276766794979567304) -->
-    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Recevoir une alerte d\'urgence : message en cas d\'exercice ou de simulation"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrations"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Toujours émettre les alertes au plein volume"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignorer le mode Ne pas déranger et d\'autres paramètres de volume"</string>

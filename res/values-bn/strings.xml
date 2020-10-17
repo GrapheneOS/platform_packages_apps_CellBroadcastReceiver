@@ -84,6 +84,9 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"জীবনের ঝুঁকি হতে পারে এমন ইভেন্টের বিষয়ে সতর্কতা পান"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"পরীক্ষা সংক্রান্ত বিজ্ঞপ্তি"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"সিকিউরিটি অ্যালার্ট সিস্টেম থেকে পরিষেবা প্রদানকারীর পরীক্ষা এবং মাসিক পরীক্ষা পান"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"জরুরি সতর্কতা পান: ব্যায়াম/ড্রিল করার মেসেজ"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ভাইব্রেশন"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"যেকোনও সময়ে বিজ্ঞপ্তি পেতে সম্পূর্ণ ভলিউম দিন"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"বিরক্ত করবে না &amp; অন্য ভলিউম সেটিংস এড়িয়ে যান"</string>

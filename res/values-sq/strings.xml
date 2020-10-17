@@ -84,6 +84,9 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Paralajmëro për ngjarje kërcënuese për jetën"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Sinjalizime testimi"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Merr testet e operatorit celular dhe testet mujore nga sistemi i sinjalizimeve të sigurisë"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Merr alarmin e urgjencës: Mesazhi i ushtrimit/stërvitjes"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Dridhje"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Gjithmonë sinjalizo me volum të plotë"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Shpërfill \"Mos shqetëso\" dhe cilësimet e tjera të volumit"</string>
