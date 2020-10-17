@@ -86,8 +86,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Получать тестовые оповещения от оператора связи и ежемесячные сообщения системы CMAS"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
-    <!-- no translation found for enable_exercise_test_alerts_summary (4276766794979567304) -->
-    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Получать экстренные оповещения (учебная тревога)"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вибрация"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Всегда проигрывать оповещения на полной громкости"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Игнорировать настройки режима \"Не беспокоить\" и другие настройки звука"</string>

@@ -64,7 +64,7 @@
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Benachrichtigung vorlesen"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Notfallbenachrichtigungen für Mobilgeräte via Sprachausgabe vorlesen"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Benachrichtigungserinnerung ertönt in normaler Lautstärke"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Bisherige Notfallbenachrichtigungen"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Notfallbenachrichtigungen"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Benachrichtigungseinstellungen"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS-Testnachrichten"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Testnachrichten für Erdbeben-/Tsunami-Warnsystem"</string>
@@ -84,6 +84,9 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Vor lebensbedrohlichen Ereignissen warnen"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testwarnungen"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Mobilfunkanbieter-Tests und monatliche Tests vom Sicherheitswarnsystem erhalten"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Notfallbenachrichtigung erhalten: Übungsnachricht"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibration"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Immer mit voller Lautstärke benachrichtigen"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\"Bitte nicht stören\" und andere Lautstärkeeinstellungen ignorieren"</string>
@@ -128,7 +131,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Du erhältst derzeit Notfallbenachrichtigungen für Mobilgeräte. Möchtest du das weiterhin?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"\"Ja\""</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nein"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Bisherige Notfallbenachrichtigungen"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Notfallbenachrichtigungen"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Einmal"</item>
     <item msgid="9097229303902157183">"Alle 2 Minuten"</item>
