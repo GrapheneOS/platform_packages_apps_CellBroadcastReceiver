@@ -24,7 +24,7 @@
     <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"సమాచారం అందించే నోటిఫికేషన్"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"ఈ వినియోగదారుకి వైర్‌లెస్ అత్యవసర హెచ్చరిక సెట్టింగ్‌లు అందుబాటులో లేవు"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"సరే"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"మునుపటి హెచ్చరికలు లేవు"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"మునుపటి అలర్ట్‌లు లేవు"</string>
     <string name="menu_preferences" msgid="3596514894131599202">"సెట్టింగ్‌లు"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"ప్రసారాలను తొలగించు"</string>
     <string name="message_options" msgid="3178489901903589574">"సందేశ ఎంపికలు"</string>
@@ -86,8 +86,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"భద్రతా అలర్ట్ సిస్టమ్ నుండి క్యారియర్ పరిక్షలను, నెలవారీ పరిక్షలను స్వీకరించండి"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
-    <!-- no translation found for enable_exercise_test_alerts_summary (4276766794979567304) -->
-    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"ఎమర్జెన్సీ అలర్ట్‌ను అందుకోండి: అభ్యాసం/డ్రిల్ మెసేజ్"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"వైబ్రేషన్"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ఎల్లప్పుడూ పూర్తి వాల్యూమ్ వద్ద హెచ్చరించు"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"అంతరాయం కలిగించవద్దు &amp; ఇతర వాల్యూమ్ సెట్టింగ్‌లను తిరస్కరించండి"</string>
