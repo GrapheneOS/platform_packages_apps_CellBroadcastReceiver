@@ -86,8 +86,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Primajte testove mobilnog operatera i mjesečne testove iz sistema sigurnosnih upozorenja"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
-    <!-- no translation found for enable_exercise_test_alerts_summary (4276766794979567304) -->
-    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Primite upozorenje za vanredne situacije: poruka za vježbu"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibracija"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Uvijek upozori najglasnijom jačinom zvuka"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Zanemari način rada Ne ometaj i druge postavke jačine zvuka"</string>
@@ -132,7 +131,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Trenutno primate hitna upozorenja bežičnim putem. Želite li ih primati i dalje?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Da"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Ne"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Historija poruka upozorenja"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Historija hitnih upozorenja"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Jednom"</item>
     <item msgid="9097229303902157183">"Svake 2 minute"</item>

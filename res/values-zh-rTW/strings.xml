@@ -86,8 +86,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"接收電信業者測試用訊息和安全性警示系統發出的每月測試訊息"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
-    <!-- no translation found for enable_exercise_test_alerts_summary (4276766794979567304) -->
-    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"接收緊急警報：演習/模擬訊息"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"震動"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"一律以最大音量播放提示音效"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"忽略零打擾和其他音量設定"</string>
