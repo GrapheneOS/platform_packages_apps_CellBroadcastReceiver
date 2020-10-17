@@ -57,7 +57,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Simsiz həyəcan siqnalı bildirişlərini əldə edin"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Siqnal xatırladıcısı"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Müntəzəm səs səviyyəsində xatırlatma səsi veriləcək"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Təcili siqnal tarixçəsi"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Fövqəladə hal xəbərdarlıq tarixçəsi"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Siqnal tərcihləri"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ZSXS test yayımları"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Zəlzələ Sunami Xəbərdarlıq Sistemi üçün test yayımı"</string>
