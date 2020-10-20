@@ -70,6 +70,10 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
     // shared preference under developer settings
     private static final String ENABLE_ALERT_MASTER_PREF = "enable_alerts_master_toggle";
+
+    // shared preference for alert reminder interval
+    private static final String ALERT_REMINDER_INTERVAL_PREF = "alert_reminder_interval";
+
     // SharedPreferences key used to store the last carrier
     private static final String CARRIER_ID_FOR_DEFAULT_SUB_PREF = "carrier_id_for_default_sub";
     // initial value for saved carrier ID. This helps us detect newly updated users or first boot
@@ -422,6 +426,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 CellBroadcasts.Preference.ENABLE_ALERT_VIBRATION_PREF,
                 CellBroadcasts.Preference.ENABLE_CMAS_IN_SECOND_LANGUAGE_PREF,
                 ENABLE_ALERT_MASTER_PREF,
+                ALERT_REMINDER_INTERVAL_PREF
         };
         try (ContentProviderClient client = mContext.getContentResolver()
                 .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
@@ -438,9 +443,19 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                             CellBroadcasts.CALL_METHOD_GET_PREFERENCE,
                             key, null);
                     if (pref != null && pref.containsKey(key)) {
-                        Log.d(TAG, "migrateSharedPreferenceFromLegacy: " + key + "val: "
-                                + pref.getBoolean(key));
-                        sp.putBoolean(key, pref.getBoolean(key));
+                        Object val = pref.get(key);
+                        if (val == null) {
+                            // noop - no value to set.
+                            // Only support Boolean and String as preference types for now.
+                        } else if (val instanceof Boolean) {
+                            Log.d(TAG, "migrateSharedPreferenceFromLegacy: " + key + "val: "
+                                    + pref.getBoolean(key));
+                            sp.putBoolean(key, pref.getBoolean(key));
+                        } else if (val instanceof String) {
+                            Log.d(TAG, "migrateSharedPreferenceFromLegacy: " + key + "val: "
+                                    + pref.getString(key));
+                            sp.putString(key, pref.getString(key));
+                        }
                     } else {
                         Log.d(TAG, "migrateSharedPreferenceFromLegacy: unsupported key: " + key);
                     }
