@@ -79,6 +79,7 @@ public class CellBroadcastAlertService extends Service {
     /** Use the same notification ID for non-emergency alerts. */
     @VisibleForTesting
     public static final int NOTIFICATION_ID = 1;
+    public static final int SETTINGS_CHANGED_NOTIFICATION_ID = 2;
 
     /**
      * Notification channel containing for non-emergency alerts.
@@ -99,6 +100,12 @@ public class CellBroadcastAlertService extends Service {
      */
     static final String NOTIFICATION_CHANNEL_EMERGENCY_ALERTS_IN_VOICECALL =
         "broadcastMessagesInVoiceCall";
+
+    /**
+     * Notification channel for informing the user when a new Carrier's WEA settings have been
+     * automatically applied.
+     */
+    static final String NOTIFICATION_CHANNEL_SETTINGS_UPDATES = "settingsUpdates";
 
     /** Intent extra for passing a SmsCbMessage */
     private static final String EXTRA_MESSAGE = "message";
@@ -793,7 +800,14 @@ public class CellBroadcastAlertService extends Service {
             NotificationManager.IMPORTANCE_HIGH);
         emergencyAlertInVoiceCall.enableVibration(true);
         notificationManager.createNotificationChannel(emergencyAlertInVoiceCall);
+
+        final NotificationChannel settingsUpdate = new NotificationChannel(
+                NOTIFICATION_CHANNEL_SETTINGS_UPDATES,
+                context.getString(R.string.notification_channel_settings_updates),
+                NotificationManager.IMPORTANCE_DEFAULT);
+        notificationManager.createNotificationChannel(settingsUpdate);
     }
+
 
     private static Intent createDisplayMessageIntent(Context context, Class intentClass,
             ArrayList<SmsCbMessage> messageList) {
