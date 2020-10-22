@@ -35,9 +35,9 @@
     </string-array>
     <!-- 4372, 4385, 4373~4379 Class 1 reserved channels for Korea -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">
-        <item>0x1114:rat=gsm, emergency=true, type=info, screen_on_duration=0</item>
-        <item>0x1115-0x111B:rat=gsm, emergency=true, type=info, screen_on_duration=0</item>
-        <item>0x1121:rat=gsm, emergency=true, type=info, screen_on_duration=0</item>
+        <item>0x1114:rat=gsm, emergency=true, type=info, screen_on_duration=0, dismiss_on_outside_touch=true</item>
+        <item>0x1115-0x111B:rat=gsm, emergency=true, type=info, screen_on_duration=0, dismiss_on_outside_touch=true</item>
+        <item>0x1121:rat=gsm, emergency=true, type=info, screen_on_duration=0, dismiss_on_outside_touch=true</item>
     </string-array>
     <!-- 40960~45055 biz purpose channels -->
     <string-array name="additional_cbs_channels_strings" translatable="false">
