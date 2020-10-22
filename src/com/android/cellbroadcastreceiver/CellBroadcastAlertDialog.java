@@ -324,8 +324,6 @@ public class CellBroadcastAlertDialog extends Activity {
             decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         }
 
-        setFinishOnTouchOutside(false);
-
         // Initialize the view.
         LayoutInflater inflater = LayoutInflater.from(this);
         setContentView(inflater.inflate(R.layout.cell_broadcast_alert, null));
@@ -369,6 +367,10 @@ public class CellBroadcastAlertDialog extends Activity {
                         + message.getSubscriptionId());
                 mScreenOffHandler.startScreenOnTimer(message);
             }
+
+            CellBroadcastChannelRange range =
+                    channelManager.getCellBroadcastChannelRangeFromMessage(message);
+            setFinishOnTouchOutside(range != null && range.mDismissOnOutsideTouch);
 
             updateAlertText(message);
 

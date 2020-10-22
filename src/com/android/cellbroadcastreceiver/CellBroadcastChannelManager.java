@@ -104,6 +104,8 @@ public class CellBroadcastChannelManager {
         private static final String KEY_SCREEN_ON_DURATION = "screen_on_duration";
         /** Define whether to display warning icon in the alert dialog. */
         private static final String KEY_DISPLAY_ICON = "display_icon";
+        /** Define whether to dismiss the alert dialog for outside touches */
+        private static final String KEY_DISMISS_ON_OUTSIDE_TOUCH = "dismiss_on_outside_touch";
 
         /**
          * Defines whether the channel needs language filter or not. True indicates that the alert
@@ -143,6 +145,9 @@ public class CellBroadcastChannelManager {
         public int mScreenOnDuration = 60000;
         // whether to display warning icon in the pop-up dialog;
         public boolean mDisplayIcon = true;
+        // whether to dismiss the alert dialog on outside touch. Typically this should be false
+        // to avoid accidental dismisses of emergency messages
+        public boolean mDismissOnOutsideTouch = false;
 
         public CellBroadcastChannelRange(Context context, int subId, String channelRange) {
 
@@ -245,6 +250,11 @@ public class CellBroadcastChannelManager {
                                     mDisplayIcon = false;
                                 }
                                 break;
+                            case KEY_DISMISS_ON_OUTSIDE_TOUCH:
+                                if (value.equalsIgnoreCase("true")) {
+                                    mDismissOnOutsideTouch = true;
+                                }
+                                break;
                         }
                     }
                 }
@@ -277,7 +287,7 @@ public class CellBroadcastChannelManager {
                     + ",filter_language=" + mFilterLanguage + ",override_dnd=" + mOverrideDnd
                     + ",display=" + mDisplay + ",testMode=" + mTestMode + ",mAlwaysOn="
                     + mAlwaysOn + ",ScreenOnDuration=" + mScreenOnDuration + ", displayIcon="
-                    + mDisplayIcon + "]";
+                    + mDisplayIcon + "dismissOnOutsideTouch=" + mDismissOnOutsideTouch + "]";
         }
     }
 
