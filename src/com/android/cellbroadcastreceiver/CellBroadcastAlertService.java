@@ -427,14 +427,14 @@ public class CellBroadcastAlertService extends Service {
                     .getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, false);
         }
 
-        if (message.isEtwsMessage()) {
+        int channel = message.getServiceCategory();
+
+        if (message.isEtwsMessage() || channelManager.checkCellBroadcastChannelRange(channel,
+                R.array.etws_alerts_range_strings)) {
             // ETWS messages.
             // Turn on/off emergency notifications is the only way to turn on/off ETWS messages.
             return emergencyAlertEnabled;
-
         }
-
-        int channel = message.getServiceCategory();
 
         // Check if the messages are on additional channels enabled by the resource config.
         // If those channels are enabled by the carrier, but the device is actually roaming, we
