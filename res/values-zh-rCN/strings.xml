@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"广播消息"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"紧急警报"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"语音通话期间收到的紧急警报"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"基于 SIM 卡自动执行的 WEA 设置变更"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"允许接收警报"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"接收无线紧急警报通知"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"警报提醒"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"最长等待时间："</string>
     <string name="seconds" msgid="141450721520515025">"秒"</string>
     <string name="message_copied" msgid="6922953753733166675">"已复制消息"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"运营商已更改设置"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"点按即可查看无线紧急警报设置"</string>
 </resources>

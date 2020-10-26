@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Thông báo truyền phát"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Cảnh báo khẩn cấp"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Cảnh báo khẩn cấp trong cuộc gọi thoại"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Các tùy chọn cài đặt WEA tự động thay đổi theo SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Cho phép cảnh báo"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Nhận cảnh báo khẩn cấp không dây"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Lời nhắc cảnh báo"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Thời gian chờ đợi tối đa:"</string>
     <string name="seconds" msgid="141450721520515025">"giây"</string>
     <string name="message_copied" msgid="6922953753733166675">"Đã sao chép thông báo"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Các tùy chọn cài đặt do nhà mạng thay đổi"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Nhấn để xem các tùy chọn cài đặt cảnh báo khẩn cấp không dây"</string>
 </resources>

@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Съобщения за излъчване"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Сигнали при спешни случаи"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Сигнали при спешни случаи по време на гласово обаждане"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Автоматични промени в настройките за WEA въз основа на SIM картата"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Разрешаване на сигналите"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Получ. на известия за безж. сигнали при спешност"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Напомняне за сигнал"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Максимално време за изчакване:"</string>
     <string name="seconds" msgid="141450721520515025">"секунди"</string>
     <string name="message_copied" msgid="6922953753733166675">"Съобщението бе копирано"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Настройките са променени от оператора"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Докоснете, за да видите настройките за безжичните сигнали при спешни случаи"</string>
 </resources>

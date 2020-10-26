@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Mga mensahe ng broadcast"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Mga alerto sa emergency"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Mga emergency na alerto sa voice call"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Mga awtomatikong pagbabago sa Mga Setting ng WEA batay sa SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Payagan ang mga alerto"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Tumanggap ng wireless emergency alert notification"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Alertong paalala"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maximum na tagal ng paghihintay:"</string>
     <string name="seconds" msgid="141450721520515025">"segundo"</string>
     <string name="message_copied" msgid="6922953753733166675">"Nakopya ang mensahe"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Binago ng carrier ang mga setting"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"I-tap para makita ang mga setting ng wireless na alertong pang-emergency"</string>
 </resources>

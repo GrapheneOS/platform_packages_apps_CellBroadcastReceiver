@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Igorpen-mezuak"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Larrialdi-alertak"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Larrialdien alertak ahots-deietan"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Hari gabeko larrialdi-alerten ezarpenak automatikoki aldatu dira SIMean oinarrituta"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Baimendu alertak"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Jaso hari gabeko larrialdi-alerten jakinarazpenak"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Alerta-egoeraren abisua"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Gehieneko itxarote-denbora:"</string>
     <string name="seconds" msgid="141450721520515025">"segundo"</string>
     <string name="message_copied" msgid="6922953753733166675">"Kopiatu da mezua"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Operadoreak ezarpenak aldatu ditu"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Saka ezazu hari gabeko larrialdi-alerten ezarpenak ikusteko"</string>
 </resources>

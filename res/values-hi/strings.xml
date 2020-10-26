@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण संदेश"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"वॉयस कॉल के दौरान आपातकालीन चेतावनियां"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"अपने-आप काम करने वाली WEA की सूचनाओं की सेटिंग, सिम के हिसाब से बदल जाती है"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"चेतावनी दिखाए जाने की अनुमति दें"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"वायरलेस इमरजेंसी अलर्ट की चेतावनी पाएं"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"याद दिलाने के लिए अलर्ट"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"ज़्यादा से ज़्यादा इतने समय बाद जगह की जानकारी देखी जाएगी:"</string>
     <string name="seconds" msgid="141450721520515025">"सेकंड"</string>
     <string name="message_copied" msgid="6922953753733166675">"मैसेज कॉपी किया गया"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"यह सेटिंग, मोबाइल और इंटरनेट सेवा देने वाली कंपनी ने बदल दी है"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"वायरलेस इमरजेंसी अलर्ट की सूचनाओं की सेटिंग देखने के लिए टैप करें"</string>
 </resources>

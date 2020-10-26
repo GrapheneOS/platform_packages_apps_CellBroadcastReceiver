@@ -58,6 +58,8 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"সম্প্রচারিত মেসেজ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"জরুরি সতর্কতা"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ভয়েস কলের সময়ে জরুরি সতর্কতা"</string>
+    <!-- no translation found for notification_channel_settings_updates (6779759372516475085) -->
+    <skip />
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"সতর্কতার অনুমতি দিন"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ওয়্যারলেস জরুরি সতর্কতার বিজ্ঞপ্তি রিসিভ করুন"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"সতর্কতা অনুস্মারক"</string>
@@ -159,4 +161,8 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"অপেক্ষা করার সর্বাধিক সময়:"</string>
     <string name="seconds" msgid="141450721520515025">"সেকেন্ড"</string>
     <string name="message_copied" msgid="6922953753733166675">"মেসেজ কপি করা হয়েছে"</string>
+    <!-- no translation found for notification_cb_settings_changed_title (7664799881479966932) -->
+    <skip />
+    <!-- no translation found for notification_cb_settings_changed_text (1397646219615654933) -->
+    <skip />
 </resources>

@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Поруке о емитовању"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Хитна обавештења"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Обавештења у хитним случајевима током гласовног позива"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Аутоматске промене подешавања бежичних упозорења о хитним случајевима на основу SIM-а"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дозволи обавештења"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Шаљи ми бежична обавештења о хитним случајевима"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Подсетник за обавештења"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Максимално време чекања:"</string>
     <string name="seconds" msgid="141450721520515025">"сек"</string>
     <string name="message_copied" msgid="6922953753733166675">"Порука је копирана"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Мобилни оператер је променио подешавања"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Додирните да бисте видели подешавања бежичних упозорења о хитним случајевима"</string>
 </resources>

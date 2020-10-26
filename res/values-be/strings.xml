@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Паведамленні рассылкі"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Абвесткі аб надзвычайных сітуацыях"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Абвесткі пра надзвычайныя сітуацыі ў галасавым выкліку"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Аўтаматычная змена налад бесправаднога экстраннага апавяшчэння на падставе даных SIM-карты"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дазволіць абвесткі"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Атрымліваць абвесткі па бесправадных сетках аб надзвычайных сітуацыях"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Напаміны"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Максімальна дапушчальны час чакання:"</string>
     <string name="seconds" msgid="141450721520515025">"секунды"</string>
     <string name="message_copied" msgid="6922953753733166675">"Паведамленне скапіравана"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Налады зменены аператарам"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Націсніце, каб убачыць налады бесправаднога экстраннага апавяшчэння"</string>
 </resources>

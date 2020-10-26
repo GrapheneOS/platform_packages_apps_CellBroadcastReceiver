@@ -58,6 +58,8 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ବ୍ରୋଡକାଷ୍ଟ ମେସେଜ୍‌"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ଭଏସ୍ କଲ୍‌ରେ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
+    <!-- no translation found for notification_channel_settings_updates (6779759372516475085) -->
+    <skip />
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ଆଲର୍ଟକୁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ୱେୟାରଲେସ୍ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ବିଜ୍ଞପ୍ତି ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ଆଲର୍ଟ ରିମାଇଣ୍ଡର"</string>
@@ -159,4 +161,8 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"ସର୍ବାଧିକ ଅପେକ୍ଷାରତ ସମୟ:"</string>
     <string name="seconds" msgid="141450721520515025">"ସେକେଣ୍ଡ"</string>
     <string name="message_copied" msgid="6922953753733166675">"ମେସେଜ୍ କପି ହୋଇଛି"</string>
+    <!-- no translation found for notification_cb_settings_changed_title (7664799881479966932) -->
+    <skip />
+    <!-- no translation found for notification_cb_settings_changed_text (1397646219615654933) -->
+    <skip />
 </resources>

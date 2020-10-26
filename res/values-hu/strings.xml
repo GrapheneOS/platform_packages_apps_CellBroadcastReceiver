@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Sugárzott üzenetek"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Vészriasztások"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Vészriasztások hanghívás közben"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Az automatikus WEA-beállítások a SIM-kártya alapján változnak"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Figyelmeztetések engedélyezése"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Vezeték nélküli vészjelzések fogadása"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Figyelmeztetési emlékeztető"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maximális várakozási idő:"</string>
     <string name="seconds" msgid="141450721520515025">"másodperc"</string>
     <string name="message_copied" msgid="6922953753733166675">"Üzenet vágólapra másolva"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"A szolgáltató megváltoztatta a beállításokat"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Koppintson ide a vezeték nélküli vészjelzések beállításainak megtekintéséhez"</string>
 </resources>

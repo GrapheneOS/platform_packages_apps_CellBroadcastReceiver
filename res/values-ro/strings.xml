@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Mesaje privind difuzarea"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alerte de urgență"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alerte de urgență într-un apel vocal"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Setările pentru alertele de urgență wireless au fost modificate automat pe baza cardului SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permiteți alertele"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Primiți notificări privind alertele de urgență wireless"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Memento alerte"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Timpul maxim de așteptare:"</string>
     <string name="seconds" msgid="141450721520515025">"secunde"</string>
     <string name="message_copied" msgid="6922953753733166675">"Mesajul a fost copiat"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Setările au fost modificate de către operator"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Atingeți ca să vedeți setările pentru alertele de urgență wireless"</string>
 </resources>

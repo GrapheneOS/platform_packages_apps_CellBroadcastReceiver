@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Broadcast შეტყობინებები"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"საგანგებო გაფრთხილებები"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"საგანგებო გაფრთხილებები ხმოვანი ზარის დროს"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"WEA პარამეტრების ავტომატური ცვლილებები SIM-ის მიხედვით"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"გაფრთხილებების დაშვება"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"უსადენო საგანგებო გაფრთხილებების მიღება"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"გაფრთხილება"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"ლოდინის მაქსიმალური დრო:"</string>
     <string name="seconds" msgid="141450721520515025">"წამი"</string>
     <string name="message_copied" msgid="6922953753733166675">"შეტყობინება კოპირებულია"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"პარამეტრები შეიცვალა ოპერატორის მიერ"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"შეეხეთ უსადენო საგანგებო გაფრთხილებების პარამეტრების სანახავად"</string>
 </resources>
