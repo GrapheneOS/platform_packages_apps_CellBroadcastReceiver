@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Pesan broadcast"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Peringatan darurat"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Peringatan darurat dalam panggilan suara"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Setelan WEA otomatis diubah berdasarkan SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Izinkan peringatan"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Terima peringatan darurat nirkabel"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Pengingat peringatan"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Waktu tunggu maksimum:"</string>
     <string name="seconds" msgid="141450721520515025">"detik"</string>
     <string name="message_copied" msgid="6922953753733166675">"Pesan disalin"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Setelan diubah oleh operator"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Ketuk untuk melihat setelan peringatan darurat nirkabel"</string>
 </resources>

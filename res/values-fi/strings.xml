@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Lähetysviestit"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Hätätiedotteet"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Hätähälytykset äänipuhelun aikana"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Langattomien vaaratiedotteiden automaattiset asetukset muuttuneet SIM-kortin perusteella"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Salli hälytykset"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Vastaanota langattomia vaaratiedotteita"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Ilmoitusmuistutus"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Odotuksen enimmäisaika:"</string>
     <string name="seconds" msgid="141450721520515025">"sekuntia"</string>
     <string name="message_copied" msgid="6922953753733166675">"Viesti kopioitu"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Operaattori muuttanut asetuksia"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Katso langattomien vaaratiedotteiden asetukset napauttamalla"</string>
 </resources>

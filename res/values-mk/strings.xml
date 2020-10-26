@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Пораки за емитување"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Предупредувања за итни случаи"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Предупредувања за итни случаи во гласовен повик"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Автоматски промени на поставките за безжичните предупредувања за итни случаи според SIM-картичката"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дозволи предупредувања"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Примај безжични предупредувања за итни случаи"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Потсетник за предупредување"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Максимално време на чекање:"</string>
     <string name="seconds" msgid="141450721520515025">"секунди"</string>
     <string name="message_copied" msgid="6922953753733166675">"Пораката е копирана"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Операторот ги променил поставките"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Допрете за да ги видите поставките за безжичните предупредувања за итни случаи"</string>
 </resources>

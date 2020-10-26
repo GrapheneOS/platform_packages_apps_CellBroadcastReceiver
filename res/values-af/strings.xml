@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Uitsaaiboodskappe"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Noodwaarskuwings"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Noodwaarskuwings in stemoproep"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Outomatiese WEA-instellingsveranderinge op grond van SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Laat waarskuwings toe"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Ontvang draadlose noodwaarskuwings"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Waarskuwingonthounota"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maksimum wagtyd:"</string>
     <string name="seconds" msgid="141450721520515025">"sekondes"</string>
     <string name="message_copied" msgid="6922953753733166675">"Boodskap is gekopieer"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Instellings is deur diensverskaffer verander"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Tik om draadlose noodwaarskuwinginstellings te sien"</string>
 </resources>

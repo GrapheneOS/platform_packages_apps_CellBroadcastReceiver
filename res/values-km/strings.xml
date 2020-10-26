@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"សារ​ផ្សព្វផ្សាយ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ការជូន​ដំណឹង​ពេលអាសន្ន"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ការជូនដំណឹងពេល​មានអាសន្នអំឡុងពេលហៅជាសំឡេង"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"ការផ្លាស់ប្ដូរ​ការកំណត់ WEA ដោយស្វ័យប្រវត្តិ​ផ្អែកលើស៊ីម"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"អនុញ្ញាត​ការជូន​ដំណឹង"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ទទួលបានការជូនដំណឹង​ពេលមានអាសន្នដោយឥតប្រើខ្សែ"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ការរំលឹកអំពីការជូន​ដំណឹង"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"រយៈពេលរង់ចាំ​អតិបរមា៖"</string>
     <string name="seconds" msgid="141450721520515025">"វិនាទី"</string>
     <string name="message_copied" msgid="6922953753733166675">"បាន​ចម្លង​សារ"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"ការកំណត់​បានផ្លាស់ប្ដូរដោយ​ក្រុមហ៊ុនសេវាទូរសព្ទ"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"ចុច ដើម្បីមើល​ការកំណត់​ការជូនដំណឹង​ពេលមានអាសន្ន​ដោយឥតប្រើខ្សែ"</string>
 </resources>

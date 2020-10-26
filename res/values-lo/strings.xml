@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ຂໍ້ຄວາມສົ່ງສັນຍານ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ການເຕືອນສຸກເສີນ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ການເຕືອນສຸກເສີນໃນການໂທສຽງ"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"ປ່ຽນການຕັ້ງຄ່າ WEA ອັດຕະໂນມັດໂດຍອ້າງອີງໃສ່ຊິມແລ້ວ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ອະນຸຍາດການເຕືອນ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ຮັບການແຈ້ງເຕືອນການເຕືອນສຸກເສີນໄຮ້ສາຍ"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ການແຈ້ງເຕືອນ"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"ເວລາລໍຖ້າສູງສຸງ:"</string>
     <string name="seconds" msgid="141450721520515025">"ວິນາທີ"</string>
     <string name="message_copied" msgid="6922953753733166675">"ສຳເນົາຂໍ້ຄວາມແລ້ວ"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"ຜູ້ໃຫ້ບໍລິການໄດ້ປ່ຽນການຕັ້ງຄ່າແລ້ວ"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"ແຕະເພື່ອເບິ່ງການຕັ້ງຄ່າການແຈ້ງເຕືອນສຸກເສີນໄຮ້ສາຍ"</string>
 </resources>

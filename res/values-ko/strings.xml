@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"브로드캐스트 메시지"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"긴급 경보"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"음성 통화 중 응급 상황 알림"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM을 기반으로 자동 WEA 설정을 변경했습니다."</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"경보 허용"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"재난문자 알림 수신"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"다시 알림 간격"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"최대 대기 시간:"</string>
     <string name="seconds" msgid="141450721520515025">"초"</string>
     <string name="message_copied" msgid="6922953753733166675">"메시지 복사됨"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"이동통신사에서 설정을 변경함"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"무선 긴급 경보 설정을 보려면 탭하세요."</string>
 </resources>

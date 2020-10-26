@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ブロードキャスト メッセージ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"緊急速報メール"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"音声通話中の緊急アラート"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"WEA 設定は SIM に基づいて自動的に変更されます"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"緊急速報メールの許可"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"緊急速報メールの通知を受信する"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"メッセージ受信を再通知する"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"最大待ち時間:"</string>
     <string name="seconds" msgid="141450721520515025">"秒"</string>
     <string name="message_copied" msgid="6922953753733166675">"メッセージをコピーしました"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"携帯通信会社によって設定が変更されました"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"タップすると、緊急速報メールの設定を確認できます"</string>
 </resources>

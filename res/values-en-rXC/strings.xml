@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‎‎‏‏‎‎‎‎‏‏‏‎‎‎‏‏‏‎‎‎‏‏‏‏‏‏‎‎‏‏‏‎‎‏‎‏‎‏‏‏‏‎‏‏‎‎‏‏‏‏‎‏‎‏‎‏‎‎‏‏‎‎‎Broadcast messages‎‏‎‎‏‎"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‏‏‏‎‎‎‏‎‏‏‎‎‎‎‎‎‏‎‎‎‎‎‎‏‏‎‏‏‎‎‎‏‎‎‎‏‏‎‏‏‏‎‎‎‏‏‏‏‏‎‏‏‎‎‎‎‎‎‎‎‎‎‎‎‏‎Emergency alerts‎‏‎‎‏‎"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‏‎‏‎‏‏‎‏‏‎‏‎‏‎‏‏‏‏‏‏‏‏‎‎‏‎‏‎‏‏‏‎‏‎‏‏‏‎‏‎‏‎‏‎‏‏‏‎‏‏‏‎‏‎‎‎‎‎‎‎‎‏‏‎‎Emergency alerts in voice call‎‏‎‎‏‎"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‏‏‏‎‏‏‏‏‎‎‎‎‏‎‏‏‎‏‎‎‎‏‎‏‏‎‎‏‏‏‎‏‎‏‎‎‎‎‏‎‏‎‏‏‏‏‎‎‎‎‏‎‎‎‎‎‎‏‏‎‎‏‏‎‏‎Automatic WEA Settings changes based on SIM‎‏‎‎‏‎"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‎‏‏‎‏‎‎‎‎‏‏‏‎‏‏‏‎‎‎‎‏‎‎‎‏‎‎‎‏‏‎‏‎‏‏‎‏‏‎‏‏‏‏‎‏‏‎‏‏‏‎‏‎‎‏‎‎‏‏‎‏‏‎‎Allow alerts‎‏‎‎‏‎"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‏‏‏‎‎‏‏‎‏‎‏‏‏‏‎‏‏‎‏‏‎‎‏‏‎‎‎‏‏‎‏‏‎‏‎‏‎‏‏‎‏‎‎‎‏‎‏‎‎‏‎‎‏‏‏‏‎‏‎‏‏‏‎‎‏‎Receive wireless emergency alert notifications‎‏‎‎‏‎"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‏‎‏‎‏‏‎‏‏‎‎‏‎‎‎‏‏‎‏‎‏‏‎‎‎‏‏‏‎‎‎‎‎‏‏‏‎‎‎‏‎‏‎‏‏‏‏‏‏‏‎‎‎‎‏‏‎‎‏‎‎‏‎‏‎Alert reminder‎‏‎‎‏‎"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‏‎‏‏‎‎‎‎‏‎‏‎‎‎‏‏‏‎‎‏‎‏‎‏‎‏‎‏‎‏‎‎‎‎‏‏‏‏‏‎‎‏‎‎‏‏‎‎‏‎‏‎‏‎‏‏‎‏‏‎‏‏‎‎‎Maximum waiting time:‎‏‎‎‏‎"</string>
     <string name="seconds" msgid="141450721520515025">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‎‎‏‏‏‏‏‏‎‏‏‎‏‎‎‎‏‎‎‎‏‎‏‎‏‏‏‎‏‎‎‎‏‎‎‏‎‏‏‏‎‎‏‏‏‏‏‏‎‏‏‏‏‏‎‏‎‎‎‏‎seconds‎‏‎‎‏‎"</string>
     <string name="message_copied" msgid="6922953753733166675">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‏‏‏‏‎‎‎‎‎‎‎‎‏‎‎‏‏‎‏‎‎‎‏‎‏‏‏‎‎‎‎‏‎‎‏‏‏‎‏‏‏‏‎‏‏‏‎‎‎‏‏‏‏‎‏‏‎‎‏‎‏‎‎‏‏‎Message copied‎‏‎‎‏‎"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‏‏‏‏‎‏‎‏‎‎‏‎‏‏‏‏‎‏‏‎‏‎‏‏‎‏‏‏‎‎‎‎‏‏‏‏‎‎‎‏‎‎‎‎‏‎‎‎‏‏‏‎‏‎‎‎‎‏‏‎‏‎‏‎‎‎Settings changed by carrier‎‏‎‎‏‎"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‏‏‏‎‏‏‎‎‏‏‎‏‏‎‎‏‎‏‎‏‏‎‏‏‏‏‏‏‎‏‎‏‎‎‏‏‏‎‏‎‎‏‏‏‎‏‏‎‏‏‏‏‎‏‎‏‎‎‎‎‎‏‎‏‎‏‎Tap to see wireless emergency alert settings‎‏‎‎‏‎"</string>
 </resources>

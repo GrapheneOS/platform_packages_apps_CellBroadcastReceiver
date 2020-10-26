@@ -58,6 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Transmitir mensagens"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertas de emergência"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertas de emergência em chamadas de voz"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Mudanças automáticas nas configurações sem fio do alerta de emergência com base no chip"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permitir alertas"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Receber notificações de alertas de emergência sem fio"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Lembrete de alerta"</string>
@@ -159,4 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Tempo máximo de espera:"</string>
     <string name="seconds" msgid="141450721520515025">"segundos"</string>
     <string name="message_copied" msgid="6922953753733166675">"Mensagem copiada"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Configurações mudadas pela operadora"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Toque para ver as configurações sem fio do alerta de emergência"</string>
 </resources>
