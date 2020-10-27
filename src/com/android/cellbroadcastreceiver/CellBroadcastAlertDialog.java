@@ -441,8 +441,6 @@ public class CellBroadcastAlertDialog extends Activity {
         if (!(isChangingConfigurations() || getLatestMessage() == null) && pm.isScreenOn()) {
             CellBroadcastAlertService.addToNotificationBar(getLatestMessage(), mMessageList,
                     getApplicationContext(), true, true, false);
-            // Stop playing alert sound/vibration/speech (if started)
-            stopService(new Intent(this, CellBroadcastAlertAudio.class));
         }
         // Do not stop the audio here. Pressing power button should turn off screen but should not
         // interrupt the audio/vibration
