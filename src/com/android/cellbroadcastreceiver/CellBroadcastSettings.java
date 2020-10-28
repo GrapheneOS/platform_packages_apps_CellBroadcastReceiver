@@ -633,7 +633,7 @@ public class CellBroadcastSettings extends Activity {
                 // In that case, no need to show vibration toggle for users.
                 mEnableVibrateCheckBox.setVisible(
                         res.getBoolean(R.bool.show_override_dnd_settings)
-                                || !res.getBoolean(R.bool.override_dnd_default));
+                                || !res.getBoolean(R.bool.override_dnd));
             }
             if (mAlertsHeader != null) {
                 mAlertsHeader.setVisible(
