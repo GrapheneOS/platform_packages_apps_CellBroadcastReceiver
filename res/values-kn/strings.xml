@@ -58,8 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ಪ್ರಸಾರ ಸಂದೇಶಗಳು"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ಧ್ವನಿ ಕರೆಯಲ್ಲಿ ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
-    <!-- no translation found for notification_channel_settings_updates (6779759372516475085) -->
-    <skip />
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM ಆಧಾರದ ಮೇಲೆ ಸ್ವಯಂಚಾಲಿತ WEA ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಬದಲಾಗುತ್ತವೆ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ಎಚ್ಚರಿಕೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್ ಅಧಿಸೂಚನೆಗಳನ್ನು ಸ್ವೀಕರಿಸಿ"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ಎಚ್ಚರಿಕೆ ಜ್ಞಾಪನೆ"</string>
@@ -161,8 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"ಗರಿಷ್ಠ ಕಾಯುವ ಸಮಯ:"</string>
     <string name="seconds" msgid="141450721520515025">"ಸೆಕೆಂಡುಗಳು"</string>
     <string name="message_copied" msgid="6922953753733166675">"ಸಂದೇಶವನ್ನು ನಕಲಿಸಲಾಗಿದೆ"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (7664799881479966932) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (1397646219615654933) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"ವಾಹಕದಿಂದ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಾಯಿಸಲಾಗಿದೆ"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಎಚ್ಚರಿಕೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನೋಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ"</string>
 </resources>
