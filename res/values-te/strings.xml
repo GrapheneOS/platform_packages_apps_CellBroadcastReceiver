@@ -58,8 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ప్రసార సందేశాలు"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"అత్యవసర హెచ్చరికలు"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"వాయిస్ కాల్‌లో అత్యవసర అలర్ట్‌లు"</string>
-    <!-- no translation found for notification_channel_settings_updates (6779759372516475085) -->
-    <skip />
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM ఆధారంగా WEA సెట్టింగుల ఆటోమేటిక్ మార్పులు"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"అలర్ట్‌లను అనుమతించండి"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"వైర్‌లెస్ ఎమర్జెన్సీ అలర్ట్ నోటిఫికేషన్‌లను పొందండి"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"హెచ్చరిక రిమైండర్"</string>
@@ -161,8 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"గరిష్ఠ వెయిటింగ్ టైమ్:"</string>
     <string name="seconds" msgid="141450721520515025">"సెకన్లు"</string>
     <string name="message_copied" msgid="6922953753733166675">"మెసేజ్ కాపీ చేయబడింది"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (7664799881479966932) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (1397646219615654933) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"సెట్టింగ్‌లు క్యారియర్ ద్వారా మార్చబడ్డాయి"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"వైర్‌లెస్ ఎమర్జెన్సీ అలర్ట్ సెట్టింగ్‌లను చూడటానికి ట్యాప్ చేయండి"</string>
 </resources>
