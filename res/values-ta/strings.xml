@@ -58,8 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"வலைபரப்புச் செய்திகள்"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"அவசரகால எச்சரிக்கைகள்"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"குரல் அழைப்பில் அவசரகால விழிப்பூட்டல்கள்"</string>
-    <!-- no translation found for notification_channel_settings_updates (6779759372516475085) -->
-    <skip />
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"சிம்மின் அடிப்படையில் தானியங்கு WEA அமைப்புகள் மாறும்"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"விழிப்பூட்டல்களை அனுமதி"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"வயர்லெஸ் அவசரகால விழிப்பூட்டல்களைப் பெறு"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"விழிப்பூட்டலுக்கான நினைவூட்டல்"</string>
@@ -161,8 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"அதிகபட்சக் காத்திருப்பு நேரம்:"</string>
     <string name="seconds" msgid="141450721520515025">"நொடிகள்"</string>
     <string name="message_copied" msgid="6922953753733166675">"செய்தி நகலெடுக்கப்பட்டது"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (7664799881479966932) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (1397646219615654933) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"மொபைல் நிறுவனத்தால் மாற்றப்பட்ட அமைப்புகள்"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"வயர்லெஸ் அவசரகால விழிப்பூட்டல் அமைப்புகளைப் பார்க்க தட்டவும்"</string>
 </resources>
