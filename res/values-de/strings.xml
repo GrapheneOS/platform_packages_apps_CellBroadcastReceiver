@@ -58,8 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Broadcast-Nachrichten"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Notfallbenachrichtigungen"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alarmmeldungen in Audioanrufen"</string>
-    <!-- no translation found for notification_channel_settings_updates (6779759372516475085) -->
-    <skip />
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Automatische Änderungen an Einstellungen für Notfallbenachrichtigungen für Mobilgeräte je nach SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Notfallbenachrichtigungen zulassen"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Notfallbenachrichtigungen für Mobilgeräte erhalten"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Benachrichtigungserinnerung"</string>
@@ -161,8 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maximale Wartezeit:"</string>
     <string name="seconds" msgid="141450721520515025">"Sekunden"</string>
     <string name="message_copied" msgid="6922953753733166675">"Nachricht kopiert"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (7664799881479966932) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (1397646219615654933) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Einstellungen vom Mobilfunkanbieter geändert"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Tippen, um Einstellungen für Notfallbenachrichtigungen für Mobilgeräte zu sehen"</string>
 </resources>
