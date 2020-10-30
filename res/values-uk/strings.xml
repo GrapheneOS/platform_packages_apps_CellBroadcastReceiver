@@ -160,6 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Максимальний час очікування:"</string>
     <string name="seconds" msgid="141450721520515025">"с"</string>
     <string name="message_copied" msgid="6922953753733166675">"Повідомлення скопійовано"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Налаштування змінено оператором"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Налаштування змінив оператор"</string>
     <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Натисніть, щоб переглянути налаштування бездротових екстрених сповіщень"</string>
 </resources>

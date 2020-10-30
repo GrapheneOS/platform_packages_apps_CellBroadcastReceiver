@@ -58,8 +58,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण गर्ने सन्देशहरू"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"आपत्‌कालीन सतर्कताहरू"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"भ्वाइस कलका आपत्‌कालीन अलर्टहरू"</string>
-    <!-- no translation found for notification_channel_settings_updates (6779759372516475085) -->
-    <skip />
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"WEA का स्वचालित सेटिङ SIM अनुसार परिवर्तन हुन्छन्"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"अलर्टहरूलाई अनुमति दिनुहोस्"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"आपत्‌कालीन वायरलेस सतर्कता सूचनाहरू प्राप्त गर्नु…"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"अलर्ट रिमाइन्डर"</string>
@@ -161,8 +160,6 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"पर्खनु पर्ने अधिकतम समय:"</string>
     <string name="seconds" msgid="141450721520515025">"सेकेन्ड"</string>
     <string name="message_copied" msgid="6922953753733166675">"सन्देश प्रतिलिपि गरियो"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (7664799881479966932) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (1397646219615654933) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"सेवा प्रदायकले यी सेटिङ परिवर्तन गरेको छ"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"आपत्‌कालीन वायरलेस सतर्कता सूचनासम्बन्धी सेटिङ हेर्न ट्याप गर्नुहोस्"</string>
 </resources>
