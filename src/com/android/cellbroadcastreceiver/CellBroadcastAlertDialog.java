@@ -779,7 +779,9 @@ public class CellBroadcastAlertDialog extends Activity {
         // Cancel any pending alert reminder
         CellBroadcastAlertReminder.cancelAlertReminder();
         // Remove the all current showing alert message from the list.
-        mMessageList.clear();
+        if (mMessageList != null) {
+            mMessageList.clear();
+        }
         // clear notifications.
         clearNotification(intent);
         // Remove pending screen-off messages (animation messages are removed in onPause()).
