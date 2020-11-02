@@ -124,7 +124,7 @@
 
         <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastAlertDialog"
                   android:theme="@style/CellBroadcastAlertTheme"
-                  android:launchMode="singleTask"
+                  android:launchMode="singleInstance"
                   android:exported="false"
                   android:excludeFromRecents="true"
                   android:configChanges="orientation|keyboardHidden|keyboard|navigation">
