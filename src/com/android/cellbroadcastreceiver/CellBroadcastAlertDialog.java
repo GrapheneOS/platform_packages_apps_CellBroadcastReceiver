@@ -22,6 +22,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.app.NotificationManager;
+import android.app.StatusBarManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -64,6 +65,8 @@ import com.android.internal.annotations.VisibleForTesting;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -322,12 +325,10 @@ public class CellBroadcastAlertDialog extends Activity {
                 | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                 | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 
-        // Disable home button when alert dialog is showing if mute_by_physical_button is false.
-        if (!CellBroadcastSettings.getResourcesForDefaultSubId(getApplicationContext())
-                .getBoolean(R.bool.mute_by_physical_button)) {
-            final View decorView = win.getDecorView();
-            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-        }
+        // Some LATAM carriers mandate to disable navigation bars, quick settings etc when alert
+        // dialog is showing. This is to make sure users to ack the alert before switching to
+        // other activities.
+        setStatusBarDisabledIfNeeded(true);
 
         // Initialize the view.
         LayoutInflater inflater = LayoutInflater.from(this);
@@ -890,6 +891,12 @@ public class CellBroadcastAlertDialog extends Activity {
     }
 
     @Override
+    public void onDestroy() {
+        setStatusBarDisabledIfNeeded(false);
+        super.onDestroy();
+    }
+
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.d(TAG, "onKeyDown: " + event);
         SmsCbMessage message = getLatestMessage();
@@ -987,6 +994,51 @@ public class CellBroadcastAlertDialog extends Activity {
            CellBroadcastAlertService.addToNotificationBar(
                    CellBroadcastReceiverApp.getLatestMessage(),
                    unreadMessageList, context,false, false, false);
+        }
+    }
+
+    /**
+     * To disable navigation bars, quick settings etc. Force users to engage with the alert dialog
+     * before switching to other activities.
+     *
+     * @param disable if set to {@code true} to disable the status bar. {@code false} otherwise.
+     */
+    private void setStatusBarDisabledIfNeeded(boolean disable) {
+        if (!CellBroadcastSettings.getResourcesForDefaultSubId(getApplicationContext())
+                .getBoolean(R.bool.disable_status_bar)) {
+            return;
+        }
+        try {
+            // TODO change to system API in S.
+            StatusBarManager statusBarManager = getSystemService(StatusBarManager.class);
+            Method disableMethod = StatusBarManager.class.getDeclaredMethod(
+                    "disable", int.class);
+            Method disableMethod2 = StatusBarManager.class.getDeclaredMethod(
+                    "disable2", int.class);
+            if (disable) {
+                // flags to be disabled
+                int disableHome = StatusBarManager.class.getDeclaredField("DISABLE_HOME")
+                        .getInt(null);
+                int disableRecent = StatusBarManager.class
+                        .getDeclaredField("DISABLE_RECENT").getInt(null);
+                int disableBack = StatusBarManager.class.getDeclaredField("DISABLE_BACK")
+                        .getInt(null);
+                int disableQuickSettings = StatusBarManager.class.getDeclaredField(
+                        "DISABLE2_QUICK_SETTINGS").getInt(null);
+                int disableNotificationShaded = StatusBarManager.class.getDeclaredField(
+                        "DISABLE2_NOTIFICATION_SHADE").getInt(null);
+                disableMethod.invoke(statusBarManager, disableHome | disableBack | disableRecent);
+                disableMethod2.invoke(statusBarManager, disableQuickSettings
+                        | disableNotificationShaded);
+            } else {
+                int disableNone = StatusBarManager.class.getDeclaredField("DISABLE_NONE")
+                        .getInt(null);
+                disableMethod.invoke(statusBarManager, disableNone);
+                disableMethod2.invoke(statusBarManager, disableNone);
+            }
+        } catch (NoSuchFieldException | IllegalAccessException
+                | NoSuchMethodException | InvocationTargetException e) {
+            Log.e(TAG, "Failed to disable navigation when showing alert: " + e);
         }
     }
 }

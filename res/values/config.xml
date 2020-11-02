@@ -246,4 +246,9 @@
     <!-- Whether to display a notification with pop-up dialog in the foreground.
     This is used to support emergency alert on the companion devices by bridged notification -->
     <bool name="show_alert_dialog_with_notification">false</bool>
+
+    <!-- Whether to disable status bar while alert dialog is showing.
+    Some carriers mandate this to make sure users do not switch to other activities
+    until pressing the "ok" button -->
+    <bool name="disable_status_bar">false</bool>
 </resources>
