@@ -30,31 +30,49 @@
 
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
     <bool name="override_dnd">true</bool>
+    <!-- 4370, 4383 -->
+    <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
+        <item>0x1112:rat=gsm, emergency=true, always_on=true, language=ar</item>
+        <!-- additional language -->
+        <item>0x111F:rat=gsm, emergency=true, always_on=true, language=en</item>
+    </string-array>
+    <!-- 4371~4372, 4384~4385 -->
+    <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
+        <item>0x1113-0x1114:rat=gsm, emergency=true, language=ar</item>
+        <!-- additional language -->
+        <item>0x1120-0x1121:rat=gsm, emergency=true, language=en</item>
+    </string-array>
+    <!-- 4373~4378, 4386~4391 -->
+    <string-array name="cmas_alerts_severe_range_strings" translatable="false">
+        <item>0x1115-0x111A:rat=gsm, emergency=true, language=ar</item>
+        <!-- additional language -->
+        <item>0x1122-0x1127:rat=gsm, emergency=true, language=en</item>
+    </string-array>
     <!-- 4379, 4392 -->
     <string-array name="emergency_alerts_channels_range_strings" translatable="false">
-        <item>0x111B:rat=gsm, emergency=true</item>
+        <item>0x111B:rat=gsm, emergency=true, language=ar</item>
         <!-- additional language -->
-        <item>0x1128:rat=gsm, emergency=true</item>
+        <item>0x1128:rat=gsm, emergency=true, language=en</item>
     </string-array>
     <!-- 4380, 4393 -->
     <string-array name="required_monthly_test_range_strings" translatable="false">
-        <item>0x111C:rat=gsm, type=info, emergency=true</item>
+        <item>0x111C:rat=gsm, type=info, emergency=true, language=ar</item>
         <!-- additional language -->
-        <item>0x1129:rat=gsm, type=info, emergency=true</item>
+        <item>0x1129:rat=gsm, type=info, emergency=true, language=en</item>
     </string-array>
     <!-- 4396, 4397 -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">
         <!-- Public safety messages -->
-        <item>0x112C:rat=gsm, type=info, emergency=true</item>
+        <item>0x112C:rat=gsm, type=info, emergency=true, language=ar</item>
         <!-- Public safety messages for additional language -->
-        <item>0x112D:rat=gsm, type=info, emergency=true</item>
+        <item>0x112D:rat=gsm, type=info, emergency=true, language=en</item>
     </string-array>
     <!-- 4398, 4399 -->
     <string-array name="state_local_test_alert_range_strings" translatable="false">
         <!-- state/local test -->
-        <item>0x112E:rat=gsm, type=info, emergency=true</item>
+        <item>0x112E:rat=gsm, type=info, emergency=true, language=ar</item>
         <!-- state/local test additional language -->
-        <item>0x112F:rat=gsm, type=info, emergency=true</item>
+        <item>0x112F:rat=gsm, type=info, emergency=true, language=en</item>
     </string-array>
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false">
     </string-array>
@@ -64,9 +82,9 @@
     <!-- By default it's true for United Arab Emirates users -->
     <!-- 4381, 4394 -->
     <string-array name="exercise_alert_range_strings" translatable="false">
-        <item>0x111D:rat=gsm, emergency=true, always_on=true</item>
+        <item>0x111D:rat=gsm, emergency=true, always_on=true, language=ar</item>
         <!-- additional language -->
-        <item>0x112A:rat=gsm, emergency=true, always_on=true</item>
+        <item>0x112A:rat=gsm, emergency=true, always_on=true, language=en</item>
     </string-array>
     <!-- Whether enabling copy message text into clipboard by long press -->
     <bool name="enable_text_copy">false</bool>
