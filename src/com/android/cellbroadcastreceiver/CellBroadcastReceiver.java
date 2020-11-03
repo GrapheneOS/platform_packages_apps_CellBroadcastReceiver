@@ -127,9 +127,11 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             // read. Log an event.
             EventLog.writeEvent(0x534e4554, "162741784", -1, null);
         } else if (CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED.equals(action)) {
-            initializeSharedPreference();
-            enableLauncher();
-            startConfigService();
+            if (!intent.getBooleanExtra("android.telephony.extra.REBROADCAST_ON_UNLOCK", false)) {
+                initializeSharedPreference();
+                enableLauncher();
+                startConfigService();
+            }
         } else if (ACTION_SERVICE_STATE.equals(action)) {
             // lower layer clears channel configurations under APM, thus need to resend
             // configurations once moving back from APM. This should be fixed in lower layer
