@@ -41,6 +41,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
 import android.text.TextUtils;
+import android.util.EventLog;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -122,8 +123,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         Resources res = getResourcesMethod();
 
         if (ACTION_MARK_AS_READ.equals(action)) {
-            final long deliveryTime = intent.getLongExtra(EXTRA_DELIVERY_TIME, -1);
-            getCellBroadcastTask(deliveryTime);
+            // The only way this'll be called is if someone tries to maliciously set something as
+            // read. Log an event.
+            EventLog.writeEvent(0x534e4554, "162741784", -1, null);
         } else if (CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED.equals(action)) {
             if (!intent.getBooleanExtra("android.telephony.extra.REBROADCAST_ON_UNLOCK", false)) {
                 initializeSharedPreference();

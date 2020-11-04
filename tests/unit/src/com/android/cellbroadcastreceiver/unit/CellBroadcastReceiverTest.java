@@ -125,15 +125,6 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     }
 
     @Test
-    public void testOnReceive_actionMarkAsRead() {
-        doReturn(CellBroadcastReceiver.ACTION_MARK_AS_READ).when(mIntent).getAction();
-        doNothing().when(mCellBroadcastReceiver).getCellBroadcastTask(anyLong());
-        mCellBroadcastReceiver.onReceive(mContext, mIntent);
-        verify(mIntent).getLongExtra(CellBroadcastReceiver.EXTRA_DELIVERY_TIME, -1);
-        verify(mCellBroadcastReceiver).getCellBroadcastTask(anyLong());
-    }
-
-    @Test
     public void testOnReceive_actionCarrierConfigChanged() {
         doReturn(CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED).when(mIntent).getAction();
         doNothing().when(mCellBroadcastReceiver).initializeSharedPreference();
