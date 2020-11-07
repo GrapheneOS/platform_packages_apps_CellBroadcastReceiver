@@ -18,10 +18,6 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"התראות אלחוטיות על מקרי חירום"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"התראות אלחוטיות על מקרי חירום"</string>
-    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"התראות אלחוטיות על מקרי חירום"</string>
-    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"התראות אלחוטיות על מקרי חירום"</string>
-    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"התראות אלחוטיות על מקרי חירום"</string>
-    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"הודעה אינפורמטיבית"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"הגדרות של התראות אלחוטיות על מקרי חירום לא זמינות למשתמש זה"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"אישור"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"אין התרעות קודמות"</string>
@@ -58,12 +54,9 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"הודעות שידור"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"התרעות חירום"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"התרעות על מקרי חירום בשיחה קולית"</string>
-    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"‏שינויים בהגדרות WEA אוטומטיות שמבוססות על כרטיס SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"הצגת התרעות"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"לקבלת התראות אלחוטיות על מקרי חירום"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"תזכורת התרעה"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"הודעת התרעה תושמע בקול"</string>
-    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"‏שימוש בהמרת טקסט לדיבור (TTS) להקראה של התראות אלחוטיות על מקרי חירום"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"צליל תזכורת יושמע בעוצמת שמע רגילה"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"היסטוריה של התרעות חירום"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"העדפות להתרעות"</string>
@@ -85,9 +78,6 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"הזהר אותי מפני אירועים מסכני חיים"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"התראות בדיקה"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"קבלת בדיקות של הספק ובדיקות חודשיות ממערכת התרעות האבטחה"</string>
-    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
-    <skip />
-    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"קבלת התרעה על מקרה חירום: הודעת תרגול/ניסיון"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"רטט"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"צליל ההתראה יושמע תמיד בעוצמת השמע המרבית"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"יש להתעלם מהתכונה \'נא לא להפריע\' ומהגדרות אחרות של עוצמת השמע"</string>
@@ -145,7 +135,6 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"הודעות אזהרה לאומיות מהנשיא. לא ניתן להשבית אותן."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
-    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"מצב הבדיקה של השידור הסלולרי מופעל."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"מצב הבדיקה של השידור הסלולרי מושבת."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"הצגת כל ההודעות"</string>
@@ -159,7 +148,4 @@
     <string name="message_coordinates" msgid="356333576818059052">"קואורדינטות:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"סמן המתנה מרבי:"</string>
     <string name="seconds" msgid="141450721520515025">"שניות"</string>
-    <string name="message_copied" msgid="6922953753733166675">"ההודעה הועתקה"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"ההגדרות שונו על ידי הספק הסלולרי"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"יש להקיש כדי לראות את ההגדרות של ההתראות האלחוטיות על מקרה חירום"</string>
 </resources>

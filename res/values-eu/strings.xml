@@ -18,10 +18,6 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"Hari gabeko larrialdi-alertak"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"Hari gabeko larrialdi-alertak"</string>
-    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"Hari gabeko larrialdi-alertak"</string>
-    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"Hari gabeko larrialdi-alertak"</string>
-    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"Hari gabeko larrialdi-alertak"</string>
-    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"Informazioa emateko jakinarazpena"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Erabiltzaile honek ez ditu erabilgarri hari gabeko larrialdi-alerten ezarpenak"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Ados"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Ez dago aurreko alertarik"</string>
@@ -58,12 +54,9 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Igorpen-mezuak"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Larrialdi-alertak"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Larrialdien alertak ahots-deietan"</string>
-    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Hari gabeko larrialdi-alerten ezarpenak automatikoki aldatu dira SIMean oinarrituta"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Baimendu alertak"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Onartu alertak"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Jaso hari gabeko larrialdi-alerten jakinarazpenak"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Alerta-egoeraren abisua"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Irakurri alerta-mezua ozen"</string>
-    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Erabili testua ahots bihurtzeko eginbidea hari gabeko larrialdi-alertak ozen irakurtzeko"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Abisu-soinu batek joko du ohiko bolumenean"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Larrialdi-alerten historia"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Alerten hobespenak"</string>
@@ -80,14 +73,11 @@
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Segurtasun publikoari buruzko mezuak"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Bizia edo ondasunak salbatzeko ekintza gomendatuak"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Estatuko eta tokiko erakundeen probak"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Jaso probako mezuak estatuko eta tokiko agintaritzengandik"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Jaso probako mezuak estatuko eta tokiko erakundeengandik"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Larrialdi-alertak"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Ohartarazi bizitza arriskuan jar dezaketen gertaerei buruz"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testu-mezu bidezko alertak"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Jaso segurtasun-alerten sistemaren operadore-probak eta hileroko probak"</string>
-    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
-    <skip />
-    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Jaso larrialdi-alerta: probako mezua"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Dardara"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Alertak beti gehieneko bolumenean"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ez ikusi egin ez molestatzeko moduari eta beste bolumen-ezarpen batzuei"</string>
@@ -142,10 +132,9 @@
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Hari gabeko larrialdi-alertak"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Gobernuaren alertak"</string>
-    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Gobernuak bidalitako abisu-mezu nazionalak. Ezin da desaktibatu."</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Presidenteak bidali duen abisu-mezu nazionala da. Ezin da desaktibatu."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
-    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Gaitu da sare mugikor bidezko igorpenaren proba modua."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Desgaitu da sare mugikor bidezko igorpenaren proba modua."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Erakutsi mezu guztiak"</string>
@@ -159,7 +148,4 @@
     <string name="message_coordinates" msgid="356333576818059052">"Koordenatuak:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Gehieneko itxarote-denbora:"</string>
     <string name="seconds" msgid="141450721520515025">"segundo"</string>
-    <string name="message_copied" msgid="6922953753733166675">"Kopiatu da mezua"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Operadoreak ezarpenak aldatu ditu"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Saka ezazu hari gabeko larrialdi-alerten ezarpenak ikusteko"</string>
 </resources>

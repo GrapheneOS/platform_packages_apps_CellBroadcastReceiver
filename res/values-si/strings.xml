@@ -18,10 +18,6 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම්"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම්"</string>
-    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම්"</string>
-    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම්"</string>
-    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම්"</string>
-    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"තොරතුරුමය දැනුම්දීම"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම් සැකසීම් මෙම පරිශීලකයා සඳහා ලබා ගත නොහැකිය"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"හරි"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"පෙර ඇඟවීම් නොමැත"</string>
@@ -58,12 +54,9 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"විකාශ පණිවිඩ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"හදිසි අවස්ථා ඇඟවීම්"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"හඬ ඇමතුමේ ඇති හදිසි ඇඟවීම්"</string>
-    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM මත පදනම්ව ස්වයංක්‍රිය WEA සැකසීම් වෙනස් වේ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ඇඟවීම්වලට ඉඩ දෙන්න"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම් ලබා ගන්න"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ඇඟවීම් මතක් කිරීම"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"ඇඟවීම් පණිවිඩ කතා කරවන්න"</string>
-    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම් පණිවිඩ කියවීමට පෙළ-සිට-කථනය භාවිත කරන්න"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ක්‍රමවත් හඬ පරිමාවකින් සිහිකැඳවීමේ ශබ්දයක් වාදනය වෙනු ඇත"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"හදිසි අවස්ථා ඇඟවීම් ඉතිහාසය"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ඇඟවීම් මනාප"</string>
@@ -85,9 +78,6 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ජීවිත තර්ජනාත්මක සිදුවීම් ගැන අනතුරු අඟවන්න"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"පරීක්ෂණ ඇඟවීම්"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ආරක්ෂක අනතුරු ඇඟවීමේ පද්ධතියෙන් වාහක පරීක්ෂා සහ මාසික පරීක්ෂා ලබා ගන්න"</string>
-    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
-    <skip />
-    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"හදිසි අවස්ථා ඇඟවීම ලබා ගන්න: ව්‍යායාම/සරඹ පණිවිඩය"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"කම්පනය"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"සැමවිට පූර්ණ හඬ පරිමාවෙන් අඟවන්න"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"බාධා නොකරන්න &amp; වෙනත් හඬ පරිමා සැකසීම් නොසලකා හරින්න"</string>
@@ -145,7 +135,6 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ජනාධිපති විසින් නිකුත් කළ ජාතික අනතුරු ඇඟවීමේ පණිවිඩ. ක්‍රියාවිරහිත කිරීමට නොහැකිය."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
-    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"සෙල් විකාශන පරීක්ෂාව සබල කර ඇත."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"සෙල් විකාශන පරීක්ෂාව අබල කර ඇත."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"සියලු පණිවිඩ පෙන්වන්න"</string>
@@ -159,7 +148,4 @@
     <string name="message_coordinates" msgid="356333576818059052">"ඛණ්ඩාංක:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"උපරිම පොරොත්තු වේලාව:"</string>
     <string name="seconds" msgid="141450721520515025">"තත්පර"</string>
-    <string name="message_copied" msgid="6922953753733166675">"පණිවිඩය පිටපත් කරන ලදී"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"වාහකය මගින් සැකසීම් වෙනස් කරන ලදි"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"රැහැන් රහිත හදිසි අවස්ථා ඇඟවීම් සැකසීම් බැලීමට තට්ටු කරන්න"</string>
 </resources>

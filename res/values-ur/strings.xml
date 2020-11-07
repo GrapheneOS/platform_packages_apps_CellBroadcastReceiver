@@ -18,10 +18,6 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"وائرلیس ہنگامی الرٹس"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"وائرلیس ہنگامی الرٹس"</string>
-    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"وائرلیس ہنگامی الرٹس"</string>
-    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"وائرلیس ہنگامی الرٹس"</string>
-    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"وائرلیس ہنگامی الرٹس"</string>
-    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"معلوماتی اطلاع"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"اس صارف کے ليے وائرلیس ہنگامی الرٹ کی ترتیبات دستیاب نہیں ہیں"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ٹھیک ہے"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"کوئی سابقہ الرٹس نہیں ہیں"</string>
@@ -58,12 +54,9 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"براڈ کاسٹ کے پیغامات"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ایمرجنسی الرٹس"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"صوتی کال میں ہنگامی الرٹس"</string>
-    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"‏SIM کی بنیاد پر خودکار WEA ترتیبات کی تبدیلیاں"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"الرٹس کی اجازت دیں"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"وائرلیس ہنگامی الرٹ کی اطلاعات موصول کریں"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"الرٹ کی یاد دہانی"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"الرٹ کا پیغام بولیں"</string>
-    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"وائرلیس ہنگامی الرٹ کے پیغامات بولنے کے ليے ٹیکسٹ ٹو اسپیچ کا استعمال کریں"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ایک یاد دہانی کی آواز ریگولر والیوم پر چلے گی"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ایمرجنسی الرٹ کی سر گزشت"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"الرٹ کی ترجیحات"</string>
@@ -85,9 +78,6 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"جان لیوا ایونٹس کے بارے میں متنبہ کریں"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"ٹیسٹ الرٹس"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"حفاظتی الرٹ سسٹم سے کیریئر ٹیسٹس اور ماہانہ ٹیسٹس موصول کریں"</string>
-    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
-    <skip />
-    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"ہنگامی الرٹ موصول کریں: ورزش/ڈرِل پیغام"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"وائبریشن"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ہمیشہ پورے والیوم پر الرٹ کریں"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'ڈسٹرب نہ کریں\' اور دیگر والیوم کی ترتیبات کو نظر انداز کریں"</string>
@@ -145,7 +135,6 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"صدر کی طرف سے جاری قومی وارننگ کے پیغامات۔ آف نہیں کیا جا سکتا۔"</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
-    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"سیل نشریہ ٹیسٹنگ موڈ فعال ہے۔"</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"سیل نشریہ ٹیسٹنگ موڈ غیر فعال ہے۔"</string>
     <string name="show_all_messages" msgid="3780970968167139836">"سبھی پیغامات دکھائیں"</string>
@@ -159,7 +148,4 @@
     <string name="message_coordinates" msgid="356333576818059052">"کوآرڈینیٹس:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"زیادہ سے زیادہ انتظار کرنے کا وقت:"</string>
     <string name="seconds" msgid="141450721520515025">"سیکنڈز"</string>
-    <string name="message_copied" msgid="6922953753733166675">"پیغام کاپی ہو گیا"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"ترتیبات کو کیریئر نے تبدیل کر دیا"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"وائرلیس ہنگامی الرٹ کی ترتیبات کو دیکھنے کیلئے تھپتھپائیں"</string>
 </resources>

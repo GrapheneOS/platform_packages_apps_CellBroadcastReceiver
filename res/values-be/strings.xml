@@ -18,10 +18,6 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"Абвесткі па бесправадных сетках пра надзвычайныя сітуацыі"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"Абвесткі па бесправадных сетках пра надзвычайныя сітуацыі"</string>
-    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"Аварыйныя абвесткі па бесправадных сетках"</string>
-    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"Аварыйныя абвесткі па бесправадных сетках"</string>
-    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"Аварыйныя абвесткі па бесправадных сетках"</string>
-    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"Інфармацыйнае апавяшчэнне"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Налады абвестак па бесправадных сетках пра надзвычайныя сітуацыі недаступныя для гэтага карыстальніка"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ОК"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Папярэднія абвесткі адсутнічаюць"</string>
@@ -58,13 +54,10 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Паведамленні рассылкі"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Абвесткі аб надзвычайных сітуацыях"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Абвесткі пра надзвычайныя сітуацыі ў галасавым выкліку"</string>
-    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Аўтаматычная змена налад бесправаднога экстраннага апавяшчэння на падставе даных SIM-карты"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дазволіць абвесткі"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Атрымліваць абвесткі па бесправадных сетках аб надзвычайных сітуацыях"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Атрымліваць бесправадныя аварыйныя апавяшчэнні"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Напаміны"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Прагаворваць апавяшчэнні"</string>
-    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Выкарыстоўваць сінтэз маўлення, каб прагаворваць аварыйныя апавяшчэнні па бесправадных сетках"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Гук напамінаў будзе прайгравацца са звычайнай гучнасцю"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Гукавы сігнал напамінаў будзе прайгравацца са звычайнай гучнасцю"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Гісторыя аварыйных абвестак"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Параметры абвестак"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Тэставыя рассылкі ETWS"</string>
@@ -85,9 +78,6 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Папярэджваць пра небяспечныя для жыцця падзеі"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Тэставыя абвесткі"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Атрымліваць тэсты аператараў і штомесячныя тэсты ад сістэмы абвяшчэння бяспекі"</string>
-    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
-    <skip />
-    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Атрымаць абвестку пра надзвычайную сітуацыю: вучэбнае/трэніровачнае паведамленне"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вібрацыя"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Заўсёды абвяшчаць з поўнай гучнасцю"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ігнараваць рэжым \"Не турбаваць\" і іншыя налады гучнасці"</string>
@@ -145,7 +135,6 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Дзяржаўныя папераджальныя паведамленні, зробленыя Прэзідэнтам. Нельга выключыць."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
-    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Тэставы рэжым сотавай трансляцыі ўключаны."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Тэставы рэжым сотавай трансляцыі выключаны."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Паказаць усе паведамленні"</string>
@@ -159,7 +148,4 @@
     <string name="message_coordinates" msgid="356333576818059052">"Каардынаты:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Максімальна дапушчальны час чакання:"</string>
     <string name="seconds" msgid="141450721520515025">"секунды"</string>
-    <string name="message_copied" msgid="6922953753733166675">"Паведамленне скапіравана"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Налады зменены аператарам"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Націсніце, каб убачыць налады бесправаднога экстраннага апавяшчэння"</string>
 </resources>

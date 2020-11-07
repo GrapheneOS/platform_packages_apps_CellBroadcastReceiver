@@ -18,10 +18,6 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"Alertas de emergência sem fios"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"Alertas de emergência sem fios"</string>
-    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"Alertas de emergência sem fios"</string>
-    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"Alertas de emergência sem fios"</string>
-    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"Alertas de emergência sem fios"</string>
-    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"Notificação informativa"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"As definições de alertas de emergência não estão disponíveis para este utilizador."</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Não existem alertas anteriores."</string>
@@ -58,12 +54,9 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Mensagens de difusão"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertas de emergência"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertas de emergência em chamada de voz"</string>
-    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Alterações das definições de WEA automáticas baseadas no SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permitir alertas"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Receber notificações de alerta de emergência sem fios"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Rec. notificações de alerta de emergência sem fios"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Lembrete de alerta"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Dizer mensagem de alerta"</string>
-    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Utilize a síntese de voz para dizer mensagens de alertas de emergência sem fios."</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Será reproduzido um som de lembrete com o volume normal"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Histórico de alertas de emergência"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferências de alerta"</string>
@@ -85,9 +78,6 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Avisar acerca de eventos potencialmente fatais"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Alertas de teste"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Receber testes do operador e testes mensais do sistema de alerta de segurança"</string>
-    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
-    <skip />
-    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Receber um alerta de emergência: mensagem de simulação/exercício"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibração"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Alertar sempre no volume máximo"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignorar o modo Não incomodar e outras definições de volume"</string>
@@ -142,10 +132,9 @@
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Alertas de emergência sem fios"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Alertas presidenciais"</string>
-    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Mensagens de aviso nacionais emitidas pelo Presidente. Não é possível desativá-las"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Mensagens de aviso nacionais emitidas pelo Presidente. Não é possível desativá-las."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
-    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"O modo de teste da difusão celular está ativado."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"O modo de teste da difusão celular está desativado."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Mostrar todas as mensagens"</string>
@@ -159,7 +148,4 @@
     <string name="message_coordinates" msgid="356333576818059052">"Coordenadas:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Tempo de espera máximo:"</string>
     <string name="seconds" msgid="141450721520515025">"segundos"</string>
-    <string name="message_copied" msgid="6922953753733166675">"Mensagem copiada."</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Definições alteradas pelo operador"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Toque para ver definições de alertas de emergência sem fios"</string>
 </resources>
