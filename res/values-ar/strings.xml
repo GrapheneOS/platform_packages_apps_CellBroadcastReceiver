@@ -18,6 +18,10 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"إنذارات الطوارئ اللاسلكية"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"إنذارات الطوارئ اللاسلكية"</string>
+    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"تنبيهات الطوارئ اللاسلكية"</string>
+    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"تنبيهات الطوارئ اللاسلكية"</string>
+    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"تنبيهات الطوارئ اللاسلكية"</string>
+    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"إشعار معلوماتي"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"لا تتوفَّر إعدادات إنذارات الطوارئ اللاسلكية لهذا المستخدم,"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"حسنًا"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"ليست هناك تنبيهات سابقة."</string>
@@ -54,11 +58,14 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"رسائل البث"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"إنذارات الطوارئ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"إنذارات الطوارئ في مكالمة صوتية"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"‏تتغير إعدادات نظام WEA التلقائي بناءً على شريحة SIM."</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"السماح بالتنبيهات"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"تلقي الإشعارات بإنذارات الطوارئ اللاسلكية"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"تلقّي الإشعارات بإنذارات الطوارئ اللاسلكية"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"تذكير التنبيه"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"الاستماع إلى رسالة التنبيه"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"استخدام ميزة \"تحويل النص إلى كلام\" للاستماع إلى رسائل إنذارات الطوارئ اللاسلكية"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"سيتم تشغيل صوت تذكير بمستوى صوت منتظم"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"سجلّ تنبيهات الطوارئ"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"سجلّ إنذارات الطوارئ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"الإعدادات المفضّلة للتنبيهات"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"‏مجموعات البث التجريبية في ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"مجموعات البث التجريبية لنظام التحذير المبكر من موجات تسونامي عقب الزلازل"</string>
@@ -76,8 +83,11 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"استلام رسائل اختبارية من سلطات الولاية والسلطات المحلية"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"إنذارات الطوارئ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"إرسال تحذير بشأن الأحداث التي تهدد الحياة"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"تنبيهات اختبارية"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"رسائل تجريبية"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"تلقّي اختبارات مشغّل شبكة الجوّال والاختبارات الشهرية من نظام تنبيهات السلامة"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"تلقّي تنبيه بحالة طوارئ: رسالة تجريبية"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"الاهتزاز"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"التذكير دائمًا باستخدام أعلى مستوى صوت"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"تجاهل ميزة \"عدم الإزعاج\" والإعدادات الأخرى لمستوى الصوت"</string>
@@ -122,7 +132,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"أنت حاليًا تتلقى إنذارات الطوارئ اللاسلكية. هل تريد مواصلة تلقي إنذارات الطوارئ اللاسلكية؟"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"نعم"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"لا"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"سجلّ تنبيهات الطوارئ"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"سجلّ إنذارات الطوارئ"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"مرة واحدة"</item>
     <item msgid="9097229303902157183">"كل دقيقتين"</item>
@@ -135,6 +145,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"رسائل تحذير وطنية من إصدار الرئيس، لا يمكن إيقافها"</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"وضع اختبار البث الخلوي مفعّل."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"وضع اختبار البث الخلوي غير مفعّل."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"إظهار جميع الرسائل"</string>
@@ -148,4 +159,7 @@
     <string name="message_coordinates" msgid="356333576818059052">"الإحداثيات:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"الحد الأقصى لوقت الانتظار:"</string>
     <string name="seconds" msgid="141450721520515025">"ثوانٍ"</string>
+    <string name="message_copied" msgid="6922953753733166675">"تم نسخ الرسالة."</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"غيّر مشغّل شبكة الجوّال الإعدادات."</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"انقر لعرض إعدادات التنبيهات اللاسلكية لحالات الطوارئ."</string>
 </resources>

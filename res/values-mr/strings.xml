@@ -18,6 +18,10 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"आणीबाणीमधील वायरलेस इशारा"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"आणीबाणीमधील वायरलेस इशारा"</string>
+    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"वायरलेस आणीबाणी सूचना"</string>
+    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"आणीबाणीच्या वायरलेस सूचना"</string>
+    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"आणीबाणीच्या वायरलेस सूचना"</string>
+    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"माहितीपूर्ण सूचना"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"या वापरकर्त्यासाठी आणीबाणीमधील वायरलेस इशारा सेटिंग्ज उपलब्ध नाही"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक आहे"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"यापूर्वीचे अलर्ट नाहीत"</string>
@@ -54,9 +58,12 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण मेसेज"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"आणीबाणीच्या सूचना"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"व्हॉइस कॉलमधील आणीबाणी सूचना"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM वर आधारित ऑटोमॅटिक WEA सेटिंग्जमधील बदल"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"सूचनांना अनुमती द्या"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"आणीबाणीमधील वायरलेस इशारा सूचना स्वीकारा"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"सूचना स्मरणपत्र"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"सूचना मेसेज बोला"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"आणीबाणीमधील वायरलेस इशारा मेसेज बोलण्यासाठी टेक्स्ट-टू-स्पीच वापरा"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"नियमित व्हॉल्यूमवर एक रिमाइंडर आवाज प्ले होईल"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"आणीबाणी सूचना इतिहास"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"सूचना प्राधान्ये"</string>
@@ -78,6 +85,9 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"जीवघेण्या घटनांच्या चेतावण्या द्या"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"चाचणीच्या सूचना"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा सूचना सिस्टमकडून वाहक चाचण्या आणि मासिक चाचण्या मिळवा"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"आणीबाणीच्या सूचना मिळवा: चाचणी/ड्रिल मेसेज"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"कंपन"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"सूचना नेहमी संपूर्ण व्हॉल्यूमवर द्या"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"व्यत्यय आणू नका कडे दुर्लक्ष करा &amp; इतर व्‍हॉल्‍यूम सेटिंग्ज"</string>
@@ -135,6 +145,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"राष्ट्रीय चेतावणी संबंधित राष्ट्रपतींनी जारी केलेला मेसेज. बंद केला जाऊ शकत नाही."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"सेल प्रसारण चाचणी मोड सुरू केला आहे."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"सेल प्रसारण चाचणी मोड बंद केला आहे."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"सर्व मेसेज दाखवा"</string>
@@ -148,4 +159,7 @@
     <string name="message_coordinates" msgid="356333576818059052">"निर्देशक:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"प्रतीक्षा करण्याची कमाल वेळ:"</string>
     <string name="seconds" msgid="141450721520515025">"सेकंद"</string>
+    <string name="message_copied" msgid="6922953753733166675">"मेसेज कॉपी केला"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"सेटिंग्ज वाहकाद्वारे बदलली गेली"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"वायरलेस आणीबाणी सूचना सेटिंग्ज पाहण्यासाठी टॅप करा"</string>
 </resources>

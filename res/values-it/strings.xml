@@ -18,6 +18,10 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"Avvisi di emergenza wireless"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"Avvisi di emergenza wireless"</string>
+    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"Avvisi di emergenza wireless"</string>
+    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"Avvisi di emergenza wireless"</string>
+    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"Avvisi di emergenza wireless"</string>
+    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"Notifica informativa"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Le impostazioni per gli avvisi di emergenza wireless non sono disponibili per questo utente"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Nessun avviso precedente"</string>
@@ -54,9 +58,12 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Messaggi broadcast"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Avvisi di emergenza"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Avvisi d\'emergenza in chiamata vocale"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Le impostazioni WEA automatiche cambiano in base alla SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Consenti avvisi"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Ricevi notifiche per avvisi di emergenza wireless"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Promemoria avvisi"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Leggimi messaggio di avviso"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Usa la sintesi vocale per leggermi i messaggi degli avvisi di emergenza wireless"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Verrà riprodotto un suono di promemoria a volume normale"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Cronologia avvisi di emergenza"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferenze per gli avvisi"</string>
@@ -76,8 +83,11 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Ricevi messaggi di prova da autorità statali e locali"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Avvisi d\'emergenza"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Avvisi relativi a eventi potenzialmente letali"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Allarmi di prova"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Allarmi pubblici"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Ricevi test dell\'operatore e test mensili dal sistema di avvisi relativi alla sicurezza"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Ricevi un allarme di emergenza: messaggio di esercitazione"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrazione"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Avvisa sempre a tutto volume"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignora l\'impostazione Non disturbare e altre impostazioni del volume"</string>
@@ -132,9 +142,10 @@
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Avvisi di emergenza wireless"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Avvisi del presidente"</string>
-    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Messaggi di allerta nazionale da parte del presidente Non possono essere disattivati."</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Messaggi di allerta nazionale da parte del presidente. Non possono essere disattivati."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Modalità di test cell broadcast attiva."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Modalità di test cell broadcast non attiva."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Mostra tutti i messaggi"</string>
@@ -148,4 +159,7 @@
     <string name="message_coordinates" msgid="356333576818059052">"Coordinate:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Tempo massimo di attesa:"</string>
     <string name="seconds" msgid="141450721520515025">"secondi"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Messaggio copiato"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Impostazioni modificate dall\'operatore"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Tocca per visualizzare le impostazioni relative agli avvisi di emergenza wireless"</string>
 </resources>
