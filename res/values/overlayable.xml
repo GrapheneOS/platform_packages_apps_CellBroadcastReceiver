@@ -99,7 +99,9 @@
              "none": Not adding any link to message texts.
              "legacy_linkify": Use the legacy linkify to add links to message texts.
              "smart_linkify": Use machine learning based smart linkify to add
-             links to message texts. -->
+             links to message texts.
+             "smart_linkify_no_copy: Use machine learning based smart linkify but
+             hipe copy menu-->
             <item type="string" name="link_method" />
             <!-- END CHANNEL related configurations -->
 

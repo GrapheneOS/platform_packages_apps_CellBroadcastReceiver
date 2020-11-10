@@ -22,6 +22,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.RemoteAction;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -44,6 +46,7 @@ import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Display;
@@ -53,8 +56,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.textclassifier.TextClassification;
+import android.view.textclassifier.TextClassification.Request;
 import android.view.textclassifier.TextClassifier;
 import android.view.textclassifier.TextLinks;
+import android.view.textclassifier.TextLinks.TextLink;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -106,13 +112,23 @@ public class CellBroadcastAlertDialog extends Activity {
     private static final String LINK_METHOD_SMART_LINKIFY_STRING = "smart_linkify";
 
     /**
+     * Use the machine learning based {@link TextClassifier} to generate links but hiding copy
+     * option. Will fallback to
+     * {@link #LINK_METHOD_LEGACY_LINKIFY} if not enabled.
+     */
+    private static final int LINK_METHOD_SMART_LINKIFY_NO_COPY = 3;
+
+    private static final String LINK_METHOD_SMART_LINKIFY_NO_COPY_STRING = "smart_linkify_no_copy";
+
+
+    /**
      * Text link method
      * @hide
      */
     @Retention(RetentionPolicy.SOURCE)
     @IntDef(prefix = "LINK_METHOD_",
             value = {LINK_METHOD_NONE, LINK_METHOD_LEGACY_LINKIFY,
-                    LINK_METHOD_SMART_LINKIFY})
+                    LINK_METHOD_SMART_LINKIFY, LINK_METHOD_SMART_LINKIFY_NO_COPY})
     private @interface LinkMethod {}
 
 
@@ -507,6 +523,7 @@ public class CellBroadcastAlertDialog extends Activity {
             case LINK_METHOD_NONE_STRING: return LINK_METHOD_NONE;
             case LINK_METHOD_LEGACY_LINKIFY_STRING: return LINK_METHOD_LEGACY_LINKIFY;
             case LINK_METHOD_SMART_LINKIFY_STRING: return LINK_METHOD_SMART_LINKIFY;
+            case LINK_METHOD_SMART_LINKIFY_NO_COPY_STRING: return LINK_METHOD_SMART_LINKIFY_NO_COPY;
         }
         return LINK_METHOD_NONE;
     }
@@ -520,12 +537,13 @@ public class CellBroadcastAlertDialog extends Activity {
      */
     private void addLinks(@NonNull TextView textView, @NonNull String messageText,
             @LinkMethod int linkMethod) {
-        Spannable text = new SpannableString(messageText);
         if (linkMethod == LINK_METHOD_LEGACY_LINKIFY) {
+            Spannable text = new SpannableString(messageText);
             Linkify.addLinks(text, Linkify.ALL);
             textView.setMovementMethod(LinkMovementMethod.getInstance());
             textView.setText(text);
-        } else if (linkMethod == LINK_METHOD_SMART_LINKIFY) {
+        } else if (linkMethod == LINK_METHOD_SMART_LINKIFY
+                || linkMethod == LINK_METHOD_SMART_LINKIFY_NO_COPY) {
             // Text classification cannot be run in the main thread.
             new Thread(() -> {
                 final TextClassifier classifier = textView.getTextClassifier();
@@ -543,13 +561,20 @@ public class CellBroadcastAlertDialog extends Activity {
                                         TextClassifier.TYPE_DATE_TIME))
                                 .build();
 
-                TextLinks.Request request = new TextLinks.Request.Builder(text)
+                TextLinks.Request request = new TextLinks.Request.Builder(messageText)
                         .setEntityConfig(entityConfig)
                         .build();
-                // Add links to the spannable text.
-                classifier.generateLinks(request).apply(
-                        text, TextLinks.APPLY_STRATEGY_REPLACE, null);
-
+                Spannable text;
+                if (linkMethod == LINK_METHOD_SMART_LINKIFY) {
+                    text = new SpannableString(messageText);
+                    // Add links to the spannable text.
+                    classifier.generateLinks(request).apply(
+                            text, TextLinks.APPLY_STRATEGY_REPLACE, null);
+                } else {
+                    TextLinks textLinks = classifier.generateLinks(request);
+                    // Add links to the spannable text.
+                    text = applyTextLinksToSpannable(messageText, textLinks, classifier);
+                }
                 // UI can be only updated in the main thread.
                 runOnUiThread(() -> {
                     textView.setMovementMethod(LinkMovementMethod.getInstance());
@@ -559,6 +584,40 @@ public class CellBroadcastAlertDialog extends Activity {
         }
     }
 
+    private Spannable applyTextLinksToSpannable(String text, TextLinks textLinks,
+            TextClassifier textClassifier) {
+        Spannable result = new SpannableString(text);
+        for (TextLink link : textLinks.getLinks()) {
+            TextClassification textClassification = textClassifier.classifyText(
+                    new Request.Builder(
+                            text,
+                            link.getStart(),
+                            link.getEnd())
+                            .build());
+            if (textClassification.getActions().isEmpty()) {
+                continue;
+            }
+            RemoteAction remoteAction = textClassification.getActions().get(0);
+            result.setSpan(new RemoteActionSpan(remoteAction), link.getStart(), link.getEnd(),
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+        return result;
+    }
+
+    private static class RemoteActionSpan extends ClickableSpan {
+        private final RemoteAction mRemoteAction;
+        private RemoteActionSpan(RemoteAction remoteAction) {
+            mRemoteAction = remoteAction;
+        }
+        @Override
+        public void onClick(@NonNull View view) {
+            try {
+                mRemoteAction.getActionIntent().send();
+            } catch (PendingIntent.CanceledException e) {
+                Log.e(TAG, "Failed to start the pendingintent.");
+            }
+        }
+    }
 
     /**
      * If the carrier or country is configured to show the alert dialog title text in the
