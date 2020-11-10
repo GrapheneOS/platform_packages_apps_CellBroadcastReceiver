@@ -18,6 +18,10 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"Безжични предупредувања за итни случаи"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"Безжични предупредувања за итни случаи"</string>
+    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"Безжични предупредувања за итни случаи"</string>
+    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"Безжични предупредувања за итни случаи"</string>
+    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"Безжични предупредувања за итни случаи"</string>
+    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"Информативно известување"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Поставките за безжичните предупредувања за итни случаи не се достапни за корисников"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Во ред"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Нема претходни предупредувања"</string>
@@ -54,9 +58,12 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Пораки за емитување"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Предупредувања за итни случаи"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Предупредувања за итни случаи во гласовен повик"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Автоматски промени на поставките за безжичните предупредувања за итни случаи според SIM-картичката"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дозволи предупредувања"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Добивај извес. за безжични предупр. за итни случаи"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Примај безжични предупредувања за итни случаи"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Потсетник за предупредување"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"Изговори порака за предупредување"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Користи „од текст во говор“ за да изговараш пораки за безжични предупредувања за итни случаи"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Звукот на потсетникот ќе се пушта со стандардна јачина"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Историја на предупредувања"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Поставки за предупредувањата"</string>
@@ -78,6 +85,9 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Предупреди за настани опасни по живот"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Тест-предупредувања"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Примај тест-предупредувања од операторот и месечни тест-предупредувања од безбедносниот систем"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Добивајте предупредувања за итни случаи: порака за вежба/обука"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вибрации"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Секогаш предупредувај со максимална јачина на звук"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Игнорирај ги „Не вознемирувај“ и другите поставки за јачина на звук"</string>
@@ -125,7 +135,7 @@
     <string name="cb_list_activity_title" msgid="1433502151877791724">"Историја на предупредувањата за итни случаи"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Еднаш"</item>
-    <item msgid="9097229303902157183">"Секои 2 минути"</item>
+    <item msgid="9097229303902157183">"На 2 минути"</item>
     <item msgid="5718214950343391480">"На 5 минути"</item>
     <item msgid="3863339891188103437">"На 15 минути"</item>
     <item msgid="7388573183644474611">"Никогаш"</item>
@@ -135,6 +145,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Пораки за предупредување на ниво на држава издадени од претседателот. Не може да се исклучат."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Режимот на тестирање мобилен пренос е овозможен."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Режимот на тестирање мобилен пренос е оневозможен."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Прикажи ги сите пораки"</string>
@@ -148,4 +159,7 @@
     <string name="message_coordinates" msgid="356333576818059052">"Координати:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Максимално време на чекање:"</string>
     <string name="seconds" msgid="141450721520515025">"секунди"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Пораката е копирана"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Операторот ги променил поставките"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Допрете за да ги видите поставките за безжичните предупредувања за итни случаи"</string>
 </resources>

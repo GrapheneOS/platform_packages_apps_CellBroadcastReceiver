@@ -18,6 +18,10 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್‌ಗಳು"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್‌ಗಳು"</string>
+    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್‌ಗಳು"</string>
+    <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್‌ಗಳು"</string>
+    <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್‌ಗಳು"</string>
+    <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"ಮಾಹಿತಿಯ ಅಧಿಸೂಚನೆ"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"ಈ ಬಳಕೆದಾರರಿಗೆ ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಲಭ್ಯವಿಲ್ಲ"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ಸರಿ"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"ಹಿಂದಿನ ಯಾವುದೇ ಎಚ್ಚರಿಕೆಗಳಿಲ್ಲ"</string>
@@ -54,9 +58,12 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ಪ್ರಸಾರ ಸಂದೇಶಗಳು"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ಧ್ವನಿ ಕರೆಯಲ್ಲಿ ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
+    <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM ಆಧಾರದ ಮೇಲೆ ಸ್ವಯಂಚಾಲಿತ WEA ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಬದಲಾಗುತ್ತವೆ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ಎಚ್ಚರಿಕೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್ ಅಧಿಸೂಚನೆಗಳನ್ನು ಸ್ವೀಕರಿಸಿ"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ಎಚ್ಚರಿಕೆ ಜ್ಞಾಪನೆ"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"ಎಚ್ಚರಿಕೆ ಸಂದೇಶವನ್ನು ಹೇಳಿ"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್ ಸಂದೇಶಗಳನ್ನು ತಿಳಿಸಲು ಪಠ್ಯದಿಂದ ಧ್ವನಿಯನ್ನು ಬಳಸಿ"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ಜ್ಞಾಪನೆ ಧ್ವನಿಯು ಸಾಮಾನ್ಯ ವಾಲ್ಯೂಮ್‌ನಲ್ಲಿ ಪ್ಲೇ ಆಗುತ್ತದೆ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ತುರ್ತು ಎಚ್ಚರಿಕೆ ಇತಿಹಾಸ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ಎಚ್ಚರಿಕೆ ಪ್ರಾಶಸ್ತ್ಯಗಳು"</string>
@@ -78,6 +85,9 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ಜೀವ ಬೆದರಿಕೆಯ ಘಟನೆಗಳ ಕುರಿತು ಎಚ್ಚರಿಕೆ ನೀಡಿ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"ಪರೀಕ್ಷೆ ಅಲರ್ಟ್‌ಗಳು"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ಸುರಕ್ಷತಾ ಎಚ್ಚರಿಕೆ ವ್ಯವಸ್ಥೆಗಾಗಿ ವಾಹಕ ಪರೀಕ್ಷೆಗಳು ಮತ್ತು ಮಾಸಿಕ ಪರೀಕ್ಷೆಗಳನ್ನು ಸ್ವೀಕರಿಸಿ"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
+    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"ತುರ್ತು ಎಚ್ಚರಿಕೆಯನ್ನು ಸ್ವೀಕರಿಸಿ: ವ್ಯಾಯಾಮ/ಡ್ರಿಲ್ ಕುರಿತ ಸಂದೇಶ"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ವೈಬ್ರೇಷನ್‌"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ಅಲರ್ಟ್‌ಗಳನ್ನು ಗರಿಷ್ಠ ವಾಲ್ಯೂಮ್‌ನಲ್ಲಿ ಪ್ಲೇ ಮಾಡಿ"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"ಅಡಚಣೆ ಮಾಡಬೇಡಿ ಮತ್ತು ಇತರೆ ವಾಲ್ಯೂಮ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ"</string>
@@ -135,6 +145,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ಅಧ್ಯಕ್ಷರು ನೀಡಿದ ರಾಷ್ಟ್ರೀಯ ಎಚ್ಚರಿಕೆ ಸಂದೇಶಗಳು. ಆಫ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"ಸೆಲ್ ಪ್ರಸಾರ ಪರೀಕ್ಷೆ ಮೋಡ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"ಸೆಲ್ ಪ್ರಸಾರ ಪರೀಕ್ಷೆ ಮೋಡ್ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"ಎಲ್ಲಾ ಸಂದೇಶಗಳನ್ನು ತೋರಿಸಿ"</string>
@@ -148,4 +159,7 @@
     <string name="message_coordinates" msgid="356333576818059052">"ನಿರ್ದೇಶಾಂಕಗಳು:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"ಗರಿಷ್ಠ ಕಾಯುವ ಸಮಯ:"</string>
     <string name="seconds" msgid="141450721520515025">"ಸೆಕೆಂಡುಗಳು"</string>
+    <string name="message_copied" msgid="6922953753733166675">"ಸಂದೇಶವನ್ನು ನಕಲಿಸಲಾಗಿದೆ"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"ವಾಹಕದಿಂದ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಾಯಿಸಲಾಗಿದೆ"</string>
+    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಎಚ್ಚರಿಕೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನೋಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ"</string>
 </resources>
