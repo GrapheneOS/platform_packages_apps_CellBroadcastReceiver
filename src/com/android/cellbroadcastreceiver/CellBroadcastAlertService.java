@@ -76,6 +76,13 @@ public class CellBroadcastAlertService extends Service {
     /** Intent extra indicate this intent is to dismiss the alert dialog */
     public static final String DISMISS_DIALOG = "com.android.cellbroadcastreceiver.DIMISS_DIALOG";
 
+    /**
+     * Use different request code to create distinct pendingIntent for notification deleteIntent
+     * and contentIntent.
+     */
+    private static final int REQUEST_CODE_CONTENT_INTENT = 1;
+    private static final int REQUEST_CODE_DELETE_INTENT = 2;
+
     /** Use the same notification ID for non-emergency alerts. */
     @VisibleForTesting
     public static final int NOTIFICATION_ID = 1;
@@ -689,7 +696,7 @@ public class CellBroadcastAlertService extends Service {
         if (isWatch) {
             pi = PendingIntent.getBroadcast(context, 0, intent, 0);
         } else {
-            pi = PendingIntent.getActivity(context, NOTIFICATION_ID, intent,
+            pi = PendingIntent.getActivity(context, REQUEST_CODE_CONTENT_INTENT, intent,
                     PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
         }
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
@@ -723,18 +730,20 @@ public class CellBroadcastAlertService extends Service {
             // FEATURE_WATCH/CWH devices see this as priority
             builder.setVibrate(new long[]{0});
         } else {
-            if (fromDialog) {
-                // If this is a notification coming from the foreground dialog, should dismiss the
-                // foreground alert dialog when swipe the notification. This is needed
-                // when receiving emergency alerts on companion devices are supported, so that users
-                // swipe away notification on companion devices will synced to the parent devices
-                // with the foreground dialog/sound/vibration dismissed and stopped.
-                Intent deleteIntent = new Intent(intent);
-                deleteIntent.putExtra(CellBroadcastAlertService.DISMISS_DIALOG, true);
-                builder.setDeleteIntent(PendingIntent.getActivity(context, NOTIFICATION_ID,
-                        deleteIntent, PendingIntent.FLAG_ONE_SHOT
-                                | PendingIntent.FLAG_UPDATE_CURRENT));
-            } else {
+            // If this is a notification coming from the foreground dialog, should dismiss the
+            // foreground alert dialog when swipe the notification. This is needed
+            // when receiving emergency alerts on companion devices are supported, so that users
+            // swipe away notification on companion devices will synced to the parent devices
+            // with the foreground dialog/sound/vibration dismissed and stopped. Delete intent is
+            // also needed for regular notifications (e.g, pressing home button) to stop the
+            // sound, vibration and alert reminder.
+            Intent deleteIntent = new Intent(intent);
+            deleteIntent.putExtra(CellBroadcastAlertService.DISMISS_DIALOG, true);
+            builder.setDeleteIntent(PendingIntent.getActivity(context, REQUEST_CODE_DELETE_INTENT,
+                    deleteIntent, PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT));
+            if (!fromDialog) {
+                // If this is a notification from the foreground dialog, no need to set
+                // contentIntent to reopen the dialog again.
                 builder.setContentIntent(pi);
             }
 
