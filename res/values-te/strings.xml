@@ -62,10 +62,10 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"అలర్ట్‌లను అనుమతించండి"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"వైర్‌లెస్ ఎమర్జెన్సీ అలర్ట్ నోటిఫికేషన్‌లను పొందండి"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"హెచ్చరిక రిమైండర్"</string>
-    <string name="enable_alert_speech_title" msgid="8052104771053526941">"హెచ్చరిక సందేశాన్ని చదివి వినిపించు"</string>
-    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"అత్యవసర హెచ్చరిక సందేశాలను చదివి వినిపించడానికి వచనం-నుండి-ప్రసంగంను ఉపయోగించు"</string>
+    <string name="enable_alert_speech_title" msgid="8052104771053526941">"అలర్ట్ మెసేజ్‌లను చదివి వినిపించు"</string>
+    <string name="enable_alert_speech_summary" msgid="2855629032890937297">"ఎమర్జెన్సీ అలర్ట్ మెసేజ్‌లను చదివి వినిపించడానికి \'టెక్స్ట్-టు-స్పీచ్\' ఉపయోగించు"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"రిమైండర్ శబ్దం క్రమ విరామాల వద్ద ప్లే అవుతుంది"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"ఎమర్జెన్సీ అలర్ట్‌ల చరిత్ర"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"ఎమర్జెన్సీ అలర్ట్‌ల హిస్టరీ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"హెచ్చరిక ప్రాధాన్యతలు"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS పరీక్ష ప్రసారాలు"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"\'భూకంప సునామీ హెచ్చరిక సిస్టమ్\' కోసం పరీక్ష ప్రసారాలు"</string>
@@ -132,7 +132,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"మీరు ప్రస్తుతం వైర్‌లెస్ అత్యవసర హెచ్చరికలను పొందుతున్నారు. మీరు అత్యవసర హెచ్చరికలను పొందటం కొనసాగించాలనుకుంటున్నారా?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"అవును"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"లేదు"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"ఎమర్జెన్సీ అలర్ట్‌ల చరిత్ర"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"ఎమర్జెన్సీ అలర్ట్‌ల హిస్టరీ"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ఒకసారి"</item>
     <item msgid="9097229303902157183">"ప్రతి 2 నిమిషాలకు"</item>
