@@ -341,11 +341,6 @@ public class CellBroadcastAlertDialog extends Activity {
                 | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                 | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 
-        // Some LATAM carriers mandate to disable navigation bars, quick settings etc when alert
-        // dialog is showing. This is to make sure users to ack the alert before switching to
-        // other activities.
-        setStatusBarDisabledIfNeeded(true);
-
         // Initialize the view.
         LayoutInflater inflater = LayoutInflater.from(this);
         setContentView(inflater.inflate(R.layout.cell_broadcast_alert, null));
@@ -435,6 +430,10 @@ public class CellBroadcastAlertDialog extends Activity {
                 mAnimationHandler.startIconAnimation(subId);
             }
         }
+        // Some LATAM carriers mandate to disable navigation bars, quick settings etc when alert
+        // dialog is showing. This is to make sure users to ack the alert before switching to
+        // other activities.
+        setStatusBarDisabledIfNeeded(true);
     }
 
     /**
@@ -445,6 +444,7 @@ public class CellBroadcastAlertDialog extends Activity {
     public void onPause() {
         Log.d(TAG, "onPause called");
         mAnimationHandler.stopIconAnimation();
+        setStatusBarDisabledIfNeeded(false);
         super.onPause();
     }
 
@@ -951,7 +951,6 @@ public class CellBroadcastAlertDialog extends Activity {
 
     @Override
     public void onDestroy() {
-        setStatusBarDisabledIfNeeded(false);
         super.onDestroy();
     }
 
