@@ -1,7 +1,7 @@
 apex_defaults {
     name: "com.android.cellbroadcast-defaults",
     updatable: true,
-    min_sdk_version: "R",
+    min_sdk_version: "30",
 
     manifest: "apex_manifest.json",
 
