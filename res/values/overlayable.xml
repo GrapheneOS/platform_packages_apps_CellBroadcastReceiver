@@ -278,6 +278,8 @@
             <item type="string" name="enable_alert_speech_summary" />
             <item type="string" name="enable_exercise_test_alerts_title" />
             <item type="string" name="enable_exercise_test_alerts_summary" />
+            <item type="string" name="enable_operator_defined_test_alerts_title" />
+            <item type="string" name="enable_operator_defined_test_alerts_summary" />
         </policy>
         <!-- END VENDOR CUSTOMIZATION -->
 
