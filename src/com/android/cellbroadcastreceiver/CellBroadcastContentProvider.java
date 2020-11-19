@@ -37,7 +37,10 @@ import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.text.TextUtils;
 import android.util.Log;
+
 import com.android.internal.annotations.VisibleForTesting;
+
+import java.util.concurrent.CountDownLatch;
 
 /**
  * ContentProvider for the database of received cell broadcasts.
@@ -74,9 +77,17 @@ public class CellBroadcastContentProvider extends ContentProvider {
         sUriMatcher.addURI(CB_AUTHORITY, "#", CB_ALL_ID);
     }
 
-    /** The database for this content provider. */
+    /**
+     * The database for this content provider. Before using this we need to wait on
+     * mInitializedLatch, which counts down once initialization finishes in a background thread
+     */
+
     @VisibleForTesting
     public CellBroadcastDatabaseHelper mOpenHelper;
+
+    // Latch which counts down from 1 when initialization in CellBroadcastOpenHelper.tryToMigrateV13
+    // is finished
+    private final CountDownLatch mInitializedLatch = new CountDownLatch(1);
 
     /**
      * Initialize content provider.
@@ -89,8 +100,37 @@ public class CellBroadcastContentProvider extends ContentProvider {
         // the first query/update/insertion. Data migration is done inside db creation and we want
         // to migrate data from cellbroadcast-legacy immediately when upgrade to the mainline module
         // rather than migrate after the first emergency alert.
-        mOpenHelper.getReadableDatabase();
+        // getReadable database will also call tryToMigrateV13 which copies the DB file to allow
+        // for safe rollbacks.
+        // This is done in a background thread to avoid triggering an ANR if the disk operations are
+        // too slow, and all other database uses should wait for the latch.
+        new Thread(() -> {
+            mOpenHelper.getReadableDatabase();
+            mInitializedLatch.countDown();
+        }).start();
         return true;
+    }
+
+    protected SQLiteDatabase awaitInitAndGetWritableDatabase() {
+        while (mInitializedLatch.getCount() != 0) {
+            try {
+                mInitializedLatch.await();
+            } catch (InterruptedException e) {
+                Log.e(TAG, "Interrupted while waiting for db initialization. e=" + e);
+            }
+        }
+        return mOpenHelper.getWritableDatabase();
+    }
+
+    protected SQLiteDatabase awaitInitAndGetReadableDatabase() {
+        while (mInitializedLatch.getCount() != 0) {
+            try {
+                mInitializedLatch.await();
+            } catch (InterruptedException e) {
+                Log.e(TAG, "Interrupted while waiting for db initialization. e=" + e);
+            }
+        }
+        return mOpenHelper.getReadableDatabase();
     }
 
     /**
@@ -132,7 +172,7 @@ public class CellBroadcastContentProvider extends ContentProvider {
             orderBy = Telephony.CellBroadcasts.DEFAULT_SORT_ORDER;
         }
 
-        SQLiteDatabase db = mOpenHelper.getReadableDatabase();
+        SQLiteDatabase db = awaitInitAndGetReadableDatabase();
         Cursor c = qb.query(db, projection, selection, selectionArgs, null, null, orderBy);
         if (c != null) {
             c.setNotificationUri(getContext().getContentResolver(), CONTENT_URI);
@@ -205,7 +245,7 @@ public class CellBroadcastContentProvider extends ContentProvider {
                 + " args=" + args);
         // this is to handle a content-provider defined method: migration
         if (CALL_MIGRATION_METHOD.equals(method)) {
-            mOpenHelper.migrateFromLegacyIfNeeded(mOpenHelper.getReadableDatabase());
+            mOpenHelper.migrateFromLegacyIfNeeded(awaitInitAndGetReadableDatabase());
         }
         return null;
     }
@@ -255,7 +295,7 @@ public class CellBroadcastContentProvider extends ContentProvider {
      */
     @VisibleForTesting
     public boolean insertNewBroadcast(SmsCbMessage message) {
-        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        SQLiteDatabase db = awaitInitAndGetWritableDatabase();
         ContentValues cv = getContentValues(message);
 
         // Note: this method previously queried the database for duplicate message IDs, but this
@@ -281,7 +321,7 @@ public class CellBroadcastContentProvider extends ContentProvider {
      */
     @VisibleForTesting
     public boolean deleteBroadcast(long rowId) {
-        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        SQLiteDatabase db = awaitInitAndGetWritableDatabase();
 
         int rowCount = db.delete(CellBroadcastDatabaseHelper.TABLE_NAME,
                 Telephony.CellBroadcasts._ID + "=?",
@@ -300,7 +340,7 @@ public class CellBroadcastContentProvider extends ContentProvider {
      */
     @VisibleForTesting
     public boolean deleteAllBroadcasts() {
-        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        SQLiteDatabase db = awaitInitAndGetWritableDatabase();
 
         int rowCount = db.delete(CellBroadcastDatabaseHelper.TABLE_NAME, null, null);
         if (rowCount != 0) {
@@ -321,7 +361,7 @@ public class CellBroadcastContentProvider extends ContentProvider {
      * @return true if the database was updated, false otherwise
      */
     boolean markBroadcastRead(String columnName, long columnValue) {
-        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        SQLiteDatabase db = awaitInitAndGetWritableDatabase();
 
         ContentValues cv = new ContentValues(1);
         cv.put(Telephony.CellBroadcasts.MESSAGE_READ, 1);
@@ -350,7 +390,7 @@ public class CellBroadcastContentProvider extends ContentProvider {
     @VisibleForTesting
     public boolean markBroadcastSmsSyncPending(String columnName, long columnValue,
             boolean isSmsSyncPending) {
-        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        SQLiteDatabase db = awaitInitAndGetWritableDatabase();
 
         ContentValues cv = new ContentValues(1);
         cv.put(CellBroadcastDatabaseHelper.SMS_SYNC_PENDING, isSmsSyncPending ? 1 : 0);

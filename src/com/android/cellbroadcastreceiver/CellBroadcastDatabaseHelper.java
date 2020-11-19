@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static java.nio.file.Files.copy;
+
 import android.annotation.NonNull;
 import android.content.ContentProviderClient;
 import android.content.ContentValues;
@@ -32,6 +34,8 @@ import android.util.Log;
 
 import com.android.internal.annotations.VisibleForTesting;
 
+import java.io.File;
+
 /**
  * Open, create, and upgrade the cell broadcast SQLite database. Previously an inner class of
  * {@code CellBroadcastDatabase}, this is now a top-level class. The column definitions in
@@ -42,7 +46,18 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "CellBroadcastDatabaseHelper";
 
-    private static final String DATABASE_NAME = "cell_broadcasts.db";
+    /**
+     * Database version 1: initial version (support removed)
+     * Database version 2-9: (reserved for OEM database customization) (support removed)
+     * Database version 10: adds ETWS and CMAS columns and CDMA support (support removed)
+     * Database version 11: adds delivery time index
+     * Database version 12: add slotIndex
+     * Database version 13: add smsSyncPending
+     */
+    private static final int DATABASE_VERSION = 13;
+
+    private static final String OLD_DATABASE_NAME = "cell_broadcasts.db";
+    private static final String DATABASE_NAME_V13 = "cell_broadcasts_v13.db";
     @VisibleForTesting
     public static final String TABLE_NAME = "broadcasts";
 
@@ -115,23 +130,12 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
                 + SMS_SYNC_PENDING + " BOOLEAN);";
     }
 
-
-    /**
-     * Database version 1: initial version (support removed)
-     * Database version 2-9: (reserved for OEM database customization) (support removed)
-     * Database version 10: adds ETWS and CMAS columns and CDMA support (support removed)
-     * Database version 11: adds delivery time index
-     * Database version 12: add slotIndex
-     * Database version 13: add smsSyncPending
-     */
-    private static final int DATABASE_VERSION = 13;
-
     private final Context mContext;
     final boolean mLegacyProvider;
 
     @VisibleForTesting
     public CellBroadcastDatabaseHelper(Context context, boolean legacyProvider) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME_V13, null, DATABASE_VERSION);
         mContext = context;
         mLegacyProvider = legacyProvider;
     }
@@ -170,6 +174,44 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
             db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN " + SMS_SYNC_PENDING
                     + " BOOLEAN DEFAULT 0;");
         }
+    }
+
+    private synchronized void tryToMigrateV13() {
+        File oldDb = mContext.getDatabasePath(OLD_DATABASE_NAME);
+        File newDb = mContext.getDatabasePath(DATABASE_NAME_V13);
+        if (!oldDb.exists()) {
+            return;
+        }
+        // We do the DB copy in two scenarios:
+        //   1. device receives v13 upgrade.
+        //   2. device receives v13 upgrade, gets rollback to v12, then receives v13 upgrade again.
+        //      If the DB is modified after rollback, we want to copy those changes again.
+        if (!newDb.exists() || oldDb.lastModified() > newDb.lastModified()) {
+            try {
+                // copy() requires that the destination file does not exist
+                Log.d(TAG, "copying to v13 db");
+                if (newDb.exists()) newDb.delete();
+                copy(oldDb.toPath(), newDb.toPath());
+            } catch (Exception e) {
+                // If the copy failed we don't know if the db is in a safe state, so just delete it
+                // and continue with an empty new db. Ignore the exception and just log an error.
+                mContext.deleteDatabase(DATABASE_NAME_V13);
+                loge("could not copy DB to v13. e=" + e);
+            }
+        }
+        // else the V13 database has already been created.
+    }
+
+    @Override
+    public SQLiteDatabase getReadableDatabase() {
+        tryToMigrateV13();
+        return super.getReadableDatabase();
+    }
+
+    @Override
+    public SQLiteDatabase getWritableDatabase() {
+        tryToMigrateV13();
+        return super.getWritableDatabase();
     }
 
     /**
