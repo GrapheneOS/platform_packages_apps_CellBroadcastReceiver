@@ -52,6 +52,7 @@ import com.android.internal.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
 
+
 public class CellBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "CellBroadcastReceiver";
     static final boolean DBG = true;
@@ -86,22 +87,6 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             "com.android.cellbroadcastreceiver.intent.ACTION_TESTING_MODE_CHANGED";
 
     private Context mContext;
-
-    /**
-     * helper method for easier testing. To generate a new CellBroadcastTask
-     * @param deliveryTime message delivery time
-     */
-    @VisibleForTesting
-    public void getCellBroadcastTask(final long deliveryTime) {
-        new CellBroadcastContentProvider.AsyncCellBroadcastTask(mContext.getContentResolver())
-                .execute(new CellBroadcastContentProvider.CellBroadcastOperation() {
-                    @Override
-                    public boolean execute(CellBroadcastContentProvider provider) {
-                        return provider.markBroadcastRead(CellBroadcasts.DELIVERY_TIME,
-                                deliveryTime);
-                    }
-                });
-    }
 
     /**
      * this method is to make this class unit-testable, because CellBroadcastSettings.getResources()
