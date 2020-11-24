@@ -21,15 +21,14 @@
 <resources>
     <style name="CellBroadcastAlertTheme" parent="android:Theme.DeviceDefault.Light.Dialog" />
 
-    <style name="PreferenceTheme" parent="@style/PreferenceThemeOverlay.v14.Material">
+    <style name="CellBroadcastSettingsTheme" parent="@style/PreferenceThemeOverlay.v14.Material">
         <item name="switchPreferenceStyle">@style/SettingsSwitchPreference</item>
         <item name="preferenceCategoryStyle">@style/Preference.Category.Material</item>
         <item name="preferenceStyle">@style/SettingsPreference</item>
         <item name="dialogPreferenceStyle">@style/SettingsDialogPreference</item>
     </style>
 
-    <style name="CellBroadcastSettingsTheme" parent="@android:style/Theme.DeviceDefault.Settings">
-        <item name="preferenceTheme">@style/PreferenceTheme</item>
+    <style name="CellBroadcastListActivityTheme" parent="@android:style/Theme.DeviceDefault.Settings">
     </style>
 
 </resources>
