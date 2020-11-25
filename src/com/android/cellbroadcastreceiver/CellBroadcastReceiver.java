@@ -549,8 +549,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      * This method's purpose if to enable unit testing
      * @return if the mContext user is a system user
      */
-    @VisibleForTesting
-    public boolean isSystemUser() {
+    private boolean isSystemUser() {
         return isSystemUser(mContext);
     }
 
