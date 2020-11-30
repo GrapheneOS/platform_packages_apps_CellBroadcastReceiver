@@ -189,6 +189,10 @@ public class CellBroadcastConfigService extends IntentService {
                 && res.getBoolean(R.bool.show_separate_exercise_settings)
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS, false);
 
+        boolean enableOperatorDefined = enableAlertsMasterToggle
+                && res.getBoolean(R.bool.show_separate_operator_defined_settings)
+                && prefs.getBoolean(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS, false);
+
         boolean enableAreaUpdateInfoAlerts = res.getBoolean(
                 R.bool.config_showAreaUpdateInfoSettings)
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS,
@@ -215,6 +219,7 @@ public class CellBroadcastConfigService extends IntentService {
             log("enableCmasAmberAlerts = " + enableCmasAmberAlerts);
             log("enableTestAlerts = " + enableTestAlerts);
             log("enableExerciseAlerts = " + enableExerciseAlerts);
+            log("enableOperatorDefinedAlerts = " + enableOperatorDefined);
             log("enableAreaUpdateInfoAlerts = " + enableAreaUpdateInfoAlerts);
             log("enablePublicSafetyMessagesChannelAlerts = "
                     + enablePublicSafetyMessagesChannelAlerts);
@@ -259,7 +264,9 @@ public class CellBroadcastConfigService extends IntentService {
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.exercise_alert_range_strings));
 
-        setCellBroadcastRange(subId, enableTestAlerts,
+        // Enable/Disable operator defined test messages.
+        // This could either controlled by main test toggle or separate operator defined test toggle
+        setCellBroadcastRange(subId, enableTestAlerts || enableOperatorDefined,
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.operator_defined_alert_range_strings));
 
