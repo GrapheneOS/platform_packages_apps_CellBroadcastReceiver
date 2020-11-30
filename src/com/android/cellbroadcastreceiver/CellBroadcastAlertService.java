@@ -515,6 +515,13 @@ public class CellBroadcastAlertService extends Service {
                     .getBoolean(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS, false);
         }
 
+        if (channelManager.checkCellBroadcastChannelRange(
+                channel, R.array.operator_defined_alert_range_strings) &&
+                res.getBoolean(R.bool.show_separate_operator_defined_settings)) {
+            return emergencyAlertEnabled && PreferenceManager.getDefaultSharedPreferences(this)
+                    .getBoolean(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS, false);
+        }
+
         if (channelManager.checkCellBroadcastChannelRange(channel,
                 R.array.required_monthly_test_range_strings)
                 || channelManager.checkCellBroadcastChannelRange(channel,

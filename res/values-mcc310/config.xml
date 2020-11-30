@@ -91,4 +91,9 @@
 
     <!-- Whether to enable alert handling during active voice call. -->
     <bool name="enable_alert_handling_during_call">true</bool>
+    <!-- U.S carriers want to show separate testing toggles for monthly test, operator defined and exercise -->
+    <!-- whether to display a separate operator defined test settings. today, most of time, operator defined channels was controlled by the main test toggle. -->
+    <bool name="show_separate_operator_defined_settings">true</bool>
+    <!-- whether to display a separate exercise test settings. today, most of time, exercise channels was controlled by the main test toggle. -->
+    <bool name="show_separate_exercise_settings">true</bool>
 </resources>
