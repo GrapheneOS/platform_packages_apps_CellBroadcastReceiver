@@ -704,7 +704,9 @@ public class CellBroadcastAlertService extends Service {
             pi = PendingIntent.getBroadcast(context, 0, intent, 0);
         } else {
             pi = PendingIntent.getActivity(context, REQUEST_CODE_CONTENT_INTENT, intent,
-                    PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+                    PendingIntent.FLAG_ONE_SHOT
+                            | PendingIntent.FLAG_UPDATE_CURRENT
+                            | PendingIntent.FLAG_IMMUTABLE);
         }
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                 context, message.getSubscriptionId());
@@ -747,7 +749,9 @@ public class CellBroadcastAlertService extends Service {
             Intent deleteIntent = new Intent(intent);
             deleteIntent.putExtra(CellBroadcastAlertService.DISMISS_DIALOG, true);
             builder.setDeleteIntent(PendingIntent.getActivity(context, REQUEST_CODE_DELETE_INTENT,
-                    deleteIntent, PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT));
+                    deleteIntent, PendingIntent.FLAG_ONE_SHOT
+                            | PendingIntent.FLAG_UPDATE_CURRENT
+                            | PendingIntent.FLAG_IMMUTABLE));
             if (!fromDialog) {
                 // If this is a notification from the foreground dialog, no need to set
                 // contentIntent to reopen the dialog again.
