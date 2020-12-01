@@ -19,7 +19,6 @@ package com.android.cellbroadcastreceiver.unit;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doNothing;
@@ -28,8 +27,6 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
-import android.content.ContentProvider;
-import android.content.ContentProviderClient;
 import android.content.ContentResolver;
 import android.content.IContentProvider;
 import android.content.Intent;
@@ -47,7 +44,6 @@ import android.telephony.SubscriptionManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
-import com.android.cellbroadcastreceiver.CellBroadcastContentProvider;
 import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
 import com.android.cellbroadcastreceiver.CellBroadcastReceiver;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
@@ -435,7 +431,6 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     //this method is just to assign mContext to the spied instance mCellBroadcastReceiver
     private void setContext() {
         doReturn("dummy action").when(mIntent).getAction();
-        doNothing().when(mCellBroadcastReceiver).getCellBroadcastTask(anyLong());
 
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
     }
