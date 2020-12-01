@@ -98,7 +98,9 @@ public class CellBroadcastConfigService extends IntentService {
                 Intent settingsIntent = new Intent(c, CellBroadcastSettings.class);
                 PendingIntent pi = PendingIntent.getActivity(c,
                         CellBroadcastAlertService.SETTINGS_CHANGED_NOTIFICATION_ID, settingsIntent,
-                        PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+                        PendingIntent.FLAG_ONE_SHOT
+                                | PendingIntent.FLAG_UPDATE_CURRENT
+                                | PendingIntent.FLAG_IMMUTABLE);
 
                 Notification.Builder builder = new Notification.Builder(c,
                         CellBroadcastAlertService.NOTIFICATION_CHANNEL_SETTINGS_UPDATES)
