@@ -723,9 +723,6 @@ public class CellBroadcastSettings extends Activity {
                 mAreaUpdateInfoCheckBox.setEnabled(alertsEnabled);
                 mAreaUpdateInfoCheckBox.setChecked(alertsEnabled);
             }
-            if (mAlertPreferencesCategory != null) {
-                mAlertPreferencesCategory.setEnabled(alertsEnabled);
-            }
             if (mEmergencyAlertsCheckBox != null) {
                 mEmergencyAlertsCheckBox.setEnabled(alertsEnabled);
                 mEmergencyAlertsCheckBox.setChecked(alertsEnabled);
