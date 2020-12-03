@@ -72,5 +72,6 @@
     <bool name="mute_by_physical_button">false</bool>
     <!-- Whether to disable the opt-out dialog for all channels -->
     <bool name="disable_opt_out_dialog">true</bool>
+    <bool name="show_main_switch_settings">false</bool>
 </resources>
 
