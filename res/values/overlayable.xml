@@ -144,6 +144,10 @@
             <!-- Whether enable LED flash when playing alert tones -->
             <item type="bool" name="enable_led_flash" />
 
+            <!-- Whether to show the alert dialog at the bottom of the screen in order to avoid
+                 blocking other content -->
+            <item type="bool" name="alert_dialog_bottom" />
+
             <!-- Temporarily enable string customization to address translation issues. All translation issues will be fixed in S by upstreaming -->
             <!-- Dialog title for presidential level alert. [CHAR LIMIT=50] -->
             <!-- The name of the Cell Broadcast Receiver app. [CHAR LIMIT=NONE] -->

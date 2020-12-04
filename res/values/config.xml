@@ -255,4 +255,8 @@
     <!-- Whether to display a notification with pop-up dialog in the foreground.
     This is used to support emergency alert on the companion devices by bridged notification -->
     <bool name="show_alert_dialog_with_notification">false</bool>
+
+    <!-- Whether to show the alert dialog at the bottom of the screen in order to avoid blocking
+         other content -->
+    <bool name="alert_dialog_bottom">false</bool>
 </resources>
