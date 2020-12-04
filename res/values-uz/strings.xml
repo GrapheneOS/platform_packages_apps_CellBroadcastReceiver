@@ -56,7 +56,7 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Ogohlantirishlarga ruxsat"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Simsiz tarmoqlar orqali favqulodda ogohlantirishlarni qabul qilish"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Eslatmalar davriyligi"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Eslatma tovush odatdagi balandlikda yangraydi"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Eslatma tovushi odatdagi balandlikda yangraydi"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Favqulodda xabarlar arxivi"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Ogohlantirish parametrlari"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS sinov xabarlari"</string>
@@ -148,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Koordinatalari:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maksimal kutish vaqti:"</string>
     <string name="seconds" msgid="141450721520515025">"soniya"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Xabar nusxalandi"</string>
 </resources>

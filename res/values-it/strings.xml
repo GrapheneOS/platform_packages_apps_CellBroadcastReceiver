@@ -131,7 +131,7 @@
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Avvisi di emergenza wireless"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Avvisi del presidente"</string>
-    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Messaggi di allerta nazionale da parte del presidente Non possono essere disattivati."</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Messaggi di allerta nazionale da parte del presidente. Non possono essere disattivati."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="alerts_header_summary" msgid="4700985191868591788"></string>
@@ -148,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Coordinate:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Tempo massimo di attesa:"</string>
     <string name="seconds" msgid="141450721520515025">"secondi"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Messaggio copiato"</string>
 </resources>

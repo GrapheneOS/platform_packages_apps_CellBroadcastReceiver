@@ -55,7 +55,7 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertas de emergencia durante llamadas de voz"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permitir alertas"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recibir alertas de emergencia inalámbricas"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Recordatorio del alerta"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Recordatorio de alertas"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Se reproducirá un sonido de recordatorio a un volumen regular"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historial de alertas de emergencia"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferencias de alertas"</string>
@@ -148,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Coordenadas:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Tiempo máximo de espera:"</string>
     <string name="seconds" msgid="141450721520515025">"segundos"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Se copió el mensaje"</string>
 </resources>
