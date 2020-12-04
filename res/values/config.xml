@@ -260,4 +260,8 @@
     Some carriers mandate this to make sure users do not switch to other activities
     until pressing the "ok" button -->
     <bool name="disable_status_bar">false</bool>
+
+    <!-- Whether to show the alert dialog at the bottom of the screen in order to avoid blocking
+         other content -->
+    <bool name="alert_dialog_bottom">false</bool>
 </resources>

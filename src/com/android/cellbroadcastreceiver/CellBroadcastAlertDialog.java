@@ -51,6 +51,7 @@ import android.text.style.ClickableSpan;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -418,6 +419,7 @@ public class CellBroadcastAlertDialog extends Activity {
     @VisibleForTesting
     public void onResume() {
         super.onResume();
+        setWindowBottom();
         SmsCbMessage message = getLatestMessage();
         if (message != null) {
             int subId = message.getSubscriptionId();
@@ -478,6 +480,19 @@ public class CellBroadcastAlertDialog extends Activity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         setPictogramAreaLayout(newConfig.orientation);
+    }
+
+    private void setWindowBottom() {
+        // some OEMs require that the alert window is moved to the bottom of the screen to avoid
+        // blocking other screen content
+        if (getResources().getBoolean(R.bool.alert_dialog_bottom)) {
+            Window window = getWindow();
+            WindowManager.LayoutParams params = window.getAttributes();
+            params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            params.gravity = params.gravity | Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
+            params.verticalMargin = 0;
+            window.setAttributes(params);
+        }
     }
 
     /** Returns the currently displayed message. */
