@@ -19,7 +19,6 @@ package com.android.cellbroadcastreceiver.unit;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doNothing;
@@ -420,7 +419,6 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     //this method is just to assign mContext to the spied instance mCellBroadcastReceiver
     private void setContext() {
         doReturn("dummy action").when(mIntent).getAction();
-        doNothing().when(mCellBroadcastReceiver).getCellBroadcastTask(anyLong());
 
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
     }
