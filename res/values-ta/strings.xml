@@ -57,7 +57,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"வயர்லெஸ் அவசரகால விழிப்பூட்டல்களைப் பெறு"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"விழிப்பூட்டலுக்கான நினைவூட்டல்"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"பொதுவான ஒலியளவில் நினைவூட்டல் சத்தம் ஒன்று இயக்கப்படும்"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"முன்னர் வந்த அவசரகால எச்சரிக்கை செய்திகள்"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"அவசரகால எச்சரிக்கை வரலாறு"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"எச்சரிக்கை விருப்பத்தேர்வுகள்"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS சோதனை வலைபரப்புகள்"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"பூகம்பம் மற்றும் சுனாமி எச்சரிக்கை அமைப்பிற்கான சோதனை வலைபரப்புகள்"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"தற்போது வயர்லெஸ் அவசரகால விழிப்பூட்டல்களைப் பெற்றுக் கொண்டிருக்கிறீர்கள். அவசரகால விழிப்பூட்டல்களைத் தொடர்ந்து பெற விரும்புகிறீர்களா?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ஆம்"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"வேண்டாம்"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"முன்னர் வந்த அவசரகால எச்சரிக்கை செய்திகள்"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"அவசரகால எச்சரிக்கை வரலாறு"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ஒருமுறை மட்டும்"</item>
     <item msgid="9097229303902157183">"2 நிமிடங்களுக்கு ஒருமுறை"</item>
