@@ -18,6 +18,7 @@ package com.android.cellbroadcastreceiver;
 
 import android.annotation.NonNull;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
@@ -31,6 +32,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadca
 
 import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Returns the string resource ID's for CMAS and ETWS emergency alerts.
@@ -282,7 +284,28 @@ public class CellBroadcastResources {
     }
 
     /**
+     * Return the English string for the SMS sender address.
+     * This exists as a temporary workaround for b/174972822
+     * @param context
+     * @param message
+     * @return
+     */
+    public static String getSmsSenderAddressResourceEnglishString(@NonNull Context context,
+            @NonNull SmsCbMessage message) {
+
+        int resId = getSmsSenderAddressResource(context, message);
+
+        Configuration conf = context.getResources().getConfiguration();
+        conf = new Configuration(conf);
+        conf.setLocale(Locale.ENGLISH);
+        Context localizedContext = context.createConfigurationContext(conf);
+        return localizedContext.getResources().getText(resId).toString();
+    }
+
+    /**
      * @return the string resource ID for the SMS sender address.
+     * As a temporary workaround for b/174972822, prefer getSmsSenderAddressResourceEnglishString,
+     * which ignores all translations for non-English languages for these 4 strings.
      */
     public static int getSmsSenderAddressResource(@NonNull Context context,
             @NonNull SmsCbMessage message) {

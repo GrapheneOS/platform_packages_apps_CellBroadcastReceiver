@@ -470,11 +470,10 @@ public class CellBroadcastContentProvider extends ContentProvider {
         cv.put(Telephony.Sms.Inbox.SUBSCRIPTION_ID, message.getSubscriptionId());
         cv.put(Telephony.Sms.Inbox.SUBJECT, context.getString(
                 CellBroadcastResources.getDialogTitleResource(context, message)));
-        cv.put(Telephony.Sms.Inbox.ADDRESS, context.getString(
-                CellBroadcastResources.getSmsSenderAddressResource(context, message)));
+        cv.put(Telephony.Sms.Inbox.ADDRESS,
+                CellBroadcastResources.getSmsSenderAddressResourceEnglishString(context, message));
         cv.put(Telephony.Sms.Inbox.THREAD_ID, Telephony.Threads.getOrCreateThreadId(context,
-                context.getString(CellBroadcastResources
-                        .getSmsSenderAddressResource(context, message))));
+                CellBroadcastResources.getSmsSenderAddressResourceEnglishString(context, message)));
         if (CellBroadcastSettings.getResources(context, message.getSubscriptionId())
                 .getBoolean(R.bool.always_mark_sms_read)) {
             // Always mark SMS message READ. End users expect when they read new CBS messages,
