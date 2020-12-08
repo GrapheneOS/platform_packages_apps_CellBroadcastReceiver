@@ -424,17 +424,18 @@ public class CellBroadcastAlertService extends Service {
         // Check if all emergency alerts are disabled.
         boolean emergencyAlertEnabled =
                 prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
+        int channel = message.getServiceCategory();
 
         SmsCbEtwsInfo etwsInfo = message.getEtwsWarningInfo();
-        if (etwsInfo != null
-                && etwsInfo.getWarningType() == SmsCbEtwsInfo.ETWS_WARNING_TYPE_TEST_MESSAGE) {
+        if ((etwsInfo != null && etwsInfo.getWarningType()
+                == SmsCbEtwsInfo.ETWS_WARNING_TYPE_TEST_MESSAGE)
+                || channelManager.checkCellBroadcastChannelRange(channel,
+                R.array.etws_test_alerts_range_strings)) {
             return emergencyAlertEnabled
                     && CellBroadcastSettings.isTestAlertsToggleVisible(getApplicationContext())
                     && PreferenceManager.getDefaultSharedPreferences(this)
                     .getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, false);
         }
-
-        int channel = message.getServiceCategory();
 
         if (message.isEtwsMessage() || channelManager.checkCellBroadcastChannelRange(channel,
                 R.array.etws_alerts_range_strings)) {
