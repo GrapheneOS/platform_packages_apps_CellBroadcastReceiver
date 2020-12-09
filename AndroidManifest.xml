@@ -127,7 +127,7 @@
                   android:launchMode="singleInstance"
                   android:exported="false"
                   android:excludeFromRecents="true"
-                  android:configChanges="orientation|keyboardHidden|keyboard|navigation">
+                  android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_CB_RECEIVED" />
             </intent-filter>
