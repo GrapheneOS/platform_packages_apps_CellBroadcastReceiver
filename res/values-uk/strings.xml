@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Отримати екстрене сповіщення: тренувальне/симуляційне повідомлення"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Отримувати екстрені сповіщення (оператора визначено)"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вібрація"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Відтворювати звук сповіщень на повній гучності"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ігнорувати режим \"Не турбувати\" та інші налаштування гучності"</string>

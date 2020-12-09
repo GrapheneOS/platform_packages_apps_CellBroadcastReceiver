@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"അടിയന്തര മുന്നറിയിപ്പുകൾ സ്വീകരിക്കുക: വ്യായാമം/ഡ്രിൽ സന്ദേശം"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"അടിയന്തര മുന്നറിയിപ്പ് സ്വീകരിക്കുക: ഓപ്പറേറ്റർ നിർവചിച്ചത്"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"വൈബ്രേഷൻ"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"എപ്പോഴും പൂർണ്ണ ശബ്ദത്തിൽ മുന്നറിയിപ്പ് നൽകുക"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'ശല്യപ്പെടുത്തരുത്\' മോഡും മറ്റ് ശബ്ദ ക്രമീകരണവും അവഗണിക്കുക"</string>

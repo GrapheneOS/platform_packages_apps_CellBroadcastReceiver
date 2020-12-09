@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Terima notifikasi darurat: Pesan Simulasi"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Terima peringatan darurat: Operator ditentukan"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Getaran"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Selalu ingatkan dengan volume penuh"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Abaikan fitur Jangan Ganggu &amp; setelan volume lainnya"</string>

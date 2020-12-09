@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"รับการแจ้งเตือนฉุกเฉิน: ข้อความทดสอบ/ฝึกซ้อม"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"รับการแจ้งเตือนฉุกเฉิน: มีการระบุโอเปอเรเตอร์"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"การสั่น"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ส่งเสียงการแจ้งเตือนที่ระดับเสียงสูงสุดทุกครั้ง"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"ไม่สนใจโหมดห้ามรบกวนและการตั้งค่าระดับเสียงอื่นๆ"</string>

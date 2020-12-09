@@ -47,7 +47,7 @@
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"Emergency alert: Extreme"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Emergency alert: Severe"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"Child abduction (Amber alert)"</string>
-    <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Required Monthly Test"</string>
+    <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Required monthly test"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Emergency alert (exercise)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Emergency alert (operator)"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Broadcast messages"</string>
@@ -88,12 +88,15 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Receive emergency alert: exercise/drill message"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Receive emergency alert: Operator defined"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibration"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Always alert at full volume"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignore Do Not Disturb and other volume settings"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Area update broadcasts"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Show update information in SIM status"</string>
-    <string name="cmas_category_heading" msgid="3923503130776640717">"Alert Category:"</string>
+    <string name="cmas_category_heading" msgid="3923503130776640717">"Alert category:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geophysical"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorological"</string>
     <string name="cmas_category_safety" msgid="2986472639641883453">"Safety"</string>
@@ -106,7 +109,7 @@
     <string name="cmas_category_infra" msgid="3558151044446851398">"Infrastructure"</string>
     <string name="cmas_category_cbrne" msgid="240421557913603971">"Chemical/Biological/Nuclear/Explosive"</string>
     <string name="cmas_category_other" msgid="6158932360790744360">"Other"</string>
-    <string name="cmas_response_heading" msgid="4205379547245540163">"Response Type:"</string>
+    <string name="cmas_response_heading" msgid="4205379547245540163">"Response type:"</string>
     <string name="cmas_response_shelter" msgid="7301175579079615909">"Shelter"</string>
     <string name="cmas_response_evacuate" msgid="5833170084430021095">"Evacuate"</string>
     <string name="cmas_response_prepare" msgid="8428073909753758319">"Prepare"</string>

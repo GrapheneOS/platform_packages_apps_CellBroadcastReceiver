@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"ತುರ್ತು ಎಚ್ಚರಿಕೆಯನ್ನು ಸ್ವೀಕರಿಸಿ: ವ್ಯಾಯಾಮ/ಡ್ರಿಲ್ ಕುರಿತ ಸಂದೇಶ"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"ಸುರಕ್ಷತಾ ಎಚ್ಚರಿಕೆ ಸ್ವೀಕರಿಸಿ: ಆಪರೇಟರ್ ವ್ಯಾಖ್ಯಾನಿತ ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ವೈಬ್ರೇಷನ್‌"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ಅಲರ್ಟ್‌ಗಳನ್ನು ಗರಿಷ್ಠ ವಾಲ್ಯೂಮ್‌ನಲ್ಲಿ ಪ್ಲೇ ಮಾಡಿ"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"ಅಡಚಣೆ ಮಾಡಬೇಡಿ ಮತ್ತು ಇತರೆ ವಾಲ್ಯೂಮ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ"</string>
