@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"ہنگامی الرٹ موصول کریں: ورزش/ڈرِل پیغام"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"ہنگامی الرٹ موصول کریں: آپریٹر کی وضاحت کردہ"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"وائبریشن"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ہمیشہ پورے والیوم پر الرٹ کریں"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'ڈسٹرب نہ کریں\' اور دیگر والیوم کی ترتیبات کو نظر انداز کریں"</string>

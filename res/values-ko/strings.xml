@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"긴급 재난 문자 받기: 훈련 메시지"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"긴급 경보 받기: 제공업체 정의됨"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"진동"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"항상 최대 볼륨으로 알림"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"방해 금지 모드 및 기타 볼륨 설정을 무시합니다."</string>
