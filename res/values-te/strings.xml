@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"ఎమర్జెన్సీ అలర్ట్‌ను అందుకోండి: అభ్యాసం/డ్రిల్ మెసేజ్"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"ఎమర్జెన్సీ అలర్ట్‌ను స్వీకరించండి: ఆపరేటర్ నిర్వచించినవి"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"వైబ్రేషన్"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ఎల్లప్పుడూ పూర్తి వాల్యూమ్ వద్ద హెచ్చరించు"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"అంతరాయం కలిగించవద్దు &amp; ఇతర వాల్యూమ్ సెట్టింగ్‌లను తిరస్కరించండి"</string>

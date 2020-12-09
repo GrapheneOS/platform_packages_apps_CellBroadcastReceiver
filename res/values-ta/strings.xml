@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"அவசரகால எச்சரிக்கையைப் பெறுக: பயிற்சி/டிரில் மெசேஜ்"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"அவசரகால எச்சரிக்கையைப் பெறுக: ஆப்பரேட்டரால் வரையறுக்கப்பட்டது"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"அதிர்வு"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"எப்போதும் முழுஒலியளவில் விழிப்பூட்டு"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'தொந்தரவு செய்ய வேண்டாம்\' &amp; பிற ஒலி அமைப்புகளைப் புறக்கணி"</string>

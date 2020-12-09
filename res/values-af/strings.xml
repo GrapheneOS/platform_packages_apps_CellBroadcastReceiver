@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Ontvang noodberig: Oefening-/drilboodskap"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Ontvang noodberig: Operateur is gedefinieer"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrasie"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Waarsku altyd op hardste volume"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignoreer Moenie Steur nie en ander volume-instellings"</string>

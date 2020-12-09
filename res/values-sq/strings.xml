@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Merr alarmin e urgjencës: Mesazhi i ushtrimit/stërvitjes"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Merr sinjalizimin e urgjencës: Përcaktohet nga operatori"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Dridhje"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Gjithmonë sinjalizo me volum të plotë"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Shpërfill \"Mos shqetëso\" dhe cilësimet e tjera të volumit"</string>

@@ -88,6 +88,9 @@
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Primite upozorenje za vanredne situacije: poruka za vježbu"</string>
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
+    <skip />
+    <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Primanje upozorenja u hitnim slučajevima: definira operater"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibracija"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Uvijek upozori najglasnijom jačinom zvuka"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Zanemari način rada Ne ometaj i druge postavke jačine zvuka"</string>
