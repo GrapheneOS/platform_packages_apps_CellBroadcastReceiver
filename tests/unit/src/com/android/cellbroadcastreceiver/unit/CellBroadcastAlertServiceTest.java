@@ -24,6 +24,8 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.doReturn;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
@@ -142,17 +144,13 @@ public class CellBroadcastAlertServiceTest extends
         startService(intent);
     }
 
-    private void waitForServiceIntent() {
-        waitFor(() -> mServiceIntentToVerify != null);
-    }
-
     // Test handleCellBroadcastIntent method
     @InstrumentationTest
     // This test has a module dependency, so it is disabled for OEM testing because it is not a true
     // unit test
     public void testHandleCellBroadcastIntent() throws Exception {
         sendMessage(987654321);
-        waitForServiceIntent();
+        waitForMs(500);
 
         assertEquals(SHOW_NEW_ALERT_ACTION, mServiceIntentToVerify.getAction());
 
@@ -172,7 +170,7 @@ public class CellBroadcastAlertServiceTest extends
         SmsCbMessage message = createMessage(34788612);
         intent.putExtra("message", message);
         startService(intent);
-        waitForServiceIntent();
+        waitForMs(500);
 
         // verify audio service intent
         assertEquals(CellBroadcastAlertAudio.ACTION_START_ALERT_AUDIO,
@@ -197,14 +195,13 @@ public class CellBroadcastAlertServiceTest extends
     // This test has a module dependency, so it is disabled for OEM testing because it is not a true
     // unit test
     public void testShowNewAlertChildAbductionWithDefaultLanguage() {
-        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
         doReturn(new String[]{"0x111B:rat=gsm, emergency=true"})
                 .when(mResources).getStringArray(anyInt());
         doReturn("").when(mResources).getString(anyInt());
 
         sendMessageForCmasMessageClass(34788613,
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY);
-        waitForServiceIntent();
+        waitForMs(500);
 
         assertEquals(SHOW_NEW_ALERT_ACTION, mServiceIntentToVerify.getAction());
 
@@ -221,8 +218,9 @@ public class CellBroadcastAlertServiceTest extends
     // This test has a module dependency, so it is disabled for OEM testing because it is not a true
     // unit test
     public void testShowNewAlertChildAbduction() {
-        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
-        enablePreference(CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        prefs.edit().putBoolean(CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE, true)
+                .commit();
 
         final String language = "es";
         doReturn(new String[]{"0x111B:rat=gsm, emergency=true, filter_language=true"})
@@ -231,7 +229,7 @@ public class CellBroadcastAlertServiceTest extends
 
         sendMessageForCmasMessageClassAndLanguage(34788614,
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY, language);
-        waitForServiceIntent();
+        waitForMs(500);
 
         assertEquals(SHOW_NEW_ALERT_ACTION, mServiceIntentToVerify.getAction());
 
