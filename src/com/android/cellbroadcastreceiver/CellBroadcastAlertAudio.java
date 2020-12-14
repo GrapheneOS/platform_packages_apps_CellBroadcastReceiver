@@ -621,7 +621,11 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             // Stop vibrator
             mVibrator.cancel();
             if (mScreenOffReceiver != null) {
-                unregisterReceiver(mScreenOffReceiver);
+                try {
+                    unregisterReceiver(mScreenOffReceiver);
+                } catch (Exception e){
+                    // already unregistered
+                }
                 mScreenOffReceiver = null;
             }
 
