@@ -24,10 +24,12 @@ import android.app.KeyguardManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.RemoteAction;
+import android.content.BroadcastReceiver;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -157,6 +159,18 @@ public class CellBroadcastAlertDialog extends Activity {
 
     // Show the opt-out dialog
     private AlertDialog mOptOutDialog;
+
+    /** BroadcastReceiver for screen off events. When screen was off, remove FLAG_TURN_SCREEN_ON to
+     * start from a clean state. Otherwise, the window flags from the first alert will be
+     * automatically applied to the following alerts handled at onNewIntent.
+     */
+    private BroadcastReceiver mScreenOffReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent){
+            Log.d(TAG, "onSreenOff: remove FLAG_TURN_SCREEN_ON flag");
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+        }
+    };
 
     /**
      * Animation handler for the flashing warning icon (emergency alerts only).
@@ -363,6 +377,8 @@ public class CellBroadcastAlertDialog extends Activity {
             // If we were started from a notification, dismiss it.
             clearNotification(intent);
         }
+
+        registerReceiver(mScreenOffReceiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
 
         if (mMessageList == null || mMessageList.size() == 0) {
             Log.e(TAG, "onCreate failed as message list is null or empty");
@@ -971,6 +987,12 @@ public class CellBroadcastAlertDialog extends Activity {
             }
         }
         finish();
+    }
+
+    @Override
+    public void onDestroy() {
+        unregisterReceiver(mScreenOffReceiver);
+        super.onDestroy();
     }
 
     @Override
