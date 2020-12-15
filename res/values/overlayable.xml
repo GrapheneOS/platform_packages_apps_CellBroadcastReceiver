@@ -70,6 +70,8 @@
             <!-- START DIMEN -->
             <item type="dimen" name="alert_dialog_title_height"/>
             <item type="dimen" name="alert_dialog_button_bar_height"/>
+            <!-- Max height of alert dialog's text content -->
+            <item type="dimen" name="alert_dialog_maxheight_content_panel"/>
             <!-- END DIMEN -->
 
             <!-- START COLOR -->
