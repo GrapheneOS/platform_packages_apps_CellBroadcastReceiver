@@ -37,7 +37,6 @@ import androidx.annotation.NonNull;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -138,14 +137,7 @@ public class CellBroadcastConfigService extends IntentService {
         } else {
             manager = SmsManager.getDefault();
         }
-
-        // TODO: Call manager.resetAllCellBroadcastRanges() in Android S.
-        try {
-            Method method = SmsManager.class.getDeclaredMethod("resetAllCellBroadcastRanges");
-            method.invoke(manager);
-        } catch (Exception e) {
-            log("Can't reset cell broadcast ranges. e=" + e);
-        }
+        manager.resetAllCellBroadcastRanges();
     }
 
     /**
