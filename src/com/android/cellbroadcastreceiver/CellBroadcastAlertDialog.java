@@ -424,6 +424,7 @@ public class CellBroadcastAlertDialog extends Activity {
     public void onResume() {
         super.onResume();
         setWindowBottom();
+        setMaxHeightScrollView();
         SmsCbMessage message = getLatestMessage();
         if (message != null) {
             int subId = message.getSubscriptionId();
@@ -763,6 +764,18 @@ public class CellBroadcastAlertDialog extends Activity {
             }
 
             image.setLayoutParams(params);
+        }
+    }
+
+    private void setMaxHeightScrollView() {
+        int contentPanelMaxHeight = getResources().getDimensionPixelSize(
+                R.dimen.alert_dialog_maxheight_content_panel);
+        if (contentPanelMaxHeight > 0) {
+            CustomHeightScrollView scrollView = (CustomHeightScrollView) findViewById(
+                    R.id.scrollView);
+            if (scrollView != null) {
+                scrollView.setMaximumHeight(contentPanelMaxHeight);
+            }
         }
     }
 
