@@ -197,9 +197,6 @@ public class CellBroadcastAlertDialog extends Activity {
         public void stopIconAnimation() {
             // Increment the counter so the handler will ignore the next message.
             mCount.incrementAndGet();
-            if (mWarningIconView != null) {
-                mWarningIconView.setVisibility(View.GONE);
-            }
         }
 
         /** Update the visibility of the warning icon. */
