@@ -190,7 +190,7 @@ public class CellBroadcastAlertDialogTest extends
 
     public void testOnNewIntent() throws Throwable {
         Intent intent = createActivityIntent();
-        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
 
         Looper.prepare();
         CellBroadcastAlertDialog activity = startActivity(intent, null, null);
@@ -254,7 +254,7 @@ public class CellBroadcastAlertDialogTest extends
 
     public void testOnResume() throws Throwable {
         Intent intent = createActivityIntent();
-        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
 
         Looper.prepare();
         CellBroadcastAlertDialog activity = startActivity(intent, null, null);
@@ -269,7 +269,7 @@ public class CellBroadcastAlertDialogTest extends
 
     public void testOnPause() throws Throwable {
         Intent intent = createActivityIntent();
-        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
 
         Looper.prepare();
         CellBroadcastAlertDialog activity = startActivity(intent, null, null);
@@ -284,7 +284,7 @@ public class CellBroadcastAlertDialogTest extends
 
     public void testOnKeyDown() throws Throwable {
         Intent intent = createActivityIntent();
-        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
 
         Looper.prepare();
         CellBroadcastAlertDialog activity = startActivity(intent, null, null);
@@ -329,7 +329,7 @@ public class CellBroadcastAlertDialogTest extends
                 CellBroadcastAlertDialog.class);
         intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
                 mMessageList);
-        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
         Looper.prepare();
         CellBroadcastAlertDialog activity = startActivity(intent, null, null);
 
