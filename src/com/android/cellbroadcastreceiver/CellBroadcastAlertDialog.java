@@ -88,9 +88,9 @@ public class CellBroadcastAlertDialog extends Activity {
 
     private static final String TAG = "CellBroadcastAlertDialog";
 
-    /** Intent extra for non-emergency alerts sent when user selects the notification. */
+    /** Intent extra indicate this intent should not dismiss the notification */
     @VisibleForTesting
-    public static final String FROM_NOTIFICATION_EXTRA = "from_notification";
+    public static final String DISMISS_NOTIFICATION_EXTRA = "dismiss_notification";
 
     // Intent extra to identify if notification was sent while trying to move away from the dialog
     //  without acknowledging the dialog
@@ -871,7 +871,7 @@ public class CellBroadcastAlertDialog extends Activity {
      * @param intent Intent containing extras used to identify if notification needs to be cleared
      */
     private void clearNotification(Intent intent) {
-        if (intent.getBooleanExtra(FROM_NOTIFICATION_EXTRA, false)) {
+        if (intent.getBooleanExtra(DISMISS_NOTIFICATION_EXTRA, false)) {
             NotificationManager notificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.cancel(CellBroadcastAlertService.NOTIFICATION_ID);
