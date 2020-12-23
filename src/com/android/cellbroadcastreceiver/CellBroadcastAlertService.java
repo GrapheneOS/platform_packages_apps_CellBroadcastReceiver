@@ -697,7 +697,10 @@ public class CellBroadcastAlertService extends Service {
                     messageList);
         }
 
-        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        // if this is an notification from on-going alert alert, do not clear the notification when
+        // tap the notification. the notification should be gone either when users swipe away or
+        // when the foreground dialog dismissed.
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, !fromDialog);
         intent.putExtra(CellBroadcastAlertDialog.FROM_SAVE_STATE_NOTIFICATION_EXTRA, fromSaveState);
 
         PendingIntent pi;
@@ -753,12 +756,8 @@ public class CellBroadcastAlertService extends Service {
                     deleteIntent, PendingIntent.FLAG_ONE_SHOT
                             | PendingIntent.FLAG_UPDATE_CURRENT
                             | PendingIntent.FLAG_IMMUTABLE));
-            if (!fromDialog) {
-                // If this is a notification from the foreground dialog, no need to set
-                // contentIntent to reopen the dialog again.
-                builder.setContentIntent(pi);
-            }
 
+            builder.setContentIntent(pi);
             // This will break vibration on FEATURE_WATCH, so use it for anything else
             builder.setDefaults(Notification.DEFAULT_ALL);
         }
