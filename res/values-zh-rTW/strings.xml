@@ -26,7 +26,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"查看詳細資料"</string>
     <string name="menu_delete" msgid="128380070910799366">"刪除廣播"</string>
     <string name="view_details_title" msgid="1780427629491781473">"警示詳細資料"</string>
-    <string name="view_details_debugging_title" msgid="5699927030805114173">"用於除錯的警示詳細資料"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"用於偵錯的警示詳細資料"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"刪除這個廣播嗎？"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"刪除所有收到的廣播訊息嗎？"</string>
     <string name="button_delete" msgid="4672451757925194350">"刪除"</string>
