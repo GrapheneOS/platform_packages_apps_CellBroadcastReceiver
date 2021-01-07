@@ -20,6 +20,11 @@
 
 <resources>
     <style name="CellBroadcastAlertTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog.Alert"/>
+    <style name="CellBroadcastOptOutTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar.TranslucentDecor">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 
     <style name="CellBroadcastSettingsTheme" parent="@android:style/Theme.DeviceDefault.Settings">
         <item name="switchPreferenceStyle">@style/SettingsSwitchPreference</item>
