@@ -20,7 +20,8 @@
         <item>0x1100:rat=gsm, type=etws_earthquake, emergency=true</item>
         <!-- 0x1101 for tsunami -->
         <item>0x1101:rat=gsm, type=etws_tsunami, emergency=true</item>
-        <!-- 0xA808 for other purposes -->
+        <!-- 0xA807 and 0xA808 for other purposes -->
+        <item>0xA807:rat=gsm, type=other, emergency=true, scope=carrier</item>
         <item>0xA808:rat=gsm, type=other, emergency=true, scope=carrier</item>
     </string-array>
 </resources>
