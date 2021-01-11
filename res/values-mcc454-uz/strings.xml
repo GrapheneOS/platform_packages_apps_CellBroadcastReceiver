@@ -20,6 +20,6 @@
     <string name="cmas_extreme_alert" msgid="666310502927269524">"Favqulodda ogohlantirish"</string>
     <string name="cmas_required_monthly_test" msgid="3412608025684914213">"Sinov xabari"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="8186076761036041808">"Favqulodda ogohlantirishlarni qabul qilish"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="4587011587057993053">"SMSlar"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4587011587057993053">"Sinov xabarlari"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="6148921520813876460">"Sinov xabarlarini olish"</string>
 </resources>
