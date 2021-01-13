@@ -106,6 +106,9 @@ public class CellBroadcastChannelManager {
         private static final String KEY_DISPLAY_ICON = "display_icon";
         /** Define whether to dismiss the alert dialog for outside touches */
         private static final String KEY_DISMISS_ON_OUTSIDE_TOUCH = "dismiss_on_outside_touch";
+        /** Define the ISO-639-1 language code associated with the alert message. */
+        private static final String KEY_LANGUAGE_CODE = "language";
+
 
         /**
          * Defines whether the channel needs language filter or not. True indicates that the alert
@@ -148,6 +151,8 @@ public class CellBroadcastChannelManager {
         // whether to dismiss the alert dialog on outside touch. Typically this should be false
         // to avoid accidental dismisses of emergency messages
         public boolean mDismissOnOutsideTouch = false;
+        // This is used to override dialog title language
+        public String mLanguageCode;
 
         public CellBroadcastChannelRange(Context context, int subId, String channelRange) {
 
@@ -255,6 +260,9 @@ public class CellBroadcastChannelManager {
                                     mDismissOnOutsideTouch = true;
                                 }
                                 break;
+                            case KEY_LANGUAGE_CODE:
+                                mLanguageCode = value;
+                                break;
                         }
                     }
                 }
@@ -287,7 +295,8 @@ public class CellBroadcastChannelManager {
                     + ",filter_language=" + mFilterLanguage + ",override_dnd=" + mOverrideDnd
                     + ",display=" + mDisplay + ",testMode=" + mTestMode + ",mAlwaysOn="
                     + mAlwaysOn + ",ScreenOnDuration=" + mScreenOnDuration + ", displayIcon="
-                    + mDisplayIcon + "dismissOnOutsideTouch=" + mDismissOnOutsideTouch + "]";
+                    + mDisplayIcon + "dismissOnOutsideTouch=" + mDismissOnOutsideTouch
+                    + ", languageCode=" + mLanguageCode + "]";
         }
     }
 

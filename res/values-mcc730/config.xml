@@ -48,7 +48,7 @@
     </string-array>
     <!-- 4380~4382, 519 -->
     <string-array name="required_monthly_test_range_strings" translatable="false">
-        <item>0x111C:rat=gsm, type=info, emergency=true</item>
+        <item>0x111C:rat=gsm, type=info, emergency=true, language=es</item>
         <item>0x207:rat=gsm, type=info, emergency=true</item>
     </string-array>
     <string-array name="exercise_alert_range_strings" translatable="false">
@@ -73,5 +73,12 @@
     <!-- Whether to disable the opt-out dialog for all channels -->
     <bool name="disable_opt_out_dialog">true</bool>
     <bool name="show_main_switch_settings">false</bool>
+
+    <!-- String used to override message body for certain service categories.
+         The format for each entry is: "service_category:message".
+         '>' is a special character which indicates that the carrier's name should be shown -->
+    <string-array name="message_body_override" translatable="false">
+        <item>4380:Esta es una prueba de mantenimiento, sin costo, del Sistema de Alerta de Emergencia, emitido por ></item>
+    </string-array>
 </resources>
 
