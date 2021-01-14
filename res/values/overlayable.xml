@@ -23,6 +23,7 @@
         <policy type="product|system|vendor">
             <!-- START THEME / STYLE -->
             <item type="style" name="CellBroadcastAlertTheme"/>
+            <item type="style" name="CellBroadcastOptOutTheme"/>
             <item type="style" name="CellBroadcastListActivityTheme"/>
             <item type="style" name="CellBroadcastSettingsTheme"/>
 
