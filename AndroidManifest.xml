@@ -137,7 +137,7 @@
         <!-- Container activity for CMAS opt-in/opt-out dialog. -->
         <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastOptOutActivity"
                   android:launchMode="singleInstance"
-                  android:theme="@style/CellBroadcastAlertTheme"
+                  android:theme="@style/CellBroadcastOptOutTheme"
                   android:exported="false" />
 
         <receiver android:name="com.android.cellbroadcastreceiver.CellBroadcastReceiver"
