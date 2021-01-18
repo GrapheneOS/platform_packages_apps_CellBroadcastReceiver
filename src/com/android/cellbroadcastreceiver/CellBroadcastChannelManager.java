@@ -109,6 +109,7 @@ public class CellBroadcastChannelManager {
         /** Define the ISO-639-1 language code associated with the alert message. */
         private static final String KEY_LANGUAGE_CODE = "language";
 
+
         /**
          * Defines whether the channel needs language filter or not. True indicates that the alert
          * will only pop-up when the alert's language matches the device's language.
@@ -150,11 +151,9 @@ public class CellBroadcastChannelManager {
         // whether to dismiss the alert dialog on outside touch. Typically this should be false
         // to avoid accidental dismisses of emergency messages
         public boolean mDismissOnOutsideTouch = false;
-
-        // This is used to override dialog title language and it's a temp workaround to bypass
-        // carrier TA due to testcase does not configure the language code, thus hardcode language
-        // code inside CBR. TODO: remove this when testcases get updated (b/167366175).
+        // This is used to override dialog title language
         public String mLanguageCode;
+
         public CellBroadcastChannelRange(Context context, int subId, String channelRange) {
 
             mAlertType = AlertType.DEFAULT;

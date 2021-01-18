@@ -259,4 +259,9 @@
     <!-- Whether to show the alert dialog at the bottom of the screen in order to avoid blocking
          other content -->
     <bool name="alert_dialog_bottom">false</bool>
+
+    <!-- String used to override message body for certain service categories.
+         The format for each entry is: "service_category:message".
+         '>' is a special character which indicates that the carrier's name should be shown -->
+    <string-array name="message_body_override" translatable="false"></string-array>
 </resources>
