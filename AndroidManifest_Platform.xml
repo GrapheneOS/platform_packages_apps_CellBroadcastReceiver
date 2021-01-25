@@ -21,6 +21,7 @@
 
   <original-package android:name="com.android.cellbroadcastreceiver" />
 
+  <uses-permission android:name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
   <uses-permission android:name="android.permission.RECEIVE_SMS" />
   <uses-permission android:name="android.permission.RECEIVE_EMERGENCY_BROADCAST" />
   <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
