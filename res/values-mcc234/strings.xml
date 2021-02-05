@@ -38,4 +38,18 @@
   <string name="cmas_required_monthly_test">Test Alert</string>
   <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
   <string name="cmas_exercise_alert">Exercise Alert</string>
+  <!-- The name of the Cell Broadcast Receiver app. [CHAR LIMIT=NONE] -->
+  <string name="app_label">Emergency alerts</string>
+  <!-- Label for settings screen. [CHAR LIMIT=NONE] -->
+  <string name="sms_cb_settings">Emergency alerts</string>
+  <!-- Preference summaries for allow alerts checkbox. [CHAR LIMIT=66] -->
+  <string name="enable_alerts_master_toggle_summary">Receive emergency alert notifications</string>
+  <!-- Preference summary for enable text-to-speech checkbox. [CHAR LIMIT=101] -->
+  <string name="enable_alert_speech_summary">Use text-to-speech to speak emergency alert messages</string>
+  <!-- CMAS opt-out dialog message. [CHAR LIMIT=160] -->
+  <string name="cmas_opt_out_dialog_text">You are currently receiving emergency alerts. Would you like to continue receiving emergency alerts?</string>
+  <!-- Label to open emergencyNotifications dialog [CHAR LIMIT=40] -->
+  <string name="emergency_alert_settings_title_watches">Emergency alerts</string>
+  <!-- Notification title and text when alerting user that their CB settings have changed -->
+  <string name="notification_cb_settings_changed_text">Tap to see emergency alert settings</string>
 </resources>
