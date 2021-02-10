@@ -404,9 +404,7 @@ public class CellBroadcastAlertDialog extends Activity {
                 mScreenOffHandler.startScreenOnTimer(message);
             }
 
-            CellBroadcastChannelRange range =
-                    channelManager.getCellBroadcastChannelRangeFromMessage(message);
-            setFinishOnTouchOutside(range != null && range.mDismissOnOutsideTouch);
+            setFinishAlertOnTouchOutside();
 
             updateAlertText(message);
 
@@ -900,6 +898,7 @@ public class CellBroadcastAlertDialog extends Activity {
             }
 
             hideOptOutDialog(); // Hide opt-out dialog when new alert coming
+            setFinishAlertOnTouchOutside();
             updateAlertText(getLatestMessage());
             // If the new intent was sent from a notification, dismiss it.
             clearNotification(intent);
@@ -994,6 +993,7 @@ public class CellBroadcastAlertDialog extends Activity {
         // If there are older emergency alerts to display, update the alert text and return.
         SmsCbMessage nextMessage = getLatestMessage();
         if (nextMessage != null) {
+            setFinishAlertOnTouchOutside();
             updateAlertText(nextMessage);
             int subId = nextMessage.getSubscriptionId();
             if (channelManager.isEmergencyMessage(nextMessage)
@@ -1135,6 +1135,29 @@ public class CellBroadcastAlertDialog extends Activity {
            CellBroadcastAlertService.addToNotificationBar(
                    CellBroadcastReceiverApp.getLatestMessage(),
                    unreadMessageList, context,false, false, false);
+        }
+    }
+
+    /**
+     * Finish alert dialog only if all messages are configured with DismissOnOutsideTouch.
+     * When multiple messages are displayed, the message with dismissOnOutsideTouch(normally low
+     * priority message) is displayed on top of other unread alerts without dismissOnOutsideTouch,
+     * users can easily dismiss all messages by touching the screen. better way is to dismiss the
+     * alert if and only if all messages with dismiss_on_outside_touch set true.
+     */
+    private void setFinishAlertOnTouchOutside() {
+        if (mMessageList != null) {
+            int dismissCount = 0;
+            for (SmsCbMessage message : mMessageList) {
+                CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                        this, message.getSubscriptionId());
+                CellBroadcastChannelManager.CellBroadcastChannelRange range =
+                        channelManager.getCellBroadcastChannelRangeFromMessage(message);
+                if (range != null && range.mDismissOnOutsideTouch) {
+                    dismissCount++;
+                }
+            }
+            setFinishOnTouchOutside(mMessageList.size() > 0 && mMessageList.size() == dismissCount);
         }
     }
 }
