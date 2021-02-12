@@ -13,7 +13,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="5922755396541728069">"全國警報通知"</string>
+    <string name="cmas_presidential_level_alert" msgid="5922755396541728069">"全國警示通知"</string>
     <string name="cmas_extreme_alert" msgid="2666370743728576543">"極度緊急情況警示"</string>
     <!-- no translation found for cmas_extreme_immediate_observed_alert (9214912512697774351) -->
     <skip />
