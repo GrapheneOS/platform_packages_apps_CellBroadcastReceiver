@@ -198,6 +198,8 @@
 
     <!-- Preference title for CMAS vibration on/off. [CHAR LIMIT=50] -->
     <string name="enable_alert_vibrate_title">Vibration</string>
+    <!-- Preference summary for CMAS vibration on/off. [CHAR LIMIT=50] -->
+    <string name="enable_alert_vibrate_summary"></string>
 
     <!-- Preference title for overriding Do Not Disturb. [CHAR LIMIT=50] -->
     <string name="override_dnd_title">Always alert at full volume</string>
