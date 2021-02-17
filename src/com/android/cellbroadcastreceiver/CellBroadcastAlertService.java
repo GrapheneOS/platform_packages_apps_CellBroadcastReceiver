@@ -94,11 +94,23 @@ public class CellBroadcastAlertService extends Service {
     static final String NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS = "broadcastMessagesNonEmergency";
 
     /**
-     * Notification channel for emergency alerts. This is used when users sneak out of the
-     * noisy pop-up for a real emergency and get a notification due to not officially acknowledged
-     * the alert and want to refer it back later.
+     * Notification channel for emergency alerts. This is used when users dismiss the alert
+     * dialog without officially hitting "OK" (e.g. by pressing the home button). In this case we
+     * pop up a notification for them to refer to later
+     *
+     * Deprecated, use NOTIFICATION_CHANNEL_HIGH_PRIORITY_EMERGENCY_ALERTS.
      */
-    static final String NOTIFICATION_CHANNEL_EMERGENCY_ALERTS = "broadcastMessages";
+    static final String NOTIFICATION_CHANNEL_EMERGENCY_ALERTS_DEPRECATED = "broadcastMessages";
+
+    /**
+     * Notification channel for emergency alerts. This is used when users dismiss the alert
+     * dialog without officially hitting "OK" (e.g. by pressing the home button). In this case we
+     * pop up a notification for them to refer to later.
+     *
+     * This notification channel is HIGH_PRIORITY while the deprecated channel is LOW_PRIORITY.
+     */
+    static final String NOTIFICATION_CHANNEL_HIGH_PRIORITY_EMERGENCY_ALERTS =
+            "broadcastMessagesHighPriority";
 
     /**
      * Notification channel for emergency alerts during voice call. This is used when users in a
@@ -716,8 +728,10 @@ public class CellBroadcastAlertService extends Service {
                 context, message.getSubscriptionId());
 
         String channelId = channelManager.isEmergencyMessage(message)
-                ? NOTIFICATION_CHANNEL_EMERGENCY_ALERTS : NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS;
-        if (channelId == NOTIFICATION_CHANNEL_EMERGENCY_ALERTS && sRemindAfterCallFinish) {
+                ? NOTIFICATION_CHANNEL_HIGH_PRIORITY_EMERGENCY_ALERTS
+                : NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS;
+        if (channelId == NOTIFICATION_CHANNEL_HIGH_PRIORITY_EMERGENCY_ALERTS
+                && sRemindAfterCallFinish) {
             channelId = NOTIFICATION_CHANNEL_EMERGENCY_ALERTS_IN_VOICECALL;
         }
 
@@ -802,11 +816,18 @@ public class CellBroadcastAlertService extends Service {
     static void createNotificationChannels(Context context) {
         NotificationManager notificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        // delete deprecated notification channel if it exists
+        if (notificationManager.getNotificationChannel(
+                    NOTIFICATION_CHANNEL_EMERGENCY_ALERTS_DEPRECATED) != null) {
+            notificationManager.deleteNotificationChannel(
+                    NOTIFICATION_CHANNEL_EMERGENCY_ALERTS_DEPRECATED);
+        }
+
         notificationManager.createNotificationChannel(
                 new NotificationChannel(
-                        NOTIFICATION_CHANNEL_EMERGENCY_ALERTS,
+                        NOTIFICATION_CHANNEL_HIGH_PRIORITY_EMERGENCY_ALERTS,
                         context.getString(R.string.notification_channel_emergency_alerts),
-                        NotificationManager.IMPORTANCE_LOW));
+                        NotificationManager.IMPORTANCE_HIGH));
         final NotificationChannel nonEmergency = new NotificationChannel(
                 NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS,
                 context.getString(R.string.notification_channel_broadcast_messages),
