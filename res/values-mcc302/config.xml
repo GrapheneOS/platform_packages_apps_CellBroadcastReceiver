@@ -48,4 +48,6 @@
         <item>500</item>
         <item>500</item>
      </integer-array>
+    <!-- Do not interrupt active voice call -->
+    <bool name="enable_alert_handling_during_call">true</bool>
 </resources>
