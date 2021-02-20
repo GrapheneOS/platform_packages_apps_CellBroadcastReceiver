@@ -28,7 +28,7 @@
     <skip />
     <string name="cmas_severe_alert" msgid="6989950459525380066">"Alerta important"</string>
     <string name="cmas_required_monthly_test" msgid="1226904101913162471">"Alerta de prova"</string>
-    <string name="cmas_exercise_alert" msgid="4540370572086918020">"Alerta de simulacre"</string>
+    <string name="cmas_exercise_alert" msgid="4540370572086918020">"Simulacre d\'alerta"</string>
     <string name="app_label" msgid="3863159788297913185">"Alertes d\'emergència"</string>
     <string name="sms_cb_settings" msgid="4187131985831792308">"Alertes d\'emergència"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Rep notificacions d\'alertes d\'emergència"</string>
