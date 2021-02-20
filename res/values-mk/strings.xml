@@ -92,6 +92,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Примај предупредувања за итни случаи: дефинирани од операторот"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вибрации"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Секогаш предупредувај со максимална јачина на звук"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Игнорирај ги „Не вознемирувај“ и другите поставки за јачина на звук"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Емитување локални информации за состојбата"</string>

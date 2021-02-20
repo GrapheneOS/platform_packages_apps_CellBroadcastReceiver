@@ -92,6 +92,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"അടിയന്തര മുന്നറിയിപ്പ് സ്വീകരിക്കുക: ഓപ്പറേറ്റർ നിർവചിച്ചത്"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"വൈബ്രേഷൻ"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"എപ്പോഴും പൂർണ്ണ ശബ്ദത്തിൽ മുന്നറിയിപ്പ് നൽകുക"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'ശല്യപ്പെടുത്തരുത്\' മോഡും മറ്റ് ശബ്ദ ക്രമീകരണവും അവഗണിക്കുക"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ഏരിയ അപ്‌ഡേറ്റ് ബ്രോഡ്‌കാസ്റ്റുകൾ"</string>
