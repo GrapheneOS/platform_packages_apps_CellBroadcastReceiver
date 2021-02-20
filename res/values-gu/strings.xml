@@ -92,6 +92,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"ઇમર્જન્સી અલર્ટ મેળવો: ઑપરેટર દ્વારા નિર્ધારિત"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"વાઇબ્રેશન"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"અલર્ટ હંમેશા સંપૂર્ણ વૉલ્યૂમમાં મોકલો"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"ખલેલ પાડશો નહીં મોડ અને વૉલ્યૂમના અન્ય સેટિંગ અવગણો"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"વિસ્તારના અપડેટ વિશેના બ્રૉડકાસ્ટ"</string>
