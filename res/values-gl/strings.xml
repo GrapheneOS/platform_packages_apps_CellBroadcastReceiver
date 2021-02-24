@@ -54,7 +54,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertas de emerxencia"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertas de emerxencia durante as chamadas de voz"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permitir alertas"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recibir alertas de emerxencia sen fíos"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recibe alertas de emerxencia sen fíos"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Recordatorio de alerta"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Reproducirase un son de recordatorio co volume habitual"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historial de alertas de emerxencia"</string>
@@ -68,13 +68,13 @@
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Alertas AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Avisos de emerxencia de secuestro de menores"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Mensaxes de alerta"</string>
-    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Recibir advertencias de ameazas de seguranza inminentes"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Recibe advertencias de ameazas de seguranza inminentes"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Mensaxes de seguranza pública"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Accións recomendadas que poden salvar vidas ou propiedades"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Probas procedentes de autoridades locais e estatais"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Recibir mensaxes de proba procedentes de autoridades locais e estatais"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Recibe mensaxes de proba procedentes de autoridades locais e estatais"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Alertas de emerxencia"</string>
-    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Recibir advertencias de eventos que poñen a vida en perigo"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Recibe advertencias de eventos que poñen a vida en perigo"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Alertas de proba"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Recibe probas do operador e probas mensuais do sistema de alertas de seguranza"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibración"</string>
