@@ -62,8 +62,13 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
         return mActivity;
     }
 
-    protected void stopActivity() throws Exception {
-        getInstrumentation().callActivityOnStop(mActivity);
+    protected void stopActivity() throws Throwable {
+        runTestOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                getInstrumentation().callActivityOnStop(mActivity);
+            }
+        });
     }
 
     public static void waitForMs(long ms) {
