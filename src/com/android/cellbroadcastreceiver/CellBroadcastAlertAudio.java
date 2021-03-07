@@ -128,6 +128,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private boolean mEnableVibrate;
     private boolean mEnableAudio;
     private boolean mEnableLedFlash;
+    private boolean mIsMediaPlayerStarted;
+    private boolean mIsTextToSpeechSpeaking;
     private boolean mOverrideDnd;
     private boolean mResetAlarmVolumeNeeded;
     private int mUserSetAlarmVolume;
@@ -247,6 +249,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
                             mTts.setAudioAttributes(getAlertAudioAttributes());
                             res = mTts.speak(mMessageBody, 2, null, TTS_UTTERANCE_ID);
+                            mIsTextToSpeechSpeaking = true;
                             setState(STATE_SPEAKING);
                         }
                         if (res != TextToSpeech.SUCCESS) {
@@ -547,6 +550,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                 mMediaPlayer.setLooping(customAlertDuration >= 0);
                 mMediaPlayer.prepare();
                 mMediaPlayer.start();
+                mIsMediaPlayerStarted = true;
 
             } catch (Exception ex) {
                 loge("Failed to play alert sound: " + ex);
@@ -562,7 +566,6 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             mHandler.sendMessageDelayed(mHandler.obtainMessage(ALERT_SOUND_FINISHED),
                     customAlertDuration >= 0 ? customAlertDuration : vibrateDuration);
         }
-
         setState(STATE_ALERTING);
     }
 
@@ -623,31 +626,33 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
         resetAlarmStreamVolume();
 
-        if (getState() == STATE_ALERTING) {
-            // Stop audio playing
-            if (mMediaPlayer != null) {
-                try {
-                    mMediaPlayer.stop();
-                    mMediaPlayer.release();
-                } catch (IllegalStateException e) {
-                    // catch "Unable to retrieve AudioTrack pointer for stop()" exception
-                    loge("exception trying to stop media player");
-                }
-                mMediaPlayer = null;
+        // Stop audio playing
+        if (mMediaPlayer != null && mIsMediaPlayerStarted) {
+            try {
+                mMediaPlayer.stop();
+                mMediaPlayer.release();
+            } catch (IllegalStateException e) {
+                // catch "Unable to retrieve AudioTrack pointer for stop()" exception
+                loge("exception trying to stop media player");
             }
+            mIsMediaPlayerStarted = false;
+            mMediaPlayer = null;
+        }
 
-            // Stop vibrator
-            mVibrator.cancel();
-            if (mEnableLedFlash) {
-                enableLedFlash(false);
-            }
-        } else if (getState() == STATE_SPEAKING && mTts != null) {
+        // Stop vibrator
+        mVibrator.cancel();
+        if (mEnableLedFlash) {
+            enableLedFlash(false);
+        }
+
+        if (mTts != null && mIsTextToSpeechSpeaking) {
             try {
                 mTts.stop();
             } catch (IllegalStateException e) {
                 // catch "Unable to retrieve AudioTrack pointer for stop()" exception
                 loge("exception trying to stop text-to-speech");
             }
+            mIsTextToSpeechSpeaking = false;
         }
 
         // Service will be destroyed if the state is STATE_STOPPING,
