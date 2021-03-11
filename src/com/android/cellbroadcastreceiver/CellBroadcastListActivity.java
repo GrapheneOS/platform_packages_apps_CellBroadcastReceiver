@@ -52,6 +52,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.internal.annotations.VisibleForTesting;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 import java.util.ArrayList;
 
@@ -59,7 +60,7 @@ import java.util.ArrayList;
  * This activity provides a list view of received cell broadcasts. Most of the work is handled
  * in the inner CursorLoaderListFragment class.
  */
-public class CellBroadcastListActivity extends Activity {
+public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
     @VisibleForTesting
     public CursorLoaderListFragment mListFragment;
@@ -68,20 +69,16 @@ public class CellBroadcastListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            // android.R.id.home will be triggered in onOptionsItemSelected()
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-
         setTitle(getString(R.string.cb_list_activity_title));
 
         FragmentManager fm = getFragmentManager();
 
         // Create the list fragment and add it as our sole content.
-        if (fm.findFragmentById(android.R.id.content) == null) {
+        if (fm.findFragmentById(com.android.settingslib.collapsingtoolbar.R.id.content_frame)
+                == null) {
             mListFragment = new CursorLoaderListFragment();
-            fm.beginTransaction().add(android.R.id.content, mListFragment).commit();
+            fm.beginTransaction().add(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                    mListFragment).commit();
         }
     }
 
