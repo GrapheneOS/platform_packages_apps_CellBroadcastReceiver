@@ -66,6 +66,8 @@ android_test {
         "androidx.preference_preference",
         "androidx.appcompat_appcompat",
         "androidx.legacy_legacy-preference-v14",
+        "SettingsLibSettingsTheme",
+        "SettingsLibCollapsingToolbarBaseActivity"
     ],
 }
 
