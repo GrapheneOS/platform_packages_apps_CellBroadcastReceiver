@@ -555,7 +555,7 @@ public class CellBroadcastSettings extends Activity {
             Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
 
             CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
-                    getContext(), SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+                    getContext(), SubscriptionManager.getDefaultSubscriptionId());
 
             if (mMasterToggle != null) {
                 mMasterToggle.setVisible(res.getBoolean(R.bool.show_main_switch_settings));
@@ -765,7 +765,7 @@ public class CellBroadcastSettings extends Activity {
 
     public static boolean isTestAlertsToggleVisible(Context context) {
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(context,
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+                SubscriptionManager.getDefaultSubscriptionId());
         Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(context);
         boolean isTestAlertsAvailable = !channelManager.getCellBroadcastChannelRanges(
                 R.array.required_monthly_test_range_strings).isEmpty()
