@@ -1034,7 +1034,11 @@ public class CellBroadcastAlertDialog extends Activity {
 
     @Override
     public void onDestroy() {
-        unregisterReceiver(mScreenOffReceiver);
+        try {
+            unregisterReceiver(mScreenOffReceiver);
+        } catch (IllegalArgumentException e) {
+            Log.e(TAG, "Unregister Receiver fail", e);
+        }
         super.onDestroy();
     }
 
