@@ -655,9 +655,9 @@ public class CellBroadcastSettings extends Activity {
                 // override DND default is turned off.
                 // In some countries, override DND is always on, which means vibration is always on.
                 // In that case, no need to show vibration toggle for users.
-                mEnableVibrateCheckBox.setVisible(
-                        res.getBoolean(R.bool.show_override_dnd_settings)
-                                || !res.getBoolean(R.bool.override_dnd));
+                mEnableVibrateCheckBox.setVisible(res.getBoolean(R.bool.show_vibration_settings)
+                        && (res.getBoolean(R.bool.show_override_dnd_settings) ||
+                        !res.getBoolean(R.bool.override_dnd)));
             }
             if (mAlertsHeader != null) {
                 mAlertsHeader.setVisible(
