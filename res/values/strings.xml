@@ -123,6 +123,8 @@
     <string name="notification_channel_broadcast_messages">Broadcast messages</string>
     <!-- Notification channel name for a channel containing emergency alert notifications. [CHAR LIMIT=50] -->
     <string name="notification_channel_emergency_alerts">Emergency alerts</string>
+    <!-- Notification channel name for a channel containing emergency alert notifications for unacknowledged alerts. [CHAR LIMIT=50] -->
+    <string name="notification_channel_emergency_alerts_high_priority">Unacknowledged Emergency alerts</string>
     <!-- Notification channel name for a channel containing emergency alert notifications during voice call. [CHAR LIMIT=100] -->
     <string name="notification_channel_broadcast_messages_in_voicecall">Emergency alerts in voice call</string>
     <!-- Notification channel name for a channel containing info about WEA settings updates. [CHAR LIMIT=100] -->
