@@ -57,6 +57,8 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"അലേർട്ടുകൾ"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"പ്രക്ഷേപണ സന്ദേശങ്ങൾ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"അടിയന്തര അലേർട്ടുകൾ"</string>
+    <!-- no translation found for notification_channel_emergency_alerts_high_priority (3937475297436439073) -->
+    <skip />
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"വോയ്സ് കോളിലെ അടിയന്തര മുന്നറിയിപ്പുകൾ"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"സിമ്മിന്റെ അടിസ്ഥാനത്തിൽ, WEA ക്രമീകരണത്തിലെ സ്വയമേവയുള്ള മാറ്റങ്ങൾ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"മുന്നറിയിപ്പുകൾ അനുവദിക്കുക"</string>
