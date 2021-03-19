@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Opozorila"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Sporočila mobilnega operaterja"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Nujna opozorila"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Nujna obvestila brez potrditve prejema"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Opozorila v sili med glasovnim klicem"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Samodejne nastavitve brezžičnih nujnih opozoril na podlagi kartice SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Dovoli opozorila"</string>
