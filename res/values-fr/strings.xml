@@ -57,8 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alertes"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Messages de diffusion"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertes d\'urgence"</string>
-    <!-- no translation found for notification_channel_emergency_alerts_high_priority (3937475297436439073) -->
-    <skip />
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Alertes d\'urgence non confirmées"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertes d\'urgence pendant l\'appel téléphonique"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Modifications automatiques des paramètres des alertes d\'urgence sans fil en fonction de la carte SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Autoriser les alertes"</string>

@@ -57,8 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alertak"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Igorpen-mezuak"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Larrialdi-alertak"</string>
-    <!-- no translation found for notification_channel_emergency_alerts_high_priority (3937475297436439073) -->
-    <skip />
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Ez ikusi egin zaien larrialdi-alertak"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Larrialdien alertak ahots-deietan"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Hari gabeko larrialdi-alerten ezarpenak automatikoki aldatu dira SIMean oinarrituta"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Baimendu alertak"</string>

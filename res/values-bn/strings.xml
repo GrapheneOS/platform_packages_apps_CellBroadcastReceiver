@@ -57,8 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"সতর্কতা"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"সম্প্রচারিত মেসেজ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"জরুরি সতর্কতা"</string>
-    <!-- no translation found for notification_channel_emergency_alerts_high_priority (3937475297436439073) -->
-    <skip />
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"অস্বীকৃত জরুরি সতর্কতা"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ভয়েস কলের সময়ে জরুরি সতর্কতা"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"সিমের উপর ভিত্তি করে অটোমেটিক WEA সেটিংস পরিবর্তন হয়"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"সতর্কতার অনুমতি দিন"</string>

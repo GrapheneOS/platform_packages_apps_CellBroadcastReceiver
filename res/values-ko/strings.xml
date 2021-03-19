@@ -57,8 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"경보"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"브로드캐스트 메시지"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"긴급 경보"</string>
-    <!-- no translation found for notification_channel_emergency_alerts_high_priority (3937475297436439073) -->
-    <skip />
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"확인되지 않은 비상사태 알림"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"음성 통화 중 응급 상황 알림"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM을 기반으로 자동 WEA 설정을 변경했습니다."</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"경보 허용"</string>

@@ -57,8 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"সতৰ্কবাণীসমূহ"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"সম্প্ৰচাৰ কৰা বাৰ্তাবোৰ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"জৰুৰীকালীন সতৰ্কবাণীসমূহ"</string>
-    <!-- no translation found for notification_channel_emergency_alerts_high_priority (3937475297436439073) -->
-    <skip />
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"অস্বীকৃত জৰুৰীকালীন সতৰ্কবাণী"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ভইচ কলত জৰুৰীকালীন সতৰ্কবাৰ্তা"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"ছিমৰ ওপৰত নিৰ্ভৰ কৰি স্বয়ংক্ৰিয় WEA ছেটিং সলনি হয়"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"সতৰ্কবাণীযুক্ত বাৰ্তাসমূহ লাভ কৰিবলৈ অনুমতি দিয়ক"</string>
