@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"警示"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"廣播訊息"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"緊急警示"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"未經確認的緊急警示"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"語音通話中的緊急通知"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"自動無線緊急警報設定會視 SIM 卡而異"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"允許接收警示"</string>
