@@ -57,6 +57,8 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"అలర్ట్‌లు"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ప్రసార సందేశాలు"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"అత్యవసర హెచ్చరికలు"</string>
+    <!-- no translation found for notification_channel_emergency_alerts_high_priority (3937475297436439073) -->
+    <skip />
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"వాయిస్ కాల్‌లో అత్యవసర అలర్ట్‌లు"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM ఆధారంగా WEA సెట్టింగుల ఆటోమేటిక్ మార్పులు"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"అలర్ట్‌లను అనుమతించండి"</string>
