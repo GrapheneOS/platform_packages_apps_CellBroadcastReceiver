@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alarmer"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Udsendte beskeder"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Nødalarmer"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Uaccepterede nødalarmer"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Nødalarmer under taleopkald"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"De automatiske indstillinger for det trådløse advarselssystem skifter afhængigt af SIM-kortet"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Tillad nødalarmer"</string>
