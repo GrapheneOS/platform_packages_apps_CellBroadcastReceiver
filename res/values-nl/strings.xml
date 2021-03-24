@@ -23,7 +23,7 @@
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Geen eerdere meldingen"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Broadcasts verwijderen"</string>
     <string name="message_options" msgid="3178489901903589574">"Berichtopties"</string>
-    <string name="menu_view_details" msgid="1040989019045280975">"Details weergeven"</string>
+    <string name="menu_view_details" msgid="1040989019045280975">"Details bekijken"</string>
     <string name="menu_delete" msgid="128380070910799366">"Cell broadcast verwijderen"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Meldingsdetails"</string>
     <string name="view_details_debugging_title" msgid="5699927030805114173">"Meldingsgegevens voor foutopsporing"</string>
@@ -81,7 +81,7 @@
     <string name="override_dnd_title" msgid="5120805993144214421">"Altijd melden op vol volume"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'Niet storen\' en andere volume-instellingen negeren"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Broadcasts met lokale informatie"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Updategegevens weergeven in simkaartstatus"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Updategegevens tonen in simkaartstatus"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Meldingscategorie:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofysisch"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorologisch"</string>
@@ -116,8 +116,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Ontvangen:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> ongelezen waarschuwingen."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Nieuwe waarschuwingen"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Een toestemmingsvenster weergeven na de eerste melding (geen nationale melding)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Toestemmingsvenster weergeven"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Een toestemmingsvenster tonen na de eerste melding (geen nationale melding)."</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Toestemmingsvenster tonen"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Je ontvangt momenteel meldingen voor noodwaarschuwingen. Wil je meldingen voor noodwaarschuwingen blijven ontvangen?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nee"</string>
@@ -137,8 +137,8 @@
     <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"De testmodus voor cell broadcast is ingeschakeld."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"De testmodus voor cell broadcast is uitgeschakeld."</string>
-    <string name="show_all_messages" msgid="3780970968167139836">"Alle berichten weergeven"</string>
-    <string name="show_regular_messages" msgid="7376885150513522515">"Normale berichten weergeven"</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"Alle berichten tonen"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Normale berichten tonen"</string>
     <string name="message_identifier" msgid="5558338496219327850">"ID:"</string>
     <string name="message_serial_number" msgid="3386553658712978964">"Serienummer:"</string>
     <string name="data_coding_scheme" msgid="4628901196730870577">"Gegevenscoderingsschema:"</string>
