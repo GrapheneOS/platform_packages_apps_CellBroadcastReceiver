@@ -428,12 +428,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                             // check if area update was disabled
                             if (pref.getKey().equals(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS)) {
                                 boolean isEnabledAlert = (Boolean) newValue;
-                                Intent areaInfoIntent = new Intent(AREA_INFO_UPDATE_ACTION);
-                                areaInfoIntent.putExtra(AREA_INFO_UPDATE_ENABLED_EXTRA,
-                                        isEnabledAlert);
-                                // sending broadcast protected by the permission which is only
-                                // granted for CBR mainline module.
-                                getContext().sendBroadcast(areaInfoIntent, CBR_MODULE_PERMISSION);
+                                notifyAreaInfoUpdate(isEnabledAlert);
                             }
 
                             // Notify backup manager a backup pass is needed.
@@ -716,6 +711,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             if (mAreaUpdateInfoCheckBox != null) {
                 mAreaUpdateInfoCheckBox.setEnabled(alertsEnabled);
                 mAreaUpdateInfoCheckBox.setChecked(alertsEnabled);
+                notifyAreaInfoUpdate(alertsEnabled);
             }
             if (mEmergencyAlertsCheckBox != null) {
                 mEmergencyAlertsCheckBox.setEnabled(alertsEnabled);
@@ -742,6 +738,15 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 mOperatorDefinedCheckBox.setChecked(alertsEnabled);
             }
         }
+
+        private void notifyAreaInfoUpdate(boolean enabled) {
+            Intent areaInfoIntent = new Intent(AREA_INFO_UPDATE_ACTION);
+            areaInfoIntent.putExtra(AREA_INFO_UPDATE_ENABLED_EXTRA, enabled);
+            // sending broadcast protected by the permission which is only
+            // granted for CBR mainline module.
+            getContext().sendBroadcast(areaInfoIntent, CBR_MODULE_PERMISSION);
+        }
+
 
         @Override
         public void onResume() {
