@@ -158,7 +158,7 @@ public class CellBroadcastDatabaseHelperTest {
                 0,              // CMAS_CERTAINTY
         });
 
-        doReturn(mc).when(mContentProviderClient).query(any(), any(), any(), any(), any(), any());
+        doReturn(mc).when(mContentProviderClient).query(any(), any(), any(), any(), any());
         SQLiteDatabase db = mInMemoryDbHelper.getWritableDatabase();
         // version 11 -> 12 trigger in onUpgrade
         mHelper.onUpgrade(db, 11, 12);
@@ -168,7 +168,7 @@ public class CellBroadcastDatabaseHelperTest {
 
         mHelper.migrateFromLegacyIfNeeded(db);
         // verify insertion from legacy provider is succeed
-        verify(mContentProviderClient).query(any(), any(), any(), any(), any(), any());
+        verify(mContentProviderClient).query(any(), any(), any(), any(), any());
         cursor = db.query(CellBroadcastDatabaseHelper.TABLE_NAME,
                 CellBroadcastDatabaseHelper.QUERY_COLUMNS, null, null, null, null, null);
         assertEquals(1, cursor.getCount());
