@@ -131,12 +131,12 @@
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Noodwaarschuwingen"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Presidentiële meldingen"</string>
-    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Nationale waarschuwingen die zijn uitgegeven door de president. Kunnen niet worden uitgeschakeld."</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Nationale waarschuwingen van de president. Kunnen niet worden uitgezet."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
     <string name="alerts_header_summary" msgid="4700985191868591788"></string>
-    <string name="testing_mode_enabled" msgid="8296556666392297467">"De testmodus voor cell broadcast is ingeschakeld."</string>
-    <string name="testing_mode_disabled" msgid="8381408377958182661">"De testmodus voor cell broadcast is uitgeschakeld."</string>
+    <string name="testing_mode_enabled" msgid="8296556666392297467">"De testmodus voor cell broadcast staat aan."</string>
+    <string name="testing_mode_disabled" msgid="8381408377958182661">"De testmodus voor cell broadcast staat uit."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Alle berichten tonen"</string>
     <string name="show_regular_messages" msgid="7376885150513522515">"Normale berichten tonen"</string>
     <string name="message_identifier" msgid="5558338496219327850">"ID:"</string>
