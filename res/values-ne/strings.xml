@@ -16,8 +16,8 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="2008319089248760277">"आपत्‌कालीन वायरलेस सतर्कताहरू"</string>
-    <string name="sms_cb_settings" msgid="9021266457863671070">"आपत्‌कालीन वायरलेस सतर्कताहरू"</string>
+    <string name="app_label" msgid="2008319089248760277">"आपत्‌कालीन अवस्थामा वायरलेस एलर्ट"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"आपत्‌कालीन अवस्थामा वायरलेस एलर्ट"</string>
     <string name="sms_cb_sender_name_default" msgid="972946539768958828">"आपत्‌कालीन वायरलेस अलर्टहरू"</string>
     <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"आपत्‌कालीन वायरलेस अलर्टहरू"</string>
     <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"आपत्‌कालीन वायरलेस अलर्टहरू"</string>
@@ -134,7 +134,7 @@
     <string name="notification_multiple_title" msgid="1523638925739947855">"नयाँ सावधानीहरू"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"पहिलो सतर्कता देखाएपछि बाहिरिने संवाद देखाउनुहोस् (राष्ट्रपतीय चेतावनीबाहेक)।"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"अप्ट-आउट सम्बाद देखाउनुहोस्"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"तपाईं हाल आपत्‌कालीन वायरलेस सतर्कताहरू प्राप्त गर्दै हुनुहुन्छ। तपाईं आपत्‌कालीन वायरलेस सतर्कताहरू प्राप्त गरिरहन चाहनुहुन्छ?"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"तपाईं हाल आपत्‌कालीन अवस्थामा वायरलेस एलर्ट प्राप्त गर्दै हुनुहुन्छ। तपाईं आपत्‌कालीन अवस्थामा वायरलेस एलर्ट प्राप्त गरिरहन चाहनुहुन्छ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"हो"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"होइन"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"आपत्‌कालीन अलर्टको इतिहास"</string>
