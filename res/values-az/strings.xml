@@ -102,7 +102,7 @@
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofiziki"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteoroloji"</string>
     <string name="cmas_category_safety" msgid="2986472639641883453">"Güvənlik"</string>
-    <string name="cmas_category_security" msgid="2549520159044403704">"Təhlükəsizlik"</string>
+    <string name="cmas_category_security" msgid="2549520159044403704">"Güvənlik"</string>
     <string name="cmas_category_rescue" msgid="4907571719983321086">"Xilas"</string>
     <string name="cmas_category_fire" msgid="3331981591918341119">"Yanğın"</string>
     <string name="cmas_category_health" msgid="312569774587117324">"Sağlamlıq"</string>
