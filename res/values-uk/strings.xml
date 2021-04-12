@@ -56,7 +56,7 @@
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дозволити сповіщення"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Отримувати бездротові екстрені сповіщення"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Нагадування"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Сигнал нагадування відтворюватиметься зі звичайною гучністю"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Сигнал нагадування лунатиме зі звичайною гучністю"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Історія екстрених сповіщень"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Параметри сповіщень"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Пробні сповіщення ETWS"</string>
@@ -131,9 +131,10 @@
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Бездротові екстрені сповіщення"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Президентські сповіщення"</string>
-    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Повідомлення з попередженнями для всіх громадян від президента. Ці сповіщення не можна вимкнути."</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Повідомлення з попередженнями для всіх громадян від Президента. Ці сповіщення не можна вимкнути."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Тестовий режим Cell Broadcast увімкнено."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Тестовий режим Cell Broadcast вимкнено."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Показати всі повідомлення"</string>
@@ -141,10 +142,11 @@
     <string name="message_identifier" msgid="5558338496219327850">"Ідентифікатор:"</string>
     <string name="message_serial_number" msgid="3386553658712978964">"Серійний номер:"</string>
     <string name="data_coding_scheme" msgid="4628901196730870577">"Схема кодування даних:"</string>
-    <string name="message_content" msgid="6204502929879474632">"Вміст повідомлення:"</string>
+    <string name="message_content" msgid="6204502929879474632">"Текст повідомлення:"</string>
     <string name="location_check_time" msgid="4105326161240531207">"Час отримання геоданих:"</string>
     <string name="message_displayed" msgid="5091678195925617971">"Показ повідомлення:"</string>
     <string name="message_coordinates" msgid="356333576818059052">"Координати:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Максимальний час очікування:"</string>
     <string name="seconds" msgid="141450721520515025">"с"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Повідомлення скопійовано"</string>
 </resources>

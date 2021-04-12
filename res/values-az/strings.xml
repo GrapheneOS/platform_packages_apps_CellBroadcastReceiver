@@ -29,7 +29,7 @@
     <string name="view_details_debugging_title" msgid="5699927030805114173">"Sazlama üçün bildiriş detalları"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Bu yayım silinsin?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Qəbul olunmuş bütün yayım mesajları silinsin?"</string>
-    <string name="button_delete" msgid="4672451757925194350">"Sil"</string>
+    <string name="button_delete" msgid="4672451757925194350">"Silin"</string>
     <string name="button_cancel" msgid="7479958360523246140">"Ləğv et"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"Zəlzələ xəbərdarlığı"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"Sunami xəbərdarlığı"</string>
@@ -57,7 +57,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Simsiz həyəcan siqnalı bildirişlərini əldə edin"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Siqnal xatırladıcısı"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Müntəzəm səs səviyyəsində xatırlatma səsi veriləcək"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Təcili siqnal tarixçəsi"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Fövqəladə hal xəbərdarlıq tarixçəsi"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Siqnal tərcihləri"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ZSXS test yayımları"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Zəlzələ Sunami Xəbərdarlıq Sistemi üçün test yayımı"</string>
@@ -86,7 +86,7 @@
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofiziki"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteoroloji"</string>
     <string name="cmas_category_safety" msgid="2986472639641883453">"Güvənlik"</string>
-    <string name="cmas_category_security" msgid="2549520159044403704">"Təhlükəsizlik"</string>
+    <string name="cmas_category_security" msgid="2549520159044403704">"Güvənlik"</string>
     <string name="cmas_category_rescue" msgid="4907571719983321086">"Xilas"</string>
     <string name="cmas_category_fire" msgid="3331981591918341119">"Yanğın"</string>
     <string name="cmas_category_health" msgid="312569774587117324">"Sağlamlıq"</string>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Prezidentin çatdırdığı milli xəbərdarlıq mesajları Deaktiv edilə bilməz."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Şəbəkə yayımı sınaq rejimi aktivdir."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Şəbəkə yayımı sınaq rejimi deaktivdir."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Bütün mesajları göstərin"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Koordinatlar:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maksimum gözləmə vaxtı:"</string>
     <string name="seconds" msgid="141450721520515025">"saniyə"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Mesaj kopyalandı"</string>
 </resources>

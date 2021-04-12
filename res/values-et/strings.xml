@@ -57,7 +57,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Saate juhtmevabalt hädaolukorra teatisi"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Märguannete meeldetuletus"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Meeldetuletuse heli esitatakse tavapärase helitugevusega"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Hädaolukorra teatiste ajalugu"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Hädaolukorra hoiatuste ajalugu"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Teatiste eelistused"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS-i katseteatised"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Maavärina ja hiidlaine hoiatussüsteemi katseteatised"</string>
@@ -75,7 +75,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Saate riiklikelt ja kohalikelt ametkondadelt testsõnumeid"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Hädaolukorra hoiatused"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Hoiatused eluohtlike sündmuste puhul"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testhoiatused"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testteatised"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Turvahoiatussüsteem saadab operaatori teste ja igakuiseid teste"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibreerimine"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Teavita alati maksimaalse helitugevusega"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Saate praegu juhtmevabalt hädaolukorra teatisi. Kas soovite ka edaspidi juhtmevabalt hädaolukorra teatisi saada?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Jah"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Ei"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Hädaolukorra teatiste ajalugu"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Hädaolukorra hoiatuste ajalugu"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Üks kord"</item>
     <item msgid="9097229303902157183">"Iga 2 minuti järel"</item>
@@ -129,11 +129,12 @@
     <item msgid="3863339891188103437">"Iga 15 minuti järel"</item>
     <item msgid="7388573183644474611">"Mitte kunagi"</item>
   </string-array>
-    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Eriolukorra raadiosidehoiatused"</string>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Juhtmevabad hädaolukorra teatised"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Presidendi edastatud hoiatused"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Presidendi edastatud riiklikud hoiatussõnumid. Ei saa välja lülitada."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Kärjeteadete testimisrežiim on lubatud."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Kärjeteadete testimisrežiim on keelatud."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Kuva kõik sõnumid"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Koordinaadid:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maksimaalne ooteaeg:"</string>
     <string name="seconds" msgid="141450721520515025">"sekundit"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Sõnum on kopeeritud"</string>
 </resources>

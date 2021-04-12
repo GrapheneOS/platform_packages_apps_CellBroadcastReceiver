@@ -42,7 +42,7 @@
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"Emergency alert: Extreme"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Emergency alert: Severe"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"Child abduction (Amber alert)"</string>
-    <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Required Monthly Test"</string>
+    <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Required monthly test"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Emergency alert (exercise)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Emergency alert (operator)"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Broadcast messages"</string>
@@ -82,7 +82,7 @@
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignore Do Not Disturb and other volume settings"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Area update broadcasts"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Show update information in SIM status"</string>
-    <string name="cmas_category_heading" msgid="3923503130776640717">"Alert Category:"</string>
+    <string name="cmas_category_heading" msgid="3923503130776640717">"Alert category:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geophysical"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorological"</string>
     <string name="cmas_category_safety" msgid="2986472639641883453">"Safety"</string>
@@ -95,7 +95,7 @@
     <string name="cmas_category_infra" msgid="3558151044446851398">"Infrastructure"</string>
     <string name="cmas_category_cbrne" msgid="240421557913603971">"Chemical/Biological/Nuclear/Explosive"</string>
     <string name="cmas_category_other" msgid="6158932360790744360">"Other"</string>
-    <string name="cmas_response_heading" msgid="4205379547245540163">"Response Type:"</string>
+    <string name="cmas_response_heading" msgid="4205379547245540163">"Response type:"</string>
     <string name="cmas_response_shelter" msgid="7301175579079615909">"Shelter"</string>
     <string name="cmas_response_evacuate" msgid="5833170084430021095">"Evacuate"</string>
     <string name="cmas_response_prepare" msgid="8428073909753758319">"Prepare"</string>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"National warning messages issued by the President. Can\'t be turned off."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Mobile broadcast testing mode is enabled."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Mobile broadcast testing mode is disabled."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Show all messages"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Coordinates:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maximum waiting time:"</string>
     <string name="seconds" msgid="141450721520515025">"seconds"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Message copied"</string>
 </resources>
