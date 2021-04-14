@@ -95,7 +95,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibration"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Immer mit voller Lautstärke benachrichtigen"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"\"Bitte nicht stören\" und andere Lautstärkeeinstellungen ignorieren"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"„Bitte nicht stören“ und andere Lautstärkeeinstellungen ignorieren"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Aktuelle Gebietsinformationen"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Aktuelle Informationen im SIM-Status anzeigen"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Warnungskategorie:"</string>
