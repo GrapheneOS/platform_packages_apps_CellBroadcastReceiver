@@ -85,7 +85,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Экстренные оповещения"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Предупреждать о событиях, угрожающих жизни"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Тестовые оповещения"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Получать тестовые оповещения от оператора связи и ежемесячные сообщения системы CMAS"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Получать тестовые сообщения от системы экстренного оповещения (один раз в месяц) и от оператора связи"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Получать экстренные оповещения (учебная тревога)"</string>
