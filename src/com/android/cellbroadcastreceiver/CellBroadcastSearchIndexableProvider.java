@@ -112,6 +112,10 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             return null;
         }
 
+        if (isDisableAllCbMessages()) {
+            return null;
+        }
+
         MatrixCursor cursor = new MatrixCursor(INDEXABLES_XML_RES_COLUMNS);
         final int count = INDEXABLE_RES.length;
         for (int n = 0; n < count; n++) {
@@ -131,6 +135,10 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     @Override
     public Cursor queryRawData(String[] projection) {
         if (isAutomotive()) {
+            return null;
+        }
+
+        if (isDisableAllCbMessages()) {
             return null;
         }
 
@@ -281,5 +289,22 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     public boolean isAutomotive() {
         return getContextMethod().getPackageManager().hasSystemFeature(
                 PackageManager.FEATURE_AUTOMOTIVE);
+    }
+
+    /**
+     * Check disable Cell Broadcast resource.
+     * @return true if Cell Broadcast disable configured by OEM.
+     */
+    @VisibleForTesting
+    public boolean isDisableAllCbMessages() {
+        boolean disable = false;
+        try {
+            Resources res = Resources.getSystem();
+            int id = res.getIdentifier("config_disable_all_cb_messages", "bool", "android");
+            disable = res.getBoolean(id);
+        } catch (Exception e) {
+            disable = false;
+        }
+        return disable;
     }
 }
