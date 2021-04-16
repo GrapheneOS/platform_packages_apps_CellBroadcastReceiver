@@ -40,6 +40,7 @@ public class CellBroadcastSearchIndexableProviderTest extends CellBroadcastTest 
         mSearchIndexableProvider = spy(new CellBroadcastSearchIndexableProvider());
         doReturn(mContext).when(mSearchIndexableProvider).getContextMethod();
         doReturn(false).when(mSearchIndexableProvider).isAutomotive();
+        doReturn(false).when(mSearchIndexableProvider).isDisableAllCbMessages();
         doReturn("testPackageName").when(mContext).getPackageName();
         doReturn(mResources).when(mSearchIndexableProvider).getResourcesMethod();
         doReturn("testString").when(mResources).getString(anyInt());
