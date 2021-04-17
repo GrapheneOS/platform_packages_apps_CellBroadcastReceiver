@@ -85,7 +85,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Шашылыш билдирүүлөр"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Жашоого коркунуч туудурган окуялар тууралуу эскертүү"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Сынамык эскертүүлөр"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"CMAS системасынын шашылыш билдирүүлөрүн байланыш операторунун сыноолору жана ай сайын аткарылуучу сыноолор аркылуу алуу"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Байланыш операторунан сынамык билдирүүлөрдү жана CMAS системасынан ай сайын билдирүүлөрдү алып турасыз"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Шашылыш билдирүүнү алуу: Көнүгүү/Көнүгүү билдирүүсү"</string>
