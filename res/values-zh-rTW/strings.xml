@@ -74,7 +74,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"重大生命財產威脅"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"嚴重威脅"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"嚴重生命財產威脅"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"安珀警示"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"安珀警報"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"兒童綁架緊急事件公告"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"警訊通知"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"針對迫切的安全性威脅發出警告"</string>
