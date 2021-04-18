@@ -28,5 +28,5 @@
     <string name="state_local_test_alert" msgid="5347253401221487116">"चाचणीची सूचना"</string>
     <string name="enable_emergency_alerts_message_title" msgid="5365080705719184919">"चेतावणीच्या सूचना"</string>
     <string name="enable_public_safety_messages_title" msgid="4702006823902961758">"सार्वजनिक सुरक्षिततेच्या सूचना"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="3586102183699625309">"चाचणीच्या सूचना"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="3586102183699625309">"चाचणी अलर्ट"</string>
 </resources>
