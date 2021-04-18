@@ -24,5 +24,5 @@
     <string name="menu_delete_all" msgid="8991615021908376216">"Удалить оповещения"</string>
     <!-- no translation found for enable_cmas_test_alerts_title (3722503121618497385) -->
     <skip />
-    <string name="enable_cmas_test_alerts_summary" msgid="6138676147687910935">"Получать обязательные ежемесячные тестовые оповещения системы CMAS"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6138676147687910935">"Получать обязательные ежемесячные тестовые оповещения системы экстренного оповещения"</string>
 </resources>
