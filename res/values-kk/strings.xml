@@ -24,7 +24,7 @@
     <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"Ақпараттық хабарландыру"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Төтенше жағдай туралы сымсыз хабарландыру параметрлері бұл пайдаланушы үшін қолжетімді емес."</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Жарайды"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Бұрын хабарландыру берілмеген"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Бұрын хабарландыру берілмеген."</string>
     <string name="menu_preferences" msgid="3596514894131599202">"Параметрлер"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Таратылымдарды жою"</string>
     <string name="message_options" msgid="3178489901903589574">"Хабар опциялары"</string>
@@ -65,7 +65,7 @@
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Хабарландыру туралы еске салғыш"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Хабарламаны дыбыстау"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Төтенше жағдай туралы сымсыз хабарландыруларды дыбыстау үшін мәтін дыбыстау функциясын пайдаланыңыз."</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Еске салғыш дыбысының қаттылығы қалыпты болады"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Еске салғышты көрсету жиілігі (дыбысы қалыпты деңгейде болады)"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Төтенше жағдай туралы хабарландырулар тарихы"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Хабарландыру параметрлері"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS сынақ таратылымдары"</string>
@@ -74,7 +74,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Өмірге және мүлікке төнген үлкен қауіптер"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ауыр қауіптер"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Өмірге және мүлікке төнген ауыр қауіптер"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER хабарламалары"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER хабарландырулары"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Жоғалған балалар туралы хабарлар"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Ескерту хабарлары"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Болатын қауіп туралы ескерту"</string>
@@ -85,7 +85,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Төтенше жағдай туралы хабарламалар"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Өмірге қауіп төндіретін жағдайлар туралы ескерту"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Сынақ хабарландырулары"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Қауіпсіздік жөнінде хабарлау жүйесінен байланыс операторының сынақ хабарландырулары мен ай сайынғы сынақ хабарландыруларын алып отыру"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Байланыс операторының және қауіпсіздік жөнінде хабарлау жүйесінің ай сайынғы сынақ хабарландыруларын алып отыру"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Төтенше жағдай туралы хабарландыру алу: оқу/жаттығу хабары"</string>
