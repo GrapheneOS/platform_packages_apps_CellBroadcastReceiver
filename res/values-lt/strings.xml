@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="2008319089248760277">"Belaidžiu ryšiu siunčiami kritinės padėties įspėjimai"</string>
+    <string name="app_label" msgid="2008319089248760277">"Kritinės padėties įspėjimai"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"Belaidžiu ryšiu siunčiami kritinės padėties įspėjimai"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Šis naudotojas negali pasiekti belaidžiu ryšiu siunčiamų įspėjimų nustatymų"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Gerai"</string>

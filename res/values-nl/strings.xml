@@ -54,7 +54,7 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Noodmeldingen"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Noodmeldingen in audiogesprek"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Waarschuwingen toestaan"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Meldingen voor noodwaarschuwingen ontvangen"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Krijg meldingen voor noodwaarschuwingen"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Herinnering voor meldingen"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Er wordt een herinneringsgeluid afgespeeld op normaal volume"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Noodmeldingsgeschiedenis"</string>
@@ -76,7 +76,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Noodmeldingen"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Waarschuwen over levensbedreigende situaties"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testmeldingen"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Providertests en maandelijkse tests van het noodsysteem voor veiligheidsmeldingen ontvangen"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Krijg providertests en maandelijkse tests van het noodsysteem voor veiligheidsmeldingen"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Trillen"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Altijd melden op vol volume"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'Niet storen\' en andere volume-instellingen negeren"</string>
