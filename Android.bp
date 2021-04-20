@@ -38,6 +38,7 @@ java_defaults {
         "androidx.legacy_legacy-preference-v14",
         "SettingsLibSettingsTheme",
         "SettingsLibCollapsingToolbarBaseActivity",
+        "modules-utils-build_system",
     ],
     optimize: {
        proguard_flags_files: ["proguard.flags"],

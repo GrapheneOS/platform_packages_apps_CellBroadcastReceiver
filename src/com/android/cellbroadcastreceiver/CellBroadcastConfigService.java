@@ -36,7 +36,9 @@ import androidx.annotation.NonNull;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
+import com.android.modules.utils.build.SdkLevel;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -137,7 +139,18 @@ public class CellBroadcastConfigService extends IntentService {
         } else {
             manager = SmsManager.getDefault();
         }
-        manager.resetAllCellBroadcastRanges();
+        // SmsManager.resetAllCellBroadcastRanges is a new @SystemAPI in S. We need to support
+        // backward compatibility as the module need to run on R build as well.
+        if (SdkLevel.isAtLeastS()) {
+            manager.resetAllCellBroadcastRanges();
+        } else {
+            try {
+                Method method = SmsManager.class.getDeclaredMethod("resetAllCellBroadcastRanges");
+                method.invoke(manager);
+            } catch (Exception e) {
+                log("Can't reset cell broadcast ranges. e=" + e);
+            }
+        }
     }
 
     /**
