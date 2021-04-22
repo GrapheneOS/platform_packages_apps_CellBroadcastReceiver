@@ -28,7 +28,7 @@
     <string name="view_details_title" msgid="1780427629491781473">"Detalles da alerta"</string>
     <string name="view_details_debugging_title" msgid="5699927030805114173">"Detalles da alerta para a depuración"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Queres eliminar esta emisión?"</string>
-    <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Queres eliminar todas as mensaxes de emisión recibidas?"</string>
+    <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Queres eliminar todas as mensaxes de difusión recibidas?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Eliminar"</string>
     <string name="button_cancel" msgid="7479958360523246140">"Cancelar"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"Aviso de terremoto"</string>
@@ -45,16 +45,16 @@
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Proba mensual obrigatoria"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Alerta de emerxencia (simulacro)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Alerta de emerxencia (operador)"</string>
-    <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Mensaxes de emisión"</string>
+    <string name="cb_other_message_identifiers" msgid="5790068194529377210">"Mensaxes de difusión"</string>
     <string name="public_safety_message" msgid="9119928798786998252">"Mensaxe de seguranza pública"</string>
     <string name="state_local_test_alert" msgid="8003145745857480200">"Probas procedentes de autoridades locais/estatais"</string>
     <string name="emergency_alert" msgid="624783871477634263">"Alerta de emerxencia"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alertas"</string>
-    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Mensaxes de emisión"</string>
+    <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Mensaxes de difusión"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertas de emerxencia"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertas de emerxencia durante as chamadas de voz"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Permitir alertas"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recibir alertas de emerxencia sen fíos"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Recibe alertas de emerxencia sen fíos"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Recordatorio de alerta"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Reproducirase un son de recordatorio co volume habitual"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historial de alertas de emerxencia"</string>
@@ -66,15 +66,15 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ameazas graves"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ameazas graves para a vida e a propiedade"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Alertas AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Avisos de emerxencia de secuestro de menores"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Boletíns de emerxencia sobre secuestro de menores"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Mensaxes de alerta"</string>
-    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Recibir advertencias de ameazas de seguranza inminentes"</string>
+    <string name="enable_alert_message_summary" msgid="6525664541696985610">"Recibe advertencias de ameazas de seguranza inminentes"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Mensaxes de seguranza pública"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Accións recomendadas que poden salvar vidas ou propiedades"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Probas procedentes de autoridades locais e estatais"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Recibir mensaxes de proba procedentes de autoridades locais e estatais"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Recibe mensaxes de proba procedentes de autoridades locais e estatais"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Alertas de emerxencia"</string>
-    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Recibir advertencias de eventos que poñen a vida en perigo"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Recibe advertencias de eventos que poñen a vida en perigo"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Alertas de proba"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Recibe probas do operador e probas mensuais do sistema de alertas de seguranza"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibración"</string>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Mensaxes de advertencia nacional emitidas polo presidente. Esta función non se pode desactivar."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Está activado o modo de proba de difusión móbil."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Está desactivado o modo de proba de difusión móbil."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Mostrar todas as mensaxes"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Coordenadas:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Tempo de espera máximo:"</string>
     <string name="seconds" msgid="141450721520515025">"segundos"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Copiouse a mensaxe"</string>
 </resources>

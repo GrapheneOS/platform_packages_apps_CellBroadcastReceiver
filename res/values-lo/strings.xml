@@ -66,7 +66,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"​ໄພ​ຄຸກ​ຄາມ​ຮຸນ​ແຮງ"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ເປັນອັນຕະລາຍຕໍ່ຊີວິດ ແລະ ຊັບສິນຮຸນແຮງ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"ການ​ແຈ້ງ​ເຕືອນ AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ປະກາດສຸກເສີກການລັກພາຕົວເດັກນ້ອຍ"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ປະກາດສຸກເສີນການລັກພາຕົວເດັກນ້ອຍ"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"ຂໍ້ຄວາມເຕືອນ"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ເຕືອນກ່ຽວກັບຄວາມສ່ຽງດ້ານຄວາມປອດໄພທີ່ໃກ້ຈະເກີດຂຶ້ນ"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ຂໍ້ຄວາມຄວາມປອດໄພສາທາລະນະ"</string>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ຂໍ້ຄວາມຄຳເຕືອນແຫ່ງຊາດທີ່ອອກໂດຍປະທານປະເທດ. ບໍ່ສາມາດປິດໄດ້."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"ເປີດໂໝດການທົດສອບການກະຈາຍສັນຍານໂທລະສັບແລ້ວ."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"ປິດໂໝດການທົດສອບການກະຈາຍສັນຍານໂທລະສັບແລ້ວ."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"ສະແດງຂໍ້ຄວາມທັງໝົດ"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"ພິກັດ:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"ເວລາລໍຖ້າສູງສຸງ:"</string>
     <string name="seconds" msgid="141450721520515025">"ວິນາທີ"</string>
+    <string name="message_copied" msgid="6922953753733166675">"ສຳເນົາຂໍ້ຄວາມແລ້ວ"</string>
 </resources>
