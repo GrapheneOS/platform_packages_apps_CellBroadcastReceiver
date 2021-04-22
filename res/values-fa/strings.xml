@@ -20,7 +20,7 @@
     <string name="sms_cb_settings" msgid="9021266457863671070">"هشدارهای اضطراری بی‌سیم"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"تنظیمات مربوط به هشدارهای اضطراری بی‌سیم برای این کاربر در دسترس نیست"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"تأیید"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"هیچ هشداری از قبل وجود ندارد"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"هشداری ازقبل وجود ندارد"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"حذف پخش ها"</string>
     <string name="message_options" msgid="3178489901903589574">"گزینه‌های پیام"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"مشاهده جزئيات"</string>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"هشدارهای اخطار ملی صادرشده ازطرف رئیس‌جمهور. این هشدارها را نمی‌توانید خاموش کنید."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"حالت آزمایش پخش سلولی فعال شد."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"حالت آزمایش پخش سلولی غیرفعال شد."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"نمایش همه پیام‌ها"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"مختصات:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"حداکثر زمان انتظار:"</string>
     <string name="seconds" msgid="141450721520515025">"ثانیه"</string>
+    <string name="message_copied" msgid="6922953753733166675">"پیام کپی شد"</string>
 </resources>

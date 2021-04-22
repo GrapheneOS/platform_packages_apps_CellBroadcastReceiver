@@ -55,8 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ការជូនដំណឹងពេល​មានអាសន្នអំឡុងពេលហៅជាសំឡេង"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"អនុញ្ញាត​ការជូន​ដំណឹង"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ទទួលបានការជូនដំណឹង​ពេលមានអាសន្នដោយឥតប្រើខ្សែ"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ជូន​ដំណឹង"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"សំឡេង​ការរំលឹក​នឹងចាក់​នៅ​កម្រិតសំឡេង​ធម្មតា"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ការរំលឹកអំពីការជូន​ដំណឹង"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"សំឡេងរំលឹក​នឹងបន្លឺឡើងនៅ​កម្រិតសំឡេង​ធម្មតា"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ប្រវត្តិការជូនដំណឹង​ពេលអាសន្ន"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ចំណូលចិត្តការជូនដំណឹង"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ការ​ផ្សាយ​សាកល្បងរបស់ ETWS"</string>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"សារ​ព្រមាន​ថ្នាក់ជាតិ ដែលចេញ​ដោយ​ប្រធានាធិបតី​។ មិនអាច​បិទ​បានទេ​។"</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"មុខងារ​តេស្ត​ការផ្សាយចល័ត​ត្រូវបានបើក។"</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"មុខងារ​តេស្ត​ការផ្សាយចល័ត​ត្រូវបានបិទ។"</string>
     <string name="show_all_messages" msgid="3780970968167139836">"បង្ហាញសារ​ទាំងអស់"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"កូអរដោណេ៖"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"រយៈពេលរង់ចាំ​អតិបរមា៖"</string>
     <string name="seconds" msgid="141450721520515025">"វិនាទី"</string>
+    <string name="message_copied" msgid="6922953753733166675">"បាន​ចម្លង​សារ"</string>
 </resources>

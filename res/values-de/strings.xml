@@ -55,8 +55,8 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alarmmeldungen in Audioanrufen"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Notfallbenachrichtigungen zulassen"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Notfallbenachrichtigungen für Mobilgeräte erhalten"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Benachrichtigungserinnerung"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Benachrichtigungston wird in normaler Lautstärke abgespielt"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Benachrichtigungserinnerungen"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Benachrichtigungserinnerung ertönt in normaler Lautstärke"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Bisherige Notfallbenachrichtigungen"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Benachrichtigungseinstellungen"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS-Testnachrichten"</string>
@@ -65,7 +65,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Extreme Gefahren für Leben und Eigentum"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Erhebliche Gefahren"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Erhebliche Gefahren für Leben und Eigentum"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER Alerts"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER-Benachrichtigungen"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Notfallmeldungen bei Kindesentführung"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Warnmeldungen"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Vor akuten Sicherheitsbedrohungen warnen"</string>
@@ -79,7 +79,7 @@
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Mobilfunkanbieter-Tests und monatliche Tests vom Sicherheitswarnsystem erhalten"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibration"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Immer mit voller Lautstärke benachrichtigen"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"\"Bitte nicht stören\" und andere Lautstärkeeinstellungen ignorieren"</string>
+    <string name="override_dnd_summary" msgid="9026675822792800258">"„Bitte nicht stören“ und andere Lautstärkeeinstellungen ignorieren"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Aktuelle Gebietsinformationen"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Aktuelle Informationen im SIM-Status anzeigen"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Warnungskategorie:"</string>
@@ -119,7 +119,7 @@
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Nach erster Warnung Deaktivierungsoption anzeigen (außer bei Warnung auf höchster Stufe)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Option zum Deaktivieren anzeigen"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Du erhältst derzeit Notfallbenachrichtigungen für Mobilgeräte. Möchtest du das weiterhin?"</string>
-    <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"\"Ja\""</string>
+    <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"„Ja“"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nein"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"Bisherige Notfallbenachrichtigungen"</string>
   <string-array name="alert_reminder_interval_entries">
@@ -130,10 +130,11 @@
     <item msgid="7388573183644474611">"Nie"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Notfallbenachrichtigungen Mobilgeräte"</string>
-    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Warnung des Präsidenten"</string>
-    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Nationale Warnmeldungen des Präsidenten. Diese Mitteilungen können nicht deaktiviert werden."</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"Warnungen auf höchster Stufe"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Nationale Warnmeldungen auf der höchsten Stufe. Diese Mitteilungen können nicht deaktiviert werden."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Testmodus für Cell Broadcast ist aktiviert."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Testmodus für Cell Broadcast ist deaktiviert."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Alle Nachrichten anzeigen"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Koordinaten:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maximale Wartezeit:"</string>
     <string name="seconds" msgid="141450721520515025">"Sekunden"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Nachricht kopiert"</string>
 </resources>

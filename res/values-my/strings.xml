@@ -103,7 +103,7 @@
     <string name="cmas_response_monitor" msgid="681400164440495749">"စောင့်ကြပ်ခြင်း"</string>
     <string name="cmas_response_avoid" msgid="156419597612629270">"ရှောင်ရှား"</string>
     <string name="cmas_response_assess" msgid="9043534222710563415">"အကဲဖြတ်"</string>
-    <string name="cmas_response_none" msgid="5149009359674452959">"တစ်ခုမှမလို"</string>
+    <string name="cmas_response_none" msgid="5149009359674452959">"မရှိ"</string>
     <string name="cmas_severity_heading" msgid="8437057117822305243">"ပြင်းထန်မှု:"</string>
     <string name="cmas_severity_extreme" msgid="1312013282860183082">"ပြင်းထန်"</string>
     <string name="cmas_severity_severe" msgid="7504359209737074524">"လွန်ကဲ"</string>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"သမ္မတက ထုတ်ပြန်သည့် နိုင်ငံတွင်း သတိပေးချက်မက်ဆေ့ဂျ်များ။ ပိတ်၍မရပါ။"</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"စာတိုများ ဖြန့်ဝေခြင်းစနစ် အစမ်းမုဒ်ကို ဖွင့်ထားသည်။"</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"စာတိုများ ဖြန့်ဝေခြင်းစနစ် အစမ်းမုဒ်ကို ပိတ်ထားသည်။"</string>
     <string name="show_all_messages" msgid="3780970968167139836">"မက်ဆေ့ဂျ်အားလုံး ပြရန်"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"ကိုဩဒိနိတ်များ−"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"အကြာဆုံး စောင့်ဆိုင်းချိန်−"</string>
     <string name="seconds" msgid="141450721520515025">"စက္ကန့်"</string>
+    <string name="message_copied" msgid="6922953753733166675">"မက်ဆေ့ဂျ် မိတ္တူကူးပြီးပြီ"</string>
 </resources>

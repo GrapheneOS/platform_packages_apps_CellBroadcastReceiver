@@ -54,10 +54,10 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Абвесткі аб надзвычайных сітуацыях"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Абвесткі пра надзвычайныя сітуацыі ў галасавым выкліку"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дазволіць абвесткі"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Атрымліваць бесправадныя аварыйныя апавяшчэнні"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Атрымліваць абвесткі па бесправадных сетках аб надзвычайных сітуацыях"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Напаміны"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Гукавы сігнал напамінаў будзе прайгравацца са звычайнай гучнасцю"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Гісторыя аварыйных абвестак"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Прайграванне напамінаў са звычайнай гучнасцю"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Гісторыя экстранных абвестак"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Параметры абвестак"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Тэставыя рассылкі ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Тэставыя рассылкі сістэмы папярэджання аб землятрусах і цунамі"</string>
@@ -76,7 +76,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Абвесткі аб надзвычайных сітуацыях"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Папярэджваць пра небяспечныя для жыцця падзеі"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Тэставыя абвесткі"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Атрымліваць тэсты аператараў і штомесячныя тэсты ад сістэмы абвяшчэння бяспекі"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Атрымліваць тэставыя абвесткі ад аператараў і штомесячныя тэставыя абвесткі ад сістэмы экстраннага апавяшчэння"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вібрацыя"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Заўсёды абвяшчаць з поўнай гучнасцю"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ігнараваць рэжым \"Не турбаваць\" і іншыя налады гучнасці"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Вы цяпер атрымліваеце абвесткі пра надзвычайныя сітуацыі па бесправадных сетках. Хочаце і далей атрымліваць такія абвесткі па бесправадных сетках?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Так"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Не"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Гісторыя аварыйных абвестак"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Гісторыя экстранных абвестак"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Адзiн раз"</item>
     <item msgid="9097229303902157183">"Кожныя 2 хвіліны"</item>
@@ -134,6 +134,7 @@
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"Дзяржаўныя папераджальныя паведамленні, зробленыя Прэзідэнтам. Нельга выключыць."</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>
     <string name="receive_cmas_in_second_language_summary" msgid="7704105502782770718"></string>
+    <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Тэставы рэжым сотавай трансляцыі ўключаны."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Тэставы рэжым сотавай трансляцыі выключаны."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Паказаць усе паведамленні"</string>
@@ -147,4 +148,5 @@
     <string name="message_coordinates" msgid="356333576818059052">"Каардынаты:"</string>
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Максімальна дапушчальны час чакання:"</string>
     <string name="seconds" msgid="141450721520515025">"секунды"</string>
+    <string name="message_copied" msgid="6922953753733166675">"Паведамленне скапіравана"</string>
 </resources>
