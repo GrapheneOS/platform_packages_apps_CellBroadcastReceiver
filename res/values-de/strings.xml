@@ -135,7 +135,7 @@
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Nach erster Warnung Deaktivierungsoption anzeigen (außer bei Warnung auf höchster Stufe)"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Option zum Deaktivieren anzeigen"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Du erhältst derzeit Notfallbenachrichtigungen für Mobilgeräte. Möchtest du das weiterhin?"</string>
-    <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"„Ja“"</string>
+    <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nein"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"Bisherige Notfallbenachrichtigungen"</string>
   <string-array name="alert_reminder_interval_entries">
