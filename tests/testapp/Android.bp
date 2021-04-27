@@ -45,3 +45,12 @@ android_test {
     certificate: "platform",
     instrumentation_for: "CellBroadcastApp",
 }
+
+// used to share src with sl4a test app
+filegroup {
+    name: "cellbroadcast-shared-with-sl4a",
+    srcs: [
+        "src/com/android/cellbroadcastreceiver/tests/SendTestMessages.java",
+        "src/com/android/cellbroadcastreceiver/tests/GsmSmsCbMessage.java",
+    ],
+}
