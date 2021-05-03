@@ -22,13 +22,12 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
 
+import android.content.ContentProviderClient;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.IContentProvider;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -38,17 +37,19 @@ import android.provider.Telephony;
 import android.provider.Telephony.CellBroadcasts;
 import android.telephony.SmsCbCmasInfo;
 import android.util.Log;
-import com.android.cellbroadcastreceiver.CellBroadcastDatabaseHelper;
-import java.util.Arrays;
-import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import androidx.test.InstrumentationRegistry;
 
+import com.android.cellbroadcastreceiver.CellBroadcastDatabaseHelper;
+
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.Arrays;
 
 @RunWith(JUnit4.class)
 public class CellBroadcastDatabaseHelperTest {
@@ -62,7 +63,7 @@ public class CellBroadcastDatabaseHelperTest {
     @Mock
     ContentResolver mContentResolver;
     @Mock
-    IContentProvider mContentProviderClient;
+    ContentProviderClient mContentProviderClient;
     @Mock
     Cursor mCursor;
     @Mock
@@ -131,8 +132,7 @@ public class CellBroadcastDatabaseHelperTest {
     public void testMigration() throws Exception {
         Log.d(TAG, "dataBaseHelper_testMigration");
         // mock a legacy provider for data migration
-        doReturn(mContentProviderClient).when(mContentResolver).acquireContentProviderClient(
-                Telephony.CellBroadcasts.AUTHORITY_LEGACY);
+        mHelper.setOverrideContentProviderClient(mContentProviderClient);
         MatrixCursor mc = new MatrixCursor(CellBroadcastDatabaseHelper.QUERY_COLUMNS);
         mc.addRow(new Object[]{
                 1,              // _ID
@@ -158,7 +158,7 @@ public class CellBroadcastDatabaseHelperTest {
                 0,              // CMAS_CERTAINTY
         });
 
-        doReturn(mc).when(mContentProviderClient).query(any(), any(), any(), any(), any(), any());
+        doReturn(mc).when(mContentProviderClient).query(any(), any(), any(), any(), any());
         SQLiteDatabase db = mInMemoryDbHelper.getWritableDatabase();
         // version 11 -> 12 trigger in onUpgrade
         mHelper.onUpgrade(db, 11, 12);
