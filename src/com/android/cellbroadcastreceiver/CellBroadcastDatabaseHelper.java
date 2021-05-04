@@ -133,6 +133,8 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
     private final Context mContext;
     final boolean mLegacyProvider;
 
+    private ContentProviderClient mOverrideContentProviderClient = null;
+
     @VisibleForTesting
     public CellBroadcastDatabaseHelper(Context context, boolean legacyProvider) {
         super(context, DATABASE_NAME_V13, null, DATABASE_VERSION);
@@ -214,6 +216,19 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
         return super.getWritableDatabase();
     }
 
+    @VisibleForTesting
+    public void setOverrideContentProviderClient(ContentProviderClient client) {
+        mOverrideContentProviderClient = client;
+    }
+
+    private ContentProviderClient getContentProviderClient() {
+        if (mOverrideContentProviderClient != null) {
+            return mOverrideContentProviderClient;
+        }
+        return mContext.getContentResolver()
+                .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY);
+    }
+
     /**
      * This is the migration logic to accommodate OEMs move to mainlined CBR for the first time.
      * When the db is initially created, this is called once to
@@ -228,8 +243,7 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
             return;
         }
 
-        try (ContentProviderClient client = mContext.getContentResolver()
-                .acquireContentProviderClient(Telephony.CellBroadcasts.AUTHORITY_LEGACY)) {
+        try (ContentProviderClient client = getContentProviderClient()) {
             if (client == null) {
                 log("No legacy provider available for migration");
                 return;
