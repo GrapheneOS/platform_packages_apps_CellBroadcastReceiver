@@ -30,6 +30,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.os.UserManager;
+import android.os.Vibrator;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
@@ -644,7 +645,9 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 // override DND default is turned off.
                 // In some countries, override DND is always on, which means vibration is always on.
                 // In that case, no need to show vibration toggle for users.
-                mEnableVibrateCheckBox.setVisible(res.getBoolean(R.bool.show_vibration_settings)
+                Vibrator vibrator = getContext().getSystemService(Vibrator.class);
+                boolean supportVibration = (vibrator != null) && vibrator.hasVibrator();
+                mEnableVibrateCheckBox.setVisible(supportVibration
                         && (res.getBoolean(R.bool.show_override_dnd_settings) ||
                         !res.getBoolean(R.bool.override_dnd)));
             }
