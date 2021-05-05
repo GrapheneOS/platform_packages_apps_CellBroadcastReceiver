@@ -24,6 +24,7 @@ import android.app.KeyguardManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.RemoteAction;
+import android.app.StatusBarManager;
 import android.content.BroadcastReceiver;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -708,6 +709,9 @@ public class CellBroadcastAlertDialog extends Activity {
                 }
                 if (res.getBoolean(R.bool.show_date_in_numeric_format)) {
                     flags |= DateUtils.FORMAT_NUMERIC_DATE;
+                }
+                if (res.getBoolean(R.bool.show_date_time_with_weekday_title)) {
+                    flags |= DateUtils.FORMAT_SHOW_WEEKDAY;
                 }
                 title += "\n" + DateUtils.formatDateTime(context, message.getReceivedTime(), flags);
             }
