@@ -21,6 +21,8 @@
     </string-array>
 
     <bool name="show_date_time_title">true</bool>
+    <!-- if appending date-time to alert title, whether to include weekday -->
+    <bool name="show_date_time_with_weekday_title">true</bool>
     <!-- Disable Amber alert-->
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
 
