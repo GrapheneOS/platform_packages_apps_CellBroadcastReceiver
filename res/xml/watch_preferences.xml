@@ -37,6 +37,18 @@
                           android:key="enable_cmas_amber_alerts"
                           android:title="@string/enable_cmas_amber_alerts_title" />
 
+        <!-- Enable public safety messages -->
+        <SwitchPreference android:defaultValue="@bool/public_safety_messages_enabled_default"
+            android:key="enable_public_safety_messages"
+            android:summary="@string/enable_public_safety_messages_summary"
+            android:title="@string/enable_public_safety_messages_title" />
+
+        <!-- Enable public safety full screen messages -->
+        <SwitchPreference android:defaultValue="@bool/public_safety_messages_full_screen_enabled_default"
+            android:key="enable_public_safety_messages_full_screen"
+            android:summary="@string/enable_full_screen_public_safety_messages_summary"
+            android:title="@string/enable_full_screen_public_safety_messages_title" />
+
         <SwitchPreference android:defaultValue="true"
                           android:key="enable_emergency_alerts"
                           android:title="@string/enable_alerts_master_toggle_title" />

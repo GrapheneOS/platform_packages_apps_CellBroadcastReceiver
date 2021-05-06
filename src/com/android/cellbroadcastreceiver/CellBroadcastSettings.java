@@ -74,6 +74,12 @@ public class CellBroadcastSettings extends Activity {
     // Preference key for whether to enable public safety messages (default enabled).
     public static final String KEY_ENABLE_PUBLIC_SAFETY_MESSAGES = "enable_public_safety_messages";
 
+    // Preference key for whether to show full-screen public safety message (pop-up dialog), If set
+    // to false, only display from message history and sms inbox if enabled. A foreground
+    // notification might also be shown if enabled.
+    public static final String KEY_ENABLE_PUBLIC_SAFETY_MESSAGES_FULL_SCREEN =
+            "enable_public_safety_messages_full_screen";
+
     // Preference key for whether to enable emergency alerts (default enabled).
     public static final String KEY_ENABLE_EMERGENCY_ALERTS = "enable_emergency_alerts";
 
@@ -226,6 +232,7 @@ public class CellBroadcastSettings extends Activity {
                 .remove(KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS)
                 .remove(KEY_ENABLE_CMAS_AMBER_ALERTS)
                 .remove(KEY_ENABLE_PUBLIC_SAFETY_MESSAGES)
+                .remove(KEY_ENABLE_PUBLIC_SAFETY_MESSAGES_FULL_SCREEN)
                 .remove(KEY_ENABLE_EMERGENCY_ALERTS)
                 .remove(KEY_ALERT_REMINDER_INTERVAL)
                 .remove(KEY_ENABLE_ALERT_SPEECH)
@@ -283,6 +290,7 @@ public class CellBroadcastSettings extends Activity {
         private TwoStatePreference mAmberCheckBox;
         private TwoStatePreference mMasterToggle;
         private TwoStatePreference mPublicSafetyMessagesChannelCheckBox;
+        private TwoStatePreference mPublicSafetyMessagesChannelFullScreenCheckBox;
         private TwoStatePreference mEmergencyAlertsCheckBox;
         private ListPreference mReminderInterval;
         private TwoStatePreference mSpeechCheckBox;
@@ -330,6 +338,8 @@ public class CellBroadcastSettings extends Activity {
                     findPreference(KEY_ENABLE_ALERTS_MASTER_TOGGLE);
             mPublicSafetyMessagesChannelCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+            mPublicSafetyMessagesChannelFullScreenCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_PUBLIC_SAFETY_MESSAGES_FULL_SCREEN);
             mEmergencyAlertsCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_EMERGENCY_ALERTS);
             mReminderInterval = (ListPreference)
@@ -466,6 +476,10 @@ public class CellBroadcastSettings extends Activity {
                 mPublicSafetyMessagesChannelCheckBox.setOnPreferenceChangeListener(
                         startConfigServiceListener);
             }
+            if (mPublicSafetyMessagesChannelFullScreenCheckBox != null) {
+                mPublicSafetyMessagesChannelFullScreenCheckBox.setOnPreferenceChangeListener(
+                        startConfigServiceListener);
+            }
             if (mEmergencyAlertsCheckBox != null) {
                 mEmergencyAlertsCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
             }
@@ -586,6 +600,14 @@ public class CellBroadcastSettings extends Activity {
                                 && !channelManager.getCellBroadcastChannelRanges(
                                         R.array.public_safety_messages_channels_range_strings)
                                 .isEmpty());
+            }
+            // this is the matching full screen settings for public safety toggle. shown only if
+            // public safety toggle is displayed.
+            if (mPublicSafetyMessagesChannelFullScreenCheckBox != null) {
+                mPublicSafetyMessagesChannelFullScreenCheckBox.setVisible(
+                        res.getBoolean(R.bool.show_public_safety_full_screen_settings)
+                                && (mPublicSafetyMessagesChannelCheckBox != null
+                                && mPublicSafetyMessagesChannelCheckBox.isVisible()));
             }
 
             if (mTestCheckBox != null) {
