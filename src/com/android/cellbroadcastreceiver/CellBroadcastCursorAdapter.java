@@ -24,19 +24,27 @@ import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionManager;
+import android.util.ArrayMap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckedTextView;
 import android.widget.CursorAdapter;
+
 
 /**
  * The back-end data adapter for {@link CellBroadcastListActivity}.
  */
 public class CellBroadcastCursorAdapter extends CursorAdapter {
 
-    public CellBroadcastCursorAdapter(Context context) {
+    private static boolean sIsActionMode = false;
+    private CheckedTextView mCheckedTextView;
+    private ArrayMap<Integer, Long> mSelectedMessages;
+
+    public CellBroadcastCursorAdapter(Context context, ArrayMap<Integer, Long> selectedMessages) {
         // don't set FLAG_AUTO_REQUERY or FLAG_REGISTER_CONTENT_OBSERVER
         super(context, null, 0);
+        mSelectedMessages = selectedMessages;
     }
 
     /**
@@ -215,6 +223,29 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         SmsCbMessage message = createFromCursor(context, cursor);
         CellBroadcastListItem listItem = (CellBroadcastListItem) view;
+        mCheckedTextView = view.findViewById(R.id.checkBox);
+        updateCheckTextViewVisibility();
+        checkIsSelected(cursor.getPosition());
         listItem.bind(message);
+    }
+
+    static void setIsActionMode(boolean value) {
+        sIsActionMode = value;
+    }
+
+    void updateCheckTextViewVisibility() {
+        if (sIsActionMode) {
+            mCheckedTextView.setVisibility(View.VISIBLE);
+        } else {
+            mCheckedTextView.setVisibility(View.GONE);
+        }
+    }
+
+    void checkIsSelected(int position) {
+        if (mSelectedMessages.containsKey(position)) {
+            mCheckedTextView.setChecked(true);
+        } else {
+            mCheckedTextView.setChecked(false);
+        }
     }
 }

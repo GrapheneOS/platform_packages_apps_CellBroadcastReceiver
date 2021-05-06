@@ -34,6 +34,8 @@
     </style>
 
     <style name="CellBroadcastListActivityTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:actionModeBackground">?android:attr/colorBackground</item>
     </style>
 
     <style name="CellBroadcastListItemTheme" parent="SettingsPreference">
