@@ -21,6 +21,9 @@
     <bool name="show_severe_alert_settings">false</bool>
     <!-- Whether to show amber alert settings -->
     <bool name="show_amber_alert_settings">false</bool>
+    <!-- Whether to show settings that allows user to turn off full-screen public safety messages -->
+    <!-- KR want to hide pop-up dialog(full-screen message) but shown from history menu, sms inbox and foreground notification-->
+    <bool name="show_public_safety_full_screen_settings">true</bool>
 
     <!-- 4370, 4383 -->
     <!-- Emergecny alert tone duration set to 1 minute for Korean users -->

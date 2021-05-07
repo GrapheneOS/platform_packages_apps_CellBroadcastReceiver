@@ -19,6 +19,7 @@ package com.android.cellbroadcastreceiver;
 import static android.telephony.SmsCbMessage.MESSAGE_FORMAT_3GPP;
 import static android.telephony.SmsCbMessage.MESSAGE_FORMAT_3GPP2;
 
+import android.annotation.NonNull;
 import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -193,10 +194,32 @@ public class CellBroadcastAlertService extends Service {
     }
 
     /**
+     * Check if the enabled message should be displayed to users in the form of pop-up dialog.
+     *
+     * @param message
+     * @return True if the full screen alert should be displayed to the users. False otherwise.
+     */
+    public boolean shouldDisplayFullScreenMessage(@NonNull SmsCbMessage message) {
+        CellBroadcastChannelManager channelManager =
+                new CellBroadcastChannelManager(mContext, message.getSubscriptionId());
+        CellBroadcastChannelRange range = channelManager
+                .getCellBroadcastChannelRangeFromMessage(message);
+        // check the full-screen message settings to hide or show message to users.
+        if (channelManager.checkCellBroadcastChannelRange(message.getServiceCategory(),
+                R.array.public_safety_messages_channels_range_strings)) {
+            return PreferenceManager.getDefaultSharedPreferences(this)
+                    .getBoolean(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES_FULL_SCREEN,
+                            true);
+        }
+        // if no separate full-screen message settings exists, then display the message by default.
+        return true;
+    }
+
+    /**
      * Check if we should display the received cell broadcast message.
      *
      * @param message Cell broadcast message
-     * @return True if the message should be displayed to the user
+     * @return True if the message should be displayed to the user.
      */
     @VisibleForTesting
     public boolean shouldDisplayMessage(SmsCbMessage message) {
@@ -560,7 +583,7 @@ public class CellBroadcastAlertService extends Service {
                     .getBoolean(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS,
                             false);
         }
-        
+
         Log.e(TAG, "received undefined channels: " + channel);
         return false;
     }
@@ -570,6 +593,11 @@ public class CellBroadcastAlertService extends Service {
      * @param message the alert to display
      */
     private void openEmergencyAlertNotification(SmsCbMessage message) {
+        if (!shouldDisplayFullScreenMessage(message)) {
+            Log.d(TAG, "openEmergencyAlertNotification: do not show full screen alert "
+                    + "due to user preference");
+            return;
+        }
         // Close dialogs and window shade
         Intent closeDialogs = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         sendBroadcast(closeDialogs);
