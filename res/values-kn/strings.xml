@@ -80,6 +80,10 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ಸಂಭವನೀಯ ಸುರಕ್ಷತಾ ಬೆದರಿಕೆಗಳ ಕುರಿತು ಎಚ್ಚರಿಕೆ ನೀಡಿ"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತೆಯ ಸಂದೇಶಗಳು"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ಜೀವನ ಅಥವಾ ಆಸ್ತಿಯನ್ನು ಉಳಿಸಬಹುದಾದ ಶಿಫಾರಸು ಮಾಡಲಾದ ಕ್ರಮಗಳು"</string>
+    <!-- no translation found for enable_full_screen_public_safety_messages_title (1790574642368284876) -->
+    <skip />
+    <!-- no translation found for enable_full_screen_public_safety_messages_summary (1305786776090796715) -->
+    <skip />
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"ರಾಜ್ಯ ಮತ್ತು ಸ್ಥಳೀಯ ಪರೀಕ್ಷೆಗಳು"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ರಾಜ್ಯ ಮತ್ತು ಸ್ಥಳೀಯ ಅಧಿಕಾರಿಗಳಿಂದ ಪರೀಕ್ಷಾ ಸಂದೇಶಗಳನ್ನು ಸ್ವೀಕರಿಸಿ"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
