@@ -80,6 +80,10 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"નિકટવર્તી સલામતી જોખમો વિશે ચેતવો"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"સાર્વજનિક સુરક્ષા સંદેશા"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"સુઝાવ આપેલ ક્રિયાઓ જે જીંદગીઓ અથવા મિલ્કતને બચાવી શકે"</string>
+    <!-- no translation found for enable_full_screen_public_safety_messages_title (1790574642368284876) -->
+    <skip />
+    <!-- no translation found for enable_full_screen_public_safety_messages_summary (1305786776090796715) -->
+    <skip />
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"રાજ્ય અને સ્થાનિક પરીક્ષણો"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"રાજ્ય અને સ્થાનિક સત્તાવાળાઓ પાસેથી પરીક્ષણ સંદેશા પ્રાપ્ત કરો"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"કટોકટીની ચેતવણીઓ"</string>
