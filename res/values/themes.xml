@@ -28,9 +28,6 @@
 
     <style name="CellBroadcastSettingsTheme" parent="@style/Theme.SubSettingsBase" />
 
-    <style name="CellBroadcastListActivityTheme" parent="@android:style/Theme.DeviceDefault.Settings">
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
-    </style>
+    <style name="CellBroadcastListActivityTheme" parent="@style/Theme.SubSettingsBase" />
 
 </resources>

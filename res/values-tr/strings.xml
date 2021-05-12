@@ -80,10 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Yaklaşan güvenlik tehditleri hakkında uyarılar alın"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Kamu güvenliği mesajları"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Hayatları veya malları kurtarabilecek önerilen eylemler"</string>
-    <!-- no translation found for enable_full_screen_public_safety_messages_title (1790574642368284876) -->
-    <skip />
-    <!-- no translation found for enable_full_screen_public_safety_messages_summary (1305786776090796715) -->
-    <skip />
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Mesajları tam ekran göster"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Kamu güvenliği mesajlarının yalnızca SMS uygulamanıza gönderilmesi için kapatın"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Devlet testleri ve yerel testler"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Devlet kurumlarından ve yerel kurumlardan test mesajları alın"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Acil durum uyarıları"</string>
