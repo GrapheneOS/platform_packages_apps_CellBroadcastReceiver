@@ -192,6 +192,14 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                         provider.resyncToSmsInbox(mContext);
                         return true;
                     });
+        } else if (TelephonyManager.ACTION_SIM_CARD_STATE_CHANGED.equals(action)) {
+            int sim_state = intent.getIntExtra(
+                TelephonyManager.EXTRA_SIM_STATE, TelephonyManager.SIM_STATE_UNKNOWN);
+
+            if (sim_state == TelephonyManager.SIM_STATE_ABSENT
+                || sim_state == TelephonyManager.SIM_STATE_PRESENT) {
+                CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
+            }
         } else {
             Log.w(TAG, "onReceive() unexpected action " + action);
         }
