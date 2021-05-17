@@ -28,6 +28,9 @@
 
     <style name="CellBroadcastSettingsTheme" parent="@style/Theme.SubSettingsBase" />
 
-    <style name="CellBroadcastListActivityTheme" parent="@style/Theme.SubSettingsBase" />
+    <style name="CellBroadcastListActivityTheme" parent="@style/Theme.SubSettingsBase">
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:actionModeBackground">?android:attr/colorBackground</item>
+    </style>
 
 </resources>
