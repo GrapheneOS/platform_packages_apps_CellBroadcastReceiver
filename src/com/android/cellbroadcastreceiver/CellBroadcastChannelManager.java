@@ -68,6 +68,7 @@ public class CellBroadcastChannelManager {
             ));
 
     private static ArrayList<CellBroadcastChannelRange> sAllCellBroadcastChannelRanges = null;
+    private static final Object channelRangesLock = new Object();
 
     private final Context mContext;
 
@@ -340,16 +341,31 @@ public class CellBroadcastChannelManager {
      * @return all cell broadcast channels
      */
     public @NonNull ArrayList<CellBroadcastChannelRange> getAllCellBroadcastChannelRanges() {
-        if (sAllCellBroadcastChannelRanges != null) return sAllCellBroadcastChannelRanges;
+        synchronized(channelRangesLock) {
+            if (sAllCellBroadcastChannelRanges != null) return sAllCellBroadcastChannelRanges;
 
-        ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
+            Log.d(TAG, "Create new channel range list");
+            ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
 
-        for (int key : sCellBroadcastRangeResourceKeys) {
-            result.addAll(getCellBroadcastChannelRanges(key));
+            for (int key : sCellBroadcastRangeResourceKeys) {
+                result.addAll(getCellBroadcastChannelRanges(key));
+            }
+
+            sAllCellBroadcastChannelRanges = result;
+            return result;
         }
+    }
 
-        sAllCellBroadcastChannelRanges = result;
-        return result;
+    /**
+     * Clear broadcast channel range list
+     */
+    public static void clearAllCellBroadcastChannelRanges() {
+        synchronized(channelRangesLock) {
+            if (sAllCellBroadcastChannelRanges != null) {
+                Log.d(TAG, "Clear channel range list");
+                sAllCellBroadcastChannelRanges = null;
+            }
+        }
     }
 
     /**
