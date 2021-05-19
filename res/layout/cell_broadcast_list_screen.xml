@@ -27,6 +27,8 @@
                 android:drawSelectorOnTop="false"
                 android:scrollbarStyle="insideOverlay"
                 android:theme="@style/CellBroadcastListViewTheme"
+                android:divider="@null"
+                android:dividerHeight="0dp"
                 />
 
         <TextView android:id="@+id/empty"
