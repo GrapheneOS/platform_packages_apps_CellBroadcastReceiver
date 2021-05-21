@@ -19,8 +19,6 @@ package com.android.cellbroadcastreceiver;
 import static android.view.WindowManager.LayoutParams.SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS;
 
 import android.annotation.Nullable;
-import android.app.ActionBar;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -39,14 +37,16 @@ import android.os.Bundle;
 import android.os.UserManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbMessage;
+import android.util.ArrayMap;
 import android.util.Log;
+import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnCreateContextMenuListener;
 import android.view.ViewGroup;
+import android.widget.AbsListView.MultiChoiceModeListener;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -174,12 +174,16 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
         private int mCurrentLoaderId = 0;
 
+        private MenuItem mInformationMenuItem;
+        private ArrayMap<Integer, Long> mSelectedMessages;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
             // We have a menu item to show in action bar.
             setHasOptionsMenu(true);
+            mSelectedMessages = new ArrayMap<Integer, Long>();
         }
 
         @Override
@@ -194,11 +198,72 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
             // Set context menu for long-press.
             ListView listView = getListView();
-            listView.setOnCreateContextMenuListener(mOnCreateContextMenuListener);
 
             // Create a cursor adapter to display the loaded data.
-            mAdapter = new CellBroadcastCursorAdapter(getActivity());
+            mAdapter = new CellBroadcastCursorAdapter(getActivity(), mSelectedMessages);
             setListAdapter(mAdapter);
+
+            listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+            listView.setMultiChoiceModeListener(new MultiChoiceModeListener() {
+                @Override
+                public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                    mode.getMenuInflater().inflate(R.menu.cell_broadcast_list_action_menu, menu);
+                    mInformationMenuItem = menu.findItem(R.id.action_detail_info);
+                    CellBroadcastCursorAdapter.setIsActionMode(true);
+                    mAdapter.notifyDataSetChanged();
+                    updateActionIconsVisibility();
+                    return true;
+                }
+
+                @Override
+                public void onDestroyActionMode(ActionMode mode) {
+                    CellBroadcastCursorAdapter.setIsActionMode(false);
+                    clearSelectedMessages();
+                    mAdapter.notifyDataSetChanged();
+                }
+
+                @Override
+                public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                    if (item.getItemId() == R.id.action_detail_info) {
+                        Cursor cursor = getSelectedItemSingle();
+                        if (cursor != null) {
+                            showBroadcastDetails(CellBroadcastCursorAdapter.createFromCursor(
+                                    getContext(), cursor), getLocationCheckTime(cursor),
+                                    wasMessageDisplayed(cursor), getGeometryString(cursor));
+                        } else {
+                            Log.e(TAG, "Multiple items selected with action_detail_info");
+                        }
+                        mode.finish();
+                        return true;
+                    } else if (item.getItemId() == R.id.action_delete) {
+                        long[] selectedRowId = getSelectedItemsRowId();
+                        confirmDeleteThread(selectedRowId);
+                        mode.finish();
+                        return true;
+                    } else {
+                        Log.e(TAG, "onActionItemClicked: unsupported action return false");
+                        return false;
+                    }
+                }
+
+                @Override
+                public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                    return false;
+                }
+
+                @Override
+                public void onItemCheckedStateChanged(
+                        ActionMode mode, int position, long id, boolean checked) {
+                    int checkedCount = listView.getCheckedItemCount();
+                    Cursor cursor = mAdapter.getCursor();
+                    long rowId = cursor.getLong(cursor.getColumnIndexOrThrow(
+                            Telephony.CellBroadcasts._ID));
+
+                    toggleSelectedItem(position, rowId);
+                    mode.setTitle(String.valueOf(checkedCount));
+                    mAdapter.notifyDataSetChanged();
+                }
+            });
 
             mCurrentLoaderId = LOADER_NORMAL_HISTORY;
             if (savedInstanceState != null && savedInstanceState.containsKey(KEY_LOADER_ID)) {
@@ -324,14 +389,51 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                     .show();
         }
 
-        private final OnCreateContextMenuListener mOnCreateContextMenuListener =
-                (menu, v, menuInfo) -> {
-                    menu.setHeaderTitle(R.string.message_options);
-                    menu.add(0, MENU_VIEW_DETAILS, 0, R.string.menu_view_details);
-                    if (mCurrentLoaderId == LOADER_NORMAL_HISTORY) {
-                        menu.add(0, MENU_DELETE, 0, R.string.menu_delete);
-                    }
-                };
+        private void updateActionIconsVisibility() {
+            if (mInformationMenuItem != null) {
+                if (mSelectedMessages.size() == 1) {
+                    mInformationMenuItem.setVisible(true);
+                } else {
+                    mInformationMenuItem.setVisible(false);
+                }
+            }
+        }
+
+        private Cursor getSelectedItemSingle() {
+            if (mSelectedMessages.size() == 1) {
+                Cursor cursor = (Cursor) mAdapter.getItem(mSelectedMessages.keyAt(0));
+                return cursor;
+            }
+            return null;
+        }
+
+        private long[] getSelectedItemsRowId() {
+            Long[] arr = mSelectedMessages.values().toArray(new Long[mSelectedMessages.size()]);
+            long[] selectedRowId = new long[arr.length];
+            for (int i = 0; i < arr.length; i++) {
+                selectedRowId[i] = arr[i].longValue();
+            }
+            return selectedRowId;
+        }
+
+        /**
+         * Record the position and the row ID of the selected items.
+         */
+        public void toggleSelectedItem(int position, long rowId) {
+            if (mSelectedMessages.containsKey(position)) {
+                mSelectedMessages.remove(position);
+            } else {
+                mSelectedMessages.put(position, rowId);
+            }
+            updateActionIconsVisibility();
+        }
+
+        /**
+         * Clear the position and the row ID of the selected items in the ArrayMap.
+         */
+        public void clearSelectedMessages() {
+            mSelectedMessages.clear();
+        }
 
         private void updateNoAlertTextVisibility() {
             TextView noAlertsTextView = getActivity().findViewById(R.id.empty);
@@ -393,8 +495,8 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
             if (cursor != null && cursor.getPosition() >= 0) {
                 switch (item.getItemId()) {
                     case MENU_DELETE:
-                        confirmDeleteThread(cursor.getLong(cursor.getColumnIndexOrThrow(
-                                Telephony.CellBroadcasts._ID)));
+                        long[] selectedRowId = getSelectedItemsRowId();
+                        confirmDeleteThread(selectedRowId);
                         break;
 
                     case MENU_VIEW_DETAILS:
@@ -414,7 +516,8 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
         public boolean onOptionsItemSelected(MenuItem item) {
             switch(item.getItemId()) {
                 case MENU_DELETE_ALL:
-                    confirmDeleteThread(-1);
+                    long[] deleteAll = {-1};
+                    confirmDeleteThread(deleteAll);
                     break;
 
                 case MENU_SHOW_ALL_MESSAGES:
@@ -438,12 +541,13 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
         /**
          * Start the process of putting up a dialog to confirm deleting a broadcast.
-         * @param rowId the row ID of the broadcast to delete, or -1 to delete all broadcasts
+         * @param rowId array of the row ID that the broadcast to delete,
+         *        or rowId[0] = -1 to delete all broadcasts
          */
-        public void confirmDeleteThread(long rowId) {
+        public void confirmDeleteThread(long[] rowId) {
             DeleteDialogFragment dialog = new DeleteDialogFragment();
             Bundle dialogArgs = new Bundle();
-            dialogArgs.putLong(DeleteDialogFragment.ROW_ID, rowId);
+            dialogArgs.putLongArray(DeleteDialogFragment.ROW_ID, rowId);
             dialog.setArguments(dialogArgs);
             dialog.show(getFragmentManager(), KEY_DELETE_DIALOG);
         }
@@ -457,8 +561,8 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
             @Override
             public Dialog onCreateDialog(Bundle savedInstanceState) {
                 setRetainInstance(true);
-                long rowId = getArguments().getLong(ROW_ID);
-                boolean deleteAll = rowId == -1;
+                long[] rowId = getArguments().getLongArray(ROW_ID);
+                boolean deleteAll = rowId[0] == -1;
                 DeleteThreadListener listener = new DeleteThreadListener(getActivity(), rowId);
                 AlertDialog.Builder builder = new AlertDialog.Builder(
                         DeleteDialogFragment.this.getActivity());
@@ -482,10 +586,10 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
         }
 
         public static class DeleteThreadListener implements OnClickListener {
-            private final long mRowId;
+            private final long[] mRowId;
             private final Context mContext;
 
-            public DeleteThreadListener(Context context, long rowId) {
+            public DeleteThreadListener(Context context, long[] rowId) {
                 mContext = context;
                 mRowId = rowId;
             }
@@ -496,8 +600,13 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                 new CellBroadcastContentProvider.AsyncCellBroadcastTask(
                         mContext.getContentResolver()).execute(
                                 (CellBroadcastContentProvider.CellBroadcastOperation) provider -> {
-                                    if (mRowId != -1) {
-                                        return provider.deleteBroadcast(mRowId);
+                                    if (mRowId[0] != -1) {
+                                        for (int i = 0; i < mRowId.length; i++) {
+                                            if (!provider.deleteBroadcast(mRowId[i])) {
+                                                Log.e(TAG, "failed to delete at row " + mRowId[i]);
+                                            }
+                                        }
+                                        return true;
                                     } else {
                                         return provider.deleteAllBroadcasts();
                                     }
