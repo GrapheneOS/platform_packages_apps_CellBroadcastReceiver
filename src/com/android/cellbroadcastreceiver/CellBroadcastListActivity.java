@@ -440,6 +440,9 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
             if (noAlertsTextView != null) {
                 noAlertsTextView.setVisibility(!hasAlertsInHistory()
                         ? View.VISIBLE : View.INVISIBLE);
+                if (!hasAlertsInHistory()) {
+                    getListView().setContentDescription(getString(R.string.no_cell_broadcasts));
+                }
             }
         }
 
