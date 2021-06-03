@@ -156,7 +156,7 @@
     <string name="testing_mode_enabled" msgid="8296556666392297467">"Đã bật chế độ kiểm tra tính năng truyền phát trên di động."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"Đã tắt chế độ kiểm tra tính năng truyền phát trên di động."</string>
     <string name="show_all_messages" msgid="3780970968167139836">"Hiển thị tất cả thông báo"</string>
-    <string name="show_regular_messages" msgid="7376885150513522515">"Hiển thị thông báo thông thường"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"Hiện thông báo thông thường"</string>
     <string name="message_identifier" msgid="5558338496219327850">"Giá trị nhận dạng:"</string>
     <string name="message_serial_number" msgid="3386553658712978964">"Số sê-ri:"</string>
     <string name="data_coding_scheme" msgid="4628901196730870577">"Lược đồ mã hóa dữ liệu:"</string>
