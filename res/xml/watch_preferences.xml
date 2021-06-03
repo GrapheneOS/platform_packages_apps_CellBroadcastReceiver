@@ -49,7 +49,7 @@
             android:summary="@string/enable_full_screen_public_safety_messages_summary"
             android:title="@string/enable_full_screen_public_safety_messages_title" />
 
-        <SwitchPreference android:defaultValue="true"
+        <com.android.settingslib.widget.MainSwitchPreference android:defaultValue="true"
                           android:key="enable_emergency_alerts"
                           android:title="@string/enable_alerts_master_toggle_title" />
 
