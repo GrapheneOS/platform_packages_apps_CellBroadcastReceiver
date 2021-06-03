@@ -45,6 +45,9 @@ java_defaults {
     },
     resource_dirs: ["res"],
     plugins: ["java_api_finder"],
+    lint: {
+        strict_updatability_linting: true,
+    },
 }
 
 android_app {
