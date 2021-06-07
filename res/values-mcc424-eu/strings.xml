@@ -24,9 +24,9 @@
     <string name="pws_other_message_identifiers" msgid="2219849459734958071">"Abisuen alerta"</string>
     <string name="public_safety_message" msgid="6430821308078207535">"Segurtasun publikoari buruzko alerta"</string>
     <string name="cmas_exercise_alert" msgid="5775307523978007483">"Ariketa fisikoa"</string>
-    <string name="cmas_required_monthly_test" msgid="638043663020315444">"Testu-mezu bidezko alerta"</string>
-    <string name="state_local_test_alert" msgid="5347253401221487116">"Testu-mezu bidezko alerta"</string>
+    <string name="cmas_required_monthly_test" msgid="638043663020315444">"Probako alerta"</string>
+    <string name="state_local_test_alert" msgid="5347253401221487116">"Probako alerta"</string>
     <string name="enable_emergency_alerts_message_title" msgid="5365080705719184919">"Abisuen alertak"</string>
     <string name="enable_public_safety_messages_title" msgid="4702006823902961758">"Segurtasun publikoari buruzko alertak"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="3586102183699625309">"Testu-mezu bidezko alertak"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="3586102183699625309">"Probako alertak"</string>
 </resources>
