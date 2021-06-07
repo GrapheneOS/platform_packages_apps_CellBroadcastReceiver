@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ಪ್ರಸಾರ ಸಂದೇಶಗಳು"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"ಅಂಗೀಕರಿಸದ ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ಧ್ವನಿ ಕರೆಯಲ್ಲಿ ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM ಆಧಾರದ ಮೇಲೆ ಸ್ವಯಂಚಾಲಿತ WEA ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಬದಲಾಗುತ್ತವೆ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ಎಚ್ಚರಿಕೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"</string>
@@ -79,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ಸಂಭವನೀಯ ಸುರಕ್ಷತಾ ಬೆದರಿಕೆಗಳ ಕುರಿತು ಎಚ್ಚರಿಕೆ ನೀಡಿ"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತೆಯ ಸಂದೇಶಗಳು"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ಜೀವನ ಅಥವಾ ಆಸ್ತಿಯನ್ನು ಉಳಿಸಬಹುದಾದ ಶಿಫಾರಸು ಮಾಡಲಾದ ಕ್ರಮಗಳು"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"ಪೂರ್ಣ ಸ್ಕ್ರೀನ್ ಸಂದೇಶಗಳನ್ನು ತೋರಿಸಿ"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"ನಿಮ್ಮ SMS ಆ್ಯಪ್‌ಗೆ ಮಾತ್ರ ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತಾ ಸಂದೇಶಗಳನ್ನು ಕಳುಹಿಸಲು ಆಫ್ ಮಾಡಿ"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"ರಾಜ್ಯ ಮತ್ತು ಸ್ಥಳೀಯ ಪರೀಕ್ಷೆಗಳು"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ರಾಜ್ಯ ಮತ್ತು ಸ್ಥಳೀಯ ಅಧಿಕಾರಿಗಳಿಂದ ಪರೀಕ್ಷಾ ಸಂದೇಶಗಳನ್ನು ಸ್ವೀಕರಿಸಿ"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"ಸುರಕ್ಷತಾ ಎಚ್ಚರಿಕೆ ಸ್ವೀಕರಿಸಿ: ಆಪರೇಟರ್ ವ್ಯಾಖ್ಯಾನಿತ ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ವೈಬ್ರೇಷನ್‌"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ಅಲರ್ಟ್‌ಗಳನ್ನು ಗರಿಷ್ಠ ವಾಲ್ಯೂಮ್‌ನಲ್ಲಿ ಪ್ಲೇ ಮಾಡಿ"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"ಅಡಚಣೆ ಮಾಡಬೇಡಿ ಮತ್ತು ಇತರೆ ವಾಲ್ಯೂಮ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ಪ್ರದೇಶ ಅಪ್‌ಡೇಟ್‌ ಪ್ರಸಾರಗಳು"</string>

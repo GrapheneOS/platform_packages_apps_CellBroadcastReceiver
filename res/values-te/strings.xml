@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"అలర్ట్‌లు"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ప్రసార సందేశాలు"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"అత్యవసర హెచ్చరికలు"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"ధృవీకరించని ఎమర్జెన్సీ హెచ్చరికలు"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"వాయిస్ కాల్‌లో అత్యవసర అలర్ట్‌లు"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM ఆధారంగా WEA సెట్టింగుల ఆటోమేటిక్ మార్పులు"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"అలర్ట్‌లను అనుమతించండి"</string>
@@ -79,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"తక్షణ భద్రతా ప్రమాదాల గురించి హెచ్చరించు"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ప్రజా భద్రత సందేశాలు"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ప్రాణ నష్టం లేదా ఆస్తి నష్టం జరగకుండా కాపాడే సిఫార్సు చేయబడిన చర్యలు"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"ఫుల్ స్క్రీన్ మెసేజ్‌లను చూపించండి"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"పబ్లిక్ భద్రతా మెసేజ్‌లను మీ ఫోన్‌లోని SMS యాప్‌నకు మాత్రమే పంపడానికి ఆఫ్ చేయండి"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"రాష్ట్రీయ మరియు స్థానిక పరీక్షలు"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"రాష్ట్రీయ మరియు స్థానిక అధికార సంస్థల నుండి పరీక్ష సందేశాలను స్వీకరిస్తుంది"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"అత్యవసర హెచ్చరికలు"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"ఎమర్జెన్సీ అలర్ట్‌ను స్వీకరించండి: ఆపరేటర్ నిర్వచించినవి"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"వైబ్రేషన్"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ఎల్లప్పుడూ పూర్తి వాల్యూమ్ వద్ద హెచ్చరించు"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"అంతరాయం కలిగించవద్దు &amp; ఇతర వాల్యూమ్ సెట్టింగ్‌లను తిరస్కరించండి"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ప్రాంతీయ అప్‌డేట్ ప్రసారాలు"</string>

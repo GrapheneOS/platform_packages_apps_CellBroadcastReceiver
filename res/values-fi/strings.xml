@@ -35,7 +35,7 @@
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Poistetaanko tämä lähetys?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Poista kaikki vastaanotetut lähetysviestit?"</string>
     <string name="button_delete" msgid="4672451757925194350">"Poista"</string>
-    <string name="button_cancel" msgid="7479958360523246140">"Peruuta"</string>
+    <string name="button_cancel" msgid="7479958360523246140">"Peru"</string>
     <string name="etws_earthquake_warning" msgid="6428741104423152511">"Maanjäristysvaroitus"</string>
     <string name="etws_tsunami_warning" msgid="6173964105145900312">"Tsunamivaroitus"</string>
     <string name="etws_earthquake_and_tsunami_warning" msgid="662449983177407681">"Maanjäristys- ja tsunamivaroitus"</string>
@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Ilmoitukset"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Lähetysviestit"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Hätätiedotteet"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Huomaamatta jääneet hätähälytykset"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Hätähälytykset äänipuhelun aikana"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Langattomien vaaratiedotteiden automaattiset asetukset muuttuneet SIM-kortin perusteella"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Salli hälytykset"</string>
@@ -79,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Varoita välittömistä turvallisuusuhista"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Yleistä turvallisuutta koskevat viestit"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Toimintasuositukset, joilla voidaan suojata ihmishenkiä tai omaisuutta"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Näytä viestit koko näytön tilassa"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Poista käytöstä, niin yleistä turvallisuutta koskevat viestit lähetetään vain tekstiviesteinä"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Paikalliset testit"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Vastaanota koeviestejä paikallisilta viranomaisilta"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Hätätiedotteet"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Vastaanota vaaratiedote: operaattori määritetty"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Värinä"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Soita ilmoitusääni täydellä äänenvoimakkuudella"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ohita Älä häiritse- ja muut äänenvoimakkuusasetukset"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Alueelliset ilmoitukset"</string>

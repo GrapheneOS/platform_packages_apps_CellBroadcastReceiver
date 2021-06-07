@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Mga Alerto"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Mga mensahe ng broadcast"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Mga alerto sa emergency"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Mga hindi pinansing Alerto sa emergency"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Mga emergency na alerto sa voice call"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Mga awtomatikong pagbabago sa Mga Setting ng WEA batay sa SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Payagan ang mga alerto"</string>
@@ -79,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Magbabala tungkol sa mga nakaambang banta sa kaligtasan"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Mga mensahe para sa pampublikong kaligtasan"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Mga inirerekomendang pagkilos na makakaligtas ng mga buhay o pag-aari"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Ipakita ang mga full-screen na mensahe"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"I-off sa SMS app mo lang ipadala ang mga mensahe para sa kaligtasan ng publiko"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Mga pagsubok sa estado at lokal na pagsubok"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Makatanggap ng mga pansubok na mensahe mula sa mga awtoridad ng estado at lokal na awtoridad"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Mga alerto sa emergency"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Makatanggap ng alertong pang-emergency: Tinukoy ng operator"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Pag-vibrate"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Palaging alerto sa pinakamalakas na volume"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Balewalain, Huwag Istorbohin at iba pang setting ng volume"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Mga broadcast sa pag-update sa lugar"</string>

@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"ଅଲର୍ଟ"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ବ୍ରୋଡକାଷ୍ଟ ମେସେଜ୍‌"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"ସ୍ୱୀକାର କରାଯାଇନଥିବା ଜରୁରୀକାଳୀନ ଆଲର୍ଟଗୁଡ଼ିକ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ଭଏସ୍ କଲ୍‌ରେ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"SIM ଆଧାରରେ ସ୍ୱଚାଳିତ ଭାବେ WEA ସେଟିଂସ୍ ବଦଳିଥାଏ"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ଆଲର୍ଟକୁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
@@ -79,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ଏପରି ବିଷୟରେ ସୂଚନା ଦେବା, ଯେଉଁ କାରଣରୁ ସୁରକ୍ଷା ଉପରେ ବିପଦ ଆସିପାରେ"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ଜନସୁରକ୍ଷା ମେସେଜ୍"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ସୁପାରିଶ କରାଯାଇଥିବା କାର୍ଯ୍ୟ ଯାହା ଜୀବନ କିମ୍ୱା ସମ୍ପତ୍ତି ବଞ୍ଚାଇପାରିବ"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"ପୂର୍ଣ୍ଣ-ସ୍କ୍ରିନ୍ ମେସେଜଗୁଡ଼ିକ ଦେଖାନ୍ତୁ"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"ସାର୍ବଜନୀନ ସୁରକ୍ଷା ମେସେଜଗୁଡ଼ିକ କେବଳ ଆପଣଙ୍କ SMS ଆପକୁ ପଠାଯିବା ସୁବିଧା ବନ୍ଦ କରନ୍ତୁ"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"ରାଜ୍ୟ ଓ ସ୍ଥାନୀୟ ପରୀକ୍ଷା"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ରାଜ୍ୟ ଓ ସ୍ଥାନୀୟ କର୍ତ୍ତୃପକ୍ଷଙ୍କ ତରଫରୁ ଟେଷ୍ଟ ମେସେଜ୍ ପ୍ରାପ୍ତ କରନ୍ତୁ"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ପାଆନ୍ତୁ: ଅପରେଟରଙ୍କ ଦ୍ୱାରା ନିର୍ଦ୍ଦିଷ୍ଟ କରାଯାଇଛି"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ଭାଇବ୍ରେସନ୍"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ସର୍ବଦା ଉଚ୍ଚ ଭଲ୍ୟୁମରେ ଆଲର୍ଟ କରନ୍ତୁ"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\"ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ\" ଓ ଅନ୍ୟ ଭଲ୍ୟୁମ୍ ସେଟିଂସକୁ ଅଣଦେଖା କରନ୍ତୁ"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ଅଞ୍ଚଳ ଅପଡେଟ୍‍ ବ୍ରୋଡକାଷ୍ଟକରିବା"</string>

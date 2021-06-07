@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Сигнали"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Съобщения за излъчване"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Сигнали при спешни случаи"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Сигнали при спешни случаи с непотвърдена доставка"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Сигнали при спешни случаи по време на гласово обаждане"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Автоматични промени в настройките за WEA въз основа на SIM картата"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Разрешаване на сигналите"</string>
@@ -79,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Предупреждаване за непосредствени заплахи за безопасността"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Съобщения за обществена безопасност"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Препоръчителни действия, които могат да спасят животи или имущество"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Показване на съобщенията на цял екран"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Изключете опцията, за да получавате съобщения за обществена безопасност само в приложението за SMS"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Тестове на щатско и местно ниво"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Получаване на тестови съобщения от държавните и местните власти"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Сигнали при спешни случаи"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Получаване на сигнали при спешен случай: Определени от оператора"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вибриране"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Звукът на сигналите винаги да е с пълна сила"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Пренебрегване на режима „Не безпокойте“ и други настройки за силата на звука"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Излъчвания на актуализации по райони"</string>
@@ -135,7 +139,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Понастоящем получавате безжични сигнали при спешни случаи. Искате ли да продължите да ги получавате?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Да"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Не"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Ист. на сигнали при спешност"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Ист. на сигнали при спешни случаи"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Веднъж"</item>
     <item msgid="9097229303902157183">"На всеки 2 минути"</item>

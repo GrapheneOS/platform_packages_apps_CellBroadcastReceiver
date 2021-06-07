@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Шашылыш билдирүүлөр"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Билдирүүлөрдү таркатуу"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Шашылыш билдирүүлөр"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Ырасталбаган шашылыш билдирүүлөр"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Аудио чалуу учурунда берилген шашылыш билдирүүлөр"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"WEA жөндөөлөрү SIM картага жараша автоматтык түрдө өзгөрөт"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Шашылыш билдирүүлөргө уруксат берүү"</string>
@@ -79,12 +80,14 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Коопсуздукка коркунуч туудурган нерселер тууралуу кабарлоо"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Коомдук коопсуздук тууралуу билдирүүлөр"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Бирөөнүн өмүрүн же мүлкүн сактап калууга сунушталган аракеттер"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Толук экран бидирүүлөрүн көрсөтүү"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Коомдук коопсуздук билдирүүлөрүн SMS колдонмоңузда гана алуу үчүн өчүрүңүз"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Мамлекеттик жана жергиликтүү башкаруу органдарынын сынамык билдирүүлөрү"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Мамлекеттик жана жергиликтүү башкаруу органдарынан сынамык билдирүүлөр келип турат"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Шашылыш билдирүүлөр"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Жашоого коркунуч туудурган окуялар тууралуу эскертүү"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Сынамык эскертүүлөр"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"CMAS системасынын шашылыш билдирүүлөрүн байланыш операторунун сыноолору жана ай сайын аткарылуучу сыноолор аркылуу алуу"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Байланыш операторунан сынамык билдирүүлөрдү жана CMAS системасынан ай сайын билдирүүлөрдү алып турасыз"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Шашылыш билдирүүнү алуу: Көнүгүү/Көнүгүү билдирүүсү"</string>
@@ -92,10 +95,11 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Шашылыш билдирүүнү алуу: Оператор аныктайт"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Дирилдөө"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Эскертүү ар дайым катуу ойнотулсун"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\"Тынчымды алба\" жана үн көлөмүнүн башка жөндөөлөрүн этибарга албоо"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Аймакты жаңыртуу боюнча таркатмалар"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM-картанын абалы тууралуу жаңыртылган маалымат көрсөтүлсүн"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM-картанын абалы тууралуу жаңыртылган маалымат көрүнсүн"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Шашылыш билдирүүнүн категориясы:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Геофизакалык"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Метеорологиялык"</string>
