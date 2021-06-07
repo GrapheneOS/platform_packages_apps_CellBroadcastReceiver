@@ -125,8 +125,8 @@
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Бір рет"</item>
     <item msgid="9097229303902157183">"2 минут сайын"</item>
-    <item msgid="5718214950343391480">"Әр 5 минут сайын"</item>
-    <item msgid="3863339891188103437">"Әр 15 минут сайын"</item>
+    <item msgid="5718214950343391480">"5 минут сайын"</item>
+    <item msgid="3863339891188103437">"15 минут сайын"</item>
     <item msgid="7388573183644474611">"Ешқашан"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Төтенше жағдай туралы хабарландырулар"</string>
