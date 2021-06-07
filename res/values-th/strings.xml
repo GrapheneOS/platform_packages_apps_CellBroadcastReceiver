@@ -74,7 +74,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"ภัยคุกคามต่อชีวิตและทรัพย์สินระดับสูงสุด"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ภัยคุกคามที่ร้ายแรง"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ภัยคุกคามต่อชีวิตและทรัพย์สินระดับรุนแรง"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"การแจ้งเตือน AMBER"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"การแจ้งเตือนเด็กหาย Amber Alert"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"กระดานข่าวสารเหตุฉุกเฉินการลักพาตัวเด็ก"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"ข้อความแจ้งเตือน"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"เตือนเกี่ยวกับภัยคุกคามความปลอดภัยที่จะเกิดขึ้น"</string>
