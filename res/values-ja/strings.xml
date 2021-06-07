@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"緊急速報メール"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ブロードキャスト メッセージ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"緊急速報メール"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"未確認の緊急速報メール"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"音声通話中の緊急アラート"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"WEA 設定は SIM に基づいて自動的に変更されます"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"緊急速報メールの許可"</string>
@@ -79,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"差し迫った安全上の脅威に関する警告"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"災害情報メッセージ"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"人命や財産を守るための推奨される対応"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"メッセージの全画面表示"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"OFF にすると、災害情報メッセージは SMS アプリにのみ送信されます"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"国や地方自治体のテスト"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"国や地方自治体からのテスト メッセージを受信する"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"緊急速報メール"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"携帯通信会社が規定した緊急速報メールを受信する"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"バイブレーション"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"常に最大音量で通知音を鳴らす"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"サイレント モードと他の音量設定を無視する"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"エリア更新メッセージ"</string>

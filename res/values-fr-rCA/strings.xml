@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Alertes"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Messages de diffusion"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Alertes d\'urgence"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Alertes d\'urgence non lues"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Alertes d’urgence dans les appels vocaux"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Changements automatiques aux paramètres WEA en fonction de la carte SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Autoriser les alertes"</string>
@@ -79,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Avertir des menaces de sécurité imminentes"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Messages de sécurité publique"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Actions recommandées pouvant sauver des vies ou des biens"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Afficher les messages en mode plein écran"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Désactiver pour n\'envoyer les messages de sécurité publique qu\'à votre application de messagerie texte"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Tests des autorités nationales et locales"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Recevoir des messages de test des autorités nationales et locales"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Alertes d\'urgence"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Recevoir les alertes d\'urgence : défini par le fournisseur de services"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrations"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Toujours émettre les alertes au plein volume"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignorer le mode Ne pas déranger et d\'autres paramètres de volume"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Diffusion de mises à jour régionales"</string>

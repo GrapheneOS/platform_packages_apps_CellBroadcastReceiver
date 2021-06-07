@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Ogohlantirishlar"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Tarqatma xabarlar"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Favqulodda ogohlantirishlar"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Tasdiqlanmagan favqulodda ogohlantirishlar"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Ovozli chaqiruvlar vaqtida favqulodda ogohlantirish"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Favqulodda simsiz ogohlantirish (WEA) sozlmalari SIM karta asosida avtomatik oʻzgartirildi"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Ogohlantirishlarga ruxsat"</string>
@@ -79,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Xavfsizlikka muqarrar tahdidlar haqida ogohlantirilsin"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Ommaviy xavfsizlik xabarlari"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Inson hayoti yoki mulkini asrashga oid tavsiya etiladigan amallar"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Xabarlarni butun ekranda chiqarish"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Faqat SMS ilovasiga yuboriladigan ommaviy xavfsizlik xabarlarini faolsizlantirish"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Xavfsizlik organlaridan sinov ogohlantirishi"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Davlat va mahalliy xavfsizlik organlaridan sinov ogohlantirishi olish"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Favqulodda ogohlantirishlar"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Favqulodda ogohlantirish olish: Operator aniqlandi"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Tebranish"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Doim signal maksimal balandlikda yangrasin"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Bezovta qilinmasin va boshqa tovush sozlamalarini rad etish"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Favqulodda ogohlantirishlar"</string>

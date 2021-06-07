@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Оповещения"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Сообщения о трансляции"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Экстренные оповещения"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Неподтвержденные экстренные оповещения"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Оповещения о чрезвычайных ситуациях, поступающие во время голосовых вызовов"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Автоматические настройки экстренных оповещений по беспроводным сетям изменены согласно SIM-карте"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Разрешить оповещения"</string>
@@ -79,12 +80,14 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Предупреждать об угрозах безопасности"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Сообщения об угрозе общественной безопасности"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Рекомендуемые действия, которые помогут сохранить жизни или имущество"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Показывать сообщения в полноэкранном режиме"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Снимите, чтобы показывать сообщения об угрозе общественной безопасности только в приложении для SMS"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Тестовые оповещения от органов безопасности"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Получать тестовые оповещения от государственных и местных органов безопасности"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Экстренные оповещения"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Предупреждать о событиях, угрожающих жизни"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Тестовые оповещения"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Получать тестовые оповещения от оператора связи и ежемесячные сообщения системы CMAS"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Получать тестовые сообщения от системы экстренного оповещения (один раз в месяц) и от оператора связи"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Получать экстренные оповещения (учебная тревога)"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Получать экстренные оповещения от оператора"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вибрация"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Всегда проигрывать оповещения на полной громкости"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Игнорировать настройки режима \"Не беспокоить\" и другие настройки звука"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Аварийные оповещения"</string>

@@ -57,6 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"Дохио"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Мессеж дамжуулах"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Гамшгийн аюулын дохио"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Хүлээн зөвшөөрөөгүй яаралтай тусламжийн сэрэмжлүүлэг"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Дуут дуудлагын үеэр ирэх гамшгийн аюулын дохио"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"WEA автомат тохиргоо SIM дээр үндэслэн өөрчлөгддөг"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дохиоллыг зөвшөөрөх"</string>
@@ -79,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Аюулгүй байдалд учирч болзошгүй арга хэмжээний талаар сэрэмжлүүлэх"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Нийтийн аюулгүй байдлын мессеж"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Амьдрал эсвэл хөрөнгийг хэмнэх боломжтой санал болгосон үйлдэл"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Бүтэн дэлгэцийн мессежийг харуулах"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Олон нийтийн аюулгүй байдлын мессежийг зөвхөн SMS апп руугаа илгээхийн тулд унтраана уу"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Муж ба орон нутгийн туршилтууд"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Муж ба орон нутгийн захиргаанаас туршилтын мессежүүдийг хүлээн авах"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Гамшгийн аюулын дохио"</string>
@@ -92,6 +95,7 @@
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Яаралтай тусламжийн сэрэмжлүүлэг хүлээн авах: Операторын тодорхойлсон"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Чичиргээ"</string>
+    <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Сэрэмжлүүлгийг үргэлж хамгийн чанга дээр тоглуулах"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Бүү саад бол горимыг үл хэрэгсэх болон дууны түвшний бусад тохиргоо"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Газрын шинэчлэлтийн дамжуулалт"</string>
