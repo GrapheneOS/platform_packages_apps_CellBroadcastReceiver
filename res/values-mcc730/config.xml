@@ -61,11 +61,7 @@
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
     <bool name="override_dnd">true</bool>
     <!-- Append date-time to the alert title -->
-    <bool name="show_date_time_title">true</bool>
-    <!-- if appending date-time to alert title, whether to include year -->
-    <bool name="show_date_time_with_year_title">true</bool>
-    <!-- if appending date-time to alert title, whether to use numeric format -->
-    <bool name="show_date_in_numeric_format">true</bool>
+    <string name="date_time_format" translatable="false">yyyy-MM-dd, HH:mm a</string>
     <!-- Link method -->
     <string name="link_method" translatable="false">none</string>
     <!-- Whether the user can mute the alert by physical button -->
