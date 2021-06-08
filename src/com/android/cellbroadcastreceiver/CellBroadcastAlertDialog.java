@@ -75,6 +75,7 @@ import com.android.internal.annotations.VisibleForTesting;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -699,23 +700,11 @@ public class CellBroadcastAlertDialog extends Activity {
         TextView titleTextView = findViewById(R.id.alertTitle);
 
         if (titleTextView != null) {
-            if (res.getBoolean(R.bool.show_date_time_title)) {
+            String timeFormat = res.getString(R.string.date_time_format);
+            if (!TextUtils.isEmpty(timeFormat)) {
                 titleTextView.setSingleLine(false);
-                int flags = DateUtils.FORMAT_NO_NOON_MIDNIGHT | DateUtils.FORMAT_SHOW_TIME
-                                | DateUtils.FORMAT_ABBREV_ALL | DateUtils.FORMAT_SHOW_DATE
-                                | DateUtils.FORMAT_CAP_AMPM;
-                if (res.getBoolean(R.bool.show_date_time_with_year_title)) {
-                    flags |= DateUtils.FORMAT_SHOW_YEAR;
-                }
-                if (res.getBoolean(R.bool.show_date_in_numeric_format)) {
-                    flags |= DateUtils.FORMAT_NUMERIC_DATE;
-                }
-                if (res.getBoolean(R.bool.show_date_time_with_weekday_title)) {
-                    flags |= DateUtils.FORMAT_SHOW_WEEKDAY;
-                }
-                title += "\n" + DateUtils.formatDateTime(context, message.getReceivedTime(), flags);
+                title += "\n" + new SimpleDateFormat(timeFormat).format(message.getReceivedTime());
             }
-
             setTitle(title);
             titleTextView.setText(title);
         }
