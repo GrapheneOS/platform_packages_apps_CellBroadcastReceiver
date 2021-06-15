@@ -21,6 +21,7 @@ license {
 java_defaults {
     name: "CellBroadcastCommon",
     min_sdk_version: "30",
+    target_sdk_version: "31",
     sdk_version: "system_current",
     privileged: true,
     srcs: [
