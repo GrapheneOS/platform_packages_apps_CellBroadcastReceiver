@@ -16,16 +16,11 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for cmas_presidential_level_alert (8832531644152117875) -->
-    <skip />
-    <!-- no translation found for button_dismiss (5975841666550833732) -->
-    <skip />
-    <!-- no translation found for cmas_required_monthly_test (2287926047457291638) -->
-    <skip />
-    <!-- no translation found for cmas_exercise_alert (998005154407142100) -->
-    <skip />
-    <!-- no translation found for public_safety_message (6263179411117570932) -->
-    <skip />
+    <string name="cmas_presidential_level_alert" msgid="8832531644152117875">"Lokale Notfallbenachrichtigung"</string>
+    <string name="button_dismiss" msgid="5975841666550833732">"SCHLIESSEN"</string>
+    <string name="cmas_required_monthly_test" msgid="2287926047457291638">"Testnachricht"</string>
+    <string name="cmas_exercise_alert" msgid="998005154407142100">"Notfallbenachrichtigung: Übungsnachricht"</string>
+    <string name="public_safety_message" msgid="6263179411117570932">"Öffentliche Sicherheitsinformation"</string>
     <!-- no translation found for enable_public_safety_messages_title (132836010129431792) -->
     <skip />
     <string name="enable_public_safety_messages_summary" msgid="5574351338788490055"></string>
