@@ -60,7 +60,7 @@
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"അംഗീകരിക്കാത്ത അടിയന്തര മുന്നറിയിപ്പുകൾ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"വോയ്സ് കോളിലെ അടിയന്തര മുന്നറിയിപ്പുകൾ"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"സിമ്മിന്റെ അടിസ്ഥാനത്തിൽ, WEA ക്രമീകരണത്തിലെ സ്വയമേവയുള്ള മാറ്റങ്ങൾ"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"മുന്നറിയിപ്പുകൾ അനുവദിക്കുക"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"അലേർട്ടുകൾ അനുവദിക്കുക"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"വയർലെസ് അടിയന്തര അലേർട്ട് അറിയിപ്പുകൾ നേടുക"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"അലേർട്ട് റിമൈൻഡർ"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"അലേർട്ട് സന്ദേശങ്ങൾ സംസാരിക്കുക"</string>
