@@ -53,7 +53,7 @@
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"പ്രക്ഷേപണ സന്ദേശങ്ങൾ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"അടിയന്തര അലേർട്ടുകൾ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"വോയ്സ് കോളിലെ അടിയന്തര മുന്നറിയിപ്പുകൾ"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"മുന്നറിയിപ്പുകൾ അനുവദിക്കുക"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"അലേർട്ടുകൾ അനുവദിക്കുക"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"വയർലെസ് അടിയന്തര അലേർട്ട് അറിയിപ്പുകൾ നേടുക"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"അലേർട്ട് റിമൈൻഡർ"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"റിമെെൻഡർ ശബ്ദം സാധാരണ ശബ്ദത്തിൽ പ്ലേ ചെയ്യും"</string>

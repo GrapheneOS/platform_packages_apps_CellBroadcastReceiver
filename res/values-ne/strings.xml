@@ -77,7 +77,7 @@
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"जीवन जोखिममा पर्न सक्ने घटनाहरूबारे सचेत गराउनुहोस्"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"परीक्षणसम्बन्धी सतर्कताहरू"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा सतर्कता प्रणालीबाट क्यारियर परीक्षण र मासिक परीक्षणहरू प्राप्त होस्"</string>
-    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"कम्पन"</string>
+    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"भाइब्रेसन"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"सधैँ पूर्ण भोल्युममा सतर्क गराउनुहोस्"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"बाधा नपुऱ्याउनुहोस् नामक सुविधा र भोल्युमसम्बन्धी अन्य सेटिङको बेवास्ता गर्नुहोस्"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"क्षेत्रसम्बन्धी अद्यावधिकका प्रसारणहरू"</string>
