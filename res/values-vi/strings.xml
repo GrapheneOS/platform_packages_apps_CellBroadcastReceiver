@@ -57,7 +57,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Nhận cảnh báo khẩn cấp không dây"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Lời nhắc cảnh báo"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Âm báo nhắc nhở sẽ phát ở mức âm lượng bình thường"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Nhật ký cảnh báo khẩn cấp"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Lịch sử cảnh báo khẩn cấp"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Tùy chọn cảnh báo"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Thông báo thử nghiệm cho ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Thông báo thử nghiệm cho Hệ thống cảnh báo động đất và sóng thần"</string>
@@ -66,7 +66,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Mối đe dọa nghiêm trọng"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Mối đe dọa đến sinh mạng và tài sản nghiêm trọng"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Cảnh báo AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Bản tin khẩn cấp về vụ việc bắt cóc trẻ em"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Bản tin khẩn cấp vụ việc bắt cóc trẻ em"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Tin nhắn cảnh báo"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Cảnh báo về các mối đe dọa đến sự an toàn sắp xảy ra"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Thông báo an toàn công khai"</string>
@@ -76,7 +76,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Cảnh báo khẩn cấp"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Cảnh báo về các sự kiện đe dọa tới mạng sống"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Cảnh báo thử nghiệm"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Nhận cảnh báo thử nghiệm của nhà mạng và cảnh báo thử nghiệm hằng tháng của hệ thống cảnh báo an toàn"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Nhận cảnh báo kiểm tra của nhà mạng và cảnh báo kiểm tra hàng tháng của hệ thống cảnh báo an toàn"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Rung"</string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Luôn cảnh báo ở mức âm lượng to nhất"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Bỏ qua tùy chọn Không làm phiền và các tùy chọn âm lượng khác"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Hiện bạn đang nhận cảnh báo khẩn cấp không dây. Bạn có muốn tiếp tục nhận cảnh báo khẩn cấp không dây không?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Có"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Không"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Nhật ký cảnh báo khẩn cấp"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Lịch sử cảnh báo khẩn cấp"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Một lần"</item>
     <item msgid="9097229303902157183">"2 phút một lần"</item>

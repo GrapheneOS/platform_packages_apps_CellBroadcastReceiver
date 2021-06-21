@@ -49,24 +49,24 @@
     <string name="public_safety_message" msgid="9119928798786998252">"સાર્વજનિક સુરક્ષા સંદેશ"</string>
     <string name="state_local_test_alert" msgid="8003145745857480200">"રાજ્ય/સ્થાનિક પરીક્ષણ"</string>
     <string name="emergency_alert" msgid="624783871477634263">"કટોકટીની ચેતવણી"</string>
-    <string name="emergency_alerts_title" msgid="6605036374197485429">"અલર્ટ"</string>
+    <string name="emergency_alerts_title" msgid="6605036374197485429">"ચેતવણીઓ"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"બ્રોડકાસ્ટના સંદેશા"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"કટોકટીની ચેતવણીઓ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"વૉઇસ કૉલ દરમ્યાન ઇમર્જન્સી અલર્ટ"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"અલર્ટને મંજૂરી આપો"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ચેતવણીઓને મંજૂરી આપો"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"વાયરલેસ ઇમર્જન્સી અલર્ટના નોટિફિકેશન પ્રાપ્ત કરો"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"અલર્ટ રિમાઇન્ડર"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"રિમાઇન્ડરનો સાઉન્ડ સામાન્ય વૉલ્યૂમ પર વાગશે"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"ઇમર્જન્સી અલર્ટનો ઇતિહાસ"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"અલર્ટની પસંદગીઓ"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ચેતવણી આપતું રિમાઇન્ડર"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"રીમાઇન્ડરનો સાઉન્ડ નિયમિત વૉલ્યૂમ પર વાગશે"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"કટોકટીની ચેતવણીનો ઇતિહાસ"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"ચેતવણીની પસંદગીઓ"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWSના પરીક્ષણ બ્રોડકાસ્ટ"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"ભૂકંપ ત્સુનામીની ચેતવણી આપતી સિસ્ટમ માટેનાં પરીક્ષણ બ્રોડકાસ્ટ"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"આત્યંતિક જોખમો"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"જીવન અને સંપત્તિના આત્યંતિક જોખમો"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ગંભીર જોખમો"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"જીવન અને સંપત્તિના ગંભીર જોખમો"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER અલર્ટ"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"બાળ અપહરણની કટોકટીના બુલેટિન"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER ચેતવણીઓ"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"બાળ અપહરણની કટોકટીના બુલેટિન્સ"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"અલર્ટ સંદેશા"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"નિકટવર્તી સલામતી જોખમો વિશે ચેતવો"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"સાર્વજનિક સુરક્ષા સંદેશા"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"તમે હાલમાં વાયરલેસ ઇમર્જન્સી અલર્ટ પ્રાપ્ત કરી રહ્યાં છો. તમે વાયરલેસ ઇમર્જન્સી અલર્ટ પ્રાપ્ત કરવાનું ચાલુ રાખવા માગો છો?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"હા"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"નહીં"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"ઇમર્જન્સી અલર્ટનો ઇતિહાસ"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"કટોકટીની ચેતવણીનો ઇતિહાસ"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"એકવાર"</item>
     <item msgid="9097229303902157183">"દર 2 મિનિટે"</item>
