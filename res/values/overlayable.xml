@@ -141,8 +141,12 @@
             <item type="bool" name="enable_alert_speech_default" />
 
             <!-- Default value of whether to display a notification with pop-up dialog in the foreground.
-            This is used to support emergency alert on the companion devices by bridged notification -->
+            KR carriers mandate to always show notifications along with alert dialog. -->
             <item type="bool" name="show_alert_dialog_with_notification" />
+
+            <!-- Whether to display a notification with the pop-up dialog in the foreground when the
+            device has active connections to companion devices. -->
+            <item type="bool" name="show_notification_if_connected_to_companion_devices" />
 
             <!-- Whether enable LED flash when playing alert tones -->
             <item type="bool" name="enable_led_flash" />
