@@ -675,7 +675,9 @@ public class CellBroadcastAlertService extends Service {
 
         if (!CellBroadcastSettings.getResourcesForDefaultSubId(mContext)
                 .getBoolean(R.bool.show_alert_speech_setting)
-                || prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH, true)) {
+                || prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH,
+            CellBroadcastSettings.getResourcesForDefaultSubId(mContext)
+                .getBoolean(R.bool.enable_alert_speech_default))) {
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_BODY, messageBody);
 
             String language = message.getLanguageCode();
