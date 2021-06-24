@@ -252,8 +252,13 @@
     <!-- Whether to override the language of the alert dialog's title to match the message locale -->
     <bool name="override_alert_title_language_to_match_message_locale">false</bool>
 
+    <!-- Whether to display a notification with the pop-up dialog in the foreground when the device
+    has active connections to companion devices.
+    TODO: enable this feature by default in the future. -->
+    <bool name="show_notification_if_connected_to_companion_devices">false</bool>
+
     <!-- Whether to display a notification with pop-up dialog in the foreground.
-    This is used to support emergency alert on the companion devices by bridged notification -->
+    KR carriers mandate to always show notifications along with alert dialog.  -->
     <bool name="show_alert_dialog_with_notification">false</bool>
 
     <!-- Whether to show the alert dialog at the bottom of the screen in order to avoid blocking
