@@ -21,6 +21,9 @@ apex_defaults {
 
     key: "com.android.cellbroadcast.key",
     certificate: ":com.android.cellbroadcast.certificate",
+    // Indicates that pre-installed version of this apex can be compressed.
+    // Whether it actually will be compressed is controlled on per-device basis.
+    compressible: true,
 }
 
 apex_key {
