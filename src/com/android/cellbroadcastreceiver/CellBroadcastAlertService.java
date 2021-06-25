@@ -26,6 +26,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothManager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -56,6 +58,7 @@ import com.android.internal.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Set;
 
 /**
  * This service manages the display and animation of broadcast messages.
@@ -420,7 +423,12 @@ public class CellBroadcastAlertService extends Service {
             // start alert sound / vibration / TTS and display full-screen alert
             openEmergencyAlertNotification(cbm);
             Resources res = CellBroadcastSettings.getResources(mContext, cbm.getSubscriptionId());
-            if (res.getBoolean(R.bool.show_alert_dialog_with_notification)) {
+            // KR carriers mandate to always show notifications along with alert dialog.
+            if (res.getBoolean(R.bool.show_alert_dialog_with_notification) ||
+                    // to support emergency alert on companion devices use flag
+                    // show_notification_if_connected_to_companion_devices instead.
+                    (res.getBoolean(R.bool.show_notification_if_connected_to_companion_devices)
+                            && isConnectedToCompanionDevices())) {
                 // add notification to the bar by passing the list of unread non-emergency
                 // cell broadcast messages
                 addToNotificationBar(cbm, CellBroadcastReceiverApp.addNewMessageToList(cbm),
@@ -667,7 +675,9 @@ public class CellBroadcastAlertService extends Service {
 
         if (!CellBroadcastSettings.getResourcesForDefaultSubId(mContext)
                 .getBoolean(R.bool.show_alert_speech_setting)
-                || prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH, true)) {
+                || prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH,
+            CellBroadcastSettings.getResourcesForDefaultSubId(mContext)
+                .getBoolean(R.bool.enable_alert_speech_default))) {
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_BODY, messageBody);
 
             String language = message.getLanguageCode();
@@ -958,5 +968,27 @@ public class CellBroadcastAlertService extends Service {
             }
             CellBroadcastReceiverApp.clearNewMessageList();
         }
+    }
+
+    private boolean isConnectedToCompanionDevices() {
+        BluetoothManager bluetoothMgr = getSystemService(BluetoothManager.class);
+        Set<BluetoothDevice> devices;
+        try {
+            devices = bluetoothMgr.getAdapter().getBondedDevices();
+        } catch (SecurityException ex) {
+            // running on S+ will need runtime permission grant
+            // always return true here assuming there is connected devices to show alert in case
+            // of permission denial.
+            return true;
+        }
+
+        // TODO: filter out specific device types like wearable. no API support now.
+        for (BluetoothDevice device : devices) {
+            if (device.isConnected()) {
+                Log.d(TAG, "connected to device: " + device.getName());
+                return true;
+            }
+        }
+        return false;
     }
 }
