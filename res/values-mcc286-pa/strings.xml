@@ -23,7 +23,7 @@
     <skip />
     <!-- no translation found for cmas_extreme_immediate_likely_alert (8246414214802170006) -->
     <skip />
-    <string name="cmas_amber_alert" msgid="5411113795367656316">"ਨੁਕਸਾਨ ਜਾਂ ਅਪਹਰਨ ਦੀ ਸੁਚੇਤਨਾ"</string>
+    <string name="cmas_amber_alert" msgid="5411113795367656316">"ਬੱਚੇ ਦੇ ਗੁੰਮ ਜਾਂ ਅਪਹਰਨ ਹੋ ਜਾਣ ਸੰਬੰਧੀ ਸੁਚੇਤਨਾ"</string>
     <!-- no translation found for enable_cmas_test_alerts_title (7191924098636195819) -->
     <skip />
     <string name="enable_cmas_test_alerts_summary" msgid="8476051987965553727"></string>
