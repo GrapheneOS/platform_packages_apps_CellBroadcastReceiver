@@ -25,4 +25,8 @@
     <!-- no translation found for enable_cmas_test_alerts_title (3722503121618497385) -->
     <skip />
     <string name="enable_cmas_test_alerts_summary" msgid="6138676147687910935">"Recevoir des tests mensuels requis depuis le système d\'alertes de sécurité"</string>
+    <!-- no translation found for cmas_presidential_level_alert (5810314558991898384) -->
+    <skip />
+    <!-- no translation found for show_cmas_opt_out_summary (5612381687166765604) -->
+    <skip />
 </resources>
