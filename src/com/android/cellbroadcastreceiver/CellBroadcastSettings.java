@@ -35,6 +35,7 @@ import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Switch;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.ListPreference;
@@ -47,6 +48,8 @@ import androidx.preference.TwoStatePreference;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.widget.MainSwitchPreference;
+import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -282,7 +285,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
         private TwoStatePreference mExtremeCheckBox;
         private TwoStatePreference mSevereCheckBox;
         private TwoStatePreference mAmberCheckBox;
-        private TwoStatePreference mMasterToggle;
+        private MainSwitchPreference mMasterToggle;
         private TwoStatePreference mPublicSafetyMessagesChannelCheckBox;
         private TwoStatePreference mPublicSafetyMessagesChannelFullScreenCheckBox;
         private TwoStatePreference mEmergencyAlertsCheckBox;
@@ -328,7 +331,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                     findPreference(KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS);
             mAmberCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_CMAS_AMBER_ALERTS);
-            mMasterToggle = (TwoStatePreference)
+            mMasterToggle = (MainSwitchPreference)
                     findPreference(KEY_ENABLE_ALERTS_MASTER_TOGGLE);
             mPublicSafetyMessagesChannelCheckBox = (TwoStatePreference)
                     findPreference(KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
@@ -412,6 +415,13 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             mDisableSevereWhenExtremeDisabled = res.getBoolean(
                     R.bool.disable_severe_when_extreme_disabled);
 
+            final OnMainSwitchChangeListener mainSwitchListener = new OnMainSwitchChangeListener() {
+                @Override
+                public void onSwitchChanged(Switch switchView, boolean isChecked) {
+                    setAlertsEnabled(isChecked);
+                }
+            };
+
             // Handler for settings that require us to reconfigure enabled channels in radio
             Preference.OnPreferenceChangeListener startConfigServiceListener =
                     new Preference.OnPreferenceChangeListener() {
@@ -431,11 +441,6 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                                 }
                             }
 
-                            if (pref.getKey().equals(KEY_ENABLE_ALERTS_MASTER_TOGGLE)) {
-                                boolean isEnableAlerts = (Boolean) newValue;
-                                setAlertsEnabled(isEnableAlerts);
-                            }
-
                             // check if area update was disabled
                             if (pref.getKey().equals(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS)) {
                                 boolean isEnabledAlert = (Boolean) newValue;
@@ -451,7 +456,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             initReminderIntervalList();
 
             if (mMasterToggle != null) {
-                mMasterToggle.setOnPreferenceChangeListener(startConfigServiceListener);
+                mMasterToggle.addOnSwitchChangeListener(mainSwitchListener);
                 // If allow alerts are disabled, we turn all sub-alerts off. If it's enabled, we
                 // leave them as they are.
                 if (!mMasterToggle.isChecked()) {
