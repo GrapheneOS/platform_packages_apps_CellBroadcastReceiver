@@ -55,7 +55,7 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"語音通話中的緊急警報"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"允許接收警示"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"接收無線緊急警報通知"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"快訊提醒"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"警示提醒"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"系統將以標準音量播放提醒音效"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"緊急警報記錄"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"警示偏好設定"</string>
@@ -65,7 +65,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"重大生命財產威脅"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"嚴重威脅"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"嚴重生命財產威脅"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"安珀警示"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"安珀警報"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"兒童綁架緊急事件公告"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"警訊通知"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"針對迫切的安全性威脅發出警告"</string>

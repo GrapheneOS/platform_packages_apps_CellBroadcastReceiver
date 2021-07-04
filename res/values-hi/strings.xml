@@ -54,11 +54,11 @@
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"वॉयस कॉल के दौरान आपातकालीन चेतावनियां"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"चेतावनी दिखाए जाने की अनुमति दें"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"वायरलेस इमरजेंसी अलर्ट की चेतावनी पाएं"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"याद दिलाने के लिए अलर्ट"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमांइडर की रिंगटोन की आवाज़ सामान्य रहेगी"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"वायरलेस इमरजेंसी अलर्ट की सूचनाएं पाएं"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"अलर्ट रिमाइंडर"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमांइडर की आवाज़ सामान्य रहेगी"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"आपातकालीन समय की चेतावनियों का इतिहास"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"चेतावनी से जुड़ी पसंद"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"चेतावनी से जुड़ी प्राथमिकताएं"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS परीक्षण प्रसारण"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"भूकंप सुनामी चेतावनी सिस्‍टम के लिए परीक्षण प्रसारण"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"बहुत गंभीर खतरे"</string>
@@ -126,7 +126,7 @@
     <item msgid="6595211083588795160">"एक बार"</item>
     <item msgid="9097229303902157183">"हर 2 मिनट में"</item>
     <item msgid="5718214950343391480">"प्रत्‍येक 5 मिनट"</item>
-    <item msgid="3863339891188103437">"हर 15 मिनट"</item>
+    <item msgid="3863339891188103437">"हर 15 मिनट में"</item>
     <item msgid="7388573183644474611">"कभी नहीं"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"वायरलेस आपातकालीन अलर्ट"</string>
