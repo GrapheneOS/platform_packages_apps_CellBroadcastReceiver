@@ -57,7 +57,7 @@
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"وائرلیس ہنگامی الرٹ کی اطلاعات موصول کریں"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"الرٹ کی یاد دہانی"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ایک یاد دہانی کی آواز ریگولر والیوم پر چلے گی"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"ایمرجنسی الرٹ کی سر گزشت"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"ایمرجنسی الرٹ کی سرگزشت"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"الرٹ کی ترجیحات"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"‏ETWS ٹیسٹ براڈکاسٹس"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"زلزلہ سونامی وارننگ سسٹم کیلئے ٹیسٹ براڈکاسٹس"</string>
@@ -121,7 +121,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"آپ کو فی الحال وائرلیس ہنگامی الرٹس موصول ہو رہے ہیں۔ کیا آپ وائرلیس ہنگامی الرٹس حاصل کرتے رہنا چاہتے ہیں؟"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ہاں"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"نہیں"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"ایمرجنسی الرٹ کی سر گزشت"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"ایمرجنسی الرٹ کی سرگزشت"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ایک بار"</item>
     <item msgid="9097229303902157183">"ہر 2 منٹ بعد"</item>
