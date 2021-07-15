@@ -19,6 +19,7 @@ package com.android.cellbroadcastreceiver;
 import static android.view.WindowManager.LayoutParams.SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS;
 
 import android.annotation.Nullable;
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -52,6 +53,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.internal.annotations.VisibleForTesting;
+import com.android.modules.utils.build.SdkLevel;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 import java.util.ArrayList;
@@ -67,7 +69,19 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // for backward compatibility on R devices
+        if (!SdkLevel.isAtLeastS()) {
+            setCustomizeContentView(R.layout.cell_broadcast_list_collapsing_no_toobar);
+        }
         super.onCreate(savedInstanceState);
+        // for backward compatibility on R devices
+        if (!SdkLevel.isAtLeastS()) {
+            ActionBar actionBar = getActionBar();
+            if (actionBar != null) {
+                // android.R.id.home will be triggered in onOptionsItemSelected()
+                actionBar.setDisplayHomeAsUpEnabled(true);
+            }
+        }
 
         setTitle(getString(R.string.cb_list_activity_title));
 
