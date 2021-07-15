@@ -111,6 +111,7 @@ public class CellBroadcastAlertDialogTest extends
         mPowerManager = new PowerManager(mContext, mMockedPowerManagerService,
                 mMockedThermalService, null);
         injectSystemService(PowerManager.class, mPowerManager);
+        CellBroadcastSettings.setUseResourcesForSubId(false);
     }
 
     @After
@@ -206,7 +207,6 @@ public class CellBroadcastAlertDialogTest extends
 
     public void testAnimationHandler() throws Throwable {
         CellBroadcastAlertDialog activity = startActivity();
-        CellBroadcastSettings.setUseResourcesForSubId(false);
 
         activity.mAnimationHandler.startIconAnimation(mSubId);
 
