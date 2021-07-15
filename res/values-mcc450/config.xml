@@ -23,8 +23,7 @@
     <bool name="show_amber_alert_settings">false</bool>
     <!-- Whether to show settings that allows user to turn off full-screen public safety messages -->
     <!-- KR want to hide pop-up dialog(full-screen message) but shown from history menu, sms inbox and foreground notification-->
-    <!-- turn this on once we get Gov approval -->
-    <bool name="show_public_safety_full_screen_settings">false</bool>
+    <bool name="show_public_safety_full_screen_settings">true</bool>
 
     <!-- 4370, 4383 -->
     <!-- Emergecny alert tone duration set to 1 minute for Korean users -->
@@ -61,4 +60,5 @@
     <bool name="show_alert_speech_setting">true</bool>
     <!-- Default value which determines whether spoken alerts enabled -->
     <bool name="enable_alert_speech_default">false</bool>
+    <bool name="show_alert_dialog_with_notification">true</bool>
 </resources>
