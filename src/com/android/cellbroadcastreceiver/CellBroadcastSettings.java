@@ -34,6 +34,7 @@ import android.os.UserManager;
 import android.os.Vibrator;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Switch;
@@ -862,8 +863,14 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
      * @return The resource
      */
     public static @NonNull Resources getResources(@NonNull Context context, int subId) {
+        // based on the latest design, subId can be valid earlier than mcc mnc is known to telephony
+        // check if sim is loaded to avoid caching the wrong resources.
+        TelephonyManager tm = context.getSystemService(TelephonyManager.class);
+        boolean isSimLoaded = tm.getSimApplicationState(SubscriptionManager.getSlotIndex(subId))
+                == TelephonyManager.SIM_STATE_LOADED;
         if (subId == SubscriptionManager.DEFAULT_SUBSCRIPTION_ID
-                || !SubscriptionManager.isValidSubscriptionId(subId) || !sUseResourcesForSubId) {
+                || !SubscriptionManager.isValidSubscriptionId(subId) || !sUseResourcesForSubId
+                || !isSimLoaded) {
             return context.getResources();
         }
 
