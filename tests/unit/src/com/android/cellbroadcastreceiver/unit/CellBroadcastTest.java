@@ -48,6 +48,8 @@ public abstract class CellBroadcastTest {
     @Mock
     CarrierConfigManager mCarrierConfigManager;
     @Mock
+    TelephonyManager mTelephonyManager;
+    @Mock
     Resources mResources;
     @Mock
     ISub.Stub mSubService;
@@ -73,9 +75,14 @@ public abstract class CellBroadcastTest {
     private void initContext() {
         doReturn(mCarrierConfigManager).when(mContext)
                 .getSystemService(eq(Context.CARRIER_CONFIG_SERVICE));
+        doReturn(Context.TELEPHONY_SERVICE).when(mContext).getSystemServiceName(
+                TelephonyManager.class);
+        doReturn(mTelephonyManager).when(mContext).getSystemService(Context.TELEPHONY_SERVICE);
         doReturn(mResources).when(mContext).getResources();
         doReturn(mContext).when(mContext).getApplicationContext();
         doReturn(new String[]{""}).when(mResources).getStringArray(anyInt());
+        doReturn(TelephonyManager.SIM_STATE_LOADED).when(mTelephonyManager)
+                .getSimApplicationState(anyInt());
     }
 
     void carrierConfigSetStringArray(int subId, String key, String[] values) {
