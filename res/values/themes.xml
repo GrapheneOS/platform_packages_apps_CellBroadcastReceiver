@@ -26,9 +26,20 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
-    <style name="CellBroadcastSettingsTheme" parent="@style/Theme.SubSettingsBase" />
+    <style name="PreferenceTheme" parent="@style/PreferenceThemeOverlay.v14.Material">
+        <item name="switchPreferenceStyle">@style/SettingsSwitchPreference</item>
+        <item name="preferenceCategoryStyle">@style/SettingsPreferenceCategory</item>
+        <item name="preferenceStyle">@style/SettingsPreference</item>
+        <item name="dialogPreferenceStyle">@style/SettingsDialogPreference</item>
+    </style>
 
-    <style name="CellBroadcastListActivityTheme" parent="@style/Theme.SubSettingsBase">
+    <!-- have a separate theme for R to guarantee the new
+    CollapsingToolbarBaseActivity does not break R devices-->
+    <style name="CellBroadcastSettingsTheme" parent="@android:style/Theme.DeviceDefault.Settings" >
+        <item name="preferenceTheme">@style/PreferenceTheme</item>
+    </style>
+
+    <style name="CellBroadcastListActivityTheme" parent="@android:style/Theme.DeviceDefault.Settings">
         <item name="android:windowActionModeOverlay">true</item>
         <item name="android:actionModeBackground">?android:attr/colorBackground</item>
     </style>
