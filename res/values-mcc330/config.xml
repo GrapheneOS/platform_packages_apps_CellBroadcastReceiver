@@ -15,8 +15,8 @@
 -->
 
 <resources>
-  <!-- Whether to append date-time to the alert title -->
-  <bool name="show_date_time_title">true</bool>
+  <!-- Append date-time to the alert title -->
+  <string name="date_time_format" translatable="false">MMM dd, HH:mm a</string>
   <!-- Whether to show test settings, enabled by dialer code -->
   <bool name="show_test_settings">false</bool>
 </resources>
