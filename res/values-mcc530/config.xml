@@ -20,9 +20,8 @@
         <item>0x1112:rat=gsm, emergency=true, override_dnd=true, always_on=true</item>
     </string-array>
 
-    <bool name="show_date_time_title">true</bool>
-    <!-- if appending date-time to alert title, whether to include weekday -->
-    <bool name="show_date_time_with_weekday_title">true</bool>
+    <!-- Append date-time to the alert title -->
+    <string name="date_time_format" translatable="false">E, MMM dd, HH:mm a</string>
     <!-- Disable Amber alert-->
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
 
