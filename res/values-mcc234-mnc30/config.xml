@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 The Android Open Source Project
+<!-- Copyright (C) 2020 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,12 +15,8 @@
 -->
 
 <resources>
-    <string-array name="additional_cbs_channels_strings" translatable="false">
-        <item>0xA001-0xA002:type=other, emergency=true, scope=carrier</item>
-        <item>0xA004-0xA3FF:type=other, emergency=true, scope=carrier</item>
-    </string-array>
-    <string-array name="etws_test_alerts_range_strings" translatable="false">
-        <item>0x1103:rat=gsm, emergency=true</item>
-        <item>0xA400-0xA4FF:rat=gsm, emergency=true</item>
-    </string-array>
+<!-- 4382 -->
+  <string-array name="operator_defined_alert_range_strings" translatable="false">
+    <item>0x111E:rat=gsm, emergency=true, debug_build=true</item>
+  </string-array>
 </resources>
