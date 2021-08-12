@@ -44,7 +44,6 @@ import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbMessage;
-import android.telephony.TelephonyManager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
@@ -659,11 +658,10 @@ public class CellBroadcastAlertDialog extends Activity {
      * @param res Resources for the subId
      * @param languageCode the ISO-639-1 language code for this message, or null if unspecified
      */
-    private String overrideTranslation(int resId, Resources res, String languageCode,
-            boolean forceOverride) {
+    private String overrideTranslation(int resId, Resources res, String languageCode) {
         if (!TextUtils.isEmpty(languageCode)
-                && (res.getBoolean(R.bool.override_alert_title_language_to_match_message_locale)
-                || forceOverride)) {
+                && res.getBoolean(R.bool.override_alert_title_language_to_match_message_locale)) {
+            // TODO change resources to locale from message
             Configuration conf = res.getConfiguration();
             conf = new Configuration(conf);
             conf.setLocale(new Locale(languageCode));
@@ -683,20 +681,7 @@ public class CellBroadcastAlertDialog extends Activity {
         int titleId = CellBroadcastResources.getDialogTitleResource(context, message);
 
         Resources res = CellBroadcastSettings.getResources(context, message.getSubscriptionId());
-
-        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
-                this, message.getSubscriptionId());
-        CellBroadcastChannelRange range = channelManager
-                .getCellBroadcastChannelRangeFromMessage(message);
-        String languageCode;
-        boolean forceOverride = false;
-        if (range != null && !TextUtils.isEmpty(range.mLanguageCode)) {
-            languageCode = range.mLanguageCode;
-            forceOverride = true;
-        } else {
-            languageCode = message.getLanguageCode();
-        }
-        String title = overrideTranslation(titleId, res, languageCode, forceOverride);
+        String title = overrideTranslation(titleId, res, message.getLanguageCode());
         TextView titleTextView = findViewById(R.id.alertTitle);
 
         if (titleTextView != null) {
@@ -709,12 +694,8 @@ public class CellBroadcastAlertDialog extends Activity {
             titleTextView.setText(title);
         }
 
-        String messageText = message.getMessageBody();
         TextView textView = findViewById(R.id.message);
-        String messageBodyOverride = getMessageBodyOverride(context, message);
-        if (!TextUtils.isEmpty(messageBodyOverride)) {
-            messageText = messageBodyOverride;
-        }
+        String messageText = message.getMessageBody();
         if (textView != null && messageText != null) {
             int linkMethod = getLinkMethod(message.getSubscriptionId());
             if (linkMethod != LINK_METHOD_NONE) {
@@ -735,42 +716,6 @@ public class CellBroadcastAlertDialog extends Activity {
 
 
         setPictogram(context, message);
-    }
-
-    /**
-     * @param message
-     * @return the required message override for the service category for the carrier, or null if
-     * it is not set
-     */
-    private String getMessageBodyOverride(Context context, SmsCbMessage message) {
-        // return true if the carrier has configured this service category to have a fixed message
-        Resources res = CellBroadcastSettings.getResources(context, message.getSubscriptionId());
-        String[] overrides = res.getStringArray(R.array.message_body_override);
-        if (overrides != null && overrides.length > 0) {
-            for (String entry : overrides) {
-                String[] serviceCategoryAndMessage = entry.split(":");
-                if (message.getServiceCategory() == Integer.parseInt(
-                        serviceCategoryAndMessage[0])) {
-                    return insertCarrierNameIfNeeded(context, message.getSubscriptionId(),
-                            serviceCategoryAndMessage[1]);
-                }
-            }
-        }
-        return null;
-    }
-
-    /**
-     * If an override message must have the carrier name (represented with a '>' character), return
-     * the message with the carrier name inserted. Otherwise just return the message.
-     */
-    private String insertCarrierNameIfNeeded(Context context, int subId, String message) {
-        TelephonyManager tm = context.getSystemService(TelephonyManager.class)
-                .createForSubscriptionId(subId);
-        String carrierName = (String) tm.getSimSpecificCarrierIdName();
-        if (TextUtils.isEmpty(carrierName)) {
-            return message;
-        }
-        return message.replace(">", carrierName);
     }
 
     /**
