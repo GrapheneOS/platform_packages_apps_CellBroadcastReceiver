@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 The Android Open Source Project
+<!-- Copyright (C) 2021 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,13 +14,7 @@
      limitations under the License.
 -->
 
-<resources>
-    <string-array name="additional_cbs_channels_strings" translatable="false">
-        <item>0xA001-0xA002:type=other, emergency=true, scope=carrier</item>
-        <item>0xA004-0xA3FF:type=other, emergency=true, scope=carrier</item>
-    </string-array>
-    <string-array name="etws_test_alerts_range_strings" translatable="false">
-        <item>0x1103:rat=gsm, emergency=true</item>
-        <item>0xA400-0xA4FF:rat=gsm, emergency=true</item>
-    </string-array>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Name of a font family to use for headlines in SettingsLib. This overrides the default value which points to a private resource. Setting it to an empty value allows it to fallback to the default on the device. -->
+    <string name="settingslib_config_headlineFontFamily" translatable="false"></string>
 </resources>
