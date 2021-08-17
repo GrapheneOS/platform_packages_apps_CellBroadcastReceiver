@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver.unit;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.doReturn;
@@ -33,6 +35,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import java.lang.reflect.Method;
 
 public class CellBroadcastResourcesTest {
 
@@ -72,5 +76,53 @@ public class CellBroadcastResourcesTest {
                 smsCbMessage, -1, false,
                 null);
         assertNotNull(details);
+    }
+
+    @Test
+    public void testGetCmasCategoryResId() throws Exception {
+        int[] cats = {SmsCbCmasInfo.CMAS_CATEGORY_GEO, SmsCbCmasInfo.CMAS_CATEGORY_MET,
+                SmsCbCmasInfo.CMAS_CATEGORY_SAFETY, SmsCbCmasInfo.CMAS_CATEGORY_SECURITY,
+                SmsCbCmasInfo.CMAS_CATEGORY_RESCUE, SmsCbCmasInfo.CMAS_CATEGORY_FIRE,
+                SmsCbCmasInfo.CMAS_CATEGORY_HEALTH, SmsCbCmasInfo.CMAS_CATEGORY_ENV,
+                SmsCbCmasInfo.CMAS_CATEGORY_TRANSPORT, SmsCbCmasInfo.CMAS_CATEGORY_INFRA,
+                SmsCbCmasInfo.CMAS_CATEGORY_CBRNE, SmsCbCmasInfo.CMAS_CATEGORY_OTHER};
+        for (int c : cats) {
+            assertNotEquals(0, getCmasCategoryResId(new SmsCbCmasInfo(0, c, 0, 0, 0, 0)));
+        }
+
+        assertEquals(0, getCmasCategoryResId(new SmsCbCmasInfo(
+                0, SmsCbCmasInfo.CMAS_CATEGORY_UNKNOWN, 0, 0, 0, 0)));
+    }
+
+    @Test
+    public void testGetCmasResponseResId() throws Exception {
+        int[] resps = {SmsCbCmasInfo.CMAS_RESPONSE_TYPE_SHELTER,
+                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_EVACUATE,
+                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_PREPARE,
+                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_EXECUTE,
+                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_MONITOR,
+                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_AVOID,
+                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_ASSESS,
+                SmsCbCmasInfo.CMAS_RESPONSE_TYPE_NONE};
+        for (int r : resps) {
+            assertNotEquals(0, getCmasResponseResId(new SmsCbCmasInfo(0, 0, r, 0, 0, 0)));
+        }
+
+        assertEquals(0, getCmasResponseResId(new SmsCbCmasInfo(
+                0, 0, SmsCbCmasInfo.CMAS_RESPONSE_TYPE_UNKNOWN, 0, 0, 0)));
+    }
+
+    private int getCmasCategoryResId(SmsCbCmasInfo info) throws Exception {
+        Method method = CellBroadcastResources.class.getDeclaredMethod(
+                "getCmasCategoryResId", SmsCbCmasInfo.class);
+        method.setAccessible(true);
+        return (int) method.invoke(null, info);
+    }
+
+    private int getCmasResponseResId(SmsCbCmasInfo info) throws Exception {
+        Method method = CellBroadcastResources.class.getDeclaredMethod(
+                "getCmasResponseResId", SmsCbCmasInfo.class);
+        method.setAccessible(true);
+        return (int) method.invoke(null, info);
     }
 }
