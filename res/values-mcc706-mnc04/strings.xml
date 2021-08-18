@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The Android Open Source Project
+<!-- Copyright (C) 2021 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
      limitations under the License.
 -->
 
-<resources>
-    <!-- Emergency alerts toggle default value -->
-    <bool name="emergency_alerts_enabled_default">false</bool>
-    <!-- 50, 919 -->
-    <string-array name="emergency_alerts_channels_range_strings" translatable="false">
-        <item>0x0032:rat=gsm, emergency=true</item>
-        <item>0x0397:rat=gsm, emergency=true</item>
-    </string-array>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Dialog title for all other message identifiers in the PWS range. [CHAR LIMIT=50] -->
+    <string name="pws_other_message_identifiers">SV-Information</string>
+
+    <!-- Preference title for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->
+    <string name="enable_emergency_alerts_message_title">SV-regular broadcast channel</string>
 </resources>

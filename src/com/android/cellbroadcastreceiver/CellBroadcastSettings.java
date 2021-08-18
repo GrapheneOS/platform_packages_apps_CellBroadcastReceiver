@@ -830,20 +830,6 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 && isTestAlertsAvailable;
     }
 
-    public static boolean isFeatureEnabled(Context context, String feature, boolean defaultValue) {
-        CarrierConfigManager configManager =
-                (CarrierConfigManager) context.getSystemService(Context.CARRIER_CONFIG_SERVICE);
-
-        if (configManager != null) {
-            PersistableBundle carrierConfig = configManager.getConfig();
-            if (carrierConfig != null) {
-                return carrierConfig.getBoolean(feature, defaultValue);
-            }
-        }
-
-        return defaultValue;
-    }
-
     /**
      * Override used by tests so that we don't call
      * SubscriptionManager.getResourcesForSubId, which is a static unmockable
