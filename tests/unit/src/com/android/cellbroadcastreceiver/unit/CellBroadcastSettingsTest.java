@@ -122,6 +122,14 @@ public class CellBroadcastSettingsTest extends
                 .getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, false));
     }
 
+    @Test
+    public void testHasAnyPreferenceChanged() {
+        assertFalse(CellBroadcastSettings.hasAnyPreferenceChanged(mContext));
+        PreferenceManager.getDefaultSharedPreferences(mContext).edit()
+                .putBoolean("any_preference_changed_by_user", true).apply();
+        assertTrue(CellBroadcastSettings.hasAnyPreferenceChanged(mContext));
+    }
+
     public void waitUntilDialogOpens(Runnable r, long maxWaitMs) {
         long waitTime = 0;
         while (waitTime < maxWaitMs) {
