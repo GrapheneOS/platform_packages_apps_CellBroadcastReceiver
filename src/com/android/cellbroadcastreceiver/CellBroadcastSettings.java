@@ -177,9 +177,6 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
     // Key for shared preference which represents whether user has changed any preference
     private static final String ANY_PREFERENCE_CHANGED_BY_USER = "any_preference_changed_by_user";
 
-    // Test override for disabling the subId specific resources
-    private static boolean sUseResourcesForSubId = true;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // for backward compatibility on R devices
@@ -831,16 +828,6 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
     }
 
     /**
-     * Override used by tests so that we don't call
-     * SubscriptionManager.getResourcesForSubId, which is a static unmockable
-     * method.
-     */
-    @VisibleForTesting
-    public static void setUseResourcesForSubId(boolean useResourcesForSubId) {
-        sUseResourcesForSubId = useResourcesForSubId;
-    }
-
-    /**
      * Get the device resource based on SIM
      *
      * @param context Context
@@ -849,14 +836,12 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
      * @return The resource
      */
     public static @NonNull Resources getResources(@NonNull Context context, int subId) {
-        // based on the latest design, subId can be valid earlier than mcc mnc is known to telephony
-        // check if sim is loaded to avoid caching the wrong resources.
-        TelephonyManager tm = context.getSystemService(TelephonyManager.class);
-        boolean isSimLoaded = tm.getSimApplicationState(SubscriptionManager.getSlotIndex(subId))
-                == TelephonyManager.SIM_STATE_LOADED;
         if (subId == SubscriptionManager.DEFAULT_SUBSCRIPTION_ID
-                || !SubscriptionManager.isValidSubscriptionId(subId) || !sUseResourcesForSubId
-                || !isSimLoaded) {
+                || !SubscriptionManager.isValidSubscriptionId(subId)
+                // based on the latest design, subId can be valid earlier than mcc mnc is known to
+                // telephony. check if sim is loaded to avoid caching the wrong resources.
+                || context.getSystemService(TelephonyManager.class).getSimApplicationState(
+                SubscriptionManager.getSlotIndex(subId)) != TelephonyManager.SIM_STATE_LOADED) {
             return context.getResources();
         }
 
