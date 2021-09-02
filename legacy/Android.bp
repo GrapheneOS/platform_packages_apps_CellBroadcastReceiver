@@ -24,14 +24,16 @@ android_app {
         "androidx.appcompat_appcompat",
     ],
 
-    libs: ["app-compat-annotations"],
+    libs: [
+        "app-compat-annotations",
+        "framework-annotations-lib",
+    ],
 
     srcs: [
         "src/**/*.aidl",
         "src/**/*.java",
-        ":framework-annotations",
         ":cellbroadcast-database-sources",
     ],
     privileged: true,
-    sdk_version: "system_current",
+    sdk_version: "module_current",
 }
