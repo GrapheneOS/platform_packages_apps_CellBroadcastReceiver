@@ -22,14 +22,17 @@ java_defaults {
     name: "CellBroadcastCommon",
     min_sdk_version: "30",
     target_sdk_version: "31",
-    sdk_version: "system_current",
+    sdk_version: "module_current",
     privileged: true,
     srcs: [
       "src/**/*.java",
-      ":framework-annotations",
       ":cellbroadcast-constants-shared-srcs",
       ":statslog-cellbroadcast-java-gen",
-   ],
+    ],
+    libs: [
+        "framework-annotations-lib",
+        "framework-statsd",
+    ],
     static_libs: [
         "androidx.legacy_legacy-support-v4",
         "androidx.legacy_legacy-support-v13",
@@ -66,7 +69,6 @@ filegroup {
     name: "cellbroadcastreceiver-sources",
     srcs: [
       "src/**/*.java",
-      ":framework-annotations",
       ":cellbroadcast-constants-shared-srcs",
     ],
 }
