@@ -141,6 +141,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     private AudioManager mAudioManager;
     private TelephonyManager mTelephonyManager;
     private int mInitialCallState;
+    private int mStartId;
 
     // Internal messages
     private static final int ALERT_SOUND_FINISHED = 1000;
@@ -347,6 +348,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             return START_STICKY;
         }
 
+        mStartId = startId;
         // Get text to speak (if enabled by user)
         mMessageBody = intent.getStringExtra(ALERT_AUDIO_MESSAGE_BODY);
         mMessageLanguage = intent.getStringExtra(ALERT_AUDIO_MESSAGE_LANGUAGE);
@@ -757,12 +759,16 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
     /**
      * Stop CellBroadcastAlertAudio Service and set state to STATE_STOPPING
      */
-    private void stopAlertAudioService() {
+    private boolean stopAlertAudioService() {
         if (DBG) log("stopAlertAudioService, current state is " + getState());
+        boolean result = false;
         if (getState() != STATE_STOPPING) {
             setState(STATE_STOPPING);
-            stopSelf();
+            result = stopSelfResult(mStartId);
+            if (DBG) log((result ? "Successful" : "Failed")
+                    + " to stop AlertAudioService[" + mStartId + "]");
         }
+        return result;
     }
 
     /**
