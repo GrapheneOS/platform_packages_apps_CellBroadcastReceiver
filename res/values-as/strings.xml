@@ -81,7 +81,7 @@
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ৰাজহুৱা নিৰাপত্তা বিষয়ক বাৰ্তাসমূহ"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"জীৱন বা সম্পত্তি ৰক্ষা কৰিব পৰা অনুমোদিত কাৰ্যসমূহ"</string>
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"পূৰ্ণ স্ক্ৰীনত বাৰ্তা দেখুৱাওক"</string>
-    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"ৰাজহুৱা সুৰক্ষা বিষয়ক বাৰ্তা কেৱল আপোনাৰ এছএমএছ এপ্‌টোলৈ প্ৰেৰণ কৰিবলৈ অফ কৰক"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"অফ থাকিলে ৰাজহুৱা সুৰক্ষা বিষয়ক বাৰ্তাসমূহ জাননী হিচাপে তথাপি পঠিওৱা হয়"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"ৰাজ্যিক আৰু স্থানীয় পৰীক্ষামূলক সতৰ্কবাণী"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ৰাজ্য চৰকাৰ আৰু স্থানীয় কৰ্তৃপক্ষৰ পৰা পৰীক্ষামূলক বাৰ্তা লাভ কৰক"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"জৰুৰীকালীন সতৰ্কবাণীসমূহ"</string>
