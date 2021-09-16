@@ -81,7 +81,7 @@
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ਜਨਤਕ ਸੁਰੱਖਿਆ ਸੰਬੰਧੀ ਸੁਨੇਹੇ"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ਜਾਨ ਜਾਂ ਮਾਲ ਦੀ ਸੁਰੱਖਿਆ ਕਰ ਸਕਣ ਵਾਲੀਆਂ ਸਿਫ਼ਾਰਸ਼ੀ ਕਾਰਵਾਈਆਂ"</string>
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"ਪੂਰੀ-ਸਕ੍ਰੀਨ ਵਾਲੇ ਸੁਨੇਹੇ ਦਿਖਾਓ"</string>
-    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"ਜਨਤਕ ਸੁਰੱਖਿਆ ਸੰਬੰਧੀ ਸੁਨੇਹਿਆਂ ਨੂੰ ਸਿਰਫ਼ ਤੁਹਾਡੀ SMS ਐਪ \'ਤੇ ਭੇਜਣਾ ਬੰਦ ਕਰੋ"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"ਬੰਦ ਹੋਣ \'ਤੇ, ਸੁਨੇਹੇ ਹਾਲੇ ਵੀ ਸੂਚਨਾ ਵਜੋਂ ਭੇਜੇ ਜਾਂਦੇ ਹਨ"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"ਰਾਜ ਅਤੇ ਸਥਾਨਕ ਟੈਸਟ"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ਰਾਜ ਅਤੇ ਸਥਾਨਕ ਅਥਾਰਟੀਆਂ ਤੋਂ ਟੈਸਟ ਸੁਨੇਹੇ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ"</string>
