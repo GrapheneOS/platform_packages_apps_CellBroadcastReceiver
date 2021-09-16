@@ -81,7 +81,7 @@
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"સાર્વજનિક સુરક્ષા સંદેશા"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"સુઝાવ આપેલ ક્રિયાઓ જે જીંદગીઓ અથવા મિલ્કતને બચાવી શકે"</string>
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"સંદેશા પૂર્ણ સ્ક્રીનમાં બતાવો"</string>
-    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"સલામતીના સાર્વજનિક સંદેશા માત્ર તમારી SMS ઍપમાં મોકલવા માટે, આ ચેકમાર્ક બંધ કરો"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"જ્યારે એ બંધ હોય, ત્યારે પણ સાર્વજનિક સુરક્ષાના સંદેશા નોટિફિકેશન તરીકે મોકલવામાં આવે છે"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"રાજ્ય અને સ્થાનિક પરીક્ષણો"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"રાજ્ય અને સ્થાનિક સત્તાવાળાઓ પાસેથી પરીક્ષણ સંદેશા પ્રાપ્ત કરો"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"કટોકટીની ચેતવણીઓ"</string>

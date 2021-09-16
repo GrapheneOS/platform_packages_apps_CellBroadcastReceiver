@@ -81,7 +81,7 @@
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ข้อความด้านความปลอดภัยสาธารณะ"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"การดำเนินการที่แนะนำซึ่งจะช่วยรักษาชีวิตหรือทรัพย์สินได้"</string>
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"แสดงข้อความแบบเต็มหน้าจอ"</string>
-    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"ปิดเพื่อให้ส่งข้อความด้านความปลอดภัยสาธารณะไปยังแอป SMS เท่านั้น"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"เมื่อปิดข้อความด้านความปลอดภัยสาธารณะ ระบบจะยังส่งข้อความเป็นการแจ้งเตือน"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"การทดสอบระดับประเทศและระดับท้องถิ่น"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"รับข้อความทดสอบจากหน่วยงานรัฐและหน่วยงานท้องถิ่น"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"การแจ้งเตือนเหตุฉุกเฉิน"</string>
