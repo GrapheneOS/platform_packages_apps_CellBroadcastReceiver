@@ -17,9 +17,9 @@
 <resources>
     <!-- 4370, 4383 State alert notification for Turkey -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, always_on=true, filter_language=true</item>
+        <item>0x1112:rat=gsm, emergency=true, override_dnd=true, always_on=true, filter_language=true</item>
         <!-- additional language -->
-        <item>0x111F:rat=gsm, emergency=true, always_on=true, filter_language=true</item>
+        <item>0x111F:rat=gsm, emergency=true, override_dnd=true, always_on=true, filter_language=true</item>
     </string-array>
     <!-- 4371~4378, 4384~4391 vital alert notification for Turkey -->
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
