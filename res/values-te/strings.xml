@@ -52,7 +52,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"అలర్ట్‌లు"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ప్రసార మెసేజ్‌లు"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"అత్యవసర హెచ్చరికలు"</string>
-    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"వాయిస్ కాల్‌లో అత్యవసర అలర్ట్‌లు"</string>
+    <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"వాయిస్ కాల్‌లో ఎమర్జెన్సీ అలర్ట్‌లు"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"అలర్ట్‌లను అనుమతించండి"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"వైర్‌లెస్ ఎమర్జెన్సీ అలర్ట్ నోటిఫికేషన్‌లను పొందండి"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"హెచ్చరిక రిమైండర్"</string>
