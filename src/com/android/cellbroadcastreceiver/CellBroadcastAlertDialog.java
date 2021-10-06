@@ -24,7 +24,6 @@ import android.app.KeyguardManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.RemoteAction;
-import android.app.StatusBarManager;
 import android.content.BroadcastReceiver;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -47,7 +46,6 @@ import android.telephony.SmsCbMessage;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
-import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.util.Linkify;
@@ -472,7 +470,8 @@ public class CellBroadcastAlertDialog extends Activity {
         // screen goes off
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         if (!(isChangingConfigurations() || getLatestMessage() == null) && pm.isScreenOn()) {
-            CellBroadcastAlertService.addToNotificationBar(getLatestMessage(), mMessageList,
+            CellBroadcastAlertService.addToNotificationBar(getLatestMessage(),
+                    CellBroadcastReceiverApp.getNewMessageList(),
                     getApplicationContext(), true, true, false);
         }
         // Do not stop the audio here. Pressing power button should turn off screen but should not
