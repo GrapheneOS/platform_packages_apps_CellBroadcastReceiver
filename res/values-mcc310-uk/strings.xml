@@ -18,4 +18,11 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"Іспанська"</string>
     <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"Отримувати екстрені сповіщення іспанською мовою, коли це можливо"</string>
+    <string name="confirm_delete_broadcast" msgid="6808374217554967811">"Видалити це сповіщення?"</string>
+    <string name="confirm_delete_all_broadcasts" msgid="4748571670736214158">"Видалити всі отримані сповіщення?"</string>
+    <string name="menu_delete" msgid="2691868773984777519">"Видалити сповіщення"</string>
+    <string name="menu_delete_all" msgid="8991615021908376216">"Видалити сповіщення"</string>
+    <!-- no translation found for enable_cmas_test_alerts_title (3722503121618497385) -->
+    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="6138676147687910935">"Отримувати обов\'язкові щомісячні тестові сповіщення від системи безпеки"</string>
 </resources>

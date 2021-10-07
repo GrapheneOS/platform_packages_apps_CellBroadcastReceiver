@@ -27,22 +27,24 @@ import static org.mockito.Mockito.verify;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.IPowerManager;
 import android.os.IThermalService;
 import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
-import android.preference.PreferenceManager;
 import android.telephony.SmsCbMessage;
 import android.view.KeyEvent;
-import android.view.WindowManager;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertDialog;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
+import com.android.cellbroadcastreceiver.R;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 
 import org.junit.After;
@@ -109,6 +111,7 @@ public class CellBroadcastAlertDialogTest extends
         mPowerManager = new PowerManager(mContext, mMockedPowerManagerService,
                 mMockedThermalService, null);
         injectSystemService(PowerManager.class, mPowerManager);
+        CellBroadcastSettings.setUseResourcesForSubId(false);
     }
 
     @After
@@ -182,37 +185,9 @@ public class CellBroadcastAlertDialogTest extends
                 eq(CellBroadcastAlertService.NOTIFICATION_ID));
     }
 
-    @InstrumentationTest
-    // This test has a module dependency (it uses the CellBroadcastContentProvider), so it is
-    // disabled for OEM testing because it is not a true unit test
-    public void testDismissWithDialog() throws Throwable {
-        // in order to trigger mShowOptOutDialog=true, the message should not be a presidential
-        // alert (the default message we send in this test)
-        mServiceCategory = SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY;
-        mCmasMessageClass = SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY;
-
-        // prepare the looper so we can create opt out dialog
-        Looper.prepare();
-
-        // enable opt out dialog in shared prefs
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-        prefs.edit().putBoolean(CellBroadcastSettings.KEY_SHOW_CMAS_OPT_OUT_DIALOG, true).apply();
-
-        boolean triedToCreateDialog = false;
-        try {
-            CellBroadcastAlertDialog activity = startActivity();
-            waitForMs(100);
-            activity.dismiss();
-        } catch (WindowManager.BadTokenException e) {
-            triedToCreateDialog = true;
-        }
-
-        assertTrue(triedToCreateDialog);
-    }
-
     public void testOnNewIntent() throws Throwable {
         Intent intent = createActivityIntent();
-        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
 
         Looper.prepare();
         CellBroadcastAlertDialog activity = startActivity(intent, null, null);
@@ -222,6 +197,8 @@ public class CellBroadcastAlertDialogTest extends
         mMessageList.add(CellBroadcastAlertServiceTest.createMessageForCmasMessageClass(12413,
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY,
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY));
+        intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
+                new ArrayList<>(mMessageList));
         activity.onNewIntent(intent);
 
         verify(mMockedNotificationManager, atLeastOnce()).cancel(
@@ -230,7 +207,6 @@ public class CellBroadcastAlertDialogTest extends
 
     public void testAnimationHandler() throws Throwable {
         CellBroadcastAlertDialog activity = startActivity();
-        CellBroadcastSettings.setUseResourcesForSubId(false);
 
         activity.mAnimationHandler.startIconAnimation(mSubId);
 
@@ -246,7 +222,7 @@ public class CellBroadcastAlertDialogTest extends
 
     public void testOnResume() throws Throwable {
         Intent intent = createActivityIntent();
-        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
 
         Looper.prepare();
         CellBroadcastAlertDialog activity = startActivity(intent, null, null);
@@ -261,7 +237,7 @@ public class CellBroadcastAlertDialogTest extends
 
     public void testOnPause() throws Throwable {
         Intent intent = createActivityIntent();
-        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
 
         Looper.prepare();
         CellBroadcastAlertDialog activity = startActivity(intent, null, null);
@@ -276,8 +252,52 @@ public class CellBroadcastAlertDialogTest extends
 
     public void testOnKeyDown() throws Throwable {
         Intent intent = createActivityIntent();
-        intent.putExtra(CellBroadcastAlertDialog.FROM_NOTIFICATION_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
 
+        Looper.prepare();
+        CellBroadcastAlertDialog activity = startActivity(intent, null, null);
+
+        assertTrue(activity.onKeyDown(0,
+                new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_FOCUS)));
+    }
+
+    public void testOnConfigurationChanged() throws Throwable {
+        CellBroadcastAlertDialog activity = startActivity();
+        Configuration newConfig = new Configuration();
+
+        ImageView image = activity.findViewById(R.id.pictogramImage);
+        image.setVisibility(View.VISIBLE);
+        assertEquals(View.VISIBLE, image.getVisibility());
+
+        newConfig.orientation = Configuration.ORIENTATION_LANDSCAPE;
+        activity.onConfigurationChanged(newConfig);
+        assertNotNull(image.getLayoutParams());
+
+        newConfig.orientation = Configuration.ORIENTATION_PORTRAIT;
+        activity.onConfigurationChanged(newConfig);
+        assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, image.getLayoutParams().height);
+        assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, image.getLayoutParams().width);
+    }
+
+    public void testOnWindowFocusChanged() throws Throwable {
+        CellBroadcastAlertDialog activity = startActivity();
+
+        ImageView image = activity.findViewById(R.id.pictogramImage);
+        image.setVisibility(View.VISIBLE);
+        assertEquals(View.VISIBLE, image.getVisibility());
+
+        activity.onWindowFocusChanged(true);
+        assertNotNull(image.getLayoutParams());
+    }
+
+    public void testOnKeyDownWithEmptyMessageList() throws Throwable {
+        mMessageList = new ArrayList<>(1);
+
+        Intent intent = new Intent(getInstrumentation().getTargetContext(),
+                CellBroadcastAlertDialog.class);
+        intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
+                mMessageList);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
         Looper.prepare();
         CellBroadcastAlertDialog activity = startActivity(intent, null, null);
 

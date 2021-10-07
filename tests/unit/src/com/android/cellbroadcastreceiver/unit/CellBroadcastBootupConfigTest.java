@@ -39,7 +39,7 @@ import static com.android.internal.telephony.gsm.SmsCbConstants.MESSAGE_ID_ETWS_
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.timeout;
 import static org.mockito.Mockito.verify;
 
 import android.content.Intent;
@@ -49,6 +49,7 @@ import android.telephony.SmsCbMessage;
 import androidx.test.filters.FlakyTest;
 
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
+import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.internal.telephony.ISms;
 
 import org.junit.After;
@@ -137,12 +138,22 @@ public class CellBroadcastBootupConfigTest extends
 
     @FlakyTest
     public void testConfiguration() throws Exception {
+        String[] preferenceKeys = {
+                CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE,
+                CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS,
+                CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS,
+                CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS,
+                CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES,
+                CellBroadcastSettings.KEY_ENABLE_EMERGENCY_ALERTS,
+        };
+        for (String key : preferenceKeys) {
+            enablePreference(key);
+        }
 
         Intent intent = new Intent(mContext, CellBroadcastConfigService.class);
         intent.setAction(CellBroadcastConfigService.ACTION_ENABLE_CHANNELS);
 
         startService(intent);
-        waitForMs(200);
 
         CbConfig[] configs = new CbConfig[] {
                 new CbConfig(MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL,
@@ -189,8 +200,9 @@ public class CellBroadcastBootupConfigTest extends
                         SmsCbMessage.MESSAGE_FORMAT_3GPP),
         };
 
-        verify(mSmsService, times(configs.length)).enableCellBroadcastRangeForSubscriber(anyInt(),
-                mStartIds.capture(), mEndIds.capture(), mTypes.capture());
+        verify(mSmsService, timeout(10000).times(configs.length))
+                .enableCellBroadcastRangeForSubscriber(
+                        anyInt(), mStartIds.capture(), mEndIds.capture(), mTypes.capture());
 
         for (int i = 0; i < configs.length; i++) {
             assertEquals("i=" + i, configs[i].startId, mStartIds.getAllValues().get(i).intValue());
