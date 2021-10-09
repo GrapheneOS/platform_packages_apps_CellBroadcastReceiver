@@ -680,7 +680,19 @@ public class CellBroadcastAlertDialog extends Activity {
         int titleId = CellBroadcastResources.getDialogTitleResource(context, message);
 
         Resources res = CellBroadcastSettings.getResources(context, message.getSubscriptionId());
-        String title = overrideTranslation(titleId, res, message.getLanguageCode());
+
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                this, message.getSubscriptionId());
+        CellBroadcastChannelRange range = channelManager
+                .getCellBroadcastChannelRangeFromMessage(message);
+        String languageCode;
+        if (range != null && !TextUtils.isEmpty(range.mLanguageCode)) {
+            languageCode = range.mLanguageCode;
+        } else {
+            languageCode = message.getLanguageCode();
+        }
+
+        String title = overrideTranslation(titleId, res, languageCode);
         TextView titleTextView = findViewById(R.id.alertTitle);
 
         if (titleTextView != null) {
