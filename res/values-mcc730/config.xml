@@ -61,7 +61,7 @@
     <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
     <bool name="override_dnd">true</bool>
     <!-- Append date-time to the alert title -->
-    <string name="date_time_format" translatable="false">yyyy-MM-dd, HH:mm a</string>
+    <string name="date_time_format" translatable="false">dd/MM/yyyy hh:mm a</string>
     <!-- Link method -->
     <string name="link_method" translatable="false">none</string>
     <!-- Whether the user can mute the alert by physical button -->
