@@ -72,6 +72,15 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
         });
     }
 
+    protected void leaveActivity() throws Throwable {
+        runTestOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                getInstrumentation().callActivityOnUserLeaving(mActivity);
+            }
+        });
+    }
+
     public static void waitForMs(long ms) {
         try {
             Thread.sleep(ms);

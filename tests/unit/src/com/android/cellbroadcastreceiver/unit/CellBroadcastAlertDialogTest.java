@@ -168,7 +168,7 @@ public class CellBroadcastAlertDialogTest extends
     public void testAddToNotification() throws Throwable {
         startActivity();
         waitForMs(100);
-        stopActivity();
+        leaveActivity();
         waitForMs(100);
         verify(mMockedNotificationManager, times(1)).notify(mInt.capture(),
                 mNotification.capture());
