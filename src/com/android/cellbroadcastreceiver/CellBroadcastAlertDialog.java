@@ -331,6 +331,25 @@ public class CellBroadcastAlertDialog extends Activity {
         }
     }
 
+    Comparator<SmsCbMessage> mPriorityBasedComparator = (Comparator) (o1, o2) -> {
+        boolean isPresidentialAlert1 =
+                ((SmsCbMessage) o1).isCmasMessage()
+                        && ((SmsCbMessage) o1).getCmasWarningInfo()
+                        .getMessageClass() == SmsCbCmasInfo
+                        .CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
+        boolean isPresidentialAlert2 =
+                ((SmsCbMessage) o2).isCmasMessage()
+                        && ((SmsCbMessage) o2).getCmasWarningInfo()
+                        .getMessageClass() == SmsCbCmasInfo
+                        .CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
+        if (isPresidentialAlert1 ^ isPresidentialAlert2) {
+            return isPresidentialAlert1 ? 1 : -1;
+        }
+        Long time1 = new Long(((SmsCbMessage) o1).getReceivedTime());
+        Long time2 = new Long(((SmsCbMessage) o2).getReceivedTime());
+        return time2.compareTo(time1);
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -469,9 +488,14 @@ public class CellBroadcastAlertDialog extends Activity {
         // Avoid doing this when activity will be recreated because of orientation change or if
         // screen goes off
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        if (!(isChangingConfigurations() || getLatestMessage() == null) && pm.isScreenOn()) {
-            CellBroadcastAlertService.addToNotificationBar(getLatestMessage(),
-                    CellBroadcastReceiverApp.getNewMessageList(),
+        ArrayList<SmsCbMessage> messageList = getNewMessageListIfNeeded(mMessageList,
+                CellBroadcastReceiverApp.getNewMessageList());
+        SmsCbMessage latestMessage = (messageList == null || (messageList.size() < 1)) ? null
+                : messageList.get(messageList.size() - 1);
+
+        if (!(isChangingConfigurations() || latestMessage == null) && pm.isScreenOn()) {
+            Log.d(TAG, "call addToNotificationBar when activity goes in background");
+            CellBroadcastAlertService.addToNotificationBar(latestMessage, messageList,
                     getApplicationContext(), true, true, false);
         }
         // Do not stop the audio here. Pressing power button should turn off screen but should not
@@ -676,6 +700,9 @@ public class CellBroadcastAlertDialog extends Activity {
      * @param message CB message which is used to update alert text.
      */
     private void updateAlertText(@NonNull SmsCbMessage message) {
+        if (message == null) {
+            return;
+        }
         Context context = getApplicationContext();
         int titleId = CellBroadcastResources.getDialogTitleResource(context, message);
 
@@ -809,28 +836,7 @@ public class CellBroadcastAlertDialog extends Activity {
                         .getBoolean(R.bool.show_cmas_messages_in_priority_order)) {
                     // Sort message list to show messages in a different order than received by
                     // prioritizing them. Presidential Alert only has top priority.
-                    Collections.sort(
-                            mMessageList,
-                            (Comparator) (o1, o2) -> {
-                                boolean isPresidentialAlert1 =
-                                        ((SmsCbMessage) o1).isCmasMessage()
-                                                && ((SmsCbMessage) o1).getCmasWarningInfo()
-                                                .getMessageClass() == SmsCbCmasInfo
-                                                .CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
-                                boolean isPresidentialAlert2 =
-                                        ((SmsCbMessage) o2).isCmasMessage()
-                                                && ((SmsCbMessage) o2).getCmasWarningInfo()
-                                                .getMessageClass() == SmsCbCmasInfo
-                                                .CMAS_CLASS_PRESIDENTIAL_LEVEL_ALERT;
-                                if (isPresidentialAlert1 ^ isPresidentialAlert2) {
-                                    return isPresidentialAlert1 ? 1 : -1;
-                                }
-                                Long time1 =
-                                        new Long(((SmsCbMessage) o1).getReceivedTime());
-                                Long time2 =
-                                        new Long(((SmsCbMessage) o2).getReceivedTime());
-                                return time2.compareTo(time1);
-                            });
+                    Collections.sort(mMessageList, mPriorityBasedComparator);
                 }
             }
             Log.d(TAG, "onNewIntent called with message list of size " + newMessageList.size());
@@ -1113,5 +1119,46 @@ public class CellBroadcastAlertDialog extends Activity {
             }
             setFinishOnTouchOutside(mMessageList.size() > 0 && mMessageList.size() == dismissCount);
         }
+    }
+
+    /**
+     * If message list of dialog does not have message which is included in newMessageList,
+     * Create new list which includes both dialogMessageList and newMessageList
+     * without the duplicated message, and Return the new list.
+     * If not, just return dialogMessageList as default.
+     * @param dialogMessageList message list which this dialog activity is having
+     * @param newMessageList message list which is compared with dialogMessageList
+     * @return message list which is created with dialogMessageList and newMessageList
+     */
+    @VisibleForTesting
+    public ArrayList<SmsCbMessage> getNewMessageListIfNeeded(
+            @NonNull ArrayList<SmsCbMessage> dialogMessageList,
+            ArrayList<SmsCbMessage> newMessageList) {
+        if (newMessageList == null) {
+            return dialogMessageList;
+        }
+        ArrayList<SmsCbMessage> clonedNewMessageList = new ArrayList<>(newMessageList);
+        for (SmsCbMessage message : dialogMessageList) {
+            clonedNewMessageList.removeIf(
+                    msg -> msg.getReceivedTime() == message.getReceivedTime());
+        }
+        Log.d(TAG, "clonedMessageList.size()=" + clonedNewMessageList.size());
+        if (clonedNewMessageList.size() > 0) {
+            ArrayList<SmsCbMessage> resultList = new ArrayList<>(dialogMessageList);
+            resultList.addAll(clonedNewMessageList);
+            Comparator<SmsCbMessage> comparator = (Comparator) (o1, o2) -> {
+                Long time1 = new Long(((SmsCbMessage) o1).getReceivedTime());
+                Long time2 = new Long(((SmsCbMessage) o2).getReceivedTime());
+                return time1.compareTo(time2);
+            };
+            if (CellBroadcastSettings.getResourcesForDefaultSubId(getApplicationContext())
+                    .getBoolean(R.bool.show_cmas_messages_in_priority_order)) {
+                Log.d(TAG, "Use priority order Based Comparator");
+                comparator = mPriorityBasedComparator;
+            }
+            Collections.sort(resultList, comparator);
+            return resultList;
+        }
+        return dialogMessageList;
     }
 }
