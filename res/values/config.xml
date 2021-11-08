@@ -261,11 +261,6 @@
     KR carriers mandate to always show notifications along with alert dialog.  -->
     <bool name="show_alert_dialog_with_notification">false</bool>
 
-    <!-- Whether to disable status bar while alert dialog is showing.
-    Some carriers mandate this to make sure users do not switch to other activities
-    until pressing the "ok" button -->
-    <bool name="disable_status_bar">false</bool>
-
     <!-- Whether to show the alert dialog at the bottom of the screen in order to avoid blocking
          other content -->
     <bool name="alert_dialog_bottom">false</bool>
