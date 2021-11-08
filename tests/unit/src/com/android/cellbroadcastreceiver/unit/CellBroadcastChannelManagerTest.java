@@ -60,7 +60,8 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
                         "456:type=etws_tsunami, emergency=true, alert_duration=60000, "
                                 + "scope=domestic", "0xAC00-0xAFED:type=other, emergency=false, "
                         + "override_dnd=true, scope=carrier", "54-60:emergency=true, "
-                        + "testing_mode=true", "100-200", "0xA804:type=test, "
+                        + "testing_mode=true, " + "dialog_with_notification=true",
+                        "100-200", "0xA804:type=test, "
                         + "emergency=true, exclude_from_sms_inbox=true, vibration=0|350|250|350",
                         "0x111E:debug_build=true"});
 
@@ -79,6 +80,7 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
         assertFalse(list.get(0).mOverrideDnd);
         assertTrue(list.get(0).mWriteToSmsInbox);
         assertFalse(list.get(0).mTestMode);
+        assertFalse(list.get(0).mDisplayDialogWithNotification);
 
         assertEquals(456, list.get(1).mStartId);
         assertEquals(456, list.get(1).mEndId);
@@ -90,6 +92,7 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
         assertTrue(list.get(1).mWriteToSmsInbox);
         assertFalse(list.get(1).mTestMode);
         assertEquals(60000, list.get(1).mAlertDuration);
+        assertFalse(list.get(1).mDisplayDialogWithNotification);
 
         assertEquals(0xAC00, list.get(2).mStartId);
         assertEquals(0xAFED, list.get(2).mEndId);
@@ -101,6 +104,7 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
         assertTrue(list.get(2).mWriteToSmsInbox);
         assertFalse(list.get(2).mTestMode);
         assertEquals(list.get(2).mScope, CellBroadcastChannelRange.SCOPE_CARRIER);
+        assertFalse(list.get(2).mDisplayDialogWithNotification);
 
         assertEquals(54, list.get(3).mStartId);
         assertEquals(60, list.get(3).mEndId);
@@ -111,6 +115,7 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
         assertFalse(list.get(3).mOverrideDnd);
         assertTrue(list.get(3).mWriteToSmsInbox);
         assertTrue(list.get(3).mTestMode);
+        assertTrue(list.get(3).mDisplayDialogWithNotification);
 
         assertEquals(100, list.get(4).mStartId);
         assertEquals(200, list.get(4).mEndId);
@@ -121,6 +126,7 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
         assertFalse(list.get(4).mOverrideDnd);
         assertTrue(list.get(4).mWriteToSmsInbox);
         assertFalse(list.get(4).mTestMode);
+        assertFalse(list.get(4).mDisplayDialogWithNotification);
 
         assertEquals(0xA804, list.get(5).mStartId);
         assertEquals(0xA804, list.get(5).mEndId);
@@ -133,6 +139,7 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
         assertFalse(list.get(5).mTestMode);
         assertTrue(Arrays.equals(new int[]{0, 350, 250, 350}, list.get(5).mVibrationPattern));
         assertNotEquals(list.get(4).toString(), list.get(5).toString());
+        assertFalse(list.get(5).mDisplayDialogWithNotification);
 
         assertEquals(6, list.size());
     }

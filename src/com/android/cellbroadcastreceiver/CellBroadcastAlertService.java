@@ -421,12 +421,18 @@ public class CellBroadcastAlertService extends Service {
             // start alert sound / vibration / TTS and display full-screen alert
             openEmergencyAlertNotification(cbm);
             Resources res = CellBroadcastSettings.getResources(mContext, cbm.getSubscriptionId());
+
+            CellBroadcastChannelRange range = channelManager
+                    .getCellBroadcastChannelRangeFromMessage(cbm);
+
             // KR carriers mandate to always show notifications along with alert dialog.
             if (res.getBoolean(R.bool.show_alert_dialog_with_notification) ||
                     // to support emergency alert on companion devices use flag
                     // show_notification_if_connected_to_companion_devices instead.
                     (res.getBoolean(R.bool.show_notification_if_connected_to_companion_devices)
-                            && isConnectedToCompanionDevices())) {
+                            && isConnectedToCompanionDevices())
+                    // show dialog and notification for specific channel
+                    || (range != null && range.mDisplayDialogWithNotification)) {
                 // add notification to the bar by passing the list of unread non-emergency
                 // cell broadcast messages. The notification should be of LOW_IMPORTANCE if the
                 // notification is shown together with full-screen dialog.
