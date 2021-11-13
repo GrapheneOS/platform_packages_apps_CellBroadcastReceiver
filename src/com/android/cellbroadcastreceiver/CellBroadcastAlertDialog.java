@@ -715,7 +715,9 @@ public class CellBroadcastAlertDialog extends Activity {
         Context context = getApplicationContext();
         int titleId = CellBroadcastResources.getDialogTitleResource(context, message);
 
-        Resources res = CellBroadcastSettings.getResources(context, message.getSubscriptionId());
+        Resources res = CellBroadcastSettings.getResourcesByOperator(context,
+                message.getSubscriptionId(),
+                CellBroadcastReceiver.getRoamingOperatorSupported(context));
 
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                 this, message.getSubscriptionId());

@@ -37,7 +37,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.test.ServiceTestCase;
 
-import com.android.cellbroadcastreceiver.CellBroadcastSettings;
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
 import com.android.internal.telephony.ISub;
 
 import org.junit.After;
@@ -173,11 +173,13 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
 
         mContext = new TestContextWrapper(getContext());
         setContext(mContext);
+        CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
     }
 
     @After
     public void tearDown() throws Exception {
         mMockedServiceManager.restoreAllServices();
+        CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
     }
 
     void putResources(int id, String[] values) {

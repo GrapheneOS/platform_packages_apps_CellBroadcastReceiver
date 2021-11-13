@@ -33,6 +33,7 @@ import static org.mockito.Mockito.verify;
 import android.app.Instrumentation;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Looper;
 import android.os.RemoteException;
@@ -52,6 +53,7 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
 
 @RunWith(AndroidJUnit4.class)
 public class CellBroadcastSettingsTest extends
@@ -199,6 +201,34 @@ public class CellBroadcastSettingsTest extends
         verify(mockContext, times(4)).getResources();
         verify(mockSubManager, times(1)).getActiveSubscriptionInfo(anyInt());
         verify(mockContext2, times(1)).getResources();
+    }
+
+    @Test
+    public void testGetResourcesByOperator() {
+        Context mockContext = mock(Context.class);
+        Resources mockResources = mock(Resources.class);
+        doReturn(mockResources).when(mockContext).getResources();
+
+        CellBroadcastSettings.getResourcesByOperator(mockContext,
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, "");
+        verify(mockContext, never()).createConfigurationContext(any());
+        verify(mockContext, times(1)).getResources();
+
+        int mcc = 123;
+        int mnc = 456;
+        Context mockContext2 = mock(Context.class);
+        ArgumentCaptor<Configuration> captorConfig = ArgumentCaptor.forClass(Configuration.class);
+        doReturn(mockResources).when(mockContext2).getResources();
+        doReturn(mockContext2).when(mockContext).createConfigurationContext(any());
+
+        CellBroadcastSettings.getResourcesByOperator(mockContext,
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID,
+                Integer.toString(mcc) + Integer.toString(mnc));
+        verify(mockContext, times(1)).getResources();
+        verify(mockContext2, times(1)).getResources();
+        verify(mockContext, times(1)).createConfigurationContext(captorConfig.capture());
+        assertEquals(mcc, captorConfig.getValue().mcc);
+        assertEquals(mnc, captorConfig.getValue().mnc);
     }
 
     public void waitUntilDialogOpens(Runnable r, long maxWaitMs) {

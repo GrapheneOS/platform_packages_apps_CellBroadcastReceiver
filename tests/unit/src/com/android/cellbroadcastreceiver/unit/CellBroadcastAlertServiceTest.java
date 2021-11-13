@@ -21,6 +21,7 @@ import static com.android.cellbroadcastreceiver.CellBroadcastAlertService.SHOW_N
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 
@@ -80,6 +81,8 @@ public class CellBroadcastAlertServiceTest extends
     @Before
     public void setUp() throws Exception {
         super.setUp();
+        // No roaming supported by default
+        doReturn("").when(mMockedSharedPreferences).getString(anyString(), anyString());
     }
 
     @After
