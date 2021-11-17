@@ -99,7 +99,7 @@
     <string name="override_dnd_title" msgid="5120805993144214421">"ఎల్లప్పుడూ పూర్తి వాల్యూమ్ వద్ద హెచ్చరించు"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"అంతరాయం కలిగించవద్దు &amp; ఇతర వాల్యూమ్ సెట్టింగ్‌లను తిరస్కరించండి"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ప్రాంతీయ అప్‌డేట్ ప్రసారాలు"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM స్థితిలో అప్‌డేట్ సమాచారాన్ని చూపు"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM స్టేటస్‌లో అప్‌డేట్ సమాచారాన్ని చూపు"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"హెచ్చరిక వర్గం:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"భూభౌతిక సంబంధితం"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"వాతావరణ శాస్త్ర సంబంధితం"</string>
