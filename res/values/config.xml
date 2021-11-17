@@ -181,6 +181,15 @@
     <!-- Channels to receive geo-fencing trigger messages -->
     <string-array name="geo_fencing_trigger_messages_range_strings" translatable="false"></string-array>
 
+    <!-- List of roaming network operator to be supported.
+         The item can be operator numeric as 3 digits of mcc, 6 or 5 digits of mcc+mnc, or special
+         characters as XXX to match any mcc, XXXXXX to match any mcc+mnc. If multiple items match
+         the roaming network, only the first one will take effect. -->
+    <string-array name="cmas_roaming_network_strings" translatable="false">
+        <!-- France -->
+        <item>208</item>
+    </string-array>
+
     <!-- Values that are retrieved from the ListPreference.
          These must match the alert_reminder_interval_entries list above. -->
     <string-array name="alert_reminder_interval_values" translatable="false">
