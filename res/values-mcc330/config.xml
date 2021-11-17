@@ -15,6 +15,43 @@
 -->
 
 <resources>
+    <string-array name="public_safety_messages_channels_range_strings" translatable="false">
+        <!-- Public safety messages -->
+        <item>0x112C:rat=gsm, emergency=true</item>
+        <!-- Public safety messages for additional language -->
+        <item>0x112D:rat=gsm, emergency=true</item>
+    </string-array>
+    <!-- Channels to receive state/local test messages -->
+    <string-array name="state_local_test_alert_range_strings" translatable="false">
+        <!-- state/local test -->
+        <item>0x112E:rat=gsm, emergency=true</item>
+        <!-- state/local test additional language -->
+        <item>0x112F:rat=gsm, emergency=true</item>
+    </string-array>
+    <!-- Channels to receive geo-fencing trigger messages -->
+    <string-array name="geo_fencing_trigger_messages_range_strings" translatable="false">
+        <!-- geo-fencing trigger messages -->
+        <item>0x1130:rat=gsm, emergency=true</item>
+    </string-array>
+    <!-- Text links generating method. U.S does not allow text to be copied, so
+         we can't use smart linkify. -->
+    <string name="link_method" translatable="false">legacy_linkify</string>
+
+    <!-- Whether enabling copy message text into clipboard by long press.
+         FCC does not allow message to be copied/pasted -->
+    <bool name="enable_text_copy">false</bool>
+
+    <!-- Whether to enable alert handling during active voice call. -->
+    <bool name="enable_alert_handling_during_call">true</bool>
+    <!-- U.S carriers want to show separate testing toggles for monthly test,
+    operator defined and exercise -->
+    <!-- whether to display a separate operator defined test settings. today, most of time,
+    operator defined channels was controlled by the main test toggle. -->
+    <bool name="show_separate_operator_defined_settings">true</bool>
+    <!-- whether to display a separate exercise test settings. today, most of time,
+    exercise channels was controlled by the main test toggle. -->
+    <bool name="show_separate_exercise_settings">true</bool>
+
   <!-- Append date-time to the alert title -->
   <string name="date_time_format" translatable="false">MMM dd, HH:mm a</string>
   <!-- Whether to show test settings, enabled by dialer code -->
