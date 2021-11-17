@@ -442,6 +442,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 @Override
                 public void onSwitchChanged(Switch switchView, boolean isChecked) {
                     setAlertsEnabled(isChecked);
+                    onPreferenceChangedByUser(getContext());
                 }
             };
 
@@ -450,10 +451,6 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                     new Preference.OnPreferenceChangeListener() {
                         @Override
                         public boolean onPreferenceChange(Preference pref, Object newValue) {
-                            CellBroadcastReceiver.startConfigService(pref.getContext(),
-                                    CellBroadcastConfigService.ACTION_ENABLE_CHANNELS);
-                            setPreferenceChanged(getContext(), true);
-
                             if (mDisableSevereWhenExtremeDisabled) {
                                 if (pref.getKey().equals(KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS)) {
                                     boolean isExtremeAlertChecked = (Boolean) newValue;
@@ -470,8 +467,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                                 notifyAreaInfoUpdate(isEnabledAlert);
                             }
 
-                            // Notify backup manager a backup pass is needed.
-                            new BackupManager(getContext()).dataChanged();
+                            onPreferenceChangedByUser(getContext());
                             return true;
                         }
                     };
@@ -825,6 +821,20 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             super.onDestroy();
             LocalBroadcastManager.getInstance(getContext())
                     .unregisterReceiver(mTestingModeChangedReceiver);
+        }
+
+        /**
+         * Callback to be called when preference or master toggle is changed by user
+         *
+         * @param context Context to use
+         */
+        public void onPreferenceChangedByUser(Context context) {
+            CellBroadcastReceiver.startConfigService(context,
+                    CellBroadcastConfigService.ACTION_ENABLE_CHANNELS);
+            setPreferenceChanged(context, true);
+
+            // Notify backup manager a backup pass is needed.
+            new BackupManager(context).dataChanged();
         }
     }
 

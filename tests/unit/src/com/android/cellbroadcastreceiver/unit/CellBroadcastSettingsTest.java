@@ -19,6 +19,7 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.anyString;
@@ -33,19 +34,23 @@ import static org.mockito.Mockito.verify;
 import android.app.Instrumentation;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Looper;
 import android.os.RemoteException;
+import android.os.UserManager;
 import android.support.test.uiautomator.UiDevice;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 
+import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 import androidx.test.InstrumentationRegistry;
 import androidx.test.filters.FlakyTest;
 import androidx.test.runner.AndroidJUnit4;
 
+import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 
 import junit.framework.Assert;
@@ -54,6 +59,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 @RunWith(AndroidJUnit4.class)
 public class CellBroadcastSettingsTest extends
@@ -62,6 +70,17 @@ public class CellBroadcastSettingsTest extends
     private Context mContext;
     private UiDevice mDevice;
     private static final long DEVICE_WAIT_TIME = 1000L;
+
+    @Captor
+    private ArgumentCaptor<Intent> mIntent;
+    @Mock
+    private Preference mPreference;
+    @Mock
+    private UserManager mUserManager;
+    @Mock
+    private SharedPreferences mSharedPreference;
+    @Mock
+    private SharedPreferences.Editor mEditor;
 
     public CellBroadcastSettingsTest() {
         super(CellBroadcastSettings.class);
@@ -72,7 +91,7 @@ public class CellBroadcastSettingsTest extends
         mInstrumentation = InstrumentationRegistry.getInstrumentation();
         mContext = mInstrumentation.getTargetContext();
         mDevice = UiDevice.getInstance(mInstrumentation);
-        CellBroadcastSettings.resetResourcesCache();
+        MockitoAnnotations.initMocks(this);
     }
 
     @InstrumentationTest
@@ -145,6 +164,31 @@ public class CellBroadcastSettingsTest extends
         PreferenceManager.getDefaultSharedPreferences(mContext).edit()
                 .putBoolean("any_preference_changed_by_user", true).apply();
         assertTrue(CellBroadcastSettings.hasAnyPreferenceChanged(mContext));
+    }
+
+    @Test
+    public void testPreferenceChange() {
+        Context mockContext = mock(Context.class);
+        Looper.prepare();
+        CellBroadcastSettings.CellBroadcastSettingsFragment fragment =
+                new CellBroadcastSettings.CellBroadcastSettingsFragment();
+        doReturn(mUserManager).when(mockContext).getSystemService(Context.USER_SERVICE);
+        doReturn(true).when(mUserManager).isSystemUser();
+        doReturn(mSharedPreference).when(mockContext).getSharedPreferences(anyString(), anyInt());
+        doReturn(mEditor).when(mSharedPreference).edit();
+        doReturn(mEditor).when(mEditor).putBoolean(anyString(), anyBoolean());
+
+        fragment.onPreferenceChangedByUser(mockContext);
+
+        verify(mockContext, times(1)).startService(mIntent.capture());
+        assertEquals(CellBroadcastConfigService.ACTION_ENABLE_CHANNELS,
+                (String) mIntent.getValue().getAction());
+
+        doReturn("test_preference").when(mPreference).getKey();
+        fragment.onPreferenceChangedByUser(mockContext);
+        verify(mockContext, times(2)).startService(mIntent.capture());
+        assertEquals(CellBroadcastConfigService.ACTION_ENABLE_CHANNELS,
+                (String) mIntent.getValue().getAction());
     }
 
     @Test
