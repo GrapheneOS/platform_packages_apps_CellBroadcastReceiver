@@ -32,7 +32,6 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.os.UserManager;
-import androidx.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.provider.Telephony.CellBroadcasts;
 import android.telephony.CarrierConfigManager;
@@ -46,12 +45,13 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.preference.PreferenceManager;
 
 import com.android.cellbroadcastservice.CellBroadcastStatsLog;
 import com.android.internal.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
-
+import java.util.Arrays;
 
 public class CellBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "CellBroadcastReceiver";
@@ -68,6 +68,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
     // Key to access the shared preference of service state.
     private static final String SERVICE_STATE = "service_state";
+
+    // Key to access the shared preference of roaming operator.
+    private static final String ROAMING_OPERATOR_SUPPORTED = "roaming_operator_supported";
 
     // shared preference under developer settings
     private static final String ENABLE_ALERT_MASTER_PREF = "enable_alerts_master_toggle";
@@ -93,6 +96,11 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
     public static final String ACTION_TESTING_MODE_CHANGED =
             "com.android.cellbroadcastreceiver.intent.ACTION_TESTING_MODE_CHANGED";
+
+    // System property to set roaming network config which can be multiple items split by
+    // comma, and matched in sequence. This config will insert before the overlay.
+    private static final String ROAMING_PLMN_SUPPORTED_PROPERTY_KEY =
+            "persist.cellbroadcast.roaming_plmn_supported";
 
     private Context mContext;
 
@@ -146,11 +154,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             // configurations once moving back from APM. This should be fixed in lower layer
             // going forward.
             int ss = intent.getIntExtra(EXTRA_VOICE_REG_STATE, ServiceState.STATE_IN_SERVICE);
-            if (ss != ServiceState.STATE_POWER_OFF
-                    && getServiceState(context) == ServiceState.STATE_POWER_OFF) {
-                startConfigServiceToEnableChannels();
-            }
-            setServiceState(ss);
+            onServiceStateChanged(context, res, ss);
         } else if (CELLBROADCAST_START_CONFIG_ACTION.equals(action)
                 || SubscriptionManager.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action)) {
             startConfigServiceToEnableChannels();
@@ -199,6 +203,61 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             }
         } else {
             Log.w(TAG, "onReceive() unexpected action " + action);
+        }
+    }
+
+    private void onServiceStateChanged(Context context, Resources res, int ss) {
+        logd("onServiceStateChanged, ss: " + ss);
+        // check whether to support roaming network
+        String roamingOperator = null;
+        if (ss == ServiceState.STATE_IN_SERVICE || ss == ServiceState.STATE_EMERGENCY_ONLY) {
+            TelephonyManager tm = context.getSystemService(TelephonyManager.class);
+            String networkOperator = tm.getNetworkOperator();
+            logd("networkOperator: " + networkOperator);
+
+            // check roaming config only if the network oprator is not empty as the config
+            // is based on operator numeric
+            if (!networkOperator.isEmpty()) {
+                // No roaming supported by default
+                roamingOperator = "";
+                if ((tm.isNetworkRoaming() || ss == ServiceState.STATE_EMERGENCY_ONLY)
+                        && !networkOperator.equals(tm.getSimOperator())) {
+                    String propRoamingPlmn = SystemProperties.get(
+                            ROAMING_PLMN_SUPPORTED_PROPERTY_KEY, "").trim();
+                    String[] roamingNetworks = propRoamingPlmn.isEmpty() ? res.getStringArray(
+                            R.array.cmas_roaming_network_strings) : propRoamingPlmn.split(",");
+                    logd("roamingNetworks: " + Arrays.toString(roamingNetworks));
+
+                    for (String r : roamingNetworks) {
+                        r = r.trim();
+                        if (r.equals("XXXXXX")) {
+                            //match any roaming network, store mcc+mnc
+                            roamingOperator = networkOperator;
+                            break;
+                        } else if (r.equals("XXX")) {
+                            //match any roaming network, only store mcc
+                            roamingOperator = networkOperator.substring(0, 3);
+                            break;
+                        }  else if (networkOperator.startsWith(r)) {
+                            roamingOperator = r;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        if ((ss != ServiceState.STATE_POWER_OFF
+                && getServiceState(context) == ServiceState.STATE_POWER_OFF)
+                || (roamingOperator != null && !roamingOperator.equals(
+                getRoamingOperatorSupported(context)))) {
+            startConfigServiceToEnableChannels();
+        }
+        setServiceState(ss);
+
+        if (roamingOperator != null) {
+            log("update supported roaming operator as " + roamingOperator);
+            setRoamingOperatorSupported(roamingOperator);
         }
     }
 
@@ -276,7 +335,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 .apply();
     }
 
-        /**
+    /**
      * Enable/disable cell broadcast receiver testing mode.
      *
      * @param on {@code true} if testing mode is on, otherwise off.
@@ -307,11 +366,27 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     }
 
     /**
+     * Store the roaming operator
+     */
+    private void setRoamingOperatorSupported(String roamingOperator) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
+        sp.edit().putString(ROAMING_OPERATOR_SUPPORTED, roamingOperator).commit();
+    }
+
+    /**
      * @return the stored voice registration service state
      */
     private static int getServiceState(Context context) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         return sp.getInt(SERVICE_STATE, ServiceState.STATE_IN_SERVICE);
+    }
+
+    /**
+     * @return the supported roaming operator
+     */
+    public static String getRoamingOperatorSupported(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        return sp.getString(ROAMING_OPERATOR_SUPPORTED, "");
     }
 
     /**
@@ -622,6 +697,10 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
     private static void log(String msg) {
         Log.d(TAG, msg);
+    }
+
+    private static void logd(String msg) {
+        if (DBG) Log.d(TAG, msg);
     }
 
     private static void loge(String msg) {

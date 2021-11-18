@@ -17,18 +17,24 @@
 package com.android.cellbroadcastreceiver.unit;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.telephony.SmsCbMessage;
+import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.test.suitebuilder.annotation.SmallTest;
@@ -61,6 +67,15 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
 
     @Mock
     SharedPreferences mMockedSharedPreferences;
+
+    @Mock
+    SubscriptionManager mMockSubscriptionManager;
+
+    @Mock
+    SubscriptionInfo mMockSubscriptionInfo;
+
+    @Mock
+    Intent mIntent;
 
     private CellBroadcastConfigService mConfigService;
 
@@ -140,20 +155,20 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
         TelephonyManager.enableServiceHandleCaching();
     }
 
-    private void setCellBroadcastRange(int subId, boolean enable,
-                                       List<CellBroadcastChannelRange> ranges)
-            throws Exception {
+    private void setCellBroadcastRange(int subId, boolean isEnableOnly,
+            boolean enable, List<CellBroadcastChannelRange> ranges) throws Exception {
 
-        Class[] cArgs = new Class[3];
+        Class[] cArgs = new Class[4];
         cArgs[0] = Integer.TYPE;
         cArgs[1] = Boolean.TYPE;
-        cArgs[2] = List.class;
+        cArgs[2] = Boolean.TYPE;
+        cArgs[3] = List.class;
 
         Method method =
                 CellBroadcastConfigService.class.getDeclaredMethod("setCellBroadcastRange", cArgs);
         method.setAccessible(true);
 
-        method.invoke(mConfigService, subId, enable, ranges);
+        method.invoke(mConfigService, subId, isEnableOnly, enable, ranges);
     }
 
     /**
@@ -164,8 +179,8 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     public void testEnableCellBroadcastRange() throws Exception {
         ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
         result.add(new CellBroadcastChannelRange(mContext,
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, "10-20"));
-        setCellBroadcastRange(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, true, result);
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, mResources, "10-20"));
+        setCellBroadcastRange(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, false, true, result);
         ArgumentCaptor<Integer> captorStart = ArgumentCaptor.forClass(Integer.class);
         ArgumentCaptor<Integer> captorEnd = ArgumentCaptor.forClass(Integer.class);
         ArgumentCaptor<Integer> captorType = ArgumentCaptor.forClass(Integer.class);
@@ -173,6 +188,14 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
         verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(anyInt(),
                 captorStart.capture(), captorEnd.capture(), captorType.capture());
 
+        assertEquals(10, captorStart.getValue().intValue());
+        assertEquals(20, captorEnd.getValue().intValue());
+        assertEquals(1, captorType.getValue().intValue());
+
+        setCellBroadcastRange(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, true, true, result);
+
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(anyInt(),
+                captorStart.capture(), captorEnd.capture(), captorType.capture());
         assertEquals(10, captorStart.getValue().intValue());
         assertEquals(20, captorEnd.getValue().intValue());
         assertEquals(1, captorType.getValue().intValue());
@@ -186,8 +209,8 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     public void testDisableCellBroadcastRange() throws Exception {
         ArrayList<CellBroadcastChannelRange> result = new ArrayList<>();
         result.add(new CellBroadcastChannelRange(mContext,
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, "10-20"));
-        setCellBroadcastRange(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, false, result);
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, mResources, "10-20"));
+        setCellBroadcastRange(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, false, false, result);
         ArgumentCaptor<Integer> captorStart = ArgumentCaptor.forClass(Integer.class);
         ArgumentCaptor<Integer> captorEnd = ArgumentCaptor.forClass(Integer.class);
         ArgumentCaptor<Integer> captorType = ArgumentCaptor.forClass(Integer.class);
@@ -198,6 +221,11 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
         assertEquals(10, captorStart.getValue().intValue());
         assertEquals(20, captorEnd.getValue().intValue());
         assertEquals(1, captorType.getValue().intValue());
+
+        setCellBroadcastRange(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID, true, false, result);
+
+        verify(mMockedSmsService, times(1)).disableCellBroadcastRangeForSubscriber(anyInt(),
+                captorStart.capture(), captorEnd.capture(), captorType.capture());
     }
 
     private void setPreference(String pref, boolean value) {
@@ -632,6 +660,173 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(0),
                 eq(SmsCbConstants.MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE),
                 eq(SmsCbConstants.MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+    }
+
+    /**
+     * Test handling the intent to enable channels
+     */
+    @Test
+    @SmallTest
+    public void testOnHandleIntentActionEnableChannels() throws Exception {
+        List<SubscriptionInfo> sl = new ArrayList<>();
+        sl.add(mMockSubscriptionInfo);
+        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(
+                mMockSubscriptionInfo).getSubscriptionId();
+        doReturn(mContext).when(mConfigService).getApplicationContext();
+        doReturn(mMockSubscriptionManager).when(mContext).getSystemService(anyString());
+        doReturn(sl).when(mMockSubscriptionManager).getActiveSubscriptionInfoList();
+        doReturn(CellBroadcastConfigService.ACTION_ENABLE_CHANNELS).when(mIntent).getAction();
+        doNothing().when(mConfigService).enableCellBroadcastChannels(anyInt());
+        doNothing().when(mConfigService).enableCellBroadcastRoamingChannelsAsNeeded(anyInt());
+
+        Method method = CellBroadcastConfigService.class.getDeclaredMethod(
+                "onHandleIntent", new Class[]{Intent.class});
+        method.setAccessible(true);
+        method.invoke(mConfigService, mIntent);
+
+        verify(mConfigService, times(1)).enableCellBroadcastChannels(
+                eq(SubscriptionManager.INVALID_SUBSCRIPTION_ID));
+        verify(mConfigService, times(1)).enableCellBroadcastRoamingChannelsAsNeeded(
+                eq(SubscriptionManager.INVALID_SUBSCRIPTION_ID));
+    }
+
+    /**
+     * Test enabling cell broadcast roaming channels as needed
+     */
+    @Test
+    @SmallTest
+    public void testEnableCellBroadcastRoamingChannelsAsNeeded() throws Exception {
+        doReturn("").when(mMockedSharedPreferences).getString(anyString(), anyString());
+
+        mConfigService.enableCellBroadcastRoamingChannelsAsNeeded(
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+
+        //do nothing if operator is empty
+        verify(mConfigService, never()).getResources(anyInt(), anyString());
+
+        Context mockContext = mock(Context.class);
+        doReturn(mResources).when(mockContext).getResources();
+        doReturn(mockContext).when(mContext).createConfigurationContext(any());
+        doReturn("123").when(mMockedSharedPreferences).getString(anyString(), anyString());
+        doReturn(mResources).when(mConfigService).getResources(anyInt(), anyString());
+        putResources(com.android.cellbroadcastreceiver.R.bool.master_toggle_enabled_default, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .extreme_threat_alerts_enabled_default, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .severe_threat_alerts_enabled_default, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool.amber_alerts_enabled_default, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_test_settings, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool.test_alerts_enabled_default, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .test_exercise_alerts_enabled_default, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .test_operator_defined_alerts_enabled_default, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .area_update_info_alerts_enabled_default, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .state_local_test_alerts_enabled_default, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .emergency_alerts_enabled_default, true);
+
+        mConfigService.enableCellBroadcastRoamingChannelsAsNeeded(
+                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+
+        // should not disable channel
+        verify(mMockedSmsService, never()).disableCellBroadcastRangeForSubscriber(
+                anyInt(), anyInt(), anyInt(), anyInt());
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT),
+                eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP2));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_EXTREME_THREAT),
+                eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_EXTREME_THREAT),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP2));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_SEVERE_THREAT),
+                eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_SEVERE_THREAT),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP2));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY),
+                eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP2));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_TEST_MESSAGE),
+                eq(SmsEnvelope.SERVICE_CATEGORY_CMAS_TEST_MESSAGE),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP2));
+
+        // GSM
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_ETWS_EARTHQUAKE_WARNING),
+                eq(SmsCbConstants.MESSAGE_ID_ETWS_EARTHQUAKE_AND_TSUNAMI_WARNING),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE),
+                eq(SmsCbConstants.MESSAGE_ID_ETWS_OTHER_EMERGENCY_TYPE),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_LIKELY),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_EXPECTED_OBSERVED),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_SEVERE_EXPECTED_LIKELY),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_REQUIRED_MONTHLY_TEST),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_REQUIRED_MONTHLY_TEST),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_ETWS_TEST_MESSAGE),
+                eq(SmsCbConstants.MESSAGE_ID_ETWS_TEST_MESSAGE),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_OPERATOR_DEFINED_USE),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_OPERATOR_DEFINED_USE),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXERCISE),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXERCISE),
                 eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
     }
 }
