@@ -90,7 +90,8 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
         // Create the list fragment and add it as our sole content.
         if (fm.findFragmentById(com.android.settingslib.collapsingtoolbar.R.id.content_frame)
                 == null) {
-            mListFragment = new CursorLoaderListFragment(this);
+            mListFragment = new CursorLoaderListFragment();
+            mListFragment.setActivity(this);
             fm.beginTransaction().add(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                     mListFragment).commit();
         }
@@ -193,7 +194,7 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
         private CellBroadcastListActivity mActivity;
 
-        CursorLoaderListFragment(CellBroadcastListActivity activity) {
+        void setActivity(CellBroadcastListActivity activity) {
             mActivity = activity;
         }
 
@@ -556,7 +557,9 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
                             | Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                     startActivity(intent);
-                    mActivity.finish();
+                    if (mActivity != null) {
+                        mActivity.finish();
+                    }
                     break;
 
                 default:
