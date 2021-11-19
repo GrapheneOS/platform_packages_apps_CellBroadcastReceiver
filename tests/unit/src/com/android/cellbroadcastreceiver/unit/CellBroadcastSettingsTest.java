@@ -72,6 +72,7 @@ public class CellBroadcastSettingsTest extends
         mInstrumentation = InstrumentationRegistry.getInstrumentation();
         mContext = mInstrumentation.getTargetContext();
         mDevice = UiDevice.getInstance(mInstrumentation);
+        CellBroadcastSettings.resetResourcesCache();
     }
 
     @InstrumentationTest

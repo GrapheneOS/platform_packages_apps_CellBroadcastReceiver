@@ -46,6 +46,7 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.TwoStatePreference;
 
+import com.android.internal.annotations.VisibleForTesting;
 import com.android.modules.utils.build.SdkLevel;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.widget.MainSwitchPreference;
@@ -163,6 +164,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
 
     // Resource cache per operator
     private static final Map<String, Resources> sResourcesCacheByOperator = new HashMap<>();
+    private static final Object sCacheLock = new Object();
 
     // Intent sent from cellbroadcastreceiver to notify cellbroadcastservice that area info update
     // is disabled/enabled.
@@ -856,14 +858,17 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             return context.getResources();
         }
 
-        if (sResourcesCache.containsKey(subId)) {
-            return sResourcesCache.get(subId);
+        synchronized (sCacheLock) {
+            if (sResourcesCache.containsKey(subId)) {
+                return sResourcesCache.get(subId);
+            }
+
+            Resources res = SubscriptionManager.getResourcesForSubId(context, subId);
+
+            sResourcesCache.put(subId, res);
+
+            return res;
         }
-
-        Resources res = SubscriptionManager.getResourcesForSubId(context, subId);
-        sResourcesCache.put(subId, res);
-
-        return res;
     }
 
     /**
@@ -888,30 +893,32 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             return getResources(context, subId);
         }
 
-        Resources res = sResourcesCacheByOperator.get(operator);
-        if (res != null) {
+        synchronized (sCacheLock) {
+            Resources res = sResourcesCacheByOperator.get(operator);
+            if (res != null) {
+                return res;
+            }
+
+            Configuration overrideConfig = new Configuration();
+            try {
+                int mcc = Integer.parseInt(operator.substring(0, 3));
+                int mnc = operator.length() > 3 ? Integer.parseInt(operator.substring(3))
+                        : Configuration.MNC_ZERO;
+
+                overrideConfig.mcc = mcc;
+                overrideConfig.mnc = mnc;
+            } catch (NumberFormatException e) {
+                // should not happen
+                Log.e(TAG, "invalid operator: " + operator);
+                return context.getResources();
+            }
+
+            Context newContext = context.createConfigurationContext(overrideConfig);
+            res = newContext.getResources();
+
+            sResourcesCacheByOperator.put(operator, res);
             return res;
         }
-
-        Configuration overrideConfig = new Configuration();
-        try {
-            int mcc = Integer.parseInt(operator.substring(0, 3));
-            int mnc = operator.length() > 3 ? Integer.parseInt(operator.substring(3))
-                    : Configuration.MNC_ZERO;
-
-            overrideConfig.mcc = mcc;
-            overrideConfig.mnc = mnc;
-        } catch (NumberFormatException e) {
-            // should not happen
-            Log.e(TAG, "invalid operator: " + operator);
-            return context.getResources();
-        }
-
-        Context newContext = context.createConfigurationContext(overrideConfig);
-        res = newContext.getResources();
-
-        sResourcesCacheByOperator.put(operator, res);
-        return res;
     }
 
     /**
@@ -952,6 +959,17 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 return R.bool.area_update_info_alerts_enabled_default;
             default:
                 return 0;
+        }
+    }
+
+    /**
+     * Reset the resources cache.
+     */
+    @VisibleForTesting
+    public static void resetResourcesCache() {
+        synchronized (sCacheLock) {
+            sResourcesCacheByOperator.clear();
+            sResourcesCache.clear();
         }
     }
 }
