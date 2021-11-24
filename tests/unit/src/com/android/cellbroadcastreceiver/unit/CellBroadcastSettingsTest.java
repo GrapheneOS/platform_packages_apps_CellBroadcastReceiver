@@ -167,7 +167,7 @@ public class CellBroadcastSettingsTest extends
     }
 
     @Test
-    public void testPreferenceChange() {
+    public void testPreferenceChangeByUser() {
         Context mockContext = mock(Context.class);
         Looper.prepare();
         CellBroadcastSettings.CellBroadcastSettingsFragment fragment =
@@ -181,12 +181,6 @@ public class CellBroadcastSettingsTest extends
         fragment.onPreferenceChangedByUser(mockContext);
 
         verify(mockContext, times(1)).startService(mIntent.capture());
-        assertEquals(CellBroadcastConfigService.ACTION_ENABLE_CHANNELS,
-                (String) mIntent.getValue().getAction());
-
-        doReturn("test_preference").when(mPreference).getKey();
-        fragment.onPreferenceChangedByUser(mockContext);
-        verify(mockContext, times(2)).startService(mIntent.capture());
         assertEquals(CellBroadcastConfigService.ACTION_ENABLE_CHANNELS,
                 (String) mIntent.getValue().getAction());
     }
