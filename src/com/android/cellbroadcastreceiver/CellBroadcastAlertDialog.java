@@ -490,8 +490,8 @@ public class CellBroadcastAlertDialog extends Activity {
     }
 
     @Override
-    protected void onStop() {
-        Log.d(TAG, "onStop called");
+    protected void onUserLeaveHint() {
+        Log.d(TAG, "onUserLeaveHint called");
         // When the activity goes in background (eg. clicking Home button, dismissed by outside
         // touch if enabled), send notification.
         // Avoid doing this when activity will be recreated because of orientation change or if
@@ -507,9 +507,7 @@ public class CellBroadcastAlertDialog extends Activity {
             CellBroadcastAlertService.addToNotificationBar(latestMessage, messageList,
                     getApplicationContext(), true, true, false);
         }
-        // Do not stop the audio here. Pressing power button should turn off screen but should not
-        // interrupt the audio/vibration
-        super.onStop();
+        super.onUserLeaveHint();
     }
 
     @Override
