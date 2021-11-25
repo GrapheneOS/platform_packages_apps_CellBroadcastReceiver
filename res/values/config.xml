@@ -188,6 +188,8 @@
     <string-array name="cmas_roaming_network_strings" translatable="false">
         <!-- France -->
         <item>208</item>
+        <!-- Qatar -->
+        <item>427</item>
     </string-array>
 
     <!-- Values that are retrieved from the ListPreference.
