@@ -113,7 +113,8 @@ public class CellBroadcastConfigService extends IntentService {
                         .setContentTitle(c.getString(R.string.notification_cb_settings_changed_title))
                         .setContentText(c.getString(R.string.notification_cb_settings_changed_text))
                         .setSmallIcon(R.drawable.ic_settings_gear_outline_24dp)
-                        .setContentIntent(pi);
+                        .setContentIntent(pi)
+                        .setAutoCancel(true);
                 NotificationManager notificationManager = c.getSystemService(
                         NotificationManager.class);
                 notificationManager.notify(
