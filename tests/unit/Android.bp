@@ -69,6 +69,7 @@ android_test {
         "SettingsLibSettingsTheme",
         "SettingsLibCollapsingToolbarBaseActivity",
         "SettingsLibMainSwitchPreference",
+	"SettingsLibTopIntroPreference",
         "modules-utils-build_system",
     ],
     min_sdk_version: "30",
