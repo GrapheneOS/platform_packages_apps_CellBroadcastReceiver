@@ -92,6 +92,7 @@ public class CellBroadcastSettingsTest extends
         mContext = mInstrumentation.getTargetContext();
         mDevice = UiDevice.getInstance(mInstrumentation);
         MockitoAnnotations.initMocks(this);
+        CellBroadcastSettings.resetResourcesCache();
     }
 
     @InstrumentationTest
