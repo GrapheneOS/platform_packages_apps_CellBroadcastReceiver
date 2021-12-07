@@ -167,6 +167,8 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Maksimalus laukimo laikas:"</string>
     <string name="seconds" msgid="141450721520515025">"sekundės"</string>
     <string name="message_copied" msgid="6922953753733166675">"Pranešimas nukopijuotas"</string>
+    <string name="top_intro_default_text" msgid="1922926733152511202"></string>
+    <string name="top_intro_roaming_text" msgid="186872150397081032">"Kai naudojate tarptinklinį ryšį, galite gauti įspėjimų, kurie neįtraukti į šiuos nustatymus"</string>
     <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Operatoriaus pakeisti nustatymai"</string>
     <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Palieskite, kad peržiūrėtumėte belaidžiu ryšiu siunčiamų kritinės padėties įspėjimų nustatymus"</string>
 </resources>
