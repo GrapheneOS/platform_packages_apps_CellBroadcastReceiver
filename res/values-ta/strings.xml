@@ -167,6 +167,8 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"அதிகபட்சக் காத்திருப்பு நேரம்:"</string>
     <string name="seconds" msgid="141450721520515025">"நொடிகள்"</string>
     <string name="message_copied" msgid="6922953753733166675">"செய்தி நகலெடுக்கப்பட்டது"</string>
+    <string name="top_intro_default_text" msgid="1922926733152511202"></string>
+    <string name="top_intro_roaming_text" msgid="186872150397081032">"ரோமிங்கில் இருக்கும்போது இந்த அமைப்புகளில் சேர்க்கப்படாத சில விழிப்பூட்டல்களை நீங்கள் பெறக்கூடும்"</string>
     <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"மொபைல் நிறுவனத்தால் மாற்றப்பட்ட அமைப்புகள்"</string>
     <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"வயர்லெஸ் அவசரகால விழிப்பூட்டல் அமைப்புகளைப் பார்க்க தட்டவும்"</string>
 </resources>

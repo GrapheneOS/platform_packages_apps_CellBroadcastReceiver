@@ -99,7 +99,7 @@
     <string name="override_dnd_title" msgid="5120805993144214421">"Эскертүү ар дайым катуу ойнотулсун"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\"Тынчымды алба\" жана үн көлөмүнүн башка жөндөөлөрүн этибарга албоо"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Аймакты жаңыртуу боюнча таркатмалар"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM-картанын абалы тууралуу жаңыртылган маалымат көрүнсүн"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM-картанын абалы тууралуу жаңырган маалымат көрүнсүн"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Шашылыш билдирүүнүн категориясы:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Геофизакалык"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Метеорологиялык"</string>
@@ -167,6 +167,8 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"Эң көп күтүү убакыты:"</string>
     <string name="seconds" msgid="141450721520515025">"секунд"</string>
     <string name="message_copied" msgid="6922953753733166675">"Билдирүү көчүрүлдү"</string>
+    <string name="top_intro_default_text" msgid="1922926733152511202"></string>
+    <string name="top_intro_roaming_text" msgid="186872150397081032">"Роуминг учурунда бул жөндөөлөрдө камтылбаган эскертүүлөрдү алышыңыз мүмкүн"</string>
     <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Жөндөөлөр байланыш оператору тарабынан өзгөртүлдү"</string>
     <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Зымсыз шашылыш билдирүү жөндөөлөрүн көрүү үчүн басыңыз"</string>
 </resources>
