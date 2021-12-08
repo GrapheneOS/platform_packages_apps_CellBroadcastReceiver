@@ -275,7 +275,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      * @param context the context
      * @param subId subId of the carrier config event
      */
-    private void resetSettingsIfCarrierChanged(Context context, int subId) {
+    private void resetSettingsAsNeeded(Context context, int subId) {
         // subId may be -1 if carrier config broadcast is being sent on SIM removal
         if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
             if (getPreviousCarrierIdForDefaultSub() == NO_PREVIOUS_CARRIER_ID) {
@@ -316,6 +316,17 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                     + " for first boot");
             saveCarrierIdForDefaultSub(carrierId);
             return;
+        }
+
+        /** When user_build_mode is true and alow_testing_mode_on_user_build is false
+         *  then testing_mode is not able to be true at all.
+         */
+        Resources res = getResourcesMethod();
+        if (!res.getBoolean(R.bool.allow_testing_mode_on_user_build)
+                && SystemProperties.getInt("ro.debuggable", 0) == 0
+                && CellBroadcastReceiver.isTestingMode(context)) {
+            Log.d(TAG, "it can't be testing_mode at all");
+            setTestingMode(false);
         }
 
         if (carrierId != previousCarrierId) {
@@ -445,7 +456,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         if (isSystemUser()) {
             Log.d(TAG, "initializeSharedPreference");
 
-            resetSettingsIfCarrierChanged(context, subId);
+            resetSettingsAsNeeded(context, subId);
 
             SharedPreferences sp = getDefaultSharedPreferences();
 
