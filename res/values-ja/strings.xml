@@ -167,6 +167,8 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"最大待ち時間:"</string>
     <string name="seconds" msgid="141450721520515025">"秒"</string>
     <string name="message_copied" msgid="6922953753733166675">"メッセージをコピーしました"</string>
+    <string name="top_intro_default_text" msgid="1922926733152511202"></string>
+    <string name="top_intro_roaming_text" msgid="186872150397081032">"ローミング中に、これらの設定に含まれない通知が届くことがあります"</string>
     <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"携帯通信会社によって設定が変更されました"</string>
     <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"タップすると、緊急速報メールの設定を確認できます"</string>
 </resources>
