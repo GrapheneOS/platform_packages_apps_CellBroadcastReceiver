@@ -167,6 +167,8 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"최대 대기 시간:"</string>
     <string name="seconds" msgid="141450721520515025">"초"</string>
     <string name="message_copied" msgid="6922953753733166675">"메시지 복사됨"</string>
+    <string name="top_intro_default_text" msgid="1922926733152511202"></string>
+    <string name="top_intro_roaming_text" msgid="186872150397081032">"로밍 중 설정에 포함되지 않은 일부 알림이 수신될 수 있습니다."</string>
     <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"이동통신사에서 설정을 변경함"</string>
     <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"무선 긴급 경보 설정을 보려면 탭하세요."</string>
 </resources>
