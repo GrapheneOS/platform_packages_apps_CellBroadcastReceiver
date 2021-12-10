@@ -190,6 +190,8 @@
         <item>208</item>
         <!-- Qatar -->
         <item>427</item>
+        <!-- Germany -->
+        <item>262</item>
     </string-array>
 
     <!-- Values that are retrieved from the ListPreference.
