@@ -155,8 +155,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             // going forward.
             int ss = intent.getIntExtra(EXTRA_VOICE_REG_STATE, ServiceState.STATE_IN_SERVICE);
             onServiceStateChanged(context, res, ss);
-        } else if (CELLBROADCAST_START_CONFIG_ACTION.equals(action)
-                || SubscriptionManager.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action)) {
+        } else if (SubscriptionManager.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action)) {
             startConfigServiceToEnableChannels();
         } else if (Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED.equals(action) ||
                 Telephony.Sms.Intents.SMS_CB_RECEIVED_ACTION.equals(action)) {
