@@ -76,7 +76,8 @@ public class CellBroadcastChannelManager {
                     R.array.etws_alerts_range_strings,
                     R.array.etws_test_alerts_range_strings,
                     R.array.public_safety_messages_channels_range_strings,
-                    R.array.state_local_test_alert_range_strings
+                    R.array.state_local_test_alert_range_strings,
+                    R.array.geo_fencing_trigger_messages_range_strings
             ));
 
     private static Map<Integer, Map<Integer, List<CellBroadcastChannelRange>>>
