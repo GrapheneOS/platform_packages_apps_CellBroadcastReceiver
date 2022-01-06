@@ -138,6 +138,7 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         verify(mCellBroadcastReceiver).initializeSharedPreference(any(), anyInt());
         verify(mCellBroadcastReceiver).startConfigServiceToEnableChannels();
         verify(mCellBroadcastReceiver).enableLauncher();
+        verify(mCellBroadcastReceiver).resetCellBroadcastChannelRanges();
     }
 
     @Test

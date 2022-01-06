@@ -129,6 +129,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         } else if (CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED.equals(action)) {
             if (!intent.getBooleanExtra(
                     "android.telephony.extra.REBROADCAST_ON_UNLOCK", false)) {
+                resetCellBroadcastChannelRanges();
                 int subId = intent.getIntExtra(CarrierConfigManager.EXTRA_SUBSCRIPTION_INDEX,
                         SubscriptionManager.INVALID_SUBSCRIPTION_ID);
                 initializeSharedPreference(context, subId);
@@ -195,14 +196,6 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                         provider.resyncToSmsInbox(mContext);
                         return true;
                     });
-        } else if (TelephonyManager.ACTION_SIM_CARD_STATE_CHANGED.equals(action)) {
-            int sim_state = intent.getIntExtra(
-                TelephonyManager.EXTRA_SIM_STATE, TelephonyManager.SIM_STATE_UNKNOWN);
-
-            if (sim_state == TelephonyManager.SIM_STATE_ABSENT
-                || sim_state == TelephonyManager.SIM_STATE_PRESENT) {
-                CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
-            }
         } else {
             Log.w(TAG, "onReceive() unexpected action " + action);
         }
@@ -706,6 +699,16 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 new ComponentName(mContext, aliasLauncherActivity),
                 PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
         }
+    }
+
+    /**
+     * Reset cached CellBroadcastChannelRanges
+     *
+     * This method's purpose is to enable unit testing
+     */
+    @VisibleForTesting
+    public void resetCellBroadcastChannelRanges() {
+        CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
     }
 
     private static void log(String msg) {
