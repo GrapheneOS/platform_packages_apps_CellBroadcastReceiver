@@ -74,12 +74,14 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"ภัยคุกคามต่อชีวิตและทรัพย์สินระดับสูงสุด"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ภัยคุกคามที่ร้ายแรง"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ภัยคุกคามต่อชีวิตและทรัพย์สินระดับรุนแรง"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"การแจ้งเตือน AMBER"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"การแจ้งเตือนเด็กหาย Amber Alert"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"กระดานข่าวสารเหตุฉุกเฉินการลักพาตัวเด็ก"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"ข้อความแจ้งเตือน"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"เตือนเกี่ยวกับภัยคุกคามความปลอดภัยที่จะเกิดขึ้น"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ข้อความด้านความปลอดภัยสาธารณะ"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"การดำเนินการที่แนะนำซึ่งจะช่วยรักษาชีวิตหรือทรัพย์สินได้"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"แสดงข้อความแบบเต็มหน้าจอ"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"ปิดเพื่อให้ส่งข้อความด้านความปลอดภัยสาธารณะไปยังแอป SMS เท่านั้น"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"การทดสอบระดับประเทศและระดับท้องถิ่น"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"รับข้อความทดสอบจากหน่วยงานรัฐและหน่วยงานท้องถิ่น"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"การแจ้งเตือนเหตุฉุกเฉิน"</string>
