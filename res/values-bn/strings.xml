@@ -80,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"আসন্ন নিরাপত্তা ঝুঁকির বিষয়ে সতর্কতা পান"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"সর্বজনীন নিরাপত্তা মেসেজ"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"জীবন অথবা সম্পত্তি রক্ষা করতে পারে, এমন কাজের প্রস্তাবনা"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"ফুল-স্ক্রিন মেসেজ দেখুন"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"শুধুমাত্র আপনার এসএমএস অ্যাপে সর্বজনীন নিরাপত্তা মেসেজ পাওয়ার জন্য এই সুবিধা বন্ধ করুন"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"রাজ্য ও স্থানীয় পরীক্ষা"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"রাজ্য ও স্থানীয় কর্তৃপক্ষের কাছ থেকে পরীক্ষামূলক মেসেজ পান"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"জরুরি সতর্কতা"</string>
