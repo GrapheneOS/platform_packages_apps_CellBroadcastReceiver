@@ -362,16 +362,6 @@ public class CellBroadcastResources {
             case R.array.cmas_presidential_alerts_channels_range_strings:
                 return R.string.cmas_presidential_level_alert;
             case R.array.cmas_alert_extreme_channels_range_strings:
-                if (message.isCmasMessage()) {
-                    if (cmasInfo.getSeverity() == SmsCbCmasInfo.CMAS_SEVERITY_EXTREME
-                            && cmasInfo.getUrgency() == SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE) {
-                        if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED) {
-                            return R.string.cmas_extreme_immediate_observed_alert;
-                        } else if (cmasInfo.getCertainty() == SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY) {
-                            return R.string.cmas_extreme_immediate_likely_alert;
-                        }
-                    }
-                }
                 return R.string.cmas_extreme_alert;
             case R.array.cmas_alerts_severe_range_strings:
                 return R.string.cmas_severe_alert;
