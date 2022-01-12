@@ -27,6 +27,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.AudioManager;
 import android.os.SystemClock;
@@ -38,6 +39,7 @@ import android.telephony.TelephonyManager;
 import android.test.ServiceTestCase;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
+import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.internal.telephony.ISub;
 
 import org.junit.After;
@@ -68,6 +70,8 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
     protected Vibrator mMockedVibrator;
     @Mock
     protected SharedPreferences mMockedSharedPreferences;
+
+    protected Configuration mConfiguration;
 
     MockedServiceManager mMockedServiceManager;
 
@@ -145,6 +149,11 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         public SharedPreferences getSharedPreferences(String name, int mode) {
             return mMockedSharedPreferences;
         }
+
+        @Override
+        public Context createConfigurationContext(Configuration overrideConfiguration) {
+            return this;
+        }
     }
 
     @Before
@@ -159,20 +168,22 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
 
         doReturn(new String[]{""}).when(mResources).getStringArray(anyInt());
 
+        mConfiguration = new Configuration();
+        doReturn(mConfiguration).when(mResources).getConfiguration();
+
         doReturn(1).when(mMockSubscriptionInfo).getSubscriptionId();
         doReturn(Arrays.asList(mMockSubscriptionInfo)).when(mMockedSubscriptionManager)
                 .getActiveSubscriptionInfoList();
 
         doReturn(mMockedTelephonyManager).when(mMockedTelephonyManager)
                 .createForSubscriptionId(anyInt());
-        doReturn(TelephonyManager.SIM_STATE_UNKNOWN).when(mMockedTelephonyManager)
-                .getSimApplicationState(anyInt());
 
         mMockedServiceManager = new MockedServiceManager();
         mMockedServiceManager.replaceService("isub", mSubService);
 
         mContext = new TestContextWrapper(getContext());
         setContext(mContext);
+        CellBroadcastSettings.resetResourcesCache();
         CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
     }
 

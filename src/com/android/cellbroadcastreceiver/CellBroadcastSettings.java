@@ -33,7 +33,6 @@ import android.os.Bundle;
 import android.os.UserManager;
 import android.os.Vibrator;
 import android.telephony.SubscriptionManager;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Switch;
@@ -881,17 +880,8 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
      */
     public static @NonNull Resources getResources(@NonNull Context context, int subId) {
 
-        try {
-            if (subId == SubscriptionManager.DEFAULT_SUBSCRIPTION_ID
-                    || !SubscriptionManager.isValidSubscriptionId(subId)
-                    // per the latest design, subId can be valid earlier than mcc mnc is known to
-                    // telephony. check if sim is loaded to avoid caching the wrong resources.
-                    || context.getSystemService(TelephonyManager.class).getSimApplicationState(
-                    SubscriptionManager.getSlotIndex(subId)) != TelephonyManager.SIM_STATE_LOADED) {
-                return context.getResources();
-            }
-        } catch (Exception e) {
-            Log.d(TAG, "Fail to getSimApplicationState due to " + e);
+        if (subId == SubscriptionManager.DEFAULT_SUBSCRIPTION_ID
+                || !SubscriptionManager.isValidSubscriptionId(subId)) {
             return context.getResources();
         }
 
@@ -902,7 +892,11 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
 
             Resources res = SubscriptionManager.getResourcesForSubId(context, subId);
 
-            sResourcesCache.put(subId, res);
+            if (res.getConfiguration().mnc != 0) {
+                Log.d(TAG, "Cache resource for sub: " + subId + ", mcc: "
+                        + res.getConfiguration().mcc + ", mnc:" + res.getConfiguration().mnc);
+                sResourcesCache.put(subId, res);
+            }
 
             return res;
         }
