@@ -32,6 +32,7 @@ java_defaults {
     libs: [
         "framework-annotations-lib",
         "framework-statsd",
+        "framework-bluetooth",
     ],
     static_libs: [
         "androidx.legacy_legacy-support-v4",
