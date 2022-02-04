@@ -16,11 +16,14 @@
 
 package com.android.cellbroadcastreceiver.unit;
 
+import static org.mockito.Mockito.spy;
+
 import android.app.Activity;
 import android.app.ResourcesManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Handler;
 import android.test.ActivityUnitTestCase;
@@ -114,8 +117,11 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
 
         private HashMap<String, Object> mInjectedSystemServices = new HashMap<>();
 
+        private Resources mResources;
+
         public TestContext(Context base) {
             super(base);
+            mResources = spy(super.getResources());
         }
 
         public <S> void injectSystemService(Class<S> cls, S service) {
@@ -144,17 +150,14 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
             return super.getSystemService(name);
         }
 
-        Resources mResources;
         @Override
         public Resources getResources() {
-            if (mResources != null) {
-                return mResources;
-            }
-            return super.getResources();
+            return mResources;
         }
 
-        public void setResources(Resources resources) {
-            mResources = resources;
+        @Override
+        public Context createConfigurationContext(Configuration overrideConfiguration) {
+            return this;
         }
     }
 }
