@@ -88,8 +88,6 @@ public abstract class CellBroadcastTest {
         doReturn(mResources).when(mContext).getResources();
         doReturn(mContext).when(mContext).getApplicationContext();
         doReturn(new String[]{""}).when(mResources).getStringArray(anyInt());
-        doReturn(TelephonyManager.SIM_STATE_LOADED).when(mTelephonyManager)
-                .getSimApplicationState(anyInt());
     }
 
     void carrierConfigSetStringArray(int subId, String key, String[] values) {
