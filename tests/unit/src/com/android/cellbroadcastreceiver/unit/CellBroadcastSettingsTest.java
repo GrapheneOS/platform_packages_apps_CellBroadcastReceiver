@@ -51,6 +51,7 @@ import androidx.test.runner.AndroidJUnit4;
 
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
+import com.android.modules.utils.build.SdkLevel;
 
 import junit.framework.Assert;
 
@@ -226,25 +227,27 @@ public class CellBroadcastSettingsTest extends
         // The resources will be cached for ths sub
         config.mcc = 123;
         config.mnc = 456;
+        // The cache logic is updated on S
+        final int timesExpected = SdkLevel.isAtLeastS() ? 2 : 1;
 
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID - 1);
 
         verify(mockContext, times(2)).getResources();
-        verify(mockContext2, times(2)).getResources();
+        verify(mockContext2, times(timesExpected)).getResources();
 
         // The resources should be read from the cached directly
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID - 1);
 
         verify(mockContext, times(2)).getResources();
-        verify(mockContext2, times(2)).getResources();
+        verify(mockContext2, times(timesExpected)).getResources();
 
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID - 2);
 
         verify(mockContext, times(2)).getResources();
-        verify(mockContext2, times(3)).getResources();
+        verify(mockContext2, times(timesExpected + 1)).getResources();
     }
 
     @Test
