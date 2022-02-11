@@ -268,8 +268,16 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      * @param subId subId of the carrier config event
      */
     private void resetSettingsAsNeeded(Context context, int subId) {
+        final int defaultSubId = SubscriptionManager.getDefaultSubscriptionId();
+
         // subId may be -1 if carrier config broadcast is being sent on SIM removal
         if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+            if (defaultSubId != SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+                Log.d(TAG, "ignoring carrier config broadcast because subId=-1 and it's not"
+                        + " defaultSubId when device is support multi-sim");
+                return;
+            }
+
             if (getPreviousCarrierIdForDefaultSub() == NO_PREVIOUS_CARRIER_ID) {
                 // on first boot only, if no SIM is inserted we save the carrier ID -1.
                 // This allows us to detect the carrier change from -1 to the carrier of the first
@@ -280,7 +288,6 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             return;
         }
 
-        final int defaultSubId = SubscriptionManager.getDefaultSubscriptionId();
         Log.d(TAG, "subId=" + subId + " defaultSubId=" + defaultSubId);
         if (defaultSubId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
             Log.d(TAG, "ignoring carrier config broadcast because defaultSubId=-1");
@@ -336,7 +343,12 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 .getInt(CARRIER_ID_FOR_DEFAULT_SUB_PREF, NO_PREVIOUS_CARRIER_ID);
     }
 
-    private void saveCarrierIdForDefaultSub(int carrierId) {
+
+    /**
+     * store carrierId corresponding to the default subId.
+     */
+    @VisibleForTesting
+    public void saveCarrierIdForDefaultSub(int carrierId) {
         getDefaultSharedPreferences().edit().putInt(CARRIER_ID_FOR_DEFAULT_SUB_PREF, carrierId)
                 .apply();
     }
