@@ -396,6 +396,8 @@
     <string name="notification_cb_settings_changed_title">Your settings changed</string>
     <string name="notification_cb_settings_changed_text">Wireless emergency alert settings were reset because your SIM changed</string>
 
+    <string name="enable_cmas_presidential_alerts_summary_override">National warning messages.</string>
+
     <!-- WEA translation -->
     <string name="button_translate">Translate</string>
     <string name="translation_failed_toast">Translation unavailable</string>
