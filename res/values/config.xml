@@ -22,7 +22,7 @@
     <!-- Whether to show main switch settings at the top -->
     <bool name="show_main_switch_settings">true</bool>
     <!-- Whether to show presidential alert settings -->
-    <bool name="show_presidential_alerts_settings">false</bool>
+    <bool name="show_presidential_alerts_settings">true</bool>
     <!-- Whether to show extreme alert settings -->
     <bool name="show_extreme_alert_settings">true</bool>
     <!-- Whether to show severe alert settings -->
