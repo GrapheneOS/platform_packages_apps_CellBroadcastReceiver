@@ -45,9 +45,8 @@
 
         <!-- Show checkbox for Presidential alerts in settings -->
         <SwitchPreference android:defaultValue="true"
-                          android:enabled="false"
                           android:key="enable_cmas_presidential_alerts"
-                          android:summary="@string/enable_cmas_presidential_alerts_summary"
+                          android:summary="@string/enable_cmas_presidential_alerts_summary_override"
                           android:title="@string/enable_cmas_presidential_alerts_title"/>
 
         <!-- Enable CMAS Extreme Threat alerts -->

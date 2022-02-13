@@ -279,9 +279,9 @@ public class CellBroadcastChannelManager {
                                 }
                                 break;
                             case KEY_ALWAYS_ON:
-                                if (value.equalsIgnoreCase("true")) {
-                                    mAlwaysOn = true;
-                                }
+                                //if (value.equalsIgnoreCase("true")) {
+                                    //mAlwaysOn = true;
+                                //}
                                 break;
                             case KEY_SCREEN_ON_DURATION:
                                 mScreenOnDuration = Integer.parseInt(value);
