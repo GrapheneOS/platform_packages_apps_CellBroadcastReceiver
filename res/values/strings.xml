@@ -395,4 +395,6 @@
     <!-- Notification title and text when alerting user that their CB settings have changed -->
     <string name="notification_cb_settings_changed_title">Your settings changed</string>
     <string name="notification_cb_settings_changed_text">Wireless emergency alert settings were reset because your SIM changed</string>
+
+    <string name="enable_cmas_presidential_alerts_summary_override">National warning messages.</string>
 </resources>

@@ -505,6 +505,9 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             if (mAreaUpdateInfoCheckBox != null) {
                 mAreaUpdateInfoCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
             }
+            if (mPresidentialCheckBox != null) {
+                mPresidentialCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
             if (mExtremeCheckBox != null) {
                 mExtremeCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
             }
@@ -614,7 +617,9 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
 
             if (mPresidentialCheckBox != null) {
                 mPresidentialCheckBox.setVisible(
-                        res.getBoolean(R.bool.show_presidential_alerts_settings));
+                        res.getBoolean(R.bool.show_presidential_alerts_settings)
+                        && !channelManager.getCellBroadcastChannelRanges(
+                                R.array.cmas_presidential_alerts_channels_range_strings).isEmpty());
                 if (isWatch && !mPresidentialCheckBox.isVisible()) {
                     preferenceScreen.removePreference(mPresidentialCheckBox);
                 }
@@ -831,6 +836,10 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             boolean resetCarrierDefault = res.getBoolean(
                     R.bool.restore_sub_toggle_to_carrier_default);
 
+            if (mPresidentialCheckBox != null) {
+                mPresidentialCheckBox.setEnabled(alertsEnabled);
+                mPresidentialCheckBox.setChecked(alertsEnabled);
+            }
             if (mSevereCheckBox != null) {
                 mSevereCheckBox.setEnabled(alertsEnabled);
                 mSevereCheckBox.setChecked(resetCarrierDefault ? alertsEnabled && res.getBoolean(
