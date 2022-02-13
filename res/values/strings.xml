@@ -327,7 +327,7 @@
     <!-- Preference title for enable presidential threat alerts checkbox. [CHAR LIMIT=40] -->
     <string name="enable_cmas_presidential_alerts_title">Presidential alerts</string>
     <!-- Preference summary for enable presidential threat alerts checkbox. [CHAR LIMIT=100] -->
-    <string name="enable_cmas_presidential_alerts_summary">National warning messages issued by the President. Can\'t be turned off.</string>
+    <string name="enable_cmas_presidential_alerts_summary">National warning messages issued by the President.</string>
 
     <!-- Show additional language on/off switch in settings -->
     <!-- Preference title for enable CMAS second language checkbox. [CHAR LIMIT=50] -->
