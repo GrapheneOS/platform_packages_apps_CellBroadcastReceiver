@@ -673,6 +673,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
                 case CdmaSmsCbProgramData.OPERATION_CLEAR_CATEGORIES:
                     tryCdmaSetCategory(mContext,
+                            CdmaSmsCbProgramData.CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT, false);
+                    tryCdmaSetCategory(mContext,
                             CdmaSmsCbProgramData.CATEGORY_CMAS_EXTREME_THREAT, false);
                     tryCdmaSetCategory(mContext,
                             CdmaSmsCbProgramData.CATEGORY_CMAS_SEVERE_THREAT, false);
@@ -699,6 +701,12 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         switch (category) {
+            case CdmaSmsCbProgramData.CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT:
+                sharedPrefs.edit().putBoolean(
+                        CellBroadcastSettings.KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS, enable)
+                        .apply();
+                break;
+
             case CdmaSmsCbProgramData.CATEGORY_CMAS_EXTREME_THREAT:
                 sharedPrefs.edit().putBoolean(
                                 CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, enable)
