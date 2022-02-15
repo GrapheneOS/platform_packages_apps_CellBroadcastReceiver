@@ -129,6 +129,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         } else if (CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED.equals(action)) {
             if (!intent.getBooleanExtra(
                     "android.telephony.extra.REBROADCAST_ON_UNLOCK", false)) {
+                resetCellBroadcastChannelRanges();
                 int subId = intent.getIntExtra(CarrierConfigManager.EXTRA_SUBSCRIPTION_INDEX,
                         SubscriptionManager.INVALID_SUBSCRIPTION_ID);
                 initializeSharedPreference(context, subId);
@@ -195,14 +196,6 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                         provider.resyncToSmsInbox(mContext);
                         return true;
                     });
-        } else if (TelephonyManager.ACTION_SIM_CARD_STATE_CHANGED.equals(action)) {
-            int sim_state = intent.getIntExtra(
-                TelephonyManager.EXTRA_SIM_STATE, TelephonyManager.SIM_STATE_UNKNOWN);
-
-            if (sim_state == TelephonyManager.SIM_STATE_ABSENT
-                || sim_state == TelephonyManager.SIM_STATE_PRESENT) {
-                CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
-            }
         } else {
             Log.w(TAG, "onReceive() unexpected action " + action);
         }
@@ -275,8 +268,16 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      * @param subId subId of the carrier config event
      */
     private void resetSettingsAsNeeded(Context context, int subId) {
+        final int defaultSubId = SubscriptionManager.getDefaultSubscriptionId();
+
         // subId may be -1 if carrier config broadcast is being sent on SIM removal
         if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+            if (defaultSubId != SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+                Log.d(TAG, "ignoring carrier config broadcast because subId=-1 and it's not"
+                        + " defaultSubId when device is support multi-sim");
+                return;
+            }
+
             if (getPreviousCarrierIdForDefaultSub() == NO_PREVIOUS_CARRIER_ID) {
                 // on first boot only, if no SIM is inserted we save the carrier ID -1.
                 // This allows us to detect the carrier change from -1 to the carrier of the first
@@ -287,7 +288,6 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             return;
         }
 
-        final int defaultSubId = SubscriptionManager.getDefaultSubscriptionId();
         Log.d(TAG, "subId=" + subId + " defaultSubId=" + defaultSubId);
         if (defaultSubId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
             Log.d(TAG, "ignoring carrier config broadcast because defaultSubId=-1");
@@ -343,7 +343,12 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 .getInt(CARRIER_ID_FOR_DEFAULT_SUB_PREF, NO_PREVIOUS_CARRIER_ID);
     }
 
-    private void saveCarrierIdForDefaultSub(int carrierId) {
+
+    /**
+     * store carrierId corresponding to the default subId.
+     */
+    @VisibleForTesting
+    public void saveCarrierIdForDefaultSub(int carrierId) {
         getDefaultSharedPreferences().edit().putInt(CARRIER_ID_FOR_DEFAULT_SUB_PREF, carrierId)
                 .apply();
     }
@@ -706,6 +711,16 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 new ComponentName(mContext, aliasLauncherActivity),
                 PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
         }
+    }
+
+    /**
+     * Reset cached CellBroadcastChannelRanges
+     *
+     * This method's purpose is to enable unit testing
+     */
+    @VisibleForTesting
+    public void resetCellBroadcastChannelRanges() {
+        CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
     }
 
     private static void log(String msg) {

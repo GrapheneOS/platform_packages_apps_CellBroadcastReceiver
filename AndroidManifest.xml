@@ -55,6 +55,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <uses-sdk android:minSdkVersion="30" />
 
@@ -153,7 +154,6 @@
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
                 <action android:name="android.intent.action.SERVICE_STATE" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.telephony.action.SIM_CARD_STATE_CHANGED" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.telephony.action.SECRET_CODE" />
