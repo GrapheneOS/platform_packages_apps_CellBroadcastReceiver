@@ -158,9 +158,6 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
 
     /* End of user preferences keys section. */
 
-    // Resource cache
-    private static final Map<Integer, Resources> sResourcesCache = new HashMap<>();
-
     // Resource cache per operator
     private static final Map<String, Resources> sResourcesCacheByOperator = new HashMap<>();
     private static final Object sCacheLock = new Object();
@@ -858,21 +855,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             return context.getResources();
         }
 
-        synchronized (sCacheLock) {
-            if (sResourcesCache.containsKey(subId)) {
-                return sResourcesCache.get(subId);
-            }
-
-            Resources res = SubscriptionManager.getResourcesForSubId(context, subId);
-
-            if (res.getConfiguration().mnc != 0) {
-                Log.d(TAG, "Cache resource for sub: " + subId + ", mcc: "
-                        + res.getConfiguration().mcc + ", mnc:" + res.getConfiguration().mnc);
-                sResourcesCache.put(subId, res);
-            }
-
-            return res;
-        }
+        return SubscriptionManager.getResourcesForSubId(context, subId);
     }
 
     /**
@@ -973,7 +956,6 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
     public static void resetResourcesCache() {
         synchronized (sCacheLock) {
             sResourcesCacheByOperator.clear();
-            sResourcesCache.clear();
         }
     }
 }
