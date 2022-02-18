@@ -16,6 +16,8 @@
 
 package com.android.cellbroadcastreceiver.unit;
 
+import static android.telephony.SubscriptionManager.INVALID_SUBSCRIPTION_ID;
+
 import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -211,27 +213,15 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     }
 
     @Test
-    public void testInitializeSharedPreference_ifSystemUser_invalidSub() throws RemoteException {
+    public void testInitializeSharedPreference_ifSystemUser_invalidSub() {
         doReturn("An invalid action").when(mIntent).getAction();
         doReturn(true).when(mUserManager).isSystemUser();
         doReturn(true).when(mCellBroadcastReceiver).sharedPrefsHaveDefaultValues();
         doNothing().when(mCellBroadcastReceiver).adjustReminderInterval();
-        mockTelephonyManager();
 
-        int subId = 1;
-        // Not starting ConfigService, as default subId is valid and subId are invalid
-        doReturn(subId).when(mSubService).getDefaultSubId();
-        mCellBroadcastReceiver.initializeSharedPreference(mContext,
-                SubscriptionManager.INVALID_SUBSCRIPTION_ID);
+        mCellBroadcastReceiver.initializeSharedPreference(mContext, INVALID_SUBSCRIPTION_ID);
         verify(mContext, never()).startService(any());
-        verify(mCellBroadcastReceiver, never()).saveCarrierIdForDefaultSub(anyInt());
-
-        // Not starting ConfigService, as both default subId and subId are invalid
-        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService).getDefaultSubId();
-        mCellBroadcastReceiver.initializeSharedPreference(mContext,
-                SubscriptionManager.INVALID_SUBSCRIPTION_ID);
-        verify(mContext, never()).startService(any());
-        verify(mCellBroadcastReceiver).saveCarrierIdForDefaultSub(anyInt());
+        // Check interval.
     }
 
     private void mockTelephonyManager() {
