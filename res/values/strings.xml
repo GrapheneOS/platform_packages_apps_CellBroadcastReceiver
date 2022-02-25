@@ -307,9 +307,9 @@
     <!-- Title for CellBroadcastListActivity -->
     <string name="cb_list_activity_title">"Emergency alert history"</string>
     <!-- Action menu title for deleting selected messages in alert history -->
-    <string name="action_delete" translatable="false">Delete</string>
+    <string name="action_delete">Delete</string>
     <!-- Action menu title for showing the selected message detail in alert history -->
-    <string name="action_detail_info" translatable="false">Show detail</string>
+    <string name="action_detail_info">Show detail</string>
 
     <!-- Entries in the ListPreference for alert reminder intervals. [CHAR LIMIT=30] -->
     <string-array name="alert_reminder_interval_entries">
