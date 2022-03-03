@@ -688,11 +688,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 // override DND default is turned off.
                 // In some countries, override DND is always on, which means vibration is always on.
                 // In that case, no need to show vibration toggle for users.
-                Vibrator vibrator = getContext().getSystemService(Vibrator.class);
-                boolean supportVibration = (vibrator != null) && vibrator.hasVibrator();
-                mEnableVibrateCheckBox.setVisible(supportVibration
-                        && (res.getBoolean(R.bool.show_override_dnd_settings) ||
-                        !res.getBoolean(R.bool.override_dnd)));
+                mEnableVibrateCheckBox.setVisible(isVibrationToggleVisible(getContext(), res));
             }
             if (mAlertsHeader != null) {
                 mAlertsHeader.setVisible(
@@ -832,6 +828,20 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             // Notify backup manager a backup pass is needed.
             new BackupManager(context).dataChanged();
         }
+    }
+
+    /**
+     * Check whether vibration toggle is visible
+     * @param context Context
+     * @param res resources
+     */
+    public static boolean isVibrationToggleVisible(Context context, Resources res) {
+        Vibrator vibrator = context.getSystemService(Vibrator.class);
+        boolean supportVibration = (vibrator != null) && vibrator.hasVibrator();
+        boolean isVibrationToggleVisible = supportVibration
+                && (res.getBoolean(R.bool.show_override_dnd_settings)
+                || !res.getBoolean(R.bool.override_dnd));
+        return isVibrationToggleVisible;
     }
 
     public static boolean isTestAlertsToggleVisible(Context context) {
