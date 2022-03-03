@@ -140,6 +140,8 @@
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ಹೌದು"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ಇಲ್ಲ"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"ತುರ್ತು ಎಚ್ಚರಿಕೆ ಇತಿಹಾಸ"</string>
+    <string name="action_delete" msgid="7435661404543945861">"ಅಳಿಸಿ"</string>
+    <string name="action_detail_info" msgid="8486524382178381810">"ವಿವರವನ್ನು ತೋರಿಸಿ"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"ಒಮ್ಮೆ"</item>
     <item msgid="9097229303902157183">"ಪ್ರತಿ 2 ನಿಮಿಷಗಳು"</item>
