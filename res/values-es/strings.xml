@@ -140,6 +140,8 @@
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Sí"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"No"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"Historial de alertas de emergencia"</string>
+    <string name="action_delete" msgid="7435661404543945861">"Eliminar"</string>
+    <string name="action_detail_info" msgid="8486524382178381810">"Mostrar detalles"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Una vez"</item>
     <item msgid="9097229303902157183">"Cada 2 minutos"</item>
