@@ -140,6 +140,8 @@
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Так"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Не"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"Гісторыя экстранных абвестак"</string>
+    <string name="action_delete" msgid="7435661404543945861">"Выдаліць"</string>
+    <string name="action_detail_info" msgid="8486524382178381810">"Паказаць падрабязныя звесткі"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Адзiн раз"</item>
     <item msgid="9097229303902157183">"Кожныя 2 хвіліны"</item>
