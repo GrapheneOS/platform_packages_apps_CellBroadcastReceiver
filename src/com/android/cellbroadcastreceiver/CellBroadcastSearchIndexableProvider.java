@@ -278,6 +278,15 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             cursor.addRow(ref);
         }
 
+        boolean isVisibleVibrationSetting = CellBroadcastSettings
+                .isVibrationToggleVisible(getContextMethod(), res);
+        if (!isVisibleVibrationSetting) {
+            ref = new Object[1];
+            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                    CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE;
+            cursor.addRow(ref);
+        }
+
         return cursor;
     }
 
