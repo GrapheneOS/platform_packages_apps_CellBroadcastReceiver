@@ -140,6 +140,8 @@
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ооба"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Жок"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"Шашылыш билдирүүлөрдүн таржымалы"</string>
+    <string name="action_delete" msgid="7435661404543945861">"Өчүрүү"</string>
+    <string name="action_detail_info" msgid="8486524382178381810">"Чоо-жайын көрсөтүү"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Бир жолу"</item>
     <item msgid="9097229303902157183">"2 мүнөт сайын"</item>
