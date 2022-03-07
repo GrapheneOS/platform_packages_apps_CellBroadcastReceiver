@@ -5,8 +5,7 @@ package {
 
 apex_defaults {
     name: "com.android.cellbroadcast-defaults",
-    updatable: true,
-    min_sdk_version: "30",
+    defaults: ["r-launched-apex-module"],
 
     manifest: "apex_manifest.json",
 
