@@ -182,6 +182,15 @@ public class CellBroadcastAlertDialogTest extends
                 b.getCharSequence(Notification.EXTRA_TEXT));
     }
 
+    public void testDoNotAddToNotificationOnStop() throws Throwable {
+        startActivity();
+        waitForMs(100);
+        stopActivity();
+        waitForMs(100);
+        verify(mMockedNotificationManager, times(0)).notify(mInt.capture(),
+                mNotification.capture());
+    }
+
     public void testGetNewMessageListIfNeeded() throws Throwable {
         CellBroadcastAlertDialog activity = startActivity();
         Resources spyRes = mContext.getResources();
