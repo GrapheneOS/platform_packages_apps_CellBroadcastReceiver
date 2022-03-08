@@ -91,10 +91,15 @@ public class CellBroadcastSearchIndexableProviderTest extends CellBroadcastTest 
         //KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS
         //KEY_ENABLE_ALERT_SPEECH
         //KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS
-        assertThat(cursor.getCount()).isEqualTo(11);
+        assertThat(cursor.getCount()).isEqualTo(12);
 
         doReturn(false).when(mVibrator).hasVibrator();
         //KEY_ENABLE_ALERT_VIBRATE
+        cursor = mSearchIndexableProvider.queryNonIndexableKeys(new String[]{""});
+        assertThat(cursor.getCount()).isEqualTo(13);
+
+        doReturn(true).when(mSearchIndexableProvider).isTestAlertsToggleVisible();
+        //KEY_ENABLE_TEST_ALERTS
         cursor = mSearchIndexableProvider.queryNonIndexableKeys(new String[]{""});
         assertThat(cursor.getCount()).isEqualTo(12);
     }
