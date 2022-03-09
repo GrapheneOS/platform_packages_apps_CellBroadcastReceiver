@@ -269,6 +269,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             ref = new Object[1];
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
                 CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS;
+            cursor.addRow(ref);
         }
 
         if (res.getString(R.string.emergency_alert_second_language_code).isEmpty()) {
