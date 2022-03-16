@@ -74,7 +74,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Extreme Gefahren für Leben und Eigentum"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Erhebliche Gefahren"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Erhebliche Gefahren für Leben und Eigentum"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER-Benachrichtigungen"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER Alerts"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Notfallmeldungen bei Kindesentführung"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Warnmeldungen"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Vor akuten Sicherheitsbedrohungen warnen"</string>
