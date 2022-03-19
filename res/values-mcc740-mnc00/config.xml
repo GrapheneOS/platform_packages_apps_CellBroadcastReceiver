@@ -25,4 +25,7 @@
     </string-array>
     <string-array name="additional_cbs_channels_strings" translatable="false">
     </string-array>
+
+    <!-- Show area update info settings in CellBroadcastReceiver and information in SIM status in Settings app -->
+    <bool name="config_showAreaUpdateInfoSettings">false</bool>
 </resources>
