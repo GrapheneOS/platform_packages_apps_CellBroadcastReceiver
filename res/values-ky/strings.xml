@@ -80,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Коопсуздукка коркунуч туудурган нерселер тууралуу кабарлоо"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Коомдук коопсуздук тууралуу билдирүүлөр"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Бирөөнүн өмүрүн же мүлкүн сактап калууга сунушталган аракеттер"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Толук экран бидирүүлөрүн көрсөтүү"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Коомдук коопсуздук билдирүүлөрүн SMS колдонмоңузда гана алуу үчүн өчүрүңүз"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Мамлекеттик жана жергиликтүү башкаруу органдарынын сынамык билдирүүлөрү"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Мамлекеттик жана жергиликтүү башкаруу органдарынан сынамык билдирүүлөр келип турат"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Шашылыш билдирүүлөр"</string>
@@ -97,7 +99,7 @@
     <string name="override_dnd_title" msgid="5120805993144214421">"Эскертүү ар дайым катуу ойнотулсун"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\"Тынчымды алба\" жана үн көлөмүнүн башка жөндөөлөрүн этибарга албоо"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Аймакты жаңыртуу боюнча таркатмалар"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM-картанын абалы тууралуу жаңыртылган маалымат көрүнсүн"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM-картанын абалы тууралуу жаңырган маалымат көрүнсүн"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Шашылыш билдирүүнүн категориясы:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Геофизакалык"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Метеорологиялык"</string>
