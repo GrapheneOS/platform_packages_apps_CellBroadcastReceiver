@@ -71,15 +71,17 @@
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS-prufuútsendingar"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Prufuútsendingar fyrir viðvaranir um jarðskjálfta og flóð (ETWS)"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Mjög alvarlegar ógnir"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Þegar líf eða eignir eru í mjög alvarlegri hættu"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Líf eða eignir eru í mjög mikilli hættu"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Alvarlegar ógnir"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Líf eða eignir í alvarlegri hættu"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Líf eða eignir í mikilli hættu"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER-viðvaranir"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Neyðartilkynningar um brottnám barna"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Viðvörunarskilaboð"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Vara við yfirvofandi öryggisógnum"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Skilaboð frá almannavörnum"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Ráðlagðar aðgerðir sem geta bjargað mannslífum og verndað eignir"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Birta skilaboð á öllum skjánum"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Slökktu á þessu til að fá skilaboð frá almannavörnum aðeins send í SMS-forritið þitt"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Staðbundin prufuviðvörun"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Fá prufuskilboð frá ríkis- og staðaryfirvöldum"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Neyðartilkynningar"</string>
