@@ -565,8 +565,10 @@ public class CellBroadcastAlertService extends Service {
         }
 
         if (resourcesKey == R.array.state_local_test_alert_range_strings) {
-            return emergencyAlertEnabled && checkAlertConfigEnabled(
-                    subId, CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS, false);
+            return emergencyAlertEnabled && (checkAlertConfigEnabled(
+                    subId, CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS, false)
+                    || (!res.getBoolean(R.bool.show_state_local_test_settings)
+                    && res.getBoolean(R.bool.state_local_test_alerts_enabled_default)));
         }
 
         Log.e(TAG, "received undefined channels: " + channel);
