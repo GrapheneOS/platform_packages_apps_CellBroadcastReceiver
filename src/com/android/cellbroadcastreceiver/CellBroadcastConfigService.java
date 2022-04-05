@@ -214,8 +214,10 @@ public class CellBroadcastConfigService extends IntentService {
                 && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES,
                 true);
         boolean enableStateLocalTestAlerts = enableAlertsMasterToggle
-                && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS,
-                false);
+                && (prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS,
+                false)
+                || (!res.getBoolean(R.bool.show_state_local_test_settings)
+                && res.getBoolean(R.bool.state_local_test_alerts_enabled_default)));
 
         boolean enableEmergencyAlerts = enableAlertsMasterToggle && prefs.getBoolean(
                 CellBroadcastSettings.KEY_ENABLE_EMERGENCY_ALERTS, true);
