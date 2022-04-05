@@ -794,6 +794,75 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     }
 
     /**
+     * Test enabling channels for local test channels
+     */
+    @Test
+    @SmallTest
+    public void testEnablingLocalTestChannels() throws Exception {
+        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
+
+        // check disable when setting is shown and preference is false
+        setPreference(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS, false);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_state_local_test_settings, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .state_local_test_alerts_enabled_default, true);
+
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+
+        verify(mMockedSmsService, times(1)).disableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_STATE_LOCAL_TEST),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_STATE_LOCAL_TEST),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        // check disable when setting is not shown and default preference is false
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_state_local_test_settings, false);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .state_local_test_alerts_enabled_default, false);
+
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+
+        verify(mMockedSmsService, times(2)).disableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_STATE_LOCAL_TEST),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_STATE_LOCAL_TEST),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        // check enable when setting is not shown and default preference is true
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_state_local_test_settings, false);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .state_local_test_alerts_enabled_default, true);
+
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+
+        verify(mMockedSmsService, times(1)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_STATE_LOCAL_TEST),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_STATE_LOCAL_TEST),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+        // check enable when setting is shown and preference is true
+        doReturn(true).when(mMockedSharedPreferences).getBoolean(
+                eq(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS), eq(false));
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_state_local_test_settings, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .state_local_test_alerts_enabled_default, false);
+
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+
+        verify(mMockedSmsService, times(2)).enableCellBroadcastRangeForSubscriber(
+                eq(0),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_STATE_LOCAL_TEST),
+                eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_STATE_LOCAL_TEST),
+                eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+
+    }
+
+    /**
      * Test handling the intent to enable channels
      */
     @Test
