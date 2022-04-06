@@ -26,4 +26,6 @@
         <item>0x397:rat=gsm, emergency=true, alert_duration=86400000</item>
     </string-array>
 
+    <!-- Show area update info settings in CellBroadcastReceiver and information in SIM status in Settings app -->
+    <bool name="config_showAreaUpdateInfoSettings">false</bool>
 </resources>
