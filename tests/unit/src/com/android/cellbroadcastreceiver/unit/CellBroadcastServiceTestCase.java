@@ -70,6 +70,8 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
     protected Vibrator mMockedVibrator;
     @Mock
     protected SharedPreferences mMockedSharedPreferences;
+    @Mock
+    protected Context mMockContextForRoaming;
 
     protected Configuration mConfiguration;
 
@@ -99,12 +101,17 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         doReturn(true).when(mMockedSharedPreferences).getBoolean(eq(pref), anyBoolean());
     }
 
-    private class TestContextWrapper extends ContextWrapper {
+    protected void disablePreference(String pref) {
+        doReturn(false).when(mMockedSharedPreferences).getBoolean(eq(pref), anyBoolean());
+    }
+
+    public class TestContextWrapper extends ContextWrapper {
 
         private final String TAG = TestContextWrapper.class.getSimpleName();
 
         public TestContextWrapper(Context base) {
             super(base);
+            mMockContextForRoaming = null;
         }
 
         @Override
@@ -152,7 +159,15 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
 
         @Override
         public Context createConfigurationContext(Configuration overrideConfiguration) {
-            return this;
+            if (mMockContextForRoaming == null) {
+                return this;
+            } else {
+                return mMockContextForRoaming;
+            }
+        }
+
+        public void injectCreateConfigurationContext(Context context) {
+            mMockContextForRoaming = context;
         }
     }
 
@@ -195,5 +210,9 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
 
     void putResources(int id, String[] values) {
         doReturn(values).when(mResources).getStringArray(eq(id));
+    }
+
+    void putResources(int id, boolean values) {
+        doReturn(values).when(mResources).getBoolean(eq(id));
     }
 }
