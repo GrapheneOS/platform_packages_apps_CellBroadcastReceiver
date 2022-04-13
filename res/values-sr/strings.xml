@@ -71,9 +71,9 @@
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS пробна емитовања"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Пробна емитовања за систем упозорења о земљотресу и цунамију (ETWS)"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Екстремне опасности"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Екстремна опасност по живот и имовину"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Екстремне опасности по живот и имовину"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Озбиљне опасности"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Озбиљна опасност по живот и имовину"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Озбиљне опасности по живот и имовину"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER обавештења"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Објаве у вези са отмицом детета"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Поруке упозорења"</string>
