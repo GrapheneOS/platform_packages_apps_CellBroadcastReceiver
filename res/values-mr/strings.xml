@@ -87,7 +87,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"आणीबाणीच्या सूचना"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"जीवघेण्या घटनांच्या चेतावण्या द्या"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"चाचणी अलर्ट"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षितता अलर्ट सिस्टमकडून वाहक चाचण्या आणि मासिक चाचण्या मिळवा"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षितता अलर्ट सिस्टीमकडून वाहक चाचण्या आणि मासिक चाचण्या मिळवा"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"आणीबाणीच्या सूचना मिळवा: चाचणी/ड्रिल मेसेज"</string>
