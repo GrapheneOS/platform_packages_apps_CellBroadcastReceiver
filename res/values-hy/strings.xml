@@ -143,7 +143,7 @@
     <string name="action_delete" msgid="7435661404543945861">"Ջնջել"</string>
     <string name="action_detail_info" msgid="8486524382178381810">"Ցույց տալ մանրամասները"</string>
   <string-array name="alert_reminder_interval_entries">
-    <item msgid="6595211083588795160">"Մի անգամ"</item>
+    <item msgid="6595211083588795160">"Մեկ անգամ"</item>
     <item msgid="9097229303902157183">"2 րոպեն մեկ"</item>
     <item msgid="5718214950343391480">"5 րոպեն մեկ"</item>
     <item msgid="3863339891188103437">"15 րոպեն մեկ"</item>
