@@ -66,7 +66,7 @@
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Uyarı mesajını seslendir"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Kablosuz acil durum uyarı mesajları için metin okuma özelliğini kullan"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Hatırlatma sesi normal ses düzeyinde aşağıdaki gibi çalacak:"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Acil durum uyarı geçmişi"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Acil durum uyarısı geçmişi"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Uyarı tercihleri"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS test yayınları"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Deprem Tsunami Uyarı Sistemi için test yayınları"</string>
@@ -139,7 +139,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Şu anda kablosuz acil durum uyarılarını alıyorsunuz. Kablosuz acil durum uyarılarını almaya devam etmek ister misiniz?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Evet"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Hayır"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Acil durum uyarı geçmişi"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Acil durum uyarısı geçmişi"</string>
     <string name="action_delete" msgid="7435661404543945861">"Sil"</string>
     <string name="action_detail_info" msgid="8486524382178381810">"Ayrıntıları göster"</string>
   <string-array name="alert_reminder_interval_entries">
