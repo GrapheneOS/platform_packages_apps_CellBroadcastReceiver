@@ -18,8 +18,8 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Dialog title for all other message identifiers in the PWS range. [CHAR LIMIT=50] -->
-    <string name="pws_other_message_identifiers">EC-Information</string>
+    <string name="pws_other_message_identifiers">Test message</string>
 
     <!-- Preference title for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->
-    <string name="enable_emergency_alerts_message_title">EC-regular broadcast channel</string>
+    <string name="enable_emergency_alerts_message_title">Test local message</string>
 </resources>
