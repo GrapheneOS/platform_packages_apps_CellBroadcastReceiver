@@ -78,11 +78,6 @@
                           android:key="enable_state_local_test_alerts"
                           android:title="@string/enable_state_local_test_alerts_title" />
 
-        <!-- Enable other test alerts -->
-        <SwitchPreference android:defaultValue="true"
-                          android:key="enable_test_alerts"
-                          android:title="@string/enable_cmas_test_alerts_title" />
-
         <!-- Default value is true for Brazil and India. This preference is ignored and hidden
         unless the boolean "config_showAreaUpdateInfoSettings" is set to true in the global resource. -->
         <SwitchPreference android:defaultValue="true"
