@@ -734,8 +734,7 @@ public class CellBroadcastAlertService extends Service {
             pi = PendingIntent.getBroadcast(context, 0, intent, 0);
         } else {
             pi = PendingIntent.getActivity(context, REQUEST_CODE_CONTENT_INTENT, intent,
-                    PendingIntent.FLAG_ONE_SHOT
-                            | PendingIntent.FLAG_UPDATE_CURRENT
+                            PendingIntent.FLAG_UPDATE_CURRENT
                             | PendingIntent.FLAG_IMMUTABLE);
         }
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
@@ -784,8 +783,7 @@ public class CellBroadcastAlertService extends Service {
             Intent deleteIntent = new Intent(intent);
             deleteIntent.putExtra(CellBroadcastAlertService.DISMISS_DIALOG, true);
             builder.setDeleteIntent(PendingIntent.getActivity(context, REQUEST_CODE_DELETE_INTENT,
-                    deleteIntent, PendingIntent.FLAG_ONE_SHOT
-                            | PendingIntent.FLAG_UPDATE_CURRENT
+                    deleteIntent, PendingIntent.FLAG_UPDATE_CURRENT
                             | PendingIntent.FLAG_IMMUTABLE));
 
             builder.setContentIntent(pi);
