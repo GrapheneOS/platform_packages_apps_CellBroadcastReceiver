@@ -42,12 +42,12 @@
     <bool name="show_severe_alert_settings">false</bool>
     <!-- Whether to display state/local test settings, some countries/carriers want to enable it by default and not allow users to disable -->
     <bool name="show_state_local_test_settings">false</bool>
-    <!-- Whether to show emergency alert settings -->
-    <bool name="show_emergency_alert_test_settings">false</bool>
+    <!-- Whether to display exercise test settings when testing mode is off. -->
+    <bool name="show_exercise_settings">true</bool>
     <!-- State local test alerts toggle default value -->
     <bool name="state_local_test_alerts_enabled_default">true</bool>
     <!-- Exercise test alerts toggle default value -->
-    <bool name="test_exercise_alerts_enabled_default">true</bool>
+    <bool name="test_exercise_alerts_enabled_default">false</bool>
     <!-- whether to display a separate exercise test settings. today, most of time, exercise channels was controlled by the main test toggle. -->
     <bool name="show_separate_exercise_settings">true</bool>
 </resources>
