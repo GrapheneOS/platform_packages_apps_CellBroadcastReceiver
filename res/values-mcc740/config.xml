@@ -48,7 +48,7 @@
     <bool name="test_alerts_enabled_default">true</bool>
     <!-- Exercise test alerts toggle default value -->
     <bool name="test_exercise_alerts_enabled_default">true</bool>
-    <string name="date_time_format" translatable="false">YYYY-MM-DD HH:MM</string>
+    <string name="date_time_format" translatable="false">yyyy-MM-dd HH:mm</string>
     <!-- Show area update info settings in CellBroadcastReceiver and information in SIM status in Settings app -->
     <bool name="config_showAreaUpdateInfoSettings">true</bool>
     <!-- Whether the user can mute the alert by physical button -->
