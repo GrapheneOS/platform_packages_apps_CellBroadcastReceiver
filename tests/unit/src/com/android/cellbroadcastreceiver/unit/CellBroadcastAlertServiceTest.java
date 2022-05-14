@@ -465,4 +465,48 @@ public class CellBroadcastAlertServiceTest extends
                 cellBroadcastAlertService.shouldDisplayMessage(message2));
         ((TestContextWrapper) mContext).injectCreateConfigurationContext(null);
     }
+
+    public void testFilterLanguage() {
+        final String language = "en";
+        final String language2nd = "es";
+        doReturn(new String[]{"0x112E:rat=gsm, emergency=true, filter_language=true",
+                "0x112F:rat=gsm, emergency=true"}).when(mResources).getStringArray(
+                        eq(com.android.cellbroadcastreceiver.R.array
+                                .state_local_test_alert_range_strings));
+        doReturn(language).when(mResources).getString(
+                eq(com.android.cellbroadcastreceiver.R.string
+                        .emergency_alert_second_language_code));
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS);
+        enablePreference(CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
+
+        sendMessage(1);
+        waitForServiceIntent();
+        CellBroadcastAlertService cellBroadcastAlertService =
+                (CellBroadcastAlertService) getService();
+
+        // Verify the message with the same language to be displayed for the channel
+        // with filter_language=true
+        SmsCbMessage message = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112E,
+                language, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        // Verify the message with the different language not to be displayed for the channel
+        // with filter_language=true
+        SmsCbMessage message2 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112E,
+                language2nd, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+
+        assertFalse("Should not display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        // Verify the message with the different language to be displayed for the channel
+        // without filter_language=true
+        SmsCbMessage message3 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112F,
+                language2nd, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message3));
+    }
 }
