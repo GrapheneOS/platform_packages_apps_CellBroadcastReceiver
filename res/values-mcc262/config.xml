@@ -16,21 +16,21 @@
 <resources>
     <!-- 4370, 4383 DE/EU level 1 alert -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, always_on=true</item>
+        <item>0x1112:rat=gsm, emergency=true, alert_duration=300000, always_on=true, override_dnd=true</item>
         <!-- additional language -->
-        <item>0x111F:rat=gsm, emergency=true, always_on=true</item>
+        <item>0x111F:rat=gsm, emergency=true, alert_duration=300000, always_on=true, override_dnd=true</item>
     </string-array>
-    <!-- 4371, 4384 DE/EU level 2 alert -->
+    <!-- 4372, 4385 DE/EU level 2 alert -->
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
-        <item>0x1113:rat=gsm, emergency=true</item>
+        <item>0x1114:rat=gsm, emergency=true</item>
         <!-- additional language -->
-        <item>0x1120:rat=gsm, emergency=true</item>
+        <item>0x1121:rat=gsm, emergency=true</item>
     </string-array>
-    <!-- 4373, 4386 DE/EU level 3 alert -->
+    <!-- 4378, 4391 DE/EU level 3 alert -->
     <string-array name="cmas_alerts_severe_range_strings" translatable="false">
-        <item>0x1115:rat=gsm, emergency=true</item>
+        <item>0x111A:rat=gsm, emergency=true</item>
         <!-- additional language -->
-        <item>0x1122:rat=gsm, emergency=true</item>
+        <item>0x1127:rat=gsm, emergency=true</item>
     </string-array>
     <!-- 4396, 4397 DE/EU level 4 alert -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">
