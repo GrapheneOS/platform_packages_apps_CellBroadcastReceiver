@@ -65,7 +65,7 @@
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"अलर्ट रिमाइंडर"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"अलर्ट मैसेज बोलें"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"वायरलेस इमरजेंसी अलर्ट वाला मैसेज बोलने के लिए लिखाई को बोली में बदलने की सुविधा इस्तेमाल करें"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमांइडर की आवाज़ सामान्य रहेगी"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमाइंडर की आवाज़ सामान्य रहेगी"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"आपातकालीन चेतावनियों का इतिहास"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"चेतावनी से जुड़ी प्राथमिकताएं"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS परीक्षण प्रसारण"</string>
@@ -98,8 +98,8 @@
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"हमेशा सबसे तेज़ आवाज़ (फ़ुल वॉल्यूम) में सूचना दें"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"\'परेशान न करें\' मोड और आवाज़ की अन्य सेटिंग को अनदेखा करें"</string>
-    <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"क्षेत्र अपडेट प्रसारण"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"सिम की स्थिति में बदलाव की जानकारी दिखाएं"</string>
+    <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"मौजूदा इलाके की जानकारी से जुड़े ब्रॉडकास्ट"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"सिम के स्टेटस में अपडेट की गई जानकारी दिखाएं"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"अलर्ट श्रेणी:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"भूभौतिकीय"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"मौसम संबंधी"</string>
