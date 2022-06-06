@@ -56,7 +56,7 @@
     <string name="emergency_alert" msgid="624783871477634263">"התרעה על מקרה חירום"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"התרעות"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"הודעות שידור"</string>
-    <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"התרעות חירום"</string>
+    <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"התרעות על מצב חירום"</string>
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"התרעות חירום שלא אושרו"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"התרעות על מקרי חירום בשיחה קולית"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"‏שינויים בהגדרות WEA אוטומטיות שמבוססות על כרטיס SIM"</string>
@@ -84,7 +84,7 @@
     <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"‏יש לבטל את הסימון כדי שהודעות בנוגע לביטחון הציבור יישלחו רק לאפליקציה ל-SMS"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"בדיקות מקומיות וארציות"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"קבלת הודעות בדיקה מרשויות מקומיות וארציות"</string>
-    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"התרעות חירום"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"התרעות על מצב חירום"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"יש להזהיר אותי מפני אירועים מסכני חיים"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"התרעות בדיקה"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"קבלת בדיקות של הספק ובדיקות חודשיות ממערכת התרעות האבטחה"</string>
