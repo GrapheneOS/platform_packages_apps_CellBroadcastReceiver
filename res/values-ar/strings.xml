@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"إنذارات الطوارئ اللاسلكية"</string>
-    <string name="sms_cb_settings" msgid="9021266457863671070">"إنذارات الطوارئ اللاسلكية"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"تنبيهات الطوارئ اللاسلكية"</string>
     <string name="sms_cb_sender_name_default" msgid="972946539768958828">"تنبيهات الطوارئ اللاسلكية"</string>
     <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"تنبيهات الطوارئ اللاسلكية"</string>
     <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"تنبيهات الطوارئ اللاسلكية"</string>
@@ -80,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"إرسال تحذير بشأن التهديدات الوشيكة للسلامة"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"رسائل السلامة العامة"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"الإجراءات المقترحة التي يمكن أن تنقذ الأرواح أو الممتلكات"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"إظهار الرسائل في وضع ملء الشاشة"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"‏إيقاف هذا الإعداد ليتم إرسال رسائل السلامة العامة إلى تطبيق SMS فقط"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"اختبارات الولاية والاختبارات المحلية"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"استلام رسائل اختبارية من سلطات الولاية والسلطات المحلية"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"إنذارات الطوارئ"</string>

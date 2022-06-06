@@ -80,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Beri amaran tentang ancaman keselamatan hampir"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Mesej keselamatan awam"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Tindakan yang disyorkan untuk menyelamatkan nyawa atau harta"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Tunjukkan mesej skrin penuh"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Matikan ciri agar mesej keselamatan awam hanya dihantar kepada apl SMS anda"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Ujian negeri dan setempat"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Terima mesej teks daripada pihak berkuasa negeri dan setempat"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Makluman kecemasan"</string>

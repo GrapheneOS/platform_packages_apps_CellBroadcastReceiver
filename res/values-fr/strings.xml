@@ -80,6 +80,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Recevoir des avertissements relatifs aux menaces de sécurité imminentes"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Messages de sécurité publique"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Actions recommandées susceptibles de sauver des vies ou des biens"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Afficher les messages en plein écran"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"Désactiver pour envoyer les messages de sécurité publique uniquement sur votre appli de SMS"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Tests à l\'échelle nationale et locale"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Recevoir des messages tests des autorités nationales et locales"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Alertes d\'urgence"</string>
@@ -92,7 +94,7 @@
     <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Recevoir une alerte d\'urgence : défini par l\'opérateur"</string>
-    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibration"</string>
+    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibreur"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Conserver le volume maximal pour les alertes"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignorer Ne pas déranger et les autres paramètres de volume"</string>

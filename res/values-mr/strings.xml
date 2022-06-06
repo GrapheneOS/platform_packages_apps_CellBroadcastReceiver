@@ -31,7 +31,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"तपशील पहा"</string>
     <string name="menu_delete" msgid="128380070910799366">"प्रसारण हटवा"</string>
     <string name="view_details_title" msgid="1780427629491781473">"सूचना तपशील"</string>
-    <string name="view_details_debugging_title" msgid="5699927030805114173">"डीबगिंगचे सूचना तपशील पाहा"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"डीबगिंगचे सूचना तपशील पहा"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"हे प्रसारण हटवायचे?"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"सर्व प्राप्त केलेले प्रसारण मेसेज हटवायचे?"</string>
     <string name="button_delete" msgid="4672451757925194350">"हटवा"</string>
@@ -80,12 +80,14 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"सुस्पष्ट सुरक्षा धोक्यांची चेतावणी द्या"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"सार्वजनिक सुरक्षितता मेसेज"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"शिफारस केलेली उपाययोजना जी जीवन किंवा मालमत्ता वाचवू शकते"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"फुल-स्क्रीन मेसेज दाखवा"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"फक्त तुमच्या एसएमएस अ‍ॅपवर सार्वजनिक सुरक्षितता मेसेज पाठवणे बंद करा"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"राज्य आणि स्थानिक चाचण्या"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"राज्य आणि स्थानिक अधिकार्‍यांकडून चाचणी मेसेज मिळवा"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"आणीबाणीच्या सूचना"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"जीवघेण्या घटनांच्या चेतावण्या द्या"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"चाचणी अलर्ट"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षितता अलर्ट सिस्टमकडून वाहक चाचण्या आणि मासिक चाचण्या मिळवा"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षितता अलर्ट सिस्टीमकडून वाहक चाचण्या आणि मासिक चाचण्या मिळवा"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"आणीबाणीच्या सूचना मिळवा: चाचणी/ड्रिल मेसेज"</string>
