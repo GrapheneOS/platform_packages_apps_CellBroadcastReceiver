@@ -99,7 +99,7 @@
     <string name="override_dnd_title" msgid="5120805993144214421">"সদায় সম্পূর্ণ ভলিউমত সতর্ক কৰক"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"অসুবিধা নিদিব আৰু অন্য ভলিউমৰ ছেটিং উপেক্ষা কৰক"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"এলেকা আপডে’ট সম্প্ৰচাৰসমূহ"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"ছিমৰ স্থিতিত আপডেটৰ তথ্য় দেখুৱাওক"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"ছিমৰ স্থিতিত আপডেটৰ তথ্য দেখুৱাওক"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"সতৰ্কবাণীৰ প্ৰকাৰ:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"ভূ-ভৌতিক সম্পর্কীয় সতর্কতা"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"বতৰ সম্পৰ্কীয়"</string>

@@ -87,7 +87,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Larrialdi-alertak"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Ohartarazi bizitza arriskuan jar dezaketen gertaerei buruz"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Probako alertak"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Jaso segurtasun-alerten sistemaren operadore-probak eta hileroko probak"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Jaso operadorearen probak eta hileroko probak segurtasun-alerten sistemaren bidez"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Jaso larrialdi-alerta: probako mezua"</string>
