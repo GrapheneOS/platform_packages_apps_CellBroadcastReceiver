@@ -20,15 +20,15 @@
     <string name="cmas_extreme_alert" msgid="3655071721612807998">"긴급 위험 알림"</string>
     <string name="cmas_severe_alert" msgid="8204679766209106041">"위험 알림"</string>
     <string name="public_safety_message" msgid="8870933058203924990">"안전 안내"</string>
-    <string name="state_local_test_alert" msgid="4208083984152605275">"테스트 알림"</string>
-    <string name="cmas_operator_defined_alert" msgid="7554916428554204737">"EU-Reserved"</string>
-    <string name="cmas_exercise_alert" msgid="9166953612111508567">"테스트 알림"</string>
+    <string name="state_local_test_alert" msgid="4208083984152605275">"훈련 알림"</string>
+    <string name="cmas_operator_defined_alert" msgid="7554916428554204737">"EU 국가 사업자 전용"</string>
+    <string name="cmas_exercise_alert" msgid="9166953612111508567">"훈련 알림"</string>
     <string name="cmas_required_monthly_test" msgid="5030077310729851915">"셀 브로드캐스트 테스트"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="140477407513377226">"긴급 위험 알림"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2244702687286589592">"위험 알림"</string>
     <string name="enable_public_safety_messages_title" msgid="9081684819449444846">"안전 안내"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="2160210558920782153">"테스트 알림"</string>
-    <string name="enable_operator_defined_test_alerts_title" msgid="6867927342721101561">"EU-Reserved"</string>
-    <string name="enable_exercise_test_alerts_title" msgid="8506871939061264885">"테스트 알림"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="2160210558920782153">"훈련 알림"</string>
+    <string name="enable_operator_defined_test_alerts_title" msgid="6867927342721101561">"EU 국가 사업자 전용"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="8506871939061264885">"훈련 알림"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7029435174451887312">"셀 브로드캐스트 테스트"</string>
 </resources>
