@@ -141,6 +141,7 @@
         <activity android:name="com.android.cellbroadcastreceiver.CellBroadcastOptOutActivity"
                   android:launchMode="singleInstance"
                   android:theme="@style/CellBroadcastOptOutTheme"
+                  android:excludeFromRecents="true"
                   android:exported="false" />
 
         <receiver android:name="com.android.cellbroadcastreceiver.CellBroadcastReceiver"
