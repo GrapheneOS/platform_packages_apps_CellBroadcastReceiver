@@ -20,15 +20,15 @@
     <string name="cmas_extreme_alert" msgid="3655071721612807998">"Pericolo estremo"</string>
     <string name="cmas_severe_alert" msgid="8204679766209106041">"Serio pericolo"</string>
     <string name="public_safety_message" msgid="8870933058203924990">"Informazioni sulla minaccia"</string>
-    <string name="state_local_test_alert" msgid="4208083984152605275">"Avviso di prova"</string>
+    <string name="state_local_test_alert" msgid="4208083984152605275">"Avviso di test"</string>
     <string name="cmas_operator_defined_alert" msgid="7554916428554204737">"Solo per UE"</string>
-    <string name="cmas_exercise_alert" msgid="9166953612111508567">"Allarme di prova"</string>
-    <string name="cmas_required_monthly_test" msgid="5030077310729851915">"Prova di cell broadcast"</string>
+    <string name="cmas_exercise_alert" msgid="9166953612111508567">"Allarme di test"</string>
+    <string name="cmas_required_monthly_test" msgid="5030077310729851915">"Test cell broadcast"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="140477407513377226">"Pericolo estremo"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2244702687286589592">"Serio pericolo"</string>
     <string name="enable_public_safety_messages_title" msgid="9081684819449444846">"Informazioni sulla minaccia"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="2160210558920782153">"Avviso di prova"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="2160210558920782153">"Avviso di test"</string>
     <string name="enable_operator_defined_test_alerts_title" msgid="6867927342721101561">"Solo per UE"</string>
-    <string name="enable_exercise_test_alerts_title" msgid="8506871939061264885">"Allarme di prova"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7029435174451887312">"Prova di cell broadcast"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="8506871939061264885">"Allarme di test"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7029435174451887312">"Test cell broadcast"</string>
 </resources>
