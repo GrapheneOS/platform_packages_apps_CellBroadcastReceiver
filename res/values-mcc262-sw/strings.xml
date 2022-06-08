@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="2107659575955828996">"King\'ora cha Dharura"</string>
+    <string name="cmas_presidential_level_alert" msgid="2107659575955828996">"King\'ora cha dharura"</string>
     <string name="cmas_extreme_alert" msgid="3655071721612807998">"Tishio lililokithiri"</string>
     <string name="cmas_severe_alert" msgid="8204679766209106041">"Tishio kali"</string>
     <string name="public_safety_message" msgid="8870933058203924990">"Maelezo ya tishio"</string>
@@ -29,6 +29,6 @@
     <string name="enable_public_safety_messages_title" msgid="9081684819449444846">"Maelezo ya tishio"</string>
     <string name="enable_state_local_test_alerts_title" msgid="2160210558920782153">"Tahadhari ya jaribio"</string>
     <string name="enable_operator_defined_test_alerts_title" msgid="6867927342721101561">"Mahususi kwa Umoja wa Ulaya"</string>
-    <string name="enable_exercise_test_alerts_title" msgid="8506871939061264885">"Jaribu King\'ora"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="8506871939061264885">"Jaribu king\'ora"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7029435174451887312">"Jaribio la Matangazo ya Simu"</string>
 </resources>

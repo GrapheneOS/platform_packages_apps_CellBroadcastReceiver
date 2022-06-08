@@ -23,12 +23,12 @@
     <string name="state_local_test_alert" msgid="4208083984152605275">"ٹیسٹ سے متعلق الرٹ"</string>
     <string name="cmas_operator_defined_alert" msgid="7554916428554204737">"EU-Reserved"</string>
     <string name="cmas_exercise_alert" msgid="9166953612111508567">"الارم سے متعلق ٹیسٹ"</string>
-    <string name="cmas_required_monthly_test" msgid="5030077310729851915">"سیل نشریہ کا ٹیسٹ"</string>
+    <string name="cmas_required_monthly_test" msgid="5030077310729851915">"سیل نشریہ سے متعلق ٹیسٹ"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="140477407513377226">"انتہائی دھمکی"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2244702687286589592">"شدید دھمکی"</string>
     <string name="enable_public_safety_messages_title" msgid="9081684819449444846">"دھمکی سے متعلق معلومات"</string>
     <string name="enable_state_local_test_alerts_title" msgid="2160210558920782153">"ٹیسٹ سے متعلق الرٹ"</string>
     <string name="enable_operator_defined_test_alerts_title" msgid="6867927342721101561">"EU-Reserved"</string>
     <string name="enable_exercise_test_alerts_title" msgid="8506871939061264885">"الارم سے متعلق ٹیسٹ"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7029435174451887312">"سیل نشریہ کا ٹیسٹ"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7029435174451887312">"سیل نشریہ سے متعلق ٹیسٹ"</string>
 </resources>
