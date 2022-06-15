@@ -16,6 +16,10 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRSRC_CBR;
+import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_ICONRESOURCE;
+import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_STATUSBAR;
+
 import android.annotation.IntDef;
 import android.annotation.NonNull;
 import android.app.Activity;
@@ -250,6 +254,8 @@ public class CellBroadcastAlertDialog extends Activity {
                     mWarningIcon = CellBroadcastSettings.getResources(getApplicationContext(),
                             subId).getDrawable(R.drawable.ic_warning_googred);
                 } catch (Resources.NotFoundException e) {
+                    CellBroadcastReceiverMetrics.getInstance().logModuleError(
+                            ERRSRC_CBR, ERRTYPE_ICONRESOURCE);
                     Log.e(TAG, "warning icon resource not found", e);
                     return false;
                 }
@@ -1211,6 +1217,8 @@ public class CellBroadcastAlertDialog extends Activity {
                 disableMethod2.invoke(statusBarManager, disableNone);
             }
         } catch (Exception e) {
+            CellBroadcastReceiverMetrics.getInstance()
+                    .logModuleError(ERRSRC_CBR, ERRTYPE_STATUSBAR);
             Log.e(TAG, "Failed to disable navigation when showing alert: ", e);
         }
     }

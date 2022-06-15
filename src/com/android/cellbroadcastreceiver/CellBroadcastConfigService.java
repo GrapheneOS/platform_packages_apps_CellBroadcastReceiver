@@ -17,6 +17,9 @@
 package com.android.cellbroadcastreceiver;
 
 import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
+import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRSRC_CBR;
+import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_CHANNEL_R;
+import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_ENABLECHANNEL;
 
 import android.app.IntentService;
 import android.app.Notification;
@@ -32,6 +35,7 @@ import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Pair;
 
 import androidx.annotation.NonNull;
 
@@ -42,6 +46,7 @@ import com.android.modules.utils.build.SdkLevel;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -57,6 +62,8 @@ import java.util.List;
  */
 public class CellBroadcastConfigService extends IntentService {
     private static final String TAG = "CellBroadcastConfigService";
+
+    private HashSet<Pair<Integer, Integer>> mChannelRangeForMetric = new HashSet<>();
 
     @VisibleForTesting
     public static final String ACTION_ENABLE_CHANNELS = "ACTION_ENABLE_CHANNELS";
@@ -74,7 +81,8 @@ public class CellBroadcastConfigService extends IntentService {
                         .getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
 
                 if (subManager != null) {
-                    // Retrieve all the active subscription indice and enable cell broadcast
+                    mChannelRangeForMetric.clear();
+                    // Retrieve all the active subscription inside and enable cell broadcast
                     // messages on all subs. The duplication detection will be done at the
                     // frameworks.
                     int[] subIds = getActiveSubIdList(subManager);
@@ -90,8 +98,17 @@ public class CellBroadcastConfigService extends IntentService {
                         enableCellBroadcastRoamingChannelsAsNeeded(
                                 SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
                     }
+
+                    String roamingOperator = CellBroadcastReceiver.getRoamingOperatorSupported(
+                            this);
+                    CellBroadcastReceiverMetrics.getInstance().onConfigUpdated(
+                            getApplicationContext(),
+                            roamingOperator.isEmpty() ? "" : roamingOperator,
+                            mChannelRangeForMetric);
                 }
             } catch (Exception ex) {
+                CellBroadcastReceiverMetrics.getInstance().logModuleError(
+                        ERRSRC_CBR, ERRTYPE_ENABLECHANNEL);
                 Log.e(TAG, "exception enabling cell broadcast channels", ex);
             }
         } else if (ACTION_UPDATE_SETTINGS_FOR_CARRIER.equals(intent.getAction())) {
@@ -153,6 +170,8 @@ public class CellBroadcastConfigService extends IntentService {
                 Method method = SmsManager.class.getDeclaredMethod("resetAllCellBroadcastRanges");
                 method.invoke(manager);
             } catch (Exception e) {
+                CellBroadcastReceiverMetrics.getInstance().logModuleError(
+                        ERRSRC_CBR, ERRTYPE_CHANNEL_R);
                 log("Can't reset cell broadcast ranges. e=" + e);
             }
         }
@@ -335,7 +354,7 @@ public class CellBroadcastConfigService extends IntentService {
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.additional_cbs_channels_strings);
 
-        for (CellBroadcastChannelRange range: ranges) {
+        for (CellBroadcastChannelRange range : ranges) {
             boolean enableAlerts;
             switch (range.mAlertType) {
                 case AREA:
@@ -368,7 +387,6 @@ public class CellBroadcastConfigService extends IntentService {
         if (roamingOperator.isEmpty()) {
             return;
         }
-
         log("enableCellBroadcastRoamingChannels for roaming network:" + roamingOperator);
         Resources res = getResources(subId, roamingOperator);
 
@@ -422,10 +440,11 @@ public class CellBroadcastConfigService extends IntentService {
 
     /**
      * Enable/disable cell broadcast with messages id range
-     * @param subId Subscription index
+     *
+     * @param subId         Subscription index
      * @param isEnableOnly, True for enabling channel only for roaming network
-     * @param enable True for enabling cell broadcast with id range, otherwise for disabling
-     * @param ranges Cell broadcast id ranges
+     * @param enable        True for enabling cell broadcast with id range, otherwise for disabling
+     * @param ranges        Cell broadcast id ranges
      */
     private void setCellBroadcastRange(int subId, boolean isEnableOnly,
             boolean enable, List<CellBroadcastChannelRange> ranges) {
@@ -437,7 +456,7 @@ public class CellBroadcastConfigService extends IntentService {
         }
 
         if (ranges != null) {
-            for (CellBroadcastChannelRange range: ranges) {
+            for (CellBroadcastChannelRange range : ranges) {
                 if (range.mAlwaysOn) {
                     log("mAlwaysOn is set to true, enable the range: " + range.mStartId
                             + ":" + range.mEndId);
@@ -449,6 +468,7 @@ public class CellBroadcastConfigService extends IntentService {
                         log("enableCellBroadcastRange[" + range.mStartId + "-" + range.mEndId
                                 + "], type:" + range.mRanType);
                     }
+                    mChannelRangeForMetric.add(new Pair(range.mStartId, range.mEndId));
                     manager.enableCellBroadcastRange(range.mStartId, range.mEndId, range.mRanType);
                 } else if (!isEnableOnly) {
                     if (VDBG) {
@@ -464,9 +484,10 @@ public class CellBroadcastConfigService extends IntentService {
 
     /**
      * Get resource according to the operator or subId
-     * @param subId Subscription index
+     *
+     * @param subId    Subscription index
      * @param operator Operator numeric, the resource will be retrieved by it if it is no null,
-     * otherwise, by the sub id.
+     *                 otherwise, by the sub id.
      */
     @VisibleForTesting
     public Resources getResources(int subId, String operator) {
