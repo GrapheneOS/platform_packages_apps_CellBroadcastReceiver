@@ -24,12 +24,12 @@ import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionManager;
-import android.util.ArrayMap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckedTextView;
 import android.widget.CursorAdapter;
+import android.widget.ListView;
 
 /**
  * The back-end data adapter for {@link CellBroadcastListActivity}.
@@ -38,12 +38,12 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
 
     private static boolean sIsActionMode = false;
     private CheckedTextView mCheckedTextView;
-    private ArrayMap<Integer, Long> mSelectedMessages;
+    private ListView mListView;
 
-    public CellBroadcastCursorAdapter(Context context, ArrayMap<Integer, Long> selectedMessages) {
+    public CellBroadcastCursorAdapter(Context context, ListView listview) {
         // don't set FLAG_AUTO_REQUERY or FLAG_REGISTER_CONTENT_OBSERVER
         super(context, null, 0);
-        mSelectedMessages = selectedMessages;
+        mListView = listview;
     }
 
     /**
@@ -241,10 +241,7 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
     }
 
     void checkIsSelected(int position) {
-        if (mSelectedMessages.containsKey(position)) {
-            mCheckedTextView.setChecked(true);
-        } else {
-            mCheckedTextView.setChecked(false);
-        }
+        boolean isChecked = mListView.isItemChecked(position);
+        mCheckedTextView.setChecked(isChecked);
     }
 }

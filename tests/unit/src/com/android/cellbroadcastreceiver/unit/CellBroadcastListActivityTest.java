@@ -47,6 +47,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+import android.app.Fragment;
 import android.app.NotificationManager;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -55,6 +56,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.UserManager;
 import android.provider.Telephony;
+import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,6 +73,7 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class CellBroadcastListActivityTest extends
@@ -219,7 +222,7 @@ public class CellBroadcastListActivityTest extends
         // create mock delete menu item
         MenuItem mockMenuItem = mock(MenuItem.class);
         doReturn(MENU_DELETE).when(mockMenuItem).getItemId();
-        activity.mListFragment.toggleSelectedItem(1, 1);
+        activity.mListFragment.getListView().setItemChecked(0, true);
 
         // must call looper.prepare to create alertdialog
         Looper.prepare();
@@ -230,8 +233,209 @@ public class CellBroadcastListActivityTest extends
                 activity.mListFragment.getFragmentManager().findFragmentByTag(
                         CellBroadcastListActivity.CursorLoaderListFragment.KEY_DELETE_DIALOG));
 
-        verify(mockCursor, atLeastOnce()).getColumnIndexOrThrow(eq(Telephony.CellBroadcasts._ID));
-        activity.mListFragment.clearSelectedMessages();
+        verify(mockCursor, atLeastOnce()).getColumnIndex(eq(Telephony.CellBroadcasts._ID));
+        stopActivity();
+    }
+
+    public void testOnActionItemClickedDelete() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        // Mock out the adapter cursor
+        Cursor mockCursor = mock(Cursor.class);
+        doReturn(0).when(mockCursor).getPosition();
+        doReturn(0L).when(mockCursor).getLong(anyInt());
+        activity.mListFragment.mAdapter.swapCursor(mockCursor);
+
+        // create mock delete menu item
+        MenuItem mockMenuItem = mock(MenuItem.class);
+        doReturn(R.id.action_delete).when(mockMenuItem).getItemId();
+        activity.mListFragment.getListView().setItemChecked(0, true);
+
+        // must call looper.prepare to create alertdialog
+        Looper.prepare();
+        ActionMode mode = mock(ActionMode.class);
+        activity.mListFragment.getMultiChoiceModeListener().onActionItemClicked(mode, mockMenuItem);
+        waitForHandlerAction(Handler.getMain(), TEST_TIMEOUT_MILLIS);
+
+        assertNotNull("onContextItemSelected - MENU_DELETE_ALL should create alert dialog",
+                activity.mListFragment.getFragmentManager().findFragmentByTag(
+                        CellBroadcastListActivity.CursorLoaderListFragment.KEY_DELETE_DIALOG));
+
+        verify(mockCursor, atLeastOnce()).getColumnIndex(eq(Telephony.CellBroadcasts._ID));
+        stopActivity();
+    }
+
+    public void testOnActionItemClickedDeleteOnMultiSelect() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        long rowId1 = 20;
+        long rowId2 = 30;
+        long rowId3 = 40;
+        MatrixCursor data =
+                new MatrixCursor(CellBroadcastListActivity.CursorLoaderListFragment.QUERY_COLUMNS);
+        data.addRow(new Object[] {
+                rowId1, //Telephony.CellBroadcasts._ID,
+                0, //Telephony.CellBroadcasts.SLOT_INDEX,
+                1, //Telephony.CellBroadcasts.SUBSCRIPTION_ID,
+                -1, //Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE,
+                "", //Telephony.CellBroadcasts.PLMN,
+                0, //Telephony.CellBroadcasts.LAC,
+                0, //Telephony.CellBroadcasts.CID,
+                "", //Telephony.CellBroadcasts.SERIAL_NUMBER,
+                0, //Telephony.CellBroadcasts.SERVICE_CATEGORY,
+                "", //Telephony.CellBroadcasts.LANGUAGE_CODE,
+                0, //Telephony.CellBroadcasts.DATA_CODING_SCHEME,
+                "", //Telephony.CellBroadcasts.MESSAGE_BODY,
+                0, //Telephony.CellBroadcasts.MESSAGE_FORMAT,
+                0, //Telephony.CellBroadcasts.MESSAGE_PRIORITY,
+                0, //Telephony.CellBroadcasts.ETWS_WARNING_TYPE,
+                0, //Telephony.CellBroadcasts.CMAS_MESSAGE_CLASS,
+                0, //Telephony.CellBroadcasts.CMAS_CATEGORY,
+                0, //Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE,
+                0, //Telephony.CellBroadcasts.CMAS_SEVERITY,
+                0, //Telephony.CellBroadcasts.CMAS_URGENCY,
+                0, //Telephony.CellBroadcasts.CMAS_CERTAINTY,
+                0, //Telephony.CellBroadcasts.RECEIVED_TIME,
+                0, //Telephony.CellBroadcasts.LOCATION_CHECK_TIME,
+                false, //Telephony.CellBroadcasts.MESSAGE_BROADCASTED,
+                true, //Telephony.CellBroadcasts.MESSAGE_DISPLAYED,
+                "", //Telephony.CellBroadcasts.GEOMETRIES,
+                0 //Telephony.CellBroadcasts.MAXIMUM_WAIT_TIME
+        });
+        data.addRow(new Object[] {
+                rowId2, //Telephony.CellBroadcasts._ID,
+                0, //Telephony.CellBroadcasts.SLOT_INDEX,
+                1, //Telephony.CellBroadcasts.SUBSCRIPTION_ID,
+                -1, //Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE,
+                "", //Telephony.CellBroadcasts.PLMN,
+                0, //Telephony.CellBroadcasts.LAC,
+                0, //Telephony.CellBroadcasts.CID,
+                "", //Telephony.CellBroadcasts.SERIAL_NUMBER,
+                0, //Telephony.CellBroadcasts.SERVICE_CATEGORY,
+                "", //Telephony.CellBroadcasts.LANGUAGE_CODE,
+                0, //Telephony.CellBroadcasts.DATA_CODING_SCHEME,
+                "", //Telephony.CellBroadcasts.MESSAGE_BODY,
+                0, //Telephony.CellBroadcasts.MESSAGE_FORMAT,
+                0, //Telephony.CellBroadcasts.MESSAGE_PRIORITY,
+                0, //Telephony.CellBroadcasts.ETWS_WARNING_TYPE,
+                0, //Telephony.CellBroadcasts.CMAS_MESSAGE_CLASS,
+                0, //Telephony.CellBroadcasts.CMAS_CATEGORY,
+                0, //Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE,
+                0, //Telephony.CellBroadcasts.CMAS_SEVERITY,
+                0, //Telephony.CellBroadcasts.CMAS_URGENCY,
+                0, //Telephony.CellBroadcasts.CMAS_CERTAINTY,
+                0, //Telephony.CellBroadcasts.RECEIVED_TIME,
+                0, //Telephony.CellBroadcasts.LOCATION_CHECK_TIME,
+                false, //Telephony.CellBroadcasts.MESSAGE_BROADCASTED,
+                true, //Telephony.CellBroadcasts.MESSAGE_DISPLAYED,
+                "", //Telephony.CellBroadcasts.GEOMETRIES,
+                0 //Telephony.CellBroadcasts.MAXIMUM_WAIT_TIME
+        });
+        data.addRow(new Object[] {
+                rowId3, //Telephony.CellBroadcasts._ID,
+                0, //Telephony.CellBroadcasts.SLOT_INDEX,
+                1, //Telephony.CellBroadcasts.SUBSCRIPTION_ID,
+                -1, //Telephony.CellBroadcasts.GEOGRAPHICAL_SCOPE,
+                "", //Telephony.CellBroadcasts.PLMN,
+                0, //Telephony.CellBroadcasts.LAC,
+                0, //Telephony.CellBroadcasts.CID,
+                "", //Telephony.CellBroadcasts.SERIAL_NUMBER,
+                0, //Telephony.CellBroadcasts.SERVICE_CATEGORY,
+                "", //Telephony.CellBroadcasts.LANGUAGE_CODE,
+                0, //Telephony.CellBroadcasts.DATA_CODING_SCHEME,
+                "", //Telephony.CellBroadcasts.MESSAGE_BODY,
+                0, //Telephony.CellBroadcasts.MESSAGE_FORMAT,
+                0, //Telephony.CellBroadcasts.MESSAGE_PRIORITY,
+                0, //Telephony.CellBroadcasts.ETWS_WARNING_TYPE,
+                0, //Telephony.CellBroadcasts.CMAS_MESSAGE_CLASS,
+                0, //Telephony.CellBroadcasts.CMAS_CATEGORY,
+                0, //Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE,
+                0, //Telephony.CellBroadcasts.CMAS_SEVERITY,
+                0, //Telephony.CellBroadcasts.CMAS_URGENCY,
+                0, //Telephony.CellBroadcasts.CMAS_CERTAINTY,
+                0, //Telephony.CellBroadcasts.RECEIVED_TIME,
+                0, //Telephony.CellBroadcasts.LOCATION_CHECK_TIME,
+                false, //Telephony.CellBroadcasts.MESSAGE_BROADCASTED,
+                true, //Telephony.CellBroadcasts.MESSAGE_DISPLAYED,
+                "", //Telephony.CellBroadcasts.GEOMETRIES,
+                0 //Telephony.CellBroadcasts.MAXIMUM_WAIT_TIME
+        });
+        activity.mListFragment.mAdapter.swapCursor(data);
+
+        // create mock delete menu item
+        MenuItem mockMenuItem = mock(MenuItem.class);
+        doReturn(R.id.action_delete).when(mockMenuItem).getItemId();
+        activity.mListFragment.getListView().setItemChecked(0, true);
+        activity.mListFragment.getListView().setItemChecked(2, true);
+
+        // must call looper.prepare to create alertdialog
+        Looper.prepare();
+        ActionMode mode = mock(ActionMode.class);
+        activity.mListFragment.getMultiChoiceModeListener().onActionItemClicked(mode, mockMenuItem);
+        waitForHandlerAction(Handler.getMain(), TEST_TIMEOUT_MILLIS);
+
+        assertNotNull("onContextItemSelected - MENU_DELETE_ALL should create alert dialog",
+                activity.mListFragment.getFragmentManager().findFragmentByTag(
+                        CellBroadcastListActivity.CursorLoaderListFragment.KEY_DELETE_DIALOG));
+
+        Fragment frag = activity.mListFragment.getFragmentManager().findFragmentByTag(
+                CellBroadcastListActivity.CursorLoaderListFragment.KEY_DELETE_DIALOG);
+        long[] rowId = frag.getArguments().getLongArray(
+                CellBroadcastListActivity.CursorLoaderListFragment.DeleteDialogFragment.ROW_ID);
+        long[] expectedResult = {rowId1, rowId3};
+        assertTrue(Arrays.equals(expectedResult, expectedResult));
+        stopActivity();
+    }
+
+    public void testOnActionItemClickedViewDetail() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        // Mock out the adapter cursor
+        Cursor mockCursor = mock(Cursor.class);
+        doReturn(1).when(mockCursor).getPosition();
+        doReturn(0L).when(mockCursor).getLong(anyInt());
+        activity.mListFragment.mAdapter.swapCursor(mockCursor);
+
+        // create mock delete menu item
+        MenuItem mockMenuItem = mock(MenuItem.class);
+        doReturn(R.id.action_detail_info).when(mockMenuItem).getItemId();
+        activity.mListFragment.getListView().setItemChecked(0, true);
+
+        // must call looper.prepare to create alertdialog
+        Looper.prepare();
+        boolean alertDialogCreated = false;
+        try {
+            ActionMode mode = mock(ActionMode.class);
+            activity.mListFragment.getMultiChoiceModeListener()
+                    .onActionItemClicked(mode, mockMenuItem);
+        } catch (WindowManager.BadTokenException e) {
+            // We can't mock WindowManager because WindowManagerImpl is final, so instead we just
+            // verify that this exception is thrown when we try to create the AlertDialog
+            alertDialogCreated = true;
+        }
+
+        assertTrue("onContextItemSelected - MENU_VIEW_DETAILS should create alert dialog",
+                alertDialogCreated);
+
+        // getColumnIndex is called 13 times within CellBroadcastCursorAdapter.createFromCursor
+        verify(mockCursor, times(13)).getColumnIndex(mColumnCaptor.capture());
+        List<String> columns = mColumnCaptor.getAllValues();
+        assertTrue(contains(columns, PLMN));
+        assertTrue(contains(columns, LAC));
+        assertTrue(contains(columns, CID));
+        assertTrue(contains(columns, ETWS_WARNING_TYPE));
+        assertTrue(contains(columns, CMAS_MESSAGE_CLASS));
+        assertTrue(contains(columns, CMAS_CATEGORY));
+        assertTrue(contains(columns, CMAS_RESPONSE_TYPE));
+        assertTrue(contains(columns, CMAS_SEVERITY));
+        assertTrue(contains(columns, CMAS_URGENCY));
+        assertTrue(contains(columns, CMAS_CERTAINTY));
+        assertTrue(contains(columns, DELIVERY_TIME));
+        assertTrue(contains(columns, DATA_CODING_SCHEME));
+        assertTrue(contains(columns, MAXIMUM_WAIT_TIME));
         stopActivity();
     }
 
