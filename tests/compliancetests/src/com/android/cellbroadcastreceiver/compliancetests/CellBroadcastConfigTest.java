@@ -68,7 +68,7 @@ public class CellBroadcastConfigTest {
 
     private static final String ALLOW_MOCK_MODEM_PROPERTY = "persist.radio.allow_mock_modem";
     private static final boolean DEBUG = !"user".equals(Build.TYPE);
-    private static final boolean DEBUGGABLE = Build.isDebuggable();
+    private static final boolean DEBUGGABLE = SystemProperties.getInt("ro.debuggable", 0) == 1;
 
     private static final String EXPECTED_RESULT_CHANNELS_JSON = "emergency_alert_channels.json";
     private static final String CARRIER_LISTS_JSON = "region_plmn_list.json";
