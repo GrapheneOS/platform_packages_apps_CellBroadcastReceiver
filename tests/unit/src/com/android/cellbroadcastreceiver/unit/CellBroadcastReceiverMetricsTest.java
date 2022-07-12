@@ -114,15 +114,12 @@ public class CellBroadcastReceiverMetricsTest extends CellBroadcastTest {
 
     @Test
     public void testGetFeatureMetrics() {
-        doReturn(null).when(mContext).getSharedPreferences(anyString(), anyInt());
         CellBroadcastReceiverMetrics.FeatureMetrics testFeatureMetrics =
                 CellBroadcastReceiverMetrics.getInstance().getFeatureMetrics(mContext);
         CellBroadcastReceiverMetrics.FeatureMetrics testFeatureMetricsClone =
                 CellBroadcastReceiverMetrics.getInstance().getFeatureMetrics(mContext);
 
         assertSame(testFeatureMetrics, testFeatureMetricsClone);
-
-        doReturn(mSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
 
         doReturn(false).when(mSharedPreferences)
                 .getBoolean(ALERT_IN_CALL, false);
