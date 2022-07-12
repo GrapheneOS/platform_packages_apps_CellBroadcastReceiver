@@ -887,6 +887,14 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SubscriptionManager.INVALID_SUBSCRIPTION_ID));
         verify(mConfigService, times(1)).enableCellBroadcastRoamingChannelsAsNeeded(
                 eq(SubscriptionManager.INVALID_SUBSCRIPTION_ID));
+
+        doReturn(true).when(mConfigService).isMockModemRunning();
+        method.invoke(mConfigService, mIntent);
+        verify(mContext, times(1)).sendBroadcast(any(), anyString());
+
+        doReturn(false).when(mConfigService).isMockModemRunning();
+        method.invoke(mConfigService, mIntent);
+        verify(mContext, times(1)).sendBroadcast(any(), anyString());
     }
 
     /**

@@ -33,6 +33,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.SystemProperties;
@@ -106,6 +107,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     private static final String ROAMING_PLMN_SUPPORTED_PROPERTY_KEY =
             "persist.cellbroadcast.roaming_plmn_supported";
 
+    private static final String MOCK_MODEM_BASEBAND = "mock-modem-service";
+
     private Context mContext;
 
     /**
@@ -163,7 +166,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             int ss = intent.getIntExtra(EXTRA_VOICE_REG_STATE, ServiceState.STATE_IN_SERVICE);
             onServiceStateChanged(context, res, ss);
         } else if (SubscriptionManager.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED.equals(action)) {
-            startConfigServiceToEnableChannels();
+            if (!isMockModemRunning()) {
+                startConfigServiceToEnableChannels();
+            }
         } else if (Telephony.Sms.Intents.ACTION_SMS_EMERGENCY_CB_RECEIVED.equals(action) ||
                 Telephony.Sms.Intents.SMS_CB_RECEIVED_ACTION.equals(action)) {
             intent.setClass(mContext, CellBroadcastAlertService.class);
@@ -260,7 +265,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 && getServiceState(context) == ServiceState.STATE_POWER_OFF)
                 || (roamingOperator != null && !roamingOperator.equals(
                 getRoamingOperatorSupported(context)))) {
-            startConfigServiceToEnableChannels();
+            if (!isMockModemRunning()) {
+                startConfigServiceToEnableChannels();
+            }
         }
         setServiceState(ss);
 
@@ -752,6 +759,26 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
     @VisibleForTesting
     public void resetCellBroadcastChannelRanges() {
         CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
+    }
+
+    /**
+     * Check if mockmodem is running
+     * @return true if mockmodem service is running instead of real modem
+     */
+    @VisibleForTesting
+    public boolean isMockModemRunning() {
+        return isMockModemBinded();
+    }
+
+    /**
+     * Check if mockmodem is running
+     * @return true if mockmodem service is running instead of real modem
+     */
+    public static boolean isMockModemBinded() {
+        String modem = Build.getRadioVersion();
+        boolean isMockModem = modem != null ? modem.contains(MOCK_MODEM_BASEBAND) : false;
+        Log.d(TAG, "mockmodem is running? = " + isMockModem);
+        return isMockModem;
     }
 
     private static void log(String msg) {

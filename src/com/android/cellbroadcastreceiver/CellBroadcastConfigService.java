@@ -21,6 +21,7 @@ import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRSRC_CBR;
 import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_CHANNEL_R;
 import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_ENABLECHANNEL;
 
+import android.Manifest;
 import android.app.IntentService;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -69,6 +70,9 @@ public class CellBroadcastConfigService extends IntentService {
     public static final String ACTION_ENABLE_CHANNELS = "ACTION_ENABLE_CHANNELS";
     public static final String ACTION_UPDATE_SETTINGS_FOR_CARRIER = "UPDATE_SETTINGS_FOR_CARRIER";
 
+    private static final String ACTION_SET_CHANNELS_DONE =
+            "android.cellbroadcast.compliancetest.SET_CHANNELS_DONE";
+
     public CellBroadcastConfigService() {
         super(TAG);          // use class name for worker thread name
     }
@@ -91,6 +95,8 @@ public class CellBroadcastConfigService extends IntentService {
                             log("Enable CellBroadcast on sub " + subId);
                             enableCellBroadcastChannels(subId);
                             enableCellBroadcastRoamingChannelsAsNeeded(subId);
+
+                            broadcastSetChannelsIsDone(subId);
                         }
                     } else {
                         // For no sim scenario.
@@ -495,6 +501,25 @@ public class CellBroadcastConfigService extends IntentService {
             return CellBroadcastSettings.getResources(this, subId);
         }
         return CellBroadcastSettings.getResourcesByOperator(this, subId, operator);
+    }
+
+    private void broadcastSetChannelsIsDone(int subId) {
+        if (!isMockModemRunning()) {
+            return;
+        }
+        Intent intent = new Intent(ACTION_SET_CHANNELS_DONE);
+        intent.putExtra("sub_id", subId);
+        sendBroadcast(intent, Manifest.permission.READ_CELL_BROADCASTS);
+        Log.d(TAG, "broadcastSetChannelsIsDone subId = " + subId);
+    }
+
+    /**
+     * Check if mockmodem is running
+     * @return true if mockmodem service is running instead of real modem
+     */
+    @VisibleForTesting
+    public boolean isMockModemRunning() {
+        return CellBroadcastReceiver.isMockModemBinded();
     }
 
     private static void log(String msg) {
