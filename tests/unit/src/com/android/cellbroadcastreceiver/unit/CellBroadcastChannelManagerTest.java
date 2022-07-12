@@ -33,7 +33,6 @@ import android.test.suitebuilder.annotation.SmallTest;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
-import com.android.cellbroadcastreceiver.unit.CellBroadcastTest;
 
 import org.junit.After;
 import org.junit.Before;

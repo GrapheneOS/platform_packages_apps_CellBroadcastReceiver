@@ -20,14 +20,17 @@ import static com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ALERT_AU
 import static com.android.cellbroadcastreceiver.CellBroadcastAlertService.SHOW_NEW_ALERT_ACTION;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.provider.Telephony;
 import android.telephony.AccessNetworkConstants;
@@ -53,6 +56,9 @@ public class CellBroadcastAlertServiceTest extends
         CellBroadcastServiceTestCase<CellBroadcastAlertService> {
     @Mock
     ServiceState mockSS;
+
+    @Mock
+    SharedPreferences.Editor mMockEditor;
 
     public CellBroadcastAlertServiceTest() {
         super(CellBroadcastAlertService.class);
@@ -86,6 +92,9 @@ public class CellBroadcastAlertServiceTest extends
         super.setUp();
         // No roaming supported by default
         doReturn("").when(mMockedSharedPreferences).getString(anyString(), anyString());
+        doReturn(mMockEditor).when(mMockedSharedPreferences).edit();
+        doReturn(mMockEditor).when(mMockEditor).putBoolean(anyString(), anyBoolean());
+        doNothing().when(mMockEditor).apply();
     }
 
     @After

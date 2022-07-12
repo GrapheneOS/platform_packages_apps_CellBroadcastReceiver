@@ -63,8 +63,9 @@ android_test {
         "SettingsLibSettingsTheme",
         "SettingsLibCollapsingToolbarBaseActivity",
         "SettingsLibMainSwitchPreference",
-	"SettingsLibTopIntroPreference",
+        "SettingsLibTopIntroPreference",
         "modules-utils-build_system",
+        "cellbroadcast-java-proto-lite",
     ],
     min_sdk_version: "30",
 }
