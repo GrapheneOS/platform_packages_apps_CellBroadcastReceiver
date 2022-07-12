@@ -42,7 +42,6 @@ import android.test.suitebuilder.annotation.SmallTest;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
-import com.android.cellbroadcastreceiver.unit.CellBroadcastTest;
 import com.android.internal.telephony.ISms;
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 import com.android.internal.telephony.gsm.SmsCbConstants;
