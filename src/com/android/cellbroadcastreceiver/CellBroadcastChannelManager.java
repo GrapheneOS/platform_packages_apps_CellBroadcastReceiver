@@ -19,6 +19,8 @@ package com.android.cellbroadcastreceiver;
 import static android.telephony.ServiceState.ROAMING_TYPE_NOT_ROAMING;
 
 import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
+import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRSRC_CBR;
+import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_CHANNELRANGEPARSE;
 
 import android.annotation.NonNull;
 import android.annotation.Nullable;
@@ -420,6 +422,8 @@ public class CellBroadcastChannelManager {
                         }
                         rangesList.add(r);
                     } catch (Exception e) {
+                        CellBroadcastReceiverMetrics.getInstance().logModuleError(
+                                ERRSRC_CBR, ERRTYPE_CHANNELRANGEPARSE);
                         loge("Failed to parse \"" + range + "\". e=" + e);
                     }
                 }

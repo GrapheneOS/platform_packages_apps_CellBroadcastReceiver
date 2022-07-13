@@ -17,6 +17,8 @@
 package com.android.cellbroadcastreceiver;
 
 import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.DBG;
+import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRSRC_CBR;
+import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_REMINDERINTERVAL;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -146,6 +148,8 @@ public class CellBroadcastAlertReminder extends Service {
         try {
             reminderIntervalMinutes = Integer.valueOf(prefStr);
         } catch (NumberFormatException ignored) {
+            CellBroadcastReceiverMetrics.getInstance().logModuleError(
+                    ERRSRC_CBR, ERRTYPE_REMINDERINTERVAL);
             loge("invalid alert reminder interval preference: " + prefStr);
             return false;
         }

@@ -13,7 +13,7 @@ java_defaults {
     srcs: [
       "src/**/*.java",
       ":cellbroadcast-constants-shared-srcs",
-      ":statslog-cellbroadcast-java-gen",
+      ":statslog-cellbroadcast-module-java-gen",
     ],
     libs: [
         "framework-annotations-lib",
@@ -30,8 +30,9 @@ java_defaults {
         "SettingsLibSettingsTheme",
         "SettingsLibCollapsingToolbarBaseActivity",
         "SettingsLibMainSwitchPreference",
-	"SettingsLibTopIntroPreference",
+        "SettingsLibTopIntroPreference",
         "modules-utils-build_system",
+        "cellbroadcast-java-proto-lite",
     ],
     optimize: {
        proguard_flags_files: ["proguard.flags"],
@@ -81,4 +82,16 @@ filegroup {
     srcs: [
         "src/com/android/cellbroadcastreceiver/CellBroadcastDatabaseHelper.java",
     ],
+}
+
+java_library {
+    name: "cellbroadcast-java-proto-lite",
+    proto: {
+        type: "lite",
+        include_dirs: ["external/protobuf/src"],
+        canonical_path_from_root: false,
+    },
+    srcs: ["proto/*.proto"],
+    sdk_version: "core_current",
+    apex_available : ["com.android.cellbroadcast"],
 }
