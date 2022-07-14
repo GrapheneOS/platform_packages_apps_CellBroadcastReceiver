@@ -93,5 +93,7 @@ java_library {
     },
     srcs: ["proto/*.proto"],
     sdk_version: "core_current",
-    apex_available : ["com.android.cellbroadcast"],
+    apex_available : ["com.android.cellbroadcast",
+                      "//apex_available:platform",
+    ],
 }
