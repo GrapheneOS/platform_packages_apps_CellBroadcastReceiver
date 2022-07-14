@@ -517,6 +517,9 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                         CellBroadcastCursorAdapter.setIsActionMode(true);
                         mAdapter.notifyDataSetChanged();
                         updateActionIconsVisibility();
+                        if (getListView().getCheckedItemCount() > 0) {
+                            mode.setTitle(String.valueOf(getListView().getCheckedItemCount()));
+                        }
                         return true;
                     }
 

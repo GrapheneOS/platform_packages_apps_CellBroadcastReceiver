@@ -58,6 +58,7 @@ import android.os.UserManager;
 import android.provider.Telephony;
 import android.view.ActionMode;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -264,6 +265,38 @@ public class CellBroadcastListActivityTest extends
 
         verify(mockCursor, atLeastOnce()).getColumnIndex(eq(Telephony.CellBroadcasts._ID));
         stopActivity();
+    }
+
+    public void testOnActionTitleOnMultiSelect() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        activity.mListFragment.getListView().setItemChecked(0, true);
+        activity.mListFragment.getListView().setItemChecked(1, true);
+
+        ActionMode mode = mock(ActionMode.class);
+        activity.mListFragment.getMultiChoiceModeListener().onItemCheckedStateChanged(
+                mode, 0, 0, true);
+        ArgumentCaptor<CharSequence> title = ArgumentCaptor.forClass(CharSequence.class);
+        verify(mode, atLeastOnce()).setTitle(title.capture());
+        assertEquals("title should be the number of selected items",
+                title.getValue(), "2");
+
+        activity.mListFragment.getListView().setItemChecked(1, false);
+        activity.mListFragment.getMultiChoiceModeListener().onItemCheckedStateChanged(
+                mode, 0, 0, true);
+        verify(mode, atLeastOnce()).setTitle(title.capture());
+        assertEquals("title should be the number of selected items",
+                title.getValue(), "1");
+
+        activity.mListFragment.getListView().setItemChecked(1, true);
+        Menu menu = mock(Menu.class);
+        MenuInflater inflator = mock(MenuInflater.class);
+        doReturn(inflator).when(mode).getMenuInflater();
+        activity.mListFragment.getMultiChoiceModeListener().onCreateActionMode(mode, menu);
+        verify(mode, atLeastOnce()).setTitle(title.capture());
+        assertEquals("title should be the number of selected items",
+                title.getValue(), "2");
     }
 
     public void testOnActionItemClickedDeleteOnMultiSelect() throws Throwable {
