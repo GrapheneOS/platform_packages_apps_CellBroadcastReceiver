@@ -397,9 +397,10 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                     PackageManager.FEATURE_WATCH)) {
                 ViewGroup.LayoutParams layoutParams = getListView().getLayoutParams();
                 if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
-                    int topMarginInPixel = (int) getResources().getDimension(
+                    int watchMarginInPixel = (int) getResources().getDimension(
                             R.dimen.pref_top_margin);
-                    ((ViewGroup.MarginLayoutParams) layoutParams).topMargin = topMarginInPixel;
+                    ((ViewGroup.MarginLayoutParams) layoutParams).topMargin = watchMarginInPixel;
+                    ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin = watchMarginInPixel;
                     getListView().setLayoutParams(layoutParams);
                 }
             }
