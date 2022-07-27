@@ -73,7 +73,7 @@ android_app {
      manifest: "AndroidManifest_Platform.xml",
      system_ext_specific: true,
      privileged: true,
-     required: ["privapp_allowlist_com.android.cellbroadcastreceiver.xml"],
+     required: ["platform_privapp_allowlist_com.android.cellbroadcastreceiver.xml"],
 }
 
 // source file shared with legacy cellbroadcast app
