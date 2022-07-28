@@ -320,7 +320,7 @@ public class CellBroadcastReceiverMetrics {
         public void logFeatureChanged() {
             try {
                 CellBroadcastModuleStatsLog.write(
-                        CellBroadcastModuleStatsLog.CB_RECEIVER_FEATURE,
+                        CellBroadcastModuleStatsLog.CB_RECEIVER_FEATURE_CHANGED,
                         mAlertDuringCall,
                         convertToProtoBuffer(mDnDChannelSet),
                         mRoamingSupport,
@@ -572,7 +572,7 @@ public class CellBroadcastReceiverMetrics {
         if (VDBG) {
             Log.d(TAG, "logModuleError : " + source + " " + errorType);
         }
-        CellBroadcastModuleStatsLog.write(CellBroadcastModuleStatsLog.CB_MODULE_ERROR,
+        CellBroadcastModuleStatsLog.write(CellBroadcastModuleStatsLog.CB_MODULE_ERROR_REPORTED,
                 source, errorType);
     }
 }
