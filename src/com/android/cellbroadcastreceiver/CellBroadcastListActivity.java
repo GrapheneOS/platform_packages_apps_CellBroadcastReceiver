@@ -88,11 +88,11 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
         FragmentManager fm = getFragmentManager();
 
         // Create the list fragment and add it as our sole content.
-        if (fm.findFragmentById(com.android.settingslib.collapsingtoolbar.R.id.content_frame)
+        if (fm.findFragmentById(com.android.settingslib.widget.R.id.content_frame)
                 == null) {
             mListFragment = new CursorLoaderListFragment();
             mListFragment.setActivity(this);
-            fm.beginTransaction().add(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+            fm.beginTransaction().add(com.android.settingslib.widget.R.id.content_frame,
                     mListFragment).commit();
         }
     }
