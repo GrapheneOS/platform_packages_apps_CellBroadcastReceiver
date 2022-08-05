@@ -64,7 +64,11 @@ public class CellBroadcastConfigTest {
     private static MockModemManager sMockModemManager;
     private static JSONObject sCarriersObject;
     private static JSONObject sChannelsObject;
-    private static boolean sShouldRunTest = false;
+    private static int sPreconditionError = 0;
+    private static final int ERROR_SDK_VERSION = 1;
+    private static final int ERROR_NO_TELEPHONY = 2;
+    private static final int ERROR_MULTI_SIM = 3;
+    private static final int ERROR_MOCK_MODEM_DISABLE = 4;
 
     private static final String ALLOW_MOCK_MODEM_PROPERTY = "persist.radio.allow_mock_modem";
     private static final boolean DEBUG = !"user".equals(Build.TYPE);
@@ -92,6 +96,7 @@ public class CellBroadcastConfigTest {
         logd("CellBroadcastConfigTest#beforeAllTests()");
         if (!SdkLevel.isAtLeastT()) {
             Log.i(TAG, "sdk level is below T");
+            sPreconditionError = ERROR_SDK_VERSION;
             return;
         }
 
@@ -99,6 +104,7 @@ public class CellBroadcastConfigTest {
         boolean hasTelephonyFeature = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
         if (!hasTelephonyFeature) {
             Log.i(TAG, "Not have Telephony Feature");
+            sPreconditionError = ERROR_NO_TELEPHONY;
             return;
         }
 
@@ -107,13 +113,15 @@ public class CellBroadcastConfigTest {
         boolean isMultiSim = tm != null && tm.getPhoneCount() > 1;
         if (isMultiSim) {
             Log.i(TAG, "Not support Multi-Sim");
+            sPreconditionError = ERROR_MULTI_SIM;
             return;
         }
 
-        enforceMockModemDeveloperSetting();
-
-        sShouldRunTest = true;
-        Log.i(TAG, "sShouldRunTest = " + sShouldRunTest);
+        if (!isMockModemAllowed()) {
+            Log.i(TAG, "Mock Modem is not allowed");
+            sPreconditionError = ERROR_MOCK_MODEM_DISABLE;
+            return;
+        }
 
         sReceiver = new BroadcastReceiver() {
             @Override
@@ -183,7 +191,9 @@ public class CellBroadcastConfigTest {
     public void beforeTest() {
         logd("CellBroadcastConfigTest#beforeTest()");
 
-        assumeTrue(sShouldRunTest);
+        assumeTrue(getErrorMessage(sPreconditionError), sPreconditionError == 0);
+
+
     }
 
     private static String loadJsonFile(String jsonFile) {
@@ -279,14 +289,30 @@ public class CellBroadcastConfigTest {
                 expectedChannels, outputSet);
     }
 
-    private static void enforceMockModemDeveloperSetting() throws Exception {
+    private static boolean isMockModemAllowed() {
         boolean isAllowed = SystemProperties.getBoolean(ALLOW_MOCK_MODEM_PROPERTY, false);
         // Check for developer settings for user build. Always allow for debug builds
-        if (!isAllowed && !DEBUG) {
-            throw new IllegalStateException(
-                    "!! Enable Mock Modem before running this test !! "
-                            + "Developer options => Allow Mock Modem");
+        return isAllowed || DEBUG;
+    }
+
+    private String getErrorMessage(int error) {
+        String errorMessage = "Precondition Error";
+        switch (error) {
+            case ERROR_SDK_VERSION:
+                errorMessage = "SDK level is below T";
+                break;
+            case ERROR_NO_TELEPHONY:
+                errorMessage = "Not have Telephony Feature";
+                break;
+            case ERROR_MULTI_SIM:
+                errorMessage = "Multi-sim is not supported in Mock Modem";
+                break;
+            case ERROR_MOCK_MODEM_DISABLE:
+                errorMessage = "Please enable mock modem to run the test! The option can be "
+                        + "updated in Settings -> System -> Developer options -> Allow Mock Modem";
+                break;
         }
+        return errorMessage;
     }
 
     private static void logd(String msg) {
