@@ -18,7 +18,10 @@
   },
   "japan_kddi": {
     "mccmnc": "44051",
-    "imsi": "440510123456789"
+    "imsi": "440510123456789",
+    "language": "ja",
+    "check_setting_with_main_lang": "false",
+    "fullscreen": "true"
   },
   "newzealand": {
     "mccmnc": "53001",
@@ -30,11 +33,15 @@
   },
   "chile_entel": {
     "mccmnc": "73001",
-    "imsi": "730010123456789"
+    "imsi": "730010123456789",
+    "disable_navigation": "true",
+    "fullscreen": "true"
   },
   "chile_telefonica": {
     "mccmnc": "73002",
-    "imsi": "730020123456789"
+    "imsi": "730020123456789",
+    "disable_navigation": "true",
+    "fullscreen": "true"
   },
   "mexico_telefonica": {
     "mccmnc": "334030",
@@ -46,15 +53,27 @@
   },
   "peru_entel": {
     "mccmnc": "71617",
-    "imsi": "716170123456789"
+    "imsi": "716170123456789",
+    "language": "es",
+    "check_setting_with_main_lang": "false",
+    "fullscreen": "true"
   },
   "peru_telefonica": {
     "mccmnc": "71606",
-    "imsi": "716060123456789"
+    "imsi": "716060123456789",
+    "language": "es",
+    "check_setting_with_main_lang": "false",
+    "fullscreen": "true"
+  },
+  "spain_telefonica": {
+    "mccmnc": "21407",
+    "imsi": "214070123456789",
+    "language": "es"
   },
   "korea": {
     "mccmnc": "45005",
-    "imsi": "450050123456789"
+    "imsi": "450050123456789",
+    "language": "ko"
   },
   "taiwan": {
     "mccmnc": "46601",
@@ -74,11 +93,15 @@
   },
   "ecuador_telefonica": {
     "mccmnc": "74000",
-    "imsi": "740000123456789"
+    "imsi": "740000123456789",
+    "language": "es",
+    "fullscreen": "true"
   },
   "ecuador_claro": {
     "mccmnc": "74001",
-    "imsi": "740010123456789"
+    "imsi": "740010123456789",
+    "language": "es",
+    "fullscreen": "true"
   },
   "puertorico": {
     "mccmnc": "33011",
@@ -122,15 +145,20 @@
   },
   "oman": {
     "mccmnc": "42202",
-    "imsi": "422020123456789"
+    "imsi": "422020123456789",
+    "language": "ar"
   },
   "japan_softbank": {
     "mccmnc": "44020",
-    "imsi": "440200123456789"
+    "imsi": "440200123456789",
+    "language": "ja",
+    "check_setting_with_main_lang": "false",
+    "fullscreen": "true"
   },
   "france": {
     "mccmnc": "20801",
-    "imsi": "208010123456789"
+    "imsi": "208010123456789",
+    "language": "fr"
   },
   "us_vzw": {
     "mccmnc": "311480",
@@ -158,6 +186,7 @@
   },
   "germany_telekom": {
     "mccmnc": "26201",
-    "imsi": "262010123456789"
+    "imsi": "262010123456789",
+    "language": "de"
   }
 }
