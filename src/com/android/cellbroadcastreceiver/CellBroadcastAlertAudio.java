@@ -256,6 +256,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                             if (DBG) log("Speaking broadcast text: " + mMessageBody);
 
                             mTts.setAudioAttributes(getAlertAudioAttributes());
+                            // Flush the text to speech queue
+                            mTts.speak("", TextToSpeech.QUEUE_FLUSH, null, null);
                             res = mTts.speak(mMessageBody, 2, null, TTS_UTTERANCE_ID);
                             mIsTextToSpeechSpeaking = true;
                             setState(STATE_SPEAKING);
