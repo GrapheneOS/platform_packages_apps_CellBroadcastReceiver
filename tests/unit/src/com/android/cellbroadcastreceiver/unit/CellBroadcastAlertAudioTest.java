@@ -23,6 +23,7 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -31,7 +32,9 @@ import android.content.res.Configuration;
 import android.media.AudioAttributes;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
+import android.os.Handler;
 import android.os.HandlerThread;
+import android.speech.tts.TextToSpeech;
 import android.telephony.TelephonyManager;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio;
@@ -39,7 +42,10 @@ import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 
 import org.junit.After;
 import org.junit.Before;
+import org.mockito.ArgumentCaptor;
 import org.mockito.MockitoAnnotations;
+
+import java.lang.reflect.Field;
 
 public class CellBroadcastAlertAudioTest extends
         CellBroadcastServiceTestCase<CellBroadcastAlertAudio> {
@@ -240,6 +246,70 @@ public class CellBroadcastAlertAudioTest extends
         verify(mMockedAudioManager).getRingerMode();
         verify(mMockedVibrator).vibrate(any(), any(AudioAttributes.class));
         phoneStateListenerHandler.quit();
+    }
+
+    public void testStartServiceWithTts() throws Throwable {
+        PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
+                "testStartService",
+                () -> {
+                    doReturn(AudioManager.RINGER_MODE_NORMAL).when(
+                            mMockedAudioManager).getRingerMode();
+
+                    Intent intent = new Intent(mContext, CellBroadcastAlertAudio.class);
+                    intent.setAction(SHOW_NEW_ALERT_ACTION);
+                    intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_BODY,
+                            TEST_MESSAGE_BODY);
+                    intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATION_PATTERN_EXTRA,
+                            TEST_VIBRATION_PATTERN);
+                    intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_LANGUAGE,
+                            TEST_MESSAGE_LANGUAGE);
+                    intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA,
+                            true);
+                    startService(intent);
+                });
+        phoneStateListenerHandler.start();
+        waitUntilReady();
+
+        CellBroadcastAlertAudio audio = (CellBroadcastAlertAudio) getService();
+        Field fieldTts = CellBroadcastAlertAudio.class.getDeclaredField("mTts");
+        fieldTts.setAccessible(true);
+        TextToSpeech mockTts = mock(TextToSpeech.class);
+        fieldTts.set(audio, mockTts);
+
+        Field fieldTtsEngineReady = CellBroadcastAlertAudio.class
+                .getDeclaredField("mTtsEngineReady");
+        fieldTtsEngineReady.setAccessible(true);
+        fieldTtsEngineReady.set(audio, true);
+
+        Field fieldTtsLanguageSupported = CellBroadcastAlertAudio.class
+                .getDeclaredField("mTtsLanguageSupported");
+        fieldTtsLanguageSupported.setAccessible(true);
+        fieldTtsLanguageSupported.set(audio, true);
+
+        Field fieldHandler = CellBroadcastAlertAudio.class.getDeclaredField("mHandler");
+        fieldHandler.setAccessible(true);
+        Handler handler = (Handler) fieldHandler.get(audio);
+
+        Field fieldSpeaking = CellBroadcastAlertAudio.class
+                .getDeclaredField("mIsTextToSpeechSpeaking");
+        fieldSpeaking.setAccessible(true);
+        ArgumentCaptor<Integer> queueMode = ArgumentCaptor.forClass(Integer.class);
+
+        // Send empty message of ALERT_PAUSE_FINISHED to trigger tts
+        handler.sendEmptyMessage(1001);
+        for (int i = 0; i < 10; i++) {
+            if (fieldSpeaking.getBoolean(audio)) {
+                break;
+            }
+            Thread.sleep(100);
+        }
+
+        verify(mockTts, times(2)).speak(any(), queueMode.capture(), any(), any());
+        assertEquals(TextToSpeech.QUEUE_FLUSH, queueMode.getAllValues().get(0).intValue());
+        assertEquals(2, queueMode.getAllValues().get(1).intValue());
+
+        phoneStateListenerHandler.quit();
+        waitUntilReady();
     }
 
     /**
