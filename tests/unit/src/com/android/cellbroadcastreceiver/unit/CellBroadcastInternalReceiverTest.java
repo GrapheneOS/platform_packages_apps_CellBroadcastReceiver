@@ -32,6 +32,7 @@ import android.os.UserManager;
 import com.android.cellbroadcastreceiver.CellBroadcastInternalReceiver;
 import com.android.cellbroadcastreceiver.CellBroadcastReceiver;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -71,6 +72,11 @@ public class CellBroadcastInternalReceiverTest extends CellBroadcastTest {
         mReceiver.onReceive(mContext, mIntent);
 
         verify(mReceiver).startConfigServiceToEnableChannels(any());
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        super.tearDown();
     }
 
 }
