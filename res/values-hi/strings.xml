@@ -81,7 +81,7 @@
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"सभी की सुरक्षा के लिए मैसेज"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ऐसी कार्रवाइयां जिनसे जीवन या संपत्ति की सुरक्षा की जा सकती है"</string>
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"फ़ुल-स्क्रीन पर मैसेज दिखाएं"</string>
-    <string name="enable_full_screen_public_safety_messages_summary" msgid="1305786776090796715">"सार्वजनिक सुरक्षा से जुड़े मैसेज सिर्फ़ एसएमएस ऐप्लिकेशन पर पाने के लिए, यह सुविधा बंद करें"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"इस सुविधा के बंद होने पर भी, सार्वजनिक सुरक्षा से जुड़े मैसेज, सूचना के तौर पर भेजे जाते हैं"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"राज्य और स्थानीय टेस्ट"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"राज्य और स्थानीय अधिकारियों से टेस्ट मैसेज पाना"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"इमरजेंसी के समय सूचनाएं"</string>
@@ -140,6 +140,8 @@
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"हां"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"नहीं"</string>
     <string name="cb_list_activity_title" msgid="1433502151877791724">"आपातकालीन चेतावनियों का इतिहास"</string>
+    <string name="action_delete" msgid="7435661404543945861">"मिटाएं"</string>
+    <string name="action_detail_info" msgid="8486524382178381810">"जानकारी दिखाएं"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"एक बार"</item>
     <item msgid="9097229303902157183">"हर 2 मिनट में"</item>
@@ -167,6 +169,8 @@
     <string name="maximum_waiting_time" msgid="3504809124079381356">"ज़्यादा से ज़्यादा इतने समय बाद जगह की जानकारी देखी जाएगी:"</string>
     <string name="seconds" msgid="141450721520515025">"सेकंड"</string>
     <string name="message_copied" msgid="6922953753733166675">"मैसेज कॉपी किया गया"</string>
+    <string name="top_intro_default_text" msgid="1922926733152511202"></string>
+    <string name="top_intro_roaming_text" msgid="186872150397081032">"रोमिंग में होने पर, आपको कुछ ऐसी सूचनाएं मिल सकती हैं जो इस सेटिंग में शामिल न हों"</string>
     <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"यह सेटिंग, मोबाइल और इंटरनेट सेवा देने वाली कंपनी ने बदल दी है"</string>
     <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"वायरलेस इमरजेंसी अलर्ट की सूचनाओं की सेटिंग देखने के लिए टैप करें"</string>
 </resources>

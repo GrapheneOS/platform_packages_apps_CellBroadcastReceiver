@@ -44,7 +44,7 @@ android_test {
     name: "CellBroadcastReceiverOemUnitTests",
     defaults: ["CellBroadcastTestCommon"],
     srcs: [":cellbroadcastreceiver-sources"],
-    test_suites: ["device-tests", "mts"],
+    test_suites: ["device-tests", "mts-cellbroadcast"],
     manifest: "AndroidManifest_OemTesting.xml",
     test_config: "AndroidTest_Oem.xml",
     resource_dirs: [
@@ -63,6 +63,7 @@ android_test {
         "SettingsLibSettingsTheme",
         "SettingsLibCollapsingToolbarBaseActivity",
         "SettingsLibMainSwitchPreference",
+	"SettingsLibTopIntroPreference",
         "modules-utils-build_system",
     ],
     min_sdk_version: "30",
@@ -75,7 +76,7 @@ android_test {
     certificate: "networkstack",
     defaults: ["CellBroadcastTestCommon"],
     instrumentation_for: "CellBroadcastApp",
-    test_suites: ["device-tests", "mts"],
+    test_suites: ["device-tests", "mts-cellbroadcast"],
     manifest: "AndroidManifest.xml",
     test_config: "AndroidTest.xml",
 }
