@@ -30,6 +30,7 @@ java_defaults {
         "SettingsLibSettingsTheme",
         "SettingsLibCollapsingToolbarBaseActivity",
         "SettingsLibMainSwitchPreference",
+	"SettingsLibTopIntroPreference",
         "modules-utils-build_system",
     ],
     optimize: {
