@@ -16,6 +16,7 @@
 
 package com.android.cellbroadcastreceiver;
 
+import static com.android.cellbroadcastreceiver.CellBroadcastReceiver.VDBG;
 import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRSRC_CBR;
 import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_ICONRESOURCE;
 import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_STATUSBAR;
@@ -38,7 +39,9 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -153,6 +156,17 @@ public class CellBroadcastAlertDialog extends Activity {
     /** Length of time for the warning icon to be off. */
     private static final int WARNING_ICON_OFF_DURATION_MSEC = 800;
 
+    /** Default interval for the highlight color of the pulsation. */
+    private static final int PULSATION_ON_DURATION_MSEC = 1000;
+    /** Default interval for the normal color of the pulsation. */
+    private static final int PULSATION_OFF_DURATION_MSEC = 1000;
+    /** Max value for the interval of the color change. */
+    private static final int PULSATION_MAX_ON_OFF_DURATION_MSEC = 120000;
+    /** Default time for the pulsation */
+    private static final int PULSATION_DURATION_MSEC = 10000;
+    /** Max time for the pulsation */
+    private static final int PULSATION_MAX_DURATION_MSEC = 86400000;
+
     /** Length of time to keep the screen turned on. */
     private static final int KEEP_SCREEN_ON_DURATION_MSEC = 60000;
 
@@ -162,6 +176,10 @@ public class CellBroadcastAlertDialog extends Activity {
 
     /** Handler to add and remove screen on flags for emergency alerts. */
     private final ScreenOffHandler mScreenOffHandler = new ScreenOffHandler();
+
+    /** Pulsation handler for the alert background color. */
+    @VisibleForTesting
+    public PulsationHandler mPulsationHandler = new PulsationHandler();
 
     // Show the opt-out dialog
     private AlertDialog mOptOutDialog;
@@ -339,6 +357,130 @@ public class CellBroadcastAlertDialog extends Activity {
         }
     }
 
+    /**
+     * Pulsation handler for the alert window background color.
+     */
+    @VisibleForTesting
+    public static class PulsationHandler extends Handler {
+        /** Latest {@code message.what} value for detecting old messages. */
+        @VisibleForTesting
+        public final AtomicInteger mCount = new AtomicInteger();
+
+        @VisibleForTesting
+        public int mBackgroundColor = Color.TRANSPARENT;
+        @VisibleForTesting
+        public int mHighlightColor = Color.TRANSPARENT;
+        @VisibleForTesting
+        public int mOnInterval;
+        @VisibleForTesting
+        public int mOffInterval;
+        @VisibleForTesting
+        public int mDuration;
+        @VisibleForTesting
+        public boolean mIsPulsationOn;
+        @VisibleForTesting
+        public View mLayout;
+
+        /** Package local constructor (called from outer class). */
+        PulsationHandler() {
+        }
+
+        /** Start the pulsation. */
+        @VisibleForTesting
+        public void start(View layout, int[] pattern) {
+            if (layout == null || pattern == null || pattern.length == 0) {
+                Log.d(TAG, layout == null ? "layout is null" : "no pulsation pattern");
+                return;
+            }
+
+            post(() -> {
+                mLayout = layout;
+                Drawable bg = mLayout.getBackground();
+                if (bg instanceof ColorDrawable) {
+                    mBackgroundColor = ((ColorDrawable) bg).getColor();
+                }
+
+                mHighlightColor = pattern[0];
+                mDuration = PULSATION_DURATION_MSEC;
+                if (pattern.length > 1) {
+                    if (pattern[1] < 0 || pattern[1] > PULSATION_MAX_DURATION_MSEC) {
+                        Log.wtf(TAG, "Invalid pulsation duration: " + pattern[1]);
+                    } else {
+                        mDuration = pattern[1];
+                    }
+                }
+
+                mOnInterval = PULSATION_ON_DURATION_MSEC;
+                if (pattern.length > 2) {
+                    if (pattern[2] < 0 || pattern[2] > PULSATION_MAX_ON_OFF_DURATION_MSEC) {
+                        Log.wtf(TAG, "Invalid pulsation on interval: " + pattern[2]);
+                    } else {
+                        mOnInterval = pattern[2];
+                    }
+                }
+
+                mOffInterval = PULSATION_OFF_DURATION_MSEC;
+                if (pattern.length > 3) {
+                    if (pattern[3] < 0 || pattern[3] > PULSATION_MAX_ON_OFF_DURATION_MSEC) {
+                        Log.wtf(TAG, "Invalid pulsation off interval: " + pattern[3]);
+                    } else {
+                        mOffInterval = pattern[3];
+                    }
+                }
+
+                if (VDBG) {
+                    Log.d(TAG, "start pulsation, highlight color=" + mHighlightColor
+                            + ", background color=" + mBackgroundColor
+                            + ", duration=" + mDuration
+                            + ", on=" + mOnInterval + ", off=" + mOffInterval);
+                }
+
+                mCount.set(0);
+                queuePulsationMessage();
+                postDelayed(() -> onPulsationStopped(), mDuration);
+            });
+        }
+
+        /** Stop the pulsation. */
+        @VisibleForTesting
+        public void stop() {
+            post(() -> onPulsationStopped());
+        }
+
+        private void onPulsationStopped() {
+            // Increment the counter so the handler will ignore the next message.
+            mCount.incrementAndGet();
+            if (mLayout != null) {
+                mLayout.setBackgroundColor(mBackgroundColor);
+            }
+            mLayout = null;
+            mIsPulsationOn = false;
+            if (VDBG) {
+                Log.d(TAG, "pulsation stopped");
+            }
+        }
+
+        /** Queue a message to pulsate the background color of the alert. */
+        private void queuePulsationMessage() {
+            int msgWhat = mCount.incrementAndGet();
+            sendEmptyMessageDelayed(msgWhat, mIsPulsationOn ? mOnInterval : mOffInterval);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            if (mLayout == null) {
+                return;
+            }
+
+            if (msg.what == mCount.get()) {
+                mIsPulsationOn = !mIsPulsationOn;
+                mLayout.setBackgroundColor(mIsPulsationOn ? mHighlightColor
+                        : mBackgroundColor);
+                queuePulsationMessage();
+            }
+        }
+    }
+
     Comparator<SmsCbMessage> mPriorityBasedComparator = (Comparator) (o1, o2) -> {
         boolean isPresidentialAlert1 =
                 ((SmsCbMessage) o1).isCmasMessage()
@@ -445,6 +587,9 @@ public class CellBroadcastAlertDialog extends Activity {
                             getApplicationContext()));
                 }
             }
+
+            startPulsatingAsNeeded(channelManager
+                    .getCellBroadcastChannelRangeFromMessage(message));
         }
     }
 
@@ -824,6 +969,16 @@ public class CellBroadcastAlertDialog extends Activity {
         }
     }
 
+    private void startPulsatingAsNeeded(CellBroadcastChannelRange range) {
+        mPulsationHandler.stop();
+        if (VDBG) {
+            Log.d(TAG, "start pulsation as needed for range:" + range);
+        }
+        if (range != null) {
+            mPulsationHandler.start(findViewById(R.id.parentPanel), range.mPulsationPattern);
+        }
+    }
+
     /**
      * Called by {@link CellBroadcastAlertService} to add a new alert to the stack.
      * @param intent The new intent containing one or more {@link SmsCbMessage}.
@@ -866,6 +1021,8 @@ public class CellBroadcastAlertDialog extends Activity {
                             + message.getSubscriptionId());
                     mScreenOffHandler.startScreenOnTimer(message);
                 }
+                startPulsatingAsNeeded(channelManager
+                        .getCellBroadcastChannelRangeFromMessage(message));
             }
 
             hideOptOutDialog(); // Hide opt-out dialog when new alert coming
@@ -923,6 +1080,8 @@ public class CellBroadcastAlertDialog extends Activity {
         Log.d(TAG, "dismiss");
         // Stop playing alert sound/vibration/speech (if started)
         stopService(new Intent(this, CellBroadcastAlertAudio.class));
+
+        mPulsationHandler.stop();
 
         // Cancel any pending alert reminder
         CellBroadcastAlertReminder.cancelAlertReminder();
