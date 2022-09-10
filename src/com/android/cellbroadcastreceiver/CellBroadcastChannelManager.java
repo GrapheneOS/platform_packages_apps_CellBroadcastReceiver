@@ -136,7 +136,8 @@ public class CellBroadcastChannelManager {
         private static final String KEY_LANGUAGE_CODE = "language";
         /** Define whether to display dialog and notification */
         private static final String KEY_DIALOG_WITH_NOTIFICATION = "dialog_with_notification";
-
+        /** Define the pulsation pattern of the alert. */
+        private static final String KEY_PULSATION = "pulsation";
         /**
          * Defines whether the channel needs language filter or not. True indicates that the alert
          * will only pop-up when the alert's language matches the device's language.
@@ -184,6 +185,10 @@ public class CellBroadcastChannelManager {
         public String mLanguageCode;
         // Display both ways dialog and notification
         public boolean mDisplayDialogWithNotification = false;
+        // The pulsation pattern of the alert. The 1st parameter indicates the color to be changed.
+        // The 2nd parameter indicates how long the pulsation will last. The 3rd and 4th parameters
+        // indicate the intervals to set highlight color on/off.
+        public int[] mPulsationPattern;
 
         public CellBroadcastChannelRange(Context context, int subId,
                 Resources res, String channelRange) {
@@ -198,6 +203,7 @@ public class CellBroadcastChannelManager {
             mDisplay = true;
             mTestMode = false;
             boolean hasVibrationPattern = false;
+            mPulsationPattern = res.getIntArray(R.array.default_pulsation_pattern);
 
             int colonIndex = channelRange.indexOf(':');
             if (colonIndex != -1) {
@@ -303,6 +309,21 @@ public class CellBroadcastChannelManager {
                                     mDisplayDialogWithNotification = true;
                                 }
                                 break;
+                            case KEY_PULSATION:
+                                String[] pulsation = value.split("\\|");
+                                if (pulsation.length > 0) {
+                                    mPulsationPattern = new int[pulsation.length];
+                                    for (int i = 0; i < pulsation.length; i++) {
+                                        try {
+                                            mPulsationPattern[i] = Long.decode(
+                                                    pulsation[i]).intValue();
+                                        } catch (NumberFormatException e) {
+                                            Log.wtf(TAG, "Bad pulsation pattern[" + i + "]:"
+                                                    + pulsation[i]);
+                                        }
+                                    }
+                                }
+                                break;
                         }
                     }
                 }
@@ -337,7 +358,8 @@ public class CellBroadcastChannelManager {
                     + mDisplayIcon + "dismissOnOutsideTouch=" + mDismissOnOutsideTouch
                     + ", mIsDebugBuildOnly =" + mIsDebugBuildOnly
                     + ", languageCode=" + mLanguageCode
-                    + ", mDisplayDialogWithNotification=" + mDisplayDialogWithNotification + "]";
+                    + ", mDisplayDialogWithNotification=" + mDisplayDialogWithNotification
+                    + ", mPulsationPattern=" + Arrays.toString(mPulsationPattern) + "]";
         }
     }
 
