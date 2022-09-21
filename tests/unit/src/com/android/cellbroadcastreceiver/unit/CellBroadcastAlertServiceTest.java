@@ -594,6 +594,8 @@ public class CellBroadcastAlertServiceTest extends
         assertEquals(message.getMessageBody(),
                 mServiceIntentToVerify.getStringExtra(
                         CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_BODY));
+        assertTrue(mServiceIntentToVerify.getBooleanExtra(
+                CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA, false));
         ArgumentCaptor<NotificationChannel> notificationChannelCaptor =
                 ArgumentCaptor.forClass(NotificationChannel.class);
         verify(mMockedNotificationManager, times(5))
@@ -605,12 +607,16 @@ public class CellBroadcastAlertServiceTest extends
         assertTrue(notificationChannelCreated.get("broadcastMessages").shouldVibrate());
         assertTrue(notificationChannelCreated.get("broadcastMessagesNonEmergency").shouldVibrate());
         assertTrue(notificationChannelCreated.get("broadcastMessagesInVoiceCall").shouldVibrate());
-        assertEquals(NotificationManager.IMPORTANCE_HIGH,
+        assertEquals(NotificationManager.IMPORTANCE_MAX,
                 notificationChannelCreated.get("broadcastMessagesHighPriority")
                 .getImportance());
+        assertTrue(notificationChannelCreated.get("broadcastMessagesHighPriority")
+                .canBypassDnd());
         assertEquals(NotificationManager.IMPORTANCE_HIGH,
                 notificationChannelCreated.get("broadcastMessages")
                 .getImportance());
+        assertTrue(notificationChannelCreated.get("broadcastMessages")
+                .canBypassDnd());
         assertEquals(NotificationManager.IMPORTANCE_HIGH,
                 notificationChannelCreated.get("broadcastMessagesNonEmergency")
                 .getImportance());
