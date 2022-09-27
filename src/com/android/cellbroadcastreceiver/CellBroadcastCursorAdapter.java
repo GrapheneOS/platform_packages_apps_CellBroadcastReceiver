@@ -31,12 +31,14 @@ import android.widget.CheckedTextView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 
+import com.android.internal.annotations.VisibleForTesting;
+
 /**
  * The back-end data adapter for {@link CellBroadcastListActivity}.
  */
 public class CellBroadcastCursorAdapter extends CursorAdapter {
 
-    private static boolean sIsActionMode = false;
+    private boolean mIsActionMode = false;
     private CheckedTextView mCheckedTextView;
     private ListView mListView;
 
@@ -228,12 +230,17 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
         listItem.bind(message);
     }
 
-    static void setIsActionMode(boolean value) {
-        sIsActionMode = value;
+    public void setIsActionMode(boolean value) {
+        mIsActionMode = value;
+    }
+
+    @VisibleForTesting
+    public boolean getIsActionMode() {
+        return mIsActionMode;
     }
 
     void updateCheckTextViewVisibility() {
-        if (sIsActionMode) {
+        if (mIsActionMode) {
             mCheckedTextView.setVisibility(View.VISIBLE);
         } else {
             mCheckedTextView.setVisibility(View.GONE);
