@@ -69,6 +69,9 @@ public class CellBroadcastConfigService extends IntentService {
     @VisibleForTesting
     public static final String ACTION_ENABLE_CHANNELS = "ACTION_ENABLE_CHANNELS";
     public static final String ACTION_UPDATE_SETTINGS_FOR_CARRIER = "UPDATE_SETTINGS_FOR_CARRIER";
+    public static final String ACTION_RESET_SETTINGS_AS_NEEDED = "RESET_SETTINGS_AS_NEEDED";
+
+    public static final String EXTRA_SUB = "SUB";
 
     private static final String ACTION_SET_CHANNELS_DONE =
             "android.cellbroadcast.compliancetest.SET_CHANNELS_DONE";
@@ -145,8 +148,26 @@ public class CellBroadcastConfigService extends IntentService {
                         builder.build());
             }
             Log.e(TAG, "Reset all preferences");
-            CellBroadcastSettings.resetAllPreferences(getApplicationContext());
+            resetAllPreferences();
+        } else if (ACTION_RESET_SETTINGS_AS_NEEDED.equals(intent.getAction())) {
+            Resources res = getResources(intent.getIntExtra(
+                    EXTRA_SUB, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID), null);
+            if (!CellBroadcastSettings.hasAnyPreferenceChanged(getApplicationContext())
+                    && (isMasterToggleEnabled() != res.getBoolean(
+                            R.bool.master_toggle_enabled_default))) {
+                Log.d(TAG, "Reset all preferences as no user changes and master toggle is"
+                        + " different as the config");
+                resetAllPreferences();
+            }
         }
+    }
+
+    /**
+     * Encapsulate the static method to reset all preferences for testing purpose.
+     */
+    @VisibleForTesting
+    public void resetAllPreferences() {
+        CellBroadcastSettings.resetAllPreferences(getApplicationContext());
     }
 
     @NonNull
@@ -200,8 +221,7 @@ public class CellBroadcastConfigService extends IntentService {
         // Note: If enableAlertsMasterToggle is false, it disables ALL emergency broadcasts
         // except for always-on alerts e.g, presidential. i.e. to receive CMAS severe alerts, both
         // enableAlertsMasterToggle AND enableCmasSevereAlerts must be true.
-        boolean enableAlertsMasterToggle = prefs.getBoolean(
-                CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
+        boolean enableAlertsMasterToggle = isMasterToggleEnabled();
 
         boolean enableEtwsAlerts = enableAlertsMasterToggle;
 
@@ -511,6 +531,11 @@ public class CellBroadcastConfigService extends IntentService {
         intent.putExtra("sub_id", subId);
         sendBroadcast(intent, Manifest.permission.READ_CELL_BROADCASTS);
         Log.d(TAG, "broadcastSetChannelsIsDone subId = " + subId);
+    }
+
+    private boolean isMasterToggleEnabled() {
+        return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
+                CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
     }
 
     /**

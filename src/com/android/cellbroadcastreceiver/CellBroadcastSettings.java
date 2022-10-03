@@ -158,6 +158,10 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
 
     /* End of user preferences keys section. */
 
+    // Key for shared preference which represents whether user has changed any preference
+    @VisibleForTesting
+    public static final String ANY_PREFERENCE_CHANGED_BY_USER = "any_preference_changed_by_user";
+
     // Resource cache per operator
     private static final Map<String, Resources> sResourcesCacheByOperator = new HashMap<>();
     private static final Object sCacheLock = new Object();
@@ -174,9 +178,6 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
      */
     private static final String CBR_MODULE_PERMISSION =
             "com.android.cellbroadcastservice.FULL_ACCESS_CELL_BROADCAST_HISTORY";
-
-    // Key for shared preference which represents whether user has changed any preference
-    private static final String ANY_PREFERENCE_CHANGED_BY_USER = "any_preference_changed_by_user";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

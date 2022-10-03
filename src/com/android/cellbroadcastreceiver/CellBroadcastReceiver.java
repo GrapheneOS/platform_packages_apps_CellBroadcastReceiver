@@ -365,8 +365,11 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             startConfigService(context,
                     CellBroadcastConfigService.ACTION_UPDATE_SETTINGS_FOR_CARRIER);
         } else {
-            Log.d(TAG, "ignoring carrier config broadcast for subId=" + subId
-                    + " because carrier has not changed. carrierId=" + carrierId);
+            Log.d(TAG, "reset settings as needed for subId=" + subId + ", carrierId=" + carrierId);
+            Intent intent = new Intent(CellBroadcastConfigService.ACTION_RESET_SETTINGS_AS_NEEDED,
+                    null, context, CellBroadcastConfigService.class);
+            intent.putExtra(CellBroadcastConfigService.EXTRA_SUB, subId);
+            context.startService(intent);
         }
     }
 
