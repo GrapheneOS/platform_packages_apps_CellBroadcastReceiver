@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="pws_other_message_identifiers" msgid="8976420402484419445">"Testați mesajul"</string>
-    <string name="enable_emergency_alerts_message_title" msgid="825742239541920431">"Testați mesajul local"</string>
+    <string name="pws_other_message_identifiers" msgid="8976420402484419445">"Testează mesajul"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="825742239541920431">"Testează mesajul local"</string>
 </resources>
