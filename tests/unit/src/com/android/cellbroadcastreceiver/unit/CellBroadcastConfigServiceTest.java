@@ -243,6 +243,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
 
     private void setPreference(String pref, boolean value) {
         doReturn(value).when(mMockedSharedPreferences).getBoolean(eq(pref), eq(true));
+        doReturn(value).when(mMockedSharedPreferences).getBoolean(eq(pref), eq(false));
     }
 
     /**
@@ -1034,5 +1035,57 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXERCISE),
                 eq(SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXERCISE),
                 eq(SmsCbMessage.MESSAGE_FORMAT_3GPP));
+    }
+
+    /**
+     * Test resetting cell broadcast settings as needed
+     */
+    @Test
+    @SmallTest
+    public void testResetCellBroadcastSettingsAsNeeded() throws Exception {
+        doNothing().when(mConfigService).resetAllPreferences();
+        doReturn(CellBroadcastConfigService.ACTION_RESET_SETTINGS_AS_NEEDED)
+                .when(mIntent).getAction();
+        doReturn(mResources).when(mConfigService).getResources(anyInt(), eq(null));
+
+        boolean[][] combNoResetting = {
+                // The settings are changed by the user
+                {true, true, true}, {true, true, false}, {true, false, true}, {true, false, false},
+                // The master toggle values of preferences and config are same
+                {false, true, true}, { false, false, false}};
+
+        Method method = CellBroadcastConfigService.class.getDeclaredMethod(
+                "onHandleIntent", new Class[]{Intent.class});
+        method.setAccessible(true);
+
+        // Verify the settings preference not to be reset
+        for (int i = 0; i < combNoResetting.length; i++) {
+            setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER,
+                    combNoResetting[i][0]);
+            setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE,
+                    combNoResetting[i][1]);
+            putResources(com.android.cellbroadcastreceiver.R.bool.master_toggle_enabled_default,
+                    combNoResetting[i][2]);
+
+            method.invoke(mConfigService, mIntent);
+
+            verify(mConfigService, never()).resetAllPreferences();
+        }
+
+        boolean[][] combResetting = {{false, true, false}, { false, false, true}};
+
+        // Verify the settings preference to be reset
+        for (int i = 0, c = 0; i < combResetting.length; i++) {
+            setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER,
+                    combResetting[i][0]);
+            setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE,
+                    combResetting[i][1]);
+            putResources(com.android.cellbroadcastreceiver.R.bool.master_toggle_enabled_default,
+                    combResetting[i][2]);
+
+            method.invoke(mConfigService, mIntent);
+
+            verify(mConfigService, times(++c)).resetAllPreferences();
+        }
     }
 }
