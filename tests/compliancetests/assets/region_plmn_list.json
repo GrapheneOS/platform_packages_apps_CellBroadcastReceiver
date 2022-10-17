@@ -40,9 +40,9 @@
     "mccmnc": "334030",
     "imsi": "334030012345678"
   },
-  "elsalvador_telefonica": {
-    "mccmnc": "70604",
-    "imsi": "706040123456789"
+  "elsalvador": {
+    "mccmnc": "70601",
+    "imsi": "706010123456789"
   },
   "peru_entel": {
     "mccmnc": "71617",
