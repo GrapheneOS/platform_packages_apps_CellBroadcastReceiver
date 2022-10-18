@@ -2558,7 +2558,7 @@
       "alert_type":"notification"
     }
   },
-  "elsalvador_telefonica": {
+  "elsalvador": {
     "4352": {
       "title": "",
       "default_value": "true",
@@ -2588,11 +2588,6 @@
       "title": "Presidential alert",
       "default_value": "true",
       "toggle_avail": "false"
-    },
-    "919": {
-      "title": "SV-Information",
-      "default_value": "false",
-      "toggle_avail": "true"
     },
     "4371": {
       "title": "Emergency alert: Extreme",
@@ -2703,11 +2698,6 @@
       "title": "Child abduction (Amber alert)",
       "default_value": "true",
       "toggle_avail": "false"
-    },
-    "50": {
-      "title": "SV-Information",
-      "default_value": "false",
-      "toggle_avail": "true"
     }
   },
   "canada": {
