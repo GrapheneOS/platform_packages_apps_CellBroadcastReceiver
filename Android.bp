@@ -7,7 +7,6 @@ package {
 java_defaults {
     name: "CellBroadcastCommon",
     min_sdk_version: "30",
-    target_sdk_version: "33",
     sdk_version: "module_current",
     privileged: true,
     srcs: [
@@ -66,6 +65,7 @@ filegroup {
 android_app {
      name: "CellBroadcastAppPlatform",
      defaults: ["CellBroadcastCommon"],
+     target_sdk_version: "33",
      certificate: "platform",
      // CellBroadcastAppPlatform is a replacement for com.android.cellbroadcast apex which consists
      // of CellBroadcastApp
