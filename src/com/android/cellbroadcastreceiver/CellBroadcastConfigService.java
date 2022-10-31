@@ -31,9 +31,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
+import android.telephony.CellBroadcastIdRange;
 import android.telephony.SmsManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
@@ -46,7 +48,6 @@ import com.android.modules.utils.build.SdkLevel;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
@@ -75,6 +76,23 @@ public class CellBroadcastConfigService extends IntentService {
 
     private static final String ACTION_SET_CHANNELS_DONE =
             "android.cellbroadcast.compliancetest.SET_CHANNELS_DONE";
+    /**
+     * CbConfig is consisted by starting channel id, ending channel id, and ran type,
+     * whether it should be enabled or not
+     */
+    public static class CbConfig {
+        public int mStartId;
+        public int mEndId;
+        public int mRanType;
+        public boolean mEnable;
+
+        public CbConfig(int startId, int endId, int type, boolean enable) {
+            this.mStartId = startId;
+            this.mEndId = endId;
+            this.mRanType = type;
+            this.mEnable = enable;
+        }
+    }
 
     public CellBroadcastConfigService() {
         super(TAG);          // use class name for worker thread name
@@ -97,15 +115,13 @@ public class CellBroadcastConfigService extends IntentService {
                         for (int subId : subIds) {
                             log("Enable CellBroadcast on sub " + subId);
                             enableCellBroadcastChannels(subId);
-                            enableCellBroadcastRoamingChannelsAsNeeded(subId);
-
-                            broadcastSetChannelsIsDone(subId);
+                            if (!SdkLevel.isAtLeastU()) {
+                                broadcastSetChannelsIsDone(subId);
+                            }
                         }
                     } else {
                         // For no sim scenario.
                         enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
-                        enableCellBroadcastRoamingChannelsAsNeeded(
-                                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
                     }
 
                     String roamingOperator = CellBroadcastReceiver.getRoamingOperatorSupported(
@@ -181,7 +197,14 @@ public class CellBroadcastConfigService extends IntentService {
         return subIds;
     }
 
-    private void resetCellBroadcastChannels(int subId) {
+    /**
+     * reset cell broadcast ranges
+     */
+    @VisibleForTesting
+    public void resetCellBroadcastChannels(int subId) {
+        if (SdkLevel.isAtLeastU()) {
+            return;
+        }
         SmsManager manager;
         if (subId != SubscriptionManager.DEFAULT_SUBSCRIPTION_ID) {
             manager = SmsManager.getSmsManagerForSubscriptionId(subId);
@@ -214,14 +237,28 @@ public class CellBroadcastConfigService extends IntentService {
     public void enableCellBroadcastChannels(int subId) {
         resetCellBroadcastChannels(subId);
 
+        List<CbConfig> config = getCellBroadcastChannelsConfig(subId, null);
+
+        String roamingOperator = CellBroadcastReceiver.getRoamingOperatorSupported(this);
+        if (!TextUtils.isEmpty(roamingOperator)) {
+            config.addAll(getCellBroadcastChannelsConfig(subId, roamingOperator));
+            config = mergeConfigAsNeeded(config);
+        }
+        setCellBroadcastRange(subId, config);
+    }
+
+    private List<CbConfig> getCellBroadcastChannelsConfig(int subId, String roamingOperator) {
+
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        Resources res = getResources(subId, null);
+        Resources res = getResources(subId, roamingOperator);
+        boolean isRoaming = !TextUtils.isEmpty(roamingOperator);
 
         // boolean for each user preference checkbox, true for checked, false for unchecked
         // Note: If enableAlertsMasterToggle is false, it disables ALL emergency broadcasts
         // except for always-on alerts e.g, presidential. i.e. to receive CMAS severe alerts, both
         // enableAlertsMasterToggle AND enableCmasSevereAlerts must be true.
-        boolean enableAlertsMasterToggle = isMasterToggleEnabled();
+        boolean enableAlertsMasterToggle = isRoaming
+                ? res.getBoolean(R.bool.master_toggle_enabled_default) : isMasterToggleEnabled();
 
         boolean enableEtwsAlerts = enableAlertsMasterToggle;
 
@@ -229,53 +266,73 @@ public class CellBroadcastConfigService extends IntentService {
         // user's preference
         boolean enablePresidential = true;
 
-        boolean enableCmasExtremeAlerts = enableAlertsMasterToggle && prefs.getBoolean(
-                CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, true);
+        boolean enableCmasExtremeAlerts = enableAlertsMasterToggle && (isRoaming
+                ? res.getBoolean(R.bool.extreme_threat_alerts_enabled_default)
+                : prefs.getBoolean(
+                        CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, true));
 
-        boolean enableCmasSevereAlerts = enableAlertsMasterToggle && prefs.getBoolean(
-                CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, true);
+        boolean enableCmasSevereAlerts = enableAlertsMasterToggle && (isRoaming
+                ? res.getBoolean(R.bool.severe_threat_alerts_enabled_default)
+                : prefs.getBoolean(
+                        CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, true));
 
-        boolean enableCmasAmberAlerts = enableAlertsMasterToggle && prefs.getBoolean(
-                CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true);
+        boolean enableCmasAmberAlerts = enableAlertsMasterToggle && (isRoaming
+                ? res.getBoolean(R.bool.amber_alerts_enabled_default)
+                : prefs.getBoolean(
+                        CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true));
 
-        boolean enableTestAlerts = enableAlertsMasterToggle
-                && CellBroadcastSettings.isTestAlertsToggleVisible(getApplicationContext())
-                && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, false);
+        boolean enableTestAlerts = enableAlertsMasterToggle && (isRoaming
+                ? (CellBroadcastSettings
+                        .isTestAlertsToggleVisible(getApplicationContext(), roamingOperator)
+                        && res.getBoolean(R.bool.test_alerts_enabled_default))
+                : (CellBroadcastSettings.isTestAlertsToggleVisible(getApplicationContext())
+                        && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS,
+                        false)));
 
-        boolean enableExerciseAlerts = enableAlertsMasterToggle
-                && res.getBoolean(R.bool.show_separate_exercise_settings)
-                && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS, false);
+        boolean enableExerciseAlerts = enableAlertsMasterToggle && (isRoaming
+                ? (res.getBoolean(R.bool.show_separate_exercise_settings)
+                && res.getBoolean(R.bool.test_exercise_alerts_enabled_default))
+                : (res.getBoolean(R.bool.show_separate_exercise_settings)
+                        && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS,
+                        false)));
 
-        boolean enableOperatorDefined = enableAlertsMasterToggle
-                && res.getBoolean(R.bool.show_separate_operator_defined_settings)
-                && prefs.getBoolean(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS, false);
+        boolean enableOperatorDefined = enableAlertsMasterToggle && (isRoaming
+                ? (res.getBoolean(R.bool.show_separate_operator_defined_settings)
+                && res.getBoolean(R.bool.test_operator_defined_alerts_enabled_default))
+                : (res.getBoolean(R.bool.show_separate_operator_defined_settings)
+                        && prefs.getBoolean(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS,
+                        false)));
 
-        boolean enableAreaUpdateInfoAlerts = res.getBoolean(
-                R.bool.config_showAreaUpdateInfoSettings)
-                && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS,
-                false);
+        boolean enableAreaUpdateInfoAlerts = isRoaming
+                ? (res.getBoolean(R.bool.config_showAreaUpdateInfoSettings)
+                && res.getBoolean(R.bool.area_update_info_alerts_enabled_default))
+                : (res.getBoolean(R.bool.config_showAreaUpdateInfoSettings)
+                        && prefs.getBoolean(
+                                CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS, false));
 
-        boolean enablePublicSafetyMessagesChannelAlerts = enableAlertsMasterToggle
-                && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES,
-                true);
-        boolean enableStateLocalTestAlerts = enableAlertsMasterToggle
-                && (prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS,
-                false)
-                || (!res.getBoolean(R.bool.show_state_local_test_settings)
-                && res.getBoolean(R.bool.state_local_test_alerts_enabled_default)));
+        boolean enablePublicSafetyMessagesChannelAlerts = enableAlertsMasterToggle && (isRoaming
+                ? res.getBoolean(R.bool.public_safety_messages_enabled_default)
+                : prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, true));
 
-        boolean enableEmergencyAlerts = enableAlertsMasterToggle && prefs.getBoolean(
-                CellBroadcastSettings.KEY_ENABLE_EMERGENCY_ALERTS, true);
+        boolean enableStateLocalTestAlerts = enableAlertsMasterToggle && (isRoaming
+                ? res.getBoolean(R.bool.state_local_test_alerts_enabled_default)
+                : (prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS,
+                        false) || (!res.getBoolean(R.bool.show_state_local_test_settings)
+                        && res.getBoolean(R.bool.state_local_test_alerts_enabled_default))));
 
-        setCellBroadcastChannelsEnabled(subId, null, enableAlertsMasterToggle, enableEtwsAlerts,
-                enablePresidential, enableCmasExtremeAlerts, enableCmasSevereAlerts,
-                enableCmasAmberAlerts, enableTestAlerts, enableExerciseAlerts,
-                enableOperatorDefined, enableAreaUpdateInfoAlerts,
+        boolean enableEmergencyAlerts = enableAlertsMasterToggle && (isRoaming
+                ? res.getBoolean(R.bool.emergency_alerts_enabled_default)
+                : prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_EMERGENCY_ALERTS, true));
+
+        return getCellBroadcastChannelsConfig(subId, roamingOperator, enableAlertsMasterToggle,
+                enableEtwsAlerts, enablePresidential, enableCmasExtremeAlerts,
+                enableCmasSevereAlerts, enableCmasAmberAlerts, enableTestAlerts,
+                enableExerciseAlerts, enableOperatorDefined, enableAreaUpdateInfoAlerts,
                 enablePublicSafetyMessagesChannelAlerts, enableStateLocalTestAlerts,
                 enableEmergencyAlerts, true);
     }
 
-    private void setCellBroadcastChannelsEnabled(int subId, @NonNull String operator,
+    private List<CbConfig> getCellBroadcastChannelsConfig(int subId, @NonNull String operator,
             boolean enableAlertsMasterToggle, boolean enableEtwsAlerts, boolean enablePresidential,
             boolean enableCmasExtremeAlerts, boolean enableCmasSevereAlerts,
             boolean enableCmasAmberAlerts, boolean enableTestAlerts, boolean enableExerciseAlerts,
@@ -302,85 +359,161 @@ public class CellBroadcastConfigService extends IntentService {
             log("enableGeoFencingTriggerMessage = " + enableGeoFencingTriggerMessage);
         }
 
+        List<CbConfig> cbConfigList = new ArrayList<>();
         boolean isEnableOnly = !TextUtils.isEmpty(operator);
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                 getApplicationContext(), subId, operator);
-
         /** Enable CMAS series messages. */
 
         // Enable/Disable Presidential messages.
-        setCellBroadcastRange(subId, isEnableOnly, enablePresidential,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.cmas_presidential_alerts_channels_range_strings));
+        List<CellBroadcastChannelRange> ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.cmas_presidential_alerts_channels_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enablePresidential;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable CMAS extreme messages.
-        setCellBroadcastRange(subId, isEnableOnly, enableCmasExtremeAlerts,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.cmas_alert_extreme_channels_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.cmas_alert_extreme_channels_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enableCmasExtremeAlerts;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable CMAS severe messages.
-        setCellBroadcastRange(subId, isEnableOnly, enableCmasSevereAlerts,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.cmas_alerts_severe_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.cmas_alerts_severe_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enableCmasSevereAlerts;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable CMAS amber alert messages.
-        setCellBroadcastRange(subId, isEnableOnly, enableCmasAmberAlerts,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.cmas_amber_alerts_channels_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.cmas_amber_alerts_channels_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enableCmasAmberAlerts;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable test messages.
-        setCellBroadcastRange(subId, isEnableOnly, enableTestAlerts,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.required_monthly_test_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.required_monthly_test_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enableTestAlerts;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable exercise test messages.
         // This could either controlled by main test toggle or separate exercise test toggle.
-        setCellBroadcastRange(subId, isEnableOnly, enableTestAlerts || enableExerciseAlerts,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.exercise_alert_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(R.array.exercise_alert_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || (enableTestAlerts || enableExerciseAlerts);
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable operator defined test messages.
         // This could either controlled by main test toggle or separate operator defined test toggle
-        setCellBroadcastRange(subId, isEnableOnly, enableTestAlerts || enableOperatorDefined,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.operator_defined_alert_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.operator_defined_alert_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || (enableTestAlerts || enableOperatorDefined);
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable GSM ETWS messages.
-        setCellBroadcastRange(subId, isEnableOnly, enableEtwsAlerts,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.etws_alerts_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(R.array.etws_alerts_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enableEtwsAlerts;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable GSM ETWS test messages.
-        setCellBroadcastRange(subId, isEnableOnly, enableTestAlerts,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.etws_test_alerts_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.etws_test_alerts_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enableTestAlerts;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable GSM public safety messages.
-        setCellBroadcastRange(subId, isEnableOnly, enablePublicSafetyMessagesChannelAlerts,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.public_safety_messages_channels_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.public_safety_messages_channels_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enablePublicSafetyMessagesChannelAlerts;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable GSM state/local test alerts.
-        setCellBroadcastRange(subId, isEnableOnly, enableStateLocalTestAlerts,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.state_local_test_alert_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.state_local_test_alert_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enableStateLocalTestAlerts;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable GSM geo-fencing trigger messages.
-        setCellBroadcastRange(subId, isEnableOnly, enableGeoFencingTriggerMessage,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.geo_fencing_trigger_messages_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.geo_fencing_trigger_messages_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enableGeoFencingTriggerMessage;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable non-CMAS series messages.
-        setCellBroadcastRange(subId, isEnableOnly, enableEmergencyAlerts,
-                channelManager.getCellBroadcastChannelRanges(
-                        R.array.emergency_alerts_channels_range_strings));
+        ranges = channelManager.getCellBroadcastChannelRanges(
+                R.array.emergency_alerts_channels_range_strings);
+        for (CellBroadcastChannelRange range : ranges) {
+            boolean enable = range.mAlwaysOn || enableEmergencyAlerts;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
+        }
 
         // Enable/Disable additional channels based on carrier specific requirement.
-        List<CellBroadcastChannelRange> ranges =
+        List<CellBroadcastChannelRange> additionChannelRanges =
                 channelManager.getCellBroadcastChannelRanges(
                         R.array.additional_cbs_channels_strings);
 
-        for (CellBroadcastChannelRange range : ranges) {
+        for (CellBroadcastChannelRange range : additionChannelRanges) {
             boolean enableAlerts;
             switch (range.mAlertType) {
                 case AREA:
@@ -392,121 +525,135 @@ public class CellBroadcastConfigService extends IntentService {
                 default:
                     enableAlerts = enableAlertsMasterToggle;
             }
-            setCellBroadcastRange(subId, isEnableOnly, enableAlerts,
-                    new ArrayList<>(Arrays.asList(range)));
+            boolean enable = range.mAlwaysOn || enableAlerts;
+            if (enable || !isEnableOnly) {
+                cbConfigList.add(
+                        new CbConfig(range.mStartId, range.mEndId, range.mRanType, enable));
+            }
         }
-    }
-
-    /**
-     * Enable cell broadcast messages channels. Messages can be only received on the
-     * enabled channels.
-     *
-     * @param subId Subscription index
-     */
-    @VisibleForTesting
-    public void enableCellBroadcastRoamingChannelsAsNeeded(int subId) {
-        if (!SubscriptionManager.isValidSubscriptionId(subId)) {
-            subId = SubscriptionManager.DEFAULT_SUBSCRIPTION_ID;
-        }
-
-        String roamingOperator = CellBroadcastReceiver.getRoamingOperatorSupported(this);
-        if (roamingOperator.isEmpty()) {
-            return;
-        }
-        log("enableCellBroadcastRoamingChannels for roaming network:" + roamingOperator);
-        Resources res = getResources(subId, roamingOperator);
-
-        // Get default config for roaming network as the settings are based on sim
-        boolean enablePresidential = true;
-
-        boolean enableAlertsMasterToggle = res.getBoolean(R.bool.master_toggle_enabled_default);
-
-        boolean enableEtwsAlerts = enableAlertsMasterToggle;
-
-        boolean enableCmasExtremeAlerts = enableAlertsMasterToggle && res.getBoolean(
-                R.bool.extreme_threat_alerts_enabled_default);
-
-        boolean enableCmasSevereAlerts = enableAlertsMasterToggle && res.getBoolean(
-                R.bool.severe_threat_alerts_enabled_default);
-
-        boolean enableCmasAmberAlerts = enableAlertsMasterToggle && res.getBoolean(
-                R.bool.amber_alerts_enabled_default);
-
-        boolean enableTestAlerts = enableAlertsMasterToggle && CellBroadcastSettings
-                .isTestAlertsToggleVisible(getApplicationContext(), roamingOperator)
-                && res.getBoolean(R.bool.test_alerts_enabled_default);
-
-        boolean enableExerciseAlerts = enableAlertsMasterToggle
-                && res.getBoolean(R.bool.show_separate_exercise_settings)
-                && res.getBoolean(R.bool.test_exercise_alerts_enabled_default);
-
-        boolean enableOperatorDefined = enableAlertsMasterToggle
-                && res.getBoolean(R.bool.show_separate_operator_defined_settings)
-                && res.getBoolean(R.bool.test_operator_defined_alerts_enabled_default);
-
-        boolean enableAreaUpdateInfoAlerts = res.getBoolean(
-                R.bool.config_showAreaUpdateInfoSettings)
-                && res.getBoolean(R.bool.area_update_info_alerts_enabled_default);
-
-        boolean enablePublicSafetyMessagesChannelAlerts = enableAlertsMasterToggle
-                && res.getBoolean(R.bool.public_safety_messages_enabled_default);
-        boolean enableStateLocalTestAlerts = enableAlertsMasterToggle
-                && res.getBoolean(R.bool.state_local_test_alerts_enabled_default);
-
-        boolean enableEmergencyAlerts = enableAlertsMasterToggle && res.getBoolean(
-                R.bool.emergency_alerts_enabled_default);
-
-        setCellBroadcastChannelsEnabled(subId, roamingOperator, enableAlertsMasterToggle,
-                enableEtwsAlerts, enablePresidential, enableCmasExtremeAlerts,
-                enableCmasSevereAlerts, enableCmasAmberAlerts, enableTestAlerts,
-                enableExerciseAlerts, enableOperatorDefined, enableAreaUpdateInfoAlerts,
-                enablePublicSafetyMessagesChannelAlerts, enableStateLocalTestAlerts,
-                enableEmergencyAlerts, true);
+        return cbConfigList;
     }
 
     /**
      * Enable/disable cell broadcast with messages id range
      *
      * @param subId         Subscription index
-     * @param isEnableOnly, True for enabling channel only for roaming network
-     * @param enable        True for enabling cell broadcast with id range, otherwise for disabling
      * @param ranges        Cell broadcast id ranges
      */
-    private void setCellBroadcastRange(int subId, boolean isEnableOnly,
-            boolean enable, List<CellBroadcastChannelRange> ranges) {
+    private void setCellBroadcastRange(int subId, List<CbConfig> ranges) {
         SmsManager manager;
         if (subId != SubscriptionManager.DEFAULT_SUBSCRIPTION_ID) {
             manager = SmsManager.getSmsManagerForSubscriptionId(subId);
         } else {
             manager = SmsManager.getDefault();
         }
+        List<CellBroadcastIdRange> channelIdRanges = new ArrayList<>();
 
         if (ranges != null) {
-            for (CellBroadcastChannelRange range : ranges) {
-                if (range.mAlwaysOn) {
-                    log("mAlwaysOn is set to true, enable the range: " + range.mStartId
-                            + ":" + range.mEndId);
-                    enable = true;
+            for (CbConfig range : ranges) {
+                boolean enable = range.mEnable;
+                if (SdkLevel.isAtLeastU()) {
+                    if (VDBG) {
+                        log("enableCellBroadcastRange[" + range.mStartId + "-"
+                                + range.mEndId + "], type:" + range.mRanType
+                                + ", enable:" + enable);
+                    }
+                    if (enable) {
+                        mChannelRangeForMetric.add(new Pair(range.mStartId, range.mEndId));
+                    }
+                    CellBroadcastIdRange cbRange = new CellBroadcastIdRange(range.mStartId,
+                            range.mEndId, range.mRanType, enable);
+                    channelIdRanges.add(cbRange);
+                } else {
+                    if (enable) {
+                        if (VDBG) {
+                            log("enableCellBroadcastRange[" + range.mStartId + "-"
+                                    + range.mEndId + "], type:" + range.mRanType);
+                        }
+                        mChannelRangeForMetric.add(new Pair(range.mStartId, range.mEndId));
+                        manager.enableCellBroadcastRange(range.mStartId, range.mEndId,
+                                range.mRanType);
+                    } else {
+                        if (VDBG) {
+                            log("disableCellBroadcastRange[" + range.mStartId + "-"
+                                    + range.mEndId + "], type:" + range.mRanType);
+                        }
+                        manager.disableCellBroadcastRange(range.mStartId, range.mEndId,
+                                range.mRanType);
+                    }
                 }
-
-                if (enable) {
-                    if (VDBG) {
-                        log("enableCellBroadcastRange[" + range.mStartId + "-" + range.mEndId
-                                + "], type:" + range.mRanType);
-                    }
-                    mChannelRangeForMetric.add(new Pair(range.mStartId, range.mEndId));
-                    manager.enableCellBroadcastRange(range.mStartId, range.mEndId, range.mRanType);
-                } else if (!isEnableOnly) {
-                    if (VDBG) {
-                        log("disableCellBroadcastRange[" + range.mStartId + "-" + range.mEndId
-                                + "], type:" + range.mRanType);
-                    }
-                    manager.disableCellBroadcastRange(range.mStartId, range.mEndId, range.mRanType);
+            }
+            if (SdkLevel.isAtLeastU()) {
+                TelephonyManager tm = getApplicationContext().getSystemService(
+                        TelephonyManager.class).createForSubscriptionId(subId);
+                try {
+                    tm.setCellBroadcastIdRanges(channelIdRanges, Runnable::run,  result -> {
+                        if (result != TelephonyManager.CELLBROADCAST_RESULT_SUCCESS) {
+                            Log.e(TAG, "fails to setCellBroadcastRanges, result = " + result);
+                        }
+                    });
+                } catch (RuntimeException e) {
+                    Log.e(TAG, "fails to setCellBroadcastRanges");
                 }
             }
         }
     }
 
+    /**
+     * Merge the conflicted CbConfig in the list as needed
+     * @param inputRanges input config lists
+     * @return the list of CbConfig without conflict
+     */
+    @VisibleForTesting
+    public static List<CbConfig> mergeConfigAsNeeded(List<CbConfig> inputRanges) {
+        inputRanges.sort((r1, r2) -> r1.mRanType != r2.mRanType ? r1.mRanType - r2.mRanType
+                : (r1.mStartId != r2.mStartId ? r1.mStartId - r2.mStartId
+                        : r2.mEndId - r1.mEndId));
+        final List<CbConfig> ranges = new ArrayList<>();
+        inputRanges.forEach(r -> {
+            if (ranges.isEmpty() || ranges.get(ranges.size() - 1).mRanType != r.mRanType
+                    || ranges.get(ranges.size() - 1).mEndId < r.mStartId) {
+                ranges.add(new CbConfig(r.mStartId, r.mEndId, r.mRanType, r.mEnable));
+            } else {
+                CbConfig range = ranges.get(ranges.size() - 1);
+                if (range.mEnable == r.mEnable) {
+                    if (r.mEndId > range.mEndId) {
+                        ranges.set(ranges.size() - 1, new CbConfig(
+                                range.mStartId, r.mEndId, range.mRanType, range.mEnable));
+                    }
+                } else if (!range.mEnable) {
+                    if (range.mStartId < r.mStartId) {
+                        if (range.mEndId <= r.mEndId) {
+                            ranges.set(ranges.size() - 1, new CbConfig(range.mStartId,
+                                    r.mStartId - 1, range.mRanType, false));
+                            ranges.add(new CbConfig(r.mStartId, r.mEndId, r.mRanType, true));
+                        } else {
+                            ranges.set(ranges.size() - 1, new CbConfig(range.mStartId,
+                                    r.mStartId - 1, range.mRanType, false));
+                            ranges.add(new CbConfig(r.mStartId, r.mEndId, r.mRanType, true));
+                            ranges.add(new CbConfig(r.mEndId + 1, range.mEndId,
+                                    range.mRanType, false));
+                        }
+                    } else {
+                        if (range.mEndId <= r.mEndId) {
+                            ranges.set(ranges.size() - 1, new CbConfig(r.mStartId,
+                                    r.mEndId, range.mRanType, true));
+                        } else if (range.mStartId <= r.mEndId) {
+                            ranges.set(ranges.size() - 1, new CbConfig(r.mStartId,
+                                    r.mEndId, range.mRanType, true));
+                            ranges.add(new CbConfig(r.mEndId + 1, range.mEndId,
+                                    r.mRanType, false));
+                        }
+                    }
+                } else {
+                    if (range.mEndId < r.mEndId) {
+                        ranges.add(new CbConfig(range.mEndId + 1, r.mEndId, r.mRanType, false));
+                    }
+                }
+            }
+        });
+        return ranges;
+    }
 
     /**
      * Get resource according to the operator or subId
