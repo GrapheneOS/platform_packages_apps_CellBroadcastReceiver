@@ -48,7 +48,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView.MultiChoiceModeListener;
-import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -185,7 +184,7 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
         // This is the Adapter being used to display the list's data.
         @VisibleForTesting
-        public CursorAdapter mAdapter;
+        public CellBroadcastCursorAdapter mAdapter;
 
         private int mCurrentLoaderId = 0;
 
@@ -514,7 +513,7 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                         mode.getMenuInflater().inflate(R.menu.cell_broadcast_list_action_menu,
                                 menu);
                         mInformationMenuItem = menu.findItem(R.id.action_detail_info);
-                        CellBroadcastCursorAdapter.setIsActionMode(true);
+                        mAdapter.setIsActionMode(true);
                         mAdapter.notifyDataSetChanged();
                         updateActionIconsVisibility();
                         if (getListView().getCheckedItemCount() > 0) {
@@ -525,7 +524,7 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
                     @Override
                     public void onDestroyActionMode(ActionMode mode) {
-                        CellBroadcastCursorAdapter.setIsActionMode(false);
+                        mAdapter.setIsActionMode(false);
                         mAdapter.notifyDataSetChanged();
                     }
 
