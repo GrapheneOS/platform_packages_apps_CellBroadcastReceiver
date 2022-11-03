@@ -49,6 +49,7 @@ import static org.mockito.Mockito.verify;
 
 import android.app.Fragment;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.os.Bundle;
@@ -63,6 +64,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.android.cellbroadcastreceiver.CellBroadcastCursorAdapter;
 import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
 import com.android.cellbroadcastreceiver.CellBroadcastListItem;
 import com.android.cellbroadcastreceiver.R;
@@ -599,5 +601,25 @@ public class CellBroadcastListActivityTest extends
         Bundle bundle = new Bundle();
         activity.mListFragment.onSaveInstanceState(bundle);
         assertTrue(bundle.containsKey(KEY_LOADER_ID));
+    }
+
+    public void testActionModeSate() {
+        CellBroadcastCursorAdapter adapter = new CellBroadcastCursorAdapter(mock(Context.class),
+                null);
+        boolean actionMode = adapter.getIsActionMode();
+        assertEquals(false, actionMode);
+
+        adapter.setIsActionMode(true);
+        actionMode = adapter.getIsActionMode();
+        assertEquals(true, actionMode);
+
+        CellBroadcastCursorAdapter adapter2 = new CellBroadcastCursorAdapter(mock(Context.class),
+                null);
+        actionMode = adapter2.getIsActionMode();
+        assertEquals(false, actionMode);
+
+        adapter2.setIsActionMode(true);
+        actionMode = adapter2.getIsActionMode();
+        assertEquals(true, actionMode);
     }
 }
