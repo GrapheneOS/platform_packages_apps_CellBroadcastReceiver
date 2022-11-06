@@ -566,7 +566,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 mPresidentialCheckBox.setVisible(
                         res.getBoolean(R.bool.show_presidential_alerts_settings)
                         && !channelManager.getCellBroadcastChannelRanges(
-                                R.array.cmas_presidential_alerts_channels_range_string).isEmpty());
+                                R.array.cmas_presidential_alerts_channels_range_strings).isEmpty());
             }
 
             if (mExtremeCheckBox != null) {
