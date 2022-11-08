@@ -145,7 +145,7 @@ public class CellBroadcastConfigTest {
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(ACTION_SET_CHANNELS_DONE);
-        getContext().registerReceiver(sReceiver, filter, Context.RECEIVER_EXPORTED);
+        getContext().registerReceiver(sReceiver, filter);
 
         sMockModemManager = new MockModemManager();
         assertTrue(sMockModemManager.connectMockModemService(
