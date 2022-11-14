@@ -416,7 +416,7 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
             }
         }
 
-        if (mEnableAudio || mEnableVibrate) {
+        if ((mEnableAudio || mEnableVibrate) && (mAlertType != AlertType.MUTE)) {
             playAlertTone(mAlertType, mVibrationPattern);
         } else {
             if (DBG) log("No audio/vibrate playing. Stop CellBroadcastAlertAudio service");
