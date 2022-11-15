@@ -18,6 +18,8 @@
     package="com.android.cellbroadcastreceiver.tests.compliancetests">
 
     <uses-permission android:name="android.permission.READ_CELL_BROADCASTS" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
 
     <application>
         <uses-library android:name="android.test.runner" />
