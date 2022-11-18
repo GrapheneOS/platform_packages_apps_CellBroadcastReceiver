@@ -1306,9 +1306,9 @@ public class CellBroadcastAlertDialog extends Activity {
      */
     @VisibleForTesting
     public ArrayList<SmsCbMessage> getNewMessageListIfNeeded(
-            @NonNull ArrayList<SmsCbMessage> dialogMessageList,
+            ArrayList<SmsCbMessage> dialogMessageList,
             ArrayList<SmsCbMessage> newMessageList) {
-        if (newMessageList == null) {
+        if (newMessageList == null || dialogMessageList == null) {
             return dialogMessageList;
         }
         ArrayList<SmsCbMessage> clonedNewMessageList = new ArrayList<>(newMessageList);
