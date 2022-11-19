@@ -258,6 +258,18 @@ public class CellBroadcastAlertDialogTest extends
                 mNotification.capture());
     }
 
+    public void testDismissByDeleteIntent() throws Throwable {
+        final Intent intent = createActivityIntent();
+        intent.putExtra(CellBroadcastAlertService.DISMISS_DIALOG, true);
+        intent.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
+        Looper.prepare();
+        CellBroadcastAlertDialog activity =
+                startActivity(intent, null, null);
+        getInstrumentation().callActivityOnUserLeaving(activity);
+        verify(mMockedNotificationManager, atLeastOnce()).cancel(
+                eq(CellBroadcastAlertService.NOTIFICATION_ID));
+    }
+
     public void testGetNewMessageListIfNeeded() throws Throwable {
         CellBroadcastAlertDialog activity = startActivity();
         Resources spyRes = mContext.getResources();
