@@ -17,5 +17,5 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="alerts_header_summary" msgid="4824339599027800065">"In the event of a natural disaster, the device can receive a notification similar to an evacuation warning. \nThis service is provided by the disaster warning message release organisation (such as the Earthquake Administration), network operators and device manufacturers. \nNotification information may not be received in the event of device malfunction or poor network environment."</string>
+    <string name="alerts_header_summary" msgid="4824339599027800065">"In the event of a natural disaster, the device can receive a notification similar to an evacuation warning. \nThis service is provided by the disaster warning message release organization (such as the Earthquake Administration), network operators and device manufacturers. \nNotification information may not be received in the event of device malfunction or poor network environment."</string>
 </resources>
