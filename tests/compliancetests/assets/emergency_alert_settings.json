@@ -128,17 +128,13 @@
     }
   },
   "chile_telefonica": {
-    "CL-regular broadcast channel": {
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
     "Test alerts": {
       "default_value": "false",
       "toggle_avail": "true"
     }
   },
   "columbia": {
-    "CO-regular broadcast channel": {
+    "Operator warnings": {
       "default_value": "false",
       "toggle_avail": "true"
     },
@@ -164,8 +160,8 @@
     }
   },
   "ecuador_telefonica": {
-    "Mensaje local de prueba": { //"Test local message": {
-      "default_value": "true",
+    "Mensaje local de prueba": { //Avisos del operador with translation update // "Operator warnings": {
+      "default_value": "false",
       "toggle_avail": "true"
     },
     "Mensaje Informativo": { //"Informative message": {
@@ -436,10 +432,6 @@
     }
   },
   "peru_telefonica": {
-    "PE-regular broadcast channel": {
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
     "Speak alert message": {
       "default_value": "false",
       "toggle_avail": "true"
@@ -700,6 +692,32 @@
       "toggle_avail": "true"
     },
     "Testwarnung": { //"Test alert": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "venezuela": {
+    "Operator warnings": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test alerts": {
       "default_value": "false",
       "toggle_avail": "true"
     },
