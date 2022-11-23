@@ -40,29 +40,37 @@
     }
   },
   "mexico_telefonica": {
-    "MX-regular broadcast channel": {
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "Extreme threats": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Severe threats": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "AMBER alerts": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Test alerts": {
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "Area update broadcasts": {
+    "Alert Messages Level 1": {
       "default_value": "true",
       "toggle_avail": "false"
+    },
+    "Alert Messages Level 2": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Alert Messages Level 3": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Information Messages in Spanish": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Amber Alert Messages in Spanish": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Exercise Alert Messages in Spanish": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Reserved for future deployments": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Operator warnings": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "elsalvador": {
@@ -732,6 +740,36 @@
       "toggle_avail": "true"
     },
     "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "mexico": {
+    "Alert Messages Level 1": {
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "Alert Messages Level 2": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Alert Messages Level 3": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Information Messages in Spanish": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Amber Alert Messages in Spanish": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Exercise Alert Messages in Spanish": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Reserved for future deployments": {
       "default_value": "true",
       "toggle_avail": "true"
     }
