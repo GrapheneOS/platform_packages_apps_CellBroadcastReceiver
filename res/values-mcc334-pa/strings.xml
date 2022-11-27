@@ -16,22 +16,14 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for cmas_presidential_level_alert (2145492112645335437) -->
-    <skip />
-    <!-- no translation found for cmas_extreme_alert (2888933940331015047) -->
-    <skip />
-    <!-- no translation found for cmas_severe_alert (6548160507371179194) -->
-    <skip />
-    <!-- no translation found for public_safety_message (8615033532458685141) -->
-    <skip />
-    <!-- no translation found for cmas_amber_alert (2057872092383474179) -->
-    <skip />
-    <!-- no translation found for cmas_required_monthly_test (6482419682828275558) -->
-    <skip />
-    <!-- no translation found for cmas_exercise_alert (8800157369170240179) -->
-    <skip />
-    <!-- no translation found for emergency_alert (5684653149590755418) -->
-    <skip />
+    <string name="cmas_presidential_level_alert" msgid="2145492112645335437">"ਸੁਚੇਤਨਾ ਸੁਨੇਹੇ ਪੱਧਰ 1"</string>
+    <string name="cmas_extreme_alert" msgid="2888933940331015047">"ਸੁਚੇਤਨਾ ਸੁਨੇਹੇ ਪੱਧਰ 2"</string>
+    <string name="cmas_severe_alert" msgid="6548160507371179194">"ਸੁਚੇਤਨਾ ਸੁਨੇਹੇ ਪੱਧਰ 3"</string>
+    <string name="public_safety_message" msgid="8615033532458685141">"ਸਪੈਨਿਸ਼ ਵਿੱਚ ਜਾਣਕਾਰੀ ਸੰਬੰਧੀ ਸੁਨੇਹੇ"</string>
+    <string name="cmas_amber_alert" msgid="2057872092383474179">"ਸਪੈਨਿਸ਼ ਵਿੱਚ AMBER ਸੁਚੇਤਨਾ ਸੰਬੰਧੀ ਸੁਨੇਹੇ"</string>
+    <string name="cmas_required_monthly_test" msgid="6482419682828275558">"ਸਪੈਨਿਸ਼ ਵਿੱਚ ਜਾਂਚ ਸੁਚੇਤਨਾ ਸੰਬੰਧੀ ਸੁਨੇਹੇ"</string>
+    <string name="cmas_exercise_alert" msgid="8800157369170240179">"ਸਪੈਨਿਸ਼ ਵਿੱਚ ਕਸਰਤ ਸੁਚੇਤਨਾ ਸੰਬੰਧੀ ਸੁਨੇਹੇ"</string>
+    <string name="emergency_alert" msgid="5684653149590755418">"ਭਵਿੱਖੀ ਤੈਨਾਤੀਆਂ ਲਈ ਰਾਖਵੇਂ"</string>
     <!-- no translation found for enable_cmas_presidential_alerts_title (69237443430056765) -->
     <skip />
     <string name="enable_cmas_presidential_alerts_summary" msgid="755047677150111577"></string>
