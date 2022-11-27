@@ -160,7 +160,7 @@
     }
   },
   "ecuador_telefonica": {
-    "Mensaje local de prueba": { //Avisos del operador with translation update // "Operator warnings": {
+    "Avisos del operador": {
       "default_value": "false",
       "toggle_avail": "true"
     },
