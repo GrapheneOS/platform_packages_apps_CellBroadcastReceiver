@@ -5362,5 +5362,62 @@
       "default_value": "true",
       "toggle_avail": "true"
     }
+  },
+  "bahamas": {
+    "4370": {
+      "title": "National Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4371": {
+      "title": "Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4372": {
+      "title": "Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4373": {
+      "title": "Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4374": {
+      "title": "Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4375": {
+      "title": "Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4376": {
+      "title": "Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4377": {
+      "title": "Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4378": {
+      "title": "Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4379": {
+      "title": "Marco's Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4380": {
+      "title": "Test Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
   }
 }

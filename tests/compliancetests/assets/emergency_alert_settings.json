@@ -791,5 +791,11 @@
       "default_value": "true",
       "toggle_avail": "true"
     }
+  },
+  "bahamas": {
+    "Test Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
   }
 }
