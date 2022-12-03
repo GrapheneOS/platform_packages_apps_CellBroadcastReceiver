@@ -112,7 +112,7 @@
     <string name="cmas_category_transport" msgid="5014901635987361642">"ପରିବହନ"</string>
     <string name="cmas_category_infra" msgid="3558151044446851398">"ଇନଫ୍ରାଷ୍ଟ୍ରକଚର୍‌"</string>
     <string name="cmas_category_cbrne" msgid="240421557913603971">"ରାସାୟନିକ/ଜୀବବିଜ୍ଞାନ/ଆଣବିକ/ବିସ୍ଫୋରକ"</string>
-    <string name="cmas_category_other" msgid="6158932360790744360">"ଅନ୍ୟାନ୍ୟ"</string>
+    <string name="cmas_category_other" msgid="6158932360790744360">"ଅନ୍ୟ"</string>
     <string name="cmas_response_heading" msgid="4205379547245540163">"ପ୍ରତିକ୍ରିୟାର ପ୍ରକାର:"</string>
     <string name="cmas_response_shelter" msgid="7301175579079615909">"ଆଶ୍ରୟ"</string>
     <string name="cmas_response_evacuate" msgid="5833170084430021095">"ଖାଲି କରନ୍ତୁ"</string>
