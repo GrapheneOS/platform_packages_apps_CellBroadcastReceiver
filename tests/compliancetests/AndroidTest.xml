@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <configuration description="Run CellBroadcastReceiver Compliance Test Cases.">
-    <target_preparer class="com.android.tradefed.targetprep.TestAppInstallSetup">
+    <target_preparer class="com.android.tradefed.targetprep.suite.SuiteApkInstaller">
         <option name="test-file-name" value="CellBroadcastReceiverComplianceTests.apk" />
         <option name="install-arg" value="-g"/>
     </target_preparer>
