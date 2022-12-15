@@ -20,6 +20,7 @@ import static com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ALERT_AU
 import static com.android.cellbroadcastreceiver.CellBroadcastAlertService.SHOW_NEW_ALERT_ACTION;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -517,5 +518,32 @@ public class CellBroadcastAlertServiceTest extends
 
         assertTrue("Should display the message",
                 cellBroadcastAlertService.shouldDisplayMessage(message3));
+    }
+
+    public void testMuteAlert() {
+        doReturn(new String[]{
+                "0x1113:rat=gsm, type=mute, emergency=true, always_on=true",
+                "0x112F:rat=gsm, emergency=true"}).when(mResources).getStringArray(
+                eq(com.android.cellbroadcastreceiver.R.array
+                        .additional_cbs_channels_strings));
+
+        Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
+        intent.setAction(SHOW_NEW_ALERT_ACTION);
+
+        SmsCbMessage message = createMessageForCmasMessageClass(13788634, 0x1113, 0x1113);
+        intent.putExtra("message", message);
+        startService(intent);
+        waitForServiceIntent();
+
+        assertEquals(CellBroadcastAlertService.AlertType.MUTE,
+                mServiceIntentToVerify.getSerializableExtra(ALERT_AUDIO_TONE_TYPE));
+
+        message = createMessageForCmasMessageClass(14788634, 0x112F, 0x112F);
+        intent.putExtra("message", message);
+        startService(intent);
+        waitForServiceIntent();
+
+        assertNotEquals(CellBroadcastAlertService.AlertType.MUTE,
+                mServiceIntentToVerify.getSerializableExtra(ALERT_AUDIO_TONE_TYPE));
     }
 }

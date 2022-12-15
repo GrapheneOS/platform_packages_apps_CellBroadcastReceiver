@@ -162,6 +162,7 @@ public class CellBroadcastAlertService extends Service {
         TEST,
         AREA,
         INFO,
+        MUTE,
         OTHER
     }
 
@@ -717,6 +718,7 @@ public class CellBroadcastAlertService extends Service {
                 message.getSubscriptionId());
         audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_DURATION,
                 (range != null) ? range.mAlertDuration : -1);
+
         startService(audioIntent);
 
         ArrayList<SmsCbMessage> messageList = new ArrayList<>();
