@@ -57,7 +57,9 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
         "0xA901:type=test, emergency=true, pulsation=0xFFFFFFFF",
         "0xA902:type=test, emergency=true, pulsation=0xFFFFFFFF|30000",
         "0xA903:type=test, emergency=true, pulsation=0xFFFFFFFF|30000|1000|1000",
+        "0x1113:type=mute, emergency=true, always_on=true",
         "0x111E:debug_build=true"};
+
     private static final String[] CHANNEL_CONFIG2 = {
         "12:type=etws_earthquake, emergency=true, display=true, always_on=false",
         "456:type=etws_tsunami, emergency=true, alert_duration=20000, scope=domestic",
@@ -119,7 +121,7 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
 
     private void verifyChannelRangesForConfig1(List<CellBroadcastChannelRange> list)
             throws Exception {
-        assertEquals(9, list.size());
+        assertEquals(10, list.size());
 
         assertEquals(12, list.get(0).mStartId);
         assertEquals(12, list.get(0).mEndId);
@@ -192,23 +194,29 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
         assertFalse(list.get(5).mDisplayDialogWithNotification);
 
         assertEquals(0xA901, list.get(6).mStartId);
-        assertEquals(0xA901, list.get(6).mStartId);
+        assertEquals(0xA901, list.get(6).mEndId);
         assertEquals(1, list.get(6).mPulsationPattern.length);
         assertEquals(0xFFFFFFFF, list.get(6).mPulsationPattern[0]);
 
         assertEquals(0xA902, list.get(7).mStartId);
-        assertEquals(0xA902, list.get(7).mStartId);
+        assertEquals(0xA902, list.get(7).mEndId);
         assertEquals(2, list.get(7).mPulsationPattern.length);
         assertEquals(0xFFFFFFFF, list.get(7).mPulsationPattern[0]);
         assertEquals(30000, list.get(7).mPulsationPattern[1]);
 
         assertEquals(0xA903, list.get(8).mStartId);
-        assertEquals(0xA903, list.get(8).mStartId);
+        assertEquals(0xA903, list.get(8).mEndId);
         assertEquals(4, list.get(8).mPulsationPattern.length);
         assertEquals(0xFFFFFFFF, list.get(8).mPulsationPattern[0]);
         assertEquals(30000, list.get(8).mPulsationPattern[1]);
         assertEquals(1000, list.get(8).mPulsationPattern[2]);
         assertEquals(1000, list.get(8).mPulsationPattern[3]);
+
+        assertEquals(0x1113, list.get(9).mStartId);
+        assertEquals(0x1113, list.get(9).mEndId);
+        assertEquals(AlertType.MUTE, list.get(9).mAlertType);
+        assertEquals(CellBroadcastChannelRange.LEVEL_EMERGENCY, list.get(9).mEmergencyLevel);
+        assertTrue(list.get(9).mAlwaysOn);
     }
 
     private void verifyChannelRangesForConfig2(List<CellBroadcastChannelRange> list)
@@ -289,9 +297,9 @@ public class CellBroadcastChannelManagerTest extends CellBroadcastTest {
 
         ranges = mChannelManager2.getAllCellBroadcastChannelRanges();
 
-        assertEquals(13, ranges.size());
+        assertEquals(14, ranges.size());
         verifyChannelRangesForConfig2(new ArrayList<>(ranges).subList(0, 3));
-        verifyChannelRangesForConfig1(new ArrayList<>(ranges).subList(4, 13));
+        verifyChannelRangesForConfig1(new ArrayList<>(ranges).subList(4, 14));
     }
 
     @Test
