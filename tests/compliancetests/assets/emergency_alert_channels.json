@@ -187,6 +187,60 @@
       "test_mode": "true"
     }
   },
+  "norway": {
+    "4370": {
+      "title": "Immediate danger",  // 'Akutt fare' == 'Immediate danger'
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "Immediate danger", // 'Akutt fare' == 'Immediate danger'
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4371": {
+      "title": "Immediate danger", // 'Akutt fare' == 'Immediate danger'
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4384": {
+      "title": "Immediate danger", // 'Akutt fare' == 'Immediate danger'
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4375": {
+      "title": "Important warning", // 'Viktig melding' == 'Important warning'
+      "default_value": "true",
+      "toggle_avail": "false",
+      "end_channel": "4376"
+    },
+    "4388": {
+      "title": "Important warning", // 'Viktig melding' == 'Important warning'
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4389"
+    },
+    "4380": {
+      "title": "Test",  // 'Test' == 'Test'
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4393": {
+      "title": "Test",  // 'Test' == 'Test'
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4381": {
+      "title": "Exercise", // 'Øvelse' == 'Exercise'
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4394": {
+      "title": "Exercise", // 'Øvelse' == 'Exercise'
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
   "peru_entel": {
     "4352": {
       "title": "",

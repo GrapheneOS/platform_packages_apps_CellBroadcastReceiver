@@ -415,6 +415,20 @@
       "toggle_avail": "true"
     }
   },
+  "norway": {
+    "Important warning": { //"Viktig melding"
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test": { //"Test"
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
   "oman": {
     "تمارين": { //"Exercises Alerts"
       "default_value": "true",
