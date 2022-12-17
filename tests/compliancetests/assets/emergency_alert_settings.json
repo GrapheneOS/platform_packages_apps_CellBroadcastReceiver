@@ -740,6 +740,12 @@
       "toggle_avail": "true"
     }
   },
+  "ukraine": {
+    "Emergency Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
   "australia": {
     "Extreme threats": {
       "default_value": "true",
