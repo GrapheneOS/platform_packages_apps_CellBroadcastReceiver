@@ -5016,6 +5016,61 @@
       "toggle_avail": "true"
     }
   },
+  "ukraine": {
+    "4352": {
+      "title": "",
+      "default_value": "true",
+      "toggle_avail": "false",
+      "end_channel": "4354"
+    },
+    "4356": {
+      "title": "",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4370": {
+      "title": "National Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "National Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4371": {
+      "title": "Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4384": {
+      "title": "Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4373": {
+      "title": "Emergency alert: Severe",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4378"
+    },
+    "4386": {
+      "title": "Emergency alert: Severe",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4391"
+    },
+    "4379": {
+      "title": "Child abduction (Amber alert)",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "Child abduction (Amber alert)",
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
   "australia": {
     "4352": {
       "title": "",
