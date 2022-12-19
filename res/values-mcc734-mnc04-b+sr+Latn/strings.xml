@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="pws_other_message_identifiers" msgid="3594437796498866115">"VE informacije"</string>
-    <string name="enable_emergency_alerts_message_title" msgid="8589973943848979179">"VE redovan kanal za emitovanje"</string>
+    <string name="pws_other_message_identifiers" msgid="3594437796498866115">"VE информације"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="8589973943848979179">"VE редован канал за емитовање"</string>
 </resources>
