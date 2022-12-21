@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="pws_other_message_identifiers" msgid="2558374779011704807">"CL informacije"</string>
-    <string name="enable_emergency_alerts_message_title" msgid="1826329492951433241">"CL redovan kanal za emitovanje"</string>
+    <string name="pws_other_message_identifiers" msgid="2558374779011704807">"CL информације"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="1826329492951433241">"CL редован канал за емитовање"</string>
 </resources>
