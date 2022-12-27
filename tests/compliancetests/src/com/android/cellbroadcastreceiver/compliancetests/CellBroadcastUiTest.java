@@ -191,7 +191,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         String hexString = serialHexString + hexChannel + pduCode + "11D4F29C0E0AB2CB727A08";
         byte[] data = HexDump.hexStringToByteArray(hexString);
 
-        sMockModemManager.newBroadcastSms(data);
+        sMockModemManager.newBroadcastSms(sSlotId, data);
     }
 
     private void verifyAlertDialogTitle(String carrier, String title, String channel,
