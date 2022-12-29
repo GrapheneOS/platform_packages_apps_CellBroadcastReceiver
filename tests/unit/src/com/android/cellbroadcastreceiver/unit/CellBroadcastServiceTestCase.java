@@ -153,6 +153,14 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         }
 
         @Override
+        public String getSystemServiceName(Class<?> serviceClass) {
+            if (TelephonyManager.class.equals(serviceClass)) {
+                return Context.TELEPHONY_SERVICE;
+            }
+            return super.getSystemServiceName(serviceClass);
+        }
+
+        @Override
         public SharedPreferences getSharedPreferences(String name, int mode) {
             return mMockedSharedPreferences;
         }
