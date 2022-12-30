@@ -28,6 +28,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.SystemProperties;
 import android.support.test.uiautomator.UiDevice;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.telephony.mockmodem.IRadioMessagingImpl;
 import android.telephony.mockmodem.MockModemConfigBase.SimInfoChangedResult;
@@ -58,6 +59,7 @@ import java.util.concurrent.TimeUnit;
 public class CellBroadcastBaseTest {
     private static final String TAG = "CellBroadcastBaseTest";
     protected static MockModemManager sMockModemManager;
+    protected static int sSlotId = 0;
     protected static JSONObject sCarriersObject;
     protected static JSONObject sChannelsObject;
     protected static JSONObject sSettingsObject;
@@ -172,11 +174,12 @@ public class CellBroadcastBaseTest {
         sMockModemManager = new MockModemManager();
         assertTrue(sMockModemManager.connectMockModemService(
                 MockSimService.MOCK_SIM_PROFILE_ID_TWN_CHT));
+        sSlotId = SubscriptionManager.getSlotIndex(SubscriptionManager.getDefaultSubscriptionId());
         if (SdkLevel.isAtLeastU()) {
             BroadcastChannelListener broadcastCallback = new BroadcastChannelListener();
             sCallBackWithExecutor = new IRadioMessagingImpl.CallBackWithExecutor(
                     Runnable::run, broadcastCallback);
-            sMockModemManager.registerBroadcastCallback(sCallBackWithExecutor);
+            sMockModemManager.registerBroadcastCallback(sSlotId, sCallBackWithExecutor);
         }
         waitForNotify();
 
@@ -212,7 +215,7 @@ public class CellBroadcastBaseTest {
             getContext().unregisterReceiver(sReceiver);
         }
         if (sCallBackWithExecutor != null && sMockModemManager != null) {
-            sMockModemManager.unregisterBroadcastCallback(sCallBackWithExecutor);
+            sMockModemManager.unregisterBroadcastCallback(sSlotId, sCallBackWithExecutor);
         }
         if (sMockModemManager != null) {
             // Rebind all interfaces which is binding to MockModemService to default.
