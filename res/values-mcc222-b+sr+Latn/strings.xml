@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="sms_cb_settings" msgid="8489556780139246683">"Јавна упозорења"</string>
+    <string name="sms_cb_settings" msgid="8489556780139246683">"Javna upozorenja"</string>
     <!-- no translation found for cmas_extreme_alert (8930893242227527613) -->
     <skip />
     <!-- no translation found for cmas_extreme_immediate_observed_alert (3037852378370476280) -->
@@ -27,6 +27,6 @@
     <skip />
     <!-- no translation found for enable_cmas_extreme_threat_alerts_title (4190349287603327927) -->
     <skip />
-    <string name="alerts_header_summary" msgid="5963536832729208581">"Корисници ће добијати важне поруке без обзира на подешавања"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7658007515811137035">"Пробне поруке"</string>
+    <string name="alerts_header_summary" msgid="5963536832729208581">"Korisnici će dobijati važne poruke bez obzira na podešavanja"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7658007515811137035">"Probne poruke"</string>
 </resources>
