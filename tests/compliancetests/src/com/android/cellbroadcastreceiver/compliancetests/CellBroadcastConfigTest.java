@@ -44,7 +44,7 @@ public class CellBroadcastConfigTest extends CellBroadcastBaseTest {
         setSimInfo(carrierName);
 
         logd("Check Broadcast Channel Configs");
-        Set<Integer> outputConfigs = sMockModemManager.getGsmBroadcastConfig();
+        Set<Integer> outputConfigs = sMockModemManager.getGsmBroadcastConfig(sSlotId);
         verifyOutput(outputConfigs, carrierName);
     }
 
