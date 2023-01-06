@@ -588,7 +588,7 @@ public class CellBroadcastConfigService extends IntentService {
                         TelephonyManager.class).createForSubscriptionId(subId);
                 try {
                     tm.setCellBroadcastIdRanges(channelIdRanges, Runnable::run,  result -> {
-                        if (result != TelephonyManager.CELLBROADCAST_RESULT_SUCCESS) {
+                        if (result != TelephonyManager.CELL_BROADCAST_RESULT_SUCCESS) {
                             Log.e(TAG, "fails to setCellBroadcastRanges, result = " + result);
                         }
                     });
