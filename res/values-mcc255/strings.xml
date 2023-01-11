@@ -22,6 +22,6 @@
     <!-- Required Ukraine(uk) translation for this message: Екстрене сповіщення -->
     <string name="cmas_extreme_alert">Emergency Alert</string>
     <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Ukraine(uk) translation for this message: Екстрена оповістка -->
+    <!-- Required Ukraine(uk) translation for this message: Екстрене сповіщення -->
     <string name="enable_cmas_extreme_threat_alerts_title">Emergency Alert</string>
 </resources>
