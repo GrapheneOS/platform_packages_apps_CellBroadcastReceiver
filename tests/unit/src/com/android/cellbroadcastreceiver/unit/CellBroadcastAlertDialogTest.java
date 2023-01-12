@@ -60,6 +60,7 @@ import android.widget.TextView;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertDialog;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
+import com.android.cellbroadcastreceiver.CellBroadcastReceiverApp;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.cellbroadcastreceiver.R;
 import com.android.internal.telephony.gsm.SmsCbConstants;
@@ -72,6 +73,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class CellBroadcastAlertDialogTest extends
@@ -554,5 +556,77 @@ public class CellBroadcastAlertDialogTest extends
         assertEquals(m.what + 2, activity.mPulsationHandler.mCount.get());
         assertFalse(activity.mPulsationHandler.mIsPulsationOn);
         verify(mMockLinearLayout, times(2)).setBackgroundColor(eq(backgroundColor));
+    }
+
+    private ArrayList<SmsCbMessage> getNewMessageList() throws Exception {
+        Method method = CellBroadcastReceiverApp.class.getDeclaredMethod("getNewMessageList");
+        method.setAccessible(true);
+        return (ArrayList<SmsCbMessage>) method.invoke(null);
+    }
+
+    private ArrayList<SmsCbMessage> addNewMessageToList(SmsCbMessage message) {
+        Class[] args = new Class[1];
+        args[0] = SmsCbMessage.class;
+        try {
+            Method method = CellBroadcastReceiverApp.class.getDeclaredMethod(
+                    "addNewMessageToList", args);
+            method.setAccessible(true);
+            return (ArrayList<SmsCbMessage>) method.invoke(null, message);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public void testNewMessageListCount() throws Throwable {
+        SmsCbMessage testMessage1 = CellBroadcastAlertServiceTest
+                .createMessageForCmasMessageClass(75103,
+                        SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PRESIDENTIAL_LEVEL,
+                        mCmasMessageClass);
+        SmsCbMessage testMessage2 = CellBroadcastAlertServiceTest
+                .createMessageForCmasMessageClass(51030,
+                        SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY,
+                        mCmasMessageClass);
+        SmsCbMessage testMessage3 = CellBroadcastAlertServiceTest
+                .createMessageForCmasMessageClass(10307,
+                        SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY,
+                        mCmasMessageClass);
+
+        // touch a notification for on-going message
+        Intent intent1 = createActivityIntent();
+        intent1.putExtra(CellBroadcastAlertService.DISMISS_DIALOG, false);
+        intent1.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, false);
+        addNewMessageToList(testMessage1);
+        Looper.prepare();
+        CellBroadcastAlertDialog activity = startActivity(intent1, null, null);
+        waitForMs(100);
+
+        assertEquals(1, getNewMessageList().size());
+
+        // touch a notification for pending message
+        Intent intent2 = createActivityIntent();
+        intent2.putExtra(CellBroadcastAlertService.DISMISS_DIALOG, false);
+        intent2.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
+        addNewMessageToList(testMessage2);
+        activity.onNewIntent(intent2);
+
+        assertEquals(2, getNewMessageList().size());
+
+        // swipe a notification for pending message
+        Intent intent3 = createActivityIntent();
+        intent3.putExtra(CellBroadcastAlertService.DISMISS_DIALOG, true);
+        intent3.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, true);
+        addNewMessageToList(testMessage3);
+        activity.onNewIntent(intent3);
+
+        assertEquals(getNewMessageList().size(), 0);
+
+        // swipe a notification for on-going message
+        Intent intent4 = createActivityIntent();
+        intent4.putExtra(CellBroadcastAlertService.DISMISS_DIALOG, true);
+        intent4.putExtra(CellBroadcastAlertDialog.DISMISS_NOTIFICATION_EXTRA, false);
+        addNewMessageToList(testMessage1);
+        activity.onNewIntent(intent4);
+
+        assertEquals(getNewMessageList().size(), 1);
     }
 }
