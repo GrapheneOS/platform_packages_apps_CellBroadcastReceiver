@@ -1044,7 +1044,12 @@ public class CellBroadcastAlertDialog extends Activity {
             NotificationManager notificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.cancel(CellBroadcastAlertService.NOTIFICATION_ID);
-            CellBroadcastReceiverApp.clearNewMessageList();
+
+            // Clear new message list when user swipe the notification
+            // except dialog and notification are visible at the same time.
+            if (intent.getBooleanExtra(CellBroadcastAlertService.DISMISS_DIALOG, false)) {
+                CellBroadcastReceiverApp.clearNewMessageList();
+            }
         }
     }
 
