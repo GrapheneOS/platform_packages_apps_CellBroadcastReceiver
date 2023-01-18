@@ -25,7 +25,7 @@
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Бул колдонуучу үчүн зымсыз шашылыш билдирүүлөрдүн жөндөөлөрү жеткиликсиз"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"OK"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"Азырынча эч нерсе жок"</string>
-    <string name="menu_preferences" msgid="3596514894131599202">"Жөндөөлөр"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"Параметрлер"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Уюк таркатмаларын жок кылуу"</string>
     <string name="message_options" msgid="3178489901903589574">"Билдирүүнүн параметрлери"</string>
     <string name="menu_view_details" msgid="1040989019045280975">"Дайындарды көрүү"</string>
@@ -171,6 +171,6 @@
     <string name="message_copied" msgid="6922953753733166675">"Билдирүү көчүрүлдү"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="186872150397081032">"Роуминг учурунда бул жөндөөлөрдө камтылбаган эскертүүлөрдү алышыңыз мүмкүн"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Жөндөөлөр байланыш оператору тарабынан өзгөртүлдү"</string>
+    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Параметрлер байланыш оператору тарабынан өзгөртүлдү"</string>
     <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Зымсыз шашылыш билдирүү жөндөөлөрүн көрүү үчүн басыңыз"</string>
 </resources>
