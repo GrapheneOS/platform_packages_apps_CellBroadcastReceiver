@@ -121,19 +121,35 @@
       "toggle_avail": "true"
     }
   },
-  "chile_entel": {
-    "Test alerts": {
-      "default_value": "false",
-      "toggle_avail": "true"
-    }
-  },
-  "chile_telefonica": {
+  "chile": {
     "Test alerts": {
       "default_value": "false",
       "toggle_avail": "true"
     }
   },
   "columbia": {
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Area update broadcasts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "columbia_telefonica": {
     "Operator warnings": {
       "default_value": "false",
       "toggle_avail": "true"
@@ -185,7 +201,7 @@
       "toggle_avail": "true"
     }
   },
-  "ecuador_claro": {
+  "ecuador": {
     "Mensaje Informativo": { //"Informative message": {
       "default_value": "true",
       "toggle_avail": "true"
@@ -315,6 +331,54 @@
       "toggle_avail": "true"
     }
   },
+  "japan_emobile": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "Always alert at full volume": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "japan_wirelesscityplanning": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "Always alert at full volume": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "japan_docomo": {
+    "Test alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "Always alert at full volume": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "japan_rakuten": {
+    "Test alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "Always alert at full volume": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
   "japan_softbank": {
     "Vibration": {
       "default_value": "true",
@@ -326,6 +390,42 @@
     }
   },
   "korea": {
+    "긴급 재난 문자": { //"Emergency alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "안전 안내 문자": { // "Public safety messages": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "진동": { //"Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "경보 메시지를 음성으로 알림": { //"Speak alert message": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
+  "korea_skt": {
+    "긴급 재난 문자": { //"Emergency alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "안전 안내 문자": { // "Public safety messages": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "진동": { //"Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "경보 메시지를 음성으로 알림": { //"Speak alert message": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
+  "korea_lgu": {
     "긴급 재난 문자": { //"Emergency alerts": {
       "default_value": "true",
       "toggle_avail": "true"
@@ -445,7 +545,7 @@
       "toggle_avail": "true"
     }
   },
-  "peru_telefonica": {
+  "peru": {
     "Speak alert message": {
       "default_value": "false",
       "toggle_avail": "true"
@@ -570,7 +670,7 @@
       "toggle_avail": "true"
     },
     "FR-ALERT : Exercice": { //"Fr-Alert Exercise": {
-      "default_value": "false",
+      "default_value": "true",
       "toggle_avail": "true"
     },
     "Vibreur": { //"Vibration": {
@@ -740,6 +840,302 @@
       "toggle_avail": "true"
     }
   },
+  "russia": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "russia_megafon": {
+    "Area update broadcasts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "turkey": {
+    "Life threat alert notification": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Loss or kidnapping alert notification": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test alert notification": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "us": {
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Public safety messages": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "State and local tests": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Required Monthly Test": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Spanish": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
+  "us_sprint": {
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Public safety messages": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "State and local tests": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Spanish": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
+  "us_usc": {
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Public safety messages": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "State and local tests": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Required Monthly Test": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Spanish": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
+  "azerbaijan": {
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Test alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "china": {
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "southafrica": {
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "guatemala_telefonica": {
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "india": {
+    "Area update broadcasts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "hungary_telekom": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "croatia_hrvatski": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "czech_tmobile": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "slovakia_telekom": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "austria_magenta": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "poland_tmobile": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "austria_tmobile": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "macedonia_telekom": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "montenegro_telekom": {
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
   "ukraine": {
     "Emergency Alert": {
       "default_value": "true",
@@ -769,6 +1165,20 @@
     }
   },
   "uk": {
+    "Extreme alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "uk_ee": {
     "Extreme alerts": {
       "default_value": "true",
       "toggle_avail": "true"
