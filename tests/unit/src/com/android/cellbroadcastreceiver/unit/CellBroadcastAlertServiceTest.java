@@ -46,6 +46,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.internal.telephony.gsm.SmsCbConstants;
+import com.android.modules.utils.build.SdkLevel;
 
 import org.junit.After;
 import org.junit.Before;
@@ -521,6 +522,10 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     public void testMuteAlert() {
+        if (!SdkLevel.isAtLeastS()) {
+            return;
+        }
+
         doReturn(new String[]{
                 "0x1113:rat=gsm, type=mute, emergency=true, always_on=true",
                 "0x112F:rat=gsm, emergency=true"}).when(mResources).getStringArray(
