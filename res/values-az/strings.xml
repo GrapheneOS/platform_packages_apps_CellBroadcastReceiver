@@ -144,9 +144,9 @@
     <string name="action_detail_info" msgid="8486524382178381810">"Detalları göstərin"</string>
   <string-array name="alert_reminder_interval_entries">
     <item msgid="6595211083588795160">"Bir dəfə"</item>
-    <item msgid="9097229303902157183">"Hər 2 dəqiqə"</item>
+    <item msgid="9097229303902157183">"Hər 2 dəqiqədən bir"</item>
     <item msgid="5718214950343391480">"5 dəqiqədən bir"</item>
-    <item msgid="3863339891188103437">"Hər 15 dəqiqə"</item>
+    <item msgid="3863339891188103437">"Hər 15 dəqiqədən bir"</item>
     <item msgid="7388573183644474611">"Heç vaxt"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"Fövqəladə hal xəbərdarlıqları"</string>
