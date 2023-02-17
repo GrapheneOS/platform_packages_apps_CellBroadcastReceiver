@@ -20,8 +20,8 @@
 
     <!-- Channel 4370, 919 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, alert_duration=86400000, always_on=true</item>
-        <item>0x397:rat=gsm, emergency=true, alert_duration=86400000, always_on=true</item>
+        <item>0x1112:rat=gsm, emergency=true, alert_duration=86400000, always_on=true, override_dnd=true</item>
+        <item>0x397:rat=gsm, emergency=true, alert_duration=86400000, always_on=true, override_dnd=true</item>
     </string-array>
 
     <!-- 50 -->
@@ -32,6 +32,9 @@
     <!-- additional_cbs_channels_strings empty -->
     <string-array name="additional_cbs_channels_strings" translatable="false">
     </string-array>
+
+    <!-- Play alert sound in full volume regardless Do Not Disturb is on -->
+    <bool name="override_dnd">false</bool>
 
     <!-- Append date-time to the alert title -->
     <string name="date_time_format" translatable="false">dd/MM/yyyy hh:mm a</string>
