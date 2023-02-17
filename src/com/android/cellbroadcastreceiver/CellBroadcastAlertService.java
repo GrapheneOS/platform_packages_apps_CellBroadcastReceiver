@@ -780,7 +780,7 @@ public class CellBroadcastAlertService extends Service {
 
         PendingIntent pi;
         if (isWatch) {
-            pi = PendingIntent.getBroadcast(context, 0, intent, 0);
+            pi = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
         } else {
             pi = PendingIntent.getActivity(context, REQUEST_CODE_CONTENT_INTENT, intent,
                             PendingIntent.FLAG_UPDATE_CURRENT
