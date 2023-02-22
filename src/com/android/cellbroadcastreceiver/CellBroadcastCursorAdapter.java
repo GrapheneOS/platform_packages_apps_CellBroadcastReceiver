@@ -32,6 +32,7 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 
 import com.android.internal.annotations.VisibleForTesting;
+import com.android.modules.utils.build.SdkLevel;
 
 /**
  * The back-end data adapter for {@link CellBroadcastListActivity}.
@@ -194,12 +195,19 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
                     Telephony.CellBroadcasts.DATA_CODING_SCHEME));
         }
 
-        SubscriptionManager sm = (SubscriptionManager) context.getSystemService(
-                Context.TELEPHONY_SUBSCRIPTION_SERVICE);
-        int subId = SubscriptionManager.DEFAULT_SUBSCRIPTION_ID;
-        int[] subIds = sm.getSubscriptionIds(slotIndex);
-        if (subIds != null && subIds.length > 0) {
-            subId = subIds[0];
+        int subId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
+        if (SdkLevel.isAtLeastU()) {
+            subId = SubscriptionManager.getSubscriptionId(slotIndex);
+        } else {
+            SubscriptionManager sm = context.getSystemService(SubscriptionManager.class);
+            int[] subIds = sm.getSubscriptionIds(slotIndex);
+            if (subIds != null && subIds.length > 0) {
+                subId = subIds[0];
+            }
+        }
+
+        if (!SubscriptionManager.isValidSubscriptionId(subId)) {
+            subId = SubscriptionManager.DEFAULT_SUBSCRIPTION_ID;
         }
 
         int maximumWaitTimeSec = 0;
