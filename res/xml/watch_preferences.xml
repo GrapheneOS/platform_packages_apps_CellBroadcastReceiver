@@ -22,20 +22,31 @@
     android:title="@string/emergency_alert_settings_title_watches"
     android:key="category_alert_preferences">
 
+        <com.android.settingslib.widget.MainSwitchPreference
+                          android:defaultValue="@bool/master_toggle_enabled_default"
+                          android:key="enable_alerts_master_toggle"
+                          android:summary="@string/enable_alerts_master_toggle_summary"
+                          android:title="@string/enable_alerts_master_toggle_title" />
+
+
+        <SwitchPreference android:defaultValue="@bool/emergency_alerts_enabled_default"
+                          android:key="enable_emergency_alerts"
+                          android:title="@string/enable_alerts_master_toggle_title" />
+
+        <!-- Enable CMAS AMBER alerts -->
+        <SwitchPreference android:defaultValue="@bool/amber_alerts_enabled_default"
+                          android:key="enable_cmas_amber_alerts"
+                          android:title="@string/enable_cmas_amber_alerts_title" />
+
         <!-- Enable CMAS Extreme Threat alerts -->
-        <SwitchPreference android:defaultValue="true"
+        <SwitchPreference android:defaultValue="@bool/extreme_threat_alerts_enabled_default"
                           android:key="enable_cmas_extreme_threat_alerts"
                           android:title="@string/enable_cmas_extreme_threat_alerts_title" />
 
         <!-- Enable CMAS Severe Threat alerts -->
-        <SwitchPreference android:defaultValue="true"
+        <SwitchPreference android:defaultValue="@bool/severe_threat_alerts_enabled_default"
                           android:key="enable_cmas_severe_threat_alerts"
                           android:title="@string/enable_cmas_severe_threat_alerts_title" />
-
-        <!-- Enable CMAS AMBER alerts -->
-        <SwitchPreference android:defaultValue="true"
-                          android:key="enable_cmas_amber_alerts"
-                          android:title="@string/enable_cmas_amber_alerts_title" />
 
         <!-- Enable public safety messages -->
         <SwitchPreference android:defaultValue="@bool/public_safety_messages_enabled_default"
@@ -49,21 +60,6 @@
             android:summary="@string/enable_full_screen_public_safety_messages_summary"
             android:title="@string/enable_full_screen_public_safety_messages_title" />
 
-        <com.android.settingslib.widget.MainSwitchPreference android:defaultValue="true"
-                          android:key="enable_emergency_alerts"
-                          android:title="@string/enable_alerts_master_toggle_title" />
-
-        <ListPreference android:key="alert_reminder_interval"
-                        android:title="@string/alert_reminder_interval_title"
-                        android:entries="@array/alert_reminder_interval_entries"
-                        android:entryValues="@array/alert_reminder_interval_values"
-                        android:defaultValue="@string/alert_reminder_interval_in_min_default"
-                        android:dialogTitle="@string/alert_reminder_interval_title" />
-
-        <SwitchPreference android:defaultValue="true"
-                          android:key="enable_alert_vibrate"
-                          android:title="@string/enable_alert_vibrate_title" />
-
         <SwitchPreference android:defaultValue="true"
                           android:key="enable_alert_speech"
                           android:title="@string/enable_alert_speech_title" />
@@ -74,7 +70,7 @@
                           android:title="@string/enable_cmas_test_alerts_title" />
 
         <!-- Enable state/local test alerts -->
-        <SwitchPreference android:defaultValue="true"
+        <SwitchPreference android:defaultValue="@bool/state_local_test_alerts_enabled_default"
                           android:key="enable_state_local_test_alerts"
                           android:title="@string/enable_state_local_test_alerts_title" />
 
@@ -88,6 +84,10 @@
         <Preference android:key="emergency_alert_history"
                             android:title="@string/emergency_alert_history_title" />
 
+        <SwitchPreference android:defaultValue="true"
+                          android:key="enable_alert_vibrate"
+                          android:title="@string/enable_alert_vibrate_title" />
+
         <!-- Show additional language on/off switch in settings -->
         <SwitchPreference android:defaultValue="false"
                           android:key="receive_cmas_in_second_language"
@@ -97,4 +97,16 @@
                           android:key="override_dnd"
                           android:summary="@string/override_dnd_summary"
                           android:title="@string/override_dnd_title" />
-</PreferenceScreen>
+
+        <ListPreference android:key="alert_reminder_interval"
+                        android:title="@string/alert_reminder_interval_title"
+                        android:entries="@array/alert_reminder_interval_entries"
+                        android:entryValues="@array/alert_reminder_interval_values"
+                        android:defaultValue="@string/alert_reminder_interval_in_min_default"
+                        android:dialogTitle="@string/alert_reminder_interval_title" />
+
+        <SwitchPreference android:defaultValue="true"
+                            android:key="show_cmas_opt_out_dialog"
+                            android:summary="@string/show_cmas_opt_out_summary"
+                            android:title="@string/show_cmas_opt_out_title" />
+ </PreferenceScreen>
