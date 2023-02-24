@@ -819,8 +819,6 @@ public class CellBroadcastAlertService extends Service {
 
         if (isWatch) {
             builder.setDeleteIntent(pi);
-            // FEATURE_WATCH/CWH devices see this as priority
-            builder.setVibrate(new long[]{0});
         } else {
             // If this is a notification coming from the foreground dialog, should dismiss the
             // foreground alert dialog when swipe the notification. This is needed
@@ -880,29 +878,49 @@ public class CellBroadcastAlertService extends Service {
     static void createNotificationChannels(Context context) {
         NotificationManager notificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.createNotificationChannel(
-                new NotificationChannel(
-                        NOTIFICATION_CHANNEL_HIGH_PRIORITY_EMERGENCY_ALERTS,
-                        context.getString(
-                                R.string.notification_channel_emergency_alerts_high_priority),
-                        NotificationManager.IMPORTANCE_HIGH));
-        notificationManager.createNotificationChannel(
-                new NotificationChannel(
-                        NOTIFICATION_CHANNEL_EMERGENCY_ALERTS,
-                        context.getString(R.string.notification_channel_emergency_alerts),
-                        NotificationManager.IMPORTANCE_LOW));
+        final NotificationChannel highPriorityEmergency = new NotificationChannel(
+                NOTIFICATION_CHANNEL_HIGH_PRIORITY_EMERGENCY_ALERTS,
+                context.getString(R.string.notification_channel_emergency_alerts_high_priority),
+                NotificationManager.IMPORTANCE_HIGH);
+
+        final NotificationChannel emergency = new NotificationChannel(
+                NOTIFICATION_CHANNEL_EMERGENCY_ALERTS,
+                context.getString(R.string.notification_channel_emergency_alerts),
+                NotificationManager.IMPORTANCE_LOW);
+
         final NotificationChannel nonEmergency = new NotificationChannel(
                 NOTIFICATION_CHANNEL_NON_EMERGENCY_ALERTS,
                 context.getString(R.string.notification_channel_broadcast_messages),
                 NotificationManager.IMPORTANCE_DEFAULT);
         nonEmergency.enableVibration(true);
-        notificationManager.createNotificationChannel(nonEmergency);
 
         final NotificationChannel emergencyAlertInVoiceCall = new NotificationChannel(
             NOTIFICATION_CHANNEL_EMERGENCY_ALERTS_IN_VOICECALL,
             context.getString(R.string.notification_channel_broadcast_messages_in_voicecall),
             NotificationManager.IMPORTANCE_HIGH);
         emergencyAlertInVoiceCall.enableVibration(true);
+
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+            highPriorityEmergency.setImportance(NotificationManager.IMPORTANCE_HIGH);
+            highPriorityEmergency.enableVibration(true);
+            highPriorityEmergency.setVibrationPattern(new long[]{0});
+
+            emergency.setImportance(NotificationManager.IMPORTANCE_HIGH);
+            emergency.enableVibration(true);
+            emergency.setVibrationPattern(new long[]{0});
+
+            nonEmergency.setImportance(NotificationManager.IMPORTANCE_HIGH);
+            nonEmergency.enableVibration(true);
+            nonEmergency.setVibrationPattern(new long[]{0});
+
+            emergencyAlertInVoiceCall.setImportance(NotificationManager.IMPORTANCE_HIGH);
+            emergencyAlertInVoiceCall.enableVibration(true);
+            emergencyAlertInVoiceCall.setVibrationPattern(new long[]{0});
+        }
+
+        notificationManager.createNotificationChannel(highPriorityEmergency);
+        notificationManager.createNotificationChannel(emergency);
+        notificationManager.createNotificationChannel(nonEmergency);
         notificationManager.createNotificationChannel(emergencyAlertInVoiceCall);
 
         final NotificationChannel settingsUpdate = new NotificationChannel(
