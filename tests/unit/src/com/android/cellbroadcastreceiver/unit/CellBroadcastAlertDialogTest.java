@@ -629,4 +629,30 @@ public class CellBroadcastAlertDialogTest extends
 
         assertEquals(getNewMessageList().size(), 1);
     }
+
+    private void setWatchUiMode() {
+        Configuration configuration = new Configuration(
+                mContext.getResources().getConfiguration());
+        configuration.uiMode =
+                (configuration.uiMode & ~Configuration.UI_MODE_TYPE_MASK)
+                | Configuration.UI_MODE_TYPE_WATCH;
+        mContext.enableOverrideConfiguration(true);
+        mContext = (TestContext) mContext.createConfigurationContext(configuration);
+        setActivityContext(mContext);
+    }
+
+    public void testOnConfigurationChangedForWatch() throws Throwable {
+        setWatchUiMode();
+        CellBroadcastAlertDialog activity = startActivity();
+
+        Configuration newConfig = new Configuration();
+        newConfig.orientation = Configuration.ORIENTATION_LANDSCAPE;
+        activity.onConfigurationChanged(newConfig);
+
+        newConfig.orientation = Configuration.ORIENTATION_PORTRAIT;
+        activity.onConfigurationChanged(newConfig);
+
+        assertNull(activity.findViewById(R.id.pictogramImage));
+    }
+
 }
