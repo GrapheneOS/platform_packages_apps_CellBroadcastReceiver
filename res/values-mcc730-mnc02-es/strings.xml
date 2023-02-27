@@ -17,5 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="pws_other_message_identifiers" msgid="2558374779011704807">"Información de CL"</string>
-    <string name="enable_emergency_alerts_message_title" msgid="1826329492951433241">"Canal de difusión habitual de CL"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="1826329492951433241">"Canal en abierto habitual de CL"</string>
 </resources>
