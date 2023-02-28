@@ -924,6 +924,10 @@ public class CellBroadcastAlertDialog extends Activity {
     private void setPictogram(Context context, SmsCbMessage message) {
         int resId = CellBroadcastResources.getDialogPictogramResource(context, message);
         ImageView image = findViewById(R.id.pictogramImage);
+        // not all layouts may have a pictogram image, e.g. watch
+        if (image == null) {
+            return;
+        }
         if (resId != -1) {
             image.setImageResource(resId);
             image.setVisibility(View.VISIBLE);
@@ -939,6 +943,10 @@ public class CellBroadcastAlertDialog extends Activity {
      */
     private void setPictogramAreaLayout(int orientation) {
         ImageView image = findViewById(R.id.pictogramImage);
+        // not all layouts may have a pictogram image, e.g. watch
+        if (image == null) {
+            return;
+        }
         if (image.getVisibility() == View.VISIBLE) {
             ViewGroup.LayoutParams params = image.getLayoutParams();
 
