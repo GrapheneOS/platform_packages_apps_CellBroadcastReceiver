@@ -119,6 +119,8 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
 
         private Resources mResources;
 
+        boolean mIsOverrideConfigurationEnabled;
+
         public TestContext(Context base) {
             super(base);
             mResources = spy(super.getResources());
@@ -157,7 +159,19 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
 
         @Override
         public Context createConfigurationContext(Configuration overrideConfiguration) {
-            return this;
+            if (!mIsOverrideConfigurationEnabled) {
+                return this;
+            }
+
+            TestContext newTestContext = new TestContext(
+                    super.createConfigurationContext(overrideConfiguration));
+            newTestContext.mInjectedSystemServices.putAll(mInjectedSystemServices);
+            return newTestContext;
         }
+
+        public void enableOverrideConfiguration(boolean enabled) {
+            mIsOverrideConfigurationEnabled = enabled;
+        }
+
     }
 }
