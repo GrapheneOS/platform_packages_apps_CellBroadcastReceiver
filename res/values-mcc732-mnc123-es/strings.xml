@@ -17,5 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="pws_other_message_identifiers" msgid="7584680083580968019">"Información de CO"</string>
-    <string name="enable_emergency_alerts_message_title" msgid="7743983160317594328">"Canal de difusión habitual de CO"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="7743983160317594328">"Canal en abierto habitual de CO"</string>
 </resources>
