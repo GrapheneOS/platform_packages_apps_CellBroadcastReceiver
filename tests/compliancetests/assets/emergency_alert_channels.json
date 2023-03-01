@@ -1594,6 +1594,62 @@
       "toggle_avail": "true"
     }
   },
+  "bulgaria": {
+    "4370": {
+      "title": "BG-ALERT: Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "BG-ALERT: Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4371": {
+      "title": "BG-ALERT: Warning",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4372"
+    },
+    "4384": {
+      "title": "BG-ALERT: Warning",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4385"
+    },
+    "4373": {
+      "title": "BG-ALERT: Information",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4378"
+    },
+    "4386": {
+      "title": "BG-ALERT: Information",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4391"
+    },
+    "4379": {
+      "title": "BG-ALERT: Missing Person Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "BG-ALERT: Missing Person Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4380": {
+      "title": "BG-ALERT: Test alert",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4393": {
+      "title": "BG-ALERT: Test alert",
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
   "estonia": {
     "4352": {
       "title": "",
