@@ -487,6 +487,32 @@
       "toggle_avail": "true"
     }
   },
+  "bulgaria": {
+    "Extreme and Severe Threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Information": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Missing Person Alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test Alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Speak alert message": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
   "netherlands": {
     "NL-Alert": {
       "default_value": "true",
