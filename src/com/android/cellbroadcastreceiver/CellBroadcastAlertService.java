@@ -35,6 +35,7 @@ import static com.android.cellbroadcastservice.CellBroadcastMetrics.SRC_CBR;
 import android.annotation.NonNull;
 import android.app.ActivityManager;
 import android.app.Notification;
+import android.app.Notification.Action;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -101,7 +102,6 @@ public class CellBroadcastAlertService extends Service {
     private static final int REQUEST_CODE_DELETE_INTENT = 2;
 
     /** Use the same notification ID for non-emergency alerts. */
-    @VisibleForTesting
     public static final int NOTIFICATION_ID = 1;
     public static final int SETTINGS_CHANGED_NOTIFICATION_ID = 2;
 
@@ -819,6 +819,8 @@ public class CellBroadcastAlertService extends Service {
 
         if (isWatch) {
             builder.setDeleteIntent(pi);
+            builder.addAction(new Action(android.R.drawable.ic_delete,
+                    context.getString(android.R.string.ok), pi));
         } else {
             // If this is a notification coming from the foreground dialog, should dismiss the
             // foreground alert dialog when swipe the notification. This is needed
