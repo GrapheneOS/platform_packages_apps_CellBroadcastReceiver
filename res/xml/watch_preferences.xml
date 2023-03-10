@@ -31,7 +31,7 @@
 
         <SwitchPreference android:defaultValue="@bool/emergency_alerts_enabled_default"
                           android:key="enable_emergency_alerts"
-                          android:title="@string/enable_alerts_master_toggle_title" />
+                          android:title="@string/enable_emergency_alerts_message_title" />
 
         <!-- Enable CMAS AMBER alerts -->
         <SwitchPreference android:defaultValue="@bool/amber_alerts_enabled_default"
