@@ -623,6 +623,8 @@ public class CellBroadcastAlertServiceTest extends
             .notify(eq(CellBroadcastAlertService.NOTIFICATION_ID), notificationCaptor.capture());
         Notification notificationPosted = notificationCaptor.getValue();
         assertTrue(notificationPosted.deleteIntent.isBroadcast());
+        assertEquals(1, notificationPosted.actions.length);
+        assertSame(notificationPosted.deleteIntent, notificationPosted.actions[0].actionIntent);
     }
 
 }
