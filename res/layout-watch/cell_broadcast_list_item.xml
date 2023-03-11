@@ -16,33 +16,43 @@
  * limitations under the License.
  */
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/listContainer"
+<com.android.cellbroadcastreceiver.CellBroadcastListItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_item_background_unread"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    >
+
+    <TextView android:id="@+id/channel"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="18dip"
-        android:layout_marginBottom="18dip"
-        android:layout_marginLeft="18dip"
-        android:layout_marginRight="18dip">
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="?android:attr/textColorPrimary"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        />
 
-        <ListView android:id="@android:id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:drawSelectorOnTop="false"
-            android:scrollbarStyle="insideOverlay" />
+    <TextView android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/channel"
+        android:layout_marginTop="2dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:singleLine="true"
+        />
 
-        <TextView android:id="@+android:id/empty"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/no_cell_broadcasts"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView android:id="@+id/message"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/date"
+        android:layout_marginTop="2dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        />
 
-    </FrameLayout>
-
-</LinearLayout>
+</com.android.cellbroadcastreceiver.CellBroadcastListItem>

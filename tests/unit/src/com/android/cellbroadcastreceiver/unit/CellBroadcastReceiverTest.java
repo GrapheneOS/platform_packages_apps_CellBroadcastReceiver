@@ -24,11 +24,13 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+import android.app.NotificationManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.IContentProvider;
@@ -217,6 +219,23 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         mCellBroadcastReceiver.onReceive(mContext, mIntent);
         verify(mIntent).getParcelableArrayListExtra(anyString());
     }
+
+    @Test
+    public void testOnReceive_actionMarkAsReadForWatch() {
+        NotificationManager mockNotificationManager = mock(NotificationManager.class);
+        doReturn(Context.NOTIFICATION_SERVICE).when(mContext)
+            .getSystemServiceName(NotificationManager.class);
+        doReturn(mockNotificationManager).when(mContext)
+                .getSystemService(Context.NOTIFICATION_SERVICE);
+        doReturn(mPackageManager).when(mContext).getPackageManager();
+        doReturn(true).when(mPackageManager).hasSystemFeature(PackageManager.FEATURE_WATCH);
+        doReturn(CellBroadcastReceiver.ACTION_MARK_AS_READ).when(mIntent).getAction();
+
+        mCellBroadcastReceiver.onReceive(mContext, mIntent);
+
+        verify(mockNotificationManager).cancel(CellBroadcastAlertService.NOTIFICATION_ID);
+    }
+
 
     @Test
     public void testInitializeSharedPreference_ifSystemUser_invalidSub() throws RemoteException {

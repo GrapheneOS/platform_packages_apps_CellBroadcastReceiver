@@ -150,9 +150,6 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
     // Preference key for emergency alerts history
     public static final String KEY_EMERGENCY_ALERT_HISTORY = "emergency_alert_history";
 
-    // For watch layout
-    private static final String KEY_WATCH_ALERT_REMINDER = "watch_alert_reminder";
-
     // For top introduction info
     private static final String KEY_PREFS_TOP_INTRO = "alert_prefs_top_intro";
 
@@ -400,9 +397,10 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                     PackageManager.FEATURE_WATCH)) {
                 ViewGroup.LayoutParams layoutParams = getListView().getLayoutParams();
                 if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
-                    int topMarginInPixel = (int) getResources().getDimension(
+                    int watchMarginInPixel = (int) getResources().getDimension(
                             R.dimen.pref_top_margin);
-                    ((ViewGroup.MarginLayoutParams) layoutParams).topMargin = topMarginInPixel;
+                    ((ViewGroup.MarginLayoutParams) layoutParams).topMargin = watchMarginInPixel;
+                    ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin = watchMarginInPixel;
                     getListView().setLayoutParams(layoutParams);
                 }
             }
