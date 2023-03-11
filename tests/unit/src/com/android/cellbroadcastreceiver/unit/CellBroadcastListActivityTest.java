@@ -57,12 +57,16 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.UserManager;
 import android.provider.Telephony;
+import android.telephony.SmsCbMessage;
+import android.telephony.SubscriptionManager;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.CheckedTextView;
+import android.widget.ListView;
 
 import com.android.cellbroadcastreceiver.CellBroadcastCursorAdapter;
 import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
@@ -149,11 +153,7 @@ public class CellBroadcastListActivityTest extends
         stopActivity();
     }
 
-    public void testOnLoadFinishedWithData() throws Throwable {
-        CellBroadcastListActivity activity = startActivity();
-        assertNotNull(activity.mListFragment);
-
-        // create data with one entry so that the "no alert" text view is invisible
+    private static MatrixCursor makeTestCursor() {
         MatrixCursor data =
                 new MatrixCursor(CellBroadcastListActivity.CursorLoaderListFragment.QUERY_COLUMNS);
         data.addRow(new Object[] {
@@ -164,11 +164,11 @@ public class CellBroadcastListActivityTest extends
                 "", //Telephony.CellBroadcasts.PLMN,
                 0, //Telephony.CellBroadcasts.LAC,
                 0, //Telephony.CellBroadcasts.CID,
-                "", //Telephony.CellBroadcasts.SERIAL_NUMBER,
+                0, //Telephony.CellBroadcasts.SERIAL_NUMBER,
                 0, //Telephony.CellBroadcasts.SERVICE_CATEGORY,
                 "", //Telephony.CellBroadcasts.LANGUAGE_CODE,
                 0, //Telephony.CellBroadcasts.DATA_CODING_SCHEME,
-                "", //Telephony.CellBroadcasts.MESSAGE_BODY,
+                "testAlert", //Telephony.CellBroadcasts.MESSAGE_BODY,
                 0, //Telephony.CellBroadcasts.MESSAGE_FORMAT,
                 0, //Telephony.CellBroadcasts.MESSAGE_PRIORITY,
                 0, //Telephony.CellBroadcasts.ETWS_WARNING_TYPE,
@@ -185,7 +185,15 @@ public class CellBroadcastListActivityTest extends
                 "", //Telephony.CellBroadcasts.GEOMETRIES,
                 0 //Telephony.CellBroadcasts.MAXIMUM_WAIT_TIME
         });
-        activity.mListFragment.onLoadFinished(null, data);
+        return data;
+    }
+
+    public void testOnLoadFinishedWithData() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        // create data with one entry so that the "no alert" text view is invisible
+        activity.mListFragment.onLoadFinished(null, makeTestCursor());
         assertEquals(View.INVISIBLE, activity.findViewById(R.id.empty).getVisibility());
         stopActivity();
     }
@@ -621,5 +629,50 @@ public class CellBroadcastListActivityTest extends
         adapter2.setIsActionMode(true);
         actionMode = adapter2.getIsActionMode();
         assertEquals(true, actionMode);
+    }
+
+    public void testCursorAdaptorBindViewForWatch() {
+        // Watch layout misses checkbox.
+        // mockListItemView.findViewById(R.id.checkBox) returns null as default setting up this
+        // usecase.
+        SubscriptionManager mockSubscriptionManager = mock(SubscriptionManager.class);
+        Context mockContext = mock(Context.class);
+        doReturn(mockSubscriptionManager).when(mockContext)
+                .getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
+        CellBroadcastListItem mockListItemView = mock(CellBroadcastListItem.class);
+        ListView mockListView = mock(ListView.class);
+        MatrixCursor data = makeTestCursor();
+        data.moveToFirst();
+        CellBroadcastCursorAdapter adapter = new CellBroadcastCursorAdapter(mockContext,
+                mockListView);
+
+        adapter.bindView(mockListItemView, mockContext, data);
+
+        ArgumentCaptor<SmsCbMessage> messageCaptor = ArgumentCaptor.forClass(SmsCbMessage.class);
+        verify(mockListItemView).bind(messageCaptor.capture());
+        assertEquals("testAlert", messageCaptor.getValue().getMessageBody());
+    }
+
+    public void testCursorAdaptorBindView() {
+        SubscriptionManager mockSubscriptionManager = mock(SubscriptionManager.class);
+        Context mockContext = mock(Context.class);
+        doReturn(mockSubscriptionManager).when(mockContext)
+                .getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
+        CellBroadcastListItem mockListItemView = mock(CellBroadcastListItem.class);
+        ListView mockListView = mock(ListView.class);
+        CheckedTextView mockCheckbox = mock(CheckedTextView.class);
+        doReturn(mockCheckbox).when(mockListItemView).findViewById(R.id.checkBox);
+        MatrixCursor data = makeTestCursor();
+        data.moveToFirst();
+        CellBroadcastCursorAdapter adapter = new CellBroadcastCursorAdapter(mockContext,
+                mockListView);
+
+        adapter.setIsActionMode(true);
+        adapter.bindView(mockListItemView, mockContext, data);
+        verify(mockCheckbox).setVisibility(View.VISIBLE);
+
+        adapter.setIsActionMode(false);
+        adapter.bindView(mockListItemView, mockContext, data);
+        verify(mockCheckbox).setVisibility(View.GONE);
     }
 }

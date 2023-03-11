@@ -225,8 +225,10 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
         SmsCbMessage message = createFromCursor(context, cursor);
         CellBroadcastListItem listItem = (CellBroadcastListItem) view;
         mCheckedTextView = view.findViewById(R.id.checkBox);
-        updateCheckTextViewVisibility();
-        checkIsSelected(cursor.getPosition());
+        if (mCheckedTextView != null) {
+            updateCheckTextViewVisibility();
+            checkIsSelected(cursor.getPosition());
+        }
         listItem.bind(message);
     }
 
