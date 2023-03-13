@@ -641,9 +641,6 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
 
             if (mTestCheckBox != null) {
                 mTestCheckBox.setVisible(isTestAlertsToggleVisible(getContext()));
-                if (isWatch && !mTestCheckBox.isVisible()) {
-                    preferenceScreen.removePreference(mTestCheckBox);
-                }
             }
 
             if (mExerciseTestCheckBox != null) {
