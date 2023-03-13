@@ -682,8 +682,9 @@ public class CellBroadcastAlertService extends Service {
         // range.mOverrideDnd is per channel configuration. override_dnd is the main config
         // applied for all channels.
         Resources res = CellBroadcastSettings.getResources(mContext, message.getSubscriptionId());
+        boolean isWatch = getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH);
         boolean isOverallEnabledOverrideDnD =
-                (res.getBoolean(R.bool.show_override_dnd_settings)
+                isWatch || (res.getBoolean(R.bool.show_override_dnd_settings)
                 && prefs.getBoolean(CellBroadcastSettings.KEY_OVERRIDE_DND, false))
                 || res.getBoolean(R.bool.override_dnd);
         if (isOverallEnabledOverrideDnD || (range != null && range.mOverrideDnd)) {
@@ -724,8 +725,9 @@ public class CellBroadcastAlertService extends Service {
         ArrayList<SmsCbMessage> messageList = new ArrayList<>();
         messageList.add(message);
 
-        // For FEATURE_WATCH, the dialog doesn't make sense from a UI/UX perspective
-        if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+        // For FEATURE_WATCH, the dialog doesn't make sense from a UI/UX perspective.
+        // But the audio & vibration still breakthrough DND.
+        if (isWatch) {
             addToNotificationBar(message, messageList, this, false, true, false);
         } else {
             Intent alertDialogIntent = createDisplayMessageIntent(this,
@@ -903,13 +905,15 @@ public class CellBroadcastAlertService extends Service {
         emergencyAlertInVoiceCall.enableVibration(true);
 
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
-            highPriorityEmergency.setImportance(NotificationManager.IMPORTANCE_HIGH);
+            highPriorityEmergency.setImportance(NotificationManager.IMPORTANCE_MAX);
             highPriorityEmergency.enableVibration(true);
             highPriorityEmergency.setVibrationPattern(new long[]{0});
+            highPriorityEmergency.setBypassDnd(true);
 
             emergency.setImportance(NotificationManager.IMPORTANCE_HIGH);
             emergency.enableVibration(true);
             emergency.setVibrationPattern(new long[]{0});
+            emergency.setBypassDnd(true);
 
             nonEmergency.setImportance(NotificationManager.IMPORTANCE_HIGH);
             nonEmergency.enableVibration(true);
