@@ -17,6 +17,10 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+  <!-- Label for settings screen. [CHAR LIMIT=NONE] -->
+  <!-- Required Norwegian (nb) translation for this message: "Nødvarsler" -->
+  <string name="sms_cb_settings">Emergency alerts</string>
+
   <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
   <!-- Required Norwegian (nb) translation for this message: "Viktig melding" -->
   <string name="enable_cmas_severe_threat_alerts_title">Important warning</string>
