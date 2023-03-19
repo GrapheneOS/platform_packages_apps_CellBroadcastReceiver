@@ -327,7 +327,7 @@
     <!-- Preference title for enable presidential threat alerts checkbox. [CHAR LIMIT=40] -->
     <string name="enable_cmas_presidential_alerts_title">Presidential alerts</string>
     <!-- Preference summary for enable presidential threat alerts checkbox. [CHAR LIMIT=100] -->
-    <string name="enable_cmas_presidential_alerts_summary">National warning messages issued by the President.</string>
+    <string name="enable_cmas_presidential_alerts_summary">National warning messages issued by the President. Can\'t be turned off.</string>
 
     <!-- Show additional language on/off switch in settings -->
     <!-- Preference title for enable CMAS second language checkbox. [CHAR LIMIT=50] -->
@@ -392,4 +392,6 @@
     <!-- Notification title and text when alerting user that their CB settings have changed -->
     <string name="notification_cb_settings_changed_title">Settings changed by carrier</string>
     <string name="notification_cb_settings_changed_text">Tap to see wireless emergency alert settings</string>
+
+    <string name="enable_cmas_presidential_alerts_summary_override">National warning messages.</string>
 </resources>
