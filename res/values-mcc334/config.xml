@@ -81,6 +81,8 @@
     <bool name="disable_severe_when_extreme_disabled">false</bool>
     <!-- Whether to display state/local test settings, some countries/carriers want to enable it by default and not allow users to disable -->
     <bool name="show_state_local_test_settings">false</bool>
+    <!-- Whether enabling capture message screen -->
+    <bool name="disable_capture_alert_dialog">true</bool>
 
     <!-- Values that for the vibration pattern. -->
     <integer-array name="default_vibration_pattern">
