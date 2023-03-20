@@ -121,7 +121,8 @@
                         android:entries="@array/alert_reminder_interval_entries"
                         android:entryValues="@array/alert_reminder_interval_values"
                         android:defaultValue="@string/alert_reminder_interval_in_min_default"
-                        android:dialogTitle="@string/alert_reminder_interval_title" />
+                        android:dialogTitle="@string/alert_reminder_interval_title"
+                        android:negativeButtonText="@null" />
 
         <SwitchPreference android:defaultValue="true"
                             android:key="show_cmas_opt_out_dialog"
