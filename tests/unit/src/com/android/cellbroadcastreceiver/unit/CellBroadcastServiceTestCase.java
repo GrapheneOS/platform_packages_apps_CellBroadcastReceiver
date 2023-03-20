@@ -32,6 +32,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.AudioManager;
+import android.os.PowerManager;
 import android.os.SystemClock;
 import android.os.Vibrator;
 import android.telephony.CarrierConfigManager;
@@ -76,6 +77,7 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
     protected Context mMockContextForRoaming;
     @Mock
     protected NotificationManager mMockedNotificationManager;
+    protected PowerManager mMockedPowerManager;
 
     protected Configuration mConfiguration;
 
@@ -156,6 +158,11 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
                     return mMockedVibrator;
                 case Context.NOTIFICATION_SERVICE:
                     return mMockedNotificationManager;
+                case Context.POWER_SERVICE:
+                    if (mMockedPowerManager != null) {
+                        return mMockedPowerManager;
+                    }
+                    break;
             }
             return super.getSystemService(name);
         }

@@ -39,6 +39,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.os.Handler;
+import android.os.IPowerManager;
+import android.os.Looper;
+import android.os.PowerManager;
+import android.os.RemoteException;
 import android.provider.Telephony;
 import android.telephony.AccessNetworkConstants;
 import android.telephony.NetworkRegistrationInfo;
@@ -577,8 +582,11 @@ public class CellBroadcastAlertServiceTest extends
     }
 
 
-    public void testAddToNotificationBarForWatch() {
+    public void testAddToNotificationBarForWatch() throws RemoteException {
         setWatchFeatureEnabled(true);
+        Handler handler = new Handler(Looper.getMainLooper());
+        IPowerManager mockedPowerService = mock(IPowerManager.class);
+        mMockedPowerManager = new PowerManager(mContext, mockedPowerService, null, handler);
 
         Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
         intent.setAction(SHOW_NEW_ALERT_ACTION);
