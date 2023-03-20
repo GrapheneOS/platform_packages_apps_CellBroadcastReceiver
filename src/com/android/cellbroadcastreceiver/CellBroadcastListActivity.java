@@ -32,14 +32,12 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.Loader;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserManager;
 import android.provider.Telephony;
 import android.telephony.SmsCbMessage;
-import android.telephony.SubscriptionManager;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
@@ -98,9 +96,8 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                     mListFragment).commit();
         }
 
-        Resources res = CellBroadcastSettings.getResources(getApplicationContext(),
-                SubscriptionManager.getDefaultSubscriptionId());
-        if (res.getBoolean(R.bool.disable_capture_alert_dialog)) {
+        if (CellBroadcastSettings.getResourcesForDefaultSubId(getApplicationContext()).getBoolean(
+                R.bool.disable_capture_alert_dialog)) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
         }
     }

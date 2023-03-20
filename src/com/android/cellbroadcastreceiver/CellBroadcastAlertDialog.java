@@ -588,7 +588,7 @@ public class CellBroadcastAlertDialog extends Activity {
                 }
             }
 
-            if (getResources().getBoolean(R.bool.disable_capture_alert_dialog)) {
+            if (res.getBoolean(R.bool.disable_capture_alert_dialog)) {
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
             }
             startPulsatingAsNeeded(channelManager
@@ -882,17 +882,21 @@ public class CellBroadcastAlertDialog extends Activity {
             languageCode = message.getLanguageCode();
         }
 
-        String title = overrideTranslation(titleId, res, languageCode);
-        TextView titleTextView = findViewById(R.id.alertTitle);
+        if (CellBroadcastSettings.getResourcesForDefaultSubId(context).getBoolean(
+                R.bool.show_alert_title)) {
+            String title = overrideTranslation(titleId, res, languageCode);
+            TextView titleTextView = findViewById(R.id.alertTitle);
 
-        if (titleTextView != null) {
-            String timeFormat = res.getString(R.string.date_time_format);
-            if (!TextUtils.isEmpty(timeFormat)) {
-                titleTextView.setSingleLine(false);
-                title += "\n" + new SimpleDateFormat(timeFormat).format(message.getReceivedTime());
+            if (titleTextView != null) {
+                String timeFormat = res.getString(R.string.date_time_format);
+                if (!TextUtils.isEmpty(timeFormat)) {
+                    titleTextView.setSingleLine(false);
+                    title += "\n" + new SimpleDateFormat(timeFormat).format(
+                            message.getReceivedTime());
+                }
+                setTitle(title);
+                titleTextView.setText(title);
             }
-            setTitle(title);
-            titleTextView.setText(title);
         }
 
         TextView textView = findViewById(R.id.message);
