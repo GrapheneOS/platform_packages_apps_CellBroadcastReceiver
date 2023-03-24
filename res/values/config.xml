@@ -290,6 +290,9 @@
     <!-- Name of a font family to use for headlines in SettingsLib. -->
     <string name="config_headlineFontFamily" translatable="false"></string>
 
+    <!-- Whether enabling capture message screen -->
+    <bool name="disable_capture_alert_dialog">false</bool>
+
     <!-- Pulsation pattern to be used as the default for the alert.
     The 1st parameter is the color to be changed.
     The 2nd parameter indicates how long the pulsation to last in ms. It must be positive.
