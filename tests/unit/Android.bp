@@ -98,6 +98,9 @@ android_test {
     defaults: ["CellBroadcastTestCommon"],
     instrumentation_for: "CellBroadcastAppPlatform",
     test_suites: ["device-tests"],
+    data: [
+        ":CellBroadcastReceiverUnitTests",
+    ],
 }
 
 // used to share src with unit test app
