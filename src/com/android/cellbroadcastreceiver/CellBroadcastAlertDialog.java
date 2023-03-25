@@ -588,6 +588,9 @@ public class CellBroadcastAlertDialog extends Activity {
                 }
             }
 
+            if (getResources().getBoolean(R.bool.disable_capture_alert_dialog)) {
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+            }
             startPulsatingAsNeeded(channelManager
                     .getCellBroadcastChannelRangeFromMessage(message));
         }
