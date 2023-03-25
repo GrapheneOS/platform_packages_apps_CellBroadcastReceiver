@@ -17,10 +17,10 @@
 <resources>
     <!-- Channel 4370, 4383, 919 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, alert_duration=8000, always_on=true, override_dnd=true</item>
-        <item>0x111F:rat=gsm, emergency=true, alert_duration=8000, always_on=true, override_dnd=true</item>
+        <item>0x1112:rat=gsm, emergency=true, alert_duration=8000, always_on=true</item>
+        <item>0x111F:rat=gsm, emergency=true, alert_duration=8000, always_on=true</item>
         <!-- Channel 919 is the secondary channel for level 1-3, following the highest level config -->
-        <item>0x397:rat=gsm, emergency=true, alert_duration=8000, always_on=true, override_dnd=true</item>
+        <item>0x397:rat=gsm, emergency=true, alert_duration=8000, always_on=true</item>
     </string-array>
 
     <!-- 4371~4372, 4384~4385 -->
@@ -81,6 +81,8 @@
     <bool name="disable_severe_when_extreme_disabled">false</bool>
     <!-- Whether to display state/local test settings, some countries/carriers want to enable it by default and not allow users to disable -->
     <bool name="show_state_local_test_settings">false</bool>
+    <!-- Whether enabling capture message screen -->
+    <bool name="disable_capture_alert_dialog">true</bool>
 
     <!-- Values that for the vibration pattern. -->
     <integer-array name="default_vibration_pattern">
@@ -102,4 +104,8 @@
         <item>500</item>
         <item>500</item>
      </integer-array>
+
+    <!-- always overriding dnd settings: Play alert sound in full volume regardless DND is on. Applied to all channels -->
+    <bool name="override_dnd">true</bool>
+
 </resources>
