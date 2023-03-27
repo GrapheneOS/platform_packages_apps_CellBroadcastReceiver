@@ -83,6 +83,8 @@
     <bool name="show_state_local_test_settings">false</bool>
     <!-- Whether enabling capture message screen -->
     <bool name="disable_capture_alert_dialog">true</bool>
+    <!-- Whether enabling copy message text into clipboard by long press -->
+    <bool name="enable_text_copy">false</bool>
 
     <!-- Values that for the vibration pattern. -->
     <integer-array name="default_vibration_pattern">
