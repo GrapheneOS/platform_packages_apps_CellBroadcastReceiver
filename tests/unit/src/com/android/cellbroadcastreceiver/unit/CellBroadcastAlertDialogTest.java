@@ -47,11 +47,13 @@ import android.os.PowerManager;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
+import android.text.TextUtils;
 import android.util.Singleton;
 import android.view.IWindowManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.WindowManagerGlobal;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -185,6 +187,8 @@ public class CellBroadcastAlertDialogTest extends
     }
 
     public void testTitleAndMessageText() throws Throwable {
+        doReturn(true).when(mContext.getResources()).getBoolean(R.bool.show_alert_title);
+
         startActivity();
         waitForMs(100);
 
@@ -202,6 +206,14 @@ public class CellBroadcastAlertDialogTest extends
                             com.android.cellbroadcastreceiver.R.id.message)).getText().toString());
         }, 1000);
 
+        stopActivity();
+    }
+    public void testNoTitle() throws Throwable {
+        doReturn(false).when(mContext.getResources()).getBoolean(R.bool.show_alert_title);
+        startActivity();
+        waitForMs(100);
+        assertTrue(TextUtils.isEmpty(((TextView) getActivity().findViewById(
+                com.android.cellbroadcastreceiver.R.id.alertTitle)).getText()));
         stopActivity();
     }
 
@@ -222,6 +234,10 @@ public class CellBroadcastAlertDialogTest extends
     }
 
     public void testAddToNotification() throws Throwable {
+        doReturn(true).when(mContext.getResources()).getBoolean(R.bool.show_alert_title);
+        doReturn(false).when(mContext.getResources()).getBoolean(
+                R.bool.disable_capture_alert_dialog);
+
         startActivity();
         waitForMs(100);
         leaveActivity();
@@ -249,6 +265,25 @@ public class CellBroadcastAlertDialogTest extends
         Field field = ((Class) WindowManagerGlobal.class).getDeclaredField("sWindowManagerService");
         field.setAccessible(true);
         field.set(null, null);
+    }
+
+    public void testAddToNotificationWithDifferentConfiguration() throws Throwable {
+        doReturn(false).when(mContext.getResources()).getBoolean(R.bool.show_alert_title);
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                R.bool.disable_capture_alert_dialog);
+
+        startActivity();
+        waitForMs(100);
+        leaveActivity();
+        waitForMs(100);
+        verify(mMockedNotificationManager, times(1)).notify(mInt.capture(),
+                mNotification.capture());
+        Bundle b = mNotification.getValue().extras;
+
+        assertEquals(1, (int) mInt.getValue());
+        assertTrue(TextUtils.isEmpty(b.getCharSequence(Notification.EXTRA_TITLE)));
+        verify(mContext.getResources(), times(1)).getString(mInt.capture(), anyInt());
+        assertEquals(R.string.notification_multiple, (int) mInt.getValue());
     }
 
     public void testDoNotAddToNotificationOnStop() throws Throwable {
@@ -655,4 +690,22 @@ public class CellBroadcastAlertDialogTest extends
         assertNull(activity.findViewById(R.id.pictogramImage));
     }
 
+    public void testOnCreate() throws Throwable {
+        doReturn(false).when(mContext.getResources()).getBoolean(
+                R.bool.disable_capture_alert_dialog);
+        CellBroadcastAlertDialog activity = startActivity();
+        int flags = activity.getWindow().getAttributes().flags;
+        assertEquals((flags & WindowManager.LayoutParams.FLAG_SECURE), 0);
+        stopActivity();
+    }
+
+    public void testOnCreateWithCaptureRestriction() throws Throwable {
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                R.bool.disable_capture_alert_dialog);
+        CellBroadcastAlertDialog activity = startActivity();
+        int flags = activity.getWindow().getAttributes().flags;
+        assertEquals((flags & WindowManager.LayoutParams.FLAG_SECURE),
+                WindowManager.LayoutParams.FLAG_SECURE);
+        stopActivity();
+    }
 }
