@@ -293,6 +293,9 @@
     <!-- Whether enabling capture message screen -->
     <bool name="disable_capture_alert_dialog">false</bool>
 
+    <!-- Whether to show the alert dialog title -->
+    <bool name="show_alert_title">true</bool>
+
     <!-- Pulsation pattern to be used as the default for the alert.
     The 1st parameter is the color to be changed.
     The 2nd parameter indicates how long the pulsation to last in ms. It must be positive.
