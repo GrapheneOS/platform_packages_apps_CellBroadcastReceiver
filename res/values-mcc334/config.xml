@@ -109,5 +109,7 @@
 
     <!-- always overriding dnd settings: Play alert sound in full volume regardless DND is on. Applied to all channels -->
     <bool name="override_dnd">true</bool>
+    <!-- Whether to show the alert dialog title -->
+    <bool name="show_alert_title">false</bool>
 
 </resources>
