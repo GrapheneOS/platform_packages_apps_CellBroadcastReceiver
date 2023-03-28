@@ -845,15 +845,18 @@ public class CellBroadcastAlertService extends Service {
 
         // increment unread alert count (decremented when user dismisses alert dialog)
         int unreadCount = messageList.size();
-        if (unreadCount > 1) {
+        if (unreadCount > 1 || res.getBoolean(R.bool.disable_capture_alert_dialog)) {
             // use generic count of unread broadcasts if more than one unread
-            builder.setContentTitle(context.getString(R.string.notification_multiple_title));
+            if (res.getBoolean(R.bool.show_alert_title)) {
+                builder.setContentTitle(context.getString(R.string.notification_multiple_title));
+            }
             builder.setContentText(context.getString(R.string.notification_multiple, unreadCount));
         } else {
-            builder.setContentTitle(channelName)
-                    .setContentText(messageBody)
-                    .setStyle(new Notification.BigTextStyle()
-                            .bigText(messageBody));
+            if (res.getBoolean(R.bool.show_alert_title)) {
+                builder.setContentTitle(channelName);
+            }
+            builder.setContentText(messageBody)
+                    .setStyle(new Notification.BigTextStyle().bigText(messageBody));
         }
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
