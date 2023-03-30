@@ -132,7 +132,7 @@
     <string name="cmas_certainty_observed" msgid="3668549749352106472">"مشاہدہ کردہ"</string>
     <string name="cmas_certainty_likely" msgid="4254497828943291749">"امکان"</string>
     <string name="delivery_time_heading" msgid="5980836543433619329">"موصولہ:"</string>
-    <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> بغیر پڑھے ہوئے الرٹس۔"</string>
+    <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> نہ پڑھے ہوئے الرٹس۔"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"نئے الرٹس"</string>
     <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"پہلا الرٹ (صدارتی الرٹ کے علاوہ) ڈسپلے کرنے کے بعد ایک آپٹ آؤٹ ڈائیلاگ دکھائیں۔"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"آپٹ آؤٹ ڈائیلاگ دکھائیں"</string>
