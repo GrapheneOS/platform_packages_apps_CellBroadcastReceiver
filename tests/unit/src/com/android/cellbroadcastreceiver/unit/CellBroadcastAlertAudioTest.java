@@ -273,6 +273,8 @@ public class CellBroadcastAlertAudioTest extends
         waitUntilReady();
 
         CellBroadcastAlertAudio audio = (CellBroadcastAlertAudio) getService();
+        audio.stop();
+
         Field fieldTts = CellBroadcastAlertAudio.class.getDeclaredField("mTts");
         fieldTts.setAccessible(true);
         TextToSpeech mockTts = mock(TextToSpeech.class);
