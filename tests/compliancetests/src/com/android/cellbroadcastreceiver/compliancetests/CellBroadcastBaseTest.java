@@ -68,6 +68,7 @@ public class CellBroadcastBaseTest {
     protected static final int ERROR_NO_TELEPHONY = 2;
     protected static final int ERROR_MULTI_SIM = 3;
     protected static final int ERROR_MOCK_MODEM_DISABLE = 4;
+    protected static final int ERROR_INVALID_SIM_SLOT_INDEX_ERROR = 5;
 
     protected static final String ALLOW_MOCK_MODEM_PROPERTY = "persist.radio.allow_mock_modem";
     protected static final boolean DEBUG = !"user".equals(Build.TYPE);
@@ -175,6 +176,13 @@ public class CellBroadcastBaseTest {
         assertTrue(sMockModemManager.connectMockModemService(
                 MockSimService.MOCK_SIM_PROFILE_ID_TWN_CHT));
         sSlotId = SubscriptionManager.getSlotIndex(SubscriptionManager.getDefaultSubscriptionId());
+
+        if (sSlotId == SubscriptionManager.INVALID_SIM_SLOT_INDEX) {
+            Log.i(TAG, "Error with invalid sim slot index");
+            sPreconditionError = ERROR_INVALID_SIM_SLOT_INDEX_ERROR;
+            return;
+        }
+
         if (SdkLevel.isAtLeastU()) {
             BroadcastChannelListener broadcastCallback = new BroadcastChannelListener();
             sCallBackWithExecutor = new IRadioMessagingImpl.CallBackWithExecutor(
@@ -321,6 +329,9 @@ public class CellBroadcastBaseTest {
             case ERROR_MOCK_MODEM_DISABLE:
                 errorMessage = "Please enable mock modem to run the test! The option can be "
                         + "updated in Settings -> System -> Developer options -> Allow Mock Modem";
+                break;
+            case ERROR_INVALID_SIM_SLOT_INDEX_ERROR:
+                errorMessage = "Error with invalid sim slot index";
                 break;
         }
         return errorMessage;
