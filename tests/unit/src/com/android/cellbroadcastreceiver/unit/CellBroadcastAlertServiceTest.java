@@ -37,7 +37,6 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Handler;
 import android.os.IPowerManager;
@@ -182,12 +181,6 @@ public class CellBroadcastAlertServiceTest extends
 
     private void waitForServiceIntent() {
         waitFor(() -> mServiceIntentToVerify != null);
-    }
-
-    private void setWatchFeatureEnabled(boolean enabled) {
-        PackageManager mockPackageManager = mock(PackageManager.class);
-        doReturn(enabled).when(mockPackageManager).hasSystemFeature(PackageManager.FEATURE_WATCH);
-        injectPackageManager(mockPackageManager);
     }
 
     // Test handleCellBroadcastIntent method
