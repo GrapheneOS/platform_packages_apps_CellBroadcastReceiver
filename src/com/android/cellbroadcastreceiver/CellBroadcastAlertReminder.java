@@ -26,6 +26,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.media.AudioManager;
 import android.media.Ringtone;
@@ -108,7 +109,11 @@ public class CellBroadcastAlertReminder extends Service {
         Ringtone r = RingtoneManager.getRingtone(this, notificationUri);
 
         if (r != null) {
-            r.setStreamType(AudioManager.STREAM_NOTIFICATION);
+            if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                r.setStreamType(AudioManager.STREAM_ALARM);
+            } else {
+                r.setStreamType(AudioManager.STREAM_NOTIFICATION);
+            }
             log("playing alert reminder sound");
             r.play();
         } else {
