@@ -16,6 +16,7 @@
 
 package com.android.cellbroadcastreceiver;
 
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -59,6 +60,11 @@ public class CellBroadcastInternalReceiver extends BroadcastReceiver {
         if (CellBroadcastReceiver.ACTION_MARK_AS_READ.equals(intent.getAction())) {
             final long deliveryTime = intent.getLongExtra(
                     CellBroadcastReceiver.EXTRA_DELIVERY_TIME, -1);
+            // Stop playing alert sound/vibration/speech (if started)
+            context.stopService(new Intent(context, CellBroadcastAlertAudio.class));
+            CellBroadcastAlertReminder.cancelAlertReminder();
+            context.getSystemService(NotificationManager.class)
+                    .cancel(CellBroadcastAlertService.NOTIFICATION_ID);
             getCellBroadcastTask(context, deliveryTime);
         } else if (CellBroadcastReceiver.CELLBROADCAST_START_CONFIG_ACTION.equals(
                 intent.getAction())) {
