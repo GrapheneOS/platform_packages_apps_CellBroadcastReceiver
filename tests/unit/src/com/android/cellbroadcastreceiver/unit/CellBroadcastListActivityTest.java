@@ -50,6 +50,7 @@ import static org.mockito.Mockito.verify;
 import android.app.Fragment;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -74,6 +75,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastCursorAdapter;
 import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
 import com.android.cellbroadcastreceiver.CellBroadcastListItem;
 import com.android.cellbroadcastreceiver.R;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 import org.junit.After;
 import org.junit.Before;
@@ -82,6 +84,7 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 
@@ -98,6 +101,12 @@ public class CellBroadcastListActivityTest extends
 
     @Captor
     private ArgumentCaptor<String> mColumnCaptor;
+
+    private void setWatchFeatureEnabled(boolean enabled) {
+        PackageManager mockPackageManager = mock(PackageManager.class);
+        doReturn(enabled).when(mockPackageManager).hasSystemFeature(PackageManager.FEATURE_WATCH);
+        mContext.injectPackageManager(mockPackageManager);
+    }
 
     @Before
     public void setUp() throws Exception {
@@ -129,6 +138,20 @@ public class CellBroadcastListActivityTest extends
         CellBroadcastListActivity activity = startActivity();
         int flags = activity.getWindow().getAttributes().flags;
         assertEquals((flags & WindowManager.LayoutParams.FLAG_SECURE), 0);
+        stopActivity();
+    }
+
+    public void testOnCreateForWatch() throws Throwable {
+        setWatchFeatureEnabled(true);
+
+        CellBroadcastListActivity activity = startActivity();
+
+        Field customizeLayoutResIdField =
+                CollapsingToolbarBaseActivity.class.getDeclaredField("mCustomizeLayoutResId");
+        customizeLayoutResIdField.setAccessible(true);
+        assertTrue(customizeLayoutResIdField.getInt(activity) != 0);
+
+        assertNotNull(activity.findViewById(R.id.content_frame));
         stopActivity();
     }
 
