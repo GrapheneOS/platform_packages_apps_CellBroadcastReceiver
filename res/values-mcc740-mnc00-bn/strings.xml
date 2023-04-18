@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="pws_other_message_identifiers" msgid="8976420402484419445">"পরীক্ষামূলক মেসেজ"</string>
-    <string name="enable_emergency_alerts_message_title" msgid="825742239541920431">"স্থানীয় মেসেজ পরীক্ষা করুন"</string>
+    <string name="pws_other_message_identifiers" msgid="1072852870660427393">"EC-তথ্য"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="4779534892377181264">"EC-রেগুলার ব্রডকাস্ট চ্যানেল"</string>
 </resources>
