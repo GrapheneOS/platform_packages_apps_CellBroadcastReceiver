@@ -74,6 +74,9 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
     private static final BySelector CLOSE_BUTTON =
             By.res("android:id/ok");
 
+    private static final BySelector YES_BUTTON =
+            By.res("android:id/button1");
+
     private boolean mIsOptOutDialogHandled = false;
 
     @Before
@@ -114,7 +117,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
             deleteMessageWithShellPermissionIdentity();
 
             if (!mIsOptOutDialogHandled) {
-                UiObject2 yesButton = sDevice.wait(Until.findObject(By.text("Yes")), 1000);
+                UiObject2 yesButton = sDevice.wait(Until.findObject(YES_BUTTON), 1000);
                 if (yesButton != null) {
                     logd("yesButton click");
                     yesButton.click();
