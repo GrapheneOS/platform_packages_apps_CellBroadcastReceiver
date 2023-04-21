@@ -23,6 +23,7 @@ import android.app.ResourcesManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Handler;
@@ -121,6 +122,8 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
 
         boolean mIsOverrideConfigurationEnabled;
 
+        private PackageManager mPackageManager;
+
         public TestContext(Context base) {
             super(base);
             mResources = spy(super.getResources());
@@ -130,6 +133,11 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
             final String name = getSystemServiceName(cls);
             mInjectedSystemServices.put(name, service);
         }
+
+        public void injectPackageManager(PackageManager packageManager) {
+            mPackageManager = packageManager;
+        }
+
 
         @Override
         public Display getDisplay() {
@@ -156,6 +164,15 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
         public Resources getResources() {
             return mResources;
         }
+
+        @Override
+        public PackageManager getPackageManager() {
+            if (mPackageManager != null) {
+                return mPackageManager;
+            }
+            return super.getPackageManager();
+        }
+
 
         @Override
         public Context createConfigurationContext(Configuration overrideConfiguration) {
