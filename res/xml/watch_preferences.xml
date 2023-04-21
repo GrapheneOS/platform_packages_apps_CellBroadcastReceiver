@@ -22,7 +22,7 @@
     android:title="@string/emergency_alert_settings_title_watches"
     android:key="category_alert_preferences">
 
-        <com.android.settingslib.widget.MainSwitchPreference
+        <SwitchPreference
                           android:defaultValue="@bool/master_toggle_enabled_default"
                           android:key="enable_alerts_master_toggle"
                           android:summary="@string/enable_alerts_master_toggle_summary"
