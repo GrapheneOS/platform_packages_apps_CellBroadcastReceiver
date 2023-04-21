@@ -764,11 +764,13 @@ public class CellBroadcastAlertService extends Service {
 
         boolean isWatch = context.getPackageManager()
                 .hasSystemFeature(PackageManager.FEATURE_WATCH);
+        int notificationId = NOTIFICATION_ID;
         // Create intent to show the new messages when user selects the notification.
         Intent intent;
         if (isWatch) {
-            // For FEATURE_WATCH we want to mark as read
-            intent = createMarkAsReadIntent(context, message.getReceivedTime());
+            // For FEATURE_WATCH we want to mark as read and use a unique notification id
+            notificationId = (message.getServiceCategory() << 16 | message.getSerialNumber());
+            intent = createMarkAsReadIntent(context, message.getReceivedTime(), notificationId);
         } else {
             // For anything else we handle it normally
             intent = createDisplayMessageIntent(context, CellBroadcastAlertDialog.class,
@@ -859,7 +861,7 @@ public class CellBroadcastAlertService extends Service {
                     .setStyle(new Notification.BigTextStyle().bigText(messageBody));
         }
 
-        notificationManager.notify(NOTIFICATION_ID, builder.build());
+        notificationManager.notify(notificationId, builder.build());
 
         // SysUI does not wake screen up when notification received. For emergency alert, manually
         // wakes up the screen for 1 second.
@@ -970,10 +972,11 @@ public class CellBroadcastAlertService extends Service {
      * @param deliveryTime time the message was sent in order to mark as read
      * @return delete intent to add to the pending intent
      */
-    static Intent createMarkAsReadIntent(Context context, long deliveryTime) {
+    static Intent createMarkAsReadIntent(Context context, long deliveryTime, int notificationId) {
         Intent deleteIntent = new Intent(context, CellBroadcastInternalReceiver.class);
         deleteIntent.setAction(CellBroadcastReceiver.ACTION_MARK_AS_READ);
         deleteIntent.putExtra(CellBroadcastReceiver.EXTRA_DELIVERY_TIME, deliveryTime);
+        deleteIntent.putExtra(CellBroadcastReceiver.EXTRA_NOTIF_ID, notificationId);
         return deleteIntent;
     }
 
