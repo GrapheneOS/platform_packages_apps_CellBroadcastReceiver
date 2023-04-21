@@ -202,6 +202,8 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
         private CellBroadcastListActivity mActivity;
 
+        private boolean mIsWatch;
+
         void setActivity(CellBroadcastListActivity activity) {
             mActivity = activity;
         }
@@ -230,9 +232,22 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
             // Create a cursor adapter to display the loaded data.
             mAdapter = new CellBroadcastCursorAdapter(getActivity(), listView);
             setListAdapter(mAdapter);
-
-            listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
-            listView.setMultiChoiceModeListener(getMultiChoiceModeListener());
+            // Watch UI does not support multi-choice deletion, so still needs to have
+            // the traditional per-item delete option.
+            mIsWatch = getContext().getPackageManager().hasSystemFeature(
+                    PackageManager.FEATURE_WATCH);
+            if (mIsWatch) {
+                listView.setOnCreateContextMenuListener((menu, v, menuInfo) -> {
+                    menu.setHeaderTitle(R.string.message_options);
+                    menu.add(0, MENU_VIEW_DETAILS, 0, R.string.menu_view_details);
+                    if (mCurrentLoaderId == LOADER_NORMAL_HISTORY) {
+                        menu.add(0, MENU_DELETE, 0, R.string.menu_delete);
+                    }
+                });
+            } else {
+                listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+                listView.setMultiChoiceModeListener(getMultiChoiceModeListener());
+            }
 
             mCurrentLoaderId = LOADER_NORMAL_HISTORY;
             if (savedInstanceState != null && savedInstanceState.containsKey(KEY_LOADER_ID)) {
@@ -383,6 +398,13 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
         }
 
         private long[] getSelectedItemsRowId() {
+            if (mIsWatch) {
+                Cursor cursor = mAdapter.getCursor();
+                long id = cursor.getLong(cursor.getColumnIndexOrThrow(
+                        Telephony.CellBroadcasts._ID));
+                return new long [] { id };
+            }
+
             SparseBooleanArray checkStates = getListView().getCheckedItemPositions();
             long[] arr = new long[checkStates.size()];
             for (int i = 0; i < checkStates.size(); i++) {
