@@ -49,6 +49,8 @@ public class CellBroadcastInternalReceiverTest extends CellBroadcastTest {
     private Configuration mConfiguration = new Configuration();
     private CellBroadcastInternalReceiver mReceiver;
 
+    private static final int TEST_NOTIFICATION_ID = 0x123;
+
     @Before
     public void setUp() throws Exception {
         super.setUp(this.getClass().getSimpleName());
@@ -68,13 +70,16 @@ public class CellBroadcastInternalReceiverTest extends CellBroadcastTest {
         doReturn(mockNotificationManager).when(mContext)
                 .getSystemService(Context.NOTIFICATION_SERVICE);
         doReturn(CellBroadcastReceiver.ACTION_MARK_AS_READ).when(mIntent).getAction();
+        doReturn(TEST_NOTIFICATION_ID).when(mIntent).getIntExtra(
+                CellBroadcastReceiver.EXTRA_NOTIF_ID,
+                CellBroadcastAlertService.NOTIFICATION_ID);
         doNothing().when(mReceiver).getCellBroadcastTask(nullable(Context.class), anyLong());
 
         mReceiver.onReceive(mContext, mIntent);
 
         verify(mIntent).getLongExtra(CellBroadcastReceiver.EXTRA_DELIVERY_TIME, -1);
         verify(mReceiver).getCellBroadcastTask(nullable(Context.class), anyLong());
-        verify(mockNotificationManager).cancel(CellBroadcastAlertService.NOTIFICATION_ID);
+        verify(mockNotificationManager).cancel(TEST_NOTIFICATION_ID);
     }
 
     @Test
