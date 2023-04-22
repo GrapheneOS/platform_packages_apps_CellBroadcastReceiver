@@ -98,6 +98,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             "com.android.cellbroadcastreceiver.intent.action.MARK_AS_READ";
     public static final String EXTRA_DELIVERY_TIME =
             "com.android.cellbroadcastreceiver.intent.extra.ID";
+    public static final String EXTRA_NOTIF_ID =
+            "com.android.cellbroadcastreceiver.intent.extra.NOTIF_ID";
 
     public static final String ACTION_TESTING_MODE_CHANGED =
             "com.android.cellbroadcastreceiver.intent.ACTION_TESTING_MODE_CHANGED";
