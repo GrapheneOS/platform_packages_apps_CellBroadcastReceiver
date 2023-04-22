@@ -583,7 +583,7 @@ public class CellBroadcastAlertServiceTest extends
 
         Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
         intent.setAction(SHOW_NEW_ALERT_ACTION);
-        SmsCbMessage message = createMessage(14788634);
+        SmsCbMessage message = createMessageForCmasMessageClass(0xbbaa, 0x1112, 0);
         intent.putExtra("message", message);
         startService(intent);
 
@@ -627,7 +627,7 @@ public class CellBroadcastAlertServiceTest extends
         ArgumentCaptor<Notification> notificationCaptor =
                 ArgumentCaptor.forClass(Notification.class);
         verify(mMockedNotificationManager, times(1))
-            .notify(eq(CellBroadcastAlertService.NOTIFICATION_ID), notificationCaptor.capture());
+            .notify(eq(0x1112bbaa), notificationCaptor.capture());
         Notification notificationPosted = notificationCaptor.getValue();
         assertTrue(notificationPosted.deleteIntent.isBroadcast());
         assertEquals(1, notificationPosted.actions.length);
