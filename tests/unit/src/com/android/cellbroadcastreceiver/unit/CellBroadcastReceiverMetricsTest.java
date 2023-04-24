@@ -25,6 +25,7 @@ import static com.android.cellbroadcastreceiver.CellBroadcastReceiverMetrics.Fea
 import static com.android.cellbroadcastreceiver.CellBroadcastReceiverMetrics.FeatureMetrics.TEST_MODE_ON_USER_BUILD;
 import static com.android.cellbroadcastreceiver.CellBroadcastReceiverMetrics.FeatureMetrics.TTS_MODE;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertSame;
@@ -245,6 +246,19 @@ public class CellBroadcastReceiverMetricsTest extends CellBroadcastTest {
         testChannelSet1.add(new Pair(4370, 4375));
         testChannelSet1.add(new Pair(9000, 9000));
         testChannelSet1.add(new Pair(1112, 1133));
+        testChannelSet1.add(new Pair(4370, 4376));
+        testChannelSet1.add(new Pair(2345, 2900));
+        testChannelSet1.add(new Pair(1112, 1199));
+        testChannelSet1.add(new Pair(1112, 1111));
+
+        HashSet<Pair<Integer, Integer>> testChannelSet_sorted = new HashSet<>();
+        testChannelSet_sorted.add(new Pair(1112, 1133));
+        testChannelSet_sorted.add(new Pair(4370, 4376));
+        testChannelSet_sorted.add(new Pair(2345, 2900));
+        testChannelSet_sorted.add(new Pair(4370, 4375));
+        testChannelSet_sorted.add(new Pair(1112, 1199));
+        testChannelSet_sorted.add(new Pair(9000, 9000));
+        testChannelSet_sorted.add(new Pair(1112, 1111));
 
         byte[] testArrayByte = CellBroadcastReceiverMetrics.getInstance()
                 .convertToProtoBuffer(testChannelSet1);
@@ -261,6 +275,11 @@ public class CellBroadcastReceiverMetricsTest extends CellBroadcastTest {
         }
 
         assertTrue(testChannelSet1.equals(testChannelSet2));
+
+        byte[] testArrayByte_sorted = CellBroadcastReceiverMetrics.getInstance()
+                .convertToProtoBuffer(testChannelSet_sorted);
+
+        assertArrayEquals(testArrayByte, testArrayByte_sorted);
 
         HashSet<Pair<Integer, Integer>> testChannelSetEmpty1 = new HashSet<>();
 
