@@ -32,6 +32,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.hardware.camera2.CameraAccessException;
@@ -540,7 +541,13 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
                         break;
                     case INFO:
                     case AREA:
-                        mMediaPlayer.setDataSource(this, Settings.System.DEFAULT_NOTIFICATION_URI);
+                        if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                            //TODO(b/279183006): remove watch workaround when URI supported.
+                            setDataSourceFromResource(res, mMediaPlayer, R.raw.watch_info);
+                        } else {
+                            mMediaPlayer.setDataSource(this,
+                                    Settings.System.DEFAULT_NOTIFICATION_URI);
+                        }
                         break;
                     case TEST:
                     case DEFAULT:
