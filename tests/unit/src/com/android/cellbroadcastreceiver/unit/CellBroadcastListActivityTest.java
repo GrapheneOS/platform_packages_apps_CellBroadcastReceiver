@@ -75,6 +75,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastCursorAdapter;
 import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
 import com.android.cellbroadcastreceiver.CellBroadcastListItem;
 import com.android.cellbroadcastreceiver.R;
+import com.android.internal.view.menu.ContextMenuBuilder;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 import org.junit.After;
@@ -153,6 +154,16 @@ public class CellBroadcastListActivityTest extends
 
         assertNotNull(activity.findViewById(R.id.content_frame));
         stopActivity();
+    }
+
+    public void testContextMenuForWatch() throws Throwable {
+        setWatchFeatureEnabled(true);
+        CellBroadcastListActivity activity = startActivity();
+        ContextMenuBuilder contextMenu = new ContextMenuBuilder(mContext);
+
+        activity.mListFragment.getListView().createContextMenu(contextMenu);
+
+        assertNotNull(contextMenu.findItem(MENU_DELETE));
     }
 
     public void testOnCreateWithCaptureRestriction() throws Throwable {
@@ -289,6 +300,32 @@ public class CellBroadcastListActivityTest extends
                         CellBroadcastListActivity.CursorLoaderListFragment.KEY_DELETE_DIALOG));
 
         verify(mockCursor, atLeastOnce()).getColumnIndex(eq(Telephony.CellBroadcasts._ID));
+        stopActivity();
+    }
+
+    public void testOnContextItemSelectedDeleteForWatch() throws Throwable {
+        setWatchFeatureEnabled(true);
+        CellBroadcastListActivity activity = startActivity();
+        Cursor mockCursor = mock(Cursor.class);
+        doReturn(0).when(mockCursor).getPosition();
+        doReturn(10L).when(mockCursor).getLong(anyInt());
+        activity.mListFragment.mAdapter.swapCursor(mockCursor);
+        MenuItem mockMenuItem = mock(MenuItem.class);
+        doReturn(MENU_DELETE).when(mockMenuItem).getItemId();
+        activity.mListFragment.getListView().setSelection(1);
+
+        activity.mListFragment.onContextItemSelected(mockMenuItem);
+        waitForHandlerAction(Handler.getMain(), TEST_TIMEOUT_MILLIS);
+
+
+        Fragment frag = activity.mListFragment.getFragmentManager().findFragmentByTag(
+                CellBroadcastListActivity.CursorLoaderListFragment.KEY_DELETE_DIALOG);
+        assertNotNull("onContextItemSelected - MENU_DELETE should create alert dialog",
+                frag);
+        long[] rowId = frag.getArguments().getLongArray(
+                CellBroadcastListActivity.CursorLoaderListFragment.DeleteDialogFragment.ROW_ID);
+        long[] expectedResult = {10L};
+        assertTrue(Arrays.equals(expectedResult, rowId));
         stopActivity();
     }
 
