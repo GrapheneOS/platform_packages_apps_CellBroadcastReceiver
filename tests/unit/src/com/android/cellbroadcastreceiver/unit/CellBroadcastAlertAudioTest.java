@@ -119,6 +119,15 @@ public class CellBroadcastAlertAudioTest extends
         super.tearDown();
     }
 
+    private Intent createStartAudioIntent() {
+        Intent intent = new Intent(mContext, CellBroadcastAlertAudio.class);
+        intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_MESSAGE_BODY,
+                TEST_MESSAGE_BODY);
+        intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATION_PATTERN_EXTRA,
+                TEST_VIBRATION_PATTERN);
+        return intent;
+    }
+
     public void testStartService() throws Throwable {
         PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
                 "testStartService",
@@ -136,6 +145,45 @@ public class CellBroadcastAlertAudioTest extends
                             TEST_MESSAGE_LANGUAGE);
                     intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA,
                             true);
+                    startService(intent);
+                });
+        phoneStateListenerHandler.start();
+        waitUntilReady();
+        verify(mMockedAudioManager).getRingerMode();
+        verify(mMockedVibrator).vibrate(any(), any(AudioAttributes.class));
+        phoneStateListenerHandler.quit();
+    }
+
+    public void testPlayAlertToneInfo() throws Throwable {
+        setWatchFeatureEnabled(false);
+        doReturn(AudioManager.RINGER_MODE_NORMAL).when(
+                mMockedAudioManager).getRingerMode();
+        PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
+                "testPlayAlertToneInfo",
+                () -> {
+                    Intent intent = createStartAudioIntent();
+                    intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE,
+                            CellBroadcastAlertService.AlertType.INFO);
+                    startService(intent);
+                });
+        phoneStateListenerHandler.start();
+        waitUntilReady();
+        verify(mMockedAudioManager).getRingerMode();
+        verify(mMockedVibrator).vibrate(any(), any(AudioAttributes.class));
+        phoneStateListenerHandler.quit();
+    }
+
+    public void testPlayAlertToneInfoForWatch() throws Throwable {
+        setWatchFeatureEnabled(true);
+        doReturn(AudioManager.RINGER_MODE_NORMAL).when(
+                mMockedAudioManager).getRingerMode();
+        PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
+                "testPlayAlertToneInfoForWatch",
+                () -> {
+
+                    Intent intent = createStartAudioIntent();
+                    intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE,
+                            CellBroadcastAlertService.AlertType.INFO);
                     startService(intent);
                 });
         phoneStateListenerHandler.start();
