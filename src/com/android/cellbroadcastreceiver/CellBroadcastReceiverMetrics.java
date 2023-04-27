@@ -389,12 +389,16 @@ public class CellBroadcastReceiverMetrics {
             throws IOException {
         Cellbroadcastmetric.CellBroadcastChannelRangesProto.Builder rangeListBuilder =
                 Cellbroadcastmetric.CellBroadcastChannelRangesProto.newBuilder();
-        rangeList.forEach(pair -> {
+        rangeList.stream().sorted((o1, o2) -> o1.first == o2.first ? o1.second - o2.second
+                : o1.first - o2.first).forEach(pair -> {
             Cellbroadcastmetric.CellBroadcastChannelRangeProto.Builder rangeBuilder =
                     Cellbroadcastmetric.CellBroadcastChannelRangeProto.newBuilder();
             rangeBuilder.setStart(pair.first);
             rangeBuilder.setEnd(pair.second);
             rangeListBuilder.addChannelRanges(rangeBuilder);
+            if (VDBG) {
+                Log.d(TAG, "[first] : " + pair.first + " [second] : " + pair.second);
+            }
         });
         return rangeListBuilder.build().toByteArray();
     }
@@ -405,7 +409,7 @@ public class CellBroadcastReceiverMetrics {
      * @param arrayByte : channel range set encoded arrayByte
      */
     @VisibleForTesting
-    public  HashSet<Pair<Integer, Integer>> getDataFromProtoArrayByte(byte[] arrayByte)
+    public HashSet<Pair<Integer, Integer>> getDataFromProtoArrayByte(byte[] arrayByte)
             throws InvalidProtocolBufferException {
         HashSet<Pair<Integer, Integer>> convertResult = new HashSet<>();
 
