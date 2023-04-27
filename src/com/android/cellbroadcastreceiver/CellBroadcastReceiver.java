@@ -278,7 +278,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             setRoamingOperatorSupported(roamingOperator);
         }
         CellBroadcastReceiverMetrics.getInstance().getFeatureMetrics(mContext)
-                .onChangedRoamingSupport((roamingOperator != null) ? true : false);
+                .onChangedRoamingSupport(!TextUtils.isEmpty(roamingOperator) ? true : false);
     }
 
     /**
