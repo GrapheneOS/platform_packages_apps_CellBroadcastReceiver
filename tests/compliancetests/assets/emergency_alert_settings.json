@@ -1083,18 +1083,6 @@
     }
   },
   "india": {
-    "Area update broadcasts": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Extreme threats": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Severe threats": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
     "AMBER alerts": {
       "default_value": "true",
       "toggle_avail": "true"
