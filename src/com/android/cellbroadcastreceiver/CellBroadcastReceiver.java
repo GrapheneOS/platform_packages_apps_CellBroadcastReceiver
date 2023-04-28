@@ -22,7 +22,6 @@ import static com.android.cellbroadcastservice.CellBroadcastMetrics.RPT_SPC;
 import static com.android.cellbroadcastservice.CellBroadcastMetrics.SRC_CBR;
 
 import android.app.ActivityManager;
-import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.ContentProviderClient;
@@ -99,6 +98,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             "com.android.cellbroadcastreceiver.intent.action.MARK_AS_READ";
     public static final String EXTRA_DELIVERY_TIME =
             "com.android.cellbroadcastreceiver.intent.extra.ID";
+    public static final String EXTRA_NOTIF_ID =
+            "com.android.cellbroadcastreceiver.intent.extra.NOTIF_ID";
 
     public static final String ACTION_TESTING_MODE_CHANGED =
             "com.android.cellbroadcastreceiver.intent.ACTION_TESTING_MODE_CHANGED";
@@ -132,15 +133,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         Resources res = getResourcesMethod();
 
         if (ACTION_MARK_AS_READ.equals(action)) {
-            if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
-                // Clear the notification in case we are launching the DeleteIntent from an action
-                context.getSystemService(NotificationManager.class)
-                        .cancel(CellBroadcastAlertService.NOTIFICATION_ID);
-            } else {
-                // The only way this'll be called is if someone tries to maliciously set something
-                // as read. Log an event.
-                EventLog.writeEvent(0x534e4554, "162741784", -1, null);
-            }
+            // The only way this'll be called is if someone tries to maliciously set something
+            // as read. Log an event.
+            EventLog.writeEvent(0x534e4554, "162741784", -1, null);
         } else if (CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED.equals(action)) {
             if (!intent.getBooleanExtra(
                     "android.telephony.extra.REBROADCAST_ON_UNLOCK", false)) {
