@@ -4356,6 +4356,11 @@
       "toggle_avail": "false",
       "end_channel": "4354"
     },
+    "4355": {
+      "title": "",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
     "4356": {
       "title": "",
       "default_value": "true",
@@ -4374,25 +4379,25 @@
     "4371": {
       "title": "Emergency alert: Extreme",
       "default_value": "true",
-      "toggle_avail": "true",
+      "toggle_avail": "false",
       "end_channel": "4372"
     },
     "4384": {
       "title": "Emergency alert: Extreme",
       "default_value": "true",
-      "toggle_avail": "true",
+      "toggle_avail": "false",
       "end_channel": "4385"
     },
     "4373": {
       "title": "Emergency alert: Severe",
       "default_value": "true",
-      "toggle_avail": "true",
+      "toggle_avail": "false",
       "end_channel": "4378"
     },
     "4386": {
       "title": "Emergency alert: Severe",
       "default_value": "true",
-      "toggle_avail": "true",
+      "toggle_avail": "false",
       "end_channel": "4391"
     },
     "4379": {
@@ -4434,12 +4439,6 @@
       "title": "Emergency alert (operator)",
       "default_value": "false",
       "toggle_avail": "true"
-    },
-    "60": {
-      "title": "Broadcast messages",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "alert_type":"notification"
     }
   },
   "hungary_telekom": {
