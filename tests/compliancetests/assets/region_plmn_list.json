@@ -282,7 +282,8 @@
   },
   "india": {
     "mccmnc": "40401",
-    "imsi": "404010123456789"
+    "imsi": "404010123456789",
+    "disable_navigation": "true"
   },
   "hungary_telekom": {
     "mccmnc": "21630",
