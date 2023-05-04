@@ -39,7 +39,6 @@ import android.content.res.Resources;
 import android.os.Looper;
 import android.os.RemoteException;
 import android.os.UserManager;
-import android.support.test.uiautomator.UiDevice;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 
@@ -48,6 +47,7 @@ import androidx.preference.PreferenceManager;
 import androidx.test.InstrumentationRegistry;
 import androidx.test.filters.FlakyTest;
 import androidx.test.runner.AndroidJUnit4;
+import androidx.test.uiautomator.UiDevice;
 
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
