@@ -28,9 +28,9 @@ java_defaults {
     static_libs: [
         "androidx.test.rules",
         "androidx.test.espresso.core",
+        "androidx.test.uiautomator_uiautomator",
         "mockito-target-minus-junit4",
         "truth-prebuilt",
-        "ub-uiautomator",
     ],
     // Include all test java files.
     srcs: [":cellbroadcastreceiver-shared-srcs-test"],
