@@ -882,8 +882,7 @@ public class CellBroadcastAlertDialog extends Activity {
             languageCode = message.getLanguageCode();
         }
 
-        if (CellBroadcastSettings.getResourcesForDefaultSubId(context).getBoolean(
-                R.bool.show_alert_title)) {
+        if (res.getBoolean(R.bool.show_alert_title)) {
             String title = overrideTranslation(titleId, res, languageCode);
             TextView titleTextView = findViewById(R.id.alertTitle);
 
@@ -897,6 +896,10 @@ public class CellBroadcastAlertDialog extends Activity {
                 setTitle(title);
                 titleTextView.setText(title);
             }
+        } else {
+            TextView titleTextView = findViewById(R.id.alertTitle);
+            setTitle("");
+            titleTextView.setText("");
         }
 
         TextView textView = findViewById(R.id.message);
