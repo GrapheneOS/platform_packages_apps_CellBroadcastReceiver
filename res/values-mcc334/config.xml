@@ -84,7 +84,10 @@
     <!-- Whether enabling capture message screen -->
     <bool name="disable_capture_alert_dialog">true</bool>
     <!-- Whether enabling copy message text into clipboard by long press -->
+    <!-- Check the configuration 'link_method' as well to make the url copy disabled as needed -->
     <bool name="enable_text_copy">false</bool>
+    <!-- Text links generating method. does not allow text to be copied. so we can't use smart linkify. -->
+    <string name="link_method" translatable="false">legacy_linkify</string>
 
     <!-- Values that for the vibration pattern. -->
     <integer-array name="default_vibration_pattern">
@@ -111,5 +114,4 @@
     <bool name="override_dnd">true</bool>
     <!-- Whether to show the alert dialog title -->
     <bool name="show_alert_title">false</bool>
-
 </resources>
