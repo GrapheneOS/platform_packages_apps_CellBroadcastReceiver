@@ -66,10 +66,6 @@
             android:summary="@string/enable_full_screen_public_safety_messages_summary"
             android:title="@string/enable_full_screen_public_safety_messages_title" />
 
-        <SwitchPreference android:defaultValue="true"
-                          android:key="enable_alert_speech"
-                          android:title="@string/enable_alert_speech_title" />
-
         <!-- Enable receive monthly test -->
         <SwitchPreference android:defaultValue="false"
                           android:key="enable_test_alerts"
@@ -115,6 +111,10 @@
                           android:key="override_dnd"
                           android:summary="@string/override_dnd_summary"
                           android:title="@string/override_dnd_title" />
+
+        <SwitchPreference android:defaultValue="true"
+                          android:key="enable_alert_speech"
+                          android:title="@string/enable_alert_speech_title" />
 
         <ListPreference android:key="alert_reminder_interval"
                         android:title="@string/alert_reminder_interval_title"
