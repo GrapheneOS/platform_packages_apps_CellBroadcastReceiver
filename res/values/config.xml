@@ -264,6 +264,7 @@
     <string name="link_method" translatable="false">smart_linkify</string>
 
     <!-- Whether enabling copy message text into clipboard by long press -->
+    <!-- Check the configuration 'link_method' as well to make the url copy disabled as needed -->
     <bool name="enable_text_copy">true</bool>
 
     <!-- Whether to override the language of the alert dialog's title to match the message locale -->
