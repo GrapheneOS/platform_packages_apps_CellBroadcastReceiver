@@ -794,6 +794,40 @@
       "toggle_avail": "true"
     }
   },
+  "us_dish": {
+    "National alerts": {
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Public safety messages": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "State and local tests": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Spanish": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
   "qatar_vodafone": {
     "Warning alerts": {
       "default_value": "true",
