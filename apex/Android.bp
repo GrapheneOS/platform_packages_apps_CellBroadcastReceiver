@@ -34,8 +34,4 @@ apex {
     name: "com.android.cellbroadcast",
     defaults:["com.android.cellbroadcast-defaults"],
     apps: ["CellBroadcastApp", "CellBroadcastServiceModule"],
-    prebuilts: [
-        "privapp_allowlist_com.android.cellbroadcastservice.xml",
-        "privapp_allowlist_com.android.cellbroadcastreceiver.module.xml",
-    ],
 }
