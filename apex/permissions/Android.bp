@@ -18,34 +18,25 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
-prebuilt_etc {
+filegroup {
     name: "privapp_allowlist_com.android.cellbroadcastreceiver.module.xml",
-    sub_dir: "permissions",
-    src: "com.android.cellbroadcastreceiver.module.xml",
-    installable: false,
+    srcs: ["com.android.cellbroadcastreceiver.module.xml"],
 }
 
 // For platform only variant
-prebuilt_etc {
+filegroup {
     name: "platform_privapp_allowlist_com.android.cellbroadcastreceiver.xml",
-    sub_dir: "permissions",
-    src: "com.android.cellbroadcastreceiver.xml",
-    system_ext_specific: true,
+    srcs: ["com.android.cellbroadcastreceiver.xml"],
     visibility: ["//packages/apps/CellBroadcastReceiver"],
-    installable: true,
 }
 
 // For platform only variant
-prebuilt_etc {
+filegroup {
     name: "platform_privapp_allowlist_com.android.cellbroadcastservice.xml",
-    sub_dir: "permissions",
-    src: "com.android.cellbroadcastservice.xml",
-    installable: true,
+    srcs: ["com.android.cellbroadcastservice.xml"],
 }
 
-prebuilt_etc {
+filegroup {
     name: "privapp_allowlist_com.android.cellbroadcastservice.xml",
-    sub_dir: "permissions",
-    src: "com.android.cellbroadcastservice.xml",
-    installable: false,
+    srcs: ["com.android.cellbroadcastservice.xml"],
 }
