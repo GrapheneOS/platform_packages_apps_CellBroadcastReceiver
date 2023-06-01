@@ -4563,13 +4563,98 @@
   },
   "croatia_hrvatski": {
     "4370": {
-      "title": "Presidential alert",
+      "title": "HR-ALERT",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Presidential alert",
+      "title": "HR-ALERT",
       "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4371": {
+      "title": "HR-ALERT",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4384": {
+      "title": "HR-ALERT",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4373": {
+      "title": "HR-ALERT",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4386": {
+      "title": "HR-ALERT",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4379": {
+      "title": "HR-AMBER",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "HR-AMBER",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4380": {
+      "title": "Cell Broadcast Test",
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4393": {
+      "title": "Cell Broadcast Test",
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4381": {
+      "title": "HR-ALERT",
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4394": {
+      "title": "HR-ALERT",
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4396": {
+      "title": "HR-ALERT",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4397": {
+      "title": "HR-ALERT",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "6400": {
+      "title": "HR-ALERT",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4398": {
+      "title": "HR-ALERT",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4399": {
+      "title": "HR-ALERT",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4382": {
+      "title": "EU Reserved",
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4395": {
+      "title": "EU Reserved",
+      "default_value": "false",
       "toggle_avail": "false"
     }
   },

@@ -1137,6 +1137,34 @@
     }
   },
   "croatia_hrvatski": {
+    "Emergency Alarm": {
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "Extreme Danger": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Significant Danger": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Missing person": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Hazard Information": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Information": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Test Warning": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
