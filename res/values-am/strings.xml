@@ -80,7 +80,7 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ስለተቃረቡ የደህንነት አደጋዎች አስጠንቀቅ"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"የሕዝባዊ ደህንነት መልዕክቶች"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ህይወትን ወይም ንብረትን ሊያድኑ የሚችሉ የሚመከሩ እርምጃዎች"</string>
-    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"ባለሙሉ ማያ ገጽ መልዕክቶችን ያሳይ"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"ባለሙሉ ማያ ገፅ መልዕክቶችን ያሳይ"</string>
     <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"ሲጠፋ የሕዝብ ደህንነት መልዕክቶች አሁንም እንደ ማሳወቂያ ይላካሉ"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"የግዛት እና አካባቢያዊ ሙከራዎች"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ከግዛት እና የአካባቢ ባለሥልጣናት የሙከራ መልዕክቶችን ተቀበል"</string>
@@ -113,7 +113,7 @@
     <string name="cmas_category_infra" msgid="3558151044446851398">"መሰረተ ልማት"</string>
     <string name="cmas_category_cbrne" msgid="240421557913603971">"ኬሚካል/ባዮሎጂካል/ኒውክሌር/ ፈንጅ"</string>
     <string name="cmas_category_other" msgid="6158932360790744360">"ሌላ"</string>
-    <string name="cmas_response_heading" msgid="4205379547245540163">"የምላሽ አይነት፦"</string>
+    <string name="cmas_response_heading" msgid="4205379547245540163">"የምላሽ ዓይነት፦"</string>
     <string name="cmas_response_shelter" msgid="7301175579079615909">"መጠለያ"</string>
     <string name="cmas_response_evacuate" msgid="5833170084430021095">"ልቀቅ"</string>
     <string name="cmas_response_prepare" msgid="8428073909753758319">"አዘጋጅ"</string>
