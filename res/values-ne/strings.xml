@@ -66,7 +66,7 @@
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"चेतावनी सन्देश बोल्नुहोस्"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"आपत्‌कालीन वायरलेस सतर्कता सन्देशहरूलाई आवाजमा परिवर्तन गर्न टेक्स्ट-टू-स्पिच सुविधा प्रयोग गर्नुहोस्"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमाइन्डर साउन्ड नियमित भोल्युममा बज्ने छ"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"आपत्‌कालीन अलर्टको इतिहास"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"आपत्‌कालीन अलर्टको हिस्ट्री"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"अलर्टका प्राथमिकताहरू"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS का परीक्षण प्रसारणहरू"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"भूकम्प सुनामी चेतावनी प्रणालीका परीक्षण प्रसारणहरू"</string>
@@ -139,7 +139,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"तपाईं हाल आपत्‌कालीन अवस्थामा वायरलेस एलर्ट प्राप्त गर्दै हुनुहुन्छ। तपाईं आपत्‌कालीन अवस्थामा वायरलेस एलर्ट प्राप्त गरिरहन चाहनुहुन्छ?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"हो"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"होइन"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"आपत्‌कालीन अलर्टको इतिहास"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"आपत्‌कालीन अलर्टको हिस्ट्री"</string>
     <string name="action_delete" msgid="7435661404543945861">"मेटाउनुहोस्"</string>
     <string name="action_detail_info" msgid="8486524382178381810">"विस्तृत विवरण देखाइयोस्"</string>
   <string-array name="alert_reminder_interval_entries">
