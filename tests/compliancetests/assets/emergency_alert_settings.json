@@ -1226,20 +1226,6 @@
       "toggle_avail": "true"
     }
   },
-  "uk_ee": {
-    "Extreme alerts": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Severe alerts": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Vibration": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    }
-  },
   "mexico": {
     "Alert Messages Level 1": {
       "default_value": "true",
