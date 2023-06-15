@@ -17,6 +17,7 @@
 package com.android.cellbroadcastreceiver.unit;
 
 import static com.android.cellbroadcastreceiver.CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE;
+import static com.android.cellbroadcastreceiver.CellBroadcastAlertService.PROP_DISPLAY;
 import static com.android.cellbroadcastreceiver.CellBroadcastAlertService.SHOW_NEW_ALERT_ACTION;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -43,6 +44,7 @@ import android.os.IPowerManager;
 import android.os.Looper;
 import android.os.PowerManager;
 import android.os.RemoteException;
+import android.os.SystemProperties;
 import android.provider.Telephony;
 import android.telephony.AccessNetworkConstants;
 import android.telephony.NetworkRegistrationInfo;
@@ -51,6 +53,7 @@ import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
+import android.view.Display;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
@@ -638,4 +641,26 @@ public class CellBroadcastAlertServiceTest extends
         assertSame(notificationPosted.deleteIntent, notificationPosted.actions[0].actionIntent);
     }
 
+    public void testClamshellCoverDisplayId() {
+        doReturn(new String[]{
+                "0x1113:rat=gsm, type=mute, emergency=true, always_on=true",
+                "0x112F:rat=gsm, emergency=true"}).when(mResources).getStringArray(
+                eq(com.android.cellbroadcastreceiver.R.array
+                        .additional_cbs_channels_strings));
+
+        Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
+        intent.setAction(SHOW_NEW_ALERT_ACTION);
+        SmsCbMessage message = createMessageForCmasMessageClass(13788634, 0x1113, 0x1113);
+        intent.putExtra("message", message);
+
+        startService(intent);
+        waitForServiceIntent();
+
+        int display_id = SystemProperties.getInt(PROP_DISPLAY, Display.DEFAULT_DISPLAY);
+        if (display_id == Display.DEFAULT_DISPLAY) {
+            assertEquals(mBundle, null);
+        } else {
+            assertEquals(mBundle.getInt("android.activity.launchDisplayId", 0), display_id);
+        }
+    }
 }
