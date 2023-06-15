@@ -250,6 +250,7 @@ public class CellBroadcastListActivityTest extends
         // create data with one entry so that the "no alert" text view is invisible
         activity.mListFragment.onLoadFinished(null, makeTestCursor());
         assertEquals(View.INVISIBLE, activity.findViewById(R.id.empty).getVisibility());
+        assertTrue(activity.findViewById(android.R.id.list).isLongClickable());
         stopActivity();
     }
 
@@ -262,6 +263,25 @@ public class CellBroadcastListActivityTest extends
                 new MatrixCursor(CellBroadcastListActivity.CursorLoaderListFragment.QUERY_COLUMNS);
         activity.mListFragment.onLoadFinished(null, data);
         assertEquals(View.VISIBLE, activity.findViewById(R.id.empty).getVisibility());
+        assertFalse(activity.findViewById(android.R.id.list).isLongClickable());
+        stopActivity();
+    }
+
+    public void testOnLoadFinishedEmptyToExistData() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        // When the history changes from empty to exist,
+        // the ListView's LongClickable is from false to true.
+        Cursor data =
+                new MatrixCursor(CellBroadcastListActivity.CursorLoaderListFragment.QUERY_COLUMNS);
+        activity.mListFragment.onLoadFinished(null, data);
+        assertEquals(View.VISIBLE, activity.findViewById(R.id.empty).getVisibility());
+        assertFalse(activity.findViewById(android.R.id.list).isLongClickable());
+
+        activity.mListFragment.onLoadFinished(null, makeTestCursor());
+        assertEquals(View.INVISIBLE, activity.findViewById(R.id.empty).getVisibility());
+        assertTrue(activity.findViewById(android.R.id.list).isLongClickable());
         stopActivity();
     }
 
