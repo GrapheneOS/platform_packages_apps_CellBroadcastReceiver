@@ -34,6 +34,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.IContentProvider;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ProviderInfo;
 import android.content.res.Configuration;
@@ -77,6 +78,7 @@ import org.mockito.MockitoAnnotations;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class CellBroadcastAlertDialogTest extends
         CellBroadcastActivityTestCase<CellBroadcastAlertDialog> {
@@ -707,5 +709,36 @@ public class CellBroadcastAlertDialogTest extends
         assertEquals((flags & WindowManager.LayoutParams.FLAG_SECURE),
                 WindowManager.LayoutParams.FLAG_SECURE);
         stopActivity();
+    }
+
+    public void testTitleOnNonDefaultSubId() throws Throwable {
+        Intent intent = createActivityIntent();
+        Looper.prepare();
+        CellBroadcastAlertDialog activity = startActivity(intent, null, null);
+        waitForMs(100);
+
+        assertFalse(TextUtils.isEmpty(((TextView) getActivity().findViewById(
+                com.android.cellbroadcastreceiver.R.id.alertTitle)).getText()));
+
+        SharedPreferences mockSharedPreferences = mock(SharedPreferences.class);
+        doReturn("334090").when(mockSharedPreferences).getString(any(), any());
+        mContext.injectSharedPreferences(mockSharedPreferences);
+        Resources mockResources2 = mock(Resources.class);
+        doReturn(false).when(mockResources2).getBoolean(R.bool.show_alert_title);
+
+        Field field = CellBroadcastSettings.class.getDeclaredField("sResourcesCacheByOperator");
+        field.setAccessible(true);
+        Map<String, Resources> roamingMap = (Map<String, Resources>) field.get(null);
+        roamingMap.put("334090", mockResources2);
+
+        mMessageList.add(CellBroadcastAlertServiceTest.createMessageForCmasMessageClass(12413,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY,
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY));
+        intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
+                new ArrayList<>(mMessageList));
+        activity.onNewIntent(intent);
+
+        assertTrue(TextUtils.isEmpty(((TextView) getActivity().findViewById(
+                com.android.cellbroadcastreceiver.R.id.alertTitle)).getText()));
     }
 }
