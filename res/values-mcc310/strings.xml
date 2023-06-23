@@ -17,6 +17,13 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- The name of the Cell Broadcast Receiver app. [CHAR LIMIT=NONE] -->
+    <string name="app_label">Wireless Emergency Alerts</string>
+    <!-- Label for settings screen. [CHAR LIMIT=NONE] -->
+    <string name="sms_cb_settings">Wireless Emergency Alerts</string>
+    <!-- Label to open emergencyNotifications dialog [CHAR LIMIT=40] -->
+    <string name="emergency_alert_settings_title_watches">Wireless Emergency Alerts</string>
+
     <!-- Show additional language on/off switch in settings -->
     <!-- Preference title for enable CMAS second language checkbox. [CHAR LIMIT=50] -->
     <string name="receive_cmas_in_second_language_title">Spanish</string>
