@@ -185,17 +185,18 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
      * it to the default language. mTtsLanguageSupported will be updated based on the response.
      */
     private void setTtsLanguage() {
-        Locale locale;
+        Locale locale = null;
         if (!TextUtils.isEmpty(mMessageLanguage)) {
             locale = new Locale(mMessageLanguage);
-        } else {
+        }
+        if (locale == null || locale.getLanguage().equalsIgnoreCase(
+                Locale.getDefault().getLanguage())) {
             // If the cell broadcast message does not specify the language, use device's default
             // language.
             locale = Locale.getDefault();
         }
 
         if (DBG) log("Setting TTS language to '" + locale + '\'');
-
         int result = mTts.setLanguage(locale);
         if (DBG) log("TTS setLanguage() returned: " + result);
         mTtsLanguageSupported = (result >= TextToSpeech.LANG_AVAILABLE);
