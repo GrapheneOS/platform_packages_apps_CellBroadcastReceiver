@@ -23,6 +23,7 @@ import android.app.ResourcesManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -124,6 +125,8 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
 
         private PackageManager mPackageManager;
 
+        private SharedPreferences mSharedPreferences;
+
         public TestContext(Context base) {
             super(base);
             mResources = spy(super.getResources());
@@ -138,6 +141,9 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
             mPackageManager = packageManager;
         }
 
+        public void injectSharedPreferences(SharedPreferences sp) {
+            mSharedPreferences = sp;
+        }
 
         @Override
         public Display getDisplay() {
@@ -173,6 +179,13 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
             return super.getPackageManager();
         }
 
+        @Override
+        public SharedPreferences getSharedPreferences(String name, int mode) {
+            if (mSharedPreferences != null) {
+                return mSharedPreferences;
+            }
+            return super.getSharedPreferences(name, mode);
+        }
 
         @Override
         public Context createConfigurationContext(Configuration overrideConfiguration) {
