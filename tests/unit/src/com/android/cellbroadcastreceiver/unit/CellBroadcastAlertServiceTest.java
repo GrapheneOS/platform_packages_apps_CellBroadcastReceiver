@@ -576,6 +576,10 @@ public class CellBroadcastAlertServiceTest extends
 
 
     public void testAddToNotificationBarForWatch() throws RemoteException {
+        if (!SdkLevel.isAtLeastS()) {
+            return;
+        }
+
         setWatchFeatureEnabled(true);
         Handler handler = new Handler(Looper.getMainLooper());
         IPowerManager mockedPowerService = mock(IPowerManager.class);
