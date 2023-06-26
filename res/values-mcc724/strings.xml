@@ -33,6 +33,15 @@
     <!-- Required spanish (es) translation for this message: Alerta de prueba técnica -->
     <string name="cmas_exercise_alert">Technical test alerts</string>
 
+    <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Portuguese (pt) translation for this message: Alerta Extremo -->
+    <!-- Required spanish (es) translation for this message: Alerta Extrema -->
+    <string name="enable_cmas_extreme_threat_alerts_title">Extreme Threats</string>
+    <!-- Preference summary for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Portuguese (pt) translation for this message: Ameaças extremas à vida ou à propriedade -->
+    <!-- Required spanish (es) translation for this message: Amenazas extremas a la vida y la propiedad -->
+    <string name="enable_cmas_extreme_threat_alerts_summary">Extreme threats to life and property</string>
+
     <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
     <!-- Required Portuguese (pt) translation for this message: Alerta Severo -->
     <!-- Required spanish (es) translation for this message: Alerta Severa -->

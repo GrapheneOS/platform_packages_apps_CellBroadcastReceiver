@@ -73,6 +73,9 @@
     <bool name="always_mark_sms_read">false</bool>
     <!-- Whether to retry message history data migration after db creation -->
     <bool name="retry_message_history_data_migration">false</bool>
+    <!-- Whether to disable extreme alert settings -->
+    <!-- To support 'true' it needs to be set show_extreme_alert_settings=true, always_on=true : true -->
+    <bool name="disable_extreme_alert_settings">false</bool>
 
     <!-- Section for switch default value -->
     <!-- Main toggle default value -->
