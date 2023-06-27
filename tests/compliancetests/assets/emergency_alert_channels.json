@@ -4597,18 +4597,6 @@
       "toggle_avail": "false"
     }
   },
-  "austria_magenta": {
-    "4370": {
-      "title": "Presidential alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4383": {
-      "title": "Presidential alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    }
-  },
   "poland_tmobile": {
     "4370": {
       "title": "Presidential alert",
@@ -4623,13 +4611,78 @@
   },
   "austria_tmobile": {
     "4370": {
-      "title": "Presidential alert",
+      "title": "Emergency alarm",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Presidential alert",
+      "title": "Emergency alarm",
       "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "919": {
+      "title": "Emergency alarm",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4372": {
+      "title": "Extreme threat",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4385": {
+      "title": "Extreme threat",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4378": {
+      "title": "Severe threat",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4391": {
+      "title": "Severe threat",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4396": {
+      "title": "Threat information",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4397": {
+      "title": "Threat information",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4379": {
+      "title": "Search for missing person",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "Search for missing person",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4380": {
+      "title": "Cell Broadcast Test",
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4393": {
+      "title": "Cell Broadcast Test",
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4381": {
+      "title": "Test alarm",
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4394": {
+      "title": "Test alarm",
+      "default_value": "false",
       "toggle_avail": "false"
     }
   },
