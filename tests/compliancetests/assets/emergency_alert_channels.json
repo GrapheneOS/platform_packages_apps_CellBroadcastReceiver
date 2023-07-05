@@ -4475,23 +4475,23 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "Presidential alert",
+      "title": "National Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Presidential alert",
+      "title": "National Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "Emergency alert: Extreme",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false",
       "end_channel": "4372"
     },
     "4384": {
-      "title": "Emergency alert: Extreme",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false",
       "end_channel": "4385"
