@@ -1154,12 +1154,6 @@
       "toggle_avail": "true"
     }
   },
-  "austria_magenta": {
-    "Vibration": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    }
-  },
   "poland_tmobile": {
     "Vibration": {
       "default_value": "true",
@@ -1167,6 +1161,26 @@
     }
   },
   "austria_tmobile": {
+    "Extreme threat": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threat": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Missing persons": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Threat information": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test alert": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
