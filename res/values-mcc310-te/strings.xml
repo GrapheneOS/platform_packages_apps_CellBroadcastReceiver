@@ -16,6 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_label" msgid="6018514276739876277">"వైర్‌లెస్ ఎమర్జెన్సీ అలర్ట్‌లు"</string>
+    <string name="sms_cb_settings" msgid="1556918270840502446">"వైర్‌లెస్ ఎమర్జెన్సీ అలర్ట్‌లు"</string>
+    <string name="emergency_alert_settings_title_watches" msgid="5702555089013313773">"వైర్‌లెస్ ఎమర్జెన్సీ అలర్ట్‌లు"</string>
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"స్పానిష్"</string>
     <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"వీలున్నప్పుడు, స్పానిష్ భాషలో ఉన్న అత్యవసర అలర్ట్‌లను స్వీకరించండి"</string>
     <string name="confirm_delete_broadcast" msgid="6808374217554967811">"ఈ అలర్ట్‌ను తొలగించాలా?"</string>

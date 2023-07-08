@@ -16,6 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_label" msgid="6018514276739876277">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම්"</string>
+    <string name="sms_cb_settings" msgid="1556918270840502446">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම්"</string>
+    <string name="emergency_alert_settings_title_watches" msgid="5702555089013313773">"නොරැහැන් හදිසි අවස්ථා ඇඟවීම්"</string>
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"ස්පාඤ්ඤ"</string>
     <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"හැකි විට ස්පාඤ්ඤ භාෂාවෙන් හදිසි අනතුරු ඇඟවීම් ලබා ගන්න"</string>
     <string name="confirm_delete_broadcast" msgid="6808374217554967811">"මෙම ඇඟවීම මකන්නද?"</string>
