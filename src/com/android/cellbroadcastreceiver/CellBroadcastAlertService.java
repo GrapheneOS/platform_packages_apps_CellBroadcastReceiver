@@ -34,6 +34,7 @@ import static com.android.cellbroadcastservice.CellBroadcastMetrics.SRC_CBR;
 
 import android.annotation.NonNull;
 import android.app.ActivityManager;
+import android.app.ActivityOptions;
 import android.app.Notification;
 import android.app.Notification.Action;
 import android.app.NotificationChannel;
@@ -66,6 +67,7 @@ import android.telephony.SmsCbMessage;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Display;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
@@ -149,6 +151,15 @@ public class CellBroadcastAlertService extends Service {
      */
     private static final String MESSAGE_FILTER_PROPERTY_KEY =
             "persist.cellbroadcast.message_filter";
+
+    /**
+     * Key for getting current display id from SystemProperties for foldable models.
+     * This is a temporary solution which will be deprecated when system api is available.
+     * OEMs should protect the property from invalid access.
+     */
+    @VisibleForTesting
+    public static final String PROP_DISPLAY =
+            "cellbroadcast.device.is.foldable.and.currently.use.display.id";
 
     private Context mContext;
 
@@ -734,9 +745,23 @@ public class CellBroadcastAlertService extends Service {
             Intent alertDialogIntent = createDisplayMessageIntent(this,
                     CellBroadcastAlertDialog.class, messageList);
             alertDialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(alertDialogIntent);
-        }
 
+            int displayId = SystemProperties.getInt(PROP_DISPLAY, Display.DEFAULT_DISPLAY);
+            Log.d(TAG, "openEmergencyAlertNotification: current displayId = " + displayId);
+
+            if (displayId != Display.DEFAULT_DISPLAY) {
+                try {
+                    ActivityOptions option = ActivityOptions.makeBasic();
+                    option.setLaunchDisplayId(displayId);
+                    startActivity(alertDialogIntent, option.toBundle());
+                } catch (Exception ex) {
+                    Log.d(TAG, "Failed to start alert for " + ex);
+                    startActivity(alertDialogIntent);
+                }
+            } else {
+                startActivity(alertDialogIntent);
+            }
+        }
     }
 
     /**
