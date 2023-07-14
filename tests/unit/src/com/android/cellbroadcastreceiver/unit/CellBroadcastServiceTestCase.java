@@ -33,6 +33,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.AudioManager;
+import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.os.Vibrator;
@@ -90,6 +91,8 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
 
     Intent mActivityIntentToVerify;
 
+    Bundle mBundle;
+
     CellBroadcastServiceTestCase(Class<T> serviceClass) {
         super(serviceClass);
     }
@@ -137,6 +140,12 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         @Override
         public void startActivity(Intent intent) {
             mActivityIntentToVerify = intent;
+        }
+
+        @Override
+        public void startActivity(Intent intent, Bundle bundle) {
+            mActivityIntentToVerify = intent;
+            mBundle = bundle;
         }
 
         @Override
