@@ -962,8 +962,6 @@ public class CellBroadcastAlertService extends Service {
             nonEmergency.setVibrationPattern(new long[]{0});
 
             emergencyAlertInVoiceCall.setImportance(NotificationManager.IMPORTANCE_HIGH);
-            emergencyAlertInVoiceCall.enableVibration(true);
-            emergencyAlertInVoiceCall.setVibrationPattern(new long[]{0});
         }
 
         notificationManager.createNotificationChannel(highPriorityEmergency);
