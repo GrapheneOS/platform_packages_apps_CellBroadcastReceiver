@@ -812,6 +812,72 @@
       "toggle_avail": "true"
     }
   },
+  "denmark": {
+    "4370": {
+      "title": "Public warning",  // 'Beredskabsmeddelelse' == 'Public warning'
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "Public warning",  // 'Beredskabsmeddelelse' == 'Public warning'
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4371": {
+      "title": "Extreme",         // 'Farlig hændelse' == 'Extreme'
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4374"
+    },
+    "4384": {
+      "title": "Extreme",         // 'Farlig hændelse' == 'Extreme'
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4387"
+    },
+    "4375": {
+      "title": "Severe",          // 'Alvorlig hændelse' == 'Severe'
+      "default_value": "false",
+      "toggle_avail": "true",
+      "end_channel": "4378"
+    },
+    "4388": {
+      "title": "Severe",          // 'Alvorlig hændelse' == 'Severe'
+      "default_value": "false",
+      "toggle_avail": "true",
+      "end_channel": "4391"
+    },
+    "4380": {
+      "title": "Test",            // 'Test' == 'Test'
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4382": {
+      "title": "Test",            // 'Test' == 'Test'
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4393": {
+      "title": "Test",            // 'Test' == 'Test'
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4395": {
+      "title": "Test",            // 'Test' == 'Test'
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4381": {
+      "title": "Exercise",        // 'Øvelse' == 'Exercise'
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4394": {
+      "title": "Exercise",        // 'Øvelse' == 'Exercise'
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
   "uk": {
     "4370": {
       "title": "Government Alert",
