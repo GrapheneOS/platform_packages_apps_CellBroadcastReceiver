@@ -46,6 +46,8 @@
   <string name="enable_alerts_master_toggle_summary">Receive emergency alert notifications</string>
   <!-- Preference summary for enable text-to-speech checkbox. [CHAR LIMIT=101] -->
   <string name="enable_alert_speech_summary">Use text-to-speech to speak emergency alert messages</string>
+  <!-- Preference summary for other test alerts checkbox. [CHAR LIMIT=125] -->
+  <string name="enable_cmas_test_alerts_summary">Receive tests from the Emergency alert system</string>
   <!-- CMAS opt-out dialog message. [CHAR LIMIT=160] -->
   <string name="cmas_opt_out_dialog_text">You are currently receiving emergency alerts. Would you like to continue receiving emergency alerts?</string>
   <!-- Label to open emergencyNotifications dialog [CHAR LIMIT=40] -->
