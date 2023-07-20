@@ -33,6 +33,8 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"Төтенше жағдай хабарландырулары"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Төтенше жағдай хабарландыруларын алу"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Төтенше жағдай хабарландыруларын дыбыстау үшін мәтінді дыбыстау функциясын пайдаланыңыз."</string>
+    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
+    <skip />
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Сіз қазір төтенше жағдай хабарландыруларын алып жатырсыз. Төтенше жағдай хабарландыруларын әрі қарай ала бергіңіз келе ме?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Төтенше жағдай хабарландырулары"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Төтенше жағдай хабарландыру параметрлерін көру үшін түртіңіз"</string>
