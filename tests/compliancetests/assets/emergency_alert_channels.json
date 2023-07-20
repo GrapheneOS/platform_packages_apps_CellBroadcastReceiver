@@ -868,62 +868,6 @@
       "toggle_avail": "false"
     }
   },
-  "uk_ee": {
-    "4370": {
-      "title": "Government Alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4383": {
-      "title": "Government Alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4371": {
-      "title": "Extreme Alert",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4372"
-    },
-    "4384": {
-      "title": "Extreme Alert",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4385"
-    },
-    "4373": {
-      "title": "Severe Alert",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4378"
-    },
-    "4386": {
-      "title": "Severe Alert",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4391"
-    },
-    "4380": {
-      "title": "Required Monthly Test",
-      "default_value": "false",
-      "toggle_avail": "false"
-    },
-    "4393": {
-      "title": "Required Monthly Test",
-      "default_value": "false",
-      "toggle_avail": "false"
-    },
-    "4381": {
-      "title": "Emergency alert (Exercise)",
-      "default_value": "false",
-      "toggle_avail": "false"
-    },
-    "4394": {
-      "title": "Emergency alert (Exercise)",
-      "default_value": "false",
-      "toggle_avail": "false"
-    }
-  },
   "chile": {
     "4352": {
       "title": "",
