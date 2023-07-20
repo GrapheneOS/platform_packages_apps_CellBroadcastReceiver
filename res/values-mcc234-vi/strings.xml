@@ -33,6 +33,8 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"Cảnh báo khẩn cấp"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Nhận thông báo về cảnh báo khẩn cấp"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Sử dụng tính năng chuyển văn bản sang lời nói để đọc to nội dung các cảnh báo khẩn cấp"</string>
+    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
+    <skip />
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Bạn hiện đang nhận cảnh báo khẩn cấp. Bạn có muốn tiếp tục nhận cảnh báo khẩn cấp không?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Cảnh báo khẩn cấp"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Nhấn để xem chế độ cài đặt cảnh báo khẩn cấp"</string>

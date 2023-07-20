@@ -16,7 +16,11 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="public_safety_message" msgid="4052407641316309322">"ແຈ້ງ​ເຕືອນ MESSAGE"</string>
+    <!-- no translation found for cmas_presidential_level_alert (2072968896927919629) -->
+    <skip />
+    <!-- no translation found for emergency_alert (5431770009291479378) -->
+    <skip />
+    <string name="public_safety_message" msgid="3043854916586710461">"ຂໍ້ຄວາມການເຕືອນ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="4165080207837566277">"ການທົດສອບລາຍເດືອນທີ່ຈຳເປັນ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="1339769389077152402">"ຮັບຂໍ້ຄວາມທົດສອບສຳລັບລະບົບການເຕືອນຄວາມປອດໄພ"</string>
 </resources>

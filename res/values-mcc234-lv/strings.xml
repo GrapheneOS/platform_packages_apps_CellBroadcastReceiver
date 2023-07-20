@@ -33,6 +33,8 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"Ārkārtas brīdinājumi"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Saņemt ārkārtas brīdinājumu paziņojumus"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Izmantot teksta pārvēršanu runā, lai izrunātu ārkārtas brīdinājumu ziņojumus"</string>
+    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
+    <skip />
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Pašlaik jūs saņemat ārkārtas brīdinājumus. Vai vēlaties arī turpmāk saņemt ārkārtas brīdinājumus?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Ārkārtas brīdinājumi"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Pieskarieties, lai skatītu ārkārtas brīdinājumu iestatījumus"</string>

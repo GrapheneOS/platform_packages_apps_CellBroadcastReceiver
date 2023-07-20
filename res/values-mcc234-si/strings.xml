@@ -33,6 +33,8 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"හදිසි අවස්ථා ඇඟවීම්"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"හදිසි අවස්ථා ඇඟවීම් දැනුම්දීම් ලබා ගන්න"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"හදිසි අවස්ථා ඇඟවීම් පණිවිඩ කියවීමට පෙළ-සිට-කථනයට භාවිත කරන්න"</string>
+    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
+    <skip />
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"ඔබ දැනට හදිසි අවස්ථා ඇඟවීම් ලබයි. හදිසි අවස්ථා ඇඟවීම් ලැබීම දිගටම පවත්වා ගෙන යාමට ඔබ කැමතිද?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"හදිසි අවස්ථා ඇඟවීම්"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"හදිසි අවස්ථා ඇඟවීම් සැකසීම් බැලීමට තට්ටු කරන්න"</string>

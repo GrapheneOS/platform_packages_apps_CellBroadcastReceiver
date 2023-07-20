@@ -33,6 +33,8 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"জৰুৰীকালীন সতৰ্কবাৰ্তা"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"জৰুৰীকালীন সতৰ্কবাৰ্তাৰ জাননী পাওক"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"জৰুৰীকালীন সতৰ্কবাৰ্তাৰ বাৰ্তাসমূহ ক’বলৈ পাঠৰ পৰা কথনৰ সুবিধা ব্যৱহাৰ কৰক"</string>
+    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
+    <skip />
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"আপুনি বৰ্তমান জৰুৰীকালীন সতৰ্কবাৰ্তা লাভ কৰি আছে। আপুনি জৰুৰীকালীন সতৰ্কবাৰ্তা পোৱাটো অব্যাহত ৰাখিব বিচাৰেনে?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"জৰুৰীকালীন সতৰ্কবাৰ্তা"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"জৰুৰীকালীন সতৰ্কবাৰ্তাৰ ছেটিং চাবলৈ টিপক"</string>
