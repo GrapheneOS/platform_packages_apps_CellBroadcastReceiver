@@ -1730,17 +1730,17 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "Presidential alert",
+      "title": "Presidential Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Presidential alert",
+      "title": "Presidential Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "911": {
-      "title": "Alert message",
+      "title": "Alert Message",
       "default_value": "true",
       "toggle_avail": "true",
       "vibration_time": 1,
@@ -1748,7 +1748,7 @@
       "alert_time": 10
     },
     "919": {
-      "title": "Alert message",
+      "title": "Alert Message",
       "default_value": "true",
       "toggle_avail": "true",
       "vibration_time": 1,
@@ -1756,13 +1756,13 @@
       "alert_time": 10
     },
     "4371": {
-      "title": "Emergency alert",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4379"
     },
     "4384": {
-      "title": "Emergency alert",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4392"

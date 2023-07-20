@@ -17,8 +17,15 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
            xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- CMAS dialog title for presidential level alert. [CHAR LIMIT=50] -->
+    <!-- Required Taiwan(zh-rTW) translation for this message: 国家级警报 -->
+    <string name="cmas_presidential_level_alert">Presidential Alert</string>
+    <!-- Dialog title or menu title of emergency alert. [CHAR LIMIT=50] -->
+    <!-- Required Taiwan(zh-rTW) translation for this message: 緊急警報 -->
+    <string name="emergency_alert">Emergency Alert</string>
     <!-- Dialog title for all public safety message broadcasts. [CHAR LIMIT=50] -->
-    <string name="public_safety_message">Alert message</string>
+    <!-- Required Taiwan(zh-rTW) translation for this message: 警訊通知 -->
+    <string name="public_safety_message">Alert Message</string>
 
     <!-- Preference title for enable public safety messages checkbox. -->
     <string name="enable_public_safety_messages_title" translatable="false">@string/enable_alert_message_title</string>
