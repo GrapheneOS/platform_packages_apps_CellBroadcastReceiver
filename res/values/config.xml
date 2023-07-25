@@ -196,6 +196,8 @@
         <item>242</item>
         <!-- Italy -->
         <item>222</item>
+        <!-- Brazil -->
+        <item>724</item>
     </string-array>
 
     <!-- Values that are retrieved from the ListPreference.
