@@ -1728,98 +1728,47 @@
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "4352": {
-      "title": "",
+    "4371": {
+      "title": "Extreme Alert",
       "default_value": "true",
       "toggle_avail": "false",
-      "end_channel": "4354"
-    },
-    "4356": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4370": {
-      "title": "Presidential alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4383": {
-      "title": "Presidential alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4371": {
-      "title": "Emergency alert: Extreme",
-      "default_value": "true",
-      "toggle_avail": "true",
       "end_channel": "4372"
     },
     "4384": {
-      "title": "Emergency alert: Extreme",
+      "title": "Extreme Alert",
       "default_value": "true",
-      "toggle_avail": "true",
+      "toggle_avail": "false",
       "end_channel": "4385"
     },
     "4373": {
-      "title": "Emergency alert: Severe",
+      "title": "Severe Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4378"
     },
     "4386": {
-      "title": "Emergency alert: Severe",
+      "title": "Severe Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4391"
     },
-    "4380": {
-      "title": "Required Monthly Test",
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
     "4381": {
-      "title": "Emergency alert (exercise)",
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "4393": {
-      "title": "Required Monthly Test",
+      "title": "Exercise Alert",
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4394": {
-      "title": "Emergency alert (exercise)",
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "4379": {
-      "title": "Child abduction (Amber alert)",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4392": {
-      "title": "Child abduction (Amber alert)",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4398": {
-      "title": "State/Local test",
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "4399": {
-      "title": "State/Local test",
+      "title": "Exercise Alert",
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4382": {
-      "title": "Emergency alert (operator)",
+      "title": "Technical Test Alerts",
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4395": {
-      "title": "Emergency alert (operator)",
+      "title": "Technical Test Alerts",
       "default_value": "false",
       "toggle_avail": "false"
     }

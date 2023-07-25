@@ -14,21 +14,21 @@
     }
   },
   "brazil": {
-    "Extreme threats": {
+    "Extreme Threats": {
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "Severe Threats": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe threats": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "AMBER alerts": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Test alerts": {
+    "State and Local tests": {
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "Technical Test Alerts": {
+      "default_value": "false",
+      "toggle_avail": "false"
     },
     "Area update broadcasts": {
       "default_value": "true",

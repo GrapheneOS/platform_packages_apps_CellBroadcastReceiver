@@ -15,10 +15,49 @@
 -->
 
 <resources>
+    <!-- 4371~4372, 4384~4385 -->
+    <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
+        <item>0x1113-0x1114:rat=gsm, emergency=true, override_dnd=true</item>
+        <item>0x1120-0x1121:rat=gsm, emergency=true, override_dnd=true</item>
+    </string-array>
+    <!-- 4373~4378, 4386~4391 -->
+    <string-array name="cmas_alerts_severe_range_strings" translatable="false">
+        <item>0x1115-0x111A:rat=gsm, emergency=true</item>
+        <item>0x1122-0x1127:rat=gsm, emergency=true</item>
+    </string-array>
+    <!-- 4381, 4394 -->
+    <string-array name="required_monthly_test_range_strings" translatable="false">
+        <item>0x111D:rat=gsm, emergency=true</item>
+        <item>0x112A:rat=gsm, emergency=true</item>
+    </string-array>
+    <!-- 4382, 4395 -->
+    <string-array name="exercise_alert_range_strings" translatable="false">
+        <item>0x111E:rat=gsm, emergency=true</item>
+        <item>0x112B:rat=gsm, emergency=true</item>
+    </string-array>
+
     <string-array name="additional_cbs_channels_strings" translatable="false">
         <!-- Channel 50 for area update info is required by Brazilian government -->
         <item>0x032:type=area, emergency=false</item>
     </string-array>
+
+    <!-- Whether to show extreme alert settings -->
+    <bool name="show_extreme_alert_settings">false</bool>
     <!-- Show area update info settings in CellBroadcastReceiver and information in SIM status in Settings app -->
     <bool name="config_showAreaUpdateInfoSettings">true</bool>
+    <!-- Whether to display exercise test settings when testing mode is off. -->
+    <bool name="show_exercise_settings">false</bool>
+    <!-- whether to display a separate exercise test settings. today, most of time, exercise channels was controlled by the main test toggle. -->
+    <bool name="show_separate_exercise_settings">true</bool>
+
+    <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false"></string-array>
+    <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
+    <string-array name="operator_defined_alert_range_strings" translatable="false"></string-array>
+    <string-array name="etws_alerts_range_strings" translatable="false"></string-array>
+    <string-array name="etws_test_alerts_range_strings" translatable="false"></string-array>
+
+
+    <!-- Default value that in the ListPreference.
+         These must be a subset of the alert_reminder_interval_values list above. -->
+    <string name="alert_reminder_interval_in_min_default" translatable="false">15</string>
 </resources>
