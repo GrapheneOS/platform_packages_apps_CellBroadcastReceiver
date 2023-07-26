@@ -33,8 +33,7 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"การแจ้งเตือนเหตุฉุกเฉิน"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"รับการแจ้งเตือนเหตุฉุกเฉิน"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"ใช้การอ่านออกเสียงข้อความเพื่ออ่านข้อความแจ้งเตือนเหตุฉุกเฉิน"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"รับการทดสอบจากระบบการแจ้งเตือนเหตุฉุกเฉิน"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"ขณะนี้ คุณได้รับการแจ้งเตือนเหตุฉุกเฉิน คุณต้องการรับการแจ้งเตือนเหตุฉุกเฉินต่อไปไหม"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"การแจ้งเตือนเหตุฉุกเฉิน"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"แตะเพื่อดูการตั้งค่าการแจ้งเตือนเหตุฉุกเฉิน"</string>

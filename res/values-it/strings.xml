@@ -54,20 +54,20 @@
     <string name="public_safety_message" msgid="9119928798786998252">"Messaggio di sicurezza pubblica"</string>
     <string name="state_local_test_alert" msgid="8003145745857480200">"Test a livello statale/locale"</string>
     <string name="emergency_alert" msgid="624783871477634263">"Allerta di emergenza"</string>
-    <string name="emergency_alerts_title" msgid="6605036374197485429">"Allerte"</string>
+    <string name="emergency_alerts_title" msgid="6605036374197485429">"Avvisi"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"Messaggi broadcast"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"Avvisi di emergenza"</string>
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Avvisi di emergenza senza risposta"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Avvisi d\'emergenza in chiamata vocale"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Le impostazioni WEA automatiche cambiano in base alla SIM"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Consenti allerte"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Consenti avvisi"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Ricevi notifiche per allerte wireless di emergenza"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Promemoria allerte"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Leggimi messaggio di allerta"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Usa la sintesi vocale per leggermi i messaggi delle allerte di emergenza wireless"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Verrà riprodotto un suono di promemoria a volume normale"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Cronologia allerte di emergenza"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"Preferenze per le allerte"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"Preferenze per gli avvisi"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Trasmissioni di prova ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Trasmissioni di prova per il sistema di avviso tsunami e terremoto"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Minacce estreme"</string>

@@ -33,8 +33,7 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"긴급 재난 문자"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"긴급 재난 문자 받기"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"텍스트 음성 변환을 사용하여 긴급 재난 문자를 음성으로 듣기"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"긴급 재난 문자 시스템으로부터 테스트 경보 받기"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"현재 긴급 재난 문자를 수신하고 있습니다. 긴급 재난 문자를 계속 수신하시겠습니까?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"긴급 재난 문자"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"탭하여 긴급 재난 문자 설정 보기"</string>

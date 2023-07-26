@@ -33,8 +33,7 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾ ਸੂਚਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾ ਵਾਲੇ ਸੁਨੇਹੇ ਬੋਲਣ ਲਈ \'ਲਿਖਤ-ਤੋਂ-ਬੋਲੀ\' ਦੀ ਵਰਤੋਂ ਕਰੋ"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"ਐਮਰਜੈਂਸੀ ਅਲਰਟ ਸਿਸਟਮ ਤੋਂ ਜਾਂਚਾਂ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"ਇਸ ਵੇਲੇ ਤੁਸੀਂ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰ ਰਹੇ ਹੋ। ਕੀ ਤੁਸੀਂ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰਨਾ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾ ਸੈਟਿੰਗਾਂ ਦੇਖਣ ਲਈ ਟੈਪ ਕਰੋ"</string>

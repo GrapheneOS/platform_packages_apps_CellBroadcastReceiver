@@ -31,12 +31,12 @@
     <string name="enable_cmas_presidential_alerts_title" msgid="3534852322578108211">"Hitni alarm"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="8576288857704383650">"Ekstremna opasnost"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1832317443314951890">"Značajna opasnost"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="7436837874014559921">"Nestalo dijete"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7436837874014559921">"Nestala osoba"</string>
     <string name="enable_cmas_test_alerts_title" msgid="6042593731810177621">"Cell Broadcast Test"</string>
-    <string name="enable_exercise_test_alerts_title" msgid="1231668381853354024">"EU Exercise"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="1231668381853354024">"Vježba na području EU-a"</string>
     <string name="enable_public_safety_messages_title" msgid="6862686863231116574">"Informacije o opasnosti"</string>
     <string name="enable_emergency_alerts_message_title" msgid="1943277306183523272">"Informacije"</string>
-    <string name="enable_emergency_alerts_message_summary" msgid="971537902040466940">"Informacije poruke"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="971537902040466940">"Informativne poruke"</string>
     <string name="enable_state_local_test_alerts_title" msgid="5010586946959105408">"Testno upozorenje"</string>
-    <string name="enable_operator_defined_test_alerts_title" msgid="3362963120884373036">"EU Reserved"</string>
+    <string name="enable_operator_defined_test_alerts_title" msgid="3362963120884373036">"Ograničeno na EU"</string>
 </resources>
