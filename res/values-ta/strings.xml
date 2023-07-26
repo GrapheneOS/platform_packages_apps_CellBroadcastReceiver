@@ -86,7 +86,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"மாநில மற்றும் உள்ளூர் நிர்வாகங்களின் சோதனை மெசேஜ்களைப் பெறு"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"அவசரகால விழிப்பூட்டல்கள்"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"உயிருக்கு ஆபத்தை விளைவிக்கும் நிகழ்வுகள் பற்றி எச்சரிக்கவும்"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"பரிசோதனை விழிப்பூட்டல்கள்"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"பரிசோதனை எச்சரிக்கைகள்"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"பாதுகாப்பு விழிப்பூட்டல் அமைப்பிலிருந்து மொபைல் நிறுவன சோதனைகளையும் மாதாந்திர சோதனைகளையும் பெறுவீர்கள்"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
