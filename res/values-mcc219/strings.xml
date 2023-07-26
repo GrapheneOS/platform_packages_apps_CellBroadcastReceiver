@@ -47,13 +47,13 @@
     <!-- Required Croatia(hr) translation for this message: Značajna opasnost -->
     <string name="enable_cmas_severe_threat_alerts_title">Significant Danger</string>
     <!-- Preference title for enable CMAS amber alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Croatia(hr) translation for this message: Nestalo dijete -->
+    <!-- Required Croatia(hr) translation for this message: Nestala osoba -->
     <string name="enable_cmas_amber_alerts_title">Missing person</string>
     <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
     <!-- Required Croatia(hr) translation for this message: Cell Broadcast Test -->
     <string name="enable_cmas_test_alerts_title">Cell Broadcast Test</string>
     <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Croatia(hr) translation for this message: EU Exercise -->
+    <!-- Required Croatia(hr) translation for this message: Vježba na području EU-a -->
     <string name="enable_exercise_test_alerts_title">EU Exercise</string>
     <!-- Preference title for enable public safety messages checkbox. [CHAR LIMIT=100] -->
     <!-- Required Croatia(hr) translation for this message: Informacije o opasnosti -->
@@ -62,12 +62,12 @@
     <!-- Required Croatia(hr) translation for this message: Informacije -->
     <string name="enable_emergency_alerts_message_title">Information</string>
     <!-- Preference summary for enable emergency alerts messages checkbox. [CHAR LIMIT=100] -->
-    <!-- Required Croatia(hr) translation for this message: Informacije poruke -->
+    <!-- Required Croatia(hr) translation for this message: Informativne poruke -->
     <string name="enable_emergency_alerts_message_summary">Information messages</string>
     <!-- Preference title for enable state/local test alerts checkbox. [CHAR LIMIT=100] -->
     <!-- Required Croatia(hr) translation for this message: Testno upozorenje -->
     <string name="enable_state_local_test_alerts_title">Test Warning</string>
     <!-- Preference title for operator defined test alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Croatia(hr) translation for this message: EU Reserved -->
+    <!-- Required Croatia(hr) translation for this message: Ograničeno na EU -->
     <string name="enable_operator_defined_test_alerts_title">EU Reserved</string>
 </resources>
