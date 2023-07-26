@@ -33,8 +33,7 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"ఎమర్జెన్సీ అలర్ట్‌లు"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"ఎమర్జెన్సీ అలర్ట్ నోటిఫికేషన్‌లను అందుకోండి"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"ఎమర్జెన్సీ అలర్ట్ మెసేజ్‌లను చదివి వినిపించడానికి \'టెక్స్ట్-టు-స్పీచ్\'ను ఉపయోగించండి"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"ఎమర్జెన్సీ అలర్ట్ సిస్టమ్ నుండి టెస్ట్‌లను స్వీకరించండి"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"మీరు ప్రస్తుతం ఎమర్జెన్సీ అలర్ట్‌లను అందుకుంటున్నారు. ఎమర్జెన్సీ అలర్ట్‌లను అందుకోవడాన్ని కొనసాగించాలనుకుంటున్నారా?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"ఎమర్జెన్సీ అలర్ట్‌లు"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"ఎమర్జెన్సీ అలర్ట్ సెట్టింగ్‌లను చూడటానికి ట్యాప్ చేయండి"</string>

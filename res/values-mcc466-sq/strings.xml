@@ -16,10 +16,8 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for cmas_presidential_level_alert (2072968896927919629) -->
-    <skip />
-    <!-- no translation found for emergency_alert (5431770009291479378) -->
-    <skip />
+    <string name="cmas_presidential_level_alert" msgid="2072968896927919629">"Sinjalizim presidencial"</string>
+    <string name="emergency_alert" msgid="5431770009291479378">"Sinjalizim urgjence"</string>
     <string name="public_safety_message" msgid="3043854916586710461">"Mesazh sinjalizues"</string>
     <string name="enable_cmas_test_alerts_title" msgid="4165080207837566277">"Kërkohet testi mujor"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="1339769389077152402">"Merr mesazhe testimi për sistemin e sinjalizimeve të sigurisë"</string>

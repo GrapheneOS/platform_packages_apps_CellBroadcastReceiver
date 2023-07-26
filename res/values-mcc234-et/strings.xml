@@ -33,8 +33,7 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"Hädaolukorra hoiatused"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Saadetakse hädaolukorra hoiatuste märguandeid"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Kõnesünteesi funktsiooni kasutamine hädaolukorra hoiatuste sõnumite esitamiseks kõnena"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"Saate hädaolukorra hoiatuste süsteemist teste"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Praegu on hädaolukorra hoiatuste saamine kasutusel. Kas soovite hädaolukorra hoiatusi jätkuvalt saada?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Hädaolukorra hoiatused"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Puudutage hädaolukorra hoiatuste seadete nägemiseks"</string>
