@@ -33,8 +33,7 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"Arifa za dharura"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Pokea arifa za dharura"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Tumia kipengele cha kusoma maandishi kwa sauti kusoma ujumbe wa arifa za dharura"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"Pokea majaribio kutoka kwa mfumo wa Tahadhari ya dharura"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Unapokea arifa za dharura kwa sasa. Ungependa kuendelea kupokea arifa hizi?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Arifa za dharura"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Gusa ili uone mipangilio ya arifa za dharura"</string>
