@@ -17,8 +17,8 @@
 <resources>
     <!-- 4371~4372, 4384~4385 -->
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
-        <item>0x1113-0x1114:rat=gsm, emergency=true, override_dnd=true</item>
-        <item>0x1120-0x1121:rat=gsm, emergency=true, override_dnd=true</item>
+        <item>0x1113-0x1114:rat=gsm, always_on=true, emergency=true, override_dnd=true</item>
+        <item>0x1120-0x1121:rat=gsm, always_on=true, emergency=true, override_dnd=true</item>
     </string-array>
     <!-- 4373~4378, 4386~4391 -->
     <string-array name="cmas_alerts_severe_range_strings" translatable="false">
@@ -49,6 +49,8 @@
     <bool name="show_exercise_settings">false</bool>
     <!-- whether to display a separate exercise test settings. today, most of time, exercise channels was controlled by the main test toggle. -->
     <bool name="show_separate_exercise_settings">true</bool>
+    <!-- Whether to disable cell broadcast severe alert when extreme alert is disabled -->
+    <bool name="disable_severe_when_extreme_disabled">false</bool>
 
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false"></string-array>
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
