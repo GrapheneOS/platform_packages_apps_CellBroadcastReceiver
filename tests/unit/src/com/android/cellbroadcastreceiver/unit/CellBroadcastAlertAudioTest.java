@@ -18,13 +18,16 @@ package com.android.cellbroadcastreceiver.unit;
 
 import static com.android.cellbroadcastreceiver.CellBroadcastAlertService.SHOW_NEW_ALERT_ACTION;
 
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -33,8 +36,11 @@ import android.content.res.Configuration;
 import android.media.AudioAttributes;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.Looper;
+import android.os.SystemClock;
 import android.speech.tts.TextToSpeech;
 import android.telephony.TelephonyManager;
 
@@ -45,6 +51,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import org.junit.After;
 import org.junit.Before;
 import org.mockito.ArgumentCaptor;
+import org.mockito.InOrder;
 import org.mockito.MockitoAnnotations;
 
 import java.lang.reflect.Field;
@@ -466,5 +473,39 @@ public class CellBroadcastAlertAudioTest extends
         verify(mMockedTelephonyManager, never()).getCallState();
         verify(mMockedAudioManager, never()).requestAudioFocus(any(), any(), anyInt(), anyInt());
         phoneStateListenerHandler.quit();
+    }
+
+    public void testPlayAlertDuration() throws Throwable {
+        int duration = 15 * 1000;
+        int tolerance = 100;
+        PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
+                "testPlayAlertDuration",
+                () -> {
+                    startService(null);
+                });
+        phoneStateListenerHandler.start();
+        waitUntilReady();
+
+        CellBroadcastAlertAudio audio = (CellBroadcastAlertAudio) getService();
+
+        Handler mockHandler = spy(new Handler(Looper.getMainLooper()));
+        audio.mHandler = mockHandler;
+        MediaPlayer mockMediaPlayer = mock(MediaPlayer.class);
+        audio.mMediaPlayerInjected = mockMediaPlayer;
+        Intent intent = createStartAudioIntent();
+        intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE,
+                CellBroadcastAlertService.AlertType.INFO);
+        intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA, true);
+        intent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_DURATION, duration);
+
+        ArgumentCaptor<Long> capTime = ArgumentCaptor.forClass(Long.class);
+        InOrder inOrder = inOrder(mockMediaPlayer, mockHandler);
+        long expTime = SystemClock.uptimeMillis() + duration;
+        audio.handleStartIntent(intent);
+
+        inOrder.verify(mockMediaPlayer).prepare();
+        inOrder.verify(mockHandler).sendMessageAtTime(any(), capTime.capture());
+        inOrder.verify(mockMediaPlayer).start();
+        assertTrue((capTime.getValue() - expTime) < tolerance);
     }
 }
