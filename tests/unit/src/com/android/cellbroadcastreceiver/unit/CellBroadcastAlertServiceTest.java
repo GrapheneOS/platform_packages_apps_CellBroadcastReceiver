@@ -642,6 +642,9 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     public void testClamshellCoverDisplayId() {
+        if (!SdkLevel.isAtLeastS()) {
+            return;
+        }
         doReturn(new String[]{
                 "0x1113:rat=gsm, type=mute, emergency=true, always_on=true",
                 "0x112F:rat=gsm, emergency=true"}).when(mResources).getStringArray(
