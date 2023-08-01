@@ -58,8 +58,4 @@
     <string-array name="etws_alerts_range_strings" translatable="false"></string-array>
     <string-array name="etws_test_alerts_range_strings" translatable="false"></string-array>
 
-
-    <!-- Default value that in the ListPreference.
-         These must be a subset of the alert_reminder_interval_values list above. -->
-    <string name="alert_reminder_interval_in_min_default" translatable="false">15</string>
 </resources>

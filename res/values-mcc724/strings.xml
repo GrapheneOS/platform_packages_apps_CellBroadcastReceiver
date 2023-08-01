@@ -35,20 +35,26 @@
 
     <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
     <!-- Required Portuguese (pt) translation for this message: Alerta Severo -->
+    <!-- Required spanish (es) translation for this message: Alerta Severa -->
     <string name="enable_cmas_severe_threat_alerts_title">Severe Threats</string>
     <!-- Preference summary for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=100] -->
     <!-- Required Portuguese (pt) translation for this message: Medidas de proteção necessárias -->
+    <!-- Required spanish (es) translation for this message: Medidas de protección necesarias -->
     <string name="enable_cmas_severe_threat_alerts_summary">Severe threats to life and property</string>
     <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
     <!-- Required Portuguese (pt) translation for this message: Alerta de teste -->
+    <!-- Required spanish (es) translation for this message: Alerta de prueba -->
     <string name="enable_cmas_test_alerts_title">State and Local tests</string>
     <!-- Preference summary for other test alerts checkbox. [CHAR LIMIT=125] -->
     <!-- Required Portuguese (pt) translation for this message: Recebimento de alertas de testes das autoridades competentes -->
+    <!-- Required spanish (es) translation for this message: Recepción de mensajes de prueba de las autoridades competentes -->
     <string name="enable_cmas_test_alerts_summary">Receive test messages from state and local authorities</string>
     <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
     <!-- Required Portuguese (pt) translation for this message: Alerta de Teste técnico -->
+    <!-- Required spanish (es) translation for this message: Alerta de prueba técnica -->
     <string name="enable_exercise_test_alerts_title">Technical test alerts</string>
     <!-- Preference summary for exercise test alerts checkbox. [CHAR LIMIT=125] -->
     <!-- Required Portuguese (pt) translation for this message: Recebimento de alertas de testes técnicos -->
+    <!-- Required spanish (es) translation for this message: Recepción de alertas de pruebas técnicas -->
     <string name="enable_exercise_test_alerts_summary">Receive test messages</string>
 </resources>
