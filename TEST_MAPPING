@@ -17,7 +17,8 @@
       ]
     }
   ],
-  "presubmit-large": [
+
+  "postsubmit": [
     {
       "name": "CellBroadcastReceiverComplianceTests"
     }
