@@ -33,8 +33,7 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"Výstražné zprávy"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Dostávat oznámení o výstražných zprávách"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Přečíst výstražné zprávy pomocí převodu textu na řeč"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"Dostávat zkušební hlášení od systému výstražných zpráv"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Aktuálně jste přihlášeni k odběru výstražných zpráv. Chcete je odebírat i nadále?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Výstražné zprávy"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Klepnutím zobrazíte nastavení výstražných zpráv"</string>
