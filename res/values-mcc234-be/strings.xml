@@ -33,8 +33,7 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"Абвесткі аб надзвычайных сітуацыях"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Атрымліваць абвесткі аб надзвычайных сітуацыях"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Выкарыстоўваць сінтэз маўлення, каб прагаворваць аварыйныя апавяшчэнні"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"Атрымліваць праверачныя паведамленні ад сістэмы экстранных абвестак"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Цяпер вы атрымліваеце абвесткі аб надзвычайных сітуацыях. Хочаце і далей іх атрымліваць?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Абвесткі аб надзвычайных сітуацыях"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Націсніце, каб убачыць налады абвестак аб надзвычайных сітуацыях"</string>

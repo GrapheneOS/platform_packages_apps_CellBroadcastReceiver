@@ -33,8 +33,7 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"आणीबाणीच्या सूचना"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"आणीबाणीमधील इशाऱ्याची सूचना मिळवा"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"आणीबाणीमधील सूचनेचा मेसेज बोलण्यासाठी टेक्स्ट-टू-स्पीच वापरा"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"आणीबाणी सूचना सिस्टीमकडून चाचण्या मिळवा"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"तुम्हाला सध्या आणीबाणीच्या सूचना मिळत आहेत. तुम्ही आणीबाणीच्या सूचना मिळवणे सुरू ठेऊ इच्छिता का?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"आणीबाणीच्या सूचना"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"आणीबाणीच्या सूचनेशी संबंधित सेटिंग्ज पाहण्यासाठी टॅप करा"</string>

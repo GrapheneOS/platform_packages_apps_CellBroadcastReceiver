@@ -33,8 +33,7 @@
     <string name="sms_cb_settings" msgid="4187131985831792308">"Neyðartilkynningar"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Fá tilkynningar um neyðarviðvaranir"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Nota talgervil til að lesa skilaboð neyðarviðvarana upphátt"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (2931455154355509465) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"Fá prufuviðvaranir frá neyðarviðvörunarkerfinu"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Þér berast neyðarviðvaranir. Viltu halda áfram að fá neyðarviðvaranir?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Neyðartilkynningar"</string>
     <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Ýttu til að skoða stillingar neyðarviðvarana"</string>
