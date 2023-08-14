@@ -63,6 +63,8 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.Locale;
+
 @RunWith(AndroidJUnit4.class)
 public class CellBroadcastSettingsTest extends
         CellBroadcastActivityTestCase<CellBroadcastSettings> {
@@ -190,7 +192,9 @@ public class CellBroadcastSettingsTest extends
     public void testGetResources() {
         Context mockContext = mock(Context.class);
         Resources mockResources = mock(Resources.class);
+        Configuration configuration = new Configuration();
         doReturn(mockResources).when(mockContext).getResources();
+        doReturn(configuration).when(mockResources).getConfiguration();
 
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
@@ -219,7 +223,7 @@ public class CellBroadcastSettingsTest extends
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID - 1);
 
-        verify(mockContext, times(2)).getResources();
+        verify(mockContext, times(1)).createConfigurationContext(any());
         verify(mockContext2, times(1)).getResources();
 
         // The resources will be cached for ths sub
@@ -231,20 +235,23 @@ public class CellBroadcastSettingsTest extends
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID - 1);
 
-        verify(mockContext, times(2)).getResources();
+        verify(mockContext, times(2)).createConfigurationContext(any());
         verify(mockContext2, times(timesExpected)).getResources();
 
         // The resources should be read from the cached directly
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID - 1);
 
-        verify(mockContext, times(2)).getResources();
+        verify(mockContext, times(2)).createConfigurationContext(any());
         verify(mockContext2, times(timesExpected)).getResources();
 
+        Configuration configuration2 = new Configuration();
+        configuration2.setLocale(Locale.ROOT);
+        doReturn(configuration2).when(mockResources).getConfiguration();
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID - 2);
 
-        verify(mockContext, times(2)).getResources();
+        verify(mockContext, times(3)).createConfigurationContext(any());
         verify(mockContext2, times(timesExpected + 1)).getResources();
     }
 
