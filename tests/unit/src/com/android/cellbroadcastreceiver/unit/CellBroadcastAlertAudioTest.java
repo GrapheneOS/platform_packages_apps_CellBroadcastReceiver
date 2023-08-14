@@ -42,6 +42,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.speech.tts.TextToSpeech;
+import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio;
@@ -70,6 +71,9 @@ public class CellBroadcastAlertAudioTest extends
     private AudioDeviceInfo[] mDevices = new AudioDeviceInfo[0];
     private Object mLock = new Object();
     private boolean mReady;
+
+    private static final int STATE_ALERTING = 1;
+    private static final int STATE_STOPPING = 4;
 
     public CellBroadcastAlertAudioTest() {
         super(CellBroadcastAlertAudio.class);
@@ -507,5 +511,35 @@ public class CellBroadcastAlertAudioTest extends
         inOrder.verify(mockHandler).sendMessageAtTime(any(), capTime.capture());
         inOrder.verify(mockMediaPlayer).start();
         assertTrue((capTime.getValue() - expTime) < tolerance);
+    }
+
+    public void testCallConnectedDuringPlayAlert() throws Throwable {
+        PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
+                "testCallConnectedDuringPlayAlert",
+                () -> {
+                    startService(null);
+                });
+        phoneStateListenerHandler.start();
+        waitUntilReady();
+
+        ArgumentCaptor<PhoneStateListener> phoneStateListenerCaptor =
+                ArgumentCaptor.forClass(PhoneStateListener.class);
+        verify(mMockedTelephonyManager).listen(phoneStateListenerCaptor.capture(),
+                eq(PhoneStateListener.LISTEN_CALL_STATE));
+        PhoneStateListener mPhoneStateListener = phoneStateListenerCaptor.getValue();
+
+        CellBroadcastAlertAudio audio = (CellBroadcastAlertAudio) getService();
+        doReturn(AudioManager.RINGER_MODE_NORMAL).when(mMockedAudioManager).getRingerMode();
+        doReturn(TelephonyManager.CALL_STATE_IDLE).when(mMockedTelephonyManager).getCallState();
+
+        Intent intent = createStartAudioIntent();
+        audio.handleStartIntent(intent);
+        assertEquals(STATE_ALERTING, audio.getState());
+
+        // Call state change to OFFHOOK, stop audio play
+        mPhoneStateListener.onCallStateChanged(TelephonyManager.CALL_STATE_OFFHOOK, "");
+        assertEquals(STATE_STOPPING, audio.getState());
+
+        phoneStateListenerHandler.quit();
     }
 }
