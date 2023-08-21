@@ -281,6 +281,28 @@
       "toggle_avail": "true"
     }
   },
+  "denmark": {
+    "Extreme": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Test": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Exercise": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
   "israel": {
     "Extreme threats": {
       "default_value": "true",
