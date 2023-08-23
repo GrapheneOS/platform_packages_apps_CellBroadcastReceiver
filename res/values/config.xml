@@ -186,22 +186,8 @@
          characters as XXX to match any mcc, XXXXXX to match any mcc+mnc. If multiple items match
          the roaming network, only the first one will take effect. -->
     <string-array name="cmas_roaming_network_strings" translatable="false">
-        <!-- France -->
-        <item>208</item>
-        <!-- Denmark -->
-        <item>238</item>
-        <!-- Qatar -->
-        <item>427</item>
-        <!-- Germany -->
-        <item>262</item>
-        <!-- Norway -->
-        <item>242</item>
-        <!-- Italy -->
-        <item>222</item>
-        <!-- Austria -->
-        <item>232</item>
-        <!-- Brazil -->
-        <item>724</item>
+        <!-- Enable roaming support by default -->
+        <item>XXX</item>
     </string-array>
 
     <!-- Values that are retrieved from the ListPreference.
