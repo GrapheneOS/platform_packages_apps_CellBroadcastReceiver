@@ -70,7 +70,7 @@
     <string name="alert_preferences_title" msgid="6001469026393248468">"الإعدادات المفضّلة للتنبيهات"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"‏مجموعات البث التجريبية في ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"مجموعات البث التجريبية لنظام التحذير المبكر من موجات تسونامي عقب الزلازل"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"التهديدات القصوى"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"التهديدات البالغة الخطورة"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"التهديدات القصوى للحياة والممتلكات"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"التهديدات الخطيرة"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"التهديدات الخطيرة للحياة والممتلكات"</string>
@@ -82,7 +82,7 @@
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"الإجراءات المقترحة التي يمكن أن تنقذ الأرواح أو الممتلكات"</string>
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"إظهار الرسائل في وضع ملء الشاشة"</string>
     <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"سيتم إرسال رسائل السلامة العامة كإشعار حتى إذا كانت غير مفعّلة."</string>
-    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"اختبارات الولاية والاختبارات المحلية"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"تنبيهات تجريبية من سلطات الولاية والسلطات المحلية"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"استلام رسائل اختبارية من سلطات الولاية والسلطات المحلية"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"إنذارات الطوارئ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"إرسال تحذير بشأن الأحداث التي تهدد الحياة"</string>
