@@ -231,20 +231,20 @@ public class CellBroadcastSettingsTest extends
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID - 1);
 
-        verify(mockContext, times(2)).getResources();
+        verify(mockContext, times(timesExpected)).createConfigurationContext(any());
         verify(mockContext2, times(timesExpected)).getResources();
 
         // The resources should be read from the cached directly
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID - 1);
 
-        verify(mockContext, times(2)).getResources();
+        verify(mockContext, times(timesExpected)).createConfigurationContext(any());
         verify(mockContext2, times(timesExpected)).getResources();
 
         CellBroadcastSettings.getResources(
                 mockContext, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID - 2);
 
-        verify(mockContext, times(2)).getResources();
+        verify(mockContext, times(timesExpected + 1)).createConfigurationContext(any());
         verify(mockContext2, times(timesExpected + 1)).getResources();
     }
 
