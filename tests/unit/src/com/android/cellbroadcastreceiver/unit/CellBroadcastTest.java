@@ -67,8 +67,10 @@ public abstract class CellBroadcastTest {
         // CellBroadcastSettings.getResources(context).
         doReturn(mSubService).when(mSubService).queryLocalInterface(anyString());
         doReturn(mSubService).when(mSubService).asBinder();
-        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService).getDefaultSubId();
-        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService).getDefaultSmsSubId();
+        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService)
+                .getDefaultSubIdAsUser(anyInt());
+        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService)
+                .getDefaultSmsSubIdAsUser(anyInt());
         mMockedServiceManager = new MockedServiceManager();
         mMockedServiceManager.replaceService("isub", mSubService);
         TelephonyManager.disableServiceHandleCaching();
