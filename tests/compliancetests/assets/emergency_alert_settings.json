@@ -16,7 +16,7 @@
   "brazil": {
     "Extreme Threats": {
       "default_value": "true",
-      "toggle_avail": "false"
+      "toggle_avail": "true"
     },
     "Severe Threats": {
       "default_value": "true",

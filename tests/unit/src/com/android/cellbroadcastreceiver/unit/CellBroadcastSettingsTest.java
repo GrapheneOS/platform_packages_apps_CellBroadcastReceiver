@@ -30,7 +30,6 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import android.app.Instrumentation;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -42,8 +41,8 @@ import android.os.UserManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 
-import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
+import androidx.preference.TwoStatePreference;
 import androidx.test.InstrumentationRegistry;
 import androidx.test.filters.FlakyTest;
 import androidx.test.runner.AndroidJUnit4;
@@ -51,13 +50,13 @@ import androidx.test.uiautomator.UiDevice;
 
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
+import com.android.cellbroadcastreceiver.R;
 import com.android.modules.utils.build.SdkLevel;
 
 import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
@@ -65,24 +64,23 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.Locale;
 
-@RunWith(AndroidJUnit4.class)
+
 public class CellBroadcastSettingsTest extends
         CellBroadcastActivityTestCase<CellBroadcastSettings> {
-    private Instrumentation mInstrumentation;
-    private Context mContext;
+
     private UiDevice mDevice;
     private static final long DEVICE_WAIT_TIME = 1000L;
 
     @Captor
     private ArgumentCaptor<Intent> mIntent;
     @Mock
-    private Preference mPreference;
-    @Mock
     private UserManager mUserManager;
     @Mock
-    private SharedPreferences mSharedPreference;
+    private SharedPreferences mMockedSharedPreference;
     @Mock
     private SharedPreferences.Editor mEditor;
+
+    FakeSharedPreferences mFakeSharedPreferences = new FakeSharedPreferences();
 
     public CellBroadcastSettingsTest() {
         super(CellBroadcastSettings.class);
@@ -90,9 +88,8 @@ public class CellBroadcastSettingsTest extends
 
     @Before
     public void setUp() throws Exception {
-        mInstrumentation = InstrumentationRegistry.getInstrumentation();
-        mContext = mInstrumentation.getTargetContext();
-        mDevice = UiDevice.getInstance(mInstrumentation);
+        super.setUp();
+        mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
         MockitoAnnotations.initMocks(this);
         CellBroadcastSettings.resetResourcesCache();
     }
@@ -110,7 +107,7 @@ public class CellBroadcastSettingsTest extends
             Assert.fail("Exception " + exception);
         }
 
-        mInstrumentation.startActivitySync(createActivityIntent());
+        InstrumentationRegistry.getInstrumentation().startActivitySync(createActivityIntent());
         int w = mDevice.getDisplayWidth();
         int h = mDevice.getDisplayHeight();
 
@@ -136,6 +133,7 @@ public class CellBroadcastSettingsTest extends
     @Test
     public void testResetAllPreferences() throws Throwable {
         Looper.prepare();
+        mContext.injectSharedPreferences(mFakeSharedPreferences);
         // set a few preferences so we can verify they are reset to the default
         PreferenceManager.getDefaultSharedPreferences(mContext).edit()
                 .putBoolean(CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE, true)
@@ -163,6 +161,7 @@ public class CellBroadcastSettingsTest extends
 
     @Test
     public void testHasAnyPreferenceChanged() {
+        mContext.injectSharedPreferences(mFakeSharedPreferences);
         assertFalse(CellBroadcastSettings.hasAnyPreferenceChanged(mContext));
         PreferenceManager.getDefaultSharedPreferences(mContext).edit()
                 .putBoolean("any_preference_changed_by_user", true).apply();
@@ -177,8 +176,9 @@ public class CellBroadcastSettingsTest extends
                 new CellBroadcastSettings.CellBroadcastSettingsFragment();
         doReturn(mUserManager).when(mockContext).getSystemService(Context.USER_SERVICE);
         doReturn(true).when(mUserManager).isSystemUser();
-        doReturn(mSharedPreference).when(mockContext).getSharedPreferences(anyString(), anyInt());
-        doReturn(mEditor).when(mSharedPreference).edit();
+        doReturn(mMockedSharedPreference).when(mockContext).getSharedPreferences(anyString(),
+                anyInt());
+        doReturn(mEditor).when(mMockedSharedPreference).edit();
         doReturn(mEditor).when(mEditor).putBoolean(anyString(), anyBoolean());
 
         fragment.onPreferenceChangedByUser(mockContext);
@@ -311,5 +311,38 @@ public class CellBroadcastSettingsTest extends
     private void openAlertReminderDialog() {
         onView(withText(mContext.getString(com.android.cellbroadcastreceiver.R
                 .string.alert_reminder_interval_title))).perform(click());
+    }
+
+    @Test
+    public void testDisabledExtremeToggle() throws Throwable {
+        SubscriptionManager mockSubManager = mock(SubscriptionManager.class);
+        injectSystemService(SubscriptionManager.class, mockSubManager);
+        SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
+        doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
+
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                R.bool.extreme_threat_alerts_enabled_default);
+        doReturn(false).when(mContext.getResources()).getBoolean(
+                R.bool.disable_extreme_alert_settings);
+
+        CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
+
+        TwoStatePreference extremeCheckBox =
+                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
+                        CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS);
+
+        assertTrue(extremeCheckBox.isEnabled());
+
+        stopActivity();
+        waitForMs(100);
+
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                R.bool.disable_extreme_alert_settings);
+
+        cellBroadcastSettingActivity.mCellBroadcastSettingsFragment
+                .initAlertsToggleDisabledAsNeeded();
+        cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.onResume();
+
+        assertFalse(extremeCheckBox.isEnabled());
     }
 }

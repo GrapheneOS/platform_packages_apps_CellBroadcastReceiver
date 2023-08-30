@@ -67,6 +67,9 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
 
     private static final boolean DBG = false;
 
+    @VisibleForTesting
+    public CellBroadcastSettings.CellBroadcastSettingsFragment mCellBroadcastSettingsFragment;
+
     /**
      * Keys for user preferences.
      * When adding a new preference, make sure to clear its value in resetAllPreferences.
@@ -209,10 +212,11 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
         Fragment fragment = getFragmentManager().findFragmentById(
                 com.android.settingslib.widget.R.id.content_frame);
         if (fragment == null) {
-            fragment = new CellBroadcastSettingsFragment();
+            mCellBroadcastSettingsFragment = new CellBroadcastSettingsFragment();
             getFragmentManager()
                     .beginTransaction()
-                    .add(com.android.settingslib.widget.R.id.content_frame, fragment)
+                    .add(com.android.settingslib.widget.R.id.content_frame,
+                            mCellBroadcastSettingsFragment)
                     .commit();
         }
     }
@@ -460,6 +464,9 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             initReminderIntervalList();
 
             if (mMasterToggle != null) {
+
+                initAlertsToggleDisabledAsNeeded();
+
                 if (mMasterToggle instanceof MainSwitchPreference) {
                     MainSwitchPreference mainSwitchPreference =
                             (MainSwitchPreference) mMasterToggle;
@@ -614,7 +621,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             if (mExtremeCheckBox != null) {
                 mExtremeCheckBox.setVisible(res.getBoolean(R.bool.show_extreme_alert_settings)
                         && !channelManager.getCellBroadcastChannelRanges(
-                                R.array.cmas_alert_extreme_channels_range_strings).isEmpty());
+                        R.array.cmas_alert_extreme_channels_range_strings).isEmpty());
                 if (isWatch && !mExtremeCheckBox.isVisible()) {
                     preferenceScreen.removePreference(mExtremeCheckBox);
                 }
@@ -623,7 +630,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             if (mSevereCheckBox != null) {
                 mSevereCheckBox.setVisible(res.getBoolean(R.bool.show_severe_alert_settings)
                         && !channelManager.getCellBroadcastChannelRanges(
-                                R.array.cmas_alerts_severe_range_strings).isEmpty());
+                        R.array.cmas_alerts_severe_range_strings).isEmpty());
                 if (isWatch && !mSevereCheckBox.isVisible()) {
                     preferenceScreen.removePreference(mSevereCheckBox);
                 }
@@ -701,7 +708,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 mStateLocalTestCheckBox.setVisible(
                         res.getBoolean(R.bool.show_state_local_test_settings)
                                 && !channelManager.getCellBroadcastChannelRanges(
-                                        R.array.state_local_test_alert_range_strings).isEmpty());
+                                R.array.state_local_test_alert_range_strings).isEmpty());
                 if (isWatch && !mStateLocalTestCheckBox.isVisible()) {
                     preferenceScreen.removePreference(mStateLocalTestCheckBox);
                 }
@@ -801,13 +808,28 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                     });
         }
 
+        /**
+         * Set the extreme toggle disabled as needed.
+         */
+        @VisibleForTesting
+        public void initAlertsToggleDisabledAsNeeded() {
+            Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
+            if (res.getBoolean(R.bool.disable_extreme_alert_settings)) {
+                mExtremeCheckBox.setEnabled(false);
+                mExtremeCheckBox.setChecked(
+                        res.getBoolean(R.bool.extreme_threat_alerts_enabled_default));
+            }
+        }
 
         private void setAlertsEnabled(boolean alertsEnabled) {
+            Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
+
             if (mSevereCheckBox != null) {
                 mSevereCheckBox.setEnabled(alertsEnabled);
                 mSevereCheckBox.setChecked(alertsEnabled);
             }
-            if (mExtremeCheckBox != null) {
+            if (!res.getBoolean(R.bool.disable_extreme_alert_settings)
+                    && mExtremeCheckBox != null) {
                 mExtremeCheckBox.setEnabled(alertsEnabled);
                 mExtremeCheckBox.setChecked(alertsEnabled);
             }
