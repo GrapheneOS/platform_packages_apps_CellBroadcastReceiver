@@ -20,6 +20,10 @@
     <string name="cmas_severe_alert" msgid="4773544726385840011">"ការជូនដំណឹង​ពេលមានអាសន្នធ្ងន់ធ្ងរ"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"ការជូនដំណឹង​អំពី​ការហ្វឹកហាត់"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"ការជូនដំណឹងអំពីការសាកល្បងបច្ចេកទេស"</string>
+    <!-- no translation found for enable_cmas_extreme_threat_alerts_title (3095141156358640879) -->
+    <skip />
+    <!-- no translation found for enable_cmas_extreme_threat_alerts_summary (6931853411327178941) -->
+    <skip />
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"ការ​គំរាម​កំហែង​ធ្ងន់ធ្ងរ"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"ការគំរាមកំហែងដល់អាយុជីវិត និងទ្រព្យសម្បត្តិធ្ងន់ធ្ងរ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"ការសាកល្បងក្នុងមូលដ្ឋាន និងរដ្ឋ"</string>
