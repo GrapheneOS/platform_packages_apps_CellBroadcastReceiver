@@ -20,6 +20,10 @@
     <string name="cmas_severe_alert" msgid="4773544726385840011">"Jiddiy ogohlantirish"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"Oʻquv mashqi ogohlantirishi"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"Texnik sinov ogohlantirishlari"</string>
+    <!-- no translation found for enable_cmas_extreme_threat_alerts_title (3095141156358640879) -->
+    <skip />
+    <!-- no translation found for enable_cmas_extreme_threat_alerts_summary (6931853411327178941) -->
+    <skip />
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Jiddiy tahdidlar"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Inson hayoti va mulkiga nisbatan jiddiy xatarlar"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Davlat miqyosidagi va mahalliy sinovlar"</string>
