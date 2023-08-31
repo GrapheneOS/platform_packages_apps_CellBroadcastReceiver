@@ -29,6 +29,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -46,13 +47,16 @@ import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.provider.Telephony;
+import android.service.notification.StatusBarNotification;
 import android.telephony.AccessNetworkConstants;
 import android.telephony.NetworkRegistrationInfo;
+import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
+import android.telephony.TelephonyManager;
 import android.view.Display;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio;
@@ -665,5 +669,45 @@ public class CellBroadcastAlertServiceTest extends
         } else {
             assertEquals(mBundle.getInt("android.activity.launchDisplayId", 0), display_id);
         }
+    }
+
+    public void testPlayPendingAlert() throws Exception {
+        doReturn(true).when(mResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.enable_alert_handling_during_call));
+        doReturn(TelephonyManager.CALL_STATE_RINGING).when(mMockedTelephonyManager).getCallState();
+        Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
+        intent.setAction(SHOW_NEW_ALERT_ACTION);
+        SmsCbMessage message = createMessage(12345);
+        intent.putExtra("message", message);
+        startService(intent);
+
+        // Verify do-nothing, when onCallStateChanged is called after Call is Active
+        ArgumentCaptor<PhoneStateListener> phoneStateListenerCaptor =
+                ArgumentCaptor.forClass(PhoneStateListener.class);
+        verify(mMockedTelephonyManager).listen(phoneStateListenerCaptor.capture(),
+                eq(PhoneStateListener.LISTEN_CALL_STATE));
+        PhoneStateListener mPhoneStateListener = phoneStateListenerCaptor.getValue();
+        mPhoneStateListener.onCallStateChanged(TelephonyManager.CALL_STATE_OFFHOOK, "");
+        waitForServiceIntent();
+
+        verify(mMockedNotificationManager, never()).getActiveNotifications();
+
+        // Verify to trigger playPendingAlert, when onCallStateChanged is called and PendingAlert
+        // exist after Call is IDLE
+        StatusBarNotification mStatusBarNotification = mock(StatusBarNotification.class);
+        doReturn(new StatusBarNotification[]{mStatusBarNotification}).when(
+                mMockedNotificationManager).getActiveNotifications();
+
+        mPhoneStateListener.onCallStateChanged(TelephonyManager.CALL_STATE_IDLE, "");
+        waitForServiceIntent();
+
+        // Verify alert dialog activity intent
+        ArrayList<SmsCbMessage> newMessageList = mActivityIntentToVerify
+                .getParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA);
+        assertEquals(1, newMessageList.size());
+        assertEquals(Intent.FLAG_ACTIVITY_NO_USER_ACTION,
+                (mActivityIntentToVerify.getFlags() & Intent.FLAG_ACTIVITY_NO_USER_ACTION));
+        assertEquals(Intent.FLAG_ACTIVITY_NEW_TASK,
+                (mActivityIntentToVerify.getFlags() & Intent.FLAG_ACTIVITY_NEW_TASK));
     }
 }
