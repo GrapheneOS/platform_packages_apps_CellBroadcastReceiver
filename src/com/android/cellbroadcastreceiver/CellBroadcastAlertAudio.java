@@ -842,7 +842,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
      * Get AlertAudioService status
      * @return service status
      */
-    private synchronized int getState() {
+    @VisibleForTesting
+    public synchronized int getState() {
         return mState;
     }
 
