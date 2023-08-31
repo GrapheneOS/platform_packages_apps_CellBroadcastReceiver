@@ -17,8 +17,8 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_presidential_level_alert" msgid="7877341103742233094">"هشدار فرانسه: هشدار دولتی"</string>
-    <string name="cmas_extreme_alert" msgid="2584151399464241888">"هشدار فرانسه: هشدار بسیار جدی"</string>
-    <string name="cmas_severe_alert" msgid="9149520947951402872">"هشدار فرانسه: هشدار شدید"</string>
+    <string name="cmas_extreme_alert" msgid="2584151399464241888">"هشدار فرانسه: هشدار شدید"</string>
+    <string name="cmas_severe_alert" msgid="9149520947951402872">"هشدار فرانسه: هشدار جدی"</string>
     <string name="public_safety_message" msgid="5860178069821018697">"هشدار فرانسه: اخطار"</string>
     <string name="cmas_amber_alert" msgid="6428083238223852662">"هشدار فرانسه : هشدار آدم‌ربایی"</string>
     <string name="cmas_required_monthly_test" msgid="3216225136685938963">"آزمایش هشدار فرانسه"</string>
