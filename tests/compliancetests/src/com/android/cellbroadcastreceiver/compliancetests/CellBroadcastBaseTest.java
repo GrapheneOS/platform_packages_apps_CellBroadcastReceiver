@@ -41,6 +41,7 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import com.android.internal.telephony.CellBroadcastUtils;
 import com.android.modules.utils.build.SdkLevel;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -268,6 +269,25 @@ public class CellBroadcastBaseTest {
         return carrierLists.toArray(new String[]{});
     }
 
+    protected Object[] paramsCarrierAndMccMncForTest() throws Throwable {
+        logd("paramsCarrierAndMccMncForTest");
+        String jsonCarrier = loadJsonFile(CARRIER_LISTS_JSON);
+        JSONObject carriersObject = new JSONObject(jsonCarrier);
+        Iterator<String> carrierList = carriersObject.keys();
+
+        ArrayList<Object> result = new ArrayList<Object>();
+        for (Iterator<String> it = carrierList; it.hasNext();) {
+            String carrierName = it.next();
+            JSONObject carrierObject = carriersObject.getJSONObject(carrierName);
+            JSONArray mccMncList = carrierObject.getJSONArray(CARRIER_MCCMNC_FIELD);
+            for (int i = 0; i < mccMncList.length(); i++) {
+                String mccMnc = mccMncList.getString(i);
+                result.add(new String[]{carrierName, mccMnc});
+            }
+        }
+        return result.toArray(new Object[]{});
+    }
+
     protected Object[] paramsCarrierAndChannelForTest() throws Throwable {
         logd("paramsCarrierAndChannelForTest");
         String jsonCarrier = loadJsonFile(CARRIER_LISTS_JSON);
@@ -288,12 +308,10 @@ public class CellBroadcastBaseTest {
         return result.toArray(new Object[]{});
     }
 
-    protected void setSimInfo(String carrierName) throws Throwable {
-        JSONObject carrierObject = sCarriersObject.getJSONObject(carrierName);
-        String mccMncFromObject = carrierObject.getString(CARRIER_MCCMNC_FIELD);
-        String mcc = mccMncFromObject.substring(0, 3);
-        String mnc = mccMncFromObject.substring(3);
-        sInputMccMnc = mccMncFromObject;
+    protected void setSimInfo(String carrierName, String inputMccMnc) throws Throwable {
+        String mcc = inputMccMnc.substring(0, 3);
+        String mnc = inputMccMnc.substring(3);
+        sInputMccMnc = inputMccMnc;
         sSetChannelIsDone = new CountDownLatch(1);
 
         String[] mccMnc = new String[] {mcc, mnc};
