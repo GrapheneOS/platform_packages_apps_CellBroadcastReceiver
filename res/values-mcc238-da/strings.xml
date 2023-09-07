@@ -22,7 +22,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2574445861711004849">"Alvorlig"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="7614150249934894203">"Alvorlig hændelse for mennesker, miljø eller ejendom"</string>
     <string name="enable_cmas_test_alerts_title" msgid="2201656327607526283">"Test"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="9167491531803427454">"Beskeder i forbindelse med test"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="9167491531803427454">"Beskeder i forbindelse mest test"</string>
     <string name="enable_exercise_test_alerts_title" msgid="1899116047320259060">"Øvelse"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8874462134900526256">"Beskeder i forbindelse med øvelse"</string>
     <string name="cmas_presidential_level_alert" msgid="1021328259636041398">"Beredskabsmeddelelse"</string>

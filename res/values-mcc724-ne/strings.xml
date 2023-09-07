@@ -20,10 +20,8 @@
     <string name="cmas_severe_alert" msgid="4773544726385840011">"गम्भीर खतरासम्बन्धी अलर्ट"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"व्यायामसम्बन्धी अलर्ट"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"प्राविधिक परीक्षणसम्बन्धी अलर्ट"</string>
-    <!-- no translation found for enable_cmas_extreme_threat_alerts_title (3095141156358640879) -->
-    <skip />
-    <!-- no translation found for enable_cmas_extreme_threat_alerts_summary (6931853411327178941) -->
-    <skip />
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="3095141156358640879">"भयङ्कर खतराहरू"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"जनधनसँग सम्बन्धित भयङ्कर खतराहरू"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"गम्भीर खतराहरू"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"जनधनको गम्भीर खतरासम्बन्धी अलर्ट"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"राज्यस्तरीय र स्थानीय परीक्षण"</string>
