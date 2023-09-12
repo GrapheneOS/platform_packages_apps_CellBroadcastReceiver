@@ -4434,23 +4434,23 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "National Alert",
+      "title": "Extremely Severe Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "National Alert",
+      "title": "Extremely Severe Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "Emergency Alert",
+      "title": "Severe Alert",
       "default_value": "true",
       "toggle_avail": "false",
       "end_channel": "4372"
     },
     "4384": {
-      "title": "Emergency Alert",
+      "title": "Severe Alert",
       "default_value": "true",
       "toggle_avail": "false",
       "end_channel": "4385"
@@ -4478,12 +4478,12 @@
       "toggle_avail": "true"
     },
     "4380": {
-      "title": "Required Monthly Test",
+      "title": "Test Message",
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4393": {
-      "title": "Required Monthly Test",
+      "title": "Test Message",
       "default_value": "false",
       "toggle_avail": "true"
     },
