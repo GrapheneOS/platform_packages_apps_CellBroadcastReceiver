@@ -25,7 +25,10 @@ android_test {
         "telephony-common",
         "android.test.base",
     ],
-    static_libs: ["junit"],
+    static_libs: [
+    "junit",
+    "modules-utils-build_system",
+    ],
     // Include all test java files.
     srcs: [
         "src/**/*.java",
