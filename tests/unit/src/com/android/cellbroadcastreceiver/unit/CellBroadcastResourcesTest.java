@@ -30,12 +30,16 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.telephony.SmsCbCmasInfo;
+import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
 
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
 import com.android.cellbroadcastreceiver.CellBroadcastResources;
+import com.android.cellbroadcastreceiver.R;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 
 import org.junit.Before;
@@ -59,6 +63,7 @@ public class CellBroadcastResourcesTest {
         doReturn(mResources).when(mContext).getResources();
         String stringResultToReturn = "";
         doReturn(stringResultToReturn).when(mResources).getString(anyInt());
+        CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
     }
 
     @Test
@@ -103,27 +108,20 @@ public class CellBroadcastResourcesTest {
 
     @Test
     public void testGetDialogTitleResource() throws Exception {
-        SubscriptionManager mockSubManager = mock(SubscriptionManager.class);
-        doReturn(mockSubManager).when(mContext).getSystemService(
-                eq(Context.TELEPHONY_SUBSCRIPTION_SERVICE));
-        SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
-        doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
+        mockSubscriptionManager();
         Context mockContext2 = mock(Context.class);
         doReturn(mResources).when(mockContext2).getResources();
         Configuration config = new Configuration();
         doReturn(config).when(mResources).getConfiguration();
         doReturn(mockContext2).when(mContext).createConfigurationContext(any());
 
-        FakeSharedPreferences mFakeSharedPreferences = new FakeSharedPreferences();
-        doReturn(mFakeSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
-        putResources(com.android.cellbroadcastreceiver.R.array
-                .cmas_alert_extreme_channels_range_strings, new String[]{
+        setFakeSharedPreferences();
+        putResources(R.array.cmas_alert_extreme_channels_range_strings, new String[]{
                     "0x1113-0x1114:rat=gsm",
                     "0x1001-0x1001:rat=cdma",
                     "0x1120-0x1121:rat=gsm",
                 });
-        putResources(com.android.cellbroadcastreceiver.R.array
-                .public_safety_messages_channels_range_strings, new String[]{
+        putResources(R.array.public_safety_messages_channels_range_strings, new String[]{
                     "0x112C:rat=gsm, emergency=true",
                     "0x112D:rat=gsm, emergency=true",
                 });
@@ -169,6 +167,83 @@ public class CellBroadcastResourcesTest {
                 0, 0, SmsCbCmasInfo.CMAS_RESPONSE_TYPE_UNKNOWN, 0, 0, 0)));
     }
 
+    @Test
+    public void testGetSmsSenderAddressResource() throws Exception {
+        mockSubscriptionManager();
+        mockTelephonyManager();
+        setFakeSharedPreferences();
+        doReturn(new Configuration()).when(mResources).getConfiguration();
+        doReturn(mContext).when(mContext).createConfigurationContext(any());
+
+        final int[] expectedResources = {
+                R.string.sms_cb_sender_name_presidential, R.string.sms_cb_sender_name_emergency,
+                R.string.sms_cb_sender_name_public_safety, R.string.sms_cb_sender_name_default};
+        putResources(R.array.cmas_presidential_alerts_channels_range_strings,
+                new String[]{"0x1112:rat=gsm, emergency=true"});
+        putResources(R.array.emergency_alerts_channels_range_strings,
+                new String[]{"0x111B:rat=gsm, emergency=true"});
+        putResources(R.array.public_safety_messages_channels_range_strings,
+                new String[]{"0x112C:rat=gsm, emergency=true"});
+        putResources(R.array.cmas_alert_extreme_channels_range_strings,
+                new String[]{"0x1113:rat=gsm, emergency=true"});
+
+        final String[] expectedStrings = {
+                "Wireless emergency alerts(presidential)", "Wireless emergency alerts(emergency)",
+                "Informational notification", "Wireless emergency alerts(default)"};
+        doReturn(expectedStrings[0]).when(mResources).getText(eq(expectedResources[0]));
+        doReturn(expectedStrings[1]).when(mResources).getText(eq(expectedResources[1]));
+        doReturn(expectedStrings[2]).when(mResources).getText(eq(expectedResources[2]));
+        doReturn(expectedStrings[3]).when(mResources).getText(eq(expectedResources[3]));
+
+        // check the sms sender address resource id and string
+        final int[] serviceCategory = {0x1112, 0x111B, 0x112C, 0x1113};
+        for (int i = 0; i < serviceCategory.length; i++) {
+            SmsCbMessage message = new SmsCbMessage(0, 0, 0, null,
+                    serviceCategory[i], "", "", 0, null,
+                    null, 0, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+            assertEquals(expectedResources[i],
+                    CellBroadcastResources.getSmsSenderAddressResource(mContext, message));
+            assertEquals(expectedStrings[i],
+                    CellBroadcastResources.getSmsSenderAddressResourceEnglishString(mContext,
+                            message));
+        }
+    }
+
+    @Test
+    public void testGetDialogPictogramResource() throws Exception {
+        final int[] expectedResources = {R.drawable.pict_icon_earthquake,
+                R.drawable.pict_icon_earthquake, R.drawable.pict_icon_tsunami};
+        final int[] warningType = {SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE,
+                SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE_AND_TSUNAMI,
+                SmsCbEtwsInfo.ETWS_WARNING_TYPE_TSUNAMI};
+
+        // when SmsCbEtwsInfo exist, check the drawable res id that matches the warningType
+        for (int i = 0; i < warningType.length; i++) {
+            SmsCbMessage message = new SmsCbMessage(0, 0, 0, null, 0, "", "", 0,
+                    new SmsCbEtwsInfo(warningType[i], false, false, false, null),
+                    null, 0, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+            assertEquals(expectedResources[i], getDialogPictogramResource(mContext, message));
+        }
+
+        mockTelephonyManager();
+        setFakeSharedPreferences();
+        putResources(R.array.additional_cbs_channels_strings,
+                new String[]{"0xA800:type=etws_earthquake, emergency=true, scope=carrier",
+                        "0xAFEE:type=etws_tsunami, emergency=true, scope=carrier",
+                        "0xAC00:type=other, emergency=true, scope=carrier",
+                        "0xA802:type=test, emergency=false, scope=carrier"});
+        // received an additional channel message, check the drawable res id matching alertType
+        final int[] expectedResources2 = {R.drawable.pict_icon_earthquake,
+                R.drawable.pict_icon_tsunami, -1, -1};
+        final int[] serviceCategory = {0xA800, 0xAFEE, 0xAC00, 0xA802};
+        for (int i = 0; i < serviceCategory.length; i++) {
+            SmsCbMessage message = new SmsCbMessage(0, 0, 0, null,
+                    serviceCategory[i], "", "", 0, null,
+                    null, 0, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+            assertEquals(expectedResources2[i], getDialogPictogramResource(mContext, message));
+        }
+    }
+
     private int getCmasCategoryResId(SmsCbCmasInfo info) throws Exception {
         Method method = CellBroadcastResources.class.getDeclaredMethod(
                 "getCmasCategoryResId", SmsCbCmasInfo.class);
@@ -190,7 +265,36 @@ public class CellBroadcastResourcesTest {
         return (int) method.invoke(null, context, info);
     }
 
+    private int getDialogPictogramResource(Context context, SmsCbMessage info) throws Exception {
+        Method method = CellBroadcastResources.class.getDeclaredMethod(
+                "getDialogPictogramResource", Context.class, SmsCbMessage.class);
+        method.setAccessible(true);
+        return (int) method.invoke(null, context, info);
+    }
+
     void putResources(int id, String[] values) {
         doReturn(values).when(mResources).getStringArray(eq(id));
+    }
+
+    private void setFakeSharedPreferences() {
+        FakeSharedPreferences mFakeSharedPreferences = new FakeSharedPreferences();
+        doReturn(mFakeSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
+    }
+
+    private void mockSubscriptionManager() {
+        SubscriptionManager mockSubManager = mock(SubscriptionManager.class);
+        doReturn(mockSubManager).when(mContext).getSystemService(
+                eq(Context.TELEPHONY_SUBSCRIPTION_SERVICE));
+        SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
+        doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
+    }
+
+    private void mockTelephonyManager() {
+        TelephonyManager mMockTelephonyManager = mock(TelephonyManager.class);
+        doReturn(mMockTelephonyManager).when(mMockTelephonyManager)
+                .createForSubscriptionId(anyInt());
+        doReturn(Context.TELEPHONY_SERVICE).when(mContext).getSystemServiceName(
+                TelephonyManager.class);
+        doReturn(mMockTelephonyManager).when(mContext).getSystemService(Context.TELEPHONY_SERVICE);
     }
 }
