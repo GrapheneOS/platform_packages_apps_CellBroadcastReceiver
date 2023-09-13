@@ -20,10 +20,8 @@
     <string name="cmas_severe_alert" msgid="4773544726385840011">"การแจ้งเตือนระดับร้ายแรง"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"การแจ้งเตือนทดสอบ"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"การแจ้งเตือนการทดสอบทางเทคนิค"</string>
-    <!-- no translation found for enable_cmas_extreme_threat_alerts_title (3095141156358640879) -->
-    <skip />
-    <!-- no translation found for enable_cmas_extreme_threat_alerts_summary (6931853411327178941) -->
-    <skip />
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="3095141156358640879">"ภัยคุกคามระดับสูงสุด"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"ภัยคุกคามต่อชีวิตและทรัพย์สินระดับสูงสุด"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"ภัยคุกคามระดับร้ายแรง"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"ภัยคุกคามต่อชีวิตและทรัพย์สินระดับร้ายแรง"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"การทดสอบระดับรัฐและท้องถิ่น"</string>
