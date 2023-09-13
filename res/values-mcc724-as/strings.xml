@@ -20,10 +20,8 @@
     <string name="cmas_severe_alert" msgid="4773544726385840011">"গুৰুতৰ সতৰ্কবাৰ্তা"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"অনুশীলন সম্পৰ্কীয় সতৰ্কবাৰ্তা"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"কাৰিকৰী পৰীক্ষণৰ সতৰ্কবাৰ্তা"</string>
-    <!-- no translation found for enable_cmas_extreme_threat_alerts_title (3095141156358640879) -->
-    <skip />
-    <!-- no translation found for enable_cmas_extreme_threat_alerts_summary (6931853411327178941) -->
-    <skip />
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="3095141156358640879">"চৰম ভাবুকি"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"জীৱন আৰু সম্পত্তিৰ প্ৰতি চৰম ভাবুকি"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"গুৰুতৰ ভাবুকি"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"জীৱন আৰু সম্পত্তিৰ প্ৰতি গুৰুতৰ ভাবুকি"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"ৰাজ্যিক আৰু স্থানীয় পৰীক্ষণসমূহ"</string>
