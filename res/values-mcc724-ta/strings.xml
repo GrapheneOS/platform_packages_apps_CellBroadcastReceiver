@@ -20,10 +20,8 @@
     <string name="cmas_severe_alert" msgid="4773544726385840011">"கடுமையான எச்சரிக்கை"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"பயிற்சி எச்சரிக்கை"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"தொழில்நுட்பப் பரிசோதனை எச்சரிக்கைகள்"</string>
-    <!-- no translation found for enable_cmas_extreme_threat_alerts_title (3095141156358640879) -->
-    <skip />
-    <!-- no translation found for enable_cmas_extreme_threat_alerts_summary (6931853411327178941) -->
-    <skip />
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="3095141156358640879">"அதீத அச்சுறுத்தல்கள்"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"உயிருக்கும் உடைமைக்கும் மிகக் கடுமையான அச்சுறுத்தல்கள்"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"கடும் அச்சுறுத்தல்கள்"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"உயிருக்கும் உடைமைக்கும் கடுமையான அச்சுறுத்தல்கள்"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"மாநில &amp; உள்ளூர் அமைப்புகளின் பரிசோதனை மெசேஜ்கள்"</string>
