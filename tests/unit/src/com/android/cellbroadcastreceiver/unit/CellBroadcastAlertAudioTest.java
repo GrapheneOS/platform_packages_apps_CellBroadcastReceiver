@@ -21,6 +21,7 @@ import static com.android.cellbroadcastreceiver.CellBroadcastAlertService.SHOW_N
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
@@ -539,6 +540,74 @@ public class CellBroadcastAlertAudioTest extends
         // Call state change to OFFHOOK, stop audio play
         mPhoneStateListener.onCallStateChanged(TelephonyManager.CALL_STATE_OFFHOOK, "");
         assertEquals(STATE_STOPPING, audio.getState());
+
+        phoneStateListenerHandler.quit();
+    }
+
+    public void testOnError() throws Throwable {
+        PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
+                "testOnError",
+                () -> {
+                    startService(null);
+                });
+        phoneStateListenerHandler.start();
+        waitUntilReady();
+
+        doReturn(AudioManager.RINGER_MODE_NORMAL).when(mMockedAudioManager).getRingerMode();
+        CellBroadcastAlertAudio audio = (CellBroadcastAlertAudio) getService();
+        Handler mockHandler = spy(new Handler(Looper.getMainLooper()));
+        audio.mHandler = mockHandler;
+        MediaPlayer mockMediaPlayer = mock(MediaPlayer.class);
+        audio.mMediaPlayerInjected = mockMediaPlayer;
+
+        Intent intent = createStartAudioIntent();
+        audio.handleStartIntent(intent);
+
+        verify(mockHandler, never()).sendMessageAtTime(any(), anyLong());
+
+        ArgumentCaptor<MediaPlayer.OnErrorListener> onErrorListenerArgumentCaptor =
+                ArgumentCaptor.forClass(MediaPlayer.OnErrorListener.class);
+        verify(mockMediaPlayer).setOnErrorListener(onErrorListenerArgumentCaptor.capture());
+        MediaPlayer.OnErrorListener onErrorListener = onErrorListenerArgumentCaptor.getValue();
+        onErrorListener.onError(mockMediaPlayer, 0, 0);
+
+        // If possible will check message's 'what' equals ‘ALERT_SOUND_FINISHED’ in the future.
+        verify(mockHandler, times(1)).sendMessageAtTime(any(), anyLong());
+
+        phoneStateListenerHandler.quit();
+    }
+
+    public void testOnCompletion() throws Throwable {
+        PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
+                "testOnCompletion",
+                () -> {
+                    startService(null);
+                });
+        phoneStateListenerHandler.start();
+        waitUntilReady();
+
+        doReturn(AudioManager.RINGER_MODE_NORMAL).when(mMockedAudioManager).getRingerMode();
+        CellBroadcastAlertAudio audio = (CellBroadcastAlertAudio) getService();
+        Handler mockHandler = spy(new Handler(Looper.getMainLooper()));
+        audio.mHandler = mockHandler;
+        MediaPlayer mockMediaPlayer = mock(MediaPlayer.class);
+        audio.mMediaPlayerInjected = mockMediaPlayer;
+
+        Intent intent = createStartAudioIntent();
+        audio.handleStartIntent(intent);
+
+        verify(mockHandler, never()).sendMessageAtTime(any(), anyLong());
+
+        ArgumentCaptor<MediaPlayer.OnCompletionListener> OnCompletionListenerArgumentCaptor =
+                ArgumentCaptor.forClass(MediaPlayer.OnCompletionListener.class);
+        verify(mockMediaPlayer).setOnCompletionListener(
+                OnCompletionListenerArgumentCaptor.capture());
+        MediaPlayer.OnCompletionListener onCompletionListener =
+                OnCompletionListenerArgumentCaptor.getValue();
+        onCompletionListener.onCompletion(mockMediaPlayer);
+
+        // If possible will check message's 'what' equals ‘ALERT_SOUND_FINISHED’ in the future.
+        verify(mockHandler, times(1)).sendMessageAtTime(any(), anyLong());
 
         phoneStateListenerHandler.quit();
     }
