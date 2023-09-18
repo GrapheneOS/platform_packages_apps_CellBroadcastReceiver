@@ -210,12 +210,12 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
 
         // We only add new CellBroadcastSettingsFragment if no fragment is restored.
         Fragment fragment = getFragmentManager().findFragmentById(
-                com.android.settingslib.widget.R.id.content_frame);
+                com.android.settingslib.collapsingtoolbar.R.id.content_frame);
         if (fragment == null) {
             mCellBroadcastSettingsFragment = new CellBroadcastSettingsFragment();
             getFragmentManager()
                     .beginTransaction()
-                    .add(com.android.settingslib.widget.R.id.content_frame,
+                    .add(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                             mCellBroadcastSettingsFragment)
                     .commit();
         }
