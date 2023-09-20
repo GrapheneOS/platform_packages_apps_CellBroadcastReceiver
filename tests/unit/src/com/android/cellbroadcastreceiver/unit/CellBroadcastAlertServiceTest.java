@@ -672,6 +672,9 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     public void testPlayPendingAlert() throws Exception {
+        if (!SdkLevel.isAtLeastS()) {
+            return;
+        }
         doReturn(true).when(mResources).getBoolean(
                 eq(com.android.cellbroadcastreceiver.R.bool.enable_alert_handling_during_call));
         doReturn(TelephonyManager.CALL_STATE_RINGING).when(mMockedTelephonyManager).getCallState();
