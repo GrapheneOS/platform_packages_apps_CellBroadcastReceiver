@@ -27,8 +27,10 @@ import static android.provider.Telephony.CellBroadcasts.DATA_CODING_SCHEME;
 import static android.provider.Telephony.CellBroadcasts.DELIVERY_TIME;
 import static android.provider.Telephony.CellBroadcasts.ETWS_WARNING_TYPE;
 import static android.provider.Telephony.CellBroadcasts.LAC;
+import static android.provider.Telephony.CellBroadcasts.LOCATION_CHECK_TIME;
 import static android.provider.Telephony.CellBroadcasts.MAXIMUM_WAIT_TIME;
 import static android.provider.Telephony.CellBroadcasts.PLMN;
+import static android.view.WindowManager.LayoutParams.SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS;
 
 import static com.android.cellbroadcastreceiver.CellBroadcastListActivity.CursorLoaderListFragment.KEY_LOADER_ID;
 import static com.android.cellbroadcastreceiver.CellBroadcastListActivity.CursorLoaderListFragment.LOADER_HISTORY_FROM_CBS;
@@ -46,11 +48,13 @@ import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.LoaderManager;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -71,11 +75,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
 
 import androidx.test.filters.SdkSuppress;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import com.android.cellbroadcastreceiver.CellBroadcastCursorAdapter;
 import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
@@ -92,6 +98,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.lang.reflect.Field;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -751,6 +758,94 @@ public class CellBroadcastListActivityTest extends
         adapter.setIsActionMode(false);
         adapter.bindView(mockListItemView, mContext, data);
         verify(mockCheckbox).setVisibility(View.GONE);
+    }
+
+    public void testGetLocationCheckTime() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        Cursor mockCursor = getMockCursor(activity, 0, 0L);
+        doReturn("test").when(mockCursor).getString(anyInt());
+        AlertDialog.Builder mockAlertDialogBuilder = getMockAlertDialogBuilder(activity);
+
+        // set the LocationCheckTime
+        Field fieldCurrentLoaderId =
+                CellBroadcastListActivity.CursorLoaderListFragment.class.getDeclaredField(
+                        "mCurrentLoaderId");
+        fieldCurrentLoaderId.setAccessible(true);
+        fieldCurrentLoaderId.setInt(activity.mListFragment, LOADER_HISTORY_FROM_CBS);
+        final Long locationCheckTime = 10L;
+        final int locationCheckTimeColumnIndex = 1111;
+        doReturn(locationCheckTimeColumnIndex).when(mockCursor).getColumnIndex(
+                eq(LOCATION_CHECK_TIME));
+        doReturn(locationCheckTime).when(mockCursor).getLong(eq(locationCheckTimeColumnIndex));
+
+        MenuItem mockMenuItem = mock(MenuItem.class);
+        doReturn(R.id.action_detail_info).when(mockMenuItem).getItemId();
+
+        activity.mListFragment.getListView().setItemChecked(0, true);
+        activity.mListFragment.getMultiChoiceModeListener()
+                .onActionItemClicked(mock(ActionMode.class), mockMenuItem);
+
+        // verify the locationCheckTime in dialog's message
+        ArgumentCaptor<CharSequence> detailCaptor = ArgumentCaptor.forClass(CharSequence.class);
+        verify(mockAlertDialogBuilder).setMessage(detailCaptor.capture());
+        assertTrue(detailCaptor.getValue().toString().contains(
+                DateFormat.getDateTimeInstance().format(locationCheckTime)));
+        verify(mockAlertDialogBuilder).show();
+    }
+
+    public void testOnResume() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+        Looper.prepare();
+
+        CellBroadcastListActivity.CursorLoaderListFragment mockFragment = spy(
+                activity.mListFragment);
+        LoaderManager mockLoaderManager = mock(LoaderManager.class);
+        doReturn(mockLoaderManager).when(mockFragment).getLoaderManager();
+
+        mockFragment.onResume();
+        verify(mockLoaderManager).restartLoader(anyInt(), any(), any());
+    }
+
+    public void testOnStart() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        CellBroadcastListActivity mockActivity = spy(activity);
+        final Window mockWindow = mock(Window.class);
+        doReturn(mockWindow).when(mockActivity).getWindow();
+
+        InstrumentationRegistry.getInstrumentation().runOnMainSync(() -> {
+            mockActivity.onStart();
+        });
+        verify(mockWindow).addSystemFlags(eq(SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS));
+    }
+
+    public void testOnDestroyActionMode() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        CellBroadcastCursorAdapter mockAdapter = spy(activity.mListFragment.mAdapter);
+        activity.mListFragment.mAdapter = mockAdapter;
+        ActionMode mode = mock(ActionMode.class);
+
+        activity.mListFragment.getMultiChoiceModeListener().onDestroyActionMode(mode);
+        verify(mockAdapter).setIsActionMode(eq(false));
+        verify(mockAdapter).notifyDataSetChanged();
+    }
+
+    public void testOnActionItemClickedUnsupportedAction() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+
+        // when click unsupported action, verify do nothing
+        MenuItem mockMenuItem = mock(MenuItem.class);
+        doReturn(-1).when(mockMenuItem).getItemId();
+        activity.mListFragment.getListView().setItemChecked(0, true);
+
+        ActionMode mode = mock(ActionMode.class);
+        assertFalse(activity.mListFragment.getMultiChoiceModeListener()
+                .onActionItemClicked(mode, mockMenuItem));
+        verify(mode, never()).finish();
     }
 
     private Cursor getMockCursor(CellBroadcastListActivity activity, int position, Long value) {
