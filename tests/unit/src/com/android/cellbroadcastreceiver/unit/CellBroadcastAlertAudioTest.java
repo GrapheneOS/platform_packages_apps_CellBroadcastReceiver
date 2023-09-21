@@ -532,6 +532,8 @@ public class CellBroadcastAlertAudioTest extends
         CellBroadcastAlertAudio audio = (CellBroadcastAlertAudio) getService();
         doReturn(AudioManager.RINGER_MODE_NORMAL).when(mMockedAudioManager).getRingerMode();
         doReturn(TelephonyManager.CALL_STATE_IDLE).when(mMockedTelephonyManager).getCallState();
+        // prevent the IllegalStateException during the playAlertTone
+        audio.mMediaPlayerInjected = mock(MediaPlayer.class);
 
         Intent intent = createStartAudioIntent();
         audio.handleStartIntent(intent);
