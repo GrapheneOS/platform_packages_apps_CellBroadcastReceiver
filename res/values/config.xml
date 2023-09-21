@@ -73,6 +73,9 @@
     <bool name="always_mark_sms_read">false</bool>
     <!-- Whether to retry message history data migration after db creation -->
     <bool name="retry_message_history_data_migration">false</bool>
+    <!-- Whether to disable extreme alert settings -->
+    <!-- To support 'true' it needs to be set show_extreme_alert_settings=true, always_on=true : true -->
+    <bool name="disable_extreme_alert_settings">false</bool>
 
     <!-- Section for switch default value -->
     <!-- Main toggle default value -->
@@ -186,20 +189,8 @@
          characters as XXX to match any mcc, XXXXXX to match any mcc+mnc. If multiple items match
          the roaming network, only the first one will take effect. -->
     <string-array name="cmas_roaming_network_strings" translatable="false">
-        <!-- France -->
-        <item>208</item>
-        <!-- Qatar -->
-        <item>427</item>
-        <!-- Germany -->
-        <item>262</item>
-        <!-- Norway -->
-        <item>242</item>
-        <!-- Italy -->
-        <item>222</item>
-        <!-- Austria -->
-        <item>232</item>
-        <!-- Brazil -->
-        <item>724</item>
+        <!-- Enable roaming support by default -->
+        <item>XXX</item>
     </string-array>
 
     <!-- Values that are retrieved from the ListPreference.

@@ -20,6 +20,8 @@
     <string name="cmas_severe_alert" msgid="4773544726385840011">"Alertă gravă"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"Simulare de alertă"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"Alerte pentru testări tehnice"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="3095141156358640879">"Pericole extreme"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"Pericole extreme privind viața și bunurile"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Pericole grave"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Pericole grave privind viața și bunurile"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Testări naționale și locale"</string>

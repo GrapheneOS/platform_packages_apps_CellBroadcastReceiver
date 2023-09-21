@@ -20,6 +20,8 @@
     <string name="cmas_severe_alert" msgid="4773544726385840011">"Allerta per condizioni gravi"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"Simulazione di allerta"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"Allerte di prova tecnica"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="3095141156358640879">"Minacce estreme"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"Minacce estreme alla vita e alle proprietà"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Minacce gravi"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Minacce gravi alla vita e alle proprietà"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Test a livello statale e locale"</string>

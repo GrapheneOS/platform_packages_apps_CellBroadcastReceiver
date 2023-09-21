@@ -20,6 +20,8 @@
     <string name="cmas_severe_alert" msgid="4773544726385840011">"Alerta severo"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"Alerta de teste"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"Alerta de teste técnico"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="3095141156358640879">"Ameaças extremas"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"Ameaças extremas à vida e à propriedade"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Alerta Severo"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Medidas de proteção necessárias"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Alerta de teste"</string>

@@ -19,6 +19,7 @@ package com.android.cellbroadcastreceiver.unit;
 import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
@@ -305,6 +306,12 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         doReturn(secondSubId).when(mMockTelephonyManager).getSimCarrierId();
         mCellBroadcastReceiver.initializeSharedPreference(mContext, secondSubId);
         verify(mContext).startService(any());
+
+        // Initialize for first sub and starting ConfigService as same carrierId change.
+        doReturn(firstSubId).when(mSubService).getDefaultSubId();
+        doReturn(secondSubId).when(mMockTelephonyManager).getSimCarrierId();
+        mCellBroadcastReceiver.initializeSharedPreference(mContext, firstSubId);
+        verify(mContext, times(2)).startService(any());
     }
 
     @Test
@@ -448,6 +455,13 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         assertThat(mFakeSharedPreferences.getBoolean(
                 CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, !enable))
                 .isEqualTo(enable);
+
+        // set the not defined category
+        FakeSharedPreferences mockSharedPreferences = spy(mFakeSharedPreferences);
+        doReturn(mockSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
+        mCellBroadcastReceiver.tryCdmaSetCategory(mContext,
+                CdmaSmsCbProgramData.CATEGORY_CMAS_LAST_RESERVED_VALUE + 1, enable);
+        verify(mockSharedPreferences, never()).apply();
     }
 
     @Test
@@ -483,6 +497,14 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
                 CdmaSmsCbProgramData.CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY, false);
         verify(mCellBroadcastReceiver).tryCdmaSetCategory(mContext,
                 CdmaSmsCbProgramData.CATEGORY_CMAS_TEST_MESSAGE, false);
+    }
+
+    @Test
+    public void testHandleCdmaSmsCbProgramDataNotDefinedOperation() {
+        CdmaSmsCbProgramData programData = new CdmaSmsCbProgramData(
+                -1, CdmaSmsCbProgramData.CATEGORY_CMAS_LAST_RESERVED_VALUE + 1, 1, 1, 1, "");
+        mCellBroadcastReceiver.handleCdmaSmsCbProgramData(new ArrayList<>(List.of(programData)));
+        verify(mCellBroadcastReceiver, never()).tryCdmaSetCategory(any(), anyInt(), anyBoolean());
     }
 
     //this method is just to assign mContext to the spied instance mCellBroadcastReceiver
@@ -622,7 +644,6 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         assertThat(mFakeSharedPreferences.getString(
                 "roaming_operator_supported", "321")).isEqualTo("");
     }
-
 
     @After
     public void tearDown() throws Exception {

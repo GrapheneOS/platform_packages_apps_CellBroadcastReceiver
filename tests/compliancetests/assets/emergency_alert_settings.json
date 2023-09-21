@@ -16,7 +16,7 @@
   "brazil": {
     "Extreme Threats": {
       "default_value": "true",
-      "toggle_avail": "false"
+      "toggle_avail": "true"
     },
     "Severe Threats": {
       "default_value": "true",
@@ -273,6 +273,28 @@
       "toggle_avail": "true"
     },
     "Test messages": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "denmark": {
+    "Extreme": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Test": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Exercise": {
       "default_value": "false",
       "toggle_avail": "true"
     },
