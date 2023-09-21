@@ -147,6 +147,39 @@ public class CellBroadcastResourcesTest {
                 SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY), 0, 1);
         result = getDialogTitleResource(mContext, testPublicSafetyMessage);
         assertNotEquals(expectedResult, result);
+
+        // received other channel message, check the res id matching service category
+        final int[] expectedResources = {
+                R.string.pws_other_message_identifiers, R.string.cmas_presidential_level_alert,
+                R.string.cmas_severe_alert, R.string.cmas_amber_alert,
+                R.string.cmas_required_monthly_test,
+                R.string.cmas_exercise_alert, R.string.cmas_operator_defined_alert,
+                R.string.state_local_test_alert};
+        putResources(R.array.emergency_alerts_channels_range_strings,
+                new String[]{"0x1123:rat=gsm, emergency=true"});
+        putResources(R.array.cmas_presidential_alerts_channels_range_strings,
+                new String[]{"0x1112:rat=gsm, emergency=true"});
+        putResources(R.array.cmas_alerts_severe_range_strings,
+                new String[]{"0x1115:rat=gsm, emergency=true"});
+        putResources(R.array.cmas_amber_alerts_channels_range_strings,
+                new String[]{"0x111B:rat=gsm, emergency=true"});
+        putResources(R.array.required_monthly_test_range_strings,
+                new String[]{"0x111C:rat=gsm, emergency=true"});
+        putResources(R.array.exercise_alert_range_strings,
+                new String[]{"0x111D:rat=gsm, emergency=true"});
+        putResources(R.array.operator_defined_alert_range_strings,
+                new String[]{"0x111E:rat=gsm, emergency=true"});
+        putResources(R.array.state_local_test_alert_range_strings,
+                new String[]{"0x1122:rat=gsm, emergency=true"});
+
+        final int[] serviceCategory =
+                {0x1123, 0x1112, 0x1115, 0x111B, 0x111C, 0x111D, 0x111E, 0x1122};
+        for (int i = 0; i < serviceCategory.length; i++) {
+            SmsCbMessage message = new SmsCbMessage(0, 0, 0, null,
+                    serviceCategory[i], "", "", 0, null,
+                    null, 0, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+            assertEquals(expectedResources[i], getDialogTitleResource(mContext, message));
+        }
     }
 
     @Test
@@ -228,10 +261,10 @@ public class CellBroadcastResourcesTest {
         mockTelephonyManager();
         setFakeSharedPreferences();
         putResources(R.array.additional_cbs_channels_strings,
-                new String[]{"0xA800:type=etws_earthquake, emergency=true, scope=carrier",
-                        "0xAFEE:type=etws_tsunami, emergency=true, scope=carrier",
-                        "0xAC00:type=other, emergency=true, scope=carrier",
-                        "0xA802:type=test, emergency=false, scope=carrier"});
+                new String[]{"0xA800:type=etws_earthquake, emergency=true",
+                        "0xAFEE:type=etws_tsunami, emergency=true",
+                        "0xAC00:type=other, emergency=true",
+                        "0xA802:type=test, emergency=false"});
         // received an additional channel message, check the drawable res id matching alertType
         final int[] expectedResources2 = {R.drawable.pict_icon_earthquake,
                 R.drawable.pict_icon_tsunami, -1, -1};
@@ -241,6 +274,59 @@ public class CellBroadcastResourcesTest {
                     serviceCategory[i], "", "", 0, null,
                     null, 0, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
             assertEquals(expectedResources2[i], getDialogPictogramResource(mContext, message));
+        }
+    }
+
+    @Test
+    public void testGetDialogTitleResourceForExistEtwsWarningInfo() throws Exception {
+        setFakeSharedPreferences();
+
+        // when SmsCbEtwsInfo exist, check the string res id that matches the warningType
+        final int[] expectedResources = {R.string.etws_earthquake_warning,
+                R.string.etws_tsunami_warning, R.string.etws_earthquake_and_tsunami_warning,
+                R.string.etws_test_message, R.string.etws_other_emergency_type,
+                R.string.etws_other_emergency_type};
+        final int[] warningType = {SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE,
+                SmsCbEtwsInfo.ETWS_WARNING_TYPE_TSUNAMI,
+                SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE_AND_TSUNAMI,
+                SmsCbEtwsInfo.ETWS_WARNING_TYPE_TEST_MESSAGE,
+                SmsCbEtwsInfo.ETWS_WARNING_TYPE_OTHER_EMERGENCY,
+                SmsCbEtwsInfo.ETWS_WARNING_TYPE_UNKNOWN};
+        for (int i = 0; i < warningType.length; i++) {
+            SmsCbMessage message = new SmsCbMessage(0, 0, 0, null, 0, "", "", 0,
+                    new SmsCbEtwsInfo(warningType[i], false, false, false, null),
+                    null, 0, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+            assertEquals(expectedResources[i], getDialogTitleResource(mContext, message));
+        }
+    }
+
+    @Test
+    public void testGetDialogTitleResourceForAdditionalChannel() throws Exception {
+        setFakeSharedPreferences();
+
+        // received an additional channel message, check the res id matching alertType
+        CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
+        mockTelephonyManager();
+        putResources(R.array.additional_cbs_channels_strings,
+                new String[]{"0xAC01:type=default, emergency=true",
+                        "0xA800:type=etws_earthquake, emergency=true",
+                        "0xAFEE:type=etws_tsunami, emergency=true",
+                        "0xA802:type=test, emergency=true",
+                        "0xAC00:type=other, emergency=true",
+                        "0xA803:type=etws_default, emergency=true",
+                        "0xA804:type=mute, emergency=true",
+                        "0xA805:type=test, emergency=false"});
+        final int[] expectedResources = {R.string.pws_other_message_identifiers,
+                R.string.etws_earthquake_warning, R.string.etws_tsunami_warning,
+                R.string.etws_test_message,
+                R.string.etws_other_emergency_type, R.string.etws_other_emergency_type,
+                R.string.pws_other_message_identifiers, R.string.cb_other_message_identifiers};
+        final int[] serviceCategory =
+                {0xAC01, 0xA800, 0xAFEE, 0xA802, 0xAC00, 0xA803, 0xA804, 0xA805};
+        for (int i = 0; i < serviceCategory.length; i++) {
+            SmsCbMessage message = new SmsCbMessage(0, 0, 0, null, serviceCategory[i], "", "", 0,
+                    null, null, 0, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+            assertEquals(expectedResources[i], getDialogTitleResource(mContext, message));
         }
     }
 
