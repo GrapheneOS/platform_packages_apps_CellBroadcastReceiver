@@ -162,7 +162,7 @@
     <string name="message_identifier" msgid="5558338496219327850">"ಗುರುತಿಸುವಿಕೆ:"</string>
     <string name="message_serial_number" msgid="3386553658712978964">"ಕ್ರಮ ಸಂಖ್ಯೆ:"</string>
     <string name="data_coding_scheme" msgid="4628901196730870577">"ಡೇಟಾ ಕೋಡಿಂಗ್ ಸ್ಕೀಮ್:"</string>
-    <string name="message_content" msgid="6204502929879474632">"ಸಂದೇಶದ ವಿಷಯ:"</string>
+    <string name="message_content" msgid="6204502929879474632">"ಸಂದೇಶದ ಕಂಟೆಂಟ್‍:"</string>
     <string name="location_check_time" msgid="4105326161240531207">"ಸ್ಥಳ ಪರಿಶೀಲನೆಯ ಸಮಯ:"</string>
     <string name="message_displayed" msgid="5091678195925617971">"ಸಂದೇಶವನ್ನು ಪ್ರದರ್ಶಿಸಲಾಗಿದೆ:"</string>
     <string name="message_coordinates" msgid="356333576818059052">"ನಿರ್ದೇಶಾಂಕಗಳು:"</string>
