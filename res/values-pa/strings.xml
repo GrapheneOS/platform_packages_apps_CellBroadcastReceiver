@@ -60,7 +60,7 @@
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"ਅਸਵੀਕਾਰ ਕੀਤੀਆਂ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"ਅਵਾਜ਼ੀ ਕਾਲ ਵਿੱਚ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"ਸਿਮ ਦੇ ਆਧਾਰ \'ਤੇ ਸਵੈਚਲਿਤ WEA ਸੈਟਿੰਗਾਂ ਦੀਆਂ ਤਬਦੀਲੀਆਂ"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ਸੁਚੇਤਨਾਵਾਂ ਦੀ ਆਗਿਆ ਦਿਓ"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"ਅਲਰਟਾਂ ਦੀ ਆਗਿਆ ਦਿਓ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"ਵਾਇਰਲੈੱਸ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾ ਦੀਆਂ ਸੂਚਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ਸੁਚੇਤਨਾ ਰਿਮਾਈਂਡਰ"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"ਸੁਚੇਤਨਾ ਵਾਲਾ ਸੁਨੇਹਾ ਬੋਲੋ"</string>
