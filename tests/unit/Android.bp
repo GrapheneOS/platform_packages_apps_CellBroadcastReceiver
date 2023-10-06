@@ -63,8 +63,9 @@ android_test {
         "SettingsLibSettingsTheme",
         "SettingsLibCollapsingToolbarBaseActivity",
         "SettingsLibMainSwitchPreference",
-	"SettingsLibTopIntroPreference",
+        "SettingsLibTopIntroPreference",
         "modules-utils-build_system",
+        "cellbroadcast-java-proto-lite",
     ],
     min_sdk_version: "30",
 }
@@ -79,6 +80,16 @@ android_test {
     test_suites: ["device-tests", "mts-cellbroadcast"],
     manifest: "AndroidManifest.xml",
     test_config: "AndroidTest.xml",
+}
+
+android_test {
+    name: "CellBroadcastReceiverGoogleUnitTests",
+    certificate: "networkstack",
+    defaults: ["CellBroadcastTestCommon"],
+    instrumentation_for: "CellBroadcastApp",
+    test_suites: ["device-tests", "mts-cellbroadcast"],
+    manifest: "AndroidManifest.xml",
+    test_config: "AndroidTest_PixelExperience.xml",
 }
 
 android_test {

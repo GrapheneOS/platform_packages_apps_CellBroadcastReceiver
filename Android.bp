@@ -7,13 +7,12 @@ package {
 java_defaults {
     name: "CellBroadcastCommon",
     min_sdk_version: "30",
-    target_sdk_version: "33",
     sdk_version: "module_current",
     privileged: true,
     srcs: [
       "src/**/*.java",
       ":cellbroadcast-constants-shared-srcs",
-      ":statslog-cellbroadcast-java-gen",
+      ":statslog-cellbroadcast-module-java-gen",
     ],
     libs: [
         "framework-annotations-lib",
@@ -30,8 +29,9 @@ java_defaults {
         "SettingsLibSettingsTheme",
         "SettingsLibCollapsingToolbarBaseActivity",
         "SettingsLibMainSwitchPreference",
-	"SettingsLibTopIntroPreference",
+        "SettingsLibTopIntroPreference",
         "modules-utils-build_system",
+        "cellbroadcast-java-proto-lite",
     ],
     optimize: {
        proguard_flags_files: ["proguard.flags"],
@@ -64,6 +64,7 @@ filegroup {
 android_app {
      name: "CellBroadcastAppPlatform",
      defaults: ["CellBroadcastCommon"],
+     target_sdk_version: "33",
      certificate: "platform",
      // CellBroadcastAppPlatform is a replacement for com.android.cellbroadcast apex which consists
      // of CellBroadcastApp
@@ -79,5 +80,19 @@ filegroup {
     name: "cellbroadcast-database-sources",
     srcs: [
         "src/com/android/cellbroadcastreceiver/CellBroadcastDatabaseHelper.java",
+    ],
+}
+
+java_library {
+    name: "cellbroadcast-java-proto-lite",
+    proto: {
+        type: "lite",
+        include_dirs: ["external/protobuf/src"],
+        canonical_path_from_root: false,
+    },
+    srcs: ["proto/*.proto"],
+    sdk_version: "core_current",
+    apex_available : ["com.android.cellbroadcast",
+                      "//apex_available:platform",
     ],
 }
