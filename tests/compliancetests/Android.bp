@@ -29,7 +29,7 @@ java_defaults {
         "androidx.test.rules",
         "androidx.test.espresso.core",
         "mockito-target-minus-junit4",
-        "truth-prebuilt",
+        "truth",
         "ub-uiautomator",
         "android.telephony.mockmodem",
         "modules-utils-build_system",
@@ -43,7 +43,10 @@ java_defaults {
 android_test {
     name: "CellBroadcastReceiverComplianceTests",
     defaults: ["CellBroadcastTestCommonComplianceTest"],
-    test_suites: ["device-tests", "mts-cellbroadcast"],
+    test_suites: [
+        "device-tests",
+        "mts-cellbroadcast",
+    ],
     min_sdk_version: "30",
 }
 
