@@ -30,7 +30,7 @@ java_defaults {
         "androidx.test.espresso.core",
         "androidx.test.uiautomator_uiautomator",
         "mockito-target-minus-junit4",
-        "truth-prebuilt",
+        "truth",
     ],
     // Include all test java files.
     srcs: [":cellbroadcastreceiver-shared-srcs-test"],
@@ -44,14 +44,17 @@ android_test {
     name: "CellBroadcastReceiverOemUnitTests",
     defaults: ["CellBroadcastTestCommon"],
     srcs: [":cellbroadcastreceiver-sources"],
-    test_suites: ["device-tests", "mts-cellbroadcast"],
+    test_suites: [
+        "device-tests",
+        "mts-cellbroadcast",
+    ],
     manifest: "AndroidManifest_OemTesting.xml",
     test_config: "AndroidTest_Oem.xml",
     resource_dirs: [
         "main-res",
     ],
     aaptflags: [
-        "--custom-package com.android.cellbroadcastreceiver"
+        "--custom-package com.android.cellbroadcastreceiver",
     ],
     static_libs: [
         "androidx.legacy_legacy-support-v4",
@@ -70,14 +73,16 @@ android_test {
     min_sdk_version: "30",
 }
 
-
 // used to run mts coverage test
 android_test {
     name: "CellBroadcastReceiverUnitTests",
     certificate: "networkstack",
     defaults: ["CellBroadcastTestCommon"],
     instrumentation_for: "CellBroadcastApp",
-    test_suites: ["device-tests", "mts-cellbroadcast"],
+    test_suites: [
+        "device-tests",
+        "mts-cellbroadcast",
+    ],
     manifest: "AndroidManifest.xml",
     test_config: "AndroidTest.xml",
 }
@@ -87,7 +92,10 @@ android_test {
     certificate: "networkstack",
     defaults: ["CellBroadcastTestCommon"],
     instrumentation_for: "CellBroadcastApp",
-    test_suites: ["device-tests", "mts-cellbroadcast"],
+    test_suites: [
+        "device-tests",
+        "mts-cellbroadcast",
+    ],
     manifest: "AndroidManifest.xml",
     test_config: "AndroidTest_PixelExperience.xml",
 }
