@@ -54,6 +54,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.MatrixCursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -70,6 +71,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
+
+import androidx.test.filters.SdkSuppress;
 
 import com.android.cellbroadcastreceiver.CellBroadcastCursorAdapter;
 import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
@@ -142,6 +145,7 @@ public class CellBroadcastListActivityTest extends
         stopActivity();
     }
 
+    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.TIRAMISU)
     public void testOnCreateForWatch() throws Throwable {
         setWatchFeatureEnabled(true);
 
@@ -156,6 +160,7 @@ public class CellBroadcastListActivityTest extends
         stopActivity();
     }
 
+    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.TIRAMISU)
     public void testContextMenuForWatch() throws Throwable {
         setWatchFeatureEnabled(true);
         CellBroadcastListActivity activity = startActivity();
@@ -323,6 +328,7 @@ public class CellBroadcastListActivityTest extends
         stopActivity();
     }
 
+    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.TIRAMISU)
     public void testOnContextItemSelectedDeleteForWatch() throws Throwable {
         setWatchFeatureEnabled(true);
         CellBroadcastListActivity activity = startActivity();
