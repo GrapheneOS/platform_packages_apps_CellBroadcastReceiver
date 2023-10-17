@@ -24,7 +24,7 @@
     <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"তথ্য সংক্রান্ত বিজ্ঞপ্তি"</string>
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"এই ব্যবহারকারীর জন্য ওয়্যারলেস সতর্কতার সেটিংস উপলভ্য নয়"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ঠিক আছে"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"পূর্বের কোনও সতর্কতা নেই"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"পূর্বের কোনও অ্যালার্ট নেই"</string>
     <string name="menu_preferences" msgid="3596514894131599202">"সেটিংস"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"সম্প্রচারগুলি মুছে দিন"</string>
     <string name="message_options" msgid="3178489901903589574">"মেসেজ বিকল্পগুলি"</string>
@@ -94,7 +94,7 @@
     <!-- no translation found for enable_operator_defined_test_alerts_title (7459219458579095832) -->
     <skip />
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"জরুরি সতর্কতা পান: অপারেটর সংক্রান্ত সতর্কতা"</string>
-    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"কম্পন"</string>
+    <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ভাইব্রেশন"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"যেকোনও সময়ে বিজ্ঞপ্তি পেতে সম্পূর্ণ ভলিউম দিন"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"বিরক্ত করবে না &amp; অন্য ভলিউম সেটিংস এড়িয়ে যান"</string>
