@@ -37,11 +37,11 @@ public class CellBroadcastConfigTest extends CellBroadcastBaseTest {
     private static final String TAG = "CellBroadcastConfigTest";
 
     @Test
-    @Parameters(method = "paramsForTest")
-    public void testCellBroadcastRange(String carrierName) throws Throwable {
+    @Parameters(method = "paramsCarrierAndMccMncForTest")
+    public void testCellBroadcastRange(String carrierName, String mccMnc) throws Throwable {
         logd("CellBroadcastConfigTest#testCellBroadcastRange");
 
-        setSimInfo(carrierName);
+        setSimInfo(carrierName, mccMnc);
 
         logd("Check Broadcast Channel Configs");
         Set<Integer> outputConfigs = sMockModemManager.getGsmBroadcastConfig(sSlotId);

@@ -144,7 +144,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         // setup mccmnc
         if (sInputMccMnc == null || (sInputMccMnc != null
                 && !sInputMccMnc.equals(carrierInfo.mMccMnc))) {
-            setSimInfo(carrierName);
+            setSimInfo(carrierName, carrierInfo.mMccMnc);
         }
 
         // change language of CBR
@@ -278,7 +278,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         // setup mccmnc
         if (sInputMccMnc == null || (sInputMccMnc != null
                 && !sInputMccMnc.equals(carrierInfo.mMccMnc))) {
-            setSimInfo(carrierName);
+            setSimInfo(carrierName, carrierInfo.mMccMnc);
         }
 
         // change language of CBR

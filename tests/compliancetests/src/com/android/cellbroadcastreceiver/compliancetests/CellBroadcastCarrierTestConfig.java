@@ -18,6 +18,7 @@ package com.android.cellbroadcastreceiver.compliancetests;
 
 import android.text.TextUtils;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,7 +38,8 @@ public class CellBroadcastCarrierTestConfig implements ITestConfig {
     public CellBroadcastCarrierTestConfig(JSONObject carriersObject, String carrierName)
             throws JSONException {
         JSONObject carrierObject = carriersObject.getJSONObject(carrierName);
-        mMccMnc = carrierObject.getString(CARRIER_MCCMNC_FIELD);
+        JSONArray mccMncList = carrierObject.getJSONArray(CARRIER_MCCMNC_FIELD);
+        mMccMnc = mccMncList.getString(0);
         String disableNavigationString =
                 getObjectString(carrierObject, CARRIER_DISABLE_NAVIGATION);
         mDisableNavigation = false;
