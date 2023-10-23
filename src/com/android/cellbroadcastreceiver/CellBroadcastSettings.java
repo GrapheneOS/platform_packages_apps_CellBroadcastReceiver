@@ -38,7 +38,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Switch;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.ListPreference;
@@ -53,7 +54,6 @@ import com.android.internal.annotations.VisibleForTesting;
 import com.android.modules.utils.build.SdkLevel;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.widget.MainSwitchPreference;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -471,10 +471,10 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 if (mMasterToggle instanceof MainSwitchPreference) {
                     MainSwitchPreference mainSwitchPreference =
                             (MainSwitchPreference) mMasterToggle;
-                    final OnMainSwitchChangeListener mainSwitchListener =
-                            new OnMainSwitchChangeListener() {
+                    final OnCheckedChangeListener mainSwitchListener =
+                            new OnCheckedChangeListener() {
                         @Override
-                        public void onSwitchChanged(Switch switchView, boolean isChecked) {
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                             setAlertsEnabled(isChecked);
                             onPreferenceChangedByUser(getContext());
                         }
