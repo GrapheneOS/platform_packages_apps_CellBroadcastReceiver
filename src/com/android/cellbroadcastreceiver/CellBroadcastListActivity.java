@@ -204,6 +204,9 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
         private boolean mIsWatch;
 
+        @VisibleForTesting
+        public AlertDialog.Builder mInjectAlertDialogBuilder;
+
         void setActivity(CellBroadcastListActivity activity) {
             mActivity = activity;
         }
@@ -366,7 +369,9 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                     messageDisplayed, geometry);
             int titleId = (mCurrentLoaderId == LOADER_NORMAL_HISTORY)
                     ? R.string.view_details_title : R.string.view_details_debugging_title;
-            new AlertDialog.Builder(getActivity())
+            AlertDialog.Builder dialogBuilder = mInjectAlertDialogBuilder != null
+                    ? mInjectAlertDialogBuilder : new AlertDialog.Builder(getActivity());
+            dialogBuilder
                     .setTitle(titleId)
                     .setMessage(details)
                     .setCancelable(true)
