@@ -62,9 +62,14 @@ import org.mockito.Mock;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class CellBroadcastReceiverTest extends CellBroadcastTest {
     private static final long MAX_INIT_WAIT_MS = 5000;
+
+    private static final String[] MCC_TABLE = {
+        "gr:202", "nL:204", "Be:206", "US:310"
+    };
 
     CellBroadcastReceiver mCellBroadcastReceiver;
     String mPackageName = "testPackageName";
@@ -118,6 +123,7 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     public void setUp() throws Exception {
         super.setUp(this.getClass().getSimpleName());
         doReturn(mConfiguration).when(mResources).getConfiguration();
+        doReturn(MCC_TABLE).when(mResources).getStringArray(R.array.iso_country_code_mcc_table);
         mCellBroadcastReceiver = spy(new CellBroadcastReceiver());
         doReturn(mResources).when(mCellBroadcastReceiver).getResourcesMethod();
         doNothing().when(mCellBroadcastReceiver).startConfigServiceToEnableChannels();
@@ -643,6 +649,64 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         verify(mCellBroadcastReceiver, times(6)).startConfigServiceToEnableChannels();
         assertThat(mFakeSharedPreferences.getString(
                 "roaming_operator_supported", "321")).isEqualTo("");
+    }
+
+    @Test
+    public void testOnSimlessChange() {
+        mFakeSharedPreferences.putInt("service_state", ServiceState.STATE_IN_SERVICE);
+        mFakeSharedPreferences.putString("roaming_operator_supported", "");
+        doReturn("Us").when(mMockTelephonyManager).getNetworkCountryIso();
+        mockTelephonyManager();
+        doReturn("android.intent.action.SERVICE_STATE").when(mIntent).getAction();
+        doReturn(ServiceState.STATE_OUT_OF_SERVICE).when(mIntent)
+                .getIntExtra(anyString(), anyInt());
+        doReturn("").when(mMockTelephonyManager).getSimOperator();
+        doReturn("").when(mMockTelephonyManager).getNetworkOperator();
+        doReturn(false).when(mMockTelephonyManager).isNetworkRoaming();
+        doReturn(new String[] {"XXX"}).when(mResources).getStringArray(anyInt());
+
+        mCellBroadcastReceiver.onReceive(mContext, mIntent);
+
+        // verify the roaming operator is set correctly for simless case
+        verify(mCellBroadcastReceiver, times(1)).startConfigServiceToEnableChannels();
+        assertThat(mFakeSharedPreferences.getString(
+                "roaming_operator_supported", "")).isEqualTo("310");
+
+        doReturn(ServiceState.STATE_OUT_OF_SERVICE).when(mIntent)
+                .getIntExtra(anyString(), anyInt());
+        doReturn("123456").when(mMockTelephonyManager).getSimOperator();
+        doReturn("123456").when(mMockTelephonyManager).getNetworkOperator();
+
+        mCellBroadcastReceiver.onReceive(mContext, mIntent);
+
+        // verify the roaming operator is reset when sim loaded
+        verify(mCellBroadcastReceiver, times(2)).startConfigServiceToEnableChannels();
+        assertThat(mFakeSharedPreferences.getString(
+                "roaming_operator_supported", "")).isEqualTo("");
+    }
+
+    @Test
+    public void testGetMccMap() {
+        final String[] mccArray = new String[] {
+            //valid values
+            "gr:202", "nL:204", "Be:206", "US:310",
+            //invalid values
+            "aaa", "123", "aaa123", "aaa 123"
+        };
+        int validNum = 4;
+        doReturn(mccArray).when(mResources).getStringArray(anyInt());
+
+        Map<String, String> map = CellBroadcastReceiver.getMccMap(mResources);
+
+        assertThat(map.size()).isEqualTo(validNum);
+        // 2 times expected as it has been called in setup
+        verify(mResources, times(2)).getStringArray(eq(R.array.iso_country_code_mcc_table));
+
+        for (int i = 0; i < validNum; i++) {
+            String[] values = mccArray[i].split(":");
+            assertThat(map.get(values[0].toLowerCase())).isEqualTo(values[1]);
+            assertThat(map.get(values[0].toUpperCase())).isEqualTo(null);
+        }
     }
 
     @After

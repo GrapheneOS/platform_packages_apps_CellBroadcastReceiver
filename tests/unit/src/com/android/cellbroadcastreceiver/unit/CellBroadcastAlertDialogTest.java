@@ -78,7 +78,6 @@ import org.mockito.MockitoAnnotations;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Map;
 
 public class CellBroadcastAlertDialogTest extends
         CellBroadcastActivityTestCase<CellBroadcastAlertDialog> {
@@ -726,10 +725,7 @@ public class CellBroadcastAlertDialogTest extends
         Resources mockResources2 = mock(Resources.class);
         doReturn(false).when(mockResources2).getBoolean(R.bool.show_alert_title);
 
-        Field field = CellBroadcastSettings.class.getDeclaredField("sResourcesCacheByOperator");
-        field.setAccessible(true);
-        Map<String, Resources> roamingMap = (Map<String, Resources>) field.get(null);
-        roamingMap.put("334090", mockResources2);
+        CellBroadcastSettings.sResourcesCacheByOperator.put("334090", mockResources2);
 
         mMessageList.add(CellBroadcastAlertServiceTest.createMessageForCmasMessageClass(12413,
                 SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY,
