@@ -35,6 +35,7 @@ import android.view.Display;
 import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.function.BooleanSupplier;
 
 public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityUnitTestCase<T> {
 
@@ -203,5 +204,22 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
             mIsOverrideConfigurationEnabled = enabled;
         }
 
+    }
+
+    protected void waitForChange(BooleanSupplier condition, long timeoutMs) {
+        CountDownLatch latch = new CountDownLatch(1);
+        new Thread(() -> {
+            while (latch.getCount() > 0 && !condition.getAsBoolean()) {
+                // do nothing
+            }
+            latch.countDown();
+        }).start();
+
+        try {
+            latch.await(timeoutMs, TimeUnit.MILLISECONDS);
+        } catch (InterruptedException e) {
+            // do nothing
+        }
+        latch.countDown();
     }
 }

@@ -30,6 +30,7 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -42,6 +43,7 @@ import android.support.test.uiautomator.UiDevice;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 
+import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 import androidx.preference.TwoStatePreference;
 import androidx.test.InstrumentationRegistry;
@@ -62,6 +64,7 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.lang.reflect.Field;
 import java.util.Locale;
 
 
@@ -70,6 +73,13 @@ public class CellBroadcastSettingsTest extends
 
     private UiDevice mDevice;
     private static final long DEVICE_WAIT_TIME = 1000L;
+    private static final String ROAMING_OPERATOR_SUPPORTED = "roaming_operator_supported";
+    private static final String ACTION_TESTING_MODE_CHANGED =
+            "com.android.cellbroadcastreceiver.intent.ACTION_TESTING_MODE_CHANGED";
+    private static final String TESTING_MODE = "testing_mode";
+    private static final int PREFERENCE_PUT_TYPE_BOOL = 0;
+    private static final int PREFERENCE_PUT_TYPE_STRING = 1;
+    private static final long TEST_TIMEOUT_MILLIS = 1000L;
 
     @Captor
     private ArgumentCaptor<Intent> mIntent;
@@ -344,5 +354,107 @@ public class CellBroadcastSettingsTest extends
         cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.onResume();
 
         assertFalse(extremeCheckBox.isEnabled());
+    }
+
+    @Test
+    public void testTopIntroductionForRoamingSupport() throws Throwable {
+        String topIntroRoamingText = "test";
+        doReturn(topIntroRoamingText).when(mContext.getResources()).getString(
+                eq(R.string.top_intro_roaming_text));
+        setSubscriptionManager();
+        setPreference(PREFERENCE_PUT_TYPE_STRING, ROAMING_OPERATOR_SUPPORTED, "XXX");
+
+        CellBroadcastSettings settings = startActivity();
+
+        Preference topIntroPreference = settings.mCellBroadcastSettingsFragment.findPreference(
+                CellBroadcastSettings.KEY_PREFS_TOP_INTRO);
+        assertEquals(topIntroRoamingText, topIntroPreference.getTitle().toString());
+    }
+
+    @Test
+    public void testDoNotShowTestCheckBox() throws Throwable {
+        setSubscriptionManager();
+        setPreference(PREFERENCE_PUT_TYPE_BOOL, TESTING_MODE, "false");
+        doReturn(false).when(mContext.getResources()).getBoolean(
+                eq(R.bool.show_separate_exercise_settings));
+        doReturn(false).when(mContext.getResources()).getBoolean(
+                eq(R.bool.show_separate_operator_defined_settings));
+        CellBroadcastSettings settings = startActivity();
+
+        TwoStatePreference exerciseTestCheckBox =
+                settings.mCellBroadcastSettingsFragment.findPreference(
+                        CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        TwoStatePreference operatorDefinedCheckBox =
+                settings.mCellBroadcastSettingsFragment.findPreference(
+                        CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+
+        // received the ACTION_TESTING_MODE_CHANGED, do not show exerciseTestCheckBox &
+        // operatorDefinedCheckBox
+        Field fieldTestingModeChangedReceiver =
+                CellBroadcastSettings.CellBroadcastSettingsFragment.class.getDeclaredField(
+                        "mTestingModeChangedReceiver");
+        fieldTestingModeChangedReceiver.setAccessible(true);
+        BroadcastReceiver broadcastReceiver =
+                (BroadcastReceiver) fieldTestingModeChangedReceiver.get(
+                        settings.mCellBroadcastSettingsFragment);
+        broadcastReceiver.onReceive(mContext, new Intent().setAction(ACTION_TESTING_MODE_CHANGED));
+
+        assertFalse(exerciseTestCheckBox.isVisible());
+        assertFalse(operatorDefinedCheckBox.isVisible());
+    }
+
+    @Test
+    public void testShowTestCheckBox() throws Throwable {
+        setSubscriptionManager();
+        setPreference(PREFERENCE_PUT_TYPE_BOOL, TESTING_MODE, "true");
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                eq(R.bool.show_separate_exercise_settings));
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                eq(R.bool.show_separate_operator_defined_settings));
+        CellBroadcastSettings settings = startActivity();
+
+        TwoStatePreference exerciseTestCheckBox =
+                settings.mCellBroadcastSettingsFragment.findPreference(
+                        CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        TwoStatePreference operatorDefinedCheckBox =
+                settings.mCellBroadcastSettingsFragment.findPreference(
+                        CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+
+        // received the ACTION_TESTING_MODE_CHANGED, show exerciseTestCheckBox &
+        // operatorDefinedCheckBox
+        Field fieldTestingModeChangedReceiver =
+                CellBroadcastSettings.CellBroadcastSettingsFragment.class.getDeclaredField(
+                        "mTestingModeChangedReceiver");
+        fieldTestingModeChangedReceiver.setAccessible(true);
+        BroadcastReceiver broadcastReceiver =
+                (BroadcastReceiver) fieldTestingModeChangedReceiver.get(
+                        settings.mCellBroadcastSettingsFragment);
+        broadcastReceiver.onReceive(mContext, new Intent().setAction(ACTION_TESTING_MODE_CHANGED));
+
+        waitForChange(() -> exerciseTestCheckBox.isVisible(), TEST_TIMEOUT_MILLIS);
+        assertTrue(exerciseTestCheckBox.isVisible());
+        waitForChange(() -> operatorDefinedCheckBox.isVisible(), TEST_TIMEOUT_MILLIS);
+        assertTrue(operatorDefinedCheckBox.isVisible());
+    }
+
+    private void setSubscriptionManager() {
+        SubscriptionManager mockSubManager = mock(SubscriptionManager.class);
+        injectSystemService(SubscriptionManager.class, mockSubManager);
+        SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
+        doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
+    }
+
+    private void setPreference(int putType, String key, String value) {
+        mContext.injectSharedPreferences(mFakeSharedPreferences);
+        switch (putType) {
+            case PREFERENCE_PUT_TYPE_BOOL:
+                PreferenceManager.getDefaultSharedPreferences(mContext).edit()
+                        .putBoolean(key, Boolean.valueOf(value)).apply();
+                break;
+            case PREFERENCE_PUT_TYPE_STRING:
+                PreferenceManager.getDefaultSharedPreferences(mContext).edit()
+                        .putString(key, value).apply();
+                break;
+        }
     }
 }
