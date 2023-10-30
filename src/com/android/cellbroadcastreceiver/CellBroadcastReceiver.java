@@ -21,6 +21,7 @@ import static com.android.cellbroadcastservice.CellBroadcastMetrics.ERRTYPE_PREF
 import static com.android.cellbroadcastservice.CellBroadcastMetrics.RPT_SPC;
 import static com.android.cellbroadcastservice.CellBroadcastMetrics.SRC_CBR;
 
+import android.annotation.NonNull;
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -46,6 +47,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaSmsCbProgramData;
 import android.text.TextUtils;
+import android.util.ArrayMap;
 import android.util.EventLog;
 import android.util.Log;
 import android.widget.Toast;
@@ -57,6 +59,8 @@ import com.android.internal.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Locale;
+import java.util.Map;
 
 public class CellBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "CellBroadcastReceiver";
@@ -113,6 +117,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
     private Context mContext;
 
+    // This is to map the iso country code to the MCC string
+    private Map<String, String> mMccMap;
+
     /**
      * this method is to make this class unit-testable, because CellBroadcastSettings.getResources()
      * is a static method and cannot be stubbed.
@@ -131,6 +138,10 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         mContext = context.getApplicationContext();
         String action = intent.getAction();
         Resources res = getResourcesMethod();
+
+        if (mMccMap == null) {
+            mMccMap = getMccMap(res);
+        }
 
         if (ACTION_MARK_AS_READ.equals(action)) {
             // The only way this'll be called is if someone tries to maliciously set something
@@ -226,17 +237,27 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         logd("onServiceStateChanged, ss: " + ss);
         // check whether to support roaming network
         String roamingOperator = null;
-        if (ss == ServiceState.STATE_IN_SERVICE || ss == ServiceState.STATE_EMERGENCY_ONLY) {
+        if (ss != ServiceState.STATE_POWER_OFF) {
             TelephonyManager tm = context.getSystemService(TelephonyManager.class);
             String networkOperator = tm.getNetworkOperator();
             logd("networkOperator: " + networkOperator);
 
+            // check the mcc on emergency only mode
+            if (TextUtils.isEmpty(networkOperator)) {
+                String countryCode = tm.getNetworkCountryIso();
+                if (mMccMap != null && !TextUtils.isEmpty(countryCode)) {
+                    networkOperator = mMccMap.get(countryCode.toLowerCase(Locale.ROOT).trim());
+                    logd("networkOperator on emergency mode: " + networkOperator
+                            + " for the country code: " + countryCode);
+                }
+            }
+
             // check roaming config only if the network oprator is not empty as the config
             // is based on operator numeric
-            if (!networkOperator.isEmpty()) {
+            if (!TextUtils.isEmpty(networkOperator)) {
                 // No roaming supported by default
                 roamingOperator = "";
-                if ((tm.isNetworkRoaming() || ss == ServiceState.STATE_EMERGENCY_ONLY)
+                if ((tm.isNetworkRoaming() || ss != ServiceState.STATE_IN_SERVICE)
                         && !networkOperator.equals(tm.getSimOperator())) {
                     String propRoamingPlmn = SystemProperties.get(
                             ROAMING_PLMN_SUPPORTED_PROPERTY_KEY, "").trim();
@@ -279,6 +300,25 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
         }
         CellBroadcastReceiverMetrics.getInstance().getFeatureMetrics(mContext)
                 .onChangedRoamingSupport(!TextUtils.isEmpty(roamingOperator) ? true : false);
+    }
+
+    /**
+     * Initialize the MCC mapping table
+     */
+    @VisibleForTesting
+    @NonNull
+    public static Map<String, String> getMccMap(@NonNull Resources res) {
+        String[] arr = res.getStringArray(R.array.iso_country_code_mcc_table);
+        Map<String, String> map = new ArrayMap<>(arr.length);
+
+        for (String item : arr) {
+            String[] val = item.split(":");
+            if (val.length > 1) {
+                map.put(val[0].toLowerCase(Locale.ROOT).trim(), val[1].trim());
+            }
+        }
+
+        return map;
     }
 
     /**
