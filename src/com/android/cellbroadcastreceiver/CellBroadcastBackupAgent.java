@@ -20,6 +20,7 @@ import android.app.backup.BackupAgentHelper;
 import android.app.backup.SharedPreferencesBackupHelper;
 import android.content.Intent;
 import android.os.UserHandle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.android.internal.annotations.VisibleForTesting;
@@ -30,19 +31,16 @@ import com.android.internal.annotations.VisibleForTesting;
  * now it backs up the whole shared preference file. This can be
  * modified in the future to accommodate partial backup.
  */
-public class CellBroadcastBackupAgent extends BackupAgentHelper
-{
-    private static final String TAG = "CBBackupAgent";
-
+public class CellBroadcastBackupAgent extends BackupAgentHelper {
     @VisibleForTesting
     public static final String SHARED_KEY = "shared_pref";
-
-    private static final String SHARED_PREFS_NAME = "com.android.cellbroadcastreceiver_preferences";
+    private static final String TAG = "CBBackupAgent";
 
     @Override
     public void onCreate() {
         Log.d(TAG, "onCreate");
-        addHelper(SHARED_KEY, new SharedPreferencesBackupHelper(this, SHARED_PREFS_NAME));
+        addHelper(SHARED_KEY, new SharedPreferencesBackupHelper(this,
+                PreferenceManager.getDefaultSharedPreferencesName(this)));
     }
 
     @Override
