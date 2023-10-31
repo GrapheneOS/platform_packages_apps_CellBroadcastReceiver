@@ -124,12 +124,14 @@ public class CellBroadcastConfigService extends IntentService {
                         enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
                     }
 
-                    String roamingOperator = CellBroadcastReceiver.getRoamingOperatorSupported(
-                            this);
-                    CellBroadcastReceiverMetrics.getInstance().onConfigUpdated(
-                            getApplicationContext(),
-                            roamingOperator.isEmpty() ? "" : roamingOperator,
-                            mChannelRangeForMetric);
+                    if (!mChannelRangeForMetric.isEmpty()) {
+                        String roamingOperator = CellBroadcastReceiver.getRoamingOperatorSupported(
+                                this);
+                        CellBroadcastReceiverMetrics.getInstance().onConfigUpdated(
+                                getApplicationContext(),
+                                roamingOperator.isEmpty() ? "" : roamingOperator,
+                                mChannelRangeForMetric);
+                    }
                 }
             } catch (Exception ex) {
                 CellBroadcastReceiverMetrics.getInstance().logModuleError(
@@ -558,19 +560,21 @@ public class CellBroadcastConfigService extends IntentService {
                                 + range.mEndId + "], type:" + range.mRanType
                                 + ", enable:" + enable);
                     }
-                    if (enable) {
+                    if (enable && (subId == SubscriptionManager.getDefaultSubscriptionId())) {
                         mChannelRangeForMetric.add(new Pair(range.mStartId, range.mEndId));
                     }
                     CellBroadcastIdRange cbRange = new CellBroadcastIdRange(range.mStartId,
                             range.mEndId, range.mRanType, enable);
                     channelIdRanges.add(cbRange);
                 } else {
+                    if (VDBG) {
+                        log("enableCellBroadcastRange[" + range.mStartId + "-"
+                                + range.mEndId + "], type:" + range.mRanType);
+                    }
                     if (enable) {
-                        if (VDBG) {
-                            log("enableCellBroadcastRange[" + range.mStartId + "-"
-                                    + range.mEndId + "], type:" + range.mRanType);
+                        if (subId == SubscriptionManager.getDefaultSubscriptionId()) {
+                            mChannelRangeForMetric.add(new Pair(range.mStartId, range.mEndId));
                         }
-                        mChannelRangeForMetric.add(new Pair(range.mStartId, range.mEndId));
                         manager.enableCellBroadcastRange(range.mStartId, range.mEndId,
                                 range.mRanType);
                     } else {
