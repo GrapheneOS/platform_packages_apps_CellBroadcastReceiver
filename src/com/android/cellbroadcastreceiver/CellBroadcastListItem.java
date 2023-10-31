@@ -17,6 +17,7 @@
 package com.android.cellbroadcastreceiver;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.provider.Telephony;
@@ -30,6 +31,8 @@ import android.view.accessibility.AccessibilityEvent;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.internal.annotations.VisibleForTesting;
+
 /**
  * This class manages the list item view for a single alert.
  */
@@ -37,9 +40,12 @@ public class CellBroadcastListItem extends RelativeLayout {
 
     private SmsCbMessage mCbMessage;
 
-    private TextView mChannelView;
-    private TextView mMessageView;
-    private TextView mDateView;
+    @VisibleForTesting
+    public TextView mChannelView;
+    @VisibleForTesting
+    public TextView mMessageView;
+    @VisibleForTesting
+    public TextView mDateView;
     private Context mContext;
 
     public CellBroadcastListItem(Context context, AttributeSet attrs) {
@@ -66,7 +72,11 @@ public class CellBroadcastListItem extends RelativeLayout {
      */
     public void bind(SmsCbMessage message) {
         mCbMessage = message;
-        mChannelView.setText(CellBroadcastResources.getDialogTitleResource(mContext, message));
+        Resources res = CellBroadcastSettings.getResourcesByOperator(mContext,
+                message.getSubscriptionId(),
+                CellBroadcastReceiver.getRoamingOperatorSupported(mContext));
+        mChannelView.setText(res.getText(
+                CellBroadcastResources.getDialogTitleResource(mContext, message)));
         mDateView.setText(DateUtils.formatDateTime(getContext(), message.getReceivedTime(),
                 DateUtils.FORMAT_NO_NOON_MIDNIGHT | DateUtils.FORMAT_SHOW_TIME
                         | DateUtils.FORMAT_ABBREV_ALL | DateUtils.FORMAT_SHOW_DATE

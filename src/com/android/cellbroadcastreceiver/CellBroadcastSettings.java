@@ -167,7 +167,8 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
     public static final String ANY_PREFERENCE_CHANGED_BY_USER = "any_preference_changed_by_user";
 
     // Resource cache per operator
-    private static final Map<String, Resources> sResourcesCacheByOperator = new HashMap<>();
+    @VisibleForTesting
+    public static final Map<String, Resources> sResourcesCacheByOperator = new HashMap<>();
     private static final Object sCacheLock = new Object();
 
     // Intent sent from cellbroadcastreceiver to notify cellbroadcastservice that area info update
