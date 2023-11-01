@@ -65,7 +65,6 @@ public class CellBroadcastReceiverMetrics {
     /**
      * Get instance of CellBroadcastReceiverMetrics.
      */
-    @VisibleForTesting
     public static CellBroadcastReceiverMetrics getInstance() {
         if (sCbrMetrics == null) {
             sCbrMetrics = new CellBroadcastReceiverMetrics();

@@ -66,6 +66,10 @@ public class CellBroadcastBackupAgentTest {
 
     @Test
     public void testOnCreate() throws Exception {
+        final String packageName = CellBroadcastInternalReceiver.class.getPackage().getName();
+        doReturn(packageName).when(mMockContext).getPackageName();
+
+        mBackupAgentUT.attach(mMockContext);
         mockBackupDispatcher();
         mBackupAgentUT.onCreate();
         // Ideally we should verify creation of SharedPreferencesBackupHelper, but it's not quite
