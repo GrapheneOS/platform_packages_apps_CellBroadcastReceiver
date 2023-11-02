@@ -230,9 +230,10 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         // A hack to return mResources from static method
         // CellBroadcastSettings.getResources(context).
         //doReturn(mSubService).when(mSubService).queryLocalInterface(anyString());
-        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService).getDefaultSubId();
+        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService)
+                .getDefaultSubIdAsUser(anyInt());
         doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(
-                mSubService).getDefaultSmsSubId();
+                mSubService).getDefaultSmsSubIdAsUser(anyInt());
 
         doReturn(new String[]{""}).when(mResources).getStringArray(anyInt());
 
