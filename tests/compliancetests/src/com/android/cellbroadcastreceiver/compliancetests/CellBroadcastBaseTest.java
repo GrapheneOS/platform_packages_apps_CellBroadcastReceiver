@@ -93,6 +93,7 @@ public class CellBroadcastBaseTest {
     protected static String sPackageName = null;
 
     protected static IRadioMessagingImpl.CallBackWithExecutor sCallBackWithExecutor = null;
+    protected static String sBackUpRoamingNetwork = "";
 
     protected static Context getContext() {
         return InstrumentationRegistry.getInstrumentation().getContext();
@@ -203,12 +204,27 @@ public class CellBroadcastBaseTest {
         sDevice = UiDevice.getInstance(sInstrumentation);
         sPackageName = CellBroadcastUtils
                 .getDefaultCellBroadcastReceiverPackageName(getContext());
+
+        setTestRoamingOperator(true);
+        enableAirplaneMode(true);
+        enableAirplaneMode(false);
     }
 
     private static void waitForNotify() {
         while (sSetChannelIsDone.getCount() > 0) {
             try {
                 sSetChannelIsDone.await(MAX_WAIT_TIME, TimeUnit.MILLISECONDS);
+                sSetChannelIsDone.countDown();
+            } catch (InterruptedException e) {
+                // do nothing
+            }
+        }
+    }
+
+    private static void waitForNotify(int milliSeconds) {
+        while (sSetChannelIsDone.getCount() > 0) {
+            try {
+                sSetChannelIsDone.await(milliSeconds, TimeUnit.MILLISECONDS);
                 sSetChannelIsDone.countDown();
             } catch (InterruptedException e) {
                 // do nothing
@@ -231,6 +247,8 @@ public class CellBroadcastBaseTest {
             assertTrue(sMockModemManager.disconnectMockModemService());
             sMockModemManager = null;
         }
+
+        setTestRoamingOperator(false);
     }
 
     @Rule
@@ -306,6 +324,47 @@ public class CellBroadcastBaseTest {
             }
         }
         return result.toArray(new Object[]{});
+    }
+
+    protected static void enableDualSim(boolean enable) throws Exception {
+        if (enable) {
+            sDevice.executeShellCommand("root");
+            sDevice.executeShellCommand("setprop persist.radio.multisim.config ss");
+            sDevice.executeShellCommand("reboot");
+        } else {
+            sDevice.executeShellCommand("root");
+            sDevice.executeShellCommand("setprop persist.radio.multisim.config dsds");
+        }
+    }
+
+    protected static void enableAirplaneMode(boolean on) throws Exception {
+        if (on) {
+            logd("airplane mode on");
+            sDevice.executeShellCommand("settings put global airplane_mode_on 1");
+            sDevice.executeShellCommand("am broadcast -a android.intent.action.AIRPLANE_MODE");
+            waitForNotify(2000);
+        } else {
+            logd("airplane mode off");
+            sDevice.executeShellCommand("settings put global airplane_mode_on 0");
+            sDevice.executeShellCommand("am broadcast -a android.intent.action.AIRPLANE_MODE");
+            waitForNotify(2000);
+        }
+    }
+
+    protected static void setTestRoamingOperator(boolean save) throws Exception {
+        if (save) {
+            logd("setTestRoamingOperator: 00101");
+            sBackUpRoamingNetwork = sDevice.executeShellCommand(
+                    "getprop persist.cellbroadcast.roaming_plmn_supported");
+            logd("backup roaming network is " + sBackUpRoamingNetwork);
+            sDevice.executeShellCommand(
+                    "setprop persist.cellbroadcast.roaming_plmn_supported 00101");
+        } else {
+            logd("restore TestRoamingOperator: " + sBackUpRoamingNetwork);
+            sDevice.executeShellCommand(
+                    "setprop persist.cellbroadcast.roaming_plmn_supported "
+                            + sBackUpRoamingNetwork);
+        }
     }
 
     protected void setSimInfo(String carrierName, String inputMccMnc) throws Throwable {
