@@ -370,16 +370,21 @@ public class CellBroadcastAlertDialogTest extends
         CellBroadcastAlertDialog activity = startActivity(intent, null, null);
         waitForMs(100);
 
+        ImageView image = activity.findViewById(R.id.pictogramImage);
+        image.setVisibility(View.VISIBLE);
+        assertEquals(View.VISIBLE, image.getVisibility());
+
         // add more messages to list
         mMessageList.add(CellBroadcastAlertServiceTest.createMessageForCmasMessageClass(12413,
-                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY,
-                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_CHILD_ABDUCTION_EMERGENCY));
+                SmsCbConstants.MESSAGE_ID_ETWS_EARTHQUAKE_WARNING,
+                SmsCbConstants.MESSAGE_ID_ETWS_EARTHQUAKE_WARNING));
         intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
                 new ArrayList<>(mMessageList));
         activity.onNewIntent(intent);
 
         verify(mMockedNotificationManager, atLeastOnce()).cancel(
                 eq(CellBroadcastAlertService.NOTIFICATION_ID));
+        assertNotNull(image.getLayoutParams());
     }
 
     public void testAnimationHandler() throws Throwable {
