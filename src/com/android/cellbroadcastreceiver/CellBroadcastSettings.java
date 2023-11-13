@@ -154,7 +154,8 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
     public static final String KEY_EMERGENCY_ALERT_HISTORY = "emergency_alert_history";
 
     // For top introduction info
-    private static final String KEY_PREFS_TOP_INTRO = "alert_prefs_top_intro";
+    @VisibleForTesting
+    public static final String KEY_PREFS_TOP_INTRO = "alert_prefs_top_intro";
 
     // Whether to receive alert in second language code
     public static final String KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE =
