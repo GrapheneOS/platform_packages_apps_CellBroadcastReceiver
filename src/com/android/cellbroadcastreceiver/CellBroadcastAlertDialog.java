@@ -269,8 +269,11 @@ public class CellBroadcastAlertDialog extends Activity {
         private boolean initDrawableAndImageView(int subId) {
             if (mWarningIcon == null) {
                 try {
-                    mWarningIcon = CellBroadcastSettings.getResources(getApplicationContext(),
-                            subId).getDrawable(R.drawable.ic_warning_googred);
+                    mWarningIcon = CellBroadcastSettings.getResourcesByOperator(
+                            getApplicationContext(), subId,
+                            CellBroadcastReceiver
+                                    .getRoamingOperatorSupported(getApplicationContext()))
+                            .getDrawable(R.drawable.ic_warning_googred);
                 } catch (Resources.NotFoundException e) {
                     CellBroadcastReceiverMetrics.getInstance().logModuleError(
                             ERRSRC_CBR, ERRTYPE_ICONRESOURCE);
@@ -578,8 +581,9 @@ public class CellBroadcastAlertDialog extends Activity {
 
             updateAlertText(message);
 
-            Resources res = CellBroadcastSettings.getResources(getApplicationContext(),
-                    message.getSubscriptionId());
+            Resources res = CellBroadcastSettings.getResourcesByOperator(getApplicationContext(),
+                    message.getSubscriptionId(),
+                    CellBroadcastReceiver.getRoamingOperatorSupported(getApplicationContext()));
             if (res.getBoolean(R.bool.enable_text_copy)) {
                 TextView textView = findViewById(R.id.message);
                 if (textView != null) {
@@ -732,7 +736,8 @@ public class CellBroadcastAlertDialog extends Activity {
      * @return The link method
      */
     private @LinkMethod int getLinkMethod(int subId) {
-        Resources res = CellBroadcastSettings.getResources(getApplicationContext(), subId);
+        Resources res = CellBroadcastSettings.getResourcesByOperator(getApplicationContext(),
+                subId, CellBroadcastReceiver.getRoamingOperatorSupported(getApplicationContext()));
         switch (res.getString(R.string.link_method)) {
             case LINK_METHOD_NONE_STRING: return LINK_METHOD_NONE;
             case LINK_METHOD_LEGACY_LINKIFY_STRING: return LINK_METHOD_LEGACY_LINKIFY;
@@ -1202,8 +1207,10 @@ public class CellBroadcastAlertDialog extends Activity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.d(TAG, "onKeyDown: " + event);
         SmsCbMessage message = getLatestMessage();
-        if (message != null && CellBroadcastSettings.getResources(getApplicationContext(),
-                message.getSubscriptionId()).getBoolean(R.bool.mute_by_physical_button)) {
+        if (message != null && CellBroadcastSettings.getResourcesByOperator(getApplicationContext(),
+                message.getSubscriptionId(),
+                CellBroadcastReceiver.getRoamingOperatorSupported(getApplicationContext()))
+                .getBoolean(R.bool.mute_by_physical_button)) {
             switch (event.getKeyCode()) {
                 // Volume keys and camera keys mute the alert sound/vibration (except ETWS).
                 case KeyEvent.KEYCODE_VOLUME_UP:
@@ -1251,7 +1258,8 @@ public class CellBroadcastAlertDialog extends Activity {
      * @return true if the device is configured to never show the opt out dialog for the mcc/mnc
      */
     private boolean neverShowOptOutDialog(int subId) {
-        return CellBroadcastSettings.getResources(getApplicationContext(), subId)
+        return CellBroadcastSettings.getResourcesByOperator(getApplicationContext(), subId,
+                        CellBroadcastReceiver.getRoamingOperatorSupported(getApplicationContext()))
                 .getBoolean(R.bool.disable_opt_out_dialog);
     }
 
@@ -1269,8 +1277,10 @@ public class CellBroadcastAlertDialog extends Activity {
 
         cm.setPrimaryClip(ClipData.newPlainText("Alert Message", message.getMessageBody()));
 
-        String msg = CellBroadcastSettings.getResources(context,
-                message.getSubscriptionId()).getString(R.string.message_copied);
+        String msg = CellBroadcastSettings.getResourcesByOperator(context,
+                message.getSubscriptionId(),
+                CellBroadcastReceiver.getRoamingOperatorSupported(context))
+                .getString(R.string.message_copied);
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
         return true;
     }

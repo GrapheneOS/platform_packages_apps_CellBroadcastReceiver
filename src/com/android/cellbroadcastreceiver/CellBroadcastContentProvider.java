@@ -481,7 +481,8 @@ public class CellBroadcastContentProvider extends ContentProvider {
                 CellBroadcastResources.getSmsSenderAddressResourceEnglishString(context, message));
         cv.put(Telephony.Sms.Inbox.THREAD_ID, Telephony.Threads.getOrCreateThreadId(context,
                 CellBroadcastResources.getSmsSenderAddressResourceEnglishString(context, message)));
-        if (CellBroadcastSettings.getResources(context, message.getSubscriptionId())
+        if (CellBroadcastSettings.getResourcesByOperator(context, message.getSubscriptionId(),
+                        CellBroadcastReceiver.getRoamingOperatorSupported(context))
                 .getBoolean(R.bool.always_mark_sms_read)) {
             // Always mark SMS message READ. End users expect when they read new CBS messages,
             // the unread alert count in the notification should be decreased, as they thought it

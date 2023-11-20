@@ -180,7 +180,8 @@ public class CellBroadcastAlertReminder extends Service {
         }
 
         if (firstTime) {
-            Resources res = CellBroadcastSettings.getResources(context, subId);
+            Resources res = CellBroadcastSettings.getResourcesByOperator(context, subId,
+                    CellBroadcastReceiver.getRoamingOperatorSupported(context));
             int interval = res.getInteger(R.integer.first_reminder_interval_in_min);
             // If there is first reminder interval configured, use it.
             if (interval != 0) {
