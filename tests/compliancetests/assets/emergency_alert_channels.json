@@ -728,43 +728,6 @@
       "title": "子供の誘拐（誘拐事件速報）", //"Child abduction (Amber alert)",
       "default_value": "true",
       "toggle_avail": "true"
-    },
-    "43008": {
-      "title": "緊急地震速報", //"Earthquake warning",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "45038": {
-      "title": "津波警報", //"Tsunami warning",
-      "default_value": "true",
-      "toggle_avail": "false",
-      "warning_type": "02"
-    },
-    "44032": {
-      "title": "緊急速報メール", //"Emergency warning",
-      "default_value": "true",
-      "toggle_avail": "false",
-      "end_channel": "45037"
-    },
-    "45000": {
-      "title": "緊急速報メール", //"Emergency warning",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "45037": {
-      "title": "緊急速報メール", //"Emergency warning",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "43010": {
-      "title": "ETWS 試験メッセージ", //"ETWS test message",
-      "default_value": "false",
-      "toggle_avail": "false"
-    },
-    "43012": {
-      "title": "ETWS 試験メッセージ", //"ETWS test message",
-      "default_value": "false",
-      "toggle_avail": "false"
     }
   },
   "hongkong": {
