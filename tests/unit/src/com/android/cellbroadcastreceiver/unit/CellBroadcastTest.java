@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.PersistableBundle;
+import android.os.RemoteException;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
@@ -67,10 +68,8 @@ public abstract class CellBroadcastTest {
         // CellBroadcastSettings.getResources(context).
         doReturn(mSubService).when(mSubService).queryLocalInterface(anyString());
         doReturn(mSubService).when(mSubService).asBinder();
-        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService)
-                .getDefaultSubIdAsUser(anyInt());
-        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService)
-                .getDefaultSmsSubIdAsUser(anyInt());
+
+        mockDefaultSubId(SubscriptionManager.INVALID_SUBSCRIPTION_ID);
         mMockedServiceManager = new MockedServiceManager();
         mMockedServiceManager.replaceService("isub", mSubService);
         TelephonyManager.disableServiceHandleCaching();
@@ -90,6 +89,19 @@ public abstract class CellBroadcastTest {
         doReturn(mResources).when(mContext).getResources();
         doReturn(mContext).when(mContext).getApplicationContext();
         doReturn(new String[]{""}).when(mResources).getStringArray(anyInt());
+    }
+
+    protected void mockDefaultSubId(int subId) throws RemoteException {
+        try {
+            // Only exist after U-QPR2, so the reflection amounts to a QPR version check.
+            ISub.Stub.class.getMethod("getDefaultSubIdAsUser", int.class);
+            doReturn(subId).when(mSubService).getDefaultSubIdAsUser(anyInt());
+            doReturn(subId).when(mSubService).getDefaultSmsSubIdAsUser(anyInt());
+        } catch (Exception methodNotFound) {
+            logd("need to check if SubscriptionManagerService.getDefaultSubIdAsUser exist");
+            doReturn(subId).when(mSubService).getDefaultSubId();
+            doReturn(subId).when(mSubService).getDefaultSmsSubId();
+        }
     }
 
     void carrierConfigSetStringArray(int subId, String key, String[] values) {

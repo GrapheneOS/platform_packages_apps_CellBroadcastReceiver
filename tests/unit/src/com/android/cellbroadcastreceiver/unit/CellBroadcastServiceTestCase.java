@@ -230,11 +230,19 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
         // A hack to return mResources from static method
         // CellBroadcastSettings.getResources(context).
         //doReturn(mSubService).when(mSubService).queryLocalInterface(anyString());
-        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(mSubService)
-                .getDefaultSubIdAsUser(anyInt());
-        doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID).when(
-                mSubService).getDefaultSmsSubIdAsUser(anyInt());
-
+        try {
+            // Only exist after U-QPR2, so the reflection amounts to a QPR version check.
+            ISub.Stub.class.getMethod("getDefaultSubIdAsUser", int.class);
+            doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID)
+                    .when(mSubService).getDefaultSubIdAsUser(anyInt());
+            doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID)
+                    .when(mSubService).getDefaultSmsSubIdAsUser(anyInt());
+        } catch (Exception methodNotFound) {
+            doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID)
+                    .when(mSubService).getDefaultSubId();
+            doReturn(SubscriptionManager.INVALID_SUBSCRIPTION_ID)
+                    .when(mSubService).getDefaultSmsSubId();
+        }
         doReturn(new String[]{""}).when(mResources).getStringArray(anyInt());
 
         mConfiguration = new Configuration();
