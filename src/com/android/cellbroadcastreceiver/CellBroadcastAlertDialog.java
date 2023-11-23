@@ -922,8 +922,12 @@ public class CellBroadcastAlertDialog extends Activity {
 
         ((TextView) findViewById(R.id.dismissButton)).setText(dismissButtonText);
 
-
         setPictogram(context, message);
+
+        if (this.hasWindowFocus()) {
+            Configuration config = res.getConfiguration();
+            setPictogramAreaLayout(config.orientation);
+        }
     }
 
     /**
