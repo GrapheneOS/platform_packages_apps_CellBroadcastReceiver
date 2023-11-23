@@ -28,6 +28,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -123,7 +124,15 @@ public class CellBroadcastAlertReminder extends Service {
         if (enableVibration) {
             // Vibrate for 500ms.
             Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-            vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+            if (vibrator != null) {
+                AudioAttributes.Builder attrBuilder = new AudioAttributes.Builder();
+                attrBuilder.setUsage(AudioAttributes.USAGE_ALARM);
+                AudioAttributes attr = attrBuilder.build();
+                vibrator.vibrate(VibrationEffect.createOneShot(500,
+                        VibrationEffect.DEFAULT_AMPLITUDE), attr);
+            } else {
+                Log.e(TAG, "vibrator is null");
+            }
         }
     }
 

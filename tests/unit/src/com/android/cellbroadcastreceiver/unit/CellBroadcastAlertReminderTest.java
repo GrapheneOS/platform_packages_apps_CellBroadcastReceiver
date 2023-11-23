@@ -26,6 +26,7 @@ import static org.mockito.Mockito.verify;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.os.HandlerThread;
 import android.preference.PreferenceManager;
@@ -120,7 +121,7 @@ public class CellBroadcastAlertReminderTest extends
         phoneStateListenerHandler.start();
         waitUntilReady();
 
-        verify(mMockedVibrator).vibrate(any());
+        verify(mMockedVibrator).vibrate(any(), (AudioAttributes) any());
         phoneStateListenerHandler.quit();
     }
 
@@ -140,7 +141,7 @@ public class CellBroadcastAlertReminderTest extends
         phoneStateListenerHandler.start();
         waitUntilReady();
 
-        verify(mMockedVibrator, never()).vibrate(any());
+        verify(mMockedVibrator, never()).vibrate(any(), (AudioAttributes) any());
         phoneStateListenerHandler.quit();
     }
 
