@@ -11,6 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 {
   "uae": {
     "4352": {
@@ -43,10 +44,7 @@
     "4396": {
       "title": "Public Safety Alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4380": {
       "title": "Test Alert",
@@ -93,10 +91,7 @@
     "4397": {
       "title": "Public Safety Alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4393": {
       "title": "Test Alert",
@@ -190,50 +185,32 @@
     "4370": {
       "title": "Alerta de Emergencia", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "4383": {
       "title": "Alerta de Emergencia", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "4380": {
       "title": "Alerta de Emergencia – mensaje de Prueba", //"Emergency alert: Test message",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "4381": {
       "title": "Alerta de Emergencia – mensaje de Ejercicio / Simulacro", //"Emergency alert: Exercise/Drill message",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "4382": {
       "title": "Mensaje Informativo", //"Informative message",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "4396": {
       "title": "Alerta de Emergencia", //"Emergency alert",
       "default_value": "true",
       "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180,
       "end_channel": "4399"
     }
   },
@@ -252,50 +229,32 @@
     "4370": {
       "title": "Alerta de Emergencia", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "4383": {
       "title": "Alerta de Emergencia", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "4380": {
       "title": "Alerta de Emergencia – mensaje de Prueba", //"Emergency alert: Test message",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "4381": {
       "title": "Alerta de Emergencia – mensaje de Ejercicio / Simulacro", //"Emergency alert: Exercise/Drill message",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "4382": {
       "title": "Mensaje Informativo", //"Informative message",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "4396": {
       "title": "Alerta de Emergencia", // "Emergency alert",
       "default_value": "true",
       "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 180,
-      "alert_time": 180,
       "end_channel": "4399"
     }
   },
@@ -728,43 +687,6 @@
       "title": "子供の誘拐（誘拐事件速報）", //"Child abduction (Amber alert)",
       "default_value": "true",
       "toggle_avail": "true"
-    },
-    "43008": {
-      "title": "緊急地震速報", //"Earthquake warning",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "45038": {
-      "title": "津波警報", //"Tsunami warning",
-      "default_value": "true",
-      "toggle_avail": "false",
-      "warning_type": "02"
-    },
-    "44032": {
-      "title": "緊急速報メール", //"Emergency warning",
-      "default_value": "true",
-      "toggle_avail": "false",
-      "end_channel": "45037"
-    },
-    "45000": {
-      "title": "緊急速報メール", //"Emergency warning",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "45037": {
-      "title": "緊急速報メール", //"Emergency warning",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "43010": {
-      "title": "ETWS 試験メッセージ", //"ETWS test message",
-      "default_value": "false",
-      "toggle_avail": "false"
-    },
-    "43012": {
-      "title": "ETWS 試験メッセージ", //"ETWS test message",
-      "default_value": "false",
-      "toggle_avail": "false"
     }
   },
   "hongkong": {
@@ -949,101 +871,59 @@
     "4370": {
       "title": "Emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10
+      "toggle_avail": "false"
     },
     "919": {
       "title": "Emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10
+      "toggle_avail": "false"
     },
     "4380": {
       "title": "Mensaje de prueba",
       "default_value": "false",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "519": {
       "title": "Test Message",
       "default_value": "false",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4371": {
       "title": "Emergency alert: Extreme",
       "default_value": "true",
       "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10,
       "end_channel": "4372"
     },
     "4373": {
       "title": "Emergency alert: Severe",
       "default_value": "true",
       "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10,
       "end_channel": "4378"
     },
     "4379": {
       "title": "Child abduction (Amber alert)",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10
+      "toggle_avail": "false"
     },
     "4381": {
       "title": "Emergency alert (exercise)",
       "default_value": "false",
-      "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10
+      "toggle_avail": "false"
     },
     "4382": {
       "title": "Emergency alert (operator)",
       "default_value": "false",
-      "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10
+      "toggle_avail": "false"
     },
     "4383": {
       "title": "Emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10
+      "toggle_avail": "false"
     },
     "921": {
       "title": "Emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10
+      "toggle_avail": "false"
     }
   },
   "korea": {
@@ -1061,59 +941,38 @@
     "4370": {
       "title": "위급 재난 문자", //"Critical emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "false"
     },
     "4383": {
       "title": "위급 재난 문자", //"Critical emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "false"
     },
     "4371": {
       "title": "긴급 재난 문자", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4384": {
       "title": "긴급 재난 문자", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4372": {
       "title": "안전 안내 문자", //"Public safety message",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4373": {
       "title": "안전 안내 문자", //"Public safety message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 10,
       "end_channel": "4379"
     },
     "4385": {
       "title": "안전 안내 문자", //"Public safety message",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "40960": {
       "title": "안전 안내 문자", //"Public safety message",
@@ -1138,59 +997,38 @@
     "4370": {
       "title": "위급 재난 문자", //"Critical emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "false"
     },
     "4383": {
       "title": "위급 재난 문자", //"Critical emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "false"
     },
     "4371": {
       "title": "긴급 재난 문자", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4384": {
       "title": "긴급 재난 문자", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4372": {
       "title": "안전 안내 문자", //"Public safety message",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4373": {
       "title": "안전 안내 문자", //"Public safety message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 10,
       "end_channel": "4379"
     },
     "4385": {
       "title": "안전 안내 문자", //"Public safety message",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "40960": {
       "title": "안전 안내 문자", //"Public safety message",
@@ -1215,59 +1053,38 @@
     "4370": {
       "title": "위급 재난 문자", //"Critical emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "false"
     },
     "4383": {
       "title": "위급 재난 문자", //"Critical emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "false"
     },
     "4371": {
       "title": "긴급 재난 문자", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4384": {
       "title": "긴급 재난 문자", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 10,
-      "sound_time": 10,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4372": {
       "title": "안전 안내 문자", //"Public safety message",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4373": {
       "title": "안전 안내 문자", //"Public safety message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 10,
       "end_channel": "4379"
     },
     "4385": {
       "title": "안전 안내 문자", //"Public safety message",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "40960": {
       "title": "안전 안내 문자", //"Public safety message",
@@ -1752,18 +1569,12 @@
     "911": {
       "title": "Alert Message",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "919": {
       "title": "Alert Message",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4371": {
       "title": "Emergency Alert",
@@ -2009,48 +1820,36 @@
     "4370": {
       "title": "Alerta de Protección Civil", //"Civil Protection Alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 60,
-      "sound_time": 65
+      "toggle_avail": "false"
     },
     "4383": {
       "title": "Alerta de Protección Civil", //"Civil Protection Alert",
       "default_value": "true",
       "toggle_avail": "false",
-      "vibration_time": 60,
-      "sound_time": 65,
       "filter_language": "language_setting"
     },
     "4371": {
       "title": "Pre-Alerta de Protección Civil", //"Civil Protection Pre-Alert",
       "default_value": "false",
       "toggle_avail": "true",
-      "vibration_time": 30,
-      "sound_time": 35,
       "end_channel": "4372"
     },
     "4384": {
       "title": "Pre-Alerta de Protección Civil", //"Civil Protection Pre-Alert",
       "default_value": "false",
       "toggle_avail": "true",
-      "vibration_time": 30,
-      "sound_time": 35,
       "filter_language": "language_setting",
       "end_channel": "4385"
     },
     "4380": {
       "title": "Pruebas", //"Test",
       "default_value": "false",
-      "toggle_avail": "false",
-      "vibration_time": 15,
-      "sound_time": 20
+      "toggle_avail": "false"
     },
     "4393": {
       "title": "Pruebas", //"Test",
       "default_value": "false",
       "toggle_avail": "false",
-      "vibration_time": 15,
-      "sound_time": 20,
       "filter_language": "language_setting"
     }
   },
@@ -2069,104 +1868,76 @@
     "4370": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 8,
-      "sound_time": 8
+      "toggle_avail": "false"
     },
     "4371": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8,
       "end_channel": "4372"
     },
     "4373": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8,
       "end_channel": "4378"
     },
     "4379": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8
+      "toggle_avail": "true"
     },
     "4380": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "false",
-      "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8
+      "toggle_avail": "true"
     },
     "4381": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "false",
-      "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8
+      "toggle_avail": "true"
     },
     "4382": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "false",
-      "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8
+      "toggle_avail": "true"
     },
     "4383": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8
+      "toggle_avail": "true"
     },
     "4384": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8,
       "end_channel": "4385"
     },
     "4386": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8,
       "end_channel": "4391"
     },
     "4392": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8
+      "toggle_avail": "true"
     },
     "4393": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "false",
-      "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8
+      "toggle_avail": "true"
     },
     "4394": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "false",
-      "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8
+      "toggle_avail": "true"
     },
     "4395": {
       "title": "EMERGENCY ALERT / ALERTE",
       "default_value": "false",
-      "toggle_avail": "true",
-      "vibration_time": 8,
-      "sound_time": 8
+      "toggle_avail": "true"
     },
     "4396": {
       "title": "",
@@ -2190,11 +1961,7 @@
     "4370": {
       "title": "Presidential alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10
+      "toggle_avail": "false"
     },
     "4380": {
       "title": "Required Monthly Test",
@@ -2277,20 +2044,12 @@
     "4370": {
       "title": "Presidential alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10
+      "toggle_avail": "false"
     },
     "919": {
       "title": "Presidential alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 190,
-      "sound_time": 190,
-      "alert_time": 180,
-      "offset": 10
+      "toggle_avail": "false"
     },
     "4380": {
       "title": "Required Monthly Test",
@@ -2367,36 +2126,24 @@
     "4370": {
       "title": "Alerta Local de Emergencia", //"Local emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 186,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "6400": {
       "title": "Mensaje Informativo", //"Informative message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10,
       "alert_type": "notification"
     },
     "4380": {
       "title": "Mensaje de Prueba", //"Test message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10,
       "alert_type": "notification"
     },
     "4381": {
       "title": "Alerta de Emergencia – mensaje de Ejercicio /Simulacro", //"Emergency Alert - Exercise / Drill message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10,
       "alert_type": "notification"
     },
     "50": {
@@ -2425,45 +2172,30 @@
     "4370": {
       "title": "Alerta Local de Emergencia", //"Local emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 180,
-      "sound_time": 186,
-      "alert_time": 180
+      "toggle_avail": "false"
     },
     "6400": {
       "title": "Mensaje Informativo", //"Informative message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10,
       "alert_type": "notification"
     },
     "4380": {
       "title": "Mensaje de Prueba", //"Test message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10,
       "alert_type": "notification"
     },
     "4381": {
       "title": "Alerta de Emergencia – mensaje de Ejercicio /Simulacro", //"Emergency Alert - Exercise / Drill message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10,
       "alert_type": "notification"
     },
     "50": {
       "title": "Broadcast messages",
       "default_value": "true",
       "toggle_avail": "false",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "display":"false"
     }
   },
@@ -2559,10 +2291,7 @@
     "4370": {
       "title": "تحذير طارىء", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 30,
-      "sound_time": 36,
-      "alert_time": 30
+      "toggle_avail": "false"
     },
     "4371": {
       "title": "رسالة تحذيرية", // "Warning alert",
@@ -2602,9 +2331,6 @@
       "title": "Warning alert",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification",
       "end_channel": "4372"
     },
@@ -2612,9 +2338,6 @@
       "title": "Warning alert",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification",
       "filter_language": "language_setting",
       "end_channel": "4385"
@@ -2623,9 +2346,6 @@
       "title": "Warning alert",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification",
       "filter_language": "language_setting",
       "end_channel": "922"
@@ -2634,9 +2354,6 @@
       "title": "Informative message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification",
       "end_channel": "4378"
     },
@@ -2644,9 +2361,6 @@
       "title": "Informative message",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification",
       "filter_language": "language_setting",
       "end_channel": "4391"
@@ -2655,18 +2369,12 @@
       "title": "Required Monthly Test",
       "default_value": "false",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification"
     },
     "4393": {
       "title": "Required Monthly Test",
       "default_value": "false",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification",
       "filter_language": "language_setting"
     },
@@ -2674,18 +2382,12 @@
       "title": "Emergency alert (exercise)",
       "default_value": "false",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification"
     },
     "4394": {
       "title": "Emergency alert (exercise)",
       "default_value": "false",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification",
       "filter_language": "language_setting"
     },
@@ -2693,18 +2395,12 @@
       "title": "Public assistance request message",
       "default_value": "false",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification"
     },
     "4392": {
       "title": "Public assistance request message",
       "default_value": "false",
       "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 1,
-      "alert_time": 5,
       "alert_type":"notification"
     }
   },
@@ -2860,32 +2556,24 @@
     "4375": {
       "title": "FR-ALERT : Alerte grave", //"FR-ALERT : Severe alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 0,
-      "sound_time": 0
+      "toggle_avail": "true"
     },
     "4388": {
       "title": "FR-ALERT : Alerte grave", //"FR-ALERT : Severe alert",
       "default_value": "true",
       "toggle_avail": "true",
-      "vibration_time": 0,
-      "sound_time": 0,
       "filter_language": "language_setting"
     },
     "4396": {
       "title": "FR-ALERT : Avertissement", //"FR-ALERT : Warning",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 0,
-      "sound_time": 0
+      "toggle_avail": "true"
     },
     "4397": {
       "title": "FR-ALERT : Avertissement", //"FR-ALERT : Warning",
       "default_value": "true",
       "toggle_avail": "true",
-      "filter_language": "language_setting",
-      "vibration_time": 0,
-      "sound_time": 0
+      "filter_language": "language_setting"
     },
     "4379": {
       "title": "FR-ALERT : Enlèvement", //"FR-ALERT : Kidnapping Alert",
@@ -3416,50 +3104,32 @@
     "4396": {
       "title": "Public Safety Alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4397": {
       "title": "Public Safety Alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4398": {
       "title": "Test Alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "false"
     },
     "4399": {
       "title": "Test Alert",
       "default_value": "true",
-      "toggle_avail": "false",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "false"
     },
     "4380": {
       "title": "Test Alert",
       "default_value": "false",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4393": {
       "title": "Test Alert",
       "default_value": "false",
-      "toggle_avail": "true",
-      "vibration_time": 1,
-      "sound_time": 7,
-      "alert_time": 10
+      "toggle_avail": "true"
     },
     "4381": {
       "title": "Exercise",
