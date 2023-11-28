@@ -649,6 +649,18 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         verify(mCellBroadcastReceiver, times(6)).startConfigServiceToEnableChannels();
         assertThat(mFakeSharedPreferences.getString(
                 "roaming_operator_supported", "321")).isEqualTo("");
+
+        // roaming to network operator with different mcc and configured as any mcc match,
+        // verify to update the network operator, and call enable channel
+        doReturn("310240").when(mMockTelephonyManager).getNetworkOperator();
+        doReturn("310260").when(mMockTelephonyManager).getSimOperator();
+        doReturn(new String[] {"XXX"}).when(mResources).getStringArray(anyInt());
+
+        mCellBroadcastReceiver.onReceive(mContext, mIntent);
+
+        verify(mCellBroadcastReceiver, times(6)).startConfigServiceToEnableChannels();
+        assertThat(mFakeSharedPreferences.getString(
+                "roaming_operator_supported", "")).isEqualTo("");
     }
 
     @Test

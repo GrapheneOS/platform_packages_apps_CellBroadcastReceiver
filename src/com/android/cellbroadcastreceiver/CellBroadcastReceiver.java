@@ -272,8 +272,14 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                             roamingOperator = networkOperator;
                             break;
                         } else if (r.equals("XXX")) {
-                            //match any roaming network, only store mcc
-                            roamingOperator = networkOperator.substring(0, 3);
+                            if (tm.getSimOperator() != null) {
+                                String networkMcc = networkOperator.substring(0, 3);
+                                // empty sim case or inserted sim but different mcc case
+                                if (!tm.getSimOperator().startsWith(networkMcc)) {
+                                    //match any roaming network, only store mcc
+                                    roamingOperator = networkMcc;
+                                }
+                            }
                             break;
                         } else if (networkOperator.startsWith(r)) {
                             roamingOperator = r;
