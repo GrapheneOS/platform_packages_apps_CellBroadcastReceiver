@@ -389,7 +389,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         // retrieve the vibration patterns.
         mVibrationPattern = intent.getIntArrayExtra(ALERT_AUDIO_VIBRATION_PATTERN_EXTRA);
 
-        Resources res = CellBroadcastSettings.getResources(getApplicationContext(), mSubId);
+        Resources res = CellBroadcastSettings.getResourcesByOperator(getApplicationContext(),
+                mSubId, CellBroadcastReceiver.getRoamingOperatorSupported(getApplicationContext()));
         mEnableLedFlash = res.getBoolean(R.bool.enable_led_flash);
 
         // retrieve the customized alert duration. -1 means play the alert with the tone's duration.
@@ -463,7 +464,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
         log("playAlertTone: alertType=" + alertType + ", mEnableVibrate=" + mEnableVibrate
                 + ", mEnableAudio=" + mEnableAudio + ", mOverrideDnd=" + mOverrideDnd
                 + ", mSubId=" + mSubId);
-        Resources res = CellBroadcastSettings.getResources(getApplicationContext(), mSubId);
+        Resources res = CellBroadcastSettings.getResourcesByOperator(getApplicationContext(),
+                mSubId, CellBroadcastReceiver.getRoamingOperatorSupported(getApplicationContext()));
 
         // Vibration duration in milliseconds
         long vibrateDuration = 0;

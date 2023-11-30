@@ -729,6 +729,7 @@ public class CellBroadcastAlertDialogTest extends
         mContext.injectSharedPreferences(mockSharedPreferences);
         Resources mockResources2 = mock(Resources.class);
         doReturn(false).when(mockResources2).getBoolean(R.bool.show_alert_title);
+        doReturn("none").when(mockResources2).getString(R.string.link_method);
 
         CellBroadcastSettings.sResourcesCacheByOperator.put("334090", mockResources2);
 
