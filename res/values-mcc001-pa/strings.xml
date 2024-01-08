@@ -17,5 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="receive_cmas_in_second_language_title" msgid="6380811692570868097">"ਸਪੇਨੀ"</string>
-    <string name="receive_cmas_in_second_language_summary" msgid="2747100010816713897">"ਜਦੋਂ ਵੀ ਸੰਭਵ ਹੋਵੇ ਸਪੇਨੀ ਭਾਸ਼ਾ ਵਿੱਚ ਸੰਕਟਕਾਲੀਨ ਸੁਚੇਤਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
+    <string name="receive_cmas_in_second_language_summary" msgid="2747100010816713897">"ਜਦੋਂ ਵੀ ਸੰਭਵ ਹੋਵੇ ਸਪੇਨੀ ਭਾਸ਼ਾ ਵਿੱਚ ਐਮਰਜੈਂਸੀ ਅਲਰਟ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
 </resources>

@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="sms_cb_settings" msgid="4911123515920531602">"ਐਮਰਜੈਂਸੀ ਸੁਚੇਤਨਾਵਾਂ"</string>
+    <string name="sms_cb_settings" msgid="4911123515920531602">"ਐਮਰਜੈਂਸੀ ਅਲਰਟ"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1222446927484539779">"ਮਹੱਤਵਪੂਰਨ ਚਿਤਾਵਨੀ"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5264650363636546708"></string>
     <string name="enable_public_safety_messages_title" msgid="1666398582465886587">"ਮਹੱਤਵਪੂਰਨ ਚਿਤਾਵਨੀ"</string>
