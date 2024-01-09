@@ -21,7 +21,7 @@
     <string name="cmas_severe_alert" msgid="628940584325136759">"ਗੰਭੀਰ ਖਤਰਾ"</string>
     <string name="public_safety_message" msgid="8084690288011309280">"ਖਤਰੇ ਸੰਬੰਧੀ ਜਾਣਕਾਰੀ"</string>
     <string name="cmas_amber_alert" msgid="404589837946037736">"ਖੁੰਝੇ ਹੋਏ ਵਿਅਕਤੀ ਨੂੰ ਖੋਜੋ"</string>
-    <string name="state_local_test_alert" msgid="3774161961273584245">"ਜਾਂਚ ਸੁਚੇਤਨਾ"</string>
+    <string name="state_local_test_alert" msgid="3774161961273584245">"ਜਾਂਚ ਅਲਰਟ"</string>
     <string name="cmas_exercise_alert" msgid="4845005677469935113">"ਜਾਂਚ ਅਲਾਰਮ"</string>
     <string name="cmas_required_monthly_test" msgid="8386390153236774475">"ਸੈੱਲ ਪ੍ਰਸਾਰਨ ਜਾਂਚ"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="2361635321508611596">"ਬਹੁਤ ਜ਼ਿਆਦਾ ਖਤਰਾ"</string>
@@ -29,7 +29,7 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"ਖੁੰਝੇ ਹੋਏ ਵਿਅਕਤੀ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"ਖੁੰਝੇ ਹੋਏ ਵਿਅਕਤੀਆਂ ਨੂੰ ਖੋਜੋ"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"ਖਤਰੇ ਸੰਬੰਧੀ ਜਾਣਕਾਰੀ"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"ਜਾਂਚ ਸੁਚੇਤਨਾ"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"ਜਾਂਚ ਅਲਰਟ"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"ਜਾਂਚ ਅਲਾਰਮ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"ਸੈੱਲ ਪ੍ਰਸਾਰਨ ਜਾਂਚ"</string>
 </resources>

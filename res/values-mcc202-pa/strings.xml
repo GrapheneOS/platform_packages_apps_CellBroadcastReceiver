@@ -16,10 +16,10 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_amber_alert" msgid="8487743009781574082">"GR-ਸੁਚੇਤਨਾ: Amber ਸੁਚੇਤਨਾ"</string>
-    <string name="cmas_presidential_level_alert" msgid="6341018911042907130">"GR-ਸੁਚੇਤਨਾ: ਰਾਸ਼ਟਰਪਤੀ ਵੱਲੋਂ ਸੁਚੇਤਨਾਵਾਂ"</string>
-    <string name="cmas_extreme_alert" msgid="7989498696890004631">"GR-ਸੁਚੇਤਨਾ: ਗੰਭੀਰ ਸੁਚੇਤਨਾ"</string>
-    <string name="cmas_extreme_immediate_observed_alert" msgid="3810446910355766140">"GR-ਸੁਚੇਤਨਾ: ਗੰਭੀਰ ਸੁਚੇਤਨਾ"</string>
-    <string name="cmas_extreme_immediate_likely_alert" msgid="4723844134984591798">"GR-ਸੁਚੇਤਨਾ: ਗੰਭੀਰ ਸੁਚੇਤਨਾ"</string>
-    <string name="cmas_severe_alert" msgid="3002006180717551407">"GR-ਸੁਚੇਤਨਾ: ਬਹੁਤ ਗੰਭੀਰ ਸੁਚੇਤਨਾ"</string>
+    <string name="cmas_amber_alert" msgid="8487743009781574082">"GR-ਅਲਰਟ: Amber ਅਲਰਟ"</string>
+    <string name="cmas_presidential_level_alert" msgid="6341018911042907130">"GR-ਅਲਰਟ: ਰਾਸ਼ਟਰਪਤੀ ਵੱਲੋਂ ਅਲਰਟ"</string>
+    <string name="cmas_extreme_alert" msgid="7989498696890004631">"GR-ਅਲਰਟ: ਗੰਭੀਰ ਅਲਰਟ"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="3810446910355766140">"GR-ਅਲਰਟ: ਗੰਭੀਰ ਅਲਰਟ"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="4723844134984591798">"GR-ਅਲਰਟ: ਗੰਭੀਰ ਅਲਰਟ"</string>
+    <string name="cmas_severe_alert" msgid="3002006180717551407">"GR-ਅਲਰਟ: ਬਹੁਤ ਗੰਭੀਰ ਅਲਰਟ"</string>
 </resources>

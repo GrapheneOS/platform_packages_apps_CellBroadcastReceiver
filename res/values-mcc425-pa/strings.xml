@@ -16,10 +16,10 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_severe_alert" msgid="4470698515511189493">"ਚਿਤਾਵਨੀ ਸੁਚੇਤਨਾ"</string>
+    <string name="cmas_severe_alert" msgid="4470698515511189493">"ਚਿਤਾਵਨੀ ਅਲਰਟ"</string>
     <string name="public_safety_message" msgid="7373019453807671797">"ਜਾਣਕਾਰੀ ਭਰਪੂਰ ਸੁਨੇਹਾ"</string>
     <string name="cmas_amber_alert" msgid="740474290634511931">"ਜਨਤਕ ਸਹਾਇਕ ਬੇਨਤੀ ਸੁਨੇਹਾ"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="4570611095431464471">"ਚਿਤਾਵਨੀ ਸੁਚੇਤਨਾਵਾਂ"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="4570611095431464471">"ਚਿਤਾਵਨੀ ਅਲਰਟ"</string>
     <string name="enable_public_safety_messages_title" msgid="6173886162636474286">"ਜਾਣਕਾਰੀ ਭਰਪੂਰ ਸੁਨੇਹੇ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="3896845887375326185">"ਜਨਤਕ ਸਹਾਇਕ ਬੇਨਤੀ ਸੁਨੇਹੇ"</string>
 </resources>

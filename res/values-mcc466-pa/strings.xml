@@ -18,7 +18,7 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_presidential_level_alert" msgid="2072968896927919629">"ਸਰਕਾਰੀ ਅਲਰਟ"</string>
     <string name="emergency_alert" msgid="5431770009291479378">"ਐਮਰਜੈਂਸੀ ਅਲਰਟ"</string>
-    <string name="public_safety_message" msgid="3043854916586710461">"ਸੁਚੇਤਨਾ ਸੁਨੇਹਾ"</string>
+    <string name="public_safety_message" msgid="3043854916586710461">"ਅਲਰਟ ਸੁਨੇਹਾ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="4165080207837566277">"ਮਹੀਨਾਵਾਰ ਜਾਂਚ ਦੀ ਲੋੜ ਹੈ"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="1339769389077152402">"ਸੁਰੱਖਿਆ ਸੁਚੇਤਨਾ ਸਿਸਟਮ ਤੋਂ ਜਾਂਚ ਸੁਨੇਹੇ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="1339769389077152402">"ਸੁਰੱਖਿਆ ਅਲਰਟ ਸਿਸਟਮ ਤੋਂ ਜਾਂਚ ਸੁਨੇਹੇ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
 </resources>
