@@ -56,7 +56,4 @@
     <string-array name="etws_alerts_range_strings" translatable="false"></string-array>
     <string-array name="etws_test_alerts_range_strings" translatable="false"></string-array>
 
-    <!-- Whether to allow user to disable opt-out -->
-    <bool name="disable_extreme_alert_settings">true</bool>
-
 </resources>
