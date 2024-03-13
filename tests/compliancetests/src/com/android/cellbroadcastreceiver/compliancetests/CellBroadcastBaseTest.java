@@ -326,17 +326,6 @@ public class CellBroadcastBaseTest {
         return result.toArray(new Object[]{});
     }
 
-    protected static void enableDualSim(boolean enable) throws Exception {
-        if (enable) {
-            sDevice.executeShellCommand("root");
-            sDevice.executeShellCommand("setprop persist.radio.multisim.config ss");
-            sDevice.executeShellCommand("reboot");
-        } else {
-            sDevice.executeShellCommand("root");
-            sDevice.executeShellCommand("setprop persist.radio.multisim.config dsds");
-        }
-    }
-
     protected static void enableAirplaneMode(boolean on) throws Exception {
         if (on) {
             logd("airplane mode on");
@@ -352,6 +341,10 @@ public class CellBroadcastBaseTest {
     }
 
     protected static void setTestRoamingOperator(boolean save) throws Exception {
+        if (sDevice == null) {
+            logd("setTestRoamingOperator: sDevice is null");
+            return;
+        }
         if (save) {
             logd("setTestRoamingOperator: 00101");
             sBackUpRoamingNetwork = sDevice.executeShellCommand(
