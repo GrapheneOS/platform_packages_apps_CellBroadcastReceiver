@@ -1211,23 +1211,23 @@
     }
   },
   "austria_tmobile": {
-    "Extreme threat": {
+    "Extreme threat": {  // Extreme Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe threat": {
+    "Severe threat": {  // Erhebliche Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Missing persons": {
+    "Missing persons": {  // Abgängige Personen
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Threat information": {
+    "Threat information": { // Gefahreninformation
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Test alert": {
+    "Test alert": {  // Testwarnung
       "default_value": "false",
       "toggle_avail": "true"
     },
