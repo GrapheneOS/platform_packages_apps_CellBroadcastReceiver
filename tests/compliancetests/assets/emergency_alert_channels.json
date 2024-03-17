@@ -976,47 +976,62 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "위급 재난 문자", //"Critical emergency alert",
+      "title": "Extreme Emergency Alert", //"위급 재난문자",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "위급 재난 문자", //"Critical emergency alert",
+      "title": "Extreme Emergency Alert", //"위급 재난문자",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "긴급 재난 문자", //"Emergency alert",
+      "title": "Emergency Alert", //"긴급 재난문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4384": {
-      "title": "긴급 재난 문자", //"Emergency alert",
+      "title": "Emergency Alert", //"긴급 재난문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4372": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4373": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true",
-      "end_channel": "4379"
+      "end_channel": "4378"
     },
     "4385": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4379": {
+      "title": "Amber Alert", //"실종 경보문자",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "Amber Alert", //"실종 경보문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "40960": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "45055",
       "display": "false"
+    },
+    "4400": {
+      "title": "",
+      "default_value": "true",
+      "toggle_avail": "false"
     }
   },
   "korea_skt": {
@@ -1032,47 +1047,62 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "위급 재난 문자", //"Critical emergency alert",
+      "title": "Extreme Emergency Alert", //"위급 재난문자",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "위급 재난 문자", //"Critical emergency alert",
+      "title": "Extreme Emergency Alert", //"위급 재난문자",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "긴급 재난 문자", //"Emergency alert",
+      "title": "Emergency Alert", //"긴급 재난문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4384": {
-      "title": "긴급 재난 문자", //"Emergency alert",
+      "title": "Emergency Alert", //"긴급 재난문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4372": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4373": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4379"
     },
+    "4379": {
+      "title": "Amber Alert", //"실종 경보문자",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "Amber Alert", //"실종 경보문자",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
     "4385": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "40960": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Message", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "45055",
       "display": "false"
+    },
+    "4400": {
+      "title": "",
+      "default_value": "true",
+      "toggle_avail": "false"
     }
   },
   "korea_lgu": {
@@ -1088,47 +1118,62 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "위급 재난 문자", //"Critical emergency alert",
+      "title": "Extreme Emergency Alert", //"위급 재난문자",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "위급 재난 문자", //"Critical emergency alert",
+      "title": "Extreme Emergency Alert", //"위급 재난문자",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "긴급 재난 문자", //"Emergency alert",
+      "title": "Emergency Alert", //"긴급 재난문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4384": {
-      "title": "긴급 재난 문자", //"Emergency alert",
+      "title": "Emergency Alert", //"긴급 재난문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4372": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4373": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true",
-      "end_channel": "4379"
+      "end_channel": "4378"
+    },
+    "4379": {
+      "title": "Amber Alert", //"실종 경보문자",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "Amber Alert", //"실종 경보문자",
+      "default_value": "true",
+      "toggle_avail": "true"
     },
     "4385": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "40960": {
-      "title": "안전 안내 문자", //"Public safety message",
+      "title": "Public Safety Alert", //"안전 안내문자",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "45055",
       "display": "false"
+    },
+    "4400": {
+      "title": "",
+      "default_value": "true",
+      "toggle_avail": "false"
     }
   },
   "greece": {

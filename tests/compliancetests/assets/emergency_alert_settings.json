@@ -412,55 +412,59 @@
     }
   },
   "korea": {
-    "긴급 재난 문자": { //"Emergency alerts": {
+    "Emergency Alert": { //"긴급 재난문자": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "안전 안내 문자": { // "Public safety messages": {
+    "Public Safety Alert": { // "안전 안내문자": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "진동": { //"Vibration": {
+    "Amber Alert": { // "실종 안내문자": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "경보 메시지를 음성으로 알림": { //"Speak alert message": {
+    "Vibration": { //"진동": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Speak alert message": { //"경보 메시지를 음성으로 알림": {
       "default_value": "false",
       "toggle_avail": "true"
     }
   },
   "korea_skt": {
-    "긴급 재난 문자": { //"Emergency alerts": {
+    "Emergency Alert": { //"긴급 재난문자": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "안전 안내 문자": { // "Public safety messages": {
+    "Amber Alert": { // "실종 안내문자": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "진동": { //"Vibration": {
+    "Vibration": { //"진동": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "경보 메시지를 음성으로 알림": { //"Speak alert message": {
+    "Speak alert message": { //"경보 메시지를 음성으로 알림": {
       "default_value": "false",
       "toggle_avail": "true"
     }
   },
   "korea_lgu": {
-    "긴급 재난 문자": { //"Emergency alerts": {
+    "Emergency Alert": { //"긴급 재난문자": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "안전 안내 문자": { // "Public safety messages": {
+    "Amber Alert": { // "실종 안내문자": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "진동": { //"Vibration": {
+    "Vibration": { //"진동": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "경보 메시지를 음성으로 알림": { //"Speak alert message": {
+    "Speak alert message": { //"경보 메시지를 음성으로 알림": {
       "default_value": "false",
       "toggle_avail": "true"
     }

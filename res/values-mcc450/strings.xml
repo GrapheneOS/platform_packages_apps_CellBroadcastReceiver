@@ -18,7 +18,28 @@
            xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Dialog title for presidential level alert. [CHAR LIMIT=50] -->
-    <string name="cmas_presidential_level_alert">Critical emergency alert</string>
+    <!-- Required Korean (ko) translation for this message: 위급 재난문자 -->
+    <string name="cmas_presidential_level_alert">Extreme Emergency Alert</string>
+    <!-- Dialog title or menu title of emergency alert. [CHAR LIMIT=50] -->
+    <!-- Required Korean (ko) translation for this message: 긴급 재난문자 -->
+    <!-- Dialog title or menu title of emergency alert. [CHAR LIMIT=50] -->
+    <string name="emergency_alert">Emergency Alert</string>
+    <!-- Dialog title for all public safety message broadcasts. [CHAR LIMIT=50] -->
+    <!-- Required Korean (ko) translation for this message: 안전 안내문자 -->
+    <string name="public_safety_message">Public Safety Alert</string>
+    <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
+    <!-- Required Korean (ko) translation for this message: 실종 경보문자 -->
+    <string name="cmas_amber_alert">Amber Alert</string>
+
+    <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Korean (ko) translation for this message: 긴급 재난문자 -->
+    <string name="enable_emergency_alerts_message_title">Emergency Alert</string>
+    <!-- Preference title for enable public safety messages checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Korean (ko) translation for this message: 안전 안내문자 -->
+    <string name="enable_public_safety_messages_title">Public Safety Alert</string>
+    <!-- Preference title for enable CMAS amber alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Korean (ko) translation for this message: 실종 경보문자 -->
+    <string name="enable_cmas_amber_alerts_title">Amber Alert</string>
 
     <!-- Preference summary the "about cell broadcast messages" info required for some carriers.
       Required Korean (ko) translation for this message:
