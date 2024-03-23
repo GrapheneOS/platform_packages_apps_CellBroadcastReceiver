@@ -29,7 +29,11 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"ગુમ વ્યક્તિઓ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"ગુમ વ્યક્તિઓને શોધો"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"જોખમની માહિતી"</string>
+    <string name="enable_public_safety_messages_summary" msgid="1865721958409326701">"જોખમો સંબંધિત માહિતી"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"પરીક્ષણ માટેનું અલર્ટ"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="2611084212363095735">"સમર્પિત સક્ષમ અધિકારીઓના અલર્ટનું પરીક્ષણ કરો"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"પરીક્ષણ માટેનું અલાર્મ"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"ક્રિયાવિધિઓના સંદર્ભમાં અલાર્મનું પરીક્ષણ કરો"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"સેલ બ્રોડકાસ્ટનું પરીક્ષણ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"સેલ બ્રોડકાસ્ટ સિસ્ટમના પરીક્ષણો"</string>
 </resources>

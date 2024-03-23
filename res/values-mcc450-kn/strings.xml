@@ -16,6 +16,12 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="6968323372438785870">"ಗಂಭೀರ ತುರ್ತು ಎಚ್ಚರಿಕೆ"</string>
+    <string name="cmas_presidential_level_alert" msgid="5649815444496135942">"ತೀವ್ರ ತುರ್ತು ಅಲರ್ಟ್"</string>
+    <string name="emergency_alert" msgid="3311447424971987519">"ತುರ್ತು ಅಲರ್ಟ್"</string>
+    <string name="public_safety_message" msgid="909566512650220068">"ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತೆಯ ಎಚ್ಚರಿಕೆ"</string>
+    <string name="cmas_amber_alert" msgid="3379756389634116131">"AMBER ಎಚ್ಚರಿಕೆ"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"ತುರ್ತು ಅಲರ್ಟ್"</string>
+    <string name="enable_public_safety_messages_title" msgid="80797144239755093">"ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತೆಯ ಎಚ್ಚರಿಕೆ"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"AMBER ಎಚ್ಚರಿಕೆ"</string>
     <string name="alerts_header_summary" msgid="8898082819299479687">"ನಿಮ್ಮ ಫೋನ್, ನೈಸರ್ಗಿಕ ವಿಪತ್ತುಗಳ ಸಂದರ್ಭದಲ್ಲಿ ಸ್ಥಳಾಂತರದ ಸೂಚನೆಗಳಂತಹ ಎಚ್ಚರಿಕೆಗಳನ್ನು ನಿಮಗೆ ಕಳುಹಿಸಬಹುದು. ಈ ಸೇವೆಯು ರಾಷ್ಟ್ರೀಯ ತುರ್ತು ನಿರ್ವಹಣೆ ಏಜೆನ್ಸಿ, ನೆಟ್‌ವರ್ಕ್ ಒದಗಿಸುವವರು ಮತ್ತು ಸಾಧನದ ಉತ್ಪಾದಕರ ನಡುವಿನ ಸಹಯೋಗವಾಗಿದೆ.\n\nನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಸಮಸ್ಯೆ ಇದ್ದರೆ ಅಥವಾ ನೆಟ್‌ವರ್ಕ್ ಸ್ಥಿತಿಗಳು ದುರ್ಬಲವಾಗಿದ್ದರೆ ನೀವು ಎಚ್ಚರಿಕೆಗಳನ್ನು ಪಡೆಯದೇ ಇರಬಹುದು."</string>
 </resources>

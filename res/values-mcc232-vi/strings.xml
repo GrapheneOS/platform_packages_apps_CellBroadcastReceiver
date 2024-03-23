@@ -29,7 +29,11 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"Người mất tích"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"Tìm những người mất tích"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"Thông tin về mối đe doạ"</string>
+    <string name="enable_public_safety_messages_summary" msgid="1865721958409326701">"Thông tin về các mối đe dọa"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"Thử nghiệm cảnh báo"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="2611084212363095735">"Cảnh báo thử nghiệm của cơ quan có thẩm quyền"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"Thử nghiệm chuông báo"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"Cảnh báo thử nghiệm trong quá trình tập thể dục"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"Thử nghiệm tính năng truyền phát trên di động"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"Kiểm tra hệ thống Truyền phát trên di động"</string>
 </resources>

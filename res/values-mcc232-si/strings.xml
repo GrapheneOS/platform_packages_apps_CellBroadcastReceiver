@@ -29,7 +29,11 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"අතුරුදන් වූ පුද්ගලයින්"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"අතුරුදන් වූ පුද්ගලයින් සොයන්න"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"තර්ජන තොරතුරු"</string>
+    <string name="enable_public_safety_messages_summary" msgid="1865721958409326701">"තර්ජන සම්බන්ධ තොරතුරු"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"පරීක්ෂණ ඇඟවීම"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="2611084212363095735">"නිසි බලධාරීන්ගෙන් පරීක්ෂණ ඇඟවීම්"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"පරීක්ෂණ එලාමය"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"අභ්‍යාසවල සන්දර්භය තුළ එලාම් පරීක්ෂා කරන්න"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"සෙල් විකාශන පරීක්ෂණය"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"සෙල් විකාශන පද්ධති පරීක්ෂණ"</string>
 </resources>

@@ -16,6 +16,12 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="6968323372438785870">"Arifa ya dharura"</string>
+    <string name="cmas_presidential_level_alert" msgid="5649815444496135942">"Tahadhari ya Dharura Kubwa"</string>
+    <string name="emergency_alert" msgid="3311447424971987519">"Tahadhari ya Dharura"</string>
+    <string name="public_safety_message" msgid="909566512650220068">"Tahadhari ya Usalama kwa Umma"</string>
+    <string name="cmas_amber_alert" msgid="3379756389634116131">"Arifa ya Watoto Waliotekwa Nyara"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Tahadhari ya Dharura"</string>
+    <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Tahadhari ya Usalama kwa Umma"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Arifa ya Watoto Waliotekwa Nyara"</string>
     <string name="alerts_header_summary" msgid="8898082819299479687">"Simu yako inaweza kukutumia arifa, kama vile maagizo ya kuokolewa, wakati wa majanga. Huduma hii ni ushirikiano kati ya Shirika la Kitaifa la Usimamizi wa Dharura, kampuni zinazotoa huduma za mtandao na watengenezaji wa vifaa.\n\nHuenda usipate arifa ikiwa kuna hitilafu kwenye kifaa chako au ikiwa hali ya mitandao ni duni."</string>
 </resources>

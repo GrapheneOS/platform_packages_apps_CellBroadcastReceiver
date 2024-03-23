@@ -29,7 +29,11 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"Хора в неизвестност"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"Търсене на хора в неизвестност"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"Информация за заплахата"</string>
+    <string name="enable_public_safety_messages_summary" msgid="1865721958409326701">"Информация за заплахите"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"Тестови сигнал"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="2611084212363095735">"Тестване на сигнали от компетентни органи"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"Тестова аларма"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"Тестване на сигнали в контекста на упражнения"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"Тестване на клетъчното излъчване"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"Тест на системата за клетъчно излъчване"</string>
 </resources>

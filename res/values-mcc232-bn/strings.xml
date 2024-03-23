@@ -29,7 +29,11 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"হারিয়ে যাওয়া লোকজন"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"হারিয়ে যাওয়া লোকজন সম্পর্কে সার্চ করুন"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"ঝুঁকি সম্পর্কিত তথ্য"</string>
+    <string name="enable_public_safety_messages_summary" msgid="1865721958409326701">"হুমকি সম্পর্কিত তথ্য"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"সতর্কতা পরীক্ষা করুন"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="2611084212363095735">"উপযুক্ত কর্তৃপক্ষ থেকে আসা টেস্ট অ্যালার্ট"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"অ্যালার্ম পরীক্ষা করুন"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"ব্যায়ামের জন্য টেস্ট অ্যালার্ম"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"\'সেল ব্রডকাস্ট\'-এর পরীক্ষা"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"সেল ব্রডকাস্ট সিস্টেম টেস্ট"</string>
 </resources>

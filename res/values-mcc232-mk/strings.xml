@@ -29,7 +29,11 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"Исчезнати лица"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"Потрага по исчезнати лица"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"Информации за заканата"</string>
+    <string name="enable_public_safety_messages_summary" msgid="1865721958409326701">"Информации за закани"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"Пробно предупредување"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="2611084212363095735">"Пробни предупредувања од надлежните органи"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"Пробен аларм"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"Пробни аларми за вежби"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"Тест за мобилен пренос"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"Тестирања на системите за мобилен пренос"</string>
 </resources>

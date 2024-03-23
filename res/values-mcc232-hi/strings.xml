@@ -29,7 +29,11 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"गुमशुदा व्यक्ति"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"गुमशुदा व्यक्ति की तलाश करें"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"खतरे की जानकारी"</string>
+    <string name="enable_public_safety_messages_summary" msgid="1865721958409326701">"खतरों से जुड़ी जानकारी"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"टेस्ट अलर्ट"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="2611084212363095735">"आधिकारिक संस्थाओं से मिली सूचना की जांच करें"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"टेस्ट अलार्म"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"कसरत के लिए अलार्म की जांच करें"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"सेल ब्रॉडकास्ट की जांच"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"सेल ब्रॉडकास्ट के सिस्टम से जुड़ी जांच"</string>
 </resources>

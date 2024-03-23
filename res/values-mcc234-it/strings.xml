@@ -31,10 +31,10 @@
     <string name="cmas_exercise_alert" msgid="4540370572086918020">"Simulazione di allerta"</string>
     <string name="app_label" msgid="3863159788297913185">"Avvisi di emergenza"</string>
     <string name="sms_cb_settings" msgid="4187131985831792308">"Avvisi di emergenza"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Ricevi notifiche per allerte di emergenza"</string>
-    <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Usa la sintesi vocale per farmi ascoltare i messaggi delle allerte di emergenza"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Ricevi notifiche per avvisi di emergenza"</string>
+    <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Usa la sintesi vocale per farmi ascoltare i messaggi degli avvisi di emergenza"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"Ricevi test dal sistema di avviso di emergenza"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Stai ricevendo avvisi di emergenza. Vuoi continuare a ricevere questi avvisi?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Avvisi di emergenza"</string>
-    <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Tocca per visualizzare le impostazioni relative alle allerte di emergenza"</string>
+    <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Tocca per visualizzare le impostazioni per gli avvisi di emergenza"</string>
 </resources>

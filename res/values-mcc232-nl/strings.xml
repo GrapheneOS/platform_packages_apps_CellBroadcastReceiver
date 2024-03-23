@@ -29,7 +29,11 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"Vermiste personen"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"Vermiste personen gezocht"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"Informatie over dreiging"</string>
+    <string name="enable_public_safety_messages_summary" msgid="1865721958409326701">"Informatie over dreigingen"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"Testmelding"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="2611084212363095735">"Meldingen van bevoegde instanties testen"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"Testalarm"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"Alarmen testen in de context van oefeningen"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"Test van cell broadcast"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"Systeemtests voor cell broadcast"</string>
 </resources>

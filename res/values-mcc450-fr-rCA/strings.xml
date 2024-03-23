@@ -16,6 +16,12 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="6968323372438785870">"Alerte d\'urgence critique"</string>
+    <string name="cmas_presidential_level_alert" msgid="5649815444496135942">"Alerte d\'urgence extrême"</string>
+    <string name="emergency_alert" msgid="3311447424971987519">"Alerte d\'urgence"</string>
+    <string name="public_safety_message" msgid="909566512650220068">"Alerte relative à la sécurité publique"</string>
+    <string name="cmas_amber_alert" msgid="3379756389634116131">"Alerte AMBER"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Alerte d\'urgence"</string>
+    <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Alerte relative à la sécurité publique"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Alerte AMBER"</string>
     <string name="alerts_header_summary" msgid="8898082819299479687">"Votre téléphone peut vous envoyer des alertes, comme des instructions d\'évacuation, lors de catastrophes naturelles. Ce service est le résultat d\'une collaboration entre l\'agence nationale de gestion des urgences, les fournisseurs de services réseau et les fabricants d\'appareils.\n\nVous pourriez ne pas recevoir d\'alertes en cas de problème avec votre appareil ou si les conditions du réseau ne sont pas optimales."</string>
 </resources>

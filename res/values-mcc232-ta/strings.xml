@@ -29,7 +29,11 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"காணாமல் போனவர்கள்"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"காணாமல் போனவர்களைத் தேடுதல்"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"அச்சுறுத்தல் தொடர்பான தகவல்கள்"</string>
+    <string name="enable_public_safety_messages_summary" msgid="1865721958409326701">"அச்சுறுத்தல்கள் தொடர்பான விவரங்கள்"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"பரிசோதனை எச்சரிக்கை"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="2611084212363095735">"தகுதிபெற்ற ஆணையங்களிடமிருந்து பரிசோதனை விழிப்பூட்டல்கள்"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"பரிசோதனை அலாரம்"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"பயிற்சிகள் தொடர்பான பரிசோதனை அலாரங்கள்"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"செல் பிராட்காஸ்ட் பரிசோதனை"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"செல் பிராட்காஸ்ட் சிஸ்டம் பரிசோதனைகள்"</string>
 </resources>

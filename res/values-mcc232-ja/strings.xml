@@ -29,7 +29,11 @@
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"行方不明者"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"行方不明者を探す"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"脅威に関する情報"</string>
+    <string name="enable_public_safety_messages_summary" msgid="1865721958409326701">"脅威に関する情報"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1795129352473584681">"テストアラート"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="2611084212363095735">"所轄官庁からのテストアラート"</string>
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"テストアラーム"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"テストアラーム（訓練）"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"緊急速報メールのテスト"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"緊急速報メールのシステムテスト"</string>
 </resources>
