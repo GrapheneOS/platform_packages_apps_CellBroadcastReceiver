@@ -75,7 +75,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"పొంచి ఉన్న తీవ్ర అపాయాలు"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ప్రాణానికి, ఆస్తికి పొంచి ఉన్న తీవ్ర అపాయాలు"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER అలర్ట్‌లు"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"పిల్లల అపహరణ అత్యవసర బులెటిన్‌లు"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"పిల్లల అపహరణ ఎమర్జెన్సీ బులెటిన్‌లు"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"అలర్ట్ మెసేజ్‌లు"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"తక్షణ భద్రతా ప్రమాదాల గురించి హెచ్చరించు"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"ప్రజా భద్రతా మెసేజ్‌లు"</string>
@@ -86,7 +86,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"రాష్ట్ర, స్థానిక అధికారిక సంస్థల నుండి టెస్ట్ మెసేజ్‌లను స్వీకరిస్తుంది"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"అత్యవసర హెచ్చరికలు"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ప్రాణాంతకమైన సంఘటనల గురించి హెచ్చరించు"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"పరీక్ష అలర్ట్‌లు"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"టెస్ట్ అలర్ట్‌లు"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"భద్రతా అలర్ట్ సిస్టమ్ నుండి క్యారియర్ టెస్ట్‌లను, నెలవారీ టెస్ట్‌లను స్వీకరించండి"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />

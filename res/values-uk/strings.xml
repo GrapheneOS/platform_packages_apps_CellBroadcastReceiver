@@ -71,9 +71,9 @@
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Пробні сповіщення ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Пробні широкомовні сповіщення системи застережень щодо землетрусів і цунамі (ETWS)"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Надзвичайні загрози"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Надзвичайні загрози життю та майну"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Надзвичайні загрози життю й майну"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Серйозні загрози"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Серйозні загрози життю та майну"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Серйозні загрози життю й майну"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Сповіщення AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Екстрені сповіщення про викрадення дітей"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Сповіщення"</string>
@@ -87,7 +87,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Екстрені сповіщення"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Застерігати про небезпечні для життя події"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Тестові сповіщення"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Отримувати тестові сповіщення від оператора та щомісячні тестові сповіщення системи безпеки"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Отримувати тестові сповіщення від оператора й щомісячні тестові сповіщення системи безпеки"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Отримати екстрене сповіщення: тренувальне/симуляційне повідомлення"</string>

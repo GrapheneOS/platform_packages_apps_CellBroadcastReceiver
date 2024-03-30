@@ -30,5 +30,5 @@
     <string name="state_local_test_alert" msgid="7009393486453350790">"పరీక్ష అలర్ట్"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="3253477871276901425">"హెచ్చరిక అలర్ట్‌లు"</string>
     <string name="enable_public_safety_messages_title" msgid="6164589595328113173">"పబ్లిక్ భద్రత అలర్ట్‌లు"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="5347896880762045640">"పరీక్ష అలర్ట్‌లు"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="5347896880762045640">"టెస్ట్ అలర్ట్‌లు"</string>
 </resources>
