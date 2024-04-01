@@ -472,6 +472,8 @@ public class CellBroadcastAlertServiceTest extends
                 .state_local_test_alert_range_strings, new String[]{
                     "0x112E:rat=gsm, emergency=true",
                     "0x112F:rat=gsm, emergency=true",
+                    "0x0032:rat=gsm, type=area, emergency=false",
+                    "0x0034:rat=gsm, type=area, emergency=true"
                 });
         sendMessage(1);
         waitForServiceIntent();
@@ -534,6 +536,22 @@ public class CellBroadcastAlertServiceTest extends
                 .state_local_test_alerts_enabled_default, false);
         assertTrue("Should enable local test channel",
                 cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        // area_info alert with no_emergency_alert should not show : return false
+        SmsCbMessage areaInfoNoEmergencyAlert = new SmsCbMessage(1, 2, 3, new SmsCbLocation(),
+                0x0032, "language", "body",
+                SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null,
+                null, 0, 1);
+        assertFalse("Should not show area info with no emergency alert",
+                cellBroadcastAlertService.shouldDisplayMessage(areaInfoNoEmergencyAlert));
+
+        // area_info alert with no_emergency_alert should show : return true
+        SmsCbMessage areaInfoEmergencyAlert = new SmsCbMessage(1, 2, 3, new SmsCbLocation(),
+                0x0034, "language", "body",
+                SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null,
+                null, 0, 1);
+        assertTrue("Should show area info with emergency alert",
+                cellBroadcastAlertService.shouldDisplayMessage(areaInfoEmergencyAlert));
 
         // roaming case
         Context mockContext = mock(Context.class);

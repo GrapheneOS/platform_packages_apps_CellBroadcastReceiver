@@ -264,6 +264,7 @@ public class CellBroadcastAlertService extends Service {
                     .logMessageFiltered(FILTER_NOTSHOW_ECBM, message);
             return false;
         }
+
         // Check if the channel is enabled by the user or configuration.
         if (!isChannelEnabled(message)) {
             Log.d(TAG, "ignoring alert of type " + message.getServiceCategory()
@@ -287,6 +288,15 @@ public class CellBroadcastAlertService extends Service {
                 message.getSubscriptionId());
         CellBroadcastChannelRange range = channelManager
                 .getCellBroadcastChannelRangeFromMessage(message);
+
+        // Check the case the channel is enabled by roaming and not filtered out by the service
+        // layer, only if the message is not emergency.
+        if (range != null && range.mAlertType == AlertType.AREA
+                && !channelManager.isEmergencyMessage(message)) {
+            Log.d(TAG, "this alert type is area_info and not emergency message");
+            return false;
+        }
+
         String messageLanguage = message.getLanguageCode();
         if (range != null && range.mFilterLanguage) {
             // language filtering based on CBR second language settings
