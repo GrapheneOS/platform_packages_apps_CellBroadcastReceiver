@@ -75,7 +75,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"गम्भीर खतराहरू"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"जनधनको गम्भीर खतराहरूको अलर्ट"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER सम्बन्धी अलर्टहरू"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"बच्चाको अपहरण सम्बन्धी आपत्‌कालीन बुलेटिनहरू"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"बच्चाको अपहरणसम्बन्धी आपत्‌कालीन जानकारी"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"सतर्कतासम्बन्धी म्यासेजहरू"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"आसन्न सुरक्षासम्बन्धी खतराहरूबारे सचेत गराउनुहोस्"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"सार्वजनिक सुरक्षाका म्यासेजहरू"</string>

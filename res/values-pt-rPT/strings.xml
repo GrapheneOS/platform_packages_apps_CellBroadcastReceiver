@@ -67,7 +67,7 @@
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Utilize a conversão de texto em voz para dizer mensagens de alertas de emergência sem fios."</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Será reproduzido um som de lembrete com o volume normal"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Histórico de alertas de emergência"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"Preferências de alerta"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"Preferências dos alertas"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Difusões de teste do ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Difusões de teste para o Sistema de Aviso de Terramotos e Tsunamis"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Ameaças extremas"</string>

@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"खतरे की चेतावनी"</string>
-    <string name="sms_cb_settings" msgid="9021266457863671070">"वायरलेस इमरजेंसी अलर्ट"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"खतरे की चेतावनी"</string>
     <string name="sms_cb_sender_name_default" msgid="972946539768958828">"खतरे की चेतावनी"</string>
     <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"खतरे की चेतावनी"</string>
     <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"वायरलेस इमरजेंसी अलर्ट"</string>
@@ -60,14 +60,14 @@
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"अस्वीकार की गई आपातकालीन चेतावनियां"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"वॉयस कॉल के दौरान आपातकालीन चेतावनियां"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"अपने-आप काम करने वाली WEA की सूचनाओं की सेटिंग, सिम के हिसाब से बदल जाती है"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"चेतावनियां दिखाए जाने की अनुमति दें"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"खतरे की चेतावनी दिखाए जाने की अनुमति दें"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"वायरलेस इमरजेंसी अलर्ट की सूचनाएं पाएं"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"अलर्ट रिमाइंडर"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"खतरे से जु़ड़ी चेतावनी का रिमाइंडर"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"अलर्ट मैसेज बोलें"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"वायरलेस इमरजेंसी अलर्ट वाला मैसेज बोलने के लिए लिखाई को बोली में बदलने की सुविधा इस्तेमाल करें"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमाइंडर की आवाज़ सामान्य रहेगी"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"आपातकालीन चेतावनियों का इतिहास"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"चेतावनी से जुड़ी प्राथमिकताएं"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"खतरे की चेतावनियों की सेटिंग"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS परीक्षण प्रसारण"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"भूकंप सुनामी चेतावनी सिस्‍टम के लिए परीक्षण प्रसारण"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"बहुत गंभीर खतरे"</string>
@@ -87,7 +87,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जान का खतरा हो सकता है"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"जांच करने के लिए भेजी जाने वाली चेतावनियां"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा चेतावनी वाले सिस्टम से हर महीने टेस्ट पाएं. साथ ही, मोबाइल और इंटरनेट सेवा देने वाली कंपनी से टेस्ट पाएं"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा से जुड़ी चेतावनी वाले सिस्टम से हर महीने टेस्ट अलर्ट पाएं. साथ ही, मोबाइल और इंटरनेट कंपनी से टेस्ट अलर्ट पाएं"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"आपातकालीन स्थिति में चेतावनी पाएं: एक्सरसाइज़/ड्रिल करने के लिए मैसेज"</string>
@@ -139,7 +139,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"फ़िलहाल, आपको वायरलेस इमरजेंसी अलर्ट की सूचनाएं भेजी जा रही हैं. क्या आप वायरलेस इमरजेंसी अलर्ट की सूचनाएं आगे भी पाना चाहेंगे?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"हां"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"नहीं"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"आपातकालीन चेतावनियों का इतिहास"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"खतरे की चेतावनियों का इतिहास"</string>
     <string name="action_delete" msgid="7435661404543945861">"मिटाएं"</string>
     <string name="action_detail_info" msgid="8486524382178381810">"जानकारी दिखाएं"</string>
   <string-array name="alert_reminder_interval_entries">

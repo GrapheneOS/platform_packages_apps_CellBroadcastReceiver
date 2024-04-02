@@ -27,7 +27,7 @@
     <!-- no translation found for cmas_extreme_immediate_likely_alert (1667218798350595295) -->
     <skip />
     <string name="cmas_severe_alert" msgid="6989950459525380066">"ଗୁରୁତର ଆଲର୍ଟ"</string>
-    <string name="cmas_required_monthly_test" msgid="1226904101913162471">"ପରୀକ୍ଷା ଆଲର୍ଟ"</string>
+    <string name="cmas_required_monthly_test" msgid="1226904101913162471">"ଟେଷ୍ଟ ଆଲର୍ଟ"</string>
     <string name="cmas_exercise_alert" msgid="4540370572086918020">"ବ୍ୟାୟାମ ଆଲର୍ଟ"</string>
     <string name="app_label" msgid="3863159788297913185">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟଗୁଡ଼ିକ"</string>
     <string name="sms_cb_settings" msgid="4187131985831792308">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟଗୁଡ଼ିକ"</string>

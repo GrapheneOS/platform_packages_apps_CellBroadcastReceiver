@@ -160,7 +160,7 @@
     <string name="show_all_messages" msgid="3780970968167139836">"Ցույց տալ բոլոր հաղորդագրությունները"</string>
     <string name="show_regular_messages" msgid="7376885150513522515">"Ցույց տալ սովորական հաղորդագրությունները"</string>
     <string name="message_identifier" msgid="5558338496219327850">"Նույնացուցիչը՝"</string>
-    <string name="message_serial_number" msgid="3386553658712978964">"Հերթական համարը`"</string>
+    <string name="message_serial_number" msgid="3386553658712978964">"Հերթական համար`"</string>
     <string name="data_coding_scheme" msgid="4628901196730870577">"Տվյալների կոդավորման սխեմա՝"</string>
     <string name="message_content" msgid="6204502929879474632">"Հաղորդագրության բովանդակությունը՝"</string>
     <string name="location_check_time" msgid="4105326161240531207">"Տեղադրության ստուգման ժամանակը՝"</string>

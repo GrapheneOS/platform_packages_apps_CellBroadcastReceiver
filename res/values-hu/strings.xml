@@ -74,7 +74,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Életre és tulajdonra extrém veszélyt jelentő fenyegetések"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Komoly veszélyek"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Életre és tulajdonra komoly veszélyt jelentő fenyegetések"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER jelzés (gyermekrablás)"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER riasztások (gyermekrablás)"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Gyermekrablási vészhelyzetekről szóló közlemények"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Figyelmeztető üzenetek"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Közvetlen biztonsági fenyegetésekkel kapcsolatos figyelmeztetés"</string>
