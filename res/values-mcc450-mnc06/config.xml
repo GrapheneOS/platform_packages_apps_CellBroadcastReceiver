@@ -19,20 +19,20 @@
   <!-- Emergency alert tone duration set to 1 minute for Korean users -->
   <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
     <item>0x1112:rat=gsm, emergency=true, override_dnd=true, always_on=true</item>
-    <item>0x111F:rat=gsm, emergency=true, override_dnd=true, always_on=true</item>
+    <item>0x111F:rat=gsm, emergency=true, override_dnd=true, always_on=true, filter_language=true</item>
     <item>0xA16A:rat=gsm, emergency=true, override_dnd=true, testing_mode=true</item>
   </string-array>
   <!-- 4371, 4384, (0xA16B test mode) -->
   <string-array name="emergency_alerts_channels_range_strings" translatable="false">
     <item>0x1113:rat=gsm, emergency=true, override_dnd=true</item>
-    <item>0x1120:rat=gsm, emergency=true, override_dnd=true</item>
+    <item>0x1120:rat=gsm, emergency=true, override_dnd=true, filter_language=true</item>
     <item>0xA16B:rat=gsm, emergency=true, override_dnd=true, testing_mode=true</item>
   </string-array>
-  <!-- 4372, 4385, 4373~4379 Class 1 reserved channels for Korea, 0xA16A for test mode -->
+  <!-- 4372, 4385, 4373~4378 Class 1 reserved channels for Korea, 0xA16A for test mode -->
   <string-array name="public_safety_messages_channels_range_strings" translatable="false">
     <item>0x1114:rat=gsm, emergency=true, type=info, screen_on_duration=0, dismiss_on_outside_touch=true</item>
-    <item>0x1115-0x111B:rat=gsm, emergency=true, type=info, screen_on_duration=0, dismiss_on_outside_touch=true</item>
-    <item>0x1121:rat=gsm, emergency=true, type=info, screen_on_duration=0, dismiss_on_outside_touch=true</item>
+    <item>0x1115-0x111A:rat=gsm, emergency=true, type=info, screen_on_duration=0, dismiss_on_outside_touch=true</item>
+    <item>0x1121:rat=gsm, emergency=true, type=info, screen_on_duration=0, dismiss_on_outside_touch=true, filter_language=true</item>
     <item>0xA16C:rat=gsm, emergency=true, type=info, testing_mode=true, screen_on_duration=0, dismiss_on_outside_touch=true</item>
   </string-array>
   <!-- 40990~45055 biz purpose channels -->
