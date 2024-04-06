@@ -174,6 +174,10 @@ public class CellBroadcastBaseTest {
             getContext().registerReceiver(sReceiver, filter, Context.RECEIVER_EXPORTED);
         }
 
+        sInstrumentation = InstrumentationRegistry.getInstrumentation();
+        sDevice = UiDevice.getInstance(sInstrumentation);
+        setTestRoamingOperator(true);
+
         sMockModemManager = new MockModemManager();
         assertTrue(sMockModemManager.connectMockModemService(
                 MockSimService.MOCK_SIM_PROFILE_ID_TWN_CHT));
@@ -199,32 +203,14 @@ public class CellBroadcastBaseTest {
         sChannelsObject = new JSONObject(jsonChannels);
         String jsonSettings = loadJsonFile(EXPECTED_RESULT_SETTINGS_JSON);
         sSettingsObject = new JSONObject(jsonSettings);
-
-        sInstrumentation = InstrumentationRegistry.getInstrumentation();
-        sDevice = UiDevice.getInstance(sInstrumentation);
         sPackageName = CellBroadcastUtils
                 .getDefaultCellBroadcastReceiverPackageName(getContext());
-
-        setTestRoamingOperator(true);
-        enableAirplaneMode(true);
-        enableAirplaneMode(false);
     }
 
     private static void waitForNotify() {
         while (sSetChannelIsDone.getCount() > 0) {
             try {
                 sSetChannelIsDone.await(MAX_WAIT_TIME, TimeUnit.MILLISECONDS);
-                sSetChannelIsDone.countDown();
-            } catch (InterruptedException e) {
-                // do nothing
-            }
-        }
-    }
-
-    private static void waitForNotify(int milliSeconds) {
-        while (sSetChannelIsDone.getCount() > 0) {
-            try {
-                sSetChannelIsDone.await(milliSeconds, TimeUnit.MILLISECONDS);
                 sSetChannelIsDone.countDown();
             } catch (InterruptedException e) {
                 // do nothing
@@ -242,13 +228,12 @@ public class CellBroadcastBaseTest {
         if (sCallBackWithExecutor != null && sMockModemManager != null) {
             sMockModemManager.unregisterBroadcastCallback(sSlotId, sCallBackWithExecutor);
         }
+        setTestRoamingOperator(false);
         if (sMockModemManager != null) {
             // Rebind all interfaces which is binding to MockModemService to default.
             assertTrue(sMockModemManager.disconnectMockModemService());
             sMockModemManager = null;
         }
-
-        setTestRoamingOperator(false);
     }
 
     @Rule
@@ -324,20 +309,6 @@ public class CellBroadcastBaseTest {
             }
         }
         return result.toArray(new Object[]{});
-    }
-
-    protected static void enableAirplaneMode(boolean on) throws Exception {
-        if (on) {
-            logd("airplane mode on");
-            sDevice.executeShellCommand("settings put global airplane_mode_on 1");
-            sDevice.executeShellCommand("am broadcast -a android.intent.action.AIRPLANE_MODE");
-            waitForNotify(2000);
-        } else {
-            logd("airplane mode off");
-            sDevice.executeShellCommand("settings put global airplane_mode_on 0");
-            sDevice.executeShellCommand("am broadcast -a android.intent.action.AIRPLANE_MODE");
-            waitForNotify(2000);
-        }
     }
 
     protected static void setTestRoamingOperator(boolean save) throws Exception {
