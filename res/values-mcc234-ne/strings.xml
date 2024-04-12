@@ -32,7 +32,7 @@
     <string name="app_label" msgid="3863159788297913185">"आपत्‌कालीन अलर्टहरू"</string>
     <string name="sms_cb_settings" msgid="4187131985831792308">"आपत्‌कालीन अलर्टहरू"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"आपत्‌कालीन अलर्टसम्बन्धी सूचना पठाइयोस्"</string>
-    <string name="enable_alert_speech_summary" msgid="5021926525240750702">"आपत्‌कालीन अलर्टसम्बन्धी म्यासेज पढेर सुनाउन टेक्स्ट-टू-स्पिच सेवा प्रयोग गरियोस्"</string>
+    <string name="enable_alert_speech_summary" msgid="5021926525240750702">"आपत्‌कालीन अलर्टसम्बन्धी म्यासेज पढेर सुनाउन टेक्स्ट-टू-स्पिच सेवा प्रयोग गर्नुहोस्"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"आपत्‌कालीन अलर्टको सिस्टमबाट परीक्षणहरू प्राप्त गर्नुहोस्"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"तपाईं हाल आपत्‌कालीन अलर्टहरू प्राप्त गर्दै हुनुहुन्छ। तपाईं भविष्यमा पनि आपत्‌कालीन अलर्टहरू प्राप्त गरिरहन चाहनुहुन्छ?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"आपत्‌कालीन अलर्टहरू"</string>

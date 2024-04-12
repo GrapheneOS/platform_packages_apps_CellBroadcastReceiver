@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_presidential_level_alert" msgid="5786487196661686996">"राष्ट्रिय आपत्‌कालीन अलर्ट"</string>
-    <string name="show_cmas_opt_out_summary" msgid="1317444474007208209">"पहिलो अलर्ट देखाएपछि बाहिरिने डायलग देखाइयोस् (राष्ट्रव्यापी अलर्टबाहेक)।"</string>
+    <string name="show_cmas_opt_out_summary" msgid="1317444474007208209">"पहिलो अलर्ट देखाएपछि बाहिरिने डायलग देखाउनुहोस् (राष्ट्रव्यापी अलर्टबाहेक)।"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="789927829034029104">"राष्ट्रिय आपत्‌कालीन अलर्टहरू"</string>
     <string name="cmas_extreme_alert" msgid="3470880837863412562">"आपत्‌कालीन अलर्ट"</string>
     <string name="cmas_extreme_immediate_observed_alert" msgid="2411683921516746239">"आपत्‌कालीन अलर्ट"</string>

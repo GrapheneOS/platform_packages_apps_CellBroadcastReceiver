@@ -20,5 +20,5 @@
     <string name="emergency_alert" msgid="5431770009291479378">"Alerta de emergência"</string>
     <string name="public_safety_message" msgid="3043854916586710461">"Mensagem de alerta"</string>
     <string name="enable_cmas_test_alerts_title" msgid="4165080207837566277">"Teste mensal obrigatório"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="1339769389077152402">"Receber mensagens de teste para o sistema de alerta de segurança"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="1339769389077152402">"Receber mensagens de teste para o sistema de aviso de segurança"</string>
 </resources>
