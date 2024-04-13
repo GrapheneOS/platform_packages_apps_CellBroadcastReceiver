@@ -104,8 +104,9 @@ public class CellBroadcastBaseTest {
         @Override
         public void onGsmBroadcastActivated() {
             TelephonyManager tm = getContext().getSystemService(TelephonyManager.class);
-            logd("onGsmBroadcastActivated, mccmnc = " + tm.getSimOperator());
-            if (sInputMccMnc != null && sInputMccMnc.equals(tm.getSimOperator())) {
+            String mccmnc = tm.getSimOperator(SubscriptionManager.getDefaultSubscriptionId());
+            logd("onGsmBroadcastActivated, mccmnc = " + mccmnc);
+            if (sInputMccMnc != null && sInputMccMnc.equals(mccmnc)) {
                 sSetChannelIsDone.countDown();
                 logd("wait is released");
             }
@@ -234,6 +235,7 @@ public class CellBroadcastBaseTest {
             assertTrue(sMockModemManager.disconnectMockModemService());
             sMockModemManager = null;
         }
+        sInputMccMnc = null;
     }
 
     @Rule
