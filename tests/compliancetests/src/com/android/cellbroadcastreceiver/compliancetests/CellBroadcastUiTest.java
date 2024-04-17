@@ -318,7 +318,6 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
                     assertTrue("carrier=" + carrierName + ", settingName="
                             + settingName, false);
                 }
-                return;
             }
             UiObject itemSwitch = null;
             try {

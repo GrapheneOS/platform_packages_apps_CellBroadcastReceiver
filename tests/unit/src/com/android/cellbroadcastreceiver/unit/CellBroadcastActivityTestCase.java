@@ -16,6 +16,7 @@
 
 package com.android.cellbroadcastreceiver.unit;
 
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 
 import android.app.Activity;
@@ -33,6 +34,7 @@ import android.util.Log;
 import android.view.Display;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BooleanSupplier;
@@ -131,6 +133,9 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
         public TestContext(Context base) {
             super(base);
             mResources = spy(super.getResources());
+            Configuration configuration = new Configuration();
+            configuration.setLocale(Locale.ROOT);
+            doReturn(configuration).when(mResources).getConfiguration();
         }
 
         public <S> void injectSystemService(Class<S> cls, S service) {
