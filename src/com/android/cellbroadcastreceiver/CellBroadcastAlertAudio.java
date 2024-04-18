@@ -124,7 +124,8 @@ public class CellBroadcastAlertAudio extends Service implements TextToSpeech.OnI
 
     private int mState;
 
-    private TextToSpeech mTts;
+    @VisibleForTesting
+    public TextToSpeech mTts;
     private boolean mTtsEngineReady;
 
     private AlertType mAlertType;
