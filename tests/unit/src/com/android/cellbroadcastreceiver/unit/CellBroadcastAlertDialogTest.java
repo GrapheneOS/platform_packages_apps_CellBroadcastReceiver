@@ -247,6 +247,8 @@ public class CellBroadcastAlertDialogTest extends
                 mNotification.capture());
         Bundle b = mNotification.getValue().extras;
 
+        assertEquals(Notification.VISIBILITY_PUBLIC, mNotification.getValue().visibility);
+
         assertEquals(1, (int) mInt.getValue());
 
         assertTrue(getActivity().getTitle().toString().startsWith(
@@ -281,6 +283,7 @@ public class CellBroadcastAlertDialogTest extends
                 mNotification.capture());
         Bundle b = mNotification.getValue().extras;
 
+        assertEquals(Notification.VISIBILITY_PUBLIC, mNotification.getValue().visibility);
         assertEquals(1, (int) mInt.getValue());
         assertTrue(TextUtils.isEmpty(b.getCharSequence(Notification.EXTRA_TITLE)));
         verify(mContext.getResources(), times(1)).getString(mInt.capture(), anyInt());

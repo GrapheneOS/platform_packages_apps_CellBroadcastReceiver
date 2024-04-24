@@ -728,6 +728,7 @@ public class CellBroadcastAlertServiceTest extends
         verify(mMockedNotificationManager, times(1))
             .notify(eq(0x1112bbaa), notificationCaptor.capture());
         Notification notificationPosted = notificationCaptor.getValue();
+        assertEquals(Notification.VISIBILITY_PUBLIC, notificationPosted.visibility);
         assertTrue(notificationPosted.deleteIntent.isBroadcast());
         assertEquals(1, notificationPosted.actions.length);
         assertSame(notificationPosted.deleteIntent, notificationPosted.actions[0].actionIntent);
