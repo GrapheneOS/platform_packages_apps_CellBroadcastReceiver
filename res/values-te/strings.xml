@@ -171,6 +171,8 @@
     <string name="message_copied" msgid="6922953753733166675">"మెసేజ్ కాపీ చేయబడింది"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"మీరు రోమింగ్‌లో ఉన్నప్పుడు లేదా యాక్టివ్ అయిన SIM లేనప్పుడు, మీరు ఈ సెట్టింగ్‌లలో చేర్చబడని కొన్ని అలర్ట్‌లను పొందవచ్చు"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"సెట్టింగ్‌లు క్యారియర్ ద్వారా మార్చబడ్డాయి"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"వైర్‌లెస్ ఎమర్జెన్సీ అలర్ట్ సెట్టింగ్‌లను చూడటానికి ట్యాప్ చేయండి"</string>
+    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
+    <skip />
+    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
+    <skip />
 </resources>

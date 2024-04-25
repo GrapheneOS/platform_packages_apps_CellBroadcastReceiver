@@ -171,6 +171,8 @@
     <string name="message_copied" msgid="6922953753733166675">"Мессежийг хуулсан"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Та роуминг хийж байгаа эсвэл идэвхтэй SIM-гүй үедээ эдгээр тохиргоонд багтаагүй зарим сэрэмжлүүлгийг авч магадгүй"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Оператор компани тохиргоог өөрчилсөн"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Утасгүй яаралтай тусламжийн сэрэмжлүүлгийн тохиргоог харахын тулд товшино уу"</string>
+    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
+    <skip />
+    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
+    <skip />
 </resources>

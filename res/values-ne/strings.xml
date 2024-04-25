@@ -171,6 +171,8 @@
     <string name="message_copied" msgid="6922953753733166675">"म्यासेज कपी गरियो"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"रोमिङ मोडमा हुँदा वा तपाईंसँग सक्रिय SIM नहुँदा तपाईं यी सेटिङमा समावेश नभएका केही अलर्टहरू प्राप्त गर्न सक्नुहुन्छ"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"सेवा प्रदायकले यी सेटिङ परिवर्तन गरेको छ"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"आपत्‌कालीन वायरलेस सतर्कता सूचनासम्बन्धी सेटिङ हेर्न ट्याप गर्नुहोस्"</string>
+    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
+    <skip />
+    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
+    <skip />
 </resources>

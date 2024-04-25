@@ -23,5 +23,6 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"ਐਮਰਜੈਂਸੀ ਅਲਰਟ"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"ਜਨਤਕ ਸੁਰੱਖਿਆ ਅਲਰਟ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"AMBER ਅਲਰਟ"</string>
-    <string name="alerts_header_summary" msgid="8898082819299479687">"ਕੁਦਰਤੀ ਆਫ਼ਤਾਂ ਦੌਰਾਨ ਤੁਹਾਡਾ ਫ਼ੋਨ ਤੁਹਾਨੂੰ ਅਲਰਟ, ਜਿਵੇਂ ਕਿ ਨਿਕਾਸ ਸੰਬੰਧੀ ਹਿਦਾਇਤਾਂ, ਭੇਜ ਸਕਦਾ ਹੈ। ਇਹ ਸੇਵਾ ਰਾਸ਼ਟਰੀ ਐਮਰਜੈਂਸੀ ਪ੍ਰਬੰਧਨ ਏਜੰਸੀ, ਨੈੱਟਵਰਕ ਪ੍ਰਦਾਨਕਾਂ ਅਤੇ ਡੀਵਾਈਸ ਨਿਰਮਾਤਾਵਾਂ ਵਿਚਲਾ ਸਹਿਯੋਗ ਹੈ।\n\nਤੁਹਾਡੇ ਡੀਵਾਈਸ ਵਿੱਚ ਸਮੱਸਿਆ ਹੋਣ \'ਤੇ ਜਾਂ ਖਰਾਬ ਨੈੱਟਵਰਕ ਹਾਲਾਤਾਂ ਦੇ ਚਲਦੇ ਸ਼ਾਇਦ ਤੁਹਾਨੂੰ ਅਲਰਟ ਪ੍ਰਾਪਤ ਨਾ ਹੋਣ।"</string>
+    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
+    <skip />
 </resources>

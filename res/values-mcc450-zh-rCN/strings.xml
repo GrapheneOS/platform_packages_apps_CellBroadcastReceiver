@@ -23,5 +23,6 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"紧急警报"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"公共安全警报"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"安珀警报"</string>
-    <string name="alerts_header_summary" msgid="8898082819299479687">"您的手机可在自然灾害发生期间向您发出警报，例如疏散指示。这项服务是由韩国国家应急管理署、网络服务提供商和设备制造商联合提供的。\n\n如果您的设备存在问题或网络条件不佳，您可能会收不到警报。"</string>
+    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
+    <skip />
 </resources>

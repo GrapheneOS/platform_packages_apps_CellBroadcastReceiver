@@ -23,5 +23,6 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"அவசரகால எச்சரிக்கை"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"பொதுப் பாதுகாப்பு எச்சரிக்கை"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"AMBER எச்சரிக்கை"</string>
-    <string name="alerts_header_summary" msgid="8898082819299479687">"இயற்கைப் பேரிடர்களின் போது வெளியேறும் வழிமுறைகள் போன்ற விழிப்பூட்டல்களை உங்கள் மொபைல் அனுப்பும். இந்தச் சேவையை தேசியப் பேரிடர் மேலாண்மை நிறுவனமும், நெட்வொர்க் வழங்குனர்களும், சாதன உற்பத்தியாளர்களும் இணைந்து வழங்குகிறார்கள். \n\nஉங்கள் சாதனத்தில் ஏதேனும் சிக்கல் இருந்தாலோ, உங்கள் நெட்வொர்க் சரியில்லை என்றாலோ விழிப்பூட்டல்கள் வராமல் போகக்கூடும்."</string>
+    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
+    <skip />
 </resources>

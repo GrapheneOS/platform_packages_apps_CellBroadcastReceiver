@@ -23,5 +23,6 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"आणीबाणी सूचना"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"सार्वजनिक सुरक्षितता सूचना"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"अँबर सूचना"</string>
-    <string name="alerts_header_summary" msgid="8898082819299479687">"तुमचा फोन तुम्हाला नैसर्गिक आपत्तीच्या वेळी निर्वासनासंबंधित सूचनांसारख्या सूचना पाठवू शकतो. ही सेवा राष्ट्रीय आणीबाणी व्यवस्थापन एजन्सी, नेटवर्क पुरवठादार आणि डिव्हाइस उत्पादक यांच्यामधील सहयोगाने काम करते. \n\n तुमच्या डिव्हाइसमध्ये काही समस्या असल्यास किंवा नेटवर्कची स्थिती खराब असल्यास, तुम्हाला कदाचित सूचना मिळणार नाहीत."</string>
+    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
+    <skip />
 </resources>

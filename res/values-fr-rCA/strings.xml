@@ -171,6 +171,8 @@
     <string name="message_copied" msgid="6922953753733166675">"Message copié"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Lorsque vous êtes en itinérance ou que vous n\'avez pas de carte SIM active, vous pourriez recevoir des alertes qui ne sont pas incluses dans ces paramètres"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"Les paramètres ont été modifiés par le fournisseur de services"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"Touchez pour voir les paramètres des alertes d\'urgence sans fil"</string>
+    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
+    <skip />
+    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
+    <skip />
 </resources>

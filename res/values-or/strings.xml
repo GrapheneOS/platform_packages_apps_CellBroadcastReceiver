@@ -171,6 +171,8 @@
     <string name="message_copied" msgid="6922953753733166675">"ମେସେଜ୍ କପି ହୋଇଛି"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"ଆପଣ ରୋମିଂରେ ଥିଲେ କିମ୍ବା ଆପଣଙ୍କର କୌଣସି ସକ୍ରିୟ SIM ନଥିଲେ, ଆପଣ ଏହି ସେଟିଂସରେ ଅନ୍ତର୍ଭୁକ୍ତ ନଥିବା କିଛି ଆଲର୍ଟ ପାଇପାରନ୍ତି"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"କ୍ୟାରିଅର ଦ୍ୱାରା ସେଟିଂସ ବଦଳାଯାଇଛି"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"ୱାୟାରଲେସ୍ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ସେଟିଂସ ଦେଖିବାକୁ ଟାପ କରନ୍ତୁ"</string>
+    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
+    <skip />
+    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
+    <skip />
 </resources>

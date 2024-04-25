@@ -171,6 +171,8 @@
     <string name="message_copied" msgid="6922953753733166675">"मैसेज कॉपी किया गया"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"रोमिंग में होने के दौरान या कोई चालू सिम न होने पर, आपको ऐसी सूचनाएं मिल सकती हैं जो इन सेटिंग में शामिल नहीं हैं"</string>
-    <string name="notification_cb_settings_changed_title" msgid="7664799881479966932">"यह सेटिंग, मोबाइल और इंटरनेट सेवा देने वाली कंपनी ने बदल दी है"</string>
-    <string name="notification_cb_settings_changed_text" msgid="1397646219615654933">"वायरलेस इमरजेंसी अलर्ट की सूचनाओं की सेटिंग देखने के लिए टैप करें"</string>
+    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
+    <skip />
+    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
+    <skip />
 </resources>

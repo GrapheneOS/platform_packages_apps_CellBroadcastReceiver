@@ -23,5 +23,6 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"התראה על מקרה חירום"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"התראה בנוגע לביטחון הציבור"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"‏התרעת AMBER"</string>
-    <string name="alerts_header_summary" msgid="8898082819299479687">"במהלך אסונות טבע, הטלפון יכול לשלוח הוראות לפינוי והתרעות נוספות. השירות ניתן במסגרת שיתוף פעולה בין הסוכנות הלאומית לניהול מצבי חירום, ספקי רשתות ויצרני מכשירים.\n\nייתכן שלא יוצגו לך התרעות אם יש בעיה במכשיר או בעיות באיכות הרשת."</string>
+    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
+    <skip />
 </resources>

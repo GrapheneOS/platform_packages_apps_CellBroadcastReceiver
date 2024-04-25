@@ -23,5 +23,6 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"ایمرجنسی الرٹ"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"عوامی حفاظتی الرٹ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"زرد الرٹ"</string>
-    <string name="alerts_header_summary" msgid="8898082819299479687">"آپ کا فون قدرتی آفات کے دوران انخلائی ہدایات جیسے الرٹس آپ کو بھیج سکتا ہے۔ یہ سروس نیشنل ایمرجنسی مینجمنٹ ایجنسی، نیٹ ورک فراہم کنندگان اور آلہ مینوفیکچررز کے درمیان ایک معاونت ہے۔\n\nاگر آپ کے آلہ میں کوئی مسئلہ ہو یا نیٹ ورک کے حالات خراب ہو تو ہو سکتا ہے کہ آپ کو الرٹس موصول نہ ہوں۔"</string>
+    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
+    <skip />
 </resources>

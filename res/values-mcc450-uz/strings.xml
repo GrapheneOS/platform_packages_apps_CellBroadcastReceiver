@@ -23,5 +23,6 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Favqulodda ogohlantirish"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Ommaviy xavfsizlik haqida ogohlantirish"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Amber ogohlantirishi"</string>
-    <string name="alerts_header_summary" msgid="8898082819299479687">"Tabiiy ofatlar vaqtida telefoningiz evakuatsiya koʻrsatmalari kabi muhim xabarlarni chiqarishi mumkin. Bu xizmat Milliy favqulodda vaziyatlarni boshqarish agentligi, tarmoq operatorlari va qurilma ishlab chiqaruvchilari tomonidan birgalikda ishlab chiqilgan.\n\nQurilmada yoki tarmoqda muammolar boʻlsa, sizga muhim xabarlar kelmasligi mumkin."</string>
+    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
+    <skip />
 </resources>

@@ -23,5 +23,6 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"आपत्‌कालीन अलर्ट"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"सार्वजनिक सुरक्षासम्बन्धी अलर्ट"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"AMBER अलर्ट"</string>
-    <string name="alerts_header_summary" msgid="8898082819299479687">"तपाईंको फोनले तपाईंलाई प्राकृतिक प्रकोपका बेला खतरापूर्ण ठाउँबाट सुरक्षित रूपमा निस्कने निर्देशनहरू जस्ता अलर्टहरू पठाउन सक्छ। यो सेवा राष्ट्रिय आपत्‌काल व्यस्थापन निकाय, नेटवर्क सेवा प्रदायक र यन्त्र उत्पादक कम्पनीहरूबिच सहकार्य गरेर सुरु गरिएको हो।\n\nतपाईंको डिभाइसमा कुनै समस्या छ वा नेटवर्क राम्रो छैन भने तपाईं अलर्टहरू प्राप्त नगर्न पनि सक्नुहुन्छ।"</string>
+    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
+    <skip />
 </resources>
