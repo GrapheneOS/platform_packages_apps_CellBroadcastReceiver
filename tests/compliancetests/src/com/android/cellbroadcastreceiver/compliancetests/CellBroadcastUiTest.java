@@ -44,6 +44,9 @@ import android.widget.LinearLayout;
 
 import com.android.internal.util.HexDump;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
+
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Before;
@@ -51,9 +54,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.Iterator;
-
-import junitparams.JUnitParamsRunner;
-import junitparams.Parameters;
 
 @RunWith(JUnitParamsRunner.class)
 public class CellBroadcastUiTest extends CellBroadcastBaseTest {
@@ -102,6 +102,19 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         }
         if ("testEmergencyAlertSettingsUi".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())) {
+            // close disturbing dialog if exist
+            UiObject2 yesButton = sDevice.wait(Until.findObject(YES_BUTTON), 100);
+            if (yesButton != null) {
+                logd("dismiss disturbing dialog");
+                yesButton.click();
+            }
+            // if left alertdialog exist, close it
+            UiObject2 okItem = sDevice.wait(Until.findObject(
+                    By.res(sPackageName, "dismissButton")), 100);
+            if (okItem != null) {
+                logd("dismiss left alertdialog");
+                okItem.click();
+            }
             sDevice.pressHome();
         }
     }

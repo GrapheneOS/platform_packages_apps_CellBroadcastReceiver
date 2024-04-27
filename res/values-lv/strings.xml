@@ -60,7 +60,7 @@
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Neapstiprināti ārkārtas brīdinājumi"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Ārkārtas brīdinājumi balss zvana laikā"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Automātiskas WEA iestatījumu izmaiņas, pamatojoties uz SIM karti"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Brīdinājumu saņemšana"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Saņemt brīdinājumus"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Saņemt bezvadu ārkārtas brīdinājumu paziņojumus"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Atgādinājums ar signālu"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Ierunāt brīdinājuma ziņojumu"</string>

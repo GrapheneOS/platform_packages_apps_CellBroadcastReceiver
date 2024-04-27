@@ -182,13 +182,6 @@ public class CellBroadcastBaseTest {
         sMockModemManager = new MockModemManager();
         assertTrue(sMockModemManager.connectMockModemService(
                 MockSimService.MOCK_SIM_PROFILE_ID_TWN_CHT));
-        sSlotId = SubscriptionManager.getSlotIndex(SubscriptionManager.getDefaultSubscriptionId());
-
-        if (sSlotId == SubscriptionManager.INVALID_SIM_SLOT_INDEX) {
-            Log.i(TAG, "Error with invalid sim slot index");
-            sPreconditionError = ERROR_INVALID_SIM_SLOT_INDEX_ERROR;
-            return;
-        }
 
         if (SdkLevel.isAtLeastU()) {
             BroadcastChannelListener broadcastCallback = new BroadcastChannelListener();
