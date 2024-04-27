@@ -48,6 +48,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.pm.ServiceInfo;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Binder;
@@ -929,7 +930,20 @@ public class CellBroadcastAlertService extends Service {
                     .setStyle(new Notification.BigTextStyle().bigText(messageBody));
         }
 
-        notificationManager.notify(notificationId, builder.build());
+        // If alert is received during an active call, post notification only and do not play alert
+        // until call is disconnected. Use a foreground service to prevent CMAS process being
+        // frozen or removed by low memory killer
+        if (sRemindAfterCallFinish && context instanceof CellBroadcastAlertService) {
+            try {
+                ((CellBroadcastAlertService) context).startForeground(notificationId,
+                        builder.build(),
+                        ServiceInfo.FOREGROUND_SERVICE_TYPE_SYSTEM_EXEMPTED);
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to start foreground " + e);
+            }
+        } else {
+            notificationManager.notify(notificationId, builder.build());
+        }
 
         // SysUI does not wake screen up when notification received. For emergency alert, manually
         // wakes up the screen for 1 second.
@@ -1101,6 +1115,12 @@ public class CellBroadcastAlertService extends Service {
                 }
             }
             CellBroadcastReceiverApp.clearNewMessageList();
+            // Stop the foreground service since call is now already disconnected.
+            try {
+                stopForeground(Service.STOP_FOREGROUND_DETACH);
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to stop foreground");
+            }
         }
     }
 

@@ -22,6 +22,7 @@ import static com.android.cellbroadcastreceiver.CellBroadcastAlertService.SHOW_N
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -32,13 +33,18 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
+import android.app.IActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.ServiceInfo;
 import android.content.res.Resources;
 import android.os.Handler;
 import android.os.IPowerManager;
@@ -70,6 +76,7 @@ import org.junit.Before;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -81,6 +88,9 @@ public class CellBroadcastAlertServiceTest extends
 
     @Mock
     SharedPreferences.Editor mMockEditor;
+
+    @Mock
+    IActivityManager mMockActivityManager;
 
     public CellBroadcastAlertServiceTest() {
         super(CellBroadcastAlertService.class);
@@ -109,6 +119,12 @@ public class CellBroadcastAlertServiceTest extends
                 0, 1);
     }
 
+    @Override
+    protected void setupService() {
+        super.setupService();
+        injectMockActivityManager(getService(), mMockActivityManager);
+    }
+
     @Before
     public void setUp() throws Exception {
         super.setUp();
@@ -117,6 +133,10 @@ public class CellBroadcastAlertServiceTest extends
         doReturn(mMockEditor).when(mMockedSharedPreferences).edit();
         doReturn(mMockEditor).when(mMockEditor).putBoolean(anyString(), anyBoolean());
         doNothing().when(mMockEditor).apply();
+        Handler handler = new Handler(Looper.getMainLooper());
+        IPowerManager mockedPowerService = mock(IPowerManager.class);
+        mMockedPowerManager = new PowerManager(mContext, mockedPowerService, null, handler);
+        when(mResources.getText(anyInt())).thenReturn("text");
     }
 
     @After
@@ -785,6 +805,8 @@ public class CellBroadcastAlertServiceTest extends
         waitForServiceIntent();
 
         verify(mMockedNotificationManager, never()).getActiveNotifications();
+        verify(mMockActivityManager).setServiceForeground(any(), any(), anyInt(), any(), anyInt(),
+                eq(ServiceInfo.FOREGROUND_SERVICE_TYPE_SYSTEM_EXEMPTED));
 
         // Verify to trigger playPendingAlert, when onCallStateChanged is called and PendingAlert
         // exist after Call is IDLE
@@ -796,12 +818,30 @@ public class CellBroadcastAlertServiceTest extends
         waitForServiceIntent();
 
         // Verify alert dialog activity intent
-        ArrayList<SmsCbMessage> newMessageList = mActivityIntentToVerify
-                .getParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA);
-        assertEquals(1, newMessageList.size());
-        assertEquals(Intent.FLAG_ACTIVITY_NO_USER_ACTION,
-                (mActivityIntentToVerify.getFlags() & Intent.FLAG_ACTIVITY_NO_USER_ACTION));
-        assertEquals(Intent.FLAG_ACTIVITY_NEW_TASK,
-                (mActivityIntentToVerify.getFlags() & Intent.FLAG_ACTIVITY_NEW_TASK));
+        boolean isWatch = mContext.getPackageManager().hasSystemFeature(
+                PackageManager.FEATURE_WATCH);
+        if (!isWatch) {
+            ArrayList<SmsCbMessage> newMessageList = mActivityIntentToVerify
+                    .getParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA);
+            assertEquals(1, newMessageList.size());
+            assertEquals(Intent.FLAG_ACTIVITY_NO_USER_ACTION,
+                    (mActivityIntentToVerify.getFlags() & Intent.FLAG_ACTIVITY_NO_USER_ACTION));
+            assertEquals(Intent.FLAG_ACTIVITY_NEW_TASK,
+                    (mActivityIntentToVerify.getFlags() & Intent.FLAG_ACTIVITY_NEW_TASK));
+        }
+        verify(mMockActivityManager).setServiceForeground(any(), any(), anyInt(), any(),
+                eq(Service.STOP_FOREGROUND_DETACH), anyInt());
+    }
+
+    // Inject a mock activity manager to test setForeground functionality because ServiceTestCase
+    // by default set activity manager to null.
+    private void injectMockActivityManager(Service service, IActivityManager activityManager) {
+        try {
+            Field privateNameField = Service.class.getDeclaredField("mActivityManager");
+            privateNameField.setAccessible(true);
+            privateNameField.set(service, activityManager);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new RuntimeException("failed to inject mock actiivty manager into service");
+        }
     }
 }

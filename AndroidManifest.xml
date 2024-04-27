@@ -43,6 +43,8 @@
     <uses-permission android:name="android.permission.MODIFY_CELL_BROADCASTS" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.STATUS_BAR" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SYSTEM_EXEMPTED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
     <uses-permission android:name="android.permission.MANAGE_USERS" />
@@ -75,7 +77,11 @@
                  android:exported="false" />
 
         <service android:name="com.android.cellbroadcastreceiver.CellBroadcastAlertService"
-                 android:exported="false" />
+                 android:foregroundServiceType="systemExempted"
+                 android:exported="false">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                      android:value="keep cell broadcast receiver process alive in case of an emergency alert received during the call"/>
+        </service>
 
         <service android:name="com.android.cellbroadcastreceiver.CellBroadcastConfigService"
                  android:exported="false" />
@@ -156,7 +162,6 @@
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
                 <action android:name="android.intent.action.SERVICE_STATE" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.telephony.action.SECRET_CODE" />
