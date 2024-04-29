@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Fövqəladə hal siqnalı"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"İctimai güvənlik siqnalı"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Kəhrəba siqnalı"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"Telefon fəlakətlər zamanı evakuasiya təlimatları kimi xəbərdarlıqlar göndərə bilər. Bu xidmət Koreya hökuməti, şəbəkə provayderləri və cihaz istehsalçıları arasında əməkdaşlıqdır.\n\nCihazda problem olarsa və ya şəbəkə zəif olarsa, xəbərdarlıq almaya bilərsiniz."</string>
 </resources>

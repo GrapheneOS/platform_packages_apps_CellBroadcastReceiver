@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Alert o zagrożeniu"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Alert dotyczący bezpieczeństwa publicznego"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Alert AMBER"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"Podczas klęsk żywiołowych telefon może wysyłać Ci alerty, na przykład instrukcje dotyczące ewakuacji. Ta usługa powstała we współpracy z rządem Korei, dostawcami usług sieciowych i producentami urządzeń.\n\nW przypadku problemów z urządzeniem lub złego stanu sieci alerty mogą być niedostępne."</string>
 </resources>

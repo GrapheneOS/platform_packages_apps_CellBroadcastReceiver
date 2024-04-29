@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Nujno opozorilo"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Opozorilo za javno varnost"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Opozorilo AMBER"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"Telefon vam lahko med katastrofami pošilja opozorila, na primer navodila za evakuacijo. To storitev je plod sodelovanja med korejsko vlado, operaterji omrežij in proizvajalci naprav.\n\nOpozoril morda ne boste mogli prejeti v primeru težav z napravo ali slabega signala omrežja."</string>
 </resources>

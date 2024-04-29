@@ -1329,5 +1329,23 @@
       "default_value": "true",
       "toggle_avail": "true"
     }
+  },
+  "Luxembourg": {
+    "Kidnapping Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "LU-Alert Test": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "LU-Alert Exercise": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
   }
 }

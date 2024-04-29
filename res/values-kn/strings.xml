@@ -171,8 +171,6 @@
     <string name="message_copied" msgid="6922953753733166675">"ಸಂದೇಶವನ್ನು ನಕಲಿಸಲಾಗಿದೆ"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"ನೀವು ರೋಮಿಂಗ್‌ನಲ್ಲಿರುವಾಗ ಅಥವಾ ಸಕ್ರಿಯ SIM ಕಾರ್ಡ್ ಅನ್ನು ಹೊಂದಿಲ್ಲದಿದ್ದರೆ, ಈ ಸೆಟ್ಟಿಂಗ್‌ನಲ್ಲಿ ಸೇರಿಸದ ಕೆಲವು ಅಲರ್ಟ್‌ಗಳನ್ನು ನೀವು ಸ್ವೀಕರಿಸಬಹುದು"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಬದಲಾಗಿವೆ"</string>
+    <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"ನಿಮ್ಮ SIM ಬದಲಾಗಿರುವ ಕಾರಣ ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ರೀಸೆಟ್ ಮಾಡಲಾಗಿದೆ"</string>
 </resources>

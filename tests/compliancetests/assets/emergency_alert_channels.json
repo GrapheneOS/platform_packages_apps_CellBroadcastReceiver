@@ -2501,6 +2501,11 @@
       "default_value": "false",
       "toggle_avail": "true",
       "alert_type":"notification"
+    },
+    "4400": {
+      "title": "",
+      "default_value": "true",
+      "toggle_avail": "false"
     }
   },
   "puertorico": {
@@ -4799,6 +4804,78 @@
     "4380": {
       "title": "Test Alert",
       "default_value": "true",
+      "toggle_avail": "true"
+    }
+  },
+  "Luxembourg": {
+    "4370": {
+      "title": "LU-Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "LU-Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4371": {
+      "title": "LU-Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4384": {
+      "title": "LU-Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4375": {
+      "title": "LU-Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4388": {
+      "title": "LU-Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4396": {
+      "title": "LU-Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4397": {
+      "title": "LU-Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4379": {
+      "title": "LU-Alert : Kidnapping alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "LU-Alert : Kidnapping alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4380": {
+      "title": "LU-Alert Test",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4393": {
+      "title": "LU-Alert Test",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4381": {
+      "title": "LU-Alert Exercise",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4394": {
+      "title": "LU-Alert Exercise",
+      "default_value": "false",
       "toggle_avail": "true"
     }
   }

@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"ការប្រកាសអាសន្ន"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"ការជូនដំណឹង​អំពីសុវត្ថិភាព​សាធារណៈ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"ការជូនដំណឹងអំពីការចាប់ជំរិតក្មេង"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"ទូរសព្ទរបស់អ្នក​អាចផ្ញើការជូនដំណឹងទៅអ្នកដូចជា ការណែនាំអំពីការជម្លៀស អំឡុងពេល​មានគ្រោះមហន្តរាយជាដើម។ សេវាកម្មនេះគឺជាការសហការរវាងរដ្ឋាភិបាលកូរ៉េ ក្រុមហ៊ុនផ្ដល់សេវាបណ្ដាញ និងក្រុមហ៊ុនផលិតឧបករណ៍។\n\nអ្នកអាចនឹងមិនទទួលបានការជូនដំណឹងទេ ប្រសិនបើមានបញ្ហាជាមួយឧបករណ៍របស់អ្នក ឬប្រសិនបើស្ថានភាពបណ្ដាញខ្សោយ។"</string>
 </resources>

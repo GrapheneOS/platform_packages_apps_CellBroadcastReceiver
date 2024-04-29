@@ -171,8 +171,6 @@
     <string name="message_copied" msgid="6922953753733166675">"បាន​ចម្លង​សារ"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"នៅពេលអ្នកកំពុងរ៉ូមីង ឬមិនមានស៊ីមសកម្មទេ អ្នកអាចនឹងទទួលបានការជូនដំណឹងមួយចំនួនដែលមិនរួមបញ្ចូលនៅក្នុងការកំណត់ទាំងនេះ"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"បានប្ដូរការ​កំណត់របស់អ្នក"</string>
+    <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"ការ​កំណត់ការប្រកាសអាសន្នតាមប្រព័ន្ធឥតខ្សែត្រូវបានកំណត់​ឡើងវិញ ដោយសារអ្នកបានប្ដូរស៊ីម"</string>
 </resources>

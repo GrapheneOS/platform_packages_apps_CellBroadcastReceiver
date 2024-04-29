@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"ತುರ್ತು ಅಲರ್ಟ್"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತೆಯ ಎಚ್ಚರಿಕೆ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"AMBER ಎಚ್ಚರಿಕೆ"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"ನಿಮ್ಮ ಫೋನ್, ವಿಪತ್ತುಗಳ ಸಂದರ್ಭದಲ್ಲಿ ಸ್ಥಳಾಂತರದ ಸೂಚನೆಗಳಂತಹ ಎಚ್ಚರಿಕೆಗಳನ್ನು ನಿಮಗೆ ಕಳುಹಿಸಬಹುದು. ಈ ಸೇವೆಯು ಕೊರಿಯನ್ ಸರ್ಕಾರ, ನೆಟ್‌ವರ್ಕ್ ಒದಗಿಸುವವರು ಮತ್ತು ಸಾಧನದ ಉತ್ಪಾದಕರ ನಡುವಿನ ಸಹಯೋಗವಾಗಿದೆ.\n\nನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಸಮಸ್ಯೆ ಇದ್ದರೆ ಅಥವಾ ನೆಟ್‌ವರ್ಕ್ ಸ್ಥಿತಿಗಳು ದುರ್ಬಲವಾಗಿದ್ದರೆ ನೀವು ಎಚ್ಚರಿಕೆಗಳನ್ನು ಪಡೆಯದೇ ಇರಬಹುದು."</string>
 </resources>
