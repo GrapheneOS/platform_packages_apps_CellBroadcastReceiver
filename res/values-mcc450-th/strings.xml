@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"การแจ้งเตือนเหตุฉุกเฉิน"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"การแจ้งเตือนด้านความปลอดภัยสาธารณะ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"การแจ้งเตือนเด็กหาย Amber Alert"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"โทรศัพท์จะส่งการแจ้งเตือนให้คุณ เช่น คำสั่งอพยพ ระหว่างเกิดภัยพิบัติ บริการนี้เป็นการทำงานร่วมกันระหว่างรัฐบาลเกาหลี ผู้ให้บริการเครือข่าย และผู้ผลิตอุปกรณ์\n\nคุณอาจไม่ได้รับการแจ้งเตือนหากอุปกรณ์มีปัญหาหรือเครือข่ายอยู่ในสภาวะที่ไม่เสถียร"</string>
 </resources>

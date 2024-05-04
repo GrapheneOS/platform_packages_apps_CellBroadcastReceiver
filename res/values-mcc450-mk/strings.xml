@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Предупредување за итни случаи"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Предупредување за јавна безбедност"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Предупредување AMBER"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"При катастрофи, вашиот телефон може да ви прикажува предупредувања, како на пр. упатства за евакуација. Услугава е соработка меѓу корејската влада, операторите и производителите на уреди.\n\nМожно е да не добиете предупредувања ако има проблем со уредот или ако мрежните услови се лоши."</string>
 </resources>

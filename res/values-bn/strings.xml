@@ -171,8 +171,6 @@
     <string name="message_copied" msgid="6922953753733166675">"মেসেজ কপি করা হয়েছে"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"আপনি রোমিংয়ে থাকাকালীন বা আপনার কাছে কোনও অ্যাক্টিভ সিম কার্ড না থাকলে, এইসব সেটিংসে অন্তর্ভুক্ত করা নেই এমন কিছু সতর্কতা পেতে পারেন"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"আপনার সেটিংস পরিবর্তন করা হয়েছে"</string>
+    <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"আপনার সিম কার্ড পরিবর্তন করার জন্য ওয়্যারলেস জরুরি সতর্কতা সেটিংস রিসেট করা হয়েছে"</string>
 </resources>

@@ -171,8 +171,6 @@
     <string name="message_copied" msgid="6922953753733166675">"Повідомлення скопійовано"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Коли ви користуєтеся роумінгом або у вас немає активної SIM-карти, ви можете отримувати деякі сповіщення, відсутні в цих налаштуваннях"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Ваші налаштування змінено"</string>
+    <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Налаштування бездротових екстрених сповіщень скинуто, оскільки змінилася ваша SIM-карта"</string>
 </resources>

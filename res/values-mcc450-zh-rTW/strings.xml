@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"緊急警報"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"公共安全警報"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"安珀警報"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"災難發生時，手機會收到避難指示等警報。這項服務是由韓國政府、網路服務供應商和裝置製造商共同提供。\n\n如果裝置有問題或網路訊號不佳，可能會收不到警報。"</string>
 </resources>

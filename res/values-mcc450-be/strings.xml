@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Экстранная абвестка"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Абвестка пра пагрозу грамадскай бяспецы"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Абвестка AMBER"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"Ваш тэлефон падчас катастроф можа паказваць вам абвесткі, напрыклад інструкцыі па эвакуацыі. Гэты сэрвіс працуе пры падтрымцы ўрада Паўднёвай Карэі, аператараў сетак і вытворцаў прылад.\n\nВы можаце не атрымаць абвестак у тых выпадках, калі ўзнікне праблема з вашай прыладай ці з падключэннем да сеткі."</string>
 </resources>

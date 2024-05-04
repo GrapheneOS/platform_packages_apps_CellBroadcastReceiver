@@ -171,8 +171,6 @@
     <string name="message_copied" msgid="6922953753733166675">"Порука је копирана"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Док сте у ромингу или када немате активан SIM, можете да добијате нека упозорења која нису обухваћена овим подешавањима"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Подешавања су промењена"</string>
+    <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Подешавања мобилних упозорења о хитним случајевима су ресетована јер сте променили SIM"</string>
 </resources>

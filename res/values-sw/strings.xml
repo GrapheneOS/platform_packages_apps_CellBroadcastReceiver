@@ -171,8 +171,6 @@
     <string name="message_copied" msgid="6922953753733166675">"Ujumbe umenakiliwa"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Wakati unatumia mitandao ya ng\'ambo au huna SIM inayotumika, huenda ukapata arifa fulani ambazo hazijajumuisha katika mipangilio hii"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Mipangilio yako imebadilika"</string>
+    <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Mipangilio ya tahadhari za dharura kupitia vifaa vya mkononi imewekwa upya kwa sababu umebadilisha SIM yako"</string>
 </resources>

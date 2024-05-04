@@ -171,8 +171,6 @@
     <string name="message_copied" msgid="6922953753733166675">"Nachricht kopiert"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Wenn du Roaming verwendest oder keine aktive SIM-Karte hast, erhältst du möglicherweise einige Benachrichtigungen, die nicht in diesen Einstellungen angezeigt werden"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Deine Einstellungen haben sich geändert"</string>
+    <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Die Einstellungen für Notfallbenachrichtigungen an Mobilgeräte wurden zurückgesetzt, weil sich deine SIM geändert hat"</string>
 </resources>

@@ -171,8 +171,6 @@
     <string name="message_copied" msgid="6922953753733166675">"Üzenet vágólapra másolva"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Amikor roamingol, vagy nincs aktív SIM-je, kaphat néhány olyan értesítést, amelyek nem találhatók meg ezekben a beállításokban"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Módosultak a beállításai"</string>
+    <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"A vezeték nélküli vészriasztások beállításai visszaállításra kerültek a SIM módosítása miatt"</string>
 </resources>

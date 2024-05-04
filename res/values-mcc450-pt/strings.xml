@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Alerta de emergência"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Alerta de segurança pública"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Alerta AMBER (rapto de criança)"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"Seu smartphone pode enviar alertas, como instruções de evacuação, durante desastres. Esse serviço é uma colaboração entre o governo da Coreia do Sul, operadoras de rede e fabricantes de dispositivos.\n\nTalvez você não receba alertas se houver algum problema com o dispositivo ou se as condições da rede estiverem ruins."</string>
 </resources>

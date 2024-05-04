@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"ସାର୍ବଜନୀନ ସୁରକ୍ଷା ଆଲର୍ଟ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"ଅମ୍ବର ଆଲର୍ଟ"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"ଆପଣଙ୍କ ଫୋନ ଦୁର୍ବିପାକ ସମୟରେ ସ୍ଥାନାନ୍ତର ନିର୍ଦ୍ଦେଶଗୁଡ଼ିକ ପରି ଆଲର୍ଟ ଆପଣଙ୍କୁ ପଠାଇପାରିବ। ଏହି ସେବା କୋରୀୟ ସରକାର, ନେଟୱାର୍କ ପ୍ରଦାନକାରୀ ଏବଂ ଡିଭାଇସ ନିର୍ମାତାମାନଙ୍କ ମଧ୍ୟରେ ଏକ ସହଯୋଗ ଅଟେ।\n\nଯଦି ଆପଣଙ୍କ ଡିଭାଇସରେ କୌଣସି ସମସ୍ୟା ଥାଏ କିମ୍ବା ନେଟୱାର୍କ ସ୍ଥିତି ଖରାପ ଥାଏ ତେବେ ଆପଣ ଆଲର୍ଟ ପାଇନପାରନ୍ତି।"</string>
 </resources>

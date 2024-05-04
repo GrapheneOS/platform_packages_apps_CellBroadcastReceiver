@@ -171,8 +171,6 @@
     <string name="message_copied" msgid="6922953753733166675">"Xabar nusxalandi"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Roumingda ekaningizda yoki faol SIM-karta solinmaganida, bu sozlamalarga kiritilmagan ayrim ogohlantirishlar yuborilishi mumkin"</string>
-    <!-- no translation found for notification_cb_settings_changed_title (8404224790323899805) -->
-    <skip />
-    <!-- no translation found for notification_cb_settings_changed_text (8722470940705858715) -->
-    <skip />
+    <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Sozlamalar oʻzgartirildi"</string>
+    <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"SIM karta almashgani sababli aholini favqulodda ogohlantirish sozlamalari asliga qaytarildi"</string>
 </resources>

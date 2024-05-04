@@ -23,6 +23,5 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"အရေးပေါ် သတိပေးချက်"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"လူထုလုံခြုံရေး သတိပေးချက်"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Amber သတိပေးချက်"</string>
-    <!-- no translation found for alerts_header_summary (7325972887358335555) -->
-    <skip />
+    <string name="alerts_header_summary" msgid="7325972887358335555">"ဘေးအန္တရာယ်များ ဖြစ်နေစဉ်တွင် သင့်ဖုန်းသည် ဘေးကင်းရာသို့ ရွှေ့ပြောင်းခြင်း ညွှန်ကြားချက်များကဲ့သို့ သတိပေးချက်များကို သင့်ထံ ပို့နိုင်သည်။ ဤဝန်ဆောင်မှုသည် ကိုရီးယားနိုင်ငံအစိုးရ၊ ကွန်ရက်ဝန်ဆောင်မှုပေးသူနှင့် စက်ပစ္စည်းထုတ်လုပ်သူများကြား ပူးတွဲလုပ်ကိုင်မှုဖြစ်သည်။\n\nစက်ပစ္စည်း၌ ပြဿနာရှိပါက (သို့) ကွန်ရက်အခြေအနေများ အားနည်းနေပါက သတိပေးချက်များ မရနိုင်ပါ။"</string>
 </resources>
