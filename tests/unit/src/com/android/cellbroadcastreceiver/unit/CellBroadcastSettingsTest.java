@@ -47,7 +47,6 @@ import androidx.preference.PreferenceManager;
 import androidx.preference.TwoStatePreference;
 import androidx.test.InstrumentationRegistry;
 import androidx.test.filters.FlakyTest;
-import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.UiDevice;
 
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
@@ -77,6 +76,7 @@ public class CellBroadcastSettingsTest extends
     private static final String ACTION_TESTING_MODE_CHANGED =
             "com.android.cellbroadcastreceiver.intent.ACTION_TESTING_MODE_CHANGED";
     private static final String TESTING_MODE = "testing_mode";
+    private static final String MASTER_TOGGLE_ENABLED = "enable_alerts_master_toggle";
     private static final int PREFERENCE_PUT_TYPE_BOOL = 0;
     private static final int PREFERENCE_PUT_TYPE_STRING = 1;
     private static final long TEST_TIMEOUT_MILLIS = 1000L;
@@ -330,6 +330,7 @@ public class CellBroadcastSettingsTest extends
         SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
         doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
 
+        setPreference(PREFERENCE_PUT_TYPE_BOOL, MASTER_TOGGLE_ENABLED, "true");
         doReturn(true).when(mContext.getResources()).getBoolean(
                 R.bool.extreme_threat_alerts_enabled_default);
         doReturn(false).when(mContext.getResources()).getBoolean(

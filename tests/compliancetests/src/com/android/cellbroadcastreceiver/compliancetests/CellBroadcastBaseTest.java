@@ -26,9 +26,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.SystemProperties;
 import android.support.test.uiautomator.UiDevice;
+import android.telephony.ServiceState;
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyCallback;
 import android.telephony.TelephonyManager;
 import android.telephony.mockmodem.IRadioMessagingImpl;
 import android.telephony.mockmodem.MockModemConfigBase.SimInfoChangedResult;
@@ -38,6 +42,7 @@ import android.util.Log;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 
+import com.android.compatibility.common.util.ShellIdentityUtils;
 import com.android.internal.telephony.CellBroadcastUtils;
 import com.android.modules.utils.build.SdkLevel;
 
@@ -91,9 +96,27 @@ public class CellBroadcastBaseTest {
     protected static Instrumentation sInstrumentation = null;
     protected static UiDevice sDevice = null;
     protected static String sPackageName = null;
-
     protected static IRadioMessagingImpl.CallBackWithExecutor sCallBackWithExecutor = null;
-    protected static String sBackUpRoamingNetwork = "";
+    private static ServiceStateListener sServiceStateCallback;
+    private static int sServiceState = ServiceState.STATE_OUT_OF_SERVICE;
+    private static final Object OBJECT = new Object();
+    private static final int SERVICE_STATE_MAX_WAIT = 20 * 1000;
+    protected static CountDownLatch sServiceStateLatch =  new CountDownLatch(1);
+
+    private static class ServiceStateListener extends TelephonyCallback
+            implements TelephonyCallback.ServiceStateListener {
+        @Override
+        public void onServiceStateChanged(ServiceState serviceState) {
+            Log.d(TAG, "Callback: service state = " + serviceState.getVoiceRegState());
+            synchronized (OBJECT) {
+                sServiceState = serviceState.getVoiceRegState();
+                if (sServiceState == ServiceState.STATE_IN_SERVICE) {
+                    sServiceStateLatch.countDown();
+                    logd("countdown sServiceStateLatch");
+                }
+            }
+        }
+    }
 
     protected static Context getContext() {
         return InstrumentationRegistry.getInstrumentation().getContext();
@@ -177,7 +200,6 @@ public class CellBroadcastBaseTest {
 
         sInstrumentation = InstrumentationRegistry.getInstrumentation();
         sDevice = UiDevice.getInstance(sInstrumentation);
-        setTestRoamingOperator(true);
 
         sMockModemManager = new MockModemManager();
         assertTrue(sMockModemManager.connectMockModemService(
@@ -191,6 +213,8 @@ public class CellBroadcastBaseTest {
         }
         waitForNotify();
 
+        enterService();
+
         String jsonCarrier = loadJsonFile(CARRIER_LISTS_JSON);
         sCarriersObject = new JSONObject(jsonCarrier);
         String jsonChannels = loadJsonFile(EXPECTED_RESULT_CHANNELS_JSON);
@@ -202,13 +226,10 @@ public class CellBroadcastBaseTest {
     }
 
     private static void waitForNotify() {
-        while (sSetChannelIsDone.getCount() > 0) {
-            try {
-                sSetChannelIsDone.await(MAX_WAIT_TIME, TimeUnit.MILLISECONDS);
-                sSetChannelIsDone.countDown();
-            } catch (InterruptedException e) {
-                // do nothing
-            }
+        try {
+            sSetChannelIsDone.await(MAX_WAIT_TIME, TimeUnit.MILLISECONDS);
+        } catch (InterruptedException e) {
+            // do nothing
         }
     }
 
@@ -222,7 +243,6 @@ public class CellBroadcastBaseTest {
         if (sCallBackWithExecutor != null && sMockModemManager != null) {
             sMockModemManager.unregisterBroadcastCallback(sSlotId, sCallBackWithExecutor);
         }
-        setTestRoamingOperator(false);
         if (sMockModemManager != null) {
             // Rebind all interfaces which is binding to MockModemService to default.
             assertTrue(sMockModemManager.disconnectMockModemService());
@@ -306,26 +326,6 @@ public class CellBroadcastBaseTest {
         return result.toArray(new Object[]{});
     }
 
-    protected static void setTestRoamingOperator(boolean save) throws Exception {
-        if (sDevice == null) {
-            logd("setTestRoamingOperator: sDevice is null");
-            return;
-        }
-        if (save) {
-            logd("setTestRoamingOperator: 00101");
-            sBackUpRoamingNetwork = sDevice.executeShellCommand(
-                    "getprop persist.cellbroadcast.roaming_plmn_supported");
-            logd("backup roaming network is " + sBackUpRoamingNetwork);
-            sDevice.executeShellCommand(
-                    "setprop persist.cellbroadcast.roaming_plmn_supported 00101");
-        } else {
-            logd("restore TestRoamingOperator: " + sBackUpRoamingNetwork);
-            sDevice.executeShellCommand(
-                    "setprop persist.cellbroadcast.roaming_plmn_supported "
-                            + sBackUpRoamingNetwork);
-        }
-    }
-
     protected void setSimInfo(String carrierName, String inputMccMnc) throws Throwable {
         String mcc = inputMccMnc.substring(0, 3);
         String mnc = inputMccMnc.substring(3);
@@ -375,5 +375,51 @@ public class CellBroadcastBaseTest {
 
     protected static void logd(String msg) {
         if (DEBUG) Log.d(TAG, msg);
+    }
+
+    protected static void enterService() throws Exception {
+        logd("enterService");
+        HandlerThread serviceStateChangeCallbackHandlerThread =
+                new HandlerThread("ServiceStateChangeCallback");
+        serviceStateChangeCallbackHandlerThread.start();
+        Handler serviceStateChangeCallbackHandler =
+                new Handler(serviceStateChangeCallbackHandlerThread.getLooper());
+        TelephonyManager telephonyManager =
+                (TelephonyManager) getContext().getSystemService(Context.TELEPHONY_SERVICE);
+        sSetChannelIsDone = new CountDownLatch(1);
+        // Register service state change callback
+        synchronized (OBJECT) {
+            sServiceState = ServiceState.STATE_OUT_OF_SERVICE;
+        }
+
+        serviceStateChangeCallbackHandler.post(
+                () -> {
+                    sServiceStateCallback = new ServiceStateListener();
+                    ShellIdentityUtils.invokeMethodWithShellPermissionsNoReturn(
+                            telephonyManager,
+                            (tm) -> tm.registerTelephonyCallback(
+                                    Runnable::run, sServiceStateCallback));
+                });
+
+        // Enter Service
+        logd("Enter Service");
+        sMockModemManager.changeNetworkService(sSlotId, MockSimService.MOCK_SIM_PROFILE_ID_TWN_CHT,
+                true);
+
+        // Expect: Home State
+        logd("Wait for service state change to in service");
+        waitForNotifyForServiceState();
+
+        // Unregister service state change callback
+        telephonyManager.unregisterTelephonyCallback(sServiceStateCallback);
+        sServiceStateCallback = null;
+    }
+
+    private static void waitForNotifyForServiceState() {
+        try {
+            sServiceStateLatch.await(SERVICE_STATE_MAX_WAIT, TimeUnit.MILLISECONDS);
+        } catch (InterruptedException e) {
+            // do nothing
+        }
     }
 }

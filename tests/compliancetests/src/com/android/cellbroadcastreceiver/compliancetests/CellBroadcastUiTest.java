@@ -139,6 +139,11 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
             }
         }
 
+        if ("testEmergencyAlertSettingsUi".equals(mTestNameRule.getMethodName())) {
+            sDevice.pressBack();
+            sDevice.pressHome();
+        }
+
         if ("testEmergencyAlertSettingsUi".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())) {
             LocaleManager localeManager = getContext().getSystemService(LocaleManager.class);
@@ -355,7 +360,6 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
                     + ", expectedSwitchValue=" + settingInfo.mIsToggleAvailability,
                     settingInfo.mExpectedSwitchValue, itemSwitch.isChecked());
         }
-        sDevice.pressBack();
     }
 
     private void dismissKeyGuard() throws Exception {
