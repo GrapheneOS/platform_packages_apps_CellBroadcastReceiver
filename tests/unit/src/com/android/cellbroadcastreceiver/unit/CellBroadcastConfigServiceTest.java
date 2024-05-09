@@ -825,13 +825,43 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
         }
     }
 
+    private void verifySetRanges(CbConfig[] configs, int invocationNumForU, int[] invocationNum)
+            throws RemoteException {
+        if (SdkLevel.isAtLeastU()) {
+            ArgumentCaptor<List<CellBroadcastIdRange>> captorRanges =
+                    ArgumentCaptor.forClass(List.class);
+            verify(mTelephonyManager, times(invocationNumForU)).setCellBroadcastIdRanges(
+                    captorRanges.capture(), any(), any());
+            List<CellBroadcastIdRange> ranges = captorRanges.getAllValues()
+                    .get(invocationNumForU - 1);
+            for (int i = 0; i < configs.length; i++) {
+                assertTrue(ranges.contains(new CellBroadcastIdRange(configs[i].mStartId,
+                        configs[i].mEndId, configs[i].mRanType, configs[i].mEnable)));
+            }
+        } else {
+            for (int i = 0; i < configs.length; i++) {
+                if (configs[i].mEnable) {
+                    verify(mMockedSmsService, times(invocationNum[i]))
+                            .enableCellBroadcastRangeForSubscriber(eq(0),
+                                    eq(configs[i].mStartId), eq(configs[i].mEndId),
+                                    eq(configs[i].mRanType));
+                } else {
+                    verify(mMockedSmsService, times(invocationNum[i]))
+                            .disableCellBroadcastRangeForSubscriber(eq(0),
+                                    eq(configs[i].mStartId), eq(configs[i].mEndId),
+                                    eq(configs[i].mRanType));
+                }
+            }
+        }
+    }
+
     /**
      * Test enabling cell broadcast roaming channels as needed
      */
     @Test
     @SmallTest
     public void testEnableCellBroadcastRoamingChannelsAsNeeded() throws Exception {
-        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, false);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, false);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, false);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, false);
@@ -935,7 +965,8 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 boolean result = false;
                 for (int j = 0; j < ranges.size(); j++) {
                     if (configs[i].mStartId >= ranges.get(j).getStartId()
-                            && configs[i].mEndId <= ranges.get(j).getEndId()) {
+                            && configs[i].mEndId <= ranges.get(j).getEndId()
+                            && configs[i].mEnable == ranges.get(j).isEnabled()) {
                         result = true;
                         break;
                     }
@@ -961,6 +992,195 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 assertTrue(result);
             }
         }
+    }
+
+    @Test
+    public void testEnableCellBroadcastWithMasterToggleState() throws Exception {
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .cmas_alert_extreme_channels_range_strings, new String[]{
+                    "0x1113:rat=gsm, emergency=true, always_on=true",
+                });
+        Context mockContext = mock(Context.class);
+        doReturn(mResources).when(mockContext).getResources();
+        doReturn(mockContext).when(mContext).createConfigurationContext(any());
+        doReturn(mResources).when(mConfigService).getResources(anyInt(), anyString());
+        int startId = SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PUBLIC_SAFETY;
+        int endId = SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PUBLIC_SAFETY;
+        int type = SmsCbMessage.MESSAGE_FORMAT_3GPP;
+        int alwaysOnStartId = 0x1113;
+        int alwaysOnEndId = 0x1113;
+
+        // master toggle on
+        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
+
+        // home network with master toggle on
+        doReturn("").when(mMockedSharedPreferences).getString(anyString(), anyString());
+
+        // home network with master toggle on, default public safety on
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, true);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, true);
+        CbConfig[] configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, true),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 1, new int[]{1, 1});
+
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, false);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 2, new int[]{1, 2});
+
+        // home network with master toggle on, default public safety off
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, false);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, true);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, true),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 3, new int[]{2, 3});
+
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, false);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 4, new int[]{2, 4});
+
+        // roaming or simless roaming with master toggle on
+        doReturn("123").when(mMockedSharedPreferences).getString(anyString(), anyString());
+
+        // roaming or simless roaming with master toggle on, default public safety on
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, true);
+
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, true);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, true),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 5, new int[]{3, 5});
+
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, false);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, true),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 6, new int[]{4, 6});
+
+        // roaming or simless roaming with master toggle on, default public safety off
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, false);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, true);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, true),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 7, new int[]{5, 7});
+
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, false);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 8, new int[]{3, 8});
+
+        // master toggle off
+        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, false);
+
+        // home network with master toggle off
+        doReturn("").when(mMockedSharedPreferences).getString(anyString(), anyString());
+
+        // home network with master toggle off, default public safety on
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, true);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, true);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 9, new int[]{4, 9});
+
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, false);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 10, new int[]{5, 10});
+
+        // home network with master toggle off, default public safety off
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, false);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, true);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 11, new int[]{6, 11});
+
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, false);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 12, new int[]{7, 12});
+
+        // roaming or simless roaming with master toggle off
+        doReturn("123").when(mMockedSharedPreferences).getString(anyString(), anyString());
+
+        // roaming or simless roaming with master toggle off, public safety on
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, true);
+
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, true);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 13, new int[]{8, 13});
+
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, false);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 14, new int[]{9, 14});
+
+        // roaming or simless roaming with master toggle off, default public safety off
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, false);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, true);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 15, new int[]{10, 15});
+
+        setPreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, false);
+        configs = new CbConfig[]{
+                new CbConfig(startId, endId, type, false),
+                new CbConfig(alwaysOnStartId, alwaysOnEndId, type, true)
+        };
+        mConfigService.enableCellBroadcastChannels(SubscriptionManager.DEFAULT_SUBSCRIPTION_ID);
+        verifySetRanges(configs, 16, new int[]{11, 16});
     }
 
     @Test

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2024 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="6712775293264329163">"LU सूचना"</string>
+    <string name="cmas_extreme_alert" msgid="5707699462404036561">"LU सूचना"</string>
+    <string name="cmas_severe_alert" msgid="3403847334974558596">"LU सूचना"</string>
+    <string name="public_safety_message" msgid="7178887441252495779">"LU सूचना"</string>
+    <string name="cmas_amber_alert" msgid="1934668428381380827">"LU सूचना : अपहरणासंबंधित सूचना"</string>
+    <string name="cmas_required_monthly_test" msgid="7364077592345886483">"LU सूचना चाचणी"</string>
+    <string name="cmas_exercise_alert" msgid="8651116593061990582">"LU सूचना व्यायाम"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="8584334752414501217">"अपहरणासंबंधित सूचना"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="5532453981233187282">"लहान मुलांच्या अपहरणांसंबंधित सूचना मेसेज दाखवा"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="6503578245169569633">"LU सूचना चाचणी"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"चाचणी मेसेज दाखवा"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="8642537980920870855">"LU सूचना व्यायाम"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="7365706865492962183">"व्यायामासंबंधित मेसेज दाखवा"</string>
+</resources>

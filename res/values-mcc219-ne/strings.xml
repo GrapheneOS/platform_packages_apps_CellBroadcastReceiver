@@ -28,7 +28,7 @@
     <skip />
     <!-- no translation found for state_local_test_alert (1130036880854851130) -->
     <skip />
-    <string name="enable_cmas_presidential_alerts_title" msgid="3534852322578108211">"आपत्कालीन अलार्म"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="3534852322578108211">"आपत्‌कालीन अलार्म"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="8576288857704383650">"अत्यन्तै खतरा"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1832317443314951890">"धेरै खतरा"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="7436837874014559921">"हराइरहेको व्यक्ति"</string>

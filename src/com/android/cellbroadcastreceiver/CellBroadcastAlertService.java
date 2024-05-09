@@ -534,9 +534,10 @@ public class CellBroadcastAlertService extends Service {
         }
 
         // Check if all emergency alerts are disabled.
-        boolean emergencyAlertEnabled = checkAlertConfigEnabled(
-                subId, CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE,
-                res.getBoolean(R.bool.master_toggle_enabled_default));
+        boolean emergencyAlertEnabled = PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE,
+                        res.getBoolean(R.bool.master_toggle_enabled_default));
+
         int channel = message.getServiceCategory();
         int resourcesKey = channelManager.getCellBroadcastChannelResourcesKey(channel);
         CellBroadcastChannelRange range = channelManager.getCellBroadcastChannelRange(channel);

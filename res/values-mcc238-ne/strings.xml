@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="sms_cb_settings" msgid="2385801397334582049">"आपत्कालीन अलर्टहरू"</string>
+    <string name="sms_cb_settings" msgid="2385801397334582049">"आपत्‌कालीन अलर्टहरू"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="7171885969406895532">"चरम"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="289758466218591800">"अत्यन्तै गम्भीर घटना"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2574445861711004849">"अत्यन्त खराब"</string>

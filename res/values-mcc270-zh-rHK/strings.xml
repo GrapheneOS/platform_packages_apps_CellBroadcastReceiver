@@ -20,11 +20,11 @@
     <string name="cmas_extreme_alert" msgid="5707699462404036561">"LU-Alert"</string>
     <string name="cmas_severe_alert" msgid="3403847334974558596">"LU-Alert"</string>
     <string name="public_safety_message" msgid="7178887441252495779">"LU-Alert"</string>
-    <string name="cmas_amber_alert" msgid="1934668428381380827">"LU-Alert：綁架警報"</string>
+    <string name="cmas_amber_alert" msgid="1934668428381380827">"LU-Alert：綁架警示"</string>
     <string name="cmas_required_monthly_test" msgid="7364077592345886483">"LU-Alert 測試"</string>
     <string name="cmas_exercise_alert" msgid="8651116593061990582">"LU-Alert 演習"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="8584334752414501217">"綁架警報"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="5532453981233187282">"顯示兒童誘拐案件的警報訊息"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="8584334752414501217">"綁架警示"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="5532453981233187282">"顯示兒童誘帶案件的警示訊息"</string>
     <string name="enable_cmas_test_alerts_title" msgid="6503578245169569633">"LU-Alert 測試"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"顯示測試訊息"</string>
     <string name="enable_exercise_test_alerts_title" msgid="8642537980920870855">"LU-Alert 演習"</string>

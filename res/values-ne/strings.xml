@@ -57,7 +57,7 @@
     <string name="emergency_alerts_title" msgid="6605036374197485429">"अलर्टहरू"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"प्रसारण गर्ने म्यासेजहरू"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"आपत्‌कालीन सतर्कताहरू"</string>
-    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"स्वीकार नगरिएका आपत्कालीन अलर्टहरू"</string>
+    <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"स्वीकार नगरिएका आपत्‌कालीन अलर्टहरू"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"भ्वाइस कलका आपत्‌कालीन अलर्टहरू"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"WEA का स्वचालित सेटिङ SIM अनुसार परिवर्तन हुन्छन्"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"अलर्टलाई अनुमति दिनुहोस्"</string>

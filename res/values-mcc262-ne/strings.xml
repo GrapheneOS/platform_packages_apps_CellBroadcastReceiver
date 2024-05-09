@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="2107659575955828996">"आपत्कालीन अलार्म"</string>
+    <string name="cmas_presidential_level_alert" msgid="2107659575955828996">"आपत्‌कालीन अलार्म"</string>
     <string name="cmas_extreme_alert" msgid="3655071721612807998">"अत्यधिक जोखिम"</string>
     <string name="cmas_severe_alert" msgid="8204679766209106041">"गम्भीर जोखिम"</string>
     <string name="public_safety_message" msgid="8870933058203924990">"जोखिमसम्बन्धी जानकारी"</string>

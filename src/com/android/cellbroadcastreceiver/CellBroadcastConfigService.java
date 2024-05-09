@@ -265,8 +265,7 @@ public class CellBroadcastConfigService extends IntentService {
         // Note: If enableAlertsMasterToggle is false, it disables ALL emergency broadcasts
         // except for always-on alerts e.g, presidential. i.e. to receive CMAS severe alerts, both
         // enableAlertsMasterToggle AND enableCmasSevereAlerts must be true.
-        boolean enableAlertsMasterToggle = isRoaming
-                ? res.getBoolean(R.bool.master_toggle_enabled_default) : isMasterToggleEnabled();
+        boolean enableAlertsMasterToggle = isMasterToggleEnabled();
 
         boolean enableEtwsAlerts = enableAlertsMasterToggle;
 

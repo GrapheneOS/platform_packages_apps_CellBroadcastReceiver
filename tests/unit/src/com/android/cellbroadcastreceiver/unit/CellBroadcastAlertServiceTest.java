@@ -604,6 +604,129 @@ public class CellBroadcastAlertServiceTest extends
         ((TestContextWrapper) mContext).injectCreateConfigurationContext(null);
     }
 
+    public void testShouldDisplayMessageWithMasterToggleState() {
+        Context mockContext = mock(Context.class);
+        doReturn(mResources).when(mockContext).getResources();
+        ((TestContextWrapper) mContext).injectCreateConfigurationContext(mockContext);
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .public_safety_messages_channels_range_strings, new String[]{
+                    "0x112C:rat=gsm, emergency=true",
+                    "0x112D:rat=gsm, emergency=true",
+                });
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .cmas_alert_extreme_channels_range_strings, new String[]{
+                    "0x1113:rat=gsm, emergency=true, always_on=true",
+                });
+        sendMessage(1);
+        waitForServiceIntent();
+        CellBroadcastAlertService cellBroadcastAlertService =
+                (CellBroadcastAlertService) getService();
+        SmsCbMessage message = new SmsCbMessage(1, 2, 0, new SmsCbLocation(),
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_PUBLIC_SAFETY,
+                "language", "body",
+                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null,
+                null, 0, 1);
+        SmsCbMessage message2 = new SmsCbMessage(1, 2, 1, new SmsCbLocation(),
+                0x1113, "language", "body",
+                SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, null,
+                null, 0, 1);
+
+        // master toggle on
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
+
+        // home network with master toggle on
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, false);
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, true);
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        // roaming or simless roaming with master toggle on
+        doReturn("123").when(mMockedSharedPreferences)
+                .getString(anyString(), anyString());
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, false);
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, true);
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        // master toggle off
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
+
+        // home network with master toggle off
+        doReturn("").when(mMockedSharedPreferences)
+                .getString(anyString(), anyString());
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, false);
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, true);
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        // roaming or simless roaming with master toggle off
+        doReturn("123").when(mMockedSharedPreferences)
+                .getString(anyString(), anyString());
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, false);
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .public_safety_messages_enabled_default, true);
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+        assertFalse(cellBroadcastAlertService.shouldDisplayMessage(message));
+        assertTrue(cellBroadcastAlertService.shouldDisplayMessage(message2));
+    }
+
     public void testFilterLanguage() {
         final String language = "en";
         final String language2nd = "es";
