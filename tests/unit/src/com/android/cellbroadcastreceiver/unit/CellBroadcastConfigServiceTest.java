@@ -1410,6 +1410,8 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 .when(mIntent).getAction();
         doReturn(mResources).when(mConfigService).getResources(anyInt(), eq(null));
 
+        int aggregationCount = 0;
+
         boolean[][] combNoResetting = {
                 // The settings are changed by the user
                 {true, true, true}, {true, true, false}, {true, false, true}, {true, false, false},
@@ -1419,6 +1421,11 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
         Method method = CellBroadcastConfigService.class.getDeclaredMethod(
                 "onHandleIntent", new Class[]{Intent.class});
         method.setAccessible(true);
+
+        // Set 'the speech alert toggle' the same to verify 'the master toggle'.
+        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool.enable_alert_speech_default,
+                true);
 
         // Verify the settings preference not to be reset
         for (int i = 0; i < combNoResetting.length; i++) {
@@ -1448,6 +1455,40 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
             method.invoke(mConfigService, mIntent);
 
             verify(mConfigService, times(++c)).resetAllPreferences();
+            aggregationCount = c;
+        }
+
+        // Set 'the master toggle' the same to verify 'the speech alert toggle'.
+        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool.master_toggle_enabled_default,
+                true);
+
+        // Verify the settings preference not to be reset
+        for (int i = 0; i < combNoResetting.length; i++) {
+            setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER,
+                    combNoResetting[i][0]);
+            setPreference(CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH,
+                    combNoResetting[i][1]);
+            putResources(com.android.cellbroadcastreceiver.R.bool.enable_alert_speech_default,
+                    combNoResetting[i][2]);
+
+            method.invoke(mConfigService, mIntent);
+
+            verify(mConfigService, times(aggregationCount)).resetAllPreferences();
+        }
+
+        // Verify the settings preference to be reset
+        for (int i = 0, c = 0; i < combResetting.length; i++) {
+            setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER,
+                    combResetting[i][0]);
+            setPreference(CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH,
+                    combResetting[i][1]);
+            putResources(com.android.cellbroadcastreceiver.R.bool.enable_alert_speech_default,
+                    combResetting[i][2]);
+
+            method.invoke(mConfigService, mIntent);
+
+            verify(mConfigService, times(++c + aggregationCount)).resetAllPreferences();
         }
     }
 }

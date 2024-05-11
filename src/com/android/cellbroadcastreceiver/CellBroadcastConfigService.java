@@ -176,12 +176,17 @@ public class CellBroadcastConfigService extends IntentService {
         } else if (ACTION_RESET_SETTINGS_AS_NEEDED.equals(intent.getAction())) {
             Resources res = getResources(intent.getIntExtra(
                     EXTRA_SUB, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID), null);
-            if (!CellBroadcastSettings.hasAnyPreferenceChanged(getApplicationContext())
-                    && (isMasterToggleEnabled() != res.getBoolean(
-                            R.bool.master_toggle_enabled_default))) {
-                Log.d(TAG, "Reset all preferences as no user changes and master toggle is"
-                        + " different as the config");
-                resetAllPreferences();
+
+            /// TODO :: b/339644128 - Reset WEA preferences when user has not modified them
+            if (!CellBroadcastSettings.hasAnyPreferenceChanged(getApplicationContext())) {
+                if (isMasterToggleEnabled() != res.getBoolean(R.bool.master_toggle_enabled_default)
+                        || (isSpeechAlertMessageEnabled() != res.getBoolean(
+                        R.bool.enable_alert_speech_default))) {
+                    Log.d(TAG, "Reset all preferences as no user changes and "
+                            + "master toggle is different as the config or "
+                            + "alert speech toggle is different as the config");
+                    resetAllPreferences();
+                }
             }
         }
     }
@@ -692,6 +697,11 @@ public class CellBroadcastConfigService extends IntentService {
     private boolean isMasterToggleEnabled() {
         return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
                 CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
+    }
+
+    private boolean isSpeechAlertMessageEnabled() {
+        return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
+                CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH, true);
     }
 
     /**

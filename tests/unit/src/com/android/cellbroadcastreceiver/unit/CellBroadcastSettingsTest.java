@@ -49,6 +49,7 @@ import androidx.test.InstrumentationRegistry;
 import androidx.test.filters.FlakyTest;
 import androidx.test.uiautomator.UiDevice;
 
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.cellbroadcastreceiver.R;
@@ -56,6 +57,7 @@ import com.android.modules.utils.build.SdkLevel;
 
 import junit.framework.Assert;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
@@ -102,6 +104,13 @@ public class CellBroadcastSettingsTest extends
         mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
         MockitoAnnotations.initMocks(this);
         CellBroadcastSettings.resetResourcesCache();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        CellBroadcastSettings.resetResourcesCache();
+        CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
+        super.tearDown();
     }
 
     @InstrumentationTest
@@ -380,6 +389,10 @@ public class CellBroadcastSettingsTest extends
                 eq(R.bool.show_separate_exercise_settings));
         doReturn(false).when(mContext.getResources()).getBoolean(
                 eq(R.bool.show_separate_operator_defined_settings));
+        doReturn(new String[]{"0x111D:rat=gsm, emergency=true"}).when(mContext.getResources())
+                .getStringArray(eq(R.array.exercise_alert_range_strings));
+        doReturn(new String[]{"0x111E:rat=gsm, emergency=true"}).when(mContext.getResources())
+                .getStringArray(eq(R.array.operator_defined_alert_range_strings));
         CellBroadcastSettings settings = startActivity();
 
         TwoStatePreference exerciseTestCheckBox =
@@ -412,6 +425,10 @@ public class CellBroadcastSettingsTest extends
                 eq(R.bool.show_separate_exercise_settings));
         doReturn(true).when(mContext.getResources()).getBoolean(
                 eq(R.bool.show_separate_operator_defined_settings));
+        doReturn(new String[]{"0x111D:rat=gsm, emergency=true"}).when(mContext.getResources())
+                .getStringArray(eq(R.array.exercise_alert_range_strings));
+        doReturn(new String[]{"0x111E:rat=gsm, emergency=true"}).when(mContext.getResources())
+                .getStringArray(eq(R.array.operator_defined_alert_range_strings));
         CellBroadcastSettings settings = startActivity();
 
         TwoStatePreference exerciseTestCheckBox =
