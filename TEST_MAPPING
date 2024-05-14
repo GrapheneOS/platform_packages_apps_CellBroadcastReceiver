@@ -22,7 +22,8 @@
 
   "postsubmit": [
     {
-      "name": "CellBroadcastReceiverComplianceTests"
+      "name": "CellBroadcastReceiverComplianceTests",
+      "keywords": ["internal"]
     }
   ]
 }
