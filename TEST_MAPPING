@@ -1,4 +1,24 @@
 {
+  "cellbroadcast-mainline-presubmit": [
+    {
+      "name": "GoogleCellBroadcastReceiverUnitTests",
+      "options": [
+        {
+          "exclude-annotation": "androidx.test.filters.FlakyTest"
+        }
+      ]
+    }
+  ],
+  "mainline-presubmit": [
+    {
+      "name": "GoogleCellBroadcastReceiverUnitTests[com.google.android.cellbroadcast.apex]",
+      "options": [
+        {
+          "exclude-annotation": "androidx.test.filters.FlakyTest"
+        }
+      ]
+    }
+  ],
   "presubmit": [
     {
       "name": "CellBroadcastReceiverUnitTests",

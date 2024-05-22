@@ -36,6 +36,7 @@ java_defaults {
     // Include all test java files.
     srcs: [":cellbroadcastreceiver-shared-srcs-test"],
     platform_apis: true,
+    min_sdk_version: "30",
 }
 
 // in order to have our tests run on OEM devices, the test apk here includes
@@ -91,7 +92,7 @@ android_test {
     defaults: ["CellBroadcastTestCommon"],
     instrumentation_for: "CellBroadcastApp",
     test_suites: [
-        "device-tests",
+        "general-tests",
         "mts-cellbroadcast",
     ],
     manifest: "AndroidManifest.xml",
