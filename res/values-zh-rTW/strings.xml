@@ -79,7 +79,7 @@
     <string name="enable_alert_message_title" msgid="2939830587633599352">"警訊通知"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"針對迫切的安全性威脅發出警告"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"公共安全訊息"</string>
-    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"可挽救性命或財產的應變措施建議"</string>
+    <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"可挽救性命或財產的建議應變措施"</string>
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"以全螢幕模式顯示訊息"</string>
     <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"關閉之後，系統仍會以通知的形式傳送公共安全訊息"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"州政府和地方政府的測試訊息"</string>

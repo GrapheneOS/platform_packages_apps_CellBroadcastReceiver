@@ -25,7 +25,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Groot gevaar"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Ernstig gevaar voor levens en eigendommen"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Nationale en lokale tests"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"Testberichten ontvangen van nationale en lokale overheden"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"Krijg testberichten van nationale en lokale overheden"</string>
     <string name="enable_exercise_test_alerts_title" msgid="1926178722994782168">"Meldingen voor technische tests"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="2009461083781266766">"Testberichten ontvangen"</string>
 </resources>

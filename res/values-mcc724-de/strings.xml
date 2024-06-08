@@ -24,8 +24,8 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"Erhebliche Gefahren für Leben und Eigentum"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Erhebliche Gefahren"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Erhebliche Gefahren für Leben und Eigentum"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Staatliche und lokale Tests"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"Testnachrichten von staatlichen und lokalen Behörden erhalten"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Regionale und lokale Tests"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"Testnachrichten von regionalen und lokalen Behörden erhalten"</string>
     <string name="enable_exercise_test_alerts_title" msgid="1926178722994782168">"Warnung für technischen Test"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="2009461083781266766">"Testnachrichten erhalten"</string>
 </resources>

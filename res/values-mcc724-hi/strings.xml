@@ -24,7 +24,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"जान और माल से जुड़े बहुत गंभीर खतरे"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"गंभीर खतरे"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"जान और माल से जुड़े गंभीर खतरे"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"राज्य और स्थानीय टेस्ट"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"राज्य और स्थानीय अधिकारियों की ओर से टेस्ट"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"राज्य और स्थानीय सरकारी विभाग से टेस्ट मैसेज पाएं"</string>
     <string name="enable_exercise_test_alerts_title" msgid="1926178722994782168">"तकनीकी टेस्ट की चेतावनियां"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="2009461083781266766">"टेस्ट मैसेज पाएं"</string>

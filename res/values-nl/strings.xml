@@ -78,12 +78,12 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Noodberichten over ontvoering van kinderen"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Waarschuwingsberichten"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Waarschuwen over directe beveiligingsrisico\'s"</string>
-    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Openbare calamiteitenberichten"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Berichten over openbare veiligheid"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Aanbevolen acties die levens of eigendommen kunnen redden"</string>
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Berichten op volledig scherm laten zien"</string>
     <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"Als dit uitstaat, worden berichten over openbare veiligheid nog steeds als melding gestuurd"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Nationale en lokale tests"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Testberichten ontvangen van nationale en lokale overheden"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Krijg testberichten van nationale en lokale overheden"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Noodmeldingen"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Waarschuwen over levensbedreigende situaties"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testnoodmeldingen"</string>

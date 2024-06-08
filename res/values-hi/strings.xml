@@ -78,12 +78,12 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"बच्‍चे के अपहरण के आपातकालीन बुलेटिन"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"चेतावनी वाले मैसेज"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जल्द ही सुरक्षा पर खतरा हो सकता है"</string>
-    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"सभी की सुरक्षा के लिए मैसेज"</string>
+    <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"सार्वजनिक सुरक्षा के लिए मैसेज"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"ऐसी कार्रवाइयां जिनसे जीवन या संपत्ति की सुरक्षा की जा सकती है"</string>
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"फ़ुल-स्क्रीन पर मैसेज दिखाएं"</string>
     <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"इस सुविधा के बंद होने पर भी, सार्वजनिक सुरक्षा से जुड़े मैसेज, सूचना के तौर पर भेजे जाते हैं"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"राज्य और स्थानीय टेस्ट"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"राज्य और स्थानीय अधिकारियों से टेस्ट मैसेज पाना"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"राज्य और स्थानीय अधिकारियों की ओर से टेस्ट"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"राज्य और स्थानीय अधिकारियों से टेस्ट मैसेज पाएं"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जान का खतरा हो सकता है"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"जांच करने के लिए भेजी जाने वाली चेतावनियां"</string>

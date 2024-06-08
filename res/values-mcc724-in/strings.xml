@@ -25,7 +25,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Ancaman Berat"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Ancaman berat terhadap nyawa dan harta"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Peringatan percobaan dari Negara Bagian dan Lokal"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"Menerima pesan percobaan dari otoritas negara bagian atau lokal"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"Terima pesan percobaan dari otoritas negara bagian atau lokal"</string>
     <string name="enable_exercise_test_alerts_title" msgid="1926178722994782168">"Peringatan pengujian teknis"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="2009461083781266766">"Menerima pesan pengujian"</string>
 </resources>

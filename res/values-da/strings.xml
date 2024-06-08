@@ -82,8 +82,8 @@
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"Anbefalede handlinger, der kan redde liv eller ejendom"</string>
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Vis meddelelser i fuld skærm"</string>
     <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"Når meddelelser om offentlig sikkerhed er slået fra, sendes de stadig som notifikationer"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Centrale og lokale testadvarsler"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Modtag testmeddelelser fra centrale og lokale myndigheder"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Statslige og lokale test"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Modtag testmeddelelser fra statslige og lokale myndigheder"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Varslinger"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Advar om livstruende hændelser"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testunderretninger"</string>

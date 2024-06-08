@@ -25,7 +25,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Озбиљне опасности"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Озбиљне опасности по живот и имовину"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Пробне поруке државних и локалних управа"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"Примај пробне поруке од државних и локалних управа"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"Примајте пробне поруке од државних и локалних управа"</string>
     <string name="enable_exercise_test_alerts_title" msgid="1926178722994782168">"Упозорења о техничким тестовима"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="2009461083781266766">"Примај пробне поруке"</string>
 </resources>

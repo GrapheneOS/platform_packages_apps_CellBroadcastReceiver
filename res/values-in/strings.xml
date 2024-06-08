@@ -83,7 +83,7 @@
     <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"Tampilkan pesan layar penuh"</string>
     <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"Jika dinonaktifkan, pesan keselamatan publik akan tetap dikirim sebagai notifikasi"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"Peringatan percobaan dari negara bagian dan lokal"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Menerima pesan percobaan dari otoritas negara bagian atau lokal"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Terima pesan percobaan dari otoritas negara bagian atau lokal"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Peringatan darurat"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Peringatkan tentang peristiwa yang mengancam jiwa"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Uji peringatan"</string>
