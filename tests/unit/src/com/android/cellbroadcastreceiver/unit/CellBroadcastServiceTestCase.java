@@ -22,6 +22,7 @@ import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
+import android.app.AlarmManager;
 import android.app.NotificationManager;
 import android.app.Service;
 import android.content.ComponentName;
@@ -79,6 +80,8 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
     protected Context mMockContextForRoaming;
     @Mock
     protected NotificationManager mMockedNotificationManager;
+    @Mock
+    protected AlarmManager mMockedAlarmManager;
     protected PowerManager mMockedPowerManager;
 
     protected Configuration mConfiguration;
@@ -168,6 +171,8 @@ public abstract class CellBroadcastServiceTestCase<T extends Service> extends Se
                     return mMockedVibrator;
                 case Context.NOTIFICATION_SERVICE:
                     return mMockedNotificationManager;
+                case Context.ALARM_SERVICE:
+                    return mMockedAlarmManager;
                 case Context.POWER_SERVICE:
                     if (mMockedPowerManager != null) {
                         return mMockedPowerManager;

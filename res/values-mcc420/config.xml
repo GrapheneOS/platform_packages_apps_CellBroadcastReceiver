@@ -66,6 +66,13 @@
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false">
     </string-array>
 
+    <!-- 4352~4354, 4356 -->
+    <string-array name="etws_alerts_range_strings" translatable="false"/>
+    <!-- 4355-->
+    <string-array name="etws_test_alerts_range_strings" translatable="false">
+        <item>0x1103:rat=gsm, emergency=true, test_mode=true</item>
+    </string-array>
+
     <!-- Whether to override the language of the alert dialog's title to match the message locale -->
     <bool name="override_alert_title_language_to_match_message_locale">true</bool>
     <!-- Whether enabling copy message text into clipboard by long press -->

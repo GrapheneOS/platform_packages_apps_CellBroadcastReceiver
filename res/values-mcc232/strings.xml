@@ -18,7 +18,7 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- CMAS dialog title for presidential level alert. [CHAR LIMIT=50] -->
     <!-- Required Germany(de) translation for this message: Notfallalarm -->
-    <string name="cmas_presidential_level_alert">Emergency alarm</string>
+    <string name="cmas_presidential_level_alert">Emergency alert</string>
     <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
     <!-- Required Germany(de) translation for this message: Extreme Gefahr -->
     <string name="cmas_extreme_alert">Extreme threat</string>

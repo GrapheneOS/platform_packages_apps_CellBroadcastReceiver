@@ -32,6 +32,7 @@ java_defaults {
         "androidx.test.uiautomator_uiautomator",
         "mockito-target-minus-junit4",
         "truth",
+        "cellbroadcastreceiver_flags_lib",
     ],
     // Include all test java files.
     srcs: [":cellbroadcastreceiver-shared-srcs-test"],
@@ -68,6 +69,7 @@ android_test {
         "modules-utils-build_system",
         "cellbroadcast-java-proto-lite",
         "CellBroadcastCommon",
+        "cellbroadcastreceiver_flags_lib",
     ],
     min_sdk_version: "30",
 }

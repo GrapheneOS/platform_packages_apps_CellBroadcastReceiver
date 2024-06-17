@@ -65,7 +65,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     };
 
     @VisibleForTesting
-    public static final SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[] {
+    public static final SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[]{
             new SearchIndexableResource(1, R.xml.preferences,
                     CellBroadcastSettings.class.getName(),
                     R.mipmap.ic_launcher_cell_broadcast),
@@ -74,6 +74,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     /**
      * this method is to make this class unit-testable, because super.getContext() is a final
      * method and therefore not mockable
+     *
      * @return context
      */
     @VisibleForTesting
@@ -84,6 +85,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     /**
      * this method is to make this class unit-testable, because
      * CellBroadcastSettings.getResourcesForDefaultSubId() is a static method and cannot be stubbed.
+     *
      * @return resources
      */
     @VisibleForTesting
@@ -94,11 +96,24 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
     /**
      * this method is to make this class unit-testable, because
      * CellBroadcastSettings.isTestAlertsToggleVisible is a static method and therefore not mockable
+     *
      * @return true if test alerts toggle is Visible
      */
     @VisibleForTesting
     public boolean isTestAlertsToggleVisible() {
         return CellBroadcastSettings.isTestAlertsToggleVisible(getContextMethod());
+    }
+
+    /**
+     * this method is to make this class unit-testable, because
+     * CellBroadcastSettings.isShowFullScreenMessageVisible is a static method and therefore not
+     * able to mock
+     *
+     * @return true if show full screen toggle is Visible
+     */
+    @VisibleForTesting
+    public boolean isShowFullScreenMessageVisible(Resources res) {
+        return CellBroadcastSettings.isShowFullScreenMessageVisible(getContextMethod(), res);
     }
 
     @Override
@@ -193,7 +208,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
         }
 
         if (!CellBroadcastSettings.getResources(getContextMethod(),
-                SubscriptionManager.DEFAULT_SUBSCRIPTION_ID)
+                        SubscriptionManager.DEFAULT_SUBSCRIPTION_ID)
                 .getBoolean(R.bool.show_alert_speech_setting)) {
             ref = new Object[1];
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
@@ -268,7 +283,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
         if (!isTestAlertsToggleVisible()) {
             ref = new Object[1];
             ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
-                CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS;
+                    CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS;
             cursor.addRow(ref);
         }
 
@@ -288,11 +303,19 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
             cursor.addRow(ref);
         }
 
+        if (!isShowFullScreenMessageVisible(res)) {
+            ref = new Object[1];
+            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] =
+                    CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES_FULL_SCREEN;
+            cursor.addRow(ref);
+        }
+
         return cursor;
     }
 
     /**
      * Whether or not this is an Android Automotive platform.
+     *
      * @return true if the current platform is automotive
      */
     @VisibleForTesting
@@ -303,6 +326,7 @@ public class CellBroadcastSearchIndexableProvider extends SearchIndexablesProvid
 
     /**
      * Check disable Cell Broadcast resource.
+     *
      * @return true if Cell Broadcast disable configured by OEM.
      */
     @VisibleForTesting

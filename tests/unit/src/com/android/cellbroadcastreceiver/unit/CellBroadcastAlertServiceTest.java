@@ -450,7 +450,6 @@ public class CellBroadcastAlertServiceTest extends
                 .getSharedPreferences(anyString(), anyInt());
 
         sendMessage(1);
-        waitForServiceIntent();
         CellBroadcastAlertService cellBroadcastAlertService =
                 (CellBroadcastAlertService) getService();
 
@@ -496,7 +495,6 @@ public class CellBroadcastAlertServiceTest extends
                     "0x0034:rat=gsm, type=area, emergency=true"
                 });
         sendMessage(1);
-        waitForServiceIntent();
 
         CellBroadcastAlertService cellBroadcastAlertService =
                 (CellBroadcastAlertService) getService();
@@ -618,7 +616,6 @@ public class CellBroadcastAlertServiceTest extends
                     "0x1113:rat=gsm, emergency=true, always_on=true",
                 });
         sendMessage(1);
-        waitForServiceIntent();
         CellBroadcastAlertService cellBroadcastAlertService =
                 (CellBroadcastAlertService) getService();
         SmsCbMessage message = new SmsCbMessage(1, 2, 0, new SmsCbLocation(),
@@ -742,7 +739,6 @@ public class CellBroadcastAlertServiceTest extends
         enablePreference(CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
 
         sendMessage(1);
-        waitForServiceIntent();
         CellBroadcastAlertService cellBroadcastAlertService =
                 (CellBroadcastAlertService) getService();
 

@@ -168,6 +168,11 @@
       "title": "Exercise", // 'Øvelse' == 'Exercise'
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "4400": {
+      "title": "",
+      "default_value": "true",
+      "toggle_avail": "false"
     }
   },
   "peru_entel": {
@@ -2299,16 +2304,10 @@
     }
   },
   "saudiarabia": {
-    "4352": {
+    "4355": {
       "title": "",
-      "default_value": "true",
-      "toggle_avail": "false",
-      "end_channel": "4354"
-    },
-    "4356": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false"
+      "default_value": "false",
+      "toggle_avail": "true"  // test_mode
     },
     "4370": {
       "title": "تنبيهات على المستوى الوطني",
@@ -4429,77 +4428,77 @@
   },
   "austria_tmobile": {
     "4370": {
-      "title": "Emergency alarm",
+      "title": "Emergency alert", //Notfallalarm
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Emergency alarm",
+      "title": "Emergency alert", //Notfallalarm
       "default_value": "true",
       "toggle_avail": "false"
     },
     "919": {
-      "title": "Emergency alarm",
+      "title": "Emergency alert", //Notfallalarm
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4372": {
-      "title": "Extreme threat",
+      "title": "Extreme threat", //Extreme Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4385": {
-      "title": "Extreme threat",
+      "title": "Extreme threat", //Extreme Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4378": {
-      "title": "Severe threat",
+      "title": "Severe threat", //Erhebliche Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4391": {
-      "title": "Severe threat",
+      "title": "Severe threat", //Erhebliche Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4396": {
-      "title": "Threat information",
+      "title": "Threat information", // Gefahreninformation
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4397": {
-      "title": "Threat information",
+      "title": "Threat information", //Gefahreninformation
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4379": {
-      "title": "Search for missing person",
+      "title": "Search for missing person", //Suche nach abgängiger Person
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "Search for missing person",
+      "title": "Search for missing person", //Suche nach abgängiger Person
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4380": {
-      "title": "Cell Broadcast Test",
+      "title": "Cell Broadcast Test", //Cell Broadcast Test
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4393": {
-      "title": "Cell Broadcast Test",
+      "title": "Cell Broadcast Test", //Cell Broadcast Test
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4381": {
-      "title": "Test alarm",
+      "title": "Test alarm", //Übungsalarm
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4394": {
-      "title": "Test alarm",
+      "title": "Test alarm", //Übungsalarm
       "default_value": "false",
       "toggle_avail": "false"
     }
@@ -4809,72 +4808,72 @@
   },
   "Luxembourg": {
     "4370": {
-      "title": "LU-Alert",
+      "title": "LU-Alert",  // LU-Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "LU-Alert",
+      "title": "LU-Alert", // LU-Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "LU-Alert",
+      "title": "LU-Alert", // LU-Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4384": {
-      "title": "LU-Alert",
+      "title": "LU-Alert", // LU-Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4375": {
-      "title": "LU-Alert",
+      "title": "LU-Alert", // LU-Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4388": {
-      "title": "LU-Alert",
+      "title": "LU-Alert", // LU-Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4396": {
-      "title": "LU-Alert",
+      "title": "LU-Alert", // LU-Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4397": {
-      "title": "LU-Alert",
+      "title": "LU-Alert", // LU-Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4379": {
-      "title": "LU-Alert : Kidnapping alert",
+      "title": "LU-Alert : Kidnapping alert", // LU-Alert : Entführungswarnung
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "LU-Alert : Kidnapping alert",
+      "title": "LU-Alert : Kidnapping alert", // LU-Alert : Entführungswarnung
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4380": {
-      "title": "LU-Alert Test",
+      "title": "LU-Alert Test", // LU-Alert Test
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4393": {
-      "title": "LU-Alert Test",
+      "title": "LU-Alert Test", // LU-Alert Test
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4381": {
-      "title": "LU-Alert Exercise",
+      "title": "LU-Alert Exercise", // LU-Alert Übung
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4394": {
-      "title": "LU-Alert Exercise",
+      "title": "LU-Alert Exercise", // LU-Alert Übung
       "default_value": "false",
       "toggle_avail": "true"
     }

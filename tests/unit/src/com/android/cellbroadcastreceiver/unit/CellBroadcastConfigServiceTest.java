@@ -34,19 +34,31 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+import android.app.ActivityManager;
+import android.app.ActivityOptions;
+import android.app.IActivityManager;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.os.RemoteException;
 import android.telephony.CellBroadcastIdRange;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
+import android.util.DisplayMetrics;
+import android.util.Singleton;
+import android.view.IWindowManager;
 
 import androidx.test.filters.SmallTest;
 
+import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.internal.telephony.ISms;
@@ -58,6 +70,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.Mock;
 
 import java.lang.reflect.Method;
@@ -85,6 +98,21 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     Intent mIntent;
 
     private CellBroadcastConfigService mConfigService;
+
+    @Mock
+    IWindowManager.Stub mWindowManagerService;
+
+    @Mock
+    private IActivityManager.Stub mMockedActivityManager;
+
+    @Mock
+    private NotificationManager mMockedNotificationManager;
+
+    @Captor
+    private ArgumentCaptor<Notification> mNotification;
+
+    @Captor
+    private ArgumentCaptor<Integer> mInt;
 
     @Before
     public void setUp() throws Exception {
@@ -1489,6 +1517,68 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
             method.invoke(mConfigService, mIntent);
 
             verify(mConfigService, times(++c + aggregationCount)).resetAllPreferences();
+        }
+    }
+
+    /**
+     * Test updating settings and notification when carrier id is changed
+     */
+    @Test
+    public void testUpdateSettingsForCarrierChanged() throws Exception {
+        // set mock for test
+        PackageManager mockPackageManager = mock(PackageManager.class);
+        doReturn(false).when(mockPackageManager)
+                .hasSystemFeature(PackageManager.FEATURE_WATCH);
+        doReturn(mockPackageManager).when(mContext).getPackageManager();
+        doReturn(Context.NOTIFICATION_SERVICE).when(mContext)
+                .getSystemServiceName(NotificationManager.class);
+        doReturn(mMockedNotificationManager).when(mContext)
+                .getSystemService(Context.NOTIFICATION_SERVICE);
+        doReturn("testPackageName").when(mContext).getPackageName();
+        doReturn(new ApplicationInfo()).when(mContext).getApplicationInfo();
+        doReturn(mResources).when(mConfigService).getResources();
+        doReturn(new DisplayMetrics()).when(mResources).getDisplayMetrics();
+        Singleton<IActivityManager> activityManagerSingleton = new Singleton<IActivityManager>() {
+            @Override
+            protected IActivityManager create() {
+                return mMockedActivityManager;
+            }
+        };
+        mMockedServiceManager.replaceService("window", mWindowManagerService);
+        mMockedServiceManager.replaceInstance(ActivityManager.class,
+                "IActivityManagerSingleton", null, activityManagerSingleton);
+        doNothing().when(mConfigService).resetAllPreferences();
+        doReturn(CellBroadcastConfigService.ACTION_UPDATE_SETTINGS_FOR_CARRIER)
+                .when(mIntent).getAction();
+        doReturn(mResources).when(mConfigService).getResources(anyInt(), eq(null));
+
+        // set ANY_PREFERENCE_CHANGED_BY_USER to false
+        setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER, false);
+        Method method = CellBroadcastConfigService.class.getDeclaredMethod(
+                "onHandleIntent", new Class[]{Intent.class});
+        method.setAccessible(true);
+        method.invoke(mConfigService, mIntent);
+        verify(mConfigService, times(1)).resetAllPreferences();
+        verify(mMockedNotificationManager, never()).notify(mInt.capture(),
+                mNotification.capture());
+
+        // set ANY_PREFERENCE_CHANGED_BY_USER to true
+        setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER, true);
+        method.setAccessible(true);
+        method.invoke(mConfigService, mIntent);
+        verify(mConfigService, times(2)).resetAllPreferences();
+        verify(mMockedNotificationManager, times(1)).notify(mInt.capture(),
+                mNotification.capture());
+        assertEquals(CellBroadcastAlertService.SETTINGS_CHANGED_NOTIFICATION_ID,
+                (int) mInt.getValue());
+        if (SdkLevel.isAtLeastU()) {
+            ArgumentCaptor<Bundle> bundleArgs = ArgumentCaptor.forClass(Bundle.class);
+            verify(mMockedActivityManager, times(1))
+                    .getIntentSenderWithFeature(anyInt(), any(), any(), any(), any(), anyInt(),
+                            any(), any(), anyInt(), bundleArgs.capture(), anyInt());
+            ActivityOptions activityOptions = new ActivityOptions(bundleArgs.getAllValues().get(0));
+            int startMode = activityOptions.getPendingIntentCreatorBackgroundActivityStartMode();
+            assertEquals(ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED, startMode);
         }
     }
 }

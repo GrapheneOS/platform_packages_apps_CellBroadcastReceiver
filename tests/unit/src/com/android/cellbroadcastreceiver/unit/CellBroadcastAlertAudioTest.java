@@ -24,6 +24,7 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
@@ -438,6 +439,7 @@ public class CellBroadcastAlertAudioTest extends
                 TEST_VIBRATION_PATTERN);
         doReturn(AudioManager.RINGER_MODE_NORMAL).when(
                 mMockedAudioManager).getRingerMode();
+        doNothing().when(mMockedAlarmManager).setExact(anyInt(), anyLong(), any());
 
         PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
                 "testStartServiceStop",

@@ -661,9 +661,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             // public safety toggle is displayed.
             if (mPublicSafetyMessagesChannelFullScreenCheckBox != null) {
                 mPublicSafetyMessagesChannelFullScreenCheckBox.setVisible(
-                        res.getBoolean(R.bool.show_public_safety_full_screen_settings)
-                                && (mPublicSafetyMessagesChannelCheckBox != null
-                                && mPublicSafetyMessagesChannelCheckBox.isVisible()));
+                        isShowFullScreenMessageVisible(getContext(), res));
             }
 
             if (mTestCheckBox != null) {
@@ -919,6 +917,29 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 && (res.getBoolean(R.bool.show_override_dnd_settings)
                 || !res.getBoolean(R.bool.override_dnd));
         return isVibrationToggleVisible;
+    }
+
+    /**
+     * Check whether show full screen message toggle is visible
+     *
+     * @param context Context
+     * @param res     resources
+     * @return {@code true} if it needs to show, {@code false} otherwise
+     */
+    public static boolean isShowFullScreenMessageVisible(Context context, Resources res) {
+        // The settings should be based on the config by the subscription
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                context, SubscriptionManager.getDefaultSubscriptionId(), null);
+
+        if (res.getBoolean(R.bool.show_public_safety_settings)
+                && !channelManager.getCellBroadcastChannelRanges(
+                R.array.public_safety_messages_channels_range_strings).isEmpty()
+                && res.getBoolean(R.bool.show_public_safety_full_screen_settings)) {
+            Log.d(TAG, "isShowFullScreenMessageVisible : true");
+            return true;
+        }
+        Log.d(TAG, "isShowFullScreenMessageVisible : false");
+        return false;
     }
 
     public static boolean isTestAlertsToggleVisible(Context context) {

@@ -1331,19 +1331,19 @@
     }
   },
   "Luxembourg": {
-    "Kidnapping Alert": {
+    "Kidnapping alert": {  // Entführungswarnung
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "LU-Alert Test": {
+    "LU-Alert Test": {  // LU-Alert Test
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "LU-Alert Exercise": {
+    "LU-Alert Exercise": { // LU-Alert Übung
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Vibration": {
+    "Vibration": {  // Vibration
       "default_value": "true",
       "toggle_avail": "true"
     }

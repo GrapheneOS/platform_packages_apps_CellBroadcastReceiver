@@ -55,7 +55,7 @@
     <!-- Preference title for enable 'EU-Amber / Child Abdunction Alert' checkbox. [CHAR LIMIT=50] -->
     <!-- Required German (de) translation for this message: "Entführungswarnung" -->
     <!-- Required French (fr) translation for this message: "Alerte enlèvement" -->
-    <string name="enable_cmas_amber_alerts_title">Kidnapping Alert</string>
+    <string name="enable_cmas_amber_alerts_title">Kidnapping alert</string>
     <!-- Preference summary for enable 'EU-Amber / Child Abdunction Alert' checkbox. [CHAR LIMIT=100] -->
     <!-- Required German (de) translation for this message: "Warnmeldungen bei Kindesentführungen anzeigen" -->
     <!-- Required French (fr) translation for this message: "Afficher les messages d’alerte pour les enlèvements d'enfant" -->
@@ -71,7 +71,7 @@
     <string name="enable_cmas_test_alerts_summary">Show test messages</string>
 
     <!-- Preference title for 'EU-Exercise / Exercise Alert' checkbox. [CHAR LIMIT=50] -->
-    <!-- Required German (de) translation for this message: "LU-Alert-Übung" -->
+    <!-- Required German (de) translation for this message: "LU-Alert Übung" -->
     <!-- Required French (fr) translation for this message: "LU-Alert Exercice" -->
     <string name="enable_exercise_test_alerts_title">LU-Alert Exercise</string>
     <!-- Preference summary for 'EU-Exercise / Exercise Alert' checkbox. [CHAR LIMIT=125] -->

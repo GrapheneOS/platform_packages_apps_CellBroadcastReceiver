@@ -36,6 +36,7 @@ import org.mockito.Mock;
 
 public class CellBroadcastSearchIndexableProviderTest extends CellBroadcastTest {
     CellBroadcastSearchIndexableProvider mSearchIndexableProvider;
+
     @Before
     public void setUp() throws Exception {
         super.setUp(getClass().getSimpleName());
@@ -77,6 +78,7 @@ public class CellBroadcastSearchIndexableProviderTest extends CellBroadcastTest 
         doReturn("test").when(mContext).getSystemServiceName(Vibrator.class);
         doReturn(mVibrator).when(mContext).getSystemService("test");
         doReturn(true).when(mVibrator).hasVibrator();
+        doReturn(false).when(mSearchIndexableProvider).isShowFullScreenMessageVisible(mResources);
         Cursor cursor = mSearchIndexableProvider.queryNonIndexableKeys(new String[]{""});
 
         //KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE
@@ -91,14 +93,19 @@ public class CellBroadcastSearchIndexableProviderTest extends CellBroadcastTest 
         //KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS
         //KEY_ENABLE_ALERT_SPEECH
         //KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS
-        assertThat(cursor.getCount()).isEqualTo(12);
+        assertThat(cursor.getCount()).isEqualTo(13);
 
         doReturn(false).when(mVibrator).hasVibrator();
         //KEY_ENABLE_ALERT_VIBRATE
         cursor = mSearchIndexableProvider.queryNonIndexableKeys(new String[]{""});
-        assertThat(cursor.getCount()).isEqualTo(13);
+        assertThat(cursor.getCount()).isEqualTo(14);
 
         doReturn(true).when(mSearchIndexableProvider).isTestAlertsToggleVisible();
+        //KEY_ENABLE_TEST_ALERTS
+        cursor = mSearchIndexableProvider.queryNonIndexableKeys(new String[]{""});
+        assertThat(cursor.getCount()).isEqualTo(13);
+
+        doReturn(true).when(mSearchIndexableProvider).isShowFullScreenMessageVisible(mResources);
         //KEY_ENABLE_TEST_ALERTS
         cursor = mSearchIndexableProvider.queryNonIndexableKeys(new String[]{""});
         assertThat(cursor.getCount()).isEqualTo(12);

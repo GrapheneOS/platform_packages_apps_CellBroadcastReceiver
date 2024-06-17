@@ -1,0 +1,9 @@
+package: "com.android.cellbroadcastreceiver.flags"
+container: "com.android.cellbroadcast"
+
+flag {
+    name: "test_flag"
+    namespace: "cellbroadcast"
+    description: "Test flag for cellbroadcastreceiver"
+    bug: "343345283"
+}

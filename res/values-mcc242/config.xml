@@ -45,6 +45,11 @@
     <!-- additional language -->
     <item>0x112A:rat=gsm, emergency=true, override_dnd=true</item>
   </string-array>
+  <!-- Channels to receive geo-fencing trigger messages -->
+  <string-array name="geo_fencing_trigger_messages_range_strings" translatable="false">
+    <!-- geo-fencing trigger messages -->
+    <item>0x1130:rat=gsm, emergency=true</item>
+  </string-array>
 
   <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"/>
   <string-array name="operator_defined_alert_range_strings" translatable="false"/>
