@@ -981,57 +981,57 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "Extreme Emergency Alert", //"위급 재난문자",
+      "title": "위급 재난문자", //"Extreme Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Extreme Emergency Alert", //"위급 재난문자",
+      "title": "위급 재난문자", //"Extreme Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false",
       "filter_language": "language_setting"
     },
     "4371": {
-      "title": "Emergency Alert", //"긴급 재난문자",
+      "title": "긴급 재난문자", //"Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4384": {
-      "title": "Emergency Alert", //"긴급 재난문자",
+      "title": "긴급 재난문자", //"Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "4372": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4373": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4378"
     },
     "4385": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "4379": {
-      "title": "Amber Alert", //"실종 경보문자",
+      "title": "실종 경보문자", //"Amber Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "Amber Alert", //"실종 경보문자",
+      "title": "실종 경보문자", //"Amber Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "40960": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "45055",
@@ -1056,57 +1056,57 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "Extreme Emergency Alert", //"위급 재난문자",
+      "title": "위급 재난문자", //"Extreme Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Extreme Emergency Alert", //"위급 재난문자",
+      "title": "위급 재난문자", //"Extreme Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false",
       "filter_language": "language_setting"
     },
     "4371": {
-      "title": "Emergency Alert", //"긴급 재난문자",
+      "title": "긴급 재난문자", //"Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4384": {
-      "title": "Emergency Alert", //"긴급 재난문자",
+      "title": "긴급 재난문자", //"Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "4372": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4373": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4378"
     },
     "4379": {
-      "title": "Amber Alert", //"실종 경보문자",
+      "title": "실종 경보문자", //"Amber Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "Amber Alert", //"실종 경보문자",
+      "title": "실종 경보문자", //"Amber Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "4385": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "40960": {
-      "title": "Public Safety Message", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Message",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "45055",
@@ -1131,57 +1131,57 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "Extreme Emergency Alert", //"위급 재난문자",
+      "title": "위급 재난문자", //"Extreme Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Extreme Emergency Alert", //"위급 재난문자",
+      "title": "위급 재난문자", //"Extreme Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false",
       "filter_language": "language_setting"
     },
     "4371": {
-      "title": "Emergency Alert", //"긴급 재난문자",
+      "title": "긴급 재난문자", //"Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4384": {
-      "title": "Emergency Alert", //"긴급 재난문자",
+      "title": "긴급 재난문자", //"Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "4372": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4373": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4378"
     },
     "4379": {
-      "title": "Amber Alert", //"실종 경보문자",
+      "title": "실종 경보문자", //"Amber Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "Amber Alert", //"실종 경보문자",
+      "title": "실종 경보문자", //"Amber Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "4385": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "40960": {
-      "title": "Public Safety Alert", //"안전 안내문자",
+      "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "45055",

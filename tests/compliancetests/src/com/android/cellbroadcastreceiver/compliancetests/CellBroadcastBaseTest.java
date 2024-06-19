@@ -72,9 +72,7 @@ public class CellBroadcastBaseTest {
     protected static int sPreconditionError = 0;
     protected static final int ERROR_SDK_VERSION = 1;
     protected static final int ERROR_NO_TELEPHONY = 2;
-    protected static final int ERROR_MULTI_SIM = 3;
-    protected static final int ERROR_MOCK_MODEM_DISABLE = 4;
-    protected static final int ERROR_INVALID_SIM_SLOT_INDEX_ERROR = 5;
+    protected static final int ERROR_MOCK_MODEM_DISABLE = 3;
 
     protected static final String ALLOW_MOCK_MODEM_PROPERTY = "persist.radio.allow_mock_modem";
     protected static final boolean DEBUG = !"user".equals(Build.TYPE);
@@ -156,15 +154,6 @@ public class CellBroadcastBaseTest {
         if (!hasTelephonyFeature) {
             Log.i(TAG, "Not have Telephony Feature");
             sPreconditionError = ERROR_NO_TELEPHONY;
-            return;
-        }
-
-        TelephonyManager tm =
-                (TelephonyManager) getContext().getSystemService(Context.TELEPHONY_SERVICE);
-        boolean isMultiSim = tm != null && tm.getPhoneCount() > 1;
-        if (isMultiSim) {
-            Log.i(TAG, "Not support Multi-Sim");
-            sPreconditionError = ERROR_MULTI_SIM;
             return;
         }
 
@@ -361,15 +350,9 @@ public class CellBroadcastBaseTest {
             case ERROR_NO_TELEPHONY:
                 errorMessage = "Not have Telephony Feature";
                 break;
-            case ERROR_MULTI_SIM:
-                errorMessage = "Multi-sim is not supported in Mock Modem";
-                break;
             case ERROR_MOCK_MODEM_DISABLE:
                 errorMessage = "Please enable mock modem to run the test! The option can be "
                         + "updated in Settings -> System -> Developer options -> Allow Mock Modem";
-                break;
-            case ERROR_INVALID_SIM_SLOT_INDEX_ERROR:
-                errorMessage = "Error with invalid sim slot index";
                 break;
         }
         return errorMessage;
