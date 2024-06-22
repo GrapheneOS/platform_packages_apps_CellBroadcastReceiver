@@ -515,13 +515,13 @@ public class CellBroadcastAlertAudioTest extends
 
         ArgumentCaptor<Long> capTime = ArgumentCaptor.forClass(Long.class);
         InOrder inOrder = inOrder(mockMediaPlayer, mockHandler);
-        long expTime = SystemClock.uptimeMillis() + duration;
         audio.handleStartIntent(intent);
 
         inOrder.verify(mockMediaPlayer).prepare();
         inOrder.verify(mockHandler).sendMessageAtTime(any(), capTime.capture());
         inOrder.verify(mockMediaPlayer).start();
-        assertTrue((capTime.getValue() - expTime) < tolerance);
+        long expTime = SystemClock.uptimeMillis() + duration;
+        assertTrue((expTime - capTime.getValue()) < tolerance);
     }
 
     public void testCallConnectedDuringPlayAlert() throws Throwable {
