@@ -102,6 +102,8 @@
         <!-- Channel 50 and 60 for area update info -->
         <item>0x32:type=area, emergency=false</item>
         <item>0x3C:type=area, emergency=false</item>
+        <!-- Channel 999 -->
+        <item>0x3E7:rat=gsm, emergency=true</item>
     </string-array>
     <!-- Show area update info settings in CellBroadcastReceiver and information in SIM status in Settings app -->
     <bool name="config_showAreaUpdateInfoSettings">true</bool>

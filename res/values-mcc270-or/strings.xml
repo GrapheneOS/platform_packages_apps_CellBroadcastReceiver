@@ -23,8 +23,7 @@
     <string name="cmas_amber_alert" msgid="1934668428381380827">"LU-ଆଲର୍ଟ : ଅପହରଣର ଆଲର୍ଟ"</string>
     <string name="cmas_required_monthly_test" msgid="7364077592345886483">"LU-ଆଲର୍ଟ ଟେଷ୍ଟ"</string>
     <string name="cmas_exercise_alert" msgid="8651116593061990582">"LU-ଆଲର୍ଟ ବ୍ୟାୟାମ"</string>
-    <!-- no translation found for enable_cmas_amber_alerts_title (3426998226619316792) -->
-    <skip />
+    <string name="enable_cmas_amber_alerts_title" msgid="3426998226619316792">"ଅପହରଣର ଆଲର୍ଟ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5532453981233187282">"ଶିଶୁ ଅପହରଣ ପାଇଁ ଆଲର୍ଟ ମେସେଜଗୁଡ଼ିକ ଦେଖାନ୍ତୁ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="6503578245169569633">"LU-ଆଲର୍ଟ ଟେଷ୍ଟ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"ପରୀକ୍ଷା ବିଷୟରେ ମେସେଜଗୁଡ଼ିକ ଦେଖାନ୍ତୁ"</string>

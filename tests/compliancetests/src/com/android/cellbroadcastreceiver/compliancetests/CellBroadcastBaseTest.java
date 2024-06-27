@@ -20,6 +20,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 
 import android.app.Instrumentation;
+import android.app.UiAutomation;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -31,6 +32,7 @@ import android.os.HandlerThread;
 import android.os.SystemProperties;
 import android.support.test.uiautomator.UiDevice;
 import android.telephony.ServiceState;
+import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyCallback;
 import android.telephony.TelephonyManager;
@@ -130,6 +132,7 @@ public class CellBroadcastBaseTest {
             if (sInputMccMnc != null && sInputMccMnc.equals(mccmnc)) {
                 sSetChannelIsDone.countDown();
                 logd("wait is released");
+                addSubIdToBeRemoved(SubscriptionManager.getDefaultSubscriptionId());
             }
         }
 
@@ -179,6 +182,7 @@ public class CellBroadcastBaseTest {
                             if (sInputMccMnc != null && sInputMccMnc.equals(mccMncOfIntent)) {
                                 sSetChannelIsDone.countDown();
                                 logd("wait is released");
+                                addSubIdToBeRemoved(SubscriptionManager.getDefaultSubscriptionId());
                             }
                         }
                     }
@@ -227,6 +231,10 @@ public class CellBroadcastBaseTest {
     @AfterClass
     public static void afterAllTests() throws Exception {
         logd("CellBroadcastBaseTest#afterAllTests()");
+
+        if (sIccIdForDummySub != null) {
+            deleteDummySubscriptionIds();
+        }
 
         if (sReceiver != null) {
             getContext().unregisterReceiver(sReceiver);
@@ -405,6 +413,56 @@ public class CellBroadcastBaseTest {
             sServiceStateLatch.await(SERVICE_STATE_MAX_WAIT, TimeUnit.MILLISECONDS);
         } catch (InterruptedException e) {
             // do nothing
+        }
+    }
+
+    private static int sSubIdForDummySub;
+    private static String sIccIdForDummySub;
+    private static int sSubTypeForDummySub;
+
+    private static void addSubIdToBeRemoved(int subId) {
+        logd("addSubIdToBeRemoved, subId = " + subId
+                + " subIdToBeRemoved = " + sSubIdForDummySub);
+        deleteDummySubscriptionIds();
+        UiAutomation uiAutomation = sInstrumentation.getUiAutomation();
+        uiAutomation.adoptShellPermissionIdentity();
+        try {
+            SubscriptionManager subManager =
+                    getContext().getSystemService(SubscriptionManager.class);
+            SubscriptionInfo subInfo = subManager.getActiveSubscriptionInfo(subId);
+            sSubIdForDummySub = subId;
+            sIccIdForDummySub = subInfo.getIccId();
+            sSubTypeForDummySub = subInfo.getSubscriptionType();
+            logd("addSubIdToBeRemoved, subId = " + sSubIdForDummySub
+                    + " iccId=" + sIccIdForDummySub + " subType=" + sSubTypeForDummySub);
+        } catch (SecurityException e) {
+            logd("runWithShellPermissionIdentity exception = " + e);
+        } finally {
+            uiAutomation.dropShellPermissionIdentity();
+        }
+    }
+
+    private static void deleteDummySubscriptionIds() {
+        if (sIccIdForDummySub != null) {
+            UiAutomation uiAutomation = sInstrumentation.getUiAutomation();
+            uiAutomation.adoptShellPermissionIdentity();
+            try {
+                SubscriptionManager subManager =
+                        getContext().getSystemService(SubscriptionManager.class);
+                logd("deleteDummySubscriptionIds "
+                        + " subId =" + sSubIdForDummySub
+                        + " iccId=" + sIccIdForDummySub
+                        + " subType=" + sSubTypeForDummySub);
+                subManager.removeSubscriptionInfoRecord(sIccIdForDummySub, sSubTypeForDummySub);
+            } catch (SecurityException e) {
+                logd("runWithShellPermissionIdentity exception = " + e);
+            } catch (IllegalArgumentException e) {
+                logd("catch IllegalArgumentException during removing subscriptionId = " + e);
+            } catch (NullPointerException e) {
+                logd("catch NullPointerException during removing subscriptionId = " + e);
+            } finally {
+                uiAutomation.dropShellPermissionIdentity();
+            }
         }
     }
 }

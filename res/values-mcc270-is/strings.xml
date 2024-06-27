@@ -23,8 +23,7 @@
     <string name="cmas_amber_alert" msgid="1934668428381380827">"LU-viðvörun : Viðvörun um mannrán"</string>
     <string name="cmas_required_monthly_test" msgid="7364077592345886483">"LU-viðvörunarprófun"</string>
     <string name="cmas_exercise_alert" msgid="8651116593061990582">"LU-viðvörunaræfing"</string>
-    <!-- no translation found for enable_cmas_amber_alerts_title (3426998226619316792) -->
-    <skip />
+    <string name="enable_cmas_amber_alerts_title" msgid="3426998226619316792">"Viðvörun um mannrán"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5532453981233187282">"Sýna viðvaranir varðandi mannrán á börnum"</string>
     <string name="enable_cmas_test_alerts_title" msgid="6503578245169569633">"LU-viðvörunarprófun"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"Sýna prófskilaboð"</string>

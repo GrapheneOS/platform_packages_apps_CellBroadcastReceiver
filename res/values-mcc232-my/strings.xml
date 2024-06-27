@@ -16,8 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for cmas_presidential_level_alert (1635895961813101610) -->
-    <skip />
+    <string name="cmas_presidential_level_alert" msgid="1635895961813101610">"အရေးပေါ် သတိပေးချက်"</string>
     <string name="cmas_extreme_alert" msgid="9122792746957924456">"ဆိုးရွားပြင်းထန်သည့် ခြိမ်းခြောက်မှု"</string>
     <string name="cmas_severe_alert" msgid="628940584325136759">"အလွန်ဆိုးရွားသည့် ခြိမ်းခြောက်မှု"</string>
     <string name="public_safety_message" msgid="8084690288011309280">"ခြိမ်းခြောက်မှု အချက်အလက်"</string>

@@ -23,8 +23,7 @@
     <string name="cmas_amber_alert" msgid="1934668428381380827">"LU-Alert: 유괴 경보"</string>
     <string name="cmas_required_monthly_test" msgid="7364077592345886483">"LU-Alert 테스트"</string>
     <string name="cmas_exercise_alert" msgid="8651116593061990582">"LU-Alert 안전 훈련"</string>
-    <!-- no translation found for enable_cmas_amber_alerts_title (3426998226619316792) -->
-    <skip />
+    <string name="enable_cmas_amber_alerts_title" msgid="3426998226619316792">"유괴 경보"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5532453981233187282">"아동 유괴 관련 경보 메시지 표시"</string>
     <string name="enable_cmas_test_alerts_title" msgid="6503578245169569633">"LU-Alert 테스트"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"테스트 메시지 표시"</string>

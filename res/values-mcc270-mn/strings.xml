@@ -23,8 +23,7 @@
     <string name="cmas_amber_alert" msgid="1934668428381380827">"LU-сэрэмжлүүлэг : Хүн хулгайлсан тухай сэрэмжлүүлэг"</string>
     <string name="cmas_required_monthly_test" msgid="7364077592345886483">"LU-сэрэмжлүүлгийн туршилт"</string>
     <string name="cmas_exercise_alert" msgid="8651116593061990582">"LU-сэрэмжлүүлгийн сургуулилалт"</string>
-    <!-- no translation found for enable_cmas_amber_alerts_title (3426998226619316792) -->
-    <skip />
+    <string name="enable_cmas_amber_alerts_title" msgid="3426998226619316792">"Хүн хулгайлсан тухай сэрэмжлүүлэг"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5532453981233187282">"Хүүхэд хулгайлсан тухай сэрэмжлүүлгийн мессежийг харуулах"</string>
     <string name="enable_cmas_test_alerts_title" msgid="6503578245169569633">"LU-сэрэмжлүүлгийн туршилт"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"Туршилтын мессежийг харуулах"</string>
