@@ -86,6 +86,7 @@ android_test {
     ],
     manifest: "AndroidManifest.xml",
     test_config: "AndroidTest.xml",
+    min_sdk_version: "30",
 }
 
 android_test {
