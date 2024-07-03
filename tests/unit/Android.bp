@@ -100,7 +100,6 @@ android_test {
     ],
     manifest: "AndroidManifest.xml",
     test_config: "AndroidTest_PixelExperience.xml",
-    min_sdk_version: "30",
 }
 
 android_test {
