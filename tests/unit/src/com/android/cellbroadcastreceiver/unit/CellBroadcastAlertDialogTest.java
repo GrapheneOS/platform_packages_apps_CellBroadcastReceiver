@@ -156,27 +156,6 @@ public class CellBroadcastAlertDialogTest extends
         SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
         doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
 
-        ProviderInfo providerInfo = new ProviderInfo();
-        providerInfo.authority = "test";
-        providerInfo.applicationInfo = new ApplicationInfo();
-        providerInfo.applicationInfo.uid = 999;
-        ContentProviderHolder holder = new ContentProviderHolder(providerInfo);
-        doReturn(holder).when(mMockedActivityManager)
-                .getContentProvider(any(), any(), any(), anyInt(), anyBoolean());
-        holder.provider = mock(IContentProvider.class);
-
-        Singleton<IActivityManager> activityManagerSingleton = new Singleton<IActivityManager>() {
-            @Override
-            protected IActivityManager create() {
-                return mMockedActivityManager;
-            }
-        };
-
-        mMockedActivityManagerHelper = new MockedServiceManager();
-        mMockedActivityManagerHelper.replaceService("window", mWindowManagerService);
-        mMockedActivityManagerHelper.replaceInstance(ActivityManager.class,
-                "IActivityManagerSingleton", null, activityManagerSingleton);
-
         CellBroadcastSettings.resetResourcesCache();
         CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
         String[] values = new String[]{"0x1112-0x1112:rat=gsm, always_on=true"};
@@ -189,7 +168,6 @@ public class CellBroadcastAlertDialogTest extends
     public void tearDown() throws Exception {
         CellBroadcastSettings.resetResourcesCache();
         CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
-        mMockedActivityManagerHelper.restoreAllServices();
         super.tearDown();
     }
 
@@ -241,6 +219,8 @@ public class CellBroadcastAlertDialogTest extends
     }
 
     public void testAddToNotification() throws Throwable {
+        setUpMockActivityManager();
+
         doReturn(true).when(mContext.getResources()).getBoolean(R.bool.show_alert_title);
         doReturn(false).when(mContext.getResources()).getBoolean(
                 R.bool.disable_capture_alert_dialog);
@@ -284,6 +264,30 @@ public class CellBroadcastAlertDialogTest extends
         Field field = ((Class) WindowManagerGlobal.class).getDeclaredField("sWindowManagerService");
         field.setAccessible(true);
         field.set(null, null);
+
+        mMockedActivityManagerHelper.restoreAllServices();
+    }
+
+    private void setUpMockActivityManager() throws Exception {
+        ProviderInfo providerInfo = new ProviderInfo();
+        providerInfo.authority = "test";
+        providerInfo.applicationInfo = new ApplicationInfo();
+        providerInfo.applicationInfo.uid = 999;
+        ContentProviderHolder holder = new ContentProviderHolder(providerInfo);
+        doReturn(holder).when(mMockedActivityManager)
+                .getContentProvider(any(), any(), any(), anyInt(), anyBoolean());
+        holder.provider = mock(IContentProvider.class);
+
+        Singleton<IActivityManager> activityManagerSingleton = new Singleton<IActivityManager>() {
+            @Override
+            protected IActivityManager create() {
+                return mMockedActivityManager;
+            }
+        };
+        mMockedActivityManagerHelper = new MockedServiceManager();
+        mMockedActivityManagerHelper.replaceService("window", mWindowManagerService);
+        mMockedActivityManagerHelper.replaceInstance(ActivityManager.class,
+                "IActivityManagerSingleton", null, activityManagerSingleton);
     }
 
     public void testAddToNotificationWithDifferentConfiguration() throws Throwable {

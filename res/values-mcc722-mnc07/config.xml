@@ -19,6 +19,6 @@
     <bool name="emergency_alerts_enabled_default">false</bool>
     <!-- 50 -->
     <string-array name="emergency_alerts_channels_range_strings" translatable="false">
-        <item>0x032:rat=gsm, emergency=true, dialog_with_notification=true</item>
+        <item>0x032:rat=gsm, type=mute, emergency=true, dialog_with_notification=true</item>
     </string-array>
 </resources>

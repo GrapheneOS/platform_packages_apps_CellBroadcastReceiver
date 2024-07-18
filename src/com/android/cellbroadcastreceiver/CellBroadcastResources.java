@@ -320,6 +320,8 @@ public class CellBroadcastResources {
             return R.string.sms_cb_sender_name_emergency;
         } else if (resourcesKey == R.array.public_safety_messages_channels_range_strings) {
             return R.string.sms_cb_sender_name_public_safety;
+        } else if (resourcesKey == R.array.cmas_amber_alerts_channels_range_strings) {
+            return R.string.sms_cb_sender_name_amber;
         }
 
         return R.string.sms_cb_sender_name_default;

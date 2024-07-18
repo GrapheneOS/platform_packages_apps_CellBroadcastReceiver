@@ -212,26 +212,31 @@ public class CellBroadcastResourcesTest {
 
         final int[] expectedResources = {
                 R.string.sms_cb_sender_name_presidential, R.string.sms_cb_sender_name_emergency,
-                R.string.sms_cb_sender_name_public_safety, R.string.sms_cb_sender_name_default};
+                R.string.sms_cb_sender_name_public_safety, R.string.sms_cb_sender_name_default,
+                R.string.sms_cb_sender_name_amber};
         putResources(R.array.cmas_presidential_alerts_channels_range_strings,
                 new String[]{"0x1112:rat=gsm, emergency=true"});
         putResources(R.array.emergency_alerts_channels_range_strings,
-                new String[]{"0x111B:rat=gsm, emergency=true"});
-        putResources(R.array.public_safety_messages_channels_range_strings,
-                new String[]{"0x112C:rat=gsm, emergency=true"});
-        putResources(R.array.cmas_alert_extreme_channels_range_strings,
                 new String[]{"0x1113:rat=gsm, emergency=true"});
+        putResources(R.array.public_safety_messages_channels_range_strings,
+                new String[]{"0x1114:rat=gsm, emergency=true"});
+        putResources(R.array.cmas_alert_extreme_channels_range_strings,
+                new String[]{"0x1120:rat=gsm, emergency=true"});
+        putResources(R.array.cmas_amber_alerts_channels_range_strings,
+                new String[]{"0x111B:rat=gsm, emergency=true"});
 
         final String[] expectedStrings = {
                 "Wireless emergency alerts(presidential)", "Wireless emergency alerts(emergency)",
-                "Informational notification", "Wireless emergency alerts(default)"};
+                "Informational notification", "Wireless emergency alerts(default)",
+                "Wireless emergency alerts(amber)"};
         doReturn(expectedStrings[0]).when(mResources).getText(eq(expectedResources[0]));
         doReturn(expectedStrings[1]).when(mResources).getText(eq(expectedResources[1]));
         doReturn(expectedStrings[2]).when(mResources).getText(eq(expectedResources[2]));
         doReturn(expectedStrings[3]).when(mResources).getText(eq(expectedResources[3]));
+        doReturn(expectedStrings[4]).when(mResources).getText(eq(expectedResources[4]));
 
         // check the sms sender address resource id and string
-        final int[] serviceCategory = {0x1112, 0x111B, 0x112C, 0x1113};
+        final int[] serviceCategory = {0x1112, 0x1113, 0x1114, 0x1120, 0x111B};
         for (int i = 0; i < serviceCategory.length; i++) {
             SmsCbMessage message = new SmsCbMessage(0, 0, 0, null,
                     serviceCategory[i], "", "", 0, null,

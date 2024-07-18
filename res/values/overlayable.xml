@@ -118,6 +118,8 @@
             <item type="string" name="sms_cb_sender_name_emergency" />
             <!-- Value of sms sender display name to be shown in SMS inbox for public safety alerts -->
             <item type="string" name="sms_cb_sender_name_public_safety" />
+            <!-- Value of sms sender display name to be shown in SMS inbox for amber alerts -->
+            <item type="string" name="sms_cb_sender_name_amber" />
             <item type="bool" name="enable_write_alerts_to_sms_inbox" />
             <item type="bool" name="always_mark_sms_read" />
 

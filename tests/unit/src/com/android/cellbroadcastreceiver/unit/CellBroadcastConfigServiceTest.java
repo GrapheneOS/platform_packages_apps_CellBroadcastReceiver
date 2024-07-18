@@ -889,6 +889,7 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     @Test
     @SmallTest
     public void testEnableCellBroadcastRoamingChannelsAsNeeded() throws Exception {
+        CellBroadcastSettings.resetResourcesCache();
         setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, false);
         setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, false);

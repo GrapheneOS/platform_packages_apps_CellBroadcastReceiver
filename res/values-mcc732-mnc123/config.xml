@@ -26,7 +26,7 @@
 
     <!-- 50 -->
     <string-array name="emergency_alerts_channels_range_strings" translatable="false">
-        <item>0x0032:rat=gsm, emergency=true, dialog_with_notification=true</item>
+        <item>0x0032:rat=gsm, type=mute, emergency=true, dialog_with_notification=true</item>
     </string-array>
 
     <!-- additional_cbs_channels_strings empty -->
