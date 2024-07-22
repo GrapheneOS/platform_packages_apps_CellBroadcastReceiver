@@ -1527,58 +1527,88 @@
   },
   "bulgaria": {
     "4370": {
-      "title": "BG-ALERT: Emergency Alert",
+      "title": "BG-ALERT: Emergency Alert",  // BG-ALERT: Внимание, опасност!
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "BG-ALERT: Emergency Alert",
+      "title": "BG-ALERT: Emergency Alert", // BG-ALERT: Внимание, опасност!
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "BG-ALERT: Warning",
+      "title": "BG-ALERT: Warning", // BG-ALERT: Предупреждение
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4372"
     },
     "4384": {
-      "title": "BG-ALERT: Warning",
+      "title": "BG-ALERT: Warning", // BG-ALERT: Предупреждение
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4385"
     },
     "4373": {
-      "title": "BG-ALERT: Information",
+      "title": "BG-ALERT: Information", // BG-ALERT: Информация
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4378"
     },
     "4386": {
-      "title": "BG-ALERT: Information",
+      "title": "BG-ALERT: Information", // BG-ALERT: Информация
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4391"
     },
     "4379": {
-      "title": "BG-ALERT: Missing Person Alert",
+      "title": "BG-ALERT: Missing Person Alert", // BG-ALERT: Човек в неизвестност
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "BG-ALERT: Missing Person Alert",
+      "title": "BG-ALERT: Missing Person Alert", // BG-ALERT: Човек в неизвестност
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4380": {
-      "title": "BG-ALERT: Test alert",
+      "title": "BG-ALERT: Test alert", // BG-ALERT: Тестово съобщение
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4393": {
-      "title": "BG-ALERT: Test alert",
+      "title": "BG-ALERT: Test alert", // BG-ALERT: Тестово съобщение
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "4381": {
+      "title": "BG-ALERT: Exercise", // BG-ALERT: Упражнение
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4394": {
+      "title": "BG-ALERT: Exercise", // BG-ALERT: Упражнение
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4382": {
+      "title": "BG-ALERT: Reserved", // BG-ALERT: Резервиран
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4395": {
+      "title": "BG-ALERT: Reserved", // BG-ALERT: Резервиран
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4398": {
+      "title": "BG-ALERT: Technical test", // BG-ALERT: Резервиран
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4399": {
+      "title": "BG-ALERT: Technical test", // BG-ALERT: Технически тест
+      "default_value": "false",
+      "toggle_avail": "false"
     }
   },
   "estonia": {

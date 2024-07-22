@@ -522,28 +522,40 @@
     }
   },
   "bulgaria": {
-    "Extreme and Severe Threats": {
+    "Extreme and Severe Threats": { // Сериозни опасности
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Information": {
+    "Information": { // Информация
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Missing Person Alerts": {
+    "Missing Person Alerts": { // Сигнали за човек в неизвестност
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Test Alerts": {
+    "Test Alerts": { // Тестови сигнали
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "Exercise Alerts": { // Сигнали за упражнения
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "EU-Reserved": { // EU-Reserved
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "Technical Test Alerts": { // Технически тестови сигнали
+      "default_value": "false",
+      "toggle_avail": "false"
     },
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
     },
     "Speak alert message": {
-      "default_value": "true",
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
