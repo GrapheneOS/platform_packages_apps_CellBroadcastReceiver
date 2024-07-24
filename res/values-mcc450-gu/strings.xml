@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"ઇમર્જન્સી અલર્ટ"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"સાર્વજનિક સલામતી માટે અલર્ટ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"AMBER અલર્ટ"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"તમારો ફોન તમને આફતો દરમિયાન સ્થળાંતરની સૂચનાઓ જેવા અલર્ટ મોકલી શકે છે. આ સેવા કોરિયન સરકાર, નેટવર્ક પ્રદાતાઓ અને ડિવાઇસના નિર્માતાઓ વચ્ચેનો સહયોગ છે.\n\nતમારા ડિવાઇસમાં કોઈ સમસ્યા હોય અથવા નેટવર્ક ખરાબ હોય તો તમને કદાચ અલર્ટ ન પણ મળે."</string>
 </resources>

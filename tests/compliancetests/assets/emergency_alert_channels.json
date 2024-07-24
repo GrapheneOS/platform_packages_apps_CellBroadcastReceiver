@@ -276,10 +276,11 @@
       "toggle_avail": "false",
       "warning_type": "02"
     },
-    "43016": {
+    "4356": {
       "title": "緊急速報メール", //"Emergency alert",
       "default_value": "true",
-      "toggle_avail": "false"
+      "toggle_avail": "false",
+      "warning_type": "08"
     },
     "4370": {
       "title": "国家レベルの警報", //"Presidential alert",

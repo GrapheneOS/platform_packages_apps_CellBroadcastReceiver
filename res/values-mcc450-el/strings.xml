@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Ειδοποίηση έκτακτης ανάγκης"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Ειδοποίηση δημόσιας ασφάλειας"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Ειδοποίηση Amber"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"Το τηλέφωνό σας μπορεί να σας στείλει ειδοποιήσεις, όπως οδηγίες εκκένωσης κατά τη διάρκεια καταστροφών. Αυτή η υπηρεσία είναι μια συνεργασία μεταξύ της κυβέρνησης της Κορέας, παρόχων υπηρεσιών δικτύου και κατασκευαστών συσκευών.\n\nΕνδέχεται να μην λάβετε ειδοποιήσεις εάν υπάρχει πρόβλημα με τη συσκευή σας ή αν δεν είναι καλές οι συνθήκες του δικτύου."</string>
 </resources>

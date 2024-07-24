@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Varsling"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Offentlig sikkerhedsvarsling"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Underretning om barnebortførelse"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"Din telefon kan sende dig varsler, f.eks. om, hvordan du skal søge i ly, ved katastrofer. Denne tjeneste er et samarbejde mellem de sydkoreanske myndigheder, netværksudbydere og enhedsproducenter.\n\nDu modtager muligvis ikke varsler, hvis der er et problem med din enhed, eller hvis dine netværksforhold er dårlige."</string>
 </resources>

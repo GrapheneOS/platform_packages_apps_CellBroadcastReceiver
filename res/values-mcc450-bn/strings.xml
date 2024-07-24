@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"জরুরি সতর্কতা"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"সর্বজনীন নিরাপত্তা সতর্কতা"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"AMBER সতর্কতা"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"আপনার ফোন সতর্কতা পাঠাতে পারে, যেমন দুর্যোগের সময় নিরাপদ স্থানে যাওয়ার ব্যাপারে নির্দেশ। কোরিয়ান সরকার, নেটওয়ার্ক পরিষেবা প্রদানকারী ও ডিভাইস প্রস্তুতকারকদের সহযোগিতায় এই পরিষেবার ব্যবস্থা করা হয়েছে।\n\nআপনার ডিভাইসে কোনও সমস্যা থাকলে বা নেটওয়ার্ক দুর্বল হলে, আপনি সতর্কতা নাও পেতে পারেন।"</string>
 </resources>

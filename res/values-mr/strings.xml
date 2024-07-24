@@ -22,6 +22,8 @@
     <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"आणीबाणीच्या वायरलेस सूचना"</string>
     <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"आणीबाणीच्या वायरलेस सूचना"</string>
     <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"माहितीपूर्ण सूचना"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (9124939966591107501) -->
+    <skip />
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"या वापरकर्त्यासाठी आणीबाणीमधील वायरलेस इशारा सेटिंग्ज उपलब्ध नाही"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ठीक आहे"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"यापूर्वीचे अलर्ट नाहीत"</string>

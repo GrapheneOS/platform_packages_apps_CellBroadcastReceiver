@@ -21,6 +21,12 @@
     <string name="cmas_severe_alert" msgid="1394463869061650114">"BG-ALERT: 情報"</string>
     <string name="cmas_amber_alert" msgid="6042893309718893485">"BG-ALERT: 行方不明者に関するアラート"</string>
     <string name="cmas_required_monthly_test" msgid="3241200045692496222">"BG-ALERT: テストアラート"</string>
+    <!-- no translation found for cmas_exercise_alert (1727406102736603186) -->
+    <skip />
+    <!-- no translation found for cmas_operator_defined_alert (4264583649927521831) -->
+    <skip />
+    <!-- no translation found for state_local_test_alert (3476953286481847290) -->
+    <skip />
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="2856233162192255821">"極めて重大な脅威"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="4399126631396210521">"命や財産に関わる極めて重大な脅威"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="7304511098720139598">"情報"</string>
@@ -29,4 +35,16 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="2737081426606202971">"行方不明者に関するメッセージ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5501920660625344060">"テストアラート"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="5979346836630343830">"テスト メッセージを受信する"</string>
+    <!-- no translation found for enable_exercise_test_alerts_title (6186667183449173633) -->
+    <skip />
+    <!-- no translation found for enable_exercise_test_alerts_summary (5406239686393408858) -->
+    <skip />
+    <!-- no translation found for enable_operator_defined_test_alerts_title (7672118368857656927) -->
+    <skip />
+    <!-- no translation found for enable_operator_defined_test_alerts_summary (6269683089765134935) -->
+    <skip />
+    <!-- no translation found for enable_state_local_test_alerts_title (5622875124715880594) -->
+    <skip />
+    <!-- no translation found for enable_state_local_test_alerts_summary (9045352067985067381) -->
+    <skip />
 </resources>

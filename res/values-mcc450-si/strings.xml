@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"හදිසි අවස්ථා ඇඟවීම"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"පොදු ආරක්ෂාව පිළිබඳ ඇඟවීම"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"ඇම්බර් ඇඟවීම"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"විපත්වලදී, ඔබේ දුරකථනය ඉවත් වීමේ උපදෙස් වැනි ඇඟවීම් ඔබට එවිය හැක. මෙම සේවය කොරියානු රජය, ජාල සැපයුම්කරුවන්, සහ උපාංග නිෂ්පාදකයින් අතර සහයෝගයකි.\n\nඔබේ උපාංගයේ ගැටලුවක් තිබේ නම් හෝ ජාල තත්ත්‍ව දුර්වල නම් ඔබට ඇඟවීම් ලැබේවි."</string>
 </resources>

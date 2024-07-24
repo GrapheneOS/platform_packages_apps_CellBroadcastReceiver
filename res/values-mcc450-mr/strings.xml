@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"आणीबाणी सूचना"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"सार्वजनिक सुरक्षितता सूचना"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"अँबर सूचना"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"तुमचा फोन तुम्हाला आपत्तीच्या वेळी निर्वासनासंबंधित सूचनांसारखे इशारे पाठवू शकतो. ही सेवा कोरियन सरकार, नेटवर्क पुरवठादार आणि डिव्हाइस उत्पादक यांच्यामधील सहयोगाने काम करते.\n\n तुमच्या डिव्हाइसमध्ये काही समस्या असल्यास किंवा नेटवर्कची स्थिती वाईट असल्यास, तुम्हाला कदाचित इशारे मिळणार नाहीत."</string>
 </resources>

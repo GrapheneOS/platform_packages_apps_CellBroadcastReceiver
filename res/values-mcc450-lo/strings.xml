@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"ການແຈ້ງເຕືອນເຫດສຸກເສີນ"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"ການແຈ້ງເຕືອນດ້ານຄວາມປອດໄພສາທາລະນະ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"ການແຈ້ງເຕືອນ AMBER"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"ໂທລະສັບຂອງທ່ານສາມາດສົ່ງການແຈ້ງເຕືອນໃຫ້ທ່ານໄດ້ ເຊັ່ນ: ຄຳແນະນຳການອົບພະຍົບ, ໃນລະຫວ່າງທີ່ເກີດໄພພິບັດ. ບໍລິການນີ້ເປັນການເຮັດວຽກຮ່ວມກັນລະຫວ່າງລັດຖະບານເກົາຫຼີ, ຜູ້ໃຫ້ບໍລິການເຄືອຂ່າຍ ແລະ ຜູ້ຜະລິດອຸປະກອນ.\n\nທ່ານອາດບໍ່ໄດ້ຮັບການແຈ້ງເຕືອນຫາກອຸປະກອນຂອງທ່ານມີບັນຫາ ຫຼື ເຄືອຂ່າຍຢູ່ໃນສະພາວະທີ່ບໍ່ສະຖຽນ."</string>
 </resources>

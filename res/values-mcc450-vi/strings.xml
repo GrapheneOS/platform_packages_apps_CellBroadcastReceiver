@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"Cảnh báo khẩn cấp"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"Cảnh báo chung về an toàn"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"Cảnh báo Amber"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"Điện thoại có thể gửi cho bạn các cảnh báo, chẳng hạn như hướng dẫn sơ tán khi xảy ra thảm hoạ. Dịch vụ này là kết quả hợp tác giữa Chính phủ Hàn Quốc, nhà cung cấp dịch vụ mạng và nhà sản xuất thiết bị.\n\nCó thể bạn sẽ không nhận được cảnh báo nếu thiết bị gặp sự cố hoặc nếu kết nối mạng kém."</string>
 </resources>

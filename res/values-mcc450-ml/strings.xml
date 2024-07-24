@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"അടിയന്തര മുന്നറിയിപ്പ്"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"പൊതു സുരക്ഷാ മുന്നറിയിപ്പ്"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"ആംബർ അലേർട്ട്"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"ദുരന്തങ്ങൾക്കിടയിൽ ഒഴിപ്പിക്കൽ നിർദ്ദേശങ്ങൾ പോലുള്ള മുന്നറിയിപ്പുകൾ അയയ്ക്കാൻ നിങ്ങളുടെ ഫോണിന് കഴിയും. ഈ സേവനം കൊറിയൻ സർക്കാർ, നെറ്റ്‍വർക്ക് സേവന ദാതാക്കൾ, ഉൽപ്പന്ന നിർമ്മാതാക്കൾ എന്നിവരുടെ സഹകരണത്തിന്റെ ഫലമാണ്.\n\nഉപകരണത്തിന് എന്തെങ്കിലും പ്രശ്‌നമുണ്ടെങ്കിലോ നെറ്റ്‌വർക്ക് സാഹചര്യങ്ങൾ മോശമാണെങ്കിലോ നിങ്ങൾക്ക് മുന്നറിയിപ്പുകൾ ലഭിച്ചേക്കില്ല."</string>
 </resources>

@@ -22,6 +22,8 @@
     <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"تنبيهات الطوارئ اللاسلكية"</string>
     <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"تنبيهات الطوارئ اللاسلكية"</string>
     <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"إشعار معلوماتي"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (9124939966591107501) -->
+    <skip />
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"لا تتوفَّر إعدادات إنذارات الطوارئ اللاسلكية لهذا المستخدم,"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"حسنًا"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"ليست هناك تنبيهات سابقة."</string>

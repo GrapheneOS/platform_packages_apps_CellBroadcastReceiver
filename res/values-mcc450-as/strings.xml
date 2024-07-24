@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"জৰুৰীকালীন সতৰ্কবাৰ্তা"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"ৰাজহুৱা সুৰক্ষা বিষয়ক সতৰ্কবাৰ্তা"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"এম্বাৰ সতৰ্কবাৰ্তা"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"আপোনাৰ ফ’নটোৱে আপোনালৈ দুৰ্যোগৰ সময়ত অপসাৰণৰ নিৰ্দেশাৱলীৰ দৰে সতৰ্কবাণীসমূহ পঠিয়াব পাৰে। কোৰিয়ান চৰকাৰ, নেটৱৰ্ক প্ৰদানকাৰী আৰু ডিভাইচ নিৰ্মাতাসকলৰ সহযোগত এই সেৱা আগবঢ়োৱা হৈছে।\n\nআপোনাৰ ডিভাইচত কিবা সমস্যা থাকিলে অথবা নেটৱৰ্কৰ স্থিতি দুৰ্বল হ’লে আপুনি সতৰ্কবাণী লাভ নকৰিবও পাৰে।"</string>
 </resources>

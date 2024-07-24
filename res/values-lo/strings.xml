@@ -22,6 +22,8 @@
     <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"ການເຕືອນສຸກເສີນໄຮ້ສາຍ"</string>
     <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"ການເຕືອນສຸກເສີນໄຮ້ສາຍ"</string>
     <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"ການແຈ້ງເຕືອນດ້ານຂໍ້ມູນ"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (9124939966591107501) -->
+    <skip />
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"ຜູ້ໃຊ້ນີ້ບໍ່ສາມາດໃຊ້ການຕັ້ງຄ່າການເຕືອນສຸກເສີນໄຮ້ສາຍໄດ້"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"ຕົກລົງ"</string>
     <string name="no_cell_broadcasts" msgid="7554779730107421769">"ບໍ່ມີການເຕືອນກ່ອນໜ້າ"</string>

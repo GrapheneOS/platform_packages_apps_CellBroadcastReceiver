@@ -23,5 +23,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="4898249233421369579">"खतरे की चेतावनी"</string>
     <string name="enable_public_safety_messages_title" msgid="80797144239755093">"लोगों की सुरक्षा से जुड़ी चेतावनी"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6133775002476394948">"ऐंबर अलर्ट (अगवा बच्चों से जुड़ी जानकारी)"</string>
+    <!-- no translation found for sms_cb_sender_name_amber (747151502102840369) -->
+    <skip />
     <string name="alerts_header_summary" msgid="7325972887358335555">"आपको फ़ोन पर चेतावनियां मिल सकती हैं. जैसे, आपदाओं के दौरान, खतरे वाली जगहों से सुरक्षित बाहर निकलने के निर्देश. कोरिया की सरकार, नेटवर्क सेवा देने वाली कंपनियों, और डिवाइस बनाने वाली कंपनियों के साथ मिलकर काम करने की वजह से, यह सेवा शुरू की गई है.\n\nअगर आपके डिवाइस में कोई समस्या है या नेटवर्क ठीक से नहीं आ रहा है, तो शायद आपको चेतावनियां न मिलें."</string>
 </resources>

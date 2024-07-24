@@ -20,7 +20,7 @@
     "imsi": "424030123456789"
   },
   "japan_kddi": {
-    "mccmnc": ["44050", "44051", "44052"],
+    "mccmnc": ["44050", "44051", "44052", "44054"],
     "imsi": "440500123456789",
     "language": "ja",
     "check_setting_with_main_lang": "false",
