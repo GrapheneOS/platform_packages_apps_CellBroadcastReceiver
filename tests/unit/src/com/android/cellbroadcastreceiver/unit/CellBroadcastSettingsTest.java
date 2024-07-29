@@ -475,4 +475,56 @@ public class CellBroadcastSettingsTest extends
                 break;
         }
     }
+
+    @Test
+    public void testRestoreToggleToCarrierDefault() throws Throwable {
+        doReturn(false).when(mContext.getResources()).getBoolean(
+                R.bool.restore_sub_toggle_to_carrier_default);
+
+        CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
+
+        TwoStatePreference severeCheckBox =
+                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
+                        CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS);
+        TwoStatePreference amberCheckBox =
+                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
+                        CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS);
+        TwoStatePreference testCheckBox =
+                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
+                        CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS);
+
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                R.bool.severe_threat_alerts_enabled_default);
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                R.bool.amber_alerts_enabled_default);
+        doReturn(false).when(mContext.getResources()).getBoolean(
+                R.bool.test_alerts_enabled_default);
+
+        cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.setAlertsEnabled(false);
+
+        assertFalse(severeCheckBox.isChecked());
+        assertFalse(amberCheckBox.isChecked());
+        assertFalse(testCheckBox.isChecked());
+
+        cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.setAlertsEnabled(true);
+
+        assertTrue(severeCheckBox.isChecked());
+        assertTrue(amberCheckBox.isChecked());
+        assertTrue(testCheckBox.isChecked());
+
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                R.bool.restore_sub_toggle_to_carrier_default);
+
+        cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.setAlertsEnabled(false);
+
+        assertFalse(severeCheckBox.isChecked());
+        assertFalse(amberCheckBox.isChecked());
+        assertFalse(testCheckBox.isChecked());
+
+        cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.setAlertsEnabled(true);
+
+        assertTrue(severeCheckBox.isChecked());
+        assertTrue(amberCheckBox.isChecked());
+        assertFalse(testCheckBox.isChecked());
+    }
 }

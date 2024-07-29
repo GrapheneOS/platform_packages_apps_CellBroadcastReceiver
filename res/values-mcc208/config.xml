@@ -69,4 +69,7 @@
     <string-array name="operator_defined_alert_range_strings" translatable="false" />
     <string-array name="etws_alerts_range_strings" translatable="false" />
     <string-array name="etws_test_alerts_range_strings" translatable="false" />
+
+    <!-- Whether to restore the sub-toggle setting to carrier default -->
+    <bool name="restore_sub_toggle_to_carrier_default">true</bool>
 </resources>

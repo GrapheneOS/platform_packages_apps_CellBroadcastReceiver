@@ -300,4 +300,7 @@
     positive. If they are not specified or invalid, default value will be 1s. -->
     <integer-array name="default_pulsation_pattern">
     </integer-array>
+
+    <!-- Whether to restore the sub-toggle setting to carrier default -->
+    <bool name="restore_sub_toggle_to_carrier_default">false</bool>
 </resources>

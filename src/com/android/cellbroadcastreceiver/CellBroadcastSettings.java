@@ -821,50 +821,75 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             }
         }
 
-        private void setAlertsEnabled(boolean alertsEnabled) {
+        /**
+         * Enable the toggles to set it on/off or carrier default.
+         */
+        @VisibleForTesting
+        public void setAlertsEnabled(boolean alertsEnabled) {
             Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
+
+            boolean resetCarrierDefault = res.getBoolean(
+                    R.bool.restore_sub_toggle_to_carrier_default);
 
             if (mSevereCheckBox != null) {
                 mSevereCheckBox.setEnabled(alertsEnabled);
-                mSevereCheckBox.setChecked(alertsEnabled);
+                mSevereCheckBox.setChecked(resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                        R.bool.severe_threat_alerts_enabled_default) : alertsEnabled);
             }
             if (!res.getBoolean(R.bool.disable_extreme_alert_settings)
                     && mExtremeCheckBox != null) {
                 mExtremeCheckBox.setEnabled(alertsEnabled);
-                mExtremeCheckBox.setChecked(alertsEnabled);
+                mExtremeCheckBox.setChecked(resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                        R.bool.extreme_threat_alerts_enabled_default) : alertsEnabled);
             }
             if (mAmberCheckBox != null) {
                 mAmberCheckBox.setEnabled(alertsEnabled);
-                mAmberCheckBox.setChecked(alertsEnabled);
+                mAmberCheckBox.setChecked(resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                        R.bool.amber_alerts_enabled_default) : alertsEnabled);
             }
             if (mAreaUpdateInfoCheckBox != null) {
                 mAreaUpdateInfoCheckBox.setEnabled(alertsEnabled);
-                mAreaUpdateInfoCheckBox.setChecked(alertsEnabled);
-                notifyAreaInfoUpdate(alertsEnabled);
+                mAreaUpdateInfoCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.area_update_info_alerts_enabled_default) : alertsEnabled);
+                notifyAreaInfoUpdate(resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                        R.bool.area_update_info_alerts_enabled_default) : alertsEnabled);
             }
             if (mEmergencyAlertsCheckBox != null) {
                 mEmergencyAlertsCheckBox.setEnabled(alertsEnabled);
-                mEmergencyAlertsCheckBox.setChecked(alertsEnabled);
+                mEmergencyAlertsCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.emergency_alerts_enabled_default) : alertsEnabled);
             }
             if (mPublicSafetyMessagesChannelCheckBox != null) {
                 mPublicSafetyMessagesChannelCheckBox.setEnabled(alertsEnabled);
-                mPublicSafetyMessagesChannelCheckBox.setChecked(alertsEnabled);
+                mPublicSafetyMessagesChannelCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.public_safety_messages_enabled_default) : alertsEnabled);
             }
             if (mStateLocalTestCheckBox != null) {
                 mStateLocalTestCheckBox.setEnabled(alertsEnabled);
-                mStateLocalTestCheckBox.setChecked(alertsEnabled);
+                mStateLocalTestCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.state_local_test_alerts_enabled_default) : alertsEnabled);
             }
             if (mTestCheckBox != null) {
                 mTestCheckBox.setEnabled(alertsEnabled);
-                mTestCheckBox.setChecked(alertsEnabled);
+                mTestCheckBox.setChecked(resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                        R.bool.test_alerts_enabled_default) : alertsEnabled);
             }
             if (mExerciseTestCheckBox != null) {
                 mExerciseTestCheckBox.setEnabled(alertsEnabled);
-                mExerciseTestCheckBox.setChecked(alertsEnabled);
+                mExerciseTestCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.test_exercise_alerts_enabled_default) : alertsEnabled);
             }
             if (mOperatorDefinedCheckBox != null) {
                 mOperatorDefinedCheckBox.setEnabled(alertsEnabled);
-                mOperatorDefinedCheckBox.setChecked(alertsEnabled);
+                mOperatorDefinedCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.test_operator_defined_alerts_enabled_default)
+                                : alertsEnabled);
             }
         }
 
