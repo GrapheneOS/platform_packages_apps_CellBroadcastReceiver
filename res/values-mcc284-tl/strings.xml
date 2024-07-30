@@ -21,12 +21,9 @@
     <string name="cmas_severe_alert" msgid="1394463869061650114">"BG-ALERT: Impormasyon"</string>
     <string name="cmas_amber_alert" msgid="6042893309718893485">"BG-ALERT: Alerto sa Nawawalang Tao"</string>
     <string name="cmas_required_monthly_test" msgid="3241200045692496222">"BG-ALERT: Pansubok na alerto"</string>
-    <!-- no translation found for cmas_exercise_alert (1727406102736603186) -->
-    <skip />
-    <!-- no translation found for cmas_operator_defined_alert (4264583649927521831) -->
-    <skip />
-    <!-- no translation found for state_local_test_alert (3476953286481847290) -->
-    <skip />
+    <string name="cmas_exercise_alert" msgid="1727406102736603186">"BG-ALERT: Pagsasanay"</string>
+    <string name="cmas_operator_defined_alert" msgid="4264583649927521831">"BG-ALERT: Nakareserba"</string>
+    <string name="state_local_test_alert" msgid="3476953286481847290">"BG-ALERT: Teknikal na test"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="2856233162192255821">"Mga Matindi at Malalang Banta"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="4399126631396210521">"Mga Matindi at Malalang Banta sa Buhay at Ari-arian"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="7304511098720139598">"Impormasyon"</string>
@@ -35,16 +32,10 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="2737081426606202971">"Mga Mensahe para sa Mga Nawawalang Tao"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5501920660625344060">"Mga Pansubok na Alerto"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="5979346836630343830">"Tumanggap ng Mga Pansubok na Mensahe"</string>
-    <!-- no translation found for enable_exercise_test_alerts_title (6186667183449173633) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_summary (5406239686393408858) -->
-    <skip />
-    <!-- no translation found for enable_operator_defined_test_alerts_title (7672118368857656927) -->
-    <skip />
-    <!-- no translation found for enable_operator_defined_test_alerts_summary (6269683089765134935) -->
-    <skip />
-    <!-- no translation found for enable_state_local_test_alerts_title (5622875124715880594) -->
-    <skip />
-    <!-- no translation found for enable_state_local_test_alerts_summary (9045352067985067381) -->
-    <skip />
+    <string name="enable_exercise_test_alerts_title" msgid="6186667183449173633">"Mga Alerto para sa Pagsasanay"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="5406239686393408858">"Makatanggap ng Mga Mensahe para sa Pagsasanay"</string>
+    <string name="enable_operator_defined_test_alerts_title" msgid="7672118368857656927">"Nakareserba sa EU"</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Makatanggap ng Mga Mensaheng Nakareserba sa EU"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="5622875124715880594">"Mga Alerto sa Teknikal na Test"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="9045352067985067381">"Makatanggap ng Mga Mensahe ng Teknikal na Test"</string>
 </resources>
