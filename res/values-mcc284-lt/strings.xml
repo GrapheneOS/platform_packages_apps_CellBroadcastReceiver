@@ -21,7 +21,7 @@
     <string name="cmas_severe_alert" msgid="1394463869061650114">"BG-ALERT: informacija"</string>
     <string name="cmas_amber_alert" msgid="6042893309718893485">"BG-ALERT: įspėjimas apie dingusį asmenį"</string>
     <string name="cmas_required_monthly_test" msgid="3241200045692496222">"BG-ALERT: bandomasis įspėjimas"</string>
-    <string name="cmas_exercise_alert" msgid="1727406102736603186">"BG-ALERT: mankšta"</string>
+    <string name="cmas_exercise_alert" msgid="1727406102736603186">"BG-ALERT: testinis bandymas"</string>
     <string name="cmas_operator_defined_alert" msgid="4264583649927521831">"BG-ALERT: rezervuota"</string>
     <string name="state_local_test_alert" msgid="3476953286481847290">"BG-ALERT: techninis bandymas"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="2856233162192255821">"Didelė ir rimta grėsmė"</string>
@@ -32,8 +32,8 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="2737081426606202971">"Pranešimai apie dingusius asmenis"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5501920660625344060">"Bandomieji įspėjimai"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="5979346836630343830">"Gauti bandomuosius pranešimus"</string>
-    <string name="enable_exercise_test_alerts_title" msgid="6186667183449173633">"Mankštos įspėjimai"</string>
-    <string name="enable_exercise_test_alerts_summary" msgid="5406239686393408858">"Gauti mankštos pranešimus"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="6186667183449173633">"Testinių bandymų įspėjimai"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="5406239686393408858">"Gauti testinių bandymų pranešimus"</string>
     <string name="enable_operator_defined_test_alerts_title" msgid="7672118368857656927">"ES rezervuota"</string>
     <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Gauti ES rezervuotus pranešimus"</string>
     <string name="enable_state_local_test_alerts_title" msgid="5622875124715880594">"Įspėjimai apie techninius bandymus"</string>

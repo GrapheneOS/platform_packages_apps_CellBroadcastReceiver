@@ -47,7 +47,7 @@
     <string name="cmas_extreme_alert" msgid="2588720613319969289">"Аварыйная абвестка: надзвычайная сітуацыя"</string>
     <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"Аварыйная абвестка: надзвычайная сітуацыя"</string>
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"Аварыйная абвестка: надзвычайная сітуацыя"</string>
-    <string name="cmas_severe_alert" msgid="4135809475315826913">"Аварыйная абвестка: сур\'ёзная сітуацыя"</string>
+    <string name="cmas_severe_alert" msgid="4135809475315826913">"Аварыйная абвестка: сур’ёзная сітуацыя"</string>
     <string name="cmas_amber_alert" msgid="6154867710264778887">"Выкраданне дзіцяці (абвестка AMBER)"</string>
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Абавязковы штомесячны тэст"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Аварыйная абвестка (вучэбная трывога)"</string>
@@ -74,8 +74,8 @@
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Тэставыя рассылкі сістэмы папярэджання аб землятрусах і цунамі"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Надзвычайныя пагрозы"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Надзвычайныя пагрозы для жыцця і маёмасці"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Сур\'ёзныя пагрозы"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Сур\'ёзныя пагрозы для жыцця і маёмасці"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Сур’ёзныя пагрозы"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Сур’ёзныя пагрозы для жыцця і маёмасці"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Абвесткі сістэмы AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Апавяшчэнні пра выкраданне дзяцей"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Папярэджанні"</string>
@@ -126,7 +126,7 @@
     <string name="cmas_response_none" msgid="5149009359674452959">"Няма"</string>
     <string name="cmas_severity_heading" msgid="8437057117822305243">"Цяжкасць:"</string>
     <string name="cmas_severity_extreme" msgid="1312013282860183082">"Крайнія"</string>
-    <string name="cmas_severity_severe" msgid="7504359209737074524">"Сур\'ёзныя"</string>
+    <string name="cmas_severity_severe" msgid="7504359209737074524">"Сур’ёзныя"</string>
     <string name="cmas_urgency_heading" msgid="8218282767913431492">"Тэрміновасць:"</string>
     <string name="cmas_urgency_immediate" msgid="1577485208196449288">"Неадкладна"</string>
     <string name="cmas_urgency_expected" msgid="6830831119872375936">"Чаканае"</string>

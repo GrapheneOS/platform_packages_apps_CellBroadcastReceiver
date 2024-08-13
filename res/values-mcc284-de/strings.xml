@@ -22,7 +22,7 @@
     <string name="cmas_amber_alert" msgid="6042893309718893485">"BG-ALERT: Meldung über eine vermisste Person"</string>
     <string name="cmas_required_monthly_test" msgid="3241200045692496222">"BG-ALERT: Testwarnung"</string>
     <string name="cmas_exercise_alert" msgid="1727406102736603186">"BG-ALERT: Übung"</string>
-    <string name="cmas_operator_defined_alert" msgid="4264583649927521831">"BG-ALERT: Reserved"</string>
+    <string name="cmas_operator_defined_alert" msgid="4264583649927521831">"BG-ALERT: Reserviert"</string>
     <string name="state_local_test_alert" msgid="3476953286481847290">"BG-ALERT: Technischer Test"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="2856233162192255821">"Schwerwiegende Gefahren"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="4399126631396210521">"Schwerwiegende Gefahren für Leben und Eigentum"</string>
@@ -34,8 +34,8 @@
     <string name="enable_cmas_test_alerts_summary" msgid="5979346836630343830">"Testnachrichten erhalten"</string>
     <string name="enable_exercise_test_alerts_title" msgid="6186667183449173633">"Warnungen der Kategorie „Übung“"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="5406239686393408858">"Meldungen der Kategorie „Übung“ empfangen"</string>
-    <string name="enable_operator_defined_test_alerts_title" msgid="7672118368857656927">"EU-Reserved"</string>
-    <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Meldungen der Kategorie „EU‑Reserved“ empfangen"</string>
+    <string name="enable_operator_defined_test_alerts_title" msgid="7672118368857656927">"Reserviert für die EU"</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Meldungen der Kategorie „Reserviert für die EU“ empfangen"</string>
     <string name="enable_state_local_test_alerts_title" msgid="5622875124715880594">"Warnungen der Kategorie „Technischer Test“"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="9045352067985067381">"Meldungen der Kategorie „Technischer Test“ empfangen"</string>
 </resources>

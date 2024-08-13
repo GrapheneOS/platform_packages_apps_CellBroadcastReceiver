@@ -35,7 +35,7 @@
     <string name="enable_exercise_test_alerts_title" msgid="6186667183449173633">"Alertas de exercício"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="5406239686393408858">"Receber mensagens de exercício"</string>
     <string name="enable_operator_defined_test_alerts_title" msgid="7672118368857656927">"Reservado à UE"</string>
-    <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Receber mensagens Reservado à UE"</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Receber mensagens reservadas à UE"</string>
     <string name="enable_state_local_test_alerts_title" msgid="5622875124715880594">"Alertas de teste técnico"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="9045352067985067381">"Receber mensagens de teste técnico"</string>
 </resources>

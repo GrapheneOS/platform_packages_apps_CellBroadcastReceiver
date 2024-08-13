@@ -17,13 +17,13 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_extreme_alert" msgid="3751964445127743376">"Экстранная абвестка"</string>
-    <string name="cmas_severe_alert" msgid="4773544726385840011">"Абвестка пра сур\'ёзную пагрозу"</string>
+    <string name="cmas_severe_alert" msgid="4773544726385840011">"Абвестка пра сур’ёзную пагрозу"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"Тэставая абвестка"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"Абвесткі ў рамках тэхнічных выпрабаванняў"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="3095141156358640879">"Надзвычайныя пагрозы"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"Надзвычайныя пагрозы для жыцця і маёмасці"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Сур\'ёзныя пагрозы"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Сур\'ёзныя пагрозы для жыцця і маёмасці"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Сур’ёзныя пагрозы"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Сур’ёзныя пагрозы для жыцця і маёмасці"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Дзяржаўныя і мясцовыя тэставыя паведамленні"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"Атрымліваць тэставыя паведамленні ад дзяржаўных і мясцовых органаў улады"</string>
     <string name="enable_exercise_test_alerts_title" msgid="1926178722994782168">"Абвесткі ў рамках тэхнічных выпрабаванняў"</string>

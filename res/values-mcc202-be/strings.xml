@@ -21,5 +21,5 @@
     <string name="cmas_extreme_alert" msgid="7989498696890004631">"Абвестка GR: экстранная абвестка"</string>
     <string name="cmas_extreme_immediate_observed_alert" msgid="3810446910355766140">"Абвестка GR: экстранная абвестка"</string>
     <string name="cmas_extreme_immediate_likely_alert" msgid="4723844134984591798">"Абвестка GR: экстранная абвестка"</string>
-    <string name="cmas_severe_alert" msgid="3002006180717551407">"Абвестка GR: абвестка аб сур\'ёзнай пагрозе"</string>
+    <string name="cmas_severe_alert" msgid="3002006180717551407">"Абвестка GR: абвестка аб сур’ёзнай пагрозе"</string>
 </resources>

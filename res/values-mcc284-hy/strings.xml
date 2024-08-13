@@ -21,7 +21,7 @@
     <string name="cmas_severe_alert" msgid="1394463869061650114">"BG-ALERT․ տեղեկություններ"</string>
     <string name="cmas_amber_alert" msgid="6042893309718893485">"BG-ALERT․ անհայտ կորած անձի մասին ծանուցում"</string>
     <string name="cmas_required_monthly_test" msgid="3241200045692496222">"BG-ALERT․ փորձնական ծանուցում"</string>
-    <string name="cmas_exercise_alert" msgid="1727406102736603186">"BG-ALERT. փորձարկում"</string>
+    <string name="cmas_exercise_alert" msgid="1727406102736603186">"BG-ALERT. ուսումնական տագնապ"</string>
     <string name="cmas_operator_defined_alert" msgid="4264583649927521831">"BG-ALERT․ ամրագրված"</string>
     <string name="state_local_test_alert" msgid="3476953286481847290">"BG-ALERT․ տեխնիկական փորձարկում"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="2856233162192255821">"Ծայրահեղ կամ լուրջ վտանգներ"</string>
@@ -32,10 +32,10 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="2737081426606202971">"Հաղորդագրություններ անհայտ կորած մարդկանց մասին"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5501920660625344060">"Փորձնական ծանուցումներ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="5979346836630343830">"Ստանալ փորձնական հաղորդագրություններ"</string>
-    <string name="enable_exercise_test_alerts_title" msgid="6186667183449173633">"Փորձնական ծանուցումներ"</string>
-    <string name="enable_exercise_test_alerts_summary" msgid="5406239686393408858">"Ստացեք փորձնական հաղորդագրություններ"</string>
-    <string name="enable_operator_defined_test_alerts_title" msgid="7672118368857656927">"ԵՄ-ի կողմից ամրագրված"</string>
-    <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Ստանալ ԵՄ-ի կողմից ամրագրված հաղորդագրություններ"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="5622875124715880594">"Տեխնիկական փորձարկման ծանուցումներ"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="9045352067985067381">"Ստանալ տեխնիկական փորձարկման հաղորդագրություններ"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="6186667183449173633">"Ուսումնական տագնապների մասին ծանուցումներ"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="5406239686393408858">"Ստանալ ուսումնական տագնապների մասին ծանուցումներ"</string>
+    <string name="enable_operator_defined_test_alerts_title" msgid="7672118368857656927">"EU-Reserved"</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Ստանալ EU-Reserved հաղորդագրություններ"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="5622875124715880594">"Տեխնիկական փորձարկումների մասին ծանուցումներ"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="9045352067985067381">"Ստանալ տեխնիկական փորձարկումների մասին ծանուցումներ"</string>
 </resources>

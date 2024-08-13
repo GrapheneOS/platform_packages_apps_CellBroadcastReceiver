@@ -25,7 +25,7 @@
     <string name="cmas_exercise_alert" msgid="4845005677469935113">"Тэставы сігнал"</string>
     <string name="cmas_required_monthly_test" msgid="8386390153236774475">"Праверка сотавай трансляцыі"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="2361635321508611596">"Экстрэмальная пагроза"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="1718166777595485623">"Сур\'ёзная пагроза"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="1718166777595485623">"Сур’ёзная пагроза"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="3125202178531035580">"Прапаўшыя людзі"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="5252326889751639729">"Пошук прапаўшых людзей"</string>
     <string name="enable_public_safety_messages_title" msgid="3974955568145658404">"Інфармацыя пра пагрозу"</string>

@@ -35,7 +35,7 @@
     <string name="enable_exercise_test_alerts_title" msgid="6186667183449173633">"Оповещения об учебных тревогах"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="5406239686393408858">"Получать сообщения об учебных тревогах"</string>
     <string name="enable_operator_defined_test_alerts_title" msgid="7672118368857656927">"EU-Reserved"</string>
-    <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Получать EU-Reserved сообщения"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="5622875124715880594">"Оповещения в рамках технических испытаний"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="9045352067985067381">"Получать сообщения в рамках технических испытаний"</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Получать сообщения EU-Reserved"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="5622875124715880594">"Оповещения о технических испытаниях"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="9045352067985067381">"Получать сообщения о технических испытаниях"</string>
 </resources>
