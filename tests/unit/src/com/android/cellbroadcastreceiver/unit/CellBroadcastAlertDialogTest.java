@@ -515,6 +515,7 @@ public class CellBroadcastAlertDialogTest extends
         doReturn(pattern).when(mContext.getResources()).getIntArray(
                 eq(com.android.cellbroadcastreceiver.R.array.default_pulsation_pattern));
 
+        CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
         CellBroadcastAlertDialog activity = startActivity();
         waitForMs(100);
         activity.mPulsationHandler.mLayout = mMockLinearLayout;

@@ -29,7 +29,8 @@ import android.content.SharedPreferences;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.os.HandlerThread;
-import android.preference.PreferenceManager;
+
+import androidx.preference.PreferenceManager;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertReminder;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;

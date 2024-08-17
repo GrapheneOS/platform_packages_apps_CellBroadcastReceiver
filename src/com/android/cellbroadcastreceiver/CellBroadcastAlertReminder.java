@@ -37,9 +37,10 @@ import android.os.IBinder;
 import android.os.SystemClock;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
+
+import androidx.preference.PreferenceManager;
 
 import com.android.internal.annotations.VisibleForTesting;
 

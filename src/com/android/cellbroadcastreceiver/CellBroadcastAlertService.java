@@ -59,7 +59,6 @@ import android.os.Looper;
 import android.os.PowerManager;
 import android.os.SystemProperties;
 import android.os.UserHandle;
-import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.service.notification.StatusBarNotification;
 import android.telephony.PhoneStateListener;
@@ -69,6 +68,8 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
+
+import androidx.preference.PreferenceManager;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.internal.annotations.VisibleForTesting;
