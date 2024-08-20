@@ -79,6 +79,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import java.util.UUID;
 
 /**
  * This service manages the display and animation of broadcast messages.
@@ -1056,6 +1057,9 @@ public class CellBroadcastAlertService extends Service {
      */
     static Intent createMarkAsReadIntent(Context context, long deliveryTime, int notificationId) {
         Intent deleteIntent = new Intent(context, CellBroadcastInternalReceiver.class);
+        // The extras are used rather than the data payload. The data payload only needs to
+        // ensure uniqueness of the intent to prevent overwriting a previous notification intent.
+        deleteIntent.setData(Uri.parse("cbr://notification/" + UUID.randomUUID()));
         deleteIntent.setAction(CellBroadcastReceiver.ACTION_MARK_AS_READ);
         deleteIntent.putExtra(CellBroadcastReceiver.EXTRA_DELIVERY_TIME, deliveryTime);
         deleteIntent.putExtra(CellBroadcastReceiver.EXTRA_NOTIF_ID, notificationId);
