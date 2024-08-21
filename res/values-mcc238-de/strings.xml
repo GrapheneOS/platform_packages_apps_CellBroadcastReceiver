@@ -24,10 +24,10 @@
     <string name="enable_cmas_test_alerts_title" msgid="2201656327607526283">"Test"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="9167491531803427454">"Testwarnungen"</string>
     <string name="enable_exercise_test_alerts_title" msgid="1899116047320259060">"Probe"</string>
-    <string name="enable_exercise_test_alerts_summary" msgid="8874462134900526256">"Probewarnungen"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="8874462134900526256">"Übungswarnungen"</string>
     <string name="cmas_presidential_level_alert" msgid="1021328259636041398">"Öffentliche Warnung"</string>
     <string name="cmas_extreme_alert" msgid="8549790257394972582">"Extrem"</string>
     <string name="cmas_severe_alert" msgid="9168154995381314879">"Schwerwiegend"</string>
     <string name="cmas_required_monthly_test" msgid="3066529282314710473">"Test"</string>
-    <string name="cmas_exercise_alert" msgid="4686404814038501898">"Probe"</string>
+    <string name="cmas_exercise_alert" msgid="4686404814038501898">"Übung"</string>
 </resources>
