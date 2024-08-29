@@ -20,5 +20,5 @@
     <string name="emergency_alert" msgid="5431770009291479378">"ઇમર્જન્સી અલર્ટ"</string>
     <string name="public_safety_message" msgid="3043854916586710461">"અલર્ટ અંગેનો સંદેશ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="4165080207837566277">"જરૂરી માસિક પરીક્ષણ"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="1339769389077152402">"સલામતી અલર્ટ સિસ્ટમ માટે પરીક્ષણ સંદેશા પ્રાપ્ત કરો"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="1339769389077152402">"સલામતી અલર્ટ સિસ્ટમ માટે પરીક્ષણ માટેનો મેસેજ પ્રાપ્ત કરો"</string>
 </resources>

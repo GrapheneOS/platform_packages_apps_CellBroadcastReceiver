@@ -540,12 +540,14 @@ public class CellBroadcastReceiverMetrics {
      * @param serialNo : set 0 as deprecated
      * @param msgId    : service_category of message
      */
-    void logMessageReported(Context context, int type, int source, int serialNo, int msgId) {
+    void logMessageReported(Context context, int type, int source, int serialNo, int msgId,
+            String roamingOperator, String languageIndicator) {
         if (VDBG) {
-            Log.d(TAG, "logMessageReported : " + type + " " + source + " " + 0 + " " + msgId);
+            Log.d(TAG, "logMessageReported : " + type + " " + source + " " + 0 + " "
+                            + msgId + " " + roamingOperator + " " + languageIndicator);
         }
         CellBroadcastModuleStatsLog.write(CellBroadcastModuleStatsLog.CB_MESSAGE_REPORTED,
-                type, source, 0, msgId);
+                type, source, 0, msgId, roamingOperator, languageIndicator);
     }
 
     /**

@@ -32,7 +32,7 @@
     <string name="app_label" msgid="3863159788297913185">"ઇમર્જન્સી અલર્ટ"</string>
     <string name="sms_cb_settings" msgid="4187131985831792308">"ઇમર્જન્સી અલર્ટ"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"ઇમર્જન્સી અલર્ટના નોટિફિકેશન પ્રાપ્ત કરો"</string>
-    <string name="enable_alert_speech_summary" msgid="5021926525240750702">"ઇમર્જન્સી અલર્ટ સંદેશા બોલવા માટે ટેક્સ્ટ ટૂ સ્પીચનો ઉપયોગ કરો"</string>
+    <string name="enable_alert_speech_summary" msgid="5021926525240750702">"ઇમર્જન્સી અલર્ટ મેસેજ બોલવા માટે ટેક્સ્ટ ટૂ સ્પીચનો ઉપયોગ કરો"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"ઇમર્જન્સી અલર્ટ સિસ્ટમમાંથી પરીક્ષણો મેળવો"</string>
     <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"તમે હાલમાં ઇમર્જન્સી અલર્ટ પ્રાપ્ત કરી રહ્યાં છો. શું તમે ઇમર્જન્સી અલર્ટ પ્રાપ્ત કરવાનું ચાલુ રાખવા માગો છો?"</string>
     <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"ઇમર્જન્સી અલર્ટ"</string>

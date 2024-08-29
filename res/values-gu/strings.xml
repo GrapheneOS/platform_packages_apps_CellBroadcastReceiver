@@ -53,7 +53,7 @@
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"કટોકટીની ચેતવણી (અભ્યાસ)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"કટોકટીની ચેતવણી (ઓપરેટર)"</string>
     <string name="cb_other_message_identifiers" msgid="5790068194529377210">"બ્રોડકાસ્ટના સંદેશા"</string>
-    <string name="public_safety_message" msgid="9119928798786998252">"સાર્વજનિક સુરક્ષા સંદેશ"</string>
+    <string name="public_safety_message" msgid="9119928798786998252">"સાર્વજનિક સુરક્ષા મેસેજ"</string>
     <string name="state_local_test_alert" msgid="8003145745857480200">"રાજ્ય/સ્થાનિક પરીક્ષણ"</string>
     <string name="emergency_alert" msgid="624783871477634263">"કટોકટીની ચેતવણી"</string>
     <string name="emergency_alerts_title" msgid="6605036374197485429">"અલર્ટ"</string>
@@ -82,8 +82,8 @@
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"નિકટવર્તી સલામતી જોખમો વિશે ચેતવો"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"સાર્વજનિક સુરક્ષા મેસેજ"</string>
     <string name="enable_public_safety_messages_summary" msgid="7868069748857851521">"સુઝાવ આપેલ ક્રિયાઓ જે જીંદગીઓ અથવા મિલ્કતને બચાવી શકે"</string>
-    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"સંદેશા પૂર્ણ સ્ક્રીનમાં બતાવો"</string>
-    <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"જ્યારે એ બંધ હોય, ત્યારે પણ સાર્વજનિક સુરક્ષાના સંદેશા નોટિફિકેશન તરીકે મોકલવામાં આવે છે"</string>
+    <string name="enable_full_screen_public_safety_messages_title" msgid="1790574642368284876">"મેસેજ પૂર્ણ સ્ક્રીનમાં બતાવો"</string>
+    <string name="enable_full_screen_public_safety_messages_summary" msgid="194171850169012897">"જ્યારે એ બંધ હોય, ત્યારે પણ સાર્વજનિક સુરક્ષાના મેસેજ નોટિફિકેશન તરીકે મોકલવામાં આવે છે"</string>
     <string name="enable_state_local_test_alerts_title" msgid="1012930918171302720">"રાજ્ય અને સ્થાનિક પરીક્ષણો"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"રાજ્ય અને સ્થાનિક સત્તાવાળાઓ પાસેથી પરીક્ષણ સંદેશા પ્રાપ્ત કરો"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"કટોકટીની ચેતવણીઓ"</string>
@@ -159,8 +159,8 @@
     <string name="alerts_header_summary" msgid="4700985191868591788"></string>
     <string name="testing_mode_enabled" msgid="8296556666392297467">"સેલ બ્રોડકાસ્ટ પરીક્ષણ મોડ ચાલુ કરેલો છે."</string>
     <string name="testing_mode_disabled" msgid="8381408377958182661">"સેલ બ્રોડકાસ્ટ પરીક્ષણ મોડ બંધ કરેલો છે."</string>
-    <string name="show_all_messages" msgid="3780970968167139836">"બધા સંદેશા બતાવો"</string>
-    <string name="show_regular_messages" msgid="7376885150513522515">"નિયમિત સંદેશા બતાવો"</string>
+    <string name="show_all_messages" msgid="3780970968167139836">"બધા મેસેજ બતાવો"</string>
+    <string name="show_regular_messages" msgid="7376885150513522515">"નિયમિત મેસેજ બતાવો"</string>
     <string name="message_identifier" msgid="5558338496219327850">"ઓળખકર્તા:"</string>
     <string name="message_serial_number" msgid="3386553658712978964">"અનુક્રમ નંબર:"</string>
     <string name="data_coding_scheme" msgid="4628901196730870577">"ડેટા કોડિંગ સ્કીમ:"</string>

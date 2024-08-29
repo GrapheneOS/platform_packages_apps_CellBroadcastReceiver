@@ -387,10 +387,13 @@ public class CellBroadcastAlertService extends Service {
 
         if (message.getMessageFormat() == MESSAGE_FORMAT_3GPP) {
             CellBroadcastReceiverMetrics.getInstance().logMessageReported(mContext,
-                    RPT_GSM, SRC_CBR, message.getSerialNumber(), message.getServiceCategory());
+                    RPT_GSM, SRC_CBR, message.getSerialNumber(), message.getServiceCategory(),
+                    CellBroadcastReceiver.getRoamingOperatorSupported(mContext),
+                    message.getLanguageCode());
         } else if (message.getMessageFormat() == MESSAGE_FORMAT_3GPP2) {
             CellBroadcastReceiverMetrics.getInstance().logMessageReported(mContext,
-                    RPT_CDMA, SRC_CBR, message.getSerialNumber(), message.getServiceCategory());
+                    RPT_CDMA, SRC_CBR, message.getSerialNumber(), message.getServiceCategory(),
+                    "", "");
         }
 
         if (!shouldDisplayMessage(message)) {

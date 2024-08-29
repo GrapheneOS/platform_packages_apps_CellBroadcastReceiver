@@ -192,7 +192,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                     intent.getParcelableArrayListExtra("program_data");
 
             CellBroadcastReceiverMetrics.getInstance().logMessageReported(mContext,
-                    RPT_SPC, SRC_CBR, 0, 0);
+                    RPT_SPC, SRC_CBR, 0, 0, "", "");
 
             if (programDataList != null) {
                 handleCdmaSmsCbProgramData(programDataList);
