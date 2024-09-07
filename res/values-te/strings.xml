@@ -89,7 +89,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"అత్యవసర హెచ్చరికలు"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ప్రాణాంతకమైన సంఘటనల గురించి హెచ్చరించు"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"టెస్ట్ అలర్ట్‌లు"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"భద్రతా అలర్ట్ సిస్టమ్ నుండి క్యారియర్ టెస్ట్‌లను, నెలవారీ టెస్ట్‌లను స్వీకరించండి"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"సేఫ్టీ అలర్ట్ సిస్టమ్ పంపే క్యారియర్ టెస్ట్‌లను, నెలవారీ టెస్ట్‌లను పొందండి"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"ఎమర్జెన్సీ అలర్ట్‌ను అందుకోండి: ప్రాక్టీస్/డ్రిల్ మెసేజ్"</string>

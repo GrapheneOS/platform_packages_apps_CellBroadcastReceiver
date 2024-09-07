@@ -20,10 +20,10 @@ package {
 java_defaults {
     name: "CellBroadcastTestCommonComplianceTest",
     libs: [
-        "android.test.runner",
+        "android.test.runner.stubs.system",
         "telephony-common",
-        "android.test.base",
-        "android.test.mock",
+        "android.test.base.stubs.system",
+        "android.test.mock.stubs.system",
     ],
     static_libs: [
         "androidx.test.rules",
