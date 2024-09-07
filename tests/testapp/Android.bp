@@ -22,9 +22,9 @@ android_test {
     name: "CellBroadcastReceiverTests",
     // We only want this apk build for tests.
     libs: [
-        "android.test.runner",
+        "android.test.runner.stubs.system",
         "telephony-common",
-        "android.test.base",
+        "android.test.base.stubs.system",
     ],
     static_libs: [
     "junit",
