@@ -67,7 +67,7 @@
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"ಎಚ್ಚರಿಕೆ ಜ್ಞಾಪನೆ"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"ಎಚ್ಚರಿಕೆ ಸಂದೇಶವನ್ನು ಹೇಳಿ"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್ ಸಂದೇಶಗಳನ್ನು ತಿಳಿಸಲು ಪಠ್ಯದಿಂದ ಧ್ವನಿಯನ್ನು ಬಳಸಿ"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ಜ್ಞಾಪನೆ ಧ್ವನಿಯು ಸಾಮಾನ್ಯ ವಾಲ್ಯೂಮ್‌ನಲ್ಲಿ ಪ್ಲೇ ಆಗುತ್ತದೆ"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"ರಿಮೈಂಡರ್ ಧ್ವನಿಯು ಸಾಮಾನ್ಯ ವಾಲ್ಯೂಮ್‌ನಲ್ಲಿ ಪ್ಲೇ ಆಗುತ್ತದೆ"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"ತುರ್ತು ಎಚ್ಚರಿಕೆ ಇತಿಹಾಸ"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"ಎಚ್ಚರಿಕೆ ಪ್ರಾಶಸ್ತ್ಯಗಳು"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS ಪರೀಕ್ಷಾ ಪ್ರಸಾರಗಳು"</string>
