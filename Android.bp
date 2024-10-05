@@ -19,9 +19,9 @@ android_library {
     name: "CellBroadcastCommon",
     defaults: ["CellBroadcastDefaults"],
     srcs: [
-      "src/**/*.java",
-      ":cellbroadcast-constants-shared-srcs",
-      ":statslog-cellbroadcast-module-java-gen",
+        "src/**/*.java",
+        ":cellbroadcast-constants-shared-srcs",
+        ":statslog-cellbroadcast-module-java-gen",
     ],
     libs: [
         "framework-annotations-lib",
@@ -45,7 +45,7 @@ android_library {
     ],
     resource_dirs: ["res"],
     manifest: "AndroidManifest_Lib.xml",
-    apex_available : [
+    apex_available: [
         "com.android.cellbroadcast",
         "//apex_available:platform",
     ],
@@ -61,6 +61,7 @@ android_app {
     apex_available: ["com.android.cellbroadcast"],
     privapp_allowlist: ":privapp_allowlist_com.android.cellbroadcastreceiver.module.xml",
     resource_dirs: [],
+    updatable: true,
 }
 
 android_app {
@@ -71,7 +72,10 @@ android_app {
     certificate: "platform",
     // CellBroadcastAppPlatform is a replacement for com.android.cellbroadcast apex which consists
     // of CellBroadcastApp
-    overrides: ["com.android.cellbroadcast", "CellBroadcastLegacyApp"],
+    overrides: [
+        "com.android.cellbroadcast",
+        "CellBroadcastLegacyApp",
+    ],
     manifest: "AndroidManifest_Platform.xml",
     system_ext_specific: true,
     privileged: true,
@@ -96,7 +100,8 @@ java_library {
     },
     srcs: ["proto/*.proto"],
     sdk_version: "core_current",
-    apex_available : ["com.android.cellbroadcast",
-                      "//apex_available:platform",
+    apex_available: [
+        "com.android.cellbroadcast",
+        "//apex_available:platform",
     ],
 }

@@ -104,6 +104,10 @@ public class CellBroadcastSettingsTest extends
         mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
         MockitoAnnotations.initMocks(this);
         CellBroadcastSettings.resetResourcesCache();
+        SubscriptionManager mockSubManager = mock(SubscriptionManager.class);
+        injectSystemService(SubscriptionManager.class, mockSubManager);
+        SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
+        doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
     }
 
     @After
@@ -371,7 +375,6 @@ public class CellBroadcastSettingsTest extends
         String topIntroRoamingText = "test";
         doReturn(topIntroRoamingText).when(mContext.getResources()).getString(
                 eq(R.string.top_intro_roaming_text));
-        setSubscriptionManager();
         setPreference(PREFERENCE_PUT_TYPE_STRING, ROAMING_OPERATOR_SUPPORTED, "XXX");
 
         CellBroadcastSettings settings = startActivity();
@@ -383,7 +386,6 @@ public class CellBroadcastSettingsTest extends
 
     @Test
     public void testDoNotShowTestCheckBox() throws Throwable {
-        setSubscriptionManager();
         setPreference(PREFERENCE_PUT_TYPE_BOOL, TESTING_MODE, "false");
         doReturn(false).when(mContext.getResources()).getBoolean(
                 eq(R.bool.show_separate_exercise_settings));
@@ -419,7 +421,6 @@ public class CellBroadcastSettingsTest extends
 
     @Test
     public void testShowTestCheckBox() throws Throwable {
-        setSubscriptionManager();
         setPreference(PREFERENCE_PUT_TYPE_BOOL, TESTING_MODE, "true");
         doReturn(true).when(mContext.getResources()).getBoolean(
                 eq(R.bool.show_separate_exercise_settings));
@@ -453,13 +454,6 @@ public class CellBroadcastSettingsTest extends
         assertTrue(exerciseTestCheckBox.isVisible());
         waitForChange(() -> operatorDefinedCheckBox.isVisible(), TEST_TIMEOUT_MILLIS);
         assertTrue(operatorDefinedCheckBox.isVisible());
-    }
-
-    private void setSubscriptionManager() {
-        SubscriptionManager mockSubManager = mock(SubscriptionManager.class);
-        injectSystemService(SubscriptionManager.class, mockSubManager);
-        SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
-        doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
     }
 
     private void setPreference(int putType, String key, String value) {
