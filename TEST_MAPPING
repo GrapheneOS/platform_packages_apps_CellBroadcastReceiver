@@ -45,5 +45,11 @@
       "name": "CellBroadcastReceiverComplianceTests",
       "keywords": ["internal"]
     }
+  ],
+  "postsubmit": [
+    {
+      "name": "CellBroadcastReceiverMTS",
+      "keywords": ["internal"]
+    }
   ]
 }

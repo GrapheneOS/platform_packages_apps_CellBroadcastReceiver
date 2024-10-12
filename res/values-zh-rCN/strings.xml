@@ -136,7 +136,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"接收时间："</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> 条未读警报。"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"新警报"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"在显示第一条警报（国家级警报除外）后，显示是否停收警报的对话框。"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"在显示第一条警报后，显示是否停收警报的对话框（国家级警报除外）。"</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"显示警报停收对话框"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"您目前已设置接收无线紧急警报。要继续接收无线紧急警报吗？"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"是"</string>

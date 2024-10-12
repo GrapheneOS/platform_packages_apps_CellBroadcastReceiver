@@ -147,6 +147,10 @@ public class CellBroadcastAlertDialogTest extends
         // PowerManager is a final class so we can't use Mockito to mock it, but we can mock
         // its underlying service.
         doReturn(true).when(mMockedPowerManagerService).isInteractive();
+        if (SdkLevel.isAtLeastU()) {
+            doReturn(true).when(
+                    mMockedPowerManagerService).isDisplayInteractive(anyInt());
+        }
         mPowerManager = new PowerManager(mContext, mMockedPowerManagerService,
                 mMockedThermalService, null);
         injectSystemService(PowerManager.class, mPowerManager);

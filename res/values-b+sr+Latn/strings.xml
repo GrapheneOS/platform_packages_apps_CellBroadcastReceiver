@@ -100,8 +100,8 @@
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Uvek obaveštavaj punom jačinom zvuka"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Ignoriše Ne uznemiravaj i druga podešavanja jačine zvuka"</string>
-    <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Obaveštenja o ažuriranju područja"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Prikazuj informacije o ažuriranju u statusu SIM kartice"</string>
+    <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Emitovanja novosti za područje"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Prikaz najnovijih informacija u statusu SIM kartice"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategorija upozorenja:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofizička"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorološka"</string>

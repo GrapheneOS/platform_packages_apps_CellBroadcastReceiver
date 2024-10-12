@@ -82,7 +82,6 @@ android_test {
     instrumentation_for: "CellBroadcastApp",
     test_suites: [
         "device-tests",
-        "mts-cellbroadcast",
     ],
     manifest: "AndroidManifest.xml",
     test_config: "AndroidTest.xml",
@@ -96,9 +95,9 @@ android_test {
     instrumentation_for: "CellBroadcastApp",
     test_suites: [
         "general-tests",
-        "mts-cellbroadcast",
     ],
     manifest: "AndroidManifest.xml",
+    target_sdk_version: "10000",
     test_config: "AndroidTest_PixelExperience.xml",
 }
 

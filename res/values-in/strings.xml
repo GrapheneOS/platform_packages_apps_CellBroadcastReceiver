@@ -88,7 +88,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Terima pesan percobaan dari otoritas negara bagian atau lokal"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Peringatan darurat"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Peringatkan tentang peristiwa yang mengancam jiwa"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Uji peringatan"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Peringatan uji coba"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Terima pengujian operator dan pengujian bulanan dari sistem peringatan keselamatan"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
@@ -101,7 +101,7 @@
     <string name="override_dnd_title" msgid="5120805993144214421">"Selalu ingatkan dengan volume penuh"</string>
     <string name="override_dnd_summary" msgid="9026675822792800258">"Abaikan fitur Jangan Ganggu &amp; setelan volume lainnya"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Siaran update area"</string>
-    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Tampilan informasi update di status SIM"</string>
+    <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Tampilkan informasi update di status SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategori Notifikasi:"</string>
     <string name="cmas_category_geo" msgid="4979494217069688527">"Geofisika"</string>
     <string name="cmas_category_met" msgid="7563732573851773537">"Meteorologi"</string>
@@ -136,8 +136,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Diterima:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> peringatan belum dibaca."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Peringatan baru"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Tunjukkan dialog menolak ikut serta setelah notifikasi pertama tampil (selain Notifikasi Presidensial)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Tunjukkan dialog pilihan tidak ikut"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Tampilkan dialog pilihan tidak ikut setelah peringatan pertama (selain Peringatan Kepresidenan)."</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Tampilkan dialog pilihan tidak ikut"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Saat ini Anda menerima peringatan darurat nirkabel. Ingin terus menerima peringatan darurat nirkabel?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ya"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Tidak"</string>

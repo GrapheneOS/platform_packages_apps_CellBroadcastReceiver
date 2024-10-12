@@ -24,7 +24,7 @@
     <string name="cmas_required_monthly_test" msgid="3216225136685938963">"FR-ALERT စမ်းသပ်ချက်"</string>
     <string name="cmas_exercise_alert" msgid="6540820517122545556">"Fr-ALERT လေ့ကျင့်ခန်း"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="1268433786689479357">"အရေးပေါ် သတိပေးချက်များ (အဆင့် ၂)"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6125474083043183037">"ဆိုးရွားသည့် ခြိမ်းခြောက်မှုများအတွက် သတိပေးမက်ဆေ့ဂျ်များ ပြရန်"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6125474083043183037">"လွန်ကဲ အန္တရာယ်များအတွက် သတိပေးမက်ဆေ့ဂျ်များ ပြရန်"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="6185770513604614548">"အထူးအရေးပေါ် သတိပေးချက်များ (အဆင့် ၃)"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="3073259381449390054">"ဆိုးရွားလွန်းသည့် ခြိမ်းခြောက်မှုများအတွက် သတိပေးမက်ဆေ့ဂျ်များ ပြရန်"</string>
     <string name="enable_public_safety_messages_title" msgid="4231398452970069457">"သတိပေးချက် (အဆင့် ၄)"</string>
