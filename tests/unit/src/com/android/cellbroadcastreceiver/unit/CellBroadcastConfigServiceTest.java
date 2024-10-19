@@ -21,10 +21,13 @@ import static com.android.cellbroadcastreceiver.CellBroadcastConfigService.CbCon
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.nullable;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.eq;
@@ -46,6 +49,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.os.RemoteException;
 import android.telephony.CellBroadcastIdRange;
 import android.telephony.SmsCbMessage;
@@ -72,7 +76,10 @@ import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -1546,6 +1553,23 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
             }
         };
         mMockedServiceManager.replaceService("window", mWindowManagerService);
+        Field fieldHandler = ActivityManager.class.getDeclaredField("IActivityManagerSingleton");
+        fieldHandler.setAccessible(true);
+        Singleton<IActivityManager> activityManager =
+                (Singleton<IActivityManager>) fieldHandler.get(null);
+        IActivityManager realInstance = activityManager.get();
+        doAnswer(new Answer() {
+            public Void answer(InvocationOnMock invocation) throws RemoteException {
+                if (realInstance != null) {
+                    realInstance.finishReceiver(invocation.getArgument(0),
+                            invocation.getArgument(1), invocation.getArgument(2),
+                            invocation.getArgument(3), invocation.getArgument(4),
+                            invocation.getArgument(5));
+                }
+                return null;
+            }
+        }).when(mMockedActivityManager).finishReceiver(nullable(IBinder.class), anyInt(),
+                nullable(String.class), nullable(Bundle.class), anyBoolean(), anyInt());
         mMockedServiceManager.replaceInstance(ActivityManager.class,
                 "IActivityManagerSingleton", null, activityManagerSingleton);
         doNothing().when(mConfigService).resetAllPreferences();

@@ -490,7 +490,9 @@ public class CellBroadcastAlertService extends Service {
         if (channelManager.isEmergencyMessage(cbm) && !sRemindAfterCallFinish) {
             // start alert sound / vibration / TTS and display full-screen alert
             openEmergencyAlertNotification(cbm);
-            Resources res = CellBroadcastSettings.getResources(mContext, cbm.getSubscriptionId());
+            Resources res = CellBroadcastSettings.getResourcesByOperator(mContext,
+                    cbm.getSubscriptionId(),
+                    CellBroadcastReceiver.getRoamingOperatorSupported(mContext));
 
             CellBroadcastChannelRange range = channelManager
                     .getCellBroadcastChannelRangeFromMessage(cbm);

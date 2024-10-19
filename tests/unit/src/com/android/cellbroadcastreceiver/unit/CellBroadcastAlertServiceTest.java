@@ -67,6 +67,7 @@ import android.view.Display;
 
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
+import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 import com.android.modules.utils.build.SdkLevel;
@@ -141,6 +142,8 @@ public class CellBroadcastAlertServiceTest extends
 
     @After
     public void tearDown() throws Exception {
+        CellBroadcastSettings.resetResourcesCache();
+        CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
         super.tearDown();
     }
 
@@ -363,6 +366,80 @@ public class CellBroadcastAlertServiceTest extends
         assertEquals(Intent.FLAG_ACTIVITY_NEW_TASK,
                 (mActivityIntentToVerify.getFlags() & Intent.FLAG_ACTIVITY_NEW_TASK));
         compareCellBroadCastMessage(message, newMessageList.get(0));
+    }
+
+    public void testShowNewAlertWithNotification() {
+        doReturn("").when(mMockedSharedPreferences).getString(
+                eq("roaming_operator_supported"), any());
+        doReturn(false).when(mResources).getBoolean(
+                com.android.cellbroadcastreceiver.R.bool.show_alert_dialog_with_notification);
+
+        Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
+        intent.setAction(SHOW_NEW_ALERT_ACTION);
+        SmsCbMessage message = createMessage(34788612);
+        intent.putExtra("message", message);
+        startService(intent);
+        waitForServiceIntent();
+
+        verify(mMockedNotificationManager, times(0))
+                .notify(anyInt(), any());
+
+        doReturn(true).when(mResources).getBoolean(
+                com.android.cellbroadcastreceiver.R.bool.show_alert_dialog_with_notification);
+
+        intent = new Intent(mContext, CellBroadcastAlertService.class);
+        intent.setAction(SHOW_NEW_ALERT_ACTION);
+        message = createMessage(34788612);
+        intent.putExtra("message", message);
+        startService(intent);
+        waitForServiceIntent();
+
+        ArgumentCaptor<Notification> notificationCaptor =
+                ArgumentCaptor.forClass(Notification.class);
+        ArgumentCaptor<Integer> mInt = ArgumentCaptor.forClass(Integer.class);
+        verify(mMockedNotificationManager, times(1))
+                .notify(mInt.capture(), notificationCaptor.capture());
+        assertEquals(1, (int) mInt.getValue());
+    }
+
+    public void testShowNewAlertWithNotificationInRoaming() {
+        doReturn(false).when(mResources).getBoolean(
+                com.android.cellbroadcastreceiver.R.bool.show_alert_dialog_with_notification);
+        doReturn("123456").when(mMockedSharedPreferences).getString(
+                eq("roaming_operator_supported"), any());
+        Resources mockResources2 = mock(Resources.class);
+        CellBroadcastSettings.sResourcesCacheByOperator.put("123456", mockResources2);
+        doReturn("").when(mockResources2).getText(anyInt());
+
+        doReturn(false).when(mockResources2).getBoolean(
+                com.android.cellbroadcastreceiver.R.bool.show_alert_dialog_with_notification);
+
+        Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
+        intent.setAction(SHOW_NEW_ALERT_ACTION);
+        SmsCbMessage message = createMessage(34788612);
+        intent.putExtra("message", message);
+        startService(intent);
+        waitForServiceIntent();
+
+        verify(mMockedNotificationManager, times(0))
+                .notify(anyInt(), any());
+
+        doReturn(true).when(mockResources2).getBoolean(
+                com.android.cellbroadcastreceiver.R.bool.show_alert_dialog_with_notification);
+
+        intent = new Intent(mContext, CellBroadcastAlertService.class);
+        intent.setAction(SHOW_NEW_ALERT_ACTION);
+        message = createMessage(34788612);
+        intent.putExtra("message", message);
+        startService(intent);
+        waitForServiceIntent();
+
+        ArgumentCaptor<Notification> notificationCaptor =
+                ArgumentCaptor.forClass(Notification.class);
+        ArgumentCaptor<Integer> intCaptor = ArgumentCaptor.forClass(Integer.class);
+        verify(mMockedNotificationManager, times(1))
+                .notify(intCaptor.capture(), notificationCaptor.capture());
+        assertEquals(1, (int) intCaptor.getValue());
     }
 
     // Test showNewAlert method with a CMAS child abduction alert, using the default language code

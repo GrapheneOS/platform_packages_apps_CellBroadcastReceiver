@@ -20,7 +20,9 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.nullable;
 import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -41,11 +43,13 @@ import android.content.pm.ProviderInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.os.IPowerManager;
 import android.os.IThermalService;
 import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
+import android.os.RemoteException;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
@@ -76,6 +80,8 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -290,6 +296,23 @@ public class CellBroadcastAlertDialogTest extends
         };
         mMockedActivityManagerHelper = new MockedServiceManager();
         mMockedActivityManagerHelper.replaceService("window", mWindowManagerService);
+        Field fieldHandler = ActivityManager.class.getDeclaredField("IActivityManagerSingleton");
+        fieldHandler.setAccessible(true);
+        Singleton<IActivityManager> activityManager =
+                (Singleton<IActivityManager>) fieldHandler.get(null);
+        IActivityManager realInstance = activityManager.get();
+        doAnswer(new Answer() {
+            public Void answer(InvocationOnMock invocation) throws RemoteException {
+                if (realInstance != null) {
+                    realInstance.finishReceiver(invocation.getArgument(0),
+                            invocation.getArgument(1), invocation.getArgument(2),
+                            invocation.getArgument(3), invocation.getArgument(4),
+                            invocation.getArgument(5));
+                }
+                return null;
+            }
+        }).when(mMockedActivityManager).finishReceiver(nullable(IBinder.class), anyInt(),
+                nullable(String.class), nullable(Bundle.class), anyBoolean(), anyInt());
         mMockedActivityManagerHelper.replaceInstance(ActivityManager.class,
                 "IActivityManagerSingleton", null, activityManagerSingleton);
     }
