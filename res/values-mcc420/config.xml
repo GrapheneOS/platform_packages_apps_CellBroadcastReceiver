@@ -39,9 +39,13 @@
     </string-array>
     <!-- 4373~4378, 4386~4391 -->
     <string-array name="cmas_alerts_severe_range_strings" translatable="false">
-        <item>0x1115-0x111A:rat=gsm, emergency=true, always_on=true, language=ar</item>
+        <item>0x1115-0x1118:rat=gsm, emergency=true, always_on=true, language=ar</item>
+        <item>0x1119:rat=gsm, emergency=true, type=info, always_on=true, language=ar</item>
+        <item>0x111A:rat=gsm, emergency=true, always_on=true, language=ar</item>
         <!-- additional language -->
-        <item>0x1122-0x1127:rat=gsm, emergency=true, always_on=true, language=en</item>
+        <item>0x1122-0x1125:rat=gsm, emergency=true, always_on=true, language=en</item>
+        <item>0x1126:rat=gsm, emergency=true, type=info, always_on=true, language=en</item>
+        <item>0x1127:rat=gsm, emergency=true, always_on=true, language=en</item>
     </string-array>
     <!-- 4379, 4392 -->
     <string-array name="emergency_alerts_channels_range_strings" translatable="false">
