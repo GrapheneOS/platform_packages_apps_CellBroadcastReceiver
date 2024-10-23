@@ -38,75 +38,75 @@
                         android:key="category_emergency_alerts">
 
         <!-- Enable emergency alerts -->
-        <SwitchPreference android:defaultValue="@bool/emergency_alerts_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/emergency_alerts_enabled_default"
                           android:key="enable_emergency_alerts"
                           android:summary="@string/enable_emergency_alerts_message_summary"
                           android:title="@string/enable_emergency_alerts_message_title" />
 
         <!-- Show checkbox for Presidential alerts in settings -->
-        <SwitchPreference android:defaultValue="true"
+        <SwitchPreferenceCompat android:defaultValue="true"
                           android:enabled="false"
                           android:key="enable_cmas_presidential_alerts"
                           android:summary="@string/enable_cmas_presidential_alerts_summary"
                           android:title="@string/enable_cmas_presidential_alerts_title"/>
 
         <!-- Enable CMAS Extreme Threat alerts -->
-        <SwitchPreference android:defaultValue="@bool/extreme_threat_alerts_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/extreme_threat_alerts_enabled_default"
                           android:key="enable_cmas_extreme_threat_alerts"
                           android:summary="@string/enable_cmas_extreme_threat_alerts_summary"
                           android:title="@string/enable_cmas_extreme_threat_alerts_title" />
 
         <!-- Enable CMAS Severe Threat alerts -->
-        <SwitchPreference android:defaultValue="@bool/severe_threat_alerts_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/severe_threat_alerts_enabled_default"
                           android:key="enable_cmas_severe_threat_alerts"
                           android:summary="@string/enable_cmas_severe_threat_alerts_summary"
                           android:title="@string/enable_cmas_severe_threat_alerts_title" />
 
         <!-- Enable CMAS AMBER alerts -->
-        <SwitchPreference android:defaultValue="@bool/amber_alerts_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/amber_alerts_enabled_default"
                           android:key="enable_cmas_amber_alerts"
                           android:summary="@string/enable_cmas_amber_alerts_summary"
                           android:title="@string/enable_cmas_amber_alerts_title" />
 
         <!-- Enable public safety messages -->
-        <SwitchPreference android:defaultValue="@bool/public_safety_messages_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/public_safety_messages_enabled_default"
                           android:key="enable_public_safety_messages"
                           android:summary="@string/enable_public_safety_messages_summary"
                           android:title="@string/enable_public_safety_messages_title" />
 
         <!-- Enable public safety full screen messages -->
-        <SwitchPreference android:defaultValue="@bool/public_safety_messages_full_screen_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/public_safety_messages_full_screen_enabled_default"
             android:key="enable_public_safety_messages_full_screen"
             android:summary="@string/enable_full_screen_public_safety_messages_summary"
             android:title="@string/enable_full_screen_public_safety_messages_title" />
 
         <!-- Enable state/local test alerts -->
-        <SwitchPreference android:defaultValue="@bool/state_local_test_alerts_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/state_local_test_alerts_enabled_default"
                           android:key="enable_state_local_test_alerts"
                           android:summary="@string/enable_state_local_test_alerts_summary"
                           android:title="@string/enable_state_local_test_alerts_title" />
 
         <!-- Enable other test alerts -->
-        <SwitchPreference android:defaultValue="@bool/test_alerts_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/test_alerts_enabled_default"
                           android:key="enable_test_alerts"
                           android:summary="@string/enable_cmas_test_alerts_summary"
                           android:title="@string/enable_cmas_test_alerts_title" />
 
         <!-- Enable exercise test alerts -->
-        <SwitchPreference android:defaultValue="@bool/test_exercise_alerts_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/test_exercise_alerts_enabled_default"
                           android:key="enable_exercise_alerts"
                           android:summary="@string/enable_exercise_test_alerts_summary"
                           android:title="@string/enable_exercise_test_alerts_title" />
 
         <!-- Enable operator defined test alerts -->
-        <SwitchPreference android:defaultValue="@bool/test_operator_defined_alerts_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/test_operator_defined_alerts_enabled_default"
                           android:key="enable_operator_defined_alerts"
                           android:summary="@string/enable_operator_defined_test_alerts_summary"
                           android:title="@string/enable_operator_defined_test_alerts_title" />
 
         <!-- Default value is true for Brazil and India. This preference is ignored and hidden
         unless the boolean "config_showAreaUpdateInfoSettings" is set to true in the global resource. -->
-        <SwitchPreference android:defaultValue="@bool/area_update_info_alerts_enabled_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/area_update_info_alerts_enabled_default"
                           android:key="enable_area_update_info_alerts"
                           android:summary="@string/enable_area_update_info_alerts_summary"
                           android:title="@string/enable_area_update_info_alerts_title" />
@@ -121,7 +121,7 @@
     <PreferenceCategory android:title="@string/alert_preferences_title"
                         android:key="category_alert_preferences">
 
-        <SwitchPreference android:defaultValue="true"
+        <SwitchPreferenceCompat android:defaultValue="true"
                           android:key="enable_alert_vibrate"
                           android:summary="@string/enable_alert_vibrate_summary"
                           android:title="@string/enable_alert_vibrate_title" />
@@ -134,17 +134,17 @@
                         android:dialogTitle="@string/alert_reminder_dialog_title" />
 
         <!-- Show additional language on/off switch in settings -->
-        <SwitchPreference android:defaultValue="false"
+        <SwitchPreferenceCompat android:defaultValue="false"
                           android:key="receive_cmas_in_second_language"
                           android:summary="@string/receive_cmas_in_second_language_summary"
                           android:title="@string/receive_cmas_in_second_language_title" />
 
-        <SwitchPreference android:defaultValue="@bool/override_dnd_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/override_dnd_default"
                           android:key="override_dnd"
                           android:summary="@string/override_dnd_summary"
                           android:title="@string/override_dnd_title" />
 
-        <SwitchPreference android:defaultValue="@bool/enable_alert_speech_default"
+        <SwitchPreferenceCompat android:defaultValue="@bool/enable_alert_speech_default"
                           android:key="enable_alert_speech"
                           android:summary="@string/enable_alert_speech_summary"
                           android:title="@string/enable_alert_speech_title" />

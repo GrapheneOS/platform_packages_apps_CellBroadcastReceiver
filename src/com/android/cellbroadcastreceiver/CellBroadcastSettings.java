@@ -45,7 +45,6 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
@@ -54,6 +53,7 @@ import com.android.internal.annotations.VisibleForTesting;
 import com.android.modules.utils.build.SdkLevel;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.widget.MainSwitchPreference;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -215,7 +215,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 com.android.settingslib.collapsingtoolbar.R.id.content_frame);
         if (fragment == null) {
             mCellBroadcastSettingsFragment = new CellBroadcastSettingsFragment();
-            getFragmentManager()
+            getSupportFragmentManager()
                     .beginTransaction()
                     .add(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                             mCellBroadcastSettingsFragment)
@@ -301,7 +301,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
     /**
      * New fragment-style implementation of preferences.
      */
-    public static class CellBroadcastSettingsFragment extends PreferenceFragment {
+    public static class CellBroadcastSettingsFragment extends SettingsBasePreferenceFragment {
 
         private TwoStatePreference mExtremeCheckBox;
         private TwoStatePreference mSevereCheckBox;
