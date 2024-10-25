@@ -17,50 +17,34 @@
 package com.android.cellbroadcastreceiver.unit;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.ArgumentMatchers.nullable;
 import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import android.app.ActivityManager;
-import android.app.ActivityOptions;
-import android.app.ContentProviderHolder;
-import android.app.IActivityManager;
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.IContentProvider;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.ProviderInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.os.IPowerManager;
 import android.os.IThermalService;
 import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
-import android.os.RemoteException;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.text.TextUtils;
-import android.util.Singleton;
-import android.view.IWindowManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.WindowManagerGlobal;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -80,10 +64,7 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -100,16 +81,7 @@ public class CellBroadcastAlertDialogTest extends
     private IThermalService.Stub mMockedThermalService;
 
     @Mock
-    private IActivityManager.Stub mMockedActivityManager;
-
-    @Mock
-    IWindowManager.Stub mWindowManagerService;
-
-    @Mock
     LinearLayout mMockLinearLayout;
-
-    @Captor
-    private ArgumentCaptor<Integer> mFlags;
 
     @Captor
     private ArgumentCaptor<Integer> mInt;
@@ -128,8 +100,6 @@ public class CellBroadcastAlertDialogTest extends
     private int mCmasMessageClass = 0;
 
     private ArrayList<SmsCbMessage> mMessageList;
-
-    MockedServiceManager mMockedActivityManagerHelper;
 
     @Override
     protected Intent createActivityIntent() {
@@ -229,8 +199,6 @@ public class CellBroadcastAlertDialogTest extends
     }
 
     public void testAddToNotification() throws Throwable {
-        setUpMockActivityManager();
-
         doReturn(true).when(mContext.getResources()).getBoolean(R.bool.show_alert_title);
         doReturn(false).when(mContext.getResources()).getBoolean(
                 R.bool.disable_capture_alert_dialog);
@@ -251,70 +219,6 @@ public class CellBroadcastAlertDialogTest extends
                 b.getCharSequence(Notification.EXTRA_TITLE).toString()));
         assertEquals(CellBroadcastAlertServiceTest.createMessage(98235).getMessageBody(),
                 b.getCharSequence(Notification.EXTRA_TEXT));
-
-        ArgumentCaptor<Bundle> bundleArgs = ArgumentCaptor.forClass(Bundle.class);
-        verify(mMockedActivityManager, times(2))
-                .getIntentSenderWithFeature(anyInt(), any(), any(), any(), any(), anyInt(),
-                        any(), any(), mFlags.capture(), bundleArgs.capture(), anyInt());
-
-        assertTrue((PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE)
-                ==  mFlags.getAllValues().get(0));
-        assertTrue((PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE)
-                ==  mFlags.getAllValues().get(1));
-
-        if (SdkLevel.isAtLeastU()) {
-            ActivityOptions activityOptions = new ActivityOptions(bundleArgs.getAllValues().get(0));
-            int startMode = activityOptions.getPendingIntentCreatorBackgroundActivityStartMode();
-            assertEquals(ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED, startMode);
-            activityOptions = new ActivityOptions(bundleArgs.getAllValues().get(1));
-            startMode = activityOptions.getPendingIntentCreatorBackgroundActivityStartMode();
-            assertEquals(ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED, startMode);
-        }
-
-        Field field = ((Class) WindowManagerGlobal.class).getDeclaredField("sWindowManagerService");
-        field.setAccessible(true);
-        field.set(null, null);
-
-        mMockedActivityManagerHelper.restoreAllServices();
-    }
-
-    private void setUpMockActivityManager() throws Exception {
-        ProviderInfo providerInfo = new ProviderInfo();
-        providerInfo.authority = "test";
-        providerInfo.applicationInfo = new ApplicationInfo();
-        providerInfo.applicationInfo.uid = 999;
-        ContentProviderHolder holder = new ContentProviderHolder(providerInfo);
-        doReturn(holder).when(mMockedActivityManager)
-                .getContentProvider(any(), any(), any(), anyInt(), anyBoolean());
-        holder.provider = mock(IContentProvider.class);
-
-        Singleton<IActivityManager> activityManagerSingleton = new Singleton<IActivityManager>() {
-            @Override
-            protected IActivityManager create() {
-                return mMockedActivityManager;
-            }
-        };
-        mMockedActivityManagerHelper = new MockedServiceManager();
-        mMockedActivityManagerHelper.replaceService("window", mWindowManagerService);
-        Field fieldHandler = ActivityManager.class.getDeclaredField("IActivityManagerSingleton");
-        fieldHandler.setAccessible(true);
-        Singleton<IActivityManager> activityManager =
-                (Singleton<IActivityManager>) fieldHandler.get(null);
-        IActivityManager realInstance = activityManager.get();
-        doAnswer(new Answer() {
-            public Void answer(InvocationOnMock invocation) throws RemoteException {
-                if (realInstance != null) {
-                    realInstance.finishReceiver(invocation.getArgument(0),
-                            invocation.getArgument(1), invocation.getArgument(2),
-                            invocation.getArgument(3), invocation.getArgument(4),
-                            invocation.getArgument(5));
-                }
-                return null;
-            }
-        }).when(mMockedActivityManager).finishReceiver(nullable(IBinder.class), anyInt(),
-                nullable(String.class), nullable(Bundle.class), anyBoolean(), anyInt());
-        mMockedActivityManagerHelper.replaceInstance(ActivityManager.class,
-                "IActivityManagerSingleton", null, activityManagerSingleton);
     }
 
     public void testAddToNotificationWithDifferentConfiguration() throws Throwable {

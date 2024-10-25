@@ -16,18 +16,17 @@
 
 package com.android.cellbroadcastreceiver.unit;
 
+import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
+
 import static com.android.cellbroadcastreceiver.CellBroadcastConfigService.CbConfig;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.anyBoolean;
-import static org.mockito.ArgumentMatchers.nullable;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.eq;
@@ -37,9 +36,7 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import android.app.ActivityManager;
 import android.app.ActivityOptions;
-import android.app.IActivityManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -49,7 +46,6 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.os.RemoteException;
 import android.telephony.CellBroadcastIdRange;
 import android.telephony.SmsCbMessage;
@@ -57,8 +53,6 @@ import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
-import android.util.Singleton;
-import android.view.IWindowManager;
 
 import androidx.test.filters.SmallTest;
 
@@ -77,10 +71,7 @@ import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -106,12 +97,6 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
     Intent mIntent;
 
     private CellBroadcastConfigService mConfigService;
-
-    @Mock
-    IWindowManager.Stub mWindowManagerService;
-
-    @Mock
-    private IActivityManager.Stub mMockedActivityManager;
 
     @Mock
     private NotificationManager mMockedNotificationManager;
@@ -1694,36 +1679,11 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
                 .getSystemServiceName(NotificationManager.class);
         doReturn(mMockedNotificationManager).when(mContext)
                 .getSystemService(Context.NOTIFICATION_SERVICE);
-        doReturn("testPackageName").when(mContext).getPackageName();
+        String packageName = getApplicationContext().getPackageName();
+        doReturn(packageName).when(mContext).getPackageName();
         doReturn(new ApplicationInfo()).when(mContext).getApplicationInfo();
         doReturn(mResources).when(mConfigService).getResources();
         doReturn(new DisplayMetrics()).when(mResources).getDisplayMetrics();
-        Singleton<IActivityManager> activityManagerSingleton = new Singleton<IActivityManager>() {
-            @Override
-            protected IActivityManager create() {
-                return mMockedActivityManager;
-            }
-        };
-        mMockedServiceManager.replaceService("window", mWindowManagerService);
-        Field fieldHandler = ActivityManager.class.getDeclaredField("IActivityManagerSingleton");
-        fieldHandler.setAccessible(true);
-        Singleton<IActivityManager> activityManager =
-                (Singleton<IActivityManager>) fieldHandler.get(null);
-        IActivityManager realInstance = activityManager.get();
-        doAnswer(new Answer() {
-            public Void answer(InvocationOnMock invocation) throws RemoteException {
-                if (realInstance != null) {
-                    realInstance.finishReceiver(invocation.getArgument(0),
-                            invocation.getArgument(1), invocation.getArgument(2),
-                            invocation.getArgument(3), invocation.getArgument(4),
-                            invocation.getArgument(5));
-                }
-                return null;
-            }
-        }).when(mMockedActivityManager).finishReceiver(nullable(IBinder.class), anyInt(),
-                nullable(String.class), nullable(Bundle.class), anyBoolean(), anyInt());
-        mMockedServiceManager.replaceInstance(ActivityManager.class,
-                "IActivityManagerSingleton", null, activityManagerSingleton);
         doNothing().when(mConfigService).resetAllPreferences();
         doReturn(CellBroadcastConfigService.ACTION_UPDATE_SETTINGS_FOR_CARRIER)
                 .when(mIntent).getAction();
@@ -1742,6 +1702,8 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
         // set ANY_PREFERENCE_CHANGED_BY_USER to true
         setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER, true);
         method.setAccessible(true);
+        Bundle testBundle = new Bundle();
+        doReturn(testBundle).when(mIntent).getBundleExtra("pending_intent_element");
         method.invoke(mConfigService, mIntent);
         verify(mConfigService, times(2)).resetAllPreferences();
         verify(mMockedNotificationManager, times(1)).notify(mInt.capture(),
@@ -1749,11 +1711,8 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
         assertEquals(CellBroadcastAlertService.SETTINGS_CHANGED_NOTIFICATION_ID,
                 (int) mInt.getValue());
         if (SdkLevel.isAtLeastU()) {
-            ArgumentCaptor<Bundle> bundleArgs = ArgumentCaptor.forClass(Bundle.class);
-            verify(mMockedActivityManager, times(1))
-                    .getIntentSenderWithFeature(anyInt(), any(), any(), any(), any(), anyInt(),
-                            any(), any(), anyInt(), bundleArgs.capture(), anyInt());
-            ActivityOptions activityOptions = new ActivityOptions(bundleArgs.getAllValues().get(0));
+            ActivityOptions activityOptions =
+                    new ActivityOptions(testBundle.getBundle("option"));
             int startMode = activityOptions.getPendingIntentCreatorBackgroundActivityStartMode();
             assertEquals(ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED, startMode);
         }

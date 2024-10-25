@@ -663,7 +663,7 @@ public class CellBroadcastAlertDialog extends Activity {
         if (!(isChangingConfigurations() || latestMessage == null) && pm.isScreenOn()) {
             Log.d(TAG, "call addToNotificationBar when activity goes in background");
             CellBroadcastAlertService.addToNotificationBar(latestMessage, messageList,
-                    getApplicationContext(), true, true, false);
+                    getApplicationContext(), true, true, false, null);
         }
         super.onUserLeaveHint();
     }
@@ -1283,7 +1283,8 @@ public class CellBroadcastAlertDialog extends Activity {
             // do not alert if remove unread messages from the notification bar.
            CellBroadcastAlertService.addToNotificationBar(
                    CellBroadcastReceiverApp.getLatestMessage(),
-                   unreadMessageList, context,false, false, false);
+                   unreadMessageList, context, false, false, false,
+                   null);
         }
     }
 
