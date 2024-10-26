@@ -1,7 +1,7 @@
 {
   "cellbroadcast-mainline-presubmit": [
     {
-      "name": "GoogleCellBroadcastReceiverUnitTests",
+      "name": "CellBroadcastReceiverMTS",
       "options": [
         {
           "exclude-annotation": "androidx.test.filters.FlakyTest"
@@ -11,7 +11,7 @@
   ],
   "mainline-presubmit": [
     {
-      "name": "GoogleCellBroadcastReceiverUnitTests[com.google.android.cellbroadcast.apex]",
+      "name": "CellBroadcastReceiverMTS[com.google.android.cellbroadcast.apex]",
       "options": [
         {
           "exclude-annotation": "androidx.test.filters.FlakyTest"
@@ -30,7 +30,7 @@
       "keywords": ["internal"]
     },
     {
-      "name": "GoogleCellBroadcastReceiverUnitTests",
+      "name": "CellBroadcastReceiverMTS",
       "options": [
         {
           "exclude-annotation": "androidx.test.filters.FlakyTest"
@@ -43,12 +43,6 @@
   "postsubmit": [
     {
       "name": "CellBroadcastReceiverComplianceTests",
-      "keywords": ["internal"]
-    }
-  ],
-  "postsubmit": [
-    {
-      "name": "CellBroadcastReceiverMTS",
       "keywords": ["internal"]
     }
   ]
