@@ -669,31 +669,13 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             }
 
             if (mExerciseTestCheckBox != null) {
-                boolean visible = false;
-                if (res.getBoolean(R.bool.show_separate_exercise_settings)) {
-                    if (res.getBoolean(R.bool.show_exercise_settings)
-                            || CellBroadcastReceiver.isTestingMode(getContext())) {
-                        if (!channelManager.getCellBroadcastChannelRanges(
-                                R.array.exercise_alert_range_strings).isEmpty()) {
-                            visible = true;
-                        }
-                    }
-                }
-                mExerciseTestCheckBox.setVisible(visible);
+                mExerciseTestCheckBox.setVisible(
+                        isExerciseTestAlertsToggleVisible(res, getContext(), channelManager));
             }
 
             if (mOperatorDefinedCheckBox != null) {
-                boolean visible = false;
-                if (res.getBoolean(R.bool.show_separate_operator_defined_settings)) {
-                    if (res.getBoolean(R.bool.show_operator_defined_settings)
-                            || CellBroadcastReceiver.isTestingMode(getContext())) {
-                        if (!channelManager.getCellBroadcastChannelRanges(
-                                R.array.operator_defined_alert_range_strings).isEmpty()) {
-                            visible = true;
-                        }
-                    }
-                }
-                mOperatorDefinedCheckBox.setVisible(visible);
+                mOperatorDefinedCheckBox.setVisible(
+                        isOperatorTestAlertsToggleVisible(res, getContext(), channelManager));
             }
 
             if (mEmergencyAlertsCheckBox != null) {
@@ -965,6 +947,36 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
         }
         Log.d(TAG, "isShowFullScreenMessageVisible : false");
         return false;
+    }
+
+    /**
+     * Check whether exercise test alert toggle is visible
+     * @param res Resources
+     * @param context Context
+     * @param channelManager ChannelManager
+     */
+    public static boolean isExerciseTestAlertsToggleVisible(Resources res, Context context,
+            CellBroadcastChannelManager channelManager) {
+        return res.getBoolean(R.bool.show_separate_exercise_settings)
+                && (res.getBoolean(R.bool.show_exercise_settings)
+                || CellBroadcastReceiver.isTestingMode(context))
+                && !channelManager.getCellBroadcastChannelRanges(
+                R.array.exercise_alert_range_strings).isEmpty();
+    }
+
+    /**
+     * Check whether operator test alert toggle is visible
+     * @param res Resources
+     * @param context Context
+     * @param channelManager ChannelManager
+     */
+    public static boolean isOperatorTestAlertsToggleVisible(Resources res, Context context,
+            CellBroadcastChannelManager channelManager) {
+        return res.getBoolean(R.bool.show_separate_operator_defined_settings)
+                && (res.getBoolean(R.bool.show_operator_defined_settings)
+                || CellBroadcastReceiver.isTestingMode(context))
+                && !channelManager.getCellBroadcastChannelRanges(
+                R.array.operator_defined_alert_range_strings).isEmpty();
     }
 
     public static boolean isTestAlertsToggleVisible(Context context) {
