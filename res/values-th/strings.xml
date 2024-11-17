@@ -136,8 +136,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"ได้รับ:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> การแจ้งเตือนที่ยังไม่ได้อ่าน"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"การแจ้งเตือนใหม่"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"แสดงกล่องโต้ตอบเพื่อเลือกไม่ใช้งานหลังจากแสดงการแจ้งเตือนแรก (นอกเหนือจากการแจ้งเตือนระดับสูง)"</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"แสดงกล่องโต้ตอบเพื่อเลือกไม่ใช้งาน"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"แสดงกล่องโต้ตอบเพื่อเลือกไม่รับหลังจากแสดงการแจ้งเตือนแรก (นอกเหนือจากการแจ้งเตือนระดับสูง)"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"แสดงกล่องโต้ตอบเพื่อเลือกไม่รับ"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"ขณะนี้คุณรับการแจ้งเหตุฉุกเฉินแบบไร้สาย คุณต้องการรับการแจ้งเหตุฉุกเฉินแบบไร้สายต่อหรือไม่"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"ใช่"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"ไม่ใช่"</string>

@@ -369,6 +369,9 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     public void testShowNewAlertWithNotification() {
+        if (!SdkLevel.isAtLeastS()) {
+            return;
+        }
         doReturn("").when(mMockedSharedPreferences).getString(
                 eq("roaming_operator_supported"), any());
         doReturn(false).when(mResources).getBoolean(
@@ -403,6 +406,9 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     public void testShowNewAlertWithNotificationInRoaming() {
+        if (!SdkLevel.isAtLeastS()) {
+            return;
+        }
         doReturn(false).when(mResources).getBoolean(
                 com.android.cellbroadcastreceiver.R.bool.show_alert_dialog_with_notification);
         doReturn("123456").when(mMockedSharedPreferences).getString(

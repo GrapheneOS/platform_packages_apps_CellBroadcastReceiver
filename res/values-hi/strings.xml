@@ -62,9 +62,9 @@
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"अस्वीकार की गई आपातकालीन चेतावनियां"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"वॉयस कॉल के दौरान आपातकालीन चेतावनियां"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"अपने-आप काम करने वाली WEA की सूचनाओं की सेटिंग, सिम के हिसाब से बदल जाती है"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"खतरे की चेतावनी दिखाए जाने की अनुमति दें"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"वायरलेस इमरजेंसी अलर्ट की सूचनाएं पाएं"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"खतरे से जु़ड़ी चेतावनी का रिमाइंडर"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"चेतावनी दिखाने की अनुमति दें"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"खतरे की चेतावनी से जुड़ी सूचनाएं पाएं"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"चेतावनी का रिमाइंडर"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"चेतावनी वाले मैसेज की जानकारी बोलकर दें"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"वायरलेस इमरजेंसी अलर्ट वाला मैसेज बोलने के लिए लिखाई को बोली में बदलने की सुविधा इस्तेमाल करें"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"रिमाइंडर की आवाज़ सामान्य रहेगी"</string>
