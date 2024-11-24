@@ -24,7 +24,7 @@
     <string name="cmas_exercise_alert" msgid="1727406102736603186">"BG-ALERT: exercício"</string>
     <string name="cmas_operator_defined_alert" msgid="4264583649927521831">"BG-ALERT: reservado"</string>
     <string name="state_local_test_alert" msgid="3476953286481847290">"BG-ALERT: teste técnico"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="2856233162192255821">"Ameaças graves e extremas"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="2856233162192255821">"Alerta severo e extremo"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="4399126631396210521">"Ameaças graves e extremas à vida e propriedade"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="7304511098720139598">"Informações"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4573406416500374588">"Mensagens informativas"</string>

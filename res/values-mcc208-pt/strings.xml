@@ -26,7 +26,7 @@
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="1268433786689479357">"Alertas extremos (nível 2)"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6125474083043183037">"Mostrar mensagens de alerta para ameaças extremas"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="6185770513604614548">"Ameaças graves (nível 3)"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="3073259381449390054">"Mostrar mensagens de alerta para ameaças graves"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="3073259381449390054">"Mostrar mensagens de alerta severo"</string>
     <string name="enable_public_safety_messages_title" msgid="4231398452970069457">"Alerta (nível 4)"</string>
     <string name="enable_public_safety_messages_summary" msgid="1691623841627340948">"Mostrar mensagens de alerta"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="4087727029650572978">"Alerta de sequestro"</string>

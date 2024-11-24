@@ -88,7 +88,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"राज्यस्तरीय र स्थानीय अधिकारीहरूबाट परीक्षणसम्बन्धी म्यासेजहरू प्राप्त गर्नुहोस्"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"आपत्‌कालीन सतर्कताहरू"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"जीवन जोखिममा पर्न सक्ने घटनाहरूबारे सचेत गराउनुहोस्"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"परीक्षणसम्बन्धी सतर्कताहरू"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"परीक्षणको अलर्ट"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा सतर्कता प्रणालीबाट क्यारियर परीक्षण र मासिक परीक्षणहरू प्राप्त होस्"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
@@ -149,7 +149,7 @@
     <item msgid="9097229303902157183">"हरेक २ मिनेट"</item>
     <item msgid="5718214950343391480">"हरेक ५ मिनेट"</item>
     <item msgid="3863339891188103437">"हरेक १५ मिनेट"</item>
-    <item msgid="7388573183644474611">"कदापि होइन"</item>
+    <item msgid="7388573183644474611">"कहिले पनि नगर्नु"</item>
   </string-array>
     <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"वायरलेस आपत्‌कालीन अलर्टहरू"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"राष्ट्राध्यक्षीय सतर्कताहरू"</string>

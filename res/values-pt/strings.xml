@@ -72,9 +72,9 @@
     <string name="alert_preferences_title" msgid="6001469026393248468">"Preferências de alertas"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Transmissões de teste do ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Transmissões de teste do Sistema de aviso de tsunamis e terremotos"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Ameaças extremas"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Alerta extremo"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Ameaças extremas, materiais ou à vida"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ameaças graves"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Alerta severo"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ameaças graves, materiais ou à vida"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Alertas AMBER"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Boletins de emergência envolvendo sequestro de crianças"</string>
@@ -136,7 +136,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Recebida:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> alertas não lidos."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Novos alertas"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Mostrar caixa de diálogo de desativação após exibir o primeiro alerta (exceção: alerta presidencial)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Mostrar caixa de diálogo de desativação depois do primeiro alerta (exceção: alerta presidencial)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Mostrar diálogo de desativação"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Você está recebendo alertas de emergência sem fio. Quer continuar a recebê-los?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Sim"</string>

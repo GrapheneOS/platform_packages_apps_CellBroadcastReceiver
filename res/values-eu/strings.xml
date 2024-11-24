@@ -64,7 +64,7 @@
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Hari gabeko larrialdi-alerten ezarpenak automatikoki aldatu dira SIMean oinarrituta"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Eman alertak erabiltzeko baimena"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Jaso hari gabeko larrialdi-alerten jakinarazpenak"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Alerta-egoeraren abisua"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Alerta-gogorarazpena"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Irakurri alerta-mezua ozen"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Erabili testua ahots bihurtzeko eginbidea hari gabeko larrialdi-alertak ozen irakurtzeko"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Gogorarazpen-soinu batek joko du ohiko bolumenean"</string>
@@ -136,8 +136,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Jasota:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> alerta dituzu irakurri gabe."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Alerta berriak"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Erakutsi zerbitzua ez erabiltzeko leihoa lehen alerta jaso ondoren (gobernuaren alerta izan ezik)"</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Erakutsi ez erabiltzeko leihoa"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Erakutsi alertak ez jasotzea aukeratzeko leihoa lehena jaso ondoren (gobernuaren alerta izan ezik)"</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Erakutsi ez jasotzea aukeratzeko leihoa"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Aktibatuta daukazu hari gabeko larrialdi-alertak jasotzeko aukera. Halakoak jasotzen jarraitu nahi duzu?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Bai"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Ez"</string>

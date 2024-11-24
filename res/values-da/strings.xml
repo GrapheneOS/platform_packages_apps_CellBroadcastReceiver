@@ -68,7 +68,7 @@
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Læs advarselsmeddelelser op"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Få oplæst beskeder fra mobilbaseret varsling"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Der afspilles en påmindelseslyd i normal lydstyrke"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historik for varslinger"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Historik for advarsler"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Præferencer for alarmer"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Testmeddelelser fra ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Testmeddelelser for ETWS (varslingssystem ved jordskælv og tsunami)"</string>
@@ -141,7 +141,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Du er i øjeblikket tilmeldt mobilbaseret varsling. Vil du fortsætte med at modtage disse?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Ja"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nej"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Historik for varslinger"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Historik for advarsler"</string>
     <string name="action_delete" msgid="7435661404543945861">"Slet"</string>
     <string name="action_detail_info" msgid="8486524382178381810">"Vis oplysninger"</string>
   <string-array name="alert_reminder_interval_entries">
