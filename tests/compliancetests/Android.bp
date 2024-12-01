@@ -31,12 +31,28 @@ java_defaults {
         "mockito-target-minus-junit4",
         "truth",
         "ub-uiautomator",
-        "android.telephony.mockmodem",
+        "cellbroadcast.mockmodem",
         "modules-utils-build_system",
         "junit-params",
     ],
     // Include all test java files.
     srcs: [":cellbroadcastreceiver-srcs-mockmodem-test"],
+    platform_apis: true,
+}
+
+java_import {
+    name: "prebuilt_cellbroadcast_mockmodem",
+    jars: ["mockmodem/classes.jar"],
+}
+
+android_library {
+    name: "cellbroadcast.mockmodem",
+    asset_dirs: ["mockmodem/assets"],
+    manifest: "mockmodem/AndroidManifest.xml",
+    static_libs: [
+        "prebuilt_cellbroadcast_mockmodem",
+    ],
+    min_sdk_version: "30",
     platform_apis: true,
 }
 

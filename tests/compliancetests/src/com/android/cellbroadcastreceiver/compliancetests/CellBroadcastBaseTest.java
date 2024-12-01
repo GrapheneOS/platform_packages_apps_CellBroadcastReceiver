@@ -144,9 +144,7 @@ public class CellBroadcastBaseTest {
     @BeforeClass
     public static void beforeAllTests() throws Exception {
         logd("CellBroadcastBaseTest#beforeAllTests()");
-        // TODO: Make cellbroadcastcompliancetest use old mockmodem lib so that test can be
-        // run on the previous platform as well.
-        if (!SdkLevel.isAtLeastV()) {
+        if (!SdkLevel.isAtLeastT()) {
             Log.i(TAG, "sdk level is below the latest platform");
             sPreconditionError = ERROR_SDK_VERSION;
             return;

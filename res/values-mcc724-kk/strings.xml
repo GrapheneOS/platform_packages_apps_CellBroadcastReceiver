@@ -20,10 +20,10 @@
     <string name="cmas_severe_alert" msgid="4773544726385840011">"Маңыздылығы жоғары хабарландыру"</string>
     <string name="cmas_required_monthly_test" msgid="5274965928258227096">"Жаттығу хабарландыруы"</string>
     <string name="cmas_exercise_alert" msgid="4971838389621550184">"Техникалық сынақ хабарландырулары"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="3095141156358640879">"Аса үлкен қауіп"</string>
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"Өмірге және мүлікке төнетін аса үлкен қауіп"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Елеулі қауіптер"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Өмірге және мүлікке төнген елеулі қауіптер"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="3095141156358640879">"Аса үлкен қауіптер"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6931853411327178941">"Өмірге және мүлікке төнген аса үлкен қауіптер"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="2603680055509729555">"Үлкен қауіптер"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="405751015446465202">"Өмірге және мүлікке төнген үлкен қауіптер"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5550182663333808054">"Мемлекеттік және жергілікті сынақтар"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="5713628754819156297">"Мемлекеттік және жергілікті органдардан сынақ хабарларын алу"</string>
     <string name="enable_exercise_test_alerts_title" msgid="1926178722994782168">"Техникалық сынақ хабарландырулары"</string>

@@ -76,7 +76,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"命や財産に関わる極めて重大な脅威"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"重大な脅威"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"命や財産に関わる重大な脅威"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"誘拐事件速報"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"アンバー アラート"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"児童誘拐警報の速報"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"警告メッセージ"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"差し迫った安全上の脅威に関する警告"</string>

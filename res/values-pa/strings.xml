@@ -76,7 +76,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"ਜਾਨ ਅਤੇ ਮਾਲ ਦੇ ਹੱਦੋਂ ਵੱਧ ਖਤਰਿਆਂ ਸੰਬੰਧੀ ਸੁਚੇਤਨਾਵਾਂ"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ਗੰਭੀਰ ਖਤਰੇ"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"ਜਾਨ ਅਤੇ ਮਾਲ ਦੇ ਗੰਭੀਰ ਖਤਰਿਆਂ ਸੰਬੰਧੀ ਸੁਚੇਤਨਾਵਾਂ"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER ਸੁਚੇਤਨਾਵਾਂ"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER ਅਲਰਟ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"ਅਗਵਾ ਹੋਏ ਬੱਚੇ ਸੰਬੰਧੀ ਐਮਰਜੈਂਸੀ ਬੁਲੇਟਿਨ"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"ਅਲਰਟ ਸੰਬੰਧੀ ਸੁਨੇਹੇ"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"ਸੰਭਾਵੀ ਸੁਰੱਖਿਆ ਖਤਰਿਆਂ ਬਾਰੇ ਚਿਤਾਵਨੀ ਦਿਓ"</string>

@@ -68,6 +68,7 @@ import android.view.Display;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertAudio;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
+import com.android.cellbroadcastreceiver.CellBroadcastReceiver;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 import com.android.modules.utils.build.SdkLevel;
@@ -513,6 +514,7 @@ public class CellBroadcastAlertServiceTest extends
 
         putResources(com.android.cellbroadcastreceiver.R.bool.show_separate_exercise_settings,
                 true);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings, true);
         putResources(com.android.cellbroadcastreceiver.R.array.exercise_alert_range_strings,
                 new String[]{
                     "0x111D:rat=gsm, emergency=true",
@@ -682,6 +684,285 @@ public class CellBroadcastAlertServiceTest extends
         enablePreference(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS);
         assertTrue("Should enable local test channel",
                 cellBroadcastAlertService.shouldDisplayMessage(message2));
+        ((TestContextWrapper) mContext).injectCreateConfigurationContext(null);
+    }
+
+    public void testShouldDisplayMessageForExerciseAlerts() {
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .exercise_alert_range_strings, new String[]{
+                    "0x111D:rat=gsm, emergency=true",
+                });
+        sendMessage(1);
+
+        CellBroadcastAlertService cellBroadcastAlertService =
+                (CellBroadcastAlertService) getService();
+        SmsCbMessage message = new SmsCbMessage(1, 2, 3, new SmsCbLocation(),
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXERCISE,
+                "language", "body",
+                SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null,
+                null, 0, 1);
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_separate_exercise_settings, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .test_exercise_alerts_enabled_default, false);
+        // disable testing mode
+        disablePreference(CellBroadcastReceiver.TESTING_MODE);
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings, true);
+        assertTrue("Should enable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings, false);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings, true);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings, false);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        // enable testing mode
+        enablePreference(CellBroadcastReceiver.TESTING_MODE);
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings, true);
+        assertTrue("Should enable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings, false);
+        assertTrue("Should enable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings, true);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings, false);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        // roaming case
+        Context mockContext = mock(Context.class);
+        Resources mockResources = mock(Resources.class);
+        doReturn(mockResources).when(mockContext).getResources();
+        ((TestContextWrapper) mContext).injectCreateConfigurationContext(mockContext);
+        // inject roaming operator
+        doReturn("123").when(mMockedSharedPreferences)
+                .getString(anyString(), anyString());
+        doReturn(true).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.show_separate_exercise_settings));
+
+        // disable testing mode
+        disablePreference(CellBroadcastReceiver.TESTING_MODE);
+
+        doReturn(true).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings));
+        doReturn(false).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.test_exercise_alerts_enabled_default));
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertTrue("Should enable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        doReturn(true).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.test_exercise_alerts_enabled_default));
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertTrue("Should enable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertTrue("Should enable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        doReturn(false).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings));
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        doReturn(false).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.test_exercise_alerts_enabled_default));
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        // enable testing mode
+        enablePreference(CellBroadcastReceiver.TESTING_MODE);
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertFalse("Should disable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertTrue("Should enable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        doReturn(true).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.test_exercise_alerts_enabled_default));
+        disablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertTrue("Should enable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        assertTrue("Should enable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        ((TestContextWrapper) mContext).injectCreateConfigurationContext(null);
+    }
+
+    public void testShouldDisplayMessageForOperatorAlerts() {
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .operator_defined_alert_range_strings, new String[]{
+                    "0x111E:rat=gsm, emergency=true",
+                });
+        sendMessage(1);
+
+        CellBroadcastAlertService cellBroadcastAlertService =
+                (CellBroadcastAlertService) getService();
+        SmsCbMessage message = new SmsCbMessage(1, 2, 3, new SmsCbLocation(),
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_OPERATOR_DEFINED_USE,
+                "language", "body",
+                SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null,
+                null, 0, 1);
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_separate_operator_defined_settings, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .test_operator_defined_alerts_enabled_default, false);
+        // disable testing mode
+        disablePreference(CellBroadcastReceiver.TESTING_MODE);
+
+        enablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_operator_defined_settings, true);
+        assertTrue("Should enable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_operator_defined_settings, false);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        disablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_operator_defined_settings, true);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_operator_defined_settings, false);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        // enable testing mode
+        enablePreference(CellBroadcastReceiver.TESTING_MODE);
+
+        enablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_operator_defined_settings, true);
+        assertTrue("Should enable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_operator_defined_settings, false);
+        assertTrue("Should enable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        disablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_operator_defined_settings, true);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_operator_defined_settings, false);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        // roaming case
+        Context mockContext = mock(Context.class);
+        Resources mockResources = mock(Resources.class);
+        doReturn(mockResources).when(mockContext).getResources();
+        ((TestContextWrapper) mContext).injectCreateConfigurationContext(mockContext);
+        // inject roaming operator
+        doReturn("123").when(mMockedSharedPreferences)
+                .getString(anyString(), anyString());
+        doReturn(true).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool
+                        .show_separate_operator_defined_settings));
+
+        // disable testing mode
+        disablePreference(CellBroadcastReceiver.TESTING_MODE);
+
+        doReturn(true).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.show_operator_defined_settings));
+        doReturn(false).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool
+                        .test_operator_defined_alerts_enabled_default));
+        disablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertTrue("Should enable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        doReturn(true).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool
+                        .test_operator_defined_alerts_enabled_default));
+        disablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertTrue("Should enable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertTrue("Should enable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        doReturn(false).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.show_operator_defined_settings));
+        disablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        doReturn(false).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool
+                        .test_operator_defined_alerts_enabled_default));
+        disablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        // enable testing mode
+        enablePreference(CellBroadcastReceiver.TESTING_MODE);
+        disablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertFalse("Should disable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertTrue("Should enable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        doReturn(true).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool
+                        .test_operator_defined_alerts_enabled_default));
+        disablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertTrue("Should enable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+        enablePreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        assertTrue("Should enable operator test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
         ((TestContextWrapper) mContext).injectCreateConfigurationContext(null);
     }
 

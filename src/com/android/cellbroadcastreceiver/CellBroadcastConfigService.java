@@ -301,17 +301,28 @@ public class CellBroadcastConfigService extends IntentService {
                         && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS,
                         false)));
 
+        CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                getApplicationContext(), SubscriptionManager.getDefaultSubscriptionId(),
+                roamingOperator);
         boolean enableExerciseAlerts = enableAlertsMasterToggle && (isRoaming
                 ? (res.getBoolean(R.bool.show_separate_exercise_settings)
+                && CellBroadcastSettings.isExerciseTestAlertsToggleVisible(
+                        res, getApplicationContext(), channelManager)
                 && res.getBoolean(R.bool.test_exercise_alerts_enabled_default))
                 : (res.getBoolean(R.bool.show_separate_exercise_settings)
+                        && CellBroadcastSettings.isExerciseTestAlertsToggleVisible(
+                                res, getApplicationContext(), channelManager)
                         && prefs.getBoolean(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS,
                         false)));
 
         boolean enableOperatorDefined = enableAlertsMasterToggle && (isRoaming
                 ? (res.getBoolean(R.bool.show_separate_operator_defined_settings)
+                && CellBroadcastSettings.isOperatorTestAlertsToggleVisible(
+                        res, getApplicationContext(), channelManager)
                 && res.getBoolean(R.bool.test_operator_defined_alerts_enabled_default))
                 : (res.getBoolean(R.bool.show_separate_operator_defined_settings)
+                        && CellBroadcastSettings.isOperatorTestAlertsToggleVisible(
+                                res, getApplicationContext(), channelManager)
                         && prefs.getBoolean(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS,
                         false)));
 
