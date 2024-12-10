@@ -56,7 +56,7 @@
     <string name="public_safety_message" msgid="9119928798786998252">"பொதுமக்களுக்கான பாதுகாப்புச் செய்தி"</string>
     <string name="state_local_test_alert" msgid="8003145745857480200">"மாநில/உள்ளூர் சோதனை மெசேஜ்கள்"</string>
     <string name="emergency_alert" msgid="624783871477634263">"அவசரகால எச்சரிக்கை"</string>
-    <string name="emergency_alerts_title" msgid="6605036374197485429">"எச்சரிக்கைகள்"</string>
+    <string name="emergency_alerts_title" msgid="6605036374197485429">"விழிப்பூட்டல்கள்"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"வலைபரப்புச் செய்திகள்"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"அவசரகால எச்சரிக்கைகள்"</string>
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"உறுதிசெய்யப்படாத அவசரகால எச்சரிக்கைகள்"</string>
