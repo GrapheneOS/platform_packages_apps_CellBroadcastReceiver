@@ -28,6 +28,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
@@ -693,6 +694,14 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         verify(mCellBroadcastReceiver, times(1)).startConfigServiceToEnableChannels();
         assertThat(mFakeSharedPreferences.getString(
                 "roaming_operator_supported", "")).isEqualTo("310");
+
+        doThrow(new IllegalArgumentException("test"))
+                .when(mMockTelephonyManager).getNetworkCountryIso();
+        try {
+            mCellBroadcastReceiver.onReceive(mContext, mIntent);
+        } catch (Exception IllegalArgumentException) {
+            throw new AssertionError("not expected exception", IllegalArgumentException);
+        }
 
         doReturn(ServiceState.STATE_OUT_OF_SERVICE).when(mIntent)
                 .getIntExtra(anyString(), anyInt());
