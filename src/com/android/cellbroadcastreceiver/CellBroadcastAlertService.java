@@ -255,7 +255,13 @@ public class CellBroadcastAlertService extends Service {
         TelephonyManager tm = ((TelephonyManager) mContext.getSystemService(
                 Context.TELEPHONY_SERVICE)).createForSubscriptionId(message.getSubscriptionId());
 
-        if (tm.getEmergencyCallbackMode() && CellBroadcastSettings.getResourcesByOperator(
+        boolean isEmergencyCallbackMode = false;
+        try {
+            isEmergencyCallbackMode = tm.getEmergencyCallbackMode();
+        } catch (UnsupportedOperationException e) {
+            Log.d(TAG, "telephony calling feature is not available");
+        }
+        if (isEmergencyCallbackMode && CellBroadcastSettings.getResourcesByOperator(
                 mContext, message.getSubscriptionId(),
                         CellBroadcastReceiver.getRoamingOperatorSupported(mContext))
                 .getBoolean(R.bool.ignore_messages_in_ecbm)) {

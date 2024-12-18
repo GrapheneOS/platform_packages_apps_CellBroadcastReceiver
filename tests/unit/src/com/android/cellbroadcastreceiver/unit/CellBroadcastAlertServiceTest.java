@@ -29,6 +29,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
@@ -685,6 +686,48 @@ public class CellBroadcastAlertServiceTest extends
         assertTrue("Should enable local test channel",
                 cellBroadcastAlertService.shouldDisplayMessage(message2));
         ((TestContextWrapper) mContext).injectCreateConfigurationContext(null);
+    }
+
+    public void testShouldDisplayMessageInEcbmMode() {
+        putResources(com.android.cellbroadcastreceiver.R.bool.ignore_messages_in_ecbm, true);
+        doReturn(false).when(mMockedTelephonyManager).getEmergencyCallbackMode();
+        putResources(com.android.cellbroadcastreceiver.R.array
+                .exercise_alert_range_strings, new String[]{
+                    "0x111D:rat=gsm, emergency=true",
+                });
+        sendMessage(1);
+
+        CellBroadcastAlertService cellBroadcastAlertService =
+                (CellBroadcastAlertService) getService();
+        SmsCbMessage message = new SmsCbMessage(1, 2, 3, new SmsCbLocation(),
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXERCISE,
+                "language", "body",
+                SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null,
+                null, 0, 1);
+
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .show_separate_exercise_settings, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool
+                .test_exercise_alerts_enabled_default, true);
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        putResources(com.android.cellbroadcastreceiver.R.bool.show_exercise_settings, true);
+        assertTrue("Should enable exercise test channel",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        doReturn(true).when(mMockedTelephonyManager).getEmergencyCallbackMode();
+        assertFalse("Should ignore exercise test channel in ecbm mode",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        doThrow(new UnsupportedOperationException("test")).when(mMockedTelephonyManager)
+                .getEmergencyCallbackMode();
+        try {
+            assertTrue("Should enable exercise test channel",
+                    cellBroadcastAlertService.shouldDisplayMessage(message));
+        } catch (Exception UnsupportedOperationException) {
+            throw new AssertionError("not expected exception",
+                    UnsupportedOperationException);
+        }
     }
 
     public void testShouldDisplayMessageForExerciseAlerts() {
