@@ -256,7 +256,12 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
             // check the mcc on emergency only mode
             if (TextUtils.isEmpty(networkOperator)) {
-                String countryCode = tm.getNetworkCountryIso();
+                String countryCode = null;
+                try {
+                    countryCode = tm.getNetworkCountryIso();
+                } catch (IllegalArgumentException e) {
+                    loge("IllegalArgumentException while getting network country iso" + e);
+                }
                 if (mMccMap != null && !TextUtils.isEmpty(countryCode)) {
                     networkOperator = mMccMap.get(countryCode.toLowerCase(Locale.ROOT).trim());
                     logd("networkOperator on emergency mode: " + networkOperator
