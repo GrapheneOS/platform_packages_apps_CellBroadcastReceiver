@@ -38,9 +38,9 @@
     <string name="public_safety_message">LU-Alert</string>
 
     <!-- CMAS dialog title for 'EU-Amber / Child Abdunction Alert' alert notification (amber alert). [CHAR LIMIT=50] -->
-    <!-- Required German (de) translation for this message: "LU-Alert : Entführungswarnung" -->
-    <!-- Required French (fr) translation for this message: "LU-Alert : Alerte enlèvement" -->
-    <string name="cmas_amber_alert">LU-Alert : Kidnapping alert</string>
+    <!-- Required German (de) translation for this message: "LU-Alert" -->
+    <!-- Required French (fr) translation for this message: "LU-Alert" -->
+    <string name="cmas_amber_alert">LU-Alert</string>
 
     <!-- CMAS dialog title for 'EU-Monthly Test' alert notification. [CHAR LIMIT=50] -->
     <!-- Required German (de) translation for this message: "LU-Alert Test" -->
@@ -53,13 +53,13 @@
     <string name="cmas_exercise_alert">LU-Alert Exercise</string>
 
     <!-- Preference title for enable 'EU-Amber / Child Abdunction Alert' checkbox. [CHAR LIMIT=50] -->
-    <!-- Required German (de) translation for this message: "Entführungswarnung" -->
-    <!-- Required French (fr) translation for this message: "Alerte enlèvement" -->
-    <string name="enable_cmas_amber_alerts_title">Kidnapping alert</string>
+    <!-- Required German (de) translation for this message: "Vermissten- / Entführungsmeldung" -->
+    <!-- Required French (fr) translation for this message: "Alerte disparition / enlèvement" -->
+    <string name="enable_cmas_amber_alerts_title">Missing / kidnapping alert</string>
     <!-- Preference summary for enable 'EU-Amber / Child Abdunction Alert' checkbox. [CHAR LIMIT=100] -->
-    <!-- Required German (de) translation for this message: "Warnmeldungen bei Kindesentführungen anzeigen" -->
-    <!-- Required French (fr) translation for this message: "Afficher les messages d’alerte pour les enlèvements d'enfant" -->
-    <string name="enable_cmas_amber_alerts_summary">Show alert messages for child abductions</string>
+    <!-- Required German (de) translation for this message: "Warnmeldungen bei Vermissten- / Entführungssituationen anzeigen" -->
+    <!-- Required French (fr) translation for this message: "Afficher les messages d’alerte pour les disparitions / enlèvements" -->
+    <string name="enable_cmas_amber_alerts_summary">Show alert messages for missing / kidnapping situations</string>
 
     <!-- Preference title for 'EU-Monthly Test' checkbox. [CHAR LIMIT=50] -->
     <!-- Required German (de) translation for this message: "LU-Alert Test" -->
