@@ -26,6 +26,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.hardware.radio.network.Domain;
 import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -99,20 +100,28 @@ public class CellBroadcastBaseTest {
     protected static IRadioMessagingImpl.CallBackWithExecutor sCallBackWithExecutor = null;
     private static ServiceStateListener sServiceStateCallback;
     private static int sServiceState = ServiceState.STATE_OUT_OF_SERVICE;
+    private static int sDataServiceState = ServiceState.STATE_OUT_OF_SERVICE;
     private static final Object OBJECT = new Object();
     private static final int SERVICE_STATE_MAX_WAIT = 20 * 1000;
-    protected static CountDownLatch sServiceStateLatch =  new CountDownLatch(1);
+    protected static CountDownLatch sServiceStateLatch = new CountDownLatch(1);
+    protected static CountDownLatch sDataServiceStateLatch = new CountDownLatch(1);
 
     private static class ServiceStateListener extends TelephonyCallback
             implements TelephonyCallback.ServiceStateListener {
         @Override
         public void onServiceStateChanged(ServiceState serviceState) {
             Log.d(TAG, "Callback: service state = " + serviceState.getVoiceRegState());
+            Log.d(TAG, "Callback: service data state = " + serviceState.getDataRegState());
             synchronized (OBJECT) {
                 sServiceState = serviceState.getVoiceRegState();
+                sDataServiceState = serviceState.getDataRegState();
                 if (sServiceState == ServiceState.STATE_IN_SERVICE) {
                     sServiceStateLatch.countDown();
                     logd("countdown sServiceStateLatch");
+                }
+                if (sDataServiceState == ServiceState.STATE_OUT_OF_SERVICE) {
+                    sDataServiceStateLatch.countDown();
+                    logd("countdown sDataServiceStateLatch");
                 }
             }
         }
@@ -377,10 +386,12 @@ public class CellBroadcastBaseTest {
                 new Handler(serviceStateChangeCallbackHandlerThread.getLooper());
         TelephonyManager telephonyManager =
                 (TelephonyManager) getContext().getSystemService(Context.TELEPHONY_SERVICE);
-        sSetChannelIsDone = new CountDownLatch(1);
+        sServiceStateLatch = new CountDownLatch(1);
+        sDataServiceStateLatch = new CountDownLatch(1);
         // Register service state change callback
         synchronized (OBJECT) {
             sServiceState = ServiceState.STATE_OUT_OF_SERVICE;
+            sDataServiceState = ServiceState.STATE_OUT_OF_SERVICE;
         }
 
         serviceStateChangeCallbackHandler.post(
@@ -392,10 +403,17 @@ public class CellBroadcastBaseTest {
                                     Runnable::run, sServiceStateCallback));
                 });
 
-        // Enter Service
-        logd("Enter Service");
+        logd("Disable Data Service");
         sMockModemManager.changeNetworkService(sSlotId, MockSimService.MOCK_SIM_PROFILE_ID_TWN_CHT,
-                true);
+                false, Domain.PS);
+
+        logd("Wait for data service state change to out of service");
+        waitForNotifyForDataServiceState();
+
+        // Enter Service
+        logd("Enter Voice Service");
+        sMockModemManager.changeNetworkService(sSlotId, MockSimService.MOCK_SIM_PROFILE_ID_TWN_CHT,
+                true, Domain.CS);
 
         // Expect: Home State
         logd("Wait for service state change to in service");
@@ -409,6 +427,14 @@ public class CellBroadcastBaseTest {
     private static void waitForNotifyForServiceState() {
         try {
             sServiceStateLatch.await(SERVICE_STATE_MAX_WAIT, TimeUnit.MILLISECONDS);
+        } catch (InterruptedException e) {
+            // do nothing
+        }
+    }
+
+    private static void waitForNotifyForDataServiceState() {
+        try {
+            sDataServiceStateLatch.await(SERVICE_STATE_MAX_WAIT, TimeUnit.MILLISECONDS);
         } catch (InterruptedException e) {
             // do nothing
         }
