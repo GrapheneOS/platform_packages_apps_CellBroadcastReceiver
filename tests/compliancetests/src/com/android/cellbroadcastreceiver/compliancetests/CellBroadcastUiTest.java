@@ -33,6 +33,7 @@ import android.provider.Settings;
 import android.provider.Telephony;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.BySelector;
+import android.support.test.uiautomator.StaleObjectException;
 import android.support.test.uiautomator.UiObject;
 import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
@@ -106,18 +107,26 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         }
         if ("testEmergencyAlertSettingsUi".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())) {
-            // close disturbing dialog if exist
-            UiObject2 yesButton = sDevice.wait(Until.findObject(YES_BUTTON), 100);
-            if (yesButton != null) {
-                logd("dismiss disturbing dialog");
-                yesButton.click();
+            try {
+                // close disturbing dialog if exist
+                UiObject2 yesButton = sDevice.wait(Until.findObject(YES_BUTTON), 100);
+                if (yesButton != null) {
+                    logd("dismiss disturbing dialog");
+                    yesButton.click();
+                }
+            } catch (StaleObjectException ex) {
+                logd("caught StaleObjectException");
             }
-            // if left alertdialog exist, close it
-            UiObject2 okItem = sDevice.wait(Until.findObject(
-                    By.res(sPackageName, "dismissButton")), 100);
-            if (okItem != null) {
-                logd("dismiss left alertdialog");
-                okItem.click();
+            try {
+                // if left alertdialog exist, close it
+                UiObject2 okItem = sDevice.wait(Until.findObject(
+                        By.res(sPackageName, "dismissButton")), 100);
+                if (okItem != null) {
+                    logd("dismiss left alertdialog");
+                    okItem.click();
+                }
+            } catch (StaleObjectException ex) {
+                logd("caught StaleObjectException");
             }
             sDevice.pressHome();
         }
