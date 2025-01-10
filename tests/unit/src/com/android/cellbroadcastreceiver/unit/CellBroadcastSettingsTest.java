@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.android.cellbroadcastreceiver.unit;
 
 import static androidx.test.espresso.Espresso.onView;
@@ -69,6 +70,8 @@ import java.util.Locale;
 
 public class CellBroadcastSettingsTest extends
         CellBroadcastActivityTestCase<CellBroadcastSettings> {
+
+    private static final String TAG = "CellBroadcastSettingsTest";
 
     private UiDevice mDevice;
     private static final long DEVICE_WAIT_TIME = 1000L;
@@ -132,7 +135,7 @@ public class CellBroadcastSettingsTest extends
         int w = mDevice.getDisplayWidth();
         int h = mDevice.getDisplayHeight();
 
-        waitUntilDialogOpens(()-> {
+        waitUntilDialogOpens(() -> {
             mDevice.swipe(w / 2 /* start X */,
                     h / 2 /* start Y */,
                     w / 2 /* end X */,
@@ -174,18 +177,37 @@ public class CellBroadcastSettingsTest extends
 
         assertFalse("receive_cmas_in_second_language was not reset to the default (false)",
                 PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE, true));
+                        .getBoolean(CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE,
+                                true));
         assertTrue("enable_alert_vibrate was not reset to the default (true)",
                 PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, false));
+                        .getBoolean(CellBroadcastSettings.KEY_ENABLE_ALERT_VIBRATE, false));
     }
 
     @Test
-    public void testHasAnyPreferenceChanged() {
+    public void testHasAnyPreferenceChanged() throws Throwable {
         mContext.injectSharedPreferences(mFakeSharedPreferences);
         assertFalse(CellBroadcastSettings.hasAnyPreferenceChanged(mContext));
         PreferenceManager.getDefaultSharedPreferences(mContext).edit()
                 .putBoolean("any_preference_changed_by_user", true).apply();
+        assertTrue(CellBroadcastSettings.hasAnyPreferenceChanged(mContext));
+
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                R.bool.show_alert_speech_setting);
+        doReturn(false).when(mContext.getResources()).getBoolean(
+                R.bool.enable_alert_speech_default);
+
+        CellBroadcastSettings.resetAllPreferences(mContext);
+        assertFalse(CellBroadcastSettings.hasAnyPreferenceChanged(mContext));
+
+        CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
+
+        TwoStatePreference speechCheckBox =
+                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
+                        CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH);
+        assertNotNull(speechCheckBox);
+
+        speechCheckBox.performClick();
         assertTrue(CellBroadcastSettings.hasAnyPreferenceChanged(mContext));
     }
 
@@ -202,7 +224,10 @@ public class CellBroadcastSettingsTest extends
         doReturn(mEditor).when(mMockedSharedPreference).edit();
         doReturn(mEditor).when(mEditor).putBoolean(anyString(), anyBoolean());
 
-        fragment.onPreferenceChangedByUser(mockContext);
+        fragment.onPreferenceChangedByUser(mockContext, false);
+        verify(mockContext, times(0)).startService(mIntent.capture());
+
+        fragment.onPreferenceChangedByUser(mockContext, true);
 
         verify(mockContext, times(1)).startService(mIntent.capture());
         assertEquals(CellBroadcastConfigService.ACTION_ENABLE_CHANNELS,
