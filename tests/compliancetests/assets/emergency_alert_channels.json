@@ -4842,12 +4842,12 @@
       "toggle_avail": "false"
     },
     "4379": {
-      "title": "LU-Alert : Kidnapping alert", // LU-Alert : Entführungswarnung
+      "title": "LU-Alert", // LU-Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "LU-Alert : Kidnapping alert", // LU-Alert : Entführungswarnung
+      "title": "LU-Alert", // LU-Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
