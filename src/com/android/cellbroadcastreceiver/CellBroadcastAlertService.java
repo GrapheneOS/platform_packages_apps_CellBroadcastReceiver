@@ -150,6 +150,9 @@ public class CellBroadcastAlertService extends Service {
     /** Intent extra for passing a SmsCbMessage */
     private static final String EXTRA_MESSAGE = "message";
 
+    /** Intent extra for passing a PendingIntentElement for testing */
+    private static final String EXTRA_PENDING_INTENT_ELEMENT = "pending_intent_element";
+
     /**
      * Key for accessing message filter from SystemProperties. For testing use.
      */
@@ -189,7 +192,6 @@ public class CellBroadcastAlertService extends Service {
      * when the voicecall finish
      */
     private static boolean sRemindAfterCallFinish = false;
-
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -474,6 +476,7 @@ public class CellBroadcastAlertService extends Service {
         }
 
         SmsCbMessage cbm = intent.getParcelableExtra(EXTRA_MESSAGE);
+        Bundle injectedPendingIntent = intent.getBundleExtra(EXTRA_PENDING_INTENT_ELEMENT);
 
         if (cbm == null) {
             Log.e(TAG, "received SHOW_NEW_ALERT_ACTION with no message extra");
@@ -515,14 +518,16 @@ public class CellBroadcastAlertService extends Service {
                 // cell broadcast messages. The notification should be of LOW_IMPORTANCE if the
                 // notification is shown together with full-screen dialog.
                 addToNotificationBar(cbm, CellBroadcastReceiverApp.addNewMessageToList(cbm),
-                        this, false, true, shouldDisplayFullScreenMessage(cbm));
+                        this, false, true,
+                        shouldDisplayFullScreenMessage(cbm), injectedPendingIntent);
             }
         } else {
             // add notification to the bar by passing the list of unread non-emergency
             // cell broadcast messages
             ArrayList<SmsCbMessage> messageList = CellBroadcastReceiverApp
                     .addNewMessageToList(cbm);
-            addToNotificationBar(cbm, messageList, this, false, true, false);
+            addToNotificationBar(cbm, messageList, this, false, true,
+                    false, injectedPendingIntent);
         }
         CellBroadcastReceiverMetrics.getInstance().logFeatureChangedAsNeeded(mContext);
     }
@@ -789,7 +794,7 @@ public class CellBroadcastAlertService extends Service {
         // For FEATURE_WATCH, the dialog doesn't make sense from a UI/UX perspective.
         // But the audio & vibration still breakthrough DND.
         if (isWatch) {
-            addToNotificationBar(message, messageList, this, false, true, false);
+            addToNotificationBar(message, messageList, this, false, true, false, null);
         } else {
             Intent alertDialogIntent = createDisplayMessageIntent(this,
                     CellBroadcastAlertDialog.class, messageList);
@@ -827,7 +832,8 @@ public class CellBroadcastAlertService extends Service {
      */
     static void addToNotificationBar(SmsCbMessage message,
             ArrayList<SmsCbMessage> messageList, Context context,
-            boolean fromSaveState, boolean shouldAlert, boolean fromDialog) {
+            boolean fromSaveState, boolean shouldAlert, boolean fromDialog,
+            Bundle injectedPendingIntent) {
 
         Resources res = CellBroadcastSettings.getResourcesByOperator(context,
                 message.getSubscriptionId(),
@@ -871,9 +877,13 @@ public class CellBroadcastAlertService extends Service {
                 options.setPendingIntentCreatorBackgroundActivityStartMode(
                         ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED);
             }
+            int flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
+            if (injectedPendingIntent != null) {
+                injectedPendingIntent.putInt("flag", flags);
+                injectedPendingIntent.putBundle("option", options.toBundle());
+            }
             pi = PendingIntent.getActivity(context, REQUEST_CODE_CONTENT_INTENT, intent,
-                            PendingIntent.FLAG_UPDATE_CURRENT
-                            | PendingIntent.FLAG_IMMUTABLE, options.toBundle());
+                    flags, options.toBundle());
         }
         CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
                 context, message.getSubscriptionId());

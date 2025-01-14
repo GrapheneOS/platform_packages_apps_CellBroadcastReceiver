@@ -31,6 +31,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.os.Bundle;
 import android.telephony.CellBroadcastIdRange;
 import android.telephony.SmsManager;
 import android.telephony.SubscriptionInfo;
@@ -74,6 +75,7 @@ public class CellBroadcastConfigService extends IntentService {
     public static final String ACTION_RESET_SETTINGS_AS_NEEDED = "RESET_SETTINGS_AS_NEEDED";
 
     public static final String EXTRA_SUB = "SUB";
+    private static final String EXTRA_PENDING_INTENT_ELEMENT = "pending_intent_element";
 
     private static final String ACTION_SET_CHANNELS_DONE =
             "android.cellbroadcast.compliancetest.SET_CHANNELS_DONE";
@@ -150,6 +152,10 @@ public class CellBroadcastConfigService extends IntentService {
                 if (SdkLevel.isAtLeastU()) {
                     options.setPendingIntentCreatorBackgroundActivityStartMode(
                             ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED);
+                }
+                Bundle injectedPendingIntent = intent.getBundleExtra(EXTRA_PENDING_INTENT_ELEMENT);
+                if (injectedPendingIntent != null) {
+                    injectedPendingIntent.putBundle("option", options.toBundle());
                 }
                 PendingIntent pi = PendingIntent.getActivity(c,
                         CellBroadcastAlertService.SETTINGS_CHANGED_NOTIFICATION_ID, settingsIntent,
