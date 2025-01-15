@@ -14,7 +14,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_presidential_level_alert" msgid="5922755396541728069">"Notifikasi Peringatan Nasional"</string>
-    <string name="cmas_extreme_alert" msgid="2666370743728576543">"Notifikasi Peringatan Darurat Ekstrim"</string>
+    <string name="cmas_extreme_alert" msgid="2666370743728576543">"Notifikasi Peringatan Darurat Ekstrem"</string>
     <!-- no translation found for cmas_extreme_immediate_observed_alert (9214912512697774351) -->
     <skip />
     <!-- no translation found for cmas_extreme_immediate_likely_alert (5872678423468023949) -->
