@@ -36,10 +36,12 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import android.app.ActivityOptions;
 import android.app.IActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -47,6 +49,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ServiceInfo;
 import android.content.res.Resources;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.IPowerManager;
 import android.os.Looper;
@@ -1203,6 +1206,38 @@ public class CellBroadcastAlertServiceTest extends
 
         assertNotEquals(CellBroadcastAlertService.AlertType.MUTE,
                 mServiceIntentToVerify.getSerializableExtra(ALERT_AUDIO_TONE_TYPE));
+    }
+
+    public void testNotificationPendingIntentFlag() {
+        if (!SdkLevel.isAtLeastS()) {
+            return;
+        }
+        doReturn(new String[]{"0x1113:rat=gsm, emergency=false"}).when(mResources).getStringArray(
+                eq(com.android.cellbroadcastreceiver.R.array
+                        .cmas_alert_extreme_channels_range_strings));
+
+        Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
+        intent.setAction(SHOW_NEW_ALERT_ACTION);
+
+        SmsCbMessage message = createMessageForCmasMessageClass(13788634,
+                0x1113, 0x1113);
+        intent.putExtra("message", message);
+        Bundle testBundle = new Bundle();
+        intent.putExtra("pending_intent_element", testBundle);
+        startService(intent);
+        waitForServiceIntent();
+
+        verify(mMockedNotificationManager, times(1))
+                .notify(anyInt(), any());
+
+        assertEquals(PendingIntent.FLAG_UPDATE_CURRENT
+                | PendingIntent.FLAG_IMMUTABLE, testBundle.getInt("flag"));
+        if (SdkLevel.isAtLeastU()) {
+            ActivityOptions activityOptions =
+                    new ActivityOptions(testBundle.getBundle("option"));
+            int startMode = activityOptions.getPendingIntentCreatorBackgroundActivityStartMode();
+            assertEquals(ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED, startMode);
+        }
     }
 
     private static Map<String, NotificationChannel> mapNotificationChannelCaptor(
