@@ -20,11 +20,11 @@
     <string name="cmas_extreme_alert" msgid="5707699462404036561">"LU सूचना"</string>
     <string name="cmas_severe_alert" msgid="3403847334974558596">"LU सूचना"</string>
     <string name="public_safety_message" msgid="7178887441252495779">"LU सूचना"</string>
-    <string name="cmas_amber_alert" msgid="1934668428381380827">"LU सूचना : अपहरणासंबंधित सूचना"</string>
+    <string name="cmas_amber_alert" msgid="8819965519404224477">"LU सूचना"</string>
     <string name="cmas_required_monthly_test" msgid="7364077592345886483">"LU सूचना चाचणी"</string>
     <string name="cmas_exercise_alert" msgid="8651116593061990582">"LU सूचना व्यायाम"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="3426998226619316792">"अपहरणासंबंधित इशारा"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="5532453981233187282">"लहान मुलांच्या अपहरणांसंबंधित सूचना मेसेज दाखवा"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="2823952820653655264">"हरवलेल्या / अपहरणासंबंधित सूचना"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="3962545093583028195">"हरवलेल्या / अपहरण झालेल्या परिस्थितींसाठी सूचना मेसेज दाखवा"</string>
     <string name="enable_cmas_test_alerts_title" msgid="6503578245169569633">"LU सूचना चाचणी"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"चाचणी मेसेज दाखवा"</string>
     <string name="enable_exercise_test_alerts_title" msgid="8642537980920870855">"LU सूचना व्यायाम"</string>
