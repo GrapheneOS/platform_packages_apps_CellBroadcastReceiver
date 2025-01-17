@@ -2,7 +2,10 @@
 # http://proguard.sourceforge.net/index.html#manual/usage.html
 
 # Keep classes and methods that have the @VisibleForTesting annotation
--keep @com.android.internal.annotations.VisibleForTesting class *
+# TODO(b/373579455): Evaluate if <init> needs to be kept.
+-keep @com.android.internal.annotations.VisibleForTesting class * {
+    void <init>();
+}
 -keepclassmembers class * {
     @com.android.internal.annotations.VisibleForTesting *;
 }
@@ -32,7 +35,10 @@
 }
 
 # Keep annotated classes or class members.
--keep @androidx.annotation.Keep class *
+# TODO(b/373579455): Evaluate if <init> needs to be kept.
+-keep @androidx.annotation.Keep class * {
+    void <init>();
+}
 -keepclassmembers class * {
     @androidx.annotation.Keep *;
 }
