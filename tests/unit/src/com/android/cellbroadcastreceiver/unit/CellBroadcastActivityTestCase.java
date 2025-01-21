@@ -29,6 +29,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Handler;
+import android.os.UserHandle;
 import android.test.ActivityUnitTestCase;
 import android.util.Log;
 import android.view.Display;
@@ -130,6 +131,10 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
 
         private SharedPreferences mSharedPreferences;
 
+        Intent mSendBroadcastIntent;
+        UserHandle mUserHandle;
+        String mReceiverPermission;
+
         public TestContext(Context base) {
             super(base);
             mResources = spy(super.getResources());
@@ -203,6 +208,15 @@ public class CellBroadcastActivityTestCase<T extends Activity> extends ActivityU
                     super.createConfigurationContext(overrideConfiguration));
             newTestContext.mInjectedSystemServices.putAll(mInjectedSystemServices);
             return newTestContext;
+        }
+
+        @Override
+        public void sendBroadcastAsUser(Intent intent, UserHandle user,
+                String receiverPermission) {
+            mSendBroadcastIntent = intent;
+            mUserHandle = user;
+            mReceiverPermission = receiverPermission;
+            super.sendBroadcastAsUser(intent, user, receiverPermission);
         }
 
         public void enableOverrideConfiguration(boolean enabled) {

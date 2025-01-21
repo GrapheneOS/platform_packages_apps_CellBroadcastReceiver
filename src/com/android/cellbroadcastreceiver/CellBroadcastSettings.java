@@ -30,6 +30,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.os.UserManager;
 import android.os.Vibrator;
 import android.telephony.SubscriptionManager;
@@ -906,7 +907,8 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             areaInfoIntent.putExtra(AREA_INFO_UPDATE_ENABLED_EXTRA, enabled);
             // sending broadcast protected by the permission which is only
             // granted for CBR mainline module.
-            getContext().sendBroadcast(areaInfoIntent, CBR_MODULE_PERMISSION);
+            getContext().sendBroadcastAsUser(areaInfoIntent, UserHandle.SYSTEM,
+                    CBR_MODULE_PERMISSION);
         }
 
 
@@ -1536,7 +1538,8 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             areaInfoIntent.putExtra(AREA_INFO_UPDATE_ENABLED_EXTRA, enabled);
             // sending broadcast protected by the permission which is only
             // granted for CBR mainline module.
-            getContext().sendBroadcast(areaInfoIntent, CBR_MODULE_PERMISSION);
+            getContext().sendBroadcastAsUser(areaInfoIntent, UserHandle.SYSTEM,
+                    CBR_MODULE_PERMISSION);
         }
 
 
