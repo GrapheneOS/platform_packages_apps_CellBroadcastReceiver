@@ -1260,6 +1260,8 @@ public class CellBroadcastAlertServiceTest extends
         IPowerManager mockedPowerService = mock(IPowerManager.class);
         mMockedPowerManager = new PowerManager(mContext, mockedPowerService, null, handler);
         doReturn("alert dialog title").when(mResources).getText(anyInt());
+        doReturn(true).when(mResources).getBoolean(
+                com.android.cellbroadcastreceiver.R.bool.show_alert_dialog_with_notification);
 
         Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
         intent.setAction(SHOW_NEW_ALERT_ACTION);

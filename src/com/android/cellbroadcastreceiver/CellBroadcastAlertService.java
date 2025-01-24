@@ -514,12 +514,16 @@ public class CellBroadcastAlertService extends Service {
                             && isConnectedToCompanionDevices())
                     // show dialog and notification for specific channel
                     || (range != null && range.mDisplayDialogWithNotification)) {
+
                 // add notification to the bar by passing the list of unread non-emergency
                 // cell broadcast messages. The notification should be of LOW_IMPORTANCE if the
                 // notification is shown together with full-screen dialog.
-                addToNotificationBar(cbm, CellBroadcastReceiverApp.addNewMessageToList(cbm),
-                        this, false, true,
-                        shouldDisplayFullScreenMessage(cbm), injectedPendingIntent);
+                // The notification is already handled for watch
+                if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                    addToNotificationBar(cbm, CellBroadcastReceiverApp.addNewMessageToList(cbm),
+                            this, false, true,
+                            shouldDisplayFullScreenMessage(cbm), injectedPendingIntent);
+                }
             }
         } else {
             // add notification to the bar by passing the list of unread non-emergency
