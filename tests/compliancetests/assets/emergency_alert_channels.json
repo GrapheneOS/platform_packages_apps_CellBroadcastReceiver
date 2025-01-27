@@ -1655,44 +1655,44 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "Presidential Alert",
+      "title": "國家級警報",  //Presidential Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Presidential Alert",
+      "title": "國家級警報",  //Presidential Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "911": {
-      "title": "Alert Message",
+      "title": "警訊通知",  //Alert Message
       "default_value": "true",
       "toggle_avail": "true"
     },
     "919": {
-      "title": "Alert Message",
+      "title": "警訊通知",  //Alert Message
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4371": {
-      "title": "Emergency Alert",
+      "title": "緊急警報",  //Emergency Alert
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4379"
     },
     "4384": {
-      "title": "Emergency Alert",
+      "title": "緊急警報",  //Emergency Alert
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4392"
     },
     "4380": {
-      "title": "Required Monthly Test",
+      "title": "每月測試用訊息",  //Required Monthly Test
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4393": {
-      "title": "Required Monthly Test",
+      "title": "每月測試用訊息",  //Required Monthly Test
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -4422,59 +4422,64 @@
   },
   "austria_tmobile": {
     "4370": {
-      "title": "Emergency alert", //Notfallalarm
+      "title": "Notfallalarm", //Emergency alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Emergency alert", //Notfallalarm
+      "title": "Notfallalarm", //Emergency alert
       "default_value": "true",
-      "toggle_avail": "false"
+      "toggle_avail": "false",
+      "filter_language": "language_setting"
     },
     "919": {
-      "title": "Emergency alert", //Notfallalarm
+      "title": "Notfallalarm", //Emergency alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4372": {
-      "title": "Extreme threat", //Extreme Gefahr
+      "title": "Extreme Gefahr", //Extreme threat
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4385": {
-      "title": "Extreme threat", //Extreme Gefahr
+      "title": "Extreme Gefahr", //Extreme threat
       "default_value": "true",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     },
     "4378": {
-      "title": "Severe threat", //Erhebliche Gefahr
+      "title": "Erhebliche Gefahr", //Severe threat
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4391": {
-      "title": "Severe threat", //Erhebliche Gefahr
+      "title": "Erhebliche Gefahr", //Severe threat
       "default_value": "true",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     },
     "4396": {
-      "title": "Threat information", // Gefahreninformation
+      "title": "Gefahreninformation", //Threat information
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4397": {
-      "title": "Threat information", //Gefahreninformation
+      "title": "Gefahreninformation", //Threat information
       "default_value": "true",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     },
     "4379": {
-      "title": "Search for missing person", //Suche nach abgängiger Person
+      "title": "Suche nach abgängiger Person", //Search for missing person
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "Search for missing person", //Suche nach abgängiger Person
+      "title": "Suche nach abgängiger Person", //Search for missing person
       "default_value": "true",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     },
     "4380": {
       "title": "Cell Broadcast Test", //Cell Broadcast Test
@@ -4484,17 +4489,19 @@
     "4393": {
       "title": "Cell Broadcast Test", //Cell Broadcast Test
       "default_value": "false",
-      "toggle_avail": "false"
+      "toggle_avail": "false",
+      "filter_language": "language_setting"
     },
     "4381": {
-      "title": "Test alarm", //Übungsalarm
+      "title": "Übungsalarm", //Test alarm
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4394": {
-      "title": "Test alarm", //Übungsalarm
+      "title": "Übungsalarm", //Test alarm
       "default_value": "false",
-      "toggle_avail": "false"
+      "toggle_avail": "false",
+      "filter_language": "language_setting"
     }
   },
   "macedonia_telekom": {
