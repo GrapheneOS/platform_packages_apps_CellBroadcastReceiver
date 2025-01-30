@@ -62,7 +62,7 @@
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Tähelepanuta jäänud hädaolukorra hoiatused"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Hädaolukorra teatised häälkõnes"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"WEA seadete automaatsed muudatused SIM-kaardi põhjal"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Teatiste lubamine"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Luba teatised"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Saate juhtmevabalt hädaolukorra teatisi"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Teatiste meeldetuletus"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Märguandesõnumi esitamine kõnena"</string>
