@@ -4842,12 +4842,12 @@
       "toggle_avail": "false"
     },
     "4379": {
-      "title": "LU-Alert", // LU-Alert
+      "title": "LU-Alert : Missing person / kidnapping alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "LU-Alert", // LU-Alert
+      "title": "LU-Alert : Missing person / kidnapping alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
