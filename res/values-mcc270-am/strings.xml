@@ -24,7 +24,7 @@
     <string name="cmas_required_monthly_test" msgid="7364077592345886483">"የልጅ ጠለፋ-ማንቂያ ሙከራ"</string>
     <string name="cmas_exercise_alert" msgid="8651116593061990582">"የልጅ ጠለፋ-ማንቂያ ልምምድ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="2823952820653655264">"የመጥፋት / ጠለፋ ማንቂያ"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3962545093583028195">"ለመጥፋት / ጠለፋ ሁነኢታዎች የማንቂያ መልዕክቶችን አሳይ"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="3962545093583028195">"ለመጥፋት / ጠለፋ ሁኔታዎች የማንቂያ መልዕክቶችን አሳይ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="6503578245169569633">"የልጅ ጠለፋ-ማንቂያ ሙከራ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"የሙከራ መልዕክቶችን አሳይ"</string>
     <string name="enable_exercise_test_alerts_title" msgid="8642537980920870855">"የልጅ ጠለፋ-ማንቂያ ልምምድ"</string>
