@@ -1351,7 +1351,7 @@
     }
   },
   "Luxembourg": {
-    "Missing / kidnapping alert": {  // Vermissten- / Entführungsmeldung
+    "Missing person / kidnapping alert": {  // Vermissten- / Entführungsmeldung
       "default_value": "true",
       "toggle_avail": "true"
     },
