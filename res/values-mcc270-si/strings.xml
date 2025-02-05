@@ -20,11 +20,14 @@
     <string name="cmas_extreme_alert" msgid="5707699462404036561">"LU-ඇඟවීම"</string>
     <string name="cmas_severe_alert" msgid="3403847334974558596">"LU-ඇඟවීම"</string>
     <string name="public_safety_message" msgid="7178887441252495779">"LU-ඇඟවීම"</string>
-    <string name="cmas_amber_alert" msgid="8819965519404224477">"LU-ඇඟවීම"</string>
+    <!-- no translation found for cmas_amber_alert (258609494655720157) -->
+    <skip />
     <string name="cmas_required_monthly_test" msgid="7364077592345886483">"LU-ඇඟවීම පරීක්ෂණය"</string>
     <string name="cmas_exercise_alert" msgid="8651116593061990582">"LU-ඇඟවීම අභ්‍යාසය"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="2823952820653655264">"අතුරුදහන් / පැහැර ගැනීමේ අනතුරු ඇඟවීම"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3962545093583028195">"අතුරුදහන් / පැහැර ගැනීමේ අවස්ථා සඳහා ඇඟවීම් පණිවිඩ පෙන්වන්න"</string>
+    <!-- no translation found for enable_cmas_amber_alerts_title (709666858644713262) -->
+    <skip />
+    <!-- no translation found for enable_cmas_amber_alerts_summary (3678172264874835315) -->
+    <skip />
     <string name="enable_cmas_test_alerts_title" msgid="6503578245169569633">"LU-ඇඟවීම පරීක්ෂණය"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"පරීක්ෂණ පණිවිඩ පෙන්වන්න"</string>
     <string name="enable_exercise_test_alerts_title" msgid="8642537980920870855">"LU-ඇඟවීම අභ්‍යාසය"</string>
