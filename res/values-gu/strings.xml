@@ -72,7 +72,7 @@
     <string name="alert_preferences_title" msgid="6001469026393248468">"અલર્ટની પસંદગીઓ"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWSના પરીક્ષણ બ્રોડકાસ્ટ"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"ભૂકંપ ત્સુનામીની ચેતવણી આપતી સિસ્ટમ માટેનાં પરીક્ષણ બ્રોડકાસ્ટ"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"આત્યંતિક જોખમો"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"ભારે જોખમો"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"જીવન અને સંપત્તિના આત્યંતિક જોખમો"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ગંભીર જોખમો"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"જીવન અને સંપત્તિના ગંભીર જોખમો"</string>
