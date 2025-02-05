@@ -703,19 +703,19 @@
     }
   },
   "taiwan": {
-    "緊急警報": {
+    "Emergency alerts": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "警訊通知": {
+    "Alert messages": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "每月測試用訊息": {
+    "Required monthly test": {
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "震動": {
+    "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
     }
@@ -1235,23 +1235,23 @@
     }
   },
   "austria_tmobile": {
-    "Extreme Gefahr": {  // Extreme threat
+    "Extreme threat": {  // Extreme Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Erhebliche Gefahr": {  //Severe threat
+    "Severe threat": {  // Erhebliche Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Abgängige Personen": {  //Missing persons
+    "Missing persons": {  // Abgängige Personen
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Gefahreninformation": { //Threat information
+    "Threat information": { // Gefahreninformation
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Testwarnung": {  //Test alert
+    "Test alert": {  // Testwarnung
       "default_value": "false",
       "toggle_avail": "true"
     },
