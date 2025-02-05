@@ -1655,44 +1655,44 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "國家級警報",
+      "title": "Presidential Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "國家級警報",
+      "title": "Presidential Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "911": {
-      "title": "警訊通知",
+      "title": "Alert Message",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "919": {
-      "title": "警訊通知",
+      "title": "Alert Message",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4371": {
-      "title": "緊急警報",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4379"
     },
     "4384": {
-      "title": "緊急警報",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4392"
     },
     "4380": {
-      "title": "每月測試用訊息",
+      "title": "Required Monthly Test",
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4393": {
-      "title": "每月測試用訊息",
+      "title": "Required Monthly Test",
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -4422,12 +4422,12 @@
   },
   "austria_tmobile": {
     "4370": {
-      "title": "Notfallalarm", //Emergency alert
+      "title": "Emergency alert", //Notfallalarm
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Notfallalarm", //Emergency alert
+      "title": "Emergency alert", //Notfallalarm
       "default_value": "true",
       "toggle_avail": "false"
     },
@@ -4437,42 +4437,42 @@
       "toggle_avail": "false"
     },
     "4372": {
-      "title": "Extreme Gefahr", //Extreme threat
+      "title": "Extreme threat", //Extreme Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4385": {
-      "title": "Extreme Gefahr", //Extreme threat
+      "title": "Extreme threat", //Extreme Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4378": {
-      "title": "Erhebliche Gefahr", //Severe threat
+      "title": "Severe threat", //Erhebliche Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4391": {
-      "title": "Erhebliche Gefahr", //Severe threat
+      "title": "Severe threat", //Erhebliche Gefahr
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4396": {
-      "title": "Gefahreninformation", //Threat information
+      "title": "Threat information", // Gefahreninformation
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4397": {
-      "title": "Gefahreninformation", //Threat information
+      "title": "Threat information", //Gefahreninformation
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4379": {
-      "title": "Suche nach abgängiger Person", //Search for missing person
+      "title": "Search for missing person", //Suche nach abgängiger Person
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "Suche nach abgängiger Person", //Search for missing person
+      "title": "Search for missing person", //Suche nach abgängiger Person
       "default_value": "true",
       "toggle_avail": "true"
     },
@@ -4487,12 +4487,12 @@
       "toggle_avail": "false"
     },
     "4381": {
-      "title": "Übungsalarm", //Test alarm
+      "title": "Test alarm", //Übungsalarm
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4394": {
-      "title": "Übungsalarm", //Test alarm
+      "title": "Test alarm", //Übungsalarm
       "default_value": "false",
       "toggle_avail": "false"
     }

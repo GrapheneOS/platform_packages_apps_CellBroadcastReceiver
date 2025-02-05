@@ -124,8 +124,7 @@
   },
   "taiwan": {
     "mccmnc": ["46601"],
-    "imsi": "466010123456789",
-    "language": "zh-rTW"
+    "imsi": "466010123456789"
   },
   "brazil": {
     "mccmnc": ["72406"],
@@ -316,8 +315,7 @@
   },
   "austria_tmobile": {
     "mccmnc": ["23207"],
-    "imsi": "232070123456789",
-    "language": "de"
+    "imsi": "232070123456789"
   },
   "macedonia_telekom": {
     "mccmnc": ["29401"],
