@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_label" msgid="2008319089248760277">"Bezdrôtové tiesňové výstrahy"</string>
-    <string name="sms_cb_settings" msgid="9021266457863671070">"Bezdrôtové tiesňové upozornenia"</string>
+    <string name="sms_cb_settings" msgid="9021266457863671070">"Bezdrôtové tiesňové výstrahy"</string>
     <string name="sms_cb_sender_name_default" msgid="972946539768958828">"Bezdrôtové tiesňové výstrahy"</string>
     <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"Bezdrôtové tiesňové výstrahy"</string>
     <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"Bezdrôtové tiesňové výstrahy"</string>
@@ -172,7 +172,7 @@
     <string name="seconds" msgid="141450721520515025">"s"</string>
     <string name="message_copied" msgid="6922953753733166675">"Správa bola skopírovaná"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
-    <string name="top_intro_roaming_text" msgid="5250650823028195358">"Keď používate roaming alebo nemáte aktívnu SIM kartu, môžete dostávať upozornenia, ktoré v týchto nastaveniach nie sú zahrnuté"</string>
+    <string name="top_intro_roaming_text" msgid="5250650823028195358">"Keď používate roaming alebo nemáte aktívnu SIM kartu, môžete dostávať výstrahy, ktoré v týchto nastaveniach nie sú zahrnuté"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Nastavenia boli zmenené"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Nastavenia bezdrôtových núdzových upozornení boli resetované, pretože bola vymenená SIM karta"</string>
 </resources>
