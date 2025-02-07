@@ -55,6 +55,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.Iterator;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @RunWith(JUnitParamsRunner.class)
 public class CellBroadcastUiTest extends CellBroadcastBaseTest {
@@ -68,6 +71,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
     private static final int MESSAGE_ID_ETWS_TYPE_MASK = 0xFFF8;
     /** Value for messages of ETWS type after applying {@link #MESSAGE_ID_ETWS_TYPE_MASK}. */
     private static final int MESSAGE_ID_ETWS_TYPE = 0x1100; // 4352
+    private static final int TWO_BYTE_LANGUAGE_CODE = 2;
     private static final String CELL_BROADCAST_LIST_ACTIVITY =
             "com.android.cellbroadcastreceiver.CellBroadcastSettings";
     private static final BySelector SYSUI_FULL_SCREEN_DIALOG =
@@ -426,13 +430,42 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         return isConfirmed;
     }
 
+    private String[] extractLanguageAndRegionCodes(String languageTag) {
+        if (languageTag == null || languageTag.isEmpty()) {
+            logd("languageTag is null or empty");
+            return null;
+        }
+
+        // Regular expression to match language tags like "zh-rTW", "en-rGB", etc.
+        // Assumes "-r" always exists.
+        Pattern pattern = Pattern.compile("^([a-z]{2})-r([A-Z]{2})$");
+        Matcher matcher = pattern.matcher(languageTag);
+
+        if (matcher.matches()) {
+            String languageCode = matcher.group(1);
+            String regionCode = matcher.group(2);
+            logd("changeLocale: languageCode: " + languageCode + " regionCode: " + regionCode);
+            return new String[]{languageCode, regionCode};
+        } else {
+            logd("Invalid languageTag format");
+            return null; // Invalid language tag format
+        }
+    }
+
     private void changeLocale(CellBroadcastCarrierTestConfig info,
             String packageName, boolean checkAlertUi) {
         LocaleManager localeManager = getContext().getSystemService(LocaleManager.class);
         if (info.mLanguageTag != null && (checkAlertUi || info.mCheckSettingWithMainLanguage)) {
             logd("setApplicationLocales " + info.mLanguageTag);
-            localeManager.setApplicationLocales(packageName,
-                    LocaleList.forLanguageTags(info.mLanguageTag));
+            if (info.mLanguageTag.length() > TWO_BYTE_LANGUAGE_CODE) {
+                String[] languageRegion = extractLanguageAndRegionCodes(info.mLanguageTag);
+                Locale locale = new Locale(languageRegion[0], languageRegion[1]);
+                localeManager.setApplicationLocales(packageName, new LocaleList(locale));
+            } else {
+                logd("setApplicationLocales " + info.mLanguageTag);
+                localeManager.setApplicationLocales(packageName,
+                        LocaleList.forLanguageTags(info.mLanguageTag));
+            }
         } else {
             logd("setApplicationLocales to default");
             localeManager.setApplicationLocales(packageName,
