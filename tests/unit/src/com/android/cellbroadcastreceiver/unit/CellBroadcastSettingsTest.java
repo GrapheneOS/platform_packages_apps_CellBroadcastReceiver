@@ -201,7 +201,6 @@ public class CellBroadcastSettingsTest extends
         assertFalse(CellBroadcastSettings.hasAnyPreferenceChanged(mContext));
 
         CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
-        waitForMs(100);
 
         TwoStatePreference speechCheckBox =
                 cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
@@ -374,7 +373,6 @@ public class CellBroadcastSettingsTest extends
                 R.bool.disable_extreme_alert_settings);
 
         CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
-        waitForMs(100);
 
         TwoStatePreference extremeCheckBox =
                 cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
@@ -403,7 +401,6 @@ public class CellBroadcastSettingsTest extends
         setPreference(PREFERENCE_PUT_TYPE_STRING, ROAMING_OPERATOR_SUPPORTED, "XXX");
 
         CellBroadcastSettings settings = startActivity();
-        waitForMs(100);
 
         Preference topIntroPreference = settings.mCellBroadcastSettingsFragment.findPreference(
                 CellBroadcastSettings.KEY_PREFS_TOP_INTRO);
@@ -515,7 +512,6 @@ public class CellBroadcastSettingsTest extends
                 R.bool.test_alerts_enabled_default);
 
         CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
-        waitForMs(100);
 
         TwoStatePreference severeCheckBox =
                 cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
@@ -552,7 +548,6 @@ public class CellBroadcastSettingsTest extends
                 R.bool.test_alerts_enabled_default);
 
         CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
-        waitForMs(100);
 
         TwoStatePreference severeCheckBox =
                 cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
