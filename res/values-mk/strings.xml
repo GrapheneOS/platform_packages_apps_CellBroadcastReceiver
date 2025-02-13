@@ -88,8 +88,8 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"Добивајте тест-пораки од државните и локалните власти"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Предупредувања за итни случаи"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Предупреди за настани опасни по живот"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Тест-предупредувања"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Примај тест-предупредувања од операторот и месечни тест-предупредувања од безбедносниот систем"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Пробни предупредувања"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Примајте пробни предупредувања од операторот и месечни пробни предупредувања од системот за безбедносни предупредувања"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Добивајте предупредувања за итни случаи: порака за вежба/обука"</string>
@@ -172,7 +172,7 @@
     <string name="seconds" msgid="141450721520515025">"секунди"</string>
     <string name="message_copied" msgid="6922953753733166675">"Пораката е копирана"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
-    <string name="top_intro_roaming_text" msgid="5250650823028195358">"Кога сте во роаминг или немате активна SIM-картичка, може да добивате некои известувања што не се опфатени во поставкиве"</string>
+    <string name="top_intro_roaming_text" msgid="5250650823028195358">"Кога сте во роаминг или немате активна SIM-картичка, може да добивате некои предупредувања што не се опфатени во поставкиве"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Вашите поставки се променети"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Поставките за безжични предупредувања за итни случаи се ресетираа бидејќи ја променивте SIM-картичката"</string>
 </resources>

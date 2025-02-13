@@ -136,7 +136,7 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Vastaanotettu:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> lukematonta hälytystä"</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Uusia hälytyksiä"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Näytä kieltäytymisikkuna ensimmäisen hälytyksen jälkeen (muun kuin presidentin hälytyksen)."</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Näytä kieltäytymisikkuna ensimmäisen hälytyksen jälkeen (muun kuin presidenttitason hälytyksen)."</string>
     <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Näytä kieltäytymisikkuna"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Vastaanotat tällä hetkellä langattomia hätähälytyksiä. Haluatko jatkaa langattomien hätähälytysten vastaanottamista?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Kyllä"</string>
