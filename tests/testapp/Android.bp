@@ -29,6 +29,7 @@ android_test {
     static_libs: [
     "junit",
     "modules-utils-build_system",
+    "androidx.core_core",
     ],
     // Include all test java files.
     srcs: [
