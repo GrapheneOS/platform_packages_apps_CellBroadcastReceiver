@@ -35,5 +35,5 @@
     <string name="enable_exercise_test_alerts_title" msgid="569839026995925829">"चाचणी अलार्म"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="9221851253406484290">"व्यायामाच्या संदर्भातील चाचणी अलार्म"</string>
     <string name="enable_cmas_test_alerts_title" msgid="3897522692038895778">"सेल प्रसारण चाचणी"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"सेल प्रसारण संबंधित सिस्टम चाचण्या"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="3008029598281530835">"सेल प्रसारण संबंधित सिस्टीम चाचण्या"</string>
 </resources>
