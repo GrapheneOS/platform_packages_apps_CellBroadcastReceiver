@@ -27,6 +27,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import java.util.Random;
 
 /**
@@ -111,6 +115,8 @@ public class SendTestBroadcastActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.test_buttons);
+
+        setupEdgeToEdge(this);
 
         /* Set message ID to a random value from 1-65535. */
         EditText messageIdField = (EditText) findViewById(R.id.message_id);
@@ -697,6 +703,25 @@ public class SendTestBroadcastActivity extends Activity {
                     public void onClick(View v) {
                         mIsAdditionalLangAlert = additionalLangCheckbox.isChecked();
                     }
+                });
+    }
+
+    /**
+     * Given an activity, configure the activity to adjust for edge to edge restrictions.
+     * @param activity the activity.
+     */
+    public static void setupEdgeToEdge(Activity activity) {
+        ViewCompat.setOnApplyWindowInsetsListener(activity.findViewById(android.R.id.content),
+                (v, windowInsets) -> {
+                    Insets insets = windowInsets.getInsets(
+                            WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.ime());
+
+                    // Apply the insets paddings to the view.
+                    v.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+
+                    // Return CONSUMED if you don't want the window insets to keep being
+                    // passed down to descendant views.
+                    return WindowInsetsCompat.CONSUMED;
                 });
     }
 }
