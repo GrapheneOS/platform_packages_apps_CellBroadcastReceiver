@@ -53,6 +53,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.cellbroadcastreceiver.R;
+import com.android.internal.telephony.CellBroadcastUtils;
 import com.android.modules.utils.build.SdkLevel;
 
 import junit.framework.Assert;
@@ -355,8 +356,11 @@ public class CellBroadcastSettingsTest extends
     }
 
     private void openAlertReminderDialog() {
-        onView(withText(mContext.getString(com.android.cellbroadcastreceiver.R
-                .string.alert_reminder_interval_title))).perform(click());
+        String packageName = CellBroadcastUtils
+                .getDefaultCellBroadcastReceiverPackageName(mContext);
+        int resId = mContext.getResources().getIdentifier("alert_reminder_interval_title",
+                "string", packageName);
+        onView(withText(resId)).perform(click());
     }
 
     @Test
