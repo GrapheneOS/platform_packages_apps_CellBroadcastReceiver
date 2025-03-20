@@ -33,7 +33,7 @@
     <string name="menu_view_details" msgid="1040989019045280975">"Προβολή λεπτομερειών"</string>
     <string name="menu_delete" msgid="128380070910799366">"Διαγραφή εκπομπής"</string>
     <string name="view_details_title" msgid="1780427629491781473">"Λεπτομέρειες ειδοποίησης"</string>
-    <string name="view_details_debugging_title" msgid="5699927030805114173">"Λεπτομέρειες ειδοποίησης για εντοπισμό και διόρθωση σφαλμάτων"</string>
+    <string name="view_details_debugging_title" msgid="5699927030805114173">"Λεπτομέρειες ειδοποίησης για αποσφαλμάτωση"</string>
     <string name="confirm_delete_broadcast" msgid="2540199303730232322">"Διαγραφή αυτής της μετάδοσης;"</string>
     <string name="confirm_delete_all_broadcasts" msgid="2924444089047280871">"Να διαγραφούν όλα τα ληφθέντα μηνύματα μετάδοσης;"</string>
     <string name="button_delete" msgid="4672451757925194350">"Διαγραφή"</string>
