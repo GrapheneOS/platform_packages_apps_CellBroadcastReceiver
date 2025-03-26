@@ -32,4 +32,6 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"პირველი გაფრთხილების შემდეგ უარის თქმის დიალოგის ჩვენება (ეროვნული დონის გაფრთხილებათა გარდა)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"ეროვნული დონის გაფრთხილებები"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"ეროვნული დონის გამაფრთხილებელი შეტყობინებები. არ შეიძლება იყოს გამორთული."</string>
+    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
+    <skip />
 </resources>

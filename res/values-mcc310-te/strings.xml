@@ -32,4 +32,6 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"మొదటి అలర్ట్‌ను (జాతీయ అలర్ట్ మినహా) ప్రదర్శించిన తర్వాత నిలిపివేత డైలాగ్‌ను చూపించండి."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"జాతీయ అలర్ట్‌లు"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"జాతీయ హెచ్చరిక మెసేజ్‌లు. ఆఫ్ చేయలేరు."</string>
+    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
+    <skip />
 </resources>
