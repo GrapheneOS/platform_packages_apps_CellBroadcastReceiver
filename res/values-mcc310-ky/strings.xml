@@ -32,4 +32,6 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Биринчи шашылыш билдирүү келгенден кийин дароо өчүрүп салуу сунушталат (Жалпы улуттуктан башка)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Улуттук деңгээлдеги шашылыш билдирүүлөр"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Улуттук деңгээлдеги билдирүүлөр Өчүрүүгө болбойт."</string>
+    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
+    <skip />
 </resources>

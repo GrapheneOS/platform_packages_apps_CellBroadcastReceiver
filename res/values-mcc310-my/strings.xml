@@ -32,4 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"ပထမ သတိပေးချက် (နိုင်ငံတော်အဆင့် သတိပေးချက်မှလွဲ၍) ပြပြီးနောက် ထွက်ရန်ဒိုင်ယာလော့ခ်ကို ပြပါ။"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"တစ်နိုင်ငံလုံးဆိုင်ရာ သတိပေးချက်များ"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"တစ်နိုင်ငံလုံးဆိုင်ရာ သတိပေး မက်ဆေ့ဂျ်များ။ ပိတ်၍မရပါ။"</string>
+    <string name="override_dnd_summary" msgid="3839647560760294340">"‘မနှောင့်ယှက်ရ’ နှင့် အခြားအသံဆက်တင်များ ပယ်ပါ။ ပိတ်ထားပါကလည်း အရေးပေါ်အဖြစ်ဆုံး သတိပေးချက်ကို အကျယ်ဆုံးအသံဖြင့် ဖွင့်မည်။"</string>
 </resources>

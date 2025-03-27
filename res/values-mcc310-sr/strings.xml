@@ -32,4 +32,6 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Прикажи дијалог за онемогућавање после приказа првог упозорења (осим упозорења на нивоу земље)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Упозорења на нивоу земље"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Упозорења на нивоу земље. Не могу да се искључе."</string>
+    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
+    <skip />
 </resources>

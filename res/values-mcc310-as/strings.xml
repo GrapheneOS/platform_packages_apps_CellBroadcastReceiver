@@ -32,4 +32,6 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"প্ৰথমটো সতৰ্কবাৰ্তা দেখুওৱাৰ পাছত এটা পৰিহাৰ কৰাৰ ডায়লগ দেখুৱাওক (ৰাষ্ট্ৰীয় স্তৰৰ সতৰ্কবাৰ্তাৰ বাহিৰে)।"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"ৰাষ্ট্ৰীয় সতৰ্কবাৰ্তা"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"ৰাষ্ট্ৰীয় সকীয়নিমূলক বাৰ্তা। অফ কৰিব নোৱাৰি।"</string>
+    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
+    <skip />
 </resources>
