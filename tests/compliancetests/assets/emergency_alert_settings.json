@@ -778,10 +778,6 @@
     "Spanish": {
       "default_value": "false",
       "toggle_avail": "true"
-    },
-    "Always alert at full volume": {
-      "default_value": "false",
-      "toggle_avail": "true"
     }
   },
   "us_att": {
@@ -816,10 +812,6 @@
     "Spanish": {
       "default_value": "false",
       "toggle_avail": "true"
-    },
-    "Always alert at full volume": {
-      "default_value": "false",
-      "toggle_avail": "true"
     }
   },
   "us_tmo": {
@@ -845,10 +837,6 @@
     },
     "Vibration": {
       "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Always alert at full volume": {
-      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -882,10 +870,6 @@
       "toggle_avail": "true"
     },
     "Spanish": {
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "Always alert at full volume": {
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -1028,10 +1012,6 @@
     "Spanish": {
       "default_value": "false",
       "toggle_avail": "true"
-    },
-    "Always alert at full volume": {
-      "default_value": "false",
-      "toggle_avail": "true"
     }
   },
   "us_sprint": {
@@ -1060,10 +1040,6 @@
       "toggle_avail": "true"
     },
     "Spanish": {
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "Always alert at full volume": {
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -1098,10 +1074,6 @@
       "toggle_avail": "true"
     },
     "Spanish": {
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "Always alert at full volume": {
       "default_value": "false",
       "toggle_avail": "true"
     }
