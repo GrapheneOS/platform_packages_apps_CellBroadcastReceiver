@@ -32,6 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"पहिली सूचना (राष्ट्रीय सूचनेव्यतिरिक्त) डिस्प्ले केल्यानंतर निवड रद्द करा डायलॉग दाखवा."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"राष्ट्रीय इशारे"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"चेतावणी देणारे राष्ट्रीय मेसेज. बंद केले जाऊ शकत नाहीत."</string>
-    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
-    <skip />
+    <string name="override_dnd_summary" msgid="3839647560760294340">"व्यत्यय आणू नका व इतर व्हॉल्यूम सेटिंग्जकडे दुर्लक्ष करा. बंद केले, तरीही सर्वात गंभीर इशारे पूर्ण व्हॉल्यूममध्ये वाजू शकतात."</string>
 </resources>
