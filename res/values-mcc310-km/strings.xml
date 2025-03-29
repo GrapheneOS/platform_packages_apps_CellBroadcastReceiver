@@ -32,4 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"បង្ហាញ​ប្រអប់​សម្រាប់ការផ្តាច់ចេញ បន្ទាប់ពី​បង្ហាញ​ការជូនដំណឹង​ដំបូង (ក្រៅពីការជូនដំណឹង​ថ្នាក់ជាតិ)។"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"ការជូនដំណឹង​ថ្នាក់ជាតិ"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"សារអំពី​ការព្រមាន​ថ្នាក់ជាតិ។ មិនអាច​បិទ​បានទេ​។"</string>
+    <string name="override_dnd_summary" msgid="3839647560760294340">"មិនអើពើចំពោះមុខងារកុំរំខាន និងការកំណត់កម្រិតសំឡេងផ្សេងទៀត។ នៅពេលបិទ ការជូនដំណឹងសំខាន់ខ្លាំងនៅតែអាចបញ្ចេញសំឡេងនៅកម្រិតសំឡេងពេញ។"</string>
 </resources>

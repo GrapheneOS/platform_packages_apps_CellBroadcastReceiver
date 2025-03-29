@@ -32,4 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"ಮೊದಲ ಎಚ್ಚರಿಕೆಯನ್ನು (ರಾಷ್ಟ್ರೀಯ ಎಚ್ಚರಿಕೆ ಹೊರತುಪಡಿಸಿ) ಪ್ರದರ್ಶಿಸಿದ ಬಳಿಕ ಆಯ್ಕೆಯಿಂದ ಹೊರಗುಳಿದ ಸಂವಾದ ತೋರಿಸಿ."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"ರಾಷ್ಟ್ರೀಯ ಎಚ್ಚರಿಕೆಗಳು"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"ರಾಷ್ಟ್ರೀಯ ಎಚ್ಚರಿಕೆ ಸಂದೇಶಗಳು. ಆಫ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ."</string>
+    <string name="override_dnd_summary" msgid="3839647560760294340">"ಅಡಚಣೆ ಮಾಡಬೇಡಿ, ಇತರೆ ವಾಲ್ಯೂಮ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ. ಆಫ್ ಮಾಡಿದಾಗಲೂ, ಅತ್ಯಂತ ಗಂಭೀರವಾದ ಅಲರ್ಟ್‌ಗಳು ಪೂರ್ಣ ವಾಲ್ಯೂಮ್‌ನಲ್ಲಿ ಧ್ವನಿಸಬಹುದು."</string>
 </resources>

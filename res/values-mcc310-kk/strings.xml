@@ -32,4 +32,6 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Алғашқы ескерту (ел бойынша ескертуден бөлек) берілген соң, бас тарту диалогтік терезесі шығады."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Мемлекеттік деңгейдегі ескертулер"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Мемлекеттік деңгейдегі ескерту хабарлары. Оларды өшіруге болмайды."</string>
+    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
+    <skip />
 </resources>
