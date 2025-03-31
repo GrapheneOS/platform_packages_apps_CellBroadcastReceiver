@@ -32,6 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Afficher une boîte de dialogue de désactivation après la première alerte (sauf alerte nationale)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Alertes nationales"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Messages d\'avertissement nationaux. Il est impossible de les désactiver."</string>
-    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
-    <skip />
+    <string name="override_dnd_summary" msgid="3839647560760294340">"Ignorer Ne pas déranger et les autres réglages de volume. Une fois le mode désactivé, les alertes les plus importantes peuvent toujours retentir à plein volume."</string>
 </resources>
