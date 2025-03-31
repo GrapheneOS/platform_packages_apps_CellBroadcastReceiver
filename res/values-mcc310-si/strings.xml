@@ -32,6 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"පළමු අනතුරු ඇඟවීම සංදර්ශනය කිරීමෙන් පසුව ඉවත් වීමේ සංවාදයක් (ජාතික ඇඟවීම හැර) පෙන්වන්න."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"ජාතික ඇඟවීම්"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"ජාතික අනතුරු ඇඟවීමේ පණිවිඩ. ක්‍රියාවිරහිත කිරීමට නොහැකිය."</string>
-    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
-    <skip />
+    <string name="override_dnd_summary" msgid="3839647560760294340">"බාධා නොකරන්න සහ වෙනත් හඬ සැකසීම් නොසලකන්න. ක්‍රියා විරහිත කළ විට, වඩාත්ම වැදගත් ඇඟවීම් තවමත් සම්පූර්ණ පරිමාවෙන් ශබ්ද කළ හැක."</string>
 </resources>

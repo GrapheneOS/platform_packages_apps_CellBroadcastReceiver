@@ -32,6 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Loobumise dialoogi näitamine pärast esimese hoiatuse kuvamist (v.a riiklik hoiatus)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Riiklikud hoiatused"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Riiklikud hoiatussõnumid. Ei saa välja lülitada."</string>
-    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
-    <skip />
+    <string name="override_dnd_summary" msgid="3839647560760294340">"Funktsiooni Mitte segada ja teisi helitugevuse seadeid eiratakse. Kui see on välja lülitatud, võivad kõige kriitilisemad hoiatused endiselt kosta täieliku helitugevusega."</string>
 </resources>

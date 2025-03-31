@@ -32,6 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Zobraziť dialógové okno na odhlásenie po prvom varovaní (okrem celoštátneho varovania)"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Národné upozornenia"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Národné upozornenia. Nedajú sa vypnúť."</string>
-    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
-    <skip />
+    <string name="override_dnd_summary" msgid="3839647560760294340">"Ignorovať režim bez vyrušení a ďalšie nast. hlasitosti Keď je toto vypnuté, hlasitosť najzávažnejších upozor. môže byť max."</string>
 </resources>
