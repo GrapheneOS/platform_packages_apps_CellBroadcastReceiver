@@ -99,6 +99,7 @@ public class CellBroadcastAlertReminderTest extends
     public void setUp() throws Exception {
         super.setUp();
         MockitoAnnotations.initMocks(this);
+        doReturn(AudioManager.RINGER_MODE_NORMAL).when(mMockedAudioManager).getRingerMode();
     }
 
     @After
@@ -168,6 +169,49 @@ public class CellBroadcastAlertReminderTest extends
 
         verify(mMockedAudioManager).getStreamVolume(AudioManager.STREAM_ALARM);
         listenerHandler.quit();
+    }
+
+    /**
+     * When the reminder is set to vibrate and DND turn on, vibrate method should not be called.
+     */
+    public void testStartServiceNotVibrateIfDNDModeOn() throws Throwable {
+        doReturn(AudioManager.RINGER_MODE_SILENT).when(mMockedAudioManager).getRingerMode();
+        PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
+                "testStartServiceVibrate",
+                () -> {
+                    Intent intent = new Intent(mContext, CellBroadcastAlertReminder.class);
+                    intent.setAction(CellBroadcastAlertReminder.ACTION_PLAY_ALERT_REMINDER);
+                    intent.putExtra(CellBroadcastAlertReminder.ALERT_REMINDER_VIBRATE_EXTRA,
+                            true);
+                    startService(intent);
+                });
+        phoneStateListenerHandler.start();
+        waitUntilReady();
+
+        verify(mMockedVibrator, never()).vibrate(any(), (AudioAttributes) any());
+        phoneStateListenerHandler.quit();
+    }
+
+    /**
+     * When the reminder is set to vibrate and Ringer mode set to vibrate, vibrate method should be
+     * called once.
+     */
+    public void testStartServiceVibrateIfRingerModeVibrate() throws Throwable {
+        doReturn(AudioManager.RINGER_MODE_VIBRATE).when(mMockedAudioManager).getRingerMode();
+        PhoneStateListenerHandler phoneStateListenerHandler = new PhoneStateListenerHandler(
+                "testStartServiceVibrate",
+                () -> {
+                    Intent intent = new Intent(mContext, CellBroadcastAlertReminder.class);
+                    intent.setAction(CellBroadcastAlertReminder.ACTION_PLAY_ALERT_REMINDER);
+                    intent.putExtra(CellBroadcastAlertReminder.ALERT_REMINDER_VIBRATE_EXTRA,
+                            true);
+                    startService(intent);
+                });
+        phoneStateListenerHandler.start();
+        waitUntilReady();
+
+        verify(mMockedVibrator).vibrate(any(), (AudioAttributes) any());
+        phoneStateListenerHandler.quit();
     }
 
     public void testQueueAlertReminderReturnFalseIfIntervalNull() {
