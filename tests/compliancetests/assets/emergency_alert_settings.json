@@ -11,6 +11,10 @@
     "Test Alerts": {
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "brazil": {
@@ -36,6 +40,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -71,6 +79,10 @@
     "Operator warnings": {
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "elsalvador": {
@@ -92,6 +104,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -119,10 +135,18 @@
     "Speak alert message": {
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "chile": {
     "Test alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -146,6 +170,10 @@
     },
     "Area update broadcasts": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -173,6 +201,10 @@
     "Area update broadcasts": {
       "default_value": "true",
       "toggle_avail": "false"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "ecuador_telefonica": {
@@ -199,6 +231,10 @@
     "Vibración": { //"Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Las alertas sonarán siempre a todo volumen": { //"Always alert at full volume"
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "ecuador": {
@@ -220,6 +256,10 @@
     },
     "Vibración": { //"Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Las alertas sonarán siempre a todo volumen": { //"Always alert at full volume"
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -243,6 +283,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "greece": {
@@ -265,6 +309,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "hongkong": {
@@ -278,6 +326,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -300,6 +352,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -327,6 +383,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "italy": {
@@ -335,6 +395,10 @@
       "toggle_avail": "true"
     },
     "Test messages": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -431,6 +495,10 @@
     "경보 메시지를 음성으로 알림": { //"Speak alert message"
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "항상 최대 볼륨으로 알림": { //"Always alert at full volume"
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "latvia": {
@@ -453,6 +521,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "lithuania": {
@@ -474,6 +546,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -513,6 +589,10 @@
     "Speak alert message": {
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "netherlands": {
@@ -522,6 +602,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -541,6 +625,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "norway": {
@@ -555,11 +643,19 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "oman": {
     "تمارين": { //"Exercises Alerts"
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "التذكير دائمًا باستخدام أعلى مستوى صوت": { //"Always alert at full volume"
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -571,10 +667,18 @@
     "Speak alert message": {
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "peru": {
     "Speak alert message": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -586,6 +690,10 @@
     },
     "Vibración": { //"Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Las alertas sonarán siempre a todo volumen": { //"Always alert at full volume"
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -613,6 +721,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "romania": {
@@ -639,6 +751,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "saudiarabia": {
@@ -650,6 +766,10 @@
     "Test alerts": {
       "default_value": "false",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "southafrica": {
@@ -659,6 +779,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -677,6 +801,10 @@
     },
     "震動": {  //Vibration
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "一律以最大音量播放提示音效": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -710,6 +838,10 @@
       "toggle_avail": "true"
     },
     "Énoncer un message d'alerte": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Conserver le volume maximal pour les alertes": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -870,10 +1002,18 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "oman_omantel": {
     "Exercise alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -897,6 +1037,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Immer mit voller Lautstärke benachrichtigen": { //"Always alert at full volume"
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -924,11 +1068,19 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "russia": {
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -939,6 +1091,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -957,6 +1113,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -1086,6 +1246,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "china": {
@@ -1107,6 +1271,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -1130,6 +1298,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "guatemala_telefonica": {
@@ -1152,6 +1324,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "india": {
@@ -1166,11 +1342,19 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "hungary_telekom": {
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -1206,11 +1390,19 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "czech_tmobile": {
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -1218,11 +1410,19 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "poland_tmobile": {
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -1250,11 +1450,19 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Immer mit voller Lautstärke benachrichtigen": { //"Always alert at full volume"
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "macedonia_telekom": {
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -1262,11 +1470,19 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "ukraine": {
     "Emergency Alert": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -1290,6 +1506,10 @@
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "uk": {
@@ -1303,6 +1523,10 @@
     },
     "Vibration": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -1334,11 +1558,19 @@
     "Reserved for future deployments": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "bahamas": {
     "Test Alert": {
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },
@@ -1357,6 +1589,10 @@
     },
     "Vibration": {  // Vibration
       "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
       "toggle_avail": "true"
     }
   },

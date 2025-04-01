@@ -213,7 +213,7 @@
     <!-- Preference title for overriding Do Not Disturb. [CHAR LIMIT=50] -->
     <string name="override_dnd_title">Always alert at full volume</string>
     <!-- Preference summary for overriding Do Not Disturb mode. [CHAR LIMIT=125] -->
-    <string name="override_dnd_summary">Ignore Do Not Disturb &amp; other volume settings</string>
+    <string name="override_dnd_summary">Ignore Do Not Disturb &amp; other volume settings. When turned off, the most critical alerts may still sound at full volume.</string>
 
     <!-- Preference title for enable area update information broadcasts. [CHAR LIMIT=50] -->
     <string name="enable_area_update_info_alerts_title">Area update broadcasts</string>

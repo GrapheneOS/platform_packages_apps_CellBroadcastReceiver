@@ -51,6 +51,4 @@
     <string name="enable_cmas_presidential_alerts_title">National alerts</string>
     <!-- Preference summary for enable national threat alerts checkbox. [CHAR LIMIT=100] -->
     <string name="enable_cmas_presidential_alerts_summary">National warning messages. Can\'t be turned off.</string>
-    <!-- Preference summary for overriding Do Not Disturb mode. [CHAR LIMIT=125] -->
-    <string name="override_dnd_summary">Ignore Do Not Disturb &amp; other volume settings. When turned off, the most critical alerts may still sound at full volume.</string>
 </resources>
