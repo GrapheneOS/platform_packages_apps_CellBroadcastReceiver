@@ -32,4 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Birinchi ogohlantirishdan keyin umummilliy ogohlantirishlarni faolsizlantirishni taklif qilish"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Federal bildirishnomalar"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Favqulodda fideral bildirishnomalar Uni faolsizlantirish imkonsiz."</string>
+    <string name="override_dnd_summary" msgid="3839647560760294340">"Bezovta qilinmasin va boshqa tovush sozlamalarini rad etish. Faolsizlantirilganda aksariyat jiddiy signallar baribir maksimal balandlikda chalinishi mumkin."</string>
 </resources>

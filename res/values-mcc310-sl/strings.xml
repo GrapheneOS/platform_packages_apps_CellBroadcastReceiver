@@ -32,4 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Po prikazu prvega opozorila (ki ni državno opozorilo) pokaži pogovorno okno za onemogočenje."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Nacionalna opozorila"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Nacionalna opozorilna sporočila. Teh ni mogoče izklopiti."</string>
+    <string name="override_dnd_summary" msgid="3839647560760294340">"Prezrtje načina »Ne moti« in drugih nastavitev glasnosti. Če je to izklopljeno, se zvok najbolj kritičnih opozoril lahko še vedno predvaja s polno glasnostjo."</string>
 </resources>

@@ -32,4 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"முதல் விழிப்பூட்டலை (தேசிய அளவிலான எச்சரிக்கையைத் தவிர்த்து) காட்டிய பிறகு விலகல் செய்தியைக் காட்டு."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"தேசிய அளவிலான எச்சரிக்கைகள்"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"தேசிய அளவிலான எச்சரிக்கை மெசேஜ்கள். இவற்றை முடக்க முடியாது."</string>
+    <string name="override_dnd_summary" msgid="3839647560760294340">"தொந்தரவு செய்ய வேண்டாம் &amp; பிற ஒலியளவு அமைப்புகளைப் புறக்கணிக்கும். ஆஃப் செய்திருக்கும்போது, அதிமுக்கிய எச்சரிக்கை முழு ஒலியளவில் ஒலிக்கக்கூடும்."</string>
 </resources>

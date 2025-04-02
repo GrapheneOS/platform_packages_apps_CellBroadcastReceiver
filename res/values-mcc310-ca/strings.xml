@@ -32,4 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Mostra un quadre de diàleg de desactivació després de la primera alerta (tret d\'alerta nacional)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Alertes nacionals"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Missatges d\'advertiment nacionals. No es poden desactivar."</string>
+    <string name="override_dnd_summary" msgid="3839647560760294340">"Ignora No molestis i altres opcions del volum. Si està desactivat, pot ser que les alertes més crítiques sonin a tot volum."</string>
 </resources>
