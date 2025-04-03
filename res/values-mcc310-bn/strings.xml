@@ -32,4 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"প্রথম সতর্কতার পরে একটি অপ্ট-আউট ডায়ালগ দেখুন (জাতীয় স্তরে সতর্কতা ছাড়া)।"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"জাতীয় স্তরে কোনও বিপদের সতর্কবার্তা"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"জাতীয় স্তরে কোনও বিপদের সতর্কবার্তা দেখানো মেসেজ। তাই এটি বন্ধ করা যাবে না।"</string>
+    <string name="override_dnd_summary" msgid="3839647560760294340">"বিরক্ত করবে না &amp; অন্য ভলিউম সেটিংস এড়িয়ে যান। বন্ধ করলে অত্যন্ত গুরুত্বপূর্ণ সতর্কতা এখনও সম্পূর্ণ ভলিউমে হয়ত শুনতে পারা যাবে।"</string>
 </resources>

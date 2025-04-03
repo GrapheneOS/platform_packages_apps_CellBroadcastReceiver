@@ -32,4 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Näytä kieltäytymisikkuna ensimmäisen hälytyksen (muun kuin kansallisen hälytyksen) jälkeen."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Kansalliset hälytykset"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Kansalliset varoitusviestit. Ei voi poistaa käytöstä."</string>
+    <string name="override_dnd_summary" msgid="3839647560760294340">"Ohita Älä häiritse ja vastaavat asetukset. Kun asetus on pois päältä, tärkeimmät voivat silti kuulua täydellä voimakkuudella."</string>
 </resources>

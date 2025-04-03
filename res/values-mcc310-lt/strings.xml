@@ -32,4 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Rodyti atsisakymo dialogo langą pateikus pirmą įspėjimą (ne nacionalinį įspėjimą)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Nacionaliniai įspėjimai"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Nacionalinių įspėjimų pranešimai. Negalima išjungti."</string>
+    <string name="override_dnd_summary" msgid="3839647560760294340">"Ignoruoti netrukd. režimą ir kitus garsumo nust. Kai išjungta, kritiniai įspėjimai vis tiek gali skambėti maksimaliu garsumu."</string>
 </resources>
