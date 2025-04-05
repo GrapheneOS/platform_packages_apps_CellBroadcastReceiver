@@ -122,7 +122,10 @@ public class CellBroadcastAlertReminder extends Service {
             loge("can't get Ringtone for alert reminder sound");
         }
 
-        if (enableVibration) {
+        AudioManager audioManager = getSystemService(AudioManager.class);
+        int audioMode = audioManager.getRingerMode();
+        log("audio mode : " + audioMode);
+        if (enableVibration && audioMode != AudioManager.RINGER_MODE_SILENT) {
             // Vibrate for 500ms.
             Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
             if (vibrator != null) {

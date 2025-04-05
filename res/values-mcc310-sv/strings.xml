@@ -32,6 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Visa en dialogruta för att välja bort detta när första varningen visas (ej nationella varningar)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Nationella varningsmeddelanden"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Nationella varningsmeddelanden. Detta kan inte stängas av."</string>
-    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
-    <skip />
+    <string name="override_dnd_summary" msgid="3839647560760294340">"Ignorera Stör ej och andra volyminställningar. Även när detta är inaktiverat kan viktiga varningar spelas upp med full volym."</string>
 </resources>

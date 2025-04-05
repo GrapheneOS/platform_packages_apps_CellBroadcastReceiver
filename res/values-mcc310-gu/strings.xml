@@ -32,6 +32,5 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"પ્રથમ અલર્ટ બતાવ્યા પછી નાપસંદ કરવા માટેનો સંવાદ બતાવો (રાષ્ટ્રીય અલર્ટ સિવાય અન્ય)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"રાષ્ટ્ર સંબંધિત જોખમની અલર્ટ"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"રાષ્ટ્ર સંબંધિત જોખમની ચેતવણીના મેસેજ. બંધ કરી શકાતા નથી."</string>
-    <!-- no translation found for override_dnd_summary (3839647560760294340) -->
-    <skip />
+    <string name="override_dnd_summary" msgid="3839647560760294340">"ખલેલ પાડશો નહીં મોડ અને વૉલ્યૂમના અન્ય સેટિંગ અવગણો. બંધ કરવામાં આવે, ત્યારે સૌથી અગત્યની ગંભીર અલર્ટ હજુ પણ સંપૂર્ણ વૉલ્યૂમમાં વાગી શકે છે."</string>
 </resources>
