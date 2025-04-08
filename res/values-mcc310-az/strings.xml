@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"İlk siqnaldan (Dövlət siqnalından başqa) sonra imtina dialoqunu göstərin."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Dövlət xəbərdarlıqları"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Dövlət xəbərdarlıq mesajları. Deaktiv edilə bilməz."</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"\"Narahat Etməyin\" və digər səs ayarlarını nəzərə almayın. Söndürüləndə əksər kritik siqnallar ən yüksək həddə səslənə bilər."</string>
 </resources>

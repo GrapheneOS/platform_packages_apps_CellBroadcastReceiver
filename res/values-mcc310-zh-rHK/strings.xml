@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"第一次警報出現後顯示停用對話框 (國家級警報除外)。"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"國家級警示"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"國家級警示訊息。這類訊息無法關閉。"</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"忽略「請勿騷擾」模式及其他音量設定。即使關閉此功能，最重要的警示可能仍會以最高音量發出。"</string>
 </resources>

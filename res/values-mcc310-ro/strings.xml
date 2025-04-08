@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Afișează un dialog de renunțare după afișarea primei alerte (alta decât alerta națională)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Alerte naționale"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Mesaje de avertizare naționale. Nu pot fi dezactivate."</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"Ignoră Nu deranja și alte setări de volum. Când sunt dezactivate, alertele importante se pot declanșa totuși la volum maxim."</string>
 </resources>

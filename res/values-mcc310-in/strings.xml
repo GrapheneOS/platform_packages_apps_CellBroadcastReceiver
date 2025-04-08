@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Tampilkan dialog pilihan tidak ikut setelah peringatan pertama (selain Peringatan nasional)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Peringatan nasional"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Pesan peringatan nasional. Tidak dapat dinonaktifkan."</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"Abaikan fitur Jangan Ganggu &amp; setelan volume lainnya. Saat dinonaktifkan, peringatan yang paling penting mungkin masih berbunyi dengan volume penuh."</string>
 </resources>
