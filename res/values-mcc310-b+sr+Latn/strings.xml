@@ -16,9 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="6018514276739876277">"Mobilna upozorenja o hitnim slučajevima"</string>
-    <string name="sms_cb_settings" msgid="1556918270840502446">"Mobilna upozorenja o hitnim slučajevima"</string>
-    <string name="emergency_alert_settings_title_watches" msgid="5702555089013313773">"Mobilna upozorenja o hitnim slučajevima"</string>
+    <string name="app_label" msgid="6018514276739876277">"Upozorenja o hitnim slučajevima"</string>
+    <string name="sms_cb_settings" msgid="1556918270840502446">"Upozorenja o hitnim slučajevima"</string>
+    <string name="emergency_alert_settings_title_watches" msgid="5702555089013313773">"Upozorenja o hitnim slučajevima"</string>
     <string name="receive_cmas_in_second_language_title" msgid="7539080017840218665">"španski"</string>
     <string name="receive_cmas_in_second_language_summary" msgid="4482209573334686904">"Primajte obaveštenja o hitnim slučajevima na španskom kada je to moguće"</string>
     <string name="confirm_delete_broadcast" msgid="6808374217554967811">"Želite da izbrišete ovo upozorenje?"</string>
@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Prikaži dijalog za onemogućavanje posle prikaza prvog upozorenja (osim upozorenja na nivou zemlje)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Upozorenja na nivou zemlje"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Upozorenja na nivou zemlje. Ne mogu da se isključe."</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"Ignoriše Ne uznemiravaj i druga podešavanja zvuka. Kada je isključeno, važna obaveštenja mogu da se oglašavaju najvećom jačinom."</string>
 </resources>
