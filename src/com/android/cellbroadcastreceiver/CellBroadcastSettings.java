@@ -54,6 +54,7 @@ import com.android.internal.annotations.VisibleForTesting;
 import com.android.modules.utils.build.SdkLevel;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.widget.MainSwitchPreference;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -69,6 +70,8 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
 
     @VisibleForTesting
     public CellBroadcastSettings.CellBroadcastSettingsFragment mCellBroadcastSettingsFragment;
+    @VisibleForTesting
+    public CellBroadcastSettings.CellBroadcastSettingsOldFragment mCellBroadcastSettingsOldFragment;
 
     /**
      * Keys for user preferences.
@@ -214,12 +217,21 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
         Fragment fragment = getFragmentManager().findFragmentById(
                 com.android.settingslib.collapsingtoolbar.R.id.content_frame);
         if (fragment == null) {
-            mCellBroadcastSettingsFragment = new CellBroadcastSettingsFragment();
-            getFragmentManager()
-                    .beginTransaction()
-                    .add(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                            mCellBroadcastSettingsFragment)
-                    .commit();
+            if (hideToolbar) {
+                mCellBroadcastSettingsOldFragment = new CellBroadcastSettingsOldFragment();
+                getFragmentManager()
+                        .beginTransaction()
+                        .add(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                                mCellBroadcastSettingsOldFragment)
+                        .commit();
+            } else {
+                mCellBroadcastSettingsFragment = new CellBroadcastSettingsFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                                mCellBroadcastSettingsFragment)
+                        .commit();
+            }
         }
     }
 
@@ -301,7 +313,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
     /**
      * New fragment-style implementation of preferences.
      */
-    public static class CellBroadcastSettingsFragment extends PreferenceFragment {
+    public static class CellBroadcastSettingsFragment extends SettingsBasePreferenceFragment {
 
         private TwoStatePreference mExtremeCheckBox;
         private TwoStatePreference mSevereCheckBox;
@@ -656,6 +668,636 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                 mAmberCheckBox.setVisible(res.getBoolean(R.bool.show_amber_alert_settings)
                         && !channelManager.getCellBroadcastChannelRanges(
                                 R.array.cmas_amber_alerts_channels_range_strings).isEmpty());
+                if (isWatch && !mAmberCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mAmberCheckBox);
+                }
+            }
+
+            if (mPublicSafetyMessagesChannelCheckBox != null) {
+                mPublicSafetyMessagesChannelCheckBox.setVisible(
+                        res.getBoolean(R.bool.show_public_safety_settings)
+                                && !channelManager.getCellBroadcastChannelRanges(
+                                        R.array.public_safety_messages_channels_range_strings)
+                                .isEmpty());
+                if (isWatch && !mPublicSafetyMessagesChannelCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mPublicSafetyMessagesChannelCheckBox);
+                }
+            }
+            // this is the matching full screen settings for public safety toggle. shown only if
+            // public safety toggle is displayed.
+            if (mPublicSafetyMessagesChannelFullScreenCheckBox != null) {
+                mPublicSafetyMessagesChannelFullScreenCheckBox.setVisible(
+                        isShowFullScreenMessageVisible(getContext(), res));
+            }
+
+            if (mTestCheckBox != null) {
+                mTestCheckBox.setVisible(isTestAlertsToggleVisible(getContext()));
+            }
+
+            if (mExerciseTestCheckBox != null) {
+                mExerciseTestCheckBox.setVisible(
+                        isExerciseTestAlertsToggleVisible(res, getContext(), channelManager));
+            }
+
+            if (mOperatorDefinedCheckBox != null) {
+                mOperatorDefinedCheckBox.setVisible(
+                        isOperatorTestAlertsToggleVisible(res, getContext(), channelManager));
+            }
+
+            if (mEmergencyAlertsCheckBox != null) {
+                mEmergencyAlertsCheckBox.setVisible(!channelManager.getCellBroadcastChannelRanges(
+                        R.array.emergency_alerts_channels_range_strings).isEmpty());
+                if (isWatch && !mEmergencyAlertsCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mEmergencyAlertsCheckBox);
+                }
+            }
+
+            if (mStateLocalTestCheckBox != null) {
+                mStateLocalTestCheckBox.setVisible(
+                        res.getBoolean(R.bool.show_state_local_test_settings)
+                                && !channelManager.getCellBroadcastChannelRanges(
+                                R.array.state_local_test_alert_range_strings).isEmpty());
+                if (isWatch && !mStateLocalTestCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mStateLocalTestCheckBox);
+                }
+            }
+
+            if (mReceiveCmasInSecondLanguageCheckBox != null) {
+                mReceiveCmasInSecondLanguageCheckBox.setVisible(!res.getString(
+                        R.string.emergency_alert_second_language_code).isEmpty());
+                if (isWatch && !mReceiveCmasInSecondLanguageCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mReceiveCmasInSecondLanguageCheckBox);
+                }
+            }
+
+            if (mAreaUpdateInfoCheckBox != null) {
+                mAreaUpdateInfoCheckBox.setVisible(
+                        res.getBoolean(R.bool.config_showAreaUpdateInfoSettings));
+                if (isWatch && !mAreaUpdateInfoCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mAreaUpdateInfoCheckBox);
+                }
+            }
+
+            if (mOverrideDndCheckBox != null) {
+                mOverrideDndCheckBox.setVisible(res.getBoolean(R.bool.show_override_dnd_settings));
+                if (isWatch && !mOverrideDndCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mOverrideDndCheckBox);
+                }
+            }
+
+            if (mEnableVibrateCheckBox != null) {
+                // Only show vibrate toggle when override DND toggle is available to users, or when
+                // override DND default is turned off.
+                // In some countries, override DND is always on, which means vibration is always on.
+                // In that case, no need to show vibration toggle for users.
+                mEnableVibrateCheckBox.setVisible(isVibrationToggleVisible(getContext(), res));
+                if (isWatch && !mEnableVibrateCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mEnableVibrateCheckBox);
+                }
+            }
+            if (mAlertsHeader != null) {
+                mAlertsHeader.setVisible(
+                        !getContext().getString(R.string.alerts_header_summary).isEmpty());
+                if (isWatch && !mAlertsHeader.isVisible()) {
+                    preferenceScreen.removePreference(mAlertsHeader);
+                }
+            }
+
+            if (mSpeechCheckBox != null) {
+                mSpeechCheckBox.setVisible(res.getBoolean(R.bool.show_alert_speech_setting)
+                        || getActivity().getPackageManager()
+                        .hasSystemFeature(PackageManager.FEATURE_WATCH));
+            }
+
+            if (mTopIntroPreference != null) {
+                mTopIntroPreference.setTitle(getTopIntroduction());
+            }
+        }
+
+        private int getTopIntroduction() {
+            // Only set specific top introduction for roaming support now
+            if (!CellBroadcastReceiver.getRoamingOperatorSupported(getContext()).isEmpty()) {
+                return R.string.top_intro_roaming_text;
+            }
+            return R.string.top_intro_default_text;
+        }
+
+        private void initReminderIntervalList() {
+            Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
+
+            String[] activeValues =
+                    res.getStringArray(R.array.alert_reminder_interval_active_values);
+            String[] allEntries = res.getStringArray(R.array.alert_reminder_interval_entries);
+            String[] newEntries = new String[activeValues.length];
+
+            // Only add active interval to the list
+            for (int i = 0; i < activeValues.length; i++) {
+                int index = mReminderInterval.findIndexOfValue(activeValues[i]);
+                if (index != -1) {
+                    newEntries[i] = allEntries[index];
+                    if (DBG) Log.d(TAG, "Added " + allEntries[index]);
+                } else {
+                    Log.e(TAG, "Can't find " + activeValues[i]);
+                }
+            }
+
+            mReminderInterval.setEntries(newEntries);
+            mReminderInterval.setEntryValues(activeValues);
+            mReminderInterval.setSummary(mReminderInterval.getEntry());
+            mReminderInterval.setOnPreferenceChangeListener(
+                    new Preference.OnPreferenceChangeListener() {
+                        @Override
+                        public boolean onPreferenceChange(Preference pref, Object newValue) {
+                            final ListPreference listPref = (ListPreference) pref;
+                            final int idx = listPref.findIndexOfValue((String) newValue);
+                            listPref.setSummary(listPref.getEntries()[idx]);
+                            return true;
+                        }
+                    });
+        }
+
+        /**
+         * Set the extreme toggle disabled as needed.
+         */
+        @VisibleForTesting
+        public void initAlertsToggleDisabledAsNeeded() {
+            Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
+            if (res.getBoolean(R.bool.disable_extreme_alert_settings)) {
+                mExtremeCheckBox.setEnabled(false);
+                mExtremeCheckBox.setChecked(
+                        res.getBoolean(R.bool.extreme_threat_alerts_enabled_default));
+            }
+        }
+
+        /**
+         * Enable the toggles to set it on/off or carrier default.
+         */
+        @VisibleForTesting
+        public void setAlertsEnabled(boolean alertsEnabled) {
+            Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
+
+            boolean resetCarrierDefault = res.getBoolean(
+                    R.bool.restore_sub_toggle_to_carrier_default);
+
+            if (mSevereCheckBox != null) {
+                mSevereCheckBox.setEnabled(alertsEnabled);
+                mSevereCheckBox.setChecked(resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                        R.bool.severe_threat_alerts_enabled_default) : alertsEnabled);
+            }
+            if (!res.getBoolean(R.bool.disable_extreme_alert_settings)
+                    && mExtremeCheckBox != null) {
+                mExtremeCheckBox.setEnabled(alertsEnabled);
+                mExtremeCheckBox.setChecked(resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                        R.bool.extreme_threat_alerts_enabled_default) : alertsEnabled);
+            }
+            if (mAmberCheckBox != null) {
+                mAmberCheckBox.setEnabled(alertsEnabled);
+                mAmberCheckBox.setChecked(resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                        R.bool.amber_alerts_enabled_default) : alertsEnabled);
+            }
+            if (mAreaUpdateInfoCheckBox != null) {
+                mAreaUpdateInfoCheckBox.setEnabled(alertsEnabled);
+                mAreaUpdateInfoCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.area_update_info_alerts_enabled_default) : alertsEnabled);
+                notifyAreaInfoUpdate(resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                        R.bool.area_update_info_alerts_enabled_default) : alertsEnabled);
+            }
+            if (mEmergencyAlertsCheckBox != null) {
+                mEmergencyAlertsCheckBox.setEnabled(alertsEnabled);
+                mEmergencyAlertsCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.emergency_alerts_enabled_default) : alertsEnabled);
+            }
+            if (mPublicSafetyMessagesChannelCheckBox != null) {
+                mPublicSafetyMessagesChannelCheckBox.setEnabled(alertsEnabled);
+                mPublicSafetyMessagesChannelCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.public_safety_messages_enabled_default) : alertsEnabled);
+            }
+            if (mStateLocalTestCheckBox != null) {
+                mStateLocalTestCheckBox.setEnabled(alertsEnabled);
+                mStateLocalTestCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.state_local_test_alerts_enabled_default) : alertsEnabled);
+            }
+            if (mTestCheckBox != null) {
+                mTestCheckBox.setEnabled(alertsEnabled);
+                mTestCheckBox.setChecked(resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                        R.bool.test_alerts_enabled_default) : alertsEnabled);
+            }
+            if (mExerciseTestCheckBox != null) {
+                mExerciseTestCheckBox.setEnabled(alertsEnabled);
+                mExerciseTestCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.test_exercise_alerts_enabled_default) : alertsEnabled);
+            }
+            if (mOperatorDefinedCheckBox != null) {
+                mOperatorDefinedCheckBox.setEnabled(alertsEnabled);
+                mOperatorDefinedCheckBox.setChecked(
+                        resetCarrierDefault ? alertsEnabled && res.getBoolean(
+                                R.bool.test_operator_defined_alerts_enabled_default)
+                                : alertsEnabled);
+            }
+        }
+
+        private void notifyAreaInfoUpdate(boolean enabled) {
+            Intent areaInfoIntent = new Intent(AREA_INFO_UPDATE_ACTION);
+            areaInfoIntent.putExtra(AREA_INFO_UPDATE_ENABLED_EXTRA, enabled);
+            // sending broadcast protected by the permission which is only
+            // granted for CBR mainline module.
+            getContext().sendBroadcast(areaInfoIntent, CBR_MODULE_PERMISSION);
+        }
+
+
+        @Override
+        public void onResume() {
+            super.onResume();
+            updatePreferenceVisibility();
+        }
+
+        @Override
+        public void onDestroy() {
+            super.onDestroy();
+            LocalBroadcastManager.getInstance(getContext())
+                    .unregisterReceiver(mTestingModeChangedReceiver);
+        }
+
+        /**
+         * Callback to be called when preference or master toggle is changed by user
+         *
+         * @param context Context to use
+         */
+        public void onPreferenceChangedByUser(Context context, boolean enableChannels) {
+            if (enableChannels) {
+                Log.d(TAG, "onPreferenceChangedByUser: enable channels");
+                CellBroadcastReceiver.startConfigService(context,
+                        CellBroadcastConfigService.ACTION_ENABLE_CHANNELS);
+            }
+            setPreferenceChanged(context, true);
+            // Notify backup manager a backup pass is needed.
+            new BackupManager(context).dataChanged();
+        }
+    }
+
+    /**
+     * SettingFragment for R
+     */
+    public static class CellBroadcastSettingsOldFragment extends PreferenceFragment {
+
+        private TwoStatePreference mExtremeCheckBox;
+        private TwoStatePreference mSevereCheckBox;
+        private TwoStatePreference mAmberCheckBox;
+        private TwoStatePreference mMasterToggle;
+        private TwoStatePreference mPublicSafetyMessagesChannelCheckBox;
+        private TwoStatePreference mPublicSafetyMessagesChannelFullScreenCheckBox;
+        private TwoStatePreference mEmergencyAlertsCheckBox;
+        private ListPreference mReminderInterval;
+        private TwoStatePreference mSpeechCheckBox;
+        private TwoStatePreference mOverrideDndCheckBox;
+        private TwoStatePreference mAreaUpdateInfoCheckBox;
+        private TwoStatePreference mTestCheckBox;
+        private TwoStatePreference mExerciseTestCheckBox;
+        private TwoStatePreference mOperatorDefinedCheckBox;
+        private TwoStatePreference mStateLocalTestCheckBox;
+        private TwoStatePreference mEnableVibrateCheckBox;
+        private Preference mAlertHistory;
+        private Preference mAlertsHeader;
+        private PreferenceCategory mAlertCategory;
+        private PreferenceCategory mAlertPreferencesCategory;
+        private boolean mDisableSevereWhenExtremeDisabled = true;
+
+        // Show checkbox for Presidential alerts in settings
+        private TwoStatePreference mPresidentialCheckBox;
+
+        // on/off switch in settings for receiving alert in second language code
+        private TwoStatePreference mReceiveCmasInSecondLanguageCheckBox;
+
+        // Show the top introduction
+        private Preference mTopIntroPreference;
+
+        private final BroadcastReceiver mTestingModeChangedReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                switch (intent.getAction()) {
+                    case CellBroadcastReceiver.ACTION_TESTING_MODE_CHANGED:
+                        updatePreferenceVisibility();
+                        break;
+                }
+            }
+        };
+
+        private void initPreferences() {
+            mExtremeCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS);
+            mSevereCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS);
+            mAmberCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_CMAS_AMBER_ALERTS);
+            mMasterToggle = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_ALERTS_MASTER_TOGGLE);
+            mPublicSafetyMessagesChannelCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_PUBLIC_SAFETY_MESSAGES);
+            mPublicSafetyMessagesChannelFullScreenCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_PUBLIC_SAFETY_MESSAGES_FULL_SCREEN);
+            mEmergencyAlertsCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_EMERGENCY_ALERTS);
+            mReminderInterval = (ListPreference)
+                    findPreference(KEY_ALERT_REMINDER_INTERVAL);
+            mSpeechCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_ALERT_SPEECH);
+            mOverrideDndCheckBox = (TwoStatePreference)
+                    findPreference(KEY_OVERRIDE_DND);
+            mAreaUpdateInfoCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS);
+            mTestCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_TEST_ALERTS);
+            mExerciseTestCheckBox = (TwoStatePreference) findPreference(KEY_ENABLE_EXERCISE_ALERTS);
+            mOperatorDefinedCheckBox = (TwoStatePreference)
+                    findPreference(KEY_OPERATOR_DEFINED_ALERTS);
+            mStateLocalTestCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_STATE_LOCAL_TEST_ALERTS);
+            mAlertHistory = findPreference(KEY_EMERGENCY_ALERT_HISTORY);
+            mAlertsHeader = findPreference(KEY_ALERTS_HEADER);
+            mReceiveCmasInSecondLanguageCheckBox = (TwoStatePreference) findPreference(
+                    KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
+            mEnableVibrateCheckBox = findPreference(KEY_ENABLE_ALERT_VIBRATE);
+
+            // Show checkbox for Presidential alerts in settings
+            mPresidentialCheckBox = (TwoStatePreference)
+                    findPreference(KEY_ENABLE_CMAS_PRESIDENTIAL_ALERTS);
+
+            PackageManager pm = getActivity().getPackageManager();
+            if (!pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                mAlertPreferencesCategory = (PreferenceCategory)
+                        findPreference(KEY_CATEGORY_ALERT_PREFERENCES);
+                mAlertCategory = (PreferenceCategory)
+                        findPreference(KEY_CATEGORY_EMERGENCY_ALERTS);
+            }
+            mTopIntroPreference = findPreference(KEY_PREFS_TOP_INTRO);
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            View root = super.onCreateView(inflater, container, savedInstanceState);
+            PackageManager pm = getActivity().getPackageManager();
+            if (pm != null
+                    && pm.hasSystemFeature(
+                    PackageManager.FEATURE_WATCH)) {
+                ViewGroup.LayoutParams layoutParams = getListView().getLayoutParams();
+                if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+                    int watchMarginInPixel = (int) getResources().getDimension(
+                            R.dimen.pref_top_margin);
+                    ((ViewGroup.MarginLayoutParams) layoutParams).topMargin = watchMarginInPixel;
+                    ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin = watchMarginInPixel;
+                    getListView().setLayoutParams(layoutParams);
+                }
+            }
+            return root;
+        }
+
+        @Override
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
+            LocalBroadcastManager.getInstance(getContext())
+                    .registerReceiver(mTestingModeChangedReceiver, new IntentFilter(
+                            CellBroadcastReceiver.ACTION_TESTING_MODE_CHANGED));
+
+            // Load the preferences from an XML resource
+            PackageManager pm = getActivity().getPackageManager();
+            if (pm.hasSystemFeature(PackageManager.FEATURE_WATCH)) {
+                addPreferencesFromResource(R.xml.watch_preferences);
+            } else {
+                addPreferencesFromResource(R.xml.preferences);
+            }
+
+            initPreferences();
+
+            Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
+
+            mDisableSevereWhenExtremeDisabled = res.getBoolean(
+                    R.bool.disable_severe_when_extreme_disabled);
+
+            // Handler for settings that require us to reconfigure enabled channels in radio
+            Preference.OnPreferenceChangeListener startConfigServiceListener =
+                    new Preference.OnPreferenceChangeListener() {
+                        @Override
+                        public boolean onPreferenceChange(Preference pref, Object newValue) {
+                            if (mDisableSevereWhenExtremeDisabled) {
+                                if (pref.getKey().equals(KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS)) {
+                                    boolean isExtremeAlertChecked = (Boolean) newValue;
+                                    if (mSevereCheckBox != null) {
+                                        mSevereCheckBox.setEnabled(isExtremeAlertChecked);
+                                        mSevereCheckBox.setChecked(false);
+                                    }
+                                }
+                            }
+
+                            // check if area update was disabled
+                            if (pref.getKey().equals(KEY_ENABLE_AREA_UPDATE_INFO_ALERTS)) {
+                                boolean isEnabledAlert = (Boolean) newValue;
+                                notifyAreaInfoUpdate(isEnabledAlert);
+                            }
+
+                            onPreferenceChangedByUser(getContext(), true);
+                            return true;
+                        }
+                    };
+
+            Preference.OnPreferenceChangeListener alertPreferenceToggleListener =
+                    new Preference.OnPreferenceChangeListener() {
+                        @Override
+                        public boolean onPreferenceChange(Preference pref, Object newValue) {
+                            onPreferenceChangedByUser(getContext(), false);
+                            return true;
+                        }
+                    };
+
+            initReminderIntervalList();
+
+            if (mMasterToggle != null) {
+
+                initAlertsToggleDisabledAsNeeded();
+
+                if (mMasterToggle instanceof MainSwitchPreference) {
+                    MainSwitchPreference mainSwitchPreference =
+                            (MainSwitchPreference) mMasterToggle;
+                    final OnCheckedChangeListener mainSwitchListener =
+                            new OnCheckedChangeListener() {
+                                @Override
+                                public void onCheckedChanged(CompoundButton buttonView,
+                                        boolean isChecked) {
+                                    setAlertsEnabled(isChecked);
+                                    onPreferenceChangedByUser(getContext(), true);
+                                }
+                            };
+                    mainSwitchPreference.addOnSwitchChangeListener(mainSwitchListener);
+                } else {
+                    Preference.OnPreferenceChangeListener mainSwitchListener =
+                            new Preference.OnPreferenceChangeListener() {
+                                @Override
+                                public boolean onPreferenceChange(
+                                        Preference pref, Object newValue) {
+                                    setAlertsEnabled((Boolean) newValue);
+                                    onPreferenceChangedByUser(getContext(), true);
+                                    return true;
+                                }
+                            };
+                    mMasterToggle.setOnPreferenceChangeListener(mainSwitchListener);
+                }
+                // If allow alerts are disabled, we turn all sub-alerts off. If it's enabled, we
+                // leave them as they are.
+                if (!mMasterToggle.isChecked()) {
+                    setAlertsEnabled(false);
+                }
+            }
+            // note that mPresidentialCheckBox does not use the startConfigServiceListener because
+            // the user is never allowed to change the preference
+            if (mAreaUpdateInfoCheckBox != null) {
+                mAreaUpdateInfoCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
+            if (mExtremeCheckBox != null) {
+                mExtremeCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
+            if (mPublicSafetyMessagesChannelCheckBox != null) {
+                mPublicSafetyMessagesChannelCheckBox.setOnPreferenceChangeListener(
+                        startConfigServiceListener);
+            }
+            if (mPublicSafetyMessagesChannelFullScreenCheckBox != null) {
+                mPublicSafetyMessagesChannelFullScreenCheckBox.setOnPreferenceChangeListener(
+                        startConfigServiceListener);
+            }
+            if (mEmergencyAlertsCheckBox != null) {
+                mEmergencyAlertsCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
+            if (mSevereCheckBox != null) {
+                mSevereCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+                if (mDisableSevereWhenExtremeDisabled) {
+                    if (mExtremeCheckBox != null) {
+                        mSevereCheckBox.setEnabled(mExtremeCheckBox.isChecked());
+                    }
+                }
+            }
+            if (mAmberCheckBox != null) {
+                mAmberCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
+            if (mTestCheckBox != null) {
+                mTestCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
+            if (mExerciseTestCheckBox != null) {
+                mExerciseTestCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
+            if (mOperatorDefinedCheckBox != null) {
+                mOperatorDefinedCheckBox.setOnPreferenceChangeListener(startConfigServiceListener);
+            }
+            if (mStateLocalTestCheckBox != null) {
+                mStateLocalTestCheckBox.setOnPreferenceChangeListener(
+                        startConfigServiceListener);
+            }
+
+            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
+
+            if (mOverrideDndCheckBox != null) {
+                if (!sp.getBoolean(KEY_OVERRIDE_DND_SETTINGS_CHANGED, false)) {
+                    // If the user hasn't changed this settings yet, use the default settings
+                    // from resource overlay.
+                    mOverrideDndCheckBox.setChecked(res.getBoolean(R.bool.override_dnd_default));
+                }
+                mOverrideDndCheckBox.setOnPreferenceChangeListener(
+                        (pref, newValue) -> {
+                            sp.edit().putBoolean(KEY_OVERRIDE_DND_SETTINGS_CHANGED,
+                                    true).apply();
+                            updateVibrationPreference((boolean) newValue);
+                            return true;
+                        });
+            }
+
+            if (mAlertHistory != null) {
+                mAlertHistory.setOnPreferenceClickListener(
+                        preference -> {
+                            final Intent intent = new Intent(getContext(),
+                                    CellBroadcastListActivity.class);
+                            startActivity(intent);
+                            return true;
+                        });
+            }
+
+            if (mSpeechCheckBox != null) {
+                mSpeechCheckBox.setOnPreferenceChangeListener(alertPreferenceToggleListener);
+            }
+
+            updateVibrationPreference(sp.getBoolean(CellBroadcastSettings.KEY_OVERRIDE_DND,
+                    false));
+            updatePreferenceVisibility();
+        }
+
+        /**
+         * Update the vibration preference based on override DND. If DND is overridden, then do
+         * not allow users to turn off vibration.
+         *
+         * @param overrideDnd {@code true} if the alert will be played at full volume, regardless
+         * DND settings.
+         */
+        private void updateVibrationPreference(boolean overrideDnd) {
+            if (mEnableVibrateCheckBox != null) {
+                if (overrideDnd) {
+                    // If DND is enabled, always enable vibration.
+                    mEnableVibrateCheckBox.setChecked(true);
+                }
+                // Grey out the preference if DND is overridden.
+                mEnableVibrateCheckBox.setEnabled(!overrideDnd);
+            }
+        }
+
+        /**
+         * Dynamically update each preference's visibility based on configuration.
+         */
+        private void updatePreferenceVisibility() {
+            Resources res = CellBroadcastSettings.getResourcesForDefaultSubId(getContext());
+
+            // The settings should be based on the config by the subscription
+            CellBroadcastChannelManager channelManager = new CellBroadcastChannelManager(
+                    getContext(), SubscriptionManager.getDefaultSubscriptionId(), null);
+
+            PreferenceScreen preferenceScreen = getPreferenceScreen();
+            boolean isWatch = getActivity().getPackageManager().hasSystemFeature(
+                    PackageManager.FEATURE_WATCH);
+
+            if (mMasterToggle != null) {
+                mMasterToggle.setVisible(res.getBoolean(R.bool.show_main_switch_settings));
+            }
+
+            if (mPresidentialCheckBox != null) {
+                mPresidentialCheckBox.setVisible(
+                        res.getBoolean(R.bool.show_presidential_alerts_settings));
+                if (isWatch && !mPresidentialCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mPresidentialCheckBox);
+                }
+            }
+
+            if (mExtremeCheckBox != null) {
+                mExtremeCheckBox.setVisible(res.getBoolean(R.bool.show_extreme_alert_settings)
+                        && !channelManager.getCellBroadcastChannelRanges(
+                        R.array.cmas_alert_extreme_channels_range_strings).isEmpty());
+                if (isWatch && !mExtremeCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mExtremeCheckBox);
+                }
+            }
+
+            if (mSevereCheckBox != null) {
+                mSevereCheckBox.setVisible(res.getBoolean(R.bool.show_severe_alert_settings)
+                        && !channelManager.getCellBroadcastChannelRanges(
+                        R.array.cmas_alerts_severe_range_strings).isEmpty());
+                if (isWatch && !mSevereCheckBox.isVisible()) {
+                    preferenceScreen.removePreference(mSevereCheckBox);
+                }
+            }
+
+            if (mAmberCheckBox != null) {
+                mAmberCheckBox.setVisible(res.getBoolean(R.bool.show_amber_alert_settings)
+                        && !channelManager.getCellBroadcastChannelRanges(
+                        R.array.cmas_amber_alerts_channels_range_strings).isEmpty());
                 if (isWatch && !mAmberCheckBox.isVisible()) {
                     preferenceScreen.removePreference(mAmberCheckBox);
                 }

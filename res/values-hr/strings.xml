@@ -77,7 +77,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Ozbiljne prijetnje"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Ozbiljne prijetnje po život i imovinu"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER upozorenja"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Hitni bilteni o otmicama djece"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Hitne obavijesti o otmicama djece"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Poruke upozorenja"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Upozorenja o neposrednim sigurnosnim prijetnjama"</string>
     <string name="enable_public_safety_messages_title" msgid="5576770949182656524">"Poruke o javnoj sigurnosti"</string>
@@ -89,7 +89,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"Hitna upozorenja"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"Upozorenja o događajima opasnima po život"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"Testna upozorenja"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Primajte testove mobilnog operatera i mjesečne testove sustava sigurnosnih upozorenja"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"Primajte testove mobilnog operatera i mjesečne testove iz sustava sigurnosnih upozorenja"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"Primanje hitnih upozorenja: poruka o vježbi"</string>
