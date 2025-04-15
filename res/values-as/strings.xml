@@ -56,7 +56,7 @@
     <string name="public_safety_message" msgid="9119928798786998252">"ৰাজহুৱা নিৰাপত্তা বিষয়ক বাৰ্তা"</string>
     <string name="state_local_test_alert" msgid="8003145745857480200">"ৰাজ্যিক/স্থানীয় পৰীক্ষামূলক সতৰ্কবাণী"</string>
     <string name="emergency_alert" msgid="624783871477634263">"জৰুৰীকালীন সতৰ্কবাণী"</string>
-    <string name="emergency_alerts_title" msgid="6605036374197485429">"সতৰ্কবাণীসমূহ"</string>
+    <string name="emergency_alerts_title" msgid="6605036374197485429">"সতৰ্কবার্তা"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"সম্প্ৰচাৰ কৰা বাৰ্তাবোৰ"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"জৰুৰীকালীন সতৰ্কবাণীসমূহ"</string>
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"অস্বীকৃত জৰুৰীকালীন সতৰ্কবাণী"</string>
