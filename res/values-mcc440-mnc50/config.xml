@@ -21,6 +21,6 @@
         <!-- 0x1101 for tsunami -->
         <item>0x1101:rat=gsm, type=etws_tsunami, emergency=true</item>
         <!-- 0x1104 for other purposes -->
-        <item>0x1104:rat=gsm, type=other, emergency=true, scope=carrier</item>
+        <item>0x1104:rat=gsm, type=other, emergency=true</item>
     </string-array>
 </resources>
