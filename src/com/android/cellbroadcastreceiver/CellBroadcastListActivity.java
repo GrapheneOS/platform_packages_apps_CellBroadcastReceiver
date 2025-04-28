@@ -32,6 +32,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -56,6 +57,7 @@ import androidx.appcompat.app.AlertDialog;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.modules.utils.build.SdkLevel;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.widget.SettingsThemeHelper;
 
 import java.util.ArrayList;
 
@@ -120,6 +122,22 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     *  Overrides the default {@link android.content.ContextWrapper#getTheme()} method
+     *  to apply a custom style(CellBroadcastListActivityActionModeTheme)
+     *  when an expressive theme is enabled.
+     */
+    @Override
+    public Resources.Theme getTheme() {
+        Resources.Theme theme = super.getTheme();
+        if (SettingsThemeHelper.isExpressiveTheme(this)) {
+            theme.applyStyle(
+                    R.style.CellBroadcastListActivityActionModeTheme,
+                    true);
+        }
+        return theme;
     }
 
     /**

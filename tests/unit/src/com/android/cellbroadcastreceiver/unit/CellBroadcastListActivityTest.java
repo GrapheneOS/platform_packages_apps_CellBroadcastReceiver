@@ -58,8 +58,10 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.database.MatrixCursor;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -90,6 +92,7 @@ import com.android.cellbroadcastreceiver.R;
 import com.android.internal.view.menu.ContextMenuBuilder;
 import com.android.modules.utils.build.SdkLevel;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.widget.SettingsThemeHelper;
 
 import org.junit.After;
 import org.junit.Before;
@@ -903,6 +906,26 @@ public class CellBroadcastListActivityTest extends
         doReturn(mockAlertDialogBuilder).when(mockAlertDialogBuilder).setCancelable(anyBoolean());
         activity.mListFragment.mInjectAlertDialogBuilder = mockAlertDialogBuilder;
         return mockAlertDialogBuilder;
+    }
+
+    public void testGetThemeCustomStyle() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        Resources.Theme returnedTheme = activity.getTheme();
+        int windowActionModeOverlay = mContext.getResources().getIdentifier(
+                "windowActionModeOverlay", "attr", "android");
+        int actionModeBackground = mContext.getResources().getIdentifier("actionModeBackground",
+                "attr", "android");
+        int[] attrsToObtain = new int[]{
+                windowActionModeOverlay,
+                actionModeBackground
+        };
+        TypedArray typedArray = returnedTheme.obtainStyledAttributes(attrsToObtain);
+        boolean windowActionModeOverlayValue = typedArray.getBoolean(0, false);
+        Drawable actionModeBackgroundDrawableValue = typedArray.getDrawable(1);
+        if (SettingsThemeHelper.isExpressiveTheme(mContext)) {
+            assertTrue(windowActionModeOverlayValue);
+            assertNotNull(actionModeBackgroundDrawableValue);
+        }
     }
 
     private android.app.AlertDialog.Builder getMockAlertDialogBuilderOld(
