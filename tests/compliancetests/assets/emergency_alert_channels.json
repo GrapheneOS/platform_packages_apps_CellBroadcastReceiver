@@ -995,157 +995,73 @@
       "filter_language": "language_setting"
     },
     "40960": {
-      "title": "안전 안내문자", //"Public Safety Alert",
+      "title": "위급 재난문자", //"Extreme Emergency Alert",
       "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "45055",
+      "toggle_avail": "false",
       "display": "false"
     },
-    "4400": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false"
-    }
-  },
-  "korea_skt": {
-    "4352": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false",
-      "end_channel": "4354"
-    },
-    "4356": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4370": {
-      "title": "위급 재난문자", //"Extreme Emergency Alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4383": {
+    "40970": {
       "title": "위급 재난문자", //"Extreme Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false",
-      "filter_language": "language_setting"
-    },
-    "4371": {
-      "title": "긴급 재난문자", //"Emergency Alert",
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "4384": {
-      "title": "긴급 재난문자", //"Emergency Alert",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "filter_language": "language_setting"
-    },
-    "4372": {
-      "title": "안전 안내문자", //"Public Safety Alert",
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "4373": {
-      "title": "안전 안내문자", //"Public Safety Alert",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4378"
-    },
-    "4379": {
-      "title": "실종 경보문자", //"Amber Alert",
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "4392": {
-      "title": "실종 경보문자", //"Amber Alert",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "filter_language": "language_setting"
-    },
-    "4385": {
-      "title": "안전 안내문자", //"Public Safety Alert",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "filter_language": "language_setting"
-    },
-    "40960": {
-      "title": "안전 안내문자", //"Public Safety Message",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "45055",
+      "filter_language": "language_setting",
       "display": "false"
     },
-    "4400": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false"
-    }
-  },
-  "korea_lgu": {
-    "4352": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false",
-      "end_channel": "4354"
-    },
-    "4356": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4370": {
-      "title": "위급 재난문자", //"Extreme Emergency Alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4383": {
-      "title": "위급 재난문자", //"Extreme Emergency Alert",
-      "default_value": "true",
-      "toggle_avail": "false",
-      "filter_language": "language_setting"
-    },
-    "4371": {
-      "title": "긴급 재난문자", //"Emergency Alert",
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "4384": {
+    "40961": {
       "title": "긴급 재난문자", //"Emergency Alert",
       "default_value": "true",
       "toggle_avail": "true",
-      "filter_language": "language_setting"
+      "display": "false"
     },
-    "4372": {
-      "title": "안전 안내문자", //"Public Safety Alert",
+    "40971": {
+      "title": "긴급 재난문자", //"Emergency Alert",
       "default_value": "true",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting",
+      "display": "false"
     },
-    "4373": {
+    "40962": {
       "title": "안전 안내문자", //"Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true",
-      "end_channel": "4378"
+      "display": "false"
     },
-    "4379": {
+    "40972": {
+      "title": "안전 안내문자", //"Public Safety Alert",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "filter_language": "language_setting",
+      "display": "false"
+    },
+    "40969": {
       "title": "실종 경보문자", //"Amber Alert",
       "default_value": "true",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "display": "false"
     },
-    "4392": {
+    "40979": {
       "title": "실종 경보문자", //"Amber Alert",
       "default_value": "true",
       "toggle_avail": "true",
-      "filter_language": "language_setting"
+      "filter_language": "language_setting",
+      "display": "false"
     },
-    "4385": {
-      "title": "안전 안내문자", //"Public Safety Alert",
+    "40963": {
+      "title": "브로드캐스트 메시지", //"Broadcast messages",
       "default_value": "true",
       "toggle_avail": "true",
-      "filter_language": "language_setting"
+      "end_channel": "40968",
+      "display": "false"
     },
-    "40960": {
-      "title": "안전 안내문자", //"Public Safety Alert",
+    "40973": {
+      "title": "브로드캐스트 메시지", //"Broadcast messages",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "40978",
+      "display": "false"
+    },
+    "40980": {
+      "title": "브로드캐스트 메시지", //"Broadcast messages",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "45055",
