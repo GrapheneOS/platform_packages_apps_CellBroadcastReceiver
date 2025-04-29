@@ -154,7 +154,7 @@ public class CellBroadcastBaseTest {
     @BeforeClass
     public static void beforeAllTests() throws Exception {
         logd("CellBroadcastBaseTest#beforeAllTests()");
-        if (!SdkLevel.isAtLeastT()) {
+        if (!SdkLevel.isAtLeastB()) {
             Log.i(TAG, "sdk level is below the latest platform");
             sPreconditionError = ERROR_SDK_VERSION;
             return;
