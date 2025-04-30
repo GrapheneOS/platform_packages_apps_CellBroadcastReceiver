@@ -52,7 +52,6 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.LoaderManager;
 import android.app.NotificationManager;
@@ -80,6 +79,7 @@ import android.view.WindowManager;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.test.filters.SdkSuppress;
 import androidx.test.platform.app.InstrumentationRegistry;
 
@@ -88,6 +88,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
 import com.android.cellbroadcastreceiver.CellBroadcastListItem;
 import com.android.cellbroadcastreceiver.R;
 import com.android.internal.view.menu.ContextMenuBuilder;
+import com.android.modules.utils.build.SdkLevel;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 import org.junit.After;
@@ -540,7 +541,14 @@ public class CellBroadcastListActivityTest extends
         assertNotNull(activity.mListFragment);
 
         // mock out the AlertDialog.Builder
-        AlertDialog.Builder mockAlertDialogBuilder = getMockAlertDialogBuilder(activity);
+        boolean isHideToolbal = isHideToolbar();
+        AlertDialog.Builder mockAlertDialogBuilder = null;
+        android.app.AlertDialog.Builder mockAlertDialogBuilderOld = null;
+        if (isHideToolbal) {
+            mockAlertDialogBuilderOld = getMockAlertDialogBuilderOld(activity);
+        } else {
+            mockAlertDialogBuilder = getMockAlertDialogBuilder(activity);
+        }
 
         // create mock delete menu item
         MenuItem mockMenuItem = mock(MenuItem.class);
@@ -556,7 +564,12 @@ public class CellBroadcastListActivityTest extends
         activity.mListFragment.getMultiChoiceModeListener().onActionItemClicked(mode, mockMenuItem);
 
         verify(mode, times(1)).finish();
-        verify(mockAlertDialogBuilder, never()).show();
+        if (isHideToolbal) {
+            verify(mockAlertDialogBuilderOld, never()).show();
+
+        } else {
+            verify(mockAlertDialogBuilder, never()).show();
+        }
 
         // mock out the adapter cursor
         Cursor mockCursor = getMockCursor(activity, 1, 0L);
@@ -565,7 +578,12 @@ public class CellBroadcastListActivityTest extends
         activity.mListFragment.getMultiChoiceModeListener().onActionItemClicked(mode, mockMenuItem);
 
         verify(mode, times(2)).finish();
-        verify(mockAlertDialogBuilder).show();
+        if (isHideToolbal) {
+            verify(mockAlertDialogBuilderOld).show();
+
+        } else {
+            verify(mockAlertDialogBuilder).show();
+        }
 
         // getColumnIndex is called 13 times within CellBroadcastCursorAdapter.createFromCursor
         verify(mockCursor, times(13)).getColumnIndex(mColumnCaptor.capture());
@@ -591,8 +609,14 @@ public class CellBroadcastListActivityTest extends
 
         // mock out the adapter cursor and the AlertDialog.Builder
         Cursor mockCursor = getMockCursor(activity, 1, 0L);
-        AlertDialog.Builder mockAlertDialogBuilder = getMockAlertDialogBuilder(activity);
-
+        boolean hideToolbar = isHideToolbar();
+        AlertDialog.Builder mockAlertDialogBuilder = null;
+        android.app.AlertDialog.Builder mockAlertDialogBuilderOld = null;
+        if (hideToolbar) {
+            mockAlertDialogBuilderOld = getMockAlertDialogBuilderOld(activity);
+        } else {
+            mockAlertDialogBuilder = getMockAlertDialogBuilder(activity);
+        }
         // create mock delete menu item
         MenuItem mockMenuItem = mock(MenuItem.class);
         doReturn(MENU_VIEW_DETAILS).when(mockMenuItem).getItemId();
@@ -603,7 +627,11 @@ public class CellBroadcastListActivityTest extends
         // verify the showing the alert dialog
         activity.mListFragment.onContextItemSelected(mockMenuItem);
 
-        verify(mockAlertDialogBuilder).show();
+        if (hideToolbar) {
+            verify(mockAlertDialogBuilderOld).show();
+        } else {
+            verify(mockAlertDialogBuilder).show();
+        }
 
         // getColumnIndex is called 13 times within CellBroadcastCursorAdapter.createFromCursor
         verify(mockCursor, times(13)).getColumnIndex(mColumnCaptor.capture());
@@ -766,7 +794,14 @@ public class CellBroadcastListActivityTest extends
 
         Cursor mockCursor = getMockCursor(activity, 0, 0L);
         doReturn("test").when(mockCursor).getString(anyInt());
-        AlertDialog.Builder mockAlertDialogBuilder = getMockAlertDialogBuilder(activity);
+        boolean hideToolbar = isHideToolbar();
+        AlertDialog.Builder mockAlertDialogBuilder = null;
+        android.app.AlertDialog.Builder mockAlertDialogBuilderOld = null;
+        if (hideToolbar) {
+            mockAlertDialogBuilderOld = getMockAlertDialogBuilderOld(activity);
+        } else {
+            mockAlertDialogBuilder = getMockAlertDialogBuilder(activity);
+        }
 
         // set the LocationCheckTime
         Field fieldCurrentLoaderId =
@@ -789,10 +824,15 @@ public class CellBroadcastListActivityTest extends
 
         // verify the locationCheckTime in dialog's message
         ArgumentCaptor<CharSequence> detailCaptor = ArgumentCaptor.forClass(CharSequence.class);
-        verify(mockAlertDialogBuilder).setMessage(detailCaptor.capture());
+        if (hideToolbar) {
+            verify(mockAlertDialogBuilderOld).setMessage(detailCaptor.capture());
+            verify(mockAlertDialogBuilderOld).show();
+        } else {
+            verify(mockAlertDialogBuilder).setMessage(detailCaptor.capture());
+            verify(mockAlertDialogBuilder).show();
+        }
         assertTrue(detailCaptor.getValue().toString().contains(
                 DateFormat.getDateTimeInstance().format(locationCheckTime)));
-        verify(mockAlertDialogBuilder).show();
     }
 
     public void testOnResume() throws Throwable {
@@ -863,5 +903,24 @@ public class CellBroadcastListActivityTest extends
         doReturn(mockAlertDialogBuilder).when(mockAlertDialogBuilder).setCancelable(anyBoolean());
         activity.mListFragment.mInjectAlertDialogBuilder = mockAlertDialogBuilder;
         return mockAlertDialogBuilder;
+    }
+
+    private android.app.AlertDialog.Builder getMockAlertDialogBuilderOld(
+            CellBroadcastListActivity activity) {
+        android.app.AlertDialog.Builder mockAlertDialogBuilder = mock(
+                android.app.AlertDialog.Builder.class);
+        doReturn(mockAlertDialogBuilder).when(mockAlertDialogBuilder).setTitle(anyInt());
+        doReturn(mockAlertDialogBuilder).when(mockAlertDialogBuilder).setMessage(any());
+        doReturn(mockAlertDialogBuilder).when(mockAlertDialogBuilder).setCancelable(anyBoolean());
+        activity.mListFragment.mInjectAlertDialogBuilderOld = mockAlertDialogBuilder;
+        return mockAlertDialogBuilder;
+    }
+
+    private boolean isHideToolbar() {
+        boolean isWatch = mContext.getPackageManager().hasSystemFeature(
+                PackageManager.FEATURE_WATCH);
+        // for backward compatibility on R devices or wearable devices due to small screen device.
+        boolean hideToolbar = !SdkLevel.isAtLeastS() || isWatch;
+        return hideToolbar;
     }
 }
