@@ -40,22 +40,6 @@ java_defaults {
     platform_apis: true,
 }
 
-java_import {
-    name: "prebuilt_cellbroadcast_mockmodem",
-    jars: ["mockmodem/classes.jar"],
-}
-
-android_library {
-    name: "cellbroadcast.mockmodem",
-    asset_dirs: ["mockmodem/assets"],
-    manifest: "mockmodem/AndroidManifest.xml",
-    static_libs: [
-        "prebuilt_cellbroadcast_mockmodem",
-    ],
-    min_sdk_version: "30",
-    platform_apis: true,
-}
-
 android_test {
     name: "CellBroadcastReceiverComplianceTests",
     defaults: ["CellBroadcastTestCommonComplianceTest"],
