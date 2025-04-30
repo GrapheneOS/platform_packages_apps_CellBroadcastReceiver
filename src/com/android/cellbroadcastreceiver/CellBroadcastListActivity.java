@@ -20,7 +20,6 @@ import static android.view.WindowManager.LayoutParams.SYSTEM_FLAG_HIDE_NON_SYSTE
 
 import android.annotation.Nullable;
 import android.app.ActionBar;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.FragmentManager;
@@ -33,6 +32,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -52,10 +52,12 @@ import android.view.WindowManager;
 import android.widget.AbsListView.MultiChoiceModeListener;
 import android.widget.ListView;
 import android.widget.TextView;
+import androidx.appcompat.app.AlertDialog;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.modules.utils.build.SdkLevel;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.widget.SettingsThemeHelper;
 
 import java.util.ArrayList;
 
@@ -67,17 +69,18 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
     @VisibleForTesting
     public CursorLoaderListFragment mListFragment;
+    private boolean mHideToolbar = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         boolean isWatch = getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH);
         // for backward compatibility on R devices or wearable devices due to small screen device.
-        boolean hideToolbar = !SdkLevel.isAtLeastS() || isWatch;
-        if (hideToolbar) {
+        mHideToolbar = !SdkLevel.isAtLeastS() || isWatch;
+        if (mHideToolbar) {
             setCustomizeContentView(R.layout.cell_broadcast_list_collapsing_no_toobar);
         }
         super.onCreate(savedInstanceState);
-        if (hideToolbar) {
+        if (mHideToolbar) {
             ActionBar actionBar = getActionBar();
             if (actionBar != null) {
                 // android.R.id.home will be triggered in onOptionsItemSelected()
@@ -119,6 +122,22 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     *  Overrides the default {@link android.content.ContextWrapper#getTheme()} method
+     *  to apply a custom style(CellBroadcastListActivityActionModeTheme)
+     *  when an expressive theme is enabled.
+     */
+    @Override
+    public Resources.Theme getTheme() {
+        Resources.Theme theme = super.getTheme();
+        if (SettingsThemeHelper.isExpressiveTheme(this)) {
+            theme.applyStyle(
+                    R.style.CellBroadcastListActivityActionModeTheme,
+                    true);
+        }
+        return theme;
     }
 
     /**
@@ -204,6 +223,8 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
 
         private boolean mIsWatch;
 
+        @VisibleForTesting
+        public android.app.AlertDialog.Builder mInjectAlertDialogBuilderOld;
         @VisibleForTesting
         public AlertDialog.Builder mInjectAlertDialogBuilder;
 
@@ -369,13 +390,24 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                     messageDisplayed, geometry);
             int titleId = (mCurrentLoaderId == LOADER_NORMAL_HISTORY)
                     ? R.string.view_details_title : R.string.view_details_debugging_title;
-            AlertDialog.Builder dialogBuilder = mInjectAlertDialogBuilder != null
-                    ? mInjectAlertDialogBuilder : new AlertDialog.Builder(getActivity());
-            dialogBuilder
-                    .setTitle(titleId)
-                    .setMessage(details)
-                    .setCancelable(true)
-                    .show();
+            if (mActivity != null && !mActivity.mHideToolbar) {
+                AlertDialog.Builder dialogBuilder = mInjectAlertDialogBuilder != null
+                        ? mInjectAlertDialogBuilder : new AlertDialog.Builder(getActivity());
+                dialogBuilder
+                        .setTitle(titleId)
+                        .setMessage(details)
+                        .setCancelable(true)
+                        .show();
+            } else {
+                android.app.AlertDialog.Builder dialogBuilder = mInjectAlertDialogBuilderOld != null
+                        ? mInjectAlertDialogBuilderOld : new android.app.AlertDialog.Builder(
+                        getActivity());
+                dialogBuilder
+                        .setTitle(titleId)
+                        .setMessage(details)
+                        .setCancelable(true)
+                        .show();
+            }
         }
 
         private void updateActionIconsVisibility() {
@@ -632,15 +664,29 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
                 long[] rowId = getArguments().getLongArray(ROW_ID);
                 boolean deleteAll = rowId[0] == -1;
                 DeleteThreadListener listener = new DeleteThreadListener(getActivity(), rowId);
-                AlertDialog.Builder builder = new AlertDialog.Builder(
-                        DeleteDialogFragment.this.getActivity());
-                builder.setIconAttribute(android.R.attr.alertDialogIcon)
-                        .setCancelable(true)
-                        .setPositiveButton(R.string.button_delete, listener)
-                        .setNegativeButton(R.string.button_cancel, null)
-                        .setMessage(deleteAll ? R.string.confirm_delete_all_broadcasts
-                                : R.string.confirm_delete_broadcast);
-                return builder.create();
+                CellBroadcastListActivity activity =
+                        (CellBroadcastListActivity) DeleteDialogFragment.this.getActivity();
+                if (!activity.mHideToolbar) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(
+                            DeleteDialogFragment.this.getActivity());
+                    builder.setIconAttribute(android.R.attr.alertDialogIcon)
+                            .setCancelable(true)
+                            .setPositiveButton(R.string.button_delete, listener)
+                            .setNegativeButton(R.string.button_cancel, null)
+                            .setMessage(deleteAll ? R.string.confirm_delete_all_broadcasts
+                                    : R.string.confirm_delete_broadcast);
+                    return builder.create();
+                } else {
+                    android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(
+                            DeleteDialogFragment.this.getActivity());
+                    builder.setIconAttribute(android.R.attr.alertDialogIcon)
+                            .setCancelable(true)
+                            .setPositiveButton(R.string.button_delete, listener)
+                            .setNegativeButton(R.string.button_cancel, null)
+                            .setMessage(deleteAll ? R.string.confirm_delete_all_broadcasts
+                                    : R.string.confirm_delete_broadcast);
+                    return builder.create();
+                }
             }
 
             @Override
