@@ -31,9 +31,12 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+import android.app.Instrumentation;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Looper;
@@ -632,5 +635,56 @@ public class CellBroadcastSettingsTest extends
         assertTrue(severeCheckBox.isChecked());
         assertTrue(amberCheckBox.isChecked());
         assertFalse(testCheckBox.isChecked());
+    }
+
+    @InstrumentationTest
+    @Test
+    public void testFragmentCreationInOnCreateIfNoExistingFragmentToRestore() throws Throwable {
+        try {
+            mDevice.wakeUp();
+            mDevice.pressMenu();
+        } catch (RemoteException exception) {
+            Assert.fail("Exception " + exception);
+        }
+        Instrumentation instrumentation = InstrumentationRegistry.getInstrumentation();
+
+        CellBroadcastSettings activity =
+                (CellBroadcastSettings) instrumentation.startActivitySync(
+                        createActivityIntent());
+        ComponentName activityComponentName = activity.getComponentName();
+        Instrumentation.ActivityMonitor monitor = instrumentation.addMonitor(
+                activityComponentName.getClassName(), null, false);
+        waitForMs(100);
+        if (isHideToolbar()) {
+            assertNotNull(activity.mCellBroadcastSettingsOldFragment);
+        } else {
+            assertNotNull(activity.mCellBroadcastSettingsFragment);
+        }
+
+        try {
+            mDevice.setOrientationLeft();
+
+            CellBroadcastSettings newActivity =
+                    (CellBroadcastSettings) instrumentation.waitForMonitorWithTimeout(
+                            monitor, DEVICE_WAIT_TIME * 5);
+
+            if (isHideToolbar()) {
+                assertNull(newActivity.mCellBroadcastSettingsOldFragment);
+            } else {
+                assertNull(newActivity.mCellBroadcastSettingsFragment);
+            }
+            mDevice.setOrientationNatural();
+            instrumentation.removeMonitor(monitor);
+        } catch (Exception e) {
+            Assert.fail("Exception " + e);
+        }
+    }
+
+    private boolean isHideToolbar() {
+        boolean isWatch = mContext.getPackageManager().hasSystemFeature(
+                PackageManager.FEATURE_WATCH);
+        // for backward compatibility on R devices or wearable devices due to small screen device.
+        boolean hideToolbar = !SdkLevel.isAtLeastS() || isWatch;
+        return hideToolbar;
     }
 }

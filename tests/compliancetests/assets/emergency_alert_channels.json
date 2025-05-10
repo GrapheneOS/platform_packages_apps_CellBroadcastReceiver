@@ -4794,5 +4794,74 @@
       "default_value": "false",
       "toggle_avail": "true"
     }
+  },
+  "Thailand": {
+    "4370": {
+      "title": "National Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "National Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4371": {
+      "title": "Extreme Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4384": {
+      "title": "Extreme Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4372": {
+      "title": "Extreme Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4385": {
+      "title": "Extreme Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4396": {
+      "title": "Informational Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4397": {
+      "title": "Informational Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4379": {
+      "title": "Amber Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "Amber Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4380": {
+      "title": "Test Alert",
+      "default_value": "false",
+      "toggle_avail": "false",
+      "test_mode": "true"
+    },
+    "4393": {
+      "title": "Test Alert",
+      "default_value": "false",
+      "toggle_avail": "false",
+      "test_mode": "true"
+    },
+    "4400": {
+      "title": "",
+      "default_value": "true",
+      "toggle_avail": "false"
+    }
   }
 }

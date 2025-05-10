@@ -1351,5 +1351,23 @@
       "default_value": "true",
       "toggle_avail": "true"
     }
+  },
+  "Thailand": {
+    "Extreme Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Informational Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Amber Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
   }
 }
