@@ -15,9 +15,10 @@
  */
 package com.android.cellbroadcastreceiver.unit;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
-import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -39,8 +40,12 @@ import android.telephony.SubscriptionManager;
 import android.test.mock.MockContentResolver;
 import android.test.mock.MockContext;
 import android.util.Log;
+
 import com.android.cellbroadcastreceiver.CellBroadcastDatabaseHelper;
+import com.android.modules.utils.build.SdkLevel;
+
 import junit.framework.TestCase;
+
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -200,7 +205,11 @@ public class CellBroadcastContentProviderTest extends TestCase {
     @InstrumentationTest
     public void testWriteSmsInboxBeforeUserUnlock() {
         doReturn(false).when(mUserManager).isUserUnlocked();
-        doReturn(true).when(mUserManager).isSystemUser();
+        if (SdkLevel.isAtLeastU()) {
+            doReturn(true).when(mUserManager).isMainUser();
+        } else {
+            doReturn(true).when(mUserManager).isSystemUser();
+        }
         SmsCbMessage msg = fakeSmsCbMessage();
         mCellBroadcastProviderTestable.insertNewBroadcast(msg);
         // verify does not write message to SMS db
@@ -313,6 +322,15 @@ public class CellBroadcastContentProviderTest extends TestCase {
                     return null;
             }
         }
+
+        @Override
+        public String getSystemServiceName(Class<?> serviceClass) {
+            if (UserManager.class.equals(serviceClass)) {
+                return Context.USER_SERVICE;
+            }
+            return super.getSystemServiceName(serviceClass);
+        }
+
 
         @Override
         public int checkCallingOrSelfPermission(String permission) {
