@@ -41,6 +41,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Looper;
 import android.os.RemoteException;
+import android.os.UserHandle;
 import android.os.UserManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
@@ -593,6 +594,28 @@ public class CellBroadcastSettingsTest extends
         assertTrue(severeCheckBox.isChecked());
         assertTrue(amberCheckBox.isChecked());
         assertTrue(testCheckBox.isChecked());
+    }
+
+    @Test
+    public void testNotifyAreaInfoUpdate() throws Throwable {
+        doReturn(false).when(mContext.getResources()).getBoolean(
+                R.bool.test_alerts_enabled_default);
+
+        CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
+        waitForMs(100);
+        if (!SdkLevel.isAtLeastS()) {
+            cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment
+                .setAlertsEnabled(false);
+        } else {
+            cellBroadcastSettingActivity.mCellBroadcastSettingsFragment
+                .setAlertsEnabled(false);
+        }
+
+        assertEquals("com.android.cellbroadcastreceiver.action.AREA_UPDATE_INFO_ENABLED",
+                mContext.mSendBroadcastIntent.getAction());
+        assertEquals(UserHandle.SYSTEM, mContext.mUserHandle);
+        assertEquals("com.android.cellbroadcastservice.FULL_ACCESS_CELL_BROADCAST_HISTORY",
+                mContext.mReceiverPermission);
     }
 
     @Test
