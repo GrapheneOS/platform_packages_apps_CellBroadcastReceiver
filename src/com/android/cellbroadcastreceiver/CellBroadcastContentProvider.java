@@ -42,6 +42,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.internal.annotations.VisibleForTesting;
+import com.android.modules.utils.build.SdkLevel;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -456,9 +457,9 @@ public class CellBroadcastContentProvider extends ContentProvider {
     @VisibleForTesting
     public void writeMessageToSmsInbox(@NonNull SmsCbMessage message, @NonNull Context context) {
         UserManager userManager = (UserManager) context.getSystemService(Context.USER_SERVICE);
-        if (!userManager.isSystemUser()) {
-            // SMS database is single-user mode, discard non-system users to avoid inserting twice.
-            Log.d(TAG, "ignoring writeMessageToSmsInbox due to non-system user");
+        if (!isPrimaryUser(context)) {
+            // SMS database is single-user mode, discard non-main users to avoid inserting twice.
+            Log.d(TAG, "ignoring writeMessageToSmsInbox due to non-main user");
             return;
         }
         // Note SMS database is not direct boot aware for privacy reasons, we should only interact
@@ -550,6 +551,15 @@ public class CellBroadcastContentProvider extends ContentProvider {
 
             mContentResolver = null;    // free reference to content resolver
             return null;
+        }
+    }
+
+    private boolean isPrimaryUser(Context context) {
+        UserManager userManager = context.getSystemService(UserManager.class);
+        if (SdkLevel.isAtLeastU()) {
+            return userManager.isMainUser();
+        } else {
+            return userManager.isSystemUser();
         }
     }
 }

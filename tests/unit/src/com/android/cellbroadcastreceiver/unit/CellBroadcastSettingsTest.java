@@ -41,6 +41,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Looper;
 import android.os.RemoteException;
+import android.os.UserHandle;
 import android.os.UserManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
@@ -54,6 +55,7 @@ import androidx.test.uiautomator.UiDevice;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
 import com.android.cellbroadcastreceiver.CellBroadcastConfigService;
+import com.android.cellbroadcastreceiver.CellBroadcastReceiver;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.cellbroadcastreceiver.R;
 import com.android.internal.telephony.CellBroadcastUtils;
@@ -99,6 +101,10 @@ public class CellBroadcastSettingsTest extends
 
     FakeSharedPreferences mFakeSharedPreferences = new FakeSharedPreferences();
 
+    CellBroadcastReceiver.ActivityManagerProxy mTestActivityManagerProxy;
+
+    CellBroadcastReceiver.ActivityManagerProxy mBackupActivityManagerProxy;
+
     public CellBroadcastSettingsTest() {
         super(CellBroadcastSettings.class);
     }
@@ -113,12 +119,16 @@ public class CellBroadcastSettingsTest extends
         injectSystemService(SubscriptionManager.class, mockSubManager);
         SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
         doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
+        mBackupActivityManagerProxy = CellBroadcastReceiver.sActivityManagerProxy;
+        mTestActivityManagerProxy = mock(CellBroadcastReceiver.ActivityManagerProxy.class);
+        CellBroadcastReceiver.sActivityManagerProxy = mTestActivityManagerProxy;
     }
 
     @After
     public void tearDown() throws Exception {
         CellBroadcastSettings.resetResourcesCache();
         CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
+        CellBroadcastReceiver.sActivityManagerProxy = mBackupActivityManagerProxy;
         super.tearDown();
     }
 
@@ -225,7 +235,7 @@ public class CellBroadcastSettingsTest extends
         CellBroadcastSettings.CellBroadcastSettingsFragment fragment =
                 new CellBroadcastSettings.CellBroadcastSettingsFragment();
         doReturn(mUserManager).when(mockContext).getSystemService(Context.USER_SERVICE);
-        doReturn(true).when(mUserManager).isSystemUser();
+        setCurrentUser(true);
         doReturn(mMockedSharedPreference).when(mockContext).getSharedPreferences(anyString(),
                 anyInt());
         doReturn(mEditor).when(mMockedSharedPreference).edit();
@@ -587,6 +597,28 @@ public class CellBroadcastSettingsTest extends
     }
 
     @Test
+    public void testNotifyAreaInfoUpdate() throws Throwable {
+        doReturn(false).when(mContext.getResources()).getBoolean(
+                R.bool.test_alerts_enabled_default);
+
+        CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
+        waitForMs(100);
+        if (!SdkLevel.isAtLeastS()) {
+            cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment
+                .setAlertsEnabled(false);
+        } else {
+            cellBroadcastSettingActivity.mCellBroadcastSettingsFragment
+                .setAlertsEnabled(false);
+        }
+
+        assertEquals("com.android.cellbroadcastreceiver.action.AREA_UPDATE_INFO_ENABLED",
+                mContext.mSendBroadcastIntent.getAction());
+        assertEquals(UserHandle.SYSTEM, mContext.mUserHandle);
+        assertEquals("com.android.cellbroadcastservice.FULL_ACCESS_CELL_BROADCAST_HISTORY",
+                mContext.mReceiverPermission);
+    }
+
+    @Test
     public void testRestoreToggleToCarrierDefault() throws Throwable {
         doReturn(true).when(mContext.getResources()).getBoolean(
                 R.bool.restore_sub_toggle_to_carrier_default);
@@ -686,5 +718,14 @@ public class CellBroadcastSettingsTest extends
         // for backward compatibility on R devices or wearable devices due to small screen device.
         boolean hideToolbar = !SdkLevel.isAtLeastS() || isWatch;
         return hideToolbar;
+    }
+
+    private void setCurrentUser(boolean currentUser) {
+        if (SdkLevel.isAtLeastT()) {
+            int userId = currentUser ? UserHandle.myUserId() : UserHandle.myUserId() + 1;
+            doReturn(userId).when(mTestActivityManagerProxy).getCurrentUser();
+        } else {
+            doReturn(currentUser).when(mUserManager).isSystemUser();
+        }
     }
 }

@@ -24,6 +24,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.android.internal.annotations.VisibleForTesting;
+import com.android.modules.utils.build.SdkLevel;
 
 /**
  * The CellBroadcast backup agent backs up the shared
@@ -51,7 +52,14 @@ public class CellBroadcastBackupAgent extends BackupAgentHelper {
 
         // Cell broadcast was configured during boot up before the shared preference is restored,
         // we need to re-configure it.
-        sendBroadcastAsUser(intent, UserHandle.SYSTEM);
+        if (SdkLevel.isAtLeastT()) {
+            // ACTION_USER_SWITCHED is supported on T and above.
+            // on T and above, channels are registered in current user for multiuser scenario
+            sendBroadcastAsUser(intent, UserHandle.CURRENT);
+        } else {
+            // before T, channels are registered in system user for multiuser scenario
+            sendBroadcastAsUser(intent, UserHandle.SYSTEM);
+        }
     }
 }
 

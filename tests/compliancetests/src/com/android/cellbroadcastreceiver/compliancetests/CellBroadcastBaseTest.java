@@ -168,6 +168,14 @@ public class CellBroadcastBaseTest {
             return;
         }
 
+        boolean hasTelephonyCallingFeature =
+                pm.hasSystemFeature("android.hardware.telephony.calling");
+        if (!hasTelephonyCallingFeature) {
+            Log.i(TAG, "Voice Capable Off device");
+            sPreconditionError = ERROR_NO_TELEPHONY;
+            return;
+        }
+
         TelephonyManager tm =
                 (TelephonyManager) getContext().getSystemService(Context.TELEPHONY_SERVICE);
         boolean isMultiSim = tm != null && tm.getPhoneCount() > 1;

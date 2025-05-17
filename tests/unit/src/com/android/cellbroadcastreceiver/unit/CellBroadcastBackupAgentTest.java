@@ -30,6 +30,7 @@ import android.os.UserHandle;
 
 import com.android.cellbroadcastreceiver.CellBroadcastBackupAgent;
 import com.android.cellbroadcastreceiver.CellBroadcastInternalReceiver;
+import com.android.modules.utils.build.SdkLevel;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -88,7 +89,11 @@ public class CellBroadcastBackupAgentTest {
 
         ArgumentCaptor<Intent> intentArg = ArgumentCaptor.forClass(Intent.class);
         mBackupAgentUT.onRestoreFinished();
-        verify(mMockContext).sendBroadcastAsUser(intentArg.capture(), eq(UserHandle.SYSTEM));
+        if (SdkLevel.isAtLeastT()) {
+            verify(mMockContext).sendBroadcastAsUser(intentArg.capture(), eq(UserHandle.CURRENT));
+        } else {
+            verify(mMockContext).sendBroadcastAsUser(intentArg.capture(), eq(UserHandle.SYSTEM));
+        }
         assertEquals(packageName, intentArg.getValue().getComponent().getPackageName());
         assertEquals(className, intentArg.getValue().getComponent().getClassName());
     }

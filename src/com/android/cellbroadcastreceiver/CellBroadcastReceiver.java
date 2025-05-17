@@ -38,6 +38,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Telephony;
 import android.provider.Telephony.CellBroadcasts;
@@ -56,6 +57,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
 
 import com.android.internal.annotations.VisibleForTesting;
+import com.android.modules.utils.build.SdkLevel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -100,6 +102,9 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
             "com.android.cellbroadcastreceiver.intent.START_CONFIG";
     public static final String ACTION_MARK_AS_READ =
             "com.android.cellbroadcastreceiver.intent.action.MARK_AS_READ";
+
+    public static final String ACTION_CELLBROADCAST_USER_SWITCHED =
+            "com.android.cellbroadcastservice.action.USER_SWITCHED";
     public static final String EXTRA_DELIVERY_TIME =
             "com.android.cellbroadcastreceiver.intent.extra.ID";
     public static final String EXTRA_NOTIF_ID =
@@ -228,6 +233,15 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                         provider.resyncToSmsInbox(mContext);
                         return true;
                     });
+        } else if (ACTION_CELLBROADCAST_USER_SWITCHED.equals(intent.getAction())) {
+            Log.d(TAG, "CELLBROADCAST_USER_SWITCHED is received");
+            if (!isRepresentativeUser(context)) {
+                Log.d(TAG, "it is not current user");
+                return;
+            }
+            resetCellBroadcastChannelRanges();
+            initializeSharedPreference(context, SubscriptionManager.getDefaultSubscriptionId());
+            startConfigServiceToEnableChannels();
         } else {
             Log.w(TAG, "onReceive() unexpected action " + action);
         }
@@ -561,7 +575,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      */
     @VisibleForTesting
     public void initializeSharedPreference(Context context, int subId) {
-        if (isSystemUser()) {
+        if (isRepresentativeUser(context)) {
             Log.d(TAG, "initializeSharedPreference");
 
             resetSettingsAsNeeded(context, subId);
@@ -591,7 +605,7 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
             adjustReminderInterval();
         } else {
-            Log.e(TAG, "initializeSharedPreference: Not system user.");
+            Log.e(TAG, "initializeSharedPreference: Not current user.");
         }
     }
 
@@ -734,20 +748,50 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
 
     /**
      * This method's purpose if to enable unit testing
-     *
-     * @return if the mContext user is a system user
-     */
-    private boolean isSystemUser() {
-        return isSystemUser(mContext);
-    }
-
-    /**
-     * This method's purpose if to enable unit testing
      */
     @VisibleForTesting
     public void startConfigServiceToEnableChannels() {
         startConfigService(mContext, CellBroadcastConfigService.ACTION_ENABLE_CHANNELS);
     }
+
+    /**
+     * Check if user from context is representative user
+     * @param context Context
+     * @return whether the user is current user
+     */
+    private static boolean isRepresentativeUser(Context context) {
+        if (SdkLevel.isAtLeastT()) {
+            // ACTION_USER_SWITCHED is supported on T and above.
+            // on T and above, channels are registered in current user for multiuser scenario
+            boolean isCurrentUser = UserHandle.myUserId() == sActivityManagerProxy.getCurrentUser();
+            Log.d(TAG, "isCurrentUser: " + isCurrentUser);
+            return isCurrentUser;
+        } else {
+            // before T, channels are registered in system user for multiuser scenario
+            boolean isSystemUser = isSystemUser(context);
+            Log.d(TAG, "isSystemUser: " + isSystemUser);
+            return isSystemUser;
+        }
+    }
+
+    /**
+     * Testing interface used to mock ActivityManager in testing
+     */
+    @VisibleForTesting
+    public interface ActivityManagerProxy {
+        /**
+         * @return The current user
+         */
+        int getCurrentUser();
+    }
+
+    @VisibleForTesting
+    public static ActivityManagerProxy sActivityManagerProxy = new ActivityManagerProxy() {
+        @Override
+        public int getCurrentUser() {
+            return ActivityManager.getCurrentUser();
+        }
+    };
 
     /**
      * Check if user from context is system user
@@ -765,12 +809,12 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
      * @param context the broadcast receiver context
      */
     static void startConfigService(Context context, String action) {
-        if (isSystemUser(context)) {
+        if (isRepresentativeUser(context)) {
             Log.d(TAG, "Start Cell Broadcast configuration for intent=" + action);
             context.startService(new Intent(action, null, context,
                     CellBroadcastConfigService.class));
         } else {
-            Log.e(TAG, "startConfigService: Not system user.");
+            Log.e(TAG, "startConfigService: Not representative user.");
         }
     }
 

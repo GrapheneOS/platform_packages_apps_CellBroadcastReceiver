@@ -46,6 +46,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.AudioDeviceInfo;
 import android.os.RemoteException;
+import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Telephony;
 import android.telephony.CarrierConfigManager;
@@ -60,6 +61,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastListActivity;
 import com.android.cellbroadcastreceiver.CellBroadcastReceiver;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.cellbroadcastreceiver.R;
+import com.android.modules.utils.build.SdkLevel;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -83,6 +85,7 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
 
     @Mock
     UserManager mUserManager;
+
     @Mock
     Intent mIntent;
     @Mock
@@ -98,6 +101,10 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     @Mock
     SubscriptionManager mSubscriptionManager;
     FakeSharedPreferences mFakeSharedPreferences = new FakeSharedPreferences();
+
+    CellBroadcastReceiver.ActivityManagerProxy mTestActivityManagerProxy;
+
+    CellBroadcastReceiver.ActivityManagerProxy mBackupActivityManagerProxy;
 
     private Configuration mConfiguration = new Configuration();
     private AudioDeviceInfo[] mDevices = new AudioDeviceInfo[0];
@@ -138,8 +145,20 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         doReturn(mPackageName).when(mContext).getPackageName();
         doReturn(mFakeSharedPreferences).when(mContext).getSharedPreferences(anyString(), anyInt());
         doReturn(mUserManager).when(mContext).getSystemService(Context.USER_SERVICE);
-        doReturn(false).when(mUserManager).isSystemUser();
+        mBackupActivityManagerProxy = CellBroadcastReceiver.sActivityManagerProxy;
+        mTestActivityManagerProxy = mock(CellBroadcastReceiver.ActivityManagerProxy.class);
+        CellBroadcastReceiver.sActivityManagerProxy = mTestActivityManagerProxy;
+        setCurrentUser(false);
         setContext();
+    }
+
+    private void setCurrentUser(boolean currentUser) {
+        if (SdkLevel.isAtLeastT()) {
+            int userId = currentUser ? UserHandle.myUserId() : UserHandle.myUserId() + 1;
+            doReturn(userId).when(mTestActivityManagerProxy).getCurrentUser();
+        } else {
+            doReturn(currentUser).when(mUserManager).isSystemUser();
+        }
     }
 
     @Test
@@ -235,7 +254,7 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     @Test
     public void testInitializeSharedPreference_ifSystemUser_invalidSub() throws RemoteException {
         doReturn("An invalid action").when(mIntent).getAction();
-        doReturn(true).when(mUserManager).isSystemUser();
+        setCurrentUser(true);
         doReturn(true).when(mCellBroadcastReceiver).sharedPrefsHaveDefaultValues();
         doNothing().when(mCellBroadcastReceiver).adjustReminderInterval();
         mockTelephonyManager();
@@ -267,7 +286,7 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     @Test
     public void testInitializeSharedPreference_ifSystemUser_firstSub() throws Exception {
         doReturn("An invalid action").when(mIntent).getAction();
-        doReturn(true).when(mUserManager).isSystemUser();
+        setCurrentUser(true);
         doReturn(true).when(mCellBroadcastReceiver).sharedPrefsHaveDefaultValues();
         doNothing().when(mCellBroadcastReceiver).adjustReminderInterval();
         mockTelephonyManager();
@@ -300,7 +319,7 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     @Test
     public void testInitializeSharedPreference_ifSystemUser_carrierChange() throws Exception {
         doReturn("An invalid action").when(mIntent).getAction();
-        doReturn(true).when(mUserManager).isSystemUser();
+        setCurrentUser(true);
         doReturn(true).when(mCellBroadcastReceiver).sharedPrefsHaveDefaultValues();
         doNothing().when(mCellBroadcastReceiver).adjustReminderInterval();
         mockTelephonyManager();
@@ -328,11 +347,11 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
     }
 
     @Test
-    public void testInitializeSharedPreference_ifNotSystemUser() {
+    public void testInitializeSharedPreference_ifNotSystemUser() throws RemoteException {
         doReturn("An invalid action").when(mIntent).getAction();
-        doReturn(false).when(mUserManager).isSystemUser();
+        setCurrentUser(false);
 
-        mCellBroadcastReceiver.initializeSharedPreference(any(), anyInt());
+        mCellBroadcastReceiver.initializeSharedPreference(mContext, 1);
         assertThat(mFakeSharedPreferences.getValueCount()).isEqualTo(0);
     }
 
@@ -788,8 +807,29 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
         }
     }
 
+    @Test
+    public void testOnReceive_userSwitchedAction() {
+        doReturn(CellBroadcastReceiver.ACTION_CELLBROADCAST_USER_SWITCHED)
+                .when(mIntent).getAction();
+
+        setCurrentUser(false);
+        mCellBroadcastReceiver.onReceive(mContext, mIntent);
+        verify(mCellBroadcastReceiver, never()).initializeSharedPreference(any(), anyInt());
+        verify(mCellBroadcastReceiver, never()).startConfigServiceToEnableChannels();
+        verify(mCellBroadcastReceiver, never()).resetCellBroadcastChannelRanges();
+
+        setCurrentUser(true);
+        doReturn(true).when(mCellBroadcastReceiver).sharedPrefsHaveDefaultValues();
+        doNothing().when(mCellBroadcastReceiver).adjustReminderInterval();
+        mCellBroadcastReceiver.onReceive(mContext, mIntent);
+        verify(mCellBroadcastReceiver).initializeSharedPreference(any(), anyInt());
+        verify(mCellBroadcastReceiver).startConfigServiceToEnableChannels();
+        verify(mCellBroadcastReceiver).resetCellBroadcastChannelRanges();
+    }
+
     @After
     public void tearDown() throws Exception {
+        CellBroadcastReceiver.sActivityManagerProxy = mBackupActivityManagerProxy;
         super.tearDown();
     }
 }
