@@ -628,6 +628,10 @@
       "default_value": "true",
       "toggle_avail": "true"
     },
+    "Public Safety Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
     "Test alerts": {
       "default_value": "false",
       "toggle_avail": "true"

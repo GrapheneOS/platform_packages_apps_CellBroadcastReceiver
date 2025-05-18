@@ -16,20 +16,53 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Preference title for enable presidential threat alerts checkbox. [CHAR LIMIT=40] -->
+    <!-- Required Romanian(ro) translation for this message: Alertă de Risc Iminent -->
+    <string name="enable_cmas_presidential_alerts_title">Imminent Risk Alert</string>
+    <!-- Preference summary for enable presidential threat alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Romanian(ro) translation for this message: Pericole cu risc iminent privind viața și bunurile -->
+    <string name="enable_cmas_presidential_alerts_summary">Imminent threats to life and property</string>
     <!-- Preference title for enable Romania orange alert messages checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Romanian(ro) translation for this message: Alertă pentru un copil dispărut -->
     <string name="enable_public_safety_messages_title">Missing Child Alert</string>
-    <!-- Dialog title for all orange alert for Romania [CHAR LIMIT=50] -->
-    <string name="public_safety_message">RO-Alert: Missing Child Alert</string>
+    <!-- Preference summary for enable Romania orange alert messages checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Romanian(ro) translation for this message: Acțiuni recomandate care pot salva vieți sau bunuri -->
+    <string name="enable_public_safety_messages_summary">Recommended actions that can save lives or property</string>
+    <!-- Preference title for enable Romania public safety messages checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Romanian(ro) translation for this message: Alertă pentru siguranță publică -->
+    <string name="enable_cmas_amber_alerts_title">Public Safety Alert</string>
+    <!-- Preference summary for enable Romania public safety messages checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Romanian(ro) translation for this message: Alertă silențioasă -->
+    <string name="enable_cmas_amber_alerts_summary">Silent Alert</string>
+    <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Romanian(ro) translation for this message: Alerte de exercițiu -->
+    <string name="enable_exercise_test_alerts_title">Exercise Alerts</string>
+    <!-- Preference summary for exercise test alerts checkbox. [CHAR LIMIT=125] -->
+    <!-- Required Romanian(ro) translation for this message: Primește alerte de urgență: mesaj de exercițiu/simulare -->
+    <string name="enable_exercise_test_alerts_summary">Receive emergency alert: exercise/drill message</string>
+
     <!-- CMAS dialog title for Romania presidential level alert. [CHAR LIMIT=60] -->
-    <string name="cmas_presidential_level_alert">RO-Alert: Presidential Alert</string>
+    <!-- Required Romanian(ro) translation for this message: RO-ALERT : Alertă de Risc Iminent -->
+    <string name="cmas_presidential_level_alert">RO-ALERT : Imminent Risk Alert</string>
     <!-- CMAS dialog title for Romania extreme alert. [CHAR LIMIT=50] -->
-    <string name="cmas_extreme_alert">RO-Alert: Extreme Alert</string>
+    <!-- Required Romanian(ro) translation for this message: RO-ALERT : Alertă Extremă -->
+    <string name="cmas_extreme_alert">RO-ALERT : Extreme Alert</string>
     <!-- CMAS dialog title for Romania extreme alert with extreme severity, immediate urgency, and observed certainty. [CHAR LIMIT=50] -->
-    <string name="cmas_extreme_immediate_observed_alert">RO-Alert: Extreme Alert</string>
+    <!-- Required Romanian(ro) translation for this message: RO-ALERT : Alertă Extremă -->
+    <string name="cmas_extreme_immediate_observed_alert">RO-ALERT : Extreme Alert</string>
     <!-- CMAS dialog title for Romania extreme alert with extreme severity, immediate urgency,  and likely certainty. [CHAR LIMIT=50] -->
-    <string name="cmas_extreme_immediate_likely_alert">RO-Alert: Extreme Alert</string>
+    <!-- Required Romanian(ro) translation for this message: RO-ALERT : Alertă Extremă -->
+    <string name="cmas_extreme_immediate_likely_alert">RO-ALERT : Extreme Alert</string>
     <!-- CMAS dialog title for Romania severe alert. [CHAR LIMIT=50] -->
-    <string name="cmas_severe_alert">RO-Alert: Severe Alert</string>
+    <!-- Required Romanian(ro) translation for this message: RO-ALERT : Alertă Severă -->
+    <string name="cmas_severe_alert">RO-ALERT : Severe Alert</string>
+    <!-- Dialog title for all orange alert for Romania [CHAR LIMIT=50] -->
+    <!-- Required Romanian(ro) translation for this message: RO-ALERT : Alertă dispariție copil -->
+    <string name="public_safety_message">RO-ALERT : Missing Child Alert</string>
+    <!-- CMAS dialog title for Romania public safety messages. [CHAR LIMIT=50] -->
+    <!-- Required Romanian(ro) translation for this message: RO-ALERT : Alertă pentru siguranță publică -->
+    <string name="cmas_amber_alert">RO-ALERT : Public Safety Alert</string>
     <!-- CMAS dialog title for Romania Exercise Alert (drill/simulation alert) [CHAR LIMIT=50] -->
-    <string name="cmas_exercise_alert">RO-Alert: Exercise Alert</string>
+    <!-- Required Romanian(ro) translation for this message: RO-ALERT : Alertă de exercițiu -->
+    <string name="cmas_exercise_alert">RO-ALERT : Exercise Alerts</string>
 </resources>
