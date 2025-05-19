@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--   Copyright (C) 2025 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+  -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="8652246909903979543">"Celostátní upozornění"</string>
+    <string name="cmas_extreme_alert" msgid="1539624055186085113">"Extrémní výstraha"</string>
+    <string name="public_safety_message" msgid="7803260172096958825">"Informační upozornění"</string>
+    <string name="cmas_amber_alert" msgid="1681714155769596431">"Varování AMBER"</string>
+    <string name="cmas_required_monthly_test" msgid="5859775148883208089">"Testovací výstraha"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5439928947393191297">"Extrémní výstraha"</string>
+    <string name="enable_public_safety_messages_title" msgid="6569566741315399257">"Informační upozornění"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="6521849845212532074">"Varování AMBER"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="1889517460681507007">"Testovací výstraha"</string>
+</resources>
