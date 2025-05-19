@@ -708,6 +708,10 @@
     "Vibreur": { //"Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
+    },
+    "Énoncer un message d'alerte": {
+      "default_value": "false",
+      "toggle_avail": "true"
     }
   },
   "us_vzw": {
