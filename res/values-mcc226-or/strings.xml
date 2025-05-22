@@ -16,35 +16,20 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for enable_cmas_presidential_alerts_title (3661150741509605283) -->
-    <skip />
-    <!-- no translation found for enable_cmas_presidential_alerts_summary (8347705366713694241) -->
-    <skip />
+    <string name="enable_cmas_presidential_alerts_title" msgid="3661150741509605283">"ଆସନ୍ନ ବିପଦର ଆଲର୍ଟ"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="8347705366713694241">"ଜୀବନ ଏବଂ ସମ୍ପତ୍ତି ପ୍ରତି ଆସନ୍ନ ବିପଦ"</string>
     <string name="enable_public_safety_messages_title" msgid="2475018227538267649">"ହଜି ଯାଇଥିବା ପିଲା ବିଷୟରେ ଆଲର୍ଟ"</string>
-    <!-- no translation found for enable_public_safety_messages_summary (4419379368753674332) -->
-    <skip />
-    <!-- no translation found for enable_cmas_amber_alerts_title (5354726577579867638) -->
-    <skip />
-    <!-- no translation found for enable_cmas_amber_alerts_summary (8834699940573410921) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (2484615513998712565) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_summary (645953203648316566) -->
-    <skip />
-    <!-- no translation found for cmas_presidential_level_alert (4433533803942786891) -->
-    <skip />
-    <!-- no translation found for cmas_extreme_alert (8873984143193938989) -->
-    <skip />
-    <!-- no translation found for cmas_extreme_immediate_observed_alert (6945883922054156265) -->
-    <skip />
-    <!-- no translation found for cmas_extreme_immediate_likely_alert (2472409745602501961) -->
-    <skip />
-    <!-- no translation found for cmas_severe_alert (2807762412380961321) -->
-    <skip />
-    <!-- no translation found for public_safety_message (2382301497387374529) -->
-    <skip />
-    <!-- no translation found for cmas_amber_alert (7019618668011011043) -->
-    <skip />
-    <!-- no translation found for cmas_exercise_alert (1318544042828018186) -->
-    <skip />
+    <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"ଜୀବନ କିମ୍ବା ସମ୍ପତ୍ତିକୁ ସେଭ କରିପାରୁଥିବା ସୁପାରିଶ କରାଯାଇଥିବା କାର୍ଯ୍ୟ"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"ପବ୍ଲିକ ସୁରକ୍ଷା ଆଲର୍ଟ"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"ସାଇଲେଣ୍ଟ ଆଲର୍ଟ"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"ବ୍ୟାୟାମ ଆଲର୍ଟ"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ପାଆନ୍ତୁ: ବ୍ୟାୟାମ/ଡ୍ରିଲ ମେସେଜ"</string>
+    <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ଆଲର୍ଟ : ଆସନ୍ନ ବିପଦର ଆଲର୍ଟ"</string>
+    <string name="cmas_extreme_alert" msgid="8873984143193938989">"RO-ଆଲର୍ଟ: ଏକ୍ସଟ୍ରିମ ଆଲର୍ଟ"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="6945883922054156265">"RO-ଆଲର୍ଟ: ଏକ୍ସଟ୍ରିମ ଆଲର୍ଟ"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="2472409745602501961">"RO-ଆଲର୍ଟ: ଏକ୍ସଟ୍ରିମ ଆଲର୍ଟ"</string>
+    <string name="cmas_severe_alert" msgid="2807762412380961321">"RO-ଆଲର୍ଟ: ଗୁରତର ଆଲର୍ଟ"</string>
+    <string name="public_safety_message" msgid="2382301497387374529">"RO-ଆଲର୍ଟ: ନିଖୋଜ ପିଲାଙ୍କ ବିଷୟରେ ଆଲର୍ଟ"</string>
+    <string name="cmas_amber_alert" msgid="7019618668011011043">"RO-ଆଲର୍ଟ : ପବ୍ଲିକ ସୁରକ୍ଷା ଆଲର୍ଟ"</string>
+    <string name="cmas_exercise_alert" msgid="1318544042828018186">"RO-ଆଲର୍ଟ : ବ୍ୟାୟାମ ଆଲର୍ଟ"</string>
 </resources>

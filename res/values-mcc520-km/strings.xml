@@ -17,11 +17,11 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_presidential_level_alert" msgid="8652246909903979543">"ការជូនដំណឹង​ថ្នាក់ជាតិ"</string>
-    <string name="cmas_extreme_alert" msgid="1539624055186085113">"ការជូនដំណឹង​ពេលមានអាសន្នធ្ងន់ធ្ងរខ្លាំង"</string>
+    <string name="cmas_extreme_alert" msgid="1539624055186085113">"ការជូនដំណឹង​ពេលអាសន្នធ្ងន់ធ្ងរ"</string>
     <string name="public_safety_message" msgid="7803260172096958825">"ការជូនដំណឹងជាព័ត៌មាន"</string>
     <string name="cmas_amber_alert" msgid="1681714155769596431">"ការជូនដំណឹងអំពីការចាប់ជំរិតក្មេង"</string>
     <string name="cmas_required_monthly_test" msgid="5859775148883208089">"ការ​ជូន​ដំណឹងសាកល្បង"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5439928947393191297">"ការជូនដំណឹង​ពេលមានអាសន្នធ្ងន់ធ្ងរខ្លាំង"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="5439928947393191297">"ការជូនដំណឹង​ពេលអាសន្នធ្ងន់ធ្ងរ"</string>
     <string name="enable_public_safety_messages_title" msgid="6569566741315399257">"ការជូនដំណឹងជាព័ត៌មាន"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="6521849845212532074">"ការជូនដំណឹងអំពីការចាប់ជំរិតក្មេង"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1889517460681507007">"ការ​ជូន​ដំណឹងសាកល្បង"</string>
