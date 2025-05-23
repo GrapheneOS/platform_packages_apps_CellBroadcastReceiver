@@ -34,4 +34,8 @@ apex {
     name: "com.android.cellbroadcast",
     defaults:["com.android.cellbroadcast-defaults"],
     apps: ["CellBroadcastApp", "CellBroadcastServiceModule"],
+    licenses: [
+        "Android-Apache-2.0",
+        "opensourcerequest",
+    ],
 }
