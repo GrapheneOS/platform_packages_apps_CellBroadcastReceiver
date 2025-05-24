@@ -16,12 +16,20 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="enable_cmas_presidential_alerts_title" msgid="3661150741509605283">"Оповещение о надвигающейся угрозе"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="8347705366713694241">"Надвигающиеся угрозы жизни и имуществу"</string>
     <string name="enable_public_safety_messages_title" msgid="2475018227538267649">"Оповещение о пропавшем ребенке"</string>
-    <string name="public_safety_message" msgid="5242662040426167782">"Румыния: оповещение о пропавшем ребенке"</string>
-    <string name="cmas_presidential_level_alert" msgid="8476571012670281437">"Румыния: президентское оповещение"</string>
-    <string name="cmas_extreme_alert" msgid="1713701020039340032">"Румыния: чрезвычайная ситуация"</string>
-    <string name="cmas_extreme_immediate_observed_alert" msgid="9008972835754333116">"Румыния: чрезвычайная ситуация"</string>
-    <string name="cmas_extreme_immediate_likely_alert" msgid="4535498659302678812">"Румыния: чрезвычайная ситуация"</string>
-    <string name="cmas_severe_alert" msgid="9170931869067635495">"Румыния: серьезная угроза"</string>
-    <string name="cmas_exercise_alert" msgid="5696553249081579138">"Румыния: учебная тревога"</string>
+    <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"Рекомендуемые действия, которые помогут сохранить жизни или имущество"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"Оповещение об угрозе общественной безопасности"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"Оповещения без звука"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"Оповещения об учебных тревогах"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"Получать экстренные оповещения об учебных тревогах"</string>
+    <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"Румыния: оповещение о надвигающейся угрозе"</string>
+    <string name="cmas_extreme_alert" msgid="8873984143193938989">"Румыния: оповещение о чрезвычайной ситуации"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="6945883922054156265">"Румыния: оповещение о чрезвычайной ситуации"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="2472409745602501961">"Румыния: оповещение о чрезвычайной ситуации"</string>
+    <string name="cmas_severe_alert" msgid="2807762412380961321">"Румыния: оповещение о серьезной угрозе"</string>
+    <string name="public_safety_message" msgid="2382301497387374529">"Румыния: оповещение о пропавшем ребенке"</string>
+    <string name="cmas_amber_alert" msgid="7019618668011011043">"Румыния: угроза общественной безопасности"</string>
+    <string name="cmas_exercise_alert" msgid="1318544042828018186">"Румыния: оповещения об учебных тревогах"</string>
 </resources>

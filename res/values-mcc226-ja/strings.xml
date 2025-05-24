@@ -16,12 +16,20 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="enable_cmas_presidential_alerts_title" msgid="3661150741509605283">"差し迫った危険に関するアラート"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="8347705366713694241">"命や財産に関わる差し迫った脅威"</string>
     <string name="enable_public_safety_messages_title" msgid="2475018227538267649">"児童行方不明警報"</string>
-    <string name="public_safety_message" msgid="5242662040426167782">"RO-Alert: 児童行方不明警報"</string>
-    <string name="cmas_presidential_level_alert" msgid="8476571012670281437">"RO-Alert: 国家レベルの警報"</string>
-    <string name="cmas_extreme_alert" msgid="1713701020039340032">"RO-Alert: 最重要警報"</string>
-    <string name="cmas_extreme_immediate_observed_alert" msgid="9008972835754333116">"RO-Alert: 最重要警報"</string>
-    <string name="cmas_extreme_immediate_likely_alert" msgid="4535498659302678812">"RO-Alert: 最重要警報"</string>
-    <string name="cmas_severe_alert" msgid="9170931869067635495">"RO-Alert: 重要警報"</string>
-    <string name="cmas_exercise_alert" msgid="5696553249081579138">"RO-Alert: 訓練用警報"</string>
+    <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"人命や財産を守るための推奨される対応"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"災害情報アラート"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"サイレント アラート"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"訓練用速報メール"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"緊急速報メール: 訓練用メッセージを受け取る"</string>
+    <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ALERT : 差し迫った危険に関するアラート"</string>
+    <string name="cmas_extreme_alert" msgid="8873984143193938989">"RO-ALERT : 最重要速報メール"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="6945883922054156265">"RO-ALERT : 最重要速報メール"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="2472409745602501961">"RO-ALERT : 最重要速報メール"</string>
+    <string name="cmas_severe_alert" msgid="2807762412380961321">"RO-ALERT : 重要警報"</string>
+    <string name="public_safety_message" msgid="2382301497387374529">"RO-ALERT : 児童行方不明警報"</string>
+    <string name="cmas_amber_alert" msgid="7019618668011011043">"RO-ALERT : 災害情報アラート"</string>
+    <string name="cmas_exercise_alert" msgid="1318544042828018186">"RO-ALERT : 訓練用速報メール"</string>
 </resources>

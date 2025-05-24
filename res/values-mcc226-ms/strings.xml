@@ -16,12 +16,20 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="enable_cmas_presidential_alerts_title" msgid="3661150741509605283">"Makluman Risiko Berkemungkinan Tinggi"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="8347705366713694241">"Ancaman yang berkemungkinan besar berlaku kepada nyawa dan harta benda"</string>
     <string name="enable_public_safety_messages_title" msgid="2475018227538267649">"Makluman Kanak-Kanak Hilang"</string>
-    <string name="public_safety_message" msgid="5242662040426167782">"Makluman-RO: Makluman Kanak-Kanak Hilang"</string>
-    <string name="cmas_presidential_level_alert" msgid="8476571012670281437">"Makluman-RO: Makluman Presiden"</string>
-    <string name="cmas_extreme_alert" msgid="1713701020039340032">"Makluman-RO: Makluman Ekstrem"</string>
-    <string name="cmas_extreme_immediate_observed_alert" msgid="9008972835754333116">"Makluman-RO: Makluman Ekstrem"</string>
-    <string name="cmas_extreme_immediate_likely_alert" msgid="4535498659302678812">"Makluman-RO: Makluman Ekstrem"</string>
-    <string name="cmas_severe_alert" msgid="9170931869067635495">"Makluman-RO: Makluman Teruk"</string>
-    <string name="cmas_exercise_alert" msgid="5696553249081579138">"Makluman-RO: Makluman Latihan"</string>
+    <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"Tindakan yang disyorkan untuk menyelamatkan nyawa atau harta"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"Makluman Keselamatan Awam"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"Makluman Senyap"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"Makluman Latihan"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"Terima amaran kecemasan: mesej latihan/latih tubi"</string>
+    <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"MAKLUMAN-RO : Makluman Risiko Berkemungkinan Besar Berlaku"</string>
+    <string name="cmas_extreme_alert" msgid="8873984143193938989">"MAKLUMAN-RO : Makluman Ekstrem"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="6945883922054156265">"MAKLUMAN-RO : Makluman Ekstrem"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="2472409745602501961">"MAKLUMAN-RO : Makluman Ekstrem"</string>
+    <string name="cmas_severe_alert" msgid="2807762412380961321">"MAKLUMAN-RO : Makluman Teruk"</string>
+    <string name="public_safety_message" msgid="2382301497387374529">"MAKLUMAN-RO: Makluman Kanak-Kanak Hilang"</string>
+    <string name="cmas_amber_alert" msgid="7019618668011011043">"MAKLUMAN-RO : Makluman Keselamatan Awam"</string>
+    <string name="cmas_exercise_alert" msgid="1318544042828018186">"MAKLUMAN-RO : Makluman Latihan"</string>
 </resources>

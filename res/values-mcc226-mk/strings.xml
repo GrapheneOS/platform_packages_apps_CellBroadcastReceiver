@@ -16,12 +16,20 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="enable_cmas_presidential_alerts_title" msgid="3661150741509605283">"Предупредување за непосреден ризик"</string>
+    <string name="enable_cmas_presidential_alerts_summary" msgid="8347705366713694241">"Непосредни закани по животот и имотот"</string>
     <string name="enable_public_safety_messages_title" msgid="2475018227538267649">"Предупредување за изгубено дете"</string>
-    <string name="public_safety_message" msgid="5242662040426167782">"Романија: предупредување за изгубено дете"</string>
-    <string name="cmas_presidential_level_alert" msgid="8476571012670281437">"RO-Alert: претседателско предупредување"</string>
-    <string name="cmas_extreme_alert" msgid="1713701020039340032">"RO-Alert: предупредување од највисок степен"</string>
-    <string name="cmas_extreme_immediate_observed_alert" msgid="9008972835754333116">"RO-Alert: предупредување од највисок степен"</string>
-    <string name="cmas_extreme_immediate_likely_alert" msgid="4535498659302678812">"RO-Alert: предупредување од највисок степен"</string>
-    <string name="cmas_severe_alert" msgid="9170931869067635495">"RO-Alert: сериозно предупредување"</string>
-    <string name="cmas_exercise_alert" msgid="5696553249081579138">"RO-Alert: предупредување за вежба"</string>
+    <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"Препорачани дејства што може да спасат животи или имот"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"Предупредување за јавна безбедност"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"Безгласно предупредување"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"Предупредувања за вежба"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"Добивајте предупредувања за итни случаи: порака за вежба/обука"</string>
+    <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ПРЕДУПРЕДУВАЊЕ : Непосреден ризик"</string>
+    <string name="cmas_extreme_alert" msgid="8873984143193938989">"RO-ПРЕДУПРЕДУВАЊЕ : Екстремна ситуација"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="6945883922054156265">"RO-ПРЕДУПРЕДУВАЊЕ : Екстремна ситуација"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="2472409745602501961">"RO-ПРЕДУПРЕДУВАЊЕ : Екстремна ситуација"</string>
+    <string name="cmas_severe_alert" msgid="2807762412380961321">"RO-ПРЕДУПРЕДУВАЊЕ : Сериозна ситуација"</string>
+    <string name="public_safety_message" msgid="2382301497387374529">"RO-ПРЕДУПРЕДУВАЊЕ : Изгубено дете"</string>
+    <string name="cmas_amber_alert" msgid="7019618668011011043">"RO-ПРЕДУПРЕДУВАЊЕ : Јавна безбедност"</string>
+    <string name="cmas_exercise_alert" msgid="1318544042828018186">"RO-ПРЕДУПРЕДУВАЊЕ : Вежба"</string>
 </resources>

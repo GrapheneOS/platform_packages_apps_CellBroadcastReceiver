@@ -34,9 +34,9 @@
     </string-array>
     <!-- 4396, 4397 DE/EU level 4 alert -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">
-        <item>0x112C:rat=gsm, emergency=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|10000</item>
+        <item>0x112C:rat=gsm, emergency=true, type=info, pulsation=0xffffffff|10000</item>
         <!-- additional language -->
-        <item>0x112D:rat=gsm, emergency=true, filter_language=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|10000</item>
+        <item>0x112D:rat=gsm, emergency=true, type=info, filter_language=true, pulsation=0xffffffff|10000</item>
     </string-array>
 
     <!-- 4398, 4399 DE/EU test alert -->

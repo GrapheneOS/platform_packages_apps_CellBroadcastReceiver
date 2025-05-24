@@ -1179,27 +1179,62 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "RO-Alert: Presidential Alert",
+      "title": "RO-ALERT : Imminent Risk Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "RO-ALERT : Imminent Risk Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "RO-Alert: Extreme Alert",
+      "title": "RO-ALERT : Extreme Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4384": {
+      "title": "RO-ALERT : Extreme Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4375": {
-      "title": "RO-Alert: Severe Alert",
+      "title": "RO-ALERT : Severe Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4388": {
+      "title": "RO-ALERT : Severe Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4379": {
-      "title": "RO-Alert: Missing Child Alert",
+      "title": "RO-ALERT : Missing Child Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "RO-ALERT : Missing Child Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4396": {
+      "title": "RO-ALERT : Public Safety Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4397": {
+      "title": "RO-ALERT : Public Safety Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4381": {
-      "title": "RO-Alert: Exercise alert",
+      "title": "RO-ALERT : Exercise Alerts",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4394": {
+      "title": "RO-ALERT : Exercise Alerts",
       "default_value": "false",
       "toggle_avail": "true"
     }
