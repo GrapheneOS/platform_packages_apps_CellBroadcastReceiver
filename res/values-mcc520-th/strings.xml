@@ -19,10 +19,10 @@
     <string name="cmas_presidential_level_alert" msgid="8652246909903979543">"การแจ้งเตือนระดับชาติ"</string>
     <string name="cmas_extreme_alert" msgid="1539624055186085113">"การแจ้งเตือนภัยขั้นรุนแรง"</string>
     <string name="public_safety_message" msgid="7803260172096958825">"การแจ้งเตือนเพื่อให้ข้อมูล"</string>
-    <string name="cmas_amber_alert" msgid="1681714155769596431">"การแจ้งเตือนการลักพาตัวเด็ก"</string>
+    <string name="cmas_amber_alert" msgid="1681714155769596431">"การแจ้งเตือนการลักพาตัว"</string>
     <string name="cmas_required_monthly_test" msgid="5859775148883208089">"การแจ้งเตือนเพื่อทดสอบระบบ"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5439928947393191297">"การแจ้งเตือนภัยขั้นรุนแรง"</string>
     <string name="enable_public_safety_messages_title" msgid="6569566741315399257">"การแจ้งเตือนเพื่อให้ข้อมูล"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="6521849845212532074">"การแจ้งเตือนการลักพาตัวเด็ก"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="6521849845212532074">"การแจ้งเตือนการลักพาตัว"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1889517460681507007">"การแจ้งเตือนเพื่อทดสอบระบบ"</string>
 </resources>

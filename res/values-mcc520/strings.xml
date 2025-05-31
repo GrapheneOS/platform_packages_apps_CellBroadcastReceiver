@@ -26,7 +26,7 @@
     <!-- Required Thai(th) translation for this message:  การแจ้งเตือนเพื่อให้ข้อมูล -->
     <string name="public_safety_message">Informational Alert</string>
     <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
-    <!-- Required Thai(th) translation for this message:  การแจ้งเตือนการลักพาตัวเด็ก -->
+    <!-- Required Thai(th) translation for this message:  การแจ้งเตือนการลักพาตัว -->
     <string name="cmas_amber_alert">Amber Alert</string>
     <!-- CMAS dialog title for required monthly test. [CHAR LIMIT=50] -->
     <!-- Required Thai(th) translation for this message: การแจ้งเตือนเพื่อทดสอบระบบ -->
@@ -39,7 +39,7 @@
     <!-- Required Thai(th) translation for this message: การแจ้งเตือนเพื่อให้ข้อมูล -->
     <string name="enable_public_safety_messages_title">Informational Alert</string>
     <!-- Preference title for enable CMAS amber alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Thai(th) translation for this message: การแจ้งเตือนการลักพาตัวเด็ก -->
+    <!-- Required Thai(th) translation for this message: การแจ้งเตือนการลักพาตัว -->
     <string name="enable_cmas_amber_alerts_title">Amber Alert</string>
     <!-- Preference title for required monthly alerts checkbox. [CHAR LIMIT=50] -->
     <!-- Required Thai(th) translation for this message: การแจ้งเตือนเพื่อทดสอบระบบ -->
