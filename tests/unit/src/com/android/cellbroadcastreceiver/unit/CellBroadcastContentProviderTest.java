@@ -29,6 +29,8 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.UserManager;
 import android.provider.Telephony.CellBroadcasts;
@@ -278,6 +280,31 @@ public class CellBroadcastContentProviderTest extends TestCase {
                 .isEqualTo(CMAS_CERTAINTY);
     }
 
+    @Test
+    @InstrumentationTest
+    public void testDbUpdateOperationsWhenStorageFull() {
+        ExceptionThrowingDatabaseHelper exceptionHelper =
+                new ExceptionThrowingDatabaseHelper(mContext, new SQLException());
+        mCellBroadcastProviderTestable.mOpenHelper = exceptionHelper;
+
+        SmsCbMessage msg = fakeSmsCbMessage();
+        long deliveryTime = msg.getReceivedTime();
+
+        try {
+            mCellBroadcastProviderTestable.markBroadcastRead(CellBroadcasts.DELIVERY_TIME,
+                    deliveryTime);
+        } catch (SQLException e) {
+            fail("must handle the SQLException that occurs when the database is full.");
+        }
+
+        try {
+            mCellBroadcastProviderTestable.markBroadcastSmsSyncPending(CellBroadcasts.DELIVERY_TIME,
+                    deliveryTime, true);
+        } catch (SQLException e) {
+            fail("must handle the SQLException that occurs when the database is full.");
+        }
+    }
+
     /**
      * This is used to give the CellBroadcastContentProviderTest a mocked context which takes a
      * CellBroadcastProvider and attaches it to the ContentResolver.
@@ -346,5 +373,30 @@ public class CellBroadcastContentProviderTest extends TestCase {
                 new SmsCbCmasInfo(CMAS_MESSAGE_CLASS, CMAS_CATEGORY, CMAS_RESPONSE_TYPE,
                         CMAS_SEVERITY, CMAS_URGENCY, CMAS_CERTAINTY), 0, null,
                 System.currentTimeMillis(), 1, SubscriptionManager.INVALID_SUBSCRIPTION_ID);
+    }
+
+    static class ExceptionThrowingDatabaseHelper extends CellBroadcastDatabaseHelper {
+        private final SQLException mExceptionToThrow;
+
+        ExceptionThrowingDatabaseHelper(Context context, SQLException exception) {
+            super(context, false /* isTestMode */);
+            this.mExceptionToThrow = exception;
+        }
+
+        @Override
+        public SQLiteDatabase getWritableDatabase() {
+            if (mExceptionToThrow != null) {
+                throw mExceptionToThrow;
+            }
+            return super.getWritableDatabase();
+        }
+
+        @Override
+        public SQLiteDatabase getReadableDatabase() {
+            if (mExceptionToThrow != null) {
+                throw mExceptionToThrow;
+            }
+            return super.getReadableDatabase();
+        }
     }
  }
