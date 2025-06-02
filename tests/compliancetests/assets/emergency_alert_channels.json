@@ -4832,63 +4832,63 @@
   },
   "Thailand": {
     "4370": {
-      "title": "National Alert",
+      "title": "การแจ้งเตือนระดับชาติ", // National Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "National Alert",
+      "title": "การแจ้งเตือนระดับชาติ", // National Alert
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "Extreme Alert",
+      "title": "การแจ้งเตือนภัยขั้นรุนแรง", // Extreme Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4384": {
-      "title": "Extreme Alert",
+      "title": "การแจ้งเตือนภัยขั้นรุนแรง",  // Extreme Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4372": {
-      "title": "Extreme Alert",
+      "title": "การแจ้งเตือนภัยขั้นรุนแรง", // Extreme Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4385": {
-      "title": "Extreme Alert",
+      "title": "การแจ้งเตือนภัยขั้นรุนแรง", // Extreme Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4396": {
-      "title": "Informational Alert",
+      "title": "การแจ้งเตือนเพื่อให้ข้อมูล", // Informational Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4397": {
-      "title": "Informational Alert",
+      "title": "การแจ้งเตือนเพื่อให้ข้อมูล", // Informational Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4379": {
-      "title": "Amber Alert",
+      "title": "การแจ้งเตือนการลักพาตัว", // Amber Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "Amber Alert",
+      "title": "การแจ้งเตือนการลักพาตัว", // Amber Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4380": {
-      "title": "Test Alert",
+      "title": "การแจ้งเตือนเพื่อทดสอบระบบ", // Test Alert
       "default_value": "false",
       "toggle_avail": "false",
       "test_mode": "true"
     },
     "4393": {
-      "title": "Test Alert",
+      "title": "การแจ้งเตือนเพื่อทดสอบระบบ", // Test Alert
       "default_value": "false",
       "toggle_avail": "false",
       "test_mode": "true"

@@ -1357,19 +1357,19 @@
     }
   },
   "Thailand": {
-    "Extreme Alert": {
+    "การแจ้งเตือนภัยขั้นรุนแรง": { // Extreme Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Informational Alert": {
+    "การแจ้งเตือนเพื่อให้ข้อมูล": { // Informational Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Amber Alert": {
+    "การแจ้งเตือนการลักพาตัว": { // Amber Alert
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Vibration": {
+    "การสั่น": { // Vibration
       "default_value": "true",
       "toggle_avail": "true"
     }
