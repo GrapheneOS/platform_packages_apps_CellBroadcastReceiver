@@ -632,7 +632,7 @@
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Test alerts": {
+    "Exercise Alerts": {
       "default_value": "false",
       "toggle_avail": "true"
     },
