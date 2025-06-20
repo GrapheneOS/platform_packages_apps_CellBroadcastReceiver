@@ -19,15 +19,15 @@
     <bool name="show_presidential_alerts_settings">true</bool>
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, always_on=true</item>
+        <item>0x1112:rat=gsm, emergency=true, always_on=true, override_dnd=true</item>
         <!-- additional language -->
-        <item>0x111F:rat=gsm, emergency=true, filter_language=true, always_on=true</item>
+        <item>0x111F:rat=gsm, emergency=true, filter_language=true, always_on=true, override_dnd=true</item>
     </string-array>
     <!-- 4371, 4384 -->
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
-        <item>0x1113:rat=gsm, emergency=true</item>
+        <item>0x1113:rat=gsm, emergency=true, override_dnd=true</item>
         <!-- additional language -->
-        <item>0x1120:rat=gsm, emergency=true, filter_language=true</item>
+        <item>0x1120:rat=gsm, emergency=true, filter_language=true, override_dnd=true</item>
     </string-array>
     <!-- 4375, 4388 -->
     <string-array name="cmas_alerts_severe_range_strings" translatable="false">
