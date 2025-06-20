@@ -336,13 +336,8 @@ public class CellBroadcastAlertService extends Service {
                 }
             } else {
                 // language filtering based on device language settings.
-                String deviceLanguage = Locale.getDefault().getLanguage();
-                // Apply If the message's language does not match device's message, we don't
-                // display the message.
-                if (!TextUtils.isEmpty(messageLanguage)
-                        && !messageLanguage.equalsIgnoreCase(deviceLanguage)) {
-                    Log.d(TAG, "ignoring the alert due to language mismatch. Message lang="
-                            + messageLanguage + ", device lang=" + deviceLanguage);
+                if (filterBasedOnLanguageSetting(mContext,
+                        message.getSubscriptionId(), messageLanguage)) {
                     CellBroadcastReceiverMetrics.getInstance().logMessageFiltered(
                             FILTER_NOTSHOW_MISMATCH_DEVICE_LANG_SETTING, message);
                     return false;
@@ -377,6 +372,32 @@ public class CellBroadcastAlertService extends Service {
 
         CellBroadcastReceiverMetrics.getInstance().logMessageFiltered(FILTER_NOTFILTERED, message);
         return true;
+    }
+
+    private static boolean filterBasedOnLanguageSetting(Context context,
+            int messgaeSubId, String messageLanguage) {
+        String deviceLanguage = Locale.getDefault().getLanguage();
+        String[] primaryLanguages = CellBroadcastSettings.getResourcesByOperator(context,
+                        messgaeSubId,
+                        CellBroadcastReceiver.getRoamingOperatorSupported(context))
+                .getStringArray(R.array.language_filter_primary_code);
+        if (primaryLanguages.length > 0) {
+            for (String language : primaryLanguages) {
+                if (!TextUtils.isEmpty(language) && language.equalsIgnoreCase(deviceLanguage)) {
+                    Log.d(TAG, "ignoring the alert because device language "
+                            + deviceLanguage + " is primary language " + language);
+                    return true;
+                }
+            }
+        } else if (!TextUtils.isEmpty(messageLanguage)
+                && !messageLanguage.equalsIgnoreCase(deviceLanguage)) {
+            // Apply If the message's language does not match device's message, we don't
+            // display the message.
+            Log.d(TAG, "ignoring the alert due to language mismatch. Message lang="
+                    + messageLanguage + ", device lang=" + deviceLanguage);
+            return true;
+        }
+        return false;
     }
 
     private void handleCellBroadcastIntent(Intent intent) {

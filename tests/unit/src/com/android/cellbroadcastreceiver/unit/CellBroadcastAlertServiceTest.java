@@ -85,6 +85,7 @@ import org.mockito.Mock;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class CellBroadcastAlertServiceTest extends
@@ -97,6 +98,8 @@ public class CellBroadcastAlertServiceTest extends
 
     @Mock
     IActivityManager mMockActivityManager;
+
+    Locale mDefaultLocale;
 
     public CellBroadcastAlertServiceTest() {
         super(CellBroadcastAlertService.class);
@@ -143,12 +146,14 @@ public class CellBroadcastAlertServiceTest extends
         IPowerManager mockedPowerService = mock(IPowerManager.class);
         mMockedPowerManager = new PowerManager(mContext, mockedPowerService, null, handler);
         when(mResources.getText(anyInt())).thenReturn("text");
+        mDefaultLocale = Locale.getDefault();
     }
 
     @After
     public void tearDown() throws Exception {
         CellBroadcastSettings.resetResourcesCache();
         CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
+        Locale.setDefault(mDefaultLocale);
         super.tearDown();
     }
 
@@ -1175,6 +1180,137 @@ public class CellBroadcastAlertServiceTest extends
 
         assertTrue("Should display the message",
                 cellBroadcastAlertService.shouldDisplayMessage(message3));
+    }
+
+    public void testFilterLanguageWithPrimaryLanguage() {
+        final String primaryLanguage = "ko";
+        String[] primaryLanguages = new String[]{"ko"};
+        final String secondLanguage = "en";
+        doReturn(new String[]{"0x112E:rat=gsm, emergency=true, filter_language=true",
+                "0x112F:rat=gsm, emergency=true"}).when(mResources).getStringArray(
+                eq(com.android.cellbroadcastreceiver.R.array
+                        .state_local_test_alert_range_strings));
+        doReturn("").when(mResources).getString(
+                eq(com.android.cellbroadcastreceiver.R.string
+                        .emergency_alert_second_language_code));
+        doReturn(primaryLanguages).when(mResources).getStringArray(
+                eq(com.android.cellbroadcastreceiver.R.array
+                        .language_filter_primary_code));
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS);
+
+        sendMessage(1);
+        CellBroadcastAlertService cellBroadcastAlertService =
+                (CellBroadcastAlertService) getService();
+
+        Locale.setDefault(Locale.KOREAN);
+        // Verify the message with filter_language=true
+        SmsCbMessage message = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112E,
+                secondLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertFalse("Should not display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        // Verify the message without filter_language=true
+        SmsCbMessage message2 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112F,
+                primaryLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        Locale.setDefault(Locale.ENGLISH);
+        // Verify the message with filter_language=true
+        SmsCbMessage message3 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112E,
+                secondLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message3));
+
+        // Verify the message without filter_language=true
+        SmsCbMessage message4 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112F,
+                primaryLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message4));
+
+        Locale.setDefault(Locale.GERMAN);
+        // Verify the message with filter_language=true
+        SmsCbMessage message5 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112E,
+                secondLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message5));
+
+        // Verify the message without filter_language=true
+        SmsCbMessage message6 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112F,
+                primaryLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message6));
+
+        doReturn(new String[]{"ko", "de"}).when(mResources).getStringArray(
+                eq(com.android.cellbroadcastreceiver.R.array
+                        .language_filter_primary_code));
+        // Verify the message with filter_language=true
+        SmsCbMessage message7 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112E,
+                secondLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertFalse("Should not display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message7));
+
+    }
+
+    public void testFilterLanguageWithDeviceAndMessageLanguage() {
+        final String primaryLanguage = "ko";
+        final String secondLanguage = "en";
+        doReturn(new String[]{"0x112E:rat=gsm, emergency=true, filter_language=true",
+                "0x112F:rat=gsm, emergency=true"}).when(mResources).getStringArray(
+                eq(com.android.cellbroadcastreceiver.R.array
+                        .state_local_test_alert_range_strings));
+        doReturn("").when(mResources).getString(
+                eq(com.android.cellbroadcastreceiver.R.string
+                        .emergency_alert_second_language_code));
+        doReturn(new String[]{}).when(mResources).getStringArray(
+                eq(com.android.cellbroadcastreceiver.R.array
+                        .language_filter_primary_code));
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE);
+        enablePreference(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS);
+
+        sendMessage(1);
+        CellBroadcastAlertService cellBroadcastAlertService =
+                (CellBroadcastAlertService) getService();
+
+        Locale.setDefault(Locale.KOREAN);
+        // Verify the message with filter_language=true
+        SmsCbMessage message = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112E,
+                secondLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertFalse("Should not display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message));
+
+        // Verify the message without filter_language=true
+        SmsCbMessage message2 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112F,
+                primaryLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message2));
+
+        Locale.setDefault(Locale.ENGLISH);
+        // Verify the message with filter_language=true
+        SmsCbMessage message3 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112E,
+                secondLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message3));
+
+        // Verify the message without filter_language=true
+        SmsCbMessage message4 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112F,
+                primaryLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message4));
+
+        Locale.setDefault(Locale.GERMAN);
+        // Verify the message with filter_language=true
+        SmsCbMessage message5 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112E,
+                secondLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertFalse("Should not display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message5));
+
+        // Verify the message without filter_language=true
+        SmsCbMessage message6 = new SmsCbMessage(1, 2, 3, new SmsCbLocation(), 0x112F,
+                primaryLanguage, "body", SmsCbMessage.MESSAGE_PRIORITY_NORMAL, null, null, 0, 1);
+        assertTrue("Should display the message",
+                cellBroadcastAlertService.shouldDisplayMessage(message6));
     }
 
     public void testMuteAlert() {

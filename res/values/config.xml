@@ -117,6 +117,10 @@
 
     <!-- Specify second language code to receive emergency alerts -->
     <string name="emergency_alert_second_language_code" translatable="false"></string>
+
+    <!-- Specify primary language code for filter out secondary channel -->
+    <string-array name="language_filter_primary_code" translatable="false"></string-array>
+
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true, always_on=true, override_dnd=true</item>
