@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2022 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- CMAS dialog title for presidential level alert.  [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Sarkanais brīdinājums -->
+    <string name="cmas_presidential_level_alert">Presidential Alert</string>
+    <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Oranžais brīdinājums -->
+    <string name="cmas_extreme_alert">Extreme Alert</string>
+    <!-- CMAS dialog title for severe alert. [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Dzeltenais brīdinājums -->
+    <string name="cmas_severe_alert">Severe Alert</string>
+    <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Bērna nolaupīšanas brīdinājums -->
+    <string name="cmas_amber_alert">Amber Alert</string>
+    <!-- CMAS dialog title for required monthly test. [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Ikmēneša testa brīdinājums -->
+    <string name="cmas_required_monthly_test">Monthly Test Alert</string>
+    <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Mācību brīdinājums -->
+    <string name="cmas_exercise_alert">Exercise Alert</string>
+    <!-- Dialog title for all public safety message broadcasts. [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Apdraudējuma beigas -->
+    <string name="public_safety_message">End of Threat</string>
+
+    <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Oranžais brīdinājums -->
+    <string name="enable_cmas_extreme_threat_alerts_title">Extreme Alerts</string>
+    <!-- Preference summary for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Latvian(lv) translation for this message: Ārkārtējs apdraudējums dzīvībai un īpašumam -->
+    <string name="enable_cmas_extreme_threat_alerts_summary">Extreme threats to life and property</string>
+    <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Dzeltenais brīdinājums -->
+    <string name="enable_cmas_severe_threat_alerts_title">Severe Alerts</string>
+    <!-- Preference summary for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Latvian(lv) translation for this message: Ievērojams apdraudējums dzīvībai un īpašumam -->
+    <string name="enable_cmas_severe_threat_alerts_summary">Severe threats to life and property</string>
+    <!-- Preference title for enable CMAS amber alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Bērna pazušanas brīdinājums -->
+    <string name="enable_cmas_amber_alerts_title">Missing Child Alerts</string>
+    <!-- Preference summary for enable CMAS amber alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Latvian(lv) translation for this message: Paziņojums par pazudušu bērnu -->
+    <string name="enable_cmas_amber_alerts_summary">Announcement about a missing child</string>
+    <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Ikmēneša testa brīdinājums -->
+    <string name="enable_cmas_test_alerts_title">Required Monthly Test Alerts</string>
+    <!-- Preference summary for other test alerts checkbox. [CHAR LIMIT=125] -->
+    <!-- Required Latvian(lv) translation for this message: Paziņojums par ikmēneša sistēmas testu -->
+    <string name="enable_cmas_test_alerts_summary">Announcement about a monthy system test</string>
+    <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Latvian(lv) translation for this message: Mācību brīdinājums -->
+    <string name="enable_exercise_test_alerts_title">Excersise Alerts</string>
+    <!-- Preference summary for exercise test alerts checkbox. [CHAR LIMIT=125] -->
+    <!-- Required Latvian(lv) translation for this message: Paziņojums par mācībām -->
+    <string name="enable_exercise_test_alerts_summary">Announcement about exercises</string>
+    <!-- Preference title for enable public safety messages checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Latvian(lv) translation for this message: Apdraudējuma beigu brīdinājums  -->
+    <string name="enable_public_safety_messages_title">End of Threat Alerts</string>
+    <!-- Preference summary for enable public safety messages checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Latvian(lv) translation for this message: Paziņojums par apdraudējuma beigām -->
+    <string name="enable_public_safety_messages_summary">Announcement about the end of threats</string>
+</resources>
