@@ -34,6 +34,12 @@
     <!-- Preference summary for enable Romania public safety messages checkbox. [CHAR LIMIT=100] -->
     <!-- Required Romanian(ro) translation for this message: Alertă silențioasă -->
     <string name="enable_cmas_amber_alerts_summary">Silent Alert</string>
+    <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Romanian(ro) translation for this message: Alerte de exercițiu -->
+    <string name="enable_cmas_test_alerts_title">Exercise Alerts</string>
+    <!-- Preference summary for other test alerts checkbox. [CHAR LIMIT=125] -->
+    <!-- Required Romanian(ro) translation for this message: Primește alerte de urgență: mesaj de exercițiu/simulare -->
+    <string name="enable_cmas_test_alerts_summary">Receive emergency alert: exercise/drill message</string>
     <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
     <!-- Required Romanian(ro) translation for this message: Alerte de exercițiu -->
     <string name="enable_exercise_test_alerts_title">Exercise Alerts</string>

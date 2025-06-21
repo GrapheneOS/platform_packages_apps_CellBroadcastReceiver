@@ -22,17 +22,17 @@
 
     <!-- 4370, 4383 -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-        <item>0x1112:rat=gsm, emergency=true, always_on=true, alert_duration=15000</item>
-        <item>0x1000:rat=cdma, emergency=true, always_on=true, alert_duration=15000</item>
+        <item>0x1112:rat=gsm, emergency=true, always_on=true, alert_duration=15000, override_dnd=true</item>
+        <item>0x1000:rat=cdma, emergency=true, always_on=true, alert_duration=15000, override_dnd=true</item>
         <!-- additional language -->
-        <item>0x111F:rat=gsm, emergency=true, always_on=true, alert_duration=15000</item>
+        <item>0x111F:rat=gsm, emergency=true, always_on=true, alert_duration=15000, override_dnd=true</item>
     </string-array>
     <!-- 4371~4372, 4384~4385 -->
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
-        <item>0x1113-0x1114:rat=gsm, emergency=true, alert_duration=15000, always_on=true</item>
-        <item>0x1001:rat=cdma, emergency=true, alert_duration=15000, always_on=true</item>
+        <item>0x1113-0x1114:rat=gsm, emergency=true, alert_duration=15000, always_on=true, override_dnd=true</item>
+        <item>0x1001:rat=cdma, emergency=true, alert_duration=15000, always_on=true, override_dnd=true</item>
         <!-- additional language -->
-        <item>0x1120-0x1121:rat=gsm, emergency=true, alert_duration=15000, always_on=true</item>
+        <item>0x1120-0x1121:rat=gsm, emergency=true, alert_duration=15000, always_on=true, override_dnd=true</item>
     </string-array>
     <!-- 4373~4378, 4386~4391 -->
     <string-array name="cmas_alerts_severe_range_strings" translatable="false">

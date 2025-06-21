@@ -214,14 +214,11 @@ public class CellBroadcastSettingsTest extends
         CellBroadcastSettings.resetAllPreferences(mContext);
         assertFalse(CellBroadcastSettings.hasAnyPreferenceChanged(mContext));
 
-        CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
+        CellBroadcastSettings settings = startActivity();
         waitForMs(100);
 
-        TwoStatePreference speechCheckBox = !SdkLevel.isAtLeastS()
-                ? cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH) :
-                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH);
+        TwoStatePreference speechCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH);
         assertNotNull(speechCheckBox);
 
         speechCheckBox.performClick();
@@ -392,15 +389,12 @@ public class CellBroadcastSettingsTest extends
         doReturn(false).when(mContext.getResources()).getBoolean(
                 R.bool.disable_extreme_alert_settings);
 
-        CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
+        CellBroadcastSettings settings = startActivity();
         waitForMs(100);
 
-        TwoStatePreference extremeCheckBox = !SdkLevel.isAtLeastS()
-                ? cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS) :
-                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS);
-
+        TwoStatePreference extremeCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS);
+        assertNotNull(extremeCheckBox);
         assertTrue(extremeCheckBox.isEnabled());
 
         stopActivity();
@@ -410,13 +404,11 @@ public class CellBroadcastSettingsTest extends
                 R.bool.disable_extreme_alert_settings);
 
         if (!SdkLevel.isAtLeastS()) {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment
-                    .initAlertsToggleDisabledAsNeeded();
-            cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.onResume();
+            settings.mCellBroadcastSettingsOldFragment.initAlertsToggleDisabledAsNeeded();
+            settings.mCellBroadcastSettingsOldFragment.onResume();
         } else {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsFragment
-                    .initAlertsToggleDisabledAsNeeded();
-            cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.onResume();
+            settings.mCellBroadcastSettingsFragment.initAlertsToggleDisabledAsNeeded();
+            settings.mCellBroadcastSettingsFragment.onResume();
         }
 
         assertFalse(extremeCheckBox.isEnabled());
@@ -432,11 +424,9 @@ public class CellBroadcastSettingsTest extends
         CellBroadcastSettings settings = startActivity();
         waitForMs(100);
 
-        Preference topIntroPreference = !SdkLevel.isAtLeastS()
-                ? settings.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_PREFS_TOP_INTRO) :
-                settings.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_PREFS_TOP_INTRO);
+        Preference topIntroPreference = getPreference(settings,
+                CellBroadcastSettings.KEY_PREFS_TOP_INTRO);
+        assertNotNull(topIntroPreference);
         assertEquals(topIntroRoamingText, topIntroPreference.getTitle().toString());
     }
 
@@ -454,18 +444,14 @@ public class CellBroadcastSettingsTest extends
         CellBroadcastSettings settings = startActivity();
         waitForMs(100);
 
-        TwoStatePreference exerciseTestCheckBox = !SdkLevel.isAtLeastS()
-                ? settings.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS) :
-                settings.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
-        TwoStatePreference operatorDefinedCheckBox = !SdkLevel.isAtLeastS()
-                ? settings.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS) :
-                settings.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        TwoStatePreference exerciseTestCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        TwoStatePreference operatorDefinedCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
 
+        assertNotNull(exerciseTestCheckBox);
         assertFalse(exerciseTestCheckBox.isVisible());
+        assertNotNull(operatorDefinedCheckBox);
         assertFalse(operatorDefinedCheckBox.isVisible());
     }
 
@@ -483,18 +469,14 @@ public class CellBroadcastSettingsTest extends
         CellBroadcastSettings settings = startActivity();
         waitForMs(100);
 
-        TwoStatePreference exerciseTestCheckBox = !SdkLevel.isAtLeastS()
-                ? settings.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS) :
-                settings.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
-        TwoStatePreference operatorDefinedCheckBox = !SdkLevel.isAtLeastS()
-                ? settings.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS) :
-                settings.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        TwoStatePreference exerciseTestCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        TwoStatePreference operatorDefinedCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
 
+        assertNotNull(exerciseTestCheckBox);
         assertTrue(exerciseTestCheckBox.isVisible());
+        assertNotNull(operatorDefinedCheckBox);
         assertTrue(operatorDefinedCheckBox.isVisible());
     }
 
@@ -516,18 +498,14 @@ public class CellBroadcastSettingsTest extends
         CellBroadcastSettings settings = startActivity();
         waitForMs(100);
 
-        TwoStatePreference exerciseTestCheckBox = !SdkLevel.isAtLeastS()
-                ? settings.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS) :
-                settings.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
-        TwoStatePreference operatorDefinedCheckBox = !SdkLevel.isAtLeastS()
-                ? settings.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS) :
-                settings.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
+        TwoStatePreference exerciseTestCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_EXERCISE_ALERTS);
+        TwoStatePreference operatorDefinedCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS);
 
+        assertNotNull(exerciseTestCheckBox);
         assertTrue(exerciseTestCheckBox.isVisible());
+        assertNotNull(operatorDefinedCheckBox);
         assertTrue(operatorDefinedCheckBox.isVisible());
     }
 
@@ -556,29 +534,20 @@ public class CellBroadcastSettingsTest extends
         doReturn(false).when(mContext.getResources()).getBoolean(
                 R.bool.test_alerts_enabled_default);
 
-        CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
+        CellBroadcastSettings settings = startActivity();
         waitForMs(100);
 
-        TwoStatePreference severeCheckBox = !SdkLevel.isAtLeastS()
-                ? cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS) :
-                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS);
-        TwoStatePreference amberCheckBox = !SdkLevel.isAtLeastS()
-                ? cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS) :
-                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS);
-        TwoStatePreference testCheckBox = !SdkLevel.isAtLeastS()
-                ? cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS) :
-                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS);
+        TwoStatePreference severeCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS);
+        TwoStatePreference amberCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS);
+        TwoStatePreference testCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS);
 
         if (!SdkLevel.isAtLeastS()) {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.setAlertsEnabled(false);
+            settings.mCellBroadcastSettingsOldFragment.setAlertsEnabled(false);
         } else {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.setAlertsEnabled(false);
+            settings.mCellBroadcastSettingsFragment.setAlertsEnabled(false);
         }
 
         assertFalse(severeCheckBox.isChecked());
@@ -586,9 +555,9 @@ public class CellBroadcastSettingsTest extends
         assertFalse(testCheckBox.isChecked());
 
         if (!SdkLevel.isAtLeastS()) {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.setAlertsEnabled(true);
+            settings.mCellBroadcastSettingsOldFragment.setAlertsEnabled(true);
         } else {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.setAlertsEnabled(true);
+            settings.mCellBroadcastSettingsFragment.setAlertsEnabled(true);
         }
 
         assertTrue(severeCheckBox.isChecked());
@@ -603,14 +572,22 @@ public class CellBroadcastSettingsTest extends
 
         CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
         waitForMs(100);
-        if (!SdkLevel.isAtLeastS()) {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment
-                .setAlertsEnabled(false);
-        } else {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsFragment
-                .setAlertsEnabled(false);
-        }
 
+        Intent intent = null;
+        for (int i = 0; i < 5; i++) {
+            intent = mContext.mSendBroadcastIntent;
+            if (!SdkLevel.isAtLeastS()) {
+                cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment
+                        .setAlertsEnabled(false);
+            } else {
+                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment
+                        .setAlertsEnabled(false);
+            }
+            if (intent != null) {
+                break;
+            }
+            waitForMs(100);
+        }
         assertEquals("com.android.cellbroadcastreceiver.action.AREA_UPDATE_INFO_ENABLED",
                 mContext.mSendBroadcastIntent.getAction());
         assertEquals(UserHandle.SYSTEM, mContext.mUserHandle);
@@ -629,29 +606,20 @@ public class CellBroadcastSettingsTest extends
         doReturn(false).when(mContext.getResources()).getBoolean(
                 R.bool.test_alerts_enabled_default);
 
-        CellBroadcastSettings cellBroadcastSettingActivity = startActivity();
+        CellBroadcastSettings settings = startActivity();
         waitForMs(100);
 
-        TwoStatePreference severeCheckBox = !SdkLevel.isAtLeastS()
-                ? cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS) :
-                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS);
-        TwoStatePreference amberCheckBox = !SdkLevel.isAtLeastS()
-                ? cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS) :
-                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS);
-        TwoStatePreference testCheckBox = !SdkLevel.isAtLeastS()
-                ? cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS) :
-                cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.findPreference(
-                        CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS);
+        TwoStatePreference severeCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS);
+        TwoStatePreference amberCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS);
+        TwoStatePreference testCheckBox = (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS);
 
         if (!SdkLevel.isAtLeastS()) {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.setAlertsEnabled(false);
+            settings.mCellBroadcastSettingsOldFragment.setAlertsEnabled(false);
         } else {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.setAlertsEnabled(false);
+            settings.mCellBroadcastSettingsFragment.setAlertsEnabled(false);
         }
 
         assertFalse(severeCheckBox.isChecked());
@@ -659,9 +627,9 @@ public class CellBroadcastSettingsTest extends
         assertFalse(testCheckBox.isChecked());
 
         if (!SdkLevel.isAtLeastS()) {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment.setAlertsEnabled(true);
+            settings.mCellBroadcastSettingsOldFragment.setAlertsEnabled(true);
         } else {
-            cellBroadcastSettingActivity.mCellBroadcastSettingsFragment.setAlertsEnabled(true);
+            settings.mCellBroadcastSettingsFragment.setAlertsEnabled(true);
         }
 
         assertTrue(severeCheckBox.isChecked());
@@ -727,5 +695,19 @@ public class CellBroadcastSettingsTest extends
         } else {
             doReturn(currentUser).when(mUserManager).isSystemUser();
         }
+    }
+
+    private Preference getPreference(CellBroadcastSettings activity, String key) {
+        Preference checkBox = null;
+        for (int i = 0; i < 5; i++) {
+            checkBox = !SdkLevel.isAtLeastS()
+                    ? activity.mCellBroadcastSettingsOldFragment.findPreference(key) :
+                    activity.mCellBroadcastSettingsFragment.findPreference(key);
+            if (checkBox != null) {
+                break;
+            }
+            waitForMs(100);
+        }
+        return checkBox;
     }
 }

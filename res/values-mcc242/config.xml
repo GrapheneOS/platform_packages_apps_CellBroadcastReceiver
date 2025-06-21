@@ -17,33 +17,33 @@
 <resources>
   <!-- 4370, 4383 -->
   <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-    <item>0x1112:rat=gsm, emergency=true, always_on=true, override_dnd=true, filter_language=true</item>
+    <item>0x1112:rat=gsm, emergency=true, always_on=true, override_dnd=true</item>
     <!-- additional language -->
-    <item>0x111F:rat=gsm, emergency=true, always_on=true, override_dnd=true</item>
+    <item>0x111F:rat=gsm, emergency=true, always_on=true, override_dnd=true, filter_language=true</item>
   </string-array>
   <!-- 4371, 4384 -->
   <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
-    <item>0x1113:type=mute, rat=gsm, emergency=true, always_on=true, filter_language=true</item>
+    <item>0x1113:type=mute, rat=gsm, emergency=true, always_on=true</item>
     <!-- additional language -->
-    <item>0x1120:type=mute, rat=gsm, emergency=true, always_on=true</item>
+    <item>0x1120:type=mute, rat=gsm, emergency=true, always_on=true, filter_language=true</item>
   </string-array>
   <!-- 4375~4376, 4388~4389 -->
   <string-array name="cmas_alerts_severe_range_strings" translatable="false">
-    <item>0x1117-0x1118:rat=gsm, emergency=true, override_dnd=true, filter_language=true</item>
+    <item>0x1117-0x1118:rat=gsm, emergency=true, override_dnd=true</item>
     <!-- additional language -->
-    <item>0x1124-0x1125:rat=gsm, emergency=true, override_dnd=true</item>
+    <item>0x1124-0x1125:rat=gsm, emergency=true, override_dnd=true, filter_language=true</item>
   </string-array>
   <!-- 4380, 4393 -->
   <string-array name="required_monthly_test_range_strings" translatable="false">
-    <item>0x111C:rat=gsm, emergency=true, override_dnd=true, filter_language=true</item>
+    <item>0x111C:rat=gsm, emergency=true, override_dnd=true</item>
     <!-- additional language -->
-    <item>0x1129:rat=gsm, emergency=true, override_dnd=true</item>
+    <item>0x1129:rat=gsm, emergency=true, override_dnd=true, filter_language=true</item>
   </string-array>
   <!-- 4381, 4394 -->
   <string-array name="exercise_alert_range_strings" translatable="false">
-    <item>0x111D:rat=gsm, emergency=true, override_dnd=true, filter_language=true</item>
+    <item>0x111D:rat=gsm, emergency=true, override_dnd=true</item>
     <!-- additional language -->
-    <item>0x112A:rat=gsm, emergency=true, override_dnd=true</item>
+    <item>0x112A:rat=gsm, emergency=true, override_dnd=true, filter_language=true</item>
   </string-array>
   <!-- Channels to receive geo-fencing trigger messages -->
   <string-array name="geo_fencing_trigger_messages_range_strings" translatable="false">
@@ -64,4 +64,10 @@
   <bool name="show_exercise_settings">false</bool>
   <!-- whether to display a separate exercise test settings. today, most of time, exercise channels was controlled by the main test toggle. -->
   <bool name="show_separate_exercise_settings">true</bool>
+  <!-- Specify primary language code for filter out secondary channel -->
+  <string-array name="language_filter_primary_code" translatable="false">
+    <item>nb</item>
+    <item>nn</item>
+    <item>se</item>
+  </string-array>
 </resources>
