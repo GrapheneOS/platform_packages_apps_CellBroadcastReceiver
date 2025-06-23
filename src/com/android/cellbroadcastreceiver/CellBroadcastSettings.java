@@ -35,6 +35,7 @@ import android.os.UserManager;
 import android.os.Vibrator;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,6 +57,7 @@ import com.android.modules.utils.build.SdkLevel;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.widget.MainSwitchPreference;
 import com.android.settingslib.widget.SettingsBasePreferenceFragment;
+import com.android.settingslib.widget.SettingsThemeHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -227,6 +229,15 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
                         .commit();
             }
         } else {
+            if (!SettingsThemeHelper.isExpressiveTheme(this)) {
+                final Resources.Theme theme = getTheme();
+                TypedValue typedValue = new TypedValue();
+                if (theme != null && !theme.resolveAttribute(
+                        R.attr.isCellBroadcastSettingsRuntimeTheme, typedValue, true)) {
+                    theme.applyStyle(R.style.CellBroadcastSettingsRuntimeTheme, false);
+                    Log.d(TAG, "applyStyle");
+                }
+            }
             androidx.fragment.app.Fragment fragment = getSupportFragmentManager().findFragmentById(
                     com.android.settingslib.collapsingtoolbar.R.id.content_frame);
             if (fragment == null) {

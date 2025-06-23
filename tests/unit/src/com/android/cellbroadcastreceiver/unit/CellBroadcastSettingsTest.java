@@ -45,6 +45,7 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
+import android.util.TypedValue;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
@@ -60,6 +61,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.cellbroadcastreceiver.R;
 import com.android.internal.telephony.CellBroadcastUtils;
 import com.android.modules.utils.build.SdkLevel;
+import com.android.settingslib.widget.SettingsThemeHelper;
 
 import junit.framework.Assert;
 
@@ -677,6 +679,21 @@ public class CellBroadcastSettingsTest extends
             instrumentation.removeMonitor(monitor);
         } catch (Exception e) {
             Assert.fail("Exception " + e);
+        }
+    }
+
+    @Test
+    public void testCellBroadcastSettingsRuntimeThemeApplyOrNot() throws Throwable {
+        CellBroadcastSettings cellBroadcastSettings = startActivity();
+        waitForMs(100);
+
+        int attrId = R.attr.isCellBroadcastSettingsRuntimeTheme;
+        final Resources.Theme theme = cellBroadcastSettings.getTheme();
+        final TypedValue typedValue = new TypedValue();
+        if (!isHideToolbar() && !SettingsThemeHelper.isExpressiveTheme(mContext)) {
+            assertTrue(theme.resolveAttribute(attrId, typedValue, true));
+        } else {
+            assertFalse(theme.resolveAttribute(attrId, typedValue, true));
         }
     }
 
