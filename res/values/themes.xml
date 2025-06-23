@@ -49,4 +49,9 @@
         <item name="android:actionModeBackground">?android:attr/colorBackground</item>
     </style>
 
+    <style name="CellBroadcastSettingsRuntimeTheme">
+        <item name="isCellBroadcastSettingsRuntimeTheme">true</item>
+        <item name="switchStyle">@style/SwitchCompat.SettingsLib</item>
+        <item name="alertDialogTheme">@style/Theme.AlertDialog.SettingsLib</item>
+    </style>
 </resources>
