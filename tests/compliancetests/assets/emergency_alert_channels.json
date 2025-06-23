@@ -1374,68 +1374,38 @@
     }
   },
   "latvia": {
-    "4352": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false",
-      "end_channel": "4354"
-    },
-    "4356": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
     "4370": {
-      "title": "Presidential alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4383": {
-      "title": "Presidential alert",
+      "title": "Presidential Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "Emergency alert: Extreme",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4372"
-    },
-    "4384": {
-      "title": "Emergency alert: Extreme",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4385"
-    },
-    "4373": {
-      "title": "Emergency alert: Severe",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4378"
-    },
-    "4386": {
-      "title": "Emergency alert: Severe",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4391"
-    },
-    "4379": {
-      "title": "Child abduction (Amber alert)",
+      "title": "Extreme Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "4392": {
-      "title": "Child abduction (Amber alert)",
+    "4373": {
+      "title": "Severe Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4379": {
+      "title": "Amber Alert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4380": {
-      "title": "Required Monthly Test",
+      "title": "Monthly Test Alert",
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "4393": {
-      "title": "Required Monthly Test",
+    "4381": {
+      "title": "Exercise Alert",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4396": {
+      "title": "End of Threat",
       "default_value": "false",
       "toggle_avail": "true"
     }
