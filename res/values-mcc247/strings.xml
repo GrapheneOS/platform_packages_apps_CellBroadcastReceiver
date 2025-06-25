@@ -60,10 +60,10 @@
     <string name="enable_cmas_test_alerts_title">Required Monthly Test Alerts</string>
     <!-- Preference summary for other test alerts checkbox. [CHAR LIMIT=125] -->
     <!-- Required Latvian(lv) translation for this message: Paziņojums par ikmēneša sistēmas testu -->
-    <string name="enable_cmas_test_alerts_summary">Announcement about a monthy system test</string>
+    <string name="enable_cmas_test_alerts_summary">Announcement about a monthly system test</string>
     <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
     <!-- Required Latvian(lv) translation for this message: Mācību brīdinājums -->
-    <string name="enable_exercise_test_alerts_title">Excersise Alerts</string>
+    <string name="enable_exercise_test_alerts_title">Exercise Alerts</string>
     <!-- Preference summary for exercise test alerts checkbox. [CHAR LIMIT=125] -->
     <!-- Required Latvian(lv) translation for this message: Paziņojums par mācībām -->
     <string name="enable_exercise_test_alerts_summary">Announcement about exercises</string>
