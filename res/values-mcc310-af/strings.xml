@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Wys onttrekkingdialoog nadat eerste waarskuwing gewys is (behalwe presidensiële waarskuwing)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Nasionale waarskuwings"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Nasionale waarskuwingsboodskappe. Kan nie afgeskakel word nie."</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"Ignoreer Moenie Steur Nie en ander volume-instellings. Indien afgeskakel kan kritiekste waarskuwings op hardste volume lui."</string>
 </resources>

@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Wibracje"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Zawsze ostrzegaj z pełną głośnością"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"Ignoruj ustawienia dźwięku w trybie Nie przeszkadzać i innych"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Ignoruj tryb Nie przeszkadzać i ustawienia głośności. Po wyłączeniu najważniejsze alerty mogą dalej mieć pełną głośność."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Aktualne informacje z danego obszaru"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Pokaż aktualne informacje w ramach stanu karty SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategoria alertu:"</string>

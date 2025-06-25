@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"জীবন বা সম্পত্তি রক্ষা করতে পারে এমন কাজের সাজেশন"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"পাবলিক নিরাপত্তা সতর্কতা"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"নিঃশব্দ সতর্কতা"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"অনুশীলন সংক্রান্ত সতর্কতা মেসেজ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"জরুরি সতর্কতা পান: অনুশীলন/ড্রিলের মেসেজ"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"মহড়ার জন্য সতর্কতা"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"জরুরি সতর্কতা পান: ড্রিল/মহড়ার জন্য মেসেজ"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-সতর্কতা : গুরুতর ঝুঁকির সম্ভাবনার ব্যাপারে সতর্কতা"</string>

@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"भाइब्रेसन"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"सधैँ पूर्ण भोल्युममा सतर्क गराउनुहोस्"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"बाधा नपुऱ्याउनुहोस् नामक सुविधा र भोल्युमसम्बन्धी अन्य सेटिङको बेवास्ता गर्नुहोस्"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Do Not Disturb र भोल्युमसम्बन्धी अन्य सेटिङ बेवास्ता गर्नुहोस्। यो सुविधा अफ गरिएको भए पनि सबैभन्दा महत्त्वपूर्ण अलर्ट प्राप्त हुँदा पूरा भोल्युममा घण्टी बज्न सक्छ।"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"क्षेत्रसम्बन्धी अद्यावधिकका प्रसारणहरू"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM को स्थितिमा अद्यावधिकसम्बन्धी जानकारी देखाउनुहोस्‌"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"चेतावनी कोटी:"</string>

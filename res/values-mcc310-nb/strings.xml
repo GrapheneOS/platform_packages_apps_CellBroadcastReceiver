@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Vis en bortvelgingsdialog etter det første varselet (gjelder ikke for nasjonale varsler)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Nasjonale varsler"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Nasjonale varselmeldinger. Kan ikke slås av."</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"Ignorer «Ikke forstyrr» og andre voluminnstillinger. Når dette er av, kan svært kritiske varsler spilles av med fullt volum."</string>
 </resources>

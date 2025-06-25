@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"バイブレーション"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"常に最大音量で通知音を鳴らす"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"サイレント モードと他の音量設定を無視する"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"サイレント モードと他の音量設定を無視します。最も重要なアラートの場合は、設定にかかわらず最大音量で通知されます。"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"エリア更新メッセージ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM ステータスに更新情報を表示します"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"警報のカテゴリ:"</string>

@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibriranje"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Opozarjanje vedno pri polni glasnosti"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"Prezrtje načina »ne moti« in drugih nastavitev glasnosti"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Prezrtje načina »Ne moti« in drugih nastavitev glasnosti. Če je to izklopljeno, se zvok najbolj kritičnih opozoril lahko še vedno predvaja s polno glasnostjo."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Oddaje z najnovejšimi območnimi informacijami"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Prikaz najnovejših informacij pri stanju kartice SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Kategorija opozorila:"</string>

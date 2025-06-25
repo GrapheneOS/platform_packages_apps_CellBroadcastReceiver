@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"Preporučene radnje kojim se mogu spasiti životi ili imovina"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"Upozorenje o javnoj sigurnosti"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"Tiho upozorenje"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"Upozorenja za vježbu"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"Primite upozorenje na hitan slučaj: poruka za vježbu"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"Upozorenja za vježbu"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"Primite upozorenje na hitan slučaj: poruka za vježbu"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"UPOZORENJE ZA RUMUNIJU: upozorenje na neposrednu opasnost"</string>

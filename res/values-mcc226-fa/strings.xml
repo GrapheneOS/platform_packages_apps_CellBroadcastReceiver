@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"اقدام‌های توصیه‌شده که می‌تواند جان افراد یا اموال آن‌ها را حفظ کند"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"هشدار ایمنی عمومی"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"هشدار بی‌صدا"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"هشدارهای تمرینی"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"دریافت هشدار اضطراری: پیام تمرینی/آموزشی"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"هشدارهای تمرینی"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"دریافت هشدار شرایط اضطراری: پیام تمرینی/آموزشی"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"هشدار رومانی : هشدار خطر قریب‌الوقوع"</string>

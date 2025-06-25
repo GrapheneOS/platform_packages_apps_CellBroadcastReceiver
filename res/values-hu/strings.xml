@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Rezgés"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Értesítés mindig teljes hangerőn"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"A „Ne zavarjanak” funkció és más hangerő-beállítások figyelmen kívül hagyása"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"A Ne zavarjanak és más hangerő-beállítások ignorálása. Kikapcsolva a legkritikusabb értesítések továbbra is teljes hangerőn lehetnek."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Területalapú frissítések sugárzása"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"A frissítési adatok megjelenítése a SIM-kártya állapotában"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Értesítési kategória:"</string>

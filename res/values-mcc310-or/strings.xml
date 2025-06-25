@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"ପ୍ରଥମ ଆଲର୍ଟ (ଜାତୀୟ ଆଲର୍ଟ ବ୍ୟତୀତ ଅନ୍ୟ କିଛି) ଡିସପ୍ଲେ କରିବା ପରେ ଏକ ଅପ୍ଟ-ଆଉଟ୍ ଡାଏଲଗ୍ ଦେଖାନ୍ତୁ।"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"ଜାତୀୟ ଆଲର୍ଟଗୁଡ଼ିକ"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"ଜାତୀୟ ଚେତାବନୀ ସମ୍ବନ୍ଧୀୟ ମେସେଜଗୁଡ଼ିକ। ବନ୍ଦ କରାଯାଇପାରିବ ନାହିଁ।"</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ ଓ ଅନ୍ୟ ଭଲ୍ୟୁମ ସେଟିଂସକୁ ଅଣଦେଖା କର। ବନ୍ଦ ହେଲେ, ସବୁଠୁ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଆଲର୍ଟ ପୂର୍ଣ୍ଣ ଭଲ୍ୟୁମରେ ସାଉଣ୍ଡ କରିପାରେ।"</string>
 </resources>

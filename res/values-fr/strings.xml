@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibreur"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Conserver le volume maximal pour les alertes"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"Ignorer Ne pas déranger et les autres paramètres de volume"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Ignorer Ne pas déranger et les autres paramètres de volume. Une fois le mode désactivé, les alertes les plus importantes peuvent toujours retentir à plein volume."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Diffusion des dernières informations locales"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Afficher les dernières informations dans l\'état de la carte SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Catégorie d\'alerte :"</string>

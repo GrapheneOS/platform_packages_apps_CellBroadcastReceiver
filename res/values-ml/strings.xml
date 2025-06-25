@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"വൈബ്രേഷൻ"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"എപ്പോഴും പൂർണ്ണ ശബ്ദത്തിൽ മുന്നറിയിപ്പ് നൽകുക"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"\'ശല്യപ്പെടുത്തരുത്\' മോഡും മറ്റ് ശബ്ദ ക്രമീകരണവും അവഗണിക്കുക"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"ശല്യപ്പെടുത്തരുത് മോഡും മറ്റ് ശബ്ദ ക്രമീകരണവും അവഗണിക്കുക. ഓഫാക്കിയാലും അതീവ ഗുരുതര മുന്നറിയിപ്പുകൾ ഫുൾ വോളിയത്തിൽ ലഭിക്കും."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ഏരിയ അപ്‌ഡേറ്റ് ബ്രോഡ്‌കാസ്റ്റുകൾ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"സിം സ്റ്റാറ്റസിൽ ഏറ്റവും പുതിയ വിവരങ്ങൾ കാണിക്കുക"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"അലേർട്ട് വിഭാഗം:"</string>

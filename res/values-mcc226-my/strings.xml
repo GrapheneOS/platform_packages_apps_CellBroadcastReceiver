@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"အသက်အိုးအိမ်တို့ကို ကယ်တင်နိုင်သော အကြံပြုထားသည့် လုပ်ဆောင်ချက်များ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"လူထုလုံခြုံရေး သတိပေးချက်"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"အသံတိတ် သတိပေးချက်"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"လေ့ကျင့်ခန်း သတိပေးချက်များ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"အရေးပေါ် သတိပေးချက် ရယူရန်- လေ့ကျင့်ခန်း/သရုပ်ပြ မက်ဆေ့ဂျ်"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"လေ့ကျင့်သည့် သတိပေးချက်များ"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"အရေးပေါ် သတိပေးချက်ကို လက်ခံရန်- လေ့ကျင့်ရေး/သရုပ်ပြ မက်ဆေ့ဂျ်"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ALERT - ချက်ချင်းဖြစ်ပေါ်နိုင်သော အန္တရာယ်ကို သတိပေးချက်"</string>

@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"რეკომენდებული ქმედებები სიცოცხლის ან საკუთრების გადასარჩენად"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"საჯარო უსაფრთხოების გაფრთხილება"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"ჩუმი გაფრთხილება"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"ვარჯიშის შესახებ გაფრთხილებები"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"საგანგებო ვითარების გაფრთხილების მიღება: ვარჯიშის/წვრთნის შესახებ შეტყობინება"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"სავარჯიშო გაფრთხილებები"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"საგანგებო ვითარების გაფრთხილების მიღება: სავარჯიშო/საწვრთნელი შეტყობინება"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ALERT : გაფრთხილება გარდაუვალი რისკის შესახებ"</string>

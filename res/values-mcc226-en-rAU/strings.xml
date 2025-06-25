@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"Recommended actions that can save lives or property"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"Public safety alert"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"Silent alert"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"Exercise alerts"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"Receive emergency alert: Exercise/drill message"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"Exercise alerts"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"Receive emergency alert: Exercise/drill message"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ALERT: Imminent risk alert"</string>

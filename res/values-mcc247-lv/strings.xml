@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2022 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="1535999401066447253">"Sarkanais brīdinājums"</string>
+    <string name="cmas_extreme_alert" msgid="635070866065605888">"Oranžais brīdinājums"</string>
+    <string name="cmas_severe_alert" msgid="391469542972394153">"Dzeltenais brīdinājums"</string>
+    <string name="cmas_amber_alert" msgid="554360958642745625">"Bērna nolaupīšanas brīdinājums"</string>
+    <string name="cmas_required_monthly_test" msgid="6609960760172747292">"Ikmēneša testa brīdinājums"</string>
+    <string name="cmas_exercise_alert" msgid="2063758564921425393">"Mācību brīdinājums"</string>
+    <string name="public_safety_message" msgid="5861033871089494580">"Apdraudējuma beigas"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="7835278772448139534">"Oranžais brīdinājums"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="8535642656840070224">"Ārkārtējs apdraudējums dzīvībai un īpašumam"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="7180683826410959961">"Dzeltenais brīdinājums"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4599796374936655416">"Ievērojams apdraudējums dzīvībai un īpašumam"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"Bērna pazušanas brīdinājums"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Paziņojums par pazudušu bērnu"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Ikmēneša testa brīdinājums"</string>
+    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
+    <skip />
+    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
+    <skip />
+    <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"Paziņojums par mācībām"</string>
+    <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"Apdraudējuma beigu brīdinājums"</string>
+    <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"Paziņojums par apdraudējuma beigām"</string>
+</resources>

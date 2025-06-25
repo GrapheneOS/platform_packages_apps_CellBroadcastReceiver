@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"សកម្មភាព​ដែលណែនាំ​ឱ្យធ្វើ​ដែលអាច​ជួយសង្គ្រោះអាយុជីវិត ឬទ្រព្យ​សម្បត្តិ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"ការជូនដំណឹង​អំពីសុវត្ថិភាព​សាធារណៈ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"ការជូនដំណឹងស្ងាត់"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"ការជូនដំណឹង​អំពី​លំហាត់ប្រាណ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"ទទួលការប្រកាសអាសន្ន៖ សារអំពីលំហាត់ប្រាណ/ការហ្វឹកហាត់"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"ការជូនដំណឹង​អំពី​ការអនុវត្តសាកល្បង"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"ទទួលការប្រកាសអាសន្ន៖ សារនៃ​ការអនុវត្ត/ការហ្វឹកហាត់"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"ការជូនដំណឹងរូម៉ានី៖ ការជូនដំណឹងអំពីហានិភ័យដែលទំនងនឹងកើតមាន"</string>

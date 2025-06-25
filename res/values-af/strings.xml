@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrasie"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Waarsku altyd op hardste volume"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"Ignoreer Moenie Steur nie en ander volume-instellings"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Ignoreer Moenie Steur Nie en ander volume-instellings. Indien afgeskakel kan kritieke waarskuwings op hardste volume lui."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Area-opdateringuitsendings"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Wys opdateringinligting in SIM-status"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Opletberig-kategorie:"</string>

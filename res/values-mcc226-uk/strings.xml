@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"Рекомендовані дії, щоб урятувати життя чи власність"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"Сповіщення щодо громадської безпеки"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"Беззвучне сповіщення"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"Навчальні сповіщення"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"Отримати екстрене сповіщення: тренувальне/симуляційне повідомлення"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"Навчальні сповіщення"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"Отримати екстрене сповіщення: тренувальне/симуляційне повідомлення"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ALERT : сповіщення про неминучу загрозу"</string>

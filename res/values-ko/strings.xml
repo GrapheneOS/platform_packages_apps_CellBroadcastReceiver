@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"진동"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"항상 최대 볼륨으로 알림"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"방해 금지 모드 및 기타 볼륨 설정을 무시합니다."</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"방해 금지 모드 및 기타 볼륨 설정을 무시합니다. 사용 중지되어 있어도 가장 중요한 알림은 최대 볼륨으로 울릴 수 있습니다."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"지역 업데이트 방송"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM 상태에 업데이트 정보 표시"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"알리미 카테고리:"</string>

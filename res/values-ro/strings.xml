@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrație"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Trimite întotdeauna alerte la volumul maxim"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"Ignoră funcția Nu deranja și alte setări pentru volum"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Ignoră Nu deranja și alte setări de volum. Când sunt dezactivate, alertele importante se pot declanșa totuși la volum maxim."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Difuzarea actualizărilor despre zonă"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Afișează informațiile despre actualizare în starea cardului SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoria alertei:"</string>

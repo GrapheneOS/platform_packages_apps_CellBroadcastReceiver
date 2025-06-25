@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"ജീവനോ സ്വത്തോ സംരക്ഷിക്കുന്ന, ശുപാർശ ചെയ്യുന്ന നടപടികൾ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"പൊതു സുരക്ഷാ മുന്നറിയിപ്പ്"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"നിശബ്‌ദ മുന്നറിയിപ്പ്"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"പരിശീലന അറിയിപ്പുകൾ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"അടിയന്തര മുന്നറിയിപ്പുകൾ നേടൂ: പരിശീലന/ഡ്രിൽ സന്ദേശം"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"പരിശീലന അറിയിപ്പുകൾ"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"അടിയന്തര മുന്നറിയിപ്പുകൾ നേടൂ: പരിശീലന/ഡ്രിൽ സന്ദേശം"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"റൊമാനിയ-മുന്നറിയിപ്പ് : ആസന്നമായ അപകടം സംബന്ധിച്ച അലേർട്ട്"</string>
