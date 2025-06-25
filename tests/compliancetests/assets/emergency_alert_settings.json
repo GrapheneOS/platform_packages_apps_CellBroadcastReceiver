@@ -502,19 +502,27 @@
     }
   },
   "latvia": {
-    "Extreme threats": {
+    "Extreme Alerts": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe threats": {
+    "Severe Alerts": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "AMBER alerts": {
+    "Missing Child Alerts": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Test alerts": {
+    "Required Monthly Test Alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Exercise Alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "End of Threat Alerts": {
       "default_value": "false",
       "toggle_avail": "true"
     },
