@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"振动"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"始终以最大音量播放提醒提示音"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"忽略“勿扰”模式及其他音量设置"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"忽略“勿扰”模式及其他音量设置。关闭后，如果有严重警报，设备仍可能会以最大音量播放音效。"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"区域动态信息广播"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"在 SIM 卡状态中显示动态信息"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"警报类别："</string>

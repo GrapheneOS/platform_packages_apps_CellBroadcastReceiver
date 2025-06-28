@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibración"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Alertar sempre cando o volume estea ao máximo"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"Ignora o modo Non molestar e outras opcións de configuración do volume"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Ignora o modo Non molestar e outras opcións do volume. Se o desactivas, as alertas máis críticas poden soar ao máximo volume."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Emisións de información actualizada sobre a zona"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostra información actualizada no estado da SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoría de alerta:"</string>

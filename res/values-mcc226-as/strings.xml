@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"জীৱন অথবা সম্পত্তি ৰক্ষা কৰিব পৰা চুপাৰিছ কৰা কাৰ্যসমূহ"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"ৰাজহুৱা সুৰক্ষা বিষয়ক সতৰ্কবাৰ্তা"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"নীৰৱ সতৰ্কবাৰ্তা"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"অনুশীলনৰ সতৰ্কবাৰ্তা"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"জৰুৰীকালীন সতৰ্কবাৰ্তা পাওক: অনুশীলন/ড্ৰিলৰ বাৰ্তা"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"অনুশীলনৰ সতৰ্কবাৰ্তা"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"জৰুৰীকালীন সতৰ্কবাৰ্তা পাওক: অনুশীলন/ড্ৰিলৰ বাৰ্তা"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-সতৰ্কবাৰ্তা : গুৰুতৰ বিপদাশংকাৰ সতৰ্কবাৰ্তা"</string>

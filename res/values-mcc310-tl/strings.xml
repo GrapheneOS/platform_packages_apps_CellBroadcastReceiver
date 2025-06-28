@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Magpakita ng dialog sa pag-opt out pagkatapos ipakita ang unang alerto (bukod sa Pambansang Alerto)."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Mga pambansang alerto"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Mga pambansang mensahe ng babala. Hindi puwedeng i-off."</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"Balewalain ang Huwag Istorbohin at ibang volume settings. Kapag off, baka tumunog pa rin nang malakas ang mga critical alert."</string>
 </resources>

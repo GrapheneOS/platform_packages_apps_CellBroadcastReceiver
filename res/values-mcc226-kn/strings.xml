@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"ಜೀವನ ಅಥವಾ ಆಸ್ತಿಯನ್ನು ಉಳಿಸಬಹುದಾದ ಶಿಫಾರಸು ಮಾಡಲಾದ ಕ್ರಮಗಳು"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತೆಯ ಎಚ್ಚರಿಕೆ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"ಸೈಲೆಂಟ್ ಅಲರ್ಟ್"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"ಅಭ್ಯಾಸದ ಅಲರ್ಟ್‌ಗಳು"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"ತುರ್ತು ಅಲರ್ಟ್ ಅನ್ನು ಸ್ವೀಕರಿಸಿ: ಅಭ್ಯಾಸ/ಡ್ರಿಲ್ ಕುರಿತ ಸಂದೇಶ"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"ಅಭ್ಯಾಸದ ಅಲರ್ಟ್‌ಗಳು"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"ತುರ್ತು ಅಲರ್ಟ್ ಅನ್ನು ಸ್ವೀಕರಿಸಿ: ಅಭ್ಯಾಸ/ಡ್ರಿಲ್ ಕುರಿತ ಸಂದೇಶ"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ಅಲರ್ಟ್: ಸನ್ನಿಹಿತ ಅಪಾಯದ ಅಲರ್ಟ್"</string>

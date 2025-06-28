@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"생명이나 재산을 보호할 수 있는 행동 요령"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"공공 안전 알림"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"무음 알림"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"안전 훈련 알림"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"긴급 재난 문자 받기: 훈련 메시지"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"안전 훈련 알림"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"긴급 재난 문자 받기: 훈련 메시지"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ALERT : 급박한 위험 알림"</string>

@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"ప్రాణాలు లేదా ప్రాపర్టీలను కాపాడేందుకు సిఫార్సు చేసిన చర్యలు"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"పబ్లిక్ భద్రత అలర్ట్"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"నిశ్శబ్ద అలర్ట్"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"వ్యాయామ అలర్ట్‌లు"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"ఎమర్జెన్సీ అలర్ట్‌ను అందుకోండి: వ్యాయామ/డ్రిల్ మెసేజ్"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"వ్యాయామ అలర్ట్‌లు"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"ఎమర్జెన్సీ అలర్ట్‌ను అందుకోండి: వ్యాయామ/డ్రిల్ మెసేజ్"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ALERT : తీవ్రమైన ప్రమాద అలర్ట్"</string>

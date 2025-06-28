@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"સુઝાવ આપેલી ઍક્શન જે જીવન અથવા પ્રોપર્ટીને બચાવી શકે છે"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"સાર્વજનિક સલામતી માટે અલર્ટ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"સાઇલન્ટ અલર્ટ"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"અભ્યાસ માટે ડ્રિલના અલર્ટ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"ઇમર્જન્સી માટે અલર્ટ મેળવો: અભ્યાસ/ડ્રિલ સંબંધિત મેસેજ"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"અભ્યાસ માટે ડ્રિલના અલર્ટ"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"ઇમર્જન્સી માટે અલર્ટ મેળવો: અભ્યાસ/તાલીમ સંબંધિત મેસેજ"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-અલર્ટ: તાત્કાલિક જોખમનું અલર્ટ"</string>

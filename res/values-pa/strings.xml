@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ਥਰਥਰਾਹਟ"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ਹਮੇਸ਼ਾ ਪੂਰੀ ਅਵਾਜ਼ \'ਤੇ ਅਲਰਟ ਦਿਓ"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"\'ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ\' ਅਤੇ ਹੋਰ ਅਵਾਜ਼ ਸੈਟਿੰਗਾਂ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"\'ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ\' ਅਤੇ ਹੋਰ ਅਵਾਜ਼ ਸੈਟਿੰਗਾਂ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ। ਬੰਦ ਕੀਤੇ ਜਾਣ ਤੋਂ ਬਾਅਦ ਵੀ ਸਭ ਤੋਂ ਗੰਭੀਰ ਅਲਰਟ ਪੂਰੀ ਅਵਾਜ਼ ਵਿੱਚ ਵੱਜ ਸਕਦੇ ਹਨ।"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ਖੇਤਰ ਬਾਰੇ ਤਾਜ਼ਾ ਜਾਣਕਾਰੀ ਦੇ ਪ੍ਰਸਾਰਣ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"ਸਿਮ ਸਥਿਤੀ ਵਿੱਚ ਅੱਪਡੇਟ ਦੀ ਜਾਣਕਾਰੀ ਦਿਖਾਓ"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"ਚਿਤਾਵਨੀ ਸ਼੍ਰੇਣੀ:"</string>

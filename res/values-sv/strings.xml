@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibration"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Spela alltid upp varningar på högsta volym"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"Ignorera Stör ej och andra volyminställningar"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Ignorera Stör ej och andra volyminställningar. Även när detta är inaktiverat kan viktiga varningar spelas upp med full volym."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Sändningar för områdesuppdateringar"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Visa uppdateringsinformation i SIM-statusen"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Varningskategori:"</string>

@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"जीवन आणि मालमत्ता वाचवू शकतात अशा शिफारस केलेल्या उपाययोजना"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"सार्वजनिक सुरक्षितता इशारा"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"सायलंट अलर्ट"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"व्यायामासंबंधित सूचना"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"आणीबाणी इशारा मिळवा: व्यायाम/ड्रिलसंबंधित मेसेज"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"व्यायामासंबंधित सूचना"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"आणीबाणी इशारा मिळवा: व्यायाम/ड्रिल मेसेज"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO इशारा : धोक्याचा स्पष्ट इशारा"</string>

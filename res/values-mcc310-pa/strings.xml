@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"ਪਹਿਲਾ ਅਲਰਟ ਦਿਖਾਉਣ ਤੋਂ ਬਾਅਦ ਹਟਣ ਦੀ ਚੋਣ ਸੰਬੰਧੀ ਇੱਕ ਵਿੰਡੋ ਦਿਖਾਓ (ਰਾਸ਼ਟਰੀ ਅਲਰਟ ਤੋਂ ਇਲਾਵਾ)।"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"ਰਾਸ਼ਟਰੀ ਅਲਰਟ"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"ਰਾਸ਼ਟਰੀ ਚਿਤਾਵਨੀ ਸੰਬੰਧੀ ਸੁਨੇਹੇ। ਇਨ੍ਹਾਂ ਨੂੰ ਬੰਦ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।"</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"\'ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ\' ਅਤੇ ਹੋਰ ਅਵਾਜ਼ ਸੈਟਿੰਗਾਂ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ। ਬੰਦ ਕੀਤੇ ਜਾਣ ਤੋਂ ਬਾਅਦ ਵੀ ਸਭ ਤੋਂ ਗੰਭੀਰ ਅਲਰਟ ਪੂਰੀ ਅਵਾਜ਼ ਵਿੱਚ ਵੱਜ ਸਕਦੇ ਹਨ।"</string>
 </resources>

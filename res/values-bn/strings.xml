@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ভাইব্রেশন"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"যেকোনও সময়ে বিজ্ঞপ্তি পেতে সম্পূর্ণ ভলিউম দিন"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"বিরক্ত করবে না &amp; অন্য ভলিউম সেটিংস এড়িয়ে যান"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"বিরক্ত করবে না ও অন্য ভলিউম সেটিংস এড়ান। বন্ধ করার পরেও অত্যন্ত গুরুত্বপূর্ণ সতর্কতাগুলি সম্পূর্ণ ভলিউমে শোনানো হতে পারে।"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"জায়গার আপডেটের সম্প্রচার"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"সিম স্ট্যাটাসে আপডেটের তথ্য দেখুন"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"সতর্কতা বিভাগ:"</string>

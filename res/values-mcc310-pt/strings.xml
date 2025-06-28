@@ -32,5 +32,4 @@
     <string name="show_cmas_opt_out_summary" msgid="5612381687166765604">"Mostrar caixa de diálogo de desativação depois do primeiro alerta. Exceção: alerta nacional."</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="3871388542233245120">"Alertas nacionais"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="1292969668875568075">"Mensagens de aviso nacionais. Não é possível desativá-las."</string>
-    <string name="override_dnd_summary" msgid="3839647560760294340">"Ignorar Não Perturbe e outras config. de volume. Se desativado, os alertas importantes ainda poderão tocar no volume máximo."</string>
 </resources>

@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ଭାଇବ୍ରେସନ"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ସର୍ବଦା ଉଚ୍ଚ ଭଲ୍ୟୁମରେ ଆଲର୍ଟ କରନ୍ତୁ"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"\"ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ\" ଓ ଅନ୍ୟ ଭଲ୍ୟୁମ୍ ସେଟିଂସକୁ ଅଣଦେଖା କରନ୍ତୁ"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ ଓ ଅନ୍ୟ ଭଲ୍ୟୁମ ସେଟିଂସକୁ ଅଣଦେଖା କର। ବନ୍ଦ ହେଲେ, ସବୁଠୁ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଆଲର୍ଟ ପୂର୍ଣ୍ଣ ଭଲ୍ୟୁମରେ ସାଉଣ୍ଡ କରିପାରେ।"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ଅଞ୍ଚଳ ଅପଡେଟ୍‍ ବ୍ରୋଡକାଷ୍ଟକରିବା"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"SIM ଷ୍ଟାଟସରେ ଅପଡେଟ୍‍ ସୂଚନା ଦେଖାନ୍ତୁ"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"ଅଲର୍ଟ ବର୍ଗ:"</string>

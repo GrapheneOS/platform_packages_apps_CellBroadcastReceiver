@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"ሕይወቶች ወይም ንብረትን ሊያድኑ የሚችሉ የሚመከሩ እርምጃዎች"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"የሕዝብ ደህንነት ማንቂያ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"የፀጥታ ማንቂያ"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"የአካል ብቃት እንቅስቃሴ ማንቂያዎች"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"የአደጋ ጊዜ ማንቂያ ይቀበሉ ፦ የልምምድ/ድሪል መልዕክት"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"የአካል ብቃት እንቅስቃሴ ማንቂያዎች"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"የአደጋ ጊዜ ማንቂያ ይቀበሉ ፦ የልምምድ/ድሪል መልዕክት"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ማንቂያ ፦ አፋጣኝ ማንቂያ"</string>

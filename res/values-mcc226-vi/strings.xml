@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"Hành động được đề xuất có thể bảo vệ tính mạng hoặc tài sản"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"Cảnh báo chung về an toàn"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"Cảnh báo im lặng"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"Cảnh báo diễn tập"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"Nhận cảnh báo khẩn cấp: thông báo tập huấn/diễn tập"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"Cảnh báo diễn tập"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"Nhận cảnh báo khẩn cấp: thông báo tập huấn/diễn tập"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"CẢNH BÁO CHO ROMANIA: Cảnh báo rủi ro sắp xảy ra"</string>

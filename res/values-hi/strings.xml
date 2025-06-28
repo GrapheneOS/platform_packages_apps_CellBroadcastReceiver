@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"वाइब्रेशन"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"हमेशा सबसे तेज़ आवाज़ (फ़ुल वॉल्यूम) में सूचना दें"</string>
-    <string name="override_dnd_summary" msgid="9026675822792800258">"\'परेशान न करें\' मोड और आवाज़ की अन्य सेटिंग को अनदेखा करें"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"\'परेशान न करें\' मोड और आवाज़ की अन्य सेटिंग को अनदेखा करें. इनके बंद होने के बावजूद, ज़रूरी सूचनाएं पूरी आवाज़ में सुनाई दे सकती हैं."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"मौजूदा इलाके की जानकारी से जुड़े ब्रॉडकास्ट"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"इलाके की जानकारी, सिम के स्टेटस में दिखाएं"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"अलर्ट श्रेणी:"</string>

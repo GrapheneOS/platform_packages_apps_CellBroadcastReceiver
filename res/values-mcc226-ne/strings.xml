@@ -22,6 +22,8 @@
     <string name="enable_public_safety_messages_summary" msgid="4419379368753674332">"जीवन वा सम्पत्तिको सुरक्षा गर्न सक्ने सिफारिस गरिएका कार्यहरू"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"सार्वजनिक सुरक्षासम्बन्धी अलर्ट"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"साइलेन्ट अलर्ट"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"अभ्याससम्बन्धी अलर्टहरू"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"आपत्‌कालीन अलर्ट प्राप्त गर्नुहोस्: अभ्यास/तालिमसम्बन्धी म्यासेज"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"अभ्याससम्बन्धी अलर्टहरू"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"आपत्‌कालीन अलर्ट प्राप्त गर्नुहोस्: अभ्यास/तालीमसम्बन्धी म्यासेज"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ALERT : सम्भाव्य जोखिमसम्बन्धी अलर्ट"</string>
