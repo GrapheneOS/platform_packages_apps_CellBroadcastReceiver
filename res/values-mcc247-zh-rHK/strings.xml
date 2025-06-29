@@ -29,11 +29,9 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4599796374936655416">"嚴重的生命財產威脅"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"兒童失蹤警報"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"關於兒童失蹤的通知"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"必需的每月測試警報"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"必要的每月測試警報"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"有關每月系統測試的通知"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"演習警示"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"有關演習的通知"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"威脅結束警報"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"有關威脅結束的通知"</string>

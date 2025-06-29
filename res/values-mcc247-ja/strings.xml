@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"児童行方不明警報"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"行方不明の児童に関するお知らせ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"毎月のテスト警報（必須）"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"毎月のシステムテストに関するお知らせ"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"訓練用速報メール"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"訓練に関するお知らせ"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"脅威の終了の速報メール"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"脅威の終了に関するお知らせ"</string>
