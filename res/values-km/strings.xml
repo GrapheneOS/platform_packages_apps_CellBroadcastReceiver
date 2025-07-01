@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"ការ​ញ័រ"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"ជូនដំណឹង​នៅ​កម្រិតសំឡេង​ពេញ​ជានិច្ច"</string>
-    <string name="override_dnd_summary" msgid="8760249766972256385">"មិនអើពើចំពោះមុខងារកុំ​រំខាន និងការកំណត់កម្រិតសំឡេងផ្សេងទៀត។ នៅពេលបិទ ការជូនដំណឹងសំខាន់ខ្លាំងនៅតែអាចបញ្ចេញសំឡេងនៅកម្រិតសំឡេងពេញ។"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"មិនអើពើនឹងមុខងារកុំ​រំខាន និងការកំណត់កម្រិតសំឡេងផ្សេងទៀត។ នៅពេលបិទ ការជូនដំណឹងសំខាន់ខ្លាំងនៅតែអាចបញ្ចេញសំឡេងនៅកម្រិតសំឡេងពេញ។"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"ការផ្សាយបច្ចុប្បន្នភាពតំបន់"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"បង្ហាញ​ព័ត៌មាន​បច្ចុប្បន្ន​ភាព​នៅ​ក្នុង​ស្ថានភាព​ស៊ីម"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"ប្រភេទ​រំលឹក៖"</string>

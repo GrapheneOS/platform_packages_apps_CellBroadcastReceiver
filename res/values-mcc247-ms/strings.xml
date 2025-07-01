@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"Makluman Kanak-kanak Hilang"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Pengumuman tentang kanak-kanak yang hilang"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Makluman Ujian Bulanan yang Diperlukan"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"Pengumuman tentang ujian sistem bulanan"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"Makluman Latihan"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"Pengumuman tentang latihan"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"Makluman Penamat Ancaman"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"Pengumuman tentang penamat ancaman"</string>

@@ -41,6 +41,7 @@ import android.provider.Telephony;
 import android.telephony.SmsCbMessage;
 import android.util.Log;
 import android.util.SparseBooleanArray;
+import android.util.TypedValue;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -52,6 +53,7 @@ import android.view.WindowManager;
 import android.widget.AbsListView.MultiChoiceModeListener;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AlertDialog;
 
 import com.android.internal.annotations.VisibleForTesting;
@@ -70,6 +72,7 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
     @VisibleForTesting
     public CursorLoaderListFragment mListFragment;
     private boolean mHideToolbar = false;
+    private static final String TAG = CellBroadcastListActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +88,16 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
             if (actionBar != null) {
                 // android.R.id.home will be triggered in onOptionsItemSelected()
                 actionBar.setDisplayHomeAsUpEnabled(true);
+            }
+        } else {
+            if (!SettingsThemeHelper.isExpressiveTheme(this)) {
+                final Resources.Theme theme = getTheme();
+                TypedValue typedValue = new TypedValue();
+                if (theme != null && !theme.resolveAttribute(
+                        R.attr.isCellBroadcastSettingsRuntimeTheme, typedValue, true)) {
+                    theme.applyStyle(R.style.CellBroadcastSettingsRuntimeTheme, false);
+                    Log.d(TAG, "applyStyle");
+                }
             }
         }
 

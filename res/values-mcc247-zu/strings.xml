@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2022 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="1535999401066447253">"Isaziso Esiphathelene Nombusi"</string>
+    <string name="cmas_extreme_alert" msgid="635070866065605888">"Isexwayiso Esedlulele"</string>
+    <string name="cmas_severe_alert" msgid="391469542972394153">"Isexwayiso Esibucayi"</string>
+    <string name="cmas_amber_alert" msgid="554360958642745625">"Isexwayiso se-Amber"</string>
+    <string name="cmas_required_monthly_test" msgid="6609960760172747292">"Isexwayiso Sokuhlola Sanyanga Zonke"</string>
+    <string name="cmas_exercise_alert" msgid="2063758564921425393">"Isexwayiso Sokujima"</string>
+    <string name="public_safety_message" msgid="5861033871089494580">"Ukuphela Kosongo"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="7835278772448139534">"Izexwayiso Ezidlulele"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="8535642656840070224">"Ukusongela okuqinile kwempilo nempahla"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="7180683826410959961">"Izexwayiso Ezibucayi"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="4599796374936655416">"Ukusongela okukhulu kwempilo nempahla"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"Izaziso Zengane Elahlekile"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Isimemezelo mayelana nengane elahlekile"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Izaziso Zokuhlola Ezidingekayo Zanyanga Zonke"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"Isimemezelo mayelana nokuhlolwa kwesistimu kwanyanga zonke"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"Izexwayiso Zokujima"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"Isimemezelo mayelana nokujima"</string>
+    <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"Izaziso Zokuphela Kwezinsongo"</string>
+    <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"Isimemezelo mayelana nokuphela kwezinsongo"</string>
+</resources>

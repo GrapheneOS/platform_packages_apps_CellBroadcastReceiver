@@ -71,6 +71,7 @@ import android.provider.Telephony;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
+import android.util.TypedValue;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -925,6 +926,20 @@ public class CellBroadcastListActivityTest extends
         if (SettingsThemeHelper.isExpressiveTheme(mContext)) {
             assertTrue(windowActionModeOverlayValue);
             assertNotNull(actionModeBackgroundDrawableValue);
+        }
+    }
+
+    public void testCellBroadcastListActivityRuntimeThemeApplyOrNot() throws Throwable {
+        CellBroadcastListActivity activity = startActivity();
+        waitForMs(100);
+
+        int attrId = R.attr.isCellBroadcastSettingsRuntimeTheme;
+        final Resources.Theme theme = activity.getTheme();
+        final TypedValue typedValue = new TypedValue();
+        if (!isHideToolbar() && !SettingsThemeHelper.isExpressiveTheme(mContext)) {
+            assertTrue(theme.resolveAttribute(attrId, typedValue, true));
+        } else {
+            assertFalse(theme.resolveAttribute(attrId, typedValue, true));
         }
     }
 
