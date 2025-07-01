@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"Meldungen zu vermissten Kindern"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Meldung zu einem vermissten Kind"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Ankündigung erforderlicher monatlicher Tests"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"Ankündigung eines monatlichen Systemtests"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"Warnungen der Kategorie „Übung“"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"Mitteilung der Kategorie „Übung“"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"Benachrichtigungen zum Ende der Bedrohung"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"Benachrichtigung zum Ende von Bedrohungen"</string>

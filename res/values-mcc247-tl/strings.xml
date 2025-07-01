@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"Mga Alerto sa Nawawalang Bata"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Anunsyo tungkol sa nawawalang bata"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Mga Alerto sa Kinakailangang Buwanang Pagsusuri"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"Anunsyo tungkol sa buwanang pagsusuri ng system"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"Mga Alerto para sa Pagsasanay"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"Anunsyo tungkol sa mga ehersisyo"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"Mga Alerto sa Pagtatapos ng Banta"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"Anunsyo tungkol sa pagtatapos ng mga banta"</string>

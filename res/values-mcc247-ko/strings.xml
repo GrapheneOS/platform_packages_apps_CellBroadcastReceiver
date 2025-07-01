@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"실종 아동 알림"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"실종 아동에 관한 알림"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"필수 월간 테스트 경보"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"월간 시스템 테스트에 관한 알림"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"안전 훈련 알림"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"훈련에 관한 알림"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"위협 종료 알림"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"위협 종료에 관한 알림"</string>
