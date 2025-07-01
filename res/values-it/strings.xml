@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibrazione"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Allerta sempre a tutto volume"</string>
-    <string name="override_dnd_summary" msgid="8760249766972256385">"Ignora Non disturbare e altre impostazioni volume. Se off, gli avvisi più critici potrebbero suonare comunque a volume pieno."</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Ignora Non disturbare e altre impostazioni del volume. Se off, gli avvisi più critici potrebbero suonare comunque al volume massimo."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Trasmissioni degli aggiornamenti relativi alla zona"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostra le informazioni di aggiornamento nello stato della SIM"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoria allerta:"</string>

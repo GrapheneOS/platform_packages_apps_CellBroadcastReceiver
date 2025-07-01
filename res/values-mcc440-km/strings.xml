@@ -16,5 +16,5 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="override_dnd_summary" msgid="8629451080303293317">"មិនអើពើចំពោះមុខងារ​កុំ​រំខាន និងការកំណត់កម្រិតសំឡេងផ្សេងទៀត"</string>
+    <string name="override_dnd_summary" msgid="8629451080303293317">"មិនអើពើនឹងមុខងារ​កុំ​រំខាន និងការកំណត់កម្រិតសំឡេងផ្សេងទៀត"</string>
 </resources>

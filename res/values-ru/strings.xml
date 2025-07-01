@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вибрация"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Всегда проигрывать оповещения на полной громкости"</string>
-    <string name="override_dnd_summary" msgid="8760249766972256385">"Игнорировать режим \"Не беспокоить\" и др. настройки. Даже если параметр отключен, критические оповещения могут звучать громко."</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Игнорировать настройки звука и режим \"Не беспокоить\". Если отключено, самые важные оповещения все равно могут звучать громко."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Аварийные оповещения"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Показывать информацию об обновлении в статусе SIM-карты"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Категория оповещения:"</string>

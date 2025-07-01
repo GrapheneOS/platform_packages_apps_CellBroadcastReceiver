@@ -99,8 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"কম্পন"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"সদায় সম্পূর্ণ ভলিউমত সতর্ক কৰক"</string>
-    <!-- no translation found for override_dnd_summary (8760249766972256385) -->
-    <skip />
+    <string name="override_dnd_summary" msgid="8760249766972256385">"অসুবিধা নিদিব সুবিধাটো আৰু ভলিউম সম্পৰ্কীয় অন্য ছেটিংসমূহ উপেক্ষা কৰক। অফ কৰা থাকিলে, আটাইতকৈ গুৰুত্বপূৰ্ণ সতৰ্কবাৰ্তাসমূহ তথাপিও সম্পূৰ্ণ ভলিউমত বাজিব পাৰে।"</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"এলেকা আপডে’ট সম্প্ৰচাৰসমূহ"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"ছিমৰ স্থিতিত আপডেটৰ তথ্য দেখুৱাওক"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"সতৰ্কবাণীৰ প্ৰকাৰ:"</string>
