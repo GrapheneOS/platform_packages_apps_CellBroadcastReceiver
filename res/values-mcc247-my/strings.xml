@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"ပျောက်နေသောကလေးဆိုင်ရာ သတိပေးချက်များ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"ပျောက်နေသောကလေးအကြောင်း ကြေညာချက်"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"လိုအပ်သော လစဉ်စာမေးပွဲ သတိပေးချက်များ"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"လစဉ်စနစ်စမ်းသပ်မှုအကြောင်း ကြေညာချက်"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"လေ့ကျင့်ခန်း သတိပေးချက်များ"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"လေ့ကျင့်ခန်းများအကြောင်း ကြေညာချက်"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"အန္တရာယ်ကျော်လွှားနိုင်မှု သတိပေးချက်များ"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"အန္တရာယ်များ ကျော်လွှားနိုင်မှုအကြောင်း ကြေညာချက်"</string>

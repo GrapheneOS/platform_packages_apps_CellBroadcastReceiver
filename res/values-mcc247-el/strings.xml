@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"Ειδοποιήσεις εξαφάνισης παιδιού"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Ανακοίνωση σχετικά με εξαφάνιση παιδιού"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Απαιτούμενες ειδοποιήσεις μηνιαίας δοκιμής"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"Ανακοίνωση σχετικά με μια μηνιαία δοκιμή συστήματος"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"Ειδοποιήσεις άσκησης"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"Ανακοίνωση σχετικά με τις δοκιμές"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"Ειδοποιήσεις λήξης απειλών"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"Ανακοίνωση σχετικά με τη λήξη απειλών"</string>

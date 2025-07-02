@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"শিশু হেৰুওৱাৰ সতৰ্কবাৰ্তা"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"শিশু হেৰুওৱাৰ বিষয়ে ঘোষণা"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"মাহেকীয়া ছিষ্টেম পৰীক্ষাৰ সতৰ্কবাৰ্তা আৱশ্যকীয়"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"এটা মাহিলী ছিষ্টেম পৰীক্ষাৰ বিষয়ে ঘোষণা"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"অনুশীলনৰ সতৰ্কবাৰ্তা"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"অনুশীলনৰ বিষয়ে ঘোষণা"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"ভাবুকিৰ সতৰ্কবাৰ্তাৰ শেষ"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"ভাবুকিৰ সতৰ্কবাৰ্তাৰ শেষৰ বিষয়ে ঘোষণা"</string>

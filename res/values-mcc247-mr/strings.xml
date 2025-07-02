@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"लहान मूल हरवल्याशी संबंधित अलर्ट"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"लहान मूल हरवल्याची घोषणा"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"आवश्यक मासिक चाचणीशी संबंधित अलर्ट"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"मासिक सिस्टीम चाचणीविषयी घोषणा"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"व्यायामासंबंधित सूचना"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"प्रशिक्षणाशी संबंधित घोषणा"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"धोका टळला असल्याचे सांगणारे अलर्ट"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"धोके टळल्याबद्दलची घोषणा"</string>
