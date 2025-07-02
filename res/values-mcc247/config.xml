@@ -24,11 +24,11 @@
 
   <!-- 4370 Presidential Alert -->
   <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
-    <item>0x1112:rat=gsm, emergency=true, always_on=true</item>
+    <item>0x1112:rat=gsm, emergency=true, always_on=true, override_dnd=true</item>
   </string-array>
   <!-- 4371 Extreme Alert -->
   <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
-    <item>0x1113:rat=gsm, emergency=true</item>
+    <item>0x1113:rat=gsm, emergency=true, override_dnd=true</item>
   </string-array>
   <!-- 4373 Severe Alert -->
   <string-array name="cmas_alerts_severe_range_strings" translatable="false">
