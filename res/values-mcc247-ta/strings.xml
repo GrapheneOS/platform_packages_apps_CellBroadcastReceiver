@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"காணாமல் போன சிறுவர் குறித்த எச்சரிக்கைகள்"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"காணாமல் போன சிறுவர் குறித்த அறிவிப்பு"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"தேவையான மாதாந்திரப் பரிசோதனை எச்சரிக்கைகள்"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"மாதாந்திர சிஸ்டம் பரிசோதனை குறித்த அறிவிப்பு"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"பயிற்சி விழிப்பூட்டல்கள்"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"பயிற்சிகள் குறித்த அறிவிப்பு"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"அச்சுறுத்தல் எச்சரிக்கைகள் இனி தேவையில்லை"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"அச்சுறுத்தல் எச்சரிக்கைகளை நிறைவுசெய்வது தொடர்பான அறிவிப்பு"</string>

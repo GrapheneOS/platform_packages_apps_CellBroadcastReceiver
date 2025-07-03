@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"ការជូន​ដំណឹងអំពីកុមារបាត់ខ្លួន"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"ការប្រកាសអំពីកុមារបាត់ខ្លួន"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"ការជូនដំណឹង​សាកល្បងប្រចាំខែដែលចាំបាច់"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"ការប្រកាសអំពីការធ្វើតេស្ត​ប្រព័ន្ធប្រចាំខែ"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"ការជូនដំណឹង​អំពី​ការអនុវត្តសាកល្បង"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"ការប្រកាសអំពីការហ្វឹកហាត់"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"ការជូន​ដំណឹងអំពីការចប់ការគំរាមកំហែង"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"ការប្រកាសអំពីការចប់ការគំរាមកំហែង"</string>

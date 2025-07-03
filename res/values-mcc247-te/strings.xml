@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"మిస్సింగ్ చైల్డ్ అలర్ట్‌లు"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"మిస్సింగ్ చైల్డ్ గురించి అనౌన్స్‌మెంట్"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Required Monthly Test Alerts"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"నెలవారీ సిస్టమ్ టెస్ట్ గురించిన అనౌన్స్‌మెంట్"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"వ్యాయామ సంబంధిత అలర్ట్‌లు"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"వ్యాయామాల గురించి అనౌన్స్‌మెంట్"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"రిస్క్ ముగింపు అలర్ట్‌లు"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"రిస్క్ ముగింపు అనౌన్స్‌మెంట్"</string>

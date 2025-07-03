@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"Sinjalizime për fëmijë të humbur"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Njoftim për një fëmijë të humbur"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Sinjalizime për testimin mujor të kërkuar"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"Njoftim për një testim mujor të sistemit"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"Sinjalizime për ushtrime"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"Njoftim për ushtrime"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"Sinjalizime për përfundimin e kërcënimeve"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"Njoftim për përfundimin e kërcënimeve"</string>

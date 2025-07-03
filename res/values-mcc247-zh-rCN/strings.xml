@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"儿童失踪警报"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"关于儿童失踪的公告"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"强制性每月测试警报"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"关于每月系统测试的公告"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"演习警报"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"关于演习的公告"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"威胁解除警报"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"关于威胁解除的公告"</string>

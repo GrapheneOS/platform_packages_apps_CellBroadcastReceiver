@@ -23,7 +23,7 @@
     <string name="enable_cmas_amber_alerts_title" msgid="5354726577579867638">"Közbiztonsággal kapcsolatos riasztás"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="8834699940573410921">"Csendes riasztás"</string>
     <string name="enable_cmas_test_alerts_title" msgid="4852062153933449258">"Riasztási gyakorlatok"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"Vészjelzés fogadása: gyakorlati/próbaüzenet"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6935568723078570633">"Vészjelzés fogadása: gyakorlóüzenet"</string>
     <string name="enable_exercise_test_alerts_title" msgid="2484615513998712565">"Riasztási gyakorlatok"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="645953203648316566">"Vészjelzés fogadása: gyakorlati/próbaüzenet"</string>
     <string name="cmas_presidential_level_alert" msgid="4433533803942786891">"RO-ALERT : Fenyegető kockázatra vonatkozó riasztás"</string>

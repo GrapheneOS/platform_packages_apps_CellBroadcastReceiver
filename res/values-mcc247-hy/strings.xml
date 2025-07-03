@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"Կորած երեխաների մասին ծանուցումներ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Կորած երեխայի մասին հայտարարություն"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Ամենամսյա թեստավորման մասին պարտադիր ծանուցումներ"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"Համակարգի ամենամսյա թեստավորման մասին հայտարարություն"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"Ուսումնական տագնապների մասին ծանուցումներ"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"Ուսումնական տագնապների մասին հայտարարություն"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"Վտանգի վերանալու մասին ծանուցումներ"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"Վտանգի վերանալու մասին հայտարարություն"</string>
