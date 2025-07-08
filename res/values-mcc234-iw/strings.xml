@@ -30,7 +30,7 @@
     <string name="cmas_required_monthly_test" msgid="1226904101913162471">"התרעת בדיקה"</string>
     <string name="cmas_exercise_alert" msgid="4540370572086918020">"התרעת תרגול"</string>
     <string name="app_label" msgid="3863159788297913185">"התרעות על מצב חירום"</string>
-    <string name="sms_cb_settings" msgid="4187131985831792308">"התרעות על מצב חירום"</string>
+    <string name="sms_cb_settings" msgid="4187131985831792308">"התרעות על מקרה חירום"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"קבלת התרעות על מקרי חירום"</string>
     <string name="enable_alert_speech_summary" msgid="5021926525240750702">"‏שימוש בהמרת טקסט לדיבור (TTS) להקראה של התרעות על מקרי חירום"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"קבלת התראות בדיקה ממערכת ההתראה על מקרה חירום"</string>
