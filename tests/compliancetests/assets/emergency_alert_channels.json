@@ -4516,93 +4516,6 @@
       "toggle_avail": "true"
     }
   },
-  "australia": {
-    "4352": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false",
-      "end_channel": "4354"
-    },
-    "4356": {
-      "title": "",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4370": {
-      "title": "Presidential alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4383": {
-      "title": "Presidential alert",
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
-    "4371": {
-      "title": "Emergency alert: Extreme",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4372"
-    },
-    "4384": {
-      "title": "Emergency alert: Extreme",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4385"
-    },
-    "4373": {
-      "title": "Emergency alert: Severe",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4378"
-    },
-    "4386": {
-      "title": "Emergency alert: Severe",
-      "default_value": "true",
-      "toggle_avail": "true",
-      "end_channel": "4391"
-    },
-    "4379": {
-      "title": "Child abduction (Amber alert)",
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "4392": {
-      "title": "Child abduction (Amber alert)",
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "4380": {
-      "title": "Required Monthly Test",
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "4393": {
-      "title": "Required Monthly Test",
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "4381": {
-      "title": "Emergency alert (exercise)",
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "4394": {
-      "title": "Emergency alert (exercise)",
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "4382": {
-      "title": "Emergency alert (operator)",
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "4395": {
-      "title": "Emergency alert (operator)",
-      "default_value": "false",
-      "toggle_avail": "true"
-    }
-  },
   "newzealand": {
     "4352": {
       "title": "",
@@ -4969,6 +4882,57 @@
       "title": "EU Test",
       "default_value": "true",
       "toggle_avail": "true"
+    }
+  },
+  "Australia": {
+    "4370": {
+      "title": "NMS Critical Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "NMS Critical Alert",
+      "default_value": "true",
+      "toggle_avail": "false",
+      "filter_language": "language_setting"
+    },
+    "4371": {
+      "title": "NMS Priority Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4384": {
+      "title": "NMS Priority Alert",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
+    },
+    "4381": {
+      "title": "Exercise",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4394": {
+      "title": "Exercise",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
+    },
+    "4398": {
+      "title": "State/Local Test",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4399": {
+      "title": "State/Local Test",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
+    },
+    "4400": {
+      "title": "",
+      "default_value": "true",
+      "toggle_avail": "false"
     }
   }
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2025 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- CMAS dialog title for national level alert. [CHAR LIMIT=50] -->
+    <!-- Required all English (en) translation for this message: NMS Critical Alert -->
+    <string name="cmas_presidential_level_alert">NMS Critical Alert</string>
+    <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
+    <!-- Required all English (en) translation for this message: NMS Priority Alert -->
+    <string name="cmas_extreme_alert">NMS Priority Alert</string>
+    <!-- CMAS dialog title for required monthly test. [CHAR LIMIT=50] -->
+    <!-- Required all English (en) translation for this message: Test -->
+    <string name="cmas_required_monthly_test">Test</string>
+    <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
+    <!-- Required all English (en) translation for this message: Exercise -->
+    <string name="cmas_exercise_alert">Exercise</string>
+    <!-- CMAS dialog title for operator defined use. [CHAR LIMIT=50] -->
+    <!-- Required all English (en) translation for this message: Operator Test -->
+    <string name="cmas_operator_defined_alert">Operator Test</string>
+    <!-- Dialog title for all state/local test alerts. [CHAR LIMIT=50] -->
+    <!-- Required all English (en) translation for this message: State/Local Test -->
+    <string name="state_local_test_alert">State/Local Test</string>
+
+    <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
+    <string name="enable_cmas_extreme_threat_alerts_title">@string/cmas_extreme_alert</string>
+    <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
+    <string name="enable_cmas_test_alerts_title">@string/cmas_required_monthly_test</string>
+    <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
+    <string name="enable_exercise_test_alerts_title">@string/cmas_exercise_alert</string>
+    <!-- Preference title for operator defined test alerts checkbox. [CHAR LIMIT=50] -->
+    <string name="enable_operator_defined_test_alerts_title">@string/cmas_operator_defined_alert</string>
+    <!-- Preference title for enable state/local test alerts checkbox. [CHAR LIMIT=100] -->
+    <string name="enable_state_local_test_alerts_title">@string/state_local_test_alert</string>
+</resources>
