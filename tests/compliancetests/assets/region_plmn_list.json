@@ -64,8 +64,7 @@
   },
   "hongkong": {
     "mccmnc": ["45406"],
-    "imsi": "454060123456789",
-    "language": "zh-rHK"
+    "imsi": "454060123456789"
   },
   "denmark": {
     "mccmnc": ["23801"],

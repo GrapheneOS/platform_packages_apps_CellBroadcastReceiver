@@ -708,34 +708,34 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "極度緊急警示", //"Extreme Emergency Alert",
+      "title": "Extreme Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "極度緊急警示", //"Extreme Emergency Alert",
+      "title": "Extreme Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "緊急警示", //"Emergency alert",
+      "title": "Emergency alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4378"
     },
     "4384": {
-      "title": "緊急警示", //"Emergency alert",
+      "title": "Emergency alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4391"
     },
     "4380": {
-      "title": "測試訊息", //"Test Message",
+      "title": "Test Message",
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4393": {
-      "title": "測試訊息", //"Test Message",
+      "title": "Test Message",
       "default_value": "false",
       "toggle_avail": "true"
     }

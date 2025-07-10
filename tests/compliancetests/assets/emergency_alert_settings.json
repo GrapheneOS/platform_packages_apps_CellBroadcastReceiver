@@ -316,19 +316,19 @@
     }
   },
   "hongkong": {
-    "緊急警示": { //"Emergency alerts"
+    "Emergency alerts": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "測試訊息": { //"Test messages"
+    "Test messages": {
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "震動": { //"Vibration"
+    "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "一律以最大音量通知": { //"Always alert at full volume"
+    "Always alert at full volume": {
       "default_value": "false",
       "toggle_avail": "true"
     }
