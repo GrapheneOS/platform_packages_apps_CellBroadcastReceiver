@@ -17,15 +17,15 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_presidential_level_alert" msgid="1535999401066447253">"国家レベルの警報"</string>
-    <string name="cmas_extreme_alert" msgid="635070866065605888">"最重要速報メール"</string>
-    <string name="cmas_severe_alert" msgid="391469542972394153">"重要速報メール"</string>
+    <string name="cmas_extreme_alert" msgid="635070866065605888">"最重要アラート"</string>
+    <string name="cmas_severe_alert" msgid="391469542972394153">"重要アラート"</string>
     <string name="cmas_amber_alert" msgid="554360958642745625">"アンバー アラート"</string>
     <string name="cmas_required_monthly_test" msgid="6609960760172747292">"毎月のテスト警報"</string>
-    <string name="cmas_exercise_alert" msgid="2063758564921425393">"訓練用速報メール"</string>
+    <string name="cmas_exercise_alert" msgid="2063758564921425393">"訓練用アラート"</string>
     <string name="public_safety_message" msgid="5861033871089494580">"脅威の終了"</string>
-    <string name="enable_cmas_extreme_threat_alerts_title" msgid="7835278772448139534">"最重要速報メール"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="7835278772448139534">"最重要アラート"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="8535642656840070224">"命や財産に関わる極めて重大な脅威"</string>
-    <string name="enable_cmas_severe_threat_alerts_title" msgid="7180683826410959961">"重要速報メール"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="7180683826410959961">"重要アラート"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4599796374936655416">"命や財産に関わる重大な脅威"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"児童行方不明警報"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"行方不明の児童に関するお知らせ"</string>
@@ -33,6 +33,6 @@
     <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"毎月のシステムテストに関するお知らせ"</string>
     <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"訓練用速報メール"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"訓練に関するお知らせ"</string>
-    <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"脅威の終了の速報メール"</string>
+    <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"脅威の終了アラート"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"脅威の終了に関するお知らせ"</string>
 </resources>

@@ -30,10 +30,8 @@
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"අතුරුදහන් වූ දරුවෙකු පිළිබඳ ඇඟවීම්"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"අතුරුදහන් වූ දරුවෙකු පිළිබඳ නිවේදනය"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"අවශ්‍ය මාසික පරීක්ෂණ ඇඟවීම්"</string>
-    <!-- no translation found for enable_cmas_test_alerts_summary (5252220198509528818) -->
-    <skip />
-    <!-- no translation found for enable_exercise_test_alerts_title (4700976630721921586) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"මාසික පද්ධති පරීක්ෂණයක් පිළිබඳ නිවේදනය"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"ව්‍යායාම ඇඟවීම්"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"අභ්‍යාස පිළිබඳ නිවේදනය"</string>
     <string name="enable_public_safety_messages_title" msgid="6739024884321051726">"තර්ජන අවසන් වීම පිළිබඳ ඇඟවීම්"</string>
     <string name="enable_public_safety_messages_summary" msgid="2439130917419356981">"තර්ජන අවසන් වීම පිළිබඳ නිවේදනය"</string>
