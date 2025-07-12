@@ -28,7 +28,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="7180683826410959961">"Alerty o poważnym zagrożeniu"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4599796374936655416">"Poważne zagrożenia dla życia i mienia"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"Alerty o zaginięciu dziecka"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Komunikat o zaginięciu dziecku"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Komunikat o zaginięciu dziecka"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Alerty dotyczące wymaganego comiesięcznego testu"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"Komunikat o comiesięcznym teście systemu"</string>
     <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"Alerty ćwiczeniowe"</string>
