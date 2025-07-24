@@ -60,7 +60,8 @@
   },
   "norway": {
     "mccmnc": ["24201"],
-    "imsi": "242010123456789"
+    "imsi": "242010123456789",
+    "language": "nb"
   },
   "hongkong": {
     "mccmnc": ["45406"],
