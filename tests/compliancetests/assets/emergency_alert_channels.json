@@ -4868,5 +4868,95 @@
       "default_value": "true",
       "toggle_avail": "false"
     }
+  },
+  "Slovenia": {
+    "4370": {
+      "title": "National Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "National Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4371": {
+      "title": "Extreme Threats",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4372"
+    },
+    "4384": {
+      "title": "Extreme Threats",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4385"
+    },
+    "4373": {
+      "title": "Severe Alert",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4378"
+    },
+    "4386": {
+      "title": "Severe Alert",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4391"
+    },
+    "4396": {
+      "title": "Public Safety Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4397": {
+      "title": "Public Safety Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4379": {
+      "title": "Amber Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "Amber Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4380": {
+      "title": "Monthly Test Alert",
+      "default_value": "false",
+      "toggle_avail": "false",
+      "test_mode": "true"
+    },
+    "4393": {
+      "title": "Monthly Test Alert",
+      "default_value": "false",
+      "toggle_avail": "false",
+      "test_mode": "true"
+    },
+    "4381": {
+      "title": "Exercise Alert",
+      "default_value": "false",
+      "toggle_avail": "false",
+      "test_mode": "true"
+    },
+    "4394": {
+      "title": "Exercise Alert",
+      "default_value": "false",
+      "toggle_avail": "false",
+      "test_mode": "true"
+    },
+    "4398": {
+      "title": "EU Test",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4399": {
+      "title": "EU Test",
+      "default_value": "true",
+      "toggle_avail": "true"
+    }
   }
 }
