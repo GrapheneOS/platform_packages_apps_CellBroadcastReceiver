@@ -1663,6 +1663,36 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
 
             verify(mConfigService, times(++c + aggregationCount)).resetAllPreferences();
         }
+        aggregationCount += combResetting.length;
+
+        // Set 'the master toggle' and 'the speech alert toggle are same to verify 'the operator
+        // defined alert toggle'.
+        int operator_defined_alerts = com.android.cellbroadcastreceiver
+                .R.bool.test_operator_defined_alerts_enabled_default;
+        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERTS_MASTER_TOGGLE, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool.master_toggle_enabled_default, true);
+        setPreference(CellBroadcastSettings.KEY_ENABLE_ALERT_SPEECH, true);
+        putResources(com.android.cellbroadcastreceiver.R.bool.enable_alert_speech_default, true);
+
+        // Verify the settings preference not to be reset
+        for (int i = 0; i < combNoResetting.length; i++) {
+            setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER,
+                    combNoResetting[i][0]);
+            setPreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS, combNoResetting[i][1]);
+            putResources(operator_defined_alerts, combNoResetting[i][2]);
+            method.invoke(mConfigService, mIntent);
+            verify(mConfigService, times(aggregationCount)).resetAllPreferences();
+        }
+
+        // Verify the settings preference to be reset
+        for (int i = 0, c = 0; i < combResetting.length; i++) {
+            setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER,
+                    combResetting[i][0]);
+            setPreference(CellBroadcastSettings.KEY_OPERATOR_DEFINED_ALERTS, combResetting[i][1]);
+            putResources(operator_defined_alerts, combResetting[i][2]);
+            method.invoke(mConfigService, mIntent);
+            verify(mConfigService, times(++c + aggregationCount)).resetAllPreferences();
+        }
     }
 
     /**
