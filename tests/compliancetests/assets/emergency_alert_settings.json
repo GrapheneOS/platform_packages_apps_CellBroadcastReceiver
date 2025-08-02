@@ -1621,5 +1621,35 @@
       "default_value": "true",
       "toggle_avail": "true"
     }
+  },
+  "Slovenia": {
+    "Extreme threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Threat information": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Missing persons": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "EU Test": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
   }
 }
