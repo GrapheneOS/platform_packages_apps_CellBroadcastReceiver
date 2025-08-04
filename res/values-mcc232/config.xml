@@ -15,10 +15,9 @@
 -->
 
 <resources>
-    <!-- 4370, 4383, 919 AT/EU level 1 alert -->
+    <!-- 4370, 4383 AT/EU level 1 alert -->
     <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
         <item>0x1112:rat=gsm, emergency=true, alert_duration=300000, always_on=true, override_dnd=true, vibration=0|1000|500|1000|500|1000|500|2000|500|2000|500|2000|500|1000|500|1000|500|1000|500, pulsation=0xffff0000|300000</item>
-        <item>0x0397:rat=gsm, emergency=true, alert_duration=300000, always_on=true, override_dnd=true, vibration=0|1000|500|1000|500|1000|500|2000|500|2000|500|2000|500|1000|500|1000|500|1000|500, pulsation=0xffff0000|300000</item>
         <!-- additional language -->
         <item>0x111F:rat=gsm, emergency=true, alert_duration=300000, filter_language=true, always_on=true, override_dnd=true, vibration=0|1000|500|1000|500|1000|500|2000|500|2000|500|2000|500|1000|500|1000|500|1000|500, pulsation=0xffff0000|300000</item>
     </string-array>

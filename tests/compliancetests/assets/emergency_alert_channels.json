@@ -4353,11 +4353,6 @@
       "toggle_avail": "false",
       "filter_language": "language_setting"
     },
-    "919": {
-      "title": "Notfallalarm", //Emergency alert
-      "default_value": "true",
-      "toggle_avail": "false"
-    },
     "4372": {
       "title": "Extreme Gefahr", //Extreme threat
       "default_value": "true",
