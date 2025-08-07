@@ -75,7 +75,8 @@
     "mccmnc": ["73001"],
     "imsi": "730010123456789",
     "disable_navigation": "true",
-    "fullscreen": "true"
+    "fullscreen": "true",
+    "language": "es"
   },
   "mexico_telefonica": {
     "mccmnc": ["334030"],
