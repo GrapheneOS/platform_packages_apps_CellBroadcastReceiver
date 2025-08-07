@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Vibração"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Sempre tocar no volume máximo"</string>
-    <string name="override_dnd_summary" msgid="8760249766972256385">"Ignorar o não perturbe e outras configurações de volume. Se desativado, alertas críticos ainda podem tocar no volume máximo."</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Ignorar o Não Perturbe e outras configurações de volume. Se desativado, alertas críticos ainda podem tocar no volume máximo."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Transmissões de atualização de área"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Mostrar informações de atualização no status do chip"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Categoria de alerta:"</string>
