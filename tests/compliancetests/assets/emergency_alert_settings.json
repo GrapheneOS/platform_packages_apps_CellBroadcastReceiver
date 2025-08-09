@@ -142,11 +142,11 @@
     }
   },
   "chile": {
-    "Test alerts": {
+    "Alertas de prueba": { //"Test alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Las alertas sonarán siempre a todo volumen": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }

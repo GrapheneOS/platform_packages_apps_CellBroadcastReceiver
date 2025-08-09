@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--   Copyright (C) 2025 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+  -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="8716579201700696171">"ការប្រកាសអាសន្ន​ថ្នាក់ជាតិ"</string>
+    <string name="cmas_extreme_alert" msgid="8347295554399630502">"ការ​គំរាមកំហែង​ធ្ងន់ធ្ងរបំផុត"</string>
+    <string name="cmas_severe_alert" msgid="3406742550733141922">"ការជូនដំណឹង​ពេលមានអាសន្នធ្ងន់ធ្ងរ"</string>
+    <string name="public_safety_message" msgid="2761202225512145906">"ការជូនដំណឹង​អំពីសុវត្ថិភាព​សាធារណៈ"</string>
+    <string name="cmas_amber_alert" msgid="5083387104440558488">"ការជូនដំណឹងអំពីការចាប់ជំរិតក្មេង"</string>
+    <string name="cmas_required_monthly_test" msgid="112010057218703991">"ការ​ជូន​ដំណឹងសាកល្បងប្រចាំខែ"</string>
+    <string name="cmas_exercise_alert" msgid="8240215119500114759">"ការជូនដំណឹង​អំពី​ការហ្វឹកហាត់"</string>
+    <string name="cmas_operator_defined_alert" msgid="4495805505817375264">"តេស្តសាកល្បងសហភាពអឺរ៉ុប"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="8213224295126453259">"ការ​គំរាមកំហែង​ធ្ងន់ធ្ងរបំផុត"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="7768188789919667899">"ការគំរាមកំហែងខ្លាំងក្លាដល់អាយុជីវិត និងទ្រព្យសម្បត្តិ។"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8709652983091852514">"ការ​គំរាម​កំហែង​ធ្ងន់ធ្ងរ"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="1300762483900153049">"ការគំរាមកំហែងធ្ងន់ធ្ងរដល់អាយុជីវិត និងទ្រព្យសម្បត្តិ។"</string>
+    <string name="enable_public_safety_messages_title" msgid="3280148883359663028">"ព័ត៌មានអំពីការគំរាមកំហែង"</string>
+    <string name="enable_public_safety_messages_summary" msgid="3240272120066618615">"ព័ត៌មានទាក់ទងនឹងការគំរាមកំហែង។"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="548226737646925540">"មនុស្សដែលបាត់ខ្លួន"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7691451106260011094">"ស្វែងរកមនុស្សដែលបាត់ខ្លួន។"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="5491558192707049705">"ការ​ជូន​ដំណឹងសាកល្បងប្រចាំខែ"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="237932492543387399">"ការជូនដំណឹង​អំពី​ការហ្វឹកហាត់"</string>
+    <string name="enable_operator_defined_test_alerts_title" msgid="4619286009864944020">"តេស្តសាកល្បងសហភាពអឺរ៉ុប"</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="4919777166129829302">"ការជូនដំណឹងសាកល្បងពីអាជ្ញាធរមានសមត្ថកិច្ច។"</string>
+</resources>

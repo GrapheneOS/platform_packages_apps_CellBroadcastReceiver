@@ -88,7 +88,7 @@
     <string name="enable_state_local_test_alerts_summary" msgid="780298327377950187">"ຮັບຂໍ້ຄວາມທົດສອບຈາກລັດ ແລະ ເຈົ້າໜ້າທີ່ທ້ອງຖິ່ນ"</string>
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ການເຕືອນສຸກເສີນ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ເຕືອນກ່ຽວກັບເຫດການຂູ່ເຂັນຊີວິດ"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"ການເຕືອນທົດສອບ"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"ທົດສອບແຈ້ງເຕືອນ"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ຮັບການທົດສອບຜູ້ໃຫ້ບໍລິການ ແລະ ການທົດສອບລາຍເດືອນຈາກລະບົບການເຕືອນຄວາມປອດໄພ"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />

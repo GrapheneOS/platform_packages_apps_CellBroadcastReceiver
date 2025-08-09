@@ -875,59 +875,59 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "Emergency alert",
+      "title": "Alerta de emergencia", //"Emergency alert"
       "default_value": "true",
       "toggle_avail": "false"
     },
     "919": {
-      "title": "Emergency alert",
+      "title": "Alerta de emergencia", //"Emergency alert"
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4380": {
-      "title": "Mensaje de prueba",
+      "title": "Mensaje de prueba", //"Test Message"
       "default_value": "false",
       "toggle_avail": "true"
     },
     "519": {
-      "title": "Test Message",
+      "title": "Mensaje de prueba", //"Test Message"
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4371": {
-      "title": "Emergency alert: Extreme",
+      "title": "Alerta de emergencia: extrema", //"Emergency alert: Extreme"
       "default_value": "true",
       "toggle_avail": "false",
       "end_channel": "4372"
     },
     "4373": {
-      "title": "Emergency alert: Severe",
+      "title": "Alerta de emergencia: grave", //"Emergency alert: Severe"
       "default_value": "true",
       "toggle_avail": "false",
       "end_channel": "4378"
     },
     "4379": {
-      "title": "Child abduction (Amber alert)",
+      "title": "Secuestro de menores (alerta Amber)", //"Child abduction (Amber alert)"
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4381": {
-      "title": "Emergency alert (exercise)",
+      "title": "Alerta de emergencia (simulacro)", //"Emergency alert (exercise)"
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4382": {
-      "title": "Emergency alert (operator)",
+      "title": "Alerta de emergencia (operador)", //"Emergency alert (operator)"
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Emergency alert",
+      "title": "Alerta de emergencia", //"Emergency alert"
       "default_value": "true",
       "toggle_avail": "false"
     },
     "921": {
-      "title": "Emergency alert",
+      "title": "Alerta de emergencia", //"Emergency alert"
       "default_value": "true",
       "toggle_avail": "false"
     }

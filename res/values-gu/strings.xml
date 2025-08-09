@@ -75,7 +75,7 @@
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"ભારે જોખમો"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"જીવન અને સંપત્તિને ભારે જોખમો"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"ગંભીર જોખમો"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"જીવન અને સંપત્તિના ગંભીર જોખમો"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"જીવન અને સંપત્તિને ગંભીર જોખમો"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER અલર્ટ"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"બાળ અપહરણની ઇમર્જન્સી બુલેટિન"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"અલર્ટ મેસેજ"</string>

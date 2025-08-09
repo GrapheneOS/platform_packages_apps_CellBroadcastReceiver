@@ -98,7 +98,7 @@
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"आणीबाणी सूचना मिळवा: ऑपरेटर निर्धारित केला"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"व्हायब्रेशन"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
-    <string name="override_dnd_title" msgid="5120805993144214421">"सूचना नेहमी संपूर्ण व्हॉल्यूमवर द्या"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"इशारा नेहमी संपूर्ण व्हॉल्यूमवर द्या"</string>
     <string name="override_dnd_summary" msgid="8760249766972256385">"व्यत्यय आणू नका व इतर व्हॉल्यूम सेटिंग्जकडे दुर्लक्ष करा. बंद केले, तरीही सर्वात गंभीर इशारे पूर्ण व्हॉल्यूममध्ये वाजू शकतात."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"परिसराशी संबंधित अपडेट ब्रॉडकास्ट"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"सिमच्‍या स्थितीत अपडेटची काही माहिती असल्‍यास दाखवा"</string>
