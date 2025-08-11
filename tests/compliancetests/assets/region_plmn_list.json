@@ -69,7 +69,8 @@
   },
   "denmark": {
     "mccmnc": ["23801"],
-    "imsi": "238010123456789"
+    "imsi": "238010123456789",
+    "language": "da"
   },
   "chile": {
     "mccmnc": ["73001"],
@@ -80,7 +81,8 @@
   },
   "mexico_telefonica": {
     "mccmnc": ["334030"],
-    "imsi": "334030012345678"
+    "imsi": "334030012345678",
+    "language": "es"
   },
   "elsalvador": {
     "mccmnc": ["70601"],
