@@ -334,27 +334,27 @@
     }
   },
   "denmark": {
-    "Extreme": {
+    "Farlig": { //"Extreme"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe": {
+    "Alvorlig": { //"Severe"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Test": {
+    "Test": { //"Test"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Exercise": {
+    "Øvelse": { //"Exercise"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Vibration": {
+    "Vibration": { //"Vibration"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Brug altid fuld lydstyrke ved underretninger": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }

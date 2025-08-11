@@ -742,68 +742,74 @@
   },
   "denmark": {
     "4370": {
-      "title": "Public warning",  // 'Beredskabsmeddelelse' == 'Public warning'
+      "title": "Beredskabsmeddelelse", //"Public warning"
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "Public warning",  // 'Beredskabsmeddelelse' == 'Public warning'
+      "title": "Beredskabsmeddelelse", //"Public warning"
       "default_value": "true",
-      "toggle_avail": "false"
+      "toggle_avail": "false",
+      "filter_language": "language_setting"
     },
     "4371": {
-      "title": "Extreme",         // 'Farlig hændelse' == 'Extreme'
+      "title": "Farlig hændelse", //"Extreme"
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4374"
     },
     "4384": {
-      "title": "Extreme",         // 'Farlig hændelse' == 'Extreme'
+      "title": "Farlig hændelse", //"Extreme"
       "default_value": "true",
       "toggle_avail": "true",
-      "end_channel": "4387"
+      "end_channel": "4387",
+      "filter_language": "language_setting"
     },
     "4375": {
-      "title": "Severe",          // 'Alvorlig hændelse' == 'Severe'
+      "title": "Alvorlig hændelse", //"Severe"
       "default_value": "false",
       "toggle_avail": "true",
       "end_channel": "4378"
     },
     "4388": {
-      "title": "Severe",          // 'Alvorlig hændelse' == 'Severe'
+      "title": "Alvorlig hændelse", //"Severe"
       "default_value": "false",
       "toggle_avail": "true",
-      "end_channel": "4391"
+      "end_channel": "4391",
+      "filter_language": "language_setting"
     },
     "4380": {
-      "title": "Test",            // 'Test' == 'Test'
+      "title": "Test", //"Test"
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4382": {
-      "title": "Test",            // 'Test' == 'Test'
+      "title": "Test", //"Test"
       "default_value": "false",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     },
     "4393": {
-      "title": "Test",            // 'Test' == 'Test'
+      "title": "Test", //"Test"
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4395": {
-      "title": "Test",            // 'Test' == 'Test'
+      "title": "Test", //"Test"
       "default_value": "false",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     },
     "4381": {
-      "title": "Exercise",        // 'Øvelse' == 'Exercise'
+      "title": "Øvelse", //"Exercise"
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4394": {
-      "title": "Exercise",        // 'Øvelse' == 'Exercise'
+      "title": "Øvelse", //"Exercise"
       "default_value": "false",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     }
   },
   "uk": {
