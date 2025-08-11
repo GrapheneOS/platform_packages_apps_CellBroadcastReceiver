@@ -48,39 +48,39 @@
     }
   },
   "mexico_telefonica": {
-    "Alert Messages Level 1": {
+    "Mensajes de Alerta nivel 1": { //"Alert Messages Level 1"
       "default_value": "true",
       "toggle_avail": "false"
     },
-    "Alert Messages Level 2": {
+    "Mensajes de Alerta nivel 2": { //"Alert Messages Level 2"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Alert Messages Level 3": {
+    "Mensajes de Alerta nivel 3": { //"Alert Messages Level 3"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Information Messages in Spanish": {
+    "Mensajes de información en español": { //"Information Messages in Spanish"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Amber Alert Messages in Spanish": {
+    "Mensajes de Alerta Amber en español": { //"Amber Alert Messages in Spanish"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Exercise Alert Messages in Spanish": {
+    "Mensajes de Alerta de Ejercicio en español": { //"Exercise Alert Messages in Spanish"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Reserved for future deployments": {
+    "Reservados para futuras implementaciones": { //"Reserved for future deployments"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Operator warnings": {
+    "Avisos del operador": { //"Operator warnings"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Las alertas sonarán siempre a todo volumen": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
