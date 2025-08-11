@@ -22,7 +22,7 @@
     <string name="public_safety_message" msgid="2761202225512145906">"Sinjalizim i sigurisë publike"</string>
     <string name="cmas_amber_alert" msgid="5083387104440558488">"Sinjalizimi Amber"</string>
     <string name="cmas_required_monthly_test" msgid="112010057218703991">"Sinjalizim mujor testimi"</string>
-    <string name="cmas_exercise_alert" msgid="8240215119500114759">"Sinjalizim ushtrimi"</string>
+    <string name="cmas_exercise_alert" msgid="8240215119500114759">"Sinjalizim stërvitor"</string>
     <string name="cmas_operator_defined_alert" msgid="4495805505817375264">"Testimi i BE-së"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="8213224295126453259">"Kërcënime ekstreme"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="7768188789919667899">"Kërcënime ekstreme për jetën dhe pronën."</string>
@@ -33,7 +33,7 @@
     <string name="enable_cmas_amber_alerts_title" msgid="548226737646925540">"Persona të humbur"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7691451106260011094">"Kërkim për persona të humbur."</string>
     <string name="enable_cmas_test_alerts_title" msgid="5491558192707049705">"Sinjalizim mujor testimi"</string>
-    <string name="enable_exercise_test_alerts_title" msgid="237932492543387399">"Sinjalizim ushtrimi"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="237932492543387399">"Sinjalizim stërvitor"</string>
     <string name="enable_operator_defined_test_alerts_title" msgid="4619286009864944020">"Testimi i BE-së"</string>
     <string name="enable_operator_defined_test_alerts_summary" msgid="4919777166129829302">"Sinjalizimet e testimit nga autoritetet kompetente."</string>
 </resources>

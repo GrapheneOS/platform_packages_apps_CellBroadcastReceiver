@@ -29,7 +29,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8709652983091852514">"Pericole grave"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="1300762483900153049">"Pericole grave privind viața și bunurile."</string>
     <string name="enable_public_safety_messages_title" msgid="3280148883359663028">"Informații despre pericol"</string>
-    <string name="enable_public_safety_messages_summary" msgid="3240272120066618615">"Informații cu privire la amenințări."</string>
+    <string name="enable_public_safety_messages_summary" msgid="3240272120066618615">"Informații cu privire la pericole."</string>
     <string name="enable_cmas_amber_alerts_title" msgid="548226737646925540">"Persoane dispărute"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7691451106260011094">"Căutarea unor persoane dispărute."</string>
     <string name="enable_cmas_test_alerts_title" msgid="5491558192707049705">"Alertă de testare lunară"</string>
