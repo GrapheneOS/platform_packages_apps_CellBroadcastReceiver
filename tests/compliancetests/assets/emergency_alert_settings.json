@@ -18,31 +18,31 @@
     }
   },
   "brazil": {
-    "Extreme Threats": {
+    "Alerta Extremo": { //"Extreme Threats"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe Threats": {
+    "Alerta Severo": { //"Severe Threats"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "State and Local tests": {
+    "Alerta de teste": { //"State and Local tests"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Technical Test Alerts": {
+    "Alerta de teste técnico": { //"Technical Test Alerts"
       "default_value": "false",
       "toggle_avail": "false"
     },
-    "Area update broadcasts": {
+    "Transmissões de atualização de área": { //"Area update broadcasts"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Vibration": {
+    "Vibração": { //"Vibration"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Sempre tocar no volume máximo": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
