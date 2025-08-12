@@ -1631,46 +1631,46 @@
       "toggle_avail": "true"
     },
     "4371": {
-      "title": "Extreme Alert",
+      "title": "Alerta extremo", //"Extreme Alert"
       "default_value": "true",
       "toggle_avail": "false",
       "end_channel": "4372"
     },
     "4384": {
-      "title": "Extreme Alert",
+      "title": "Alerta extremo", //"Extreme Alert"
       "default_value": "true",
       "toggle_avail": "false",
       "end_channel": "4385"
     },
     "4373": {
-      "title": "Severe Alert",
+      "title": "Alerta severo", //"Severe Alert"
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4378"
     },
     "4386": {
-      "title": "Severe Alert",
+      "title": "Alerta severo", //"Severe Alert"
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4391"
     },
     "4381": {
-      "title": "Exercise Alert",
+      "title": "Alerta de teste", //"Exercise Alert"
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4394": {
-      "title": "Exercise Alert",
+      "title": "Alerta de teste", //"Exercise Alert"
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4382": {
-      "title": "Technical Test Alerts",
+      "title": "Alerta de teste técnico", //"Technical Test Alerts",
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4395": {
-      "title": "Technical Test Alerts",
+      "title": "Alerta de teste técnico", //"Technical Test Alerts",
       "default_value": "false",
       "toggle_avail": "false"
     }
