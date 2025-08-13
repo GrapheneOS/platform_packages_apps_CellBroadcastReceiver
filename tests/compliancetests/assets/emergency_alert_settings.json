@@ -178,31 +178,31 @@
     }
   },
   "columbia_telefonica": {
-    "Operator warnings": {
+    "Avisos del operador": { //"Operator warnings"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Extreme threats": {
+    "Amenazas extremas": { //"Extreme threats"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe threats": {
+    "Amenazas graves": { //"Severe threats"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "AMBER alerts": {
+    "Alertas AMBER": { //"AMBER alerts"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Test alerts": {
+    "Alertas de prueba": { //"Test alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Area update broadcasts": {
+    "Difusiones de información actualizada de la zona": { //"Area update broadcasts"
       "default_value": "true",
       "toggle_avail": "false"
     },
-    "Always alert at full volume": {
+    "Las alertas sonarán siempre a todo volumen": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
