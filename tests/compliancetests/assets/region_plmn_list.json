@@ -132,7 +132,8 @@
   },
   "columbia_telefonica": {
     "mccmnc": ["732123"],
-    "imsi": "732123012345678"
+    "imsi": "732123012345678",
+    "language": "es"
   },
   "ecuador_telefonica": {
     "mccmnc": ["74000"],
