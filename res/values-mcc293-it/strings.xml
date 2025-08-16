@@ -16,11 +16,11 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="8716579201700696171">"Allerta nazionale"</string>
+    <string name="cmas_presidential_level_alert" msgid="8716579201700696171">"Allerta di emergenza"</string>
     <string name="cmas_extreme_alert" msgid="8347295554399630502">"Minacce estreme"</string>
-    <string name="cmas_severe_alert" msgid="3406742550733141922">"Allerta per condizioni gravi"</string>
-    <string name="public_safety_message" msgid="2761202225512145906">"Allerta sicurezza pubblica"</string>
-    <string name="cmas_amber_alert" msgid="5083387104440558488">"Allerta AMBER"</string>
+    <string name="cmas_severe_alert" msgid="3406742550733141922">"Minacce gravi"</string>
+    <string name="public_safety_message" msgid="2761202225512145906">"Informazioni sulle minacce"</string>
+    <string name="cmas_amber_alert" msgid="5083387104440558488">"Persone scomparse"</string>
     <string name="cmas_required_monthly_test" msgid="112010057218703991">"Allerta di prova mensile"</string>
     <string name="cmas_exercise_alert" msgid="8240215119500114759">"Simulazione di allerta"</string>
     <string name="cmas_operator_defined_alert" msgid="4495805505817375264">"Test UE"</string>

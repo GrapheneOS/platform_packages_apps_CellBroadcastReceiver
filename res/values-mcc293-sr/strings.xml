@@ -22,7 +22,7 @@
     <string name="public_safety_message" msgid="2761202225512145906">"Упозорење о јавној безбедности"</string>
     <string name="cmas_amber_alert" msgid="5083387104440558488">"Amber упозорење"</string>
     <string name="cmas_required_monthly_test" msgid="112010057218703991">"Месечно пробно упозорење"</string>
-    <string name="cmas_exercise_alert" msgid="8240215119500114759">"Упозорење (вежба)"</string>
+    <string name="cmas_exercise_alert" msgid="8240215119500114759">"Упозорење (проба)"</string>
     <string name="cmas_operator_defined_alert" msgid="4495805505817375264">"Пробно упозорење на нивоу ЕУ"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="8213224295126453259">"Екстремне опасности"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="7768188789919667899">"Екстремне опасности по живот и имовину."</string>
