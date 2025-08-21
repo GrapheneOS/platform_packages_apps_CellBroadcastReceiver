@@ -502,35 +502,35 @@
     }
   },
   "latvia": {
-    "Extreme Alerts": {
+    "Oranžais brīdinājums": { //"Extreme Alerts"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe Alerts": {
+    "Dzeltenais brīdinājums": { //"Severe Alerts"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Missing Child Alerts": {
+    "Bērna pazušanas brīdinājums": { //"Missing Child Alerts"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Required Monthly Test Alerts": {
+    "Ikmēneša testa brīdinājums": { //"Required Monthly Test Alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Exercise Alerts": {
+    "Mācību brīdinājums": { //"Exercise Alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "End of Threat Alerts": {
+    "Apdraudējuma beigu brīdinājums": { //"End of Threat Alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Vibration": {
+    "Vibrācija": { //"Vibration"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Vienmēr atskaņot brīdinājuma signālu pilnā skaļumā": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }

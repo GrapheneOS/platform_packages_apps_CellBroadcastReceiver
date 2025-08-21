@@ -1381,37 +1381,37 @@
   },
   "latvia": {
     "4370": {
-      "title": "Presidential Alert",
+      "title": "Sarkanais brīdinājums", //"Presidential Alert"
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "Extreme Alert",
+      "title": "Oranžais brīdinājums", //"Extreme Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4373": {
-      "title": "Severe Alert",
+      "title": "Dzeltenais brīdinājums", //"Severe Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4379": {
-      "title": "Amber Alert",
+      "title": "Bērna nolaupīšanas brīdinājums", //"Amber Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4380": {
-      "title": "Monthly Test Alert",
+      "title": "Ikmēneša testa brīdinājums", //"Monthly Test Alert"
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4381": {
-      "title": "Exercise Alert",
+      "title": "Mācību brīdinājums", //"Exercise Alert"
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4396": {
-      "title": "End of Threat",
+      "title": "Apdraudējuma beigas", //"End of Threat"
       "default_value": "false",
       "toggle_avail": "true"
     }
