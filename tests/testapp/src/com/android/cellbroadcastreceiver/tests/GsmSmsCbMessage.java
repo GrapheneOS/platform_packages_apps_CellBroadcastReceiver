@@ -110,6 +110,7 @@ public class GsmSmsCbMessage {
         }
 
         long receivedTimeMillis = System.currentTimeMillis();
+        List<Geometry> geometries = null;
         if (header.isEtwsPrimaryNotification()) {
             // ETSI TS 23.041 ETWS Primary Notification message
             // ETWS primary message only contains 4 fields including serial number,
@@ -119,7 +120,7 @@ public class GsmSmsCbMessage {
                     header.getSerialNumber(), location, header.getServiceCategory(), null, 0,
                     getEtwsPrimaryMessage(context, header.getEtwsInfo().getWarningType()),
                     SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY, header.getEtwsInfo(),
-                    header.getCmasInfo(), 0, null /* geometries */, receivedTimeMillis, slotIndex,
+                    header.getCmasInfo(), 0, geometries, receivedTimeMillis, slotIndex,
                     subId);
         } else if (header.isUmtsFormat()) {
             // UMTS format has only 1 PDU
@@ -135,7 +136,6 @@ public class GsmSmsCbMessage {
                     + (PDU_BODY_PAGE_LENGTH + 1) * nrPages; // cb data
 
             // Has Warning Area Coordinates information
-            List<Geometry> geometries = null;
             int maximumWaitingTimeSec = 255;
             if (pdu.length > wacDataOffset) {
                 try {
@@ -170,7 +170,7 @@ public class GsmSmsCbMessage {
                     header.getGeographicalScope(), header.getSerialNumber(), location,
                     header.getServiceCategory(), language, header.getDataCodingScheme(),
                     sb.toString(), priority, header.getEtwsInfo(), header.getCmasInfo(), 0,
-                    null /* geometries */, receivedTimeMillis, slotIndex, subId);
+                    geometries, receivedTimeMillis, slotIndex, subId);
         }
     }
 

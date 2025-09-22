@@ -58,4 +58,5 @@
     <string name="button_gsm_cmas_alert" translatable="false">Send GSM CMAS Alert \n with ServiceCategory, MessageBody</string>
     <string name="message_body_hint" translatable="false">default text will be used</string>
     <string name="language_code_hint" translatable="false">by default, English/en will be used</string>
+    <string name="button_include_random_geo">Include Random Geo Info for GSM CMAS</string>
 </resources>
