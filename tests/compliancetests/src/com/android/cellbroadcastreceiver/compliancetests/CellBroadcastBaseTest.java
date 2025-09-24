@@ -377,6 +377,32 @@ public class CellBroadcastBaseTest {
         return result.toArray(new Object[]{});
     }
 
+    protected Object[] paramsCarrierAndChannelForTranslateFeature() throws Throwable {
+        logd("paramsCarrierAndChannelForTranslateFeature");
+        String jsonCarrier = loadJsonFile(CARRIER_LISTS_JSON);
+        JSONObject carriersObject = new JSONObject(jsonCarrier);
+        Iterator<String> carrierList = carriersObject.keys();
+
+        ArrayList<Object> result = new ArrayList<Object>();
+        for (Iterator<String> it = carrierList; it.hasNext();) {
+            String carrierName = it.next();
+            JSONObject carrierObject = carriersObject.getJSONObject(carrierName);
+            String translateSupport = null;
+            try {
+                translateSupport = carrierObject.getString("translate_support");
+            } catch (Exception JSONException) {
+            }
+            boolean isTranslateSupport = false;
+            if (!TextUtils.isEmpty(translateSupport) && translateSupport.equals("true")) {
+                isTranslateSupport = true;
+            }
+            if (isTranslateSupport) {
+                result.add(new String[]{carrierName, "4370"});
+            }
+        }
+        return result.toArray(new Object[]{});
+    }
+
     protected void setSimInfo(String carrierName, String inputMccMnc) throws Throwable {
         String mcc = inputMccMnc.substring(0, 3);
         String mnc = inputMccMnc.substring(3);
