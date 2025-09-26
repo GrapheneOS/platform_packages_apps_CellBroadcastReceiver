@@ -128,7 +128,8 @@
   },
   "columbia": {
     "mccmnc": ["732101"],
-    "imsi": "732101012345678"
+    "imsi": "732101012345678",
+    "language": "es"
   },
   "columbia_telefonica": {
     "mccmnc": ["732123"],
