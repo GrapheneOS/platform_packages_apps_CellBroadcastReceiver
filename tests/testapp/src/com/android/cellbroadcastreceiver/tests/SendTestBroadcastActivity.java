@@ -20,6 +20,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.telephony.CbGeoUtils;
+import android.telephony.CbGeoUtils.Geometry;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,6 +33,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -47,6 +50,7 @@ public class SendTestBroadcastActivity extends Activity {
 
     /** Delay time before sending test message (when box is checked). */
     private static final int DELAY_BEFORE_SENDING_MSEC = 5000;
+    private boolean mIncludeRandomGeoInfo = false;
 
     private final Handler mDelayHandler = new Handler() {
         @Override
@@ -103,6 +107,22 @@ public class SendTestBroadcastActivity extends Activity {
     private String getLanguageCode() {
         EditText languageCodeField = (EditText) findViewById(R.id.language_code);
         return languageCodeField.getText().toString();
+    }
+
+    private List<Geometry> getGeometries() {
+        List<Geometry> geometries = null;
+        Random random = new Random();
+        if (mIncludeRandomGeoInfo) {
+            int randomIndex = random.nextInt(SendTestMessages.TEST_GEO_DATA_LIST.size());
+            String randomGeoString = SendTestMessages.TEST_GEO_DATA_LIST.get(randomIndex);
+            try {
+                geometries = CbGeoUtils.parseGeometriesFromString(randomGeoString);
+                Log.d(TAG, "Injecting random geo info: " + randomGeoString);
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to parse random geo string: " + e);
+            }
+        }
+        return geometries;
     }
 
     /**
@@ -307,7 +327,8 @@ public class SendTestBroadcastActivity extends Activity {
                                     getSerialNumber(),
                                     getMessageBody(),
                                     getLanguageCode(),
-                                    mIsAdditionalLangAlert);
+                                    mIsAdditionalLangAlert,
+                                    getGeometries());
                         }
                     }
                 });
@@ -326,7 +347,8 @@ public class SendTestBroadcastActivity extends Activity {
                                     getSerialNumber(),
                                     getMessageBody(),
                                     getLanguageCode(),
-                                    mIsAdditionalLangAlert);
+                                    mIsAdditionalLangAlert,
+                                    getGeometries());
                         }
                     }
                 });
@@ -345,7 +367,8 @@ public class SendTestBroadcastActivity extends Activity {
                                     getSerialNumber(),
                                     getMessageBody(),
                                     getLanguageCode(),
-                                    mIsAdditionalLangAlert);
+                                    mIsAdditionalLangAlert,
+                                    getGeometries());
                         }
                     }
                 });
@@ -364,7 +387,8 @@ public class SendTestBroadcastActivity extends Activity {
                                     getSerialNumber(),
                                     getMessageBody(),
                                     getLanguageCode(),
-                                    mIsAdditionalLangAlert);
+                                    mIsAdditionalLangAlert,
+                                    getGeometries());
                         }
                     }
                 });
@@ -383,7 +407,8 @@ public class SendTestBroadcastActivity extends Activity {
                                     getSerialNumber(),
                                     getMessageBody(),
                                     getLanguageCode(),
-                                    mIsAdditionalLangAlert);
+                                    mIsAdditionalLangAlert,
+                                    getGeometries());
                         }
                     }
                 });
@@ -402,7 +427,8 @@ public class SendTestBroadcastActivity extends Activity {
                                     getSerialNumber(),
                                     getMessageBody(),
                                     getLanguageCode(),
-                                    mIsAdditionalLangAlert);
+                                    mIsAdditionalLangAlert,
+                                    getGeometries());
                         }
                     }
                 });
@@ -421,7 +447,8 @@ public class SendTestBroadcastActivity extends Activity {
                                     getSerialNumber(),
                                     getMessageBody(),
                                     getLanguageCode(),
-                                    mIsAdditionalLangAlert);
+                                    mIsAdditionalLangAlert,
+                                    getGeometries());
                         }
                     }
                 });
@@ -441,7 +468,8 @@ public class SendTestBroadcastActivity extends Activity {
                                     getSerialNumber(),
                                     getMessageBody(),
                                     getLanguageCode(),
-                                    mIsAdditionalLangAlert);
+                                    mIsAdditionalLangAlert,
+                                    getGeometries());
                         }
                     }
                 });
@@ -461,7 +489,8 @@ public class SendTestBroadcastActivity extends Activity {
                                     getSerialNumber(),
                                     getMessageBody(),
                                     getLanguageCode(),
-                                    mIsAdditionalLangAlert);
+                                    mIsAdditionalLangAlert,
+                                    getGeometries());
                         }
                     }
                 });
@@ -704,6 +733,15 @@ public class SendTestBroadcastActivity extends Activity {
                         mIsAdditionalLangAlert = additionalLangCheckbox.isChecked();
                     }
                 });
+
+        final CheckBox geoCheckbox = (CheckBox) findViewById(R.id.button_include_random_geo);
+        geoCheckbox.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                mIncludeRandomGeoInfo = geoCheckbox.isChecked();
+                Log.d(TAG, "Include Random Geo Info: " + mIncludeRandomGeoInfo);
+            }
+        });
+        mIncludeRandomGeoInfo = geoCheckbox.isChecked();
     }
 
     /**
