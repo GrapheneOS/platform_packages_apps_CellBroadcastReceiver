@@ -640,7 +640,7 @@
     }
   },
   "norway": {
-    "Important warning": { //"Viktig melding"
+    "Viktig melding": { //"Important warning"
       "default_value": "true",
       "toggle_avail": "true"
     },
@@ -648,11 +648,11 @@
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Vibration": {
+    "Vibrasjon": { //"Vibration"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Varsle alltid på fullt volum": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
