@@ -1185,64 +1185,70 @@
       "toggle_avail": "false"
     },
     "4370": {
-      "title": "RO-ALERT : Imminent Risk Alert",
+      "title": "RO-ALERT : Alertă de Risc Iminent", //"RO-ALERT : Imminent Risk Alert"
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "RO-ALERT : Imminent Risk Alert",
+      "title": "RO-ALERT : Alertă de Risc Iminent", //"RO-ALERT : Imminent Risk Alert"
       "default_value": "true",
-      "toggle_avail": "false"
+      "toggle_avail": "false",
+      "filter_language": "language_setting"
     },
     "4371": {
-      "title": "RO-ALERT : Extreme Alert",
+      "title": "RO-ALERT : Alertă Extremă", //"RO-ALERT : Extreme Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4384": {
-      "title": "RO-ALERT : Extreme Alert",
+      "title": "RO-ALERT : Alertă Extremă", //"RO-ALERT : Extreme Alert"
       "default_value": "true",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     },
     "4375": {
-      "title": "RO-ALERT : Severe Alert",
+      "title": "RO-ALERT : Alertă Severă", //"RO-ALERT : Severe Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4388": {
-      "title": "RO-ALERT : Severe Alert",
+      "title": "RO-ALERT : Alertă Severă", //"RO-ALERT : Severe Alert"
       "default_value": "true",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     },
     "4379": {
-      "title": "RO-ALERT : Missing Child Alert",
+      "title": "RO-ALERT : Alertă dispariție copil", //"RO-ALERT : Missing Child Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "RO-ALERT : Missing Child Alert",
+      "title": "RO-ALERT : Alertă dispariție copil", //"RO-ALERT : Missing Child Alert"
       "default_value": "true",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     },
     "4396": {
-      "title": "RO-ALERT : Public Safety Alert",
+      "title": "RO-ALERT : Alertă pentru siguranță publică", //"RO-ALERT : Public Safety Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4397": {
-      "title": "RO-ALERT : Public Safety Alert",
+      "title": "RO-ALERT : Alertă pentru siguranță publică", //"RO-ALERT : Public Safety Alert"
       "default_value": "true",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     },
     "4381": {
-      "title": "RO-ALERT : Exercise Alerts",
+      "title": "RO-ALERT : Alertă de exercițiu", //"RO-ALERT : Exercise Alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4394": {
-      "title": "RO-ALERT : Exercise Alerts",
+      "title": "RO-ALERT : Alertă de exercițiu", //"RO-ALERT : Exercise Alerts"
       "default_value": "false",
-      "toggle_avail": "true"
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
     }
   },
   "italy": {

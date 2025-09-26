@@ -736,31 +736,31 @@
     }
   },
   "romania": {
-    "Extreme threats": {
+    "Pericole extreme": { //"Extreme threats"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe threats": {
+    "Pericole grave": { //"Severe threats"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Missing Child Alert": {
+    "Alertă pentru un copil dispărut": { //"Missing Child Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Public Safety Alert": {
+    "Alertă pentru siguranță publică": { //"Public Safety Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Exercise Alerts": {
+    "Alerte de exercițiu": { //"Exercise Alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Vibration": {
+    "Vibrație": { //"Vibration"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Trimite întotdeauna alerte la volumul maxim": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
