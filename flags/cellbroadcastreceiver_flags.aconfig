@@ -14,3 +14,10 @@ flag {
     description: "If enabled, for alerts that include geolocation information, the warning area and my current location are displayed in a webview."
     bug: "410738387"
 }
+
+flag {
+    name: "enable_cellbroadcast_translation"
+    namespace: "cellbroadcast"
+    description: "If enabled, and the system language and alert language are different, the translation will be provided to match the system language."
+    bug: "412566436"
+}
