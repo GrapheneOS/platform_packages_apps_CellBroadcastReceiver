@@ -77,6 +77,7 @@ import android.widget.Toast;
 import androidx.preference.PreferenceManager;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
+import com.android.cellbroadcastreceiver.flags.Flags;
 import com.android.internal.annotations.VisibleForTesting;
 
 import java.lang.annotation.Retention;
@@ -183,6 +184,8 @@ public class CellBroadcastAlertDialog extends Activity {
 
     // Show the opt-out dialog
     private AlertDialog mOptOutDialog;
+    @VisibleForTesting
+    public static Boolean sIsTranslateFeatureEnabledForTest = null;
 
     /** BroadcastReceiver for screen off events. When screen was off, remove FLAG_TURN_SCREEN_ON to
      * start from a clean state. Otherwise, the window flags from the first alert will be
@@ -682,6 +685,22 @@ public class CellBroadcastAlertDialog extends Activity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         setPictogramAreaLayout(newConfig.orientation);
+    }
+
+    /**
+     * Checks if the translation feature is enabled. This method first checks for a
+     * test-only override value. If no override is set, it returns the value from the
+     * actual feature flag.
+     *
+     * @return {@code true} if the feature is enabled, {@code false} otherwise.
+     */
+    private boolean isTranslateFeatureEnabled() {
+        // Allow tests to override the flag's value.
+        if (sIsTranslateFeatureEnabledForTest != null) {
+            return sIsTranslateFeatureEnabledForTest;
+        }
+        // In production, use the real flag.
+        return Flags.enableCellbroadcastTranslation();
     }
 
     private void setWindowBottom() {

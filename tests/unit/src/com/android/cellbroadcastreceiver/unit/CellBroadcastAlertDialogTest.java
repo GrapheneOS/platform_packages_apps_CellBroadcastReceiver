@@ -153,6 +153,7 @@ public class CellBroadcastAlertDialogTest extends
 
     @After
     public void tearDown() throws Exception {
+        CellBroadcastAlertDialog.sIsTranslateFeatureEnabledForTest = null;
         CellBroadcastSettings.resetResourcesCache();
         CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
         super.tearDown();
