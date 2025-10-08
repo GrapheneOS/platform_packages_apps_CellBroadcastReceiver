@@ -16,13 +16,13 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="5786487196661686996">"Nationale Notfallwarnung"</string>
+    <string name="cmas_presidential_level_alert" msgid="5786487196661686996">"Nationale Warnmeldung"</string>
     <string name="show_cmas_opt_out_summary" msgid="1317444474007208209">"Nach erster Warnung Deaktivierungsoption anzeigen (außer bei nationalen Warnungen)."</string>
-    <string name="enable_cmas_presidential_alerts_title" msgid="789927829034029104">"Nationale Notfallwarnungen"</string>
-    <string name="cmas_extreme_alert" msgid="3470880837863412562">"Notfallwarnung"</string>
-    <string name="cmas_extreme_immediate_observed_alert" msgid="2411683921516746239">"Notfallwarnung"</string>
-    <string name="cmas_extreme_immediate_likely_alert" msgid="416361807347386568">"Notfallwarnung"</string>
-    <string name="cmas_severe_alert" msgid="2385773141068859901">"Notfallwarnung"</string>
+    <string name="enable_cmas_presidential_alerts_title" msgid="789927829034029104">"Nationale Warnmeldungen"</string>
+    <string name="cmas_extreme_alert" msgid="3470880837863412562">"Warnmeldung"</string>
+    <string name="cmas_extreme_immediate_observed_alert" msgid="2411683921516746239">"Warnmeldung"</string>
+    <string name="cmas_extreme_immediate_likely_alert" msgid="416361807347386568">"Warnmeldung"</string>
+    <string name="cmas_severe_alert" msgid="2385773141068859901">"Warnmeldung"</string>
     <string name="cmas_amber_alert" msgid="3770006220211300306">"Warnung"</string>
     <string name="cmas_required_monthly_test" msgid="1750249540956474421">"Warnung der Kategorie „Test“"</string>
     <string name="cmas_exercise_alert" msgid="879674481325039732">"Übung"</string>
