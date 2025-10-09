@@ -16,7 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="2071811447245340804">"BG-ALERT: Notfallbenachrichtigung"</string>
+    <string name="cmas_presidential_level_alert" msgid="2071811447245340804">"BG-ALERT: Warnmeldung"</string>
     <string name="cmas_extreme_alert" msgid="6274829174549492905">"BG-ALERT: Warnung"</string>
     <string name="cmas_severe_alert" msgid="1394463869061650114">"BG-ALERT: Information"</string>
     <string name="cmas_amber_alert" msgid="6042893309718893485">"BG-ALERT: Meldung über eine vermisste Person"</string>

@@ -29,12 +29,12 @@
     <string name="cmas_severe_alert" msgid="6989950459525380066">"Warnung der Kategorie „Ernst“"</string>
     <string name="cmas_required_monthly_test" msgid="1226904101913162471">"Warnung der Kategorie „Test“"</string>
     <string name="cmas_exercise_alert" msgid="4540370572086918020">"Warnung der Kategorie „Übung“"</string>
-    <string name="app_label" msgid="3863159788297913185">"Notfallbenachrichtigungen"</string>
-    <string name="sms_cb_settings" msgid="4187131985831792308">"Notfallbenachrichtigungen"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Notfallbenachrichtigungen erhalten"</string>
-    <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Notfallbenachrichtigungen per Sprachausgabe vorlesen"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"Erhalte Testwarnungen vom Notfallbenachrichtigungssystem"</string>
-    <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Du erhältst derzeit Notfallbenachrichtigungen. Möchtest du das weiterhin?"</string>
-    <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Notfallbenachrichtigungen"</string>
-    <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Tippe hier, um die Einstellungen für Notfallbenachrichtigungen anzeigen zu lassen"</string>
+    <string name="app_label" msgid="3863159788297913185">"Warnmeldungen"</string>
+    <string name="sms_cb_settings" msgid="4187131985831792308">"Warnmeldungen"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="805446672915814777">"Warnmeldungen erhalten"</string>
+    <string name="enable_alert_speech_summary" msgid="5021926525240750702">"Warnmeldungen per Sprachausgabe vorlesen"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2931455154355509465">"Erhalte Testwarnungen vom Warnmeldungssystem"</string>
+    <string name="cmas_opt_out_dialog_text" msgid="1972978578760513449">"Du erhältst derzeit Warnmeldungen. Möchtest du das weiterhin?"</string>
+    <string name="emergency_alert_settings_title_watches" msgid="5299419351642118203">"Warnmeldungen"</string>
+    <string name="notification_cb_settings_changed_text" msgid="6861845802821634203">"Tippe hier, um die Einstellungen für Warnmeldungen anzeigen zu lassen"</string>
 </resources>
