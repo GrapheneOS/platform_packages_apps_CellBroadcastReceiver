@@ -17,76 +17,76 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Dialog title for presidential level alert. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Nacionalna opozorila -->
+    <!-- Required Slovenija(sl) translation for this message: Nacionalna opozorila -->
     <!-- Required Italy(it) translation for this message: Allerta di emergenza -->
-    <!-- Required Hungary(h) translation for this message: Vészhelyzeti riasztás -->
+    <!-- Required Hungary(hu) translation for this message: Vészhelyzeti riasztás -->
     <string name="cmas_presidential_level_alert">National Alert</string>
     <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Izredno hude nevarnosti -->
+    <!-- Required Slovenija(sl) translation for this message: Izredno hude nevarnosti -->
     <!-- Required Italy(it) translation for this message: Minacce estreme -->
-    <!-- Required Hungary(h) translation for this message: Extrém veszéljek -->
+    <!-- Required Hungary(hu) translation for this message: Extrém veszélyek -->
     <string name="cmas_extreme_alert">Extreme Threats</string>
     <!-- CMAS dialog title for severe alert. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Hude nevarnosti -->
+    <!-- Required Slovenija(sl) translation for this message: Hude nevarnosti -->
     <!-- Required Italy(it) translation for this message: Minacce gravi -->
-    <!-- Required Hungary(h) translation for this message: Komoly veszéljek -->
+    <!-- Required Hungary(hu) translation for this message: Komoly veszélyek -->
     <string name="cmas_severe_alert">Severe Alert</string>
     <!-- Dialog title for all public safety message broadcasts. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Opozorila -->
+    <!-- Required Slovenija(sl) translation for this message: Opozorila -->
     <!-- Required Italy(it) translation for this message: Informazioni sulle minacce -->
-    <!-- Required Hungary(h) translation for this message: Teszt riasztások -->
+    <!-- Required Hungary(hu) translation for this message: Tesztriasztások -->
     <string name="public_safety_message">Public Safety Alert</string>
     <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Pogrešane osebe -->
+    <!-- Required Slovenija(sl) translation for this message: Pogrešane osebe -->
     <!-- Required Italy(it) translation for this message: Persone scomparse -->
-    <!-- Required Hungary(h) translation for this message: Eltűnt személyek -->
+    <!-- Required Hungary(hu) translation for this message: Eltűnt személyek -->
     <string name="cmas_amber_alert">Amber Alert</string>
     <!-- CMAS dialog title for required monthly test. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Mesečni test -->
+    <!-- Required Slovenija(sl) translation for this message: Mesečni test -->
     <string name="cmas_required_monthly_test">Monthly Test Alert</string>
     <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Vaja -->
+    <!-- Required Slovenija(sl) translation for this message: Vaja -->
     <string name="cmas_exercise_alert">Exercise Alert</string>
     <!-- CMAS dialog title for operator defined use. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Preizkusna opozorila -->
+    <!-- Required Slovenija(sl) translation for this message: Preizkusna opozorila -->
     <!-- Required Italy(it) translation for this message: Avvisi di prova -->
-    <!-- Required Hungary(h) translation for this message: Tesztriasztások -->
+    <!-- Required Hungary(hu) translation for this message: Tesztriasztások -->
     <string name="cmas_operator_defined_alert">EU Test</string>
 
     <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Izredno hude nevarnosti -->
+    <!-- Required Slovenija(sl) translation for this message: Izredno hude nevarnosti -->
     <string name="enable_cmas_extreme_threat_alerts_title">Extreme threats</string>
     <!-- Preference summary for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=100] -->
-    <!-- Required Slovenija(si) translation for this message: Izredno hude nevarnosti za življenje in premoženje. -->
+    <!-- Required Slovenija(sl) translation for this message: Izredno hude nevarnosti za življenje in premoženje. -->
     <string name="enable_cmas_extreme_threat_alerts_summary">Extreme threats to life and property.</string>
     <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Hude nevarnosti -->
+    <!-- Required Slovenija(sl) translation for this message: Hude nevarnosti -->
     <string name="enable_cmas_severe_threat_alerts_title">Severe threats</string>
     <!-- Preference summary for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=100] -->
-    <!-- Required Slovenija(si) translation for this message: Hude nevarnosti za življenje in premoženje. -->
+    <!-- Required Slovenija(sl) translation for this message: Hude nevarnosti za življenje in premoženje. -->
     <string name="enable_cmas_severe_threat_alerts_summary">Severe threats to life and property.</string>
     <!-- Preference title for enable public safety messages checkbox. [CHAR LIMIT=100] -->
-    <!-- Required Slovenija(si) translation for this message: Opozorila -->
+    <!-- Required Slovenija(sl) translation for this message: Opozorila -->
     <string name="enable_public_safety_messages_title">Threat information</string>
     <!-- Preference summary for enable public safety messages checkbox. [CHAR LIMIT=100] -->
-    <!-- Required Slovenija(si) translation for this message: Opozorila o grožnjah -->
+    <!-- Required Slovenija(sl) translation for this message: Opozorila o grožnjah -->
     <string name="enable_public_safety_messages_summary">Information regarding threats.</string>
     <!-- Preference title for enable CMAS amber alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Pogrešane osebe -->
+    <!-- Required Slovenija(sl) translation for this message: Pogrešane osebe -->
     <string name="enable_cmas_amber_alerts_title">Missing persons</string>
     <!-- Preference summary for enable CMAS amber alerts checkbox. [CHAR LIMIT=100] -->
-    <!-- Required Slovenija(si) translation for this message: Nujna obvestila o pogrešanih osebah -->
+    <!-- Required Slovenija(sl) translation for this message: Nujna obvestila o pogrešanih osebah -->
     <string name="enable_cmas_amber_alerts_summary">Search for missing persons.</string>
     <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Mesečni test -->
+    <!-- Required Slovenija(sl) translation for this message: Mesečni test -->
     <string name="enable_cmas_test_alerts_title">Monthly Test Alert</string>
     <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Vaja -->
+    <!-- Required Slovenija(sl) translation for this message: Vaja -->
     <string name="enable_exercise_test_alerts_title">Exercise Alert</string>
     <!-- Preference title for operator defined test alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Slovenija(si) translation for this message: Preizkusna opozorila -->
+    <!-- Required Slovenija(sl) translation for this message: Preizkusna opozorila -->
     <string name="enable_operator_defined_test_alerts_title">EU Test</string>
     <!-- Preference summary for operator defined test alerts checkbox. [CHAR LIMIT=125] -->
-    <!-- Required Slovenija(si) translation for this message: Prejemajte preizkuse operaterja iz sistema varnostnih opozoril -->
+    <!-- Required Slovenija(sl) translation for this message: Prejemajte preizkuse operaterja iz sistema varnostnih opozoril -->
     <string name="enable_operator_defined_test_alerts_summary">Test alerts from competent authorities.</string>
 </resources>
