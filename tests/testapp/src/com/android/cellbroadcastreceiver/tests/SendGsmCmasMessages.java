@@ -267,6 +267,7 @@ public class SendGsmCmasMessages {
             String language, String body, int severity, int urgency, int certainty, int priority,
             List<Geometry> geometries) {
         int messageClass = getCmasMessageClass(serviceCategory);
+        long receivedTimeMillis = System.currentTimeMillis();
         SmsCbCmasInfo cmasInfo =
                 new SmsCbCmasInfo(
                         messageClass,
@@ -277,7 +278,7 @@ public class SendGsmCmasMessages {
                         certainty);
         return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP, 0, serialNumber,
                 new SmsCbLocation("123456"), serviceCategory, language, 0, body,
-                priority, null, cmasInfo, 0, geometries, 0, 0, 1);
+                priority, null, cmasInfo, 0, geometries, receivedTimeMillis, 0, 1);
     }
 
     /**
