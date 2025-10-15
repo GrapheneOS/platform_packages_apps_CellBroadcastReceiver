@@ -42,6 +42,7 @@ android_library {
         "modules-utils-build_system",
         "cellbroadcast-java-proto-lite",
         "cellbroadcastreceiver_flags_lib",
+        "SettingsLibZeroStatePreference",
     ],
     resource_dirs: ["res"],
     manifest: "AndroidManifest_Lib.xml",

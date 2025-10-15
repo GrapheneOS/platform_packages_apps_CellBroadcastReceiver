@@ -267,9 +267,14 @@ public class CellBroadcastListActivityTest extends
         CellBroadcastListActivity activity = startActivity();
         assertNotNull(activity.mListFragment);
 
-        // create data with one entry so that the "no alert" text view is invisible
+        // create data with one entry so that the "no alert" text view is gone.
         activity.mListFragment.onLoadFinished(null, makeTestCursor());
-        assertEquals(View.INVISIBLE, activity.findViewById(R.id.empty).getVisibility());
+        if (!SettingsThemeHelper.isExpressiveTheme(mContext)) {
+            assertEquals(View.GONE, activity.findViewById(R.id.empty).getVisibility());
+        } else {
+            assertEquals(View.GONE,
+                    activity.findViewById(R.id.empty_zerostate).getVisibility());
+        }
         assertTrue(activity.findViewById(android.R.id.list).isLongClickable());
     }
 
@@ -281,7 +286,15 @@ public class CellBroadcastListActivityTest extends
         Cursor data =
                 new MatrixCursor(CellBroadcastListActivity.CursorLoaderListFragment.QUERY_COLUMNS);
         activity.mListFragment.onLoadFinished(null, data);
-        assertEquals(View.VISIBLE, activity.findViewById(R.id.empty).getVisibility());
+        if (!SettingsThemeHelper.isExpressiveTheme(mContext)) {
+            assertEquals(View.VISIBLE, activity.findViewById(R.id.empty).getVisibility());
+            assertEquals(View.GONE,
+                    activity.findViewById(R.id.empty_zerostate).getVisibility());
+        } else {
+            assertEquals(View.GONE, activity.findViewById(R.id.empty).getVisibility());
+            assertEquals(View.VISIBLE,
+                    activity.findViewById(R.id.empty_zerostate).getVisibility());
+        }
         assertFalse(activity.findViewById(android.R.id.list).isLongClickable());
     }
 
@@ -294,11 +307,23 @@ public class CellBroadcastListActivityTest extends
         Cursor data =
                 new MatrixCursor(CellBroadcastListActivity.CursorLoaderListFragment.QUERY_COLUMNS);
         activity.mListFragment.onLoadFinished(null, data);
-        assertEquals(View.VISIBLE, activity.findViewById(R.id.empty).getVisibility());
+        if (!SettingsThemeHelper.isExpressiveTheme(mContext)) {
+            assertEquals(View.VISIBLE, activity.findViewById(R.id.empty).getVisibility());
+            assertEquals(View.GONE,
+                    activity.findViewById(R.id.empty_zerostate).getVisibility());
+        } else {
+            assertEquals(View.GONE, activity.findViewById(R.id.empty).getVisibility());
+            assertEquals(View.VISIBLE, activity.findViewById(R.id.empty_zerostate).getVisibility());
+        }
         assertFalse(activity.findViewById(android.R.id.list).isLongClickable());
 
         activity.mListFragment.onLoadFinished(null, makeTestCursor());
-        assertEquals(View.INVISIBLE, activity.findViewById(R.id.empty).getVisibility());
+        if (!SettingsThemeHelper.isExpressiveTheme(mContext)) {
+            assertEquals(View.GONE, activity.findViewById(R.id.empty).getVisibility());
+        } else {
+            assertEquals(View.GONE,
+                    activity.findViewById(R.id.empty_zerostate).getVisibility());
+        }
         assertTrue(activity.findViewById(android.R.id.list).isLongClickable());
     }
 

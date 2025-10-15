@@ -468,14 +468,31 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
         }
 
         private void updateNoAlertTextVisibility() {
-            TextView noAlertsTextView = getActivity().findViewById(R.id.empty);
-            if (noAlertsTextView != null) {
-                noAlertsTextView.setVisibility(!hasAlertsInHistory()
-                        ? View.VISIBLE : View.INVISIBLE);
-                getListView().setLongClickable(hasAlertsInHistory());
-                if (!hasAlertsInHistory()) {
-                    getListView().setContentDescription(getString(R.string.no_cell_broadcasts));
+            TextView emptyView = getActivity().findViewById(R.id.empty);
+            View emptyZeroStateView = getActivity().findViewById(R.id.empty_zerostate);
+            boolean hasAlerts = hasAlertsInHistory();
+            boolean showEmptyView = !hasAlerts;
+
+            if (emptyView == null || emptyZeroStateView == null) {
+                return;
+            }
+
+            if (showEmptyView) {
+                if (SettingsThemeHelper.isExpressiveTheme(getActivity())) {
+                    emptyView.setVisibility(View.GONE);
+                    emptyZeroStateView.setVisibility(View.VISIBLE);
+                } else {
+                    emptyView.setVisibility(View.VISIBLE);
+                    emptyZeroStateView.setVisibility(View.GONE);
                 }
+            } else {
+                emptyView.setVisibility(View.GONE);
+                emptyZeroStateView.setVisibility(View.GONE);
+            }
+
+            getListView().setLongClickable(hasAlerts);
+            if (showEmptyView) {
+                getListView().setContentDescription(getString(R.string.no_cell_broadcasts));
             }
         }
 
