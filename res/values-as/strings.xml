@@ -71,7 +71,7 @@
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"জৰুৰীকালীন সতৰ্কবাণীৰ ইতিহাস"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"সতর্কতা সম্পৰ্কীয় অগ্ৰাধিকাৰসমূহ"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS পৰীক্ষামূলক সম্প্ৰচাৰ"</string>
-    <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"ভূমিকম্প ছুনামিৰ সতৰ্কতামূলক ব্য়ৱস্থাৰ পৰীক্ষামূলক সম্প্ৰচাৰ"</string>
+    <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"ভূমিকম্প ছুনামিৰ সতৰ্কতামূলক ব্যৱস্থাৰ পৰীক্ষামূলক সম্প্ৰচাৰ"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"চৰম ভাবুকিবোৰ"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"জীৱন আৰু সম্পত্তিৰ প্ৰতি চৰম ভাবুকি"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"গুৰুতৰ ভাবুকিসমূহ"</string>
@@ -109,7 +109,7 @@
     <string name="cmas_category_security" msgid="2549520159044403704">"নিৰাপত্তা"</string>
     <string name="cmas_category_rescue" msgid="4907571719983321086">"উদ্ধাৰ"</string>
     <string name="cmas_category_fire" msgid="3331981591918341119">"জুই"</string>
-    <string name="cmas_category_health" msgid="312569774587117324">"স্বাস্থ্য় সম্পৰ্কীয়"</string>
+    <string name="cmas_category_health" msgid="312569774587117324">"স্বাস্থ্য সম্পৰ্কীয়"</string>
     <string name="cmas_category_env" msgid="9213088574227522961">"পৰিৱেশ সম্পর্কীয়"</string>
     <string name="cmas_category_transport" msgid="5014901635987361642">"যাতায়ত"</string>
     <string name="cmas_category_infra" msgid="3558151044446851398">"আন্তঃগাঁথনি সম্পৰ্কীয়"</string>
@@ -122,12 +122,12 @@
     <string name="cmas_response_execute" msgid="284719420769568493">"কার্যকৰী কৰক"</string>
     <string name="cmas_response_monitor" msgid="681400164440495749">"পৰ্যবেক্ষণ"</string>
     <string name="cmas_response_avoid" msgid="156419597612629270">"এৰাই চলক"</string>
-    <string name="cmas_response_assess" msgid="9043534222710563415">"মূল্য়ায়ন"</string>
+    <string name="cmas_response_assess" msgid="9043534222710563415">"মূল্যায়ন"</string>
     <string name="cmas_response_none" msgid="5149009359674452959">"নাই"</string>
     <string name="cmas_severity_heading" msgid="8437057117822305243">"গম্ভীৰতা:"</string>
     <string name="cmas_severity_extreme" msgid="1312013282860183082">"চৰম"</string>
     <string name="cmas_severity_severe" msgid="7504359209737074524">"গম্ভীৰ"</string>
-    <string name="cmas_urgency_heading" msgid="8218282767913431492">"অত্য়াৱশ্য়কতা:"</string>
+    <string name="cmas_urgency_heading" msgid="8218282767913431492">"অত্যাৱশ্যকতা:"</string>
     <string name="cmas_urgency_immediate" msgid="1577485208196449288">"তাৎক্ষণিক"</string>
     <string name="cmas_urgency_expected" msgid="6830831119872375936">"আশানুৰূপ"</string>
     <string name="cmas_certainty_heading" msgid="8374669249736439193">"নিশ্চয়তা:"</string>

@@ -88,12 +88,16 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
 
     private boolean mIsOptOutDialogHandled = false;
 
+    private boolean mLocationEnableChanaged;
+
     @Before
     public void beforeTest() throws Exception {
         super.beforeTest();
 
         if ("testEmergencyAlertSettingsUi".equals(mTestNameRule.getMethodName())
-                || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())) {
+                || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnTranslatorFeature".equals(mTestNameRule.getMethodName())) {
             KeyguardManager keyguardManager = getContext().getSystemService(KeyguardManager.class);
             assumeTrue("cannot test under secure keyguard",
                     keyguardManager != null && !keyguardManager.isKeyguardSecure());
@@ -102,7 +106,9 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
                 dismissKeyGuard();
             }
         }
-        if ("testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())) {
+        if ("testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnTranslatorFeature".equals(mTestNameRule.getMethodName())) {
             PackageManager pm = getContext().getPackageManager();
             assumeTrue("FULL_ACCESS_CELL_BROADCAST_HISTORY permission "
                     + "is necessary for this test", pm.checkPermission(
@@ -110,7 +116,9 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
                     "com.android.shell") != PackageManager.PERMISSION_DENIED);
         }
         if ("testEmergencyAlertSettingsUi".equals(mTestNameRule.getMethodName())
-                || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())) {
+                || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnTranslatorFeature".equals(mTestNameRule.getMethodName())) {
             try {
                 // close disturbing dialog if exist
                 UiObject2 yesButton = sDevice.wait(Until.findObject(YES_BUTTON), 100);
@@ -134,15 +142,20 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
             }
             sDevice.pressHome();
         }
+        if ("testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())) {
+            mLocationEnableChanaged = setLocationEnabled(false);
+        }
     }
 
     @After
-    public void afterTest() {
+    public void afterTest() throws Exception {
         if (sPreconditionError != 0) {
             return;
         }
 
-        if ("testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
+        if (("testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnTranslatorFeature".equals(mTestNameRule.getMethodName()))
                 && (sSerialId > 0)) {
             deleteMessageWithShellPermissionIdentity();
 
@@ -162,9 +175,18 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         }
 
         if ("testEmergencyAlertSettingsUi".equals(mTestNameRule.getMethodName())
-                || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())) {
+                || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnTranslatorFeature".equals(mTestNameRule.getMethodName())) {
             LocaleManager localeManager = getContext().getSystemService(LocaleManager.class);
             localeManager.setApplicationLocales(sPackageName, LocaleList.getEmptyLocaleList());
+        }
+
+        if ("testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())) {
+            if (mLocationEnableChanaged) {
+                setLocationEnabled(true);
+            }
+            sDevice.pressHome();
         }
     }
 
@@ -212,6 +234,70 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         }
     }
 
+    //@Test // TODO: enable after full implementation
+    @Parameters(method = "paramsCarrierAndChannelForGeoTest")
+    public void testAlertUiOnReceivedAlertWithGeo(String carrierName, String channel)
+            throws Throwable {
+        logd("CellBroadcastUiTest#testAlertUiOnReceivedAlertWithGeo");
+        CellBroadcastCarrierTestConfig carrierInfo =
+                new CellBroadcastCarrierTestConfig(sCarriersObject, carrierName);
+        CellBroadcastChannelTestConfig channelInfo =
+                new CellBroadcastChannelTestConfig(sChannelsObject, carrierName, channel);
+        // setup mccmnc
+        if (sInputMccMnc == null || (sInputMccMnc != null
+                && !sInputMccMnc.equals(carrierInfo.mMccMnc))) {
+            setSimInfo(carrierName, carrierInfo.mMccMnc);
+        }
+
+        // change language of CBR
+        changeLocale(carrierInfo, sPackageName, true);
+
+        // receive broadcast message with geo info
+        receiveBroadcastMessageWithGeo(channel);
+
+        logd("carrier " + carrierName + ", Map button should be shown" + " for channel " + channel);
+        verifyMapButtonIsShown();
+    }
+
+    //@Test // TODO: enable after full implementation
+    @Parameters(method = "paramsCarrierAndChannelForTranslateFeature")
+    public void testAlertUiOnTranslatorFeature(String carrierName, String channel)
+            throws Throwable {
+        logd("CellBroadcastUiTest#testAlertUiOnTranslatorFeature");
+        CellBroadcastCarrierTestConfig carrierInfo =
+                new CellBroadcastCarrierTestConfig(sCarriersObject, carrierName);
+        CellBroadcastChannelTestConfig channelInfo =
+                new CellBroadcastChannelTestConfig(sChannelsObject, carrierName, channel);
+        // setup mccmnc
+        if (sInputMccMnc == null || (sInputMccMnc != null
+                && !sInputMccMnc.equals(carrierInfo.mMccMnc))) {
+            setSimInfo(carrierName, carrierInfo.mMccMnc);
+        }
+
+        // change language to non main language
+        LocaleManager localeManager = getContext().getSystemService(LocaleManager.class);
+        localeManager.setApplicationLocales(sPackageName,
+                LocaleList.forLanguageTags("ja-JP"));
+
+        if (!channelInfo.mChannelDefaultValue || TextUtils.isEmpty(channelInfo.mExpectedTitle)
+                || channelInfo.mFilteredLanguageBySecondLanguagePref
+                || channelInfo.mIsEnabledOnTestMode
+                || !channelInfo.mNeedDisplay) {
+            // let's skip for alerttitle
+            return;
+        }
+        boolean isMessageEnglish = !channelInfo.mIgnoreMessageByLanguageFilter
+                || (channelInfo.mIgnoreMessageByLanguageFilter && carrierInfo.mLanguageTag != null
+                && !carrierInfo.mLanguageTag.equals("en"));
+
+        // receive broadcast message
+        receiveBroadcastMessage(channel, channelInfo.mWarningType, isMessageEnglish);
+
+        logd("carrier " + carrierName + ", Translate button should be shown"
+                + " for channel " + channel);
+        verifyTranslateButtonIsShown();
+    }
+
     public void receiveBroadcastMessage(String channelName, String warningType,
             boolean isMessageEnglish) {
         int channel = Integer.parseInt(channelName);
@@ -227,6 +313,28 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         String etwsWarningType = TextUtils.isEmpty(warningType) ? "00" : warningType;
         String pduCode = isEtws ? etwsWarningType : langCode;
         String hexString = serialHexString + hexChannel + pduCode + "11D4F29C0E0AB2CB727A08";
+        byte[] data = HexDump.hexStringToByteArray(hexString);
+
+        sMockModemManager.newBroadcastSms(sSlotId, data);
+    }
+
+    /**
+     * receive BroadcastMessage with geo information
+     * @param channelName
+     */
+    public void receiveBroadcastMessageWithGeo(String channelName) {
+        int channel = Integer.parseInt(channelName);
+        String hexChannel = String.format("%04X", channel);
+
+        sSerialId++;
+        String serialHexString = String.format("%04X", sSerialId);
+        logd("receiveBroadcastMessageWithGeo, channel = " + hexChannel
+                + ", serialIdHexString = " + serialHexString);
+
+        String hexString = "011112" + serialHexString + "010154747A0E4ACF41E576597E2EBBC77950985D96"
+                + "D341F4F29C9E769F41EDF27C1E3E971B000000000000000000000000000000000000000000000000"
+                + "00000000000000000000000000000000000000000000002321002078B53B6CA4B84B53988A4B86B5"
+                + "3958A4C2DB53B54A4C28B53B6CA4B840100CFF";
         byte[] data = HexDump.hexStringToByteArray(hexString);
 
         sMockModemManager.newBroadcastSms(sSlotId, data);
@@ -269,6 +377,14 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         assertEquals("carrier=" + carrier + ", channel=" + channel
                 + ", output title=" + outputTitle
                 + ", expected title=" + title, expectedResult, result);
+    }
+
+    private void verifyMapButtonIsShown() {
+        // TODO
+    }
+
+    private void verifyTranslateButtonIsShown() {
+        // TODO
     }
 
     /** Pulls down notification shade and verifies that message text is found. */
@@ -484,5 +600,26 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         } finally {
             uiAutomation.dropShellPermissionIdentity();
         }
+    }
+
+    private boolean setLocationEnabled(boolean enable) throws Exception {
+        boolean isChanged = false;
+        sDevice.executeShellCommand("am start -a android.settings.LOCATION_SOURCE_SETTINGS");
+
+        UiObject2 locationSwitch = sDevice.wait(
+                Until.findObject(By.res("android:id/switch_widget")), UI_TIMEOUT);
+
+        if (locationSwitch != null) {
+            boolean isChecked = locationSwitch.isChecked();
+            if (enable && !isChecked) {
+                locationSwitch.click();
+                isChanged = true;
+            } else if (!enable && isChecked) {
+                locationSwitch.click();
+                isChanged = true;
+            }
+        }
+        sDevice.pressBack();
+        return isChanged;
     }
 }

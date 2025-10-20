@@ -152,27 +152,27 @@
     }
   },
   "columbia": {
-    "Extreme threats": {
+    "Amenazas extremas": { //"Extreme threats"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe threats": {
+    "Amenazas graves": { //"Severe threats"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "AMBER alerts": {
+    "Alertas AMBER": { //"AMBER alerts"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Test alerts": {
+    "Alertas de prueba": { //"Test alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Area update broadcasts": {
+    "Difusiones de información actualizada de la zona": { //"Area update broadcasts"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Las alertas sonarán siempre a todo volumen": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -502,35 +502,35 @@
     }
   },
   "latvia": {
-    "Extreme Alerts": {
+    "Oranžais brīdinājums": { //"Extreme Alerts"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe Alerts": {
+    "Dzeltenais brīdinājums": { //"Severe Alerts"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Missing Child Alerts": {
+    "Bērna pazušanas brīdinājums": { //"Missing Child Alerts"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Required Monthly Test Alerts": {
+    "Ikmēneša testa brīdinājums": { //"Required Monthly Test Alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Exercise Alerts": {
+    "Mācību brīdinājums": { //"Exercise Alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "End of Threat Alerts": {
+    "Apdraudējuma beigu brīdinājums": { //"End of Threat Alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Vibration": {
+    "Vibrācija": { //"Vibration"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Vienmēr atskaņot brīdinājuma signālu pilnā skaļumā": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -640,7 +640,7 @@
     }
   },
   "norway": {
-    "Important warning": { //"Viktig melding"
+    "Viktig melding": { //"Important warning"
       "default_value": "true",
       "toggle_avail": "true"
     },
@@ -648,11 +648,11 @@
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Vibration": {
+    "Vibrasjon": { //"Vibration"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Varsle alltid på fullt volum": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -736,31 +736,31 @@
     }
   },
   "romania": {
-    "Extreme threats": {
+    "Pericole extreme": { //"Extreme threats"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Severe threats": {
+    "Pericole grave": { //"Severe threats"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Missing Child Alert": {
+    "Alertă pentru un copil dispărut": { //"Missing Child Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Public Safety Alert": {
+    "Alertă pentru siguranță publică": { //"Public Safety Alert"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Exercise Alerts": {
+    "Alerte de exercițiu": { //"Exercise Alerts"
       "default_value": "false",
       "toggle_avail": "true"
     },
-    "Vibration": {
+    "Vibrație": { //"Vibration"
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Always alert at full volume": {
+    "Trimite întotdeauna alerte la volumul maxim": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -1494,32 +1494,6 @@
       "toggle_avail": "true"
     }
   },
-  "australia": {
-    "Extreme threats": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Severe threats": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "AMBER alerts": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Test alerts": {
-      "default_value": "false",
-      "toggle_avail": "true"
-    },
-    "Vibration": {
-      "default_value": "true",
-      "toggle_avail": "true"
-    },
-    "Always alert at full volume": {
-      "default_value": "false",
-      "toggle_avail": "true"
-    }
-  },
   "uk": {
     "Extreme alerts": {
       "default_value": "true",
@@ -1640,6 +1614,28 @@
       "toggle_avail": "true"
     },
     "EU Test": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
+  "Australia": {
+    "NMS Priority Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Exercise": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "State/Local Test": {
       "default_value": "true",
       "toggle_avail": "true"
     },

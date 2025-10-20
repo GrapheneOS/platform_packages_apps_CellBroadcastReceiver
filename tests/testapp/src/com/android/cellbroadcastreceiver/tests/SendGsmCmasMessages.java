@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.UserHandle;
 import android.provider.Telephony;
+import android.telephony.CbGeoUtils.Geometry;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
@@ -30,6 +31,8 @@ import android.text.TextUtils;
 
 import com.android.internal.telephony.CellBroadcastUtils;
 import com.android.internal.telephony.gsm.SmsCbConstants;
+
+import java.util.List;
 
 /**
  * Send some test GSM CMAS warning notifications.
@@ -68,7 +71,7 @@ public class SendGsmCmasMessages {
 
     public static void testSendCmasAlertWithServiceCategory(
             Context context, int serviceCategory, int serialNumber, String messageBody,
-            String languageCode, boolean isAdditionalLang) {
+            String languageCode, boolean isAdditionalLang, List<Geometry> geometries) {
         SmsCbMessage cbMessage =
                 createCmasSmsMessage(
                         serviceCategory,
@@ -78,14 +81,15 @@ public class SendGsmCmasMessages {
                         SmsCbCmasInfo.CMAS_SEVERITY_EXTREME,
                         SmsCbCmasInfo.CMAS_URGENCY_EXPECTED,
                         SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY,
-                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
+                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY,
+                        geometries);
 
         sendBroadcast(context, cbMessage);
     }
 
     public static void testSendCmasPresAlert(
             Context context, int serialNumber, String messageBody, String languageCode,
-            boolean isAdditionalLang) {
+            boolean isAdditionalLang, List<Geometry> geometries) {
         SmsCbMessage cbMessage =
                 createCmasSmsMessage(
                         isAdditionalLang
@@ -97,14 +101,15 @@ public class SendGsmCmasMessages {
                         SmsCbCmasInfo.CMAS_SEVERITY_EXTREME,
                         SmsCbCmasInfo.CMAS_URGENCY_EXPECTED,
                         SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY,
-                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
+                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY,
+                        geometries);
 
         sendBroadcast(context, cbMessage);
     }
 
     public static void testSendCmasExtremeAlert(
             Context context, int serialNumber, String messageBody, String languageCode,
-            boolean isAdditionalLang) {
+            boolean isAdditionalLang, List<Geometry> geometries) {
         SmsCbMessage cbMessage =
                 createCmasSmsMessage(
                         isAdditionalLang
@@ -117,14 +122,15 @@ public class SendGsmCmasMessages {
                         SmsCbCmasInfo.CMAS_SEVERITY_EXTREME,
                         SmsCbCmasInfo.CMAS_URGENCY_EXPECTED,
                         SmsCbCmasInfo.CMAS_CERTAINTY_OBSERVED,
-                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
+                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY,
+                        geometries);
 
         sendBroadcast(context, cbMessage);
     }
 
     public static void testSendCmasSevereAlert(
             Context context, int serialNumber, String messageBody, String languageCode,
-            boolean isAdditionalLang) {
+            boolean isAdditionalLang, List<Geometry> geometries) {
         SmsCbMessage cbMessage =
                 createCmasSmsMessage(
                         isAdditionalLang
@@ -137,14 +143,15 @@ public class SendGsmCmasMessages {
                         SmsCbCmasInfo.CMAS_SEVERITY_SEVERE,
                         SmsCbCmasInfo.CMAS_URGENCY_IMMEDIATE,
                         SmsCbCmasInfo.CMAS_CERTAINTY_LIKELY,
-                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
+                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY,
+                        geometries);
 
         sendBroadcast(context, cbMessage);
     }
 
     public static void testSendCmasAmberAlert(
             Context context, int serialNumber, String messageBody, String languageCode,
-            boolean isAdditionalLang) {
+            boolean isAdditionalLang, List<Geometry> geometries) {
         SmsCbMessage cbMessage =
                 createCmasSmsMessage(
                         isAdditionalLang
@@ -157,14 +164,15 @@ public class SendGsmCmasMessages {
                         SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
                         SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN,
                         SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN,
-                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
+                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY,
+                        geometries);
 
         sendBroadcast(context, cbMessage);
     }
 
     public static void testSendCmasMonthlyTest(
             Context context, int serialNumber, String messageBody, String languageCode,
-            boolean isAdditionalLang) {
+            boolean isAdditionalLang, List<Geometry> geometries) {
         SmsCbMessage cbMessage =
                 createCmasSmsMessage(
                         isAdditionalLang
@@ -177,14 +185,15 @@ public class SendGsmCmasMessages {
                         SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
                         SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN,
                         SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN,
-                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
+                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY,
+                        geometries);
 
         sendBroadcast(context, cbMessage);
     }
 
     public static void testSendCmasExerciseTest(
             Context context, int serialNumber, String messageBody, String languageCode,
-            boolean isAdditionalLang) {
+            boolean isAdditionalLang, List<Geometry> geometries) {
         SmsCbMessage cbMessage =
                 createCmasSmsMessage(
                         isAdditionalLang
@@ -197,14 +206,15 @@ public class SendGsmCmasMessages {
                         SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
                         SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN,
                         SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN,
-                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY);
+                        SmsCbMessage.MESSAGE_PRIORITY_EMERGENCY,
+                        geometries);
 
         sendBroadcast(context, cbMessage);
     }
 
     public static void testSendPublicSafetyMessagesAlert(
             Context context, int serialNumber, String messageBody, String languageCode,
-            boolean isAdditionalLang) {
+            boolean isAdditionalLang, List<Geometry> geometries) {
         SmsCbMessage cbMessage =
                 createCmasSmsMessage(
                         isAdditionalLang
@@ -216,14 +226,15 @@ public class SendGsmCmasMessages {
                         SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
                         SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN,
                         SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN,
-                        SmsCbMessage.MESSAGE_PRIORITY_NORMAL);
+                        SmsCbMessage.MESSAGE_PRIORITY_NORMAL,
+                        geometries);
 
         sendBroadcast(context, cbMessage);
     }
 
     public static void testSendStateLocalTestAlert(
             Context context, int serialNumber, String messageBody, String languageCode,
-            boolean isAdditionalLang) {
+            boolean isAdditionalLang, List<Geometry> geometries) {
         SmsCbMessage cbMessage =
                 createCmasSmsMessage(
                         isAdditionalLang
@@ -235,7 +246,8 @@ public class SendGsmCmasMessages {
                         SmsCbCmasInfo.CMAS_SEVERITY_UNKNOWN,
                         SmsCbCmasInfo.CMAS_URGENCY_UNKNOWN,
                         SmsCbCmasInfo.CMAS_CERTAINTY_UNKNOWN,
-                        SmsCbMessage.MESSAGE_PRIORITY_NORMAL);
+                        SmsCbMessage.MESSAGE_PRIORITY_NORMAL,
+                        geometries);
 
         sendBroadcast(context, cbMessage);
     }
@@ -252,7 +264,8 @@ public class SendGsmCmasMessages {
      * @return the newly created SmsMessage object
      */
     private static SmsCbMessage createCmasSmsMessage(int serviceCategory, int serialNumber,
-            String language, String body, int severity, int urgency, int certainty, int priority) {
+            String language, String body, int severity, int urgency, int certainty, int priority,
+            List<Geometry> geometries) {
         int messageClass = getCmasMessageClass(serviceCategory);
         SmsCbCmasInfo cmasInfo =
                 new SmsCbCmasInfo(
@@ -263,8 +276,8 @@ public class SendGsmCmasMessages {
                         urgency,
                         certainty);
         return new SmsCbMessage(SmsCbMessage.MESSAGE_FORMAT_3GPP, 0, serialNumber,
-                new SmsCbLocation("123456"), serviceCategory, language, body,
-                priority, null, cmasInfo, 0, 1);
+                new SmsCbLocation("123456"), serviceCategory, language, 0, body,
+                priority, null, cmasInfo, 0, geometries, 0, 0, 1);
     }
 
     /**

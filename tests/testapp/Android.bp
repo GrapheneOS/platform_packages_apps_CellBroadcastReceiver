@@ -51,5 +51,6 @@ filegroup {
     srcs: [
         "src/com/android/cellbroadcastreceiver/tests/SendTestMessages.java",
         "src/com/android/cellbroadcastreceiver/tests/GsmSmsCbMessage.java",
+        "src/com/android/cellbroadcastreceiver/tests/SendGsmCmasMessages.java",
     ],
 }

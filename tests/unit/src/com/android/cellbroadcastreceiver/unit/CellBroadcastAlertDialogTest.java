@@ -27,6 +27,7 @@ import static org.mockito.Mockito.verify;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -49,12 +50,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.test.InstrumentationRegistry;
+import androidx.test.uiautomator.By;
+import androidx.test.uiautomator.UiDevice;
+import androidx.test.uiautomator.Until;
+
 import com.android.cellbroadcastreceiver.CellBroadcastAlertDialog;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
 import com.android.cellbroadcastreceiver.CellBroadcastReceiverApp;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.cellbroadcastreceiver.R;
+import com.android.internal.telephony.CellBroadcastUtils;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 import com.android.modules.utils.build.SdkLevel;
 
@@ -146,6 +153,7 @@ public class CellBroadcastAlertDialogTest extends
 
     @After
     public void tearDown() throws Exception {
+        CellBroadcastAlertDialog.sIsTranslateFeatureEnabledForTest = null;
         CellBroadcastSettings.resetResourcesCache();
         CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
         super.tearDown();
@@ -697,5 +705,23 @@ public class CellBroadcastAlertDialogTest extends
 
         assertTrue(TextUtils.isEmpty(((TextView) getActivity().findViewById(
                 com.android.cellbroadcastreceiver.R.id.alertTitle)).getText()));
+    }
+
+    @InstrumentationTest
+    public void testDialogDismissOnBackPress() {
+        UiDevice device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+        Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        String packageName =
+                CellBroadcastUtils.getDefaultCellBroadcastReceiverPackageName(context);
+
+        Intent intent = createActivityIntent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+
+        device.wait(Until.hasObject(By.pkg(packageName)), 3000);
+        device.pressBack();
+
+        boolean isGone = device.wait(Until.gone(By.pkg(packageName)), 3000);
+        assertFalse("Dialog should not be dismissed after pressing back key", isGone);
     }
 }

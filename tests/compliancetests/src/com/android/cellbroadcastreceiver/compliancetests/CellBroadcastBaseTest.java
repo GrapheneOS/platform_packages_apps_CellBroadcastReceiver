@@ -41,6 +41,7 @@ import android.telephony.mockmodem.IRadioMessagingImpl;
 import android.telephony.mockmodem.MockModemConfigBase.SimInfoChangedResult;
 import android.telephony.mockmodem.MockModemManager;
 import android.telephony.mockmodem.MockSimService;
+import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -345,6 +346,58 @@ public class CellBroadcastBaseTest {
             for (Iterator<String> iterator = channelsForCarrier.keys(); iterator.hasNext();) {
                 String channelId = iterator.next();
                 result.add(new String[]{carrierName, channelId});
+            }
+        }
+        return result.toArray(new Object[]{});
+    }
+
+    protected Object[] paramsCarrierAndChannelForGeoTest() throws Throwable {
+        logd("paramsCarrierAndChannelForGeoTest");
+        String jsonCarrier = loadJsonFile(CARRIER_LISTS_JSON);
+        JSONObject carriersObject = new JSONObject(jsonCarrier);
+        Iterator<String> carrierList = carriersObject.keys();
+
+        ArrayList<Object> result = new ArrayList<Object>();
+        for (Iterator<String> it = carrierList; it.hasNext();) {
+            String carrierName = it.next();
+            JSONObject carrierObject = carriersObject.getJSONObject(carrierName);
+            String mapSupport = null;
+            try {
+                mapSupport = carrierObject.getString("map_support");
+            } catch (Exception JSONException) {
+            }
+            boolean isMapSupport = false;
+            if (!TextUtils.isEmpty(mapSupport) && mapSupport.equals("true")) {
+                isMapSupport = true;
+            }
+            if (isMapSupport) {
+                result.add(new String[]{carrierName, "4370"});
+            }
+        }
+        return result.toArray(new Object[]{});
+    }
+
+    protected Object[] paramsCarrierAndChannelForTranslateFeature() throws Throwable {
+        logd("paramsCarrierAndChannelForTranslateFeature");
+        String jsonCarrier = loadJsonFile(CARRIER_LISTS_JSON);
+        JSONObject carriersObject = new JSONObject(jsonCarrier);
+        Iterator<String> carrierList = carriersObject.keys();
+
+        ArrayList<Object> result = new ArrayList<Object>();
+        for (Iterator<String> it = carrierList; it.hasNext();) {
+            String carrierName = it.next();
+            JSONObject carrierObject = carriersObject.getJSONObject(carrierName);
+            String translateSupport = null;
+            try {
+                translateSupport = carrierObject.getString("translate_support");
+            } catch (Exception JSONException) {
+            }
+            boolean isTranslateSupport = false;
+            if (!TextUtils.isEmpty(translateSupport) && translateSupport.equals("true")) {
+                isTranslateSupport = true;
+            }
+            if (isTranslateSupport) {
+                result.add(new String[]{carrierName, "4370"});
             }
         }
         return result.toArray(new Object[]{});
