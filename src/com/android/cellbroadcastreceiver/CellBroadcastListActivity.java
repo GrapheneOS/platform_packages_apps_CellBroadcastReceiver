@@ -468,26 +468,34 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
         }
 
         private void updateNoAlertTextVisibility() {
-            TextView emptyView = getActivity().findViewById(R.id.empty);
-            View emptyZeroStateView = getActivity().findViewById(R.id.empty_zerostate);
             boolean hasAlerts = hasAlertsInHistory();
             boolean showEmptyView = !hasAlerts;
 
-            if (emptyView == null || emptyZeroStateView == null) {
+            TextView emptyView = getActivity().findViewById(R.id.empty);
+            View emptyZeroStateView = getActivity().findViewById(R.id.empty_zerostate);
+
+            if (emptyView == null) {
                 return;
             }
 
             if (showEmptyView) {
-                if (SettingsThemeHelper.isExpressiveTheme(getActivity())) {
+                boolean useZeroStateView = !mIsWatch && emptyZeroStateView != null
+                        && SettingsThemeHelper.isExpressiveTheme(getActivity());
+
+                if (useZeroStateView) {
                     emptyView.setVisibility(View.GONE);
                     emptyZeroStateView.setVisibility(View.VISIBLE);
                 } else {
                     emptyView.setVisibility(View.VISIBLE);
-                    emptyZeroStateView.setVisibility(View.GONE);
+                    if (emptyZeroStateView != null) {
+                        emptyZeroStateView.setVisibility(View.GONE);
+                    }
                 }
             } else {
-                emptyView.setVisibility(View.GONE);
-                emptyZeroStateView.setVisibility(View.GONE);
+                emptyView.setVisibility(mIsWatch ? View.INVISIBLE : View.GONE);
+                if (emptyZeroStateView != null) {
+                    emptyZeroStateView.setVisibility(View.GONE);
+                }
             }
 
             getListView().setLongClickable(hasAlerts);

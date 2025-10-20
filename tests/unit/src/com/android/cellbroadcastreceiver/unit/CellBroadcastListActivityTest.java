@@ -968,6 +968,35 @@ public class CellBroadcastListActivityTest extends
         }
     }
 
+    public void testUpdateNoAlertTextVisibility_forWatch() throws Throwable {
+        setWatchFeatureEnabled(true);
+        CellBroadcastListActivity activity = startActivity();
+        assertNotNull(activity.mListFragment);
+
+        Cursor emptyCursor =
+                new MatrixCursor(CellBroadcastListActivity.CursorLoaderListFragment.QUERY_COLUMNS);
+        Cursor nonEmptyCursor = makeTestCursor();
+
+        activity.mListFragment.onLoadFinished(null, emptyCursor);
+
+        assertEquals("For Watch with no alerts, 'empty' view should be VISIBLE",
+                View.VISIBLE, activity.findViewById(R.id.empty).getVisibility());
+        View zeroStateView = activity.findViewById(R.id.empty_zerostate);
+        if (zeroStateView != null) {
+            assertEquals("For Watch, 'zerostate' view should always be GONE",
+                    View.GONE, zeroStateView.getVisibility());
+        }
+        assertFalse("For Watch with no alerts, list should not be long clickable",
+                activity.findViewById(android.R.id.list).isLongClickable());
+
+        activity.mListFragment.onLoadFinished(null, nonEmptyCursor);
+
+        assertEquals("For Watch with alerts, 'empty' view should be INVISIBLE",
+                View.INVISIBLE, activity.findViewById(R.id.empty).getVisibility());
+        assertTrue("For Watch with alerts, list should be long clickable",
+                activity.findViewById(android.R.id.list).isLongClickable());
+    }
+
     private android.app.AlertDialog.Builder getMockAlertDialogBuilderOld(
             CellBroadcastListActivity activity) {
         android.app.AlertDialog.Builder mockAlertDialogBuilder = mock(
