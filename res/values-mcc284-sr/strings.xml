@@ -32,7 +32,7 @@
     <string name="enable_cmas_amber_alerts_summary" msgid="2737081426606202971">"Поруке за нестале особе"</string>
     <string name="enable_cmas_test_alerts_title" msgid="5501920660625344060">"Пробна обавештења"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="5979346836630343830">"Пријем пробних порука"</string>
-    <string name="enable_exercise_test_alerts_title" msgid="6186667183449173633">"Обавештења о вежбању"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="6186667183449173633">"Упозорења о вежбању"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="5406239686393408858">"Примај поруке о вежбању"</string>
     <string name="enable_operator_defined_test_alerts_title" msgid="7672118368857656927">"Само за ЕУ"</string>
     <string name="enable_operator_defined_test_alerts_summary" msgid="6269683089765134935">"Примај поруке само за ЕУ"</string>
