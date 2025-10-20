@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2025 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- CMAS dialog title for presidential level alert. [CHAR LIMIT=50] -->
+    <!-- Required Arabic(ar) translation for this message: تحذير طارئ وطني -->
+    <string name="cmas_presidential_level_alert">National Emergency Alert</string>
+    <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
+    <!-- Required Arabic(ar) translation for this message: تحذير طارئ لتهديد وشيك -->
+    <string name="cmas_extreme_alert">Imminent Threat Emergency Alert</string>
+    <!-- CMAS dialog title for severe alert. [CHAR LIMIT=50] -->
+    <!-- Required Arabic(ar) translation for this message: تحذير السلامة العامة -->
+    <string name="cmas_severe_alert">Public Safety Warning Alert</string>
+    <!-- CMAS dialog title for required monthly test. [CHAR LIMIT=50] -->
+    <!-- Required Arabic(ar) translation for this message: رسالة تجريبية -->
+    <string name="cmas_required_monthly_test">Test Alert</string>
+    <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
+    <!-- Required Arabic(ar) translation for this message: تمرين -->
+    <string name="cmas_exercise_alert">Exercise</string>
+    <!-- CMAS dialog title for operator defined use. [CHAR LIMIT=50] -->
+    <!-- Required Arabic(ar) translation for this message: رسالة تجريبية -->
+    <string name="cmas_operator_defined_alert">Test Alert</string>
+
+    <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Arabic(ar) translation for this message: تنبيهات السلامة العامة -->
+    <string name="enable_cmas_severe_threat_alerts_title">Public Safety Alerts</string>
+    <!-- Preference summary for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Arabic(ar) translation for this message: تنبيهات تحتوي على تحذيرات وإرشادات وقائية تهدف إلى حماية الأرواح وضمان السلامة العامة -->
+    <string name="enable_cmas_severe_threat_alerts_summary">Alerts containing warnings and guidelines aimed at protecting lives and ensuring public safety</string>
+    <!-- Preference title for other test alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Arabic(ar) translation for this message: التنبيهات الحكومية التجريبية -->
+    <string name="enable_cmas_test_alerts_title">Government Test Alerts</string>
+    <!-- Preference summary for other test alerts checkbox. [CHAR LIMIT=125] -->
+    <!-- Required Arabic(ar) translation for this message: تنبيهات مصممة لاختبار كفاءة نظام التنبيه -->
+    <string name="enable_cmas_test_alerts_summary">Alerts designed to test the functionality of the alerting system</string>
+    <!-- Preference title for operator defined test alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Arabic(ar) translation for this message: تنبيهات مزودي الخدمة التجريبية -->
+    <string name="enable_operator_defined_test_alerts_title">Operator Test Alerts</string>
+    <!-- Preference summary for operator defined test alerts checkbox. [CHAR LIMIT=125] -->
+    <!-- Required Arabic(ar) translation for this message: تنبيهات تجريبية مخصصة حصريًا للاستخدام من قبل مزودي الخدمة -->
+    <string name="enable_operator_defined_test_alerts_summary">Testing alerts limited to operators use</string>
+</resources>
