@@ -693,7 +693,7 @@
   },
   "spain_telefonica": {
     "Pre-Alerta de Protección Civil": { //"Civil Protection Pre-Alert": {
-      "default_value": "false",
+      "default_value": "true",
       "toggle_avail": "true"
     },
     "Vibración": { //"Vibration": {

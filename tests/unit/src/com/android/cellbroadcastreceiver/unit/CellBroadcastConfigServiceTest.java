@@ -1750,6 +1750,34 @@ public class CellBroadcastConfigServiceTest extends CellBroadcastTest {
             verify(mConfigService, times(++c + aggregationCount)).resetAllPreferences();
         }
 
+        aggregationCount += combResetting.length;
+        setPreference(CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS, true);
+        putResources(com.android.cellbroadcastreceiver
+                .R.bool.state_local_test_alerts_enabled_default, true);
+        int extreme_alerts = com.android.cellbroadcastreceiver
+                .R.bool.extreme_threat_alerts_enabled_default;
+
+        // Verify the settings preference not to be reset
+        for (int i = 0; i < combNoResetting.length; i++) {
+            setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER,
+                    combNoResetting[i][0]);
+            setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS,
+                    combNoResetting[i][1]);
+            putResources(extreme_alerts, combNoResetting[i][2]);
+            method.invoke(mConfigService, mIntent);
+            verify(mConfigService, times(aggregationCount)).resetAllPreferences();
+        }
+
+        // Verify the settings preference to be reset
+        for (int i = 0, c = 0; i < combResetting.length; i++) {
+            setPreference(CellBroadcastSettings.ANY_PREFERENCE_CHANGED_BY_USER,
+                    combResetting[i][0]);
+            setPreference(CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS,
+                    combResetting[i][1]);
+            putResources(extreme_alerts, combResetting[i][2]);
+            method.invoke(mConfigService, mIntent);
+            verify(mConfigService, times(++c + aggregationCount)).resetAllPreferences();
+        }
     }
 
     /**
