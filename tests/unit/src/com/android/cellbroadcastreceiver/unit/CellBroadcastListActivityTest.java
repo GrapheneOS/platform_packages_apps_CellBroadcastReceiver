@@ -269,7 +269,7 @@ public class CellBroadcastListActivityTest extends
 
         // create data with one entry so that the "no alert" text view is gone.
         activity.mListFragment.onLoadFinished(null, makeTestCursor());
-        if (!SettingsThemeHelper.isExpressiveTheme(mContext)) {
+        if (!SettingsThemeHelper.isExpressiveTheme(mContext) || isHideToolbar()) {
             assertEquals(View.GONE, activity.findViewById(R.id.empty).getVisibility());
         } else {
             assertEquals(View.GONE,
@@ -286,7 +286,7 @@ public class CellBroadcastListActivityTest extends
         Cursor data =
                 new MatrixCursor(CellBroadcastListActivity.CursorLoaderListFragment.QUERY_COLUMNS);
         activity.mListFragment.onLoadFinished(null, data);
-        if (!SettingsThemeHelper.isExpressiveTheme(mContext)) {
+        if (!SettingsThemeHelper.isExpressiveTheme(mContext) || isHideToolbar()) {
             assertEquals(View.VISIBLE, activity.findViewById(R.id.empty).getVisibility());
             assertEquals(View.GONE,
                     activity.findViewById(R.id.empty_zerostate).getVisibility());
@@ -307,7 +307,7 @@ public class CellBroadcastListActivityTest extends
         Cursor data =
                 new MatrixCursor(CellBroadcastListActivity.CursorLoaderListFragment.QUERY_COLUMNS);
         activity.mListFragment.onLoadFinished(null, data);
-        if (!SettingsThemeHelper.isExpressiveTheme(mContext)) {
+        if (!SettingsThemeHelper.isExpressiveTheme(mContext) || isHideToolbar()) {
             assertEquals(View.VISIBLE, activity.findViewById(R.id.empty).getVisibility());
             assertEquals(View.GONE,
                     activity.findViewById(R.id.empty_zerostate).getVisibility());
@@ -318,7 +318,7 @@ public class CellBroadcastListActivityTest extends
         assertFalse(activity.findViewById(android.R.id.list).isLongClickable());
 
         activity.mListFragment.onLoadFinished(null, makeTestCursor());
-        if (!SettingsThemeHelper.isExpressiveTheme(mContext)) {
+        if (!SettingsThemeHelper.isExpressiveTheme(mContext) || isHideToolbar()) {
             assertEquals(View.GONE, activity.findViewById(R.id.empty).getVisibility());
         } else {
             assertEquals(View.GONE,
