@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2025 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="3172256201644467777">"జాతీయ ఎమర్జెన్సీ అలర్ట్"</string>
+    <string name="cmas_extreme_alert" msgid="3687083885651385845">"తక్షణ ప్రమాద ఎమర్జెన్సీ అలర్ట్"</string>
+    <string name="cmas_severe_alert" msgid="535061001518550762">"పబ్లిక్ భద్రతా హెచ్చరిక అలర్ట్"</string>
+    <string name="cmas_required_monthly_test" msgid="7382539198590693959">"టెస్ట్ అలర్ట్"</string>
+    <string name="cmas_exercise_alert" msgid="6218424182114680287">"వ్యాయామం"</string>
+    <string name="cmas_operator_defined_alert" msgid="7775913913413528234">"టెస్ట్ అలర్ట్"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="5997396957502447108">"పబ్లిక్ భద్రత అలర్ట్‌లు"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="3116707116975036191">"ప్రాణాలను రక్షించడం, పబ్లిక్ భద్రతను నిర్ధారించడం లక్ష్యంగా హెచ్చరికలు, గైడ్‌లైన్స్ ఉన్న అలర్ట్‌లు"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="6975484288924696726">"ప్రభుత్వ టెస్ట్ అలర్ట్‌లు"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="7114059247591999444">"అలర్ట్ సిస్టమ్ ఫంక్షనాలిటీని టెస్ట్ చేయడానికి రూపొందించిన అలర్ట్‌లు"</string>
+    <string name="enable_operator_defined_test_alerts_title" msgid="4173452057683852916">"ఆపరేటర్ టెస్ట్ అలర్ట్‌లు"</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="9091006795999824138">"టెస్టింగ్ అలర్ట్‌లు ఆపరేటర్‌ల వినియోగానికి పరిమితం చేయబడ్డాయి"</string>
+</resources>
