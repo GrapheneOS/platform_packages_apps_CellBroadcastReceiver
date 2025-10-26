@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2025 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="3172256201644467777">"ජාතික හදිසි අවස්ථා ඇඟවීම"</string>
+    <string name="cmas_extreme_alert" msgid="3687083885651385845">"ආසන්න තර්ජන හදිසි ඇඟවීම"</string>
+    <string name="cmas_severe_alert" msgid="535061001518550762">"පොදු ආරක්ෂාව පිළිබඳ අනතුරු ඇඟවීමේ ඇඟවීම"</string>
+    <string name="cmas_required_monthly_test" msgid="7382539198590693959">"පරීක්ෂණ ඇඟවීම"</string>
+    <string name="cmas_exercise_alert" msgid="6218424182114680287">"ව්‍යායාමය"</string>
+    <string name="cmas_operator_defined_alert" msgid="7775913913413528234">"පරීක්ෂණ ඇඟවීම"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="5997396957502447108">"පොදු ආරක්ෂාව පිළිබඳ ඇඟවීම්"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="3116707116975036191">"ජීවිත ආරක්ෂා කිරීම සහ පොදු ආරක්ෂාව සහතික කිරීම අරමුණු කරගත් අනතුරු ඇඟවීම් සහ මාර්ගෝපදේශ අඩංගු ඇඟවීම්"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="6975484288924696726">"රජයේ පරීක්ෂණ ඇඟවීම්"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="7114059247591999444">"අනතුරු ඇඟවීමේ පද්ධතියේ ක්‍රියාකාරීත්වය පරීක්ෂා කිරීමට සැලසුම් කර ඇති ඇඟවීම්"</string>
+    <string name="enable_operator_defined_test_alerts_title" msgid="4173452057683852916">"ක්‍රියාකරු පරීක්ෂණ ඇඟවීම්"</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="9091006795999824138">"පරීක්ෂණ ඇඟවීම් ක්‍රියාකරුවන්ගේ භාවිතයට සීමා වේ"</string>
+</resources>
