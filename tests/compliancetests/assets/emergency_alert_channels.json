@@ -4934,5 +4934,77 @@
       "default_value": "true",
       "toggle_avail": "false"
     }
+  },
+  "Bahrain": {
+    "4370": {
+      "title": "National Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "National Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false",
+      "filter_language": "language_setting"
+    },
+    "4371": {
+      "title": "Imminent Threat Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false",
+      "end_channel": "4372"
+    },
+    "4384": {
+      "title": "Imminent Threat Emergency Alert",
+      "default_value": "true",
+      "toggle_avail": "false",
+      "end_channel": "4385",
+      "filter_language": "language_setting"
+    },
+    "4373": {
+      "title": "Public Safety Warning Alert",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4378"
+    },
+    "4386": {
+      "title": "Public Safety Warning Alert",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4391",
+      "filter_language": "language_setting"
+    },
+    "4380": {
+      "title": "Test Alert",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4393": {
+      "title": "Test Alert",
+      "default_value": "false",
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
+    },
+    "4381": {
+      "title": "Exercise",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4394": {
+      "title": "Exercise",
+      "default_value": "false",
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
+    },
+    "4382": {
+      "title": "Test Alert",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4395": {
+      "title": "Test Alert",
+      "default_value": "false",
+      "toggle_avail": "true",
+      "filter_language": "language_setting"
+    }
   }
 }

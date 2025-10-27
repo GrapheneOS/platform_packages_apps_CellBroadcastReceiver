@@ -98,7 +98,7 @@
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"Vastaanota vaaratiedote: operaattori määritetty"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Värinä"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
-    <string name="override_dnd_title" msgid="5120805993144214421">"Soita ilmoitusääni täydellä äänenvoimakkuudella"</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"Hälytys aina täydellä äänenvoimakkuudella"</string>
     <string name="override_dnd_summary" msgid="8760249766972256385">"Ohita Älä häiritse ja vastaavat asetukset. Kun asetus on pois päältä, tärkeimmät voivat silti kuulua täydellä voimakkuudella."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Alueelliset ilmoitukset"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Näytä päivitystiedot SIM-kortin tilassa."</string>

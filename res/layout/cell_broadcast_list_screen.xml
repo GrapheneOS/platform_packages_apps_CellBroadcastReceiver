@@ -17,6 +17,8 @@
  */
 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
              android:id="@+id/listContainer"
              android:layout_width="match_parent"
              android:layout_height="match_parent">
@@ -31,12 +33,58 @@
                 android:dividerHeight="0dp"
                 />
 
+        <!-- Legacy Empty View -->
         <TextView android:id="@+id/empty"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/no_cell_broadcasts"
-                android:textColor="?android:attr/textColorSecondary"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:gravity="center"
+                  android:text="@string/no_cell_broadcasts"
+                  android:textColor="?android:attr/textColorSecondary"
+                  android:textAppearance="?android:attr/textAppearanceMedium"
+                  android:visibility="gone"/>
+
+        <!-- Zero State Layout -->
+        <LinearLayout
+            android:id="@+id/empty_zerostate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingHorizontal="?android:attr/listPreferredItemPaddingStart">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    tools:ignore="ContentDescription">
+
+                        <ImageView
+                            android:layout_width="@dimen/settingslib_expressive_zero_state_background_size"
+                            android:layout_height="@dimen/settingslib_expressive_zero_state_background_size"
+                            android:src="@drawable/settingslib_expressive_zerostate_background"/>
+
+                        <ImageView
+                            android:id="@android:id/icon"
+                            android:layout_width="@dimen/settingslib_expressive_space_large2"
+                            android:layout_height="@dimen/settingslib_expressive_space_large2"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_history_empty_zero_state"
+                            android:tint="@color/settingslib_materialColorOnSurface"/>
+                </FrameLayout>
+
+                <TextView
+                    android:id="@android:id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceListItem"
+                    android:textColor="@color/settingslib_materialColorOnSurface"
+                    android:text="@string/no_cell_broadcasts"
+                    android:layout_marginStart="@dimen/settingslib_expressive_space_medium1"
+                    android:layout_marginEnd="@dimen/settingslib_expressive_space_medium1"
+                    android:layout_marginBottom="@dimen/settingslib_expressive_space_small1"/>
+        </LinearLayout>
 
 </FrameLayout>

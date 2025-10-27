@@ -468,14 +468,39 @@ public class CellBroadcastListActivity extends CollapsingToolbarBaseActivity {
         }
 
         private void updateNoAlertTextVisibility() {
-            TextView noAlertsTextView = getActivity().findViewById(R.id.empty);
-            if (noAlertsTextView != null) {
-                noAlertsTextView.setVisibility(!hasAlertsInHistory()
-                        ? View.VISIBLE : View.INVISIBLE);
-                getListView().setLongClickable(hasAlertsInHistory());
-                if (!hasAlertsInHistory()) {
-                    getListView().setContentDescription(getString(R.string.no_cell_broadcasts));
+            boolean hasAlerts = hasAlertsInHistory();
+            boolean showEmptyView = !hasAlerts;
+
+            TextView emptyView = getActivity().findViewById(R.id.empty);
+            View emptyZeroStateView = getActivity().findViewById(R.id.empty_zerostate);
+
+            if (emptyView == null) {
+                return;
+            }
+
+            if (showEmptyView) {
+                boolean useZeroStateView = !mIsWatch && emptyZeroStateView != null
+                        && SettingsThemeHelper.isExpressiveTheme(getActivity());
+
+                if (useZeroStateView) {
+                    emptyView.setVisibility(View.GONE);
+                    emptyZeroStateView.setVisibility(View.VISIBLE);
+                } else {
+                    emptyView.setVisibility(View.VISIBLE);
+                    if (emptyZeroStateView != null) {
+                        emptyZeroStateView.setVisibility(View.GONE);
+                    }
                 }
+            } else {
+                emptyView.setVisibility(mIsWatch ? View.INVISIBLE : View.GONE);
+                if (emptyZeroStateView != null) {
+                    emptyZeroStateView.setVisibility(View.GONE);
+                }
+            }
+
+            getListView().setLongClickable(hasAlerts);
+            if (showEmptyView) {
+                getListView().setContentDescription(getString(R.string.no_cell_broadcasts));
             }
         }
 

@@ -89,7 +89,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"इमरजेंसी के समय सूचनाएं"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ऐसे मामलों के बारे में चेतावनी देना, जिनकी वजह से जान का खतरा हो सकता है"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"टेस्ट अलर्ट"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा से जुड़ी चेतावनी वाले सिस्टम से हर महीने टेस्ट अलर्ट पाएं. साथ ही, मोबाइल और इंटरनेट कंपनी से टेस्ट अलर्ट पाएं"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"सुरक्षा से जुड़ी चेतावनी वाले सिस्टम से हर महीने टेस्ट अलर्ट पाएं. साथ ही, मोबाइल और इंटरनेट कंपनी से भी टेस्ट अलर्ट पाएं"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"आपातकालीन स्थिति में चेतावनी पाएं: एक्सरसाइज़/ड्रिल करने के लिए मैसेज"</string>
@@ -98,8 +98,8 @@
     <string name="enable_operator_defined_test_alerts_summary" msgid="7856514354348843433">"आपातकालीन स्थिति के लिए चेतावनी पाएं: ऑपरेटर से जुड़ी चेतावनियां"</string>
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"वाइब्रेशन"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
-    <string name="override_dnd_title" msgid="5120805993144214421">"हमेशा सबसे तेज़ आवाज़ (फ़ुल वॉल्यूम) में सूचना दें"</string>
-    <string name="override_dnd_summary" msgid="8760249766972256385">"\'परेशान न करें\' मोड और आवाज़ की अन्य सेटिंग को अनदेखा करें. यह बंद होने पर भी, ज़रूरी सूचनाएं पूरी आवाज़ में सुनाई दे सकती हैं."</string>
+    <string name="override_dnd_title" msgid="5120805993144214421">"हमेशा फ़ुल वॉल्यूम में सूचना दें"</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"\'परेशान न करें\' मोड और आवाज़ की अन्य सेटिंग को अनदेखा करें. यह सेटिंग बंद होने पर भी, ज़रूरी सूचनाएं फ़ुल वॉल्यूम में सुनाई दे सकती हैं."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"मौजूदा इलाके की जानकारी से जुड़े ब्रॉडकास्ट"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"इलाके की जानकारी, सिम के स्टेटस में दिखाएं"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"अलर्ट श्रेणी:"</string>
