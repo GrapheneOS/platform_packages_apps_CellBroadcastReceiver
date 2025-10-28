@@ -17,31 +17,41 @@
 package com.android.cellbroadcastreceiver.unit;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.icu.util.ULocale;
 import android.os.Bundle;
 import android.os.IPowerManager;
 import android.os.IThermalService;
 import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
+import android.telephony.SmsCbCmasInfo;
+import android.telephony.SmsCbEtwsInfo;
+import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
+import android.text.Spannable;
 import android.text.TextUtils;
+import android.text.style.URLSpan;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,11 +65,13 @@ import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.Until;
 
+import com.android.cellbroadcastreceiver.CellBroadcastAlertButtonManager;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertDialog;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager;
 import com.android.cellbroadcastreceiver.CellBroadcastReceiverApp;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
+import com.android.cellbroadcastreceiver.CellBroadcastTranslateManager;
 import com.android.cellbroadcastreceiver.R;
 import com.android.internal.telephony.CellBroadcastUtils;
 import com.android.internal.telephony.gsm.SmsCbConstants;
@@ -74,6 +86,9 @@ import org.mockito.MockitoAnnotations;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Optional;
+
 
 public class CellBroadcastAlertDialogTest extends
         CellBroadcastActivityTestCase<CellBroadcastAlertDialog> {
@@ -107,6 +122,11 @@ public class CellBroadcastAlertDialogTest extends
     private int mCmasMessageClass = 0;
 
     private ArrayList<SmsCbMessage> mMessageList;
+    @Mock
+    private CellBroadcastTranslateManager mMockCBTranslateManager;
+    @Mock private CellBroadcastAlertButtonManager mMockCBButtonManager;
+
+    private static final String KEY_TRANSLATE_CONSENT_ACCEPTED = "translate_consent_accepted";
 
     @Override
     protected Intent createActivityIntent() {
@@ -723,5 +743,245 @@ public class CellBroadcastAlertDialogTest extends
 
         boolean isGone = device.wait(Until.gone(By.pkg(packageName)), 3000);
         assertFalse("Dialog should not be dismissed after pressing back key", isGone);
+    }
+
+    private CellBroadcastAlertDialog startActivityForTranslate(Intent intent) {
+        Looper.prepare();
+        startActivity(intent, null, null);
+        waitForMs(100);
+        CellBroadcastAlertDialog activity = getActivity();
+        assertNotNull("Activity should not be null", activity);
+        activity.setTranslateManagerForTest(mMockCBTranslateManager);
+        activity.setButtonManagerForTest(mMockCBButtonManager);
+        return activity;
+    }
+
+    private SmsCbMessage createMessage(String messageBody, String language) {
+        return new SmsCbMessage(1, 1, 1, new SmsCbLocation("123456"),
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED, language,
+                messageBody, 3, (SmsCbEtwsInfo) null,
+                (SmsCbCmasInfo) null, 0, 0);
+    }
+
+    private Intent createIntentWithMessage(SmsCbMessage message) {
+        ArrayList<SmsCbMessage> messageList = new ArrayList<>();
+        messageList.add(message);
+        Intent intent = new Intent(mContext, CellBroadcastAlertDialog.class);
+        intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
+                messageList);
+        return intent;
+    }
+
+    private SharedPreferences setTranslation() {
+        SharedPreferences mockSharedPreferences = mock(SharedPreferences.class);
+        SharedPreferences.Editor mMockEditor = mock(SharedPreferences.Editor.class);
+        mContext.injectSharedPreferences(mockSharedPreferences);
+        doReturn(mMockEditor).when(mockSharedPreferences).edit();
+        doReturn(mMockEditor).when(mMockEditor).putBoolean(anyString(), anyBoolean());
+        doReturn(true).when(mMockCBTranslateManager).isTranslationManagerAvailable();
+        return mockSharedPreferences;
+    }
+
+    private void setPendingIntentForTranslation() {
+        Intent dummyIntent = new Intent();
+        PendingIntent realPendingIntent = PendingIntent.getActivity(
+                getInstrumentation().getTargetContext(), 0, dummyIntent,
+                PendingIntent.FLAG_IMMUTABLE);
+        doReturn(realPendingIntent).when(mMockCBTranslateManager).getSettingsIntent();
+    }
+
+    private static class TranslationTestSetupResult {
+        public final CellBroadcastAlertDialog dialog;
+        public final SharedPreferences sharedPreferences;
+
+        TranslationTestSetupResult(CellBroadcastAlertDialog dialog,
+                SharedPreferences sharedPreferences) {
+            this.dialog = dialog;
+            this.sharedPreferences = sharedPreferences;
+        }
+    }
+
+    private TranslationTestSetupResult setupActivityForTranslationTest(SmsCbMessage message,
+            boolean consentAccepted, boolean translatorReady, boolean disableDialogs) {
+        SharedPreferences mockSharedPreferences = setTranslation();
+
+        doReturn(consentAccepted).when(mockSharedPreferences).getBoolean(
+                KEY_TRANSLATE_CONSENT_ACCEPTED, false);
+        doReturn(translatorReady).when(mMockCBTranslateManager).isTranslatorReady();
+        setPendingIntentForTranslation();
+
+        CellBroadcastAlertDialog.sDisableDialogsForTest = disableDialogs;
+
+        Intent intent = createIntentWithMessage(message);
+        CellBroadcastAlertDialog dialog = startActivityForTranslate(intent);
+        waitForMs(100);
+
+        return new TranslationTestSetupResult(dialog, mockSharedPreferences);
+    }
+
+    private String getDifferentLanguage(String systemLanguage) {
+        return systemLanguage.equals("en") ? "es" : "en";
+    }
+
+    /**
+     * Tests that clicking the translate button for the first time shows the consent dialog
+     * and does not proceed with the translation.
+     */
+    public void testTranslateClickFirstTimeShowsConsentDialog() {
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage("Test Message", getDifferentLanguage(systemLang));
+        TranslationTestSetupResult result = setupActivityForTranslationTest(message,
+                false, true, true);
+
+        try {
+            getInstrumentation().runOnMainSync(() -> {
+                result.dialog.onTranslateClick();
+            });
+
+            verify(result.sharedPreferences, times(1)).getBoolean(KEY_TRANSLATE_CONSENT_ACCEPTED,
+                    false);
+            verify(mMockCBTranslateManager, never()).startOnDeviceTranslation(any(), any());
+        } finally {
+            CellBroadcastAlertDialog.sDisableDialogsForTest = false;
+        }
+    }
+
+    /**
+     * Tests that if the user has already given consent, clicking the translate button
+     * proceeds directly to translation.
+     */
+    public void testTranslateClickConsentGivenProceedsToTranslation() {
+        final String originalMessage = "Original Message";
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage(originalMessage, getDifferentLanguage(systemLang));
+        TranslationTestSetupResult setup = setupActivityForTranslationTest(message,
+                true, true, true);
+
+        getInstrumentation().runOnMainSync(() -> {
+            setup.dialog.onTranslateClick();
+        });
+
+        verify(mMockCBTranslateManager, times(1)).startOnDeviceTranslation(eq(originalMessage),
+                any());
+    }
+
+    /**
+     * Tests that if consent is given but the translator is not ready (e.g., missing language pack),
+     * the flow to download the language pack is initiated.
+     */
+    public void testTranslateClickTranslatorNotReadyTakesDownloadPath() {
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage("Test Message", getDifferentLanguage(systemLang));
+        TranslationTestSetupResult setup = setupActivityForTranslationTest(message,
+                true, false, true);
+
+        try {
+            getInstrumentation().runOnMainSync(() -> {
+                setup.dialog.onTranslateClick();
+            });
+
+            verify(mMockCBTranslateManager, times(1)).isTranslatorReady();
+            verify(mMockCBTranslateManager, never()).startOnDeviceTranslation(any(), any());
+        } finally {
+            CellBroadcastAlertDialog.sDisableDialogsForTest = false;
+        }
+    }
+
+    /**
+     * Tests that the translation button is not shown if the source and target languages are the
+     * same.
+     */
+    public void testInitTranslateWithSameLanguageHidesTranslateButton() {
+        String systemLanguage = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage("A message in the system language", systemLanguage);
+        TranslationTestSetupResult result = setupActivityForTranslationTest(message,
+                true, true, true);
+        CellBroadcastAlertDialog activity = result.dialog;
+        getInstrumentation().runOnMainSync(() -> activity.initTranslate(message));
+        verify(mMockCBButtonManager, times(1)).configureButtons(eq(false));
+    }
+
+    /**
+     * Tests that onLanguageDetectionCompleted callback correctly triggers offerTranslation.
+     * This test dynamically selects a language different from the system default to ensure
+     * the translation offer logic is always triggered.
+     */
+    public void testOnLanguageDetectionCompletedWithDetectedLanguageOffersTranslation() {
+        SmsCbMessage message = createMessage("A message to be detected", null);
+
+        setPendingIntentForTranslation();
+        final String systemLanguage = Locale.getDefault().getLanguage();
+        final String detectedLanguage = getDifferentLanguage(systemLanguage);
+        final ULocale detectedULocale = new ULocale(detectedLanguage);
+        final ULocale systemULocale = new ULocale(systemLanguage);
+        TranslationTestSetupResult result = setupActivityForTranslationTest(message,
+                true, true, true);
+        CellBroadcastAlertDialog activity = result.dialog;
+
+        getInstrumentation().runOnMainSync(
+                () -> activity.onLanguageDetectionCompleted(Optional.of(detectedULocale)));
+        verify(mMockCBTranslateManager, times(1)).initializeTranslator(eq(detectedULocale),
+                eq(systemULocale));
+    }
+
+    /**
+     * Tests that onNewIntent() calls destroyTranslator() to clean up resources.
+     */
+    public void testOnNewIntentCallsDestroyTranslator() {
+        SmsCbMessage message = createMessage("First message", "en");
+        TranslationTestSetupResult result = setupActivityForTranslationTest(message,
+                true, true, true);
+        CellBroadcastAlertDialog activity = result.dialog;
+        Intent newIntent = createIntentWithMessage(createMessage("Second message", "en"));
+        getInstrumentation().runOnMainSync(() -> activity.onNewIntent(newIntent));
+        verify(mMockCBTranslateManager, times(1)).destroyTranslator();
+    }
+
+    /**
+     * Tests that the progress bar is shown when translation starts and hidden when it finishes.
+     */
+    public void testProgressBarVisibilityDuringTranslation() {
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage("Test message", getDifferentLanguage(systemLang));
+
+        TranslationTestSetupResult setup = setupActivityForTranslationTest(message, true, true,
+                true);
+        getInstrumentation().runOnMainSync(() -> setup.dialog.initTranslate(message));
+        getInstrumentation().runOnMainSync(() -> setup.dialog.onTranslateClick());
+
+        verify(mMockCBButtonManager, times(1)).showTranslationInProgress(eq(true));
+
+        getInstrumentation().runOnMainSync(
+                () -> setup.dialog.onTranslationCompleted("Translated", true));
+        verify(mMockCBButtonManager, times(1)).showTranslationInProgress(eq(false));
+    }
+
+    /**
+     * Tests that linkified text (e.g., URLs) is preserved after translation.
+     * This verifies the functionality of setTextAndApplyLinks.
+     */
+    public void testLinkificationIsPreservedAfterTranslation() {
+        doReturn("legacy_linkify").when(mContext.getResources()).getString(R.string.link_method);
+
+        String url = "http://www.google.com";
+        String systemLang = Locale.getDefault().getLanguage();
+        String messageLang = getDifferentLanguage(systemLang);
+        String originalMessage = "Test message with a link " + url;
+        String translatedMessage = "Translated text";
+
+        SmsCbMessage message = createMessage(originalMessage, messageLang);
+        TranslationTestSetupResult result = setupActivityForTranslationTest(message,
+                true, true, true);
+
+        getInstrumentation().runOnMainSync(() -> {
+            result.dialog.onTranslationCompleted(translatedMessage, true);
+        });
+
+        TextView messageView = result.dialog.findViewById(R.id.message);
+        Spannable spannable = (Spannable) messageView.getText();
+        URLSpan[] spans = spannable.getSpans(0, spannable.length(), URLSpan.class);
+
+        assertTrue("URLSpan should exist after translation", spans.length > 0);
+        assertEquals("The URL in the span should be correct", url, spans[0].getURL());
     }
 }
