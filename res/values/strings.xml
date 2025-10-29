@@ -395,4 +395,18 @@
     <!-- Notification title and text when alerting user that their CB settings have changed -->
     <string name="notification_cb_settings_changed_title">Your settings changed</string>
     <string name="notification_cb_settings_changed_text">Wireless emergency alert settings were reset because your SIM changed</string>
+
+    <!-- WEA translation -->
+    <string name="button_translate">Translate</string>
+    <string name="translation_failed_toast">Can\'t translate</string>
+    <!-- WEA translation Consent Dialog -->
+    <string name="translation_consent_title">Turn on translations?</string>
+    <string name="translation_consent_message">Translations are automated and may include mistakes</string>
+    <string name="translation_consent_positive_button">Turn on</string>
+    <string name="translation_consent_negative_button">No thanks</string>
+    <!-- WEA translation Language Pack Dialog -->
+    <string name="download_language_title">Download needed</string>
+    <string name="download_language_message">To translate messages without an internet connection, you\'ll need to download an additional language package in Settings</string>
+    <string name="download_language_positive_button">Settings</string>
+    <string name="download_language_negative_button">Not now</string>
 </resources>
