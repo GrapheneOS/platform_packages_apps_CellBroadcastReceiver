@@ -26,6 +26,6 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="3116707116975036191">"ऐसी सूचनाएं जिनमें चेतावनियां और दिशा-निर्देश शामिल होते हैं. इनका मकसद लोगों की जान बचाना और सार्वजनिक सुरक्षा को बनाए रखना है"</string>
     <string name="enable_cmas_test_alerts_title" msgid="6975484288924696726">"सरकार की ओर से जारी की गई जांच से जुड़ी चेतावनियां"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="7114059247591999444">"जांच वाले सिस्टम की सुविधा को आज़माने के लिए डिज़ाइन की गई चेतावनियां"</string>
-    <string name="enable_operator_defined_test_alerts_title" msgid="4173452057683852916">"ऑपरेटर के लिए जांच से जुड़ी चेतावनियां"</string>
-    <string name="enable_operator_defined_test_alerts_summary" msgid="9091006795999824138">"जांच से जुड़ी चेतावनी की सुविधा सिर्फ़ ऑपरेटर के इस्तेमाल तक सीमित हैं"</string>
+    <string name="enable_operator_defined_test_alerts_title" msgid="4173452057683852916">"ऑपरेटर को मिलने वाली जांच से जुड़ी चेतावनियां"</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="9091006795999824138">"जांच से जुड़ी चेतावनी की वह सुविधा जो सिर्फ़ ऑपरेटर के लिए है"</string>
 </resources>
