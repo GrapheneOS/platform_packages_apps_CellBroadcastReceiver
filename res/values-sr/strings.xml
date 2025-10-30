@@ -62,13 +62,13 @@
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"Непотврђена обавештења о хитним случајевима"</string>
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"Обавештења у хитним случајевима током гласовног позива"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Аутоматске промене подешавања бежичних упозорења о хитним случајевима на основу SIM-а"</string>
-    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дозволи обавештења"</string>
+    <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Дозволи упозорења"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Шаљи ми обавештења о хитним случајевима преко мреже"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Подсетник за обавештења"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Изговори поруку обавештења"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Користи претварање текста у говор за изговарање порука бежичних обавештења о хитним случајевима"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Звук подсетника ће бити нормалне јачине"</string>
-    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Историја хитних обавештења"</string>
+    <string name="emergency_alert_history_title" msgid="8310173569237268431">"Историја хитних упозорења"</string>
     <string name="alert_preferences_title" msgid="6001469026393248468">"Подешавања обавештења"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS пробна емитовања"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Пробна емитовања за систем упозорења о земљотресу и цунамију (ETWS)"</string>
@@ -99,7 +99,7 @@
     <string name="enable_alert_vibrate_title" msgid="5421032189422312508">"Вибрација"</string>
     <string name="enable_alert_vibrate_summary" msgid="4733669825477146614"></string>
     <string name="override_dnd_title" msgid="5120805993144214421">"Увек обавештавај пуном јачином звука"</string>
-    <string name="override_dnd_summary" msgid="8760249766972256385">"Игнорише Не узнемиравај и друга подешавања јачине звука. Када је искључено, најважнија обавештења и даље могу да се оглашавају највећом јачином."</string>
+    <string name="override_dnd_summary" msgid="8760249766972256385">"Игнорише Не узнемиравај и друга подешавања јачине звука. Када је искључено, најважнија упозорења и даље могу да се оглашавају највећом јачином."</string>
     <string name="enable_area_update_info_alerts_title" msgid="3442042268424617226">"Емитовања новости за подручје"</string>
     <string name="enable_area_update_info_alerts_summary" msgid="6437816607144264910">"Приказ најновијих информација у статусу SIM картице"</string>
     <string name="cmas_category_heading" msgid="3923503130776640717">"Категорија упозорења:"</string>
@@ -141,7 +141,7 @@
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Тренутно примате обавештењења о хитним случајевима преко мобилне мреже. Желите ли да наставите да их примате?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Да"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"He"</string>
-    <string name="cb_list_activity_title" msgid="1433502151877791724">"Историја обавештења о хитним случајевима"</string>
+    <string name="cb_list_activity_title" msgid="1433502151877791724">"Историја хитних упозорења"</string>
     <string name="action_delete" msgid="7435661404543945861">"Избриши"</string>
     <string name="action_detail_info" msgid="8486524382178381810">"Прикажи детаље"</string>
   <string-array name="alert_reminder_interval_entries">

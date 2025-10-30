@@ -69,7 +69,7 @@
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Gamitin ang text-to-speech para magsabi ng mga mensahe ng wireless na alerto sa emergency"</string>
     <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"May magpe-play na tunog ng paalala sa regular na volume"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"History ng alertong pang-emergency"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"Mga kagustuhan sa alerto"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"Mga preference sa alerto"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"Pansubok na broadcast ng ETWS"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Mga pansubok na broadcast ng Earthquake Tsunami Warning System"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Pinakamatitinding banta"</string>

@@ -63,7 +63,7 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"વૉઇસ કૉલ દરમ્યાન ઇમર્જન્સી અલર્ટ"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"ઑટોમૅટિક WEAના સેટિંગ સિમના આધારે બદલાય છે"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"અલર્ટને મંજૂરી આપો"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"વાયરલેસ ઇમર્જન્સી અલર્ટના નોટિફિકેશન પ્રાપ્ત કરો"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"વાયરલેસ ઇમર્જન્સી અલર્ટના નોટિફિકેશન મેળવો"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"અલર્ટ રિમાઇન્ડર"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"ચેતવણી મેસેજ બોલો"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"વાયરલેસ ઇમર્જન્સી અલર્ટ મેસેજ બોલવા માટે ટેક્સ્ટ ટૂ સ્પીચનો ઉપયોગ કરો"</string>
@@ -89,7 +89,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"કટોકટીની ચેતવણીઓ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"જીવલેણ ઘટનાઓ વિશે ચેતવો"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"પરીક્ષણના અલર્ટ"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"સલામતી અલર્ટ સિસ્ટમમાંથી કૅરિઅરના પરીક્ષણો અને માસિક પરીક્ષણો મેળવો"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"સલામતી અલર્ટ સિસ્ટમમાંથી મોબાઇલ ઑપરેટરના પરીક્ષણો અને માસિક પરીક્ષણો મેળવો"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"ઇમર્જન્સી માટે અલર્ટ મેળવો: અભ્યાસ/તાલીમ સંબંધિત મેસેજ"</string>

@@ -63,7 +63,7 @@
     <string name="notification_channel_broadcast_messages_in_voicecall" msgid="3291001780110813190">"إنذارات الطوارئ في مكالمة صوتية"</string>
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"‏تتغير إعدادات نظام WEA التلقائي بناءً على شريحة SIM."</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"السماح بالتنبيهات"</string>
-    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"يمكنك تلقّي الإشعارات بإنذارات الطوارئ اللاسلكية"</string>
+    <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"تلقّي الإشعارات بإنذارات الطوارئ اللاسلكية"</string>
     <string name="alert_reminder_interval_title" msgid="3283595202268218149">"التذكير بالتنبيهات"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"الاستماع إلى رسالة التنبيه"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"استخدام ميزة \"تحويل النص إلى كلام\" للاستماع إلى تنبيهات الطوارئ اللاسلكية"</string>
@@ -89,7 +89,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"إنذارات الطوارئ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"إرسال تحذير بشأن الأحداث التي تهدد الحياة"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"رسائل تجريبية"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"يمكنك تلقّي تنبيهات اختبارية من مشغّل شبكة الجوّال واختبارات شهرية من نظام تنبيهات السلامة"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"تلقّي تنبيهات اختبارية من مشغّل شبكة الجوّال واختبارات شهرية من نظام تنبيهات السلامة"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"تلقّي تنبيه بحالة طوارئ: رسالة تجريبية"</string>
