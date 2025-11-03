@@ -109,6 +109,7 @@
         android:showDividers="beginning"
         android:dividerPadding="0dip">
         <LinearLayout
+            android:id="@+id/button_bar"
             style="?android:attr/buttonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,5 +128,5 @@
                 android:minHeight="@dimen/alert_dialog_button_bar_height"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-     </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

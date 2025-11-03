@@ -33,6 +33,7 @@ java_defaults {
         "mockito-target-minus-junit4",
         "truth",
         "cellbroadcastreceiver_flags_lib",
+        "platform-test-annotations",
     ],
     // Include all test java files.
     srcs: [":cellbroadcastreceiver-shared-srcs-test"],
