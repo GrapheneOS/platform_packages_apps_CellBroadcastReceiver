@@ -34,6 +34,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.UserManager;
 import android.provider.Telephony.CellBroadcasts;
+import android.telephony.CbGeoUtils.Circle;
+import android.telephony.CbGeoUtils.Geometry;
+import android.telephony.CbGeoUtils.LatLng;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
@@ -43,6 +46,7 @@ import android.test.mock.MockContentResolver;
 import android.test.mock.MockContext;
 import android.util.Log;
 
+import com.android.cellbroadcastreceiver.CbGeoUtils;
 import com.android.cellbroadcastreceiver.CellBroadcastDatabaseHelper;
 import com.android.modules.utils.build.SdkLevel;
 
@@ -51,6 +55,10 @@ import junit.framework.TestCase;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class CellBroadcastContentProviderTest extends TestCase {
     private static final String TAG = CellBroadcastContentProviderTest.class.getSimpleName();
@@ -152,7 +160,7 @@ public class CellBroadcastContentProviderTest extends TestCase {
     // OEM testing because it is not a true unit test
     public void testDeleteAll() {
         // Insert a cell broadcast message
-        mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage());
+        mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage(null));
         // Verify that the record is inserted into the database correctly.
         Cursor cursor = mContentResolver.query(CONTENT_URI,
                 CellBroadcastDatabaseHelper.QUERY_COLUMNS, null, null, null);
@@ -170,8 +178,8 @@ public class CellBroadcastContentProviderTest extends TestCase {
     // OEM testing because it is not a true unit test
     public void testDeleteBroadcast() {
         // Insert two cell broadcast message
-        mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage());
-        mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage());
+        mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage(null));
+        mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage(null));
         // Verify that the record is inserted into the database correctly.
         Cursor cursor = mContentResolver.query(CONTENT_URI,
                 CellBroadcastDatabaseHelper.QUERY_COLUMNS, null, null, null);
@@ -186,7 +194,7 @@ public class CellBroadcastContentProviderTest extends TestCase {
     @Test
     @InstrumentationTest
     public void testMarkSmsSyncPending() {
-        SmsCbMessage msg = fakeSmsCbMessage();
+        SmsCbMessage msg = fakeSmsCbMessage(null);
         long deliveryTime = msg.getReceivedTime();
         mCellBroadcastProviderTestable.insertNewBroadcast(msg);
         // Verify that there is no record with smsSyncPending set
@@ -212,7 +220,7 @@ public class CellBroadcastContentProviderTest extends TestCase {
         } else {
             doReturn(true).when(mUserManager).isSystemUser();
         }
-        SmsCbMessage msg = fakeSmsCbMessage();
+        SmsCbMessage msg = fakeSmsCbMessage(null);
         mCellBroadcastProviderTestable.insertNewBroadcast(msg);
         // verify does not write message to SMS db
         mCellBroadcastProviderTestable.writeMessageToSmsInbox(msg, mContext);
@@ -228,7 +236,7 @@ public class CellBroadcastContentProviderTest extends TestCase {
     @InstrumentationTest
     public void testWriteSmsInboxNonSystemUser() {
         doReturn(false).when(mUserManager).isSystemUser();
-        SmsCbMessage msg = fakeSmsCbMessage();
+        SmsCbMessage msg = fakeSmsCbMessage(null);
         // verify does not write message to SMS db
         mCellBroadcastProviderTestable.writeMessageToSmsInbox(msg, mContext);
         verify(mMockSmsProvider, times(0)).insert(any(), any());
@@ -240,7 +248,7 @@ public class CellBroadcastContentProviderTest extends TestCase {
     // OEM testing because it is not a true unit test
     public void testInsertQuery() {
         // Insert a cell broadcast message
-        mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage());
+        mCellBroadcastProviderTestable.insertNewBroadcast(fakeSmsCbMessage(null));
 
         // Verify that the record is inserted into the database correctly.
         Cursor cursor = mContentResolver.query(CONTENT_URI,
@@ -287,7 +295,7 @@ public class CellBroadcastContentProviderTest extends TestCase {
                 new ExceptionThrowingDatabaseHelper(mContext, new SQLException());
         mCellBroadcastProviderTestable.mOpenHelper = exceptionHelper;
 
-        SmsCbMessage msg = fakeSmsCbMessage();
+        SmsCbMessage msg = fakeSmsCbMessage(null);
         long deliveryTime = msg.getReceivedTime();
 
         try {
@@ -303,6 +311,41 @@ public class CellBroadcastContentProviderTest extends TestCase {
         } catch (SQLException e) {
             fail("must handle the SQLException that occurs when the database is full.");
         }
+    }
+
+    @Test
+    @InstrumentationTest
+    public void testInsertQueryWithGeometries() {
+        final String cellbroadcastGeometriesColumn = CellBroadcasts.GEOMETRIES;
+        List<Geometry> geometries = new ArrayList<>();
+        geometries.add(new Circle(new LatLng(10, 10), 3000));
+        geometries.add(new Circle(new LatLng(12, 10), 3000));
+        geometries.add(new Circle(new LatLng(40, 40), 3000));
+
+        SmsCbMessage message = fakeSmsCbMessage(geometries);
+        mCellBroadcastProviderTestable.insertNewBroadcast(message);
+
+        String[] projection = CellBroadcastDatabaseHelper.QUERY_COLUMNS;
+        String[] projectionWithGeometries = Arrays.copyOf(projection, projection.length + 1);
+        projectionWithGeometries[projection.length] = cellbroadcastGeometriesColumn;
+
+        Cursor cursor = mContentResolver.query(CONTENT_URI, projectionWithGeometries,
+                CellBroadcasts.SERIAL_NUMBER + "=?",
+                new String[]{String.valueOf(message.getSerialNumber())}, null);
+
+        assertThat(cursor).isNotNull();
+        assertThat(cursor.getCount()).isEqualTo(1);
+        cursor.moveToNext();
+
+        assertThat(cursor.getInt(cursor.getColumnIndexOrThrow(CellBroadcasts.SERIAL_NUMBER)))
+                .isEqualTo(SERIAL_NUMBER);
+        assertThat(cursor.getString(cursor.getColumnIndexOrThrow(CellBroadcasts.MESSAGE_BODY)))
+                .isEqualTo(MESSAGE_BODY);
+
+        assertThat(cursor.getString(cursor.getColumnIndexOrThrow(cellbroadcastGeometriesColumn)))
+                .isEqualTo(CbGeoUtils.encodeGeometriesToString(geometries));
+
+        cursor.close();
     }
 
     /**
@@ -365,13 +408,13 @@ public class CellBroadcastContentProviderTest extends TestCase {
         }
     }
 
-    private SmsCbMessage fakeSmsCbMessage() {
+    private SmsCbMessage fakeSmsCbMessage(List<Geometry> geometries) {
         return new SmsCbMessage(MESSAGE_FORMAT, GEO_SCOPE, SERIAL_NUMBER,
-                new SmsCbLocation(PLMN, LAC, CID), SERVICE_CATEGORY, LANGUAGE_CODE, 0 ,
+                new SmsCbLocation(PLMN, LAC, CID), SERVICE_CATEGORY, LANGUAGE_CODE, 0,
                 MESSAGE_BODY, MESSAGE_PRIORITY, new SmsCbEtwsInfo(ETWS_WARNING_TYPE, false,
                 false, false, null),
                 new SmsCbCmasInfo(CMAS_MESSAGE_CLASS, CMAS_CATEGORY, CMAS_RESPONSE_TYPE,
-                        CMAS_SEVERITY, CMAS_URGENCY, CMAS_CERTAINTY), 0, null,
+                        CMAS_SEVERITY, CMAS_URGENCY, CMAS_CERTAINTY), 0, geometries,
                 System.currentTimeMillis(), 1, SubscriptionManager.INVALID_SUBSCRIPTION_ID);
     }
 
