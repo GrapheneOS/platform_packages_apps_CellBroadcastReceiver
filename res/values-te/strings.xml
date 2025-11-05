@@ -175,24 +175,14 @@
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"మీరు రోమింగ్‌లో ఉన్నప్పుడు లేదా యాక్టివ్ అయిన SIM లేనప్పుడు, మీరు ఈ సెట్టింగ్‌లలో చేర్చబడని కొన్ని అలర్ట్‌లను పొందవచ్చు"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"మీ సెట్టింగ్‌లు మార్చబడ్డాయి"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"మీ SIM మార్చబడినందున వైర్‌లెస్ ఎమర్జెన్సీ అలర్ట్ సెట్టింగ్‌లు రీసెట్ చేయబడ్డాయి"</string>
-    <!-- no translation found for button_translate (905455737012993000) -->
-    <skip />
-    <!-- no translation found for translation_failed_toast (1345281880897597192) -->
-    <skip />
-    <!-- no translation found for translation_consent_title (2844204601896691006) -->
-    <skip />
-    <!-- no translation found for translation_consent_message (4588089129784705987) -->
-    <skip />
-    <!-- no translation found for translation_consent_positive_button (1610706966371761921) -->
-    <skip />
-    <!-- no translation found for translation_consent_negative_button (9145526759331800269) -->
-    <skip />
-    <!-- no translation found for download_language_title (4970919897003512279) -->
-    <skip />
-    <!-- no translation found for download_language_message (417229699977464547) -->
-    <skip />
-    <!-- no translation found for download_language_positive_button (3455605256671856458) -->
-    <skip />
-    <!-- no translation found for download_language_negative_button (1441855301756712618) -->
-    <skip />
+    <string name="button_translate" msgid="905455737012993000">"అనువదించండి"</string>
+    <string name="translation_failed_toast" msgid="1345281880897597192">"అనువదించడం సాధ్యం కాదు"</string>
+    <string name="translation_consent_title" msgid="2844204601896691006">"అనువాదాలను ఆన్ చేయాలా?"</string>
+    <string name="translation_consent_message" msgid="4588089129784705987">"అనువాదాలు ఆటోమేటిక్‌గా జెనరేట్ అవుతాయి, అందువల్ల ఎర్రర్‌లు ఉండవచ్చు"</string>
+    <string name="translation_consent_positive_button" msgid="1610706966371761921">"ఆన్ చేయండి"</string>
+    <string name="translation_consent_negative_button" msgid="9145526759331800269">"వద్దు, ధన్యవాదాలు"</string>
+    <string name="download_language_title" msgid="4970919897003512279">"డౌన్‌లోడ్ చేయడం అవసరం"</string>
+    <string name="download_language_message" msgid="417229699977464547">"ఇంటర్నెట్ కనెక్షన్ లేకుండా మెసేజ్‌లను అనువదించడానికి, మీరు సెట్టింగ్‌లలో అదనపు భాష ప్యాకేజీని డౌన్‌లోడ్ చేసుకోవాలి"</string>
+    <string name="download_language_positive_button" msgid="3455605256671856458">"సెట్టింగ్‌లు"</string>
+    <string name="download_language_negative_button" msgid="1441855301756712618">"ఇప్పుడు కాదు"</string>
 </resources>

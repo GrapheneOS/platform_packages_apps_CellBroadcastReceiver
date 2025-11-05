@@ -175,24 +175,14 @@
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"‏اگر آپ رومنگ میں ہیں یا آپ کے پاس فعال SIM نہیں ہے تو آپ کو کچھ الرٹس موصول ہو سکتے ہیں جو ان ترتیبات میں شامل نہیں ہیں"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"آپ کی ترتیبات تبدیل ہوگئیں"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"‏وائرلیس ایمرجنسی الرٹ کی ترتیبات کو ری سیٹ کر دیا گیا کیونکہ آپ کا SIM تبدیل ہو گیا"</string>
-    <!-- no translation found for button_translate (905455737012993000) -->
-    <skip />
-    <!-- no translation found for translation_failed_toast (1345281880897597192) -->
-    <skip />
-    <!-- no translation found for translation_consent_title (2844204601896691006) -->
-    <skip />
-    <!-- no translation found for translation_consent_message (4588089129784705987) -->
-    <skip />
-    <!-- no translation found for translation_consent_positive_button (1610706966371761921) -->
-    <skip />
-    <!-- no translation found for translation_consent_negative_button (9145526759331800269) -->
-    <skip />
-    <!-- no translation found for download_language_title (4970919897003512279) -->
-    <skip />
-    <!-- no translation found for download_language_message (417229699977464547) -->
-    <skip />
-    <!-- no translation found for download_language_positive_button (3455605256671856458) -->
-    <skip />
-    <!-- no translation found for download_language_negative_button (1441855301756712618) -->
-    <skip />
+    <string name="button_translate" msgid="905455737012993000">"ترجمہ کریں"</string>
+    <string name="translation_failed_toast" msgid="1345281880897597192">"ترجمہ نہیں کیا جا سکتا"</string>
+    <string name="translation_consent_title" msgid="2844204601896691006">"ترجمے آن کریں؟"</string>
+    <string name="translation_consent_message" msgid="4588089129784705987">"ترجمے خودکار ہیں اور ان میں غلطیاں شامل ہو سکتی ہیں"</string>
+    <string name="translation_consent_positive_button" msgid="1610706966371761921">"آن کریں"</string>
+    <string name="translation_consent_negative_button" msgid="9145526759331800269">"نہیں شکریہ"</string>
+    <string name="download_language_title" msgid="4970919897003512279">"ڈاؤن لوڈ درکار ہے"</string>
+    <string name="download_language_message" msgid="417229699977464547">"انٹرنیٹ کنکشن کے بغیر پیغامات کا ترجمہ کرنے کے لیے، آپ کو ترتیبات میں ایک اضافی زبان کا پیکج ڈاؤن لوڈ کرنا ہوگا"</string>
+    <string name="download_language_positive_button" msgid="3455605256671856458">"ترتیبات"</string>
+    <string name="download_language_negative_button" msgid="1441855301756712618">"ابھی نہیں"</string>
 </resources>

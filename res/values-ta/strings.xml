@@ -175,24 +175,14 @@
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"நீங்கள் ரோமிங்கில் இருக்கும்போதோ உங்களிடம் செயலிலுள்ள சிம் இல்லாதபோதோ இந்த அமைப்புகளில் இடம்பெறாத சில விழிப்பூட்டல்களை நீங்கள் பெறக்கூடும்"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"உங்கள் அமைப்புகள் மாற்றப்பட்டன"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"உங்கள் சிம் மாற்றப்பட்டதால் வயர்லெஸ் அவசரகால எச்சரிக்கைகளின் அமைப்புகள் மீட்டமைக்கப்பட்டன"</string>
-    <!-- no translation found for button_translate (905455737012993000) -->
-    <skip />
-    <!-- no translation found for translation_failed_toast (1345281880897597192) -->
-    <skip />
-    <!-- no translation found for translation_consent_title (2844204601896691006) -->
-    <skip />
-    <!-- no translation found for translation_consent_message (4588089129784705987) -->
-    <skip />
-    <!-- no translation found for translation_consent_positive_button (1610706966371761921) -->
-    <skip />
-    <!-- no translation found for translation_consent_negative_button (9145526759331800269) -->
-    <skip />
-    <!-- no translation found for download_language_title (4970919897003512279) -->
-    <skip />
-    <!-- no translation found for download_language_message (417229699977464547) -->
-    <skip />
-    <!-- no translation found for download_language_positive_button (3455605256671856458) -->
-    <skip />
-    <!-- no translation found for download_language_negative_button (1441855301756712618) -->
-    <skip />
+    <string name="button_translate" msgid="905455737012993000">"மொழிபெயர்"</string>
+    <string name="translation_failed_toast" msgid="1345281880897597192">"மொழிபெயர்க்க முடியவில்லை"</string>
+    <string name="translation_consent_title" msgid="2844204601896691006">"மொழிபெயர்ப்புகளை ஆன் செய்யவா?"</string>
+    <string name="translation_consent_message" msgid="4588089129784705987">"தானாகவே மொழிபெயர்ப்புகள் செய்யப்படுவதால், இவற்றில் பிழைகள் இருக்கக்கூடும்"</string>
+    <string name="translation_consent_positive_button" msgid="1610706966371761921">"ஆன் செய்"</string>
+    <string name="translation_consent_negative_button" msgid="9145526759331800269">"வேண்டாம்"</string>
+    <string name="download_language_title" msgid="4970919897003512279">"பதிவிறக்கம் தேவை"</string>
+    <string name="download_language_message" msgid="417229699977464547">"இணைய இணைப்பு இல்லாமல் மெசேஜ்களை மொழிபெயர்க்க, அமைப்புகளில் கூடுதல் மொழித் தொகுப்பைப் பதிவிறக்க வேண்டும்"</string>
+    <string name="download_language_positive_button" msgid="3455605256671856458">"அமைப்புகள்"</string>
+    <string name="download_language_negative_button" msgid="1441855301756712618">"இப்போது வேண்டாம்"</string>
 </resources>

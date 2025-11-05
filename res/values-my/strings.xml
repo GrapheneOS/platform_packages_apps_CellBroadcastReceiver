@@ -175,24 +175,14 @@
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"ပြင်ပကွန်ရက်သုံးနေလျှင် (သို့) သုံးနေသောဆင်းမ်ကတ်မရှိလျှင် ဤဆက်တင်များတွင် မပါဝင်သော သတိပေးချက်အချို့ ရရှိနိုင်သည်"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"ဆက်တင်များကို ပြောင်းလိုက်ပါပြီ"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"သင့်ဆင်းမ်ကတ် ပြောင်းသွားသဖြင့် ကြိုးမဲ့ အရေးပေါ်သတိပေးချက် ဆက်တင်များကို ပြင်ဆင်သတ်မှတ်ထားသည်"</string>
-    <!-- no translation found for button_translate (905455737012993000) -->
-    <skip />
-    <!-- no translation found for translation_failed_toast (1345281880897597192) -->
-    <skip />
-    <!-- no translation found for translation_consent_title (2844204601896691006) -->
-    <skip />
-    <!-- no translation found for translation_consent_message (4588089129784705987) -->
-    <skip />
-    <!-- no translation found for translation_consent_positive_button (1610706966371761921) -->
-    <skip />
-    <!-- no translation found for translation_consent_negative_button (9145526759331800269) -->
-    <skip />
-    <!-- no translation found for download_language_title (4970919897003512279) -->
-    <skip />
-    <!-- no translation found for download_language_message (417229699977464547) -->
-    <skip />
-    <!-- no translation found for download_language_positive_button (3455605256671856458) -->
-    <skip />
-    <!-- no translation found for download_language_negative_button (1441855301756712618) -->
-    <skip />
+    <string name="button_translate" msgid="905455737012993000">"ဘာသာပြန်ရန်"</string>
+    <string name="translation_failed_toast" msgid="1345281880897597192">"ဘာသာပြန်၍မရပါ"</string>
+    <string name="translation_consent_title" msgid="2844204601896691006">"ဘာသာပြန်ခြင်း ဖွင့်မလား"</string>
+    <string name="translation_consent_message" msgid="4588089129784705987">"ဘာသာပြန်ဆိုချက်များကို အလိုအလျောက်ပြုလုပ်ထားပြီး အမှားများ ပါဝင်နိုင်သည်"</string>
+    <string name="translation_consent_positive_button" msgid="1610706966371761921">"ဖွင့်ရန်"</string>
+    <string name="translation_consent_negative_button" msgid="9145526759331800269">"မလိုပါ"</string>
+    <string name="download_language_title" msgid="4970919897003512279">"ဒေါင်းလုဒ်လုပ်ရန် လိုအပ်သည်"</string>
+    <string name="download_language_message" msgid="417229699977464547">"အင်တာနက်ချိတ်ဆက်မှုမရှိဘဲ မက်ဆေ့ဂျ်များ ဘာသာပြန်ရန် ဆက်တင်များတွင် ထပ်ဆောင်းဘာသာစကား ပက်ကေ့ဂျ်ကို ဒေါင်းလုဒ်လုပ်ရမည်"</string>
+    <string name="download_language_positive_button" msgid="3455605256671856458">"ဆက်တင်များ"</string>
+    <string name="download_language_negative_button" msgid="1441855301756712618">"ယခုမလုပ်ပါ"</string>
 </resources>

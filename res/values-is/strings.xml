@@ -175,24 +175,14 @@
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Þegar þú ert í reiki færðu hugsanlega viðvaranir sem eru ekki innifaldar í þessum stillingum"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Stillingunum þínum var breytt"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Stillingar þráðlausra neyðartilkynninga voru endurstilltar vegna þess að skipt var um SIM"</string>
-    <!-- no translation found for button_translate (905455737012993000) -->
-    <skip />
-    <!-- no translation found for translation_failed_toast (1345281880897597192) -->
-    <skip />
-    <!-- no translation found for translation_consent_title (2844204601896691006) -->
-    <skip />
-    <!-- no translation found for translation_consent_message (4588089129784705987) -->
-    <skip />
-    <!-- no translation found for translation_consent_positive_button (1610706966371761921) -->
-    <skip />
-    <!-- no translation found for translation_consent_negative_button (9145526759331800269) -->
-    <skip />
-    <!-- no translation found for download_language_title (4970919897003512279) -->
-    <skip />
-    <!-- no translation found for download_language_message (417229699977464547) -->
-    <skip />
-    <!-- no translation found for download_language_positive_button (3455605256671856458) -->
-    <skip />
-    <!-- no translation found for download_language_negative_button (1441855301756712618) -->
-    <skip />
+    <string name="button_translate" msgid="905455737012993000">"Translate"</string>
+    <string name="translation_failed_toast" msgid="1345281880897597192">"Ekki hægt að þýða"</string>
+    <string name="translation_consent_title" msgid="2844204601896691006">"Kveikja á þýðingum?"</string>
+    <string name="translation_consent_message" msgid="4588089129784705987">"Þýðingar eru sjálfvirkar og gætu innihaldið villur"</string>
+    <string name="translation_consent_positive_button" msgid="1610706966371761921">"Kveikja"</string>
+    <string name="translation_consent_negative_button" msgid="9145526759331800269">"Nei, takk"</string>
+    <string name="download_language_title" msgid="4970919897003512279">"Þörf á niðurhali"</string>
+    <string name="download_language_message" msgid="417229699977464547">"Til að þýða skilaboð án nettengingar þarftu að sækja viðbótartungumálapakka í stillingunum"</string>
+    <string name="download_language_positive_button" msgid="3455605256671856458">"Stillingar"</string>
+    <string name="download_language_negative_button" msgid="1441855301756712618">"Ekki núna"</string>
 </resources>

@@ -175,24 +175,14 @@
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Cando estás en itinerancia ou non tes ningunha SIM activa, pode que recibas alertas que non están incluídas nestas opcións de configuración"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Modificouse a túa configuración"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Restableceuse a configuración das alertas de emerxencia sen fíos porque se cambiou a SIM"</string>
-    <!-- no translation found for button_translate (905455737012993000) -->
-    <skip />
-    <!-- no translation found for translation_failed_toast (1345281880897597192) -->
-    <skip />
-    <!-- no translation found for translation_consent_title (2844204601896691006) -->
-    <skip />
-    <!-- no translation found for translation_consent_message (4588089129784705987) -->
-    <skip />
-    <!-- no translation found for translation_consent_positive_button (1610706966371761921) -->
-    <skip />
-    <!-- no translation found for translation_consent_negative_button (9145526759331800269) -->
-    <skip />
-    <!-- no translation found for download_language_title (4970919897003512279) -->
-    <skip />
-    <!-- no translation found for download_language_message (417229699977464547) -->
-    <skip />
-    <!-- no translation found for download_language_positive_button (3455605256671856458) -->
-    <skip />
-    <!-- no translation found for download_language_negative_button (1441855301756712618) -->
-    <skip />
+    <string name="button_translate" msgid="905455737012993000">"Traducir"</string>
+    <string name="translation_failed_toast" msgid="1345281880897597192">"Non se puido traducir o texto"</string>
+    <string name="translation_consent_title" msgid="2844204601896691006">"Queres activar as traducións?"</string>
+    <string name="translation_consent_message" msgid="4588089129784705987">"As traducións son automáticas e poden conter erros"</string>
+    <string name="translation_consent_positive_button" msgid="1610706966371761921">"Activar"</string>
+    <string name="translation_consent_negative_button" msgid="9145526759331800269">"Non, grazas"</string>
+    <string name="download_language_title" msgid="4970919897003512279">"Cómpre facer unha descarga"</string>
+    <string name="download_language_message" msgid="417229699977464547">"Para traducir mensaxes sen conexión a Internet, debes descargar un paquete de idiomas adicional en Configuración"</string>
+    <string name="download_language_positive_button" msgid="3455605256671856458">"Configuración"</string>
+    <string name="download_language_negative_button" msgid="1441855301756712618">"Agora non"</string>
 </resources>

@@ -175,24 +175,14 @@
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"જ્યારે તમે રોમિંગમાં હો અથવા તમારી પાસે કોઈ સક્રિય સિમ કાર્ડ ન હોય, ત્યારે તમને આ સેટિંગમાં સમાવેશ ન થયો હોય તેવા કેટલાક અલર્ટ મળે તેમ બની શકે"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"તમારા સેટિંગ બદલાઈ ગયા છે"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"તમારું સિમ કાર્ડ બદલાયું હોવાથી વાયરલેસ ઇમર્જન્સી અલર્ટના સેટિંગ રીસેટ કરવામાં આવ્યા છે"</string>
-    <!-- no translation found for button_translate (905455737012993000) -->
-    <skip />
-    <!-- no translation found for translation_failed_toast (1345281880897597192) -->
-    <skip />
-    <!-- no translation found for translation_consent_title (2844204601896691006) -->
-    <skip />
-    <!-- no translation found for translation_consent_message (4588089129784705987) -->
-    <skip />
-    <!-- no translation found for translation_consent_positive_button (1610706966371761921) -->
-    <skip />
-    <!-- no translation found for translation_consent_negative_button (9145526759331800269) -->
-    <skip />
-    <!-- no translation found for download_language_title (4970919897003512279) -->
-    <skip />
-    <!-- no translation found for download_language_message (417229699977464547) -->
-    <skip />
-    <!-- no translation found for download_language_positive_button (3455605256671856458) -->
-    <skip />
-    <!-- no translation found for download_language_negative_button (1441855301756712618) -->
-    <skip />
+    <string name="button_translate" msgid="905455737012993000">"અનુવાદ કરો"</string>
+    <string name="translation_failed_toast" msgid="1345281880897597192">"અનુવાદ કરી શકતા નથી"</string>
+    <string name="translation_consent_title" msgid="2844204601896691006">"અનુવાદો ચાલુ કરીએ?"</string>
+    <string name="translation_consent_message" msgid="4588089129784705987">"અનુવાદો ઑટોમૅટિક રીતે થાય છે અને તેમાં ભૂલો હોઈ શકે છે"</string>
+    <string name="translation_consent_positive_button" msgid="1610706966371761921">"ચાલુ કરો"</string>
+    <string name="translation_consent_negative_button" msgid="9145526759331800269">"ના, આભાર"</string>
+    <string name="download_language_title" msgid="4970919897003512279">"ડાઉનલોડ કરવું જરૂરી છે"</string>
+    <string name="download_language_message" msgid="417229699977464547">"ઇન્ટરનેટ કનેક્શન વિના મેસેજનો અનુવાદ કરવા માટે, તમારે સેટિંગમાં જઈને વધારાનું ભાષા પૅકેજ ડાઉનલોડ કરવું પડશે"</string>
+    <string name="download_language_positive_button" msgid="3455605256671856458">"સેટિંગ"</string>
+    <string name="download_language_negative_button" msgid="1441855301756712618">"હમણાં નહીં"</string>
 </resources>
