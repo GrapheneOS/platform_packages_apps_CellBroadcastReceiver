@@ -398,7 +398,7 @@
 
     <!-- WEA translation -->
     <string name="button_translate">Translate</string>
-    <string name="translation_failed_toast">Can\'t translate</string>
+    <string name="translation_failed_toast">Translation unavailable</string>
     <!-- WEA translation Consent Dialog -->
     <string name="translation_consent_title">Turn on translations?</string>
     <string name="translation_consent_message">Translations are automated and may include mistakes</string>
