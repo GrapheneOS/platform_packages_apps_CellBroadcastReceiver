@@ -46,6 +46,9 @@ import android.os.IThermalService;
 import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
+import android.telephony.CbGeoUtils.Circle;
+import android.telephony.CbGeoUtils.Geometry;
+import android.telephony.CbGeoUtils.LatLng;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
@@ -89,6 +92,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 
@@ -131,6 +135,9 @@ public class CellBroadcastAlertDialogTest extends
 
     private static final String KEY_TRANSLATE_CONSENT_ACCEPTED = "translate_consent_accepted";
 
+    private SmsCbMessage mSmsCbMessageWithGeo;
+    private SmsCbMessage mSmsCbMessageWithoutGeo;
+
     @Override
     protected Intent createActivityIntent() {
         mMessageList = new ArrayList<>(1);
@@ -172,11 +179,14 @@ public class CellBroadcastAlertDialogTest extends
         doReturn(values).when(mContext.getResources()).getStringArray(
                 eq(com.android.cellbroadcastreceiver.R.array
                 .cmas_presidential_alerts_channels_range_strings));
+        mSmsCbMessageWithGeo = createSmsCbMessage(true);
+        mSmsCbMessageWithoutGeo = createSmsCbMessage(false);
     }
 
     @After
     public void tearDown() throws Exception {
         CellBroadcastAlertDialog.sIsTranslateFeatureEnabledForTest = null;
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = null;
         CellBroadcastSettings.resetResourcesCache();
         CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
         super.tearDown();
@@ -1076,5 +1086,111 @@ public class CellBroadcastAlertDialogTest extends
         }
 
         verify(mMockCBButtonManager, atLeastOnce()).configureButtons(eq(false));
+    }
+
+    // Helper method to create a real SmsCbMessage instance
+    private SmsCbMessage createSmsCbMessage(boolean withGeometries) {
+        int messageFormat = 1; // MESSAGE_FORMAT_3GPP
+        int geographicalScope = 0; // GEOGRAPHICAL_SCOPE_CELL_WIDE_IMMEDIATE
+        int serialNumber = 123;
+        SmsCbLocation location = new SmsCbLocation("310260");
+        int serviceCategory = 4370; // CMAS Presidential
+        String language = "en";
+        String body = "Test alert message";
+        int priority = 3; // MESSAGE_PRIORITY_EMERGENCY
+        SmsCbEtwsInfo etwsInfo = null;
+        SmsCbCmasInfo cmasInfo = new SmsCbCmasInfo(0, 0, 0, 0, 0, 0); // Example CMAS info
+        int slotIndex = 0;
+        int subId = 1;
+        long receivedTimeMillis = System.currentTimeMillis();
+        int maximumWaitTimeSec = 255; // MAXIMUM_WAIT_TIME_NOT_SET
+
+        List<Geometry> geometries = null;
+        if (withGeometries) {
+            geometries = new ArrayList<>();
+            geometries.add(new Circle(new LatLng(37.422, -122.084), 1000.0));
+        }
+
+        return new SmsCbMessage(messageFormat, geographicalScope, serialNumber, location,
+                serviceCategory, language, 0, body, priority, etwsInfo, cmasInfo,
+                maximumWaitTimeSec, geometries, receivedTimeMillis, slotIndex, subId);
+    }
+
+    private void setMapConfigEnabled(boolean enabled) {
+        // mContext is a Spy in the base class CellBroadcastActivityTestCase
+        doReturn(enabled).when(mContext.getResources()).getBoolean(eq(R.bool.enable_map));
+    }
+
+    public void testIsGeoInfoWithGeometriesReturnsTrue() throws Throwable {
+        CellBroadcastAlertDialog activity = startActivity();
+        assertTrue(activity.isGeoInfo(mSmsCbMessageWithGeo));
+        stopActivity();
+    }
+
+    public void testIsGeoInfoWithoutGeometriesReturnsFalse() throws Throwable {
+        CellBroadcastAlertDialog activity = startActivity();
+        assertFalse(activity.isGeoInfo(mSmsCbMessageWithoutGeo));
+        stopActivity();
+    }
+
+    public void testIsMapConfigEnabledReturnsTrue() throws Throwable {
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog activity = startActivity();
+        assertTrue("enable_map should be true when mocked to true", activity.isMapConfigEnabled());
+        stopActivity();
+    }
+
+    public void testIsMapConfigEnabledReturnsFalse() throws Throwable {
+        setMapConfigEnabled(false);
+        CellBroadcastAlertDialog activity = startActivity();
+        assertFalse("enable_map should be false when mocked to false",
+                activity.isMapConfigEnabled());
+        stopActivity();
+    }
+
+    public void testIsMapFlagEnabledWhenTestFlagTrueReturnsTrue() throws Throwable {
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        CellBroadcastAlertDialog activity = startActivity();
+        assertTrue(activity.isMapFlagEnabled());
+        stopActivity();
+    }
+
+    public void testIsMapFlagEnabledWhenTestFlagFalseReturnsFalse() throws Throwable {
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = false;
+        CellBroadcastAlertDialog activity = startActivity();
+        assertFalse(activity.isMapFlagEnabled());
+        stopActivity();
+    }
+
+    public void testIsMapFeatureEnabledAllConditionsMetReturnsTrue() throws Throwable {
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog activity = startActivity();
+        assertTrue(activity.isMapFeatureEnabled(mSmsCbMessageWithGeo));
+        stopActivity();
+    }
+
+    public void testIsMapFeatureEnabledFlagOffReturnsFalse() throws Throwable {
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = false;
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog activity = startActivity();
+        assertFalse(activity.isMapFeatureEnabled(mSmsCbMessageWithGeo));
+        stopActivity();
+    }
+
+    public void testIsMapFeatureEnabledConfigFalseReturnsFalse() throws Throwable {
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        setMapConfigEnabled(false);
+        CellBroadcastAlertDialog activity = startActivity();
+        assertFalse(activity.isMapFeatureEnabled(mSmsCbMessageWithGeo));
+        stopActivity();
+    }
+
+    public void testIsMapFeatureEnabledNoGeoInfoReturnsFalse() throws Throwable {
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog activity = startActivity();
+        assertFalse(activity.isMapFeatureEnabled(mSmsCbMessageWithoutGeo));
+        stopActivity();
     }
 }

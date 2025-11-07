@@ -209,6 +209,8 @@ public class CellBroadcastAlertDialog extends Activity implements
     // for test
     private CellBroadcastTranslateManager mMockTranslateManager;
     private TextView mMessageView;
+    @VisibleForTesting
+    public static Boolean sIsMapFeatureEnabledForTest = null;
 
     /** BroadcastReceiver for screen off events. When screen was off, remove FLAG_TURN_SCREEN_ON to
      * start from a clean state. Otherwise, the window flags from the first alert will be
@@ -985,6 +987,54 @@ public class CellBroadcastAlertDialog extends Activity implements
         boolean isWatch = getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH);
         Log.d(TAG, "isWatch:" + isWatch);
         return isWatch;
+    }
+
+    /**
+     * Determines whether the Map Viewer feature is globally enabled, configured, and applicable to
+     * the message.
+     */
+    @VisibleForTesting
+    public boolean isMapFeatureEnabled(SmsCbMessage message) {
+        return isMapFlagEnabled() && isMapConfigEnabled() && isGeoInfo(message);
+    }
+
+    /**
+     * Checks the value of the global feature flag that controls the Map Viewer feature.
+     */
+    @VisibleForTesting
+    public boolean isMapFlagEnabled() {
+        // Allow tests to override the flag's value.
+        if (sIsMapFeatureEnabledForTest != null) {
+            return sIsMapFeatureEnabledForTest;
+        }
+        Log.d(TAG, "isMapFlagEnabled:" + Flags.enableCellbroadcastMapViewer());
+        return Flags.enableCellbroadcastMapViewer();
+    }
+
+    /**
+     * Checks the device configuration resource (R.bool.enable_map) to determine if the Map Viewer
+     * feature is enabled.
+     */
+    @VisibleForTesting
+    public boolean isMapConfigEnabled() {
+        boolean isMapConfigEnabled = getResources().getBoolean(R.bool.enable_map);
+        Log.d(TAG, "isMapConfigEnabled:" + isMapConfigEnabled);
+        return isMapConfigEnabled;
+    }
+
+    /**
+     * Checks if the given Cell Broadcast message contains non-null geographical information
+     * (geometries).
+     */
+    @VisibleForTesting
+    public boolean isGeoInfo(SmsCbMessage message) {
+        if (message == null) {
+            return false;
+        }
+        boolean isGeoInfoExist =
+                message.getGeometries() != null && !message.getGeometries().isEmpty();
+        Log.d(TAG, "isGeoInfoExist:" + isGeoInfoExist);
+        return isGeoInfoExist;
     }
 
     private void setWindowBottom() {
