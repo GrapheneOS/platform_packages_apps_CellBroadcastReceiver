@@ -176,7 +176,8 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Teie seaded muutusid"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Eriolukorra raadiosideteatiste seaded lähtestati, sest vahetasite SIM-i"</string>
     <string name="button_translate" msgid="905455737012993000">"Tõlgi"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"Tõlkimine pole võimalik."</string>
+    <!-- no translation found for translation_failed_toast (2716408960127862588) -->
+    <skip />
     <string name="translation_consent_title" msgid="2844204601896691006">"Kas lülitada tõlked sisse?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"Tõlked on automaatsed ja võivad sisaldada vigu."</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"Lülita sisse"</string>

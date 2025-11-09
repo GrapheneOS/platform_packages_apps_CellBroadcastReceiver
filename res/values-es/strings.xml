@@ -176,7 +176,8 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Tus ajustes han cambiado"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Los ajustes de las alertas de emergencia inalámbricas se han restablecido porque se ha cambiado de SIM"</string>
     <string name="button_translate" msgid="905455737012993000">"Traducir"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"No se puede traducir"</string>
+    <!-- no translation found for translation_failed_toast (2716408960127862588) -->
+    <skip />
     <string name="translation_consent_title" msgid="2844204601896691006">"¿Activar traducciones?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"Las traducciones son automáticas y pueden contener errores"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"Activar"</string>

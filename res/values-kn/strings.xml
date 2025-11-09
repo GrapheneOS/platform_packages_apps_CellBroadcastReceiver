@@ -176,7 +176,8 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಬದಲಾಗಿವೆ"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"ನಿಮ್ಮ SIM ಬದಲಾಗಿರುವ ಕಾರಣ ವೈರ್‌ಲೆಸ್ ತುರ್ತು ಅಲರ್ಟ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ರೀಸೆಟ್ ಮಾಡಲಾಗಿದೆ"</string>
     <string name="button_translate" msgid="905455737012993000">"Translate"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"ಅನುವಾದಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ"</string>
+    <!-- no translation found for translation_failed_toast (2716408960127862588) -->
+    <skip />
     <string name="translation_consent_title" msgid="2844204601896691006">"ಅನುವಾದಗಳನ್ನು ಆನ್ ಮಾಡಬೇಕೇ?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"ಅನುವಾದಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿವೆ ಮತ್ತು ದೋಷಗಳಿರಬಹುದು"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"ಆನ್ ಮಾಡಿ"</string>

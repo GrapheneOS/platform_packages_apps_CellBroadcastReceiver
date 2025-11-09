@@ -176,7 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Jūsų nustatymai pakeisti"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Belaidžiu ryšiu siunčiamų kritinės padėties įspėjimų nustatymai buvo nustatyti iš naujo pakeitus SIM kortelę"</string>
     <string name="button_translate" msgid="905455737012993000">"Vertėjas"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"Nepavyko išversti"</string>
+    <string name="translation_failed_toast" msgid="2716408960127862588">"Vertimas nepasiekiamas"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"Įjungti vertimus?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"Vertimai automatizuoti ir juose gali būti klaidų"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"Įjungti"</string>

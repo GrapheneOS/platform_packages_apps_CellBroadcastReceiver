@@ -176,7 +176,8 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"ଆପଣଙ୍କ ସେଟିଂସକୁ ପରିବର୍ତ୍ତନ କରାଯାଇଛି"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"ଆପଣଙ୍କ SIM ପରିବର୍ତ୍ତନ ହୋଇଥିବା ଯୋଗୁଁ ୱେୟାରଲେସ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ସେଟିଂସକୁ ରିସେଟ କରାଯାଇଛି"</string>
     <string name="button_translate" msgid="905455737012993000">"ଅନୁବାଦ କରନ୍ତୁ"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"ଅନୁବାଦ କରାଯାଇପାରିବ ନାହିଁ"</string>
+    <!-- no translation found for translation_failed_toast (2716408960127862588) -->
+    <skip />
     <string name="translation_consent_title" msgid="2844204601896691006">"ଅନୁବାଦ ଚାଲୁ କରିବେ?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"ଅନୁବାଦ ସ୍ୱତଃ ହୋଇଥାଏ ଏବଂ ସେଥିରେ ଭୁଲ ଥାଇପାରେ"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"ଚାଲୁ କରନ୍ତୁ"</string>

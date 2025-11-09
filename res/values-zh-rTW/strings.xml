@@ -176,7 +176,8 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"設定已變更"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"SIM 卡已更換，因此系統重設無線緊急警報設定"</string>
     <string name="button_translate" msgid="905455737012993000">"翻譯"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"無法翻譯"</string>
+    <!-- no translation found for translation_failed_toast (2716408960127862588) -->
+    <skip />
     <string name="translation_consent_title" msgid="2844204601896691006">"要開啟翻譯功能嗎？"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"翻譯是由系統自動產生，可能會有錯誤"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"開啟"</string>
