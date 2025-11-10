@@ -175,24 +175,14 @@
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Kun käytät roamingia tai sinulla ei ole aktiivista SIM-korttia, voit saada ilmoituksia, jotka eivät kuulu näihin asetuksiin"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Asetuksia on muutettu"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Langattomien hätätiedotteiden asetukset on nollattu, koska SIM-kortti on vaihdettu"</string>
-    <!-- no translation found for button_translate (905455737012993000) -->
-    <skip />
-    <!-- no translation found for translation_failed_toast (1345281880897597192) -->
-    <skip />
-    <!-- no translation found for translation_consent_title (2844204601896691006) -->
-    <skip />
-    <!-- no translation found for translation_consent_message (4588089129784705987) -->
-    <skip />
-    <!-- no translation found for translation_consent_positive_button (1610706966371761921) -->
-    <skip />
-    <!-- no translation found for translation_consent_negative_button (9145526759331800269) -->
-    <skip />
-    <!-- no translation found for download_language_title (4970919897003512279) -->
-    <skip />
-    <!-- no translation found for download_language_message (417229699977464547) -->
-    <skip />
-    <!-- no translation found for download_language_positive_button (3455605256671856458) -->
-    <skip />
-    <!-- no translation found for download_language_negative_button (1441855301756712618) -->
-    <skip />
+    <string name="button_translate" msgid="905455737012993000">"Käännä"</string>
+    <string name="translation_failed_toast" msgid="1345281880897597192">"Kääntäminen ei onnistu"</string>
+    <string name="translation_consent_title" msgid="2844204601896691006">"Laitetaanko käännökset päälle?"</string>
+    <string name="translation_consent_message" msgid="4588089129784705987">"Käännökset ovat automaattisia, ja niissä voi olla virheitä"</string>
+    <string name="translation_consent_positive_button" msgid="1610706966371761921">"Laita päälle"</string>
+    <string name="translation_consent_negative_button" msgid="9145526759331800269">"Ei kiitos"</string>
+    <string name="download_language_title" msgid="4970919897003512279">"Lataus tarvitaan"</string>
+    <string name="download_language_message" msgid="417229699977464547">"Jos haluat kääntää viestejä ilman internetyhteyttä, sinun on ladattava lisäkielipaketti asetuksista"</string>
+    <string name="download_language_positive_button" msgid="3455605256671856458">"Asetukset"</string>
+    <string name="download_language_negative_button" msgid="1441855301756712618">"Ei nyt"</string>
 </resources>

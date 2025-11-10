@@ -175,24 +175,14 @@
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"যেতিয়া আপুনি ৰ’মিং কৰি থাকে বা আপোনাৰ ওচৰত কোনো সক্ৰিয় ছিম নাথাকে, আপুনি এই ছেটিঙত অন্তৰ্ভুক্ত নকৰা কিছুমান সতৰ্কবাৰ্তা পাব পাৰে"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"আপোনাৰ ছেটিং সলনি কৰা হৈছে"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"আপোনাৰ ছিমখন সলনি কৰা হৈছে বাবে অনাতাঁৰ জৰুৰীকালীন সতৰ্কবাৰ্তাৰ ছেটিং সলনি কৰা হৈছে"</string>
-    <!-- no translation found for button_translate (905455737012993000) -->
-    <skip />
-    <!-- no translation found for translation_failed_toast (1345281880897597192) -->
-    <skip />
-    <!-- no translation found for translation_consent_title (2844204601896691006) -->
-    <skip />
-    <!-- no translation found for translation_consent_message (4588089129784705987) -->
-    <skip />
-    <!-- no translation found for translation_consent_positive_button (1610706966371761921) -->
-    <skip />
-    <!-- no translation found for translation_consent_negative_button (9145526759331800269) -->
-    <skip />
-    <!-- no translation found for download_language_title (4970919897003512279) -->
-    <skip />
-    <!-- no translation found for download_language_message (417229699977464547) -->
-    <skip />
-    <!-- no translation found for download_language_positive_button (3455605256671856458) -->
-    <skip />
-    <!-- no translation found for download_language_negative_button (1441855301756712618) -->
-    <skip />
+    <string name="button_translate" msgid="905455737012993000">"অনুবাদ কৰক"</string>
+    <string name="translation_failed_toast" msgid="1345281880897597192">"অনুবাদ কৰিব নোৱাৰি"</string>
+    <string name="translation_consent_title" msgid="2844204601896691006">"অনুবাদ অন কৰিব নেকি?"</string>
+    <string name="translation_consent_message" msgid="4588089129784705987">"অনুবাদসমূহ স্বয়ংক্ৰিয় আৰু তাত ভুল থাকিব পাৰে"</string>
+    <string name="translation_consent_positive_button" msgid="1610706966371761921">"অন কৰক"</string>
+    <string name="translation_consent_negative_button" msgid="9145526759331800269">"নালাগে, ধন্যবাদ"</string>
+    <string name="download_language_title" msgid="4970919897003512279">"ডাউনল’ড কৰাৰ প্ৰয়োজন"</string>
+    <string name="download_language_message" msgid="417229699977464547">"ইণ্টাৰনেট সংযোগৰ অবিহনে বাৰ্তা অনুবাদ কৰিবলৈ, আপুনি ছেটিঙত এটা অতিৰিক্ত ভাষাৰ পেকেজ ডাউনল’ড কৰিব লাগিব"</string>
+    <string name="download_language_positive_button" msgid="3455605256671856458">"ছেটিং"</string>
+    <string name="download_language_negative_button" msgid="1441855301756712618">"এতিয়া নহয়"</string>
 </resources>

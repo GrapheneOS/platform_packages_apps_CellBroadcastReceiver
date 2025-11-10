@@ -175,24 +175,14 @@
     <string name="top_intro_roaming_text" msgid="5250650823028195358">"Gdy korzystasz z roamingu lub nie masz aktywnej karty SIM, możesz otrzymywać alerty nieuwzględnione w tych ustawieniach"</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Ustawienia uległy zmianie"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Ustawienia alertów o zagrożeniu zostały zresetowane z powodu zmiany karty SIM"</string>
-    <!-- no translation found for button_translate (905455737012993000) -->
-    <skip />
-    <!-- no translation found for translation_failed_toast (1345281880897597192) -->
-    <skip />
-    <!-- no translation found for translation_consent_title (2844204601896691006) -->
-    <skip />
-    <!-- no translation found for translation_consent_message (4588089129784705987) -->
-    <skip />
-    <!-- no translation found for translation_consent_positive_button (1610706966371761921) -->
-    <skip />
-    <!-- no translation found for translation_consent_negative_button (9145526759331800269) -->
-    <skip />
-    <!-- no translation found for download_language_title (4970919897003512279) -->
-    <skip />
-    <!-- no translation found for download_language_message (417229699977464547) -->
-    <skip />
-    <!-- no translation found for download_language_positive_button (3455605256671856458) -->
-    <skip />
-    <!-- no translation found for download_language_negative_button (1441855301756712618) -->
-    <skip />
+    <string name="button_translate" msgid="905455737012993000">"Tłumacz"</string>
+    <string name="translation_failed_toast" msgid="1345281880897597192">"Nie można przetłumaczyć"</string>
+    <string name="translation_consent_title" msgid="2844204601896691006">"Włączyć tłumaczenia?"</string>
+    <string name="translation_consent_message" msgid="4588089129784705987">"Tłumaczenia są automatyczne i mogą zawierać błędy"</string>
+    <string name="translation_consent_positive_button" msgid="1610706966371761921">"Włącz"</string>
+    <string name="translation_consent_negative_button" msgid="9145526759331800269">"Nie, dziękuję"</string>
+    <string name="download_language_title" msgid="4970919897003512279">"Wymagane pobranie"</string>
+    <string name="download_language_message" msgid="417229699977464547">"Aby móc tłumaczyć wiadomości bez połączenia z internetem, musisz pobrać dodatkowy pakiet językowy w Ustawieniach"</string>
+    <string name="download_language_positive_button" msgid="3455605256671856458">"Ustawienia"</string>
+    <string name="download_language_negative_button" msgid="1441855301756712618">"Nie teraz"</string>
 </resources>
