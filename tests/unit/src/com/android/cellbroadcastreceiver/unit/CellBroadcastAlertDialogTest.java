@@ -79,6 +79,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastReceiverApp;
 import com.android.cellbroadcastreceiver.CellBroadcastSettings;
 import com.android.cellbroadcastreceiver.CellBroadcastTranslateManager;
 import com.android.cellbroadcastreceiver.R;
+import com.android.cellbroadcastreceiver.flags.Flags;
 import com.android.internal.telephony.CellBroadcastUtils;
 import com.android.internal.telephony.gsm.SmsCbConstants;
 import com.android.modules.utils.build.SdkLevel;
@@ -95,7 +96,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
-
 
 public class CellBroadcastAlertDialogTest extends
         CellBroadcastActivityTestCase<CellBroadcastAlertDialog> {
@@ -758,10 +758,10 @@ public class CellBroadcastAlertDialogTest extends
         assertFalse("Dialog should not be dismissed after pressing back key", isGone);
     }
 
-    private CellBroadcastAlertDialog startActivityForTranslate(Intent intent) {
+    private CellBroadcastAlertDialog startActivitySetMock(Intent intent) {
         Looper.prepare();
         startActivity(intent, null, null);
-        waitForMs(100);
+        getInstrumentation().waitForIdleSync();
         CellBroadcastAlertDialog activity = getActivity();
         assertNotNull("Activity should not be null", activity);
         activity.setTranslateManagerForTest(mMockCBTranslateManager);
@@ -826,7 +826,7 @@ public class CellBroadcastAlertDialogTest extends
         CellBroadcastAlertDialog.sDisableDialogsForTest = disableDialogs;
 
         Intent intent = createIntentWithMessage(message);
-        CellBroadcastAlertDialog dialog = startActivityForTranslate(intent);
+        CellBroadcastAlertDialog dialog = startActivitySetMock(intent);
         waitForMs(100);
 
         return new TranslationTestSetupResult(dialog, mockSharedPreferences);
@@ -910,8 +910,14 @@ public class CellBroadcastAlertDialogTest extends
         TranslationTestSetupResult result = setupActivityForTranslationTest(message,
                 true, true, true);
         CellBroadcastAlertDialog activity = result.dialog;
-        getInstrumentation().runOnMainSync(() -> activity.initTranslate(message));
-        verify(mMockCBButtonManager, times(1)).configureButtons(eq(false));
+        activity.setButtonManagerForTest(mMockCBButtonManager);
+
+        getInstrumentation().runOnMainSync(() -> {
+            activity.initTranslate(message);
+            activity.updateButtons(message);
+        });
+
+        verify(mMockCBButtonManager).configureButtons(eq(false), anyBoolean());
     }
 
     /**
@@ -1011,6 +1017,21 @@ public class CellBroadcastAlertDialogTest extends
         doReturn(null).when(mMockCBTranslateManager).getSettingsIntent();
     }
 
+    /**
+     * Helper method to access the private mShouldOfferTranslation field via reflection.
+     */
+    private boolean getShouldOfferTranslation(CellBroadcastAlertDialog activity) {
+        try {
+            java.lang.reflect.Field field = CellBroadcastAlertDialog.class.getDeclaredField(
+                    "mShouldOfferTranslation");
+            field.setAccessible(true);
+            return field.getBoolean(activity);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            fail("Reflection error accessing mShouldOfferTranslation: " + e.getMessage());
+            return true;
+        }
+    }
+
     public void testOfferTranslationSettingsIntentIsNullHidesButton() {
         String systemLang = Locale.getDefault().getLanguage();
         SmsCbMessage message = createMessage("Test Message", getDifferentLanguage(systemLang));
@@ -1021,7 +1042,7 @@ public class CellBroadcastAlertDialogTest extends
 
         getInstrumentation().runOnMainSync(() -> activity.initTranslate(message));
 
-        verify(mMockCBButtonManager, atLeastOnce()).configureButtons(eq(false));
+        assertFalse(getShouldOfferTranslation(activity));
     }
 
     public void testInitTranslateSettingsIntentIsNullHidesButton() {
@@ -1034,7 +1055,7 @@ public class CellBroadcastAlertDialogTest extends
 
         getInstrumentation().runOnMainSync(() -> activity.initTranslate(message));
 
-        verify(mMockCBButtonManager, atLeastOnce()).configureButtons(eq(false));
+        assertFalse(getShouldOfferTranslation(activity));
     }
 
     public void testHandleDownloadLanguagePositiveClickHandlesActivityNotFoundMockOnly()
@@ -1059,7 +1080,8 @@ public class CellBroadcastAlertDialogTest extends
         verify(spyActivity, times(1)).startIntentSenderForResult(
                 any(), anyInt(), any(), anyInt(), anyInt(), anyInt(), any());
 
-        verify(mMockCBButtonManager, atLeastOnce()).configureButtons(eq(false));
+        assertFalse(getShouldOfferTranslation(spyActivity));
+        verify(mMockCBButtonManager).configureButtons(eq(false), anyBoolean());
     }
 
     public void testShowDownloadLanguageDialogSettingsIntentIsNullShowsToastAndHidesButton() {
@@ -1085,7 +1107,8 @@ public class CellBroadcastAlertDialogTest extends
             fail("Could not find showDownloadLanguageDialog method: " + e.getMessage());
         }
 
-        verify(mMockCBButtonManager, atLeastOnce()).configureButtons(eq(false));
+        assertFalse(getShouldOfferTranslation(activity));
+        verify(mMockCBButtonManager).configureButtons(eq(false), anyBoolean());
     }
 
     // Helper method to create a real SmsCbMessage instance
@@ -1162,6 +1185,18 @@ public class CellBroadcastAlertDialogTest extends
         stopActivity();
     }
 
+    public void testIsMapFlagEnabledWhenTestFlagNull() throws Throwable {
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = null;
+        SmsCbMessage message = createSmsCbMessage(true);
+        Intent intent = createIntentWithMessage(message);
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        if (Flags.enableCellbroadcastMapViewer()) {
+            assertTrue(activity.isMapFlagEnabled());
+        } else {
+            assertFalse(activity.isMapFlagEnabled());
+        }
+    }
+
     public void testIsMapFeatureEnabledAllConditionsMetReturnsTrue() throws Throwable {
         CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
         setMapConfigEnabled(true);
@@ -1192,5 +1227,134 @@ public class CellBroadcastAlertDialogTest extends
         CellBroadcastAlertDialog activity = startActivity();
         assertFalse(activity.isMapFeatureEnabled(mSmsCbMessageWithoutGeo));
         stopActivity();
+    }
+
+    /**
+     * Helper method to set the private mShouldOfferTranslation field via reflection.
+     */
+    private void setShouldOfferTranslation(CellBroadcastAlertDialog activity, boolean value) {
+        try {
+            java.lang.reflect.Field field = CellBroadcastAlertDialog.class.getDeclaredField(
+                    "mShouldOfferTranslation");
+            field.setAccessible(true);
+            field.setBoolean(activity, value);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            fail("Reflection error accessing mShouldOfferTranslation: " + e.getMessage());
+        }
+    }
+
+    public void testUpdateButtonsTranslateTrueMapTrue() throws Throwable {
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        SmsCbMessage message = createSmsCbMessage(true);
+
+        Intent intent = createIntentWithMessage(message);
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        activity.setButtonManagerForTest(mMockCBButtonManager);
+        setShouldOfferTranslation(activity, true);
+
+        getInstrumentation().runOnMainSync(() -> activity.updateButtons(message));
+        getInstrumentation().waitForIdleSync();
+
+        verify(mMockCBButtonManager).configureButtons(eq(true), eq(true));
+    }
+
+    public void testUpdateButtonsTranslateTrueMapFalse() throws Throwable {
+        setMapConfigEnabled(false);
+        SmsCbMessage message = createSmsCbMessage(true);
+
+        Intent intent = createIntentWithMessage(message);
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        activity.setButtonManagerForTest(mMockCBButtonManager);
+        setShouldOfferTranslation(activity, true);
+
+        getInstrumentation().runOnMainSync(() -> activity.updateButtons(message));
+        getInstrumentation().waitForIdleSync();
+
+        verify(mMockCBButtonManager).configureButtons(eq(true), eq(false));
+    }
+
+    public void testUpdateButtonsTranslateFalseMapTrue() throws Throwable {
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        SmsCbMessage message = createSmsCbMessage(true);
+
+        Intent intent = createIntentWithMessage(message);
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        activity.setButtonManagerForTest(mMockCBButtonManager);
+        setShouldOfferTranslation(activity, false);
+
+        getInstrumentation().runOnMainSync(() -> activity.updateButtons(message));
+        getInstrumentation().waitForIdleSync();
+
+        verify(mMockCBButtonManager).configureButtons(eq(false), eq(true));
+    }
+
+    public void testUpdateButtonsTranslateFalseMapFalse() throws Throwable {
+        setMapConfigEnabled(false);
+        SmsCbMessage message = createSmsCbMessage(true);
+
+        Intent intent = createIntentWithMessage(message);
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        activity.setButtonManagerForTest(mMockCBButtonManager);
+        setShouldOfferTranslation(activity, false);
+
+        getInstrumentation().runOnMainSync(() -> activity.updateButtons(message));
+        getInstrumentation().waitForIdleSync();
+
+        verify(mMockCBButtonManager).configureButtons(eq(false), eq(false));
+    }
+
+    public void testMapButtonVisibilityConfigDisabled() throws Throwable {
+        setMapConfigEnabled(false);
+        CellBroadcastAlertDialog.sDisableDialogsForTest = false;
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        SmsCbMessage message = createSmsCbMessage(true);
+        Intent intent = createIntentWithMessage(message);
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        getInstrumentation().runOnMainSync(() -> activity.onResume());
+        getInstrumentation().waitForIdleSync();
+
+        verify(mMockCBButtonManager, times(1)).configureButtons(anyBoolean(),
+                eq(false));
+    }
+
+    public void testMapButtonVisibilityFeatureFlagDisabled() throws Throwable {
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = false;
+        SmsCbMessage message = createSmsCbMessage(true);
+        Intent intent = createIntentWithMessage(message);
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        getInstrumentation().runOnMainSync(() -> activity.onResume());
+        getInstrumentation().waitForIdleSync();
+
+        verify(mMockCBButtonManager, times(1)).configureButtons(anyBoolean(),
+                eq(false));
+    }
+
+    public void testMapButtonVisibilityNoGeoInfo() throws Throwable {
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        SmsCbMessage message = createSmsCbMessage(false);
+        Intent intent = createIntentWithMessage(message);
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        getInstrumentation().runOnMainSync(() -> activity.onResume());
+        getInstrumentation().waitForIdleSync();
+
+        verify(mMockCBButtonManager, times(1)).configureButtons(anyBoolean(),
+                eq(false));
+    }
+
+    public void testMapButtonVisibilityWithGeoInfo() throws Throwable {
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        SmsCbMessage message = createSmsCbMessage(true);
+        Intent intent = createIntentWithMessage(message);
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        getInstrumentation().runOnMainSync(() -> activity.onResume());
+        getInstrumentation().waitForIdleSync();
+
+        verify(mMockCBButtonManager, times(1)).configureButtons(anyBoolean(),
+                eq(true));
     }
 }

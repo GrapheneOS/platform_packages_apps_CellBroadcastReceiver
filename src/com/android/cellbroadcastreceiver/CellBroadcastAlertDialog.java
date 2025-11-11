@@ -51,6 +51,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
 import android.provider.Telephony;
+import android.telephony.CbGeoUtils.Geometry;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbMessage;
 import android.text.Spannable;
@@ -91,6 +92,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -101,6 +103,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class CellBroadcastAlertDialog extends Activity implements
         CellBroadcastAlertButtonManager.OnTranslateButtonClickListener ,
+        CellBroadcastAlertButtonManager.OnMapButtonClickListener,
         CellBroadcastTranslateManager.TranslateManagerCallback {
 
     private static final String TAG = "CellBroadcastAlertDialog";
@@ -211,6 +214,7 @@ public class CellBroadcastAlertDialog extends Activity implements
     private TextView mMessageView;
     @VisibleForTesting
     public static Boolean sIsMapFeatureEnabledForTest = null;
+    private boolean mShouldOfferTranslation = false;
 
     /** BroadcastReceiver for screen off events. When screen was off, remove FLAG_TURN_SCREEN_ON to
      * start from a clean state. Otherwise, the window flags from the first alert will be
@@ -563,8 +567,10 @@ public class CellBroadcastAlertDialog extends Activity implements
         LayoutInflater inflater = LayoutInflater.from(this);
         setContentView(inflater.inflate(R.layout.cell_broadcast_alert, null));
         TextView textView = findViewById(R.id.message);
+        if (isTranslateFeatureEnabled() || isMapConfigEnabled()) {
+            mButtonManager = new CellBroadcastAlertButtonManager(this, this, this);
+        }
         if (isTranslateFeatureEnabled()) {
-            mButtonManager = new CellBroadcastAlertButtonManager(this, this);
             mTranslateManager = new CellBroadcastTranslateManager(this, getMainExecutor(), this);
         }
 
@@ -629,6 +635,7 @@ public class CellBroadcastAlertDialog extends Activity implements
             }
             startPulsatingAsNeeded(channelManager
                     .getCellBroadcastChannelRangeFromMessage(message));
+            updateButtons(message);
         }
     }
 
@@ -661,6 +668,7 @@ public class CellBroadcastAlertDialog extends Activity implements
                 mAnimationHandler.startIconAnimation(subId);
             }
             initTranslate(message);
+            updateButtons(message);
         }
         // Some LATAM carriers mandate to disable navigation bars, quick settings etc when alert
         // dialog is showing. This is to make sure users to ack the alert before switching to
@@ -858,7 +866,7 @@ public class CellBroadcastAlertDialog extends Activity implements
         if (getTranslateManager() != null && getTranslateManager().getSettingsIntent() == null) {
             shouldOffer = false;
         }
-        updateButtons(shouldOffer);
+        mShouldOfferTranslation = shouldOffer;
 
         if (shouldOffer) {
             Log.d(TAG, "Offering translation from '" + sourceLocale.toLanguageTag()
@@ -922,7 +930,8 @@ public class CellBroadcastAlertDialog extends Activity implements
         } catch (IntentSender.SendIntentException | android.content.ActivityNotFoundException e) {
             Log.e(TAG, "Failed to launch translation settings.", e);
             showTranslateFailedToast();
-            updateButtons(false);
+            mShouldOfferTranslation = false;
+            updateButtons(getLatestMessage());
         }
     }
 
@@ -943,19 +952,23 @@ public class CellBroadcastAlertDialog extends Activity implements
         } else {
             Log.e(TAG, "Cannot get translation settings activity intent.");
             showTranslateFailedToast();
-            updateButtons(false);
+            mShouldOfferTranslation = false;
+            updateButtons(getLatestMessage());
         }
     }
 
     /**
-     * Updates the visibility and layout of the action buttons (Translate, Dismiss) based on
+     * Updates the visibility and layout of the action buttons (Map, Translate, Dismiss) based on
      * the current message content and feature enablement.
      */
-    private void updateButtons(boolean showTranslate) {
+    @VisibleForTesting
+    public void updateButtons(SmsCbMessage message) {
         if (getButtonManager() == null) return;
 
-        getButtonManager().configureButtons(showTranslate);
-        Log.d(TAG, "updateButtons: showTranslate=" + showTranslate);
+        boolean showTranslate = mShouldOfferTranslation;
+        boolean showMap = isMapFeatureEnabled(message);
+        getButtonManager().configureButtons(showTranslate, showMap);
+        Log.d(TAG, "updateButtons: showTranslate=" + showTranslate + ",showMap=" + showMap);
     }
 
     private boolean isTranslateFeatureEnabled() {
@@ -987,6 +1000,27 @@ public class CellBroadcastAlertDialog extends Activity implements
         boolean isWatch = getPackageManager().hasSystemFeature(PackageManager.FEATURE_WATCH);
         Log.d(TAG, "isWatch:" + isWatch);
         return isWatch;
+    }
+
+    /**
+     * Handles the click event for the "Map" button.
+     * Extracts geometry information from the latest message and prepares it for launching the map
+     * activity.
+     */
+    @Override
+    public void onMapClick() {
+        SmsCbMessage message = getLatestMessage();
+        List<Geometry> geometries = (message != null) ? message.getGeometries() : null;
+
+        if (geometries != null && !geometries.isEmpty()) {
+            String geoString = CbGeoUtils.encodeGeometriesToString(geometries);
+            if (!TextUtils.isEmpty(geoString)) {
+                // TODO: Launch the new map activity in GMS Core.
+                Log.d(TAG, "onMapClick: start map activity");
+            }
+        } else {
+            Log.e(TAG, "onMapClick: no geometry data found in message");
+        }
     }
 
     /**
@@ -1287,7 +1321,7 @@ public class CellBroadcastAlertDialog extends Activity implements
     @VisibleForTesting
     public void initTranslate(SmsCbMessage message) {
         if (!isTranslateFeatureEnabled() || getTranslateManager() == null) {
-            updateButtons(false);
+            mShouldOfferTranslation = false;
             return;
         }
 
@@ -1302,7 +1336,7 @@ public class CellBroadcastAlertDialog extends Activity implements
                 + isTranslateFeatureEnabled() + ", isTranslationManagerAvailable="
                 + isTranslationManagerAvailable + ", canGetSettingsIntent=" + canGetSettingsIntent);
         if (!canTranslate) {
-            updateButtons(false);
+            mShouldOfferTranslation = false;
             Log.d(TAG, "initTranslate: Translation prerequisites not met. Hiding button.");
             return;
         }
@@ -1459,6 +1493,7 @@ public class CellBroadcastAlertDialog extends Activity implements
             hideOptOutDialog(); // Hide opt-out dialog when new alert coming
             setFinishAlertOnTouchOutside();
             updateAlertText(getLatestMessage());
+            updateButtons(getLatestMessage());
             // If the new intent was sent from a notification, dismiss it.
             clearNotification(intent);
         } else {
