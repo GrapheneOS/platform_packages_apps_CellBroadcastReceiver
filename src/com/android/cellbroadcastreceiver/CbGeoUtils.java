@@ -24,6 +24,7 @@ import android.telephony.CbGeoUtils.Polygon;
 import android.text.TextUtils;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -95,5 +96,50 @@ public class CbGeoUtils {
             return null;
         }
         return sb.toString();
+    }
+
+    /**
+     * Parse the geometries from the encoded string {@code str}. The string must follow the
+     * geometry encoding specified by {@link android.provider.Telephony.CellBroadcasts#GEOMETRIES}.
+     *
+     * @param str the encoded string containing one or more geometric definitions.
+     * @return the list of geometry objects parsed from the string.
+     */
+    @NonNull
+    public static List<Geometry> parseGeometriesFromString(@NonNull String str) {
+        List<Geometry> geometries = new ArrayList<>();
+        for (String geometryStr : str.split("\\s*;\\s*")) {
+            String[] geoParameters = geometryStr.split("\\s*\\|\\s*");
+            switch (geoParameters[0]) {
+                case CIRCLE_SYMBOL:
+                    geometries.add(new Circle(parseLatLngFromString(geoParameters[1]),
+                            Double.parseDouble(geoParameters[2])));
+                    break;
+                case POLYGON_SYMBOL:
+                    List<LatLng> vertices = new ArrayList<>(geoParameters.length - 1);
+                    for (int i = 1; i < geoParameters.length; i++) {
+                        vertices.add(parseLatLngFromString(geoParameters[i]));
+                    }
+                    geometries.add(new Polygon(vertices));
+                    break;
+                default:
+                    final String errorMessage = "Invalid geometry format " + geometryStr;
+                    Log.e(TAG, errorMessage);
+            }
+        }
+        return geometries;
+    }
+
+    /**
+     * Parse {@link LatLng} from {@link String}. Latitude and longitude are separated by ",".
+     * Example: "13.56,-55.447".
+     *
+     * @param str encoded lat/lng string.
+     * @return {@link LatLng} object.
+     */
+    @NonNull
+    private static LatLng parseLatLngFromString(@NonNull String str) {
+        String[] latLng = str.split("\\s*,\\s*");
+        return new LatLng(Double.parseDouble(latLng[0]), Double.parseDouble(latLng[1]));
     }
 }
