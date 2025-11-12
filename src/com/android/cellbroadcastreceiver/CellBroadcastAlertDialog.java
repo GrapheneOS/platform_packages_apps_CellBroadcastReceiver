@@ -1015,8 +1015,8 @@ public class CellBroadcastAlertDialog extends Activity implements
         if (geometries != null && !geometries.isEmpty()) {
             String geoString = CbGeoUtils.encodeGeometriesToString(geometries);
             if (!TextUtils.isEmpty(geoString)) {
-                // TODO: Launch the new map activity in GMS Core.
-                Log.d(TAG, "onMapClick: start map activity");
+                CellBroadcastMapLauncher.launchMap(this, message);
+                Log.d(TAG, "onMapClick: launchMap");
             }
         } else {
             Log.e(TAG, "onMapClick: no geometry data found in message");

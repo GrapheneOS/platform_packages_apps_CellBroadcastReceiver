@@ -1357,4 +1357,65 @@ public class CellBroadcastAlertDialogTest extends
         verify(mMockCBButtonManager, times(1)).configureButtons(anyBoolean(),
                 eq(true));
     }
+
+    public void testOnMapClickWithGeometries() throws Throwable {
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        mMessageList = new ArrayList<>();
+        mMessageList.add(createSmsCbMessage(true));
+        Intent intent = createActivityIntent();
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        assertNotNull("Activity should not be null after startActivitySetMock", activity);
+
+        getInstrumentation().runOnMainSync(() -> {
+            activity.onMapClick();
+        });
+        getInstrumentation().waitForIdleSync();
+
+        if (activity != null && !activity.isFinishing()) {
+            activity.finish();
+            getInstrumentation().waitForIdleSync();
+        }
+    }
+
+    public void testOnMapClickWithoutGeometries() throws Throwable {
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        mMessageList = new ArrayList<>();
+        mMessageList.add(createSmsCbMessage(false));
+        Intent intent = createActivityIntent();
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        assertNotNull("Activity should not be null after startActivitySetMock", activity);
+
+        getInstrumentation().runOnMainSync(() -> {
+            activity.onMapClick();
+        });
+        getInstrumentation().waitForIdleSync();
+
+        if (activity != null && !activity.isFinishing()) {
+            activity.finish();
+            getInstrumentation().waitForIdleSync();
+        }
+    }
+
+    public void testOnMapClickNullMessage() throws Throwable {
+        setMapConfigEnabled(true);
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+        mMessageList = new ArrayList<>();
+        Intent intent = createActivityIntent();
+        intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
+                new ArrayList<SmsCbMessage>());
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+        assertNotNull("Activity should not be null after startActivitySetMock", activity);
+
+        getInstrumentation().runOnMainSync(() -> {
+            activity.onMapClick();
+        });
+        getInstrumentation().waitForIdleSync();
+
+        if (activity != null && !activity.isFinishing()) {
+            activity.finish();
+            getInstrumentation().waitForIdleSync();
+        }
+    }
 }
