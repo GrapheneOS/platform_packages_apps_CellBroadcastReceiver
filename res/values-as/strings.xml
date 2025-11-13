@@ -176,8 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"আপোনাৰ ছেটিং সলনি কৰা হৈছে"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"আপোনাৰ ছিমখন সলনি কৰা হৈছে বাবে অনাতাঁৰ জৰুৰীকালীন সতৰ্কবাৰ্তাৰ ছেটিং সলনি কৰা হৈছে"</string>
     <string name="button_translate" msgid="905455737012993000">"অনুবাদ কৰক"</string>
-    <!-- no translation found for translation_failed_toast (2716408960127862588) -->
-    <skip />
+    <string name="translation_failed_toast" msgid="2716408960127862588">"অনুবাদ উপলব্ধ নহয়"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"অনুবাদ অন কৰিব নেকি?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"অনুবাদসমূহ স্বয়ংক্ৰিয় আৰু তাত ভুল থাকিব পাৰে"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"অন কৰক"</string>

@@ -176,8 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Postavke su promijenjene"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Postavke hitnih upozorenja putem bežične mreže su vraćene na zadano jer je SIM promijenjen"</string>
     <string name="button_translate" msgid="905455737012993000">"Prevedi"</string>
-    <!-- no translation found for translation_failed_toast (2716408960127862588) -->
-    <skip />
+    <string name="translation_failed_toast" msgid="2716408960127862588">"Prevod nije dostupan"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"Uključiti prevode?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"Prevodi su automatizirani i mogu sadržavati greške"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"Uključi"</string>
