@@ -22,6 +22,8 @@
     <!-- Test Apk is signed with platform key in order to use this permission. -->
     <uses-permission android:name="android.permission.BROADCAST_SMS"/>
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!-- We add an application tag here just so that we can indicate that
          this package needs to link against the android.test library,
@@ -30,8 +32,8 @@
         <uses-library android:name="android.test.runner" />
 
         <!-- Also include an activity for sending test messages. -->
-        <activity android:name="SendTestBroadcastActivity"
-                  android:label="@string/app_label"
+        <activity android:name=".MainActivity"
+                  android:label="@string/main_app_label"
                   android:configChanges="orientation|keyboardHidden"
                   android:exported="true"
                   android:launchMode="singleTop">
@@ -41,6 +43,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name="SendTestBroadcastActivity"
+                  android:label="@string/app_label"
+                  android:configChanges="orientation|keyboardHidden"
+                  android:exported="true"/>
+        <activity android:name=".TranslationMapTestActivity"
+                  android:label="@string/translation_and_map_test_label"
+                  android:configChanges="orientation|keyboardHidden"
+                  android:exported="true"/>
     </application>
 
     <!--
