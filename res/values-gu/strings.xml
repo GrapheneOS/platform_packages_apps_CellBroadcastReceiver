@@ -176,8 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"તમારા સેટિંગ બદલાઈ ગયા છે"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"તમારું સિમ કાર્ડ બદલાયું હોવાથી વાયરલેસ ઇમર્જન્સી અલર્ટના સેટિંગ રીસેટ કરવામાં આવ્યા છે"</string>
     <string name="button_translate" msgid="905455737012993000">"અનુવાદ કરો"</string>
-    <!-- no translation found for translation_failed_toast (2716408960127862588) -->
-    <skip />
+    <string name="translation_failed_toast" msgid="2716408960127862588">"અનુવાદ અનુપલબ્ધ છે"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"અનુવાદો ચાલુ કરીએ?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"અનુવાદો ઑટોમૅટિક રીતે થાય છે અને તેમાં ભૂલો હોઈ શકે છે"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"ચાલુ કરો"</string>

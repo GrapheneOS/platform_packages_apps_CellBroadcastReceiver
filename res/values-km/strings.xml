@@ -176,8 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"បានប្ដូរការ​កំណត់របស់អ្នក"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"ការ​កំណត់ការប្រកាសអាសន្នតាមប្រព័ន្ធឥតខ្សែត្រូវបានកំណត់​ឡើងវិញ ដោយសារអ្នកបានប្ដូរស៊ីម"</string>
     <string name="button_translate" msgid="905455737012993000">"បកប្រែ"</string>
-    <!-- no translation found for translation_failed_toast (2716408960127862588) -->
-    <skip />
+    <string name="translation_failed_toast" msgid="2716408960127862588">"មិនអាចបកប្រែបានទេ"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"បើកការបកប្រែឬ?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"ការបកប្រែត្រូវបានធ្វើស្វ័យប្រវត្តិកម្ម និងអាចមានកំហុស"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"បើក"</string>

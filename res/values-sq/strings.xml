@@ -176,8 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Cilësimet e tua u ndryshuan"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Cilësimet e sinjalizimeve wireless të urgjencës u rivendosën sepse karta jote SIM u ndryshua"</string>
     <string name="button_translate" msgid="905455737012993000">"Përkthe"</string>
-    <!-- no translation found for translation_failed_toast (2716408960127862588) -->
-    <skip />
+    <string name="translation_failed_toast" msgid="2716408960127862588">"Përkthimi nuk ofrohet"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"Të aktivizohen përkthimet?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"Përkthimet janë të automatizuara dhe mund të përfshijnë gabime"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"Aktivizo"</string>
