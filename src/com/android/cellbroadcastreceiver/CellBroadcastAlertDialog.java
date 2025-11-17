@@ -853,7 +853,10 @@ public class CellBroadcastAlertDialog extends Activity implements
                 targetLocale.getLanguage());
 
         // Configure the visibility of the translation button.
-        getButtonManager().configureButtons(shouldOffer);
+        if (getTranslateManager() != null && getTranslateManager().getSettingsIntent() == null) {
+            shouldOffer = false;
+        }
+        updateButtons(shouldOffer);
 
         if (shouldOffer) {
             Log.d(TAG, "Offering translation from '" + sourceLocale.toLanguageTag()
@@ -894,11 +897,30 @@ public class CellBroadcastAlertDialog extends Activity implements
                 getButtonManager().onTranslationCompleted();
             }
         } else {
-            Log.w(TAG,
-                    "onTranslationCompleted: Translation failed or result is empty. Displaying "
-                            + "original text.");
-            Toast.makeText(getApplicationContext(),
-                    R.string.translation_failed_toast, Toast.LENGTH_SHORT).show();
+            Log.w(TAG, "onTranslationCompleted: Translation failed or result is empty.");
+            showTranslateFailedToast();
+        }
+    }
+
+    private void showTranslateFailedToast() {
+        Toast.makeText(getApplicationContext(),
+                R.string.translation_failed_toast, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * Executes the logic for the Positive Button in the Download Language Dialog.
+     * This is split out to be directly testable.
+     */
+    @VisibleForTesting
+    public void handleDownloadLanguagePositiveClick(PendingIntent pendingIntent) {
+        try {
+            startIntentSenderForResult(
+                    pendingIntent.getIntentSender(), 0, null, 0, 0, 0,
+                    null);
+        } catch (IntentSender.SendIntentException | android.content.ActivityNotFoundException e) {
+            Log.e(TAG, "Failed to launch translation settings.", e);
+            showTranslateFailedToast();
+            updateButtons(false);
         }
     }
 
@@ -912,19 +934,26 @@ public class CellBroadcastAlertDialog extends Activity implements
                     .setMessage(R.string.download_language_message)
                     .setPositiveButton(R.string.download_language_positive_button,
                             (dialog, which) -> {
-                                try {
-                                    startIntentSenderForResult(
-                                            pendingIntent.getIntentSender(), 0, null, 0, 0, 0,
-                                            null);
-                                } catch (IntentSender.SendIntentException e) {
-                                    Log.e(TAG, "Failed to launch translation settings.", e);
-                                }
+                                handleDownloadLanguagePositiveClick(pendingIntent);
                             })
                     .setNegativeButton(R.string.download_language_negative_button, null)
                     .show();
         } else {
             Log.e(TAG, "Cannot get translation settings activity intent.");
+            showTranslateFailedToast();
+            updateButtons(false);
         }
+    }
+
+    /**
+     * Updates the visibility and layout of the action buttons (Translate, Dismiss) based on
+     * the current message content and feature enablement.
+     */
+    private void updateButtons(boolean showTranslate) {
+        if (getButtonManager() == null) return;
+
+        getButtonManager().configureButtons(showTranslate);
+        Log.d(TAG, "updateButtons: showTranslate=" + showTranslate);
     }
 
     private boolean isTranslateFeatureEnabled() {
@@ -1208,23 +1237,22 @@ public class CellBroadcastAlertDialog extends Activity implements
     @VisibleForTesting
     public void initTranslate(SmsCbMessage message) {
         if (!isTranslateFeatureEnabled() || getTranslateManager() == null) {
-            if (getButtonManager() != null) {
-                getButtonManager().configureButtons(false);
-            }
+            updateButtons(false);
             return;
         }
 
+        boolean isTranslationManagerAvailable =
+                getTranslateManager().isTranslationManagerAvailable();
+        boolean canGetSettingsIntent = getTranslateManager().getSettingsIntent() != null;
         boolean canTranslate = isTranslateFeatureEnabled()
                 && !TextUtils.isEmpty(message.getMessageBody())
-                && getTranslateManager().isTranslationManagerAvailable()
-                && getTranslateManager().getSettingsIntent() != null;
-        Log.d(TAG, "initTranslate: isTranslateFeatureEnabled=" + isTranslateFeatureEnabled()
-                + ", TranslateManager.isTranslationManagerAvailable="
-                + getTranslateManager().isTranslationManagerAvailable()
-                + ", TranslateManager.getSettingsIntent="
-                + getTranslateManager().getSettingsIntent());
-        if (!canTranslate && getButtonManager() != null) {
-            getButtonManager().configureButtons(false);
+                && isTranslationManagerAvailable
+                && canGetSettingsIntent;
+        Log.d(TAG, "initTranslate:canTranslate=" + canTranslate + " isTranslateFeatureEnabled="
+                + isTranslateFeatureEnabled() + ", isTranslationManagerAvailable="
+                + isTranslationManagerAvailable + ", canGetSettingsIntent=" + canGetSettingsIntent);
+        if (!canTranslate) {
+            updateButtons(false);
             Log.d(TAG, "initTranslate: Translation prerequisites not met. Hiding button.");
             return;
         }

@@ -176,7 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"ဆက်တင်များကို ပြောင်းလိုက်ပါပြီ"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"သင့်ဆင်းမ်ကတ် ပြောင်းသွားသဖြင့် ကြိုးမဲ့ အရေးပေါ်သတိပေးချက် ဆက်တင်များကို ပြင်ဆင်သတ်မှတ်ထားသည်"</string>
     <string name="button_translate" msgid="905455737012993000">"ဘာသာပြန်ရန်"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"ဘာသာပြန်၍မရပါ"</string>
+    <string name="translation_failed_toast" msgid="2716408960127862588">"ဘာသာပြန်ဆိုချက်ကို မရနိုင်ပါ"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"ဘာသာပြန်ခြင်း ဖွင့်မလား"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"ဘာသာပြန်ဆိုချက်များကို အလိုအလျောက်ပြုလုပ်ထားပြီး အမှားများ ပါဝင်နိုင်သည်"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"ဖွင့်ရန်"</string>

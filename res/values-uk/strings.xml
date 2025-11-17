@@ -176,7 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Ваші налаштування змінено"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Налаштування бездротових екстрених сповіщень скинуто, оскільки змінилася ваша SIM-карта"</string>
     <string name="button_translate" msgid="905455737012993000">"Перекласти"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"Не вдалося перекласти"</string>
+    <string name="translation_failed_toast" msgid="2716408960127862588">"Переклад недоступний"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"Увімкнути переклади?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"Переклади автоматизовані й можуть містити помилки"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"Увімкнути"</string>

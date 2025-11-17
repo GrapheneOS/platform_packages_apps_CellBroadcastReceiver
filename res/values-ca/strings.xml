@@ -176,7 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"La configuració ha canviat"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"S\'ha restablert la configuració d\'alertes d\'emergència sense fil perquè s\'ha canviat la SIM"</string>
     <string name="button_translate" msgid="905455737012993000">"Tradueix"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"No es pot traduir"</string>
+    <string name="translation_failed_toast" msgid="2716408960127862588">"Traducció no disponible"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"Vols activar les traduccions?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"Les traduccions són automatitzades i poden incloure errors"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"Activa"</string>

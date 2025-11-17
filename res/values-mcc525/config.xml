@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2025 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources>
+    <!-- 4370, 4383 -->
+    <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
+        <item>0x1112:rat=gsm, emergency=true, always_on=true, override_dnd=true</item>
+        <!-- additional language -->
+        <item>0x111F:rat=gsm, emergency=true, always_on=true, override_dnd=true, filter_language=true</item>
+    </string-array>
+    <!-- 4380, 4393 -->
+    <string-array name="required_monthly_test_range_strings" translatable="false">
+        <item>0x111C:rat=gsm, emergency=true</item>
+        <!-- additional language -->
+        <item>0x1129:rat=gsm, emergency=true, filter_language=true</item>
+    </string-array>
+    <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false"></string-array>
+    <string-array name="cmas_alerts_severe_range_strings" translatable="false"></string-array>
+    <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
+    <string-array name="exercise_alert_range_strings" translatable="false"></string-array>
+    <string-array name="operator_defined_alert_range_strings" translatable="false"></string-array>
+    <string-array name="etws_alerts_range_strings" translatable="false"></string-array>
+    <string-array name="etws_test_alerts_range_strings" translatable="false"></string-array>
+
+    <!-- Whether to show extreme alert settings -->
+    <bool name="show_extreme_alert_settings">false</bool>
+    <!-- Whether to show severe alert settings -->
+    <bool name="show_severe_alert_settings">false</bool>
+    <!-- Whether to show amber alert settings -->
+    <bool name="show_amber_alert_settings">false</bool>
+    <!-- Whether to display public safety alert settings, some countries/carriers want to enable it by default and not allow users to disable -->
+    <bool name="show_public_safety_settings">false</bool>
+</resources>

@@ -176,7 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Suas configurações mudaram"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"As configurações de alertas de emergência sem fio foram redefinidas porque seu chip mudou"</string>
     <string name="button_translate" msgid="905455737012993000">"Tradutor"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"Não é possível traduzir"</string>
+    <string name="translation_failed_toast" msgid="2716408960127862588">"Tradução indisponível"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"Ativar as traduções?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"As traduções são automatizadas e podem conter erros"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"Ativar"</string>

@@ -176,7 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"உங்கள் அமைப்புகள் மாற்றப்பட்டன"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"உங்கள் சிம் மாற்றப்பட்டதால் வயர்லெஸ் அவசரகால எச்சரிக்கைகளின் அமைப்புகள் மீட்டமைக்கப்பட்டன"</string>
     <string name="button_translate" msgid="905455737012993000">"மொழிபெயர்"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"மொழிபெயர்க்க முடியவில்லை"</string>
+    <string name="translation_failed_toast" msgid="2716408960127862588">"மொழிபெயர்ப்பு கிடைக்கவில்லை"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"மொழிபெயர்ப்புகளை ஆன் செய்யவா?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"தானாகவே மொழிபெயர்ப்புகள் செய்யப்படுவதால், இவற்றில் பிழைகள் இருக்கக்கூடும்"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"ஆன் செய்"</string>

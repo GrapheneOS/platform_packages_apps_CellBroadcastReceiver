@@ -58,5 +58,19 @@
     <string name="button_gsm_cmas_alert" translatable="false">Send GSM CMAS Alert \n with ServiceCategory, MessageBody</string>
     <string name="message_body_hint" translatable="false">default text will be used</string>
     <string name="language_code_hint" translatable="false">by default, English/en will be used</string>
-    <string name="button_include_random_geo">Include Random Geo Info for GSM CMAS</string>
+    <string name="button_include_random_geo" translatable="false">Include Random Geo Info for GSM CMAS</string>
+    <string name="translation_and_map_test_label" translatable="false">Translation and Map Test</string>
+    <string name="main_app_label" translatable="false">Cell Broadcast Tests</string>
+    <string name="button_open_send_test_broadcast_activity" translatable="false">Open Send Test Broadcast Activity</string>
+    <string name="button_open_translation_map_test_activity" translatable="false">Open Translation and Map Test Activity</string>
+    <string name="label_select_language" translatable="false">Select Language:</string>
+    <string name="button_send_emergency_alerts_in_english" translatable="false">Send Emergency Alerts in English</string>
+    <string name="button_send_emergency_alerts_in_korean" translatable="false">Send Emergency Alerts in Korean</string>
+    <string name="button_send_emergency_alerts_in_chinese" translatable="false">Send Emergency Alerts in Chinese</string>
+    <string name="button_send_emergency_alerts_in_japanese" translatable="false">Send Emergency Alerts in Japanese</string>
+    <string name="label_geolocation_options" translatable="false">Geolocation Options (Select One):</string>
+    <string name="option_no_geolocation" translatable="false">No Geolocation</string>
+    <string name="option_include_geolocation_in_circle" translatable="false">Include Geolocation in Circle</string>
+    <string name="option_include_geolocation_in_polygon" translatable="false">Include Geolocation in Polygon</string>
+    <string name="button_send_test_alert" translatable="false">Send Test Alert</string>
 </resources>

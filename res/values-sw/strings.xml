@@ -176,7 +176,7 @@
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Mipangilio yako imebadilika"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Mipangilio ya tahadhari za dharura kupitia vifaa vya mkononi imewekwa upya kwa sababu umebadilisha SIM yako"</string>
     <string name="button_translate" msgid="905455737012993000">"Tafsiri"</string>
-    <string name="translation_failed_toast" msgid="1345281880897597192">"Imeshindwa kutafsiri"</string>
+    <string name="translation_failed_toast" msgid="2716408960127862588">"Tafsiri haipatikani"</string>
     <string name="translation_consent_title" msgid="2844204601896691006">"Ungependa kuwasha kipengele cha kutafsiri?"</string>
     <string name="translation_consent_message" msgid="4588089129784705987">"Tafsiri hufanywa kiotomatiki na huenda zikawa na makosa"</string>
     <string name="translation_consent_positive_button" msgid="1610706966371761921">"Washa"</string>

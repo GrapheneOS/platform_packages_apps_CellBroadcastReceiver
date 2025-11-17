@@ -1669,5 +1669,19 @@
       "default_value": "false",
       "toggle_avail": "true"
     }
+  },
+  "Singapore": {
+    "Test alerts": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
   }
 }

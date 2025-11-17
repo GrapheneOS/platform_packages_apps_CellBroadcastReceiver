@@ -5006,5 +5006,27 @@
       "toggle_avail": "true",
       "filter_language": "language_setting"
     }
+  },
+  "Singapore": {
+    "4370": {
+      "title": "SG Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "SG Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4380": {
+      "title": "Test Alert",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4393": {
+      "title": "Test Alert",
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
   }
 }

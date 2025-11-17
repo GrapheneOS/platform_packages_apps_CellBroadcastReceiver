@@ -23,8 +23,10 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -33,6 +35,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -983,5 +986,95 @@ public class CellBroadcastAlertDialogTest extends
 
         assertTrue("URLSpan should exist after translation", spans.length > 0);
         assertEquals("The URL in the span should be correct", url, spans[0].getURL());
+    }
+
+    private PendingIntent mockSettingsIntentFound() {
+        Intent dummyIntent = new Intent();
+        PendingIntent realPendingIntent = PendingIntent.getActivity(
+                getInstrumentation().getTargetContext(), 0, dummyIntent,
+                PendingIntent.FLAG_IMMUTABLE);
+        doReturn(realPendingIntent).when(mMockCBTranslateManager).getSettingsIntent();
+        return realPendingIntent;
+    }
+
+    private void mockSettingsIntentNotFound() {
+        doReturn(null).when(mMockCBTranslateManager).getSettingsIntent();
+    }
+
+    public void testOfferTranslationSettingsIntentIsNullHidesButton() {
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage("Test Message", getDifferentLanguage(systemLang));
+        TranslationTestSetupResult result = setupActivityForTranslationTest(message,
+                true, true, true);
+        CellBroadcastAlertDialog activity = result.dialog;
+        mockSettingsIntentNotFound();
+
+        getInstrumentation().runOnMainSync(() -> activity.initTranslate(message));
+
+        verify(mMockCBButtonManager, atLeastOnce()).configureButtons(eq(false));
+    }
+
+    public void testInitTranslateSettingsIntentIsNullHidesButton() {
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage("Test Message", getDifferentLanguage(systemLang));
+        TranslationTestSetupResult result = setupActivityForTranslationTest(message,
+                true, true, true);
+        CellBroadcastAlertDialog activity = result.dialog;
+        mockSettingsIntentNotFound();
+
+        getInstrumentation().runOnMainSync(() -> activity.initTranslate(message));
+
+        verify(mMockCBButtonManager, atLeastOnce()).configureButtons(eq(false));
+    }
+
+    public void testHandleDownloadLanguagePositiveClickHandlesActivityNotFoundMockOnly()
+            throws IntentSender.SendIntentException {
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage("Test Message", getDifferentLanguage(systemLang));
+        TranslationTestSetupResult setup = setupActivityForTranslationTest(message, true, false,
+                false);
+        CellBroadcastAlertDialog activity = setup.dialog;
+        CellBroadcastAlertDialog spyActivity = spy(activity);
+        PendingIntent realPendingIntent = mockSettingsIntentFound();
+        doThrow(new android.content.ActivityNotFoundException())
+                .when(spyActivity).startIntentSenderForResult(
+                        eq(realPendingIntent.getIntentSender()), anyInt(), any(), anyInt(),
+                        anyInt(),
+                        anyInt(), any());
+
+        getInstrumentation().runOnMainSync(() -> {
+            spyActivity.handleDownloadLanguagePositiveClick(realPendingIntent);
+        });
+
+        verify(spyActivity, times(1)).startIntentSenderForResult(
+                any(), anyInt(), any(), anyInt(), anyInt(), anyInt(), any());
+
+        verify(mMockCBButtonManager, atLeastOnce()).configureButtons(eq(false));
+    }
+
+    public void testShowDownloadLanguageDialogSettingsIntentIsNullShowsToastAndHidesButton() {
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage("Test Message", getDifferentLanguage(systemLang));
+        TranslationTestSetupResult setup = setupActivityForTranslationTest(message, true, false,
+                false);
+        CellBroadcastAlertDialog activity = setup.dialog;
+        mockSettingsIntentNotFound();
+
+        try {
+            Method showDialogMethod = CellBroadcastAlertDialog.class.getDeclaredMethod(
+                    "showDownloadLanguageDialog");
+            showDialogMethod.setAccessible(true);
+            getInstrumentation().runOnMainSync(() -> {
+                try {
+                    showDialogMethod.invoke(activity);
+                } catch (Exception e) {
+                    fail("Invocation failed: " + e.getMessage());
+                }
+            });
+        } catch (NoSuchMethodException e) {
+            fail("Could not find showDownloadLanguageDialog method: " + e.getMessage());
+        }
+
+        verify(mMockCBButtonManager, atLeastOnce()).configureButtons(eq(false));
     }
 }
