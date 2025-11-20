@@ -579,4 +579,22 @@ public class CellBroadcastReceiverMetrics {
         CellBroadcastModuleStatsLog.write(CellBroadcastModuleStatsLog.CB_MODULE_ERROR_REPORTED,
                 source, errorType);
     }
+
+    /**
+     * Create a new log logUxReported
+     *
+     * @param messageId : service_category of message
+     * @param isTranslationButtonShown : true if the translation button was shown to the user
+     * @param isTranslationTriggered : true if translation is triggered
+     * @param errorType : type of error
+     */
+    void logUxReported(int messageId, boolean isTranslationButtonShown,
+            boolean isTranslationTriggered, int errorType) {
+        if (VDBG) {
+            Log.d(TAG, "logUxReported : " + messageId + " " + isTranslationButtonShown
+                    + " " + isTranslationTriggered + " " + errorType);
+        }
+        CellBroadcastModuleStatsLog.write(CellBroadcastModuleStatsLog.CELLBROADCAST_UX_REPORTED,
+                messageId, isTranslationButtonShown, isTranslationTriggered, errorType);
+    }
 }

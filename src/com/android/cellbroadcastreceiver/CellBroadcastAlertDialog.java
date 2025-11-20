@@ -81,6 +81,7 @@ import androidx.preference.PreferenceManager;
 
 import com.android.cellbroadcastreceiver.CellBroadcastChannelManager.CellBroadcastChannelRange;
 import com.android.cellbroadcastreceiver.flags.Flags;
+import com.android.cellbroadcastservice.CellBroadcastMetrics;
 import com.android.internal.annotations.VisibleForTesting;
 
 import java.lang.annotation.Retention;
@@ -858,13 +859,27 @@ public class CellBroadcastAlertDialog extends Activity implements
         }
         updateButtons(shouldOffer);
 
+        SmsCbMessage message = getLatestMessage();
         if (shouldOffer) {
             Log.d(TAG, "Offering translation from '" + sourceLocale.toLanguageTag()
                     + "' to '" + targetLocale.toLanguageTag() + "'");
             // Request translator initialization.
             getTranslateManager().initializeTranslator(sourceLocale, targetLocale);
+
+            if (message != null) {
+                CellBroadcastReceiverMetrics.getInstance()
+                        .logUxReported(message.getServiceCategory(), true,
+                                false,
+                                CellBroadcastMetrics.ERRTYPE_TRANSLATION_NOT_APPLICABLE);
+            }
         } else {
             Log.d(TAG, "No translation offered: source language is the same as target.");
+            if (message != null) {
+                CellBroadcastReceiverMetrics.getInstance()
+                        .logUxReported(message.getServiceCategory(), false,
+                                false,
+                                CellBroadcastMetrics.ERRTYPE_TRANSLATION_NOT_APPLICABLE);
+            }
         }
     }
 
@@ -881,12 +896,13 @@ public class CellBroadcastAlertDialog extends Activity implements
             getButtonManager().showTranslationInProgress(false);
         }
 
-        if (getLatestMessage() == null || getLatestMessage().getMessageBody() == null) {
+        SmsCbMessage message = getLatestMessage();
+        if (message == null || message.getMessageBody() == null) {
             Log.e(TAG, "onTranslationCompleted: Cannot retrieve the latest message.");
             return;
         }
 
-        final String originalText = getLatestMessage().getMessageBody();
+        final String originalText = message.getMessageBody();
         Log.d(TAG, "onTranslationCompleted: originalMessageText:" + originalText);
         Log.d(TAG, "onTranslationCompleted: translatedText:" + translatedText + " , success:"
                 + success);
@@ -896,9 +912,16 @@ public class CellBroadcastAlertDialog extends Activity implements
             if (getButtonManager() != null) {
                 getButtonManager().onTranslationCompleted();
             }
+            CellBroadcastReceiverMetrics.getInstance()
+                    .logUxReported(message.getServiceCategory(), true,
+                            true, CellBroadcastMetrics.ERRTYPE_TRANSLATION_NONE);
         } else {
             Log.w(TAG, "onTranslationCompleted: Translation failed or result is empty.");
             showTranslateFailedToast();
+
+            CellBroadcastReceiverMetrics.getInstance()
+                    .logUxReported(message.getServiceCategory(), true,
+                            true, CellBroadcastMetrics.ERRTYPE_TRANSLATION_UNKNOWN);
         }
     }
 
