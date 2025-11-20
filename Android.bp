@@ -50,6 +50,9 @@ android_library {
         "com.android.cellbroadcast",
         "//apex_available:platform",
     ],
+    lint: {
+        baseline_filename: "lint-baseline.xml",
+    },
 }
 
 android_app {
