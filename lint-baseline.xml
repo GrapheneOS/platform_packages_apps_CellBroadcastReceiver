@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues
+    type="baseline"
+    client=""
+    dependencies="true"
+    name=""
+    variant=""
+    version="">
+    <issue
+        id="NewApi"
+        message="Class requires API level 31 (current min is 30): `android.view.translation.TranslationManager`"
+        errorLine1="            mManager = context.getSystemService(TranslationManager.class);"
+        errorLine2="                                                ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="134"
+            column="49"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationManager#createOnDeviceTranslator`"
+        errorLine1="                mManager.createOnDeviceTranslator(translationContext, executor, callback);"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="146"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationManager#getOnDeviceTranslationSettingsActivityIntent`"
+        errorLine1="            return (mManager != null) ? mManager.getOnDeviceTranslationSettingsActivityIntent()"
+        errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="157"
+            column="50"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `new android.view.translation.TranslationSpec`"
+        errorLine1="                final TranslationSpec sourceSpec = new TranslationSpec(sourceLocale,"
+        errorLine2="                                                   ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="299"
+            column="52"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `new android.view.translation.TranslationSpec`"
+        errorLine1="                final TranslationSpec targetSpec = new TranslationSpec(targetLocale,"
+        errorLine2="                                                   ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="301"
+            column="52"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `new android.view.translation.TranslationContext.Builder`"
+        errorLine1="                final TranslationContext translationContext = new TranslationContext.Builder("
+        errorLine2="                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="303"
+            column="63"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationContext.Builder#build`"
+        errorLine1="                        sourceSpec, targetSpec).build();"
+        errorLine2="                                                ~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="304"
+            column="49"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `new android.view.translation.ViewTranslationRequest.Builder`"
+        errorLine1="                ViewTranslationRequest viewRequest = new ViewTranslationRequest.Builder(autofillId)"
+        errorLine2="                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="363"
+            column="54"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.ViewTranslationRequest.Builder#setValue`"
+        errorLine1="                        .setValue(ViewTranslationRequest.ID_TEXT,"
+        errorLine2="                         ~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="364"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationRequestValue#forText`"
+        errorLine1="                                TranslationRequestValue.forText(textToTranslate))"
+        errorLine2="                                                        ~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="365"
+            column="57"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.ViewTranslationRequest.Builder#build`"
+        errorLine1="                        .build();"
+        errorLine2="                         ~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="366"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `new android.view.translation.TranslationRequest.Builder`"
+        errorLine1="                TranslationRequest request = new TranslationRequest.Builder()"
+        errorLine2="                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="367"
+            column="46"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationRequest.Builder#setViewTranslationRequests`"
+        errorLine1="                        .setViewTranslationRequests(Collections.singletonList(viewRequest))"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="368"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationRequest.Builder#build`"
+        errorLine1="                        .build();"
+        errorLine2="                         ~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="369"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.Translator#translate`"
+        errorLine1="                mTranslator.translate(request, null, mMainExecutor,"
+        errorLine2="                            ~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="371"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationResponse#getViewTranslationResponses`"
+        errorLine1="                                        response.getViewTranslationResponses();"
+        errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="380"
+            column="50"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.ViewTranslationResponse#getValue`"
+        errorLine1="                                                viewResponse.getValue("
+        errorLine2="                                                             ~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="386"
+            column="62"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationResponseValue#getStatusCode`"
+        errorLine1="                                        if (result != null &amp;&amp; result.getStatusCode()"
+        errorLine2="                                                                     ~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="388"
+            column="70"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationResponseValue#getText`"
+        errorLine1="                                                    + result.getText());"
+        errorLine2="                                                             ~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="391"
+            column="62"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationResponseValue#getText`"
+        errorLine1="                                            mCallback.onTranslationCompleted(result.getText(),"
+        errorLine2="                                                                                    ~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="392"
+            column="85"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.TranslationResponseValue#getStatusCode`"
+        errorLine1="                                                    (result != null) ? result.getStatusCode() : -1;"
+        errorLine2="                                                                              ~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="396"
+            column="79"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 30): `android.view.translation.Translator#destroy`"
+        errorLine1="            mTranslator.destroy();"
+        errorLine2="                        ~~~~~~~">
+        <location
+            file="packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastTranslateManager.java"
+            line="430"
+            column="25"/>
+    </issue>
+
+</issues>
