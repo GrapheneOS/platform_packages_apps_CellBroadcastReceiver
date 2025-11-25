@@ -595,6 +595,7 @@ public class CellBroadcastReceiverMetrics {
                     + " " + isTranslationTriggered + " " + errorType);
         }
         CellBroadcastModuleStatsLog.write(CellBroadcastModuleStatsLog.CELLBROADCAST_UX_REPORTED,
-                messageId, isTranslationButtonShown, isTranslationTriggered, errorType);
+                messageId, isTranslationButtonShown, isTranslationTriggered, errorType, false,
+                false, 0, 0);
     }
 }
