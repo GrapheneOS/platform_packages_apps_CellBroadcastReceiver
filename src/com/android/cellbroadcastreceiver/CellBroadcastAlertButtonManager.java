@@ -17,6 +17,7 @@
 package com.android.cellbroadcastreceiver;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,12 +27,13 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 /**
- * Manages the dynamic creation and layout of buttons in the CellBroadcastAlertDialog. This class is
- * responsible for adding a "Translate" button and a progress indicator, adjusting the layout to
- * accommodate them.
+ * Manages the dynamic creation and layout of buttons in the CellBroadcastAlertDialog. This class
+ * is responsible for adding a "Translate" button with a progress indicator, and a "Map" button,
+ * adjusting the layout to accommodate them based on feature enablement and data availability.
+ * The button order is Map, Translate, Dismiss.
  */
 public class CellBroadcastAlertButtonManager {
-
+    private static final String TAG = CellBroadcastAlertButtonManager.class.getSimpleName();
     private final Activity mActivity;
     private final LinearLayout mButtonBar;
     private final Button mDismissButton;
@@ -39,9 +41,10 @@ public class CellBroadcastAlertButtonManager {
     private FrameLayout mTranslateContainer;
     private Button mTranslateButton;
     private ProgressBar mProgressBar;
-    private boolean mIsTwoButtonLayout = false;
     private final int mDismissOriginalPaddingStart;
     private final int mDismissOriginalPaddingEnd;
+    private FrameLayout mMapContainer;
+    private Button mMapButton;
 
     /**
      * Listener interface to communicate clicks on the dynamically created translate button back to
@@ -52,12 +55,32 @@ public class CellBroadcastAlertButtonManager {
         void onTranslateClick();
     }
 
-    private final OnTranslateButtonClickListener mListener;
+    private final OnTranslateButtonClickListener mTranslateListener;
 
+    /**
+     * Listener interface to communicate clicks on the dynamically created map button back to
+     * the hosting Activity.
+     */
+    public interface OnMapButtonClickListener {
+        /** Called when the "Map" button is clicked by the user. */
+        void onMapClick();
+    }
+
+    private final OnMapButtonClickListener mMapListener;
+
+    /**
+     * Constructs the button manager, initializing listeners and caching necessary views.
+     *
+     * @param activity The hosting {@code Activity} instance.
+     * @param listener The callback listener for the translate button.
+     * @param mapListener The callback listener for the map button.
+     */
     public CellBroadcastAlertButtonManager(
-            Activity activity, OnTranslateButtonClickListener listener) {
+            Activity activity, OnTranslateButtonClickListener listener,
+            OnMapButtonClickListener mapListener) {
         mActivity = activity;
-        mListener = listener;
+        mTranslateListener = listener;
+        mMapListener = mapListener;
         mButtonBar = activity.findViewById(R.id.button_bar);
         mDismissButton = activity.findViewById(R.id.dismissButton);
 
@@ -71,24 +94,84 @@ public class CellBroadcastAlertButtonManager {
     }
 
     /**
-     * Configures the button layout based on whether the translate button should be shown. This
-     * method is state-aware and will only modify the UI if the requested state is different from
-     * the current state.
+     * Configures the button layout, dynamically adding and ordering the Translate, Map and Dismiss
+     * buttons based on feature enablement.
      *
-     * @param showTranslateButton True to show a two-button layout; false for the original
-     *                            single-button layout.
+     * @param showTranslate True to show the translate button.
+     * @param showMap       True to show the map button.
      */
-    public void configureButtons(boolean showTranslateButton) {
+    public void configureButtons(boolean showTranslate, boolean showMap) {
         if (mButtonBar == null || mDismissButton == null) {
             return;
         }
 
-        if (showTranslateButton && !mIsTwoButtonLayout) {
-            setupTwoButtonLayout();
-            mIsTwoButtonLayout = true;
-        } else if (!showTranslateButton && mIsTwoButtonLayout) {
-            setupSingleButtonLayout();
-            mIsTwoButtonLayout = false;
+        if (showTranslate) {
+            ensureTranslateButtonCreated();
+            showTranslationInProgress(false);
+        }
+        if (mTranslateContainer != null) {
+            mTranslateContainer.setVisibility(showTranslate ? View.VISIBLE : View.GONE);
+        }
+
+        if (showMap) {
+            ensureMapButtonCreated();
+        }
+        if (mMapContainer != null) {
+            mMapContainer.setVisibility(showMap ? View.VISIBLE : View.GONE);
+        }
+
+        mButtonBar.removeAllViews();
+        if (showTranslate) mButtonBar.addView(mTranslateContainer);
+        if (showMap) mButtonBar.addView(mMapContainer);
+        mButtonBar.addView(mDismissButton);
+
+        int visibleButtonCount = 1 + (showTranslate ? 1 : 0) + (showMap ? 1 : 0);
+        Log.d(TAG, "configureButtons: visibleButtonCount=" + visibleButtonCount + ", showTranslate="
+                + showTranslate + ", showMap=" + showMap);
+
+        if (visibleButtonCount > 1) {
+            mButtonBar.setGravity(Gravity.CENTER_VERTICAL);
+            float weight = 1.0f;
+
+            LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(0,
+                    ViewGroup.LayoutParams.MATCH_PARENT, weight);
+
+            if (showMap) mMapContainer.setLayoutParams(buttonParams);
+            if (showTranslate) mTranslateContainer.setLayoutParams(buttonParams);
+
+            mDismissButton.setLayoutParams(buttonParams);
+            mDismissButton.setPadding(0, mDismissButton.getPaddingTop(), 0,
+                    mDismissButton.getPaddingBottom());
+        } else {
+            mButtonBar.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+            LinearLayout.LayoutParams dismissParams =
+                    (LinearLayout.LayoutParams) mDismissButton.getLayoutParams();
+            dismissParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+            dismissParams.weight = 0f;
+            mDismissButton.setLayoutParams(dismissParams);
+            mDismissButton.setPaddingRelative(mDismissOriginalPaddingStart,
+                    mDismissButton.getPaddingTop(), mDismissOriginalPaddingEnd,
+                    mDismissButton.getPaddingBottom());
+        }
+    }
+
+    /** Creates the Translate button, progress bar, and their container if they do not exist. */
+    private void ensureTranslateButtonCreated() {
+        if (mTranslateContainer == null) {
+            mTranslateContainer = new FrameLayout(mActivity);
+            mTranslateButton = createTranslateButton();
+            mProgressBar = createProgressBar();
+            mTranslateContainer.addView(mTranslateButton);
+            mTranslateContainer.addView(mProgressBar);
+        }
+    }
+
+    /** Creates the Map button and its container if they do not exist. */
+    private void ensureMapButtonCreated() {
+        if (mMapContainer == null) {
+            mMapContainer = new FrameLayout(mActivity);
+            mMapButton = createMapButton();
+            mMapContainer.addView(mMapButton);
         }
     }
 
@@ -108,72 +191,11 @@ public class CellBroadcastAlertButtonManager {
     }
 
     /**
-     * Reverts the button layout to a single, centered "Dismiss" button. This is also called after a
-     * successful translation.
+     * Called when translation is completed to potentially hide the translate button.
      */
     public void onTranslationCompleted() {
-        configureButtons(false);
-    }
-
-    /** Configures the UI for a two-button layout (Translate, Dismiss). */
-    private void setupTwoButtonLayout() {
-        // Lazily create the container that holds the translate button and progress bar.
-        if (mTranslateContainer == null) {
-            mTranslateContainer = new FrameLayout(mActivity);
-
-            // Create and add the translate button and progress bar to the container.
-            mTranslateButton = createTranslateButton();
-            mProgressBar = createProgressBar();
-            mTranslateContainer.addView(mTranslateButton);
-            mTranslateContainer.addView(mProgressBar);
-
-            // Add the container to the main button bar.
-            mButtonBar.addView(mTranslateContainer, 0);
-        }
-        mTranslateContainer.setVisibility(View.VISIBLE);
-        showTranslationInProgress(false); // Set initial state (show button, hide progress)
-
-        // Adjust parent gravity to allow buttons to fill the space.
-        mButtonBar.setGravity(Gravity.CENTER_VERTICAL);
-
-        // Adjust dismiss button to share space.
-        LinearLayout.LayoutParams dismissParams =
-                (LinearLayout.LayoutParams) mDismissButton.getLayoutParams();
-        dismissParams.width = 0;
-        dismissParams.weight = 1.0f;
-        mDismissButton.setPadding(
-                0, mDismissButton.getPaddingTop(), 0, mDismissButton.getPaddingBottom());
-        mDismissButton.setLayoutParams(dismissParams);
-
-        // Adjust our new container to share space.
-        LinearLayout.LayoutParams containerParams =
-                new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
-        mTranslateContainer.setLayoutParams(containerParams);
-    }
-
-    /** Configures the UI for the original single-button layout. */
-    private void setupSingleButtonLayout() {
-        // Hide the container for the translate button and progress bar.
-        if (mTranslateContainer != null) {
-            mTranslateContainer.setVisibility(View.GONE);
-        }
-
-        // Restore parent gravity to center the single button.
-        mButtonBar.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
-
-        // Restore dismiss button to its original state.
-        LinearLayout.LayoutParams dismissParams =
-                (LinearLayout.LayoutParams) mDismissButton.getLayoutParams();
-        dismissParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
-        dismissParams.weight = 0f;
-
-        // Restore padding using the stored values instead of a magic number.
-        mDismissButton.setPaddingRelative(
-                mDismissOriginalPaddingStart,
-                mDismissButton.getPaddingTop(),
-                mDismissOriginalPaddingEnd,
-                mDismissButton.getPaddingBottom());
-        mDismissButton.setLayoutParams(dismissParams);
+        boolean showMap = mMapContainer != null && mMapContainer.getVisibility() == View.VISIBLE;
+        configureButtons(false, showMap);
     }
 
     /** Creates a new "Translate" button programmatically with the correct style. */
@@ -185,10 +207,24 @@ public class CellBroadcastAlertButtonManager {
                         ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         button.setOnClickListener(
                 v -> {
-                    if (mListener != null) {
-                        mListener.onTranslateClick();
+                    if (mTranslateListener != null) {
+                        mTranslateListener.onTranslateClick();
                     }
                 });
+        return button;
+    }
+
+    /** Creates a new "Map" button programmatically with the correct style. */
+    private Button createMapButton() {
+        Button button = new Button(mActivity, null, android.R.attr.buttonBarButtonStyle);
+        button.setText(R.string.button_map);
+        button.setLayoutParams(new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        button.setOnClickListener(v -> {
+            if (mMapListener != null) {
+                mMapListener.onMapClick();
+            }
+        });
         return button;
     }
 

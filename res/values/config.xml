@@ -310,4 +310,8 @@
 
     <!-- Whether to restore the sub-toggle setting to carrier default -->
     <bool name="restore_sub_toggle_to_carrier_default">false</bool>
+
+    <!-- Whether to enable the map functionality to display the alert location on a map when
+     location information is available in the alert. -->
+    <bool name="enable_map">false</bool>
 </resources>

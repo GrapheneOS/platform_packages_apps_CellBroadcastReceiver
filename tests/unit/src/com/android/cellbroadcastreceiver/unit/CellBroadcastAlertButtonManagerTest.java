@@ -19,10 +19,10 @@ package com.android.cellbroadcastreceiver.unit;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.platform.test.annotations.RequiresFlagsEnabled;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
@@ -37,7 +37,6 @@ import com.android.cellbroadcastreceiver.CellBroadcastAlertDialog;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastTranslateManager;
 import com.android.cellbroadcastreceiver.R;
-import com.android.cellbroadcastreceiver.flags.Flags;
 
 import org.junit.After;
 import org.junit.Before;
@@ -49,7 +48,7 @@ import java.util.ArrayList;
 /**
  * Instrumentation tests for the {@link CellBroadcastAlertButtonManager}.
  *
- * <p>This class tests the mechanical UI manipulation logic of the button manager, such as changing
+ * This class tests the mechanical UI manipulation logic of the button manager, such as changing
  * layouts, independent of the decision-making logic in the {@link CellBroadcastAlertDialog}.
  */
 public class CellBroadcastAlertButtonManagerTest
@@ -60,6 +59,11 @@ public class CellBroadcastAlertButtonManagerTest
     private Button mDismissButton;
     @Mock
     private CellBroadcastTranslateManager mMockTranslateManager;
+    @Mock
+    private CellBroadcastAlertButtonManager.OnMapButtonClickListener mMockMapClickListener;
+    @Mock
+    private CellBroadcastAlertButtonManager.OnTranslateButtonClickListener
+            mMockTranslateClickListener;
 
     public CellBroadcastAlertButtonManagerTest() {
         super(CellBroadcastAlertDialog.class);
@@ -67,7 +71,6 @@ public class CellBroadcastAlertButtonManagerTest
 
     @Override
     protected Intent createActivityIntent() {
-        // Use a minimal message list, as the content is not relevant for these tests.
         ArrayList<SmsCbMessage> messageList = new ArrayList<>();
         messageList.add(CellBroadcastAlertServiceTest.createMessageForCmasMessageClass(1, 1, 1));
 
@@ -85,6 +88,7 @@ public class CellBroadcastAlertButtonManagerTest
         CellBroadcastAlertDialog.sIsTranslateFeatureEnabledForTest = true;
         CellBroadcastAlertDialog.sIsWatchForTest = false;
         doReturn(true).when(mContext.getResources()).getBoolean(R.bool.enable_alert_translation);
+        doReturn(true).when(mContext.getResources()).getBoolean(R.bool.enable_map);
         Intent dummyIntent = new Intent();
         PendingIntent realPendingIntent = PendingIntent.getActivity(
                 getInstrumentation().getTargetContext(), 0, dummyIntent,
@@ -103,31 +107,50 @@ public class CellBroadcastAlertButtonManagerTest
         super.tearDown();
     }
 
-    private Button findTranslateButton() {
-        LinearLayout buttonBar = getActivity().findViewById(R.id.button_bar);
-        if (buttonBar == null) return null;
+    private Button findButtonByText(String text) {
+        mButtonBar = getActivity().findViewById(R.id.button_bar);
+        if (mButtonBar == null) return null;
 
-        for (int i = 0; i < buttonBar.getChildCount(); i++) {
-            View child = buttonBar.getChildAt(i);
+        for (int i = 0; i < mButtonBar.getChildCount(); i++) {
+            View child = mButtonBar.getChildAt(i);
             if (child instanceof FrameLayout) {
                 FrameLayout container = (FrameLayout) child;
                 for (int j = 0; j < container.getChildCount(); j++) {
                     View innerChild = container.getChildAt(j);
                     if (innerChild instanceof Button) {
-                        return (Button) innerChild;
+                        Button button = (Button) innerChild;
+                        if (text.equals(button.getText().toString())) {
+                            return button;
+                        }
                     }
+                }
+            } else if (child instanceof Button) {
+                Button button = (Button) child;
+                if (text.equals(button.getText().toString())) {
+                    return button;
                 }
             }
         }
         return null;
     }
 
-    private ProgressBar findProgressBar() {
-        LinearLayout buttonBar = getActivity().findViewById(R.id.button_bar);
-        if (buttonBar == null) return null;
+    private Button findMapButton() {
+        return findButtonByText(mContext.getString(R.string.button_map));
+    }
 
-        for (int i = 0; i < buttonBar.getChildCount(); i++) {
-            View child = buttonBar.getChildAt(i);
+    private Button findTranslateButton() {
+        return findButtonByText(mContext.getString(R.string.button_translate));
+    }
+
+    private void waitForUiThreadToSettle() {
+        getInstrumentation().waitForIdleSync();
+    }
+
+    private ProgressBar findProgressBar() {
+        mButtonBar = getActivity().findViewById(R.id.button_bar);
+        if (mButtonBar == null) return null;
+        for (int i = 0; i < mButtonBar.getChildCount(); i++) {
+            View child = mButtonBar.getChildAt(i);
             if (child instanceof FrameLayout) {
                 FrameLayout container = (FrameLayout) child;
                 for (int j = 0; j < container.getChildCount(); j++) {
@@ -141,193 +164,207 @@ public class CellBroadcastAlertButtonManagerTest
         return null;
     }
 
-    /**
-     * Test that calling {@link CellBroadcastAlertButtonManager#configureButtons(boolean)} with
-     * {@code true} correctly sets up the two-button layout (Translate and Dismiss).
-     */
-    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
-    public void testConfigureButtonsShowTranslateChangesLayoutToTwoButtons() throws Throwable {
-        startActivity();
+    private void setupButtonManager() {
         CellBroadcastAlertDialog activity = getActivity();
         activity.setTranslateManagerForTest(mMockTranslateManager);
-        mButtonManager = activity.getButtonManager();
-        assertNotNull("ButtonManager should be initialized", mButtonManager);
-
-        runTestOnUiThread(() -> {
-            mButtonManager.configureButtons(true);
-
-            mButtonBar = activity.findViewById(R.id.button_bar);
-            mDismissButton = activity.findViewById(R.id.dismissButton);
-            Button translateButton = findTranslateButton();
-
-            assertNotNull("Translate button should be found", translateButton);
-            assertEquals("Button bar should have two children.", 2, mButtonBar.getChildCount());
-            assertEquals("Translate button should be visible.", View.VISIBLE,
-                    translateButton.getVisibility());
-
-            LinearLayout.LayoutParams dismissParams =
-                    (LinearLayout.LayoutParams) mDismissButton.getLayoutParams();
-            assertEquals("Dismiss button weight should be 1.0.", 1.0f, dismissParams.weight, 0.01f);
-        });
-        stopActivity();
-    }
-
-    /**
-     * Test that calling {@link CellBroadcastAlertButtonManager#configureButtons(boolean)} with
-     * {@code false} after being in a two-button state correctly reverts the UI back to the
-     * original single-button layout, including restoring original padding.
-     */
-    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
-    public void testConfigureButtonsHideTranslateRevertsLayoutToSingleButton() throws Throwable {
-        startActivity();
-        CellBroadcastAlertDialog activity = getActivity();
-        activity.setTranslateManagerForTest(mMockTranslateManager);
-        CellBroadcastAlertButtonManager buttonManager = activity.getButtonManager();
-
-        assertNotNull("ButtonManager should be initialized", buttonManager);
-
-        runTestOnUiThread(() -> {
-            Button dismissButton = activity.findViewById(R.id.dismissButton);
-            final int originalPaddingStart = dismissButton.getPaddingStart();
-            final int originalPaddingEnd = dismissButton.getPaddingEnd();
-
-            buttonManager.configureButtons(true);
-
-            assertNotSame("Padding should change for two-button layout",
-                    originalPaddingStart, dismissButton.getPaddingStart());
-
-            buttonManager.configureButtons(false);
-
-            LinearLayout buttonBar = activity.findViewById(R.id.button_bar);
-            View translateContainer = buttonBar.getChildAt(0);
-
-            assertEquals("Translate container should be GONE.", View.GONE,
-                    translateContainer.getVisibility());
-            LinearLayout.LayoutParams dismissParams =
-                    (LinearLayout.LayoutParams) dismissButton.getLayoutParams();
-            assertEquals("Dismiss button weight should be 0.", 0f, dismissParams.weight, 0.01f);
-
-            assertEquals("Dismiss button start padding should be restored.",
-                    originalPaddingStart, dismissButton.getPaddingStart());
-            assertEquals("Dismiss button end padding should be restored.",
-                    originalPaddingEnd, dismissButton.getPaddingEnd());
-        });
-        stopActivity();
-    }
-
-    /**
-     * Test that calling {@link CellBroadcastAlertButtonManager#onTranslationCompleted()}
-     * correctly reverts the UI from a two-button layout back to the single-button layout.
-     */
-    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
-    public void testOnTranslationCompletedRevertsLayoutToSingleButton() throws Throwable {
-        startActivity();
-        CellBroadcastAlertDialog activity = getActivity();
-        activity.setTranslateManagerForTest(mMockTranslateManager);
-        mButtonManager = activity.getButtonManager();
-        runTestOnUiThread(() -> mButtonManager.configureButtons(true));
-        waitForMs(200);
-
-        runTestOnUiThread(() -> mButtonManager.onTranslationCompleted());
-        waitForMs(200);
-
+        mButtonManager = new CellBroadcastAlertButtonManager(activity, mMockTranslateClickListener,
+                mMockMapClickListener);
         mButtonBar = activity.findViewById(R.id.button_bar);
-        FrameLayout translateContainer = (FrameLayout) mButtonBar.getChildAt(0);
-        assertEquals(
-                "Translate container should be GONE after translation completes.",
-                View.GONE,
-                translateContainer.getVisibility());
+        mDismissButton = activity.findViewById(R.id.dismissButton);
+    }
+
+    public void testConfigureButtonsShowDismissOnly() throws Throwable {
+        startActivity();
+        setupButtonManager();
+
+        runTestOnUiThread(() -> mButtonManager.configureButtons(false, false));
+        waitForUiThreadToSettle();
+
+        assertEquals("Button bar should have one child", 1, mButtonBar.getChildCount());
+        assertNotNull("Dismiss button should be present", mDismissButton);
+        assertEquals("Dismiss button should be visible", View.VISIBLE,
+                mDismissButton.getVisibility());
+        assertNull("Map button should not be present", findMapButton());
+        assertNull("Translate button should not be present", findTranslateButton());
+
+        LinearLayout.LayoutParams dismissParams =
+                (LinearLayout.LayoutParams) mDismissButton.getLayoutParams();
+        assertEquals("Dismiss button weight should be 0", 0f, dismissParams.weight, 0.01f);
+        assertTrue("Dismiss button width should be WRAP_CONTENT",
+                dismissParams.width == LinearLayout.LayoutParams.WRAP_CONTENT);
+        stopActivity();
+    }
+
+    public void testConfigureButtonsShowMapOnly() throws Throwable {
+        startActivity();
+        setupButtonManager();
+
+        runTestOnUiThread(() -> mButtonManager.configureButtons(false, true));
+        waitForUiThreadToSettle();
+
+        assertEquals("Button bar should have two children", 2, mButtonBar.getChildCount());
+        assertNotNull("Map button should be present", findMapButton());
+        assertNotNull("Dismiss button should be present", mDismissButton);
+        assertEquals("Map button should be visible", View.VISIBLE, findMapButton().getVisibility());
+        assertNull("Translate button should not be present", findTranslateButton());
+
+        LinearLayout.LayoutParams dismissParams =
+                (LinearLayout.LayoutParams) mDismissButton.getLayoutParams();
+        assertEquals("Dismiss button weight should be 1.0", 1.0f, dismissParams.weight, 0.01f);
+        LinearLayout.LayoutParams mapParams = (LinearLayout.LayoutParams) mButtonBar.getChildAt(
+                0).getLayoutParams();
+        assertEquals("Map button weight should be 1.0", 1.0f, mapParams.weight, 0.01f);
+        stopActivity();
+    }
+
+    public void testConfigureButtonsShowTranslateOnly() throws Throwable {
+        startActivity();
+        setupButtonManager();
+
+        runTestOnUiThread(() -> mButtonManager.configureButtons(true, false));
+        waitForUiThreadToSettle();
+
+        assertEquals("Button bar should have two children", 2, mButtonBar.getChildCount());
+        assertNotNull("Translate button should be present", findTranslateButton());
+        assertNotNull("Dismiss button should be present", mDismissButton);
+        assertEquals("Translate button should be visible", View.VISIBLE,
+                findTranslateButton().getVisibility());
+        assertNull("Map button should not be present", findMapButton());
+        stopActivity();
+    }
+
+    public void testConfigureButtonsShowAll() throws Throwable {
+        startActivity();
+        setupButtonManager();
+
+        runTestOnUiThread(() -> mButtonManager.configureButtons(true, true));
+        waitForUiThreadToSettle();
+
+        assertEquals("Button bar should have three children", 3, mButtonBar.getChildCount());
+        assertNotNull("Map button should be present", findMapButton());
+        assertNotNull("Translate button should be present", findTranslateButton());
+        assertNotNull("Dismiss button should be present", mDismissButton);
+
+        View mapContainer = mButtonBar.getChildAt(0);
+        View translateContainer = mButtonBar.getChildAt(1);
+        Button dismissButton = (Button) mButtonBar.getChildAt(2);
+
+        assertTrue("First child should contain Map button",
+                ((FrameLayout) mapContainer).getChildAt(0) instanceof Button);
+        assertTrue("Second child should contain Translate button",
+                ((FrameLayout) translateContainer).getChildAt(0) instanceof Button);
+        assertEquals("Third child should be Dismiss button",
+                mContext.getString(R.string.button_dismiss), dismissButton.getText().toString());
 
         stopActivity();
     }
 
-    /**
-     * Tests that {@link CellBroadcastAlertButtonManager#showTranslationInProgress(boolean)}
-     * correctly toggles the visibility of the translate button and the progress bar.
-     */
-    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
-    public void testShowTranslationInProgressTogglesVisibility() throws Throwable {
-        // Arrange
+    public void testMapButtonClick() throws Throwable {
         startActivity();
-        CellBroadcastAlertDialog activity = getActivity();
-        activity.setTranslateManagerForTest(mMockTranslateManager);
-        mButtonManager = activity.getButtonManager();
-        runTestOnUiThread(() -> mButtonManager.configureButtons(true));
-        waitForMs(200);
+        setupButtonManager();
+        runTestOnUiThread(() -> mButtonManager.configureButtons(false, true));
+        waitForUiThreadToSettle();
+
+        Button mapButton = findMapButton();
+        assertNotNull(mapButton);
+        runTestOnUiThread(() -> mapButton.performClick());
+        waitForUiThreadToSettle();
+
+        verify(mMockMapClickListener).onMapClick();
+        stopActivity();
+    }
+
+    public void testTranslateButtonClick() throws Throwable {
+        startActivity();
+        setupButtonManager();
+        runTestOnUiThread(() -> mButtonManager.configureButtons(true, false));
+        waitForUiThreadToSettle();
+
+        Button translateButton = findTranslateButton();
+        assertNotNull(translateButton);
+        runTestOnUiThread(() -> translateButton.performClick());
+        waitForUiThreadToSettle();
+
+        verify(mMockTranslateClickListener).onTranslateClick();
+        stopActivity();
+    }
+
+    public void testShowTranslationInProgressTogglesVisibility() throws Throwable {
+        startActivity();
+        setupButtonManager();
+        runTestOnUiThread(() -> mButtonManager.configureButtons(true, false));
+        waitForUiThreadToSettle();
 
         Button translateButton = findTranslateButton();
         assertNotNull("Translate button should be present", translateButton);
         ProgressBar progressBar = findProgressBar();
         assertNotNull("Progress bar should be present", progressBar);
 
-        // Act 1: Show progress
         runTestOnUiThread(() -> mButtonManager.showTranslationInProgress(true));
-        waitForMs(100);
-
-        // Assert 1
+        waitForUiThreadToSettle();
         assertEquals("Progress bar should be visible.", View.VISIBLE, progressBar.getVisibility());
-        assertEquals(
-                "Translate button should be GONE.", View.GONE, translateButton.getVisibility());
-
-        // Act 2: Hide progress
-        runTestOnUiThread(() -> mButtonManager.showTranslationInProgress(false));
-        waitForMs(100);
-
-        // Assert 2
-        assertEquals("Progress bar should be GONE.", View.GONE, progressBar.getVisibility());
-        assertEquals(
-                "Translate button should be visible.",
-                View.VISIBLE,
+        assertEquals("Translate button should be GONE.", View.GONE,
                 translateButton.getVisibility());
 
+        runTestOnUiThread(() -> mButtonManager.showTranslationInProgress(false));
+        waitForUiThreadToSettle();
+        assertEquals("Progress bar should be GONE.", View.GONE, progressBar.getVisibility());
+        assertEquals("Translate button should be visible.", View.VISIBLE,
+                translateButton.getVisibility());
         stopActivity();
     }
 
-    /**
-     * Test that the manager is stateful and does not perform redundant UI changes when
-     * {@link CellBroadcastAlertButtonManager#configureButtons(boolean)} is called multiple times
-     * with the same state.
-     */
-    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
-    public void testConfigureButtonsIsStatefulAndIdempotent() throws Throwable {
-        // Arrange
+    public void testOnTranslationCompletedOnlyTranslateWasShown() throws Throwable {
         startActivity();
-        CellBroadcastAlertDialog activity = getActivity();
-        activity.setTranslateManagerForTest(mMockTranslateManager);
-        mButtonManager = activity.getButtonManager();
-        mButtonBar = activity.findViewById(R.id.button_bar);
+        setupButtonManager();
+        runTestOnUiThread(() -> mButtonManager.configureButtons(true, false));
+        waitForUiThreadToSettle();
+        assertNotNull(findTranslateButton());
 
-        // Act & Assert: Call to set two-button layout twice.
-        runTestOnUiThread(() -> mButtonManager.configureButtons(true));
-        waitForMs(200);
-        assertEquals(
-                "Button bar should have two children after first call.",
-                2,
-                mButtonBar.getChildCount());
+        runTestOnUiThread(() -> mButtonManager.onTranslationCompleted());
+        waitForUiThreadToSettle();
 
-        runTestOnUiThread(() -> mButtonManager.configureButtons(true));
-        waitForMs(200);
-        assertEquals(
-                "Button bar should still have two children after second call.",
-                2,
-                mButtonBar.getChildCount());
+        assertEquals("Button bar should have one child", 1, mButtonBar.getChildCount());
+        assertNull("Translate button should be gone", findTranslateButton());
+        assertNotNull("Dismiss button should be present", mDismissButton);
+        stopActivity();
+    }
 
-        // Act & Assert: Call to set single-button layout twice.
-        runTestOnUiThread(() -> mButtonManager.configureButtons(false));
-        waitForMs(200);
-        FrameLayout translateContainer = (FrameLayout) mButtonBar.getChildAt(0);
-        assertEquals(
-                "Translate container should be GONE after first call.",
-                View.GONE,
-                translateContainer.getVisibility());
+    public void testOnTranslationCompletedMapAndTranslateWereShown() throws Throwable {
+        startActivity();
+        setupButtonManager();
+        runTestOnUiThread(() -> mButtonManager.configureButtons(true, true));
+        waitForUiThreadToSettle();
 
-        runTestOnUiThread(() -> mButtonManager.configureButtons(false));
-        waitForMs(200);
-        assertEquals(
-                "Translate container should still be GONE after second call.",
-                View.GONE,
-                translateContainer.getVisibility());
+        runTestOnUiThread(() -> mButtonManager.onTranslationCompleted());
+        waitForUiThreadToSettle();
 
+        assertEquals("Button bar should have two children", 2, mButtonBar.getChildCount());
+        assertNull("Translate button should be gone", findTranslateButton());
+        assertNotNull("Map button should still be present", findMapButton());
+        assertNotNull("Dismiss button should be present", mDismissButton);
+        stopActivity();
+    }
+
+    public void testConfigureButtonsIdempotent() throws Throwable {
+        startActivity();
+        setupButtonManager();
+
+        runTestOnUiThread(() -> mButtonManager.configureButtons(true, true));
+        waitForUiThreadToSettle();
+        assertEquals(3, mButtonBar.getChildCount());
+
+        runTestOnUiThread(() -> mButtonManager.configureButtons(true, true));
+        waitForUiThreadToSettle();
+        assertEquals("Should still be 3 children", 3, mButtonBar.getChildCount());
+
+        runTestOnUiThread(() -> mButtonManager.configureButtons(false, false));
+        waitForUiThreadToSettle();
+        assertEquals(1, mButtonBar.getChildCount());
+
+        runTestOnUiThread(() -> mButtonManager.configureButtons(false, false));
+        waitForUiThreadToSettle();
+        assertEquals("Should still be 1 child", 1, mButtonBar.getChildCount());
         stopActivity();
     }
 }
