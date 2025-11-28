@@ -17,6 +17,7 @@
 package com.android.cellbroadcastreceiver.compliancetests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 
@@ -27,6 +28,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.LocaleList;
 import android.provider.Settings;
@@ -45,9 +47,6 @@ import android.widget.LinearLayout;
 
 import com.android.internal.util.HexDump;
 
-import junitparams.JUnitParamsRunner;
-import junitparams.Parameters;
-
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Before;
@@ -58,6 +57,9 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 
 @RunWith(JUnitParamsRunner.class)
 public class CellBroadcastUiTest extends CellBroadcastBaseTest {
@@ -259,7 +261,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         verifyMapButtonIsShown();
     }
 
-    //@Test // TODO: enable after full implementation
+    @Test
     @Parameters(method = "paramsCarrierAndChannelForTranslateFeature")
     public void testAlertUiOnTranslatorFeature(String carrierName, String channel)
             throws Throwable {
@@ -268,34 +270,88 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
                 new CellBroadcastCarrierTestConfig(sCarriersObject, carrierName);
         CellBroadcastChannelTestConfig channelInfo =
                 new CellBroadcastChannelTestConfig(sChannelsObject, carrierName, channel);
+
         // setup mccmnc
         if (sInputMccMnc == null || (sInputMccMnc != null
                 && !sInputMccMnc.equals(carrierInfo.mMccMnc))) {
             setSimInfo(carrierName, carrierInfo.mMccMnc);
         }
 
-        // change language to non main language
+        // change language to non main language (ja-JP)
+        String targetLanguage = "ja-JP";
         LocaleManager localeManager = getContext().getSystemService(LocaleManager.class);
         localeManager.setApplicationLocales(sPackageName,
-                LocaleList.forLanguageTags("ja-JP"));
-
+                LocaleList.forLanguageTags(targetLanguage));
+        boolean isSettingsTranslationAvailable = isTranslationServiceAvailable();
         if (!channelInfo.mChannelDefaultValue || TextUtils.isEmpty(channelInfo.mExpectedTitle)
                 || channelInfo.mFilteredLanguageBySecondLanguagePref
                 || channelInfo.mIsEnabledOnTestMode
-                || !channelInfo.mNeedDisplay) {
+                || !channelInfo.mNeedDisplay
+                || !isSettingsTranslationAvailable) {
             // let's skip for alerttitle
             return;
         }
+
         boolean isMessageEnglish = !channelInfo.mIgnoreMessageByLanguageFilter
                 || (channelInfo.mIgnoreMessageByLanguageFilter && carrierInfo.mLanguageTag != null
                 && !carrierInfo.mLanguageTag.equals("en"));
-
+        logd("isMessageEnglish " + isMessageEnglish);
         // receive broadcast message
         receiveBroadcastMessage(channel, channelInfo.mWarningType, isMessageEnglish);
 
         logd("carrier " + carrierName + ", Translate button should be shown"
                 + " for channel " + channel);
-        verifyTranslateButtonIsShown();
+
+        verifyTranslateButtonIsShown(targetLanguage);
+    }
+
+    /**
+     * Checks if the on-device translation API is available by verifying if the settings intent
+     * can be retrieved.
+     * This ensures that the test runs only when the device supports the required translation
+     * features.
+     *
+     * @return true if the TranslationManager is available and provides a settings intent; false
+     * otherwise.
+     */
+    private boolean isTranslationServiceAvailable() {
+        android.view.translation.TranslationManager tm =
+                getContext().getSystemService(android.view.translation.TranslationManager.class);
+        if (tm == null) {
+            return false;
+        }
+        return tm.getOnDeviceTranslationSettingsActivityIntent() != null;
+    }
+
+    /**
+     * It finds the button using the changed language setting (languageTag) as an argument.
+     */
+    private void verifyTranslateButtonIsShown(String languageTag) {
+        UiObject2 translateButton = findTranslateButton(languageTag);
+        assertNotNull("Translate button should be visible on the screen", translateButton);
+        assertTrue("Translate button should be enabled", translateButton.isEnabled());
+    }
+
+    /**
+     * Finds the "Translate" button on the screen using its localized text content.
+     *
+     * @param languageTag The language tag used for the app locale (e.g., "ja-JP").
+     * @return The UiObject2 representing the Translate button, or null if not found.
+     */
+    private UiObject2 findTranslateButton(String languageTag) {
+        try {
+            Context targetContext = getContext().createPackageContext(
+                    sPackageName, Context.CONTEXT_IGNORE_SECURITY);
+            Configuration config = new Configuration();
+            config.setLocales(LocaleList.forLanguageTags(languageTag));
+            Context localizedContext = targetContext.createConfigurationContext(config);
+            String translateButtonText = localizedContext.getString(
+                    localizedContext.getResources().getIdentifier(
+                            "button_translate", "string", sPackageName));
+            return sDevice.wait(Until.findObject(By.text(translateButtonText)), UI_TIMEOUT);
+        } catch (PackageManager.NameNotFoundException e) {
+            throw new RuntimeException("Target package context not found", e);
+        }
     }
 
     public void receiveBroadcastMessage(String channelName, String warningType,
@@ -380,10 +436,6 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
     }
 
     private void verifyMapButtonIsShown() {
-        // TODO
-    }
-
-    private void verifyTranslateButtonIsShown() {
         // TODO
     }
 
