@@ -185,4 +185,6 @@
     <string name="download_language_message" msgid="417229699977464547">"Ak chcete prekladať správy bez internetového pripojenia, musíte si v Nastaveniach stiahnuť ďalší jazykový balík"</string>
     <string name="download_language_positive_button" msgid="3455605256671856458">"Nastavenia"</string>
     <string name="download_language_negative_button" msgid="1441855301756712618">"Teraz nie"</string>
+    <!-- no translation found for button_map (5182272283825950016) -->
+    <skip />
 </resources>

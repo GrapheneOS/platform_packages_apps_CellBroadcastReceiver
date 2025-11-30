@@ -185,4 +185,5 @@
     <string name="download_language_message" msgid="417229699977464547">"ઇન્ટરનેટ કનેક્શન વિના મેસેજનો અનુવાદ કરવા માટે, તમારે સેટિંગમાં જઈને વધારાનું ભાષા પૅકેજ ડાઉનલોડ કરવું પડશે"</string>
     <string name="download_language_positive_button" msgid="3455605256671856458">"સેટિંગ"</string>
     <string name="download_language_negative_button" msgid="1441855301756712618">"હમણાં નહીં"</string>
+    <string name="button_map" msgid="5182272283825950016">"નકશો"</string>
 </resources>
