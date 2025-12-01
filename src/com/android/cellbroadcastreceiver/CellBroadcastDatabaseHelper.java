@@ -54,7 +54,7 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
      * Database version 12: add slotIndex
      * Database version 13: add smsSyncPending
      */
-    private static final int DATABASE_VERSION = 13;
+    private static final int DATABASE_VERSION = 14;
 
     private static final String OLD_DATABASE_NAME = "cell_broadcasts.db";
     private static final String DATABASE_NAME_V13 = "cell_broadcasts_v13.db";
@@ -96,7 +96,8 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
             Telephony.CellBroadcasts.CMAS_RESPONSE_TYPE,
             Telephony.CellBroadcasts.CMAS_SEVERITY,
             Telephony.CellBroadcasts.CMAS_URGENCY,
-            Telephony.CellBroadcasts.CMAS_CERTAINTY
+            Telephony.CellBroadcasts.CMAS_CERTAINTY,
+            Telephony.CellBroadcasts.GEOMETRIES
     };
 
     /**
@@ -127,7 +128,9 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
                 + Telephony.CellBroadcasts.CMAS_SEVERITY + " INTEGER,"
                 + Telephony.CellBroadcasts.CMAS_URGENCY + " INTEGER,"
                 + Telephony.CellBroadcasts.CMAS_CERTAINTY + " INTEGER,"
-                + SMS_SYNC_PENDING + " BOOLEAN);";
+                + SMS_SYNC_PENDING + " BOOLEAN,"
+                + Telephony.CellBroadcasts.GEOMETRIES + " TEXT"
+                + ");";
     }
 
     private final Context mContext;
@@ -175,6 +178,10 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
         if (oldVersion < 13) {
             db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN " + SMS_SYNC_PENDING
                     + " BOOLEAN DEFAULT 0;");
+        }
+        if (oldVersion < 14) {
+            db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN "
+                    + Telephony.CellBroadcasts.GEOMETRIES  + " TEXT;");
         }
     }
 

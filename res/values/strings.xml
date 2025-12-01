@@ -409,4 +409,7 @@
     <string name="download_language_message">To translate messages without an internet connection, you\'ll need to download an additional language package in Settings</string>
     <string name="download_language_positive_button">Settings</string>
     <string name="download_language_negative_button">Not now</string>
+
+    <!-- WEA map -->
+    <string name="button_map">Map</string>
 </resources>

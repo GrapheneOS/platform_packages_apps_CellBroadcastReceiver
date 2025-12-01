@@ -26,6 +26,7 @@ import static android.provider.Telephony.CellBroadcasts.CMAS_URGENCY;
 import static android.provider.Telephony.CellBroadcasts.DATA_CODING_SCHEME;
 import static android.provider.Telephony.CellBroadcasts.DELIVERY_TIME;
 import static android.provider.Telephony.CellBroadcasts.ETWS_WARNING_TYPE;
+import static android.provider.Telephony.CellBroadcasts.GEOMETRIES;
 import static android.provider.Telephony.CellBroadcasts.LAC;
 import static android.provider.Telephony.CellBroadcasts.LOCATION_CHECK_TIME;
 import static android.provider.Telephony.CellBroadcasts.MAXIMUM_WAIT_TIME;
@@ -615,7 +616,7 @@ public class CellBroadcastListActivityTest extends
         }
 
         // getColumnIndex is called 13 times within CellBroadcastCursorAdapter.createFromCursor
-        verify(mockCursor, times(13)).getColumnIndex(mColumnCaptor.capture());
+        verify(mockCursor, times(14)).getColumnIndex(mColumnCaptor.capture());
         List<String> columns = mColumnCaptor.getAllValues();
         assertTrue(contains(columns, PLMN));
         assertTrue(contains(columns, LAC));
@@ -630,6 +631,7 @@ public class CellBroadcastListActivityTest extends
         assertTrue(contains(columns, DELIVERY_TIME));
         assertTrue(contains(columns, DATA_CODING_SCHEME));
         assertTrue(contains(columns, MAXIMUM_WAIT_TIME));
+        assertTrue(contains(columns, GEOMETRIES));
     }
 
     public void testOnContextItemSelectedViewDetails() throws Throwable {
@@ -663,7 +665,7 @@ public class CellBroadcastListActivityTest extends
         }
 
         // getColumnIndex is called 13 times within CellBroadcastCursorAdapter.createFromCursor
-        verify(mockCursor, times(13)).getColumnIndex(mColumnCaptor.capture());
+        verify(mockCursor, times(14)).getColumnIndex(mColumnCaptor.capture());
         List<String> columns = mColumnCaptor.getAllValues();
         assertTrue(contains(columns, PLMN));
         assertTrue(contains(columns, LAC));
@@ -678,6 +680,7 @@ public class CellBroadcastListActivityTest extends
         assertTrue(contains(columns, DELIVERY_TIME));
         assertTrue(contains(columns, DATA_CODING_SCHEME));
         assertTrue(contains(columns, MAXIMUM_WAIT_TIME));
+        assertTrue(contains(columns, GEOMETRIES));
     }
 
     private boolean contains(List<String> columns, String column) {

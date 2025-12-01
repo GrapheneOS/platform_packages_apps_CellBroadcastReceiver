@@ -35,6 +35,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.UserManager;
 import android.provider.Telephony;
+import android.telephony.CbGeoUtils.Geometry;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
@@ -45,6 +46,7 @@ import android.util.Log;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.modules.utils.build.SdkLevel;
 
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -292,6 +294,13 @@ public class CellBroadcastContentProvider extends ContentProvider {
             cv.put(Telephony.CellBroadcasts.CMAS_SEVERITY, cmasInfo.getSeverity());
             cv.put(Telephony.CellBroadcasts.CMAS_URGENCY, cmasInfo.getUrgency());
             cv.put(Telephony.CellBroadcasts.CMAS_CERTAINTY, cmasInfo.getCertainty());
+        }
+
+        List<Geometry> geometries = message.getGeometries();
+        if (geometries != null && !geometries.isEmpty()) {
+            String geometriesString = CbGeoUtils.encodeGeometriesToString(
+                    geometries);
+            cv.put(Telephony.CellBroadcasts.GEOMETRIES, geometriesString);
         }
 
         return cv;

@@ -19,11 +19,13 @@ package com.android.cellbroadcastreceiver;
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.Telephony;
+import android.telephony.CbGeoUtils.Geometry;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionManager;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +35,8 @@ import android.widget.ListView;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.modules.utils.build.SdkLevel;
+
+import java.util.List;
 
 /**
  * The back-end data adapter for {@link CellBroadcastListActivity}.
@@ -216,8 +220,17 @@ public class CellBroadcastCursorAdapter extends CursorAdapter {
                     Telephony.CellBroadcasts.MAXIMUM_WAIT_TIME));
         }
 
+        List<Geometry> geometries = null;
+        if (cursor.getColumnIndex(Telephony.CellBroadcasts.GEOMETRIES) >= 0) {
+            String geometriesString = cursor.getString(cursor.getColumnIndexOrThrow(
+                    Telephony.CellBroadcasts.GEOMETRIES));
+            if (!TextUtils.isEmpty(geometriesString)) {
+                geometries = CbGeoUtils.parseGeometriesFromString(geometriesString);
+            }
+        }
+
         return new SmsCbMessage(format, geoScope, serialNum, location, category, language, dcs,
-                body, priority, etwsInfo, cmasInfo, maximumWaitTimeSec, null, time,
+                body, priority, etwsInfo, cmasInfo, maximumWaitTimeSec, geometries, time,
                 slotIndex, subId);
     }
 
