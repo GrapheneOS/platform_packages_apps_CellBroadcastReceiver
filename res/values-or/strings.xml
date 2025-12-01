@@ -185,4 +185,6 @@
     <string name="download_language_message" msgid="417229699977464547">"କୌଣସି ଇଣ୍ଟର୍ନେଟ କନେକ୍ସନ ବିନା ମେସେଜଗୁଡ଼ିକୁ ଅନୁବାଦ କରିବା ପାଇଁ ଆପଣଙ୍କୁ ସେଟିଂସରେ ଏକ ଅତିରିକ୍ତ ଭାଷା ପେକେଜ ଡାଉନଲୋଡ କରିବାକୁ ହେବ"</string>
     <string name="download_language_positive_button" msgid="3455605256671856458">"ସେଟିଂସ"</string>
     <string name="download_language_negative_button" msgid="1441855301756712618">"ବର୍ତ୍ତମାନ ନୁହେଁ"</string>
+    <!-- no translation found for button_map (5182272283825950016) -->
+    <skip />
 </resources>

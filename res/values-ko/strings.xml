@@ -185,4 +185,6 @@
     <string name="download_language_message" msgid="417229699977464547">"인터넷에 연결되어 있지 않은 상태에서 메시지를 번역하려면 설정에서 추가 언어 팩을 다운로드해야 합니다."</string>
     <string name="download_language_positive_button" msgid="3455605256671856458">"설정"</string>
     <string name="download_language_negative_button" msgid="1441855301756712618">"나중에"</string>
+    <!-- no translation found for button_map (5182272283825950016) -->
+    <skip />
 </resources>
