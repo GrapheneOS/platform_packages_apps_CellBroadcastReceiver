@@ -45,6 +45,7 @@ import android.support.test.uiautomator.Until;
 import android.text.TextUtils;
 import android.widget.LinearLayout;
 
+import com.android.cellbroadcastreceiver.flags.Flags;
 import com.android.internal.util.HexDump;
 
 import org.json.JSONObject;
@@ -236,15 +237,17 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         }
     }
 
-    //@Test // TODO: enable after full implementation
+    @Test
     @Parameters(method = "paramsCarrierAndChannelForGeoTest")
     public void testAlertUiOnReceivedAlertWithGeo(String carrierName, String channel)
             throws Throwable {
         logd("CellBroadcastUiTest#testAlertUiOnReceivedAlertWithGeo");
+
+        assumeTrue("Skipping test because Map flag is disabled",
+                Flags.enableCellbroadcastMapViewer());
+
         CellBroadcastCarrierTestConfig carrierInfo =
                 new CellBroadcastCarrierTestConfig(sCarriersObject, carrierName);
-        CellBroadcastChannelTestConfig channelInfo =
-                new CellBroadcastChannelTestConfig(sChannelsObject, carrierName, channel);
         // setup mccmnc
         if (sInputMccMnc == null || (sInputMccMnc != null
                 && !sInputMccMnc.equals(carrierInfo.mMccMnc))) {
@@ -258,7 +261,9 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         receiveBroadcastMessageWithGeo(channel);
 
         logd("carrier " + carrierName + ", Map button should be shown" + " for channel " + channel);
-        verifyMapButtonIsShown();
+        String languageTag =
+                (carrierInfo.mLanguageTag != null) ? carrierInfo.mLanguageTag : "en-US";
+        verifyMapButtonIsShown(languageTag);
     }
 
     @Test
@@ -435,8 +440,35 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
                 + ", expected title=" + title, expectedResult, result);
     }
 
-    private void verifyMapButtonIsShown() {
-        // TODO
+    /**
+     * Finds the "Map" button on the screen using its localized text content.
+     *
+     * @param languageTag The language tag used for the app locale (e.g., "ja-JP").
+     * @return The UiObject2 representing the Map button, or null if not found.
+     */
+    private UiObject2 findMapButton(String languageTag) {
+        try {
+            Context targetContext = getContext().createPackageContext(
+                    sPackageName, Context.CONTEXT_IGNORE_SECURITY);
+            Configuration config = new Configuration();
+            config.setLocales(LocaleList.forLanguageTags(languageTag));
+            Context localizedContext = targetContext.createConfigurationContext(config);
+            String mapButtonText = localizedContext.getString(
+                    localizedContext.getResources().getIdentifier(
+                            "button_map", "string", sPackageName));
+            return sDevice.wait(Until.findObject(By.text(mapButtonText)), UI_TIMEOUT);
+        } catch (PackageManager.NameNotFoundException e) {
+            throw new RuntimeException("Target package context not found", e);
+        }
+    }
+
+    /**
+     * It finds the button using the changed language setting (languageTag) as an argument.
+     */
+    private void verifyMapButtonIsShown(String languageTag) {
+        UiObject2 mapButton = findMapButton(languageTag);
+        assertNotNull("Map button should be visible on the screen", mapButton);
+        assertTrue("Map button should be enabled", mapButton.isEnabled());
     }
 
     /** Pulls down notification shade and verifies that message text is found. */

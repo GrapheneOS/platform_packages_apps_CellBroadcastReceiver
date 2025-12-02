@@ -34,6 +34,7 @@ java_defaults {
         "android.telephony.mockmodem",
         "modules-utils-build_system",
         "junit-params",
+        "cellbroadcastreceiver_flags_lib",
     ],
     // Include all test java files.
     srcs: [":cellbroadcastreceiver-srcs-mockmodem-test"],
