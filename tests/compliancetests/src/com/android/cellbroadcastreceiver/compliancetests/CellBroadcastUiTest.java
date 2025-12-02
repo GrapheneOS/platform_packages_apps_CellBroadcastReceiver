@@ -271,6 +271,10 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
     public void testAlertUiOnTranslatorFeature(String carrierName, String channel)
             throws Throwable {
         logd("CellBroadcastUiTest#testAlertUiOnTranslatorFeature");
+
+        assumeTrue("Skipping test because Translation flag is disabled",
+                Flags.enableCellbroadcastTranslation());
+
         CellBroadcastCarrierTestConfig carrierInfo =
                 new CellBroadcastCarrierTestConfig(sCarriersObject, carrierName);
         CellBroadcastChannelTestConfig channelInfo =
