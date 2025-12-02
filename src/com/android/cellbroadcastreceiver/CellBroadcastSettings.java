@@ -739,6 +739,10 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             }
 
             if (mReceiveCmasInSecondLanguageCheckBox != null) {
+                mReceiveCmasInSecondLanguageCheckBox.setTitle(
+                        res.getString(R.string.receive_cmas_in_second_language_title));
+                mReceiveCmasInSecondLanguageCheckBox.setSummary(
+                        res.getString(R.string.receive_cmas_in_second_language_summary));
                 mReceiveCmasInSecondLanguageCheckBox.setVisible(!res.getString(
                         R.string.emergency_alert_second_language_code).isEmpty());
                 if (isWatch && !mReceiveCmasInSecondLanguageCheckBox.isVisible()) {
@@ -1370,6 +1374,10 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
             }
 
             if (mReceiveCmasInSecondLanguageCheckBox != null) {
+                mReceiveCmasInSecondLanguageCheckBox.setTitle(
+                        res.getString(R.string.receive_cmas_in_second_language_title));
+                mReceiveCmasInSecondLanguageCheckBox.setSummary(
+                        res.getString(R.string.receive_cmas_in_second_language_summary));
                 mReceiveCmasInSecondLanguageCheckBox.setVisible(!res.getString(
                         R.string.emergency_alert_second_language_code).isEmpty());
                 if (isWatch && !mReceiveCmasInSecondLanguageCheckBox.isVisible()) {
