@@ -511,6 +511,29 @@ public class CellBroadcastSettingsTest extends
         assertTrue(operatorDefinedCheckBox.isVisible());
     }
 
+    @Test
+    public void testShowReceiveCmasInSecondLanguageToggle() throws Throwable {
+        String title = "title";
+        String summary = "summary";
+        doReturn("es").when(mContext.getResources()).getString(
+                eq(R.string.emergency_alert_second_language_code));
+        doReturn(title).when(mContext.getResources()).getString(
+                eq(R.string.receive_cmas_in_second_language_title));
+        doReturn(summary).when(mContext.getResources()).getString(
+                eq(R.string.receive_cmas_in_second_language_summary));
+        CellBroadcastSettings settings = startActivity();
+        waitForMs(100);
+
+        TwoStatePreference receiveCmasInSecondLangCheckBox =
+                (TwoStatePreference) getPreference(settings,
+                CellBroadcastSettings.KEY_RECEIVE_CMAS_IN_SECOND_LANGUAGE);
+
+        assertNotNull(receiveCmasInSecondLangCheckBox);
+        assertTrue(receiveCmasInSecondLangCheckBox.isVisible());
+        assertEquals(receiveCmasInSecondLangCheckBox.getTitle(), title);
+        assertEquals(receiveCmasInSecondLangCheckBox.getSummary(), summary);
+    }
+
     private void setPreference(int putType, String key, String value) {
         mContext.injectSharedPreferences(mFakeSharedPreferences);
         switch (putType) {
