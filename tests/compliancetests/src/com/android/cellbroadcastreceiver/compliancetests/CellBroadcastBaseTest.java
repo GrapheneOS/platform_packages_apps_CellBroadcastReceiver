@@ -37,6 +37,7 @@ import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyCallback;
 import android.telephony.TelephonyManager;
+import android.telephony.UiccSlotInfo;
 import android.telephony.mockmodem.IRadioMessagingImpl;
 import android.telephony.mockmodem.MockModemConfigBase.SimInfoChangedResult;
 import android.telephony.mockmodem.MockModemManager;
@@ -78,6 +79,7 @@ public class CellBroadcastBaseTest {
     protected static final int ERROR_NO_TELEPHONY = 2;
     protected static final int ERROR_MULTI_SIM = 3;
     protected static final int ERROR_MOCK_MODEM_DISABLE = 4;
+    protected static final int ERROR_ESIM_ONLY_DEVICE = 5;
 
     protected static final String ALLOW_MOCK_MODEM_PROPERTY = "persist.radio.allow_mock_modem";
     protected static final boolean DEBUG = !"user".equals(Build.TYPE);
@@ -189,6 +191,12 @@ public class CellBroadcastBaseTest {
         if (!isMockModemAllowed()) {
             Log.i(TAG, "Mock Modem is not allowed");
             sPreconditionError = ERROR_MOCK_MODEM_DISABLE;
+            return;
+        }
+
+        if (isEsimOnlyDevice(getContext())) {
+            Log.i(TAG, "Esim Only Device");
+            sPreconditionError = ERROR_ESIM_ONLY_DEVICE;
             return;
         }
 
@@ -561,6 +569,28 @@ public class CellBroadcastBaseTest {
             } finally {
                 uiAutomation.dropShellPermissionIdentity();
             }
+        }
+    }
+
+    private static boolean isEsimOnlyDevice(Context context) {
+        TelephonyManager tm = context.getSystemService(TelephonyManager.class);
+        InstrumentationRegistry.getInstrumentation().getUiAutomation()
+                .adoptShellPermissionIdentity(
+                        android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE);
+        try {
+            UiccSlotInfo[] uiccSlotInfos = tm.getUiccSlotsInfo();
+            if (uiccSlotInfos == null) {
+                return false;
+            }
+            for (UiccSlotInfo info : uiccSlotInfos) {
+                if (!info.getIsEuicc()) {
+                    return false;
+                }
+            }
+            return true;
+        } finally {
+            InstrumentationRegistry.getInstrumentation().getUiAutomation()
+                    .dropShellPermissionIdentity();
         }
     }
 }
