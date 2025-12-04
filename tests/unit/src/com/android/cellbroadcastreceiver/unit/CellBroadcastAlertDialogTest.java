@@ -21,6 +21,7 @@ import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
@@ -1109,6 +1110,31 @@ public class CellBroadcastAlertDialogTest extends
 
         assertFalse(getShouldOfferTranslation(activity));
         verify(mMockCBButtonManager).configureButtons(eq(false), anyBoolean());
+    }
+
+    /**
+     * Tests that onLanguageDetectionCompleted triggers button update to show the translate button.
+     * This verifies the fix for the button not appearing after asynchronous language detection.
+     */
+    public void testOnLanguageDetectionCompletedTriggersButtonUpdate() {
+        // Setup with different languages to ensure translation is offered.
+        String systemLang = Locale.getDefault().getLanguage();
+        final String detectedLanguage = getDifferentLanguage(systemLang);
+        final ULocale detectedULocale = new ULocale(detectedLanguage);
+
+        SmsCbMessage message = createMessage("A message to be detected", null);
+        TranslationTestSetupResult result = setupActivityForTranslationTest(message,
+                true, true, true);
+        CellBroadcastAlertDialog activity = result.dialog;
+
+        verify(mMockCBButtonManager, times(1)).configureButtons(eq(false), anyBoolean());
+
+        getInstrumentation().runOnMainSync(
+                () -> activity.onLanguageDetectionCompleted(Optional.of(detectedULocale)));
+        verify(mMockCBTranslateManager, times(1)).initializeTranslator(eq(detectedULocale),
+                any());
+        verify(mMockCBButtonManager, atLeast(2)).configureButtons(anyBoolean(), anyBoolean());
+        verify(mMockCBButtonManager, times(1)).configureButtons(eq(true), anyBoolean());
     }
 
     // Helper method to create a real SmsCbMessage instance
