@@ -185,6 +185,5 @@
     <string name="download_language_message" msgid="417229699977464547">"Хабарларды интернет байланысынсыз аудару үшін \"Параметрлер\" бөлімінен қосымша тіл пакетін жүктеп алуыңыз қажет."</string>
     <string name="download_language_positive_button" msgid="3455605256671856458">"Параметрлер"</string>
     <string name="download_language_negative_button" msgid="1441855301756712618">"Қазір емес"</string>
-    <!-- no translation found for button_map (5182272283825950016) -->
-    <skip />
+    <string name="button_map" msgid="5182272283825950016">"Карта"</string>
 </resources>

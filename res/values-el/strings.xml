@@ -185,6 +185,5 @@
     <string name="download_language_message" msgid="417229699977464547">"Για να μεταφράζετε μηνύματα χωρίς σύνδεση στο διαδίκτυο, θα πρέπει να κατεβάσετε ένα επιπλέον πακέτο γλώσσας στις Ρυθμίσεις"</string>
     <string name="download_language_positive_button" msgid="3455605256671856458">"Ρυθμίσεις"</string>
     <string name="download_language_negative_button" msgid="1441855301756712618">"Όχι τώρα"</string>
-    <!-- no translation found for button_map (5182272283825950016) -->
-    <skip />
+    <string name="button_map" msgid="5182272283825950016">"Χάρτης"</string>
 </resources>

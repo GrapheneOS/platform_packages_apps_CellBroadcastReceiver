@@ -185,6 +185,5 @@
     <string name="download_language_message" msgid="417229699977464547">"如要在離線時翻譯訊息，請前往「設定」下載額外的語言套件"</string>
     <string name="download_language_positive_button" msgid="3455605256671856458">"設定"</string>
     <string name="download_language_negative_button" msgid="1441855301756712618">"暫時不要"</string>
-    <!-- no translation found for button_map (5182272283825950016) -->
-    <skip />
+    <string name="button_map" msgid="5182272283825950016">"地圖"</string>
 </resources>
