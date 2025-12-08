@@ -760,14 +760,15 @@ public class CellBroadcastAlertService extends Service {
         }
         CellBroadcastChannelRange range = channelManager
                 .getCellBroadcastChannelRangeFromMessage(message);
+        Resources resByOperator = CellBroadcastSettings.getResourcesByOperator(mContext,
+                message.getSubscriptionId(),
+                CellBroadcastReceiver.getRoamingOperatorSupported(mContext));
         audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_TONE_TYPE, alertType);
         audioIntent.putExtra(
                 CellBroadcastAlertAudio.ALERT_AUDIO_VIBRATION_PATTERN_EXTRA,
                 (range != null)
                         ? range.mVibrationPattern
-                        : CellBroadcastSettings.getResourcesByOperator(mContext,
-                                message.getSubscriptionId(),
-                                CellBroadcastReceiver.getRoamingOperatorSupported(mContext))
+                        : resByOperator
                         .getIntArray(R.array.default_vibration_pattern));
         // read key_override_dnd only when the toggle is visible.
         // range.mOverrideDnd is per channel configuration. override_dnd is the main config
@@ -777,7 +778,7 @@ public class CellBroadcastAlertService extends Service {
         boolean isOverallEnabledOverrideDnD =
                 isWatch || (res.getBoolean(R.bool.show_override_dnd_settings)
                 && prefs.getBoolean(CellBroadcastSettings.KEY_OVERRIDE_DND, false))
-                || res.getBoolean(R.bool.override_dnd);
+                || resByOperator.getBoolean(R.bool.override_dnd);
         if (isOverallEnabledOverrideDnD || (range != null && range.mOverrideDnd)) {
             audioIntent.putExtra(CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA, true);
         }
