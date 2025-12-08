@@ -17,12 +17,21 @@
 package com.android.cellbroadcastreceiver.unit;
 
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Looper;
+import android.telephony.CbGeoUtils.Circle;
+import android.telephony.CbGeoUtils.Geometry;
+import android.telephony.CbGeoUtils.LatLng;
+import android.telephony.SmsCbCmasInfo;
+import android.telephony.SmsCbEtwsInfo;
+import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
@@ -37,6 +46,7 @@ import com.android.cellbroadcastreceiver.CellBroadcastAlertDialog;
 import com.android.cellbroadcastreceiver.CellBroadcastAlertService;
 import com.android.cellbroadcastreceiver.CellBroadcastTranslateManager;
 import com.android.cellbroadcastreceiver.R;
+import com.android.internal.telephony.gsm.SmsCbConstants;
 
 import org.junit.After;
 import org.junit.Before;
@@ -44,6 +54,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Instrumentation tests for the {@link CellBroadcastAlertButtonManager}.
@@ -89,16 +100,19 @@ public class CellBroadcastAlertButtonManagerTest
         CellBroadcastAlertDialog.sIsWatchForTest = false;
         doReturn(true).when(mContext.getResources()).getBoolean(R.bool.enable_alert_translation);
         doReturn(true).when(mContext.getResources()).getBoolean(R.bool.enable_map);
+        SubscriptionManager mockSubManager = mock(SubscriptionManager.class);
+        injectSystemService(SubscriptionManager.class, mockSubManager);
+        SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
+        doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
         Intent dummyIntent = new Intent();
         PendingIntent realPendingIntent = PendingIntent.getActivity(
                 getInstrumentation().getTargetContext(), 0, dummyIntent,
                 PendingIntent.FLAG_IMMUTABLE);
         doReturn(realPendingIntent).when(mMockTranslateManager).getSettingsIntent();
-
-        SubscriptionManager mockSubManager = mock(SubscriptionManager.class);
-        injectSystemService(SubscriptionManager.class, mockSubManager);
-        SubscriptionInfo mockSubInfo = mock(SubscriptionInfo.class);
-        doReturn(mockSubInfo).when(mockSubManager).getActiveSubscriptionInfo(anyInt());
+        CellBroadcastAlertDialog activity = getActivity();
+        if (activity != null) {
+            setupButtonManager(activity);
+        }
     }
 
     @After
@@ -107,12 +121,16 @@ public class CellBroadcastAlertButtonManagerTest
         super.tearDown();
     }
 
+    /**
+     * Finds a button in the button bar by its displayed text.
+     */
     private Button findButtonByText(String text) {
         mButtonBar = getActivity().findViewById(R.id.button_bar);
         if (mButtonBar == null) return null;
 
         for (int i = 0; i < mButtonBar.getChildCount(); i++) {
             View child = mButtonBar.getChildAt(i);
+            // Check for buttons wrapped in a FrameLayout (used for the progress bar overlay)
             if (child instanceof FrameLayout) {
                 FrameLayout container = (FrameLayout) child;
                 for (int j = 0; j < container.getChildCount(); j++) {
@@ -146,6 +164,9 @@ public class CellBroadcastAlertButtonManagerTest
         getInstrumentation().waitForIdleSync();
     }
 
+    /**
+     * Finds the ProgressBar in the button bar. It is expected to be inside a FrameLayout.
+     */
     private ProgressBar findProgressBar() {
         mButtonBar = getActivity().findViewById(R.id.button_bar);
         if (mButtonBar == null) return null;
@@ -164,8 +185,10 @@ public class CellBroadcastAlertButtonManagerTest
         return null;
     }
 
-    private void setupButtonManager() {
-        CellBroadcastAlertDialog activity = getActivity();
+    /**
+     * Initializes the CellBroadcastAlertButtonManager.
+     */
+    private void setupButtonManager(CellBroadcastAlertDialog activity) {
         activity.setTranslateManagerForTest(mMockTranslateManager);
         mButtonManager = new CellBroadcastAlertButtonManager(activity, mMockTranslateClickListener,
                 mMockMapClickListener);
@@ -173,9 +196,97 @@ public class CellBroadcastAlertButtonManagerTest
         mDismissButton = activity.findViewById(R.id.dismissButton);
     }
 
+    /**
+     * Starts a new activity with a specific intent and sets up the ButtonManager.
+     * This is useful for tests that require a specific initial message/intent.
+     * The original Looper.prepare() is only needed if not running in a TestRunner environment,
+     * but is kept for safety if the test environment changes.
+     */
+    private CellBroadcastAlertDialog startActivityAndSetupButtonManager(Intent intent) {
+        Looper.prepare();
+        startActivity(intent, null, null);
+        getInstrumentation().waitForIdleSync();
+        CellBroadcastAlertDialog activity = getActivity();
+        assertNotNull("Activity should not be null", activity);
+        setupButtonManager(activity);
+
+        doNothing().when(mMockTranslateManager).detectLanguage(anyString());
+        getInstrumentation().waitForIdleSync();
+        return activity;
+    }
+
+    /**
+     * Helper to create a basic SmsCbMessage with specific body and language.
+     */
+    private SmsCbMessage createMessage(String messageBody, String language) {
+        return new SmsCbMessage(1, 1, 1, new SmsCbLocation("123456"),
+                SmsCbConstants.MESSAGE_ID_CMAS_ALERT_EXTREME_IMMEDIATE_OBSERVED, language,
+                messageBody, 3, (SmsCbEtwsInfo) null,
+                (SmsCbCmasInfo) null, 0, 0);
+    }
+
+    /**
+     * Helper to create an SmsCbMessage, optionally with geographical information.
+     */
+    private SmsCbMessage createSmsCbMessage(boolean withGeometries) {
+        int messageFormat = 1; // MESSAGE_FORMAT_3GPP
+        int geographicalScope = 0; // GEOGRAPHICAL_SCOPE_CELL_WIDE_IMMEDIATE
+        int serialNumber = 123;
+        SmsCbLocation location = new SmsCbLocation("310260");
+        int serviceCategory = 4370; // CMAS Presidential
+        String language = "en";
+        String body = "Test alert message";
+        int priority = 3; // MESSAGE_PRIORITY_EMERGENCY
+        SmsCbEtwsInfo etwsInfo = null;
+        SmsCbCmasInfo cmasInfo = new SmsCbCmasInfo(0, 0, 0, 0, 0, 0);
+        int slotIndex = 0;
+        int subId = 1;
+        long receivedTimeMillis = System.currentTimeMillis();
+        int maximumWaitTimeSec = 255; // MAXIMUM_WAIT_TIME_NOT_SET
+
+        List<Geometry> geometries = null;
+        if (withGeometries) {
+            geometries = new ArrayList<>();
+            geometries.add(new Circle(new LatLng(37.422, -122.084), 1000.0));
+        }
+
+        return new SmsCbMessage(messageFormat, geographicalScope, serialNumber, location,
+                serviceCategory, language, 0, body, priority, etwsInfo, cmasInfo,
+                maximumWaitTimeSec, geometries, receivedTimeMillis, slotIndex, subId);
+    }
+
+    /**
+     * Helper to create an Intent containing the given SmsCbMessage.
+     */
+    private Intent createIntentWithMessage(SmsCbMessage message) {
+        ArrayList<SmsCbMessage> messageList = new ArrayList<>();
+        messageList.add(message);
+        Intent intent = new Intent(mContext, CellBroadcastAlertDialog.class);
+        intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA,
+                messageList);
+        return intent;
+    }
+
+    /**
+     * Sets up the environment for tests focusing on the translate button.
+     */
+    void prepareTranslateTestEnvironment() {
+        SmsCbMessage message = createMessage("Test Message", "invalid-lang");
+        Intent intent = createIntentWithMessage(message);
+        startActivityAndSetupButtonManager(intent);
+    }
+
+    /**
+     * Sets up the environment for tests focusing on the map button.
+     */
+    void prepareMapTestEnvironment() {
+        SmsCbMessage message = createSmsCbMessage(true);
+        Intent intent = createIntentWithMessage(message);
+        startActivityAndSetupButtonManager(intent);
+    }
+
     public void testConfigureButtonsShowDismissOnly() throws Throwable {
-        startActivity();
-        setupButtonManager();
+        prepareTranslateTestEnvironment();
 
         runTestOnUiThread(() -> mButtonManager.configureButtons(false, false));
         waitForUiThreadToSettle();
@@ -192,13 +303,10 @@ public class CellBroadcastAlertButtonManagerTest
         assertEquals("Dismiss button weight should be 0", 0f, dismissParams.weight, 0.01f);
         assertTrue("Dismiss button width should be WRAP_CONTENT",
                 dismissParams.width == LinearLayout.LayoutParams.WRAP_CONTENT);
-        stopActivity();
     }
 
     public void testConfigureButtonsShowMapOnly() throws Throwable {
-        startActivity();
-        setupButtonManager();
-
+        prepareMapTestEnvironment();
         runTestOnUiThread(() -> mButtonManager.configureButtons(false, true));
         waitForUiThreadToSettle();
 
@@ -211,16 +319,15 @@ public class CellBroadcastAlertButtonManagerTest
         LinearLayout.LayoutParams dismissParams =
                 (LinearLayout.LayoutParams) mDismissButton.getLayoutParams();
         assertEquals("Dismiss button weight should be 1.0", 1.0f, dismissParams.weight, 0.01f);
-        LinearLayout.LayoutParams mapParams = (LinearLayout.LayoutParams) mButtonBar.getChildAt(
-                0).getLayoutParams();
-        assertEquals("Map button weight should be 1.0", 1.0f, mapParams.weight, 0.01f);
-        stopActivity();
+        LinearLayout.LayoutParams mapContainerParams =
+                (LinearLayout.LayoutParams) mButtonBar.getChildAt(
+                        0).getLayoutParams();
+        assertEquals("Map button container weight should be 1.0", 1.0f, mapContainerParams.weight,
+                0.01f);
     }
 
     public void testConfigureButtonsShowTranslateOnly() throws Throwable {
-        startActivity();
-        setupButtonManager();
-
+        prepareTranslateTestEnvironment();
         runTestOnUiThread(() -> mButtonManager.configureButtons(true, false));
         waitForUiThreadToSettle();
 
@@ -230,12 +337,10 @@ public class CellBroadcastAlertButtonManagerTest
         assertEquals("Translate button should be visible", View.VISIBLE,
                 findTranslateButton().getVisibility());
         assertNull("Map button should not be present", findMapButton());
-        stopActivity();
     }
 
     public void testConfigureButtonsShowAll() throws Throwable {
-        startActivity();
-        setupButtonManager();
+        prepareMapTestEnvironment();
 
         runTestOnUiThread(() -> mButtonManager.configureButtons(true, true));
         waitForUiThreadToSettle();
@@ -255,13 +360,10 @@ public class CellBroadcastAlertButtonManagerTest
                 ((FrameLayout) translateContainer).getChildAt(0) instanceof Button);
         assertEquals("Third child should be Dismiss button",
                 mContext.getString(R.string.button_dismiss), dismissButton.getText().toString());
-
-        stopActivity();
     }
 
     public void testMapButtonClick() throws Throwable {
-        startActivity();
-        setupButtonManager();
+        prepareMapTestEnvironment();
         runTestOnUiThread(() -> mButtonManager.configureButtons(false, true));
         waitForUiThreadToSettle();
 
@@ -271,27 +373,25 @@ public class CellBroadcastAlertButtonManagerTest
         waitForUiThreadToSettle();
 
         verify(mMockMapClickListener).onMapClick();
-        stopActivity();
     }
 
     public void testTranslateButtonClick() throws Throwable {
-        startActivity();
-        setupButtonManager();
+        prepareTranslateTestEnvironment();
+
         runTestOnUiThread(() -> mButtonManager.configureButtons(true, false));
-        waitForUiThreadToSettle();
+        getInstrumentation().waitForIdleSync();
 
         Button translateButton = findTranslateButton();
-        assertNotNull(translateButton);
+        assertNotNull("Translate button should be visible after manual configure", translateButton);
+
         runTestOnUiThread(() -> translateButton.performClick());
-        waitForUiThreadToSettle();
+        getInstrumentation().waitForIdleSync();
 
         verify(mMockTranslateClickListener).onTranslateClick();
-        stopActivity();
     }
 
     public void testShowTranslationInProgressTogglesVisibility() throws Throwable {
-        startActivity();
-        setupButtonManager();
+        prepareTranslateTestEnvironment();
         runTestOnUiThread(() -> mButtonManager.configureButtons(true, false));
         waitForUiThreadToSettle();
 
@@ -300,23 +400,23 @@ public class CellBroadcastAlertButtonManagerTest
         ProgressBar progressBar = findProgressBar();
         assertNotNull("Progress bar should be present", progressBar);
 
+        // Test show in progress
         runTestOnUiThread(() -> mButtonManager.showTranslationInProgress(true));
         waitForUiThreadToSettle();
         assertEquals("Progress bar should be visible.", View.VISIBLE, progressBar.getVisibility());
         assertEquals("Translate button should be GONE.", View.GONE,
                 translateButton.getVisibility());
 
+        // Test hide in progress
         runTestOnUiThread(() -> mButtonManager.showTranslationInProgress(false));
         waitForUiThreadToSettle();
         assertEquals("Progress bar should be GONE.", View.GONE, progressBar.getVisibility());
         assertEquals("Translate button should be visible.", View.VISIBLE,
                 translateButton.getVisibility());
-        stopActivity();
     }
 
     public void testOnTranslationCompletedOnlyTranslateWasShown() throws Throwable {
-        startActivity();
-        setupButtonManager();
+        prepareTranslateTestEnvironment();
         runTestOnUiThread(() -> mButtonManager.configureButtons(true, false));
         waitForUiThreadToSettle();
         assertNotNull(findTranslateButton());
@@ -327,12 +427,10 @@ public class CellBroadcastAlertButtonManagerTest
         assertEquals("Button bar should have one child", 1, mButtonBar.getChildCount());
         assertNull("Translate button should be gone", findTranslateButton());
         assertNotNull("Dismiss button should be present", mDismissButton);
-        stopActivity();
     }
 
     public void testOnTranslationCompletedMapAndTranslateWereShown() throws Throwable {
-        startActivity();
-        setupButtonManager();
+        prepareMapTestEnvironment();
         runTestOnUiThread(() -> mButtonManager.configureButtons(true, true));
         waitForUiThreadToSettle();
 
@@ -343,12 +441,10 @@ public class CellBroadcastAlertButtonManagerTest
         assertNull("Translate button should be gone", findTranslateButton());
         assertNotNull("Map button should still be present", findMapButton());
         assertNotNull("Dismiss button should be present", mDismissButton);
-        stopActivity();
     }
 
     public void testConfigureButtonsIdempotent() throws Throwable {
-        startActivity();
-        setupButtonManager();
+        prepareTranslateTestEnvironment();
 
         runTestOnUiThread(() -> mButtonManager.configureButtons(true, true));
         waitForUiThreadToSettle();
@@ -365,6 +461,5 @@ public class CellBroadcastAlertButtonManagerTest
         runTestOnUiThread(() -> mButtonManager.configureButtons(false, false));
         waitForUiThreadToSettle();
         assertEquals("Should still be 1 child", 1, mButtonBar.getChildCount());
-        stopActivity();
     }
 }

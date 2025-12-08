@@ -836,7 +836,10 @@ public class CellBroadcastAlertDialog extends Activity implements
     public void onLanguageDetectionCompleted(Optional<ULocale> detectedLocaleOptional) {
         // Only call the translation offer logic if a detected language exists.
         // If the Optional is empty, do nothing.
-        detectedLocaleOptional.ifPresent(this::offerTranslation);
+        detectedLocaleOptional.ifPresent(sourceLocale -> {
+            offerTranslation(sourceLocale);
+            updateButtons(getLatestMessage());
+        });
     }
 
     /**

@@ -185,4 +185,6 @@
     <string name="download_language_message" msgid="417229699977464547">"Para mag-translate ng mga mensahe nang walang koneksyon sa internet, kakailanganin mong mag-download ng karagdagang package ng wika sa Mga Setting"</string>
     <string name="download_language_positive_button" msgid="3455605256671856458">"Mga Setting"</string>
     <string name="download_language_negative_button" msgid="1441855301756712618">"Hindi ngayon"</string>
+    <!-- no translation found for button_map (5182272283825950016) -->
+    <skip />
 </resources>
