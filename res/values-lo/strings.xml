@@ -185,6 +185,5 @@
     <string name="download_language_message" msgid="417229699977464547">"ເພື່ອແປຂໍ້ຄວາມໂດຍບໍ່ຕ້ອງໃຊ້ການເຊື່ອມຕໍ່ອິນເຕີເນັດ, ທ່ານຈະຕ້ອງດາວໂຫຼດແພັກເກດພາສາເພີ່ມເຕີມໃນການຕັ້ງຄ່າ"</string>
     <string name="download_language_positive_button" msgid="3455605256671856458">"ການຕັ້ງຄ່າ"</string>
     <string name="download_language_negative_button" msgid="1441855301756712618">"ບໍ່ຟ້າວເທື່ອ"</string>
-    <!-- no translation found for button_map (5182272283825950016) -->
-    <skip />
+    <string name="button_map" msgid="5182272283825950016">"ແຜນທີ່"</string>
 </resources>

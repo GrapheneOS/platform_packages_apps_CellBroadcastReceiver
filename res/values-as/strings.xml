@@ -185,6 +185,5 @@
     <string name="download_language_message" msgid="417229699977464547">"ইণ্টাৰনেট সংযোগৰ অবিহনে বাৰ্তা অনুবাদ কৰিবলৈ, আপুনি ছেটিঙত এটা অতিৰিক্ত ভাষাৰ পেকেজ ডাউনল’ড কৰিব লাগিব"</string>
     <string name="download_language_positive_button" msgid="3455605256671856458">"ছেটিং"</string>
     <string name="download_language_negative_button" msgid="1441855301756712618">"এতিয়া নহয়"</string>
-    <!-- no translation found for button_map (5182272283825950016) -->
-    <skip />
+    <string name="button_map" msgid="5182272283825950016">"মেপ"</string>
 </resources>
