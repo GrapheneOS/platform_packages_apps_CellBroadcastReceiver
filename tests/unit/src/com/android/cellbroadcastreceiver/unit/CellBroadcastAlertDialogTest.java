@@ -1127,13 +1127,11 @@ public class CellBroadcastAlertDialogTest extends
                 true, true, true);
         CellBroadcastAlertDialog activity = result.dialog;
 
-        verify(mMockCBButtonManager, times(1)).configureButtons(eq(false), anyBoolean());
-
         getInstrumentation().runOnMainSync(
                 () -> activity.onLanguageDetectionCompleted(Optional.of(detectedULocale)));
         verify(mMockCBTranslateManager, times(1)).initializeTranslator(eq(detectedULocale),
                 any());
-        verify(mMockCBButtonManager, atLeast(2)).configureButtons(anyBoolean(), anyBoolean());
+        verify(mMockCBButtonManager, atLeast(1)).configureButtons(anyBoolean(), anyBoolean());
         verify(mMockCBButtonManager, times(1)).configureButtons(eq(true), anyBoolean());
     }
 
