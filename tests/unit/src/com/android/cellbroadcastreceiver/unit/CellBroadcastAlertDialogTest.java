@@ -23,6 +23,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.clearInvocations;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
@@ -837,6 +838,10 @@ public class CellBroadcastAlertDialogTest extends
         return systemLanguage.equals("en") ? "es" : "en";
     }
 
+    private String getTestMessageBody(String systemLanguage) {
+        return "en".equals(systemLanguage) ? "Mensaje de prueba" : "Test Message";
+    }
+
     /**
      * Tests that clicking the translate button for the first time shows the consent dialog
      * and does not proceed with the translation.
@@ -1441,5 +1446,101 @@ public class CellBroadcastAlertDialogTest extends
             activity.finish();
             getInstrumentation().waitForIdleSync();
         }
+    }
+
+    /**
+     * Tests that the translate button is hidden after translation is completed.
+     */
+    public void testTranslateButtonHiddenAfterTranslation() {
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage(getTestMessageBody(systemLang),
+                getDifferentLanguage(systemLang));
+        TranslationTestSetupResult setup = setupActivityForTranslationTest(message, true, true,
+                true);
+
+        // Simulate translation completion
+        getInstrumentation().runOnMainSync(() -> {
+            setup.dialog.onTranslationCompleted("Translated Text", true);
+        });
+
+        // Verify mTranslateDone is true
+        assertTrue("mTranslateDone should be true after translation",
+                getTranslateDone(setup.dialog));
+    }
+
+    /**
+     * Helper method to access the private mTranslateDone field via reflection.
+     */
+    private boolean getTranslateDone(CellBroadcastAlertDialog activity) {
+        try {
+            java.lang.reflect.Field field = CellBroadcastAlertDialog.class.getDeclaredField(
+                    "mTranslateDone");
+            field.setAccessible(true);
+            return field.getBoolean(activity);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            fail("Reflection error accessing mTranslateDone: " + e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * Tests that the translate button remains hidden after screen off/on (onResume)
+     * if translation was already completed.
+     */
+    public void testTranslateButtonRemainsHiddenAfterScreenOffOn() {
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage(getTestMessageBody(systemLang),
+                getDifferentLanguage(systemLang));
+        TranslationTestSetupResult setup = setupActivityForTranslationTest(message, true, true,
+                true);
+
+        getInstrumentation().runOnMainSync(() -> {
+            setup.dialog.onTranslationCompleted("Translated Text", true);
+        });
+
+        clearInvocations(mMockCBButtonManager);
+
+        getInstrumentation().runOnMainSync(() -> {
+            setup.dialog.onResume();
+        });
+
+        assertTrue("mTranslateDone should remain true after onResume",
+                getTranslateDone(setup.dialog));
+        verify(mMockCBButtonManager).configureButtons(eq(false), anyBoolean());
+    }
+
+    /**
+     * Tests that the translation state is reset when a new message arrives,
+     * allowing the translate button to be shown again.
+     */
+    public void testTranslateButtonResetOnNewMessage() {
+        String systemLang = Locale.getDefault().getLanguage();
+        SmsCbMessage message = createMessage(getTestMessageBody(systemLang),
+                getDifferentLanguage(systemLang));
+        TranslationTestSetupResult setup = setupActivityForTranslationTest(message, true, true,
+                true);
+
+        // 1. Complete translation for the first message
+        getInstrumentation().runOnMainSync(() -> {
+            setup.dialog.onTranslationCompleted("Translated Text 1", true);
+        });
+
+        assertTrue(getTranslateDone(setup.dialog));
+
+        // 2. Arrive new message
+        SmsCbMessage newMessage = createMessage(getTestMessageBody(systemLang) + " 2",
+                getDifferentLanguage(systemLang));
+        Intent newIntent = createIntentWithMessage(newMessage);
+
+        // Reset mock to clear previous interactions
+        clearInvocations(mMockCBButtonManager);
+
+        // Simulate new intent arrival
+        getInstrumentation().runOnMainSync(() -> {
+            setup.dialog.onNewIntent(newIntent);
+        });
+
+        assertFalse("mTranslateDone should be reset to false for new message",
+                getTranslateDone(setup.dialog));
     }
 }
