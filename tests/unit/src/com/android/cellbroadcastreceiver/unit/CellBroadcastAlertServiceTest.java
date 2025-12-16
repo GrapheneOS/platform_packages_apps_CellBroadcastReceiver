@@ -415,6 +415,43 @@ public class CellBroadcastAlertServiceTest extends
         assertEquals(1, (int) mInt.getValue());
     }
 
+    public void testAudioIntentWithOverrideDnd() {
+        doReturn(new String[]{
+                "0x1113:rat=gsm, emergency=true"
+                }).when(mResources).getStringArray(
+                eq(com.android.cellbroadcastreceiver.R.array
+                        .additional_cbs_channels_strings));
+        doReturn(false).when(mResources).getBoolean(
+                com.android.cellbroadcastreceiver.R.bool.override_dnd);
+        Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
+        intent.setAction(SHOW_NEW_ALERT_ACTION);
+
+        SmsCbMessage message = createMessageForCmasMessageClass(13788634, 0x1113, 0x1113);
+        intent.putExtra("message", message);
+        startService(intent);
+        waitForServiceIntent();
+
+        assertFalse(mServiceIntentToVerify.getBooleanExtra(
+                CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA, false));
+
+        // roaming case
+        Context mockContext = mock(Context.class);
+        Resources mockResources = mock(Resources.class);
+        doReturn(mockResources).when(mockContext).getResources();
+        ((TestContextWrapper) mContext).injectCreateConfigurationContext(mockContext);
+        // inject roaming operator
+        doReturn("123").when(mMockedSharedPreferences)
+                .getString(anyString(), anyString());
+        doReturn(true).when(mockResources).getBoolean(
+                eq(com.android.cellbroadcastreceiver.R.bool.override_dnd));
+
+        startService(intent);
+        waitForServiceIntent();
+
+        assertTrue(mServiceIntentToVerify.getBooleanExtra(
+                CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA, false));
+    }
+
     public void testShowNewAlertWithNotificationInRoaming() {
         if (!SdkLevel.isAtLeastS()) {
             return;
