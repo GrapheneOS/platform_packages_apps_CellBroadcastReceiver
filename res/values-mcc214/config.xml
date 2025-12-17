@@ -23,9 +23,9 @@
 
     <!-- 4371~4372, 4384~4385 -->
     <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
-        <item>0x1113-0x1114:rat=gsm, emergency=true, alert_duration=30000, override_dnd=true</item>
+        <item>0x1113-0x1114:rat=gsm, emergency=true, override_dnd=true</item>
         <!-- additional language -->
-        <item>0x1120-0x1121:rat=gsm, emergency=true, alert_duration=30000, filter_language=true, override_dnd=true</item>
+        <item>0x1120-0x1121:rat=gsm, emergency=true, filter_language=true, override_dnd=true</item>
     </string-array>
 
     <!-- 4380, 4393 -->
@@ -44,5 +44,5 @@
     <bool name="show_test_settings">false</bool>
 
     <!-- Extreme alerts toggle default value -->
-    <bool name="extreme_threat_alerts_enabled_default">false</bool>
+    <bool name="extreme_threat_alerts_enabled_default">true</bool>
 </resources>

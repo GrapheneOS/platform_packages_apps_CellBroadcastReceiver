@@ -1866,13 +1866,13 @@
     },
     "4371": {
       "title": "Pre-Alerta de Protección Civil", //"Civil Protection Pre-Alert",
-      "default_value": "false",
+      "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4372"
     },
     "4384": {
       "title": "Pre-Alerta de Protección Civil", //"Civil Protection Pre-Alert",
-      "default_value": "false",
+      "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting",
       "end_channel": "4385"

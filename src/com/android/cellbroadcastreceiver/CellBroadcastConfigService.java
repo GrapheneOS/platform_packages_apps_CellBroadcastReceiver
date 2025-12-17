@@ -193,7 +193,9 @@ public class CellBroadcastConfigService extends IntentService {
                         || (isExerciseAlertEnabled() != res.getBoolean(
                         R.bool.test_exercise_alerts_enabled_default))
                         || (isStateLocalTestAlertEnabled() != res.getBoolean(
-                        R.bool.state_local_test_alerts_enabled_default))) {
+                        R.bool.state_local_test_alerts_enabled_default))
+                        || (isExtremeAlertEnabled() != res.getBoolean(
+                        R.bool.extreme_threat_alerts_enabled_default))) {
                     Log.d(TAG, "Reset all preferences as no user changes and "
                             + "master toggle is different as the config or "
                             + "alert speech toggle is different as the config");
@@ -740,6 +742,11 @@ public class CellBroadcastConfigService extends IntentService {
     private boolean isStateLocalTestAlertEnabled() {
         return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
                 CellBroadcastSettings.KEY_ENABLE_STATE_LOCAL_TEST_ALERTS, false);
+    }
+
+    private boolean isExtremeAlertEnabled() {
+        return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
+                CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, false);
     }
 
     /**

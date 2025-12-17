@@ -216,6 +216,7 @@ public class CellBroadcastAlertDialog extends Activity implements
     @VisibleForTesting
     public static Boolean sIsMapFeatureEnabledForTest = null;
     private boolean mShouldOfferTranslation = false;
+    private boolean mTranslateDone = false;
 
     /** BroadcastReceiver for screen off events. When screen was off, remove FLAG_TURN_SCREEN_ON to
      * start from a clean state. Otherwise, the window flags from the first alert will be
@@ -922,6 +923,7 @@ public class CellBroadcastAlertDialog extends Activity implements
         if (success && !TextUtils.isEmpty(translatedText)) {
             String finalText = originalText + "\n\n" + translatedText;
             setTextAndApplyLinks(mMessageView, finalText, getLatestMessage());
+            mTranslateDone = true;
             if (getButtonManager() != null) {
                 getButtonManager().onTranslationCompleted();
             }
@@ -931,6 +933,7 @@ public class CellBroadcastAlertDialog extends Activity implements
         } else {
             Log.w(TAG, "onTranslationCompleted: Translation failed or result is empty.");
             showTranslateFailedToast();
+            mTranslateDone = false;
 
             CellBroadcastReceiverMetrics.getInstance()
                     .logUxReported(message.getServiceCategory(), true,
@@ -993,6 +996,13 @@ public class CellBroadcastAlertDialog extends Activity implements
 
         boolean showTranslate = mShouldOfferTranslation;
         boolean showMap = isMapFeatureEnabled(message);
+
+        Log.d(TAG, "updateButtons: mTranslateDone=" + mTranslateDone);
+        if (mTranslateDone) {
+            Log.d(TAG, "updateButtons: Translate already done");
+            showTranslate = false;
+        }
+
         getButtonManager().configureButtons(showTranslate, showMap);
         Log.d(TAG, "updateButtons: showTranslate=" + showTranslate + ",showMap=" + showMap);
     }
@@ -1319,6 +1329,7 @@ public class CellBroadcastAlertDialog extends Activity implements
 
         initTranslate(message);
         mMessageView = textView;
+        mTranslateDone = false;
     }
 
     /**

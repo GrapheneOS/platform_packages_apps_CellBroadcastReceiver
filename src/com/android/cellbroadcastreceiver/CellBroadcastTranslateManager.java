@@ -52,7 +52,7 @@ public class CellBroadcastTranslateManager {
     private final TranslateManagerCallback mCallback;
     // TODO: Confirm and adjust the appropriate value for the text classifier's
     //  language detection confidence threshold.
-    private static final float MIN_LANGUAGE_DETECTION_CONFIDENCE_THRESHOLD = 0.7f;
+    private static final float MIN_LANGUAGE_DETECTION_CONFIDENCE_THRESHOLD = 0.85f;
 
     /**
      * A callback interface for {@link CellBroadcastTranslateManager} to communicate results back to
