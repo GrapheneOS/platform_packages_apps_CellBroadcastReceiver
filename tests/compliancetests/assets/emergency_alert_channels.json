@@ -1889,6 +1889,43 @@
       "filter_language": "language_setting"
     }
   },
+  "andorra": {
+    "4370": {
+      "title": "Civil Protection Alert",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "Civil Protection Alert",
+      "default_value": "true",
+      "toggle_avail": "false",
+      "filter_language": "language_setting"
+    },
+    "4371": {
+      "title": "Civil Protection Pre-Alert",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "end_channel": "4372"
+    },
+    "4384": {
+      "title": "Civil Protection Pre-Alert",
+      "default_value": "true",
+      "toggle_avail": "true",
+      "filter_language": "language_setting",
+      "end_channel": "4385"
+    },
+    "4380": {
+      "title": "Test Alert",
+      "default_value": "false",
+      "toggle_avail": "false"
+    },
+    "4393": {
+      "title": "Test Alert",
+      "default_value": "false",
+      "toggle_avail": "false",
+      "filter_language": "language_setting"
+    }
+  },
   "canada": {
     "4352": {
       "title": "",

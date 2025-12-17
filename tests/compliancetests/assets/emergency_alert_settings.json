@@ -705,6 +705,24 @@
       "toggle_avail": "true"
     }
   },
+  "andorra": {
+    "Civil Protection Pre-Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test Alert": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Vibration": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
   "puertorico": {
     "Extreme threats": {
       "default_value": "true",
