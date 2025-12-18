@@ -28,7 +28,7 @@
     <string name="enable_cmas_severe_threat_alerts_title" msgid="2244702687286589592">"Menace grave"</string>
     <string name="enable_public_safety_messages_title" msgid="9081684819449444846">"Informations sur la menace"</string>
     <string name="enable_state_local_test_alerts_title" msgid="2160210558920782153">"Alerte test"</string>
-    <string name="enable_operator_defined_test_alerts_title" msgid="6867927342721101561">"EU-Réservé"</string>
+    <string name="enable_operator_defined_test_alerts_title" msgid="6867927342721101561">"Réservé par UE"</string>
     <string name="enable_exercise_test_alerts_title" msgid="8506871939061264885">"Alarme test"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7029435174451887312">"Test de diffusion cellulaire"</string>
 </resources>
