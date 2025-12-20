@@ -18,5 +18,5 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_operator_defined_alert" msgid="4844304128625490176">"অপাৰেটৰৰ সকীয়নি"</string>
     <string name="enable_operator_defined_test_alerts_title" msgid="2573656874506891319">"অপাৰেটৰৰ সকীয়নি"</string>
-    <string name="enable_operator_defined_test_alerts_summary" msgid="1267911637946761826">"অপাৰেটৰৰ সকীয়নিৰ চেনেল"</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="1267911637946761826">"অ\'পাৰেটৰৰ সকীয়নিৰ চেনেল"</string>
 </resources>
