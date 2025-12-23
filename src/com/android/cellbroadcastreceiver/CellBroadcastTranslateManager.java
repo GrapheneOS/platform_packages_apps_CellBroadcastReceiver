@@ -18,12 +18,14 @@ package com.android.cellbroadcastreceiver;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.icu.util.ULocale;
+import android.os.Build;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.autofill.AutofillId;
 import android.view.textclassifier.TextClassificationManager;
 import android.view.textclassifier.TextClassifier;
 import android.view.textclassifier.TextLanguage;
+import android.view.translation.TranslationCapability;
 import android.view.translation.TranslationContext;
 import android.view.translation.TranslationManager;
 import android.view.translation.TranslationRequest;
@@ -34,10 +36,15 @@ import android.view.translation.Translator;
 import android.view.translation.ViewTranslationRequest;
 import android.view.translation.ViewTranslationResponse;
 
+import androidx.annotation.RequiresApi;
+
 import com.android.internal.annotations.VisibleForTesting;
+import com.android.modules.utils.build.SdkLevel;
 
 import java.util.Collections;
+import java.util.Locale;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.function.Consumer;
@@ -124,6 +131,20 @@ public class CellBroadcastTranslateManager {
          * unavailable.
          */
         PendingIntent getOnDeviceTranslationSettingsActivityIntent();
+
+        /**
+         * A wrapper method for
+         * {@link TranslationManager#getOnDeviceTranslationCapabilities(int, int)}.
+         * Returns a set of {@link TranslationCapability} describing the supported translation
+         * capabilities.
+         *
+         * @param sourceFormat The data format for the source data.
+         * @param targetFormat The data format for the target data.
+         * @return A set of supported capabilities.
+         */
+        @RequiresApi(Build.VERSION_CODES.S)
+        Set<TranslationCapability> getOnDeviceTranslationCapabilities(int sourceFormat,
+                int targetFormat);
     }
 
     // Default implementation using real TranslationManager
@@ -156,6 +177,16 @@ public class CellBroadcastTranslateManager {
         public PendingIntent getOnDeviceTranslationSettingsActivityIntent() {
             return (mManager != null) ? mManager.getOnDeviceTranslationSettingsActivityIntent()
                     : null;
+        }
+
+        @Override
+        @RequiresApi(Build.VERSION_CODES.S)
+        public Set<TranslationCapability> getOnDeviceTranslationCapabilities(
+                int sourceFormat, int targetFormat) {
+            if (mManager != null && SdkLevel.isAtLeastS()) {
+                return mManager.getOnDeviceTranslationCapabilities(sourceFormat, targetFormat);
+            }
+            return Collections.emptySet();
         }
     }
 
@@ -448,5 +479,66 @@ public class CellBroadcastTranslateManager {
             Log.e(TAG, "Exception in getSettingsIntent", e);
             return null;
         }
+    }
+
+    /**
+     * Checks if the system locale is Traditional Chinese (Taiwan, Hong Kong, or Hant script).
+     */
+    private boolean isTraditionalChinese(Locale locale) {
+        if (locale == null) {
+            return false;
+        }
+        if ("zh".equalsIgnoreCase(locale.getLanguage())) {
+            return "Hant".equalsIgnoreCase(locale.getScript())
+                    || "TW".equalsIgnoreCase(locale.getCountry())
+                    || "HK".equalsIgnoreCase(locale.getCountry());
+        }
+        return false;
+    }
+
+    /**
+     * Resolves the target ULocale for translation based on the system locale.
+     * Handle Traditional Chinese according to the TranslationCapability target spec.
+     */
+    public ULocale resolveTargetLanguage(Locale systemLocale) {
+        if (systemLocale == null) {
+            return ULocale.getDefault();
+        }
+        boolean isTraditional = isTraditionalChinese(systemLocale);
+        if (isTraditional) {
+            Log.d(TAG, "resolveTargetLanguage: Normalizing for Traditional Chinese.");
+            ULocale targetLocale = new ULocale(systemLocale.getLanguage());
+
+            if (SdkLevel.isAtLeastS() && isTranslationManagerAvailable()) {
+                try {
+                    Set<TranslationCapability> capabilities =
+                            mTranslationManagerWrapper.getOnDeviceTranslationCapabilities(
+                                    TranslationSpec.DATA_FORMAT_TEXT,
+                                    TranslationSpec.DATA_FORMAT_TEXT);
+                    if (capabilities != null) {
+                        for (TranslationCapability capability : capabilities) {
+                            if (capability == null) {
+                                continue;
+                            }
+                            TranslationSpec targetSpec = capability.getTargetSpec();
+                            if (targetSpec == null) {
+                                continue;
+                            }
+                            ULocale locale = targetSpec.getLocale();
+                            if (locale != null && isTraditionalChinese(locale.toLocale())) {
+                                targetLocale = locale;
+                                Log.d(TAG, "resolveTargetLanguage: Found supported Traditional"
+                                        + " Chinese locale: " + targetLocale);
+                                break;
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    Log.e(TAG, "Exception in getOnDeviceTranslationCapabilities", e);
+                }
+            }
+            return targetLocale;
+        }
+        return new ULocale(systemLocale.getLanguage());
     }
 }

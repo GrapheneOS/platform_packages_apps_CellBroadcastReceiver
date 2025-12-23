@@ -21,6 +21,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doAnswer;
@@ -37,9 +38,11 @@ import android.icu.util.ULocale;
 import android.platform.test.annotations.RequiresFlagsEnabled;
 import android.util.SparseArray;
 import android.view.autofill.AutofillId;
+import android.view.translation.TranslationCapability;
 import android.view.translation.TranslationContext;
 import android.view.translation.TranslationResponse;
 import android.view.translation.TranslationResponseValue;
+import android.view.translation.TranslationSpec;
 import android.view.translation.Translator;
 import android.view.translation.ViewTranslationRequest;
 import android.view.translation.ViewTranslationResponse;
@@ -57,7 +60,11 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Locale;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.function.Consumer;
 
@@ -459,5 +466,82 @@ public class CellBroadcastTranslateManagerTest {
         return new TranslationResponse.Builder(TranslationResponse.TRANSLATION_STATUS_SUCCESS)
                 .setViewTranslationResponses(sparseArray)
                 .build();
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testResolveTargetLanguageSystemZhTwNoCapReturnsSystemLocale() {
+        Locale systemLocale = Locale.TAIWAN;
+        doReturn(true).when(mMockWrapper).isAvailable();
+        doReturn(Collections.emptySet()).when(mMockWrapper)
+                .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
+
+        ULocale result = mTranslateManager.resolveTargetLanguage(systemLocale);
+
+        assertEquals(systemLocale.getLanguage(), result.getName());
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testResolveTargetLanguageSystemZhHkNoCapReturnsSystemLocale() {
+        Locale systemLocale = new Locale("zh", "HK");
+        doReturn(true).when(mMockWrapper).isAvailable();
+        doReturn(Collections.emptySet()).when(mMockWrapper)
+                .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
+
+        ULocale result = mTranslateManager.resolveTargetLanguage(systemLocale);
+
+        assertEquals(systemLocale.getLanguage(), result.getName());
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testResolveTargetLanguageSystemZhCnNoCapReturnsSystemLocale() {
+        Locale systemLocale = Locale.CHINA;
+        doReturn(true).when(mMockWrapper).isAvailable();
+        doReturn(Collections.emptySet()).when(mMockWrapper)
+                .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
+        ULocale result = mTranslateManager.resolveTargetLanguage(systemLocale);
+
+        assertEquals(systemLocale.getLanguage(), result.getName());
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testResolveTargetLanguageWithCapabilityReturnsSupportedLocale() {
+        setupMockTranslationCapability("zh_Hant");
+
+        ULocale result = mTranslateManager.resolveTargetLanguage(Locale.TAIWAN);
+
+        assertEquals("zh_Hant", result.getName());
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testResolveTargetLanguageWithCapabilityReturnsZhTw() {
+        setupMockTranslationCapability("zh_TW");
+        ULocale result = mTranslateManager.resolveTargetLanguage(Locale.TAIWAN);
+        assertEquals("zh_TW", result.getName());
+    }
+
+    private void setupMockTranslationCapability(String targetLanguageTag) {
+        TranslationSpec sourceSpec = new TranslationSpec(ULocale.ENGLISH,
+                TranslationSpec.DATA_FORMAT_TEXT);
+        TranslationSpec targetSpec = new TranslationSpec(new ULocale(targetLanguageTag),
+                TranslationSpec.DATA_FORMAT_TEXT);
+
+        TranslationCapability capability = new TranslationCapability(
+                TranslationCapability.STATE_ON_DEVICE,
+                sourceSpec,
+                targetSpec,
+                true, /* uiTranslationEnabled */
+                0 /* supportedTranslationFlags */
+        );
+        Set<TranslationCapability> capabilities = new HashSet<>();
+        capabilities.add(capability);
+
+        doReturn(true).when(mMockWrapper).isAvailable();
+        doReturn(capabilities).when(mMockWrapper)
+                .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
     }
 }
