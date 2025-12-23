@@ -27,6 +27,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -66,6 +67,8 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 import java.util.function.Consumer;
 
 public class CellBroadcastTranslateManagerTest {
@@ -473,12 +476,19 @@ public class CellBroadcastTranslateManagerTest {
     public void testResolveTargetLanguageSystemZhTwNoCapReturnsSystemLocale() {
         Locale systemLocale = Locale.TAIWAN;
         doReturn(true).when(mMockWrapper).isAvailable();
+        PendingIntent mockPendingIntent = PendingIntent.getActivity(mContext, 0, new Intent(),
+                PendingIntent.FLAG_IMMUTABLE);
+        doReturn(mockPendingIntent).when(
+                mMockWrapper).getOnDeviceTranslationSettingsActivityIntent();
         doReturn(Collections.emptySet()).when(mMockWrapper)
                 .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
 
-        ULocale result = mTranslateManager.resolveTargetLanguage(systemLocale);
+        Consumer<ULocale> mockCallback = mock(Consumer.class);
+        mTranslateManager.resolveTargetLanguage(systemLocale, mockCallback);
 
-        assertEquals(systemLocale.getLanguage(), result.getName());
+        ArgumentCaptor<ULocale> captor = ArgumentCaptor.forClass(ULocale.class);
+        verify(mockCallback).accept(captor.capture());
+        assertEquals(systemLocale.getLanguage(), captor.getValue().getName());
     }
 
     @Test
@@ -486,12 +496,19 @@ public class CellBroadcastTranslateManagerTest {
     public void testResolveTargetLanguageSystemZhHkNoCapReturnsSystemLocale() {
         Locale systemLocale = new Locale("zh", "HK");
         doReturn(true).when(mMockWrapper).isAvailable();
+        PendingIntent mockPendingIntent = PendingIntent.getActivity(mContext, 0, new Intent(),
+                PendingIntent.FLAG_IMMUTABLE);
+        doReturn(mockPendingIntent).when(
+                mMockWrapper).getOnDeviceTranslationSettingsActivityIntent();
         doReturn(Collections.emptySet()).when(mMockWrapper)
                 .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
 
-        ULocale result = mTranslateManager.resolveTargetLanguage(systemLocale);
+        Consumer<ULocale> mockCallback = mock(Consumer.class);
+        mTranslateManager.resolveTargetLanguage(systemLocale, mockCallback);
 
-        assertEquals(systemLocale.getLanguage(), result.getName());
+        ArgumentCaptor<ULocale> captor = ArgumentCaptor.forClass(ULocale.class);
+        verify(mockCallback).accept(captor.capture());
+        assertEquals(systemLocale.getLanguage(), captor.getValue().getName());
     }
 
     @Test
@@ -501,9 +518,13 @@ public class CellBroadcastTranslateManagerTest {
         doReturn(true).when(mMockWrapper).isAvailable();
         doReturn(Collections.emptySet()).when(mMockWrapper)
                 .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
-        ULocale result = mTranslateManager.resolveTargetLanguage(systemLocale);
 
-        assertEquals(systemLocale.getLanguage(), result.getName());
+        Consumer<ULocale> mockCallback = mock(Consumer.class);
+        mTranslateManager.resolveTargetLanguage(systemLocale, mockCallback);
+
+        ArgumentCaptor<ULocale> captor = ArgumentCaptor.forClass(ULocale.class);
+        verify(mockCallback).accept(captor.capture());
+        assertEquals(systemLocale.getLanguage(), captor.getValue().getName());
     }
 
     @Test
@@ -511,17 +532,26 @@ public class CellBroadcastTranslateManagerTest {
     public void testResolveTargetLanguageWithCapabilityReturnsSupportedLocale() {
         setupMockTranslationCapability("zh_Hant");
 
-        ULocale result = mTranslateManager.resolveTargetLanguage(Locale.TAIWAN);
+        Consumer<ULocale> mockCallback = mock(Consumer.class);
+        mTranslateManager.resolveTargetLanguage(Locale.TAIWAN, mockCallback);
 
-        assertEquals("zh_Hant", result.getName());
+        ArgumentCaptor<ULocale> captor = ArgumentCaptor.forClass(ULocale.class);
+        verify(mockCallback).accept(captor.capture());
+
+        assertEquals("zh_Hant", captor.getValue().getName());
     }
 
     @Test
     @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
     public void testResolveTargetLanguageWithCapabilityReturnsZhTw() {
         setupMockTranslationCapability("zh_TW");
-        ULocale result = mTranslateManager.resolveTargetLanguage(Locale.TAIWAN);
-        assertEquals("zh_TW", result.getName());
+
+        Consumer<ULocale> mockCallback = mock(Consumer.class);
+        mTranslateManager.resolveTargetLanguage(Locale.TAIWAN, mockCallback);
+
+        ArgumentCaptor<ULocale> captor = ArgumentCaptor.forClass(ULocale.class);
+        verify(mockCallback).accept(captor.capture());
+        assertEquals("zh_TW", captor.getValue().getName());
     }
 
     private void setupMockTranslationCapability(String targetLanguageTag) {
@@ -540,8 +570,174 @@ public class CellBroadcastTranslateManagerTest {
         Set<TranslationCapability> capabilities = new HashSet<>();
         capabilities.add(capability);
 
+        PendingIntent mockPendingIntent = PendingIntent.getActivity(mContext, 0, new Intent(),
+                PendingIntent.FLAG_IMMUTABLE);
+        doReturn(mockPendingIntent).when(
+                mMockWrapper).getOnDeviceTranslationSettingsActivityIntent();
         doReturn(true).when(mMockWrapper).isAvailable();
         doReturn(capabilities).when(mMockWrapper)
                 .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testIsOnDeviceTranslationSupportedNoCapabilitiesReturnsFalse() {
+        doReturn(true).when(mMockWrapper).isAvailable();
+        PendingIntent mockPendingIntent = PendingIntent.getActivity(mContext, 0, new Intent(),
+                PendingIntent.FLAG_IMMUTABLE);
+        doReturn(mockPendingIntent).when(
+                mMockWrapper).getOnDeviceTranslationSettingsActivityIntent();
+        doReturn(Collections.emptySet()).when(mMockWrapper)
+                .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
+        Consumer<Boolean> mockCallback = mock(Consumer.class);
+
+        mTranslateManager.checkOnDeviceTranslationCapability(mockCallback);
+
+        verify(mockCallback).accept(false);
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testCheckOnDeviceTranslationCapabilityAllConditionsMetReturnsTrue() {
+        doReturn(true).when(mMockWrapper).isAvailable();
+        PendingIntent mockPendingIntent = PendingIntent.getActivity(mContext, 0, new Intent(),
+                PendingIntent.FLAG_IMMUTABLE);
+        doReturn(mockPendingIntent).when(
+                mMockWrapper).getOnDeviceTranslationSettingsActivityIntent();
+        TranslationCapability capability = new TranslationCapability(
+                TranslationCapability.STATE_ON_DEVICE,
+                new TranslationSpec(ULocale.ENGLISH, TranslationSpec.DATA_FORMAT_TEXT),
+                new TranslationSpec(ULocale.FRENCH, TranslationSpec.DATA_FORMAT_TEXT),
+                true, 0);
+        doReturn(Collections.singleton(capability)).when(mMockWrapper)
+                .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
+        Consumer<Boolean> mockCallback = mock(Consumer.class);
+        mTranslateManager.checkOnDeviceTranslationCapability(mockCallback);
+
+        verify(mockCallback).accept(true);
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testCheckOnDeviceTranslationCapabilityIgnoresDuplicateRequests() {
+        Executor mockExecutor = mock(Executor.class);
+        mTranslateManager = new CellBroadcastTranslateManager(mDirectExecutor,
+                mMockCallback, mMockWrapper, mMockTextClassifierWrapper, mockExecutor);
+        doReturn(true).when(mMockWrapper).isAvailable();
+        Consumer<Boolean> mockCallback = mock(Consumer.class);
+
+        mTranslateManager.checkOnDeviceTranslationCapability(mockCallback);
+
+        ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
+        verify(mockExecutor, times(1)).execute(runnableCaptor.capture());
+
+        mTranslateManager.checkOnDeviceTranslationCapability(mockCallback);
+
+        verify(mockExecutor, times(1)).execute(any());
+
+        runnableCaptor.getValue().run();
+        mTranslateManager.checkOnDeviceTranslationCapability(mockCallback);
+
+        verify(mockExecutor, times(2)).execute(any());
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testResolveTargetLanguageIgnoresDuplicateRequests() {
+        Executor mockExecutor = mock(Executor.class);
+        mTranslateManager = new CellBroadcastTranslateManager(mDirectExecutor,
+                mMockCallback, mMockWrapper, mMockTextClassifierWrapper, mockExecutor);
+        Locale systemLocale = Locale.KOREAN;
+        Consumer<ULocale> mockCallback = mock(Consumer.class);
+
+        mTranslateManager.resolveTargetLanguage(systemLocale, mockCallback);
+
+        ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
+        verify(mockExecutor, times(1)).execute(runnableCaptor.capture());
+
+        mTranslateManager.resolveTargetLanguage(systemLocale, mockCallback);
+
+        verify(mockExecutor, times(1)).execute(any());
+
+        runnableCaptor.getValue().run();
+        mTranslateManager.resolveTargetLanguage(systemLocale, mockCallback);
+
+        verify(mockExecutor, times(2)).execute(any());
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testCheckOnDeviceTranslationCapabilityExceptionReturnsFalse() {
+        doReturn(true).when(mMockWrapper).isAvailable();
+        doThrow(new RuntimeException("Service failure")).when(mMockWrapper)
+                .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
+
+        Consumer<Boolean> mockCallback = mock(Consumer.class);
+        mTranslateManager.checkOnDeviceTranslationCapability(mockCallback);
+
+        verify(mockCallback).accept(false);
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testResolveTargetLanguageExceptionReturnsDefault() {
+        Locale systemLocale = Locale.TAIWAN;
+        doReturn(true).when(mMockWrapper).isAvailable();
+        doThrow(new RuntimeException("Service failure")).when(mMockWrapper)
+                .getOnDeviceTranslationCapabilities(anyInt(), anyInt());
+
+        Consumer<ULocale> mockCallback = mock(Consumer.class);
+        mTranslateManager.resolveTargetLanguage(systemLocale, mockCallback);
+
+        ArgumentCaptor<ULocale> captor = ArgumentCaptor.forClass(ULocale.class);
+        verify(mockCallback).accept(captor.capture());
+        assertEquals(systemLocale.getLanguage(), captor.getValue().getName());
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testCheckOnDeviceTranslationCapability_Timeout_CancelsTask() throws Exception {
+        ExecutorService mockExecutorService = mock(ExecutorService.class);
+        Future mockFuture = mock(Future.class);
+        doReturn(mockFuture).when(mockExecutorService).submit(any(Runnable.class));
+        mTranslateManager = new CellBroadcastTranslateManager(mDirectExecutor,
+                mMockCallback, mMockWrapper, mMockTextClassifierWrapper, mockExecutorService);
+        doReturn(true).when(mMockWrapper).isAvailable();
+
+        Consumer<Boolean> mockCallback = mock(Consumer.class);
+        mTranslateManager.checkOnDeviceTranslationCapability(mockCallback);
+
+        verify(mockExecutorService).submit(any(Runnable.class));
+
+        Thread.sleep(500);
+
+        verify(mockCallback).accept(false);
+        verify(mockFuture).cancel(true);
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_ENABLE_CELLBROADCAST_TRANSLATION)
+    public void testResolveTargetLanguageTimeoutCancelsTask() throws Exception {
+        ExecutorService mockExecutorService = mock(ExecutorService.class);
+        Future mockFuture = mock(Future.class);
+        doReturn(mockFuture).when(mockExecutorService).submit(any(Runnable.class));
+
+        mTranslateManager = new CellBroadcastTranslateManager(mDirectExecutor,
+                mMockCallback, mMockWrapper, mMockTextClassifierWrapper, mockExecutorService);
+
+        Consumer<ULocale> mockCallback = mock(Consumer.class);
+        Locale systemLocale = Locale.TAIWAN;
+
+        mTranslateManager.resolveTargetLanguage(systemLocale, mockCallback);
+
+        verify(mockExecutorService).submit(any(Runnable.class));
+
+        Thread.sleep(500);
+
+        ArgumentCaptor<ULocale> captor = ArgumentCaptor.forClass(ULocale.class);
+        verify(mockCallback).accept(captor.capture());
+        assertEquals(systemLocale.getLanguage(), captor.getValue().getName());
+
+        verify(mockFuture).cancel(true);
     }
 }
