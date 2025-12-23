@@ -55,6 +55,8 @@
     <string-array name="etws_alerts_range_strings" translatable="false"/>
     <string-array name="etws_test_alerts_range_strings" translatable="false"/>
 
+    <!-- whether to display a separate exercise test settings. today, most of time, exercise channels was controlled by the main test toggle. -->
+    <bool name="show_separate_exercise_settings">true</bool>
     <!-- Whether to show extreme alert settings -->
     <bool name="show_extreme_alert_settings">false</bool>
     <!-- Whether to display operator defined test settings when testing mode is off. -->
