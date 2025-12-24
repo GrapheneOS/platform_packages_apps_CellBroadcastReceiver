@@ -860,8 +860,13 @@ public class CellBroadcastAlertDialog extends Activity implements
                             + "translation.");
             return;
         }
-        final String targetLanguage = Locale.getDefault().getLanguage();
-        final ULocale targetLocale = new ULocale(targetLanguage);
+        final Locale defaultLocale = Locale.getDefault();
+        final ULocale targetLocale;
+        if (getTranslateManager() != null) {
+            targetLocale = getTranslateManager().resolveTargetLanguage(defaultLocale);
+        } else {
+            targetLocale = new ULocale(defaultLocale.getLanguage());
+        }
 
         // Only offer translation if the source language and the target language are different.
         boolean shouldOffer = !sourceLocale.getLanguage().equalsIgnoreCase(

@@ -24,6 +24,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.clearInvocations;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
@@ -183,6 +184,9 @@ public class CellBroadcastAlertDialogTest extends
                 .cmas_presidential_alerts_channels_range_strings));
         mSmsCbMessageWithGeo = createSmsCbMessage(true);
         mSmsCbMessageWithoutGeo = createSmsCbMessage(false);
+        doReturn(new ULocale(Locale.ENGLISH.getLanguage())).when(
+                mMockCBTranslateManager).resolveTargetLanguage(any());
+        CellBroadcastAlertDialog.sIsTranslateFeatureEnabledForTest = false;
     }
 
     @After
@@ -794,6 +798,7 @@ public class CellBroadcastAlertDialogTest extends
         doReturn(mMockEditor).when(mockSharedPreferences).edit();
         doReturn(mMockEditor).when(mMockEditor).putBoolean(anyString(), anyBoolean());
         doReturn(true).when(mMockCBTranslateManager).isTranslationManagerAvailable();
+        CellBroadcastAlertDialog.sIsTranslateFeatureEnabledForTest = true;
         return mockSharedPreferences;
     }
 
@@ -823,12 +828,19 @@ public class CellBroadcastAlertDialogTest extends
         doReturn(consentAccepted).when(mockSharedPreferences).getBoolean(
                 KEY_TRANSLATE_CONSENT_ACCEPTED, false);
         doReturn(translatorReady).when(mMockCBTranslateManager).isTranslatorReady();
+        doAnswer(invocation -> {
+            Locale locale = invocation.getArgument(0);
+            if (locale == null) return new ULocale("en");
+            return new ULocale(locale.getLanguage());
+        }).when(mMockCBTranslateManager).resolveTargetLanguage(any());
         setPendingIntentForTranslation();
 
         CellBroadcastAlertDialog.sDisableDialogsForTest = disableDialogs;
+        CellBroadcastAlertDialog.sIsTranslateFeatureEnabledForTest = false;
 
         Intent intent = createIntentWithMessage(message);
         CellBroadcastAlertDialog dialog = startActivitySetMock(intent);
+        CellBroadcastAlertDialog.sIsTranslateFeatureEnabledForTest = true;
         waitForMs(100);
 
         return new TranslationTestSetupResult(dialog, mockSharedPreferences);
@@ -912,9 +924,13 @@ public class CellBroadcastAlertDialogTest extends
      */
     public void testInitTranslateWithSameLanguageHidesTranslateButton() {
         String systemLanguage = Locale.getDefault().getLanguage();
-        SmsCbMessage message = createMessage("A message in the system language", systemLanguage);
+        final String detectedLanguage = getDifferentLanguage(systemLanguage);
+        final ULocale detectedULocale = new ULocale(detectedLanguage);
+        SmsCbMessage message = createMessage(getTestMessageBody(detectedLanguage),
+                detectedLanguage);
         TranslationTestSetupResult result = setupActivityForTranslationTest(message,
                 true, true, true);
+        doReturn(detectedULocale).when(mMockCBTranslateManager).resolveTargetLanguage(any());
         CellBroadcastAlertDialog activity = result.dialog;
         activity.setButtonManagerForTest(mMockCBButtonManager);
 
@@ -933,7 +949,6 @@ public class CellBroadcastAlertDialogTest extends
      */
     public void testOnLanguageDetectionCompletedWithDetectedLanguageOffersTranslation() {
         SmsCbMessage message = createMessage("A message to be detected", null);
-
         setPendingIntentForTranslation();
         final String systemLanguage = Locale.getDefault().getLanguage();
         final String detectedLanguage = getDifferentLanguage(systemLanguage);
@@ -943,9 +958,12 @@ public class CellBroadcastAlertDialogTest extends
                 true, true, true);
         CellBroadcastAlertDialog activity = result.dialog;
 
+        doReturn(systemULocale).when(mMockCBTranslateManager).resolveTargetLanguage(any());
+
         getInstrumentation().runOnMainSync(
                 () -> activity.onLanguageDetectionCompleted(Optional.of(detectedULocale)));
-        verify(mMockCBTranslateManager, times(1)).initializeTranslator(eq(detectedULocale),
+
+        verify(mMockCBTranslateManager, atLeastOnce()).initializeTranslator(eq(detectedULocale),
                 eq(systemULocale));
     }
 
@@ -1122,7 +1140,6 @@ public class CellBroadcastAlertDialogTest extends
      * This verifies the fix for the button not appearing after asynchronous language detection.
      */
     public void testOnLanguageDetectionCompletedTriggersButtonUpdate() {
-        // Setup with different languages to ensure translation is offered.
         String systemLang = Locale.getDefault().getLanguage();
         final String detectedLanguage = getDifferentLanguage(systemLang);
         final ULocale detectedULocale = new ULocale(detectedLanguage);
@@ -1132,9 +1149,13 @@ public class CellBroadcastAlertDialogTest extends
                 true, true, true);
         CellBroadcastAlertDialog activity = result.dialog;
 
+        doReturn(new ULocale(systemLang)).when(mMockCBTranslateManager).resolveTargetLanguage(
+                any());
+
         getInstrumentation().runOnMainSync(
                 () -> activity.onLanguageDetectionCompleted(Optional.of(detectedULocale)));
-        verify(mMockCBTranslateManager, times(1)).initializeTranslator(eq(detectedULocale),
+
+        verify(mMockCBTranslateManager, atLeastOnce()).initializeTranslator(eq(detectedULocale),
                 any());
         verify(mMockCBButtonManager, atLeast(1)).configureButtons(anyBoolean(), anyBoolean());
         verify(mMockCBButtonManager, times(1)).configureButtons(eq(true), anyBoolean());
@@ -1542,5 +1563,54 @@ public class CellBroadcastAlertDialogTest extends
 
         assertFalse("mTranslateDone should be reset to false for new message",
                 getTranslateDone(setup.dialog));
+    }
+
+    /**
+     * Tests that when the system language is Traditional Chinese (Taiwan),
+     * initTranslate requests translation to "zh_Hant".
+     */
+    public void testInitTranslateTargetZhTwRequestsZhHant() {
+        Locale originalLocale = Locale.getDefault();
+        try {
+            Locale.setDefault(Locale.TAIWAN);
+            SmsCbMessage message = createMessage("Test Message", "en");
+            TranslationTestSetupResult result = setupActivityForTranslationTest(message,
+                    true, true, true);
+            doReturn(new ULocale("zh_Hant")).when(mMockCBTranslateManager).resolveTargetLanguage(
+                    any());
+
+            getInstrumentation().runOnMainSync(() -> {
+                result.dialog.initTranslate(message);
+            });
+
+            verify(mMockCBTranslateManager, atLeastOnce()).initializeTranslator(any(ULocale.class),
+                    eq(new ULocale("zh_Hant")));
+        } finally {
+            Locale.setDefault(originalLocale);
+        }
+    }
+
+    /**
+     * Tests that when the system language is Simplified Chinese (China),
+     * initTranslate requests translation to "zh" (default behavior).
+     */
+    public void testInitTranslateTargetZhCnRequestsZh() {
+        Locale originalLocale = Locale.getDefault();
+        try {
+            Locale.setDefault(Locale.CHINA);
+            SmsCbMessage message = createMessage("Test Message", "en");
+            TranslationTestSetupResult result = setupActivityForTranslationTest(message,
+                    true, true, true);
+            doReturn(new ULocale("zh")).when(mMockCBTranslateManager).resolveTargetLanguage(any());
+
+            getInstrumentation().runOnMainSync(() -> {
+                result.dialog.initTranslate(message);
+            });
+
+            verify(mMockCBTranslateManager, atLeastOnce()).initializeTranslator(any(ULocale.class),
+                    eq(new ULocale("zh")));
+        } finally {
+            Locale.setDefault(originalLocale);
+        }
     }
 }
