@@ -19,6 +19,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.icu.util.ULocale;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.autofill.AutofillId;
@@ -46,7 +48,11 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 
 public class CellBroadcastTranslateManager {
@@ -60,6 +66,12 @@ public class CellBroadcastTranslateManager {
     // TODO: Confirm and adjust the appropriate value for the text classifier's
     //  language detection confidence threshold.
     private static final float MIN_LANGUAGE_DETECTION_CONFIDENCE_THRESHOLD = 0.85f;
+    private final AtomicBoolean mIsCapabilityCheckInProgress = new AtomicBoolean(false);
+    private final AtomicBoolean mIsResolvingTargetLanguage = new AtomicBoolean(false);
+    // Timeout duration for translation checks (to prevent UI hanging)
+    private static final long TRANSLATION_CHECK_TIMEOUT_MS = 400;
+    // Handler for timeout callbacks
+    private final Handler mMainHandler = new Handler(Looper.getMainLooper());
 
     /**
      * A callback interface for {@link CellBroadcastTranslateManager} to communicate results back to
@@ -203,8 +215,8 @@ public class CellBroadcastTranslateManager {
          *
          * @param text The input string to detect the language from.
          * @return An {@link Optional} containing the detected {@link ULocale} if the detection
-         *         was successful and the confidence score is high enough. Otherwise, returns an
-         *         empty {@code Optional}.
+         * was successful and the confidence score is high enough. Otherwise, returns an
+         * empty {@code Optional}.
          */
         Optional<ULocale> detectLanguage(String text);
     }
@@ -245,10 +257,10 @@ public class CellBroadcastTranslateManager {
     /**
      * Constructs a new CellBroadcastTranslateManager.
      *
-     * @param context The application or activity context.
+     * @param context      The application or activity context.
      * @param mainExecutor The main thread executor for posting results back to the UI thread.
-     * @param callback The callback to report results to. This is typically the calling Activity
-     *                 or Dialog that implements {@link TranslateManagerCallback}.
+     * @param callback     The callback to report results to. This is typically the calling Activity
+     *                     or Dialog that implements {@link TranslateManagerCallback}.
      */
     public CellBroadcastTranslateManager(Context context, Executor mainExecutor,
             TranslateManagerCallback callback) {
@@ -482,6 +494,80 @@ public class CellBroadcastTranslateManager {
     }
 
     /**
+     * Checks if the system's TranslationManager service is available AND supports on-device
+     * translation asynchronously with a timeout.
+     *
+     * @param callback The callback to receive the result (true if supported) on the main thread.
+     */
+    public void checkOnDeviceTranslationCapability(Consumer<Boolean> callback) {
+        if (!isTranslationManagerAvailable()) {
+            mMainExecutor.execute(() -> callback.accept(false));
+            return;
+        }
+
+        if (mIsCapabilityCheckInProgress.getAndSet(true)) {
+            Log.d(TAG, "checkOnDeviceTranslationCapability: Already in progress, ignoring it");
+            return;
+        }
+
+        AtomicBoolean hasResponded = new AtomicBoolean(false);
+        final AtomicReference<Future<?>> futureRef = new AtomicReference<>();
+
+        Runnable timeoutRunnable = () -> {
+            if (hasResponded.compareAndSet(false, true)) {
+                Log.w(TAG, "checkOnDeviceTranslationCapability: Timed out.");
+                mIsCapabilityCheckInProgress.set(false); // Release lock
+                callback.accept(false); // Default to unsupported on timeout
+
+                Future<?> future = futureRef.get();
+                if (future != null) {
+                    future.cancel(true);
+                }
+            }
+        };
+
+        mMainHandler.postDelayed(timeoutRunnable, TRANSLATION_CHECK_TIMEOUT_MS);
+
+        Runnable task = () -> {
+            boolean isSupported = false;
+            try {
+                if (SdkLevel.isAtLeastS()) {
+                    try {
+                        if (Thread.currentThread().isInterrupted()) return;
+
+                        Set<TranslationCapability> capabilities =
+                                mTranslationManagerWrapper.getOnDeviceTranslationCapabilities(
+                                        TranslationSpec.DATA_FORMAT_TEXT,
+                                        TranslationSpec.DATA_FORMAT_TEXT);
+                        if (capabilities != null && !capabilities.isEmpty()) {
+                            isSupported = true;
+                        } else {
+                            Log.w(TAG, "checkOnDeviceTranslationCapability: empty.");
+                        }
+                    } catch (Exception e) {
+                        Log.e(TAG, "Error checking translation capabilities", e);
+                    }
+                }
+            } finally {
+                final boolean finalResult = isSupported;
+                mMainExecutor.execute(() -> {
+                    if (hasResponded.compareAndSet(false, true)) {
+                        mMainHandler.removeCallbacks(timeoutRunnable);
+                        mIsCapabilityCheckInProgress.set(false);
+                        callback.accept(finalResult);
+                    }
+                });
+            }
+        };
+
+        if (mExecutor instanceof ExecutorService) {
+            futureRef.set(((ExecutorService) mExecutor).submit(task));
+        } else {
+            mExecutor.execute(task);
+        }
+    }
+
+    /**
      * Checks if the system locale is Traditional Chinese (Taiwan, Hong Kong, or Hant script).
      */
     private boolean isTraditionalChinese(Locale locale) {
@@ -497,48 +583,89 @@ public class CellBroadcastTranslateManager {
     }
 
     /**
-     * Resolves the target ULocale for translation based on the system locale.
-     * Handle Traditional Chinese according to the TranslationCapability target spec.
+     * Resolves the target ULocale for translation based on the system locale asynchronously
+     * with a timeout.
+     *
+     * @param systemLocale The device's system locale.
+     * @param callback     The callback to receive the resolved target ULocale on the main thread.
      */
-    public ULocale resolveTargetLanguage(Locale systemLocale) {
+    public void resolveTargetLanguage(Locale systemLocale, Consumer<ULocale> callback) {
         if (systemLocale == null) {
-            return ULocale.getDefault();
+            mMainExecutor.execute(() -> callback.accept(ULocale.getDefault()));
+            return;
         }
-        boolean isTraditional = isTraditionalChinese(systemLocale);
-        if (isTraditional) {
-            Log.d(TAG, "resolveTargetLanguage: Normalizing for Traditional Chinese.");
-            ULocale targetLocale = new ULocale(systemLocale.getLanguage());
 
-            if (SdkLevel.isAtLeastS() && isTranslationManagerAvailable()) {
-                try {
-                    Set<TranslationCapability> capabilities =
-                            mTranslationManagerWrapper.getOnDeviceTranslationCapabilities(
-                                    TranslationSpec.DATA_FORMAT_TEXT,
-                                    TranslationSpec.DATA_FORMAT_TEXT);
-                    if (capabilities != null) {
-                        for (TranslationCapability capability : capabilities) {
-                            if (capability == null) {
-                                continue;
-                            }
-                            TranslationSpec targetSpec = capability.getTargetSpec();
-                            if (targetSpec == null) {
-                                continue;
-                            }
-                            ULocale locale = targetSpec.getLocale();
-                            if (locale != null && isTraditionalChinese(locale.toLocale())) {
-                                targetLocale = locale;
-                                Log.d(TAG, "resolveTargetLanguage: Found supported Traditional"
-                                        + " Chinese locale: " + targetLocale);
-                                break;
-                            }
-                        }
-                    }
-                } catch (Exception e) {
-                    Log.e(TAG, "Exception in getOnDeviceTranslationCapabilities", e);
+        if (mIsResolvingTargetLanguage.getAndSet(true)) {
+            Log.d(TAG, "resolveTargetLanguage: Already in progress, ignoring it.");
+            return;
+        }
+
+        AtomicBoolean hasResponded = new AtomicBoolean(false);
+        ULocale defaultFallback = new ULocale(systemLocale.getLanguage());
+        final AtomicReference<Future<?>> futureRef = new AtomicReference<>();
+
+        Runnable timeoutRunnable = () -> {
+            if (hasResponded.compareAndSet(false, true)) {
+                Log.w(TAG, "resolveTargetLanguage: Timed out.");
+                mIsResolvingTargetLanguage.set(false);
+                callback.accept(defaultFallback);
+                Future<?> future = futureRef.get();
+                if (future != null) {
+                    future.cancel(true);
                 }
             }
-            return targetLocale;
+        };
+
+        mMainHandler.postDelayed(timeoutRunnable, TRANSLATION_CHECK_TIMEOUT_MS);
+
+        Runnable task = () -> {
+            ULocale targetLocale = defaultFallback;
+            try {
+                if (Thread.currentThread().isInterrupted()) {
+                    return;
+                }
+                boolean isTraditional = isTraditionalChinese(systemLocale);
+                if (isTraditional) {
+                    if (SdkLevel.isAtLeastS() && isTranslationManagerAvailable()
+                            && getSettingsIntent() != null) {
+                        try {
+                            Set<TranslationCapability> capabilities =
+                                    mTranslationManagerWrapper.getOnDeviceTranslationCapabilities(
+                                            TranslationSpec.DATA_FORMAT_TEXT,
+                                            TranslationSpec.DATA_FORMAT_TEXT);
+                            if (capabilities != null) {
+                                for (TranslationCapability capability : capabilities) {
+                                    if (capability == null) continue;
+                                    TranslationSpec targetSpec = capability.getTargetSpec();
+                                    if (targetSpec == null) continue;
+                                    ULocale locale = targetSpec.getLocale();
+                                    if (locale != null && isTraditionalChinese(locale.toLocale())) {
+                                        targetLocale = locale;
+                                        break;
+                                    }
+                                }
+                            }
+                        } catch (Exception e) {
+                            Log.e(TAG, "Exception in getOnDeviceTranslationCapabilities", e);
+                        }
+                    }
+                }
+            } finally {
+                final ULocale finalTargetLocale = targetLocale;
+                mMainExecutor.execute(() -> {
+                    if (hasResponded.compareAndSet(false, true)) {
+                        mMainHandler.removeCallbacks(timeoutRunnable);
+                        mIsResolvingTargetLanguage.set(false);
+                        callback.accept(finalTargetLocale);
+                    }
+                });
+            }
+        };
+
+        if (mExecutor instanceof ExecutorService) {
+            futureRef.set(((ExecutorService) mExecutor).submit(task));
+        } else {
+            mExecutor.execute(task);
         }
-        return new ULocale(systemLocale.getLanguage());
     }
 }
