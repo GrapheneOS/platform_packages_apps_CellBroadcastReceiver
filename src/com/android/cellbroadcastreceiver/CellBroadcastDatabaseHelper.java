@@ -185,6 +185,17 @@ public class CellBroadcastDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        log("Downgrading database from version " + oldVersion + " to " + newVersion + ".");
+        try {
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+            onCreate(db);
+        } catch (Exception e) {
+            loge("Failed to recreate the table " + TABLE_NAME + e);
+        }
+    }
+
     private synchronized void tryToMigrateV13() {
         File oldDb = mContext.getDatabasePath(OLD_DATABASE_NAME);
         File newDb = mContext.getDatabasePath(DATABASE_NAME_V13);
