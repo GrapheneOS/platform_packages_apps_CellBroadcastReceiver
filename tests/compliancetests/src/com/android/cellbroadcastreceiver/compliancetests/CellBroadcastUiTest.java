@@ -43,6 +43,8 @@ import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
 import android.text.TextUtils;
+import android.view.translation.TranslationCapability;
+import android.view.translation.TranslationSpec;
 import android.widget.LinearLayout;
 
 import com.android.cellbroadcastreceiver.flags.Flags;
@@ -56,6 +58,12 @@ import org.junit.runner.RunWith;
 
 import java.util.Iterator;
 import java.util.Locale;
+import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -316,12 +324,12 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
 
     /**
      * Checks if the on-device translation API is available by verifying if the settings intent
-     * can be retrieved.
+     * can be retrieved and if there are supported translation capabilities.
      * This ensures that the test runs only when the device supports the required translation
      * features.
      *
-     * @return true if the TranslationManager is available and provides a settings intent; false
-     * otherwise.
+     * @return true if the TranslationManager is available, provides a settings intent, and supports
+     * text-to-text translation; false otherwise.
      */
     private boolean isTranslationServiceAvailable() {
         android.view.translation.TranslationManager tm =
@@ -329,7 +337,37 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         if (tm == null) {
             return false;
         }
-        return tm.getOnDeviceTranslationSettingsActivityIntent() != null;
+
+        if (tm.getOnDeviceTranslationSettingsActivityIntent() == null) {
+            return false;
+        }
+
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        final long timeOut = 400;
+        Future<Boolean> future = executor.submit(() -> {
+            try {
+                Set<TranslationCapability> capabilities =
+                        tm.getOnDeviceTranslationCapabilities(TranslationSpec.DATA_FORMAT_TEXT,
+                                TranslationSpec.DATA_FORMAT_TEXT);
+                return capabilities != null && !capabilities.isEmpty();
+            } catch (Exception e) {
+                logd("Error checking translation capabilities" + e);
+                return false;
+            }
+        });
+
+        try {
+            return future.get(timeOut, TimeUnit.MILLISECONDS);
+        } catch (TimeoutException e) {
+            logd("Timeout checking translation capabilities in test. Assuming not supported.");
+            future.cancel(true);
+            return false;
+        } catch (Exception e) {
+            logd("Exception during translation capability check" + e);
+            return false;
+        } finally {
+            executor.shutdown();
+        }
     }
 
     /**
