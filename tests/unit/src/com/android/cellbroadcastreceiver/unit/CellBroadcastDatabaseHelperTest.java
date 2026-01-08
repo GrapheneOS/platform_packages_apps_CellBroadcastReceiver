@@ -191,6 +191,35 @@ public class CellBroadcastDatabaseHelperTest {
         assertTrue(Arrays.asList(upgradedColumns).contains(CellBroadcasts.GEOMETRIES));
     }
 
+    @Test
+    public void databaseHelperOnDowngrade() {
+        Log.d(TAG, "databaseHelperOnDowngrade");
+        SQLiteDatabase db = mInMemoryDbHelper.getWritableDatabase();
+        Cursor cursor = db.query(CellBroadcastDatabaseHelper.TABLE_NAME,
+                null, null, null, null, null, null);
+        String[] columns = cursor.getColumnNames();
+        assertFalse(Arrays.asList(columns).contains(CellBroadcasts.SLOT_INDEX));
+        assertFalse(Arrays.asList(columns).contains(CellBroadcasts.GEOMETRIES));
+        if (cursor != null) cursor.close();
+
+        // Simulate version 100 -> 14
+        mHelper.onDowngrade(db, 100, 14);
+
+        Cursor downgradedCursor = db.rawQuery(
+                "SELECT * FROM " + CellBroadcastDatabaseHelper.TABLE_NAME + " LIMIT 0", null);
+
+        String[] downgradedColumns = downgradedCursor.getColumnNames();
+        Log.d(TAG, "Columns from rawQuery: " + Arrays.toString(downgradedColumns));
+
+        assertTrue(Arrays.asList(downgradedColumns).contains(CellBroadcasts.SLOT_INDEX));
+        downgradedCursor.close();
+
+        assertTrue(Arrays.asList(downgradedColumns).contains(CellBroadcasts.SLOT_INDEX));
+        assertTrue(Arrays.asList(downgradedColumns).contains(
+                CellBroadcastDatabaseHelper.SMS_SYNC_PENDING));
+        assertTrue(Arrays.asList(downgradedColumns).contains(CellBroadcasts.GEOMETRIES));
+    }
+
     private static class InMemoryCellBroadcastProviderDbHelperV11 extends SQLiteOpenHelper {
 
         public InMemoryCellBroadcastProviderDbHelperV11() {
