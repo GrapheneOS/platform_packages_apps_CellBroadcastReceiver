@@ -274,7 +274,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         verifyMapButtonIsShown(languageTag);
     }
 
-    @Test
+    //@Test // TODO: enable after feature config is enabled
     @Parameters(method = "paramsCarrierAndChannelForTranslateFeature")
     public void testAlertUiOnTranslatorFeature(String carrierName, String channel)
             throws Throwable {
