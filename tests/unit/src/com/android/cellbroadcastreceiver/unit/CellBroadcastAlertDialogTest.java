@@ -802,6 +802,8 @@ public class CellBroadcastAlertDialogTest extends
     }
 
     private SharedPreferences setTranslation() {
+        doReturn(true).when(mContext.getResources()).getBoolean(
+                eq(R.bool.enable_alert_translation));
         SharedPreferences mockSharedPreferences = mock(SharedPreferences.class);
         SharedPreferences.Editor mMockEditor = mock(SharedPreferences.Editor.class);
         mContext.injectSharedPreferences(mockSharedPreferences);

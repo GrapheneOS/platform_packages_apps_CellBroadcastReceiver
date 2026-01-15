@@ -256,7 +256,7 @@
     <bool name="non_swipeable_notification">false</bool>
 
     <!-- Whether the Emergency Alert translation is enabled or not -->
-    <bool name="enable_alert_translation">true</bool>
+    <bool name="enable_alert_translation">false</bool>
 
     <!-- Text links generating method. Could be one of the followings.
          "none": Not adding any link to message texts.
