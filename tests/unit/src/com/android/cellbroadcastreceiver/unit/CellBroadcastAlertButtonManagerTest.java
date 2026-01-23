@@ -55,6 +55,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Instrumentation tests for the {@link CellBroadcastAlertButtonManager}.
@@ -443,23 +444,56 @@ public class CellBroadcastAlertButtonManagerTest
         assertNotNull("Dismiss button should be present", mDismissButton);
     }
 
+    /**
+     * Configures the test environment by simulating a "translation required" scenario
+     * based on the current system language, and includes location information for the Map button.
+     */
+    private void prepareMapAndTranslateTestEnvironment() {
+        Locale currentLocale = Locale.getDefault();
+        String systemLang = currentLocale.getLanguage();
+
+        String messageLang = "en".equals(systemLang) ? "es" : "en";
+        String messageBody = "Test Message in " + messageLang;
+
+        List<Geometry> geometries = new ArrayList<>();
+        geometries.add(new Circle(new LatLng(37.422, -122.084), 1000.0));
+
+        SmsCbMessage message = new SmsCbMessage(1, 0, 123, new SmsCbLocation("310260"),
+                4370, messageLang, 0, messageBody, 3, null, null,
+                255, geometries, System.currentTimeMillis(), 0, 1);
+
+        Intent intent = createIntentWithMessage(message);
+        startActivityAndSetupButtonManager(intent);
+
+        try {
+            doNothing().when(mMockTranslateManager).detectLanguage(anyString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void testConfigureButtonsIdempotent() throws Throwable {
-        prepareTranslateTestEnvironment();
+        prepareMapAndTranslateTestEnvironment();
 
         runTestOnUiThread(() -> mButtonManager.configureButtons(true, true));
         waitForUiThreadToSettle();
-        assertEquals(3, mButtonBar.getChildCount());
+
+        assertEquals("Three buttons (Dismiss, Map, Translate) should be visible.", 3,
+                mButtonBar.getChildCount());
 
         runTestOnUiThread(() -> mButtonManager.configureButtons(true, true));
         waitForUiThreadToSettle();
-        assertEquals("Should still be 3 children", 3, mButtonBar.getChildCount());
+        assertEquals("The button count should remain 3 even after calling again.", 3,
+                mButtonBar.getChildCount());
 
         runTestOnUiThread(() -> mButtonManager.configureButtons(false, false));
         waitForUiThreadToSettle();
-        assertEquals(1, mButtonBar.getChildCount());
+        assertEquals("Only 1 button (Dismiss) should remain when options are disabled.", 1,
+                mButtonBar.getChildCount());
 
         runTestOnUiThread(() -> mButtonManager.configureButtons(false, false));
         waitForUiThreadToSettle();
-        assertEquals("Should still be 1 child", 1, mButtonBar.getChildCount());
+        assertEquals("The button count should remain 1 even after calling again.", 1,
+                mButtonBar.getChildCount());
     }
 }
