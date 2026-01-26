@@ -273,8 +273,8 @@ public class CellBroadcastReceiver extends BroadcastReceiver {
                 String countryCode = null;
                 try {
                     countryCode = tm.getNetworkCountryIso();
-                } catch (IllegalArgumentException e) {
-                    loge("IllegalArgumentException while getting network country iso" + e);
+                } catch (IllegalArgumentException | IllegalStateException e) {
+                    loge("Exception while getting network country iso " + e);
                 }
                 if (mMccMap != null && !TextUtils.isEmpty(countryCode)) {
                     networkOperator = mMccMap.get(countryCode.toLowerCase(Locale.ROOT).trim());
