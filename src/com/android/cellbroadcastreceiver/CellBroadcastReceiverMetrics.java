@@ -586,16 +586,23 @@ public class CellBroadcastReceiverMetrics {
      * @param messageId : service_category of message
      * @param isTranslationButtonShown : true if the translation button was shown to the user
      * @param isTranslationTriggered : true if translation is triggered
-     * @param errorType : type of error
+     * @param translationErrorType : type of error for translation
+     * @param isMapButtonShown : true if the map button was shown to the user
+     * @param isMapTriggered : true if map is triggered
+     * @param mapGeoDataType : type of geographic information passed to the map activity
+     * @param mapErrorType : type of error for map
      */
     void logUxReported(int messageId, boolean isTranslationButtonShown,
-            boolean isTranslationTriggered, int errorType) {
+            boolean isTranslationTriggered, int translationErrorType, boolean isMapButtonShown,
+            boolean isMapTriggered, int mapGeoDataType, int mapErrorType) {
         if (VDBG) {
             Log.d(TAG, "logUxReported : " + messageId + " " + isTranslationButtonShown
-                    + " " + isTranslationTriggered + " " + errorType);
+                    + " " + isTranslationTriggered + " " + translationErrorType + " "
+                    + isMapButtonShown + " " + isMapTriggered + " " + mapGeoDataType + " "
+                    + mapErrorType);
         }
         CellBroadcastModuleStatsLog.write(CellBroadcastModuleStatsLog.CELLBROADCAST_UX_REPORTED,
-                messageId, isTranslationButtonShown, isTranslationTriggered, errorType, false,
-                false, 0, 0);
+                messageId, isTranslationButtonShown, isTranslationTriggered, translationErrorType,
+                isMapButtonShown, isMapTriggered, mapGeoDataType, mapErrorType);
     }
 }
