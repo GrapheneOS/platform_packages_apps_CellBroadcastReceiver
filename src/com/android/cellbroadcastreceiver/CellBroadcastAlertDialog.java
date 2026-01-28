@@ -217,6 +217,8 @@ public class CellBroadcastAlertDialog extends Activity implements
     public static Boolean sIsMapFeatureEnabledForTest = null;
     private boolean mShouldOfferTranslation = false;
     private boolean mTranslateDone = false;
+    private Boolean mLastLoggedShowTranslate = null;
+    private Boolean mLastLoggedShowMap = null;
 
     /** BroadcastReceiver for screen off events. When screen was off, remove FLAG_TURN_SCREEN_ON to
      * start from a clean state. Otherwise, the window flags from the first alert will be
@@ -892,20 +894,8 @@ public class CellBroadcastAlertDialog extends Activity implements
                     + "' to '" + targetLocale.toLanguageTag() + "'");
             // Request translator initialization.
             getTranslateManager().initializeTranslator(sourceLocale, targetLocale);
-            if (message != null) {
-                CellBroadcastReceiverMetrics.getInstance()
-                        .logUxReported(message.getServiceCategory(), true,
-                                false,
-                                CellBroadcastMetrics.ERRTYPE_TRANSLATION_NOT_APPLICABLE);
-            }
         } else {
             Log.d(TAG, "No translation offered: source language is the same as target.");
-            if (message != null) {
-                CellBroadcastReceiverMetrics.getInstance()
-                        .logUxReported(message.getServiceCategory(), false,
-                                false,
-                                CellBroadcastMetrics.ERRTYPE_TRANSLATION_NOT_APPLICABLE);
-            }
         }
 
         updateButtons(message);
@@ -943,7 +933,11 @@ public class CellBroadcastAlertDialog extends Activity implements
             }
             CellBroadcastReceiverMetrics.getInstance()
                     .logUxReported(message.getServiceCategory(), true,
-                            true, CellBroadcastMetrics.ERRTYPE_TRANSLATION_NONE);
+                            true, CellBroadcastMetrics.ERRTYPE_TRANSLATION_NONE,
+                            isMapFeatureEnabled(message),
+                            false,
+                            CellBroadcastMapLauncher.getGeoDataType(message),
+                            CellBroadcastMetrics.ERRTYPE_MAP_UNKNOWN);
         } else {
             Log.w(TAG, "onTranslationCompleted: Translation failed or result is empty.");
             showTranslateFailedToast();
@@ -951,7 +945,11 @@ public class CellBroadcastAlertDialog extends Activity implements
 
             CellBroadcastReceiverMetrics.getInstance()
                     .logUxReported(message.getServiceCategory(), true,
-                            true, CellBroadcastMetrics.ERRTYPE_TRANSLATION_UNKNOWN);
+                            true, CellBroadcastMetrics.ERRTYPE_TRANSLATION_UNKNOWN,
+                            isMapFeatureEnabled(message),
+                            false,
+                            CellBroadcastMapLauncher.getGeoDataType(message),
+                            CellBroadcastMetrics.ERRTYPE_MAP_UNKNOWN);
         }
     }
 
@@ -1019,6 +1017,36 @@ public class CellBroadcastAlertDialog extends Activity implements
 
         getButtonManager().configureButtons(showTranslate, showMap);
         Log.d(TAG, "updateButtons: showTranslate=" + showTranslate + ",showMap=" + showMap);
+        if (message != null) {
+            boolean needToLog = (mLastLoggedShowTranslate == null)
+                    || (mLastLoggedShowMap == null)
+                    || (mLastLoggedShowTranslate != showTranslate)
+                    || (mLastLoggedShowMap != showMap);
+            if (needToLog) {
+                logUxMetric(message, showTranslate, showMap);
+                mLastLoggedShowTranslate = showTranslate;
+                mLastLoggedShowMap = showMap;
+            }
+        }
+    }
+
+    /**
+     * Helper method to log UX metrics.
+     * Ensures Map metrics are logged even if translation is not offered.
+     */
+    private void logUxMetric(SmsCbMessage message, boolean showTranslate, boolean showMap) {
+        if (message != null) {
+            int mapGeoDataType = CellBroadcastMapLauncher.getGeoDataType(message);
+            CellBroadcastReceiverMetrics.getInstance().logUxReported(
+                    message.getServiceCategory(),
+                    showTranslate,
+                    false,
+                    CellBroadcastMetrics.ERRTYPE_TRANSLATION_NOT_APPLICABLE,
+                    showMap,
+                    false,
+                    mapGeoDataType,
+                    CellBroadcastMetrics.ERRTYPE_MAP_UNKNOWN);
+        }
     }
 
     private boolean isTranslateFeatureEnabled() {

@@ -30,6 +30,7 @@ import android.telephony.CbGeoUtils.Polygon;
 import android.telephony.SmsCbMessage;
 import android.util.Log;
 
+import com.android.cellbroadcastservice.CellBroadcastMetrics;
 import com.android.internal.annotations.VisibleForTesting;
 
 import java.io.UnsupportedEncodingException;
@@ -60,12 +61,18 @@ public class CellBroadcastMapLauncher {
     public static void launchMap(Context context, SmsCbMessage message) {
         if (message == null) {
             Log.e(TAG, "No message available to show on map.");
+            logMapMetric(null, CellBroadcastMetrics.ERRTYPE_MAP_NO_MESSAGE);
             return;
         }
 
         String geoUriString = buildGeoUriString(message);
         if (geoUriString == null) {
             Log.e(TAG, "Could not build geo URI from message.");
+            if (message.getGeometries() == null || message.getGeometries().isEmpty()) {
+                logMapMetric(message, CellBroadcastMetrics.ERRTYPE_MAP_NO_GEOMETRY_DATA);
+            } else {
+                logMapMetric(message, CellBroadcastMetrics.ERRTYPE_MAP_URI_ENCODING_FAILED);
+            }
             return;
         }
         Log.d(TAG, "launchMap: geoUri=" + geoUriString);
@@ -120,11 +127,14 @@ public class CellBroadcastMapLauncher {
             explicitIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             try {
                 context.startActivity(explicitIntent);
+                logMapMetric(message, CellBroadcastMetrics.ERRTYPE_MAP_NONE);
             } catch (ActivityNotFoundException e) {
                 Log.e(TAG, "Target system activity not found: " + e);
+                logMapMetric(message, CellBroadcastMetrics.ERRTYPE_MAP_CORE_ACTIVITY_START_FAILED);
             }
         } else {
             Log.e(TAG, "No secure and unique system activity found.");
+            logMapMetric(message, CellBroadcastMetrics.ERRTYPE_MAP_CORE_ACTIVITY_NOT_FOUND);
         }
     }
 
@@ -185,5 +195,52 @@ public class CellBroadcastMapLauncher {
             Log.d(TAG, "No valid geometries could be encoded.");
             return null;
         }
+    }
+
+    /**
+     * Logs the map interaction metric.
+     */
+    private static void logMapMetric(SmsCbMessage message, int errorType) {
+        int messageId = (message != null) ? message.getServiceCategory() : 0;
+        int geoDataType = getGeoDataType(message);
+
+        CellBroadcastReceiverMetrics.getInstance().logUxReported(
+                messageId,
+                false, // isTranslationButtonShown
+                false, // isTranslationTriggered
+                CellBroadcastMetrics.ERRTYPE_TRANSLATION_NOT_APPLICABLE,
+                true,  // isMapButtonShown
+                true,  // isMapTriggered
+                geoDataType,
+                errorType
+        );
+    }
+
+    /**
+     * Returns the GeoDataType based on the message geometries.
+     */
+    public static int getGeoDataType(SmsCbMessage message) {
+        if (message == null || message.getGeometries() == null) {
+            return CellBroadcastMetrics.GEO_DATA_TYPE_UNKNOWN;
+        }
+        boolean hasCircle = false;
+        boolean hasPolygon = false;
+
+        for (CbGeoUtils.Geometry geometry : message.getGeometries()) {
+            if (geometry instanceof Circle) {
+                hasCircle = true;
+            } else if (geometry instanceof Polygon) {
+                hasPolygon = true;
+            }
+        }
+
+        if (hasCircle && hasPolygon) {
+            return CellBroadcastMetrics.GEO_DATA_TYPE_MULTIPLE;
+        } else if (hasCircle) {
+            return CellBroadcastMetrics.GEO_DATA_TYPE_CIRCLE;
+        } else if (hasPolygon) {
+            return CellBroadcastMetrics.GEO_DATA_TYPE_POLYGON;
+        }
+        return CellBroadcastMetrics.GEO_DATA_TYPE_UNKNOWN;
     }
 }
