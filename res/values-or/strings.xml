@@ -16,9 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_label" msgid="2008319089248760277">"ୱେୟାରଲେସ୍ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
+    <string name="app_label" msgid="2008319089248760277">"ୱେୟାରଲେସ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="sms_cb_settings" msgid="9021266457863671070">"ୱାୟାରଲେସ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
-    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"ୱେୟାରଲେସ୍ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
+    <string name="sms_cb_sender_name_default" msgid="972946539768958828">"ୱେୟାରଲେସ ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="sms_cb_sender_name_presidential" msgid="5302753979711319380">"ୱାୟାରଲେସ ଜରୁରୀକାଳୀନ ଆଲର୍ଟଗୁଡ଼ିକ"</string>
     <string name="sms_cb_sender_name_emergency" msgid="2937067842997478965">"ୱେୟାରଲେସ ଜରୁରୀକାଳୀନ ଆଲର୍ଟଗୁଡ଼ିକ"</string>
     <string name="sms_cb_sender_name_public_safety" msgid="5230033387708907922">"ସୂଚନାଭିତ୍ତିକ ବିଜ୍ଞପ୍ତି"</string>
@@ -151,7 +151,7 @@
     <item msgid="3863339891188103437">"ପ୍ରତି 15 ମିନିଟରେ"</item>
     <item msgid="7388573183644474611">"କେବେ ବି ନୁହେଁ"</item>
   </string-array>
-    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ୱେୟାରଲେସ୍‌ ଜରୁରୀକାଳୀନ ଅଲର୍ଟ"</string>
+    <string name="emergency_alert_settings_title_watches" msgid="4477073412799894883">"ୱେୟାରଲେସ ଜରୁରୀକାଳୀନ ଅଲର୍ଟ"</string>
     <string name="enable_cmas_presidential_alerts_title" msgid="7293800023375154256">"ରାଷ୍ଟ୍ରପତିଙ୍କ ଦ୍ୱାରା ଜାରି କରାଯାଇଥିବା ଆଲର୍ଟ"</string>
     <string name="enable_cmas_presidential_alerts_summary" msgid="7900094335808247024">"ରାଷ୍ଟ୍ରପତିଙ୍କ ଦ୍ୱାରା ଜାରି କରାଯାଇଥିବା ଜାତୀୟ ଚେତାବନୀ ମେସେଜ୍‌ଗୁଡ଼ିକ। ବନ୍ଦ କରାଯାଇପାରିବ ନାହିଁ।"</string>
     <string name="receive_cmas_in_second_language_title" msgid="1223260365527361964"></string>

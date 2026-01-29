@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2022 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="6790635625382409567">"పౌర సంబంధిత రక్షణ అలర్ట్"</string>
+    <string name="cmas_extreme_alert" msgid="4202161058090901507">"పౌర సంబంధిత రక్షణ ముందస్తు అలర్ట్"</string>
+    <string name="cmas_required_monthly_test" msgid="3498744277163765239">"టెస్ట్ అలర్ట్"</string>
+    <!-- no translation found for enable_cmas_extreme_threat_alerts_title (199804348940423906) -->
+    <skip />
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2930344195535715769">"సంభవించబోయే లేదా సంభవించే అవకాశం ఉన్న ఎమర్జెన్సీ సిచ్యుయేషన్ గురించి ముందుగానే జారీ చేసే హెచ్చరిక"</string>
+    <!-- no translation found for enable_cmas_test_alerts_title (599378129477506103) -->
+    <skip />
+    <string name="enable_cmas_test_alerts_summary" msgid="6134278168778646140">"అలర్ట్ సిస్టమ్‌లు సరిగ్గా పని చేస్తున్నాయని నిర్ధారించుకోవడానికి సిమ్యులేట్ చేసిన నోటిఫికేషన్"</string>
+</resources>
