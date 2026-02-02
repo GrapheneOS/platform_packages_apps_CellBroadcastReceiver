@@ -722,6 +722,14 @@ public class CellBroadcastReceiverTest extends CellBroadcastTest {
             throw new AssertionError("not expected exception", IllegalArgumentException);
         }
 
+        doThrow(new IllegalStateException("test"))
+                .when(mMockTelephonyManager).getNetworkCountryIso();
+        try {
+            mCellBroadcastReceiver.onReceive(mContext, mIntent);
+        } catch (Exception IllegalStateException) {
+            throw new AssertionError("not expected exception", IllegalStateException);
+        }
+
         doReturn(ServiceState.STATE_OUT_OF_SERVICE).when(mIntent)
                 .getIntExtra(anyString(), anyInt());
         doReturn("123456").when(mMockTelephonyManager).getSimOperator();
