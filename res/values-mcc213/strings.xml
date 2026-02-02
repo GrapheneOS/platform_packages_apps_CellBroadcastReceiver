@@ -19,10 +19,10 @@
     <!-- Required Catalan (ca) translation for this message: Alerta de Protecció Civil -->
     <string name="cmas_presidential_level_alert">Civil Protection Alert</string>
     <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
-    <!-- Required Catalan (es) translation for this message: Pre-Alerta de Protecció Civil -->
+    <!-- Required Catalan (ca) translation for this message: Pre-Alerta de Protecció Civil -->
     <string name="cmas_extreme_alert">Civil Protection Pre-Alert</string>
     <!-- CMAS dialog title for required monthly test. [CHAR LIMIT=50] -->
-    <!-- Required Catalan (es) translation for this message: Alerta de Prova -->
+    <!-- Required Catalan (ca) translation for this message: Alerta de Prova -->
     <string name="cmas_required_monthly_test">Test Alert</string>
 
     <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
