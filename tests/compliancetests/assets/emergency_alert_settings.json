@@ -1701,5 +1701,27 @@
       "default_value": "false",
       "toggle_avail": "true"
     }
+  },
+  "cyprus": {
+    "Public safety messages": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "AMBER alerts": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "State and local tests": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Exercise tests": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
   }
 }
