@@ -56,7 +56,7 @@
     <string name="public_safety_message" msgid="9119928798786998252">"ଜନସୁରକ୍ଷା ମେସେଜ୍"</string>
     <string name="state_local_test_alert" msgid="8003145745857480200">"ରାଜ୍ୟ/ସ୍ଥାନୀୟ ପରୀକ୍ଷା"</string>
     <string name="emergency_alert" msgid="624783871477634263">"ଅପାତକାଳୀନ ଆଲର୍ଟ"</string>
-    <string name="emergency_alerts_title" msgid="6605036374197485429">"ଅଲର୍ଟ"</string>
+    <string name="emergency_alerts_title" msgid="6605036374197485429">"ଆଲର୍ଟ"</string>
     <string name="notification_channel_broadcast_messages" msgid="880704362482824524">"ବ୍ରୋଡକାଷ୍ଟ ମେସେଜ୍‌"</string>
     <string name="notification_channel_emergency_alerts" msgid="5008287980979183617">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="notification_channel_emergency_alerts_high_priority" msgid="3937475297436439073">"ସ୍ୱୀକାର କରାଯାଇନଥିବା ଜରୁରୀକାଳୀନ ଆଲର୍ଟଗୁଡ଼ିକ"</string>
@@ -89,7 +89,7 @@
     <string name="enable_emergency_alerts_message_title" msgid="661894007489847468">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ"</string>
     <string name="enable_emergency_alerts_message_summary" msgid="7574617515441602546">"ପ୍ରାଣଘାତକ ଘଟଣା ବିଷୟରେ ଚେତାବନୀ"</string>
     <string name="enable_cmas_test_alerts_title" msgid="7194966927004755266">"ଟେଷ୍ଟ ଆଲର୍ଟ"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ସୁରକ୍ଷା ଆଲର୍ଟ ସିଷ୍ଟମ୍‌ରୁ ମୋବାଇଲ୍ କମ୍ପାନୀ ଟେଷ୍ଟ ଏବଂ ମାସିକ ଟେଷ୍ଟଗୁଡ଼ିକ ପାଆନ୍ତୁ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2083089933271720217">"ସୁରକ୍ଷା ଆଲର୍ଟ ସିଷ୍ଟମରୁ କେରିଅର ଟେଷ୍ଟ ଏବଂ ମାସିକ ଟେଷ୍ଟଗୁଡ଼ିକ ପାଆନ୍ତୁ"</string>
     <!-- no translation found for enable_exercise_test_alerts_title (6030780598569873865) -->
     <skip />
     <string name="enable_exercise_test_alerts_summary" msgid="4276766794979567304">"ଜରୁରୀକାଳୀନ ଆଲର୍ଟ ପାଆନ୍ତୁ: ବ୍ୟାୟାମ/ଡ୍ରିଲ୍ ମେସେଜ୍"</string>

@@ -172,7 +172,7 @@
     <string name="seconds" msgid="141450721520515025">"sekundy"</string>
     <string name="message_copied" msgid="6922953753733166675">"Zpráva byla zkopírována"</string>
     <string name="top_intro_default_text" msgid="1922926733152511202"></string>
-    <string name="top_intro_roaming_text" msgid="5250650823028195358">"Když používáte roaming nebo nemáte aktivní SIM kartu, můžete dostávat i upozornění, která v těchto nastaveních nejsou zahrnuta"</string>
+    <string name="top_intro_roaming_text" msgid="5250650823028195358">"Když používáte roaming nebo nemáte aktivní SIM kartu, můžete dostávat i upozornění, která v těchto nastaveních nejsou zahrnuta."</string>
     <string name="notification_cb_settings_changed_title" msgid="8404224790323899805">"Vaše nastavení se změnilo"</string>
     <string name="notification_cb_settings_changed_text" msgid="8722470940705858715">"Nastavení bezdrátových výstražných zpráv byla resetována, protože se změnila vaše SIM karta"</string>
     <string name="button_translate" msgid="905455737012993000">"Přeložit"</string>
