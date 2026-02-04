@@ -1650,11 +1650,11 @@
       "toggle_avail": "true"
     },
     "Exercise": {
-      "default_value": "true",
+      "default_value": "false",
       "toggle_avail": "true"
     },
     "State/Local Test": {
-      "default_value": "true",
+      "default_value": "false",
       "toggle_avail": "true"
     },
     "Vibration": {

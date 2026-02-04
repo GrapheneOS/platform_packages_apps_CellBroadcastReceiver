@@ -4946,23 +4946,23 @@
     },
     "4381": {
       "title": "Exercise",
-      "default_value": "true",
+      "default_value": "false",
       "toggle_avail": "true"
     },
     "4394": {
       "title": "Exercise",
-      "default_value": "true",
+      "default_value": "false",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "4398": {
       "title": "State/Local Test",
-      "default_value": "true",
+      "default_value": "false",
       "toggle_avail": "true"
     },
     "4399": {
       "title": "State/Local Test",
-      "default_value": "true",
+      "default_value": "false",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
