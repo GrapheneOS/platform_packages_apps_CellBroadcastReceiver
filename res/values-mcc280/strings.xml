@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- CMAS dialog title for CY-Alert presidential level alert. [CHAR LIMIT=60] -->
+    <!-- Required Greek (el) translation for this message: CY-Alert Επίπεδο-1 -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Seviye-1 -->
+    <string name="cmas_presidential_level_alert">CY-Alert Level-1</string>
+    <!-- CMAS dialog title for CY-Alert extreme alert. [CHAR LIMIT=80] -->
+    <!-- Required Greek (el) translation for this message: CY-Alert Επίπεδο-2 -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Seviye-2 -->
+    <string name="cmas_extreme_alert">CY-Alert Level-2</string>
+    <!-- CMAS dialog title for CY-Alert severe alert. [CHAR LIMIT=80] -->
+    <!-- Required Greek (el) translation for this message: CY-Alert Επίπεδο-3 -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Seviye-3 -->
+    <string name="cmas_severe_alert">CY-Alert Level-3</string>
+    <!-- CMAS dialog title for CY-Alert public safety messages. [CHAR LIMIT=80] -->
+    <!-- Required Greek (el) translation for this message: CY-Alert Επίπεδο-4 -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Seviye-4 -->
+    <string name="public_safety_message">CY-Alert Level-4</string>
+    <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
+    <!-- Required Greek (el) translation for this message: CY-Alert Ειδοποίηση Απαγωγής Παιδιού -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Çocuk Kaçırma Bildirimi -->
+    <string name="cmas_amber_alert">CY-Alert Child Abduction</string>
+    <!-- Dialog title for all state/local test alerts. [CHAR LIMIT=50] -->
+    <!-- Required Greek (el) translation for this message: CY-Alert - Δοκιμή -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert - Test Mesajı -->
+    <string name="state_local_test_alert">CY-Alert - Test</string>
+    <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
+    <!-- Required Greek (el) translation for this message: CY-Alert - Ειδοποίηση Άσκησης -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Tatbikat Bildirimi -->
+    <string name="cmas_exercise_alert">CY-Alert Exercise</string>
+
+    <!-- Preference title for enable public safety messages checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Greek (el) translation for this message: Μηνύματα δημόσιας ασφάλειας -->
+    <!-- Required Turkish (tr) translation for this message: Kamu güvenliği mesajları -->
+    <string name="enable_public_safety_messages_title">Public safety messages</string>
+    <!-- Preference summary for enable public safety messages checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Greek (el) translation for this message: Προτεινόμενες ενέργειες που μπορούν να σώσουν ζωές ή περιουσία -->
+    <!-- Required Turkish (tr) translation for this message: Can veya mal kayıbını önleyebilecek önerilen tedbirler -->
+    <string name="enable_public_safety_messages_summary">Recommended actions that can save lives or property</string>
+    <!-- Preference title for enable CMAS amber alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Greek (el) translation for this message: Ειδοποιήσεις AMBER -->
+    <!-- Required Turkish (tr) translation for this message: AMBER Uyarıları -->
+    <string name="enable_cmas_amber_alerts_title">AMBER alerts</string>
+    <!-- Preference summary for enable CMAS amber alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Greek (el) translation for this message: Έκτακτες ειδοποιήσεις για απαγωγή παιδιών -->
+    <!-- Required Turkish (tr) translation for this message: Çocuk kaçırma acil bildirimleri -->
+    <string name="enable_cmas_amber_alerts_summary">Child abduction emergency bulletins</string>
+    <!-- Preference title for enable state/local test alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Greek (el) translation for this message: Κρατικές και τοπικές δοκιμές -->
+    <!-- Required Turkish (tr) translation for this message: Ulusal ve yerel yestler -->
+    <string name="enable_state_local_test_alerts_title">State and local tests</string>
+    <!-- Preference summary for enable state/local test alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Greek (el) translation for this message: Λήψη δοκιμαστικών μηνυμάτων από κρατικές ή τοπικές αρχές -->
+    <!-- Required Turkish (tr) translation for this message: Devlet veya yerel yetkili kurumlardan test mesajlarının alınması -->
+    <string name="enable_state_local_test_alerts_summary">Receive test messages from state and local authorities</string>
+    <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Greek (el) translation for this message: Δοκιμαστικές Ασκήσεις -->
+    <!-- Required Turkish (tr) translation for this message: Tatbikat Amaçlı Denemeler -->
+    <string name="enable_exercise_test_alerts_title">Exercise tests</string>
+    <!-- Preference summary for exercise test alerts checkbox. [CHAR LIMIT=125] -->
+    <!-- Required Greek (el) translation for this message: Λήψη δοκιμαστικών μηνυμάτων για σκοπούς άσκησεων -->
+    <!-- Required Turkish (tr) translation for this message: Tatbikat Amaçlı Test Mesajlarının Alınması -->
+    <string name="enable_exercise_test_alerts_summary">Receive exercise messages from state or local authorities</string>
+</resources>
