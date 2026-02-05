@@ -26,7 +26,7 @@
     <skip />
     <string name="cell_broadcast_settings_not_available" msgid="3908142962162375221">"Die Einstellungen für Warnmeldungen an Mobilgeräte sind für diesen Nutzer nicht verfügbar"</string>
     <string name="button_dismiss" msgid="1234221657930516287">"Ok"</string>
-    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Bisher noch keine Benachrichtigungen"</string>
+    <string name="no_cell_broadcasts" msgid="7554779730107421769">"Bisher noch keine Warnmeldungen"</string>
     <string name="menu_preferences" msgid="3596514894131599202">"Einstellungen"</string>
     <string name="menu_delete_all" msgid="3940997343921149800">"Nachrichten löschen"</string>
     <string name="message_options" msgid="3178489901903589574">"Nachrichtenoptionen"</string>
@@ -64,12 +64,12 @@
     <string name="notification_channel_settings_updates" msgid="6779759372516475085">"Automatische Änderungen an Einstellungen für Notfallbenachrichtigungen für Mobilgeräte je nach SIM"</string>
     <string name="enable_alerts_master_toggle_title" msgid="1457904343636699446">"Notfallbenachrichtigungen zulassen"</string>
     <string name="enable_alerts_master_toggle_summary" msgid="5583168548073938617">"Warnmeldungen an Mobilgeräte erhalten"</string>
-    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Benachrichtigungserinnerungen"</string>
+    <string name="alert_reminder_interval_title" msgid="3283595202268218149">"Erinnerungen für Warnmeldungen"</string>
     <string name="enable_alert_speech_title" msgid="8052104771053526941">"Benachrichtigung vorlesen"</string>
     <string name="enable_alert_speech_summary" msgid="2855629032890937297">"Warnmeldungen für Mobilgeräte via Sprachausgabe vorlesen"</string>
-    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Benachrichtigungserinnerung ertönt in normaler Lautstärke"</string>
+    <string name="alert_reminder_dialog_title" msgid="2299010977651377315">"Erinnerung für Warnmeldung ertönt in normaler Lautstärke"</string>
     <string name="emergency_alert_history_title" msgid="8310173569237268431">"Bisherige Warnmeldungen"</string>
-    <string name="alert_preferences_title" msgid="6001469026393248468">"Benachrichtigungseinstellungen"</string>
+    <string name="alert_preferences_title" msgid="6001469026393248468">"Einstellungen für Warnmeldungen"</string>
     <string name="enable_etws_test_alerts_title" msgid="3593533226735441539">"ETWS-Testnachrichten"</string>
     <string name="enable_etws_test_alerts_summary" msgid="8746155402612927306">"Testnachrichten für Erdbeben-/Tsunami-Warnsystem"</string>
     <string name="enable_cmas_extreme_threat_alerts_title" msgid="5416260219062637770">"Extreme Gefahren"</string>
