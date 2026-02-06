@@ -778,7 +778,7 @@
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Trimite întotdeauna alerte la volumul maxim": { //"Always alert at full volume"
+    "Alertează întotdeauna la volum maxim": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
