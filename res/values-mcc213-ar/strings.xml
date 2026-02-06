@@ -21,7 +21,7 @@
     <string name="cmas_required_monthly_test" msgid="3498744277163765239">"تنبيه تجريبي"</string>
     <!-- no translation found for enable_cmas_extreme_threat_alerts_title (199804348940423906) -->
     <skip />
-    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2930344195535715769">"تحذير مبكر يتم إصداره قبل وقوع حالة طوارئ وشيكة أو محتملة"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="2930344195535715769">"تحذير مبكر يصدر قبل وقوع حالة طوارئ وشيكة أو محتملة"</string>
     <!-- no translation found for enable_cmas_test_alerts_title (599378129477506103) -->
     <skip />
     <string name="enable_cmas_test_alerts_summary" msgid="6134278168778646140">"إشعار محاكاة للتأكّد من أنّ أنظمة التنبيه تعمل بشكلٍ سليم"</string>
