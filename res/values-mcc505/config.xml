@@ -63,11 +63,6 @@
     <string-array name="cmas_alerts_severe_range_strings" translatable="false"></string-array>
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false"></string-array>
 
-    <!-- Exercise test alerts toggle default value -->
-    <bool name="test_exercise_alerts_enabled_default">true</bool>
-    <!-- State local test alerts toggle default value -->
-    <bool name="state_local_test_alerts_enabled_default">true</bool>
-
     <!-- Whether to show severe alert settings -->
     <bool name="show_severe_alert_settings">false</bool>
     <!-- Whether to show amber alert settings -->

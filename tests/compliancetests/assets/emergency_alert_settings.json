@@ -778,7 +778,7 @@
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "Trimite întotdeauna alerte la volumul maxim": { //"Always alert at full volume"
+    "Alertează întotdeauna la volum maxim": { //"Always alert at full volume"
       "default_value": "false",
       "toggle_avail": "true"
     }
@@ -1650,11 +1650,11 @@
       "toggle_avail": "true"
     },
     "Exercise": {
-      "default_value": "true",
+      "default_value": "false",
       "toggle_avail": "true"
     },
     "State/Local Test": {
-      "default_value": "true",
+      "default_value": "false",
       "toggle_avail": "true"
     },
     "Vibration": {
