@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2026 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-경보 1등급"</string>
+    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-경보 2등급"</string>
+    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-경보 3등급"</string>
+    <string name="public_safety_message" msgid="3556861828652869276">"CY-경보 4등급"</string>
+    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-경보 아동 유괴"</string>
+    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-경보 - 테스트"</string>
+    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-경보 안전 훈련"</string>
+    <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"공공 안전 문자"</string>
+    <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"생명이나 재산을 보호할 수 있는 행동 요령"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"앰버 경보"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"아동 유괴 긴급 상황 공지"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"주 및 지역 테스트"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"주 및 지역 당국의 테스트 메시지 받기"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"안전 훈련 테스트"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"주 또는 지역 당국의 안전 훈련 메시지 받기"</string>
+</resources>
