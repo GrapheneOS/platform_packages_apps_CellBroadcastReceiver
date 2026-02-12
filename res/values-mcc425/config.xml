@@ -26,10 +26,10 @@
     </string-array>
     <!-- 4371-4372 -->
     <string-array name="cmas_alerts_severe_range_strings" translatable="false">
-        <item>0x1113-0x1114:rat=gsm, emergency=false</item>
+        <item>0x1113-0x1114:rat=gsm, emergency=true, override_dnd=true</item>
         <!-- additional language -->
-        <item>0x1120-0x1121:rat=gsm, emergency=false, filter_language=true</item>
-        <item>0x397-0x39A:rat=gsm, emergency=false, filter_language=true</item>
+        <item>0x1120-0x1121:rat=gsm, emergency=true, filter_language=true, override_dnd=true</item>
+        <item>0x397-0x39A:rat=gsm, emergency=true, filter_language=true, override_dnd=true</item>
     </string-array>
     <!-- 4373~4378, 4386~4391 -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">

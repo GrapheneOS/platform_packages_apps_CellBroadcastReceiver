@@ -2398,14 +2398,12 @@
       "title": "Warning alert",
       "default_value": "true",
       "toggle_avail": "true",
-      "alert_type":"notification",
       "end_channel": "4372"
     },
     "4384": {
       "title": "Warning alert",
       "default_value": "true",
       "toggle_avail": "true",
-      "alert_type":"notification",
       "filter_language": "language_setting",
       "end_channel": "4385"
     },
@@ -2413,7 +2411,6 @@
       "title": "Warning alert",
       "default_value": "true",
       "toggle_avail": "true",
-      "alert_type":"notification",
       "filter_language": "language_setting",
       "end_channel": "922"
     },
