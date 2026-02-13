@@ -30,38 +30,38 @@
 
     <!-- 4375, 4388 Level 3 alert -->
     <string-array name="cmas_alerts_severe_range_strings" translatable="false">
-        <item>0x1117:rat=gsm, emergency=true</item>
+        <item>0x1117:rat=gsm, emergency=true, type=info</item>
         <!-- additional language -->
-        <item>0x1124:rat=gsm, emergency=true, filter_language=true</item>
+        <item>0x1124:rat=gsm, emergency=true, type=info, filter_language=true</item>
     </string-array>
 
     <!-- 4396, 4397 Level 4 alert -->
     <string-array name="public_safety_messages_channels_range_strings" translatable="false">
-        <item>0x112C:rat=gsm, emergency=true</item>
+        <item>0x112C:rat=gsm, emergency=true, type=info</item>
         <!-- additional language -->
-        <item>0x112D:rat=gsm, emergency=true, filter_language=true</item>
+        <item>0x112D:rat=gsm, emergency=true, type=info, filter_language=true</item>
     </string-array>
 
     <!-- 4379, 4392 Amber Alert -->
     <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false">
-        <item>0x111B:rat=gsm, emergency=true</item>
+        <item>0x111B:rat=gsm, emergency=true, type=mute</item>
         <!-- additional language -->
-        <item>0x1128:rat=gsm, emergency=true, filter_language=true</item>
+        <item>0x1128:rat=gsm, emergency=true, type=mute, filter_language=true</item>
     </string-array>
 
     <!-- 4380, 4393 Test Alert -->
     <string-array name="state_local_test_alert_range_strings" translatable="false">
         <!-- state/local test -->
-        <item>0x111C:rat=gsm, emergency=true</item>
+        <item>0x111C:rat=gsm, emergency=true, override_dnd=true</item>
         <!-- state/local test additional language -->
-        <item>0x1129:rat=gsm, emergency=true, filter_language=true</item>
+        <item>0x1129:rat=gsm, emergency=true, filter_language=true, override_dnd=true</item>
     </string-array>
 
     <!-- 4381, 4394 Exercise Alert -->
     <string-array name="exercise_alert_range_strings" translatable="false">
-        <item>0x111D:rat=gsm, emergency=true</item>
+        <item>0x111D:rat=gsm, emergency=true, override_dnd=true</item>
         <!-- additional language -->
-        <item>0x112A:rat=gsm, emergency=true, filter_language=true</item>
+        <item>0x112A:rat=gsm, emergency=true, filter_language=true, override_dnd=true</item>
     </string-array>
 
     <string-array name="operator_defined_alert_range_strings" translatable="false"/>
@@ -71,8 +71,6 @@
 
     <!-- Whether to show extreme alert settings -->
     <bool name="show_extreme_alert_settings">false</bool>
-    <!-- Whether to show severe alert settings -->
-    <bool name="show_severe_alert_settings">false</bool>
     <!-- Whether to show test settings -->
     <bool name="show_test_settings">true</bool>
     <!-- To display a separate exercise test settings. -->
