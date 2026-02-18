@@ -36,6 +36,8 @@ android_test {
         "src/**/*.java",
         ":cellbroadcast-util-shared-srcs",
     ],
+    min_sdk_version: "31",
+    target_sdk_version: "35",
     // Notice that we don't have to include the src files of Email because, by
     // running the tests using an instrumentation targeting Eamil, we
     // automatically get all of its classes loaded into our environment.
