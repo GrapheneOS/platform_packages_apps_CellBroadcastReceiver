@@ -136,8 +136,8 @@
     <string name="delivery_time_heading" msgid="5980836543433619329">"Kézbesítve:"</string>
     <string name="notification_multiple" msgid="5121978148152124860">"<xliff:g id="COUNT">%s</xliff:g> olvasatlan értesítés."</string>
     <string name="notification_multiple_title" msgid="1523638925739947855">"Új értesítések"</string>
-    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Leiratkozási párbeszédpanel megjelenítése az első értesítés után (kivéve elnöki riasztások esetén)."</string>
-    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Leiratkozási párbeszédpanel mutatása"</string>
+    <string name="show_cmas_opt_out_summary" msgid="6926059266585295440">"Leiratkozási opció megjelenítése az első értesítés után (kivéve elnöki riasztások esetén)."</string>
+    <string name="show_cmas_opt_out_title" msgid="9182104842820171132">"Leiratkozási opció mutatása"</string>
     <string name="cmas_opt_out_dialog_text" msgid="4820577535626084938">"Ön jelenleg fogad vezeték nélküli vészjelzéseket. Szeretné a továbbiakban is fogadni ezeket?"</string>
     <string name="cmas_opt_out_button_yes" msgid="7248930667195432936">"Igen"</string>
     <string name="cmas_opt_out_button_no" msgid="3110484064328538553">"Nem"</string>

@@ -48,7 +48,7 @@
     <string name="cmas_extreme_immediate_observed_alert" msgid="2328845915287460780">"Larrialdi-alerta: muturrekoa"</string>
     <string name="cmas_extreme_immediate_likely_alert" msgid="1859702950323471778">"Larrialdi-alerta: muturrekoa"</string>
     <string name="cmas_severe_alert" msgid="4135809475315826913">"Larrialdi-alerta: larria"</string>
-    <string name="cmas_amber_alert" msgid="6154867710264778887">"Haurrak bahitzeagatiko alerta (AMBER alerta)"</string>
+    <string name="cmas_amber_alert" msgid="6154867710264778887">"Haurrak bahitzeagatiko alerta (alerta anbara)"</string>
     <string name="cmas_required_monthly_test" msgid="1890205712251132193">"Hileroko nahitaezko proba"</string>
     <string name="cmas_exercise_alert" msgid="2892255514938370321">"Larrialdi-alerta (ariketa)"</string>
     <string name="cmas_operator_defined_alert" msgid="8755372450810011476">"Larrialdi-alerta (operadorea)"</string>
@@ -76,7 +76,7 @@
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5832146246627518123">"Bizitza eta jabetza arrisku oso larrian jartzen dituzten egoerak"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="1066172973703410042">"Arrisku larriak"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="5292443310309039223">"Bizitza eta jabetza arrisku larrian jartzen dituzten egoerak"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"AMBER alertak"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="1475030503498979651">"Alerta anbarak"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="4495233280416889667">"Haurrak bahitzeagatiko larrialdi-buletinak"</string>
     <string name="enable_alert_message_title" msgid="2939830587633599352">"Alerta-mezuak"</string>
     <string name="enable_alert_message_summary" msgid="6525664541696985610">"Ohartarazi berehalako segurtasun-arriskuei buruz"</string>

@@ -27,7 +27,7 @@
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Can veya mal kayıbını önleyebilecek önerilen tedbirler"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"AMBER Uyarıları"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"Çocuk kaçırma acil bildirimleri"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Ulusal ve yerel testler"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Ulusal ve yerel yestler"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"Devlet veya yerel yetkili kurumlardan test mesajlarının alınması"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"Tatbikat Amaçlı Denemeler"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"Tatbikat Amaçlı Test Mesajlarının Alınması"</string>
