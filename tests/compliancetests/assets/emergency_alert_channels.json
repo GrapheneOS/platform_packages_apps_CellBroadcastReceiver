@@ -4923,23 +4923,23 @@
   },
   "Australia": {
     "4370": {
-      "title": "NMS Critical Alert",
+      "title": "Critical AusAlert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "NMS Critical Alert",
+      "title": "Critical AusAlert",
       "default_value": "true",
       "toggle_avail": "false",
       "filter_language": "language_setting"
     },
     "4371": {
-      "title": "NMS Priority Alert",
+      "title": "Priority AusAlert",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4384": {
-      "title": "NMS Priority Alert",
+      "title": "Priority AusAlert",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
