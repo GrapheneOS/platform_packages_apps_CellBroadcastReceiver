@@ -87,6 +87,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/option_include_geolocation_in_polygon"/>
+        <RadioButton
+            android:id="@+id/geo_mixed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_include_geolocation_mixed"/>
     </RadioGroup>
 
     <CheckBox
