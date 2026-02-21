@@ -24,7 +24,7 @@
     <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert: proba"</string>
     <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-Alert: simulazioa"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"Segurtasun publikoari buruzko mezuak"</string>
-    <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Bizia edo ondasunak salbatzeko ekintza gomendatuak"</string>
+    <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Bizia edo ondasunak salbatzeko gomendioak"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"Alerta anbarak"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"Haurrak bahitzeagatiko larrialdi-buletinak"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Estatuko eta tokiko erakundeen probak"</string>
