@@ -1645,7 +1645,7 @@
     }
   },
   "Australia": {
-    "NMS Priority Alert": {
+    "Priority AusAlert": {
       "default_value": "true",
       "toggle_avail": "true"
     },

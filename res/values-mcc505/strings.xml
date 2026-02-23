@@ -17,11 +17,11 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- CMAS dialog title for national level alert. [CHAR LIMIT=50] -->
-    <!-- Required all English (en) translation for this message: NMS Critical Alert -->
-    <string name="cmas_presidential_level_alert">NMS Critical Alert</string>
+    <!-- Required all English (en) translation for this message: Critical AusAlert -->
+    <string name="cmas_presidential_level_alert">Critical AusAlert</string>
     <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
-    <!-- Required all English (en) translation for this message: NMS Priority Alert -->
-    <string name="cmas_extreme_alert">NMS Priority Alert</string>
+    <!-- Required all English (en) translation for this message: Priority AusAlert -->
+    <string name="cmas_extreme_alert">Priority AusAlert</string>
     <!-- CMAS dialog title for required monthly test. [CHAR LIMIT=50] -->
     <!-- Required all English (en) translation for this message: Test -->
     <string name="cmas_required_monthly_test">Test</string>
