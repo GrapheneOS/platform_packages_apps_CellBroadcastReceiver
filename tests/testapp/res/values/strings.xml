@@ -72,5 +72,6 @@
     <string name="option_no_geolocation" translatable="false">No Geolocation</string>
     <string name="option_include_geolocation_in_circle" translatable="false">Include Geolocation in Circle</string>
     <string name="option_include_geolocation_in_polygon" translatable="false">Include Geolocation in Polygon</string>
+    <string name="option_include_geolocation_mixed" translatable="false">Include Geolocation in Circle + Polygon</string>
     <string name="button_send_test_alert" translatable="false">Send Test Alert</string>
 </resources>
