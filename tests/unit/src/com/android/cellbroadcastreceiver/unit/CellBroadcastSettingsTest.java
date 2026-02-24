@@ -82,6 +82,7 @@ public class CellBroadcastSettingsTest extends
     private static final String TAG = "CellBroadcastSettingsTest";
 
     private UiDevice mDevice;
+    private boolean mIsWatch;
     private static final long DEVICE_WAIT_TIME = 1000L;
     private static final String ROAMING_OPERATOR_SUPPORTED = "roaming_operator_supported";
     private static final String ACTION_TESTING_MODE_CHANGED =
@@ -124,6 +125,8 @@ public class CellBroadcastSettingsTest extends
         mBackupActivityManagerProxy = CellBroadcastReceiver.sActivityManagerProxy;
         mTestActivityManagerProxy = mock(CellBroadcastReceiver.ActivityManagerProxy.class);
         CellBroadcastReceiver.sActivityManagerProxy = mTestActivityManagerProxy;
+        mIsWatch = mContext.getPackageManager()
+                .hasSystemFeature(PackageManager.FEATURE_WATCH);
     }
 
     @After
@@ -140,6 +143,10 @@ public class CellBroadcastSettingsTest extends
     @FlakyTest
     @Test
     public void testRotateAlertReminderDialogOpen() throws InterruptedException {
+        if (mIsWatch) {
+            return;
+        }
+
         try {
             mDevice.wakeUp();
             mDevice.pressMenu();
@@ -405,7 +412,7 @@ public class CellBroadcastSettingsTest extends
         doReturn(true).when(mContext.getResources()).getBoolean(
                 R.bool.disable_extreme_alert_settings);
 
-        if (!SdkLevel.isAtLeastS()) {
+        if (isHideToolbar()) {
             settings.mCellBroadcastSettingsOldFragment.initAlertsToggleDisabledAsNeeded();
             settings.mCellBroadcastSettingsOldFragment.onResume();
         } else {
@@ -418,6 +425,9 @@ public class CellBroadcastSettingsTest extends
 
     @Test
     public void testTopIntroductionForRoamingSupport() throws Throwable {
+        if (mIsWatch) {
+            return;
+        }
         String topIntroRoamingText = "test";
         doReturn(topIntroRoamingText).when(mContext.getResources()).getString(
                 eq(R.string.top_intro_roaming_text));
@@ -569,7 +579,7 @@ public class CellBroadcastSettingsTest extends
         TwoStatePreference testCheckBox = (TwoStatePreference) getPreference(settings,
                 CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS);
 
-        if (!SdkLevel.isAtLeastS()) {
+        if (isHideToolbar()) {
             settings.mCellBroadcastSettingsOldFragment.setAlertsEnabled(false);
         } else {
             settings.mCellBroadcastSettingsFragment.setAlertsEnabled(false);
@@ -579,7 +589,7 @@ public class CellBroadcastSettingsTest extends
         assertFalse(amberCheckBox.isChecked());
         assertFalse(testCheckBox.isChecked());
 
-        if (!SdkLevel.isAtLeastS()) {
+        if (isHideToolbar()) {
             settings.mCellBroadcastSettingsOldFragment.setAlertsEnabled(true);
         } else {
             settings.mCellBroadcastSettingsFragment.setAlertsEnabled(true);
@@ -601,7 +611,7 @@ public class CellBroadcastSettingsTest extends
         Intent intent = null;
         for (int i = 0; i < 5; i++) {
             intent = mContext.mSendBroadcastIntent;
-            if (!SdkLevel.isAtLeastS()) {
+            if (isHideToolbar()) {
                 cellBroadcastSettingActivity.mCellBroadcastSettingsOldFragment
                         .setAlertsEnabled(false);
             } else {
@@ -641,7 +651,7 @@ public class CellBroadcastSettingsTest extends
         TwoStatePreference testCheckBox = (TwoStatePreference) getPreference(settings,
                 CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS);
 
-        if (!SdkLevel.isAtLeastS()) {
+        if (isHideToolbar()) {
             settings.mCellBroadcastSettingsOldFragment.setAlertsEnabled(false);
         } else {
             settings.mCellBroadcastSettingsFragment.setAlertsEnabled(false);
@@ -651,7 +661,7 @@ public class CellBroadcastSettingsTest extends
         assertFalse(amberCheckBox.isChecked());
         assertFalse(testCheckBox.isChecked());
 
-        if (!SdkLevel.isAtLeastS()) {
+        if (isHideToolbar()) {
             settings.mCellBroadcastSettingsOldFragment.setAlertsEnabled(true);
         } else {
             settings.mCellBroadcastSettingsFragment.setAlertsEnabled(true);
@@ -687,7 +697,11 @@ public class CellBroadcastSettingsTest extends
         }
 
         try {
-            mDevice.setOrientationLeft();
+            if (mIsWatch) {
+                instrumentation.runOnMainSync(activity::recreate);
+            } else {
+                mDevice.setOrientationLeft();
+            }
 
             CellBroadcastSettings newActivity =
                     (CellBroadcastSettings) instrumentation.waitForMonitorWithTimeout(
@@ -698,7 +712,9 @@ public class CellBroadcastSettingsTest extends
             } else {
                 assertNull(newActivity.mCellBroadcastSettingsFragment);
             }
-            mDevice.setOrientationNatural();
+            if (!isHideToolbar()) {
+                mDevice.setOrientationNatural();
+            }
             instrumentation.removeMonitor(monitor);
         } catch (Exception e) {
             Assert.fail("Exception " + e);
@@ -721,11 +737,8 @@ public class CellBroadcastSettingsTest extends
     }
 
     private boolean isHideToolbar() {
-        boolean isWatch = mContext.getPackageManager().hasSystemFeature(
-                PackageManager.FEATURE_WATCH);
         // for backward compatibility on R devices or wearable devices due to small screen device.
-        boolean hideToolbar = !SdkLevel.isAtLeastS() || isWatch;
-        return hideToolbar;
+        return !SdkLevel.isAtLeastS() || mIsWatch;
     }
 
     private void setCurrentUser(boolean currentUser) {
@@ -740,9 +753,11 @@ public class CellBroadcastSettingsTest extends
     private Preference getPreference(CellBroadcastSettings activity, String key) {
         Preference checkBox = null;
         for (int i = 0; i < 5; i++) {
-            checkBox = !SdkLevel.isAtLeastS()
-                    ? activity.mCellBroadcastSettingsOldFragment.findPreference(key) :
-                    activity.mCellBroadcastSettingsFragment.findPreference(key);
+            if (isHideToolbar()) {
+                checkBox = activity.mCellBroadcastSettingsOldFragment.findPreference(key);
+            } else {
+                checkBox = activity.mCellBroadcastSettingsFragment.findPreference(key);
+            }
             if (checkBox != null) {
                 break;
             }
