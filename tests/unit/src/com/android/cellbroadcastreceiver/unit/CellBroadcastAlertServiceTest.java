@@ -101,6 +101,8 @@ public class CellBroadcastAlertServiceTest extends
 
     Locale mDefaultLocale;
 
+    private boolean mIsWatch;
+
     public CellBroadcastAlertServiceTest() {
         super(CellBroadcastAlertService.class);
     }
@@ -147,6 +149,8 @@ public class CellBroadcastAlertServiceTest extends
         mMockedPowerManager = new PowerManager(mContext, mockedPowerService, null, handler);
         when(mResources.getText(anyInt())).thenReturn("text");
         mDefaultLocale = Locale.getDefault();
+        mIsWatch = mContext.getPackageManager()
+                .hasSystemFeature(PackageManager.FEATURE_WATCH);
     }
 
     @After
@@ -353,6 +357,9 @@ public class CellBroadcastAlertServiceTest extends
     // This test has a module dependency, so it is disabled for OEM testing because it is not a true
     // unit test
     public void testShowNewAlert() {
+        if (mIsWatch) {
+            return;
+        }
         Intent intent = new Intent(mContext, CellBroadcastAlertService.class);
         intent.setAction(SHOW_NEW_ALERT_ACTION);
         SmsCbMessage message = createMessage(34788612);
@@ -379,7 +386,7 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     public void testShowNewAlertWithNotification() {
-        if (!SdkLevel.isAtLeastS()) {
+        if (!SdkLevel.isAtLeastS() || mIsWatch) {
             return;
         }
         doReturn("").when(mMockedSharedPreferences).getString(
@@ -430,14 +437,21 @@ public class CellBroadcastAlertServiceTest extends
         intent.putExtra("message", message);
         startService(intent);
         waitForServiceIntent();
-
-        assertFalse(mServiceIntentToVerify.getBooleanExtra(
-                CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA, false));
-
+        if (mIsWatch) {
+            assertTrue("Watch must force DND override to true",
+                mServiceIntentToVerify.getBooleanExtra(
+                        CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA, false));
+        } else {
+            assertFalse(mServiceIntentToVerify.getBooleanExtra(
+                    CellBroadcastAlertAudio.ALERT_AUDIO_OVERRIDE_DND_EXTRA, false));
+        }
         // roaming case
         Context mockContext = mock(Context.class);
         Resources mockResources = mock(Resources.class);
         doReturn(mockResources).when(mockContext).getResources();
+        // add this line to prevent overrideTranslation from crashing
+        // Return any non-null value, such as an empty string or a placeholder
+        doReturn("PlaceHolder").when(mockResources).getText(anyInt());
         ((TestContextWrapper) mContext).injectCreateConfigurationContext(mockContext);
         // inject roaming operator
         doReturn("123").when(mMockedSharedPreferences)
@@ -453,7 +467,7 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     public void testShowNewAlertWithNotificationInRoaming() {
-        if (!SdkLevel.isAtLeastS()) {
+        if (!SdkLevel.isAtLeastS() || mIsWatch) {
             return;
         }
         doReturn(false).when(mResources).getBoolean(
@@ -1382,7 +1396,7 @@ public class CellBroadcastAlertServiceTest extends
     }
 
     public void testNotificationPendingIntentFlag() {
-        if (!SdkLevel.isAtLeastS()) {
+        if (!SdkLevel.isAtLeastS() || mIsWatch) {
             return;
         }
         doReturn(new String[]{"0x1113:rat=gsm, emergency=false"}).when(mResources).getStringArray(
@@ -1488,10 +1502,11 @@ public class CellBroadcastAlertServiceTest extends
         assertTrue(notificationPosted.deleteIntent.isBroadcast());
         assertEquals(1, notificationPosted.actions.length);
         assertSame(notificationPosted.deleteIntent, notificationPosted.actions[0].actionIntent);
+        assertNull("Watch should NEVER start the alert dialog activity", mActivityIntentToVerify);
     }
 
     public void testClamshellCoverDisplayId() {
-        if (!SdkLevel.isAtLeastS()) {
+        if (!SdkLevel.isAtLeastS() || mIsWatch) {
             return;
         }
         doReturn(new String[]{
@@ -1554,9 +1569,7 @@ public class CellBroadcastAlertServiceTest extends
         waitForServiceIntent();
 
         // Verify alert dialog activity intent
-        boolean isWatch = mContext.getPackageManager().hasSystemFeature(
-                PackageManager.FEATURE_WATCH);
-        if (!isWatch) {
+        if (!mIsWatch) {
             ArrayList<SmsCbMessage> newMessageList = mActivityIntentToVerify
                     .getParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA);
             assertEquals(1, newMessageList.size());
