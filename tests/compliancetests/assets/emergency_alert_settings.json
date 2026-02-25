@@ -1703,11 +1703,15 @@
     }
   },
   "cyprus": {
+    "Severe threats": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
     "Public safety messages": {
       "default_value": "true",
       "toggle_avail": "true"
     },
-    "AMBER alerts": {
+    "Kidnapping - Missing person": {
       "default_value": "true",
       "toggle_avail": "true"
     },

@@ -5065,78 +5065,78 @@
   },
   "cyprus": {
     "4370": {
-      "title": "CY-Alert Level-1",
+      "title": "CY-Alert Extreme National Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "CY-Alert Level-1",
+      "title": "CY-Alert Extreme National Alert",
       "default_value": "true",
       "toggle_avail": "false",
       "filter_language": "language_setting"
     },
     "4371": {
-      "title": "CY-Alert Level-2",
+      "title": "CY-Alert Extreme threats",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4384": {
-      "title": "CY-Alert Level-2",
+      "title": "CY-Alert Extreme threats",
       "default_value": "true",
       "toggle_avail": "false",
       "filter_language": "language_setting"
     },
     "4375": {
-      "title": "CY-Alert Level-3",
+      "title": "CY-Alert Severe threats",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4388": {
-      "title": "CY-Alert Level-3",
+      "title": "CY-Alert Severe threats",
       "default_value": "true",
       "toggle_avail": "false",
       "filter_language": "language_setting"
     },
     "4396": {
-      "title": "CY-Alert Level-4",
+      "title": "CY-Alert Public safety message",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4397": {
-      "title": "CY-Alert Level-4",
+      "title": "CY-Alert Public safety message",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "4379": {
-      "title": "CY-Alert Child Abduction",
+      "title": "CY-Alert Kidnapping - Missing person",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4392": {
-      "title": "CY-Alert Child Abduction",
+      "title": "CY-Alert Kidnapping - Missing person",
       "default_value": "true",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "4380": {
-      "title": "CY-Alert - Test",
+      "title": "CY-Alert State and local tests",
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4393": {
-      "title": "CY-Alert - Test",
+      "title": "CY-Alert State and local tests",
       "default_value": "false",
       "toggle_avail": "true",
       "filter_language": "language_setting"
     },
     "4381": {
-      "title": "CY-Alert Exercise",
+      "title": "CY-Alert Exercise tests",
       "default_value": "false",
       "toggle_avail": "true"
     },
     "4394": {
-      "title": "CY-Alert Exercise",
+      "title": "CY-Alert Exercise tests",
       "default_value": "false",
       "toggle_avail": "true",
       "filter_language": "language_setting"

@@ -222,6 +222,10 @@ public class TranslationMapTestActivity extends Activity {
             } else if (selectedGeoId == R.id.geo_polygon) {
                 geometries.add(createHeptagon(center, GEO_RADIUS_METERS));
                 Log.d(TAG, "Including Polygon Geometry centered at current location");
+            } else if (selectedGeoId == R.id.geo_mixed) {
+                geometries.add(new Circle(center, GEO_RADIUS_METERS));
+                geometries.add(createHeptagon(center, GEO_RADIUS_METERS));
+                Log.d(TAG, "Including Mixed Geometry centered at current location");
             }
         } else {
             Log.w(TAG, "Current location not available, falling back to sample geometries.");
@@ -241,6 +245,16 @@ public class TranslationMapTestActivity extends Activity {
                     Log.d(TAG, "Including SAMPLE Polygon Geometry (GEO_DATA_5)");
                 } catch (Exception e) {
                     Log.e(TAG, "Failed to parse sample polygon geometries", e);
+                }
+            } else if (selectedGeoId == R.id.geo_mixed) {
+                try {
+                    geometries.addAll(
+                            CbGeoUtils.parseGeometriesFromString(SendTestMessages.GEO_DATA_6));
+                    geometries.addAll(
+                            CbGeoUtils.parseGeometriesFromString(SendTestMessages.GEO_DATA_5));
+                    Log.d(TAG, "Including SAMPLE Mixed Geometry (GEO_DATA_6 and GEO_DATA_5)");
+                } catch (Exception e) {
+                    Log.e(TAG, "Failed to parse sample mixed geometries", e);
                 }
             }
         }

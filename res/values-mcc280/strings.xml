@@ -17,34 +17,42 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- CMAS dialog title for CY-Alert presidential level alert. [CHAR LIMIT=60] -->
-    <!-- Required Greek (el) translation for this message: CY-Alert Επίπεδο-1 -->
-    <!-- Required Turkish (tr) translation for this message: CY-Alert Seviye-1 -->
-    <string name="cmas_presidential_level_alert">CY-Alert Level-1</string>
+    <!-- Required Greek (el) translation for this message: CY-Alert Έκτακτη Εθνική Ειδοποίηση -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Acil Ulusal Uyarı -->
+    <string name="cmas_presidential_level_alert">CY-Alert Extreme National Alert</string>
     <!-- CMAS dialog title for CY-Alert extreme alert. [CHAR LIMIT=80] -->
-    <!-- Required Greek (el) translation for this message: CY-Alert Επίπεδο-2 -->
-    <!-- Required Turkish (tr) translation for this message: CY-Alert Seviye-2 -->
-    <string name="cmas_extreme_alert">CY-Alert Level-2</string>
+    <!-- Required Greek (el) translation for this message: CY-Alert Ακραίος Κίνδυνος -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Aşırı tehditler -->
+    <string name="cmas_extreme_alert">CY-Alert Extreme threats</string>
     <!-- CMAS dialog title for CY-Alert severe alert. [CHAR LIMIT=80] -->
-    <!-- Required Greek (el) translation for this message: CY-Alert Επίπεδο-3 -->
-    <!-- Required Turkish (tr) translation for this message: CY-Alert Seviye-3 -->
-    <string name="cmas_severe_alert">CY-Alert Level-3</string>
+    <!-- Required Greek (el) translation for this message: CY-Alert Σοβαρός Κίνδυνος -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Ciddi tehditler -->
+    <string name="cmas_severe_alert">CY-Alert Severe threats</string>
     <!-- CMAS dialog title for CY-Alert public safety messages. [CHAR LIMIT=80] -->
-    <!-- Required Greek (el) translation for this message: CY-Alert Επίπεδο-4 -->
-    <!-- Required Turkish (tr) translation for this message: CY-Alert Seviye-4 -->
-    <string name="public_safety_message">CY-Alert Level-4</string>
+    <!-- Required Greek (el) translation for this message: CY-Alert Μήνυμα δημόσιας ασφάλειας -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Kamu güvenliği mesajları -->
+    <string name="public_safety_message">CY-Alert Public safety message</string>
     <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
-    <!-- Required Greek (el) translation for this message: CY-Alert Ειδοποίηση Απαγωγής Παιδιού -->
-    <!-- Required Turkish (tr) translation for this message: CY-Alert Çocuk Kaçırma Bildirimi -->
-    <string name="cmas_amber_alert">CY-Alert Child Abduction</string>
+    <!-- Required Greek (el) translation for this message: CY-Alert Απαγωγή - Ελλείπον πρόσωπο -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Kaçırma / Kayıp Kişi -->
+    <string name="cmas_amber_alert">CY-Alert Kidnapping - Missing person</string>
     <!-- Dialog title for all state/local test alerts. [CHAR LIMIT=50] -->
-    <!-- Required Greek (el) translation for this message: CY-Alert - Δοκιμή -->
-    <!-- Required Turkish (tr) translation for this message: CY-Alert - Test Mesajı -->
-    <string name="state_local_test_alert">CY-Alert - Test</string>
+    <!-- Required Greek (el) translation for this message: CY-Alert Κρατικές και τοπικές δοκιμές -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Ulusal ve yerel yestler -->
+    <string name="state_local_test_alert">CY-Alert State and local tests</string>
     <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
-    <!-- Required Greek (el) translation for this message: CY-Alert - Ειδοποίηση Άσκησης -->
-    <!-- Required Turkish (tr) translation for this message: CY-Alert Tatbikat Bildirimi -->
-    <string name="cmas_exercise_alert">CY-Alert Exercise</string>
+    <!-- Required Greek (el) translation for this message: CY-Alert Δοκιμαστικές Ασκήσεις -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Tatbikat Amaçlı Denemeler -->
+    <string name="cmas_exercise_alert">CY-Alert Exercise tests</string>
 
+    <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
+    <!-- Required Greek (el) translation for this message: Σοβαρός Κίνδυνος -->
+    <!-- Required Turkish (tr) translation for this message: Ciddi tehditler -->
+    <string name="enable_cmas_severe_threat_alerts_title">Severe threats</string>
+    <!-- Preference summary for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=100] -->
+    <!-- Required Greek (el) translation for this message: Σοβαρός Κίνδυνος για τη ζωή και την περιουσία -->
+    <!-- Required Turkish (tr) translation for this message: Can ve mal güvenliğine yönelik ciddi tehditler -->
+    <string name="enable_cmas_severe_threat_alerts_summary">Severe threats to life and property</string>
     <!-- Preference title for enable public safety messages checkbox. [CHAR LIMIT=100] -->
     <!-- Required Greek (el) translation for this message: Μηνύματα δημόσιας ασφάλειας -->
     <!-- Required Turkish (tr) translation for this message: Kamu güvenliği mesajları -->
@@ -54,21 +62,21 @@
     <!-- Required Turkish (tr) translation for this message: Can veya mal kayıbını önleyebilecek önerilen tedbirler -->
     <string name="enable_public_safety_messages_summary">Recommended actions that can save lives or property</string>
     <!-- Preference title for enable CMAS amber alerts checkbox. [CHAR LIMIT=50] -->
-    <!-- Required Greek (el) translation for this message: Ειδοποιήσεις AMBER -->
-    <!-- Required Turkish (tr) translation for this message: AMBER Uyarıları -->
-    <string name="enable_cmas_amber_alerts_title">AMBER alerts</string>
+    <!-- Required Greek (el) translation for this message: Απαγωγή - Ελλείπον πρόσωπο -->
+    <!-- Required Turkish (tr) translation for this message: Kaçırma / Kayıp Kişi -->
+    <string name="enable_cmas_amber_alerts_title">Kidnapping - Missing person</string>
     <!-- Preference summary for enable CMAS amber alerts checkbox. [CHAR LIMIT=100] -->
-    <!-- Required Greek (el) translation for this message: Έκτακτες ειδοποιήσεις για απαγωγή παιδιών -->
+    <!-- Required Greek (el) translation for this message: Έκτακτες ειδοποιήσεις για Απαγωγή - Ελλείπον πρόσωπο -->
     <!-- Required Turkish (tr) translation for this message: Çocuk kaçırma acil bildirimleri -->
-    <string name="enable_cmas_amber_alerts_summary">Child abduction emergency bulletins</string>
+    <string name="enable_cmas_amber_alerts_summary">Kidnapping - Missing person emergency bulletins</string>
     <!-- Preference title for enable state/local test alerts checkbox. [CHAR LIMIT=100] -->
     <!-- Required Greek (el) translation for this message: Κρατικές και τοπικές δοκιμές -->
-    <!-- Required Turkish (tr) translation for this message: Ulusal ve yerel yestler -->
+    <!-- Required Turkish (tr) translation for this message: Ulusal ve yerel testler -->
     <string name="enable_state_local_test_alerts_title">State and local tests</string>
     <!-- Preference summary for enable state/local test alerts checkbox. [CHAR LIMIT=100] -->
     <!-- Required Greek (el) translation for this message: Λήψη δοκιμαστικών μηνυμάτων από κρατικές ή τοπικές αρχές -->
     <!-- Required Turkish (tr) translation for this message: Devlet veya yerel yetkili kurumlardan test mesajlarının alınması -->
-    <string name="enable_state_local_test_alerts_summary">Receive test messages from state and local authorities</string>
+    <string name="enable_state_local_test_alerts_summary">Receive test messages from state or local authorities</string>
     <!-- Preference title for exercise test alerts checkbox. [CHAR LIMIT=50] -->
     <!-- Required Greek (el) translation for this message: Δοκιμαστικές Ασκήσεις -->
     <!-- Required Turkish (tr) translation for this message: Tatbikat Amaçlı Denemeler -->
