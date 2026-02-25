@@ -38,7 +38,7 @@
     <string name="cmas_amber_alert">CY-Alert Kidnapping - Missing person</string>
     <!-- Dialog title for all state/local test alerts. [CHAR LIMIT=50] -->
     <!-- Required Greek (el) translation for this message: CY-Alert Κρατικές και τοπικές δοκιμές -->
-    <!-- Required Turkish (tr) translation for this message: CY-Alert Ulusal ve yerel yestler -->
+    <!-- Required Turkish (tr) translation for this message: CY-Alert Ulusal ve yerel testler -->
     <string name="state_local_test_alert">CY-Alert State and local tests</string>
     <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
     <!-- Required Greek (el) translation for this message: CY-Alert Δοκιμαστικές Ασκήσεις -->
