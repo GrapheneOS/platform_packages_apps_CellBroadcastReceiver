@@ -28,6 +28,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.LocaleList;
@@ -57,6 +58,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
@@ -253,6 +255,11 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
 
         assumeTrue("Skipping test because Map flag is disabled",
                 Flags.enableCellbroadcastMapViewer());
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("cellbroadcastgeo:"));
+        List<ResolveInfo> resolveInfoList = getContext().getPackageManager()
+                .queryIntentActivities(mapIntent, PackageManager.MATCH_SYSTEM_ONLY);
+        boolean isMapActivityAvailable = resolveInfoList != null && !resolveInfoList.isEmpty();
+        assumeTrue("Skipping test because Map activity is not available", isMapActivityAvailable);
 
         CellBroadcastCarrierTestConfig carrierInfo =
                 new CellBroadcastCarrierTestConfig(sCarriersObject, carrierName);
