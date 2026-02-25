@@ -51,6 +51,63 @@ public class CellBroadcastMapLauncher {
     public static final String GEO_URI_SCHEME = "cellbroadcastgeo:";
     private static final String GEOMETRY_TYPE_POLYGON = "polygon";
     private static final String GEOMETRY_TYPE_CIRCLE = "circle";
+    @VisibleForTesting
+    public static Boolean sIsMapActivityAvailableForTest = null;
+
+    /**
+     * Checks if there is a secure activity within the system that can handle the Cell Broadcast map
+     * intent.
+     */
+    public static boolean isMapActivityAvailable(Context context) {
+        if (sIsMapActivityAvailableForTest != null) {
+            return sIsMapActivityAvailableForTest;
+        }
+        return getMapTargetActivity(context) != null;
+    }
+
+    /**
+     * Finds a target system activity to handle the map intent and verifies security requirements.
+     * (Checks permission for Baklava+, checks for uniqueness for pre-Baklava).
+     */
+    private static ResolveInfo getMapTargetActivity(Context context) {
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(GEO_URI_SCHEME));
+        PackageManager pm = context.getPackageManager();
+        List<ResolveInfo> resolveInfoList = pm.queryIntentActivities(mapIntent,
+                PackageManager.MATCH_SYSTEM_ONLY);
+
+        if (resolveInfoList == null || resolveInfoList.isEmpty()) {
+            return null;
+        }
+
+        // TODO: change to SdkLevel.isAtLeastC()
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA) {
+            for (ResolveInfo info : resolveInfoList) {
+                if (info.activityInfo != null) {
+                    try {
+                        if (pm.checkPermission(PERMISSION_ACCESS_CELL_BROADCAST,
+                                info.activityInfo.packageName)
+                                == PackageManager.PERMISSION_GRANTED) {
+                            Log.d(TAG,
+                                    "Found secure system handler on C+: " + info.activityInfo.name);
+                            return info;
+                        }
+                    } catch (Exception e) {
+                        Log.e(TAG, "Error checking permission for " + info.activityInfo.packageName,
+                                e);
+                    }
+                }
+            }
+        } else {
+            if (resolveInfoList.size() == 1 && resolveInfoList.get(0).activityInfo != null) {
+                Log.d(TAG, "Found unique system handler on pre-C: "
+                        + resolveInfoList.get(0).activityInfo.name);
+                return resolveInfoList.get(0);
+            } else if (resolveInfoList.size() > 1) {
+                Log.e(TAG, "More than one system activity found on pre-C. Not launching.");
+            }
+        }
+        return null;
+    }
 
     /**
      * Builds the URI string from all geometries in the message and launches the map activity.
@@ -77,51 +134,9 @@ public class CellBroadcastMapLauncher {
         }
         Log.d(TAG, "launchMap: geoUri=" + geoUriString);
 
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoUriString));
-        PackageManager pm = context.getPackageManager();
-        List<ResolveInfo> resolveInfoList = pm.queryIntentActivities(mapIntent,
-                PackageManager.MATCH_SYSTEM_ONLY);
-
-        ResolveInfo targetActivityInfo = null;
-
-        // TODO : changed to SdkLevel.isAtLeastC
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA) {
-            for (ResolveInfo info : resolveInfoList) {
-                if (info.activityInfo != null) {
-                    try {
-                        if (pm.checkPermission(PERMISSION_ACCESS_CELL_BROADCAST,
-                                info.activityInfo.packageName)
-                                == PackageManager.PERMISSION_GRANTED) {
-                            targetActivityInfo = info;
-                            Log.d(TAG, "Found secure system handler on C+: "
-                                    + info.activityInfo.name);
-                            break;
-                        } else {
-                            Log.w(TAG, "System activity " + info.activityInfo.name
-                                    + " lacks permission on C+.");
-                        }
-                    } catch (Exception e) {
-                        Log.e(TAG, "Error checking permission for " + info.activityInfo.packageName,
-                                e);
-                    }
-                }
-            }
-        } else {
-            if (resolveInfoList != null && resolveInfoList.size() == 1 && resolveInfoList.get(
-                    0).activityInfo != null) {
-                targetActivityInfo = resolveInfoList.get(0);
-                Log.d(TAG, "Found unique system handler on pre-C: "
-                        + targetActivityInfo.activityInfo.name);
-            } else if (resolveInfoList != null && resolveInfoList.isEmpty()) {
-                Log.e(TAG, "No system activity found to handle the geo intent.");
-            } else {
-                Log.e(TAG, "More than one system activity found (" + resolveInfoList.size()
-                        + ") on pre-C. Not launching.");
-            }
-        }
-
+        ResolveInfo targetActivityInfo = getMapTargetActivity(context);
         if (targetActivityInfo != null && targetActivityInfo.activityInfo != null) {
-            Intent explicitIntent = new Intent(mapIntent);
+            Intent explicitIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoUriString));
             explicitIntent.setClassName(targetActivityInfo.activityInfo.packageName,
                     targetActivityInfo.activityInfo.name);
             explicitIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

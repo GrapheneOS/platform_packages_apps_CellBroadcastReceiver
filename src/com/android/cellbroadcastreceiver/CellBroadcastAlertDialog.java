@@ -1107,7 +1107,8 @@ public class CellBroadcastAlertDialog extends Activity implements
      */
     @VisibleForTesting
     public boolean isMapFeatureEnabled(SmsCbMessage message) {
-        return isMapFlagEnabled() && isMapConfigEnabled() && isGeoInfo(message);
+        return isMapFlagEnabled() && isMapConfigEnabled() && isGeoInfo(message)
+                && CellBroadcastMapLauncher.isMapActivityAvailable(this);
     }
 
     /**
