@@ -1695,6 +1695,7 @@ public class CellBroadcastAlertDialog extends Activity implements
         if (nextMessage != null) {
             setFinishAlertOnTouchOutside();
             updateAlertText(nextMessage);
+            updateButtons(nextMessage);
             int subId = nextMessage.getSubscriptionId();
             if (channelManager.isEmergencyMessage(nextMessage)
                     && (range!= null && range.mDisplayIcon)) {
