@@ -20,6 +20,8 @@ import static com.android.cellbroadcastreceiver.CellBroadcastMapLauncher.GEO_URI
 import static com.android.cellbroadcastreceiver.CellBroadcastMapLauncher.PERMISSION_ACCESS_CELL_BROADCAST;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -198,5 +200,37 @@ public class CellBroadcastMapLauncherTest {
         SmsCbMessage message = createSmsCbMessage(null);
         CellBroadcastMapLauncher.launchMap(mMockContext, message);
         verify(mMockContext, never()).startActivity(any(Intent.class));
+    }
+
+    @Test
+    public void testIsMapActivityAvailableSuccessPreC() {
+        assumeTrue(Build.VERSION.SDK_INT <= Build.VERSION_CODES.BAKLAVA);
+
+        ResolveInfo mockResolveInfo = createMockResolveInfo(GMS_PACKAGE);
+        doReturn(Collections.singletonList(mockResolveInfo)).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+
+        assertTrue(CellBroadcastMapLauncher.isMapActivityAvailable(mMockContext));
+    }
+
+    @Test
+    public void testIsMapActivityAvailableSuccess() {
+        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
+
+        ResolveInfo mockResolveInfo = createMockResolveInfo(GMS_PACKAGE);
+        doReturn(Collections.singletonList(mockResolveInfo)).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+        doReturn(PackageManager.PERMISSION_GRANTED).when(mMockPackageManager)
+                .checkPermission(PERMISSION_ACCESS_CELL_BROADCAST, GMS_PACKAGE);
+
+        assertTrue(CellBroadcastMapLauncher.isMapActivityAvailable(mMockContext));
+    }
+
+    @Test
+    public void testIsMapActivityAvailableFailNoHandler() {
+        doReturn(Collections.emptyList()).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+
+        assertFalse(CellBroadcastMapLauncher.isMapActivityAvailable(mMockContext));
     }
 }
