@@ -1740,4 +1740,32 @@ public class CellBroadcastAlertDialogTest extends
     private void setMapActivityAvailable(boolean available) {
         CellBroadcastMapLauncher.sIsMapActivityAvailableForTest = available;
     }
+
+    public void testUpdateButtonsOnDismiss() throws Throwable {
+        setMapConfigEnabled(true);
+        setMapActivityAvailable(true);
+        CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
+
+        SmsCbMessage msgNoGeo = createSmsCbMessage(false);
+        SmsCbMessage msgWithGeo = createSmsCbMessage(true);
+        ArrayList<SmsCbMessage> list = new ArrayList<>();
+        list.add(msgNoGeo);
+        list.add(msgWithGeo);
+
+        Intent intent = new Intent(mContext, CellBroadcastAlertDialog.class);
+        intent.putParcelableArrayListExtra(CellBroadcastAlertService.SMS_CB_MESSAGE_EXTRA, list);
+
+        CellBroadcastAlertDialog activity = startActivitySetMock(intent);
+
+        getInstrumentation().runOnMainSync(() -> activity.updateButtons(msgWithGeo));
+        verify(mMockCBButtonManager, atLeastOnce()).configureButtons(anyBoolean(), eq(true));
+        clearInvocations(mMockCBButtonManager);
+
+        getInstrumentation().runOnMainSync(() -> {
+            activity.dismiss();
+        });
+        getInstrumentation().waitForIdleSync();
+
+        verify(mMockCBButtonManager, atLeastOnce()).configureButtons(anyBoolean(), eq(false));
+    }
 }
