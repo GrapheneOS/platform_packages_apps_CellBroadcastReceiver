@@ -197,7 +197,7 @@ public class CellBroadcastSettings extends CollapsingToolbarBaseActivity {
         // for backward compatibility on R devices or wearable devices due to small screen device.
         boolean hideToolbar = !SdkLevel.isAtLeastS() || isWatch;
         if (hideToolbar) {
-            setCustomizeContentView(R.layout.cell_broadcast_list_collapsing_no_toobar);
+            setCustomizeContentView(R.layout.cell_broadcast_list_collapsing_no_toolbar);
         }
 
         super.onCreate(savedInstanceState);
