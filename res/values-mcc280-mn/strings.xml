@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert 1-р түвшин"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert 2-р түвшин"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert 3-р түвшин"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert 4-р түвшин"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert: Хүүхэд хулгайлах"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert - Туршилт"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-Alert-н сургуулилалт"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert: Үндэсний хэмжээний ноцтой сэрэмжлүүлэг"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert: Маш ноцтой аюул"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert: Ноцтой заналхийлэл"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert: Нийтийн аюулгүй байдлын мессеж"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert: Хүн хулгайлагдсан - Алга болсон хүн"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert: Муж улс, орон нутгийн туршилт"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert: Сургуулилалтын туршилт"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"Ноцтой аюул"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"Амь нас, өмч хөрөнгөд учрах ноцтой аюул занал"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"Нийтийн аюулгүй байдлын мессеж"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Амь нас, эд хөрөнгийг аварч болох санал болгосон үйлдэл"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"УЛБАР ШАР сэрэмжлүүлэг"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"Хүүхэд хулгайлсан тохиолдлын яаралтай мэдээлэл"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"Хүн хулгайлагдсан - Алга болсон хүн"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"Хүн хулгайлагдсан - Алга болсон хүний тухай яаралтай мэдээлэл"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Муж улс ба орон нутгийн туршилт"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"Муж улс ба oрон нутгийн эрх бүхий байгууллагаас туршилтын мессеж хүлээн авна"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"Муж улс ба oрон нутгийн эрх бүхий байгууллагаас туршилтын мессеж хүлээн авна"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"Сургуулилтын туршилт"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"Муж улс, орон нутгийн эрх бүхий байгууллагаас сургуулилтын мессеж хүлээн авна"</string>
 </resources>

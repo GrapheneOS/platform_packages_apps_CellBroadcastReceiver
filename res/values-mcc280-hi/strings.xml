@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert का लेवल-1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert का लेवल-2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert का लेवल-3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert का लेवल-4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert बच्चे का अपहरण"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert - टेस्ट"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-Alert की ड्रिल"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert: राष्ट्रीय स्तर पर बेहद गंभीर खतरों की चेतावनी"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert: बेहद गंभीर खतरों की चेतावनी"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert: गंभीर खतरों की चेतावनी"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert: लोगों की सुरक्षा से जुड़ा मैसेज"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert: अपहरण - गुमशुदा व्यक्ति की सूचना"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert: स्थानीय और राज्य के विभागों की मॉक ड्रिल की सूचनाएं"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert: मॉक ड्रिल की सूचना"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"गंभीर खतरे"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"जान-माल के गंभीर खतरों की चेतावनियां"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"लोगों की सुरक्षा के लिए मैसेज"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"सुझाई गई ऐसी कार्रवाइयां जिनसे जानें बचाई जा सकती हैं या संपत्ति की सुरक्षा की जा सकती है"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"ऐंबर अलर्ट (अगवा बच्चों से जुड़ी जानकारी)"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"बच्चे के अपहरण के आपातकालीन बुलेटिन"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"राज्य और स्थानीय विभाग से टेस्ट मैसेज"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"राज्य और स्थानीय सरकारी विभाग से टेस्ट मैसेज पाएं"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"अपहरण - गुमशुदा व्यक्ति"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"अपहरण - गुमशुदा व्यक्ति के बारे में आपातकालीन बुलेटिन"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"स्थानीय और राज्य के विभागों की मॉक ड्रिल"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"स्थानीय या राज्य के सरकारी विभागों से मॉक ड्रिल की सूचनाएं पाएं"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"ड्रिल से जुड़ी चेतावनी"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"राज्य या स्थानीय सरकारी विभाग से, ड्रिल के लिए मैसेज पाएं"</string>
 </resources>

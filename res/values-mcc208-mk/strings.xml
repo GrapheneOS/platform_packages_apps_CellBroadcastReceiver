@@ -32,7 +32,7 @@
     <string name="enable_cmas_amber_alerts_title" msgid="4087727029650572978">"Предупредување за киднапирање"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="2375767662238080247">"Прикажувај пораки за предупредување за киднапирање деца"</string>
     <string name="enable_cmas_test_alerts_title" msgid="730591674839718588">"Проба за FR-Alert"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="6208243265914357932">"Прикажувај пробни пораки"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6208243265914357932">"Прикажува пробни пораки"</string>
     <string name="enable_exercise_test_alerts_title" msgid="8961707963450012289">"Вежба за FR-Alert"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8611222204116539840">"Прикажувај пораки за вежби"</string>
 </resources>

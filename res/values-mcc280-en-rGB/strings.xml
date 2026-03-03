@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert level 1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert level 2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert level 3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert Level-4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert child abduction"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert – Test"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-Alert exercise"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert extreme national alert"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert extreme threats"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert severe threats"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert public safety message"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert kidnapping – missing person"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert regional and local tests"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert exercise tests"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"Severe threats"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"Severe threats to life and property"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"Public safety messages"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Recommended actions that can save lives or property"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"AMBER Alerts"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"Child abduction emergency bulletins"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"Kidnapping – missing person"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"Kidnapping – missing person emergency bulletins"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Regional and local tests"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"Receive test messages from regional and local authorities"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"Receive test messages from state or local authorities"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"Exercise tests"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"Receive exercise messages from state or local authorities"</string>
 </resources>

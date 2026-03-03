@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-경보 1등급"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-경보 2등급"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-경보 3등급"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-경보 4등급"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-경보 아동 유괴"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-경보 - 테스트"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-경보 안전 훈련"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert 긴급 국가 알림"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert 심각한 위협"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert 심각한 위협"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert 공공 안전 메시지"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert 유괴 - 실종자"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert 주 및 지역 테스트"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert 안전 훈련 테스트"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"심각한 위협"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"생명 및 재산에 대한 심각한 위협"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"공공 안전 문자"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"생명이나 재산을 보호할 수 있는 행동 요령"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"앰버 경보"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"아동 유괴 긴급 상황 공지"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"유괴 - 실종자"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"유괴 - 실종자 긴급 상황 공지"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"주 및 지역 테스트"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"주 및 지역 당국의 테스트 메시지 받기"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"주 또는 지역 당국의 테스트 메시지 받기"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"안전 훈련 테스트"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"주 또는 지역 당국의 안전 훈련 메시지 받기"</string>
 </resources>

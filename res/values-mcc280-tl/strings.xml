@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert Level-1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert Level-2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert Level-3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert Level-4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert na Pagdukot ng Bata"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert - Test"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"Pagsasanay sa CY-Alert"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert na Matinding Pambansang Alerto"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert na Mga matinding banta"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert na Mga malalang banta"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert na Mensahe para sa pampublikong kaligtasan"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert na Pag-kidnap - Nawawalang tao"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert na Mga pang-estado at lokal na test"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert na Mga test sa pagsasanay"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"Mga malalang banta"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"Mga malalang banta sa buhay at ari-arian"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"Mga mensahe para sa pampublikong kaligtasan"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Mga inirerekomendang pagkilos na makakaligtas ng mga buhay o pag-aari"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"Mga AMBER alert"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"Mga pang-emergency na bulletin para sa pagdukot ng bata"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Mga pagsubok sa estado at lokal na pamahalaan"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"Makatanggap ng mga pansubok na mensahe mula sa mga awtoridad ng estado at lokal na awtoridad"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"Pag-kidnap - Nawawalang tao"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"Pag-kidnap - Mga pang-emergency na bulletin para sa nawawalang tao"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Mga pang-estado at lokal na test"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"Makatanggap ng mga test na mensahe mula sa mga awtoridad ng estado o lokal na awtoridad"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"Mga test sa pagsasanay"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"Makatanggap ng mga mensahe ng pagsasanay mula sa mga awtoridad ng estado o lokal na pamahalaan"</string>
 </resources>

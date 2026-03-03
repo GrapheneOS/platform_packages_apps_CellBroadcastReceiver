@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert: Niveli 1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert: Niveli 2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert: Niveli 3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert: Niveli 4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert: Rrëmbim fëmijësh"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert: Testim"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-Alert: Stërvitje"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert: Sinjalizim ekstrem kombëtar"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert: Kërcënime ekstreme"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert: Kërcënime serioze"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert: Mesazh për sigurinë publike"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert: Rrëmbim - person i humbur"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert: Testimet shtetërore dhe vendore"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert: Testimet për stërvitje"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"Kërcënime serioze"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"Kërcënime serioze për jetën dhe pronën"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"Mesazhe të sigurisë publike"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Veprime të rekomanduara që mund të shpëtojnë jetën ose pronën"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"Sinjalizimet AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"Buletinet e urgjencës për rrëmbim fëmijësh"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"Rrëmbim - Person i humbur"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"Rrëmbim - Buletinet e urgjencës për person të humbur"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Alarme testimi shtetërore dhe vendore"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"Merr mesazhe testimi nga autoritetet shtetërore dhe vendore"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"Merr mesazhe testimi nga autoritetet shtetërore ose vendore"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"Alarme testime për stërvitje"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"Merr mesazhe për stërvitje nga autoritetet shtetërore ose vendore"</string>
 </resources>

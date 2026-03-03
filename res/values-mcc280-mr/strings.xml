@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-अलर्ट पातळी- १"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-अलर्ट पातळी- २"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-अलर्ट पातळी- ३"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-अलर्ट पातळी- ४"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-अलर्ट बाल अपहरण"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-अलर्ट - चाचणी"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-अलर्ट कारवाई"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert अत्यंत गंभीर राष्ट्रीय इशारा"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert आत्यंतिक धोके"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert गंभीर धोके"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert सार्वजनिक सुरक्षिततेसंबंधित मेसेज"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert अपहरण - हरवलेली व्यक्ती"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert राज्य आणि स्थानिक चाचण्या"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert कारवाई चाचण्या"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"गंभीर धोके"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"जीवन आणि मालमत्तेला असलेले गंभीर धोके"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"सार्वजनिक सुरक्षितता मेसेज"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"जीवन आणि मालमत्ता वाचवू शकतात अशा शिफारस केलेल्या उपाययोजना"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"अँबर अलर्ट"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"बाल अपहरण आणीबाणी बुलेटिन"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"अपहरण - हरवलेली व्यक्ती"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"अपहरण - हरवलेल्या व्यक्तीसंबंधित आणीबाणी बुलेटिन"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"राज्य आणि स्थानिक चाचण्या"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"राज्य आणि स्थानिक अधिकार्‍यांकडून चाचणी मेसेज मिळवा"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"राज्य किंवा स्थानिक अधिकारी यांच्याकडून चाचणी मेसेज मिळवा"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"कारवाईसंबंधित चाचण्या"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"राज्य किंवा स्थानिक अधिकारी यांकडून कारवाईसंबंधित मेसेज मिळवा"</string>
 </resources>

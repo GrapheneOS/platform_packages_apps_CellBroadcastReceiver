@@ -26,7 +26,7 @@
     <string name="enable_cmas_amber_alerts_title" msgid="709666858644713262">"Предупредувањe за исчезнато лице/киднапирање"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="3678172264874835315">"Прикажувај пораки за предупредување за ситуации на исчезнато лице/киднапирање"</string>
     <string name="enable_cmas_test_alerts_title" msgid="6503578245169569633">"LU-Alert: пробно"</string>
-    <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"Прикажувај пробни пораки"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="4393658967042119261">"Прикажува пробни пораки"</string>
     <string name="enable_exercise_test_alerts_title" msgid="8642537980920870855">"LU-Alert: вежби"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="7365706865492962183">"Прикажувај пораки за вежби"</string>
 </resources>

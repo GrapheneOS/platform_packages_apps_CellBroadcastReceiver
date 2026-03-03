@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert កម្រិតទី 1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert កម្រិតទី 2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert កម្រិតទី 3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert កម្រិតទី 4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"ដំណឹងចាប់​ជំរិតក្មេងពី CY-Alert"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert - តេស្តសាកល្បង"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"ដំណឹងហាត់សមពី CY-Alert"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"ដំណឹងអំពីគ្រោះថ្នាក់ធ្ងន់ធ្ងរបំផុតថ្នាក់ជាតិពី CY-Alert"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"ដំណឹងអំពីការគំរាមកំហែងធ្ងន់ធ្ងរបំផុតពី CY-Alert"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"ដំណឹងអំពីការគំរាមកំហែងធ្ងន់ធ្ងរពី CY-Alert"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"សារសុវត្ថិភាពសាធារណៈពី CY-Alert"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"ដំណឹងអំពីការចាប់ជំរិត - ការបាត់ខ្លួនពី CY-Alert"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"ដំណឹងអំពីតេស្តថ្នាក់មូលដ្ឋាន និងរដ្ឋពី CY-Alert"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"ដំណឹងអំពីតេស្តហាត់សមពី CY-Alert"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"ការ​គំរាម​កំហែង​ធ្ងន់ធ្ងរ"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"ការគំរាមកំហែងធ្ងន់ធ្ងរដល់អាយុជីវិត និងទ្រព្យសម្បត្តិ"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"សារ​សុវត្ថិភាព​សាធារណៈ"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"សកម្មភាព​ដែលណែនាំ​ឱ្យធ្វើ​ដែលអាច​ជួយសង្គ្រោះ​ជីវិត ឬទ្រព្យ​សម្បត្តិ"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"ការជូនដំណឹងអំពីការចាប់ជំរិតក្មេង"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"ព្រឹត្តិបត្រប្រកាសអាសន្ន​អំពី​ការចាប់ជំរិត​ក្មេង"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"ការចាប់ជំរិត - ការបាត់ខ្លួន"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"ព្រឹត្តិបត្រប្រកាសអាសន្ន​អំពីការចាប់ជំរិត - ការបាត់ខ្លួន"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"តេស្តសាកល្បងក្នុងមូលដ្ឋាន និងរដ្ឋ"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"ទទួល​សារ​សាកល្បង​ពីអាជ្ញាធរ​មូលដ្ឋាន និងរដ្ឋ"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"ទទួល​សារ​សាកល្បង​ពីអាជ្ញាធរ​មូលដ្ឋាន ឬរដ្ឋ"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"តេស្តសាកល្បងហាត់សម"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"ទទួលបានសារអំពីការហាត់សមពីអាជ្ញាធរមូលដ្ឋាន ឬរដ្ឋ"</string>
 </resources>

@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert: узровень-1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert: узровень-2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert: узровень-3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert: узровень-4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert: выкраданне дзіцяці"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert – тэст"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-Alert: вучэнні"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert: дзяржаўная абвестка аб надзвычайнай сітуацыі"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert: надзвычайныя пагрозы"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert: сур’ёзныя пагрозы"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert: паведамленне пра пагрозу грамадскай бяспецы"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert: выкраданне чалавека – прапажа без вестак"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert: тэст. паведамл. дзярж. і мясц. органаў"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert: трэніровачныя тэсты"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"Сур’ёзныя пагрозы"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"Сур’ёзныя пагрозы для жыцця і маёмасці"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"Паведамленні аб пагрозе грамадскай бяспецы"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Рэкамендаваныя дзеянні, якія могуць выратаваць жыцці ці зберагчы маёмасць"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"Абвесткі сістэмы AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"Апавяшчэнні пра выкраданне дзяцей"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"Выкраданне чалавека – прапажа без вестак"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"Выкраданне чалавека – апавяшчэнні пра прапажу без вестак"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Дзяржаўныя і мясцовыя тэставыя паведамленні"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"Атрымліваць тэставыя паведамленні ад дзяржаўных і мясцовых органаў улады"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"Атрымліваць тэставыя паведамленні ад дзяржаўных або мясцовых органаў улады"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"Трэніровачныя тэсты"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"Атрымліваць паведамленні пра вучэнні ад дзяржаўных або мясцовых органаў улады"</string>
 </resources>
