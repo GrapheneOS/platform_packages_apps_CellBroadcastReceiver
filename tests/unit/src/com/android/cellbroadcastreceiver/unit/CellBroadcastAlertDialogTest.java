@@ -211,7 +211,7 @@ public class CellBroadcastAlertDialogTest extends
     public void tearDown() throws Exception {
         CellBroadcastAlertDialog.sIsTranslateFeatureEnabledForTest = null;
         CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = null;
-        // CellBroadcastMapLauncher.sIsMapActivityAvailableForTest = null;
+        CellBroadcastMapLauncher.sIsMapActivityAvailableForTest = null;
         CellBroadcastSettings.resetResourcesCache();
         CellBroadcastChannelManager.clearAllCellBroadcastChannelRanges();
         super.tearDown();
@@ -1956,6 +1956,11 @@ public class CellBroadcastAlertDialogTest extends
 
 
     public void testIsMapFeatureEnabledWhenActivityAvailableReturnsTrue() throws Throwable {
+        // On Wear OS, alerts are displayed as notifications rather than using the full-screen
+        // alert dialog. Therefore, testing dialog-specific UI logic is not applicable.
+        if (mIsWatch) {
+            return;
+        }
         setMapConfigEnabled(true);
         setMapActivityAvailable(true);
         CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
@@ -1967,6 +1972,11 @@ public class CellBroadcastAlertDialogTest extends
     }
 
     public void testIsMapFeatureEnabledWhenActivityNotAvailableReturnsFalse() throws Throwable {
+        // On Wear OS, alerts are displayed as notifications rather than using the full-screen
+        // alert dialog. Therefore, testing dialog-specific UI logic is not applicable.
+        if (mIsWatch) {
+            return;
+        }
         setMapConfigEnabled(true);
         setMapActivityAvailable(false);
         CellBroadcastAlertDialog.sIsMapFeatureEnabledForTest = true;
