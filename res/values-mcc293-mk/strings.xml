@@ -35,5 +35,5 @@
     <string name="enable_cmas_test_alerts_title" msgid="5491558192707049705">"Предупредување за месечно тестирање"</string>
     <string name="enable_exercise_test_alerts_title" msgid="237932492543387399">"Предупредување за вежба"</string>
     <string name="enable_operator_defined_test_alerts_title" msgid="4619286009864944020">"ЕУ-тестирање"</string>
-    <string name="enable_operator_defined_test_alerts_summary" msgid="4919777166129829302">"Предупредувања за тестирање од надлежните органи."</string>
+    <string name="enable_operator_defined_test_alerts_summary" msgid="4919777166129829302">"Пробни предупредувања од надлежните органи."</string>
 </resources>

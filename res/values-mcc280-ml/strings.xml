@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert ലെവൽ 1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert ലെവൽ 2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert ലെവൽ 3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert ലെവൽ 4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert കുട്ടികളെ തട്ടിക്കൊണ്ടുപോകൽ"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert - ടെസ്റ്റ്"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-Alert പരിശീലനം"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert ദേശീയ അടിയന്തര മുന്നറിയിപ്പ്"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert അതീവ ഗുരുതരമായ ഭീഷണികൾ"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert ഗുരുതരമായ ഭീഷണികൾ"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert പൊതു സുരക്ഷാ സന്ദേശം"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert തട്ടിക്കൊണ്ടുപോകൽ - വ്യക്തിയെ കാണാതാകൽ"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert സംസ്ഥാന, പ്രാദേശിക ടെസ്റ്റുകൾ"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert പരിശീലന ടെസ്റ്റുകൾ"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"ഗുരുതരമായ ഭീഷണികൾ"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"ജീവനും സ്വത്തിനും നേരെയുള്ള ഗുരുതരമായ ഭീഷണികൾ"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"പൊതുജനങ്ങൾക്കുള്ള സുരക്ഷാ സന്ദേശങ്ങൾ"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"ജീവനോ സ്വത്തോ സംരക്ഷിക്കുന്ന, നിർദ്ദേശിക്കുന്ന നടപടികൾ"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"ആംബർ അലേർട്ടുകൾ"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"കുട്ടികളെ തട്ടിക്കൊണ്ടുപോകലുമായി ബന്ധപ്പെട്ട അടിയന്തര ബുള്ളറ്റിനുകൾ"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"തട്ടിക്കൊണ്ടുപോകൽ - വ്യക്തിയെ കാണാതാകൽ"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"തട്ടിക്കൊണ്ടുപോകൽ - വ്യക്തിയെ കാണാതായതുമായി ബന്ധപ്പെട്ട അടിയന്തര വാർത്താക്കുറിപ്പുകൾ"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"സംസ്ഥാന, പ്രാദേശിക ടെസ്‌റ്റുകൾ"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"സംസ്ഥാന, പ്രാദേശിക അധികൃതരിൽ നിന്ന് ടെസ്റ്റ് സന്ദേശങ്ങൾ സ്വീകരിക്കുക"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"സംസ്ഥാന, പ്രാദേശിക അധികൃതരിൽ നിന്ന് ടെസ്റ്റ് സന്ദേശങ്ങൾ സ്വീകരിക്കുന്നു"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"പരിശീലന ടെസ്റ്റുകൾ"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"സംസ്ഥാന അല്ലെങ്കിൽ പ്രാദേശിക അധികൃതരിൽ നിന്ന് വ്യായാമ സന്ദേശങ്ങൾ സ്വീകരിക്കുക"</string>
 </resources>

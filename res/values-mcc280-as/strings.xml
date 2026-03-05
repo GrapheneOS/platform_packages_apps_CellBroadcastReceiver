@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-সতৰ্কবাৰ্তা স্তৰ-১"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-সতৰ্কবাৰ্তা স্তৰ-২"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-সতৰ্কবাৰ্তা স্তৰ-৩"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-সতৰ্কবাৰ্তা স্তৰ-৪"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-সতৰ্কবাৰ্তা শিশু অপহৰণ"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-সতৰ্কবাৰ্তা - পৰীক্ষণ"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-সতৰ্কবাৰ্তা অনুশীলন"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert চৰম জৰুৰীকালীন পৰিস্থিতি সম্পৰ্কীয় ৰাষ্ট্ৰীয় সতৰ্কবাৰ্তা"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert চৰম ভাবুকি"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert গুৰুতৰ ভাবুকি"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert ৰাজহুৱা সুৰক্ষা সম্পৰ্কীয় বাৰ্তা"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert অপহৰণ - সন্ধানহীন ব্যক্তি"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert ৰাজ্যিক আৰু স্থানীয় পৰীক্ষণ"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert অনুশীলনৰ পৰীক্ষণ"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"গুৰুতৰ ভাবুকি"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"জীৱন আৰু সম্পত্তিৰ প্ৰতি গুৰুতৰ ভাবুকি"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"ৰাজহুৱা নিৰাপত্তা বিষয়ক বাৰ্তাসমূহ"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"জীৱন বা সম্পত্তি ৰক্ষা কৰিব পৰা চুপাৰিছ কৰা কাৰ্যসমূহ"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"এম্বাৰ সতর্কবার্তা"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"শিশু অপহৰণ সম্পৰ্কীয় জৰুৰীকালীন বুলেটিন"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"ৰাজ্যিক আৰু স্থানীয় পৰীক্ষণসমূহ"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"ৰাজ্য আৰু স্থানীয় কৰ্তৃপক্ষৰ পৰা পৰীক্ষণ সম্পৰ্কীয় বাৰ্তা লাভ কৰক"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"অপহৰণ - সন্ধানহীন ব্যক্তি"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"অপহৰণ - সন্ধানহীন ব্যক্তি সম্পৰ্কীয় জৰুৰীকালীন বুলেটিন"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"ৰাজ্যিক আৰু স্থানীয় পৰীক্ষণ"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"ৰাজ্য বা স্থানীয় কৰ্তৃপক্ষৰ পৰা পৰীক্ষণ সম্পৰ্কীয় বাৰ্তা লাভ কৰক"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"অনুশীলনৰ পৰীক্ষণ"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"ৰাজ্য বা স্থানীয় কৰ্তৃপক্ষৰ পৰা অনুশীলন সম্পৰ্কীয় বাৰ্তা লাভ কৰক"</string>
 </resources>

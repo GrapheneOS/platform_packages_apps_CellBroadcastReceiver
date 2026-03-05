@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert ਦਾ ਪੱਧਰ-1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert ਦਾ ਪੱਧਰ-2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert ਦਾ ਪੱਧਰ-3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert ਦਾ ਪੱਧਰ-4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert: ਬੱਚਾ ਅਗਵਾ ਹੋਣ ਸੰਬੰਧੀ ਅਲਰਟ"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert - ਟੈਸਟ"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-Alert ਸੰਬੰਧੀ ਅਭਿਆਸ"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert ਰਾਸ਼ਟਰੀ ਪੱਧਰ \'ਤੇ ਗੰਭੀਰ ਸਥਿਤੀ ਸੰਬੰਧੀ ਅਲਰਟ"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert ਬਹੁਤ ਗੰਭੀਰ ਖਤਰੇ"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert ਗੰਭੀਰ ਖਤਰੇ"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert ਜਨਤਕ ਸੁਰੱਖਿਆ ਸੰਬੰਧੀ ਸੁਨੇਹਾ"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert: ਅਪਹਰਨ - ਗੁੰਮਸ਼ੁਦਾ ਵਿਅਕਤੀ"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert ਰਾਜ ਅਤੇ ਸਥਾਨਕ ਟੈਸਟ"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert ਅਭਿਆਸ ਸੰਬੰਧੀ ਟੈਸਟ"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"ਗੰਭੀਰ ਖਤਰੇ"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"ਜਾਨ ਅਤੇ ਮਾਲ ਦੇ ਗੰਭੀਰ ਖਤਰਿਆਂ ਸੰਬੰਧੀ ਅਲਰਟ"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"ਜਨਤਕ ਸੁਰੱਖਿਆ ਸੰਬੰਧੀ ਸੁਨੇਹੇ"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"ਜਾਨ ਜਾਂ ਮਾਲ ਦੀ ਸੁਰੱਖਿਆ ਕਰ ਸਕਣ ਵਾਲੀਆਂ ਸਿਫ਼ਾਰਸ਼ੀ ਕਾਰਵਾਈਆਂ"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"AMBER ਅਲਰਟ"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"ਅਗਵਾ ਹੋਏ ਬੱਚੇ ਸੰਬੰਧੀ ਐਮਰਜੈਂਸੀ ਬੁਲੇਟਿਨ"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"ਰਾਜ ਅਤੇ ਸਥਾਨਕ ਜਾਂਚਾਂ"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"ਰਾਜ ਅਤੇ ਸਥਾਨਕ ਸਰਕਾਰੀ ਵਿਭਾਗਾਂ ਤੋਂ ਜਾਂਚ ਸੁਨੇਹੇ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"ਅਪਹਰਨ - ਗੁੰਮਸ਼ੁਦਾ ਵਿਅਕਤੀ"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"ਅਪਹਰਨ - ਗੁੰਮਸ਼ੁਦਾ ਵਿਅਕਤੀ ਸੰਬੰਧੀ ਐਮਰਜੈਂਸੀ ਬੁਲੇਟਿਨ"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"ਰਾਜ ਅਤੇ ਸਥਾਨਕ ਟੈਸਟ"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"ਰਾਜ ਜਾਂ ਸਥਾਨਕ ਸਰਕਾਰੀ ਵਿਭਾਗਾਂ ਤੋਂ ਟੈਸਟ ਸੁਨੇਹੇ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"ਅਭਿਆਸ ਸੰਬੰਧੀ ਅਲਰਟ"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"ਰਾਜ ਜਾਂ ਸਥਾਨਕ ਸਰਕਾਰੀ ਵਿਭਾਗਾਂ ਤੋਂ ਅਭਿਆਸ ਸੰਬੰਧੀ ਸੁਨੇਹੇ ਪ੍ਰਾਪਤ ਕਰੋ"</string>
 </resources>

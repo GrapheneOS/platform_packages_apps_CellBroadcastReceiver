@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert: Stufe 1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert: Stufe 2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert: Stufe 3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert: Stufe 4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert: Kindesentführung"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert – Test"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-Alert – Übung"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert: Nationale Warnung der Kategorie „Extrem“"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert: Extreme Bedrohungen"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert: Ernste Bedrohungen"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert: Meldung zur öffentlichen Sicherheit"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert: Entführung – vermisste Person"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert: Regionale und lokale Tests"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert: Übungstests"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"Ernste Bedrohungen"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"Ernste Bedrohungen für Leben und Eigentum"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"Nachrichten zur öffentlichen Sicherheit"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Empfohlene Maßnahmen, die Leben oder Eigentum retten können"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"AMBER Alerts"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"Notfallmeldungen bei Kindesentführung"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"Entführung – vermisste Person"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"Entführung – Notfallmeldungen zu vermissten Personen"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Regionale und lokale Tests"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"Testnachrichten von staatlichen und kommunalen Behörden erhalten"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"Testnachrichten von staatlichen oder kommunalen Behörden erhalten"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"Testübungen"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"Übungswarnmeldungen von regionalen oder lokalen Behörden erhalten"</string>
 </resources>

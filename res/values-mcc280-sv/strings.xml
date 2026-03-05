@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert: nivå 1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert: nivå 2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert: nivå 3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert: nivå 4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert: Bortförande av barn"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert: test"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-Alert: övning"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert: Varning om extrem fara på nationell nivå"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert: Extrem fara"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert: Allvarlig fara"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert: Viktigt meddelande till allmänheten"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert: Kidnappning – försvunnen person"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert: Statliga och lokala tester"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert: Övningstester"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"Allvarlig fara"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"Allvarlig fara för liv och egendom"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"Viktiga meddelanden till allmänheten"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Rekommenderade åtgärder som kan rädda liv eller egendom"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"AMBER-varningar"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"Nödmeddelanden om bortförda barn"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"Kidnappning – försvunnen person"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"Kidnappning – nödmeddelanden om försvunna personer"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Statliga och lokala tester"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"Få testmeddelanden från statliga och lokala myndigheter"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"Få testmeddelanden från statliga eller lokala myndigheter"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"Träningsprov"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"Få övningsmeddelanden från statliga eller lokala myndigheter"</string>
 </resources>

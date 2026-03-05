@@ -29,7 +29,7 @@
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="4599796374936655416">"Сериозна опасност по животот и имотот"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="2109318004420895505">"Известувања за исчезнато дете"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="7304249741655134340">"Соопштение за исчезнато дете"</string>
-    <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Известувања за задолжителни месечни тестирања"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="5627802613266466268">"Задолжителни месечни пробни предупредувања"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="5252220198509528818">"Соопштение за месечно тестирање на системот"</string>
     <string name="enable_exercise_test_alerts_title" msgid="4700976630721921586">"Предупредувања за вежба"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="8855842380312366036">"Соопштение за вежби"</string>

@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-Alert de nivell 1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-Alert de nivell 2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-Alert de nivell 3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-Alert de nivell 4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-Alert: segrest d\'un menor"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-Alert: prova"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"Simulacre de CY-Alert"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert: alerta nacional extrema"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert: amenaces extremes"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert: amenaces greus"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert: missatge de seguretat pública"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert: segrest o desaparició"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert: proves locals i estatals"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert: proves de simulacre"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"Amenaces greus"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"Amenaces greus per a la vida i la propietat"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"Missatges de seguretat pública"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"Accions recomanades que poden salvar vides o propietats"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"Alertes AMBER"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"Butlletins d\'emergència per segrest de menors"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"Segrest o desaparició"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"Butlletins d\'emergència per segrest o desaparició"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"Proves locals i estatals"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"Missatges de prova de les autoritats locals i estatals"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"Rep missatges de prova de les autoritats locals o estatals"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"Proves de simulacre"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"Rep missatges de simulacre de les autoritats locals o estatals"</string>
 </resources>

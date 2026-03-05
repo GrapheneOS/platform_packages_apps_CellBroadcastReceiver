@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"‏المستوى الأول من تنبيه CY-Alert"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"‏المستوى الثاني من تنبيه CY-Alert"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"‏المستوى الثالث من تنبيه CY-Alert"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"‏المستوى الرابع من تنبيه CY-Alert"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"‏‫CY-Alert: اختطاف طفل"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"‏‫CY-Alert - اختبار"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"‏تجربة تنبيه CY-Alert"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"‏تنبيه CY-Alert قومي عاجل"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"‏تنبيه CY-Alert بشأن تهديدات بالغة الخطورة"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"‏تنبيه CY-Alert بشأن تهديدات خطيرة"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"‏تنبيه CY-Alert بشأن السلامة العامة"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"‏تنبيه CY-Alert بشأن اختطاف - شخص مفقود"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"‏تنبيهات CY-Alert تجريبية من سلطات الولاية والسلطات المحلية"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"‏اختبارات تجريبية لتنبيه CY-Alert"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"التهديدات الخطيرة"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"التهديدات الخطيرة لحياة الأشخاص والممتلكات"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"رسائل السلامة العامة"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"الإجراءات المقترحة التي يمكن أن تنقذ الأرواح أو الممتلكات"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"إنذارات آمبر"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"نشرات طارئة عن اختطاف الأطفال"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"اختطاف - شخص مفقود"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"اختطاف - نشرات طارئة عن شخص مفقود"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"تنبيهات تجريبية من سلطات الولاية والسلطات المحلية"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"تلقّي رسائل تنبيه تجريبية من سلطات الولاية والسلطات المحلية"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"تلقّي رسائل تنبيه تجريبية من سلطات الولاية أو السلطات المحلية"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"اختبارات التنبيهات التجريبية"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"تلقّي رسائل تنبيه تجريبية من سلطات الولاية أو السلطات المحلية"</string>
 </resources>

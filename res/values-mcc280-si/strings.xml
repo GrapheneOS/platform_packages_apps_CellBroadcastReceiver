@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"CY-ඇඟවීම් මට්ටම-1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"CY-ඇඟවීම මට්ටම-2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"CY-ඇඟවීම මට්ටම-3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"CY-ඇඟවීම මට්ටම-4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"CY-ඇඟවීම ළමා පැහැර ගැනීම"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"CY-ඇඟවීම - පරීක්ෂණය"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"CY-ඇඟවීම අභ්‍යාසය"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert අත්‍යන්ත ජාතික ඇඟවීම"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert අත්‍යන්ත තර්ජන"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert දරුණු තර්ජන"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert පොදු ආරක්ෂක පණිවිඩය"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert පැහැර ගැනීම - පුද්ගලයා අතුරුදහන් වී ඇත"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert රාජ්‍ය සහ පළාත් පරීක්ෂණ"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert අභ්‍යාස පරීක්ෂණ"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"දැඩි තර්ජන"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"ජීවිත සහ දේපළවලට දැඩි තර්ජන"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"මහජන ආරක්ෂක පණිවිඩ"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"ජීවිත හෝ දේපළ බේරා ගත හැකි නිර්දේශිත ක්‍රියා"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"සීනුවේ ඇඟවීම්"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"ළමා අපහරණ හදිසි අවස්ථා බුලටින"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"පැහැර ගැනීම - පුද්ගලයා අතුරුදහන් වී ඇත"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"පැහැර ගැනීම - අතුරුදහන් වූ පුද්ගල හදිසි සංදේශ"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"රාජ්‍ය සහ පළාත් පරීක්ෂණ"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"රාජ්‍ය සහ පළාත් පාලන ආයතනවලින් පරීක්ෂණ පණිවිඩ ලබන්න"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"රාජ්‍ය හෝ පළාත් පාලන ආයතනවලින් පරීක්ෂණ පණිවිඩ ලබන්න"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"ව්‍යායාම පරීක්ෂණ"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"රාජ්‍ය හෝ පළාත් පාලන ආයතනවලින් ව්‍යායාම පණිවිඩ ලබා ගන්න"</string>
 </resources>

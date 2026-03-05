@@ -16,19 +16,21 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1655115680157122125">"‏CY-Alert سطح-1"</string>
-    <string name="cmas_extreme_alert" msgid="3428966003534434604">"‏CY-Alert سطح-2"</string>
-    <string name="cmas_severe_alert" msgid="8220304377797478830">"‏CY-Alert سطح-3"</string>
-    <string name="public_safety_message" msgid="3556861828652869276">"‏CY-Alert سطح-4"</string>
-    <string name="cmas_amber_alert" msgid="6709295849518550424">"‏CY-Alert کودک‌ربایی"</string>
-    <string name="state_local_test_alert" msgid="6386960273214013080">"‏CY-Alert - آزمایش"</string>
-    <string name="cmas_exercise_alert" msgid="6148709823898923973">"‏تمرین هشدار CY"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"‏هشدار ملی بسیار جدی CY-Alert"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"‏تهدیدهای «بسیار جدی CY-Alert»"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"‏تهدیدهای «جدی CY-Alert»"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"‏پیام ایمنی «عمومی CY-Alert»"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"‏‫«CY-Alert آدم‌ربایی» - فرد گم‌شده"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"‏آزمایش‌های محلی و «دولتی CY-Alert»"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"‏آزمایش‌های «تمرین CY-Alert»"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"تهدیدهای شدید"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"تهدیدهای جدی جانی و مالی"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"پیام‌های امنیت عمومی"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"اقدام‌های توصیه‌شده که می‌تواند جان افراد یا اموال آن‌ها را حفظ کند"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="575956412351589153">"هشدارهای امبر"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="3658725479420922211">"بولتن‌های اضطراری کودک‌ربایی"</string>
-    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"آزمایش‌های ایالتی و محلی"</string>
-    <string name="enable_state_local_test_alerts_summary" msgid="8893722868659048212">"دریافت پیام‌های آزمایشی از مقامات محلی و دولتی"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"آدم‌ربایی - فرد گم‌شده"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"آدم‌ربایی - بولتن‌های اضطراری فرد گم‌شده"</string>
+    <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"آزمایش‌های محلی و دولتی"</string>
+    <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"دریافت پیام‌های آزمایشی از مقامات محلی و دولتی"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"آزمون‌های تمرینی"</string>
     <string name="enable_exercise_test_alerts_summary" msgid="1347030769869884348">"دریافت پیام‌های تمرینی از مقامات محلی یا دولتی"</string>
 </resources>
