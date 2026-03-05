@@ -16,13 +16,13 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"‏‫CY-Alert התרעה לאומית קיצונית"</string>
-    <string name="cmas_extreme_alert" msgid="57542272349842470">"‏‫CY-Alert סכנה קיצונית"</string>
-    <string name="cmas_severe_alert" msgid="8194797983855928430">"‏‫CY-Alert סכנה חמורה"</string>
-    <string name="public_safety_message" msgid="8872389974884345322">"‏‫CY-Alert הודעה בנוגע לביטחון הציבור"</string>
-    <string name="cmas_amber_alert" msgid="2958259621690843950">"‏‫CY-Alert חטיפה – אדם נעדר"</string>
-    <string name="state_local_test_alert" msgid="705817570234061511">"‏‫CY-Alert בדיקות מקומיות וארציות"</string>
-    <string name="cmas_exercise_alert" msgid="1608149248460551885">"‏‫CY-Alert בדיקות תרגול"</string>
+    <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"‏‫CY-Alert: התרעה לאומית קיצונית"</string>
+    <string name="cmas_extreme_alert" msgid="57542272349842470">"‏‫CY-Alert: סכנה קיצונית"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"‏‫CY-Alert: סכנה חמורה"</string>
+    <string name="public_safety_message" msgid="8872389974884345322">"‏‫CY-Alert: הודעה בנוגע לביטחון הציבור"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"‏התרעת חטיפה CY-Alert – אדם נעדר"</string>
+    <string name="state_local_test_alert" msgid="705817570234061511">"‏‫CY-Alert: בדיקות מקומיות וארציות"</string>
+    <string name="cmas_exercise_alert" msgid="1608149248460551885">"‏‫CY-Alert: בדיקות תרגול"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"סכנה חמורה"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"סכנה חמורה לנפש ולרכוש"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"הודעות שקשורות לביטחון הציבור"</string>
