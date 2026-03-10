@@ -18,6 +18,7 @@ package com.android.cellbroadcastreceiver.compliancetests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 
@@ -51,6 +52,9 @@ import android.widget.LinearLayout;
 import com.android.cellbroadcastreceiver.flags.Flags;
 import com.android.internal.util.HexDump;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
+
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Before;
@@ -69,8 +73,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import junitparams.JUnitParamsRunner;
-import junitparams.Parameters;
 
 @RunWith(JUnitParamsRunner.class)
 public class CellBroadcastUiTest extends CellBroadcastBaseTest {
@@ -110,6 +112,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         if ("testEmergencyAlertSettingsUi".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithoutGeo".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnTranslatorFeature".equals(mTestNameRule.getMethodName())) {
             KeyguardManager keyguardManager = getContext().getSystemService(KeyguardManager.class);
             assumeTrue("cannot test under secure keyguard",
@@ -121,6 +124,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         }
         if ("testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithoutGeo".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnTranslatorFeature".equals(mTestNameRule.getMethodName())) {
             PackageManager pm = getContext().getPackageManager();
             assumeTrue("FULL_ACCESS_CELL_BROADCAST_HISTORY permission "
@@ -131,6 +135,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         if ("testEmergencyAlertSettingsUi".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithoutGeo".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnTranslatorFeature".equals(mTestNameRule.getMethodName())) {
             try {
                 // close disturbing dialog if exist
@@ -155,7 +160,8 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
             }
             sDevice.pressHome();
         }
-        if ("testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())) {
+        if ("testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithoutGeo".equals(mTestNameRule.getMethodName())) {
             mLocationEnableChanaged = setLocationEnabled(false);
         }
     }
@@ -168,6 +174,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
 
         if (("testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithoutGeo".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnTranslatorFeature".equals(mTestNameRule.getMethodName()))
                 && (sSerialId > 0)) {
             deleteMessageWithShellPermissionIdentity();
@@ -190,12 +197,14 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         if ("testEmergencyAlertSettingsUi".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlert".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithoutGeo".equals(mTestNameRule.getMethodName())
                 || "testAlertUiOnTranslatorFeature".equals(mTestNameRule.getMethodName())) {
             LocaleManager localeManager = getContext().getSystemService(LocaleManager.class);
             localeManager.setApplicationLocales(sPackageName, LocaleList.getEmptyLocaleList());
         }
 
-        if ("testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())) {
+        if ("testAlertUiOnReceivedAlertWithGeo".equals(mTestNameRule.getMethodName())
+                || "testAlertUiOnReceivedAlertWithoutGeo".equals(mTestNameRule.getMethodName())) {
             if (mLocationEnableChanaged) {
                 setLocationEnabled(true);
             }
@@ -279,6 +288,41 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         String languageTag =
                 (carrierInfo.mLanguageTag != null) ? carrierInfo.mLanguageTag : "en-US";
         verifyMapButtonIsShown(languageTag);
+    }
+
+    @Test
+    @Parameters(method = "paramsCarrierAndChannelForGeoTest")
+    public void testAlertUiOnReceivedAlertWithoutGeo(String carrierName, String channel)
+            throws Throwable {
+        logd("CellBroadcastUiTest#testAlertUiOnReceivedAlertWithoutGeo");
+
+        assumeTrue("Skipping test because Map flag is disabled",
+                Flags.enableCellbroadcastMapViewer());
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("cellbroadcastgeo:"));
+        List<ResolveInfo> resolveInfoList = getContext().getPackageManager()
+                .queryIntentActivities(mapIntent, PackageManager.MATCH_SYSTEM_ONLY);
+        boolean isMapActivityAvailable = resolveInfoList != null && !resolveInfoList.isEmpty();
+        assumeTrue("Skipping test because Map activity is not available", isMapActivityAvailable);
+
+        CellBroadcastCarrierTestConfig carrierInfo =
+                new CellBroadcastCarrierTestConfig(sCarriersObject, carrierName);
+        // setup mccmnc
+        if (sInputMccMnc == null || (sInputMccMnc != null
+                && !sInputMccMnc.equals(carrierInfo.mMccMnc))) {
+            setSimInfo(carrierName, carrierInfo.mMccMnc);
+        }
+
+        // change language of CBR
+        changeLocale(carrierInfo, sPackageName, true);
+
+        // receive broadcast message with geo info
+        receiveBroadcastMessage(channel, null, true);
+
+        logd("carrier " + carrierName + ", Map button should not be shown" + " for channel "
+                + channel);
+        String languageTag =
+                (carrierInfo.mLanguageTag != null) ? carrierInfo.mLanguageTag : "en-US";
+        verifyMapButtonIsNotShown(languageTag);
     }
 
     //@Test // TODO: enable after feature config is enabled
@@ -520,6 +564,11 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
         assertTrue("Map button should be enabled", mapButton.isEnabled());
     }
 
+    private void verifyMapButtonIsNotShown(String languageTag) {
+        UiObject2 mapButton = findMapButton(languageTag);
+        assertNull("Map button should not be visible on the screen", mapButton);
+    }
+
     /** Pulls down notification shade and verifies that message text is found. */
     private void verifyNotificationPosted(String carrier, String title, String channel,
             String packageName, boolean ignoreMessageByLanguageFilter)
@@ -623,7 +672,7 @@ public class CellBroadcastUiTest extends CellBroadcastBaseTest {
                         .className(android.widget.Switch.class.getName()));
             }
             assertEquals("carrierName=" + carrierName + ", settingName=" + settingName
-                    + ", expectedSwitchValue=" + settingInfo.mIsToggleAvailability,
+                            + ", expectedSwitchValue=" + settingInfo.mIsToggleAvailability,
                     settingInfo.mExpectedSwitchValue, itemSwitch.isChecked());
         }
     }
