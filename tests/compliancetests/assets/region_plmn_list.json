@@ -302,9 +302,9 @@
     "disable_navigation": "true",
     "fullscreen": "true"
   },
-  "hungary_telekom": {
-    "mccmnc": ["21630"],
-    "imsi": "216300123456789"
+  "hungary": {
+    "mccmnc": ["21601"],
+    "imsi": "216010123456789"
   },
   "croatia_hrvatski": {
     "mccmnc": ["21901", "21920"],
