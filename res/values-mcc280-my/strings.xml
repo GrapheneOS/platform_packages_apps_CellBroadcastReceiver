@@ -18,17 +18,17 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cmas_presidential_level_alert" msgid="1226816015745396276">"CY-Alert အလွန်ပြင်းထန်သော နိုင်ငံအဆင့် သတိပေးချက်"</string>
     <string name="cmas_extreme_alert" msgid="57542272349842470">"CY-Alert လွန်ကဲ အန္တရာယ်များ"</string>
-    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert လွန်ကဲပြင်းထန်သည့် ခြိမ်းခြောက်မှုများ"</string>
+    <string name="cmas_severe_alert" msgid="8194797983855928430">"CY-Alert ပြင်းထန်သည့် အန္တရာယ်များ"</string>
     <string name="public_safety_message" msgid="8872389974884345322">"CY-Alert လူထုလုံခြုံရေး မက်ဆေ့ဂျ်"</string>
-    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert ပြန်ပေးဆွဲမှု - လူပျောက်"</string>
+    <string name="cmas_amber_alert" msgid="2958259621690843950">"CY-Alert ပြန်ပေးဆွဲမှု - လူပျောက်ဆုံးမှု"</string>
     <string name="state_local_test_alert" msgid="705817570234061511">"CY-Alert ပြည်နယ်နှင့် ဒေသတွင်း စမ်းသပ်မှုများ"</string>
     <string name="cmas_exercise_alert" msgid="1608149248460551885">"CY-Alert အရေးပေါ် သတိပေးချက် စမ်းသပ်မှုများ"</string>
     <string name="enable_cmas_severe_threat_alerts_title" msgid="8484662994214764984">"ကြီးမားသော အန္တရာယ်များ"</string>
-    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"အသက်အိုးအိမ်အတွက် အလွန်ကြီးမားသော အန္တရာယ်"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="723404782783030801">"အသက်အိုးအိမ်အတွက် ကြီးမားသော အန္တရာယ်များ"</string>
     <string name="enable_public_safety_messages_title" msgid="3901363979022455526">"လူထု ဘေးကင်းလုံခြုံရေး မက်ဆေ့ဂျ်များ"</string>
     <string name="enable_public_safety_messages_summary" msgid="6773726904522213477">"အသက်အိုးအိမ်တို့ကို ကယ်တင်နိုင်သော အကြံပြုထားသည့် လုပ်ဆောင်ချက်များ"</string>
-    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"ပြန်ပေးဆွဲမှု - လူပျောက်"</string>
-    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"ပြန်ပေးဆွဲမှု - လူပျောက်မှု အရေးပေါ်ကြေညာချက်"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="7147564310079840304">"ပြန်ပေးဆွဲမှု - လူပျောက်ဆုံးမှု"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="7934503647000423344">"ပြန်ပေးဆွဲမှု - လူပျောက်ဆုံးမှု အရေးပေါ်ကြေညာချက်"</string>
     <string name="enable_state_local_test_alerts_title" msgid="4740484186260601162">"ပြည်နယ်နှင့် ဒေသတွင်း စမ်းသပ်မှုများ"</string>
     <string name="enable_state_local_test_alerts_summary" msgid="5646654306843727099">"ပြည်နယ်နှင့် ဒေသခံ အာဏာပိုင်များထံမှ စမ်းသပ်မက်ဆေ့ဂျ်များ လက်ခံရန်"</string>
     <string name="enable_exercise_test_alerts_title" msgid="618875293236043785">"လေ့ကျင့်ခန်း စမ်းသပ်မှုများ"</string>
