@@ -19,6 +19,7 @@ package com.android.cellbroadcastreceiver;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
@@ -62,49 +63,109 @@ public class CellBroadcastMapLauncher {
         if (sIsMapActivityAvailableForTest != null) {
             return sIsMapActivityAvailableForTest;
         }
-        return getMapTargetActivity(context) != null;
+        return context != null && getMapTargetActivity(context) != null;
     }
 
     /**
      * Finds a target system activity to handle the map intent and verifies security requirements.
-     * (Checks permission for Baklava+, checks for uniqueness for pre-Baklava).
+     * Checks for explicit permissions on Baklava+ devices and falls back to
+     * uniqueness validation if the permission is not requested by the preloaded package.
      */
     private static ResolveInfo getMapTargetActivity(Context context) {
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(GEO_URI_SCHEME));
         PackageManager pm = context.getPackageManager();
+        if (pm == null){
+            Log.e(TAG, "getMapTargetActivity: PackageManager is null");
+            return null;
+        }
         List<ResolveInfo> resolveInfoList = pm.queryIntentActivities(mapIntent,
                 PackageManager.MATCH_SYSTEM_ONLY);
 
         if (resolveInfoList == null || resolveInfoList.isEmpty()) {
+            Log.d(TAG, "getMapTargetActivity: resolveInfoList is null or empty");
             return null;
         }
 
         // TODO: change to SdkLevel.isAtLeastC()
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA) {
+            boolean foundAppNotRequestingPermission = false;
             for (ResolveInfo info : resolveInfoList) {
-                if (info.activityInfo != null) {
-                    try {
-                        if (pm.checkPermission(PERMISSION_ACCESS_CELL_BROADCAST,
-                                info.activityInfo.packageName)
-                                == PackageManager.PERMISSION_GRANTED) {
-                            Log.d(TAG,
-                                    "Found secure system handler on C+: " + info.activityInfo.name);
-                            return info;
-                        }
-                    } catch (Exception e) {
-                        Log.e(TAG, "Error checking permission for " + info.activityInfo.packageName,
-                                e);
+                if (info.activityInfo == null) {
+                    continue;
+                }
+                String pkgName = info.activityInfo.packageName;
+                try {
+                    if (pm.checkPermission(PERMISSION_ACCESS_CELL_BROADCAST, pkgName)
+                            == PackageManager.PERMISSION_GRANTED) {
+                        Log.d(TAG, "Found secure system handler on C+: " + info.activityInfo.name);
+                        return info;
+                    }
+                } catch (Exception e) {
+                    Log.e(TAG, "Error checking permission for " + info.activityInfo.packageName,
+                            e);
+                    continue;
+                }
+
+                if (!isPermissionRequestedByPreload(context, pkgName,
+                        PERMISSION_ACCESS_CELL_BROADCAST)) {
+                    foundAppNotRequestingPermission = true;
+                }
+            }
+
+            if (foundAppNotRequestingPermission) {
+                Log.d(TAG, "No app with permission, but found app not requesting permission. "
+                        + "Checking for unique handler.");
+                return getUniqueTargetActivity(resolveInfoList, "C+");
+            }
+            Log.e(TAG, "No suitable system handler found on C+.");
+            return null;
+        }
+        return getUniqueTargetActivity(resolveInfoList, "pre-C");
+    }
+
+    /**
+     * Verifies whether the given permission was requested by the preloaded
+     * version of the package, using the {@code MATCH_FACTORY_ONLY} flag.
+     */
+    private static boolean isPermissionRequestedByPreload(Context context, String packageName,
+            String permissionName) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            PackageInfo systemPackageInfo = pm.getPackageInfo(packageName,
+                    PackageManager.GET_PERMISSIONS | PackageManager.MATCH_FACTORY_ONLY);
+
+            if (systemPackageInfo != null && systemPackageInfo.requestedPermissions != null) {
+                for (String requested : systemPackageInfo.requestedPermissions) {
+                    if (permissionName.equals(requested)) {
+                        Log.d(TAG, "permission is requested by preload");
+                        return true;
                     }
                 }
             }
-        } else {
-            if (resolveInfoList.size() == 1 && resolveInfoList.get(0).activityInfo != null) {
-                Log.d(TAG, "Found unique system handler on pre-C: "
-                        + resolveInfoList.get(0).activityInfo.name);
-                return resolveInfoList.get(0);
-            } else if (resolveInfoList.size() > 1) {
-                Log.e(TAG, "More than one system activity found on pre-C. Not launching.");
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.w(TAG, "Package not found for preload check: " + packageName);
+        } catch (Exception e) {
+            Log.e(TAG, "Unexpected error getting package info for " + packageName, e);
+        }
+        Log.d(TAG, "permission is not requested by preload");
+        return false;
+    }
+
+    /**
+     * Verifies and returns the system activity only if a single unique instance exists in the list.
+     */
+    private static ResolveInfo getUniqueTargetActivity(List<ResolveInfo> resolveInfoList,
+            String tag) {
+        if (resolveInfoList.size() == 1) {
+            ResolveInfo info = resolveInfoList.get(0);
+            if (info.activityInfo != null) {
+                Log.d(TAG, "Found unique target activity on " + tag
+                        + ": " + info.activityInfo.name);
+                return info;
             }
+        } else if (resolveInfoList.size() > 1) {
+            Log.e(TAG, "Multiple system activities (" + resolveInfoList.size() + ") found on "
+                    + tag + ". Ambiguous target, not launching.");
         }
         return null;
     }
