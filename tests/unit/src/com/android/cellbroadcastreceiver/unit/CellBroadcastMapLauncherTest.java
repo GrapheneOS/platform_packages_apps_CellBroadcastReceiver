@@ -26,6 +26,7 @@ import static org.junit.Assume.assumeTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
@@ -33,6 +34,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
@@ -64,6 +66,7 @@ public class CellBroadcastMapLauncherTest {
     private PackageManager mMockPackageManager;
 
     private static final String GMS_PACKAGE = "com.google.android.gms";
+    private static final String OTHER_PACKAGE = "com.other.app";
     private static final String TEST_ACTIVITY_NAME = "MapActivity";
 
     private SmsCbMessage createSmsCbMessage(List<CbGeoUtils.Geometry> geometries) {
@@ -87,6 +90,16 @@ public class CellBroadcastMapLauncherTest {
         resolveInfo.activityInfo.applicationInfo = new ApplicationInfo();
         resolveInfo.activityInfo.applicationInfo.packageName = packageName;
         return resolveInfo;
+    }
+
+    private void mockPackageInfoRequestedPermissions(String packageName, String[] permissions)
+            throws Exception {
+        PackageInfo packageInfo = new PackageInfo();
+        packageInfo.packageName = packageName;
+        packageInfo.requestedPermissions = permissions;
+        doReturn(packageInfo).when(mMockPackageManager)
+                .getPackageInfo(eq(packageName),
+                        eq(PackageManager.GET_PERMISSIONS | PackageManager.MATCH_FACTORY_ONLY));
     }
 
     private String buildExpectedGeoUri(String rawData) throws Exception {
@@ -143,24 +156,6 @@ public class CellBroadcastMapLauncherTest {
                         "polygon|1.0000000,1.0000000|2.0000000,2.0000000|1.0000000,2.0000000")),
                 capturedIntent.getData());
         assertEquals(GMS_PACKAGE, capturedIntent.getComponent().getPackageName());
-    }
-
-    @Test
-    public void testLaunchMapFailCNoPermission() {
-        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
-
-        List<CbGeoUtils.Geometry> geometries = Collections.singletonList(
-                new Circle(new CbGeoUtils.LatLng(37.4, -122.1), 1000.0));
-        SmsCbMessage message = createSmsCbMessage(geometries);
-        ResolveInfo mockResolveInfo = createMockResolveInfo(GMS_PACKAGE);
-
-        doReturn(Collections.singletonList(mockResolveInfo)).when(mMockPackageManager)
-                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
-        doReturn(PackageManager.PERMISSION_DENIED).when(mMockPackageManager)
-                .checkPermission(PERMISSION_ACCESS_CELL_BROADCAST, GMS_PACKAGE);
-
-        CellBroadcastMapLauncher.launchMap(mMockContext, message);
-        verify(mMockContext, never()).startActivity(any(Intent.class));
     }
 
     @Test
@@ -232,5 +227,206 @@ public class CellBroadcastMapLauncherTest {
                 .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
 
         assertFalse(CellBroadcastMapLauncher.isMapActivityAvailable(mMockContext));
+    }
+
+    @Test
+    public void testLaunchMapSuccessCNoPermissionFallbackUnique() throws Exception {
+        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
+
+        List<CbGeoUtils.Geometry> geometries = Collections.singletonList(
+                new Circle(new CbGeoUtils.LatLng(37.4, -122.1), 1000.0));
+        SmsCbMessage message = createSmsCbMessage(geometries);
+        ResolveInfo mockResolveInfo = createMockResolveInfo(GMS_PACKAGE);
+
+        doReturn(Collections.singletonList(mockResolveInfo)).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+        doReturn(PackageManager.PERMISSION_DENIED).when(mMockPackageManager)
+                .checkPermission(PERMISSION_ACCESS_CELL_BROADCAST, GMS_PACKAGE);
+
+        mockPackageInfoRequestedPermissions(GMS_PACKAGE, new String[]{});
+
+        CellBroadcastMapLauncher.launchMap(mMockContext, message);
+        verify(mMockContext).startActivity(any(Intent.class));
+    }
+
+    @Test
+    public void testLaunchMapFailCNoPermissionRequestedByPreload() throws Exception {
+        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
+
+        List<CbGeoUtils.Geometry> geometries = Collections.singletonList(
+                new Circle(new CbGeoUtils.LatLng(37.4, -122.1), 1000.0));
+        SmsCbMessage message = createSmsCbMessage(geometries);
+        ResolveInfo mockResolveInfo = createMockResolveInfo(GMS_PACKAGE);
+
+        doReturn(Collections.singletonList(mockResolveInfo)).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+        doReturn(PackageManager.PERMISSION_DENIED).when(mMockPackageManager)
+                .checkPermission(PERMISSION_ACCESS_CELL_BROADCAST, GMS_PACKAGE);
+
+        mockPackageInfoRequestedPermissions(GMS_PACKAGE,
+                new String[]{PERMISSION_ACCESS_CELL_BROADCAST});
+
+        CellBroadcastMapLauncher.launchMap(mMockContext, message);
+        verify(mMockContext, never()).startActivity(any(Intent.class));
+    }
+
+    @Test
+    public void testLaunchMapFailCNoPermissionFallbackMultiple() throws Exception {
+        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
+
+        List<CbGeoUtils.Geometry> geometries = Collections.singletonList(
+                new Circle(new CbGeoUtils.LatLng(37.4, -122.1), 1000.0));
+        SmsCbMessage message = createSmsCbMessage(geometries);
+
+        doReturn(Arrays.asList(createMockResolveInfo(GMS_PACKAGE),
+                createMockResolveInfo(OTHER_PACKAGE)))
+                .when(mMockPackageManager).queryIntentActivities(any(Intent.class),
+                        eq(PackageManager.MATCH_SYSTEM_ONLY));
+        doReturn(PackageManager.PERMISSION_DENIED).when(mMockPackageManager)
+                .checkPermission(any(), any());
+
+        mockPackageInfoRequestedPermissions(GMS_PACKAGE, new String[]{});
+        mockPackageInfoRequestedPermissions(OTHER_PACKAGE, new String[]{});
+
+        CellBroadcastMapLauncher.launchMap(mMockContext, message);
+        verify(mMockContext, never()).startActivity(any(Intent.class));
+    }
+
+    @Test
+    public void testLaunchMapFailCNoPermissionNullRequestedPermissions() throws Exception {
+        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
+
+        List<CbGeoUtils.Geometry> geometries = Collections.singletonList(
+                new Circle(new CbGeoUtils.LatLng(37.4, -122.1), 1000.0));
+        SmsCbMessage message = createSmsCbMessage(geometries);
+        ResolveInfo mockResolveInfo = createMockResolveInfo(GMS_PACKAGE);
+
+        doReturn(Collections.singletonList(mockResolveInfo)).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+        doReturn(PackageManager.PERMISSION_DENIED).when(mMockPackageManager)
+                .checkPermission(PERMISSION_ACCESS_CELL_BROADCAST, GMS_PACKAGE);
+
+        PackageInfo packageInfo = new PackageInfo();
+        packageInfo.packageName = GMS_PACKAGE;
+        packageInfo.requestedPermissions = null;
+        doReturn(packageInfo).when(mMockPackageManager)
+                .getPackageInfo(eq(GMS_PACKAGE),
+                        eq(PackageManager.GET_PERMISSIONS | PackageManager.MATCH_FACTORY_ONLY));
+
+        CellBroadcastMapLauncher.launchMap(mMockContext, message);
+        verify(mMockContext).startActivity(any(Intent.class));
+    }
+
+    @Test
+    public void testLaunchMapFailCNameNotFoundException() throws Exception {
+        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
+
+        List<CbGeoUtils.Geometry> geometries = Collections.singletonList(
+                new Circle(new CbGeoUtils.LatLng(37.4, -122.1), 1000.0));
+        SmsCbMessage message = createSmsCbMessage(geometries);
+        ResolveInfo mockResolveInfo = createMockResolveInfo(GMS_PACKAGE);
+
+        doReturn(Collections.singletonList(mockResolveInfo)).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+        doReturn(PackageManager.PERMISSION_DENIED).when(mMockPackageManager)
+                .checkPermission(PERMISSION_ACCESS_CELL_BROADCAST, GMS_PACKAGE);
+
+        doThrow(new PackageManager.NameNotFoundException()).when(mMockPackageManager)
+                .getPackageInfo(eq(GMS_PACKAGE),
+                        eq(PackageManager.GET_PERMISSIONS | PackageManager.MATCH_FACTORY_ONLY));
+
+        CellBroadcastMapLauncher.launchMap(mMockContext, message);
+        verify(mMockContext).startActivity(any(Intent.class));
+    }
+
+    @Test
+    public void testLaunchMapFailActivityInfoNull() {
+        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
+
+        List<CbGeoUtils.Geometry> geometries = Collections.singletonList(
+                new Circle(new CbGeoUtils.LatLng(37.4, -122.1), 1000.0));
+        SmsCbMessage message = createSmsCbMessage(geometries);
+
+        ResolveInfo badResolveInfo = new ResolveInfo();
+        badResolveInfo.activityInfo = null;
+
+        doReturn(Collections.singletonList(badResolveInfo)).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+
+        CellBroadcastMapLauncher.launchMap(mMockContext, message);
+
+        verify(mMockContext, never()).startActivity(any(Intent.class));
+    }
+
+    @Test
+    public void testLaunchMapSuccessCMultipleAppsSecondAppHasPermission() throws Exception {
+        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
+
+        List<CbGeoUtils.Geometry> geometries = Collections.singletonList(
+                new Circle(new CbGeoUtils.LatLng(37.4, -122.1), 1000.0));
+        SmsCbMessage message = createSmsCbMessage(geometries);
+
+        ResolveInfo app1 = createMockResolveInfo(OTHER_PACKAGE);
+        ResolveInfo app2 = createMockResolveInfo(GMS_PACKAGE);
+
+        doReturn(Arrays.asList(app1, app2)).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+
+        doReturn(PackageManager.PERMISSION_DENIED).when(mMockPackageManager)
+                .checkPermission(PERMISSION_ACCESS_CELL_BROADCAST, OTHER_PACKAGE);
+        doReturn(PackageManager.PERMISSION_GRANTED).when(mMockPackageManager)
+                .checkPermission(PERMISSION_ACCESS_CELL_BROADCAST, GMS_PACKAGE);
+
+        CellBroadcastMapLauncher.launchMap(mMockContext, message);
+
+        ArgumentCaptor<Intent> intentCaptor = ArgumentCaptor.forClass(Intent.class);
+        verify(mMockContext).startActivity(intentCaptor.capture());
+        assertEquals(GMS_PACKAGE, intentCaptor.getValue().getComponent().getPackageName());
+    }
+
+    @Test
+    public void testLaunchMapSkipCCheckPermissionThrowsException()
+            throws Exception {
+        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
+
+        List<CbGeoUtils.Geometry> geometries = Collections.singletonList(
+                new Circle(new CbGeoUtils.LatLng(37.4, -122.1), 1000.0));
+        SmsCbMessage message = createSmsCbMessage(geometries);
+        ResolveInfo mockResolveInfo = createMockResolveInfo(GMS_PACKAGE);
+
+        doReturn(Collections.singletonList(mockResolveInfo)).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+        doThrow(new SecurityException("Test Exception")).when(mMockPackageManager)
+                .checkPermission(PERMISSION_ACCESS_CELL_BROADCAST, GMS_PACKAGE);
+        mockPackageInfoRequestedPermissions(GMS_PACKAGE, new String[]{});
+
+        CellBroadcastMapLauncher.launchMap(mMockContext, message);
+
+        verify(mMockContext, never()).startActivity(any(Intent.class));
+    }
+
+    @Test
+    public void testLaunchMapFailCMultipleAppsOneRequestedOneNotNoPermission() throws Exception {
+        assumeTrue(Build.VERSION.SDK_INT > Build.VERSION_CODES.BAKLAVA);
+
+        List<CbGeoUtils.Geometry> geometries = Collections.singletonList(
+                new Circle(new CbGeoUtils.LatLng(37.4, -122.1), 1000.0));
+        SmsCbMessage message = createSmsCbMessage(geometries);
+
+        ResolveInfo app1 = createMockResolveInfo(GMS_PACKAGE);
+        ResolveInfo app2 = createMockResolveInfo(OTHER_PACKAGE);
+
+        doReturn(Arrays.asList(app1, app2)).when(mMockPackageManager)
+                .queryIntentActivities(any(Intent.class), eq(PackageManager.MATCH_SYSTEM_ONLY));
+
+        doReturn(PackageManager.PERMISSION_DENIED).when(mMockPackageManager).checkPermission(any(),
+                any());
+        mockPackageInfoRequestedPermissions(GMS_PACKAGE,
+                new String[]{PERMISSION_ACCESS_CELL_BROADCAST});
+        mockPackageInfoRequestedPermissions(OTHER_PACKAGE, new String[]{});
+
+        CellBroadcastMapLauncher.launchMap(mMockContext, message);
+
+        verify(mMockContext, never()).startActivity(any(Intent.class));
     }
 }
