@@ -1614,6 +1614,24 @@
       "toggle_avail": "true"
     }
   },
+  "kuwait": {
+    "Emergency Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "General Alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test Alert": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Always alert at full volume": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
+  },
   "Slovenia": {
     "Extreme threats": {
       "default_value": "true",
