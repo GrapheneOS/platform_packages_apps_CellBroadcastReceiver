@@ -5183,5 +5183,67 @@
       "toggle_avail": "true",
       "filter_language": "language_setting"
     }
+  },
+  "morocco": {
+    "4370": {
+      "title": "MAROC ALERT - Very severe alert (red level)",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4383": {
+      "title": "MAROC ALERT - Very severe alert (red level)",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4371": {
+      "title": "MAROC ALERT - severe alert (orange level)",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4384": {
+      "title": "MAROC ALERT - severe alert (orange level)",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4375": {
+      "title": "MAROC ALERT - Very important alert (yellow level)",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4388": {
+      "title": "MAROC ALERT - Very important alert (yellow level)",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4396": {
+      "title": "MAROC ALERT - Important alert (green level)",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4397": {
+      "title": "MAROC ALERT - Important alert (green level)",
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "4379": {
+      "title": "MAROC ALERT - Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4392": {
+      "title": "MAROC ALERT - Alert",
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "4380": {
+      "title": "MAROC ALERT - Test alert",
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "4393": {
+      "title": "MAROC ALERT - Test alert",
+      "default_value": "false",
+      "toggle_avail": "true"
+    }
   }
 }
