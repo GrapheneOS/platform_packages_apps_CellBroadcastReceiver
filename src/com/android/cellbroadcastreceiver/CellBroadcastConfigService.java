@@ -183,7 +183,6 @@ public class CellBroadcastConfigService extends IntentService {
             Resources res = getResources(intent.getIntExtra(
                     EXTRA_SUB, SubscriptionManager.DEFAULT_SUBSCRIPTION_ID), null);
 
-            /// TODO :: b/339644128 - Reset WEA preferences when user has not modified them
             if (!CellBroadcastSettings.hasAnyPreferenceChanged(getApplicationContext())) {
                 if (isMasterToggleEnabled() != res.getBoolean(R.bool.master_toggle_enabled_default)
                         || (isSpeechAlertMessageEnabled() != res.getBoolean(
@@ -195,10 +194,21 @@ public class CellBroadcastConfigService extends IntentService {
                         || (isStateLocalTestAlertEnabled() != res.getBoolean(
                         R.bool.state_local_test_alerts_enabled_default))
                         || (isExtremeAlertEnabled() != res.getBoolean(
-                        R.bool.extreme_threat_alerts_enabled_default))) {
-                    Log.d(TAG, "Reset all preferences as no user changes and "
-                            + "master toggle is different as the config or "
-                            + "alert speech toggle is different as the config");
+                        R.bool.extreme_threat_alerts_enabled_default))
+                        || (isSevereAlertEnabled() != res.getBoolean(
+                        R.bool.severe_threat_alerts_enabled_default))
+                        || (isAmberAlertEnabled() != res.getBoolean(
+                        R.bool.amber_alerts_enabled_default))
+                        || (isPublicSafetyMessagesEnabled() != res.getBoolean(
+                        R.bool.public_safety_messages_enabled_default))
+                        || (isTestAlertEnabled() != res.getBoolean(
+                        R.bool.test_alerts_enabled_default))
+                        || (isAreaUpdateInfoAlertEnabled() != res.getBoolean(
+                        R.bool.area_update_info_alerts_enabled_default))
+                        || (isEmergencyAlertsEnabled() != res.getBoolean(
+                        R.bool.emergency_alerts_enabled_default))) {
+                    Log.d(TAG, "Reset all preferences as no user changes and some preferences are"
+                            + " different than the config");
                     resetAllPreferences();
                 }
             }
@@ -747,6 +757,36 @@ public class CellBroadcastConfigService extends IntentService {
     private boolean isExtremeAlertEnabled() {
         return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
                 CellBroadcastSettings.KEY_ENABLE_CMAS_EXTREME_THREAT_ALERTS, false);
+    }
+
+    private boolean isSevereAlertEnabled() {
+        return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
+                CellBroadcastSettings.KEY_ENABLE_CMAS_SEVERE_THREAT_ALERTS, true);
+    }
+
+    private boolean isAmberAlertEnabled() {
+        return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
+                CellBroadcastSettings.KEY_ENABLE_CMAS_AMBER_ALERTS, true);
+    }
+
+    private boolean isPublicSafetyMessagesEnabled() {
+        return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
+                CellBroadcastSettings.KEY_ENABLE_PUBLIC_SAFETY_MESSAGES, true);
+    }
+
+    private boolean isTestAlertEnabled() {
+        return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
+                CellBroadcastSettings.KEY_ENABLE_TEST_ALERTS, false);
+    }
+
+    private boolean isAreaUpdateInfoAlertEnabled() {
+        return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
+                CellBroadcastSettings.KEY_ENABLE_AREA_UPDATE_INFO_ALERTS, true);
+    }
+
+    private boolean isEmergencyAlertsEnabled() {
+        return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
+                CellBroadcastSettings.KEY_ENABLE_EMERGENCY_ALERTS, true);
     }
 
     /**
