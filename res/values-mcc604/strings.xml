@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <!-- Required Arabic (ar) translation for this message: MAROC ALERT - إنذار خطير جدا (مستوى أحمر) -->
+    <!-- Required French (fr) translation for this message: MAROC ALERT - Alerte très grave (niveau rouge) -->
+    <string name="cmas_presidential_level_alert">MAROC ALERT - Very severe alert (red level)</string>
+
+    <!-- Required Arabic (ar) translation for this message: MAROC ALERT - إنذار خطير (مستوى برتقالي) -->
+    <!-- Required French (fr) translation for this message: MAROC ALERT - Alerte  grave (niveau orange) -->
+    <string name="cmas_extreme_alert">MAROC ALERT - severe alert (orange level)</string>
+
+    <!-- Required Arabic (ar) translation for this message: MAROC ALERT - إنذار مهم جدا (مستوى أصفر) -->
+    <!-- Required French (fr) translation for this message: MAROC ALERT - Alerte très importante (niveau jaune) -->
+    <string name="cmas_severe_alert">MAROC ALERT - Very important alert (yellow level)</string>
+
+    <!-- Required Arabic (ar) translation for this message: MAROC ALERT - إنذار مهم (مستوى أخضر) -->
+    <!-- Required French (fr) translation for this message: MAROC ALERT - Alerte importante (niveau vert)-->
+    <string name="public_safety_message">MAROC ALERT - Important alert (green level)</string>
+
+    <!-- Required Arabic (ar) translation for this message: MAROC ALERT - إنذار -->
+    <!-- Required French (fr) translation for this message: MAROC ALERT - Alerte -->
+    <string name="cmas_amber_alert">MAROC ALERT - Alert</string>
+
+    <!-- Required Arabic (ar) translation for this message: MAROC ALERT - إنذار الإختبار -->
+    <!-- Required French (fr) translation for this message: MAROC ALERT -Alerte de test -->
+    <string name="cmas_required_monthly_test">MAROC ALERT - Test alert</string>
+
+    <!-- Required Arabic (ar) translation for this message: إنذار -->
+    <!-- Required French (fr) translation for this message: Alerte -->
+    <string name="enable_cmas_amber_alerts_title">Alert</string>
+
+    <!-- Required Arabic (ar) translation for this message: التوصل برسائل الإنذار -->
+    <!-- Required French (fr) translation for this message: Recevoir les messages d’alerte -->
+    <string name="enable_cmas_amber_alerts_summary">Receive alert messages</string>
+
+    <!-- Required Arabic (ar) translation for this message: إنذار الإختبار -->
+    <!-- Required French (fr) translation for this message: Alerte de test -->
+    <string name="enable_cmas_test_alerts_title">Test alert</string>
+
+    <!-- Required Arabic (ar) translation for this message: التوصل برسائل إنذار الإختبار -->
+    <!-- Required French (fr) translation for this message: Recevoir les messages de test -->
+    <string name="enable_cmas_test_alerts_summary">Receive test messages</string>
+</resources>

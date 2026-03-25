@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <bool name="show_extreme_alert_settings">false</bool>
+    <bool name="show_severe_alert_settings">false</bool>
+    <bool name="show_public_safety_settings">false</bool>
+    <!-- Default value that in the ListPreference.
+         These must be a subset of the alert_reminder_interval_values list above. -->
+    <string name="alert_reminder_interval_in_min_default" translatable="false">2</string>
+
+    <string name="date_time_format" translatable="false">dd/MM/yyyy HH\'h\'mm</string>
+
+    <!-- 4370, 4383: Very severe alert -->
+    <string-array name="cmas_presidential_alerts_channels_range_strings" translatable="false">
+        <item>0x1112:rat=gsm, emergency=true, alert_duration=31500, always_on=true, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500</item>
+        <!-- additional language -->
+        <item>0x111F:rat=gsm, emergency=true, alert_duration=31500, always_on=true, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500, filter_language=true</item>
+    </string-array>
+
+    <!-- 4371, 4384: Severe alert -->
+    <string-array name="cmas_alert_extreme_channels_range_strings" translatable="false">
+        <item>0x1113:rat=gsm, emergency=true, alert_duration=31500, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500</item>
+        <!-- additional language -->
+        <item>0x1120:rat=gsm, emergency=true, alert_duration=31500, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500, filter_language=true</item>
+    </string-array>
+
+    <!-- 4375, 4388: Very important alert -->
+    <string-array name="cmas_alerts_severe_range_strings" translatable="false">
+        <item>0x1117:rat=gsm, emergency=true, alert_duration=31500, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500</item>
+        <!-- additional language -->
+        <item>0x1124:rat=gsm, emergency=true, alert_duration=31500, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500, filter_language=true</item>
+    </string-array>
+
+    <!-- 4396, 4397: Important alert -->
+    <string-array name="public_safety_messages_channels_range_strings" translatable="false">
+        <item>0x112C:rat=gsm, emergency=true, alert_duration=31500, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500</item>
+        <!-- additional language -->
+        <item>0x112D:rat=gsm, emergency=true, alert_duration=31500, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500, filter_language=true</item>
+    </string-array>
+
+    <!-- 4379, 4392: Alert -->
+    <string-array name="cmas_amber_alerts_channels_range_strings" translatable="false">
+        <item>0x111B:rat=gsm, emergency=true, alert_duration=31500, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500</item>
+        <!-- additional language -->
+        <item>0x1128:rat=gsm, emergency=true, alert_duration=31500, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500, filter_language=true</item>
+    </string-array>
+
+    <!-- 4380, 4393: Test alert -->
+    <string-array name="required_monthly_test_range_strings" translatable="false">
+        <item>0x111C:rat=gsm, emergency=true, alert_duration=31500, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500</item>
+        <!-- additional language -->
+        <item>0x1129:rat=gsm, emergency=true, alert_duration=31500, override_dnd=true, vibration=0|500|500|500|500|500|500|1000|500|1000|500|1000|500|500|500|500|500|500|500, pulsation=0xffffffff|31500, filter_language=true</item>
+    </string-array>
+
+    <string-array name="exercise_alert_range_strings" translatable="false" />
+    <string-array name="operator_defined_alert_range_strings" translatable="false" />
+    <string-array name="etws_alerts_range_strings" translatable="false" />
+    <string-array name="etws_test_alerts_range_strings" translatable="false" />
+
+    <!-- Specify primary language code for filter out secondary channel -->
+    <string-array name="language_filter_primary_code" translatable="false">
+        <item>ar</item>
+    </string-array>
+</resources>
