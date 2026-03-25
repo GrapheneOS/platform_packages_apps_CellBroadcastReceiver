@@ -16,21 +16,14 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for cmas_presidential_level_alert (6625686150424269693) -->
-    <skip />
-    <!-- no translation found for cmas_extreme_alert (3525429264876496098) -->
-    <skip />
-    <!-- no translation found for cmas_severe_alert (1585669211172424900) -->
-    <skip />
-    <!-- no translation found for cmas_required_monthly_test (4635380113069610237) -->
-    <skip />
-    <!-- no translation found for enable_cmas_extreme_threat_alerts_title (2552695811242023319) -->
-    <skip />
+    <string name="cmas_presidential_level_alert" msgid="6625686150424269693">"National warning alert"</string>
+    <string name="cmas_extreme_alert" msgid="3525429264876496098">"Emergency alert"</string>
+    <string name="cmas_severe_alert" msgid="1585669211172424900">"General alert"</string>
+    <string name="cmas_required_monthly_test" msgid="4635380113069610237">"Test alert"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="2552695811242023319">"Emergency alert"</string>
     <string name="enable_cmas_extreme_threat_alerts_summary" msgid="5512879491118930535"></string>
-    <!-- no translation found for enable_cmas_severe_threat_alerts_title (7182509499378391814) -->
-    <skip />
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="7182509499378391814">"General alert"</string>
     <string name="enable_cmas_severe_threat_alerts_summary" msgid="8263567166742842514"></string>
-    <!-- no translation found for enable_cmas_test_alerts_title (1481177517473463803) -->
-    <skip />
+    <string name="enable_cmas_test_alerts_title" msgid="1481177517473463803">"Test alert"</string>
     <string name="enable_cmas_test_alerts_summary" msgid="742472771033191711"></string>
 </resources>
