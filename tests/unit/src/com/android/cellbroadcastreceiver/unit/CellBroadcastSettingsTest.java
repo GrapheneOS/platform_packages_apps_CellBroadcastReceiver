@@ -429,8 +429,11 @@ public class CellBroadcastSettingsTest extends
             return;
         }
         String topIntroRoamingText = "test";
-        doReturn(topIntroRoamingText).when(mContext.getResources()).getString(
-                eq(R.string.top_intro_roaming_text));
+        String packageName = CellBroadcastUtils
+            .getDefaultCellBroadcastReceiverPackageName(mContext);
+        int resId = mContext.getResources().getIdentifier(
+            "top_intro_roaming_text", "string", packageName);
+        doReturn(topIntroRoamingText).when(mContext.getResources()).getString(eq(resId));
         setPreference(PREFERENCE_PUT_TYPE_STRING, ROAMING_OPERATOR_SUPPORTED, "XXX");
 
         CellBroadcastSettings settings = startActivity();
