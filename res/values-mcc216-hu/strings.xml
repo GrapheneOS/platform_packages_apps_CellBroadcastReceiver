@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2026 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2026 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -12,50 +12,30 @@
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
--->
+ -->
 
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert">Azonnali veszély</string>
-
-    <string name="cmas_extreme_alert">Kiemelt riasztás</string>
-
-    <string name="cmas_severe_alert">Riasztás</string>
-
-    <string name="public_safety_message">Biztonsági figyelmeztetés</string>
-
-    <string name="cmas_amber_alert">Eltűnt személy</string>
-
-    <string name="cmas_required_monthly_test">Teszt üzenet</string>
-
-    <string name="cmas_exercise_alert">Gyakorlat</string>
-
-    <string name="pws_other_message_identifiers">Csendes riasztás</string>
-
-    <string name="enable_cmas_extreme_threat_alerts_title">Kiemelt riasztás</string>
-
-    <string name="enable_cmas_extreme_threat_alerts_summary">Közvetlen életet és vagyonbiztonságot érintő veszély</string>
-
-    <string name="enable_cmas_severe_threat_alerts_title">Riasztás</string>
-
-    <string name="enable_cmas_severe_threat_alerts_summary">Közvetett életet és vagyonbiztonságot érintő veszély</string>
-
-    <string name="enable_cmas_amber_alerts_title">Eltűnt személy</string>
-
-    <string name="enable_cmas_amber_alerts_summary">Eltűnt személy keresése</string>
-
-    <string name="enable_public_safety_messages_title">Biztonsági figyelmeztetés</string>
-
-    <string name="enable_public_safety_messages_summary">Biztonsági figyelmeztetések, tájékoztatások</string>
-
-    <string name="enable_cmas_test_alerts_title">Teszt üzenet</string>
-
-    <string name="enable_cmas_test_alerts_summary">A rendszer technikai működésének ellenőrzésére szolgáló üzenet</string>
-
-    <string name="enable_exercise_test_alerts_title">Gyakorlat</string>
-
-    <string name="enable_exercise_test_alerts_summary">Válságkezelési gyakorlatok esetén használt</string>
-
-    <string name="enable_emergency_alerts_message_title">Csendes riasztás</string>
-
-    <string name="enable_emergency_alerts_message_summary">Életveszélyre figyelmeztő, hang nélküli riasztás</string>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="8108836272194350129">"Azonnali veszély"</string>
+    <string name="cmas_extreme_alert" msgid="9063860162715539033">"Kiemelt riasztás"</string>
+    <string name="cmas_severe_alert" msgid="6358619706878056790">"Riasztás"</string>
+    <string name="public_safety_message" msgid="5382183252081925945">"Biztonsági figyelmeztetés"</string>
+    <string name="cmas_amber_alert" msgid="7571169755199439538">"Eltűnt személy"</string>
+    <string name="cmas_required_monthly_test" msgid="3545522833964765508">"Tesztüzenet"</string>
+    <string name="cmas_exercise_alert" msgid="4079658399119734688">"Gyakorlat"</string>
+    <string name="pws_other_message_identifiers" msgid="1190015614818724463">"Csendes riasztás"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="643884525209848249">"Kiemelt riasztás"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6253630180516386806">"Közvetlen életet és vagyonbiztonságot érintő veszély"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="6466256803509718807">"Riasztás"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="1644552982032318092">"Közvetett életet és vagyonbiztonságot érintő veszély"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="914362590713440363">"Eltűnt személy"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="3226017012969036814">"Eltűnt személy keresése"</string>
+    <string name="enable_public_safety_messages_title" msgid="3129404181382956852">"Biztonsági figyelmeztetés"</string>
+    <string name="enable_public_safety_messages_summary" msgid="2427783790406284910">"Biztonsági figyelmeztetések, tájékoztatások"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="2560849986063734019">"Tesztüzenet"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6809288863407161397">"A rendszer technikai működésének ellenőrzésére szolgáló üzenet"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="6484475219594779379">"Gyakorlat"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="2685041181342699979">"Válságkezelési gyakorlatok esetén használt"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="5026965226601870637">"Csendes riasztás"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="9103274703179959665">"Életveszélyre figyelmeztő, hang nélküli riasztás"</string>
 </resources>

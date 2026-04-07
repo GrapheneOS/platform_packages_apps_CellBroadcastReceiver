@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2026 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="8108836272194350129">"জৰুৰীকালীন সতৰ্কবাৰ্তা"</string>
+    <string name="cmas_extreme_alert" msgid="9063860162715539033">"চৰম সতৰ্কবাৰ্তা"</string>
+    <string name="cmas_severe_alert" msgid="6358619706878056790">"গুৰুতৰ সতৰ্কবাৰ্তা"</string>
+    <string name="public_safety_message" msgid="5382183252081925945">"ৰাজহুৱা সুৰক্ষাজনিত সকীয়নি"</string>
+    <string name="cmas_amber_alert" msgid="7571169755199439538">"নিৰুদ্দেশ হোৱা লোক"</string>
+    <string name="cmas_required_monthly_test" msgid="3545522833964765508">"পৰীক্ষামূলক বাৰ্তা"</string>
+    <string name="cmas_exercise_alert" msgid="4079658399119734688">"অনুশীলনৰ সতৰ্কবাৰ্তা"</string>
+    <string name="pws_other_message_identifiers" msgid="1190015614818724463">"নীৰৱ সতৰ্কবাৰ্তা"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="643884525209848249">"চৰম সতৰ্কবাৰ্তা"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6253630180516386806">"জীৱন আৰু সম্পত্তিৰ প্ৰতি তাৎক্ষণিক বিপদ"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="6466256803509718807">"গুৰুতৰ সতৰ্কবাৰ্তা"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="1644552982032318092">"জীৱন আৰু সম্পত্তিৰ সুৰক্ষাৰ প্ৰতি পৰোক্ষ ভাবুকি"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="914362590713440363">"নিৰুদ্দেশ হোৱা লোক"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="3226017012969036814">"নিৰুদ্দেশ হোৱা ব্যক্তিৰ সন্ধান কৰি থকা হৈছে"</string>
+    <string name="enable_public_safety_messages_title" msgid="3129404181382956852">"ৰাজহুৱা সুৰক্ষাজনিত সকীয়নি"</string>
+    <string name="enable_public_safety_messages_summary" msgid="2427783790406284910">"ৰাজহুৱা সুৰক্ষাজনিত সকীয়নি আৰু জাননী"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="2560849986063734019">"পৰীক্ষামূলক বাৰ্তা"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6809288863407161397">"ছিষ্টেমটোৰ কাৰিকৰী কাৰ্যকলাপ পৰীক্ষা কৰিবৰ বাবে পঠিওৱা পৰীক্ষামূলক বাৰ্তা"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="6484475219594779379">"অনুশীলনৰ সতৰ্কবাৰ্তা"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="2685041181342699979">"সংকট ব্যৱস্থাপনাৰ অনুশীলনত ব্যৱহাৰ কৰা হয়"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="5026965226601870637">"নীৰৱ সতৰ্কবাৰ্তা"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="9103274703179959665">"জীৱনৰ প্ৰতি তাৎক্ষণিক ভাবুকিৰ বাবে নীৰৱ সতৰ্কবাৰ্তা"</string>
+</resources>

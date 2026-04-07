@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2026 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="6584511042505708680">"MAROC ALERT - అత్యంత తీవ్రమైన అలర్ట్ (ఎరుపు స్థాయి)"</string>
+    <string name="cmas_extreme_alert" msgid="3194796550184560251">"MAROC ALERT - తీవ్ర అలర్ట్ (ఆరెంజ్ స్థాయి)"</string>
+    <string name="cmas_severe_alert" msgid="6451170755727694876">"MAROC ALERT - చాలా ముఖ్యమైన అలర్ట్ (పసుపు రంగు స్థాయి)"</string>
+    <string name="public_safety_message" msgid="7651509066337510791">"MAROC ALERT - ముఖ్యమైన అలర్ట్ (ఆకుపచ్చ స్థాయి)"</string>
+    <string name="cmas_amber_alert" msgid="2871181008011658370">"MAROC ALERT - అలర్ట్"</string>
+    <string name="cmas_required_monthly_test" msgid="9188205832900358875">"MAROC ALERT - టెస్ట్ అలర్ట్"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="8384516238912601309">"హెచ్చరిక"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="1205026639879212265">"అలర్ట్ మెసేజ్‌లను అందుకోండి"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="1817651981471449767">"టెస్ట్ అలర్ట్"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="2137354982263203029">"టెస్ట్ మెసేజ్‌లను అందుకోండి"</string>
+</resources>

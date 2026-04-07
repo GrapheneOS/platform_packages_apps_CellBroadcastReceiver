@@ -16,12 +16,12 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="cmas_presidential_level_alert" msgid="6584511042505708680">"MAROC ALERT – Alerte très grave (niveau rouge)"</string>
-    <string name="cmas_extreme_alert" msgid="3194796550184560251">"MAROC ALERT – Alerte grave (niveau orange)"</string>
-    <string name="cmas_severe_alert" msgid="6451170755727694876">"MAROC ALERT – Alerte très importante (niveau jaune)"</string>
-    <string name="public_safety_message" msgid="7651509066337510791">"MAROC ALERT – Alerte importante (niveau vert)"</string>
-    <string name="cmas_amber_alert" msgid="2871181008011658370">"MAROC ALERT – Alerte"</string>
-    <string name="cmas_required_monthly_test" msgid="9188205832900358875">"MAROC ALERT – Alerte test"</string>
+    <string name="cmas_presidential_level_alert" msgid="6584511042505708680">"MAROC ALERT – Alerte très grave (niveau rouge)"</string>
+    <string name="cmas_extreme_alert" msgid="3194796550184560251">"MAROC ALERT – Alerte grave (niveau orange)"</string>
+    <string name="cmas_severe_alert" msgid="6451170755727694876">"MAROC ALERT – Alerte très importante (niveau jaune)"</string>
+    <string name="public_safety_message" msgid="7651509066337510791">"MAROC ALERT – Alerte importante (niveau vert)"</string>
+    <string name="cmas_amber_alert" msgid="2871181008011658370">"MAROC ALERT – Alerte"</string>
+    <string name="cmas_required_monthly_test" msgid="9188205832900358875">"MAROC ALERT – Alerte de test"</string>
     <string name="enable_cmas_amber_alerts_title" msgid="8384516238912601309">"Alerte"</string>
     <string name="enable_cmas_amber_alerts_summary" msgid="1205026639879212265">"Recevoir les messages d\'alerte"</string>
     <string name="enable_cmas_test_alerts_title" msgid="1817651981471449767">"Alerte de test"</string>
