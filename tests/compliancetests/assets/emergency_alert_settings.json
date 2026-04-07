@@ -1374,7 +1374,35 @@
       "toggle_avail": "true"
     }
   },
-  "hungary_telekom": {
+  "hungary": {
+    "Emergency alert": {
+      "default_value": "true",
+      "toggle_avail": "false"
+    },
+    "Extreme alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Severe alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Missing person": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Public safety warning": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
+    "Test message": {
+      "default_value": "false",
+      "toggle_avail": "true"
+    },
+    "Silent alert": {
+      "default_value": "true",
+      "toggle_avail": "true"
+    },
     "Vibration": {
       "default_value": "true",
       "toggle_avail": "true"
