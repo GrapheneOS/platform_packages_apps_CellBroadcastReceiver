@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2026 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="cmas_presidential_level_alert" msgid="8108836272194350129">"জরুরি সতর্কতা"</string>
+    <string name="cmas_extreme_alert" msgid="9063860162715539033">"চরম সতর্কতা"</string>
+    <string name="cmas_severe_alert" msgid="6358619706878056790">"গুরুতর সতর্কতা"</string>
+    <string name="public_safety_message" msgid="5382183252081925945">"সর্বজনীন নিরাপত্তা সংক্রান্ত সতর্কতা"</string>
+    <string name="cmas_amber_alert" msgid="7571169755199439538">"নিখোঁজ ব্যক্তি"</string>
+    <string name="cmas_required_monthly_test" msgid="3545522833964765508">"টেস্ট মেসেজ"</string>
+    <string name="cmas_exercise_alert" msgid="4079658399119734688">"এক্সারসাইজ সংক্রান্ত সতর্কতা"</string>
+    <string name="pws_other_message_identifiers" msgid="1190015614818724463">"নিঃশব্দ সতর্কতা"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title" msgid="643884525209848249">"চরম সতর্কতা"</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary" msgid="6253630180516386806">"জীবন ও সম্পত্তির জন্য তাৎক্ষণিক বিপদ"</string>
+    <string name="enable_cmas_severe_threat_alerts_title" msgid="6466256803509718807">"গুরুতর সতর্কতা"</string>
+    <string name="enable_cmas_severe_threat_alerts_summary" msgid="1644552982032318092">"জীবন ও সম্পত্তির নিরাপত্তার জন্য পরোক্ষ হুমকি"</string>
+    <string name="enable_cmas_amber_alerts_title" msgid="914362590713440363">"নিখোঁজ ব্যক্তি"</string>
+    <string name="enable_cmas_amber_alerts_summary" msgid="3226017012969036814">"নিখোঁজ ব্যক্তি সম্পর্কে সার্চ করা হচ্ছে"</string>
+    <string name="enable_public_safety_messages_title" msgid="3129404181382956852">"সর্বজনীন নিরাপত্তা সংক্রান্ত সতর্কতা"</string>
+    <string name="enable_public_safety_messages_summary" msgid="2427783790406284910">"সর্বজনীন নিরাপত্তা সংক্রান্ত সতর্কতা ও বিজ্ঞপ্তি"</string>
+    <string name="enable_cmas_test_alerts_title" msgid="2560849986063734019">"টেস্ট মেসেজ"</string>
+    <string name="enable_cmas_test_alerts_summary" msgid="6809288863407161397">"সিস্টেমের টেকনিক্যাল অপারেশন চেক করার জন্য টেস্ট মেসেজ"</string>
+    <string name="enable_exercise_test_alerts_title" msgid="6484475219594779379">"এক্সারসাইজ সংক্রান্ত সতর্কতা"</string>
+    <string name="enable_exercise_test_alerts_summary" msgid="2685041181342699979">"ক্রাইসিস ম্যানেজমেন্ট সংক্রান্ত এক্সারসাইজ ব্যবহার করা হয়েছে"</string>
+    <string name="enable_emergency_alerts_message_title" msgid="5026965226601870637">"নিঃশব্দ সতর্কতা"</string>
+    <string name="enable_emergency_alerts_message_summary" msgid="9103274703179959665">"জীবনহানির আশঙ্কার ক্ষেত্রে নিঃশব্দ সতর্কতা"</string>
+</resources>
