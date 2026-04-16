@@ -17,14 +17,14 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- CMAS dialog title for level 1 alert.  [CHAR LIMIT=50] -->
-    <!-- Required Spanish (es) translation for this message: Mensajes de Alerta nivel 1 -->
-    <string name="cmas_presidential_level_alert">Alert Messages Level 1</string>
+    <!-- Required Spanish (es) translation for this message: Alerta Máxima -->
+    <string name="cmas_presidential_level_alert">Emergency Alert</string>
     <!-- CMAS dialog title for level 2 alert. [CHAR LIMIT=50] -->
-    <!-- Required Spanish (es) translation for this message: Mensajes de Alerta nivel 2 -->
-    <string name="cmas_extreme_alert">Alert Messages Level 2</string>
+    <!-- Required Spanish (es) translation for this message: Alerta Extrema -->
+    <string name="cmas_extreme_alert">Extreme Alert</string>
     <!-- CMAS dialog title for level 3 alert. [CHAR LIMIT=50] -->
-    <!-- Required Spanish (es) translation for this message: Mensajes de Alerta nivel 3 -->
-    <string name="cmas_severe_alert">Alert Messages Level 3</string>
+    <!-- Required Spanish (es) translation for this message: Alerta Grave -->
+    <string name="cmas_severe_alert">Severe Alert</string>
     <!-- CMAS Dialog title for public safety message broadcasts. [CHAR LIMIT=50] -->
     <!-- Required Spanish (es) translation for this message: Mensajes de información en español -->
     <string name="public_safety_message">Information Messages in Spanish</string>
@@ -35,7 +35,7 @@
     <!-- Required Spanish (es) translation for this message: Mensajes de Alerta de Prueba en español -->
     <string name="cmas_required_monthly_test">Test Alert Messages in Spanish</string>
     <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
-    <!-- Required French (fr) translation for this message: Mensajes de Alerta de Ejercicio en español -->
+    <!-- Required Spanish (es) translation for this message: Mensajes de Alerta de Ejercicio en español -->
     <string name="cmas_exercise_alert">Exercise Alert Messages in Spanish</string>
     <!-- CMAS dialog title for reserved channels. [CHAR LIMIT=50] -->
     <!-- Required Spanish (es) translation for this message: Reservados para futuras implementaciones -->
@@ -43,15 +43,18 @@
 
     <!-- Show checkbox for Presidential alerts in settings -->
     <!-- Preference title for enable presidential threat alerts checkbox. [CHAR LIMIT=40] -->
-    <string name="enable_cmas_presidential_alerts_title">@string/cmas_presidential_level_alert</string>
+    <!-- Required Spanish (es) translation for this message: Mensajes de Alerta nivel 1 -->
+    <string name="enable_cmas_presidential_alerts_title">Alert Messages Level 1</string>
     <!-- Preference summary for enable presidential threat alerts checkbox. [CHAR LIMIT=100] -->
     <string name="enable_cmas_presidential_alerts_summary"></string>
     <!-- Preference title for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_cmas_extreme_threat_alerts_title">@string/cmas_extreme_alert</string>
+    <!-- Required Spanish (es) translation for this message: Mensajes de Alerta nivel 2 -->
+    <string name="enable_cmas_extreme_threat_alerts_title">Alert Messages Level 2</string>
     <!-- Preference summary for enable CMAS extreme threat alerts checkbox. [CHAR LIMIT=100] -->
     <string name="enable_cmas_extreme_threat_alerts_summary"></string>
     <!-- Preference title for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=50] -->
-    <string name="enable_cmas_severe_threat_alerts_title">@string/cmas_severe_alert</string>
+    <!-- Required Spanish (es) translation for this message: Mensajes de Alerta nivel 3 -->
+    <string name="enable_cmas_severe_threat_alerts_title">Alert Messages Level 3</string>
     <!-- Preference summary for enable CMAS severe threat alerts checkbox. [CHAR LIMIT=100] -->
     <string name="enable_cmas_severe_threat_alerts_summary"></string>
     <!-- Preference title for enable CMAS amber alerts checkbox. [CHAR LIMIT=50] -->

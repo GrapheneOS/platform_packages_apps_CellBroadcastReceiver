@@ -82,8 +82,7 @@
   },
   "mexico_telefonica": {
     "mccmnc": ["334030"],
-    "imsi": "334030012345678",
-    "language": "es"
+    "imsi": "334030012345678"
   },
   "elsalvador": {
     "mccmnc": ["70601"],

@@ -1694,71 +1694,71 @@
       "alert_type":"notification"
     },
     "4370": {
-      "title": "",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "919": {
-      "title": "",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "",
+      "title": "Extreme Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4372"
     },
     "4384": {
-      "title": "",
+      "title": "Extreme Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4385"
     },
     "4373": {
-      "title": "",
+      "title": "Severe Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4378"
     },
     "4386": {
-      "title": "",
+      "title": "Severe Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4391"
     },
     "4379": {
-      "title": "",
+      "title": "Amber Alert Messages in Spanish",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4380": {
-      "title": "",
+      "title": "Test Alert Messages in Spanish",
       "default_value": "false",
       "toggle_avail": "false"
     },
     "519": {
-      "title": "",
+      "title": "Test Alert Messages in Spanish",
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4381": {
-      "title": "",
+      "title": "Exercise Alert Messages in Spanish",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "6400": {
-      "title": "",
+      "title": "Information Messages in Spanish",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4396": {
-      "title": "",
+      "title": "Reserved for future deployments",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4399"
@@ -4714,71 +4714,71 @@
   },
   "mexico": {
     "4370": {
-      "title": "",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4383": {
-      "title": "",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "919": {
-      "title": "",
+      "title": "Emergency Alert",
       "default_value": "true",
       "toggle_avail": "false"
     },
     "4371": {
-      "title": "",
+      "title": "Extreme Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4372"
     },
     "4384": {
-      "title": "",
+      "title": "Extreme Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4385"
     },
     "4373": {
-      "title": "",
+      "title": "Severe Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4378"
     },
     "4386": {
-      "title": "",
+      "title": "Severe Alert",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4391"
     },
     "4379": {
-      "title": "",
+      "title": "Amber Alert Messages in Spanish",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4380": {
-      "title": "",
+      "title": "Test Alert Messages in Spanish",
       "default_value": "false",
       "toggle_avail": "false"
     },
     "519": {
-      "title": "",
+      "title": "Test Alert Messages in Spanish",
       "default_value": "false",
       "toggle_avail": "false"
     },
     "4381": {
-      "title": "",
+      "title": "Exercise Alert Messages in Spanish",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "6400": {
-      "title": "",
+      "title": "Information Messages in Spanish",
       "default_value": "true",
       "toggle_avail": "true"
     },
     "4396": {
-      "title": "",
+      "title": "Reserved for future deployments",
       "default_value": "true",
       "toggle_avail": "true",
       "end_channel": "4399"
